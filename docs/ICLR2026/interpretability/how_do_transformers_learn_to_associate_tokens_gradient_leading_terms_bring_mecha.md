@@ -2,143 +2,106 @@
 title: >-
   [Paper Note] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding
 description: >-
-  [ICLR 2026][Interpretability][Transformer interpretability] By analyzing the leading terms of training gradients, this paper derives closed-form expressions for each Transformer weight matrix during the early training ph…
+  [ICLR 2026][Interpretability][Paper Note] Through leading-term approximation analysis of training gradients, this study derives closed-form expressions for Transformer weights during early training. These weights are decomposable into a simple combination of three basis functions (bigram, token-interchangeability, context mapping), revealing how Transformers l
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Transformer interpretability"
-  - "training dynamics"
-  - "gradient leading terms"
-  - "semantic association"
-  - "closed-form weight expressions"
+  - ICLR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: dd47c6fd854815f9
+content_hash: 90647fce1ac4157e
 ---
-
 # How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19208](https://arxiv.org/abs/2601.19208)  
 **Code**: None  
-**Area**: LLM / NLP (Mechanistic Interpretability)
-**Keywords**: Transformer interpretability, training dynamics, gradient leading terms, semantic association, closed-form weight expressions
+**Area**: LLM / NLP (Mechanistic Interpretability)  
+**Keywords**: Transformer Interpretability, Training Dynamics, Gradient Leading Terms, Semantic Association, Closed-form Weight Expression
 
 ## TL;DR
-By analyzing the leading terms of training gradients, this paper derives closed-form expressions for each Transformer weight matrix during the early training phase. Each matrix decomposes into a simple combination of three basis functions (bigram, token-interchangeability, and context mapping), revealing how Transformers learn semantic associations such as "bird"↔"flew" from natural language data. The theoretical predictions align closely with the weights learned by real LLMs.
+Through leading-term approximation analysis of training gradients, this study derives closed-form expressions for Transformer weights during early training. These weights are decomposable into a simple combination of three basis functions (bigram, token-interchangeability, context mapping), revealing how Transformers learn semantic associations like "bird"↔"flew" from natural language data. Theoretical predictions align closely with weights learned in real LLMs.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: Semantic association between tokens (e.g., "bird" and "flew") is fundamental to language modeling, enabling models to transcend rote memorization for generalization and coherent generation. Understanding how these associations are learned and represented is key to linking deep learning with linguistic theory and establishing a mechanistic foundation for LLMs.
 
-**Background**: Semantic associations between tokens such as "bird" and "flew" are fundamental to language modeling—models must generalize beyond memorization to produce coherent text. Understanding how these associations are learned and represented in language models is critical for bridging deep learning with linguistic theory and establishing a mechanistic foundation for large language models.
+**Limitations of Prior Work**: Existing Transformer interpretability research generally follows two paths: (1) analyzing representations of trained models (e.g., attention visualization, probing); (2) theoretical analysis on simplified models or synthetic tasks (e.g., single-head attention, synthetic languages, removed positional encodings or residual connections). These either focus on static post-training results without explaining the "how," or rely on assumptions distant from real-world training, making conclusions difficult to generalize.
 
-**Current Issues**:
+**Key Challenge**: There is a lack of mechanistic understanding regarding how Transformers learn semantic associations from **real natural language data using standard training procedures**—a process that occurs during training and is often bypassed by static analysis and oversimplified theories.
 
-### Limitations of Prior Work
+**Key Insight**: By taking a **training dynamics** perspective on standard architectures (including relative positional encoding, causal masking, and residual streams), this work utilizes **leading-term approximation** of gradients to derive analytical, verifiable closed-form weight expressions characterizing how weights form in early training.
 
-**Limitations of Prior Work**: Existing Transformer interpretability research follows two main directions: (1) analyzing internal representations of trained models (e.g., attention visualization, probing); and (2) theoretical analysis of simplified models or tasks (e.g., single-head attention on synthetic data).
-
-### Root Cause
-
-**Key Challenge**: A critical gap exists in the mechanistic understanding of how Transformers progressively learn semantic associations **during training** from real natural language data.
-
-### Resolution
-
-**Resolution**: Existing theoretical analyses based on simplifying assumptions (e.g., linear attention, single-layer models) cannot directly explain multi-layer, multi-head Transformers trained on real data.
-
-**Key Insight**: This paper adopts a **training dynamics** perspective, using **leading-term approximations** of gradients to derive analytically tractable and empirically verifiable closed-form weight expressions. Rather than assuming a simplified architecture, the approach characterizes the formation of model weights during early training by mathematically identifying the dominant contributions to gradient updates.
-
-**Core Idea**: Each group of Transformer weights can be expressed as a simple combination of three basis functions that reflect statistical properties of the text corpus, with each basis function corresponding to a distinct mechanism for learning semantic associations.
+**Core Idea**: Each set of Transformer weights in early training can be represented as a simple combination of three basis functions reflecting corpus statistics, with each basis function corresponding to a specific learning mechanism for semantic associations.
 
 ## Method
 
 ### Overall Architecture
-- **Input/Object**: Attention-based language models (Transformers) trained with standard autoregressive or MLM objectives on natural language corpora.
-- **Analysis Tool**: Leading-term analysis of the Taylor expansion of per-step gradient updates.
-- **Output**: Closed-form expressions for each Transformer weight matrix ($W_Q$, $W_K$, $W_V$, embeddings, etc.) during the early training phase.
+
+This work focuses on the **training process itself** rather than training new models or dissecting trained networks. It tracks how each weight matrix ($W_Q$, $W_K$, $W_V$, embedding, etc.) is shaped by gradients during auto-regressive training of a standard Transformer on natural language corpora. The core tool is a leading-term approximation of gradient updates, which expresses weights in the early training phase as a closed-form combination of three statistical basis functions.
 
 ### Key Designs
 
-1. **Gradient Leading-Term Approximation**:
+**1. Gradient Leading-Term Approximation: Transforming Intractable Dynamics into Analytical Statistics**
 
-    - Gradients are decomposed to identify the dominant terms contributing most to weight updates.
-    - After discarding higher-order terms, the leading terms can be expressed in terms of corpus statistics.
-    - This approximation is particularly accurate during early training, when weights remain small.
+Directly tracking full gradient updates is intractable due to high-order coupling between weights. This approach performs an expansion of the gradient and retains only the leading terms that contribute most to weight updates. This approximation is valid in early training when weights are small and high-order terms (powers of weights) are negligible. consequently, gradients depend primarily on corpus co-occurrence statistics rather than initialization details. Since core capabilities like induction heads and linear semantic relations form early and persist, analyzing this stage is both crucial and tractable.
 
-2. **Three Basis Functions**:
-   The derivation shows that each group of Transformer weights can be expressed as a combination of the following three basis functions:
+**2. Three Basis Function Decomposition: Decoding Semantic Associations into Three Statistical Pathways**
 
-    - **Bigram Mapping**: Captures co-occurrence statistics of adjacent token pairs. For example, the high-frequency co-occurrence of "the"→"cat" leads to an increase in the corresponding weights. This is the most direct form of sequence statistics—when token $A$ frequently precedes token $B$, the model learns the association $A \rightarrow B$.
+The leading-term analysis concludes that weights can be expressed as a combination of three basis functions: **Bigram mapping** captures adjacent token dependencies (e.g., "the" → "cat"). **Token-interchangeability mapping** captures functional similarity; words like "car" and "truck" appear in similar contexts and play similar syntactic roles, thus receiving similar representations—embodying the distributional semantics hypothesis. **Context mapping** encodes long-range prefix-suffix conditional statistics. Semantic associations like "bird"↔"flew" emerge from the superposition of these three pathways.
 
-    - **Token-Interchangeability Mapping**: Captures "interchangeability"—relationships between tokens that appear in similar contexts. For example, "dog" and "cat" are not adjacent co-occurring tokens, but they are interchangeable in contexts such as "The ___ sat on the mat." This reflects the distributional semantics hypothesis.
+**3. Closed-form Weight Expression and Functional Division: Verifying Theory with Real Weights**
 
-    - **Context Mapping**: Captures broader contextual patterns—how a specific context influences predictions of subsequent tokens. This basis function encodes the statistical regularity of "given a context window, what token is most likely to follow."
-
-3. **Closed-Form Weight Expressions**:
-
-    - Each weight matrix ($W_Q$, $W_K$, $W_V$, etc.) can be written during early training as a linear combination of the three basis functions above.
-    - The combination coefficients depend on architectural details (number of layers, heads) and training hyperparameters.
-    - These closed-form expressions reveal the **functional specialization** of Transformer components:
-        - Query-Key weights rely primarily on bigram and token-interchangeability mappings → determine "what to attend to."
-        - Value weights rely primarily on context mapping → determine "what information to propagate."
-
-### Levels of Theoretical Contribution
-1. **Descriptive**: Provides a mathematical expression for the weights.
-2. **Explanatory**: Explains how each component captures semantic associations based on corpus statistics.
-3. **Predictive**: Enables quantitative comparison between theoretical expressions and weights learned by real LLMs.
+By substituting these basis functions, weight matrices (Output, Value, Query–Key) in early training are expressed as linear combinations with coefficients determined by architecture (layers, heads) and hyperparameters. This reveals a functional division: $W_{QK}$ weights are dominated by bigram and interchangeability mappings to determine "where to attend," while $W_V$ weights are dominated by context mapping to determine "what information to pass." This quantification allows direct comparison between theoretical predictions and weights of real LLMs.
 
 ## Key Experimental Results
 
-### Theory vs. Real Weights
+### Theory vs. Real Weight Comparison
 
-| Validation Dimension | Result | Notes |
-|----------------------|--------|-------|
-| Weight approximation accuracy | Strong alignment | Theoretical closed-form expressions match patterns of actual trained weights closely |
-| Validation on real LLMs | Successful | Theoretical predictions verified not only on small models but also on practical-scale LLMs |
-| Qualitative analysis | Interpretable | Closed-form expressions explain specific semantic association patterns learned by the model |
+| Validation Dimension | Result | Description |
+|---------|------|------|
+| Weight Approximation Accuracy | High Alignment | Pattern of theoretical closed-form expressions matches actual weights. |
+| Verification on Real LLMs | Successful | Theoretical predictions verified on actual large-scale LLMs, not just small models. |
+| Qualitative Analysis | Interpretable | Closed-form expressions explain specific learned semantic association patterns. |
 
 ### Ablation Study
 
-| Analysis Dimension | Key Finding | Notes |
-|--------------------|-------------|-------|
-| Early vs. late training | Early-phase approximation is more accurate | Consistent with theoretical expectations of the leading-term approximation |
-| Contribution of each basis function | All three contribute significantly | Removing any single basis function substantially degrades approximation quality |
-| Different weight matrices | Functional differentiation | Q/K weights depend more on bigram; V weights depend more on context mapping |
-| Behavior across layers | Layer-wise variation | Shallower layers favor bigram; deeper layers favor context mapping |
+| Analysis Dimension | Key Findings | Description |
+|---------|---------|------|
+| Early vs. Late Training | Early approximation is more precise | Consistent with theoretical expectations of leading-term approximation. |
+| Contribution of Bases | All three contribute significantly | Removing any basis function significantly degrades approximation quality. |
+| Weight Matrix Differences | Functional Differentiation | Q/K weights rely more on bigram; V weights rely more on context. |
+| Behavior Across Layers | Inter-layer Variation | Shallow layers favor bigram; deeper layers favor context. |
 
 ### Key Findings
-- **Decomposability of Transformer weights**: Complex weight matrices can be decomposed into combinations of only three simple basis functions derived from corpus statistics, substantially simplifying the understanding of Transformer learning mechanisms.
-- **Emergence mechanism of semantic associations**: Semantic associations are not directly encoded but emerge through the interplay of bigram co-occurrence statistics, distributional interchangeability, and contextual patterns.
-- **Functional specialization**: Q/K matrices and V matrices play fundamentally different roles in encoding semantic associations—an intuitive result now supported by theoretical grounding for the first time.
-- **Practical utility of theoretical predictions**: The closed-form expressions are validated on real LLMs, demonstrating that these results are not merely theoretically elegant but carry genuine explanatory power.
+- **Transformer Weight Decomposability**: Complex weight matrices can be decomposed into combinations of just 3 simple basis functions based on corpus statistics.
+- **Emergence of Semantic Association**: Associations emerge through the interaction of bigram statistics, distributional interchangeability, and context patterns.
+- **Functional Differentiation**: $W_{QK}$ and $W_V$ matrices play essentially different roles in encoding associations, providing theoretical support for intuitive divisions.
+- **Utility of Theoretical Predictions**: Verification on real LLMs proves the expressions are practical tools for explanation beyond purely theoretical interest.
 
 ## Highlights & Insights
-- **Understanding Transformers from a training dynamics perspective**: Unlike most interpretability work that analyzes "what a trained model does," this paper analyzes "how the model learned to do it"—providing a more fundamental understanding.
-- **Elegance of the three-basis-function decomposition**: Reducing high-dimensional, complex weight matrices to three basis functions with clear statistical semantics is both elegant and interpretable, serving as a bridge between deep learning and computational linguistics.
-- **Theoretical evidence for the distributional semantics hypothesis**: The token-interchangeability basis function directly corresponds to the linguistic hypothesis that "words appearing in similar contexts have similar meanings." This paper derives this conclusion naturally from a purely mathematical analysis of training dynamics.
-- **Quantitative validation beyond qualitative description**: The work goes beyond theoretical derivation to provide systematic quantitative validation on real LLMs.
+- **Standardizing Training Dynamics**: Shifts the focus from "what a model does" to "how a model learns it" through a fundamental analytical lens.
+- **Simplicity of Three-Basis Decomposition**: Reduces high-dimensional complexity to three statistical basis functions, bridging deep learning and computational linguistics.
+- **Theoretical Evidence for Distributional Semantics**: Naturally derives the linguistic hypothesis that "words in similar contexts have similar meanings" from purely mathematical analysis of training.
+- **Quantitative over Qualitative**: Provides systematic quantitative validation on real-world models rather than just qualitative descriptions.
 
 ## Limitations & Future Work
-- The leading-term approximation loses accuracy in later training stages (as weights grow larger), limiting its explanatory power for fully trained models.
-- The analysis focuses primarily on the early training phase; nonlinear effects and feature complexification in mid-to-late training are not fully captured.
-- Whether the three-basis-function decomposition generalizes to much larger models (billions of parameters) requires further investigation.
-- Only semantic association is analyzed; whether other Transformer capabilities (e.g., reasoning, planning) can be studied under a similar framework remains an open question.
-- Practical applications of the closed-form expressions (e.g., guiding model initialization, architecture design, or knowledge editing) are not yet fully explored.
-- The impact of inter-layer interactions and residual connections in multi-layer Transformers warrants deeper analysis.
+- Leading-term approximation accuracy declines as weights grow in later training stages.
+- Analysis focuses on early training; non-linear effects and feature complexity in mid-to-late stages are not fully captured.
+- Scalability of the three-basis decomposition to models with parameters in the tens of billions requires further validation.
+- Focus is limited to semantic association; other capabilities like reasoning or planning need similar frameworks.
+- Potential applications in guided initialization, architecture design, or knowledge editing remain unexplored.
 
 ## Related Work & Insights
-- **Mechanistic Interpretability** (Olah et al., 2020): Circuit-level interpretability analysis of Transformers.
+- **Mechanistic Interpretability** (Olah et al., 2020): Circuit-level analysis of Transformers.
 - **Induction Heads** (Olsson et al., 2022): Specific computational patterns at the attention head level.
-- **Transformer training dynamics** (Li et al., 2023, etc.): Analysis of dynamic properties of the Transformer training process.
-- **Distributional Semantics** (Harris, 1954; Firth, 1957): Word meaning is determined by distributional context—this paper provides theoretical support for this classical hypothesis from the perspective of neural network training dynamics.
-- **Feature Learning Theory**: Recent theoretical work on how neural networks learn features (lazy training vs. feature learning regime).
-- **Inspiration**: Gradient leading-term analysis is a powerful yet underutilized analytical tool that may be broadly applicable to understanding other neural network architectures and tasks. The methodology of directly linking training dynamics to corpus statistics offers a new analytical framework for understanding how data shapes models.
+- **Distributional Semantics** (Harris, 1954): This work provides theoretical support from a neural training perspective for classic linguistic hypotheses.
+- **Feature Learning Theory**: Connects to recent work regarding the lazy training vs. feature learning regimes.
+- **Insight**: Leading-term gradient analysis is a powerful, underutilized tool that correlates training dynamics directly to corpus statistics, providing a framework for how data shapes models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Gradient leading-term analysis + three-basis-function decomposition = entirely new theoretical framework)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Validated on real LLMs, but extensibility to larger models remains to be shown)
-- Writing Quality: ⭐⭐⭐⭐ (High theoretical depth with rigorous mathematical derivations)
-- Value: ⭐⭐⭐⭐⭐ (Important theoretical contribution to mechanistic understanding of Transformers, bridging deep learning and linguistics)
+- Novelty: ⭐⭐⭐⭐⭐ (Gradient leading-term analysis + 3-basis decomposition = New theoretical framework)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Verified on real LLMs, though scalability to largest models is pending)
+- Writing Quality: ⭐⭐⭐⭐ (High theoretical depth and rigorous derivation)
+- Value: ⭐⭐⭐⭐⭐ (Significant contribution to mechanistic understanding of Transformers)
 
 <!-- RELATED:START -->
 
@@ -146,11 +109,11 @@ By analyzing the leading terms of training gradients, this paper derives closed-
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] How Do Transformers Learn Implicit Reasoning?](../../NeurIPS2025/interpretability/how_do_transformers_learn_implicit_reasoning.md)
+- [\[ICLR 2026\] How Transformers Learn Causal Structures In-Context: Explainable Mechanism Meets Theoretical Guarantee](how_transformers_learn_causal_structures_in-context_explainable_mechanism_meets_.md)
+- [\[ICLR 2026\] From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](from_tokens_to_thoughts_how_llms_and_humans_trade_compression_for_meaning.md)
+- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
 - [\[ICLR 2026\] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)
-- [\[ICML 2026\] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path](../../ICML2026/interpretability/circuit_fingerprints_how_answer_tokens_encode_their_geometrical_path.md)
-- [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](../../NeurIPS2025/interpretability/nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
-- [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](../../NeurIPS2025/interpretability/base_models_know_how_to_reason_thinking_models_learn_when.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
 
 </div>
 

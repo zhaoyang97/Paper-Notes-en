@@ -2,137 +2,135 @@
 title: >-
   [Paper Note] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought
 description: >-
-  [ICLR 2026][Interpretability][Continuous CoT] This paper theoretically analyzes the training dynamics of a two-layer Transformer trained with continuous Chain-of-Thought (Coconut) on the directed graph reachability probl…
+  [ICLR 2026][Interpretability][Continuous CoT] This work provides a theoretical analysis of the training dynamics of a two-layer Transformer using continuous Chain-of-Thought (Coconut) on directed graph reachability problems. It reveals how the "superposition" mechanism naturally emerges: the index-matching logit grows initially but remains bounded, thereby achievi
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Continuous CoT"
-  - "Superposition"
-  - "Training Dynamics"
-  - "Transformer Theory"
-  - "Graph Reachability"
+  - ICLR 2026
+  - Interpretability
+  - Continuous CoT
 date: 2026-05-08
-content_hash: 3399682b680352d1
+content_hash: e9b278be8e4860d2
 ---
-
 # Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.23365](https://arxiv.org/abs/2509.23365)  
 **Code**: None  
-**Area**: Video Understanding / LLM Reasoning Theory
+**Area**: Interpretability / LLM Reasoning Theory  
 **Keywords**: Continuous CoT, Superposition, Training Dynamics, Transformer Theory, Graph Reachability
 
 ## TL;DR
 
-This paper theoretically analyzes the training dynamics of a two-layer Transformer trained with continuous Chain-of-Thought (Coconut) on the directed graph reachability problem, revealing how a "superposition" mechanism naturally emerges: the index-matching logit first grows and then remains bounded, thereby achieving a balance between exploration and exploitation.
+This work provides a theoretical analysis of the training dynamics of a two-layer Transformer using continuous Chain-of-Thought (Coconut) on directed graph reachability problems. It reveals how the "superposition" mechanism naturally emerges: the index-matching logit grows initially but remains bounded, thereby achieving a balance between exploration and exploitation.
 
 ## Background & Motivation
 
-**Empirical advantages of continuous CoT**: Coconut (Hao et al., 2024) demonstrates theoretical and empirical advantages on multiple tasks by maintaining reasoning trajectories in a continuous latent space rather than a discrete token space.
+**Empirical Advantages of Continuous CoT**: Coconut (Hao et al., 2024) demonstrates theoretical and experimental advantages across multiple tasks by maintaining reasoning trajectories in a continuous latent space rather than a discrete token space.
 
-**Constructive proof of the superposition mechanism**: Prior work (Zhu et al., 2025) proved that a two-layer Transformer with continuous CoT can efficiently solve graph reachability via "superposition"—i.e., the model simultaneously maintains multiple reasoning trajectories under uncertainty.
+**Constructive Proof of Superposition**: Prior work (Zhu et al., 2025) proved that a two-layer Transformer with continuous CoT can efficiently solve graph reachability via a "superposition" mechanism, where the model maintains multiple reasoning trajectories simultaneously when uncertain.
 
-**Core gap**: The constructive proof only establishes the existence of such parameters, without explaining whether gradient-based training can naturally learn the superposition mechanism.
+**Core Problem**: Constructive proofs only demonstrate the existence of such parameters but do not explain whether gradient-based training methods can naturally learn the superposition mechanism.
 
-**Comparison with discrete CoT**: Discrete CoT can only select one path per step (requiring global planning or backtracking), whereas continuous CoT can maintain multiple paths in parallel (requiring only local search capability).
+**Comparison with Discrete CoT**: While discrete CoT can only choose one path per step (requiring global planning or backtracking), continuous CoT can maintain multiple paths in parallel (requiring only local search capabilities).
 
-**Theoretical contribution**: This paper answers the open question of whether gradient descent naturally leads to a superposition construction.
+**Goal**: To answer the open question of whether gradient descent naturally leads to the construction of superposition.
 
 ## Method
 
 ### Overall Architecture
 
-The theoretical analysis is divided into two training phases: (1) the thought generation phase, in which the model autoregressively extends continuous thoughts, and training teaches the model to expand the set of reachable nodes by one step; and (2) the prediction phase, in which the model uses the generated continuous thoughts to produce a final answer. The analysis targets the gradient flow dynamics of a simplified two-layer Transformer on the directed graph reachability problem.
+The study consists of a gradient flow analysis centered on a two-layer Transformer using continuous CoT (Coconut) for directed graph reachability. Training is divided into two stages: "thought generation" and "answer prediction." In the former, the model autoregressively expands the current reachable node set by one step; in the latter, the model reads the superposition thoughts to output the final reachable nodes. The core analytical tool is a scalar $\mu$ called the index-matching logit. The theoretical chain proves that gradient flow pushes $\mu$ to a finite positive value, and this "boundedness" is the root cause of the natural emergence of superposition. The logic follows: define $\mu$ $\rightarrow$ prove $\mu$ is bounded (creating superposition) $\rightarrow$ perform step-by-step BFS expansion via superposition $\rightarrow$ prediction head reads the correct answer from the superposition.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Directed Graph Reachability<br/>(Graph Structure + Start)"]
+    MU["Index-matching logit μ<br/>Scalar for local search intensity"]
+    T1["Bounded logit is the switch for superposition (Theorem 1)<br/>Coconut loss makes μ→μ* bounded, creating superposition"]
+    T2["One-step frontier expansion (Theorem 2)<br/>Reachable set advances via BFS N_c→N_(c+1)"]
+    T3["Prediction stage analysis (Theorem 3)<br/>Gradient flow makes target c★ take maximum logit"]
+    OUT["Output final reachable nodes"]
+    IN --> MU --> T1 --> T2
+    T2 -->|Loop c steps for thought generation| T2
+    T2 --> T3 --> OUT
+```
 
 ### Key Designs
 
-**1. Definition and Analysis of the Index-Matching Logit**
+**1. Index-matching logit $\mu$: Characterizing Local Search Intensity with a Scalar**
 
-- **Function**: Defines the index-matching logit $\mu$ to quantify the strength of the model's local search capability.
-- **Mechanism**: $\mu$ controls the matching strength between "currently explored nodes" and "edge source nodes" in the attention mechanism. By analyzing the gradient flow $\dot{\mu}(t) = \frac{\alpha}{n\sqrt{K}}(d_{p_{c+1}} - F(\mu(t)))$, it is proved that $\mu$ converges to a finite value under the Coconut loss.
-- **Design Motivation**: If $\mu$ is too small, the model lacks local search capability (random guessing); if $\mu$ is too large, the model becomes overconfident, relying solely on local features (e.g., node in-degree) and discarding correct paths.
+To compress the model's reliance on local graph structure for edge matching into an analyzable quantity, the authors define the index-matching logit $\mu$. It controls the matching intensity between the "already explored nodes" and "candidate edge source nodes" in the attention mechanism. The magnitude of $\mu$ dictates the behavior: if $\mu$ is too small, attention is nearly uniform, and the model degrades to random guessing; if $\mu$ is too large, attention becomes one-hot, and the model overconfidently focuses on local features (e.g., the neighbor with the highest in-degree), losing the correct path. Under Coconut loss, the evolution of $\mu$ along the gradient flow satisfies $\dot{\mu}(t) = \frac{\alpha}{n\sqrt{K}}\big(d_{p_{c+1}} - F(\mu(t))\big)$. The right side is a demonstration path in-degree term minus a function $F(\mu)$ that increases monotonically with $\mu$. Consequently, $\mu$ does not grow infinitely but converges to a finite value where the two terms balance, providing the foundation for all subsequent conclusions.
 
-**2. Bounded Logit Induces Superposition Emergence (Theorem 1)**
+**2. Bounded logit is the switch for superposition (Theorem 1)**
 
-- **Function**: Proves that attention logits are bounded under the Coconut loss, whereas logits under the Coconut-BFS loss diverge at least at a logarithmic rate.
-- **Mechanism**: Under Coconut training, as long as the target node in-degree $d_\star < d_{max}$, $\mu(t) \to \mu^* < \infty$; under Coconut-BFS, $\mu(t) \to \infty$.
-- **Design Motivation**: Bounded logits produce smooth probability distributions, enabling the model to assign similar weights to multiple paths under uncertainty (superposition); unbounded logits produce near-one-hot distributions, over-committing to a single path.
+Theorem 1 directly links the training objective to the asymptotic behavior of the logit. Under Coconut loss, as long as the target node in-degree $d_\star < d_{max}$, then $\mu(t) \to \mu^\ast < \infty$. Conversely, with Coconut-BFS loss, $\mu(t) \to \infty$, diverging at least at a logarithmic rate. This contrast is the crux of the paper: a bounded $\mu$ allows the softmax to produce a smooth probability distribution, causing the model to assign similar weights to multiple candidate paths when uncertain—this is precisely "superposition." Conversely, a divergent $\mu$ collapses the distribution toward one-hot, forcing the model to commit to a single path prematurely, which prevents recovery from errors. Thus, the emergence of superposition is essentially determined by whether the training loss keeps the logit bounded.
 
-**3. One-Step Frontier Expansion (Theorem 2)**
+**3. One-step frontier expansion (Theorem 2)**
 
-- **Function**: Proves that when $\mu > 0$, the continuous thought achieves one-step expansion from $\mathcal{N}_c$ to $\mathcal{N}_{c+1}$.
-- **Mechanism**: The token projection $\mathbf{U}^\top [t_{c+1}]$ of the next-step thought has positive mass only on the one-step expansion set $\mathcal{N}_{c+1}$, with coefficients $\beta_v$ composed of two terms: carryover (nodes already in the set) and one-hop expansion (newly expanded nodes).
-- **Design Motivation**: Validates that the bounded positive $\mu$ obtained through training indeed enables BFS-style parallel search.
+Proving $\mu$ is bounded is insufficient; one must show that such a $\mu$ can perform BFS-style parallel expansion. Theorem 2 proves that when $\mu > 0$, the token projection of the next thought $\mathbf{U}^\top[t_{c+1}]$ has positive mass only on the one-step expansion set $\mathcal{N}_{c+1}$. Its coefficients $\beta_v$ consist of two parts: carryover (nodes already in $\mathcal{N}_c$ are retained) and one-hop expansion (new nodes added along edges). Effectively, each generated step of continuous thought advances the reachable set cleanly from $\mathcal{N}_c$ to $\mathcal{N}_{c+1}$ without losing old nodes or including unreachable ones, equating "bounded positive $\mu$" with "breadth-first search."
 
-**4. Prediction Phase Analysis (Theorem 3)**
+**4. Prediction stage analysis (Theorem 3)**
 
-- **Function**: Proves that the model can correctly predict reachable nodes using the generated superposition continuous thoughts.
-- **Mechanism**: Only the reachable candidate node $c_\star$ simultaneously has positive residual carryover and candidate lift; gradient flow drives the ratio $(\mu_A(t), \mu_R(t))$ to converge in a direction that ensures $c_\star$ obtains the highest logit.
-- **Design Motivation**: Completes the full end-to-end theoretical chain—training naturally produces superposition, and superposition supports correct prediction.
+The final link is proving that the superposition thought can actually be read to yield the correct answer. Theorem 3 analyzes the gradient flow during the answer prediction stage. Among all candidates, only the truly reachable target $c^\star$ possesses both positive residual carryover and candidate lift. Gradient flow causes the logit ratio $(\mu_A(t), \mu_R(t))$ in the prediction head to converge in a direction that allows $c^\star$ to achieve the maximum logit. This closes the end-to-end theoretical chain: training naturally pushes $\mu$ to a bounded positive value $\rightarrow$ boundedness produces superposition $\rightarrow$ superposition performs parallel expansion $\rightarrow$ the prediction head extracts the correct reachable nodes from the superposition.
 
 ### Loss & Training
 
-- **Coconut loss** (used in practice): $\ell^{coco} = -\log \frac{\exp(\xi_{p_{c+1}})}{\sum_v \exp(\xi_v)}$, cross-entropy over the next node on a single demonstration path.
-- **Coconut-BFS loss** (for comparison): $\ell^{BFS} = -\log \frac{\sum_{v \in \mathcal{N}_{c+1}} \exp(\xi_v)}{\sum_v \exp(\xi_v)}$, multi-label cross-entropy over all reachable nodes.
-- Permutation-averaged dataset loss is used to ensure vertex symmetry.
-- Experiments use curriculum learning: at stage $c+1$, the model first unsupervisedly generates $c$-step continuous thoughts, then trains on step $c+1$.
+Ours utilizes the Coconut loss $\ell^{coco} = -\log \frac{\exp(\xi_{p_{c+1}})}{\sum_v \exp(\xi_v)}$, which applies cross-entropy only to the next node on a single demonstration path. In contrast, the Coconut-BFS loss $\ell^{BFS} = -\log \frac{\sum_{v \in \mathcal{N}_{c+1}} \exp(\xi_v)}{\sum_v \exp(\xi_v)}$ applies multi-label cross-entropy to all reachable nodes, which causes the logit to diverge. To exploit vertex symmetry, the analysis uses a permutation-averaged dataset loss. Training follows curriculum learning, where stage $c+1$ first generates $c$ steps of continuous thought unsupervised, then trains the expansion for step $c+1$. An intuitive finding here is that although the Coconut loss only supervises a single path, superposition still emerges because it does not force the logit to diverge.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Setting | Model | Test Accuracy |
-|---------|-------|---------------|
-| GPT-2 style, 2-layer, d=768 | Coconut training | 96.2% |
-| Training strategy | Stage 1: 150 epochs, subsequent stages: 25 epochs each | 350 epochs total |
-| Stage mixing probability | 0.1 (to prevent forgetting prior stages) | — |
+| Configuration | Model | Test Accuracy |
+|------|------|---------|
+| GPT-2 style, 2 layers, d=768 | Coconut Training | 96.2% |
+| Training Strategy | Stage 1: 150 epochs, 25 epochs each thereafter | 350 epochs total |
+| Stage Mixing Prob. | 0.1 (prevents forgetting) | - |
 
-The graph reachability dataset is a subset of ProsQA (Hao et al., 2024), augmented with random vertex permutations.
+The graph reachability dataset is derived from a subset of ProsQA (Hao et al., 2024), using additional random vertex permutations.
 
 ### Ablation Study
 
-| Training Stage | Observation | Theoretical Prediction |
-|----------------|-------------|------------------------|
-| Stage 1 (c=1) | Logit difference steadily increases, saturating at ~60 around epoch 125 | Theorem 1: $\mu$ bounded ✓ |
-| Stage 2 (c=2) | Positive $\mu$ established within very few epochs | Superposition mechanism reused ✓ |
-| Stage 3–4 (c=3,4) | Generalization achieved without explicit training | Length generalization ✓ |
+| Training Stage | Phenomenon | Theoretical Prediction |
+|----------|------|---------|
+| Stage 1 (c=1) | Logit difference grows steadily, saturates at ~60 around 125 epochs | Theorem 1: $\mu$ is bounded ✓ |
+| Stage 2 (c=2) | Positive $\mu$ established in very few epochs | Reuse of superposition mechanism ✓ |
+| Stage 3-4 (c=3,4) | Automatic generalization without explicit training | Length generalization ✓ |
 
 ### Key Findings
 
-1. **Coconut loss naturally produces bounded logits**: Superposition emerges even when training data provides only a single demonstration path—answering the open question posed by Zhu et al. (2025).
-2. **Bounded logits are the key mechanism for superposition emergence**: They balance exploration (maintaining multiple possible paths) and exploitation (using local graph structure to identify relevant paths).
-3. **Length generalization**: Once superposition emerges in early stages, subsequent stages can rapidly reuse it, even without training on longer sequences.
-4. **Contrast with discrete CoT theory**: In discrete settings, logits typically grow logarithmically and diverge (Tian et al., 2023a; Nichani et al., 2024a); the bounded behavior in the continuous setting represents a fundamental difference.
+1. **Coconut loss naturally generates bounded logits**: Even when training data provides only a single demonstration path, superposition emerges—answering the open question posed by Zhu et al. (2025).
+2. **Bounded logits are the key mechanism for superposition**: They balance exploration (maintaining multiple possible paths) and exploitation (using local graph structure to identify relevant paths).
+3. **Length Generalization**: Once superposition emerges in the early stages, subsequent stages can reuse it quickly, even if never trained on longer sequences.
+4. **Comparison with Discrete CoT Theory**: In discrete settings, logits typically grow logarithmically and are unbounded (Tian et al., 2023a; Nichani et al., 2024a). The bounded behavior in the continuous setting represents a fundamental difference.
 
 ## Highlights & Insights
 
-- **Bridges the gap between constructive proofs and training dynamics**: Prior work only established that superposition "can exist"; this paper shows it "will naturally emerge."
-- **Counterintuitive finding**: Even when training data demonstrates only a single path, the model learns to track multiple paths simultaneously—a unique advantage of the continuous latent space.
-- **New perspective on exploration–exploitation**: Directly connects the boundedness of attention logits to the exploration–exploitation trade-off in reasoning, providing a new tool for understanding LLM internal reasoning mechanisms.
-- **Strong alignment between theory and experiment**: The experimentally observed logit growth followed by saturation perfectly validates the theoretical predictions.
+- **Filling the Gap between Construction and Dynamics**: While it was previously known that superposition "could exist," this work shows it "emerges automatically."
+- **Counter-intuitive Finding**: Even when training data only shows a single path (single demonstration), the model learns to track multiple paths simultaneously—a unique advantage of the continuous latent space.
+- **New Perspective on Exploration-Exploitation**: Directly linking the boundedness of attention logits with the exploration-exploitation tradeoff in reasoning provides a new tool for understanding internal LLM reasoning mechanisms.
+- **High Consistency between Theory and Experiment**: Experimental curves showing logit growth followed by saturation perfectly validate theoretical predictions.
 
 ## Limitations & Future Work
 
-1. The analysis is restricted to a simplified setting of two-layer Transformers with linear attention, leaving a gap with practical deep Transformers using softmax attention.
-2. Only the directed graph reachability problem is considered; generalization to broader reasoning tasks requires additional work.
-3. The copy mechanism in the first layer is assumed to be already established (citing prior work); its learning process is not analyzed.
-4. The permutation symmetry assumption may not strictly hold in practical LLM training.
-5. Experiments are limited in scale (2-layer Transformer, simple graph structures); validation on larger models and more complex tasks is needed.
+1. The analysis is limited to a simplified setting of two-layer Transformers with linear attention, which differs from actual deep Transformers with softmax attention.
+2. It only considers directed graph reachability; generalizing to broader reasoning tasks requires additional work.
+3. The "copy" mechanism in the first layer is assumed to be established (citing existing work) and its learning process is not analyzed.
+4. The permutation symmetry assumption may not hold strictly in practical LLM training.
+5. Experimental scale is limited (2-layer Transformer, simple graph structures) and needs validation on larger models and more complex tasks.
 
 ## Related Work & Insights
 
-- **Zhu et al. (2025)**: The direct predecessor of this paper, providing a constructive proof that continuous CoT solves graph reachability—this paper contributes the complementary training dynamics analysis.
-- **Hao et al. (2024) Coconut**: Introduced the concept of continuous CoT and the curriculum learning approach—this paper explains the theoretical foundation of its success.
-- **Nichani et al. (2024a)**: Analyzed the training dynamics of induction heads, but logits diverge in the discrete setting—forming a contrast with the bounded results of this paper.
-- The findings have theoretical implications for latent-space reasoning approaches (pause tokens, filler tokens, planning tokens): the "exploration–exploitation balance" in continuous space may be a common mechanism underlying the success of these methods.
+- **Zhu et al. (2025)**: Direct precursor; provided constructive proof for continuous CoT solving graph reachability—Ours adds training dynamics analysis.
+- **Hao et al. (2024) Coconut**: Introduced the continuous CoT concept and curriculum learning—Ours explains the theoretical basis for its success.
+- **Nichani et al. (2024a)**: Analyzed induction head training dynamics, but logits diverge in discrete settings—contrasting with the bounded results in Ours.
+- **Latent-space reasoning**: Provides theoretical guidance for directions like pause tokens, filler tokens, and planning tokens; the "exploration-exploitation balance" in continuous space might be a common mechanism for these methods.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First work to explain the emergence of superposition in continuous CoT from a training dynamics perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐ Experiments are limited in scale, serving primarily as theoretical validation; large-scale models and real-world reasoning tasks are absent.
-- **Writing Quality**: ⭐⭐⭐⭐ Mathematical derivations are clear and figures are intuitive, though the work demands substantial background knowledge.
-- **Value**: ⭐⭐⭐⭐ Provides a solid theoretical foundation for understanding how continuous CoT works, with broad implications for the latent reasoning research direction.
+- **Novelty**: ⭐⭐⭐⭐⭐ First to explain the emergence of superposition in continuous CoT from a training dynamics perspective.
+- **Experimental Thoroughness**: ⭐⭐⭐ Scale is limited, serving primarily as theoretical validation; lacks large-scale models and real-world reasoning tasks.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear mathematical derivations and intuitive illustrations, though it requires significant prior knowledge.
+- **Value**: ⭐⭐⭐⭐ Provides a solid theoretical foundation for understanding how continuous CoT works, with broad implications for latent reasoning.
 
 <!-- RELATED:START -->
 
@@ -141,10 +139,10 @@ The graph reachability dataset is a subset of ProsQA (Hao et al., 2024), augment
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](../../NeurIPS2025/interpretability/reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)
+- [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
-- [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)
-- [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
-- [\[ICLR 2026\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
+- [\[ICLR 2026\] Token Alignment Heads: Unveiling Attention's Role in LLM Multilingual Translation](token_alignment_heads_unveiling_attentions_role_in_llm_multilingual_translation.md)
+- [\[ICLR 2026\] Thought Branches: Interpreting LLM Reasoning Requires Resampling](thought_branches_interpreting_llm_reasoning_requires_resampling.md)
 
 </div>
 

@@ -2,129 +2,145 @@
 title: >-
   [Paper Note] Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test
 description: >-
-  [ICLR 2026][Interpretability][grokking] This work is the first to validate the grokking phenomenon in near-single-epoch pretraining of a real-scale LLM (7B MoE)—different data groups exhibit asynchronous memorization and…
+  [ICLR 2026][Interpretability][grokking] This paper validates the grokking phenomenon—characterized by asynchronous memorization across different data groups and delayed generalization—for the first time in near-single-pass pretraining of actual-scale LLMs (7B MoE). By analyzing the evolution of MoE routing pathways (from instance-specific to structured/share
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "grokking"
-  - "memorization"
-  - "generalization"
-  - "MoE pathway"
-  - "pretraining dynamics"
+  - ICLR 2026
+  - Interpretability
+  - grokking
+  - memorization
+  - generalization
+  - MoE pathway
+  - pretraining dynamics
 date: 2026-05-08
-content_hash: 89b82bc1abe4c665
+content_hash: d2c12dd81c6a4790
 ---
-
 # Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.21551](https://arxiv.org/abs/2506.21551)  
 **Code**: None  
-**Area**: Interpretability
+**Area**: Interpretability  
 **Keywords**: grokking, memorization, generalization, MoE pathway, pretraining dynamics
 
 ## TL;DR
-This work is the first to validate the grokking phenomenon in near-single-epoch pretraining of a real-scale LLM (7B MoE)—different data groups exhibit asynchronous memorization and delayed generalization. By analyzing the evolution of MoE routing pathways (from instance-specific to structured/shared), two zero-cost metrics are proposed to monitor generalization progress without requiring instruction tuning or benchmark evaluation.
+This paper validates the grokking phenomenon—characterized by asynchronous memorization across different data groups and delayed generalization—for the first time in near-single-pass pretraining of actual-scale LLMs (7B MoE). By analyzing the evolution of MoE routing pathways (from instance-specific to structured/shared), the authors propose two zero-cost metrics to monitor generalization progress without the need for instruction tuning or benchmark evaluation.
 
 ## Background & Motivation
 
-**Background**: Grokking (delayed generalization) is a counterintuitive phenomenon observed when training Transformers—long after training loss converges, generalization performance begins to rise sharply. Existing grokking research is limited to small models trained on algorithmic data for thousands of epochs.
+**Background**: Grokking (delayed generalization) is a counterintuitive phenomenon observed when training Transformers, where generalization performance improves sharply long after the training loss has converged. Existing grokking studies are limited to small models trained on algorithmic data over thousands of epochs.
 
-**Limitations of Prior Work**: (a) LLM pretraining is near-single-epoch (~1 epoch), without repeated data replay, making the loss convergence mechanism fundamentally different from multi-epoch training; (b) LLMs are trained on heterogeneous cross-domain data, where memorization speed and the memorization-generalization relationship may differ across data types; (c) Monitoring LLM generalization is extremely costly—requiring instruction tuning followed by benchmark evaluation.
+**Limitations of Prior Work**: (a) LLM pretraining is near-single-pass (~1 epoch) without repeated data playback, and its loss convergence mechanism differs significantly from multi-epoch training; (b) LLMs are trained on heterogeneous cross-domain data, where the relationship between memorization speed and generalization might vary; (c) monitoring LLM generalization performance is extremely costly, requiring instruction tuning followed by benchmark evaluation.
 
-**Key Challenge**: What changes continue to occur inside the model after pretraining loss converges? Why does generalization improve while loss remains unchanged? Are there metrics that can track generalization without relying on external evaluation?
+**Key Challenge**: What internal changes occur in the model after the pretraining loss converges? Why does generalization improve while the loss remains stable? Are there metrics to track generalization without relying on external evaluations?
 
-**Goal**: (a) Verify whether grokking exists in real-scale LLM pretraining; (b) Reveal the internal mechanism underlying the memorization-to-generalization transition; (c) Provide zero-cost generalization monitoring metrics.
+**Goal** (a) Verify whether grokking exists in actual LLM pretraining; (b) reveal the internal mechanisms of the transition from memorization to generalization; (c) provide zero-cost generalization monitoring metrics.
 
-**Key Insight**: The MoE architecture naturally organizes computation as expert-selection sequences (pathways), enabling tracking of how each sample's pathway evolves—from random/instance-specific (memorization) to structured/cross-sample shared (generalization).
+**Key Insight**: MoE architectures naturally organize computation into sequences of expert choices (pathways). This allows tracking the evolution of each sample's pathway—from random or instance-specific (memorization) to structured and shared across samples (generalization).
 
-**Core Idea**: Grokking exists in LLM pretraining in a local, asynchronous form; the evolution of MoE pathways from instance-specific to cross-sample shared constitutes an observable signal of the memorization-to-generalization transition.
+**Core Idea**: Grokking exists in LLM pretraining in a local and asynchronous form; the evolution of MoE pathways from individual-specific to cross-sample shared serves as an observable signal of the transition from memorization to generalization.
 
 ## Method
 
 ### Overall Architecture
-Based on a sequence of open-source pretraining checkpoints of OLMoE-7B, the work tracks the memorization time point of training data and the generalization time point on downstream benchmarks to validate local grokking. It then analyzes the dynamic evolution of MoE routing pathways, develops two metrics to quantify pathway complexity, and demonstrates their strong correlation with generalization performance.
+The paper does not train new models but instead dissects a sequence of publicly available OLMoE-7B pretraining checkpoints as "time slices." The analysis follows two tracks: first, it calibrates "when data is memorized" for training data and "when benchmark samples are answered correctly" across these checkpoints. By aligning the two, it verifies how grokking occurs. Second, it focuses on the MoE routing pathways—the sequence of experts selected for each sample across layers—quantifying their evolution through two metrics that only require training data. Finally, a theoretical analysis of a single-layer MoE links pathway complexity to generalization bounds, proving that these two metrics are strongly correlated with downstream generalization and can serve as zero-cost monitoring signals.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Publicly available OLMoE-7B<br/>pretraining checkpoint sequence"]
+    subgraph B["Verification of Local Asynchronous Grokking"]
+        direction TB
+        B1["Mark memorization time for each training datum"]
+        B2["Mark generalization time for benchmark samples"]
+        B1 --> B3["Hungarian Matching: Memorization Groups ↔ Gen. Groups<br/>Finding generalization lags behind memorization and is local/asynchronous"]
+        B2 --> B3
+    end
+    C["Pathway Edit Distance<br/>Similarity of routing between samples"]
+    D["Pathway Consistency<br/>Smoothness of routing across layers for a single sample"]
+    E["Theoretical Support<br/>Pathway complexity ↔ Generalization bounds"]
+    F["Zero-cost Generalization Monitoring Metrics"]
+    A --> B
+    A --> C
+    A --> D
+    C --> E
+    D --> E
+    B --> F
+    E --> F
+```
 
 ### Key Designs
 
-1. **Validation of Local Asynchronous Grokking**:
+**1. Verification of Local Asynchronous Grokking: Proving that grokking exists in real pretraining but is not globally synchronized**
 
-    - Function: Training data is grouped by memorization time point $t_i^*$, benchmark samples are grouped by the step at which predictions become correct, and groups are paired via Hungarian matching.
-    - Core Finding: Different data groups are memorized at different steps, and generalization typically emerges with a lag after memorization. Mathematics and code tasks require memorizing more samples before generalization begins, while commonsense QA generalizes more rapidly.
-    - Design Motivation: Demonstrates that grokking in LLMs is not globally synchronous but local and data-heterogeneous.
+Original grokking research was conducted on small models and algorithmic data over thousands of epochs, which does not confirm its existence in near-single-pass, cross-domain LLM pretraining. The authors assign a memorization time point $t_i^*$ (the step where loss drops to convergence) to each training sample and group data accordingly. Simultaneously, they group benchmark samples by the time they flip from "wrong" to "correct" and use Hungarian matching to pair memorization groups with generalization groups. Results show that different data groups are memorized at different steps, and generalization generally lags behind memorization—with the lag varying by data type: math and code tasks require memorizing more samples before generalization starts, while commonsense QA generalizes faster with less memorization. This indicates that grokking in LLMs does not happen as a global flip but unfolds locally and heterogeneously.
 
-2. **Pathway Edit Distance (Inter-Sample Similarity)**:
+**2. Pathway Edit Distance: Capturing the shift from individualized to shared knowledge via inter-sample pathway similarity**
 
-    - Function: Measures the similarity of expert-selection sequences across different training samples at each MoE layer.
-    - Mechanism: A pathway string $s_i = \text{concat}(e_1^{(i)}, ..., e_L^{(i)})$ is constructed per sample; pairwise Levenshtein edit distance $D_{path}(s_i, s_j)$ is computed.
-    - Key Finding: Early pathways are nearly identical (low edit distance) → diverge during memorization (high edit distance) → **edit distance decreases after memorization**—semantically related samples begin converging to similar pathways, signaling the emergence of shared knowledge.
+To transform the "memorization → generalization" transition into an observable signal, the authors focus on discrete MoE routing. For each sample, the sequence of selected experts across layers is concatenated into a pathway string $s_i = \text{concat}(e_1^{(i)}, ..., e_L^{(i)})$. The Levenshtein edit distance $D_{path}(s_i, s_j)$ is then used to measure how similar the paths of any two samples are. Over the course of training, this produces a three-stage curve: early on, all sample pathways are nearly identical (low distance, no differentiation) → during the memorization phase, pathways differentiate (distance increases as samples take unique paths) → **after memorization, the edit distance drops**—semantically related samples begin to converge to similar pathways. This drop marks the emergence of "shared knowledge," where the model stops assigning a unique path to every sample and instead extracts and reuses transferable structures.
 
-3. **Pathway Consistency (Layer-wise Smoothness)**:
+**3. Pathway Consistency: Characterizing pathway structure via intra-sample layer-wise routing smoothness**
 
-    - Function: Measures the consistency of expert selection between adjacent layers for a single sample.
-    - Mechanism: Weighted cosine similarity of selected expert embeddings between adjacent layers is computed.
-    - Key Finding: Pathway consistency increases after memorization—expert selection becomes smoother and more structured across layers.
+While edit distance transitions between samples, this metric focuses on the interior of a single sample: whether experts selected in adjacent layers "work in coordination." The authors calculate the weighted cosine similarity of selected expert embeddings between adjacent layers as the layer-wise consistency of the pathway. Training dynamics show that consistency continues to rise after memorization—expert selection becomes smoother and more structured across layers rather than being a random concatenation. Combined with edit distance, it confirms that pathways become better organized during the generalization phase.
 
-4. **Theoretical Support**:
+**4. Theoretical Support: Linking pathway complexity to generalization bounds**
 
-    - A connection between pathway complexity and generalization bounds is established on a single-layer MoE.
-    - More structured pathways → tighter generalization bounds.
+To demonstrate that the empirical metrics are not coincidental, the authors conduct a theoretical analysis on a single-layer MoE, establishing a link between pathway complexity and generalization bounds: more structured pathways (lower edit distance, higher consistency) correspond to tighter generalization bounds. This provides a formal basis for using structured pathways as an indicator of better generalization.
 
 ### Loss & Training
-- Analysis is based on 10 equally spaced pretraining checkpoints of OLMoE-7B.
-- Generalization evaluation: LoRA instruction tuning is applied at each checkpoint, followed by standard benchmark evaluation.
-- Metric computation is performed on training data at zero additional cost.
+- The study analyzes 10 equally spaced pretraining checkpoints of OLMoE-7B, all based on public weights without retraining.
+- Generalization Evaluation: Each checkpoint undergoes LoRA instruction tuning followed by standard benchmarks to obtain "ground truth generalization" as a reference.
+- The two pathway metrics are calculated only on training data, requiring no instruction tuning or benchmarks, thus serving as zero-cost monitoring signals.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Grokking Phenomenon Validation** (4 domains × multiple data groups):
+**Verification of Grokking Phenomenon** (4 domains × multiple data groups):
 
-| Domain | Post-Memorization Generalization Delay | Data Difficulty Effect |
-|--------|----------------------------------------|------------------------|
-| Mathematics | Long delay (requires memorizing many samples) | Later memorization → longer delay |
-| Code | Long delay | Same as above |
-| Commonsense QA | Short delay | Generalizes relatively quickly |
-| Domain QA | Moderate delay | Moderate |
+| Domain | Gen. Lag after Memorization | Data Difficulty Effect |
+|--------|-----------------------------|------------------------|
+| Math | Long lag (requires many samples memorized) | Later memorization leads to longer lag |
+| Code | Long lag | Same as above |
+| Commonsense QA | Short lag | Relatively easy to generalize |
+| Domain QA | Medium lag | Medium |
 
 ### Ablation Study
 
-| Metric | Correlation with Generalization | Notes |
-|--------|---------------------------------|-------|
-| Pathway edit distance | Strong negative correlation | Decreasing edit distance → improved generalization |
-| Pathway consistency | Strong positive correlation | Increasing consistency → improved generalization |
-| Training loss | No significant correlation | Cannot predict generalization after convergence |
+| Metric | Correlation with Generalization | Description |
+|--------|---------------------------------|-------------|
+| Pathway Edit Distance | Strong Negative | Distance decrease → Gen. increase |
+| Pathway Consistency | Strong Positive | Consistency increase → Gen. increase |
+| Training Loss | No Significant Correlation | Loss convergence does not predict generalization |
 
 ### Key Findings
-- **Grokking genuinely exists in LLM pretraining**, but manifests locally and asynchronously—different data groups exhibit distinct memorization and generalization time points.
-- **Training loss cannot predict generalization**: generalization continues to improve after loss convergence, with the magnitude varying by domain and difficulty.
-- **Pathway transition from individualized to structured**: after memorization is complete, the model continues to "memorize more intelligently"—discovering cross-sample transferable knowledge structures.
-- **Depth-dependent reorganization**: shallow-layer pathways share structure earliest (universal representations), while deeper layers retain greater flexibility (task specialization).
-- **Both metrics correlate strongly with generalization** and can serve as zero-cost generalization monitoring tools.
+- **Grokking does exist in LLM pretraining**, but it is local and asynchronous—different data groups have different time points for memorization and generalization.
+- **Training loss cannot predict generalization**: Generalization continues to improve after loss converges, with the magnitude varying by domain and difficulty.
+- **Pathway Transition from Individualized to Structured**: After memorization, the model continues to "memorize smarter" by discovering transferable knowledge structures across samples.
+- **Depth-Dependent Reorganization**: Pathways in shallow layers become shared first (universal representations), while deep layers reserve more flexibility (task specialization).
+- **High Correlation of Pathway Metrics with Generalization**: These can serve as zero-cost tools for monitoring generalization.
 
 ## Highlights & Insights
-- **"Smarter Memorization"**: Loss convergence does not imply learning has ceased—the model continues to discover more efficient encoding schemes (shared pathways), explaining why continued training improves generalization.
-- **MoE as an Interpretability Tool**: The discrete nature of expert routing naturally provides a window for analyzing computational allocation, which is not feasible in dense models.
-- **Practical Value of Zero-Cost Generalization Monitoring**: For LLM practitioners, the ability to determine when to stop pretraining without performing instruction tuning and benchmark evaluation is highly valuable.
-- **Local Grokking Implies Data Curriculum Design**: Varying memorization-to-generalization delays across data types suggest that this knowledge could inform data mixing strategies.
+- **"Memorizing Smarter"**: Loss convergence does not mean learning has stopped. The model continues to discover more efficient encoding methods (shared pathways), explaining why continued training improves generalization.
+- **MoE as an Interpretability Tool**: The discrete nature of expert routing naturally provides a window into computational allocation, which is impossible in dense models.
+- **Utility of Zero-Cost Monitoring**: For LLM developers, determining when to stop pretraining without the need for instruction tuning and benchmarks is extremely valuable.
+- **Local Grokking Suggests Curriculum Design**: The varying memorization-to-generalization lag across data types suggests that data mixing strategies can be optimized based on these dynamics.
 
 ## Limitations & Future Work
-- Analysis is limited to OLMoE-7B; grokking behavior in larger models and dense architectures remains unvalidated.
-- Pathway metrics depend on the MoE architecture and cannot be directly extended to dense Transformers.
-- The choice of instruction tuning method (LoRA vs. full fine-tuning) may affect generalization measurement.
-- Causal relationships are not fully established—it remains unclear whether pathway sharing causes generalization or is merely a consequence of it.
+- Analysis was only performed on OLMoE-7B; grokking behavior in larger models or dense architectures remains unverified.
+- Pathway metrics depend on MoE architecture and cannot be directly generalized to dense Transformers.
+- The choice of instruction tuning (LoRA vs. full-finetune) might affect generalization measurements.
+- Causal relationship is not fully established—is pathway sharing the cause of generalization or its result?
 
 ## Related Work & Insights
-- **vs. Power et al. (original grokking)**: Small models + algorithmic data + thousands of epochs. This work is the first to validate grokking in 7B MoE pretraining at near-single-epoch scale, revealing its local and asynchronous nature.
-- **vs. Nanda et al. (grokking mechanism)**: Mechanism explained via weight analysis. This work analyzes MoE pathways instead, which is more amenable to large-scale models.
-- **vs. Merrill et al. (subnetwork sparsity)**: Associates grokking with sparsity in ReLU networks. The structured pathways found here echo this finding but are situated within the MoE framework.
+- **vs. Power et al. (Original Grokking)**: Small models + algorithmic data + thousands of epochs. This paper is the first to verify it in 7B MoE + near-single-pass pretraining, discovering local asynchronous patterns.
+- **vs. Nanda et al. (Grokking Mechanism)**: Explanation via weight analysis. This paper uses MoE pathway analysis, which is more suitable for large-scale models.
+- **vs. Merrill et al. (Subnetwork Sparsity)**: Relates grokking to sparsity in ReLU networks. The pathway structuring in this paper mirrors this idea but within the MoE framework.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First systematic study of grokking in real-scale LLM pretraining, revealing local and asynchronous patterns.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 domains × multiple data groups + layer-wise analysis + theoretical support, though only a single model is studied.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem motivation is rigorously derived; the progressive revelation of findings is highly engaging.
-- Value: ⭐⭐⭐⭐⭐ Fundamental contribution to understanding LLM training dynamics, with a practical zero-cost generalization monitoring tool.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic study of grokking in real-scale LLM pretraining, discovering local asynchronous modes.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Analysis across 4 domains × multiple data groups + layer-wise analysis + theoretical support, but limited to one model.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous derivation of motivation; the step-by-step revelation of findings is highly engaging.
+- Value: ⭐⭐⭐⭐⭐ Fundamental contribution to understanding LLM training dynamics + practical generalization monitoring tools.
 
 <!-- RELATED:START -->
 
@@ -132,11 +148,11 @@ Based on a sequence of open-source pretraining checkpoints of OLMoE-7B, the work
 
 ## Related Papers
 
-- [\[ICLR 2026\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
 - [\[ICML 2026\] Memorization Dynamics of Fill-in-the-Middle Pretraining](../../ICML2026/interpretability/memorization_dynamics_of_fill-in-the-middle_pretraining.md)
+- [\[ICLR 2026\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
 - [\[ICML 2026\] Grokking: From Abstraction to Intelligence](../../ICML2026/interpretability/grokking_from_abstraction_to_intelligence.md)
 - [\[ACL 2026\] Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining](../../ACL2026/interpretability/crosscoding_through_time_tracking_emergence_consolidation_of_linguistic_represen.md)
-- [\[ICLR 2026\] ZeroTuning: Unlocking the Initial Token's Power to Enhance Large Language Models Without Training](zerotuning_unlocking_the_initial_tokens_power_to_enhance_large_language_models_w.md)
+- [\[ICLR 2026\] Evaluating SAE Interpretability Without Generating Explanations](evaluating_sae_interpretability_without_generating_explanations.md)
 
 </div>
 

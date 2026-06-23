@@ -2,140 +2,141 @@
 title: >-
   [Paper Note] Dynamic Reflections: Probing Video Representations with Text Alignment
 description: >-
-  [ICLR 2026][Interpretability][video representation alignment] This paper is the first to extend the Platonic Representation Hypothesis (PRH) from static image–text to the temporal video–text domain. Through systematic ev…
+  [ICLR 2026][Interpretability][Self-Supervised Learning] Ours provides the first expansion of the Platonic Representation Hypothesis (PRH) from static images to the spatiotemporal video-text domain. Through a systematic evaluation of 121 vision and language models, it reveals that increasing the number of frames and descriptions at test-time can nearly double alignment score
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "video representation alignment"
-  - "Platonic representation hypothesis"
-  - "test-time scaling laws"
-  - "cross-modal alignment"
-  - "self-supervised learning"
+  - ICLR 2026
+  - Interpretability
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: e4a3477f9804827c
+content_hash: e446066959a9db5c
 ---
-
 # Dynamic Reflections: Probing Video Representations with Text Alignment
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2511.02767](https://arxiv.org/abs/2511.02767)  
 **Code**: [https://video-prh.github.io](https://video-prh.github.io)  
-**Area**: Interpretability / Representation Learning
-**Keywords**: video representation alignment, Platonic representation hypothesis, test-time scaling laws, cross-modal alignment, self-supervised learning
+**Area**: Interpretability / Representation Learning  
+**Keywords**: Video representation alignment, Platonic Representation Hypothesis, Test-time scaling laws, Cross-modal alignment, Self-supervised learning
 
 ## TL;DR
 
-This paper is the first to extend the Platonic Representation Hypothesis (PRH) from static image–text to the temporal video–text domain. Through systematic evaluation of 121 visual and language models, it reveals that increasing the number of frames and captions at test time can nearly double alignment scores, and proposes a saturating scaling law with $R^2 > 0.98$ to quantify this behavior.
+Ours provides the first expansion of the Platonic Representation Hypothesis (PRH) from static images to the spatiotemporal video-text domain. Through a systematic evaluation of 121 vision and language models, it reveals that increasing the number of frames and descriptions at test-time can nearly double alignment scores, and proposes a saturated scaling law with $R^2 > 0.98$ to quantify this behavior.
 
 ## Background & Motivation
 
-The Platonic Representation Hypothesis (PRH) posits that as neural networks scale in capacity, data diversity, and task variety, the internal representations learned by different models converge toward a shared, modality-agnostic universal statistical model. Huh et al. (2024) previously validated this hypothesis in the static image–text setting, finding significant structural similarity between the latent spaces of independently trained visual encoders (e.g., DINOv2) and language encoders.
+The Platonic Representation Hypothesis (PRH) posits that as neural networks scale in capacity, data diversity, and task variety, the internal representations learned by different models converge toward a shared, modality-agnostic statistical model. Previously, Huh et al. (2024) validated this hypothesis in static image-text modalities, finding significant structural similarities between the latent spaces of independently trained vision encoders (e.g., DINOv2) and language encoders.
 
-However, prior validation exhibits two fundamental limitations:
+However, prior validations suffer from two core deficiencies:
 
-1. **Modality restriction**: All experiments were confined to static modalities (images and text). The motion, causal relationships, and temporal dependencies present in video data were entirely overlooked in representation alignment studies. Although PRH was formulated for all modalities, its validity in the temporal domain remained an open question.
+1.  **Modality Limitation**: All experiments focused on static modalities (images and text). Motion, causality, and temporal dependencies inherent in video data were entirely ignored in representation alignment research. While PRH is proposed for all modalities, its validity in the temporal domain remained an open question.
 
-2. **Interpretability of alignment scores**: Huh et al. (2024) raised an unresolved question — a maximum alignment score of 0.16 could not be judged as high or low in absolute terms.
+2.  **Interpretability of Alignment Scores**: Huh et al. (2024) raised an unresolved question—is a maximum alignment score of only 0.16 high or low? This absolute value is difficult to interpret.
 
-The central observation of this paper is that previously reported limited alignment is largely attributable to **insufficient test-time data** (single frame + single caption). By providing multiple video frames and multiple textual descriptions, alignment scores can be substantially raised to nearly 0.4 without modifying any trained model. This finding establishes test-time scaling as a new dimension complementary to training-time scaling.
+The Core Insight of this work is: the limited alignment reported previously is largely due to **insufficient data provided at test-time** (single frame + single description). By providing multiple video frames and multiple text descriptions, alignment scores can significantly increase to nearly 0.4 without modifying any trained models. This finding establishes "test-time scaling" as a new dimension complementary to training-time scaling.
 
 ## Method
 
 ### Overall Architecture
 
-This paper adopts the Mutual $k$-NN (MkNN) metric proposed by Huh et al. (2024) to measure cross-modal representation alignment. Given $N$ video–text pairs $\mathcal{S} = \{(v_1, c_1), \ldots, (v_N, c_N)\}$, embedding matrices $\mathbf{X} \in \mathbb{R}^{N \times p}$ and $\mathbf{Y} \in \mathbb{R}^{N \times q}$ are obtained via video and text encoders, respectively. Two $k$-nearest-neighbor binary indicator matrices $\mathbf{M_X}$ and $\mathbf{M_Y}$ are then constructed, and the alignment score is computed as:
+Ours does not train new models but builds a "test-time scaling" probe framework: fixing a pair of independently trained video and text encoders, while only varying the volume of data fed into them—expanding videos from single to multiple frames and descriptions from single to multiple entries—and then using a non-parametric alignment metric to measure the similarity between the two latent spaces. Alignment strength follows the Mutual $k$-NN (MkNN) metric from Huh et al. (2024): given $N$ video-text pairs, encoded as embedding matrices $\mathbf{X} \in \mathbb{R}^{N \times p}$ and $\mathbf{Y} \in \mathbb{R}^{N \times q}$, binary $k$-nearest neighbor indicator matrices $\mathbf{M_X}$ and $\mathbf{M_Y}$ are constructed. The alignment score is defined as the proportion of overlapping neighbors:
 
 $$\mathcal{A}^{\text{MkNN}}(\mathbf{X}, \mathbf{Y}) = \frac{1}{kN} \sum_{i=1}^{N} \sum_{j=1}^{N} (\mathbf{M_X} \odot \mathbf{M_Y})_{ij}$$
 
-where $\odot$ denotes the Hadamard product and $k$ is typically set to 10 for a dataset of 1,024 samples. In addition, intermediate-layer combinations across both encoders are searched to select the layer pair that maximizes the alignment score.
+where $\odot$ denotes the Hadamard product, $k$ is set to 10 (on a 1024-sample dataset), and an optimal layer pair search is conducted across all intermediate layer combinations of both encoders. The Mechanism is a dual-branch structure: videos undergo multi-frame encoding while text undergoes multi-description encoding; the two latent spaces meet at the MkNN metric to produce an alignment score, which is then fitted to a saturated scaling law by scanning the number of frames and descriptions.
 
-The core extension of this work is to generalize the framework from the "single frame + single caption" setting to a "multi-frame video + multiple captions" setting, systematically investigating the effect of test-time data richness on alignment scores.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    V["Video"] --> F["Multi-frame Video Encoding"]
+    T["Multi-description Text Encoding"]
+    F --> M["MkNN Alignment Score<br/>(Non-parametric Metric)"]
+    C["Multi-description Text Encoding"]
+    T --> C
+    C --> M
+    M -->|"Scan num. frames n_f, num. descriptions n_c"| S["Saturated Test-time Scaling Law"]
+    S --> O["Alignment Upper Bound S∞ and<br/>Extrapolable Power-law Prediction"]
+```
 
 ### Key Designs
 
-**Multi-frame video encoding strategy**: For a video encoder natively processing $n_o$ frames, $n_f$ frames are sampled via uniform linear interpolation. When $n_f > n_o$, the video is partitioned into multiple sub-clips of length $n_o$, each encoded separately and averaged. When $n_f = 1$, the setting degenerates to the prior image–text alignment configuration. For image models, two variants are provided: single-frame only, and averaged features across 8 frames (image model adapted to video).
+**1. Multi-frame Video Encoding: Integrating temporal information rather than single images**
 
-**Multi-caption text encoding strategy**: Multiple captions are concatenated into a single long string and encoded by a text encoder (including LLMs such as the Gemma 2 series); intermediate-layer features are extracted and averaged over the token dimension to yield features of shape $[\text{layer}, \text{hidden\_dim}]$. The VATEX dataset naturally supports multi-caption evaluation, providing 10 independently annotated captions per video. For the PVD dataset, which contains only a single long description per video, Gemini-2.5 Pro is used to decompose each description into 10 shorter captions.
+Prior PRH validations only used single frames, essentially compressing videos into static images and losing motion and causality—a root cause of low alignment scores. For an encoder that natively processes $n_o$ frames, this work extracts target frame counts $n_f$ via uniform linear interpolation. When $n_f > n_o$ exceeds the window, the video is sliced into several sub-clips of length $n_o$, which are encoded separately and averaged, allowing the ingestion of up to $n_f = 80$ frames without model modification. For $n_f = 1$, the setup naturally degrades to the original image-text alignment for comparability. Variants like "first frame only" and "average features across 8 frames" are provided for image-only models to distinguish whether gains stem from temporal modeling or feature smoothing.
 
-**Saturating test-time scaling law**: Based on empirical observations, a parametric saturation model is proposed to quantify the joint dependence of alignment scores on frame count $n_f$ and caption count $n_c$:
+**2. Multi-description Text Encoding: Approximating full video semantics via multiple perspectives**
+
+A single description only covers one aspect of a video; single-description settings systematically underestimate the true shared structure of vision and language. Ours concatenates multiple descriptions into a long string for the text encoder (including purely generative LLMs like Gemma 2), extracts intermediate layer features, and averages across the token dimension to obtain a sentence vector of $[\text{layer}, \text{hidden\_dim}]$. VATEX naturally provides 10 independent descriptions per video, enabling direct evaluation. For PVD, which has single long descriptions, Gemini-2.5 Pro is used to split them into 10 short descriptions—experiments show this synthetic split also improves alignment, suggesting gains come from semantic coverage expansion rather than additional human labeling.
+
+**3. Saturated Test-time Scaling Law: Formulating data-driven alignment gains as predictable power laws**
+
+Beyond observing score increases, Ours characterizes the double dependency of alignment scores on frame count $n_f$ and description count $n_c$ using a parametric saturation model:
 
 $$\text{score}(n_f, n_c) = S_{\infty} - (C_f \cdot n_f^{-\alpha} + C_c \cdot n_c^{-\beta})$$
 
-where $S_{\infty}$ is the theoretical saturating alignment score, $C_f$ and $C_c$ are error coefficients for frames and captions respectively, and $\alpha$ and $\beta$ are decay exponents. This model is analogous to the training-time compute-optimal scaling laws of Hoffmann et al. (2022): $S_{\infty}$ corresponds to the ideal alignment accuracy, and the subtracted terms represent the error penalty incurred by limited test-time data.
-
-### Loss & Training
-
-This paper is an analytical evaluation study and does not involve training new models. Its core methodology can be summarized as **test-time scaling**:
-
-- **Visual-side scaling**: Incrementally increasing $n_f$ from 1 to 80 frames, leveraging more temporal information via sub-clip encoding and average pooling.
-- **Text-side scaling**: Incrementally increasing $n_c$ from 1 to 10 captions, improving semantic coverage by concatenating multiple descriptions.
-- **Layer search strategy**: Exhaustively searching all intermediate-layer combinations across both encoders, selecting the pair with the highest alignment score as the final result.
-
-This paradigm complements training-time resource scaling (model parameter count, training data volume), demonstrating that test-time data refinement is also an effective means of improving representation alignment.
+where $S_{\infty}$ is the theoretical saturation score with infinite data, $C_f, C_c$ are error coefficients for frames and descriptions, and $\alpha, \beta$ are their respective power-law decay indices. This forms a dual to the training-time compute-optimal scaling laws of Hoffmann et al. (2022): $S_{\infty}$ represents the ideal alignment upper bound, while the latter two terms are error penalties from finite test data that decay at power-law rates as data increases. The model achieves $R^2 > 0.98$ for both VideoMAEv2 and DINOv2, proving that test-time data augmentation results in highly regular, extrapolable behavior rather than noisy improvements.
 
 ## Key Experimental Results
 
-### Main Results: Video–Text Alignment Scores
+### Main Results: Video-Text Alignment Scores
 
-Evaluated on VATEX (10-second videos + 10 annotations) and PVD datasets using a test set of 1,024 samples:
+On VATEX (10s video + 10 labels) and PVD datasets using a 1024-sample test set:
 
-| Visual Model | Type | Text Encoder | Frames / Captions | MkNN Alignment Score |
-|---|---|---|---|---|
-| DINOv2 | Image (single frame) | Best non-Gemma | 1 frame / 1 caption | ~0.18 |
-| DINOv2 | Image (single frame) | Gemma 2 9B-it | 1 frame / 1 caption | ~0.206 |
-| DINOv2 | Image→Video (8-frame avg.) | Gemma 2 9B-it | 8 frames / 1 caption | ~0.223 |
-| VideoMAEv2 | Native video | Gemma 2 9B-it | Multi-frame / multi-caption | ~0.41 ($S_{\infty}$) |
-| DINOv2 | Image→Video | Gemma 2 9B-it | Multi-frame / multi-caption | ~0.37 ($S_{\infty}$) |
+| Vision Model | Type | Text Encoder | Frames/Desc. | MkNN Score |
+| :--- | :--- | :--- | :--- | :--- |
+| DINOv2 | Image (1-frame) | Best non-Gemma | 1 frame / 1 desc | ~0.18 |
+| DINOv2 | Image (1-frame) | Gemma 2 9B-it | 1 frame / 1 desc | ~0.206 |
+| DINOv2 | Image→Video (8-f mean) | Gemma 2 9B-it | 8 frames / 1 desc | ~0.223 |
+| VideoMAEv2 | Native Video | Gemma 2 9B-it | Multi / Multi | ~0.41 ($S_{\infty}$) |
+| DINOv2 | Image→Video | Gemma 2 9B-it | Multi / Multi | ~0.37 ($S_{\infty}$) |
 
-Core finding: From the minimal setting (0.18) to full exploitation of test-time data (0.41), the alignment score increases by more than **2×**.
+Key finding: Alignment scores increase by over **2x** from the simplest setup (0.18) to full utilization of test-time data (0.41).
 
-### Ablation Study: Scaling Law Fitting and Analysis
+### Scaling Law Fitting and Ablation Study
 
-| Fitted Parameter | VideoMAEv2 | DINOv2 | Interpretation |
-|---|---|---|---|
-| $S_{\infty}$ (saturation score) | 0.41 | 0.37 | Video model has a higher theoretical upper bound |
-| $C_f$ (frame error coefficient) | 0.15 | 0.05 | Video model is **3×** more sensitive to frame count |
-| $C_c$ (caption error coefficient) | 0.13 | 0.13 | Text-side influence is comparable |
-| $\alpha$ (frame decay exponent) | 0.75 | 1.76 | Video model decays more slowly; requires more frames to saturate |
-| $\beta$ (caption decay exponent) | 1.30 | 1.40 | Caption-side decay is similar |
-| $R^2$ | 0.9791 | 0.9964 | Excellent fit quality |
+| Fit Parameter | VideoMAEv2 | DINOv2 | Interpretation |
+| :--- | :--- | :--- | :--- |
+| $S_{\infty}$ (Saturation) | 0.41 | 0.37 | Video models have higher theoretical bounds |
+| $C_f$ (Frame Error Coeff) | 0.15 | 0.05 | Video models are **3x** more frame-dependent |
+| $C_c$ (Desc Error Coeff) | 0.13 | 0.13 | Similar text-side influence |
+| $\alpha$ (Frame Decay Exp) | 0.75 | 1.76 | Video models decay slower; need more frames to saturate |
+| $\beta$ (Desc Decay Exp) | 1.30 | 1.40 | Similar description-side decay |
+| $R^2$ | 0.9791 | 0.9964 | Extremely high quality of fit |
 
 | Ablation Dimension | Range | Key Observation |
-|---|---|---|
-| Frame count $n_f$ | 1 → 80 | Alignment increases steadily; video models benefit far more than image models |
-| Caption count $n_c$ | 1 → 10 | Average alignment gain of **60%**; growth is fastest at small $n_c$ |
-| Downstream semantic tasks (SSv2, K700) | — | **Strong positive correlation** with alignment score |
-| Downstream non-semantic tasks (depth, pose) | — | Also positively correlated, except for point tracking |
-| Temporal sensitivity (Test of Time) | $k=1,2,3$ | Near-perfect alignment at $k=3$; large gaps at $k=1,2$, suggesting LLMs favor bag-of-words |
-| Temporal sensitivity (VideoComp) | Positive vs. negative captions | Higher-alignment models are more susceptible to temporal reordering |
-| Synthesized multi-caption (PVD) | 1 → 10 synthetic captions | Decomposing a single long description into short captions also improves alignment |
+| :--- | :--- | :--- |
+| Frame Count $n_f$ | 1 → 80 | Alignment rises steadily; video models benefit far more than image models |
+| Desc Count $n_c$ | 1 → 10 | Average alignment gain of **60%**, fastest growth in early stages |
+| Downstream Semantic Tasks | — | **Strong positive correlation** with alignment scores |
+| Downstream Non-semantic | — | Positive correlation for depth/pose, but not for point tracking |
+| Temporal Sensitivity | $k=1,2,3$ | Perfect alignment at $k=3$; LLMs act like bag-of-words at $k=1,2$ |
+| Synthetic Descs (PVD) | 1 → 10 synth | Synthesizing short descriptions from long ones also improves alignment |
 
 ## Highlights & Insights
 
-- **First extension of PRH to the temporal domain**: A systematic evaluation covering 85 visual models × 36 language models fills the gap in representation alignment research for the video modality, demonstrating that temporal information provides strong signals for semantic understanding.
-- **Discovery of test-time scaling laws**: Analogous to training-time compute-optimal scaling laws, this paper proposes test-time data scaling laws. The $R^2 > 0.98$ fit quality indicates that the dependence of alignment scores on frame and caption counts follows a highly predictable power-law behavior.
-- **Resolution of a key open question**: The question posed by Huh et al. (2024) — "Is an alignment score of 0.16 high or low?" — receives a clear answer: it is an underestimate caused by limited test-time data; with sufficient data, scores exceeding 0.4 are achievable.
-- **Practical utility of zero-shot evaluation metrics**: The strong correlation between video–text alignment and downstream task performance (both semantic and non-semantic) suggests that alignment scores can serve as a proxy for expensive task-specific evaluations in guiding video model development.
-- **Potential of self-supervised video models**: VideoMAEv2, trained without any text supervision, surpasses DINOv2 in alignment score, demonstrating that purely video-based self-supervised training can yield representations highly aligned with the language space.
+*   **First Expansion of PRH to Spatiotemporal Domain**: Systematically evaluated 85 vision × 36 language model combinations, bridging the gap in video modality representation research and proving temporal information provides strong signals for semantic understanding.
+*   **Discovery of Test-time Scaling Laws**: Analogous to training-phase compute-optimal scaling laws, the proposed test-time laws with $R^2 > 0.98$ indicate that alignment dependency on data volume is a highly predictable power-law behavior.
+*   **Answering Key Open Problems**: Addressing the question by Huh et al. (2024) regarding whether 0.16 is high or low, Ours provides a clear answer: it is an underestimate caused by test-time data scarcity, reaching 0.4+ with sufficient data.
+*   **Utility of Zero-shot Metrics**: The strong correlation between video-text alignment and downstream tasks (semantic + non-semantic) suggests it can replace expensive task-specific evaluations to guide video model development.
+*   **Potential of SSL Video Models**: VideoMAEv2 surpasses DINOv2's alignment scores without any text supervision, proving that pure video self-supervised training can learn representations highly aligned with language space.
 
 ## Limitations & Future Work
 
-1. **Insufficient coverage of local tasks**: The correlation between point tracking and alignment is weak, indicating that the MkNN metric emphasizes global semantics and struggles to capture fine-grained local spatiotemporal abilities.
-2. **Performance gap for native video models**: Many native video models achieve lower alignment scores than image models with frame-averaged features, suggesting that the training paradigms for video encoders still have room for improvement.
-3. **Representation utilization in generative video models**: The latent representations of current generative video models (e.g., video diffusion models) are poorly aligned with text; leveraging their understanding capabilities remains an open problem.
-4. **Limited dataset diversity**: The study primarily uses VATEX (10-second short videos) and the PVD dataset, with insufficient coverage of long videos and complex temporal reasoning scenarios.
-5. **Confounding factors in the caption effect**: Increasing the number of captions simultaneously increases both semantic coverage and viewpoint diversity; the independent contributions of these two factors to alignment have not been disentangled.
+1.  **Insufficient Local Task Coverage**: The weak correlation with point tracking suggests the MkNN metric prioritizes global semantics and struggles to capture fine-grained spatiotemporal abilities.
+2.  **Gap in Video Foundation Models**: Many native video models show lower alignment than frame-averaged image models, indicating the training paradigms for video encoders still have room for optimization.
+3.  **Representation Utilization in Generative Models**: Latent representations of current generative video models (e.g., video diffusion) align weakly with text; leveraging their understanding capability remains an open problem.
+4.  **Limited Dataset Diversity**: Primarily uses VATEX and PVD, which may not fully cover long videos or more complex temporal reasoning scenarios.
+5.  **Confounding Factors in Descriptions**: Increasing descriptions adds both semantic coverage and viewpoint diversity; the individual contributions of these factors are not yet decoupled.
 
 ## Related Work & Insights
 
-This paper sits at the intersection of three research directions: (1) *Platonic Representation Hypothesis and emergent alignment* — extending the static-modality work of Huh et al. (2024) and Maniparambil et al. (2024) to the temporal domain for the first time; (2) *Self-supervised video representation learning* — represented by large-scale unlabeled video pretraining methods such as VideoMAEv2 and V-JEPA, for which this paper provides a new zero-shot evaluation approach; and (3) *Scaling law research* — forming a dual with the training-time scaling laws of Hoffmann et al. (2022) and opening a systematic research direction for "test-time scaling." Furthermore, the finding that Gemma 2 series models — purely text-generative models — serve as the best-performing text encoders echoes the conclusions of Zhang et al. (2025) regarding the importance of language models in multimodal alignment.
+Ours sits at the intersection of three directions: (1) Platonic Representation Hypothesis and Emergent Alignment—extending the static works of Huh et al. (2024) and Maniparambil et al. (2024) to the temporal domain; (2) Self-supervised Video Representation Learning—providing a new zero-shot evaluation for models like VideoMAEv2 and V-JEPA; (3) Scaling Laws—forming a dual to the training-time scaling laws of Hoffmann et al. (2022) by opening the direction of "test-time scaling." Furthermore, the finding that Gemma 2, a text-only generative LLM, performs as the optimal encoder echoes Zhang et al. (2025) regarding the importance of LLMs in multimodal alignment.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First extension of PRH to the video domain; the test-time scaling law is novel and predictive.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 121 model combinations with broad coverage, multi-dataset validation, and rigorous scaling law fitting.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure, rich and intuitive figures, precise articulation of core findings.
-- Value: ⭐⭐⭐⭐ — Offers meaningful insights for both the evaluation paradigm of video representation learning and the theory of multimodal alignment.
+*   Novelty: ⭐⭐⭐⭐ — First extension of PRH to video; novel and predictive test-time scaling laws.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Extensive coverage of 121 model combinations across multiple datasets with rigorous fitting.
+*   Writing Quality: ⭐⭐⭐⭐ — Clear structure and intuitive visualizations; core findings stated precisely.
+*   Value: ⭐⭐⭐底 — Significant implications for video representation evaluation and multimodal alignment theory.
 
 <!-- RELATED:START -->
 
@@ -143,11 +144,11 @@ This paper sits at the intersection of three research directions: (1) *Platonic 
 
 ## Related Papers
 
-- [\[ICLR 2026\] One Language, Two Scripts: Probing Script-Invariance in LLM Concept Representations](one_language_two_scripts_probing_script-invariance_in_llm_concept_representation.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](../../ACL2026/interpretability/rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
-- [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](../../CVPR2026/interpretability/back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
+- [\[ACL 2026\] Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing](../../ACL2026/interpretability/probing_semantic_alignment_lexical_invariance_and_syntactic_influence_in_llm_met.md)
 - [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
-- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
+- [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
 
 </div>
 

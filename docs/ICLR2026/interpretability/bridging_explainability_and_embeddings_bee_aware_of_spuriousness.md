@@ -2,147 +2,157 @@
 title: >-
   [Paper Note] Bridging Explainability and Embeddings: BEE Aware of Spuriousness
 description: >-
-  [ICLR 2026][Interpretability][Spurious correlation detection] This paper proposes the BEE framework, which identifies and names spurious correlations (SCs) directly from learned classifier weights by analyzing how fine-t…
+  [ICLR 2026][Interpretability][Paper Note] Proposes the BEE framework, which identifies and names spurious correlations (SC) by analyzing how fine-tuning perturbs the weight space geometry of pre-trained representations. It discovers hidden data biases directly from classifier weights without needing counter-examples, identifying spurious associations in ImageN
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Spurious correlation detection"
-  - "weight space analysis"
-  - "embedding geometry"
-  - "linear probing"
-  - "foundation models"
+  - ICLR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 75885aa334579338
+content_hash: 01f80a2f7e56ecfb
 ---
-
 # Bridging Explainability and Embeddings: BEE Aware of Spuriousness
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2410.18970](https://arxiv.org/abs/2410.18970)  
 **Code**: [Publicly Available](https://arxiv.org/abs/2410.18970)  
-**Area**: Medical Imaging
+**Area**: Interpretability  
 **Keywords**: Spurious correlation detection, weight space analysis, embedding geometry, linear probing, foundation models
 
 ## TL;DR
-This paper proposes the BEE framework, which identifies and names spurious correlations (SCs) directly from learned classifier weights by analyzing how fine-tuning perturbs the weight-space geometry of pre-trained representations. The method requires no counterfactual samples and can discover hidden dataset biases. On ImageNet-1k, BEE uncovers spurious associations that reduce accuracy by up to 95%.
+Proposes the BEE framework, which identifies and names spurious correlations (SC) by analyzing how fine-tuning perturbs the weight space geometry of pre-trained representations. It discovers hidden data biases directly from classifier weights without needing counter-examples, identifying spurious associations in ImageNet-1k that cause accuracy drops of up to 95%.
 
 ## Background & Motivation
-**Background**: Deep neural networks, particularly fine-tuned foundation models, are widely deployed in high-stakes domains such as healthcare and finance. Spurious correlations (SCs) cause models to make decisions based on task-irrelevant features, with potentially severe consequences. Detecting SCs is therefore critical for ensuring model reliability.
+**Background**: Deep neural networks, especially fine-tuned foundation models, are widely deployed in critical domains like healthcare and finance. Spurious correlations (SC) lead models to make decisions based on task-irrelevant features, resulting in severe consequences. Detecting SC is critical for ensuring model reliability.
 
-**Limitations of Prior Work**: Existing approaches fall into two broad categories. **Data-driven methods** (e.g., SpLiCE, Lg) analyze dataset statistics to flag concepts correlated with class labels, but cannot determine whether the model has actually learned these correlations. **Error-driven methods** (e.g., B2T) infer SCs from validation-set errors, but require counterfactual examples to expose model shortcuts. When such counterexamples are absent—a common scenario in practice—both categories of methods fail.
+**Limitations of Prior Work**: Existing methods fall into two categories: **data-driven methods** (e.g., SpLiCE, Lg), which analyze dataset statistics to label concepts associated with categories but cannot determine if the model actually learned these associations; and **error-driven methods** (e.g., B2T), which infer SC from validation set errors but rely on the presence of counter-examples to expose model shortcuts. Both fail when counter-examples are missing, which is common in real-world scenarios.
 
-**Key Challenge**: Data-driven methods ignore the model internals, while error-driven methods depend on counterexamples; yet many harmful SCs arise precisely because no counterexamples exist in the dataset. Existing interpretable approaches (e.g., CBMs) require pre-defined concept sets and sacrifice model expressiveness. The fundamental question is: **how can one discover spurious correlations actually learned by a model without relying on counterexamples?**
+**Key Challenge**: Data methods ignore the model, while error methods require counter-examples. In practice, many harmful SCs exist precisely because there are no counter-examples in the dataset. Existing interpretable methods (e.g., CBM) require pre-defined concept sets and sacrifice expressivity. The fundamental problem is: **How to discover spurious associations actually learned by the model without relying on counter-examples?**
 
-**Goal**: (1) Identify model-learned SCs without requiring counterexamples; (2) not merely detect but **name** the specific concepts responsible for each SC; (3) generalize across visual and textual modalities and multiple foundation model architectures.
+**Goal**: (1) Identify SCs learned by the model without requiring counter-examples; (2) Not only detect but **name** the specific concepts causing SC; (3) Ensure the method is applicable across multiple modalities (vision and text) and various foundation models.
 
-**Key Insight**: The key observation is that during fine-tuning, linear classifier weights drift from their initialization—i.e., the zero-shot class-name embeddings—and this drift direction encodes what the model has learned, including spurious associations. Because weights and concept embeddings share the same embedding space, geometric relationships can be used to directly identify which class-irrelevant concepts are highly similar to the learned weights.
+**Key Insight**: A key observation is that during fine-tuning, linear classifier weights drift from their initial category name embeddings (zero-shot weights). This drift direction encodes the features learned by the model, including spurious associations. Since weights and concept embeddings share the same embedding space, geometric relationships can be used to directly analyze which task-irrelevant concepts are highly similar to the weights.
 
-**Core Idea**: Leverage the drift direction of classification weights relative to zero-shot initialization in the embedding space to identify concepts that are class-irrelevant yet highly similar to the learned weights, thereby surfacing spurious correlations.
+**Core Idea**: Utilize the drift direction of classification weights relative to zero-shot initialization within the embedding space to identify concepts that are task-irrelevant but highly similar to the learned weights as spurious correlations.
 
 ## Method
 
 ### Overall Architecture
-BEE is a weight-space diagnostic framework. Given a training dataset, a foundation model, and a concept set, it outputs a list of spurious concepts learned for each class. The pipeline consists of two main steps: (1) train a linear probe on top of foundation model embeddings and observe weight drift; (2) rank concepts in the embedding space by their similarity to the drifted weights while filtering out class-relevant concepts, automatically identifying SCs.
+BEE addresses the problem of identifying "exactly which spurious correlations the model has learned and what they are called" without relying on counter-examples in a validation set. Its starting point is a geometric observation: when training a linear classifier on frozen foundation model embeddings, the weight for each category drifts from the "zero-shot embedding of the category name" toward the features the model actually relies on—and this drift direction hides the spurious correlations.
+
+The framework takes a training set, a foundation model, and a concept set as input, and outputs a list of learned spurious concepts for each category. It first exposes weight drift by training a linear probe layer atop foundation model embeddings; then, within the same embedding space, it collects task-irrelevant candidate concepts, ranks them by similarity to the drifted weights, and uses an adaptive dynamic threshold for truncation to automatically filter for SCs; finally, the discovered SCs can be used as regularization constraints to improve the model. Since weights and concept embeddings exist in the same space, similarity comparisons are directly computable.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Training Set + Frozen Foundation Model<br/>+ Concept Set"] --> D1["Weight Drift Observation<br/>Linear Probing w⁰→w*"]
+    D1 --> D2["Concept Extraction & Filtering<br/>YAKE Candidates → LLM/WordNet Class Filtering"]
+    D2 --> D3["Concept Ranking<br/>Similarity with w*, minus per-concept baseline"]
+    D3 --> D4["Dynamic Thresholding<br/>Adaptive truncation at score curve inflection point"]
+    D4 --> OUT["Spurious Concepts List per Category"]
+    OUT --> D5["SC Regularization<br/>Constrain classes to be equidistant to SCs"]
+    D5 --> ROB["Robust Classifier"]
+```
 
 ### Key Designs
 
-1. **Weight Initialization and Drift Observation**:
+**1. Weight Drift Observation: Using zero-shot weights as a benchmark to expose learned features**
 
-    - Function: Initialize linear layer weights using text embeddings of class names, $w_k^0 = M(\text{class\_name}_k)$, and observe the learned weights $w_k^*$ after training.
-    - Mechanism: Zero-shot weights $w_k^0$ encode the "pure semantics" of each class, whereas post-training weights $w_k^*$ mix genuine and spurious features. The drift direction in embedding space reveals what the model has learned. The linear probe serves as a transparent diagnostic lens that renders the analysis interpretable.
-    - Design Motivation: Linear layer weights and concept embeddings reside in the same space, enabling concept ranking. Using a linear probe rather than full fine-tuning ensures transparency; experiments further confirm that SCs discovered via linear probing persist in fully fine-tuned models.
+The weights of the linear classifier are not initialized randomly but start with the text embedding of the category names: $w_k^0 = M(\text{class\_name}_k)$. This zero-shot weight $w_k^0$ encodes the "pure semantics" of the category; the final $w_k^*$ after training incorporates the features the model actually depends on, including both true and spurious features. The difference between the two is the drift direction, reflecting what the model captured beyond the original semantics. Linear probing is used instead of full-parameter fine-tuning because (1) linear weights and concept embeddings occupy the same space for direct similarity comparison, and (2) it is transparent and interpretable. Experiments further show that SCs found in linear probing persist in full-parameter fine-tuned models.
 
-2. **Concept Extraction and Filtering (Step 2a)**:
+**2. Concept Extraction and Filtering: Collecting candidates and removing class-related ones**
 
-    - Function: Extract concepts from the dataset and filter out class-relevant ones, retaining only "class-neutral" candidates.
-    - Mechanism: Image captions are generated with GIT-Large (text data is used directly); YAKE is then applied to extract the top-256 n-grams as candidate concepts $C_{all}$. Class instances are subsequently filtered using Llama-3.1-8B-Instruct, with a second-pass filter based on WordNet hypernym/hyponym relations.
-    - Design Motivation: Only concepts unrelated to the class definition are valid SC candidates. For example, "forest background" is strongly correlated with "land bird" but should not serve as a classification cue. The two-stage filtering (LLM + WordNet) ensures comprehensive removal of class-relevant concepts.
+Only concepts irrelevant to the category definition qualify as SC candidates. BEE first collects candidates from the data: image data is processed using GIT-Large to generate descriptions (text data uses the original text), and the YAKE keyword extractor is used to obtain the top-256 n-grams as the candidate concept set $C_{all}$. Two-level filtering follows: Llama-3.1-8B-Instruct is used to filter out category instances, and WordNet hypernym/hyponym relations provide secondary filtering. This combination ensures category-related concepts are cleared, leaving "category-neutral" candidates.
 
-3. **Concept Ranking (Step 2b)**:
+**3. Concept Ranking: Sorting by similarity while subtracting a universal baseline**
 
-    - Function: For each class, rank candidate concepts by their similarity to the learned weights.
-    - Mechanism: The positive-SC score is defined as $s_{k,i}^+ = w_k^{*\top} M(c_i) - \min_{k'} w_{k'}^{*\top} M(c_i)$. The intuition is to identify concepts that are highly similar to one class but dissimilar to others. Negative-SC candidates are ranked by dissimilarity $-w_k^{*\top} M(c_i)$.
-    - Design Motivation: Using raw similarity to a single class can produce false positives (generic concepts are similarly close to all classes). Subtracting the minimum removes this baseline effect, ensuring that only class-discriminative concepts are retained.
+For each category, BEE scores candidates based on the similarity between the concept embedding and the drifted weight $w_k^*$. The score for a positively correlated SC is:
 
-4. **Dynamic Thresholding (Step 2c)**:
+$$s_{k,i}^+ = w_k^{*\top} M(c_i) - \min_{k'} w_{k'}^{*\top} M(c_i)$$
 
-    - Function: Automatically determine the number of SCs to retain for each class.
-    - Mechanism: A mean filter (window size $r$) is applied to the sorted scores, and the elbow point—where the smoothed curve deviates maximally from the line connecting its endpoints—is identified: $m_k = \lfloor r/2 \rfloor + \arg\max_i (\bar{s}_{k,1} - i \frac{\bar{s}_{k,1} - \bar{s}_{k,p}}{p-1} - \bar{s}_{k,i})$.
-    - Design Motivation: Different classes may exhibit different numbers of SCs; a hard top-$k$ cutoff is therefore inappropriate. The dynamic threshold adaptively selects the appropriate number of SCs per class without manual tuning.
+The intuition is to find concepts similar *only* to one specific class but not others. Subtracting $\min_{k'} w_{k'}^{*\top} M(c_i)$ is crucial: without it, general concepts common to all classes would appear as false positives. Subtracting the minimum similarity across all classes removes this baseline effect, isolating concepts with specific discriminative power for that category. Negatively correlated SCs are ranked similarly using $-w_k^{*\top} M(c_i)$.
 
-5. **SC Regularization (Downstream Application)**:
+**4. Dynamic Thresholding: Automatically determining the number of SCs per class**
 
-    - Function: Use the discovered SCs to construct a regularization term that improves model robustness.
-    - Mechanism: The regularization loss constrains classifier weights to be equidistant from each SC concept embedding: $\mathcal{L}_{reg}(b) = \frac{\tau^2}{N} \sum_{k=1}^N [w_k^\top M(b) - sg(\frac{1}{N}\sum_j w_j^\top M(b))]^2$, with the total loss $\mathcal{L} = \mathcal{L}_{ERM} + \alpha \frac{1}{|\mathcal{B}|} \sum_{b \in \mathcal{B}} \mathcal{L}_{reg}(b)$.
-    - Design Motivation: In the fully spurious setting (no counterexamples in training), GroupDRO fails, whereas SC regularization explicitly reduces reliance on spurious features through direct geometric constraints.
+Different categories naturally learn different numbers of SCs. BEE identifies an inflection point on the sorted score curve: it uses mean filtering with window size $r$ to obtain a smoothed curve $\bar{s}$, then finds the point deviating furthest from the line connecting the start and end of the curve:
 
-### Loss & Training
-- AdamW optimizer ($lr=1\text{e}{-4}$, $wd=1\text{e}{-5}$), batch size 1024.
-- Cross-entropy loss with class-balanced weights; logits scaled by CLIP temperature $\tau=100$.
-- Weights are normalized after each update; early stopping based on class-balanced accuracy on the validation set.
+$$m_k = \lfloor r/2 \rfloor + \arg\max_i \left(\bar{s}_{k,1} - i \frac{\bar{s}_{k,1} - \bar{s}_{k,p}}{p-1} - \bar{s}_{k,i}\right)$$
+
+This point represents where the score transitions from a sharp drop to a plateau. Concepts before this point are retained as SCs. This allows each category to adaptively receive an appropriate number of SCs without manual hyperparameter tuning, enabling automation at the scale of ImageNet-1k.
+
+**5. SC Regularization: Constraining the model using discovered SCs**
+
+BEE uses discovered SCs to improve robustness by constraining classification weights to maintain equidistance from SC concepts—preventing any single class from showing a preference for an SC concept. The regularization loss is:
+
+$$\mathcal{L}_{reg}(b) = \frac{\tau^2}{N} \sum_{k=1}^N \left[w_k^\top M(b) - sg\Big(\frac{1}{N}\sum_j w_j^\top M(b)\Big)\right]^2$$
+
+where $sg(\cdot)$ is the stop-gradient operator. This pulls the similarity of all classes toward the mean. The total loss is $\mathcal{L} = \mathcal{L}_{ERM} + \alpha \frac{1}{|\mathcal{B}|} \sum_{b \in \mathcal{B}} \mathcal{L}_{reg}(b)$. This is particularly valuable when the training set completely lacks counter-examples, where GroupDRO fails but SC regularization succeeds by explicitly penalizing SC reliance.
+
+### Training Strategy
+- Uses AdamW optimizer ($lr=1e-4, wd=1e-5$) with batch size 1024.
+- Cross-entropy loss with class-balancing weights, using CLIP temperature $\tau=100$ to scale logits.
+- Weight normalization after each update and early stopping based on validation set class-balanced accuracy.
 
 ## Key Experimental Results
 
 ### Main Results: SC-Augmented Zero-Shot Prompting
 
 | Method | Waterbirds Worst | Waterbirds Avg | CelebA Worst | CelebA Avg | CivilComments Worst |
-|--------|------------------|----------------|--------------|------------|---------------------|
+|------|------------------|----------------|--------------|------------|---------------------|
 | Basic zero-shot | 35.2 | 84.2 | 72.8 | 87.7 | 33.1 |
 | w/ B2T | 48.1 | 86.1 | 72.8 | 88.0 | - |
 | w/ SpLiCE | 48.1 | 82.5 | 67.2 | 90.2 | - |
 | w/ Lg | 46.1 | 85.9 | 50.6 | 87.2 | - |
 | **w/ BEE** | **50.3** | **86.3** | **73.1** | 85.7 | **53.2** |
 
-BEE achieves substantially higher worst-group accuracy than all competing methods on Waterbirds and CivilComments.
+BEE significantly outperforms all competing methods in worst-group accuracy on Waterbirds and CivilComments.
 
-### Quantifying SC Impact on ImageNet-1k
+### ImageNet-1k SC Quantitative Impact
 
-| True Class | Spurious Concept | Induced Class | Change in True-Class Recognition | Induced-Class Prediction Rate |
-|------------|-----------------|---------------|----------------------------------|-------------------------------|
-| Peafowl | firemen | Fire truck | 100% → 5.3% (**−94.7%**) | 0% → 93.4% |
-| Mexican Hairless Dog | reading newspaper | Crossword | 47.5% → 0.9% (−46.6%) | 0% → 36.6% |
-| Bernese Mountain Dog | shrimp | American lobster | 99.8% → 10.6% (−89.2%) | 0% → 37.2% |
+| True Class | Spurious Concept | Induced Class | Target Recall Change | Induced Prediction Rate |
+|----------|----------|----------|------------------|-------------|
+| Peafowl | firemen | Fire truck | 100% → 5.3% (**-94.7%**) | 0% → 93.4% |
+| Mexican Hairless Dog | reading newspaper | Crossword | 47.5% → 0.9% (-46.6%) | 0% → 36.6% |
+| Bernese Mountain Dog | shrimp | American lobster | 99.8% → 10.6% (-89.2%) | 0% → 37.2% |
 
-### Regularization under the Fully Spurious Setting
+### Regularization in "Perfect Spuriousness" Settings
 
 | Method | Waterbirds Worst | CelebA Worst | CivilComments Worst |
-|--------|------------------|--------------|---------------------|
+|------|------------------|--------------|---------------------|
 | ERM | 43.2±5.7 | 9.6±1.0 | 18.6±0.3 |
 | GroupDRO | 38.9±5.4 | 8.1±0.3 | 18.7±0.4 |
 | Reg w/ random SCs | 46.6±2.7 | 9.4±0.0 | 19.1±1.6 |
 | Reg w/ Lg's SCs | 50.4±0.1 | 8.3±0.0 | - |
 | **Reg w/ BEE's SCs** | **57.9±0.3** | **10.4±0.5** | **31.3±0.7** |
 
-In the absence of counterexamples, GroupDRO even underperforms ERM, whereas BEE's SC regularization consistently improves worst-group performance.
+In extreme settings with zero counter-examples, where GroupDRO performs worse than ERM, BEE's SC regularization consistently improves worst-group performance.
 
 ### Key Findings
-- **SC Transfer Across Models**: SCs discovered by BEE on CLIP consistently cause significant performance degradation on diverse architectures including AlexNet, ResNet50, and ViT-L/16, indicating that SCs are a property of the dataset rather than the model.
-- **Dangerous Shortcuts in MIMIC-CXR Clinical Notes**: BEE identifies "chest examination" and "chest radiograph" as SCs for the "no pathological findings" class; appending such phrases biases the classifier toward predicting "no finding," which could lead to missed diagnoses in clinical settings.
-- **SC Discovery Without Counterexamples**: In the fully spurious setting where all minority-group samples are removed, BEE continues to identify SCs effectively, while error-analysis-based methods fail entirely.
+- **Cross-model SC Transfer**: SCs found by BEE on CLIP cause significant performance drops on architectures like AlexNet, ResNet50, and ViT-L/16, suggesting SCs are properties of the dataset rather than the model.
+- **Dangerous Shortcuts in MIMIC-CXR**: BEE found "chest examination" and "chest radiograph" as SCs for the "No Finding" class. Adding these terms biases the model toward "No Finding," which could lead to missed diagnoses in clinical settings.
+- **Counter-example Free Discovery**: In extreme settings where all minority group samples are removed, BEE effectively identifies SCs while error-analysis-based methods fail completely.
 
 ## Highlights & Insights
-- **Weight-Space Analysis as a Novel SC Detection Paradigm**: Rather than examining data distributions or prediction errors, BEE directly infers what has been learned from the geometric drift of classifier weights—an elegant approach that exploits the alignment properties of embedding spaces and can surface SCs invisible to conventional methods.
-- **Linear Probe as a Diagnostic Lens**: Adopting the simplest possible classifier avoids the opacity of complex models, and experiments confirm that SCs discovered via linear probing generalize to fully fine-tuned models, establishing the universality of the findings.
-- **Elbow Detection for Dynamic Thresholding**: Automatically determining the number of SCs per class without manual tuning enables the method to scale to all 1,000 classes of ImageNet.
-- **Practical Safety Implications of MIMIC-CXR Findings**: The SCs identified in medical text directly point to model deficiencies that could cause missed diagnoses, demonstrating the method's real-world value in high-stakes domains.
+- **Weight Space Analysis as a New Paradigm**: BEE infers learned features from geometric drift in weights rather than data distributions or prediction errors. This leverages embedding alignment elegantly to find SCs hidden from traditional methods.
+- **Linear Probing as a Diagnostic Lens**: Choosing the simplest classifier avoids complexity while maintaining representativeness. Discovered SCs are shown to transfer to full-parameter models, proving the validity of the lens.
+- **Dynamic Thresholding via Inflection Points**: Automatically determining SC counts per class removes manual tuning and enables scalability to 1,000 classes like ImageNet.
+- **Real-world Safety Implications**: The findings in MIMIC-CXR highlight model flaws that could lead to clinical hazards, demonstrating the value of the method in high-stakes domains.
 
 ## Limitations & Future Work
-- The approach relies on the linear probing assumption; SCs encoded in a nonlinear manner may not be detectable.
-- Concept extraction depends on YAKE and GIT-Large, so concept coverage is bounded by the captioning model's descriptive capacity.
-- The current scope is limited to classification tasks; extension to SC detection in detection, segmentation, and generation settings remains an open problem.
-- SC regularization requires a known SC set; integrating detection and mitigation into a closed-loop iterative framework is a promising direction.
-- Neither BEE nor B2T detected SCs for CelebA-blonde hair, suggesting potential blind spots for certain types of shortcut features.
+- Reliance on the linear probing assumption—if SCs are encoded non-linearly, they might be missed.
+- Concept extraction depends on YAKE and GIT-Large; coverage is limited by the captioning model's capacity.
+- Currently limited to classification tasks; future work could extend to detection, segmentation, or generation.
+- SC regularization requires a known SC set; detection and mitigation could be integrated into a closed-loop iteration.
+- Failed to detect SC on CelebA-blonde hair, suggesting blind spots for certain shortcut features.
 
 ## Related Work & Insights
-- **vs B2T**: B2T infers SCs from validation errors and therefore requires the presence of counterexamples. BEE infers SCs from weight drift without counterexamples and covers a broader range of concepts. On Waterbirds, BEE achieves a worst-group accuracy of 50.3% versus 48.1% for B2T.
-- **vs SpLiCE/Lg**: These data-driven methods analyze concept distributions in the dataset but cannot confirm whether the model has actually learned the identified associations. BEE directly inspects model weights, ensuring that reported SCs are genuinely learned.
-- **vs CBM**: Concept bottleneck models require pre-defined concept sets and architectural modifications at the cost of expressiveness. BEE requires no model modifications and analyzes original state-of-the-art models.
+- **vs B2T**: B2T infers SC from validation errors, requiring counter-examples. BEE uses weight drift and does not require counter-examples, finding a broader range of concepts.
+- **vs SpLiCE/Lg**: These are data-driven and analyze distribution but cannot confirm if the model learned the association. BEE analyzes weights directly.
+- **vs CBM**: CBM requires pre-defined concepts and architecture changes, sacrificing expressivity. BEE requires no modifications and analyzes original SOTA models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — Analyzing SCs through weight-space geometry is a fundamentally new perspective with clear theoretical motivation and elegant method design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers vision and text modalities, five embedding models, five datasets, and includes quantitative, qualitative, and generative validation.
-- Writing Quality: ⭐⭐⭐⭐ — Well-structured with intuitive figures, though some mathematical notation is dense and requires careful reading.
-- Value: ⭐⭐⭐⭐⭐ — Significant implications for AI safety and trustworthy AI; the MIMIC-CXR findings bear direct relevance to patient safety.
+- Novelty: ⭐⭐⭐⭐⭐ A fresh perspective analyzing SC through weight space geometry.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers vision/text, 5 embedding models, 5 datasets, and includes qualitative/quantitative/generative validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and visuals, though some mathematical notation is dense.
+- Value: ⭐⭐⭐⭐⭐ Highly significant for AI safety and trustworthy AI, especially regarding medical safety.
 
 <!-- RELATED:START -->
 
@@ -150,11 +160,11 @@ In the absence of counterexamples, GroupDRO even underperforms ERM, whereas BEE'
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning for Highly Faithful Explainability](learning_for_highly_faithful_explainability.md)
+- [\[ICLR 2026\] Probing Rotary Position Embeddings through Frequency Entropy](probing_rotary_position_embeddings_through_frequency_entropy.md)
 - [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
 - [\[ACL 2026\] Interpreto: An Explainability Library for Transformers](../../ACL2026/interpretability/interpreto_an_explainability_library_for_transformers.md)
-- [\[ICLR 2026\] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs](radar_reasoning-ability_and_difficulty-aware_routing_for_reasoning_llms.md)
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Ditching](tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_ditching.md)
-- [\[ICML 2026\] Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions](../../ICML2026/interpretability/bridging_the_knowledge-prediction_gap_in_llms_on_multiple-choice_questions.md)
+- [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
 
 </div>
 

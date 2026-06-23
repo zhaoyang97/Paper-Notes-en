@@ -2,140 +2,141 @@
 title: >-
   [Paper Note] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models
 description: >-
-  [ICLR 2026][Interpretability][Truncated Polynomial Classifier] This paper proposes the Truncated Polynomial Classifier (TPC), which enables dynamic safety monitoring by training a polynomial over LLM activation spaces or…
+  [ICLR 2026][Interpretability][Paper Note] The authors propose Truncated Polynomial Classifiers (TPC), which achieve dynamic safety monitoring through order-by-order training and truncated evaluation of polynomials in the LLM activation space. This allows for fast decisions on simple inputs using low-order (≈linear probe) terms and stronger protection for diffi
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Truncated Polynomial Classifier"
-  - "Safety Monitoring"
-  - "Dynamic Inference"
-  - "Linear Probes"
-  - "Activation Space"
+  - ICLR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: e565eca2dfed4c6e
+content_hash: 495be35b73d585c4
 ---
-
 # Beyond Linear Probes: Dynamic Safety Monitoring for Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.26238](https://arxiv.org/abs/2509.26238)  
 **Code**: [https://github.com/james-oldfield/tpc](https://github.com/james-oldfield/tpc)  
-**Area**: Model Safety / Activation Space Monitoring / AI Safety
-**Keywords**: Truncated Polynomial Classifier, Safety Monitoring, Dynamic Inference, Linear Probes, Activation Space
+**Area**: Model Safety / Activation Space Monitoring / AI Safety  
+**Keywords**: Truncated Polynomial Classifier, Safety Monitoring, Dynamic Inference, Linear Probes, Activation Space  
 
 ## TL;DR
-This paper proposes the Truncated Polynomial Classifier (TPC), which enables dynamic safety monitoring by training a polynomial over LLM activation spaces order-by-order and evaluating via truncation at inference time. Low-order truncations (≈ linear probes) handle easy inputs quickly, while higher-order terms provide stronger protection for difficult inputs. TPC matches or outperforms MLP baselines on WildGuardMix and BeaverTails while offering built-in interpretability.
+The authors propose Truncated Polynomial Classifiers (TPC), which achieve dynamic safety monitoring through order-by-order training and truncated evaluation of polynomials in the LLM activation space. This allows for fast decisions on simple inputs using low-order (≈linear probe) terms and stronger protection for difficult inputs by adding high-order terms. TPC matches or surpasses MLP baselines on WildGuardMix and BeaverTails while providing built-in interpretability.
 
 ## Background & Motivation
 
-**Background**: LLM safety monitoring is dominated by two paradigms — LLM-as-Judge natural language auditing (expensive but powerful) and activation-space linear probes (lightweight but static). The former incurs a fixed high cost per query; the latter provides only a minimal, static line of defense.
+**Background**: LLM safety monitoring primarily utilizes two types of methods: LLM-as-a-Judge natural language review (expensive but powerful) and activation-space linear probes (efficient but static). The former imposes a fixed high cost for every query, while the latter only provides a basic static line of defense.
 
 **Limitations of Prior Work**:
-- Linear probes are static and cannot adjust protection strength based on input difficulty or available compute budget.
-- LLM-as-Judge approaches are too costly to serve as always-on monitors.
-- Recent cascading work (e.g., McKenzie et al., 2025) still requires additional LLM fine-tuning/prompting and extra inference calls.
-- The linear representation hypothesis assumes high-level concepts are encoded in one-dimensional subspaces, yet growing evidence suggests not all features exhibit simple linear structure.
+   - Linear probes are static and cannot adjust protection strength based on input difficulty or available computational budget.
+   - LLM-as-a-Judge is too costly to serve as a persistent, always-on monitor.
+   - Recent work cascading the two (e.g., McKenzie et al., 2025) still requires additional LLM fine-tuning/prompting and extra inference calls.
+   - The "Linear Representation Hypothesis" assumes high-level concepts are encoded in 1D subspaces, but evidence increasingly suggests that not all features possess simple linear structures.
 
-**Key Challenge**: Safety monitoring faces an inherent cost–accuracy trade-off. Most requests are benign and require no strong protection, yet a small fraction of ambiguous or adversarial requests demands greater discriminative power. Existing methods either process all inputs at maximum cost or at minimum accuracy.
+**Key Challenge**: There is an inherent cost-accuracy trade-off in safety monitoring—most requests are benign and require minimal protection, but a few ambiguous or malicious requests need stronger discernment. Existing methods typically treat all inputs with either the highest cost or the lowest precision.
 
 **Goal**:
-- How can a single safety monitor operate effectively across varying compute budgets?
-- How can a monitor quickly pass easy inputs while deeply inspecting difficult ones?
-- How can classification capability be improved while preserving interpretability (compared to black-box MLPs)?
+   - How can a single safety monitor operate across different computational budgets?
+   - How can the monitor fast-track simple inputs while scrutinizing difficult ones?
+   - How can classification capability be improved while maintaining interpretability (unlike black-box MLPs)?
 
-**Key Insight**: Drawing inspiration from test-time compute scaling — compute should be allocated dynamically at inference time rather than fixed in advance. Polynomials possess a naturally additive, order-by-order structure that is well suited to progressive computation.
+**Key Insight**: Exploiting the idea of test-time compute scaling—computational resources should be allocated dynamically during inference rather than fixed. Polynomials naturally possess an additive structure when truncated by order, which is perfectly suited for progressive computation.
 
-**Core Idea**: Generalize linear probes into truncatable polynomial classifiers. Order-by-order training produces a family of nested sub-models; at inference time, evaluation is truncated on demand — low orders recover the linear probe, while higher orders provide stronger protection.
+**Core Idea**: Generalize linear probes into truncatable polynomial classifiers. By training a sequence of nested sub-models order-by-order, the system performs truncated evaluation as needed during inference—recovering the linear probe at low orders and providing stronger protection at higher orders.
 
 ## Method
 
 ### Overall Architecture
-The input is a residual-stream representation $\bm{z} \in \mathbb{R}^D$ extracted from a chosen LLM layer (mean-pooled over tokens), and the output is a binary harmful/benign classification probability. The core model is an $N$-th order polynomial that can be truncated at inference time to any sub-model of order $n \leq N$:
+TPC addresses the "one monitor, multiple budgets" problem: simple inputs are cleared quickly with low-cost terms (near linear probes), while difficult inputs receive more compute for deep checking. Generally, the residual stream representation $\bm{z} \in \mathbb{R}^D$ (mean-pooled across tokens) of a specific LLM layer is fed into an $N$-order polynomial classifier. This polynomial is trained **order-by-order** into a series of nested sub-models. During inference, it uses **cascading evaluation with early-exit based on confidence levels**, proceeding from low to high orders. It finally outputs binary classification probabilities (harmful/harmless) and can **attribute the decision to specific neuron interactions**. The polynomial can be truncated to any $n \leq N$ order during inference, taking the form $P_{:n}^{[N]}(\bm{z}) = w^{[0]} + \bm{z}^\top \bm{w}^{[1]} + \sum_{k=2}^{n} \sum_{r=1}^{R} \lambda_r^{[k]} (\bm{z}^\top \bm{u}_r^{[k]})^k$.
 
-$$P_{:n}^{[N]}(\bm{z}) = w^{[0]} + \bm{z}^\top \bm{w}^{[1]} + \sum_{k=2}^{n} \sum_{r=1}^{R} \lambda_r^{[k]} (\bm{z}^\top \bm{u}_r^{[k]})^k$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Z["LLM layer residual stream z<br/>(mean pooling over tokens)"] --> TPC["Truncated Polynomial Classifier TPC<br/>1~N order nested polynomials"]
+    TPC -->|Order-by-order training, freeze low-order terms| PT["Progressive Training<br/>Each truncation point is a valid classifier"]
+    PT --> CAS["Cascading Defense<br/>Evaluation starting from order 1"]
+    CAS -->|"Uncertain: σ(s)∈(τ,1-τ)"| UP["Increase order<br/>Add high-order interaction terms"]
+    UP --> CAS
+    CAS -->|"Sufficiently confident: early-exit"| OUT["Harmful / Harmless"]
+    TPC --> ATTR["Built-in Feature Attribution<br/>Extract contributions from neuron pair interactions"]
+    ATTR --> OUT
+```
 
 ### Key Designs
 
-1. **Truncated Polynomial Classifier (TPC)**:
+**1. Truncated Polynomial Classifier (TPC): Replacing static linear probes with truncatable polynomials**
 
-    - **Function**: Models high-order interactions among neurons in the activation space using an $N$-th order polynomial, replacing the linear probe.
-    - **Mechanism**: At $n=1$, the model degrades to a standard linear probe $w^{[0]} + \bm{z}^\top \bm{w}^{[1]}$. Each additional order $k$ introduces multiplicative interaction terms among $k$ neurons. High-order weight tensors are parameterized via symmetric CP decomposition: $\mathcal{W}^{[k]} = \sum_{r=1}^{R} \lambda_r^{[k]} (\bm{u}_r^{[k]} \circ \cdots \circ \bm{u}_r^{[k]})$, requiring only $O(DR)$ parameters per order.
-    - **Design Motivation**: The additive structure of polynomials means higher-order terms act as fine-grained corrections to lower-order logits, naturally supporting truncated evaluation. Symmetric decomposition eliminates redundant parameterization of equivalent monomials.
+Linear probes only capture first-order (linear) information in activation space. TPC generalizes this into an $N$-order polynomial, using high-order multiplicative interaction terms to model relationships between neurons. When truncated to $n=1$, it reduces to a standard linear probe $w^{[0]} + \bm{z}^\top \bm{w}^{[1]}$. Each additional order $k$ introduces multiplicative interactions between $k$ neurons. To prevent parameter explosion with high-order weight tensors, each order is parameterized using symmetric CP decomposition:
 
-2. **Progressive Training**:
+$$\mathcal{W}^{[k]} = \sum_{r=1}^{R} \lambda_r^{[k]} (\bm{u}_r^{[k]} \circ \cdots \circ \bm{u}_r^{[k]})$$
 
-    - **Function**: Trains polynomial orders sequentially so that every truncated sub-model is itself a competent classifier.
-    - **Mechanism**: The $k$-th order parameters $\bm{\theta}^{[k]}$ are learned by minimizing the BCE loss of the polynomial truncated at order $k$, while all parameters from orders $1$ through $k-1$ are frozen. First-order weights are initialized from a pre-trained sklearn linear probe.
-    - **Design Motivation**: Directly training a full $N$-th order polynomial and truncating afterward yields unstable sub-model performance (confirmed experimentally). Progressive training guarantees that each truncation point is a valid classifier and that adding a new order does not degrade existing truncations.
+Thus, each order requires only $O(DR)$ parameters. This additive structure allows for truncated evaluation—subsequent high-order terms act as fine-grained corrections to the accumulated logits, while symmetric decomposition removes redundant parameters for the same monomial.
 
-3. **Cascading Defense**:
+**2. Progressive Training: Ensuring each truncation point is a valid classifier**
 
-    - **Function**: Dynamically determines the number of orders to evaluate based on input difficulty — easy inputs exit early at low order, difficult inputs proceed to higher orders.
-    - **Mechanism**: Evaluation begins at $n=1$ and proceeds order by order. At each order, the condition $\sigma(s) \in (\tau, 1-\tau)$ is checked (where $\tau$ is a confidence threshold). If the current prediction is sufficiently confident (probability falls outside the threshold band), the prediction is immediately output; otherwise evaluation continues to the next order. This is analogous to early-exit strategies in deep networks.
-    - **Design Motivation**: The vast majority of requests are benign and can be classified with high confidence by a linear probe. Only a small fraction of ambiguous or adversarial inputs require the stronger discriminative power of higher-order terms. Experiments show that at medium-to-high $\tau$ values, cascade performance approaches that of the full polynomial while the net parameter count remains only slightly above that of a linear probe.
+Training a complete $N$-order polynomial all at once and then truncating leads to unpredictable sub-model performance. TPC instead uses order-by-order training: parameters $\bm{\theta}^{[k]}$ for order $k$ are learned by minimizing the BCE loss of the model truncated at $k$ orders, while freezing the previously learned parameters for orders $1$ to $k-1$. The first order inherits pre-trained linear probe weights. This explicitly optimizes each truncation point to be an effective classifier, ensuring high-order additions do not disrupt the performance of low-order truncations.
 
-4. **Built-in Feature Attribution**:
+**3. Cascading Defense: Dynamically deciding order based on input difficulty**
 
-    - **Function**: Leverages the explicit polynomial form to attribute classification decisions to individual neuron interactions.
-    - **Mechanism**: The contribution of the second-order term can be decomposed as $c_{ij} = (w_{ij}^{[2]} + w_{ji}^{[2]}) z_i z_j$, directly quantifying the contribution of any neuron pair $(i,j)$ to the classification logit.
-    - **Design Motivation**: MLPs are black boxes and cannot trace decisions back to specific neuron interactions. The polynomial form of TPC is inherently interpretable — one can precisely state, for example, that "the interaction between neuron 4830 and neuron 4916 increases the harmful classification logit by 0.005."
+With every truncation point optimized, early-exit becomes feasible during inference. Starting from $n=1$, the model evaluates each order and checks if $\sigma(s) \in (\tau, 1-\tau)$ holds (where $\tau$ is a confidence threshold). If the current prediction is sufficiently confident (outside the threshold), the result is output immediately; otherwise, it proceeds to the next order. The underlying observation is that most requests are benign and can be handled by linear probes, while only a few ambiguous or adversarial inputs require high-order checks.
+
+**4. Built-in Feature Attribution: Tracing decisions back to specific neuron interactions**
+
+Unlike black-box MLPs, TPC's polynomial form is naturally attributable. Taking a 2nd-order term as an example, its contribution to the logits can be decomposed as $c_{ij} = (w_{ij}^{[2]} + w_{ji}^{[2]}) z_i z_j$, directly quantifying the impact of the interaction between any neuron pair $(i,j)$. This allows the model to state conclusions such as "the interaction between neuron 4830 and 4916 increased the harmful logit by 0.005."
 
 ### Loss & Training
-- Standard BCE loss is used to train each order, with all preceding orders frozen.
-- First-order weights are initialized from a sklearn linear probe.
-- Experiments use $N=5$, CP rank $R=64$, and 5 random seeds.
-- Activations are extracted from intermediate layers (L32/L40 for gemma-3; L16/L20 for gpt-oss/llama).
+- Each order is trained using standard BCE loss while freezing parameters of preceding orders.
+- 1st-order weights are initialized from sklearn linear probes.
+- Experiments utilize $N=5$, CP rank $R=64$, and 5 random seeds.
+- Activation vectors are extracted from intermediate layers (L32/L40 for gemma-3, L16/L20 for gpt-oss/llama).
 
 ## Key Experimental Results
 
 ### Main Results (WildGuardMix Static Evaluation, Test F1%)
 
 | Method | gemma-3-27B | Qwen3-30B | gpt-oss-20b | Llama-3.2-3B |
-|--------|------------|-----------|-------------|-------------|
+|------|------------|-----------|-------------|-------------|
 | Linear probe | 88.03 | 85.53 | 86.70 | 83.24 |
 | Bilinear probe | 88.79 | 84.87 | 87.13 | 84.78 |
 | MLP | 88.49 | 85.48 | 87.86 | 83.77 |
 | EE-MLP (5th exit) | 88.39 | 85.24 | 87.31 | 83.84 |
-| **TPC (5th order)** | **88.86** | **85.57** | **88.05** | **84.48** |
+| **Ours (TPC 5th order)** | **88.86** | **85.57** | **88.05** | **84.48** |
 
-### Cascading Defense Results (gemma-3-27B, L40)
+### Cascading Defense Performance (gemma-3-27B, L40)
 
-| Configuration | Net Parameters | F1 | Notes |
-|---------------|---------------|-----|-------|
-| Linear probe only ($n=1$) | Baseline | ~88.0 | All inputs use linear probe |
-| Full TPC ($n=5$, no cascade) | 5× | ~88.9 | All inputs use full polynomial |
-| Cascade ($\tau$ = medium-high) | ~1.1× | ~88.8 | Most inputs exit at low order |
-| Cascade ($\tau$ = high) | ~1.3× | ~88.9 | Approaches full polynomial performance |
+| Configuration | Net Parameters | F1 | Description |
+|------|---------|-----|------|
+| Linear probe only (n=1) | Baseline | ~88.0 | All inputs use linear probe |
+| Full TPC (n=5, no cascade) | 5× | ~88.9 | All inputs use full polynomial |
+| Cascade (τ=mid-high) | ~1.1× | ~88.8 | Most inputs exit at low orders |
+| Cascade (τ=high) | ~1.3× | ~88.9 | Near full polynomial performance |
 
 ### Key Findings
-- **TPC outperforms all baselines on WildGuardMix across all models** (including parameter-matched MLPs); on BeaverTails it is on par with EE-MLP.
-- On specific harmful categories, fixed-order TPC achieves up to 10% accuracy gain over linear probes and up to 6% over MLPs.
-- **Cascading evaluation is the most notable contribution**: at medium-to-high $\tau$ values, performance approaches the full polynomial while net parameter count is only marginally above a linear probe — stronger protection obtained at nearly zero additional cost.
-- Progressive training vs. direct training: directly training the full polynomial and truncating yields unstable performance at each truncation point; progressive training ensures every truncation point is a valid classifier.
-- Neuron-pair attribution from the second-order TPC can explain classification decisions (e.g., the neuron 4830×2483 interaction increases the harmful logit for a nuclear-weapon prompt).
+- **TPC outperforms all baselines on WildGuardMix** (including parameter-matched MLPs) and matches EE-MLP on BeaverTails.
+- On specific harmful categories, fixed-order TPC improves accuracy by up to 10% compared to linear probes and 6% compared to MLPs.
+- **Cascading evaluation is the primary highlight**: under medium-to-high $\tau$, performance approaches that of the full polynomial while the net parameter count remains near the linear probe level.
+- Progressive vs. Direct Training: Direct training of a full polynomial yields unstable sub-models; progressive training ensures every truncation point is a valid classifier.
+- Neuron pair attribution in 2nd-order TPC explains decisions (e.g., interaction between neurons 4830 and 2483 increases harmful logits for "nuclear bomb" prompts).
 
 ## Highlights & Insights
-- **The "one model, multiple safety budgets" concept** is the central insight of this work — it transplants the idea of test-time compute scaling into safety monitoring and realizes it naturally through the truncation property of polynomials. This design principle is transferable to any classification task requiring flexible accuracy.
-- **The progressive training scheme** elegantly resolves the train–evaluation inconsistency inherent to truncated polynomials. Analogous to greedy layer-wise training in deep networks, but applied along the polynomial order dimension — lower orders remain independently functional, while higher orders serve only as incremental refinements.
-- **Symmetric CP decomposition** simultaneously addresses parameter explosion in high-order tensors and provides interpretable neuron-interaction attribution. Precise attribution of specific neuron-pair contributions to a decision — impossible with traditional MLPs — arises naturally in TPC.
+- **The concept of "one model, multiple safety budgets"** is the core insight—introducing test-time compute scaling to safety monitoring via the natural truncation property of polynomials. This can be adapted to any classification task requiring flexible precision.
+- **The progressive training scheme** elegantly addresses the training-evaluation inconsistency. It mirrors greedy layer-wise training but applies it to the polynomial order dimension—ensuring low orders remain useful while high orders provide incremental refinement.
+- **Symmetric CP decomposition** solves parameter explosion for high-order tensors and provides interpretable neuron interaction attribution. The ability to trace contributions back to specific pairs is a natural advantage over black-box MLPs.
 
 ## Limitations & Future Work
-- Low-data regimes are not explored — high-order polynomials are prone to overfitting and may require stronger regularization.
-- Although neuron-pair attribution is mechanistically faithful, it lacks human-readable semantic interpretation — "neuron 4830×4916 interaction" does not by itself explain *why* the decision is made.
-- Performance does not increase monotonically with order, and all activation-based monitors require a manual search for the appropriate layer.
-- Experiments are limited to prompt-level binary classification; generalization to finer-grained safety categorization (e.g., specific harmful category detection) or response-level monitoring has not been validated.
-- **Future directions**: Applying polynomial expansion in the SAE feature space may simultaneously yield sparsity and interpretability; multi-layer probe ensembling could eliminate the need for manual layer selection.
+- Small-data scenarios are unexplored—high-order polynomials risk overfitting and may require stronger regularization.
+- Neuron pair attribution is mechanically faithful but lacks human-readable semantic explanations—the "why" behind an interaction remains unclear.
+- Performance is not strictly monotonic with order; identifying the optimal layer remains a search problem for all activation monitors.
+- Experiments are restricted to prompt-level binary classification; fine-grained safety detection or response monitoring has not been validated.
+- **Future Work**: Applying polynomial expansion in SAE feature spaces could potentially yield both sparsity and interpretability; multi-layer probe ensembles could automate layer selection.
 
 ## Related Work & Insights
-- **vs. Linear Probes (Alain & Bengio, 2017)**: Linear probes are a special case of TPC at $n=1$. TPC retains all advantages of linear probes (lightweight, interpretable) while providing stronger classification capacity on demand via higher-order terms.
-- **vs. McKenzie et al. (2025) cascading approach**: Their method cascades a linear probe with an external LLM, requiring additional LLM fine-tuning. TPC implements multi-level cascading within a single polynomial, requiring no external model and resulting in a significantly lighter system.
-- **vs. MLP Probes**: MLPs may be more expressive but are black boxes. TPC achieves comparable or superior performance at matched parameter counts while providing built-in neuron-interaction attribution.
+- **vs Linear Probes (Alain & Bengio, 2017)**: Linear probes are a special case of TPC at $n=1$. TPC retains their lightweight and interpretable nature while providing additional capacity when required.
+- **vs McKenzie et al. (2025)**: They utilize a linear probe + external LLM cascade. TPC achieves multi-level cascading within a single polynomial, removing the need for external models.
+- **vs MLP Probes**: While MLPs are expressive, they are black boxes. TPC offers comparable or better performance for the same parameter count with built-in attribution.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Polynomial probes are not new in isolation, but the combination of truncated evaluation + progressive training + cascading defense in the context of safety monitoring is a first, and the design is elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Four models (up to 30B), two large-scale datasets, multi-layer sweeps, cascade ablations, progressive vs. direct training comparisons, and attribution visualizations — comprehensive coverage.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure, rigorous notation, and an intuitive Figure 1; some notation is slightly redundant.
-- **Value**: ⭐⭐⭐⭐ Provides a practical dynamic solution for LLM safety monitoring; cascading defense carries significant deployment value — achieving nonlinear-probe performance at approximately linear-probe cost.
+- Novelty: ⭐⭐⭐⭐ The combination of truncated evaluation, progressive training, and cascading defense is an elegant novelty in safety monitoring.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 4 models (up to 30B), 2 large datasets, layer scanning, and attribution visualization.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and rigorous formulas, though some notation is slightly redundant.
+- Value: ⭐⭐⭐⭐ Provides a practical dynamic solution for LLM safety monitoring; the cascading defense offers significant value by achieving non-linear performance at near-linear costs.
 
 <!-- RELATED:START -->
 
@@ -144,10 +145,10 @@ $$P_{:n}^{[N]}(\bm{z}) = w^{[0]} + \bm{z}^\top \bm{w}^{[1]} + \sum_{k=2}^{n} \su
 ## Related Papers
 
 - [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](gavel_towards_rule-based_safety_through_activation_monitoring.md)
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
+- [\[ICLR 2026\] Rethinking Layer Relevance in Large Language Models Beyond Cosine Similarity](rethinking_layer_relevance_in_large_language_models_beyond_cosine_similarity.md)
 - [\[ACL 2026\] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States](../../ACL2026/interpretability/linear_probes_detect_task_format_not_reasoning_mode_in_language_model_hidden_sta.md)
 - [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](../../ICML2026/interpretability/what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
-- [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](dynamic_reflections_probing_video_representations_with_text_alignment.md)
-- [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](../../NeurIPS2025/interpretability/emergence_of_linear_truth_encodings_in_language_models.md)
 
 </div>
 

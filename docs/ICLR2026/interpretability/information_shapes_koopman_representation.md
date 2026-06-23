@@ -1,81 +1,73 @@
 ---
 title: >-
-  [Paper Note] Information Shapes Koopman Representation
+  [Paper Note] Untitled
 description: >-
-  [ICLR 2026][Interpretability][koopman operator] This paper revisits the problem of finite-dimensional Koopman operator representation learning from the perspective of the Information Bottleneck (IB) framework. The Koopma…
+  [ICLR 2026][Interpretability][koopman operator] This paper re-examines the finite-dimensional representation learning problem of the Koopman operator from the perspective of the Information Bottleneck (IB). The Koopman operator lifts nonlinear dynamical systems into infinite-dimensional linear evolutions, but practical applications require approximation in finite-di
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "koopman operator"
-  - "information bottleneck"
-  - "dynamical systems"
-  - "representation learning"
-  - "von neumann entropy"
+  - ICLR 2026
+  - Interpretability
+  - koopman operator
+  - information bottleneck
+  - dynamical systems
+  - representation learning
+  - von neumann entropy
 date: 2026-05-08
-content_hash: 9aa2790657be6892
+content_hash: 9dd0fe0d6ee14fb7
 ---
-
 # Information Shapes Koopman Representation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.13025](https://arxiv.org/abs/2510.13025)  
 **Code**: [https://github.com/Wenxuan52/InformationKoopman](https://github.com/Wenxuan52/InformationKoopman)  
-**Area**: Interpretability
+**Area**: Interpretability  
 **Keywords**: koopman operator, information bottleneck, dynamical systems, representation learning, von neumann entropy
 
 ## TL;DR
 
-This paper revisits the problem of finite-dimensional Koopman operator representation learning from the perspective of the Information Bottleneck (IB) framework. The Koopman operator lifts nonlinear dynamical systems into infinite-dimensional linear evolution, yet practical applications require approximation within finite-dimensional subspaces, giving rise to a fundamental tension between compactness and expressiveness. The authors prove that (1) latent mutual information controls an upper bound on prediction error, but excessive maximization leads to mode collapse; and (2) von Neumann entropy prevents collapse and preserves effective dimensionality. Building on these results, an information-theoretic Lagrangian formulation is proposed that jointly balances three objectives—temporal coherence, predictive sufficiency, and structural consistency—and yields a tractable loss function. The method outperforms existing Koopman approaches on three categories of tasks: physics simulation, visual control, and graph-structured dynamics.
+This paper re-examines the finite-dimensional representation learning problem of the Koopman operator from the perspective of the Information Bottleneck (IB). The Koopman operator lifts nonlinear dynamical systems into infinite-dimensional linear evolutions, but practical applications require approximation in finite-dimensional subspaces, leading to a fundamental contradiction between "simplicity and expressivity." The authors prove that: (1) latent mutual information controls the upper bound of prediction error, but excessive maximization leads to mode collapse; (2) von Neumann entropy prevents collapse and maintains effective dimensionality. Based on this, an information-theoretic Lagrangian formulation is proposed to unify the balancing of three major objectives: temporal coherence, predictive sufficiency, and structural consistency, deriving computable loss functions. The method outperforms existing Koopman approaches in physical simulation, visual control, and graph-structured dynamics tasks.
 
 ## Background & Motivation
 
-1. **The infinite-dimensional dilemma of the Koopman operator**: Koopman operator theory can in principle linearize nonlinear dynamics, but its infinite-dimensional nature makes it extremely difficult to identify a suitable finite-dimensional subspace within deep networks; existing methods frequently exhibit instability or mode collapse.
-2. **Absence of general representation learning principles**: Prior work relies on domain-specific priors (symmetries, conservation laws, etc.) to constrain Koopman representations, but lacks general guiding principles for balancing compactness and expressiveness.
-3. **Natural fit of the IB perspective**: The IB framework naturally captures the trade-off between compressing inputs and retaining predictive information, yet standard IB does not account for the linear evolution constraints inherent to dynamical systems.
-4. **Stricter linearity constraints in latent space**: Unlike VAEs, Koopman learning requires the latent space not only to encode the current state but also to support linear forward propagation, imposing stronger structural constraints on the representation.
-5. **Simply increasing dimensionality does not resolve the problem**: Prior studies show that naively enlarging the latent space dimension does not improve performance and may in fact disrupt temporal coherence.
-6. **Error accumulates and amplifies in autoregressive prediction**: Small deviations in the Koopman representation propagate and amplify over time steps, motivating the need for theoretical tools to quantify and control this cumulative error.
+1. **Infinite-dimensional dilemma of Koopman operator**: Theoretically, the Koopman operator can linearize nonlinear dynamics, but its infinite-dimensional nature makes finding suitable finite-dimensional subspaces in deep networks extremely difficult. Existing methods frequently suffer from instability or mode collapse.
+2. **Lack of general representation learning principles**: Prior work relies on domain priors (symmetries, conservation laws, etc.) to constrain Koopman representations, but lacks general guiding principles to balance simplicity and expressivity.
+3. **Natural fit of the Information Bottleneck perspective**: The IB framework is inherently suited for describing the tradeoff between "compressing input while retaining predictive information," but standard IB does not consider the linear evolution constraints of dynamical systems.
+4. **Stricter linear constraints in latent space**: Unlike VAEs, Koopman learning requires the latent space to not only encode the current state but also support linear forward propagation, imposing stronger structural constraints on the representation.
+5. **Simple dimensionality increase does not solve the problem**: Previous research indicates that blindly increasing the latent space dimension does not improve performance and may instead damage temporal coherence.
+6. **Error accumulation in autoregressive prediction**: Small deviations in Koopman representations propagate and amplify over time steps, necessitating theoretical tools to quantify and control this cumulative error.
 
 ## Method
 
-### Information Flow Analysis
+### Overall Architecture
 
-The authors first establish a probabilistic perspective on Koopman representations. Given an initial state $x_0$, the trajectory distribution induced by the Koopman representation is:
+The authors place Koopman representation learning on the scale of the Information Bottleneck: an encoder compresses the state into a finite-dimensional latent space, a linear Koopman operator performs forward evolution in the latent space, and a decoder reconstructs the state. The quality of the entire chain depends on "how much information of the original dynamics is preserved by the latent dynamics." Centered on this core quantity, the paper follows a progressive derivation chain—first using probabilistic trajectory distributions to characterize the Koopman representation and derive an information-theoretic upper bound for prediction error, then decomposing latent mutual information into "retained vs. compressed" components based on the Koopman spectral structure, and finally distilling this into an information-theoretic Lagrangian that balances temporal coherence, predictive sufficiency, and structural consistency, implemented as an architecture-agnostic trainable loss.
 
-$$p^{KR}(x_{1:t}|x_0) = \int p(z_0|x_0) \prod_{n=1}^{t} p(z_n|z_{n-1}) p(x_n|z_n) dz_{0:t}$$
+### Key Designs
 
-where the encoder $p(z_0|x_0)$ maps states to latent space, the linear Gaussian transition $p(z_n|z_{n-1}) = \mathcal{N}(z_n|\mathcal{K}z_{n-1}, \Sigma)$ implements Koopman evolution, and the decoder $p(x_n|z_n)$ reconstructs the state.
+**1. Probabilistic Trajectory Distribution and Autoregressive Error Bound: Translating "prediction accuracy" into "latent mutual information sufficiency"**
 
-### Autoregressive Error Bound
+To discuss "lost information," a probabilistic object is required. The authors write the trajectory distribution induced by the Koopman representation as $p^{KR}(x_{1:t}|x_0) = \int p(z_0|x_0) \prod_{n=1}^{t} p(z_n|z_{n-1}) p(x_n|z_n) dz_{0:t}$, where the encoder $p(z_0|x_0)$ maps states to latent space, linear Gaussian transitions $p(z_n|z_{n-1}) = \mathcal{N}(z_n|\mathcal{K}z_{n-1}, \Sigma)$ complete the Koopman evolution, and the decoder $p(x_n|z_n)$ reconstructs the state. This form allows "encoding-linear evolution-decoding" to be represented as a chain of comparable random variables.
 
-The central theoretical contribution is a proof that the discrepancy between the true trajectory and the Koopman trajectory is controlled by the cumulative information loss at each step:
+On this basis, the authors use Total Variation distance to pin the prediction drift—which amplifies over time steps—to an upper bound:
 
-$$\|p(x_{1:t}|x_0) - q^{KR}(x_{1:t}|x_0)\|_{TV} \leq \sqrt{\frac{1}{2}\sum_{n=1}^{t}(I(x_{n-1};x_n) - I(z_{n-1};z_n)) + \mathcal{E}}$$
+$$\|p(x_{1:t}|x_0) - q^{KR}(x_{1:t}|x_0)\|_{TV} \leq \sqrt{\frac{1}{2}\sum_{n=1}^{t}\big(I(x_{n-1};x_n) - I(z_{n-1};z_n)\big) + \mathcal{E}}$$
 
-The information gap $I(x_{n-1};x_n) - I(z_{n-1};z_n)$ directly measures the dynamic coupling information lost by the Koopman approximation.
+In this equation, the step-wise information gap $I(x_{n-1};x_n) - I(z_{n-1};z_n)$ measures the loss of dynamic coupling information in the latent linear transition compared to the real state transition. This step translates abstract "prediction accuracy" into "sufficient latent mutual information" and explains why maximizing mutual information directly tightens the prediction error—it serves as the theoretical pivot for the objective function.
 
-### Information Decomposition and Spectral Properties
+**2. Information Decomposition and Spectral Correspondence: Distinguishing what to retain and what to compress**
 
-The mutual information $I(z_t; x_t)$ is decomposed into three components:
-- **Temporally coherent information** $I(z_{t-n}; z_t)$: corresponds to Koopman modes with eigenvalues $|\lambda| \approx 1$, representing information that can be preserved over long horizons.
-- **Rapidly dissipating information** $I(z_t; x_{t-1}|z_{t-n})$: corresponds to modes with $|\lambda| < 1$, decaying exponentially over time.
-- **Residual information** $I(z_t; x_t|x_{t-1})$: has no spectral counterpart and belongs to unpredictable components such as noise; it can be compressed.
+Blindly increasing mutual information forces representations to collapse into a few modes. Thus, the authors decompose latent mutual information $I(z_t; x_t)$ into three parts based on the Koopman eigenvalue $\lambda$ structure: Temporal coherent information $I(z_{t-n}; z_t)$ corresponds to $|\lambda|\approx 1$ modes, which are long-term persistent and worth retaining; fast dissipating information $I(z_t; x_{t-1}|z_{t-n})$ corresponds to $|\lambda|<1$ modes, decaying exponentially; residual information $I(z_t; x_t|x_{t-1})$ has no spectral correspondence and belongs to unpredictable components like noise, which can be safely compressed. This decomposition refines the general "compression vs. expressivity" into differentiated treatment of different spectral components.
 
-### Information-Theoretic Lagrangian
+**3. Information-Theoretic Lagrangian and Computable Loss: Integrating three types of information into a trainable objective**
 
-Based on the above analysis, the unified optimization objective is:
+Based on the decomposition, the paper proposes a unified optimization objective:
 
-$$\max_z \alpha \log I(z_{t-n};z_t) - \beta I(z_t;x_t|z_{t-n}) + \gamma S\left(\frac{\mathcal{C}}{\text{tr}(\mathcal{C})}\right) + \log p(x_t|z_t)$$
+$$\max_z\ \alpha \log I(z_{t-n};z_t) - \beta\, I(z_t;x_t|z_{t-n}) + \gamma\, S\!\left(\frac{\mathcal{C}}{\text{tr}(\mathcal{C})}\right) + \log p(x_t|z_t)$$
 
-The $\alpha$ term preserves temporal coherence; the $\beta$ term compresses dissipating and residual components; the $\gamma$ term uses von Neumann entropy $S(\cdot)$ to prevent mode collapse and maintain effective dimensionality; and the final term is the reconstruction loss.
-
-### Tractable Loss Function
-
-The Lagrangian is converted into a practical loss: temporally coherent information is computed via closed-form mutual information or InfoNCE; structural consistency is implemented as $\mathbb{E}_{p_\theta(z_n|x_n)}[\log q_\psi(z_n|z_{n-1})]$, i.e., the likelihood under the linear Koopman transition; and von Neumann entropy is computed from the normalized covariance matrix over mini-batches. The overall framework is architecture-agnostic and compatible with both VAE and AE backbones.
+Where the $\alpha$ term rewards temporal coherence to preserve long-term predictable modes; the $\beta$ term compresses dissipative and residual components for simplicity; the $\gamma$ term uses von Neumann entropy $S(\cdot)$ over the normalized covariance matrix $\mathcal{C}/\text{tr}(\mathcal{C})$ to resist mode collapse and maintain effective dimensionality; the last term is the reconstruction loss. The introduction of von Neumann entropy is critical: when the representation collapses into a few directions, the entropy drops sharply, pushing gradients back toward "spreading dimensions," forming a dual balance with MI maximization. All terms are implemented in computable forms independent of network architecture, ensuring the framework's universality.
 
 ## Key Experimental Results
 
-### Table 1: Performance Comparison on Physics Simulation Tasks (NRMSE ↓ / SSIM ↑ / SDE ↓)
+### Main Results: Physical Simulation Task Performance Comparison (NRMSE ↓ / SSIM ↑ / SDE ↓)
 
 | Task | Metric | VAE | KAE | KKR | PFNN | **Ours** |
 |------|------|-----|-----|-----|------|----------|
@@ -90,49 +82,49 @@ The Lagrangian is converted into a practical loss: temporally coherent informati
 | ERA5 Weather | 5-NRMSE | – | 0.055 | 0.058 | 0.049 | **0.028** |
 | ERA5 Weather | 5-SSIM | – | 0.666 | 0.664 | 0.697 | **0.867** |
 
-### Table 2: Ablation Study — Effect of Each Regularization Term on Pendulum Manifold Learning
+### Ablation Study: Impact of Regularization Terms on Pendulum Manifold Learning
 
-| Configuration | Temporal Coherence (α) | Structural Consistency (β) | Von Neumann Entropy (γ) | Manifold Quality |
+| Configuration | Temporal Coherence (α) | Structural Consistency (β) | von Neumann Entropy (γ) | Manifold Quality |
 |------|:-:|:-:|:-:|------|
-| Full model | ✓ | ✓ | ✓ | Closest to ground-truth $\mathcal{S}^1 \times \mathbb{R}$ |
-| α=0 | ✗ | ✓ | ✓ | Degenerates to scattered points; no geometric structure |
-| β=0 | ✓ | ✗ | ✓ | Manifold collapses; dynamical structure lost |
+| Full Model | ✓ | ✓ | ✓ | Closest to ground truth $\mathcal{S}^1 \times \mathbb{R}$ |
+| α=0 | ✗ | ✓ | ✓ | Degenerated into points, no geometric structure |
+| β=0 | ✓ | ✗ | ✓ | Manifold collapse, loss of dynamical structure |
 | γ=0 | ✓ | ✓ | ✗ | Retains $\mathcal{S}^1$ but loses $\mathbb{R}$ dimension |
-| α only increased | ↑↑ | ✓ | ✗ | Representation concentrates on $\mathcal{S}^1$ component |
-| α + γ | ✓ | ✓ | ✓ | Full $\mathcal{S}^1 \times \mathbb{R}$ recovered |
+| Increasing α | ↑↑ | ✓ | ✗ | Representation concentrated on $\mathcal{S}^1$ component |
+| α + γ | ✓ | ✓ | ✓ | Recovers full $\mathcal{S}^1 \times \mathbb{R}$ |
 
 ## Highlights & Insights
 
-- **Theoretical depth**: The paper is the first to establish an information-theoretic framework for Koopman representations, rigorously linking mutual information to autoregressive error bounds and spectral properties, and revealing the dual role of MI in promoting compactness (at the risk of mode collapse) and von Neumann entropy in maintaining expressiveness.
-- **Insightful information decomposition**: Decomposing latent information into temporally coherent, rapidly dissipating, and residual components—each mapped to corresponding Koopman eigenvalues—provides a new analytical tool for understanding dynamical system representations.
-- **Architecture-agnostic general framework**: The proposed Lagrangian is compatible with both VAE and AE architectures and demonstrates consistent effectiveness across physics simulation, visual control, and graph-structured dynamics.
-- **Clear and compelling ablation study**: Manifold visualizations on the Pendulum task clearly illustrate the role of each regularization term, with theoretical predictions and experimental observations in close agreement.
+- **Significant theoretical depth**: Establishes the first information-theoretic framework for Koopman representations, strictly linking mutual information with autoregressive error bounds and spectral properties, revealing the dual relationship where MI promotes simplicity while von Neumann entropy maintains expressivity.
+- **Insightful information decomposition**: Decomposes latent information into temporal coherent/fast dissipating/residual components and maps them to Koopman eigenvalues, providing a new analytical tool for understanding dynamical system representations.
+- **Architecture-agnostic framework**: The proposed Lagrangian is compatible with both VAE and AE structures and proves effective across physical simulation, visual control, and graph-structured dynamics.
+- **Intuitive ablation experiments**: Clear visualization of the Pendulum manifold demonstrates the specific role of each regularization term, showing perfect alignment between theoretical prediction and experimental observation.
 
 ## Limitations & Future Work
 
-- **Computational overhead insufficiently discussed**: Computing von Neumann entropy requires eigendecomposition of a covariance matrix, which may become a bottleneck in high-dimensional latent spaces.
-- **Hyperparameter selection relies on experience**: The choice of Lagrangian multipliers $\alpha, \beta, \gamma$ significantly affects performance, yet the paper does not provide systematic selection guidelines.
-- **Relatively limited experimental scale**: Physics simulation tasks are of moderate dimensionality (at most 64×64×2); validation on larger-scale or more complex real-world systems is absent.
-- **Limitations of the linear Koopman assumption**: The framework fundamentally assumes linear latent evolution; the boundary of applicability to strongly nonlinear or chaotic systems (e.g., turbulence) is not thoroughly analyzed.
-- **No comparison with modern foundation models**: The method is not benchmarked against Transformer-based temporal prediction approaches such as FourCastNet.
+- **Computational overhead not fully discussed**: Calculating von Neumann entropy requires eigen-decomposition of the covariance matrix, which may become a bottleneck in high-dimensional latent spaces.
+- **Hyperparameter tuning relies on experience**: Choice of Lagrangian multipliers $\alpha, \beta, \gamma$ has a significant impact on performance, but the paper lacks a systematic guide for selection.
+- **Relatively limited experimental scale**: Physical simulation tasks have moderate dimensionality (max 64×64×2); the approach has not been validated on larger or more complex real-world systems.
+- **Limitations of the linear Koopman assumption**: The framework fundamentally assumes linear latent evolution, leaving the boundary of applicability for strongly nonlinear or chaotic systems (like turbulence) unanalyzed.
+- **Lack of comparison with modern foundation models**: Comparison with Transformer-based time-series prediction methods (e.g., FourCastNet) is missing.
 
 ## Related Work & Insights
 
-- **Koopman operator learning**: KAE (Pan et al., 2023) is a representative Koopman autoencoder; KKR (Bevanda et al., 2023) is kernel-based; PFNN (Cheng et al., 2025) introduces a Poincaré flow structure for chaotic systems. This paper unifies and surpasses these methods from an information-theoretic standpoint.
-- **Information Bottleneck methods**: Tishby et al. (2000) proposed the classical IB framework; β-VAE (Burgess et al., 2018) extended IB to variational autoencoders. This paper extends IB to sequential Koopman representations in dynamical systems.
-- **Representation learning for dynamical systems**: E2C (Banijamali et al., 2019) and PCC (Levine et al., 2020) learn controllable representations from a VAE perspective. This paper achieves superior manifold structure through information-theoretic constraints.
-- **Spectral analysis and effective dimensionality**: Von Neumann entropy is used in quantum information to measure entanglement. This paper innovatively applies it to Koopman representations to prevent mode collapse.
+- **Koopman Operator Learning**: KAE (Pan et al., 2023) is a classic Koopman autoencoder; KKR (Bevanda et al., 2023) is based on kernel methods; PFNN (Cheng et al., 2025) designs Poincaré flow structures for chaotic systems. This work unifies and surpasses these methods from an information-theoretic perspective.
+- **Information Bottleneck Methods**: Tishby et al. (2000) proposed the classic IB framework; β-VAE (Burgess et al., 2018) introduced IB to Variational Autoencoders. This work extends IB to temporal Koopman representations of dynamical systems.
+- **Dynamical System Representation Learning**: E2C (Banijamali et al., 2019) and PCC (Levine et al., 2020) learn controllable representations using VAEs. This work achieves better manifold structures through information-theoretic constraints.
+- **Spectral Analysis & Effective Dimension**: von Neumann entropy is used in quantum information to measure entanglement. This work innovatively introduces it to Koopman representations to prevent mode collapse.
 
 ## Rating
 
-| Dimension | Score (1–10) |
+| Dimension | Score (1-10) |
 |------|:-----------:|
 | Novelty | 8 |
 | Theoretical Depth | 9 |
 | Experimental Thoroughness | 7 |
 | Writing Quality | 8 |
 | Value | 7 |
-| **Overall** | **7.8** |
+| **Total Score** | **7.8** |
 
 <!-- RELATED:START -->
 
@@ -140,11 +132,11 @@ The Lagrangian is converted into a practical loss: temporally coherent informati
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Deleuzian Representation Hypothesis](the_deleuzian_representation_hypothesis.md)
+- [\[ICLR 2026\] Gauge-invariant Representation Holonomy](gauge-invariant_representation_holonomy.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
+- [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
-- [\[ICLR 2026\] Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement](decoupling_dynamical_richness_from_representation_learning_towards_practical_mea.md)
-- [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
-- [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](../../NeurIPS2025/interpretability/toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
 
 </div>
 

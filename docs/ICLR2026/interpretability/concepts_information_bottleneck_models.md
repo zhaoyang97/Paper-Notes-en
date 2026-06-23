@@ -2,131 +2,131 @@
 title: >-
   [Paper Note] Concepts' Information Bottleneck Models
 description: >-
-  [ICLR 2026][Interpretability][Concept Bottleneck Models] This paper introduces Information Bottleneck (IB) regularization into the concept layer of Concept Bottleneck Models (CBMs)…
+  [ICLR 2026][Interpretability][Paper Note] Information Bottleneck (IB) regularization is introduced at the concept layer of Concept Bottleneck Models (CBM) to learn minimal sufficient concept representations by penalizing $I(X;C)$ while preserving $I(C;Y)$. This consistently improves predictive performance and concept intervention reliability across six CBM var
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Concept Bottleneck Models"
-  - "Information Bottleneck"
-  - "Regularization"
-  - "Concept Leakage"
+  - ICLR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 28cea4c942ce1701
+content_hash: c443e9a3335c6ea1
 ---
-
 # Concepts' Information Bottleneck Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.14626](https://arxiv.org/abs/2602.14626)  
-**Code**: Available (mentioned in the paper)  
-**Area**: Interpretability
+**Code**: Yes (mentioned in paper)  
+**Area**: Interpretability  
 **Keywords**: Concept Bottleneck Models, Information Bottleneck, Interpretability, Regularization, Concept Leakage
 
 ## TL;DR
-This paper introduces Information Bottleneck (IB) regularization into the concept layer of Concept Bottleneck Models (CBMs), learning minimal sufficient concept representations by penalizing $I(X;C)$ while preserving $I(C;Y)$. The approach consistently improves both predictive performance and concept intervention reliability across six CBM variants and three benchmarks.
+Information Bottleneck (IB) regularization is introduced at the concept layer of Concept Bottleneck Models (CBM) to learn minimal sufficient concept representations by penalizing $I(X;C)$ while preserving $I(C;Y)$. This consistently improves predictive performance and concept intervention reliability across six CBM variants and three benchmarks.
 
 ## Background & Motivation
 
-Concept Bottleneck Models (CBMs) are a class of interpretable AI methods that insert a human-understandable concept layer $C$ between input $X$ and prediction $Y$, making the decision process transparent and interpretable. This design enables domain experts to intervene on concept values at inference time (concept intervention), thereby correcting erroneous model reasoning.
+Concept Bottleneck Models (CBMs) represent a class of interpretable AI methods. The core idea is to insert a human-understandable concept layer $C$ between input $X$ and prediction $Y$ to make the decision process transparent. This design allows human experts to perform concept intervention during inference to correct a model's erroneous reasoning.
 
-However, existing CBMs suffer from two fundamental problems:
+However, existing CBMs face two fundamental issues:
 
-**Accuracy degradation**: Forcing information through the concept bottleneck causes information loss, and model accuracy is often lower than that of end-to-end black-box models. This occurs because the concept layer may encode redundant information irrelevant to the task while discarding some task-relevant information.
+**Accuracy Drop**: Forcing information through a concept bottleneck leads to information loss, often resulting in lower accuracy than end-to-end black-box models. This occurs because the concept layer may encode redundant information irrelevant to the task while losing critical task-related information.
 
-**Concept Leakage**: Concept representations encode extraneous information unrelated to the concept definitions. Although such "leaked" information may improve accuracy in the short term, it undermines the faithfulness of the concept layer and renders concept interventions unreliable—modifying the value of one concept may trigger unpredictable cascading effects.
+**Concept Leakage**: Extra information unrelated to concept definitions is mixed into concept representations. While this "leaked" information might temporarily boost accuracy, it undermines the faithfulness of the concept layer, making concept intervention unreliable—modifying one concept value may cause unpredictable chain reactions.
 
-The root cause of these two problems is that the information encoded in the concept layer is neither sufficiently "pure" (due to leakage) nor sufficiently "complete" (due to information loss).
+The **Key Challenge** lies in the fact that concept layer encoding is neither "pure" enough (due to leakage) nor "sufficient" enough (due to task information loss).
 
-The core insight of this paper is that this tension can be naturally resolved through Information Bottleneck (IB) theory. The IB principle aims to learn a minimal sufficient statistic of the input $X$—in the context of the concept layer, this means that the concept representation $C$ should retain only the minimum information necessary to predict $Y$, while compressing away task-irrelevant redundancy.
+The **Key Insight** of this work is that this contradiction can be resolved using Information Bottleneck (IB) theory. The goal of the IB principle is to learn a minimal sufficient statistic of the input $X$—in the context of CBMs, this means ensuring the concept representation $C$ retains only the minimum information necessary to predict $Y$ while compressing task-irrelevant redundancy.
 
 ## Method
 
 ### Overall Architecture
 
-The paper introduces an additional IB regularization term into the standard CBM training pipeline without modifying the model architecture or requiring extra supervision signals. The standard CBM training objective minimizes a weighted sum of concept prediction loss and task prediction loss; this work augments that objective with a penalty term constraining $I(X;C)$:
-
-$$\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda_{c} \mathcal{L}_{concept} + \beta \cdot R_{IB}$$
-
-where $R_{IB}$ is the IB regularization term and $\beta$ controls the compression strength. The key principle is to preserve (or even enhance) the mutual information from the concept layer to the label $I(C;Y)$, while compressing the mutual information from input to concept layer $I(X;C)$.
+Ours does not modify the CBM network structure or require new annotations; it solely incorporates an Information Bottleneck regularization term into the training objective. The data flow of a CBM is $X \to Z \to C \to Y$: the input $X$ is mapped to a latent representation $Z$ via an encoder, then the human-readable concept layer $C$ is predicted from $Z$, and finally the label $Y$ is derived from $C$. Standard CBMs only force $C$ to predict labels accurately but allow concept-irrelevant details from the input to leak into $C$ via $Z \to C$ (concept leakage), damaging both interpretability and intervention reliability. The **Mechanism** involves applying the IB principle directly to the concept layer: retaining $I(Z;C)$ and $I(C;Y)$ while penalizing $I(X;C)$, forcing the concept layer to carry only "sufficient and clean" information. The objective is formulated as $\mathcal{L}_{CIBM}=I(Z;C)+I(C;Y)-\beta\,I(X;C)$, where $\beta$ is a Lagrange multiplier controlling compression strength. Since $I(X;C)$ cannot be directly computed in high-dimensional spaces, the authors provide two trainable implementations: the variational upper bound version (IBB) and the estimator-based proxy version (IBE).
 
 ### Key Designs
 
-1. **Variational IB**: Direct computation of $I(X;C)$ is intractable; hence a variational upper bound is employed. A learnable marginal distribution $q(C)$ is introduced to approximate the true marginal $p(C)$, and the KL divergence $\mathrm{KL}[p(C|X) \| q(C)]$ serves as an upper bound on $I(X;C)$. In practice, $q(C)$ is parameterized as a multivariate Gaussian with learnable mean and variance. This approach is theoretically principled and directly optimizes a surrogate for the mutual information.
+**1. Applying IB to the concept layer rather than the latent layer: Enforcing "purity" constraints on the actual interpretable layer**
 
-2. **Entropy-based Surrogate**: While the variational approach is theoretically elegant, it introduces additional parameters for the marginal distribution. As an alternative, the paper proposes a simpler entropy-based surrogate: directly minimizing an estimate of the conditional entropy of the concept layer output. This requires no additional learnable parameters, incurs lower computational overhead, and is more suitable for large-scale applications. The core idea is to encourage the concept layer output distribution to be more concentrated, reducing unnecessary information encoding.
+Classic IB (Tishby 2000; Alemi 2017) compresses the latent representation $Z$ via $I(X;Z)$. According to the data processing inequality $I(X;C) \le I(X;Z)$, compressing $Z$ indirectly restricts information in $C$. However, the authors argue this is merely an "upper bound side effect": if $X \to Z$ is compressed first and then $C$ is derived from $Z$, leakage can still survive the $Z \to C$ step. Thus, this work places the constraint **directly** on the concept layer, minimizing $I(X;C)$ instead of $I(X;Z)$, resulting in the objective:
 
-3. **Architecture-agnostic Integration**: Both regularization methods are incorporated as additional loss terms in standard CBM training, requiring no modification to the network architecture. This enables direct application to existing CBM variants, including jointly trained, sequentially trained, and independently trained models.
+$$\mathcal{L}_{CIBM}=I(Z;C)+I(C;Y)-\beta\,I(X;C).$$
+
+This is an intentional design choice rather than a fallback approximation: regardless of the capacity of the latent layer $Z$, it strictly controls how much source information enters $C$, prioritizing the "purity of the interpretable layer." This distinguishes the work from prior IB applications on general latent features and is the reason it yields more faithful and interventible concepts.
+
+**2. IBB: Converting the objective into an optimizable variational lower bound of cross-entropy**
+
+Mutual information terms like $I(X;C)$ contain marginal terms that cannot be estimated directly. The authors apply a variational approximation to the data distribution, bounding $\mathcal{L}_{CIBM}$ with a series of entropy/cross-entropy terms:
+
+$$\mathcal{L}_{CIBM}\ge(1-\beta)\,\mathbb{E}_{p(z)}\!\big[H(p(c\mid z))-H(p(c\mid z),q(c\mid z))\big]-\mathbb{E}_{p(c)}H(p(y\mid c),q(y\mid c)).$$
+
+Maximizing this bound is equivalent to minimizing the cross-entropy of concepts $c$ and labels $y$ relative to ground truth, while adjusting the entropy of the concept distribution. This maps abstract mutual information optimization to a standard, back-propagatable training loss; the cost is the additional estimation of the entropy of the concept distribution $p(c)$. Models trained with this objective are denoted as **IBB** (Bounded CIB).
+
+**3. IBE: Treating entropy as a constant for a more efficient mutual information estimator**
+
+IBB still requires estimating concept entropy. The authors offer a lightweight alternative: expanding only the conditional entropies that are not marginalized out and treating concept entropy $H(C)$ and label entropy $H(Y)$ as constants, yielding:
+
+$$\mathcal{L}_{E\text{-}CIB}=\mathbb{E}_{p(c)}H(p(y\mid c),q(y\mid c))+\mathbb{E}_{p(z)}H(p(c\mid z),q(c\mid z))-\beta\big(\rho-I(X;C)\big),$$
+
+where $\rho$ is a constant and $I(X;C)$ is provided directly by a mutual information estimator. This version avoids the overhead of concept entropy estimation and is more efficient. Formally, it is isomorphic to the latent IB loss of Kawaguchi et al. (2023), but shifts the condition from the latent layer to the concept layer. Models trained with this objective are denoted as **IBE** (Estimator-based CIB), performing comparably to IBB in experiments.
+
+Both implementations are simply losses appended to the original training objective without touching the forward architecture. Thus, they can be layered onto various training paradigms (joint/sequential/independent) and concept embedding families like CEM or ProbCBM.
 
 ### Loss & Training
 
-The total training objective comprises three components:
-- **Task loss**: Cross-entropy loss for predicting the target label $Y$
-- **Concept prediction loss**: Binary cross-entropy for predicting concepts $C$ from input $X$
-- **IB regularization term**: Either the variational KL divergence term or the entropy-based surrogate, controlling the degree of information compression in the concept layer
-
-The choice of hyperparameter $\beta$ is critical: too small a value renders the regularization ineffective, while too large a value leads to excessive compression and information loss. The optimal $\beta$ is selected via a search over the validation set.
+The final training loss is either $\mathcal{L}_{S\text{-}CIBM}$ (IBB) or $\mathcal{L}_{E\text{-}CIB}$ (IBE), both of which integrate the cross-entropy for predicting concepts $c$ and labels $y$ with the IB compression term. The compression strength $\beta$ is the critical hyperparameter: if too small, compression is insufficient and leakage persists; if too large, task-relevant information is discarded, causing accuracy to drop. The paper searches for the optimal $\beta$ balance between "compression and retention" on a validation set. Through PAC-Bayes analysis (Theorem 2), it is proven that as long as $\beta$ is small enough to keep the generalization gap $\Delta > 0$, the true risk upper bound of CIBM is strictly tighter than that of a standard CBM—the reduction in complexity outweighs the slight increase in training error from the $\beta$ penalty.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The paper evaluates six CBM families on three benchmark datasets:
+The paper evaluates six CBM families across three benchmark datasets:
 
-| CBM Variant | Dataset | w/o IB | +IB | Change |
-|-------------|---------|--------|-----|--------|
-| Joint CBM | CUB-200 | Baseline | Improved | ✓ Consistent gain |
-| Sequential CBM | CUB-200 | Baseline | Improved | ✓ Consistent gain |
-| Independent CBM | CUB-200 | Baseline | Improved | ✓ Consistent gain |
-| CEM | CUB-200 | Baseline | Improved | ✓ Consistent gain |
-| CBM-AUC | CUB-200 | Baseline | Improved | ✓ Consistent gain |
-| ProbCBM | CUB-200 | Baseline | Improved | ✓ Consistent gain |
+| CBM Variant | Dataset | Without IB | +IB | Change |
+|-------------|---------|------------|-----|--------|
+| Joint CBM | CUB-200 | Baseline | Gain | ✓ Consistent Improvement |
+| Sequential CBM | CUB-200 | Baseline | Gain | ✓ Consistent Improvement |
+| Independent CBM | CUB-200 | Baseline | Gain | ✓ Consistent Improvement |
+| CEM | CUB-200 | Baseline | Gain | ✓ Consistent Improvement |
+| CBM-AUC | CUB-200 | Baseline | Gain | ✓ Consistent Improvement |
+| ProbCBM | CUB-200 | Baseline | Gain | ✓ Consistent Improvement |
 
-IB-regularized variants consistently outperform their respective baselines across all six CBM families and all three benchmarks.
+On all six CBM families and across three benchmarks, the IB-regularized versions consistently outperform the corresponding original versions.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| No IB regularization (Vanilla) | Baseline | Standard CBM training |
-| Variational IB ($\beta$ = small) | Slight improvement | Mild compression |
-| Variational IB ($\beta$ = medium) | Best | Optimal compression–retention balance |
-| Variational IB ($\beta$ = large) | Degraded | Excessive compression |
-| Entropy-based surrogate | Comparable to variational IB | Simpler, no extra parameters |
+| Configuration | Key Metrics | Description |
+|---------------|-------------|-------------|
+| No IB Regularization (Vanilla) | Baseline | Standard CBM training |
+| Variational IB ($\beta$ = small) | Slight Gain | Gentle compression |
+| Variational IB ($\beta$ = medium) | Best | Optimal compression-retention balance |
+| Variational IB ($\beta$ = large) | Drop | Over-compression |
+| Entropy-based Proxy | Comparable to IBB | Simpler, no extra parameters |
 
 ### Key Findings
-- IB regularization yields consistent improvements across **all** tested CBM variants, demonstrating strong generalizability.
-- Information plane analysis confirms that IB regularization effectively compresses $I(X;C)$ while preserving $I(C;Y)$.
-- Test-time intervention (TTI) experiments show that IB-regularized models respond to concept interventions in a more predictable and reliable manner.
-- The method resolves inconsistencies observed in prior CBM evaluations and demonstrates robust gains under a unified training protocol.
+- IB regularization brought consistent gains to **all** tested CBM variants, demonstrating strong generalization.
+- Information Plane analysis confirmed that IB regularization indeed compresses $I(X;C)$ while maintaining $I(C;Y)$.
+- Concept intervention (TTI) experiments show the IB-regularized versions are more predictable and reliable in their response to interventions.
+- This method addresses previous inconsistencies in CBM evaluations by demonstrating robust gains across a unified training protocol.
 
 ## Highlights & Insights
-- **Theoretical Elegance**: The paper unifies the empirical problems of CBMs (concept leakage, accuracy degradation) within an information-theoretic framework and derives a natural solution via the IB principle.
-- **Architecture-agnostic**: As a purely regularization-based method, it can be applied in a plug-and-play fashion to any existing CBM variant.
-- **Dual Benefits**: The approach simultaneously improves predictive accuracy and enhances the faithfulness of the concept layer, breaking the commonly observed accuracy–interpretability trade-off.
-- **Information Plane Validation**: Information plane analysis provides intuitive evidence of the regularization's effect, strengthening the credibility of the method.
+- **Theoretical Elegance**: Unifies empirical CBM issues (concept leakage, accuracy drop) within an information-theoretic framework, naturally providing a solution via the IB principle.
+- **Architecture-Agnostic**: As a pure regularization method, it can be applied in a plug-and-play manner to any existing CBM variant.
+- **Dual Benefit**: Simultaneously improves predictive accuracy and concept layer faithfulness, breaking the common trade-off between "accuracy vs. interpretability."
+- **Information Plane Validation**: Visually demonstrates the effects of regularization through information plane analysis, increasing the credibility of the method.
 
 ## Limitations & Future Work
-- The hyperparameter $\beta$ requires careful tuning; different datasets and CBM variants may demand different optimal values.
-- The variational approach relies on a Gaussian assumption for the marginal distribution, which may lack flexibility in certain settings.
-- Validation is primarily conducted on small-to-medium-scale visual classification tasks; effectiveness on large-scale and non-visual tasks remains to be explored.
-- The cost of obtaining concept annotations remains a general bottleneck for CBM-based methods.
+- The hyperparameter $\beta$ for IB regularization requires careful tuning; different datasets and CBM variants may require different optimal values.
+- Variational methods require Gaussian assumptions for marginal distributions, which may be inflexible in some scenarios.
+- The paper primarily validates on small-to-medium scale vision classification tasks; performance on large-scale and non-visual tasks remains to be explored.
+- The cost of obtaining concept annotations remains a universal bottleneck for CBM methods.
 
 ## Related Work & Insights
-- **vs. Standard CBM (Koh et al., 2020)**: Standard CBMs impose no constraint on the information content of the concept layer, making them susceptible to concept leakage; IB regularization provides a principled solution.
-- **vs. CEM (Zarlenga et al., 2022)**: CEM enhances the expressiveness of the concept layer via concept embeddings but lacks an information compression constraint; IB regularization can be layered on top to yield further improvements.
-- **vs. Deep VIB (Alemi et al., 2017)**: Deep VIB applies IB to general classification; this paper specializes the framework to the CBM concept layer, exploiting its structural properties to design more effective regularization.
+- **vs. Standard CBM (Koh et al., 2020)**: Standard CBMs do not constrain concept layer information, leading to concept leakage. IB regularization provides a principled solution.
+- **vs. CEM (Zarlenga et al., 2022)**: CEM increases concept layer capacity via concept embeddings but lacks information compression constraints. IB regularization can be layered on top for further improvement.
+- **vs. Deep VIB (Alemi et al., 2017)**: While Deep VIB applies IB to general classification, this work specializes it for the CBM concept layer, utilizing structural properties to design more effective regularization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Introducing information bottleneck into CBMs is natural and elegant, though the core technique (VIB) has prior precedent.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across six CBM variants and three benchmarks; information plane analysis adds credibility.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear and experimental setup is rigorous.
-- Value: ⭐⭐⭐⭐ Provides the CBM community with a simple, effective, and universally applicable improvement tool with strong practical utility.
-
-## Rating
-- Novelty: Pending
-- Experimental Thoroughness: Pending
-- Writing Quality: Pending
-- Value: Pending
+- **Novelty**: ⭐⭐⭐⭐ Applying Information Bottleneck to CBMs is natural and elegant, though the core technique (VIB) has precedents.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive evaluation across six CBM variants and three benchmarks; information plane analysis adds credibility.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear theoretical derivations and standardized experimental settings.
+- **Value**: ⭐⭐⭐⭐ Provides a simple and effective universal tool for the CBM community; plug-and-play characteristics offer high utility.
 
 <!-- RELATED:START -->
 
@@ -136,9 +136,9 @@ IB-regularized variants consistently outperform their respective baselines acros
 
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
-- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
+- [\[ICML 2026\] In Defense of Information Leakage in Concept-based Models](../../ICML2026/interpretability/in_defense_of_information_leakage_in_concept-based_models.md)
 
 </div>
 

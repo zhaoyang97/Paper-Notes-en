@@ -2,90 +2,72 @@
 title: >-
   [Paper Note] Evolution of Concepts in Language Model Pre-Training
 description: >-
-  [ICLR 2026][Interpretability][Mechanistic interpretability] This paper is the first to apply crosscoders (cross-snapshot sparse dictionary learning) to track the emergence and evolution of features during language model…
+  [ICLR 2026][Interpretability][crosscoders] This work applies crosscoders (cross-snapshot sparse dictionary learning) for the first time to track the emergence and evolution of features during language model pre-training. It discovers a "statistical learning → feature learning" phase transition and causally links micro-feature evolution with macro downstream tas
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Mechanistic interpretability"
-  - "crosscoders"
-  - "sparse autoencoders"
-  - "training dynamics"
-  - "feature evolution"
-  - "pre-training"
-  - "Pythia"
+  - ICLR 2026
+  - Interpretability
+  - crosscoders
+  - sparse autoencoders
+  - feature evolution
+  - Pretraining
 date: 2026-05-08
-content_hash: 39ed24e24d5930aa
+content_hash: cb679fc3defcc838
 ---
-
 # Evolution of Concepts in Language Model Pre-Training
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.17196](https://arxiv.org/abs/2509.17196)  
 **Code**: [GitHub](https://github.com/OpenMOSS/Language-Model-SAEs)  
-**Area**: Interpretability
-**Keywords**: Mechanistic interpretability, crosscoders, sparse autoencoders, training dynamics, feature evolution, pre-training, Pythia
+**Area**: Interpretability  
+**Keywords**: Mechanistic Interpretability, crosscoders, sparse autoencoders, training dynamics, feature evolution, pre-training, Pythia
 
 ## TL;DR
 
-This paper is the first to apply crosscoders (cross-snapshot sparse dictionary learning) to track the emergence and evolution of features during language model pre-training. It identifies a two-phase transition from "statistical learning → feature learning" and causally links micro-level feature evolution to macro-level downstream task metrics through attribution analysis.
+This work applies crosscoders (cross-snapshot sparse dictionary learning) for the first time to track the emergence and evolution of features during language model pre-training. It discovers a "statistical learning → feature learning" phase transition and causally links micro-feature evolution with macro downstream task metrics through attribution analysis.
 
 ## Background & Motivation
 
-- **Pre-training remains a black box**: Although scaling laws reveal macroscopic relationships among compute, data, and loss, the internal reorganization of model parameters remains poorly understood.
-- **Limitations of existing theoretical frameworks**: NTK, information bottleneck theory, and singular learning theory provide high-level explanations of generalization and grokking, but cannot answer how models develop their capabilities during pre-training.
-- **Static limitations of SAEs**: Sparse autoencoders (SAEs) have been shown to extract interpretable features from fully trained models, yet nearly all analyses target post-training checkpoints; how features emerge and evolve remains unexplored.
-- **New opportunity with crosscoders**: Crosscoders, originally proposed by Lindsey et al. for cross-layer feature alignment, are innovatively adapted here for cross-snapshot analysis.
+- **Pre-training remains a black box**: While scaling laws reveal macro relationships between computation, data, and loss, the internal reorganization process of model parameters remains unclear.
+- **Limitations of prior work**: Theoretical frameworks such as NTK, Information Bottleneck, and Singular Learning Theory provide high-level explanations for generalization and grokking but fail to answer "how models develop specific capabilities during pre-training."
+- **Static limitations of SAE**: Sparse Autoencoders (SAEs) have proven effective at extracting interpretable features from fully trained models; however, almost all analyses focus on final models, leaving the process of how features emerge and evolve unexplored.
+- **New opportunities with Crosscoders**: Originally proposed by Lindsey et al. for cross-layer feature alignment, this paper innovatively adapts crosscoders for cross-snapshot analysis.
 
 ## Method
 
 ### Overall Architecture
 
-Crosscoders are applied to simultaneously process model activations from different pre-training checkpoints, aligning features into a unified feature space, thereby tracking the complete evolution of features from initialization to the end of training.
+The core problem addressed is that scaling laws only describe macro relationships, while the specific steps and sequence of feature development remain a black box. The core idea is to repurpose crosscoders (originally used for cross-layer alignment) into "cross-snapshot" dictionaries. The mechanism involves processing activations from the same corpus across multiple pre-training snapshots simultaneously. A **shared encoder** projects these activations into a unified feature space, while **per-snapshot decoders** reconstruct the activations for each specific snapshot. This enables the "same feature" to be compared across different training steps. The trajectory of feature emergence and evolution is captured by the variation of decoder norms across snapshots. Finally, an **attribution circuit tracking** layer is added to causally link the rise and fall of these micro-features to downstream task performance.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Corpus C × Snapshot set Θ<br/>Per-snapshot activations a^θ(x)"] --> B["Cross-snapshot Crosscoder<br/>Shared Encoder → Shared Features f(x)<br/>Per-snapshot Decoder W_dec^θ reconstruction"]
+    B --> C["Decoder Norm ‖W_dec,i^θ‖<br/>= Strength of feature i at snapshot θ<br/>→ Feature evolution trajectory"]
+    B -. Training Objective .-> L["Sparsity objective with decoder norm<br/>Prevents 'pseudo-sparsity' degradation"]
+    L -. Ensures reliable norms .-> C
+    C --> D["Attribution Circuit Tracking<br/>attr_i^θ links feature i to<br/>downstream metric m"]
+    D --> E["Feature emergence timing ↔<br/>Emergence of downstream capability"]
+```
 
 ### Key Designs
 
-**1. Cross-Snapshot Crosscoder Architecture**
+**1. Cross-snapshot Crosscoder: Unified feature space via snapshot-specific decoders**
 
-Given a corpus $\mathcal{C}$ and a set of training checkpoints $\Theta$, the crosscoder encoding–decoding process is:
+Static SAEs can only dissect a fully trained model. Given a corpus $\mathcal{C}$ and a set of snapshots $\Theta$, the encoder aggregates activations from all snapshots to produce shared feature activations $f(x) = \sigma\!\left(\sum_{\theta \in \Theta} W_{\text{enc}}^{\theta} a^{\theta}(x) + b_{\text{enc}}\right)$. Conversely, the decoders $W_{\text{dec}}^{\theta}$ are unique to each snapshot, independently performing reconstruction $\hat{a}^{\theta}(x) = W_{\text{dec}}^{\theta} f(x) + b_{\text{dec}}^{\theta}$. The shared encoder ensures that the "same feature" refers to the same concept across all snapshots, while the per-snapshot decoders allow the intensity of that feature to vary. A key proxy metric is the decoder norm $\|W_{\text{dec},i}^{\theta}\|$, which directly reflects the strength and existence of feature $i$ at snapshot $\theta$. When a feature only exists in certain snapshots, sparsity penalties naturally push the decoder norms of unrelated snapshots toward zero.
 
-$$f(x) = \sigma\left(\sum_{\theta \in \Theta} W_{\text{enc}}^{\theta} a^{\theta}(x) + b_{\text{enc}}\right)$$
+**2. Sparsity objective with decoder norm: Preventing degradation under $L_0$ approximation**
 
-$$\hat{a}^{\theta}(x) = W_{\text{dec}}^{\theta} f(x) + b_{\text{dec}}^{\theta}$$
+The training objective is the sum of reconstruction and sparsity terms:
 
-Key insight: the encoder aggregates cross-snapshot information to produce shared feature activations $f(x)$, while the decoder $W_{\text{dec}}^{\theta}$ is checkpoint-specific. When a feature exists only in a subset of checkpoints, the sparsity penalty naturally drives the decoder norms of irrelevant checkpoints toward zero.
+$$\mathcal{L}(x) = \sum_{\theta \in \Theta} \|a^{\theta}(x) - \hat{a}^{\theta}(x)\|^2 + \lambda_{\text{sparsity}} \sum_{\theta \in \Theta} \sum_{i} \Omega\!\big(f_i(x) \cdot \|W_{\text{dec},i}^{\theta}\|\big)$$
 
-**Core Observation**: The decoder norm $\|W_{\text{dec},i}^{\theta}\|$ directly reflects the intensity and presence of feature $i$ at checkpoint $\theta$, making it a natural proxy for feature evolution.
+Where $\Omega(\cdot)$ is a differentiable surrogate for $L_0$. The design motivation is to multiply the decoder norm $\|W_{\text{dec},i}^{\theta}\|$ into the sparsity term. Under imperfect $L_0$ approximations, a model might "fake sparsity" by reducing activation values $f_i(x)$ while inflating decoder norms. Including the norm in the penalty prevents this degradation and ensures the "norm as feature strength" proxy is reliable. The activation function utilizes JumpReLU with a learned threshold, which outperforms traditional ReLU+L1 in the reconstruction-sparsity trade-off.
 
-**2. Training Objective**
+**3. Attribution circuit tracking: Linking features to downstream tasks**
 
-$$\mathcal{L}(x) = \underbrace{\sum_{\theta \in \Theta} \|a^{\theta}(x) - \hat{a}^{\theta}(x)\|^2}_{\text{reconstruction loss}} + \underbrace{\lambda_{\text{sparsity}} \sum_{\theta \in \Theta} \sum_{i=1}^{n_{\text{features}}} \Omega(f_i(x) \cdot \|W_{\text{dec},i}^{\theta}\|)}_{\text{sparsity loss}}$$
+To prove features drive model behavior, the authors calculate a contribution score for each feature regarding a task metric $m$: $\text{attr}_i^{\theta}(x) = f_i(x) \cdot \frac{\partial m(a^{\theta}(x))}{\partial f_i(x)}$. For tasks with clean/corrupted input pairs (e.g., Subject-Verb Agreement), attribution patching is used: $\text{attr}_i^{\theta}(x, \tilde{x}) = [f_i(x) - f_i(\tilde{x})] \cdot \frac{\partial m(a^{\theta}(x))}{\partial f_i(x)}$, measuring the causal impact of switching a feature from a corrupted state to a clean state. Integrated Gradients (IG) are used for better linear approximation. This attribution allows tracking how key features for a task take turns dominating during training, aligning feature emergence with the appearance of downstream capabilities.
 
-The sparsity regularizer $\Omega(\cdot)$ serves as a differentiable surrogate for $L_0$. Including the decoder norm $\|W_{\text{dec},i}^{\theta}\|$ in the regularization term prevents the degenerate solution in which activation values $f_i(x)$ are suppressed while decoder norms inflate under an imperfect $L_0$ approximation.
-
-JumpReLU (with a learned threshold) is chosen as the activation function, outperforming the conventional ReLU + L1 combination.
-
-**3. Experimental Setup**
-
-- Models: Pythia-160M (Layer 6) and Pythia-6.9B (Layer 16)
-- 32 checkpoints strategically selected from 154 public snapshots (all 20 snapshots within the first 10K steps + 12 uniformly sampled from later training)
-- Feature counts: up to 98,304 (160M) and 32,768 (6.9B)
-- Training corpus: SlimPajama
-
-**4. Feature Attribution Analysis**
-
-To connect micro-level features with macro-level behavior, attribution-based circuit tracing is used:
-
-$$\text{attr}_i^{\theta}(x) = f_i(x) \cdot \frac{\partial m(a^{\theta}(x))}{\partial f_i(x)}$$
-
-For tasks with clean/corrupted input pairs (e.g., subject-verb agreement), attribution patching is applied:
-
-$$\text{attr}_i^{\theta}(x, \tilde{x}) = [f_i(x) - f_i(\tilde{x})] \cdot \frac{\partial m(a^{\theta}(x))}{\partial f_i(x)}$$
-
-In practice, an integrated gradients (IG) variant is used to improve the accuracy of the linear approximation.
-
-### Loss & Training
-
-Reconstruction loss (MSE) + weighted sparsity regularization (JumpReLU activation + $L_0$ approximation incorporating decoder norms).
+The experimental setup analyzes Pythia-160M (Layer 6) and Pythia-6.9B (Layer 16). 32 snapshots were strategically selected from 154 public releases (all 20 for the first 10K steps + 12 uniform samples later). Dictionary sizes are up to 98,304 (160M) and 32,768 (6.9B), trained on the SlimPajama corpus.
 
 ## Key Experimental Results
 
@@ -93,91 +75,91 @@ Reconstruction loss (MSE) + weighted sparsity regularization (JumpReLU activatio
 
 **Crosscoder Reconstruction Quality (Pythia-160M)**
 
-| # Features | Explained Variance | L0 Norm |
-|------------|-------------------|---------|
-| 32,768 | ~92% | ~40 |
-| 65,536 | ~95% | ~35 |
-| 98,304 | ~97% | ~30 |
+| Feature Count | Explained Variance | L0 Norm |
+|---------------|-------------------|---------|
+| 32,768        | ~92%              | ~40     |
+| 65,536        | ~95%              | ~35     |
+| 98,304        | ~97%              | ~30     |
 
-Increasing dictionary size yields Pareto improvements in both explained variance and sparsity. The Pareto frontier of crosscoders is even slightly superior to SAEs trained on the final checkpoint alone.
+Increasing dictionary size yields Pareto improvements in both explained variance and sparsity. Crosscoder Pareto frontiers are slightly superior even to SAEs trained only on the final snapshot.
 
 **Feature Evolution Patterns**
 
 | Feature Type | Emergence Time | Persistence |
-|--------------|---------------|-------------|
-| Initialization features | Present at random initialization | Sharp drop at step 128, then recovery, followed by gradual decay |
-| Emergent features (simple) | ~step 1,000 | Persist in 60%+ of checkpoints |
-| Emergent features (complex) | Steps 10,000–100,000 | Persist in 60%+ of checkpoints |
+|--------------|----------------|-------------|
+| Initialization Features | Exist at random init | Sharp drop at step 128 then recovery, then gradual decay |
+| Emergent (Simple) | ~Step 1,000 | Most persist across 60%+ snapshots |
+| Emergent (Complex) | Steps 10,000–100,000 | Most persist across 60%+ snapshots |
 
 **Feature Types and Emergence Timing (Pythia-6.9B)**
 
 | Feature Type | Emergence Time Range |
-|--------------|---------------------|
-| Previous Token features | Steps 1,000–5,000 |
-| Induction features | Steps 10,000–100,000 |
-| Context-sensitive features | Steps 10,000–100,000 |
+|--------------|----------------------|
+| Previous Token Features | Steps 1,000–5,000 |
+| Induction Features | Steps 10,000–100,000 |
+| Context-sensitive Features | Steps 10,000–100,000 |
 
 ### Ablation Study
 
-**Attribution Analysis on Subject-Verb Agreement (SVA Across-PP)**
+**Subject-Verb Agreement (SVA Across-PP) Attribution Analysis**
 
-Key contributing features ordered by emergence time:
-1. Features 18341, 47045: capture plural nouns (47045 specializes in plural subjects)
-2. Feature 68813: marks compound subjects and postpositive modifiers
-3. Features 50159, 69636: identify the end of postpositive modifiers (69636 with higher precision)
+Key contributing features ordered by emergence:
+1. Features 18341, 47045: Capture plural nouns (47045 specializes in plural subjects).
+2. Feature 68813: Marks compound subjects and post-modifiers.
+3. Features 50159, 69636: Identify the end of post-modifiers (69636 has higher accuracy).
 
-Only tens of features are sufficient to consistently disrupt or restore model performance on downstream tasks across all training checkpoints.
+Only a few dozen features are required to consistently disrupt or restore downstream performance across all training snapshots.
 
 ### Key Findings
 
-**1. Universal Directional Turning Point**
+**1. Universal direction turning point**
 
-Nearly all features undergo dramatic directional changes at ~step 1,000, with pre- and post-transition directions nearly orthogonal. Features continue to rotate slowly thereafter, with the final checkpoint directions maintaining significant cosine similarity to early post-step-1,000 directions.
+Nearly all features undergo a drastic directional shift at ~step 1,000, where directions before and after are nearly orthogonal. Subsequently, features rotate slowly, with the final snapshot direction maintaining significant cosine similarity to the early post-step-1,000 directions.
 
-**2. Emergence Step Correlates with Complexity**
+**2. Emergence timing correlates with complexity**
 
-Feature complexity is scored (1–5) using an LLM (Claude Sonnet 4), revealing a moderate positive correlation between emergence time and complexity (Pearson $r = 0.309$, $p = 0.002$). More complex features tend to emerge later.
+Using an LLM (Claude Sonnet 4) to rate feature complexity (1-5), a moderate positive correlation (Pearson $r = 0.309, p = 0.002$) was found between emergence time and complexity. More complex features tend to emerge later.
 
-**3. Phase Transition from Statistical Learning to Feature Learning**
+**3. Statistical learning → feature learning phase transition**
 
-| Metric | Early Training | Post-Transition |
-|--------|---------------|-----------------|
-| Unigram/bigram KL divergence | Rapidly converges to low values | Already converged |
-| Training loss | Approaches theoretical unigram/bigram entropy lower bound | Continues to decrease |
-| Total feature dimensionality rate | First compresses | Then expands to ~70% |
+| Metric | Early Training | Post-transition |
+|--------|----------------|-----------------|
+| Unigram/Bigram KL Divergence | Converges rapidly to low values | Already converged |
+| Training Loss | Approaches theoretical unigram/bigram entropy lower bounds | Continues to decrease |
+| Total Feature Dimensionality Rate | Initial compression | Expansion to ~70% |
 
-Early training is almost entirely devoted to learning unigram and bigram distributions (Zipf's law); only afterward does the model enter the superposition learning phase for sparse features.
+Early training is almost entirely dedicated to learning unigram and bigram distributions (Zipf’s law), after which the model enters the superposition learning phase of sparse features.
 
 ## Highlights & Insights
 
-1. **Methodological innovation**: The first adaptation of crosscoders from cross-layer analysis to cross-training-snapshot analysis, enabling fine-grained tracking of feature evolution.
-2. **Feature-level evidence for the two-phase learning hypothesis**: Changes in unigram/bigram KL divergence and feature dimensionality rate provide feature-level support for the "fitting → compression" two-phase dynamics predicted by information bottleneck theory.
-3. **Hierarchical feature emergence**: The emergence order of Previous Token → Induction → context-sensitive features is consistent with causal dependencies.
-4. **Micro-to-macro causal linkage**: Only tens of features suffice to explain downstream task performance, and attribution tracing reveals alternating feature dominance (i.e., the model iteratively evolves circuits through component alternation).
-5. **Decoder norm as a proxy for feature strength**: This concise observation provides an efficient quantitative tool for tracking feature evolution.
+1. **Methodological Innovation**: Relocates crosscoders from cross-layer analysis to cross-snapshot analysis, enabling fine-grained tracking of feature evolution.
+2. **Feature-level Evidence for Two-stage Learning**: Supports the "fitting → compression" two-stage hypothesis from Information Bottleneck theory via KL divergence and feature dimensionality changes.
+3. **Hierarchy of Feature Emergence**: The sequence of Previous Token → Induction → Context-sensitive features is consistent with their causal dependencies.
+4. **Micro-Macro Causal Connection**: Explains downstream task performance using only dozens of features and reveals how models evolve circuits through iterative component updates.
+5. **Decoder Norm as a Proxy**: This simple observation provides an efficient quantitative tool for tracking feature evolution.
 
-## Limitations & Future Work
+## Limitations
 
-1. **Limited model scope**: Validation is restricted to the Pythia suite; although prior evidence suggests feature generality, generalization to different architectures and datasets remains to be confirmed.
-2. **Relatively simple downstream tasks**: SVA, Induction, and IOI are basic tasks, constrained by Pythia's capabilities and the current state of circuit tracing methods.
-3. **Discrete checkpoint limitation**: Crosscoder training requires activations from discrete checkpoints; memory and compute costs scale linearly with the number of checkpoints, limiting observation granularity.
-4. **Moderate complexity correlation**: The Pearson correlation between feature emergence time and complexity is only 0.309, indicating that complexity is not the sole determinant of emergence timing.
+1. **Limited Model Scope**: Validated only on the Pythia suite; while there is prior evidence of feature universality, generalization across different architectures/data remains to be confirmed.
+2. **Simple Downstream Tasks**: SVA, Induction, and IOI are relatively basic tasks, limited by the capabilities of Pythia models and the current state of circuit tracking.
+3. **Discrete Snapshot Constraints**: Crosscoder training requires activations from discrete snapshots; memory and compute costs scale linearly with the number of snapshots, limiting observational granularity.
+4. **Moderate Complexity Correlation**: The Pearson correlation between emergence time and complexity is only 0.309, suggesting complexity is not the sole determinant of emergence timing.
 
 ## Related Work & Insights
 
-- **Relation to SAE research**: Extends SAEs from static analysis to dynamic tracking; the unified feature space provided by crosscoders is the key enabling technology.
-- **Resonance with information bottleneck theory**: The statistical learning → feature learning two-phase transition closely aligns with the experimental findings of Shwartz-Ziv 2017.
-- **Relation to grokking research**: The abrupt changes in feature emergence suggest potential connections to phase transitions and grokking.
-- **Implications for pre-training optimization**: Knowledge of when features emerge can inform learning rate scheduling, curriculum learning, and other pre-training strategies.
-- **Implications for interpretability**: Crosscoders provide causal-level insight into why a model has learned a particular concept.
+- **Relationship with SAE Research**: Extends SAE from static analysis to dynamic tracking; the unified feature space of crosscoders is the key enabler.
+- **Echoes Information Bottleneck Theory**: The transition from statistical learning to feature learning aligns closely with the experimental findings of Shwartz-Ziv (2017).
+- **Relationship with Grokking**: Sharp changes in feature emergence imply potential links to phase transitions and grokking.
+- **Implications for Pre-training Optimization**: Knowing when features emerge could guide pre-training strategies such as learning rate scheduling and curriculum learning.
+- **Implications for Interpretability**: Crosscoders provide causal-level insights into why a model learns a specific concept.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First to achieve cross-training-snapshot feature evolution tracking; significant methodological contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated at multiple scales (160M/6.9B) with both quantitative and qualitative analyses.
-- **Value**: ⭐⭐⭐½ Primarily oriented toward understanding and explanation; direct application value is limited but offers meaningful insights for pre-training optimization.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear paper structure, high-quality figures, and sufficient technical detail.
-- **Overall**: ⭐⭐⭐⭐½ An excellent contribution to mechanistic interpretability, opening a feature-level observation window into pre-training dynamics for the first time.
+- **Novelty**: ⭐⭐⭐⭐⭐ First implementation of feature evolution tracking across training snapshots; significant methodological contribution.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated across multiple scales (160M/6.9B), including quantitative and qualitative analysis.
+- **Value**: ⭐⭐⭐½ Primarily oriented toward understanding and explanation; limited direct application but provides insights for pre-training.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure, excellent visualizations, and sufficient technical detail.
+- **Overall**: ⭐⭐⭐⭐½ Excellent work in mechanistic interpretability, opening a feature-level window into pre-training dynamics.
 
 <!-- RELATED:START -->
 
@@ -186,10 +168,10 @@ Early training is almost entirely devoted to learning unigram and bigram distrib
 ## Related Papers
 
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
+- [\[ICLR 2026\] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](learning_to_see_before_seeing_demystifying_llm_visual_priors_from_language_pre-t.md)
+- [\[ICLR 2026\] Fresh in Memory: Training-order Recency is Linearly Encoded in Language Model Activations](fresh_in_memory_training-order_recency_is_linearly_encoded_in_language_model_act.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
-- [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
-- [\[ICLR 2026\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
-- [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
+- [\[ICLR 2026\] Negative Pre-activations Differentiate Syntax](negative_pre-activations_differentiate_syntax.md)
 
 </div>
 

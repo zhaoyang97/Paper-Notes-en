@@ -2,133 +2,137 @@
 title: >-
   [Paper Note] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning
 description: >-
-  [ICLR 2026][Interpretability][subspace decomposition] This paper proposes NDM (Neighbor Distance Minimization), an unsupervised method that discovers interpretable…
+  [ICLR 2026][Interpretability][Paper Note] The authors propose NDM (Neighbor Distance Minimization), an unsupervised method to discover interpretable non-basis-aligned subspaces in neural network representation spaces by minimizing within-subspace neighbor distances. It achieves an average Gini index of 0.71 (high information concentration) on GPT-2 and identif
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "subspace decomposition"
-  - "representation interpretation"
-  - "neighbor distance minimization"
-  - "unsupervised decomposition"
-  - "knowledge localization"
-  - "mechanistic interpretability"
+  - ICLR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 85964beb76b994a4
+content_hash: 7a1e90a17ac226f7
 ---
-
 # Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.01916](https://arxiv.org/abs/2508.01916)  
 **Code**: [GitHub](https://github.com/huangxt39/SubspacePartition)  
-**Area**: Interpretable AI / Mechanistic Interpretability / Representation Learning
-**Keywords**: subspace decomposition, representation interpretation, neighbor distance minimization, unsupervised decomposition, knowledge localization, mechanistic interpretability
+**Area**: Explainable AI / Mechanistic Interpretability / Representation Learning  
+**Keywords**: Subspace Decomposition, Representation Interpretation, Neighbor Distance Minimization, Unsupervised Decomposition, Knowledge Localization, Mechanistic Interpretability
 
 ## TL;DR
-This paper proposes NDM (Neighbor Distance Minimization), an unsupervised method that discovers interpretable, non-basis-aligned subspaces in neural network representation spaces by minimizing intra-subspace neighbor distances. On GPT-2, it achieves an average Gini coefficient of 0.71 (indicating highly concentrated information); on Qwen2.5-1.5B, it identifies separated subspaces for routing parametric knowledge versus in-context knowledge.
+The authors propose NDM (Neighbor Distance Minimization), an unsupervised method to discover interpretable non-basis-aligned subspaces in neural network representation spaces by minimizing within-subspace neighbor distances. It achieves an average Gini index of 0.71 (high information concentration) on GPT-2 and identifies segregated subspaces for parametric knowledge and in-context knowledge routing on Qwen2.5-1.5B.
 
 ## Background & Motivation
-**Background**: Mechanistic interpretability research aims to understand the internal mechanisms of neural networks. The basic units of analysis include: component-level (attention heads/MLPs), sparse feature-level (SAE), and subspace-level (DAS). Each has limitations: information transmitted between components is difficult to interpret; SAE produces input-dependent circuits; DAS requires manually specified causal models.
+**Background**: Mechanistic interpretability research seeks to understand the internal mechanisms of neural networks. Basic analysis units include components (Attention Heads/MLP), sparse features (SAE), and subspaces (DAS). Each has limitations: information across components is difficult to interpret, SAE provides input-dependent circuits, and DAS requires manually specified causal models.
 
 **Limitations of Prior Work**:
-- **SAE's single-dimensional perspective**: assumes concepts align to individual basis vectors (1D features), yet concepts such as "knowledge type" or "syntactic role" may be distributed across multi-dimensional subspaces (Multi-Dimensional Superposition Hypothesis).
-- **DAS requires supervision**: requires human-designed abstract causal models to search for subspaces, making it fundamentally hypothesis verification rather than structure discovery.
-- No unsupervised method exists to automatically discover "natural" partitions of representation space.
+   - **One-dimensional view of SAE**: Assuming concepts align with single basis vectors (1D features), whereas concepts like "knowledge types" or "grammatical roles" may be distributed across multi-dimensional subspaces (Multi-Dimensional Superposition Hypothesis).
+   - **DAS requires supervision**: It requires human-designed abstract causal models to search for subspaces, essentially performing hypothesis verification rather than discovery.
+   - There is no unsupervised method to automatically discover the "natural" partitions of the representation space.
 
-**Key Challenge**: If mutually exclusive feature groups are compressed into orthogonal subspaces (superposition within groups, orthogonality between groups), how can these subspaces be identified without knowledge of the true features?
+**Key Challenge**: If mutually exclusive feature groups are compressed into orthogonal subspaces (intra-group superposition/inter-group orthogonality), how can these subspaces be identified without knowing the ground-truth features?
 
-**Core Idea**: Mutually exclusive feature groups produce "sparse" projections within their subspace (data points concentrate along a few directions) → small neighbor distances. Incorrect partitions mix features from different groups → data points spread across the entire subspace → large neighbor distances. Therefore, minimizing intra-subspace neighbor distances = finding the correct partition.
+**Core Idea**: The projection of mutually exclusive feature groups onto their subspace is "sparse" (data points cluster on specific lines), leading to small neighbor distances. Incorrect partitioning mixes features from different groups, causing data points to cover the entire subspace and resulting in large neighbor distances. Thus, minimizing neighbor distances within a subspace is equivalent to finding the correct partition.
 
 ## Method
 
 ### Overall Architecture
-Collect model activations $\{\mathbf{h}_n\}_{n=1}^N$ → learn an orthogonal matrix $\mathbf{R}$ to rotate the space → partition by dimension configuration $c = [d_1, \ldots, d_S]$ → minimize average neighbor distance within all subspaces → MI-guided subspace merging → output interpretable subspace partition.
+The goal of NDM is as follows: given a pre-trained network, it automatically partitions the representation space of a specific layer into several interpretable subspaces, each managing a specific class of concepts, without relying on labels or manually specified causal models. The process involves collecting a large number of activation vectors $\{\mathbf{h}_n\}_{n=1}^N$, learning an orthogonal matrix $\mathbf{R}$ to rotate the entire space, and slicing the rotated axes into $S$ subspaces according to a dimension configuration $c = [d_1, \ldots, d_S]$. The optimization objective is to minimize the sum of neighbor distances within each subspace. After learning the rotation, subspaces with strong mutual dependencies are merged using mutual information (MI) to obtain a final partition with adaptively determined subspace counts and dimensions. The reliability of the method is quantified via Gini evaluation based on known circuits.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Trained Network<br/>Collect activation vectors at a specific layer"] --> B["Initialize fine-grained equal-sized subspaces<br/>and orthogonal matrix R"]
+    B --> C["Neighbor Distance Minimization (NDM)<br/>Minimize the sum of neighbor distances in each subspace"]
+    C --> D{"Subspace pairs exist<br/>where MI/dim > threshold?"}
+    D -->|Yes| E["MI-guided Subspace Merging<br/>Fine-tune R after merging"]
+    E --> C
+    D -->|No| F["Adaptive Subspace Partitioning"]
+    F --> G["Gini Coefficient Evaluation<br/>Quantify reliability via known circuits"]
+```
 
 ### Key Designs
 
-1. **Neighbor Distance Minimization (NDM)**
+**1. Neighbor Distance Minimization (NDM): Unsupervised Partitioning via "Projection Sparsity"**
 
-    - Function: learns an orthogonal transformation $\mathbf{R}$ that minimizes intra-subspace neighbor distances.
-    - Objective: $\min_{\mathbf{R}} \frac{1}{N} \sum_{s=1}^S \sum_{n=1}^N \text{dist}(\hat{\mathbf{h}}_n^{(s)}, \hat{\mathbf{h}}_{n^*}^{(s)})$, s.t. $\mathbf{R}^\top \mathbf{R} = \mathbf{I}$
-    - Where $\hat{\mathbf{h}}_n = \mathbf{R} \mathbf{h}_n$ and $n^* = \arg\min_{m \neq n} \text{dist}(\hat{\mathbf{h}}_n^{(s)}, \hat{\mathbf{h}}_m^{(s)})$
-    - Intuition: a correct partition concentrates the projections of mutually exclusive intra-group features along a small number of directions (low neighbor distance); an incorrect partition mixes features from different groups, scattering projections across the entire subspace.
-    - **Information-theoretic interpretation**: neighbor distance reflects entropy; minimizing intra-subspace entropy (orthogonal transformations preserve total entropy) = minimizing total correlation across subspaces = finding the most independent partition.
+The core challenge addressed here is determining the correctness of a partition without ground-truth feature labels. The key observation of NDM is that if a group of mutually exclusive features is correctly compressed into the same subspace, the projection of any data point in that subspace will fall onto only a few lines (since mutual exclusivity implies only one feature is active at a time). Points will cluster, resulting in small neighbor distances. Conversely, if the partition is wrong and mixes unrelated features, projections scatter across the subspace, increasing neighbor distances. Thus, determining partition quality becomes an optimizable scalar. Formally, the method learns an orthogonal transformation $\mathbf{R}$ (where $\hat{\mathbf{h}}_n = \mathbf{R}\mathbf{h}_n$ and $\hat{\mathbf{h}}_n^{(s)}$ is its projection onto the $s$-th subspace) to minimize the average neighbor distance across all subspaces:
 
-2. **MI-Guided Subspace Merging**
+$$\min_{\mathbf{R}} \frac{1}{N} \sum_{s=1}^S \sum_{n=1}^N \text{dist}(\hat{\mathbf{h}}_n^{(s)}, \hat{\mathbf{h}}_{n^*}^{(s)}), \quad \text{s.t. } \mathbf{R}^\top \mathbf{R} = \mathbf{I}$$
 
-    - Function: starts from fine-grained partitions and merges subspaces with high mutual dependence using mutual information (MI).
-    - Procedure: initialize small equal-sized subspaces → train $\mathbf{R}$ → periodically compute pairwise MI between subspaces → merge if MI/dim exceeds threshold → continue training after merging → repeat until no further merges are needed.
-    - Design Motivation: determining the correct number and dimensionality of subspaces is itself critical — the MI merging strategy allows the method to adaptively determine the configuration.
+where $n^* = \arg\min_{m \neq n} \text{dist}(\hat{\mathbf{h}}_n^{(s)}, \hat{\mathbf{h}}_m^{(s)})$ is the nearest neighbor of $n$ in the current subspace. This is justified by information theory: neighbor distance reflects local entropy. Since orthogonal transformations preserve total entropy, "depressing internal entropy in each subspace" is equivalent to "minimizing total correlation between subspaces," effectively slicing the space into independent blocks—the desired "natural partition."
 
-3. **Gini Coefficient Evaluation**
+**2. MI-guided Subspace Merging: Adaptive Subspace Count and Dimension Discovery**
 
-    - Function: quantifies the concentration of intervention effects across subspaces using the Gini coefficient.
-    - $G = \sum |{\Delta_s}_1 - {\Delta_s}_2| / (2S \sum \Delta_s)$; $G > 0.6$ indicates information is highly concentrated in a single subspace.
-    - Baselines: Identity (no rotation), Random (random rotation), PCA.
-    - Design Motivation: evaluation is grounded in known circuits (IOI, Greater-than) — if the method truly identifies "variable subspaces," intervention effects should concentrate in a single subspace.
+NDM requires an initial subspace configuration (count and dimensions), which is typically unknown. Initializing partitions too coarsely merges unrelated concepts, while partitioning too finely splits concepts across subspaces. The mechanism starts with fine-grained initialization and proceeds bottom-up: it initializes small equal-sized subspaces and trains $\mathbf{R}$. Periodically, it calculates the mutual information (MI) between all pairs of subspaces. If the MI/dim of a pair exceeds a threshold—indicating they encode interdependent information—they are merged, followed by fine-tuning of $\mathbf{R}$. This process repeats until no further merges are required. The final configuration $c$ is determined adaptively from data, avoiding human bias.
+
+**3. Gini Coefficient Evaluation: Quantifiable Verification via Known Variables**
+
+The primary risk of unsupervised methods is the lack of falsifiability. To address this, well-studied circuits in mechanistic interpretability (e.g., IOI, Greater-than) are used for quantitative validation. If NDM successfully identifies a "variable subspace" corresponding to a specific variable, interventions on that variable should produce effects highly concentrated in one subspace rather than spreading across all of them. Concentration is quantified using the Gini coefficient:
+
+$$G = \frac{\sum |{\Delta_s}_1 - {\Delta_s}_2|}{2S \sum \Delta_s}$$
+
+where $\Delta_s$ is the effect caused by intervention in the $s$-th subspace. $G > 0.6$ indicates high information concentration in a single subspace. By comparing NDM against Identity (no rotation), Random (random rotation), and PCA baselines on known circuits using Gini scores, its proximity to the true structure can be objectively judged.
 
 ### Loss & Training
-- Orthogonality is enforced via PyTorch parameterization.
-- Distance metric: Euclidean distance (outperforms cosine distance).
-- Scalable to models with up to 2B parameters.
+- Orthogonal constraints are guaranteed via PyTorch's parametrization mechanism, ensuring $\mathbf{R}$ strictly satisfies $\mathbf{R}^\top\mathbf{R}=\mathbf{I}$ throughout optimization.
+- Euclidean distance is used for neighbor distance measurement, which performs better than cosine distance in experiments.
+- The method scales to models with 2B parameters.
 
 ## Key Experimental Results
 
-### Quantitative Evaluation on GPT-2 Small (5 Known Circuit Tests)
+### GPT-2 Small Quantitative Evaluation (5 Known Circuit Tests)
 
 | Method | Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | **Avg. Gini** |
-|--------|--------|--------|--------|--------|--------|---------------|
+|------|--------|--------|--------|--------|--------|-------------|
 | Identity | 0.33 | 0.32 | 0.40 | 0.31 | 0.32 | 0.21 |
 | Random | 0.36 | 0.36 | 0.32 | 0.33 | 0.39 | 0.21 |
 | PCA | 0.43 | 0.46 | 0.50 | 0.38 | 0.35 | — |
 | **NDM** | **0.71** | **0.72** | **0.75** | **0.68** | **0.69** | **0.71** |
 
-NDM's average Gini substantially exceeds all baselines (surpassing the >0.6 threshold for highly concentrated information), while Identity/Random/PCA all remain below 0.5.
+NDM's average Gini significantly exceeds all baselines (thresholding >0.6 for high concentration), whereas Identity/Random/PCA all remain <0.5.
 
-### Qualitative Analysis on Qwen2.5-1.5B
+### Qwen2.5-1.5B Qualitative Analysis
 
 | Finding | Description |
-|---------|-------------|
-| **Parametric knowledge subspace** | Encodes knowledge memorized from training data |
-| **In-context knowledge subspace** | Encodes knowledge inferred from the current context |
-| Separation of the two | Reside in distinct subspaces, supporting research on "knowledge conflicts" |
+|------|------|
+| **Parametric Knowledge Subspace** | Encodes knowledge memorized by the model from training data |
+| **In-context Knowledge Subspace** | Encodes knowledge inferred from the current context |
+| Separation of the two | Segregation in different subspaces supports "knowledge conflict" research |
 
 ### Ablation Study
 
-| Configuration | Result | Notes |
-|---------------|--------|-------|
-| Toy model (known feature groups) | Perfect subspace recovery | Validates NDM in principle |
-| Varying number of feature groups | Successful decomposition in all cases | Method is robust |
-| Without MI merging | Fragmented, uninterpretable | Merging strategy is necessary |
+| Configuration | Effect | Description |
+|------|------|------|
+| Toy Model (Known Feature Groups) | Perfect recovery of subspaces | Validates NDM principles |
+| Different Feature Group Counts | All successfully decomposed | Method is robust |
+| Without MI Merging | Fragmented, uninterpretable | Merging strategy is necessary |
 
 ### Key Findings
-- NDM's information concentration (Gini 0.71) far exceeds all baselines, indicating that representation space does possess a "natural" subspace structure.
-- Known circuit variables in GPT-2 (e.g., subject position in the IOI circuit) are indeed concentrated in a single subspace, validating the method's effectiveness.
-- The separation between parametric and in-context knowledge subspaces is an important interpretability finding that directly supports research on "knowledge conflicts" and "hallucination."
-- The method scales to 2B-parameter models, demonstrating sufficient practical applicability.
+- NDM's information concentration (Gini 0.71) far exceeds all baselines, indicating that representation space indeed possesses a "natural" subspace structure.
+- Known variables in GPT-2 circuits (e.g., subject position in IOI) are concentrated in single subspaces, validating the effectiveness of the method.
+- The discovery of segregated subspaces for parametric vs. in-context knowledge is a significant interpretability finding, directly supporting research on "knowledge conflict" and "hallucination."
+- The method scales to 2B models, offering sufficient utility.
 
 ## Highlights & Insights
-- **Paradigm shift from single features to subspaces**: SAE assumes concept = single-dimensional feature; NDM allows concept = multi-dimensional subspace. This better aligns with the Multi-Dimensional Superposition Hypothesis and represents a natural elevation in the granularity of analysis.
-- **Unsupervised discovery vs. supervised verification**: DAS first posits a causal model and then searches for subspaces (verification); NDM directly discovers subspaces from activation data (discovery), after which causal verification can follow. The discovery → verification pipeline has greater potential for scientific insight than verification → discovery.
-- **Vision of "subspace circuits"**: If subspaces serve as reliable "variables," one could analyze weights to determine which subspaces each attention head reads from and writes to, constructing input-agnostic circuits — a more general framework than the input-dependent circuits produced by SAE.
+- **Paradigm Shift from Single Features to Subspaces**: While SAE assumes concepts equal single-dimensional features, NDM allows concepts to be multi-dimensional subspaces. This aligns better with the Multi-Dimensional Superposition Hypothesis and represents a natural elevation in analysis granularity.
+- **Unsupervised Discovery vs. Supervised Verification**: DAS requires assuming a causal model before searching for subspaces (verification); NDM discovers subspaces directly from activation data (discovery), which can then be causally verified. The discovery-to-verification workflow has greater potential for scientific discovery than verification-to-discovery.
+- **Vision for "Subspace Circuits"**: If subspaces serve as reliable "variables," it becomes possible to build input-independent circuits by analyzing weight weights to determine which subspace an attention head reads from or writes to. This would be more general than SAE's input-dependent circuits.
 
 ## Limitations & Future Work
-- The orthogonality constraint assumes strictly orthogonal subspaces, whereas in practice subspaces may exhibit small angular deviations.
-- The MI threshold for subspace merging must be set manually.
-- Scalability to larger models (>10B parameters) has not been verified.
-- Evaluation is limited to the Transformer architecture; CNNs, MLPs, and other architectures are not addressed.
-- NDM assumes a mutually exclusive feature group structure; if features exhibit more complex dependencies (e.g., hierarchical structure), the current method may be insufficient.
+- The orthogonal constraint assumes subspaces are strictly orthogonal; in practice, subspaces may have small angular deviations.
+- The MI threshold for subspace merging requires manual setting.
+- Scalability to larger models (>10B) has not been verified.
+- Testing was restricted to the Transformer architecture; CNN/MLP architectures were not explored.
+- NDM assumes a mutually exclusive feature group structure; if features have more complex dependencies (e.g., hierarchical structures), the current method may be insufficient.
 
 ## Related Work & Insights
-- **vs. SAE**: SAE identifies single-dimensional sparse features, where each feature is a "direction"; NDM identifies multi-dimensional subspaces, where each subspace represents a collection of mutually exclusive features. The advancement lies in capturing multi-dimensional concepts.
-- **vs. DAS (Geiger 2024)**: Both learn orthogonal transformations, but DAS is supervised (requiring a specified causal model and counterfactual data), whereas NDM is unsupervised and discovers subspaces directly from activation data.
-- **vs. Engels 2024 (Multi-Dim Superposition)**: NDM's notion of "feature groups" closely aligns with their "multi-dimensional irreducible features," and can be viewed as a computational realization of that hypothesis.
+- **vs. SAE**: SAE finds single-dimensional sparse features (directions); NDM finds multi-dimensional subspaces representing sets of mutually exclusive features. The advancement lies in capturing multi-dimensional concepts.
+- **vs. DAS (Geiger 2024)**: Both learn orthogonal transformations, but DAS is supervised (requiring causal models + counterfactual data), whereas NDM is unsupervised and discovers structures directly from activation data.
+- **vs. Engels 2024 (Multi-Dim Superposition)**: NDM's "feature group" concept aligns closely with their "multi-dimensional irreducible features," effectively serving as a computational implementation of that hypothesis.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The unsupervised subspace decomposition approach is highly original; the theoretical connection between neighbor distance and mutually exclusive feature groups is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers toy model validation, GPT-2 quantitative evaluation, and Qwen2.5 qualitative analysis, spanning verification, discovery, and scalability.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from intuition to formalization to experiments is exceptionally clear.
-- Value: ⭐⭐⭐⭐⭐ Provides a new analytical granularity and unsupervised tool for mechanistic interpretability; the vision of "subspace circuits" carries transformative potential.
+- Novelty: ⭐⭐⭐⭐⭐ The unsupervised subspace decomposition approach is novel, and the theoretical link between neighbor distance ↔ mutually exclusive feature groups is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers toy models, GPT-2 quantification, and Qwen2.5 qualitative analysis, spanning validation, discovery, and scalability.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logic is extremely clear from intuition to formalization and experimentation.
+- Value: ⭐⭐⭐⭐⭐ Provides a new granularity of analysis and unsupervised tools for mechanistic interpretability; the vision of "subspace circuits" has transformative potential.
 
 <!-- RELATED:START -->
 
@@ -136,11 +140,11 @@ NDM's average Gini substantially exceeds all baselines (surpassing the >0.6 thre
 
 ## Related Papers
 
+- [\[ICLR 2026\] Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space](paradigm_shift_of_gnn_explainer_from_label_space_to_prototypical_representation_.md)
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
+- [\[ICLR 2026\] Decomposing LLM Computation with Jets](decomposing_llm_computation_with_jets.md)
+- [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
 - [\[ICLR 2026\] Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement](decoupling_dynamical_richness_from_representation_learning_towards_practical_mea.md)
-- [\[ICLR 2026\] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)
-- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
-- [\[ICLR 2026\] NIMO: a Nonlinear Interpretable MOdel](nimo_a_nonlinear_interpretable_model.md)
 
 </div>
 

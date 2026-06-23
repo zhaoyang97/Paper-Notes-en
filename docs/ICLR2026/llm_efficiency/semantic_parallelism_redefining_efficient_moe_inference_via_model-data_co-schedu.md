@@ -2,113 +2,125 @@
 title: >-
   [Paper Note] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes the Semantic Parallelism (SP) paradigm, which predicts token-expert routing paths and co-schedules model placement with data dispatch to substantially r…
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] The authors propose the Semantic Parallelism paradigm, which significantly reduces all-to-all communication overhead in MoE inference by predicting token-expert routing paths and co-scheduling model placement and data distribution. This achieves up to 2.78× throughput improvement in Attention-DP scenarios and up to 24.
 tags:
-  - "ICLR 2026"
-  - "LLM Efficiency"
-  - "Mixture-of-Experts"
-  - "Expert Parallelism"
-  - "all-to-all communication"
-  - "model-data co-scheduling"
-  - "token-expert affinity"
+  - ICLR 2026
+  - LLM Efficiency
+  - Mixture-of-Experts
+  - Expert Parallelism
 date: 2026-05-08
-content_hash: b6f4b5edb9c06236
+content_hash: 93cb24832440f8ab
 ---
-
 # Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.04398](https://arxiv.org/abs/2503.04398)  
-**Code**: Implemented on SGLang (~5000 lines of Python + Triton kernels)  
-**Area**: LLM Efficiency
-**Keywords**: Mixture-of-Experts, Expert Parallelism, all-to-all communication, model-data co-scheduling, token-expert affinity
+**Code**: Implemented based on SGLang (approx. 5000 lines of Python + Triton kernels)  
+**Area**: LLM Efficiency  
+**Keywords**: Mixture-of-Experts, Expert Parallelism, all-to-all communication, model-data co-scheduling, Token-Expert affinity  
 
 ## TL;DR
-This paper proposes the Semantic Parallelism (SP) paradigm, which predicts token-expert routing paths and co-schedules model placement with data dispatch to substantially reduce all-to-all communication overhead in MoE inference under expert parallelism. It achieves up to 2.78× throughput improvement in Attention-DP settings and up to 24.9% latency reduction in Attention-TP settings.
+The authors propose the Semantic Parallelism paradigm, which significantly reduces all-to-all communication overhead in MoE inference by predicting token-expert routing paths and co-scheduling model placement and data distribution. This achieves up to 2.78× throughput improvement in Attention-DP scenarios and up to 24.9% latency reduction in Attention-TP scenarios.
 
 ## Background & Motivation
-**MoE inference is bottlenecked by all-to-all communication**: Expert Parallelism (EP) distributes experts across multiple GPUs but requires two all-to-all collective communications to route tokens to remote experts and back. Even on 400 GB/s high-speed interconnects, this accounts for 59.2% of MoE layer forward latency.
+**MoE model inference is constrained by all-to-all communication bottlenecks**: Expert Parallelism (EP) distributes experts across multiple GPUs but requires two all-to-all collective communications to route tokens to remote experts and back. Even on 400GB/s high-speed interconnects, this still accounts for 59.2% of the MoE layer forward latency.
 
-**Existing approaches decouple model placement from data scheduling**: Expert placement and token dispatch are treated as independent problems, resulting in substantial unnecessary cross-device communication.
+**Existing solutions decouple model placement and data scheduling**: Deciding which GPU hosts which expert and which GPU receives which token are treated as independent problems, leading to significant unnecessary cross-device communication.
 
-**Tokens exhibit context-independent expert affinity**: Profiling reveals that tokens consistently activate a concentrated and stable set of top-k experts across different contexts (median cumulative activation probability of top-k experts: 0.833–0.976), providing a basis for predictive routing.
+**Tokens exhibit context-independent expert affinity**: Experiments reveal that token activation for specific experts is highly concentrated and stable (the median cumulative activation probability of top-k experts reaches 0.833-0.976), providing a basis for predictive routing.
 
-**Widespread deployment of MoE models such as DeepSeek-V3/R1 and Qwen3** makes EP communication optimization a critical industrial need.
+**The wide deployment of MoE models like DeepSeek-V3/R1 and Qwen3** makes EP communication optimization a critical industrial requirement.
 
 ## Method
 
-### Core Insight: Context-Independent Token-Expert Affinity
-- Profiling DeepSeek-V2-Lite on ShareGPT reveals that each token consistently routes to the same top-k expert subset across different contexts.
-- The median F1-score across all layers reaches 0.833–1.000, and the maximum activation frequency of non-top-k experts is only ~0.05.
-- Based on this, a token-expert activation frequency table $T^{(L)} \in \mathbb{N}^{t \times N}$ is constructed to estimate routing probabilities.
+### Overall Architecture
+Sem-MoE shifts MoE inference communication optimization from "reactive all-to-all management" to "proactive predictive routing." It first performs offline **profiling** of token-expert affinity to prove that token routing is stable enough to be predicted. Then, it integrates "expert placement" and "token delivery" into a single **co-clustering Integer Linear Programming (ILP)** problem. This ensures that experts frequently activated together are clustered on the same card, and requests/tokens are delivered directly to the device hosting their most likely lightning-strike experts. During deployment, the strategy is implemented via two paths: request-level scheduling for Attention-DP and finer-grained token-level rearrangement for Attention-TP. Finally, a set of fused kernels executes the optimized all-to-all. Consequently, most expert activations become local accesses, and remote all-to-all traffic is structurally minimized—essentially replacing global "any-to-any token shuffling" with "co-located data and models."
 
-### Offline Model Scheduling: Expert Clustering and Placement
-- Model-data co-scheduling is formulated as a 0-1 integer linear programming (ILP) problem.
-- Objective: $L = \theta \cdot \text{load balance term} + (1-\theta) \cdot \text{remote activation minimization term}$
-- Constraints: each token/expert belongs to exactly one cluster; each cluster contains an equal number of experts.
-- An alternating optimization algorithm is used for efficient solving, placing co-activated experts on the same GPU.
+```mermaid
+graph TD
+    IN["Offline Profiling<br/>Token Activation Frequency Stats"]
+    D1["Token-Expert Affinity Profiling<br/>Routing Probability Table (Confidence Table)"]
+    D2["Offline Model Scheduling<br/>Co-clustering ILP<br/>Cluster Co-activated Experts to Same Rank (Solve C)"]
+    SPLIT{"Attention Parallelism"}
+    D3a["Online Data Scheduling (DP)<br/>Deliver requests to affinity ranks<br/>(Using token-to-cluster R)"]
+    D3b["Online Data Scheduling (TP)<br/>Intra-request Token Rearrangement<br/>SRS / SAG + 2-gram"]
+    D4["System Implementation<br/>Fused Kernels + DeepEP<br/>Execute Optimized all-to-all"]
+    OUT["Local Activation Rate ↑ → all-to-all Traffic ↓<br/>Throughput ↑ / Latency ↓"]
 
-### Online Data Scheduling (Two Settings)
+    IN --> D1 --> D2 --> SPLIT
+    SPLIT -->|DP| D3a
+    SPLIT -->|TP| D3b
+    D3a --> D4
+    D3b --> D4
+    D4 --> OUT
+```
 
-**Attention-DP Setting — Inter-request Scheduling**:
-- Predicts the target DP rank for an entire request based on token-expert affinity.
-- $S_r = \arg\max_j \sum_{i \in r} R_{ij}$, assigning each request to the device hosting the experts most activated by its tokens.
-- Combined with workload-aware balanced scheduling to ensure load balance across ranks.
+### Key Designs
 
-**Attention-TP Setting — Intra-request Token Scheduling**:
-- Leverages Markov dependencies in inter-layer expert selection (2-gram device transition model) to enhance prediction.
-- Designs Shuffled-Reduce-Scatter (SRS) and Shuffled-AllGather (SAG) fused communication primitives.
-- Embeds speculative token reordering seamlessly into existing TP communication phases with only ~1% overhead.
+**1. Token-Expert Affinity Profiling: Providing Reliable Priors for Predictive Scheduling**
 
-### System Implementation
-- Built on SGLang with ~5000 lines of Python and custom Triton kernels.
-- Optimized argsort kernel is 25% faster than PyTorch's native implementation.
-- Integrates the DeepEP communication library for efficient all-to-all operations.
+The premise of this method is whether token routing is stable enough to be "predicted." The authors profiled DeepSeek-V2-Lite on ShareGPT and found that although the gating function $G_L(h_{L,j})=\text{top-}k(\text{softmax}(\mathbf{W}_{L,g}h_{L,j}+\mathbf{b}_{L,g}))$ theoretically depends on context semantics, the same token consistently routes to a narrow and static subset of top-k experts across different contexts. The median F1-score for "predicting based solely on the hottest top-k experts" reaches 0.833–1.000 across layers, while the median max hotness of non-top-k experts is only about 0.05. Activation is highly concentrated and stable. Accordingly, an activation frequency table $\mathbf{T}^{(L)}\in\mathbb{N}^{t\times N}$ (where $t$ is vocabulary size and $N$ is expert count) is maintained for each layer. Normalized routing probabilities $\Pr(E_k^{(L)}\mid x_j)=\mathbf{T}^{(L)}_{j,k}/\sum_k \mathbf{T}^{(L)}_{j,k}$ are stored in a confidence table as a unified prior. OOV tokens are handled using nearest neighbors in embedding space. Profiling is done once offline and can migrate across datasets zero-shot, avoiding online overhead.
+
+**2. Offline Model Scheduling: Clustering Co-activated Experts to the Same Device**
+
+With affinity data, the authors formulate "expert placement" and "token-to-cluster assignment" as a joint 0-1 ILP. Decision variables are the assignment of token $j$ to cluster $i$ ($\mathbf{R}_{ij}\in\{0,1\}$) and the placement of expert $k$ to cluster $i$ ($\mathbf{C}_{ik}\in\{0,1\}$), where the number of clusters equals the EP degree. The objective function is:
+
+$$\mathcal{L}=\theta\sum_{i}\Big|\sum_{j}\mathbf{R}_{ij}\bm{a}_j-\tfrac{S}{E}\Big|+(1-\theta)\sum_{i_1\neq i_2}\sum_{j,k}\mathbf{R}_{i_1 j}\mathbf{C}_{i_2 k}\,\bm{\mathcal{C}}_{p,jk}\,\bm{a}_j$$
+
+The left term balances token frequencies across clusters to promote EP load balancing, while the right term minimizes remote activations (cross-cluster token-expert activations). $\theta$ balances these two goals. Hard constraints ensure each token and expert belongs to exactly one cluster and that experts are distributed evenly. Since direct LP solving is expensive, an alternating optimization approach is used to iteratively approximate a feasible solution. **Model scheduling** implements the resulting $\mathbf{C}$: if $\mathbf{C}_{jk}=1$, expert $j$ is placed on device $k$, and the columns of the gating matrix are shuffled accordingly, achieving expert redistribution transparently to the upper layers.
+
+**3. Online Data Scheduling: Proactive Data Delivery**
+
+Once placement is fixed, the online phase uses the same ILP solution to determine data routing. In Attention-DP, requests are independent, so **inter-request scheduling** is used: an entire request is dispatched to the cluster (DP rank) with its highest aggregate token affinity, $\bm{S}_{\bm{r}}=\arg\max_{j\in\llbracket E\rrbracket}\sum_{i\in\bm{r}}\mathbf{R}_{ij}$. A workload-aware balancing strategy ensures all ranks are utilized for decoding. in Attention-TP, where attention itself is partitioned, **token-level scheduling** is required. Since single-layer prediction may be inaccurate, the authors utilize a Markov dependency between expert choices in adjacent layers, enhancing prediction with a 2-gram device transition model $\Pr(D_k^{(L)}\mid D^{(L-1)},\dots,D^{(L-n)})$. Speculative token rearrangement is embedded into TP's existing communication phases: replacing standard post-attention reduce-scatter with Shuffled-Reduce-Scatter (SRS) followed by a delayed Shuffled-AllGather (SAG). This merges rearrangement with necessary data transformations.
+
+**4. System Implementation: Translating Algorithmic Gains to Latency Reduction**
+
+Theoretical benefits are realized through efficient kernels to prevent rearrangement overhead from consuming communication savings. Sem-MoE is implemented as an SGLang plugin with 5000 lines of Python and custom Triton kernels. DP extends the request scheduler to batch similar requests using affinity info; TP's SRS/SAG relies on an optimized `argsort` kernel (25% faster than PyTorch native) embedded in ring communication. The system integrates the DeepEP communication library to execute optimized all-to-all, ensuring reduced remote activations translate to end-to-end throughput and latency gains.
 
 ## Key Experimental Results
 
-### Attention-DP Setting (Throughput under SLO Constraints)
+### Attention-DP Scenario (Throughput under SLO constraints)
 
 | Model | vs SGLang (TTFT SLO) | vs SGLang (E2E SLO) | vs MoETuner (TTFT) | vs MoETuner (E2E) |
 |------|---------------------|--------------------|--------------------|-------------------|
 | DeepSeek-V2-Lite | +31% | +221% | +32% | +278% |
 | Qwen3-30B-A3B | +98% | +11% | +35% | +32% |
 
-### Attention-TP Setting (Latency Reduction)
+### Attention-TP Scenario (Latency Reduction)
 
-| Model | Input Length 256 | Input Length 512 | Input Length 1024 |
+| Model | Input Len 256 | Input Len 512 | Input Len 1024 |
 |------|-----------|-----------|------------|
 | DeepSeek-V2-Lite p99 TTFT | -12.21% | -10.60% | -18.89% |
 | Qwen3-30B-A3B p99 TTFT | -17.16% | -24.90% | -3.80% |
 
 ### Key Findings
-- Local Activation Rate (LAR) improves by 37–43% over vanilla EP, corresponding to a 41.8–46.6% reduction in EP layer latency.
-- The co-scheduling algorithm achieves 15.4% higher LAR than the best baseline (MoETuner) with lower load imbalance.
-- Zero-shot cross-dataset transfer results validate the generalizability of the scheduling strategy.
+- Local Activation Rate (LAR) improves by 37-43% over vanilla, reducing EP layer latency by 41.8-46.6%.
+- The co-scheduling algorithm achieves 15.4% higher LAR and lower load imbalance compared to the MoETuner baseline.
+- Zero-shot migration performance across datasets validates the generalizability of the scheduling strategy.
 
 ## Highlights & Insights
-- Introduces the "Semantic Parallelism" paradigm, shifting communication optimization from reactive mitigation to proactive prevention.
+- Proposes the "Semantic Parallelism" paradigm, shifting communication optimization from passive to proactive.
 - Reveals the context-independent nature of token-expert affinity, providing a theoretical foundation for predictive scheduling.
-- Jointly optimizes both model placement and data scheduling, offering a systematic rather than a localized solution.
-- The SRS/SAG fused primitive design is elegant, embedding token reordering into existing communication flows with only ~1% additional overhead.
+- Provides a systemic rather than local solution by optimizing both model placement and data scheduling simultaneously.
+- The SRS/SAG fusion primitives are elegantly designed, embedding token rearrangement into existing communication flows with only ~1% overhead.
 
 ## Limitations & Future Work
-- Validation is limited to single-node 8-GPU setups; effectiveness in cross-node or low-bandwidth interconnect settings remains to be verified.
-- The prediction model requires offline profiling data, making it ineffective during cold starts.
-- MoE variants with highly dynamic routing mechanisms require re-profiling after changes to the gating function.
-- Joint evaluation with KV cache optimization or quantization techniques has not been conducted.
+- Validated only on 8-GPU single-node setups; performance in multi-node or low-speed interconnect scenarios remains to be verified.
+- The prediction model requires offline profiling and does not assist in cold-start scenarios.
+- MoE variants with highly dynamic routing mechanisms may require re-profiling if gate functions change significantly.
+- Interaction with KV cache optimizations or quantization techniques was not evaluated.
 
 ## Related Work & Insights
-- **Expert placement**: MoETuner (ILP-based placement), ExFlow (inter-layer expert affinity), EPLB (DeepSeek's load balancing).
-- **MoE inference systems**: DeepSpeed-MoE, Tutel, vLLM, SGLang.
-- **Prefetching/offloading**: Pre-gated MoE (architecture modification for next-layer expert prediction) — Sem-MoE requires no architectural changes.
-- This work is the first to jointly optimize both model scheduling and data scheduling.
+- **Expert Placement**: MoETuner (ILP optimization), ExFlow (inter-layer affinity), EPLB (DeepSeek load balancing).
+- **MoE Inference Systems**: DeepSpeed-MoE, Tutel, vLLM, SGLang.
+- **Prefetching/Offloading**: Pre-gated MoE (modifies architecture to predict lower-layer experts)—Sem-MoE requires no architectural changes.
+- This work represents the first attempt to optimize model and data scheduling concurrently.
 
 ## Rating ⭐⭐⭐⭐⭐
-- **Novelty**: 5/5 — The Semantic Parallelism paradigm and co-scheduling concept are highly original.
-- **Experimental Thoroughness**: 4/5 — Covers two models and two settings, but limited to single-node evaluation.
-- **Writing Quality**: 4/5 — System description is clear with high-quality figures.
-- **Value**: 5/5 — Addresses a core bottleneck in MoE inference with significant industrial relevance.
+- **Novelty**: 5/5 — Originality of the Semantic Parallelism paradigm and co-scheduling concept.
+- **Experimental Thoroughness**: 4/5 — Covers two models and two scenarios, though limited to a single node.
+- **Writing Quality**: 4/5 — Clear system descriptions and high-quality diagrams.
+- **Value**: 5/5 — Addresses a core bottleneck in MoE inference with high industrial potential.
 
 <!-- RELATED:START -->
 
@@ -116,11 +128,11 @@ This paper proposes the Semantic Parallelism (SP) paradigm, which predicts token
 
 ## Related Papers
 
-- [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](../../ACL2026/llm_efficiency/alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
-- [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](../../NeurIPS2025/llm_efficiency/flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
-- [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
-- [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
-- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](expert_divergence_learning_for_moe-based_language_models.md)
+- [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
+- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
+- [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
+- [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](../../CVPR2026/llm_efficiency/rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
 
 </div>
 

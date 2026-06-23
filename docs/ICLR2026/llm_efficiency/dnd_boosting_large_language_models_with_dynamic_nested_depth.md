@@ -2,84 +2,81 @@
 title: >-
   [Paper Note] DND: Boosting Large Language Models with Dynamic Nested Depth
 description: >-
-  [ICLR 2026][LLM Efficiency][Dynamic Depth] DND selects critical tokens at the end of each Transformer layer via a router and routes them back through the same layer for additional processing (nested depth). Combined with…
+  [ICLR 2026][LLM Efficiency][MoE] DND selects key tokens via a router at the end of Transformer layers and sends them back to the same layer for additional processing (nested depth). Combined with routing control loss and threshold schemes for precise token selection, it achieves average performance gains of 1.88% on Qwen3-1.7B and 0.87% on Qwen3-30B-A
 tags:
-  - "ICLR 2026"
-  - "LLM Efficiency"
-  - "Dynamic Depth"
-  - "Adaptive Token Selection"
-  - "Large Language Models"
-  - "Post-Training Enhancement"
-  - "MoE"
+  - ICLR 2026
+  - LLM Efficiency
+  - MoE
 date: 2026-05-08
-content_hash: 97e230783e422637
+content_hash: d27b09503a9a4ac9
 ---
-
 # DND: Boosting Large Language Models with Dynamic Nested Depth
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.11001](https://arxiv.org/abs/2510.11001)  
 **Code**: None  
-**Area**: LLM Efficiency / Adaptive Computation
-**Keywords**: Dynamic Depth, Adaptive Token Selection, Large Language Models, Post-Training Enhancement, MoE
+**Area**: LLM Efficiency / Adaptive Computation  
+**Keywords**: Dynamic Depth, Adaptive Token Selection, Large Language Models, Post-training Enhancement, MoE
 
 ## TL;DR
-DND selects critical tokens at the end of each Transformer layer via a router and routes them back through the same layer for additional processing (nested depth). Combined with a routing control loss and a threshold control scheme for precise and stable token selection, DND achieves average performance gains of 1.88% and 0.87% on Qwen3-1.7B and Qwen3-30B-A3B, respectively, with fewer than 0.1M additional parameters.
+DND selects key tokens via a router at the end of Transformer layers and sends them back to the same layer for additional processing (nested depth). Combined with routing control loss and threshold schemes for precise token selection, it achieves average performance gains of 1.88% on Qwen3-1.7B and 0.87% on Qwen3-30B-A3B with minimal parameter increase (<0.1M).
 
 ## Background & Motivation
-The dominant paradigm for improving large language models has been scaling — more parameters, data, and compute — at the cost of exponentially growing computational overhead. A key observation is that **prediction difficulty varies significantly across tokens**: most tokens are "easy" (e.g., those serving linguistic fluency), while a small subset of "critical" tokens involve complex logical reasoning or planning.
+The primary strategy for improving large language models has been scaling—more parameters, more data, and more computation. However, this incurs exponentially growing computational overhead. A key observation is that **prediction difficulty varies significantly between tokens**: most tokens are "simple" (e.g., language coherence tokens), while only a few "critical" tokens involve complex logical reasoning or planning tasks.
 
-This motivates two related research directions:
-- **Token Pruning**: Filtering out unimportant tokens to reduce computation — but this only avoids processing easy tokens.
-- **Test-Time Compute Scaling (implicit strategies)**: Applying iterative computation over hidden states to enhance reasoning — but uniformly across all tokens.
+This leads to two related research directions:
+- **Token Pruning**: Filtering out unimportant tokens to reduce computation—but this only addresses "not processing" simple tokens.
+- **Test-time Computation Scaling (Implicit Strategies)**: Recurrent computation in hidden states to enhance reasoning—but this applies uniformly to all tokens.
 
-**Key Challenge**: Easy tokens require no additional computation, whereas critical tokens demand deeper processing. Existing methods either perform pure subtraction (pruning) or apply uniform addition (global recurrence), lacking **targeted depth gains**.
+**Key Challenge**: Simple tokens do not require extra computation, but critical tokens require deeper processing. Existing methods either perform subtraction (pruning) or apply addition indiscriminately (universal recurrence), lacking **targeted depth gains**.
 
-DND's **Key Insight** is to combine both directions: first identify difficult tokens, then allocate additional computational depth to them — a form of "review" mechanism. This represents the first effective fusion of token-level selection and implicit depth augmentation.
+**Key Insight**: DND combines these two directions by first selecting difficult tokens and then assigning them extra computational depth—a "reviewing" mechanism. This represents the first effective fusion of token-level selection and implicit spatial deepening.
 
 ## Method
 
 ### Overall Architecture
-The DND strategy is applied only to the middle layers of the model (the initial and final layers are kept unchanged to preserve pretrained reasoning patterns). Within each DND layer:
-1. A standard forward pass produces the vanilla output $\mathbf{X}^v$.
-2. A router independently scores each token and selects those requiring additional processing.
-3. Selected tokens are packed into a compact subsequence and re-fed into the same Transformer layer.
-4. The nested depth output is merged with the original output via a normalized fusion strategy.
+DND only modifies the intermediate layers of the model (keeping several initial and final layers unchanged to protect pre-trained inference patterns). In each DND layer, the input first undergoes a vanilla forward pass to obtain the original output $\mathbf{X}^v$. Subsequently, a lightweight router scores each token. Combined with a control mechanism to stabilize score dispersion and lock the threshold to a target ratio, a small subset of "difficult" tokens is precisely selected. These tokens are packed into a short sequence, re-processed through the **same layer** to obtain the deepened output $\mathbf{X}^d$, and finally scattered back to their original positions after gated fusion with the original output. The difficulty lies not in "re-computing" itself, but in stably selecting the tokens that truly need deepening without disrupting existing knowledge. The internal data flow of a DND layer is shown below:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["DND Intermediate Layer Input<br/>Hidden State Sequence"] --> VAN["Vanilla Forward<br/>Original Output Xv"]
+    VAN --> ROUTE["Token-Choice Routing<br/>Per-token Scoring pi = σ(R(x))"]
+    ROUTE --> CTRL["Dual Routing and Threshold Control<br/>Loss Disperses Scores + Threshold Locks Ratio<br/>→ Selection Mask M"]
+    CTRL --> NEST["Nested Depth Computation<br/>Pack Difficult Tokens → Re-forward Same Layer → Unpack Xd"]
+    VAN --> FUSE["Normalized Fusion<br/>Gate (β·p)Xd + (1−β·p)Xv"]
+    NEST --> FUSE
+    FUSE --> OUT["Layer Output<br/>Difficult Tokens Deepened + Others Pass-through"]
+```
 
 ### Key Designs
 
-1. **Token-Choice Routing Design (Section 3.1.1)**:
-   A linear layer $R: \mathbb{R}^{d_{model}} \to \mathbb{R}$ serves as the router, independently computing a preference score $p_i = \sigma(R(\mathbf{x}_i^v))$ for each token's hidden state. A token-choice (rather than expert-choice) strategy is adopted, as expert-choice requires access to the full sequence and is incompatible with autoregressive token-by-token decoding (which would cause information leakage). Selection is determined by comparing against a preset threshold $\tau$: token $i$ is selected if $p_i > \tau$.
+**1. Token-Choice Routing: Compatibility with Autoregressive Decoding**
 
-2. **Nested Depth Computation (Section 3.1.2)**:
-   Selected tokens are packed via a binary mask $\mathbf{M}$ into a compact subsequence, assigned new positional encodings $\mathbf{E}'_{pos}$, and processed again through the same Transformer layer. After processing, an Unpack operation scatters outputs back to their original positions. This is equivalent to performing an "internal review iteration" for difficult tokens.
+The selection step determines where the additional computation is spent. DND employs a linear router $R: \mathbb{R}^{d_{model}} \to \mathbb{R}$ that maps hidden states to scalars, calculates independent preference scores $p_i = \sigma(R(\mathbf{x}_i^v))$ for each token, and selects tokens where $p_i > \tau$. Token-choice is intentionally used instead of the expert-choice common in MoE. Expert-choice requires viewing the entire sequence to select top-k, which leaks future token information to current positions and violates the causality of autoregressive decoding. Token-choice allows each position to decide independently based on its score, making it naturally compatible with token-by-token generation.
 
-3. **Normalized Fusion Strategy (Section 3.1.3)**:
-   To preserve pretrained knowledge, a gating mechanism merges the original and nested outputs: $\mathbf{x}_i = (\beta \cdot p_i) \cdot \mathbf{x}_i^v + (1 - \beta \cdot p_i) \cdot \mathbf{x}_i^d$ (applied only to selected tokens). $\beta$ is a learnable parameter (initialized to 0.1); a higher routing score $p_i$ assigns greater weight to the nested output. Unselected tokens retain their original output directly.
+**2. Dual Control of Routing and Threshold: Stable and Precise Ratio Locking**
 
-4. **Routing Control Loss (Section 3.2.1)**:
-   To address selection instability caused by routing scores clustering in a narrow range, a dual-objective loss is designed:
-   - **Score Dispersion Loss** $\mathcal{L}_{sd}$: Based on information entropy, it encourages diversity in the routing score distribution, increasing discriminability across tokens.
-   - **Distribution Preservation Loss** $\mathcal{L}_{dp}$: An MSE penalty that discourages scores from deviating from 0.5, preventing vanishing gradients in the saturation regions of the sigmoid.
+Token-choice lacks the natural ratio constraints of top-k, leading to two risks: routing scores may cluster, making selection near-random, or minor threshold perturbations may cause the selection ratio to fluctuate violently. DND solves this using a set of losses and a threshold adjustment mechanism. On the loss side, two "push-pull" objectives are used: the score dispersion loss $\mathcal{L}_{sd}$ (based on information entropy) encourages scores within a sequence to spread across a wider range to increase discriminability; the distribution preservation loss $\mathcal{L}_{dp}$ uses MSE to penalize scores deviating from 0.5, pulling them back into the linear sensitive region of the sigmoid to prevent gradient vanishing in saturation zones. On the threshold side, dual regulation is applied: buffer ratio control calculates the error $e$ between the actual selection ratio and the target ratio $k_{target}$ for each mini-batch and fine-tunes the threshold via $\tau \leftarrow \tau + \alpha \cdot e$; EMA synchronization calibrates the threshold every few steps (e.g., 50 steps) using the mean of top-k routing values $\bar{\tau}_{topk}$ in the buffer via $\tau = (1-\gamma)\tau + \gamma\bar{\tau}_{topk}$. Compared to prior work using z-loss for rough constraints, this mechanism precisely locks the selection ratio at the target value.
 
-   Together, they form a "push-pull" dynamic: the entropy loss pushes scores apart to cover a wider range, while the MSE loss pulls scores toward the sigmoid center to maintain responsiveness.
+**3. Nested Depth Computation: Reviewing Difficult Tokens in the Same Layer**
 
-5. **Threshold Control Scheme (Section 3.2.2)**:
-    - **Buffered Ratio Control**: On each mini-batch, the error $e$ between the actual selection ratio and the target ratio $k_{target}$ is computed, and the threshold is updated in real time: $\tau \leftarrow \tau + \alpha \cdot e$.
-    - **EMA Synchronization**: Periodically (e.g., every 50 steps), the threshold is updated via EMA using the mean of the top-$k$ routing values $\bar{\tau}_{topk}$ from the buffer: $\tau = (1-\gamma)\tau + \gamma\bar{\tau}_{topk}$, preventing long-term misalignment between the router and threshold optimization directions.
+Selected tokens are packed into a much shorter subsequence according to a binary mask $\mathbf{M}$, assigned new positional encodings $\mathbf{E}'_{pos}$, and fed into the **same** Transformer layer again. Crucially, reusing the same layer weights rather than adding a new layer minimizes additional parameters (<0.1M). Since this applies only to a few tokens, the extra computation is limited (e.g., at a 20% selection ratio, total FLOPs increase by only ~6.27%). This essentially performs an "internal review iteration" for difficult tokens, allowing them to undergo the same transformation more times than simple tokens.
+
+**4. Normalized Fusion: Preserving Pre-trained Knowledge via Gating**
+
+As a post-training method, DND could disrupt the pre-trained global token interaction distribution if the deepened output directly replaced the original output. Therefore, the deepened output $\mathbf{x}_i^d$ is fused with the original output via gating: $\mathbf{x}_i = (\beta \cdot p_i)\,\mathbf{x}_i^d + (1 - \beta \cdot p_i)\,\mathbf{x}_i^v$ (applied only to selected tokens). $\beta$ is a learnable scalar initialized to 0.1. At the start of training, the fusion weight is small, making the output nearly identical to the original model and avoiding distribution disruption. As training progresses, tokens with higher routing scores $p_i$ receive a larger proportion of the nested output $\mathbf{x}_i^d$, allowing "deepening" to be released smoothly onto the most appropriate tokens.
 
 ### Loss & Training
-Total Loss = Cross-Entropy Loss + $\lambda_{sd} \mathcal{L}_{sd}$ + $\lambda_{dp} \mathcal{L}_{dp}$
-
-Post-training via SFT, using the AdamW optimizer with cosine learning rate scheduling (5e-6 to 1e-6). Qwen3-1.7B is trained on 128 H100 GPUs for 1 day (2 epochs); Qwen3-30B-A3B on 256 H100 GPUs for 3 days (4 epochs). DND is applied only to middle layers ($L_s=4$ to $L_e=43$), with a target selection ratio of 20%. The router is initialized to all zeros, the threshold to 0.5, and $\beta$ to 0.1.
+The total loss is the sum of cross-entropy and two routing regularization terms: $\mathcal{L} = \mathcal{L}_{ce} + \lambda_{sd}\mathcal{L}_{sd} + \lambda_{dp}\mathcal{L}_{dp}$. The approach follows a post-training (SFT) route using the AdamW optimizer with a cosine learning rate schedule (5e-6 decaying to 1e-6). Qwen3-1.7B was trained for 2 epochs on 128 H100 GPUs (approx. 1 day), and Qwen3-30B-A3B for 4 epochs on 256 H100 GPUs (approx. 3 days). DND is applied only to intermediate layers ($L_s=4$ to $L_e=43$), with a target selection ratio of 20%, zero-initialized routers, threshold initialized to 0.5, and $\beta$ initialized to 0.1.
 
 ## Key Experimental Results
 
 ### Main Results
-Qwen3-30B-A3B MoE model, evaluated on 17 benchmarks:
+On the Qwen3-30B-A3B MoE model across 17 benchmarks:
 
 | Task Category | Representative Benchmark | SFT Baseline | +DND | Gain |
-|--------------|--------------------------|-------------|------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | General & Alignment | MMLU | 85.41 | 85.91 | +0.50 |
 | General & Alignment | C-Eval | 83.09 | 84.92 | +1.83 |
 | General & Alignment | IFEval | 83.09 | 84.31 | +1.22 |
@@ -91,44 +88,44 @@ Qwen3-30B-A3B MoE model, evaluated on 17 benchmarks:
 
 ### Ablation Study (Qwen3-1.7B)
 
-| Configuration | Avg. Score | Gain | Note |
-|--------------|-----------|------|------|
+| Configuration | Average Score | Gain | Description |
+| :--- | :--- | :--- | :--- |
 | Qwen3-1.7B SFT | 59.53 | 0.00 | Baseline |
 | +DND (Full) | 61.41 | +1.88 | All strategies |
-| +DND (z-loss control only) | 60.54 | +1.01 | No precise routing control |
-| +DND (routing control only) | 60.58 | +1.05 | No dynamic threshold adjustment |
-| +DND (threshold control only) | 60.68 | +1.15 | No routing dispersion loss |
-| Selection ratio = 10% | 60.33 | +0.80 | Too few tokens, insufficient attention |
-| Selection ratio = 20% | 61.41 | +1.88 | Optimal balance |
-| Selection ratio = 30% | 61.03 | +1.50 | Slightly below 20% |
+| +z-loss Control Only | 60.54 | +1.01 | No precise routing control |
+| +Routing Control Only | 60.58 | +1.05 | No dynamic threshold adjustment |
+| +Threshold Control Only| 60.68 | +1.15 | No routing dispersion loss |
+| Ratio = 10% | 60.33 | +0.80 | Too few tokens for effective attention |
+| Ratio = 20% | 61.41 | +1.88 | Optimal balance |
+| Ratio = 30% | 61.03 | +1.50 | Slightly lower than 20% |
 
 ### Key Findings
-- **Minimal computational overhead**: At a 20% selection ratio, total FLOPs increase by only ~6.27%, with fewer than 0.1M additional parameters.
-- **No performance degradation on any benchmark**: All 17 benchmarks show improvement with no trade-offs observed.
-- **Code and Agent tasks benefit most**: BFCL v3 improves by 2.05, validating the hypothesis that DND filters noise tokens and focuses on critical reasoning tokens.
-- **Token selection visualization**: Shallow layers tend to select key nouns; deeper layers select mathematical expressions and logical verbs — indicating that the model learns a hierarchical processing strategy.
-- **Stable selection ratio at inference**: The average selection ratio remains in the range of 0.178–0.242, with slightly higher rates in middle layers.
+- **Extremely Low Overhead**: At a 20% selection ratio, total FLOPs increase by only ~6.27%, with <0.1M parameter increase.
+- **No Performance Degradation**: All 17 benchmarks showed improvements, with no performance trade-offs observed.
+- **Code and Agent Tasks Benefit Most**: The 2.05 gain on BFCL v3 validates the hypothesis that DND filters out noise and focuses on critical reasoning tokens.
+- **Token Selection Visualization**: Shallower layers tend to select key nouns, while deeper layers select mathematical expressions and logical verbs—indicating the model learns hierarchical processing strategies.
+- **Stable Inference Ratios**: Ratios remain stable between 0.178 and 0.242, with slightly higher selection in intermediate layers.
 
 ## Highlights & Insights
-- **Simple yet effective**: The core idea is highly intuitive — identify difficult tokens and process them once more. A single linear router yields significant gains.
-- **Plug-and-play for post-training**: No pretraining from scratch is required; DND can be directly inserted into existing dense and MoE models, offering strong practical value.
-- **Elegant routing control design**: The "push-pull" mechanism combining dispersion loss and preservation loss is better suited for precise ratio control than a simple z-loss.
-- **Compatible with both dense and MoE architectures**: Validated on both 1.7B dense and 30B MoE models; the latter incurs lower overhead due to existing sparse activation in MoE layers.
-- **Convincing visualization analysis**: The layerwise token selection patterns (shallow layers → entities; deep layers → logical operators) provide empirical evidence for adaptive computation.
+- **Simple yet Effective**: The core idea—selecting difficult tokens for extra processing—is intuitive and yields significant gains using only a linear router.
+- **Pluggable Post-training**: DND can be directly inserted into existing dense and MoE models without requiring pre-training from scratch, offering high practical value.
+- **Sophisticated Routing Control**: The "push-pull" mechanism of dispersion and preservation losses is better suited for precise ratio control than simple z-loss.
+- **Dense and MoE Compatible**: Validated on both 1.7B dense and 30B MoE models, with lower relative costs for the latter due to existing sparsity.
+- **Persuasive Visual Analysis**: Hierarchical token selection patterns (entities in shallow layers, logic in deep layers) provide empirical evidence for adaptive computation.
 
 ## Limitations & Future Work
-- Validation is limited to the post-training (SFT) stage; the effects during pretraining and continual pretraining remain unexplored.
-- Only tested on autoregressive LLMs; applicability to other architectures such as diffusion-based LLMs is unknown.
-- Layer-wise selection ratios vary (higher in middle and boundary layers), but this observation is not leveraged for layer-adaptive ratio design.
-- The nesting depth is fixed at 1 (one additional pass only); whether multiple nesting iterations yield further gains is not explored.
-- Hyperparameters for the training strategy ($\lambda_{sd}$, $\lambda_{dp}$, $\alpha$, $\gamma$, etc.) require careful tuning.
+- Validated only in the post-training (SFT) phase; the impact on pre-training and continued pre-training is unexplored.
+- Tested only on autoregressive LLMs; applicability to other architectures like diffusion-based LLMs is unknown.
+- Layer-wise selection ratios varied naturally, but the paper did not utilize this to design layer-adaptive ratios.
+- Nested depth is fixed to 1 (one extra pass); whether multiple nesting iterations provide further benefits is unexplored.
+- Hyperparameters for training strategies ($\lambda_{sd}$, $\lambda_{dp}$, $\alpha$, $\gamma$, etc.) require careful tuning.
 
 ## Related Work & Insights
-- **Mixture-of-Depths (MOD, Raposo et al., 2024)**: Dynamically reduces the number of computation layers to eliminate redundancy; DND takes the opposite direction — augmenting depth for critical tokens.
-- **MOR (Bae et al., 2025)**: The most closely related work, also performing token selection with additional computation, but limited to 1B-scale pretraining, using z-loss for imprecise ratio control, and lacking a fusion strategy.
-- **Inner Thinking Transformer (ITT, Chen et al., 2025)**: Similar in combining dynamic selection with additional computation; DND offers more refined control strategies.
-- **DeepSeek-V3's balance loss**: Inspires DND's buffered ratio control mechanism.
-- **Takeaway**: Token-level adaptive computation is a promising direction; the key lies in precise selection ratio control and effective fusion strategies.
+- **Mixture-of-Depths (MOD, Raposo et al., 2024)**: Dynamically reduces computing layers to lower redundancy; DND does the opposite—adding depth for critical tokens.
+- **MOR (Bae et al., 2025)**: Highly relevant work performing token selection + extra computation, but limited to 1B scale pre-training with imprecise z-loss ratio control and no fusion strategy.
+- **Inner Thinking Transformer (ITT, Chen et al., 2025)**: Similar dynamic selection + extra computation; DND features more refined control strategies.
+- **DeepSeek-V3 Balance Loss**: Inspiration for DND's buffer ratio control.
+- **Inspiration**: Token-level adaptive computation is a promising direction; the key lies in precise selection ratio control and effective fusion strategies.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -143,10 +140,10 @@ Qwen3-30B-A3B MoE model, evaluated on 17 benchmarks:
 ## Related Papers
 
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
-- [\[ICLR 2026\] EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models](evoengineer_mastering_automated_cuda_kernel_code_evolution_with_large_language_m.md)
-- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](../../ACL2026/llm_efficiency/are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](../../ACL2026/llm_efficiency/lizard_an_efficient_linearization_framework_for_large_language_models.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
+- [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
+- [\[ICLR 2026\] Neuron-Aware Data Selection in Instruction Tuning for Large Language Models](neuron-aware_data_selection_in_instruction_tuning_for_large_language_models.md)
+- [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
 
 </div>
 

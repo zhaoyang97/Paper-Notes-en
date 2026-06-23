@@ -2,142 +2,155 @@
 title: >-
   [Paper Note] Efficient Resource-Constrained Training of Transformers via Subspace Optimization
 description: >-
-  [ICLR 2026][LLM Efficiency][subspace optimization] This paper proposes WASI (Weight-Activation Subspace Iteration), which leverages the observation that parameter subspaces remain stable during fine-tuning to simultaneou…
+  [ICLR 2026][LLM Efficiency][subspace optimization] The authors propose WASI (Weight-Activation Subspace Iteration), which leverages the hypothesis that "parameter subspaces remain stable during fine-tuning." It simultaneously compresses Transformer weights (via SVD + Gram-Schmidt subspace iteration) and activations (via Tucker decomposition). Both training and inferenc
 tags:
-  - "ICLR 2026"
-  - "LLM Efficiency"
-  - "subspace optimization"
-  - "transformer compression"
-  - "SVD"
-  - "activation compression"
-  - "edge deployment"
+  - ICLR 2026
+  - LLM Efficiency
+  - subspace optimization
+  - transformer compression
+  - SVD
+  - activation compression
+  - edge deployment
 date: 2026-05-08
-content_hash: f3b35636c0acb6ff
+content_hash: 374079c3ba7ac6ea
 ---
-
 # Efficient Resource-Constrained Training of Transformers via Subspace Optimization
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2510.09160](https://arxiv.org/abs/2510.09160)  
 **Code**: [https://github.com/Le-TrungNguyen/ICLR2026-WASI.git](https://github.com/Le-TrungNguyen/ICLR2026-WASI.git)  
-**Area**: AI Safety
+**Area**: AI Security  
 **Keywords**: subspace optimization, transformer compression, SVD, activation compression, edge deployment
 
 ## TL;DR
 
-This paper proposes WASI (Weight-Activation Subspace Iteration), which leverages the observation that parameter subspaces remain stable during fine-tuning to simultaneously compress both the weights (via SVD + Gram-Schmidt subspace iteration) and activations (via Tucker decomposition) of Transformers. Both training and inference are performed entirely within low-rank representations, achieving 62× training memory compression and 1.4× speedup on Raspberry Pi 5 with negligible accuracy loss.
+The authors propose WASI (Weight-Activation Subspace Iteration), which leverages the hypothesis that "parameter subspaces remain stable during fine-tuning." It simultaneously compresses Transformer weights (via SVD + Gram-Schmidt subspace iteration) and activations (via Tucker decomposition). Both training and inference are performed within low-rank representations, achieving 62× training memory compression and 1.4× acceleration on Raspberry Pi 5 with negligible accuracy loss.
 
 ## Background & Motivation
 
-**Background**: Deploying Transformers on edge devices poses severe memory and computational challenges. While methods such as LoRA reduce the number of trainable parameters, inference still operates in the full-rank space; activation maps during the forward pass constitute the primary memory bottleneck.
+**Background**: Deploying Transformers on edge devices faces severe memory and computational challenges. While methods like LoRA reduce trainable parameters, inference still occurs in full-rank space; activation maps during forward propagation remain the primary source of memory bottlenecks.
 
 **Limitations of Prior Work**:
-- **LoRA and variants**: Reduce training parameters but require merging back to full rank at inference, leaving inference overhead unchanged; storing both frozen weights and adapters during training can actually increase memory usage.
-- **ASVD / FWSVD**: Compress models via truncated SVD but lack a theoretical connection between truncation error and model performance.
-- **SVD-LLM**: Addresses the theoretical gap but is limited to LLMs and does not support 4D or higher activation tensors in vision Transformers.
-- **AMC**: Compresses activations with HOSVD, but recomputing HOSVD at every iteration incurs substantial overhead and rank fluctuations lead to unstable memory usage.
-- **ASI**: Replaces HOSVD with subspace iteration at a fixed activation rank, reducing computation, but does not compress weights.
+   - **LoRA and Variants**: Reduce training parameters, but inference requires merging back to full-rank, resulting in unchanged inference overhead. Training requires storing both frozen weights and adapters, which can actually increase total memory.
+   - **ASVD / FWSVD**: Use truncated SVD for compression but lack theoretical links between truncation error and model performance.
+   - **SVD-LLM**: Provides a theoretical foundation but is limited to LLMs and does not support Vision Transformers with 4D or higher activation tensors.
+   - **AMC**: Uses HOSVD for activation compression, but recomputing HOSVD at every iteration incurs high computational overhead, and rank fluctuations lead to unstable memory usage.
+   - **ASI**: Uses subspace iteration instead of HOSVD with fixed activation ranks to reduce computation, but does not compress weights.
 
-**Core Insight**: The intrinsic parameter subspace remains stable during fine-tuning (small learning rate → minuscule per-step updates → negligible change in SVD bases), so after an initial SVD, inexpensive subspace iteration suffices to track basis changes without recomputation at every step.
+**Key Insight**: The essential subspace of parameters remains stable during fine-tuning (low learning rates $\rightarrow$ minute updates per step $\rightarrow$ minimal changes in SVD bases). Therefore, inexpensive subspace iteration can track base changes after an initial SVD without per-step recomputation.
 
-**Core Idea**: Jointly compress both weights (WSI) and activations (ASI) so that training and inference are executed entirely within the low-rank space.
+**Core Idea**: Simultaneously compress weights (WSI) and activations (ASI) so that the entire training and inference cycle is executed in low-rank space.
 
 ## Method
 
 ### Overall Architecture
 
-WASI is a unified framework combining WSI (Weight Subspace Iteration) and ASI (Activation Subspace Iteration):
-- Forward pass: $\mathcal{A}_{i+1} = \mathcal{A}_i R_i^T L_i^T$ (computed in the low-rank space)
-- Backward pass: gradients are computed directly in the low-rank space; weight update $L_i R_i = L_i R_i + \eta \cdot \widetilde{\nabla_{\mathcal{W}_i}\mathcal{L}}$
-- Inference runs directly on the compressed representations $(L_i, R_i)$ without reconstructing full-rank weights
+WASI migrates the entire Transformer training and inference process into a low-rank subspace. Before fine-tuning begins, an initialization is performed: WSI decomposes each layer's weight $\mathcal{W}_i$ into two thin matrices $L_i R_i$ via full SVD, while ASI compresses activations into core tensors using Tucker decomposition. In each subsequent training step, the forward pass computes $\mathcal{A}_{i+1} = \mathcal{A}_i R_i^T L_i^T$ directly in the compressed representation. Backpropagation gradients are calculated in the low-rank space and update $L_i R_i \leftarrow L_i R_i + \eta \cdot \widetilde{\nabla_{\mathcal{W}_i}\mathcal{L}}$ in-place. Simultaneously, WSI uses inexpensive Gram-Schmidt orthogonalization and ASI uses fixed-rank subspace iteration to track slight drifts in weight/activation subspaces, avoiding per-step SVD/HOSVD recomputations. Since tensors are never restored to full-rank, both training and inference memory are reduced.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Pre-trained Transformer<br/>+ Downstream Fine-tuning Data"] --> INIT["Initialization (Step 0)"]
+    subgraph WSI["1. WSI Weight Subspace Iteration"]
+        direction TB
+        W0["Full SVD once<br/>Select optimal rank K_i via ε → L_i R_i"] --> W1["Per-step Gram-Schmidt<br/>tracking subspace drift"]
+    end
+    subgraph ASI["2. ASI Activation Subspace Iteration"]
+        direction TB
+        A0["DP-based rank selection r_i<br/>3D Tucker Decomposition"] --> A1["Per-step fixed-rank<br/>subspace iteration"]
+    end
+    INIT --> W0
+    INIT --> A0
+    WSI --> FB
+    ASI --> FB
+    subgraph FB["3. Unified Low-Rank Forward-Backward"]
+        direction TB
+        F["Forward A_i+1 = A_i R_i^T L_i^T"] --> B["Backward low-rank gradient<br/>In-place update L_i R_i"]
+    end
+    FB -->|Next training step| WSI
+    FB --> OUT["Low-rank model<br/>Edge training + Inference"]
+```
 
 ### Key Designs
 
-1. **WSI (Weight Subspace Iteration)**:
+**1. WSI (Weight Subspace Iteration): "SVD once" weight compression**
 
-    - **Initialization ($t=0$)**: A full SVD is performed on weight $\mathcal{W}_i$; the optimal rank $K_i$ is determined by a variance-explained threshold $\varepsilon$, yielding $\mathcal{W}_i \approx L_i R_i$.
-    - **Subsequent iterations ($t>0$)**: Gram-Schmidt orthogonalization tracks subspace changes at a computational cost far lower than recomputing SVD.
-    - **Error control**: The threshold $\varepsilon$ ensures that the retained variance satisfies $\sum_{j=1}^{K_i} \sigma_{i,j}^2 \geq \varepsilon$.
+Performing truncated SVD for every layer at every step is too expensive, yet full SVD is the only reliable way to determine optimal low-rank bases. WASI compromises by performing a full SVD on weights $\mathcal{W}_i$ only at Step 0. The optimal rank $K_i$ is chosen based on an energy retention threshold $\varepsilon$, satisfying $\sum_{j=1}^{K_i} \sigma_{i,j}^2 \geq \varepsilon$, resulting in the initial decomposition $\mathcal{W}_i \approx L_i R_i$. Subsequent steps use inexpensive Gram-Schmidt orthogonalization to track minute subspace drifts. This is effective because the small learning rate during fine-tuning ensures that the essential subspace spanned by singular vectors remains nearly constant, allowing lightweight iterative corrections. Empirically, WSI reduces computation by 1.36× compared to per-step SVD, with 35% higher accuracy under the same FLOPs budget.
 
-2. **ASI (Activation Subspace Iteration) enhancements**:
+**2. ASI (Activation Subspace Iteration): Capping memory peaks via DP rank selection**
 
-    - **Dynamic-programming rank selection**: Replaces the brute-force search in ASI with a DP formulation that minimizes memory usage subject to a target perplexity constraint, reducing search complexity from exponential to linear.
-    - **3D activation support**: Extends Tucker decomposition to support 3D activation tensors $\mathcal{A}_i \in \mathbb{R}^{B \times N_i \times I_i}$ arising in Transformers.
+Forward activation maps are the true memory bottleneck for edge training. While original ASI uses brute-force search for ranks and only supports low-dimensional tensors, WASI introduces two improvements: first, it reformulates rank selection as a dynamic programming problem to minimize total memory under a target perplexity constraint, reducing search complexity to linear. This stabilizes memory and keeps ranks fixed (avoiding fluctuations from HOSVD). Second, it extends Tucker decomposition to support 3D activation tensors $\mathcal{A}_i \in \mathbb{R}^{B \times N_i \times I_i}$ common in Transformers, enabling support for Vision Transformers (ViT/Swin) beyond standard sequence models. Since the first few principal components capture over 90% of the variance, compression ratios can be aggressive (up to 953× activation compression on TinyLlama).
 
-3. **Unified forward-backward computation**: Both forward and backward passes are executed directly in the compressed representation, eliminating decompression/recompression round-trips.
+**3. Unified Low-Rank Forward-Backward: Eliminating decompression/compression loops**
 
-### Loss & Training
-
-Standard cross-entropy loss is used; the key contribution lies in performing all gradient computations within the low-rank space:
-- Weight gradient: $\widetilde{\nabla_{\mathcal{W}_i}\mathcal{L}} = f_{LR}(\tilde{\mathcal{A}_i}, \widetilde{\nabla_{\mathcal{A}_{i+1}}\mathcal{L}})$
-- Activation gradient: $\widetilde{\nabla_{\mathcal{A}_i}\mathcal{L}} = \widetilde{\nabla_{\mathcal{A}_{i+1}}\mathcal{L}} \cdot L_i R_i$
+The benefits of low-rank computation would be negated if the backward pass required decompressing and re-compressing tensors. WASI closes the loop by performing both forward and backward passes directly on $(L_i, R_i)$ representations. Weight gradients are provided directly by a low-rank function $\widetilde{\nabla_{\mathcal{W}_i}\mathcal{L}} = f_{LR}(\tilde{\mathcal{A}_i}, \widetilde{\nabla_{\mathcal{A}_{i+1}}\mathcal{L}})$, and activation gradients passed to the previous layer are calculated as $\widetilde{\nabla_{\mathcal{A}_i}\mathcal{L}} = \widetilde{\nabla_{\mathcal{A}_{i+1}}\mathcal{L}} \cdot L_i R_i$, while maintaining standard cross-entropy loss. Consequently, the weight never needs to be restored to full-rank for inference, which fundamentally distinguishes WASI from LoRA and makes it naturally suited for edge deployment.
 
 ## Key Experimental Results
 
 ### Main Results: Multiple Models and Datasets
 
-| Model | Dataset | Train Mem. Compression | Inference Mem. Compression | Train FLOPs Reduction | Accuracy Change |
-|-------|---------|----------------------|--------------------------|----------------------|----------------|
-| ViT | CIFAR-10 | **62×** | **62×** | **2×** | −0.5% |
+| Model | Dataset | Training Memory Compression | Inference Memory Compression | Training FLOPs Reduction | Accuracy Delta |
+|------|--------|------------|-----------|---------------|--------|
+| ViT | CIFAR-10 | **62×** | **62×** | **2×** | -0.5% |
 | ViT | Pets | **62×** | **62×** | **2×** | 0% |
-| SwinT | CUB | ~50× | ~50× | 1.5× | +2% (surpasses baseline) |
-| SwinT | Flowers | ~50× | ~50× | 1.5× | −1% |
+| SwinT | CUB | ~50× | ~50× | 1.5× | +2% (Exceeded) |
+| SwinT | Flowers | ~50× | ~50× | 1.5× | -1% |
 | SwinT | CIFAR-100 | ~50× | ~50× | 1.5× | 0% |
-| TinyLlama | BoolQ | **953×** (activation) / **30×** (weight) | **30×** | **13×** | 0% |
+| TinyLlama | BoolQ | **953×**(Act) / **30×**(Weight) | **30×** | **13×** | 0% |
 
 ### Ablation Study: WSI vs. Full SVD
 
-| Method | ε=0.4 | ε=0.6 | ε=0.8 | ε=0.9 | Compute Cost Ratio |
-|--------|-------|-------|-------|-------|--------------------|
-| Full SVD | Low acc. | Medium | High | Near-full | 1.0× |
-| WSI | Low acc. | Medium | High | Near-full | **0.74× (1.36× savings)** |
-| Accuracy gap at equal FLOPs | — | — | — | — | WSI higher by **35%** |
+| Method | ε=0.4 | ε=0.6 | ε=0.8 | ε=0.9 | Computation Overhead |
+|------|-------|-------|-------|-------|-----------|
+| Full SVD | Low Acc | Med | High | Near Full | 1.0× |
+| WSI | Low Acc | Med | High | Near Full | **0.74× (1.36× saved)** |
+| Accuracy @ same FLOPs | — | — | — | — | WSI +**35%** |
 
-### On-Device Evaluation: Raspberry Pi 5
+### Device Benchmarking: Raspberry Pi 5
 
-| Setting | Train Time/Step | Inference Time/Step | Speedup |
-|---------|----------------|--------------------|---------| 
-| Vanilla | baseline | baseline | 1.0× |
-| WASI (ε=0.9) | faster | faster | **~1.4×** |
-| WASI (ε=0.4) | fastest | fastest | **>2×** |
+| Setup | Training Time/Step | Inference Time/Step | Speedup Gain |
+|------|-----------|-----------|-------|
+| Vanilla | Baseline | Baseline | 1.0× |
+| WASI (ε=0.9) | Faster | Faster | **~1.4×** |
+| WASI (ε=0.4) | Fastest | Fastest | **>2×** |
 
 ### Key Findings
 
-- Layer rank $K_i$ remains **constant** over 50 epochs, validating the subspace stability assumption.
-- WSI requires 1.36× fewer FLOPs than full SVD recomputation, yielding 35% higher accuracy at the same budget.
-- The leading principal components of activations capture >90% of the variance, indicating high compressibility.
-- On CUB, WASI with SwinT **surpasses** vanilla fine-tuning accuracy, suggesting a regularization effect from the low-rank constraint.
-- Activation compression reaches **953×** on TinyLlama, demonstrating significant compression potential for LLMs.
+- Layer rank $K_i$ remains **constant** across 50 epochs—validating the subspace stability hypothesis.
+- WSI consumes 1.36× fewer FLOPs than recomputing SVD and yields 35% higher accuracy under the same budget.
+- The first few principal components of activations capture >90% variance, making them highly compressible.
+- SwinT accuracy **exceeded** vanilla on CUB, suggesting the low-rank constraint acts as a regularizer.
+- TinyLlama achieved up to **953×** activation compression, demonstrating potential for LLMs.
 
 ## Highlights & Insights
 
-- **Both training and inference in the compressed space** — fundamentally distinct from LoRA, which must merge adapters back to full rank at inference, making WASI naturally suited for edge deployment.
-- **Empirical validation of the subspace stability assumption**: Figure 3(a) directly visualizes the stability of singular values throughout fine-tuning, providing strong alignment between theory and experiment.
-- **DP-based rank selection over brute-force search**: Reducing exponential to linear search complexity substantially improves practical usability.
-- **Compression can surpass the baseline**: The accuracy gain on CUB indicates that the low-rank constraint acts as an implicit regularizer.
-- **62× memory compression** implies that a model originally requiring 62 GB can be trained on a 1 GB device.
+- **Training + Inference both in compressed space**: Fundamentally different from LoRA (which merges back for inference), making it ideal for edge deployment.
+- **Experimental validation of subspace stability**: Figure 3(a) visualizes the stability of singular values throughout fine-tuning, aligning theory with experiment.
+- **DP-based rank selection instead of brute force**: Optimizes exponential search to linear, significantly improving practicality.
+- **Compression can improve performance**: The fact that WASI outperformed vanilla on CUB indicates that low-rank constraints provide regularization effects.
+- **62× memory compression** implies that a model originally requiring 62GB could be trained on a 1GB device.
 
 ## Limitations & Future Work
 
-- LLM validation is limited: experiments are conducted only on the last 5 layers of TinyLlama; effectiveness on larger-scale LLMs remains unknown.
-- The threshold $\varepsilon$ requires task- and model-specific tuning; the optimal value may vary across settings.
-- Gram-Schmidt orthogonalization may exhibit numerical instability at extremely small ranks.
-- The LoRA adapters in SVD-LLM confer a FLOPs advantage; WASI's FLOPs benefit is less pronounced than its memory benefit.
-- Combining WASI with orthogonal compression techniques such as quantization and knowledge distillation remains unexplored.
+- Limited LLM validation: Only tested on the last 5 layers of TinyLlama; efficacy for large-scale LLMs remains unknown.
+- Requires pre-tuning the $\varepsilon$ threshold; optimal values may vary by task or model.
+- Gram-Schmidt may exhibit numerical instability at extremely small ranks.
+- SVD-LLM's use of LoRA adapters gives it a FLOPs advantage; WASI's FLOPs efficiency is less dramatic than its memory efficiency.
+- Potential integration with orthogonal techniques (quantization, distillation) remains unexplored.
 
 ## Related Work & Insights
 
-- **vs. LoRA**: LoRA reduces only training parameters without compressing inference; WASI compresses both, offering a clear edge-deployment advantage.
-- **vs. SVD-LLM**: SVD-LLM is restricted to LLMs and memory can actually increase at low compression ratios due to LoRA adapter overhead; WASI is general-purpose with no additional overhead.
-- **vs. ASI**: ASI compresses activations only, leaving the inference space unchanged; WASI jointly compresses both.
-- **vs. AMC**: AMC incurs heavy per-step HOSVD recomputation; WASI uses an initial SVD followed by subspace iteration, achieving computational efficiency.
+- **vs. LoRA**: LoRA only reduces training parameters without compressing inference; WASI compresses both, offering a clear edge in deployment.
+- **vs. SVD-LLM**: SVD-LLM is specific to LLMs and can increase memory at low compression ratios due to adapter overhead; WASI is general-purpose and overhead-free.
+- **vs. ASI**: ASI only compresses activations; WASI provides an unified compression for both weights and activations.
+- **vs. AMC**: AMC incurs massive per-step HOSVD calculation costs; WASI uses initial SVD + subspace iteration for high efficiency.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — A unified framework that simultaneously compresses weights and activations, with theoretical grounding for the subspace stability assumption.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Convincing RPi5 deployment validation across ViT, SwinT, and TinyLlama.
-- Writing Quality: ⭐⭐⭐⭐ — Complete mathematical derivations with detailed computational complexity analysis.
-- Value: ⭐⭐⭐⭐ — A practical solution for edge deployment of Transformers; the 62× compression ratio carries significant engineering value.
+- Novelty: ⭐⭐⭐⭐ Unified framework for weight+activation compression; subspace stability hypothesis is theoretically supported.
+- Experimental Thoroughness: ⭐⭐⭐⭐ RPi5 deployment is persuasive; multi-model validation across ViT/SwinT/TinyLlama.
+- Writing Quality: ⭐⭐⭐⭐ Solid mathematical derivations and detailed complexity analysis.
+- Value: ⭐⭐⭐⭐ Practical solution for edge Transformer deployment; 62× compression offers significant engineering value.
 
 <!-- RELATED:START -->
 
@@ -145,11 +158,11 @@ Standard cross-entropy loss is used; the key contribution lies in performing all
 
 ## Related Papers
 
+- [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
 - [\[AAAI 2026\] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning](../../AAAI2026/llm_efficiency/resource_efficient_sleep_staging_via_multi-level_masking_and_prompt_learning.md)
+- [\[ICLR 2026\] MeSH: Memory-as-State-Highways for Recursive Transformers](mesh_memory-as-state-highways_for_recursive_transformers.md)
+- [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](../../NeurIPS2025/llm_efficiency/zeros_zero-sum_linear_attention_for_efficient_transformers.md)
-- [\[ICML 2026\] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing](../../ICML2026/llm_efficiency/efficient_training-free_multi-token_prediction_via_embedding-space_probing.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
 
 </div>
 

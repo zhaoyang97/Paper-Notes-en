@@ -2,140 +2,123 @@
 title: >-
   [Paper Note] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective
 description: >-
-  [ICLR 2026][LLM Efficiency][KV cache eviction policy] This paper proposes the first unified mathematical model for KV cache-aware load balancing…
+  [ICLR 2026][LLM Efficiency][Paper Note] The authors propose the first unified mathematical model for KV cache-aware load balancing, designing the Randomized Leaf-node Token eviction algorithm (RLT) with an $O(\log n)$ competitive ratio and the Learning-Based Greedy Routing (LBGR). This approach reduces latency by up to 11.96× and TTFT by 14.06× in multi-LLM
 tags:
-  - "ICLR 2026"
-  - "LLM Efficiency"
-  - "KV cache eviction policy"
-  - "randomized algorithms"
-  - "load-balanced routing"
-  - "multi-LLM serving"
-  - "competitive ratio analysis"
+  - ICLR 2026
+  - LLM Efficiency
 date: 2026-05-08
-content_hash: a1ead00f439af961
+content_hash: 5f53ae21b308225d
 ---
-
 # Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.18999](https://arxiv.org/abs/2601.18999)  
 **Code**: [GitHub](https://github.com/fzwark/KVRouting)  
-**Area**: LLM Serving / KV Cache / Load Balancing
-**Keywords**: KV cache eviction policy, randomized algorithms, load-balanced routing, multi-LLM serving, competitive ratio analysis
+**Area**: LLM Serving / KV Cache / Load Balancing  
+**Keywords**: KV Cache Eviction Policy, Randomized Algorithms, Load Balancing Routing, Multi-LLM Serving, Competitive Analysis  
 
 ## TL;DR
-This paper proposes the first unified mathematical model for KV cache-aware load balancing, introducing a randomized leaf-node eviction algorithm RLT (with $O(\log n)$ competitive ratio) and a learning-based greedy router LBGR, achieving up to 11.96× latency reduction and 14.06× TTFT reduction in multi-LLM serving scenarios.
+The authors propose the first unified mathematical model for KV cache-aware load balancing, designing the Randomized Leaf-node Token eviction algorithm (RLT) with an $O(\log n)$ competitive ratio and the Learning-Based Greedy Routing (LBGR). This approach reduces latency by up to 11.96× and TTFT by 14.06× in multi-LLM serving scenarios.
 
 ## Background & Motivation
-**KV caching is central to LLM inference acceleration**: by reusing key-value pairs from prior queries to avoid redundant computation, yet its effectiveness under memory constraints is highly sensitive to the choice of eviction policy.
+**Background**: KV caching is a core technology for LLM inference acceleration, avoiding redundant computation by reusing key-value pairs. However, its effectiveness under memory constraints depends heavily on eviction policies.
 
-**LRU eviction has fundamental flaws**: the traditional Least Recently Used (LRU) policy is fragile under dynamic query arrival patterns — in the worst case, it evicts precisely the tokens needed by the next query, causing a sharp drop in cache hit rate.
-
-**Inherent tension in multi-LLM serving**: maximizing per-LLM cache hit rate (routing similar queries to the same LLM) and achieving global load balance (avoiding queue delays) are conflicting objectives.
-
-**Existing methods rely on heuristics**: SGLang uses a fixed threshold to switch routing strategies; NVIDIA/llm-d uses a static linear scoring function. Neither approach offers formal modeling or adaptability to dynamic query patterns.
-
-**Lack of theoretical analysis**: a significant gap exists between practical system design and theoretical understanding, with no unified model capturing the coupling between cache eviction and load balancing.
-
-**Coarse-grained queue load modeling**: existing methods measure congestion solely by the number of pending queries, ignoring variation in actual service time across queries.
+**Limitations of Prior Work**: 
+- **LRU Flaws**: Traditional Least Recently Used (LRU) policies are fragile under dynamic query patterns. In the worst case, they evict tokens required for the next query, causing cache hit rates to plummet.
+- **Key Challenge**: Maximizing individual LLM cache hit rates (routing similar queries to the same worker) conflicts with global load balancing (avoiding queue delays).
+- **Heuristic Reliance**: Existing systems like SGLang use fixed thresholds, and NVIDIA/llm-d uses static linear scoring, both lacking formal modeling to adapt to dynamic patterns.
+- **Theoretical Gap**: There is a significant disconnect between system design and theoretical understanding, with no unified model capturing the coupling between cache eviction and load balancing.
+- **Coarse Modeling**: Current methods often use the number of pending queries to measure congestion, ignoring actual service time variations between queries.
 
 ## Method
 
-### Unified Formal Model
-- $M$ workers (LLMs), each equipped with a KV cache of size $B_i$, process $N$ queries $Q = \{q_j\}$ online.
-- Service time: $\text{Cost}_{ij} = \alpha_{\text{CACHED}} \cdot h_{ij} + \alpha_{\text{MISS}} \cdot (|q_j| - h_{ij}) + O_{ij}$, where $h_{ij}$ is the number of cache-hit tokens.
-- Routing decision $x_{ij} \in \{0, 1\}$ determines query assignment; the objective is to minimize makespan (maximum cumulative load across all workers).
-- Cache state is updated via an UpdateCache function; queue load $P_i$ accumulates by service time.
-- The model formally exposes the theoretical limitation of LRU: L-LRU (SGLang's leaf-node LRU) has a competitive ratio of $O(n)$, degenerating severely when query lengths are highly imbalanced.
+### Overall Architecture
+**Mechanism**: The paper integrates "cache eviction" and "query routing" into a single mathematical model: $M$ workers (LLMs) each possess a KV cache of size $B_i$, processing an online query sequence $Q=\{q_j\}$. Each query is assigned to a worker, subsequently altering that worker's cache state and queue load. The objective is to minimize the makespan (maximum cumulative load). This unified model reveals that the Leaf-node LRU (L-LRU) used in SGLang has an $O(n)$ worst-case competitive ratio. Consequently, two coupled components are designed: RLT for intra-worker eviction to achieve an $O(\log n)$ ratio, and LBGR for inter-worker routing using greedy load estimation.
 
-### RLT: Randomized Leaf-node evicTion
-- A marking set $T$ tracks visited tokens; when the mark count reaches $B_i + 1$, marks are cleared (retaining only the most recent token).
-- When the cache is full and new tokens must be loaded, a leaf node is chosen **uniformly at random** from **unmarked leaf nodes** for eviction.
-- **Theoretical guarantee**: competitive ratio $\Theta(\log(B_i - L))$, an exponential improvement over L-LRU's $O(n)$.
-- This is proven to match the optimal lower bound for all randomized eviction algorithms (information-theoretically optimal).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Online Query Sequence q_j"] --> MODEL["Unified Cost Model<br/>Service Time Cost_ij + Queue Load P_i<br/>Goal: Minimize Makespan"]
+    MODEL -->|Reveals L-LRU competitive ratio degrades to O(n)| RLT["RLT Randomized Eviction<br/>Marking set size reaches B_i+1 -> Clear<br/>Unmarked leaf nodes: Uniform Random Eviction -> O(log n)"]
+    RLT -->|Robust Worker Cache Hits| LBGR["LBGR Learning Greedy Routing<br/>Estimate Ê_ij = Cost + Decayed Load + Residual<br/>Select Worker with Min Predicted Latency"]
+    LBGR --> OUT["Assign Query → Service → Update Radix Tree<br/>Approximate Min Makespan / E2E Latency"]
+    OUT -.Observe Real Latency E_ij.-> UPD["Update Regression θ_i Online<br/>+ Exponential Load Decay ρ"]
+    UPD -.Continuous Calibration.-> LBGR
+```
 
-### LBGR: Learning-Based Greedy Routing
-- **Service time estimation**: a global Radix Tree tracks per-worker cache state to estimate cache-hit token count $\tilde{h}_{ij}$.
-- **Queue load estimation**: $\tilde{P}_i$ tracks per-worker load using exponential decay (factor $\rho$) to simulate natural load reduction over time; residual load is released upon query completion.
-- **Residual correction**: an online linear regression model $\theta_i$ captures latency deviations caused by environmental fluctuations, with feature vector $\phi$ containing hit count, miss count, and current load.
-- **Greedy decision**: $\hat{E}_{ij} = \text{Cost}_{ij} + \tilde{P}_i + \theta_i^T \cdot \phi_{ij}$; queries are routed to the worker with the lowest predicted latency.
-- **Online update**: the regression model is continuously updated by minimizing $(E_{ij} - \hat{E}_{ij})^2$ upon observing actual latency.
-- **Background decay thread**: every $\Delta t$ time units, all workers execute $\tilde{P}_i \leftarrow \rho \cdot \tilde{P}_i$ to prevent accumulated distortion in load estimates.
+### Key Designs
 
-## Experiments
+**1. Unified Formal Model: Coupling Eviction and Routing**
+**Design Motivation**: Prior systems struggle with the trade-off between grouping similar queries for hits and spreading them for balancing. The paper formalizes service time as a weighted sum of hit and miss portions: $\text{Cost}_{ij} = \alpha_{\text{CACHED}}\cdot h_{ij} + \alpha_{\text{MISS}}\cdot(|q_j| - h_{ij}) + O_{ij}$, where $h_{ij}$ is the number of hit tokens. Routing decisions $x_{ij} \in \{0, 1\}$ update the cache state and queue load $P_i$. This formalization quantifies L-LRU's fragility ($O(n)$ competitive ratio) under unbalanced query lengths.
+
+**2. RLT (Randomized Leaf-node Token Eviction)**
+**Novelty**: Deterministic LRU is vulnerable to adversarial arrival orders. Inspired by marking algorithms in online theory, RLT introduces randomness. It maintains a marking set $T$ for accessed tokens, clearing it when it reaches $B_i+1$. When the cache is full, a token is selected for eviction **uniformly at random** from the **unmarked leaf nodes**. This randomness prevents adversarial exploitation, reducing the competitive ratio to $\Theta(\log(B_i - L))$, which is an exponential improvement over $O(n)$ and theoretically optimal.
+
+**3. LBGR (Learning-Based Greedy Routing)**
+**Function**: LBGR estimates the expected latency for worker $i$ as $\hat{E}_{ij} = \text{Cost}_{ij} + \tilde{P}_i + \theta_i^{\top}\varphi_{ij}$ and routes to the worker with the minimum value. 
+- $\text{Cost}_{ij}$: Tracks cache hits via a global Radix Tree.
+- $\tilde{P}_i$: Simulates load decay using $\tilde{P}_i \leftarrow \rho\cdot\tilde{P}_i$ to account for service completion.
+- $\theta_i^{\top}\varphi_{ij}$: An online linear regression residual term that captures environmental fluctuations. Parameters are updated online using $(E_{ij} - \hat{E}_{ij})^2$ to adapt to workload shifts.
+
+## Key Experimental Results
 
 ### Main Results
 
-| Baseline | Median Latency Reduction | Median TTFT Reduction | Cache Hit Rate Gain | Throughput Gain |
-|---|---|---|---|---|
-| vs Random+LRU | 30.9× | 44.49× | — | — |
+| Method | Median Latency Gain | Median TTFT Gain | Cache Hit Rate Gain | Throughput Gain |
+|---------|------------|------------|-------------|---------|
+| vs Random+LRU | 30.9× | 44.49× | - | - |
 | vs Cache-Aware+LRU (SOTA) | 11.96× | 14.06× | 36.45% | 36.51% |
-| vs Cache-Aware+LRU (P95) | 2.03× | 2.62× | — | — |
+| vs Cache-Aware+LRU (P95) | 2.03× | 2.62× | - | - |
 
 ### Ablation Study
 
 | Method | P50 Latency (ms) | P50 TTFT (ms) | Hit Rate | Overhead |
-|---|---|---|---|---|
-| Cache-Aware+LRU | 26680 | 25022 | 23.89% | baseline |
-| Cache-Aware+RLT | 19191 | 14332 | 26.36% | +0.58ms eviction |
-| LBGR+LRU | 6025 | 2958 | 33.33% | +0.56ms routing |
-| LBGR+RLT | 2263 | 1088 | 37.31% | +2ms total |
-
-### Generalization across Model Scales and Architectures
-
-| Model | Hardware | Latency Reduction vs Cache-Aware+LRU | TTFT Reduction vs Cache-Aware+LRU |
-|---|---|---|---|
-| Llama-3.1-8B | 10×L40 | 11.96× | 14.06× |
-| Llama-3.1-70B | 4×H200 | 5.46× | 7.19× |
-| Mixtral-8×7B (MoE) | 4×H200 | significantly outperforms all baselines | significantly outperforms all baselines |
+|------|-----------|------------|-------|---------|
+| Cache-Aware+LRU (Baseline) | 26680 | 25022 | 23.89% | - |
+| Cache-Aware+RLT | 19191 | 14332 | 26.36% | +0.58ms (Eviction) |
+| LBGR+LRU | 6025 | 2958 | 33.33% | +0.56ms (Routing) |
+| LBGR+RLT | 2263 | 1088 | 37.31% | +2ms (Total) |
 
 ### Key Findings
-- Consistent gains across Llama-3.1-8B (L40), 70B (H200), and Mixtral-8×7B, generalizing across dense and sparse architectures.
-- Under worst-case round-robin arrival order, LBGR+RLT still leads substantially (22.8× latency reduction, 15.5× TTFT reduction).
-- Robust across cache sizes from 50% to 90%, worker counts from 2 to 10, and request rates of 4–20 req/s.
-- Single-worker experiments also confirm RLT's superiority over L-LRU: up to 6.92× higher cache hit rate and 77.4% throughput gain.
-- The performance gap between LBGR+RLT and baselines **widens further** as cache capacity increases.
-- Throughput saturates across methods for worker counts $\geq 6$ under fixed request rate (12 req/s), indicating sufficient system capacity.
+- **Generalization**: Effective across Llama-3.1-8B/70B and Mixtral-8×7B (MoE) architectures and various GPU hardware (L40, H200).
+- **Robustness**: In worst-case round-robin arrival sequences, LBGR+RLT maintains a massive lead (22.8× latency reduction).
+- **Scalability**: Performance gains over baselines **increase** as cache capacity grows.
+- **Single-Worker Efficiency**: RLT alone improves hit rates by up to 6.92× and throughput by 77.4% compared to L-LRU.
+- **Efficiency**: Total runtime overhead is ~2ms per query, making it highly practical for production.
 
 ## Highlights & Insights
-- The paper establishes the first unified mathematical model for KV cache-aware load balancing, bridging the gap between theory and practice.
-- RLT's $O(\log n)$ competitive ratio is proven to be information-theoretically optimal (not improvable), representing an elegant application of classical online algorithm theory to LLM systems.
-- Both algorithms introduce negligible runtime overhead (~2ms per query), making them highly practical and directly plug-and-play in existing systems.
-- LBGR's exponential decay combined with online regression is simple yet effective, avoiding the training cost of complex RL or predictive models.
-- Experiments cover 4 benchmarks (GSP/ShareGPT/UltraChat/Loogle), 3 prefix-sharing scenarios, and multiple model scales and architectures, providing comprehensive empirical coverage.
+- Sets a theoretical foundation for KV cache load balancing, closing the gap between theory and system practice.
+- RLT's $O(\log n)$ competitive ratio is information-theoretically optimal.
+- The "Analytical Cost + Decaying Load + Online Regression" combination in LBGR avoids heavy RL or prediction models while remaining adaptive.
+- Demonstrates that theoretical insights (randomization) can solve practical system bottlenecks (LRU fragility).
 
 ## Limitations & Future Work
-- Evaluation is limited to text inference; multi-modal KV caching (where image token cache behavior may differ) is not addressed.
-- Deployment is restricted to single-domain setups of up to 10 workers; the impact of network latency in large-scale or geo-distributed deployments remains unvalidated.
-- Theoretical analysis assumes online adversarial arrivals; distributional properties of real workloads (e.g., Zipf distributions) could be exploited for tighter bounds.
-- The linear regression residual model in LBGR may lack expressiveness in highly non-linear latency scenarios.
-- Output token length experiments are limited to 128; longer generation settings (e.g., 4K+) are unexplored.
+- **Modality**: Evaluated only on text; multi-modal KV caches (e.g., image tokens) may exhibit different characteristics.
+- **Scale**: Focused on single-domain deployment; wide-area network latency in geo-distributed scenarios is not explored.
+- **Theoretical Bounds**: While $O(\log n)$ is optimal for adversarial input, specific workload distributions (e.g., Zipf) might allow for tighter bounds.
+- **Generation Length**: Generation tests were limited to 128 tokens; behavior in extremely long-context scenarios (4K+) needs verification.
 
 ## Related Work & Insights
-- **KV cache compression**: H2O (retaining high-attention tokens), StreamingLLM (attention sink tokens) — model-level compression approaches, complementary to the system-level eviction strategy proposed here.
-- **KV cache systems**: vLLM (paged virtual memory to reduce fragmentation), SGLang RadixAttention (Radix tree prefix sharing) — this paper replaces the eviction and routing modules on top of SGLang.
-- **Load-balanced routing**: SGLang (threshold-based switching between hit-rate and least-load routing), NVIDIA TensorRT-LLM/llm-d (static linear scoring) — all heuristic-based with no theoretical guarantees.
-- **Online algorithm theory**: the classical marking algorithm (Fiat et al., 1991) provides the theoretical foundation for RLT; this paper extends it to leaf-node eviction on Radix tree structures.
-- **Competitive ratio analysis**: this work connects online algorithm competitive analysis with LLM system optimization, exemplifying a theory-guided systems research paradigm.
-- This is the first work to jointly model cache eviction and routing in a unified framework, serving as a canonical example of theoretically driven system optimization.
+- **KV Compression**: Works like H2O and StreamingLLM compress at the model level; this work optimizes the system-level eviction policy.
+- **Serving Systems**: Builds upon SGLang's RadixAttention, replacing the heuristic routing and eviction modules.
+- **Online Algorithms**: RLT is a non-trivial application of the classic marking algorithm (Fiat et al., 1991) to Radix tree structures.
 
 ## Rating ⭐⭐⭐⭐⭐
-- **Novelty**: 5/5 — First unified formalization with optimal competitive ratio proof; solid theoretical contribution.
-- **Experimental Thoroughness**: 5/5 — 4 benchmarks × 3 settings × multiple models × extensive parameter sweeps; thorough ablation.
-- **Writing Quality**: 5/5 — Theory and experiments are well-integrated; problem motivation is clearly articulated.
-- **Value**: 5/5 — Only ~2ms overhead per query; directly integrable into systems such as SGLang.
+- **Novelty**: 5/5
+- **Experimental Thoroughness**: 5/5
+- **Writing Quality**: 5/5
+- **Value**: 5/5
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] QuoKA: Query-Oriented KV Selection for Efficient LLM Prefill](quoka_query-oriented_kv_selection_for_efficient_llm_prefill.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 - [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
-- [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
-- [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
-- [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](../../ACL2026/llm_efficiency/mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
+- [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
+- [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
 
 </div>
 

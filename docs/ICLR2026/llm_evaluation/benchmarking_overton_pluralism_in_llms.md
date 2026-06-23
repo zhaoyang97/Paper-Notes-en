@@ -2,81 +2,83 @@
 title: >-
   [Paper Note] Benchmarking Overton Pluralism in LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][Overton pluralism] This paper proposes the OvertonBench framework, which formalizes Overton pluralism as a set-coverage metric called OvertonScore through a large-scale human study (1…
+  [ICLR 2026][LLM Evaluation][benchmark] The authors propose the OvertonBench framework, formalizing Overton pluralism as a set coverage metric, OvertonScore, through a large-scale human study (1,208 representative US participants, 60 subjective questions, 8 LLMs). It is found that all current models score only between 0.35–0.41 (theoretical upper bound is 1.
 tags:
-  - "ICLR 2026"
-  - "LLM Evaluation"
-  - "Overton pluralism"
-  - "LLM bias"
-  - "benchmark"
-  - "viewpoint coverage"
-  - "automated evaluation"
+  - ICLR 2026
+  - LLM Evaluation
+  - benchmark
 date: 2026-05-08
-content_hash: ea95dbc22350ed2b
+content_hash: f4647d6eb1139a0a
 ---
-
 # Benchmarking Overton Pluralism in LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.01351](https://arxiv.org/abs/2512.01351)  
 **Code**: [https://github.com/elinorpd/overtonbench](https://github.com/elinorpd/overtonbench)  
-**Area**: Human Understanding / LLM Alignment / Pluralistic Representation
-**Keywords**: Overton pluralism, LLM bias, benchmark, viewpoint coverage, automated evaluation
+**Area**: Human Understanding / LLM Alignment / Pluralistic Representation  
+**Keywords**: Overton Pluralism, LLM Bias, benchmark, Viewpoint Coverage, Automated Evaluation
 
 ## TL;DR
-This paper proposes the OvertonBench framework, which formalizes Overton pluralism as a set-coverage metric called OvertonScore through a large-scale human study (1,208 demographically representative U.S. participants, 60 subjective questions, 8 LLMs). All evaluated models score only 0.35–0.41 (theoretical maximum: 1.0), and an automated evaluation tool achieving high correlation with human judgments (ρ=0.88) is constructed.
+The authors propose the OvertonBench framework, formalizing Overton pluralism as a set coverage metric, OvertonScore, through a large-scale human study (1,208 representative US participants, 60 subjective questions, 8 LLMs). It is found that all current models score only between 0.35–0.41 (theoretical upper bound is 1.0), and a highly correlated (ρ=0.88) automated evaluation tool is constructed based on these findings.
 
 ## Background & Motivation
 
-**Background**: LLMs have broadly influenced political discourse, education, and everyday interaction. Conventional alignment strategies typically aggregate diverse preferences, compressing genuine disagreement into a single normative position (value monism), thereby erasing minority viewpoints.
+**Background**: LLMs have extensively influenced political discussions, education, and daily interactions. Traditional alignment strategies often aggregate diverse preferences, compressing genuine disagreements into a single normative stance (Value Monism), which leads to the erasure of minority viewpoints.
 
 **Limitations of Prior Work**:
-   - Existing political bias evaluations (e.g., Model Slant) measure only whether a model leans toward a particular side, and cannot quantify whether the model covers a plurality of viewpoints.
-   - Ostensibly "neutral" responses may achieve neutrality by omitting minority perspectives, thereby exacerbating representational harm.
-   - Pursuing political neutrality has been shown to be both impossible and not always desirable.
+   - Existing political bias assessments (e.g., Model Slant) only measure whether a model leans toward a particular side, failing to quantify whether the model covers a plurality of viewpoints.
+   - Apparently "neutral" responses may achieve neutrality by omitting minority views, which actually exacerbates representational harm.
+   - Pursuing absolute political neutrality has been proven impossible and is not always desirable.
 
-**Key Challenge**: Rather than seeking consensus, LLMs should present the range of reasonable viewpoints within the "Overton window" of public discourse; yet no systematic metric exists to measure model performance in this regard.
+**Key Challenge**: LLMs should not seek consensus but rather present a variety of reasonable viewpoints within the "Overton Window" of public discourse; however, there is currently a lack of systematic metrics to measure model performance in this regard.
 
 **Goal**:
-   - How should Overton pluralism be defined and quantified?
-   - How well do current LLMs represent a plurality of viewpoints?
-   - How can scalable evaluation be conducted without repeated expensive human studies?
+   - How can Overton pluralism be defined and quantified?
+   - How do current LLMs perform in terms of pluralistic viewpoint representation?
+   - How can scalable evaluation be conducted without repeatedly performing expensive human studies?
 
-**Key Insight**: Building on Sorensen et al.'s three-tier taxonomy of pluralism (Overton, steerable, distributional), this work focuses on the most practically relevant tier—Overton pluralism—whereby a model should present multiple reasonable viewpoints within a single response.
+**Key Insight**: Based on the three-level classification of pluralism by Sorensen et al. (Overton, Steerable, Distributed), this work focuses on the most practical level—Overton pluralism—where models should present multiple reasonable viewpoints simultaneously in a single response.
 
-**Core Idea**: Pluralistic alignment is reframed from a normative goal into a measurable set-coverage benchmark; opinion clusters are discovered via participant-based clustering, and model response coverage across clusters is then assessed.
+**Core Idea**: Transform pluralistic alignment from a normative goal into a measurable set-coverage benchmark. Viewpoint groups are identified through participant clustering, and the coverage rate of model responses for each group is then evaluated.
 
 ## Method
 
 ### Overall Architecture
-The input is a set of 60 subjective questions; the output is an OvertonScore for each LLM. Three stages are involved: (1) human data collection—participants write responses and rate LLM replies; (2) opinion clustering—distinct viewpoint clusters are discovered from pairwise agreement/disagreement voting patterns; (3) coverage computation—each opinion cluster is assessed for whether it feels represented in the model's response.
+This paper transforms the vague concept of "whether model responses cover pluralistic viewpoints" into a computable score: the input consists of 60 subjective questions, and the output is the OvertonScore for each LLM. The construction pipeline follows three steps. First, human data collection: 1,208 participants write free-text viewpoints for each question, rate the representativeness (1–5) of 8 LLM responses, and perform peer voting (Agree/Disagree/Neutral) on each other's viewpoints. Second, the sparse voting matrix is clustered into several viewpoint groups; each group represent a discrete viewpoint, and the sum of all groups for a question constitutes its "Overton Window" $W(x)$. Third, group-wise coverage determination: if a group of people feels a model response represents them, that viewpoint is considered covered. The proportion of covered viewpoints is the score for that question, and the average across all questions is the OvertonScore. Finally, an LLM judge is trained to replicate human scoring as a scalable automated proxy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["60 Subjective Questions<br/>(Model Slant + PRISM)"] --> H["Human Study (1,208 participants)<br/>Write free-text viewpoints + Rate 8 LLM responses (1-5)<br/>+ Peer voting (Agree/Disagree/Neutral)"]
+    H --> C["Voting Clustering<br/>k-means variant + Silhouette for k<br/>Viewpoint Groups = Overton Window W(x)"]
+    C --> M["OvertonScore Set Coverage<br/>Mean Group Representativeness ≥4 implies Coverage<br/>Average Coverage across questions"]
+    M --> S["OvertonScore for each LLM<br/>(+ Population-Weighted Variant)"]
+    M --> A["Automated Benchmark<br/>Gemini 2.5 Pro (FS+FR) predicts ratings<br/>Reproduces ranking ρ=0.88"]
+```
 
 ### Key Designs
 
-1. **OvertonScore Metric**:
+**1. Voting Clustering: Defining "What Viewpoints Exist" via Genuine Human Disagreement**
 
-    - Function: Quantifies what fraction of the Overton window is covered by a model's response.
-    - Mechanism: For question $x$, the Overton window $W(x)$ contains all reasonable viewpoints. Viewpoint $y$ is considered covered if a majority of participants in the corresponding cluster rate the model's representativeness ≥4 on a 5-point scale. Coverage$(\\mathcal{M}, x) = \\frac{1}{|W(x)|} \\sum_{y \\in W(x)} \\mathbb{1}\\{y \\in \\mathcal{M}(x)\\}$; OvertonScore is the average Coverage across all questions.
-    - Design Motivation: Unlike pairwise comparisons that can only assert "A is more pluralistic than B," set coverage provides an absolute quantification with a well-defined theoretical maximum (1.0), making the direction of improvement measurable.
-    - Weighted variant OvertonScore$_W$: Weights clusters by their proportion in the population, preventing rare long-tail viewpoints from disproportionately influencing the score.
+To compute coverage, one must first identify the types of viewpoints for a question—this step defines the Overton Window $W(x)$ and is most susceptible to algorithmic bias. This paper does not use semantic similarity, NLI, or LLMs for categorization. Instead, participants vote Agree/Disagree/Neutral on each other's free-text responses. A k-means variant specifically designed to distinguish viewpoint groups (following Small et al. 2021) is run on this sparse voting matrix. For each question, the optimal number of groups $k$ is dynamically selected using Silhouette scores across multiple seeds. Groups partitioned this way directly reflect how people understand and disagree with each other, avoiding the introduction of model bias into viewpoint definitions.
 
-2. **Vote-Based Opinion Clustering**:
+**2. OvertonScore Metric: Defining "Pluralism" as Set Coverage of the Viewpoint Window**
 
-    - Function: Automatically discovers distinct opinion clusters from pairwise participant voting data.
-    - Mechanism: Participants vote Agree/Disagree/Neutral on one another's free-text responses; a k-means variant is applied to sparse voting data, with the optimal $k$ determined dynamically via Silhouette scores.
-    - Design Motivation: More faithful than clustering based on semantic similarity or NLI—it directly reflects how people interpret and disagree with each other's views, rather than imposing externally derived categories—and avoids introducing model bias through NLP pipelines.
+Once $W(x)$ is established, an absolute scale for coverage is needed. Previous political bias evaluations (e.g., Model Slant) only allowed for pairwise comparisons (e.g., "A is more pluralistic than B") without knowing the distance to the ideal. This work formalizes it as set coverage: for a viewpoint $y$ and its corresponding group, if the group's average representativeness rating for a model response is $\ge 4$ (on a 5-point scale), the viewpoint is considered covered ($y \in \mathcal{M}(x)$). The per-question coverage is defined as:
 
-3. **Automated Benchmark (LLM-as-Judge)**:
+$$\text{Coverage}(\mathcal{M}, x) = \frac{1}{|W(x)|} \sum_{y \in W(x)} \mathbb{1}\{y \in \mathcal{M}(x)\}$$
 
-    - Function: Replaces human raters with an LLM to predict participant representativeness ratings of model responses.
-    - Mechanism: Gemini 2.5 Pro is used with a few-shot + free-response (FS+FR) prompting strategy to predict each participant's 1–5 Likert rating.
-    - Design Motivation: Repeated large-scale human studies are costly and slow. Automated evaluation serves as a preliminary screening tool during model development, narrowing the candidate pool before comprehensive human evaluation.
+The OvertonScore is the mean Coverage across all questions. This provides a clear theoretical upper bound of 1.0. A weighted variant, OvertonScore$_W$, is also provided, weighting each group by its actual population proportion to avoid treating long-tail viewpoints identically to mainstream ones.
+
+**3. Automated Benchmark (LLM-as-Judge): Scaling Evaluation without Repeated Human Studies**
+
+Large-scale human studies are slow and expensive. This work uses Gemini 2.5 Pro as a judge, combined with a "few-shot examples + user free-text response" (FS+FR) prompting strategy to predict the 1–5 Likert scores a participant would give. This serves as a screening tool during model development. Using a leave-one-out approach (replacing human ratings for a target model with LLM predictions), a model-level rank correlation of $\rho=0.88$ was achieved, validating its consistency with human judgment.
 
 ### Data Collection Strategy
-- Question sources: Model Slant (15 political topics) + PRISM alignment dataset (45 value-oriented questions).
-- Participants: 1,208 U.S. English-speaking users recruited via Prolific, representative across political and demographic dimensions.
+- Question Sources: Model Slant (15 political issues) + PRISM alignment dataset (45 value-oriented questions).
+- Participants: 1,208 US English-speaking users recruited via Prolific, representative in terms of political and demographic factors.
 - Evaluated LLMs: GPT-4.1, o4-mini, Gemma 3-27B, DeepSeek R1/V3, Llama 4 Maverick/3.3-70B, Claude 3.7 Sonnet.
-- Dataset scale: 28,992 data points.
+- Data Scale: 28,992 data points.
 
 ## Key Experimental Results
 
@@ -84,56 +86,56 @@ The input is a set of 60 subjective questions; the output is an OvertonScore for
 
 | Model | Adj. OvertonScore | Adj. OvertonScore$_W$ | Significance |
 |------|------------------|----------------------|--------|
-| DeepSeek V3 | 0.41 (highest) | 0.52 (highest, p=0.035) | Weighted score significantly above mean |
+| DeepSeek V3 | 0.41 (Highest) | 0.52 (Highest, p=0.035) | Significantly higher than mean (weighted) |
 | DeepSeek R1 | 0.40 | 0.49 | Not significant |
 | Llama 3.3-70B | 0.40 | 0.49 | Not significant |
 | GPT-4.1 | 0.40 | 0.49 | Not significant |
 | o4-mini | 0.39 | 0.48 | Not significant |
 | Claude 3.7 Sonnet | 0.38 | 0.47 | Not significant |
 | Llama 4 Maverick | 0.38 | 0.47 | Not significant |
-| Gemma 3-27B | 0.35 (lowest, p=0.016) | 0.44 (lowest, p=0.036) | Significantly below mean on both metrics |
-| *Cross-model best* | *0.687* | *0.768* | *Best results combined across all eight models* |
-| *Single-opinion baseline* | *0.169* | *0.524* | *Only one cluster covered per question* |
+| Gemma 3-27B | 0.35 (Lowest, p=0.016) | 0.44 (Lowest, p=0.036) | Significantly lower than mean |
+| *Best across models* | *0.687* | *0.768* | *Union of best results from 8 models* |
+| *Single-view baseline* | *0.169* | *0.524* | *Coverage of only one group per question* |
 
 ### Automated Evaluation Validation
 
-| Evaluation Method | MAE (Likert) | Spearman ρ | Notes |
+| Evaluation Method | MAE (Likert) | Spearman ρ | Description |
 |---------|-------------|-----------|------|
 | Gemini 2.5 Pro (FS+FR) | 0.66±0.01 | 0.66 | Best automated method |
-| Mean-of-others baseline | 0.70±0.01 | 0.64 | Average score from other responses |
-| Semantic similarity baseline | 0.72±0.02 | 0.59 | Cosine similarity matching |
+| Mean-of-others Baseline | 0.70±0.01 | 0.64 | Using mean scores of other responses |
+| Semantic Similarity Baseline | 0.72±0.02 | 0.59 | Cosine similarity matching |
 | Leave-one-out OvertonScore | — | 0.88 (rank) | Model-level rank correlation |
 
 ### Key Findings
-- All models score far below the theoretical maximum of 1.0 (mean: 0.39); even combining the best results across all models yields only 0.687.
-- DeepSeek V3 performs best on the full benchmark but worst on the Model Slant subset—pluralism is not a single unified capability but is domain-dependent.
-- **Political neutrality ≠ pluralistic representation**: o4-mini is rated the second most politically biased model by Model Slant, yet performs well on OvertonScore (r=−0.41 negative correlation).
-- Llama 3.3 outperforms Llama 4 on both subsets, casting doubt on the practical effectiveness of political bias mitigation efforts for pluralistic representation.
-- The automated benchmark shows no significant gender or racial fairness disparities, though small significant differences exist for political orientation and model identity (effect size η²<0.004).
+- All models' OvertonScores are far below the theoretical upper bound of 1.0 (mean is only 0.39). Even the union of all models' best results reaches only 0.687.
+- DeepSeek V3 performs strongest on the full benchmark but weakest on the Model Slant subset—pluralism is not a monolithic ability and depends on the specific domain.
+- **Political Neutrality $\neq$ Pluralistic Representation**: o4-mini was rated as the second most biased model by Model Slant but performed excellently on OvertonScore ($r=-0.41$ negative correlation).
+- Llama 3.3 outperformed Llama 4 on both subsets, questioning the actual effect of political bias mitigation efforts on pluralistic representation.
+- The automated benchmark showed no significant differences in gender/racial fairness, though minor significant differences existed regarding political orientation and model identity (effect size $\eta^2 < 0.004$).
 
 ## Highlights & Insights
-- **The set-coverage formalization of OvertonScore** is the paper's most important contribution—it transforms the vague notion of "pluralism" into a quantifiable metric between 0 and 1 with a well-defined theoretical maximum. This is more informative than pairwise comparisons because it measures absolute coverage rather than relative superiority.
-- **Vote-based participant clustering** cleverly sidesteps bias introduced by NLP pipelines—real human disagreement patterns define the opinion clusters, rather than having an algorithm presuppose what constitutes a "distinct viewpoint."
-- **The negative correlation between political neutrality and pluralism** carries far-reaching implications, suggesting that the industry's current pursuit of "neutrality" may be counterproductive and actually reduce viewpoint coverage. This insight is transferable to any AI alignment research involving subjective values.
+- **Formalization of OvertonScore as Set Coverage** is the most significant contribution—transforming "plurality" into a quantifiable metric between 0 and 1 with a clear theoretical upper bound. This is more informative than pairwise rankings as it measures absolute rather than relative performance.
+- **Clustering Based on Participant Voting** cleverly bypasses bias introduced by NLP pipelines—allowing real human disagreement patterns to define viewpoint groups rather than letting algorithms pre-set "different viewpoints."
+- **Finding of a Negative Correlation between Neutrality and Pluralism** has profound implications—suggesting that the current industry pursuit of "neutrality" might be counterproductive, actually reducing viewpoint coverage. This insight is transferable to any AI alignment research involving subjective values.
 
 ## Limitations & Future Work
-- Coverage is limited to U.S. English-speaking participants, which cannot represent Overton windows across global cultural contexts.
-- The 60 questions provide limited coverage and do not address emerging topics such as technology ethics or environmental justice.
-- Opinion clustering relies on k-means, which may fail to capture nuanced differences along continuous spectrums of opinion.
-- Claude 3.7 Sonnet is systematically overestimated in automated evaluation (Δ=+0.103), indicating that automated scores for certain models still require calibration.
-- The paper does not explore how to actually improve OvertonScore—it provides a measurement tool but not an improvement methodology.
-- **Potential direction**: An RLHF reward signal based on OvertonScore could be designed to guide models to proactively present diverse viewpoints in their responses.
+- Only covers US English users, failing to represent the Overton Window under global cultural differences.
+- The 60-question coverage is limited and does not address emerging issues like tech ethics or environmental justice.
+- Viewpoint clustering relies on k-means, which may fail to capture subtle nuances on a continuous spectrum.
+- Claude 3.7 Sonnet was systematically overestimated in automated evaluation ($\Delta=+0.103$), indicating that automated scoring for certain models still requires calibration.
+- Does not explore how to actually improve OvertonScore—providing a measurement tool rather than an improvement method.
+- **Future Work**: Design RLHF reward signals based on OvertonScore to guide models to actively present pluralistic viewpoints in their responses.
 
 ## Related Work & Insights
-- **vs. Model Slant (Westwood et al., 2025)**: Model Slant measures a model's political leaning (binary bias), whereas this paper measures pluralistic viewpoint coverage. The two dimensions are distinct; this paper finds a negative correlation between them—neutrality does not equal pluralism.
-- **vs. Modular Pluralism (Feng et al., 2024)**: Modular Pluralism detects values via NLI and performs pairwise comparison but does not directly estimate the Overton window; this paper uses real human opinion clusters for set-coverage computation, making it more grounded in human judgment.
-- **vs. GlobalOpinionQA (Durmus et al., 2024)**: That work evaluates whether LLMs reproduce the response distributions of specific populations; this paper evaluates whether a single response simultaneously covers multiple viewpoints—a different definition and measurement objective.
+- **vs. Model Slant (Westwood et al., 2025)**: Model Slant measures political leaning (binary bias), whereas this work measures pluralistic viewpoint coverage. The dimensions are different, and this paper finds they are negatively correlated—neutrality does not equate to plurality.
+- **vs. Modular Pluralism (Feng et al., 2024)**: Modular Pluralism uses NLI to detect values for pairwise comparisons but does not directly estimate the Overton Window; this work uses real human viewpoint clustering for set coverage calculation.
+- **vs. GlobalOpinionQA (Durmus et al., 2024)**: That work evaluates whether LLMs reproduce the distribution of options for specific populations; this work evaluates whether a single response covers multiple viewpoints simultaneously.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Formalizing pluralism as a quantifiable benchmark is a significant contribution, though the core techniques (clustering + coverage) are not themselves complex.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ A large-scale human study with 1,208 participants, 8 LLMs, automated validation, subgroup fairness analysis, and comparison across two dataset subsets—extremely comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ The paper is clearly structured with rigorous definitions and informative figures (Figure 1 in particular intuitively illustrates the OvertonScore computation pipeline).
-- Value: ⭐⭐⭐⭐ Provides the first quantifiable benchmark for pluralistic LLM alignment research; the discovered negative correlation has policy implications.
+- **Novelty**: ⭐⭐⭐⭐ Formalizing pluralism as a quantifiable benchmark is a major contribution, though the core techniques (clustering + coverage) are not inherently complex.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Very comprehensive, including a 1,208-person human study, 8 LLMs, automated validation, subgroup fairness analysis, and comparison of two dataset subsets.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure, rigorous definitions, and informative visualizations (especially Figure 1, which intuitively demonstrates the OvertonScore calculation).
+- **Value**: ⭐⭐⭐⭐ Provides the first quantifiable benchmark for LLM pluralistic alignment research; the discovered negative correlations have policy-level impact.
 
 <!-- RELATED:START -->
 
@@ -141,11 +143,11 @@ The input is a set of 60 subjective questions; the output is an OvertonScore for
 
 ## Related Papers
 
+- [\[ICLR 2026\] PCB-Bench: Benchmarking LLMs for Printed Circuit Board Placement and Routing](pcb-bench_benchmarking_llms_for_printed_circuit_board_placement_and_routing.md)
 - [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](../../ACL2026/llm_evaluation/personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
-- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](../../ACL2026/llm_evaluation/do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
+- [\[ICLR 2026\] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](beyond_a_million_tokens_benchmarking_and_enhancing_long-term_memory_in_llms.md)
 - [\[AAAI 2026\] Benchmarking LLMs for Political Science: A United Nations Perspective](../../AAAI2026/llm_evaluation/benchmarking_llms_for_political_science_a_united_nations_perspective.md)
-- [\[ACL 2026\] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition](../../ACL2026/llm_evaluation/researchbench_benchmarking_llms_in_scientific_discovery_via_inspiration-based_ta.md)
-- [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](../../ACL2026/llm_evaluation/bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
+- [\[ACL 2025\] WebWalker: Benchmarking LLMs in Web Traversal](../../ACL2025/llm_evaluation/webwalker_benchmarking_llms_in_web_traversal.md)
 
 </div>
 

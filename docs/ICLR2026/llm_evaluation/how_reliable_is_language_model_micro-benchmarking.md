@@ -2,93 +2,94 @@
 title: >-
   [Paper Note] How Reliable is Language Model Micro-Benchmarking?
 description: >-
-  [ICLR2026][LLM Evaluation][micro-benchmarking] This paper proposes Minimum Detectable Ability Difference (MDAD) as a meta-evaluation metric…
+  [ICLR 2026][LLM Evaluation][micro-benchmarking] Ours proposes the Minimum Detectable Ability Difference (MDAD) meta-evaluation metric, systematically revealing that micro-benchmarks cannot reliably distinguish model pairs with small performance gaps at extremely small scales, and that random sampling performs comparably to sophisticated micro-benchmark methods when
 tags:
-  - "ICLR2026"
-  - "LLM Evaluation"
-  - "micro-benchmarking"
-  - "evaluation reliability"
-  - "MDAD"
-  - "pairwise ranking"
-  - "random sampling"
-  - "MMLU-Pro"
-  - "BIG-bench Hard"
+  - ICLR 2026
+  - LLM Evaluation
+  - micro-benchmarking
+  - evaluation reliability
+  - MDAD
+  - pairwise ranking
+  - random sampling
+  - MMLU-Pro
 date: 2026-05-08
-content_hash: 5e32720a979f6c5a
+content_hash: e65c1fa4dfa42d86
 ---
-
 # How Reliable is Language Model Micro-Benchmarking?
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2510.08730](https://arxiv.org/abs/2510.08730)  
 **Code**: [dill-lab/micro-benchmarking-reliability](https://github.com/dill-lab/micro-benchmarking-reliability)  
-**Area**: LLM Evaluation
-**Keywords**: micro-benchmarking, evaluation reliability, MDAD, pairwise ranking, random sampling, MMLU-Pro, BIG-bench Hard
+**Area**: LLM Evaluation  
+**Keywords**: micro-benchmarking, evaluation reliability, MDAD, pairwise ranking, random sampling, MMLU-Pro, BIG-bench Hard  
 
 ## TL;DR
 
-This paper proposes Minimum Detectable Ability Difference (MDAD) as a meta-evaluation metric, systematically demonstrating that micro-benchmarks at extremely small scales cannot reliably distinguish model pairs with small performance gaps, and that random sampling becomes competitive with carefully designed micro-benchmark methods once the sample size reaches ~250.
+Ours proposes the Minimum Detectable Ability Difference (MDAD) meta-evaluation metric, systematically revealing that micro-benchmarks cannot reliably distinguish model pairs with small performance gaps at extremely small scales, and that random sampling performs comparably to sophisticated micro-benchmark methods when the sample size reaches ~250.
 
 ## Background & Motivation
 
-**Efficiency demands**: Evaluating on full benchmarks (e.g., MMLU-Pro with 12K examples, BBH with 5.7K examples) is costly, motivating micro-benchmarking approaches that aim to predict full-benchmark model rankings using as few as 10–100 samples.
+**Efficiency Requirements**: The evaluation costs for full benchmarks (e.g., MMLU-Pro with 12K examples, BBH with 5.7K examples) are prohibitive. Micro-benchmarking methods attempt to predict model rankings on the full benchmark using a minimal number of samples (10–100).
 
-**Existing methods**: Anchor Points selects cluster centers based on source model confidence correlations; tinyBenchmarks uses Item Response Theory (IRT) embedding space clustering; additional methods include stratified sampling by confidence and diversity-based sampling.
+**Existing Methods**: Anchor Points selects points based on clustering centers of source model confidence; tinyBenchmarks utilizes Item Response Theory (IRT) embedding space clustering for selection; other methods include stratified sampling by confidence and diversity-based sampling.
 
-**Limitations of prior meta-evaluation**: Previous work assessed micro-benchmark quality solely via (i) per-model mean estimation error and (ii) global Kendall's $\tau$ rank correlation. Neither addresses the question: "When two models differ by only 2–3 accuracy points on the full benchmark, can the micro-benchmark still rank them correctly?"
+**Limitations of Prior Work**: Previous measures of micro-benchmark quality relied solely on (i) single-model mean estimation error and (ii) global Kendall's $\tau$ rank correlation. Neither metric answers: "When two models differ by only 2–3 accuracy points on the full benchmark, can the micro-benchmark still rank them correctly?"
 
-**Core insight**: A high Kendall's $\tau$ does not imply reliable pairwise comparisons across the board — it may merely reflect the fact that model pairs with large performance gaps are easy to distinguish, masking systematic failures on closely matched pairs.
+**Key Insight**: A high Kendall's $\tau$ does not imply that all pairwise comparisons are reliable—it may only reflect the fact that "model pairs with large gaps are easy to distinguish," masking the issue of incorrect ranking for pairs with small gaps.
 
-**Practical pain point**: When comparing models of similar capability (e.g., a set of 8B instruction-tuned models), performance differences tend to be small, making micro-benchmark reliability a critical concern.
+**Key Challenge**: When comparing models of the same scale (e.g., a set of 8B instruction-tuned models), their performance is generally close, making micro-benchmark reliability a critical issue.
 
-**Neglected baseline**: Prior work has not adequately examined under what conditions micro-benchmark methods genuinely outperform simple uniform random sampling.
+**Random Sampling Ignored**: Existing work has not sufficiently investigated the conditions under which micro-benchmark methods truly outperform simple uniform random sampling.
 
 ## Method
 
-### Overall Architecture: Agreement and MDAD
+### Overall Architecture
 
-The central idea is to evaluate micro-benchmark reliability from a **pairwise model ranking** perspective.
-
-**Agreement function**: Given that model $M_1$ outperforms $M_2$ on the full benchmark $D_{\text{full}}$, the probability that micro-benchmark $D_{\text{micro}}$ agrees with this ordering is:
-
-$$\text{agreement}(D_{\text{micro}}, D_{\text{full}}, B) = \Pr_{M_1, M_2 \in \mathcal{T}}\left(\Delta_{D_{\text{micro}}}(M_1, M_2) > 0 \mid \Delta_{D_{\text{full}}}(M_1, M_2) \in B\right)$$
-
-where $\Delta_D(M_1, M_2) = \text{perf}_D(M_1) - \text{perf}_D(M_2)$ and $B$ is a binned interval of performance differences.
-
-**MDAD (Minimum Detectable Ability Difference)**: The smallest performance difference a micro-benchmark can reliably distinguish, subject to an agreement threshold of ≥ 0.8:
-
-$$\text{MDAD}(D_{\text{micro}}, D_{\text{full}}) = \arg\min_{\text{centroid}(B), B \in \mathcal{B}} \left\{\text{agreement}(D_{\text{micro}}, D_{\text{full}}, B)\right\} \text{ s.t. } \Pr \geq 0.8$$
-
-Lower MDAD is better: an MDAD of 2 means the micro-benchmark can reliably distinguish model pairs whose full-benchmark performance differs by ≥ 2 accuracy points.
+Ours does not propose a new sampling method but rather applies a finer yardstick to micro-benchmarking: shifting from "how accurately a single model is estimated" to "whether the micro-benchmark correctly ranks which of two models is stronger." This evaluation framework first measures the agreement rate between the micro-benchmark and the full benchmark across model pairs with different performance gaps, then compresses this agreement curve into a single number—MDAD—representing the minimum performance difference detectable at an acceptable reliability level. This is used for a unified comparison of six sampling methods across multiple scales.
 
 ### Key Designs
 
-- **Binning strategy**: Accuracy differences are binned at 0.5-point resolution, i.e., $\mathcal{B} = \{[0, 0.25), [0.25, 0.75), [0.75, 1.25), \ldots\}$
-- **Data split**: Each benchmark is split in half — a train half used to select the micro-benchmark, and a held-out half used for generalization testing
-- **Model split**: 470 models are randomly partitioned into source models (used to construct micro-benchmarks) and target models (used for evaluation)
-- **50-trial averaging**: Randomness from data and model splits is mitigated by averaging over 50 independent trials
-- **Multiple micro-benchmark sizes**: $k \in \{10, 25, 50, 100, 250, 500, 1000\}$
-- **Ablation over source model count**: $\{10, 50, 100, 150, 200, 250, 300\}$
+**1. Agreement Function: Quantifying "ranking accuracy" by performance gap segments**
 
-### Compared Methods
+Previously, global Kendall's $\tau$ was used to measure consistency, where high scores often resulted from pairs with vast differences, hiding errors in closely matched pairs. Ours instead examines data by gap segments: defining $\Delta_D(M_1, M_2) = \text{perf}_D(M_1) - \text{perf}_D(M_2)$, where the difference on the full benchmark $D_{\text{full}}$ falls into a bucket interval $B$. It then calculates the probability that the micro-benchmark $D_{\text{micro}}$ agrees with the original ranking within that bucket:
+
+$$\text{agreement}(D_{\text{micro}}, D_{\text{full}}, B) = \Pr_{M_1, M_2 \in \mathcal{T}}\left(\Delta_{D_{\text{micro}}}(M_1, M_2) > 0 \mid \Delta_{D_{\text{full}}}(M_1, M_2) \in B\right)$$
+
+In buckets with larger gaps, agreement approaches 1; as the gap decreases, it approaches the random rate of 0.5. Thus, the agreement curve rising with the gap characterizes the true resolution of the micro-benchmark.
+
+**2. MDAD Metric: Compressing the agreement curve into an operational threshold**
+
+While detailed, the curve is difficult to compare horizontally. Ours takes the minimum performance difference where agreement reaches 0.8 as a single metric—Minimum Detectable Ability Difference:
+
+$$\text{MDAD}(D_{\text{micro}}, D_{\text{full}}) = \arg\min_{\text{centroid}(B), B \in \mathcal{B}} \left\{\text{agreement}(D_{\text{micro}}, D_{\text{full}}, B)\right\} \text{ s.t. } \Pr \geq 0.8$$
+
+Lower MDAD is better: an MDAD = 2 indicates the micro-benchmark can reliably distinguish model pairs with a difference of $\geq 2$ accuracy points on the full benchmark; anything smaller is unreliable. This metric borrows directly from "minimum detectable effect size" in statistical power analysis, translating vague rank correlation into the practical "what gap can be distinguished."
+
+**3. Binning and Unbiased Evaluation Protocol: Isolating randomness via splitting and resampling**
+
+To ensure the agreement curve has sufficient resolution without jitter, performance gaps are binned at 0.5-point granularity: $\mathcal{B} = \{[0, 0.25), [0.25, 0.75), [0.75, 1.25), \ldots\}$. Each benchmark is split in half into a train half (for selecting the micro-benchmark) and a held-out half (to test generalization). 470 models are randomly divided into source models (for micro-benchmark construction) and target models (for evaluation). The process is repeated 50 times and averaged across seven scales $k \in \{10, 25, 50, 100, 250, 500, 1000\}$ and varying source model counts $\{10, 50, 100, 150, 200, 250, 300\}$ to smooth out variance from data and model splitting.
+
+**4. Unified Spectrum of Six Sampling Methods: Using "model information dependency" as the main axis**
+
+To determine when random sampling is sufficient, Ours compares two categories of methods under the MDAD metric: sophisticated designs dependent on source models (Anchor Points, tinyBenchmarks, Stratified Confidence, Diversity sampling) and simple model-independent baselines (Uniform Random, Subtask-Stratified Random), as shown in the table. This axis allows quantification of how much additional resolution complex methods provide over random sampling.
 
 | Method | Strategy | Model-Dependent |
-|--------|----------|-----------------|
-| Anchor Points | $k$-medoids cluster centers based on source model confidence correlations | Yes |
-| tinyBenchmarks (IRT) | $k$-means cluster centers in IRT embedding space | Yes |
-| Stratified (Confidence) | Stratified random sampling by model confidence | Yes |
-| Diversity | Uniform spread sampling in source model correlation space | Yes |
-| Uniform Random | Uniform random sampling | No |
-| Subtask-Stratified Random | Equal random sampling per subtask | No |
+|------|------|----------|
+| Anchor Points | $k$-medoids clustering centers in source model confidence space | Yes |
+| tinyBenchmarks (IRT) | $k$-means clustering centers in IRT embedding space | Yes |
+| Stratified (Confidence) | Stratified random sampling based on model confidence | Yes |
+| Diversity | Uniformly spread sampling in source model correlation space | Yes |
+| Uniform Random | Uniformly random sampling | No |
+| Subtask-Stratified Random | Equal random sampling from each subtask | No |
 
 ## Key Experimental Results
 
-### Main Results: MDAD Across Methods and Benchmarks
+### Main Results: MDAD for different methods across benchmarks
 
-**Table 1: MMLU-Pro (12,032 examples) — MDAD (lower is better)**
+**Table 1: MMLU-Pro (12,032 examples) — MDAD values (lower is better)**
 
 | Method | 10 ex. | 25 ex. | 50 ex. | 100 ex. | 250 ex. | 500 ex. | 1000 ex. |
-|--------|--------|--------|--------|---------|---------|---------|---------|
+|------|-------|-------|-------|--------|--------|--------|---------|
 | Anchor Points | **3.5** | **2.5** | 2.0 | 2.0 | 1.5 | 1.5 | 1.5 |
 | tinyBenchmarks | 7.0 | 4.0 | 3.0 | 2.0 | **1.0** | **1.0** | **1.0** |
 | Stratified (Conf.) | 9.0 | 5.0 | 3.5 | 2.5 | 1.5 | 1.0 | 1.0 |
@@ -96,10 +97,10 @@ Lower MDAD is better: an MDAD of 2 means the micro-benchmark can reliably distin
 | Uniform Random | 10.0 | 6.0 | 4.0 | 3.0 | 2.0 | 1.0 | 1.0 |
 | Subtask-Stratified | 9.5 | 5.5 | 3.5 | 2.5 | 1.5 | 1.0 | 1.0 |
 
-**Table 2: BBH (5,761 examples) — MDAD**
+**Table 2: BBH (5,761 examples) — MDAD values**
 
 | Method | 10 ex. | 25 ex. | 50 ex. | 100 ex. | 250 ex. | 500 ex. | 1000 ex. |
-|--------|--------|--------|--------|---------|---------|---------|---------|
+|------|-------|-------|-------|--------|--------|--------|---------|
 | Anchor Points | **6** | **4** | 3 | 2 | 2 | 2 | 2 |
 | tinyBenchmarks | 16 | 8 | 5 | 4 | 2 | 2 | 1 |
 | Stratified (Conf.) | 15 | 8 | 5 | 3 | 2 | 2 | 1 |
@@ -107,52 +108,52 @@ Lower MDAD is better: an MDAD of 2 means the micro-benchmark can reliably distin
 | Uniform Random | 16 | 9 | 6 | 4 | 2 | 2 | 1 |
 | Subtask-Stratified | 15 | 8 | 5 | 3 | 2 | 1 | 1 |
 
-### Ablation: MDAD and Pairwise Comparison Reliability for 8B Instruction-Tuned Models
+### Ablation Study: MDAD and pairwise comparison reliability for 8B Instruction-Tuned models
 
-| Micro-benchmark Size | MDAD | Fraction of Unreliable Pairs (gap ≤ MDAD) |
-|----------------------|------|-------------------------------------------|
-| 10 examples | ≥ 5 | > 51% |
-| 25 examples | ≥ 5 | 51% |
+| Micro-benchmark Size | MDAD | Proportion of Unreliable Pairs (Gap $\leq$ MDAD) |
+|----------------------|------|----------------------------------|
+| 10 examples | $\geq$ 5 | > 51% |
+| 25 examples | $\geq$ 5 | 51% |
 | 100 examples | ~3 | ~35% |
 | 1000 examples | ~2 | 21% |
 
 ### Key Findings
 
-1. **Reliability bounds of very small micro-benchmarks**: With only 10 samples selected, no method can reliably distinguish model pairs whose gap is < 3.5 points on MMLU-Pro, < 6 points on BBH, or < 6.5 points on GPQA.
-2. **Anchor Points leads at small scales but stagnates at large scales**: Anchor Points achieves the lowest MDAD at 10–50 examples, but at 1000 examples its MDAD is the highest among all methods due to severe $k$-medoids clustering imbalance (47% singleton clusters).
-3. **Random sampling is competitive at ≥ 250 examples**: Across all benchmarks, uniform random sampling achieves MDAD values on par with carefully designed methods when 250 or more examples are selected.
-4. **MDAD correlates with but is more informative than Kendall's $\tau$**: The two metrics exhibit a Kendall's $\tau$ correlation of −0.787, yet identical rank correlation values can correspond to different MDAD values and vice versa.
-5. **Micro-benchmarks generalize to new data**: Micro-benchmarks selected at the overall benchmark level show virtually no change in MDAD on held-out data; per-subtask selection exhibits slightly reduced generalization.
+1. **Reliability boundaries of ultra-tiny micro-benchmarks**: With only 10 samples, no method can reliably distinguish model pairs with gaps $< 3.5$ points on MMLU-Pro, $< 6$ points on BBH, or $< 6.5$ points on GPQA.
+2. **Anchor Points leads at small scale but plateaus at large scale**: It achieves the lowest MDAD at 10–50 examples, but at 1000 examples, its MDAD is the highest due to severe $k$-medoids imbalance (47% are singleton clusters).
+3. **Random sampling is competitive at $\geq 250$ examples**: Across all benchmarks, the MDAD of uniform random sampling is largely on par with sophisticated methods when 250+ examples are selected.
+4. **MDAD correlates with Kendall's $\tau$ but provides finer detail**: The two have a correlation of -0.787, but the same rank correlation value can correspond to different MDADs and vice-versa.
+5. **Micro-benchmarking generalizes to new data**: MDAD remains almost unchanged on held-out data for micro-benchmarks selected at the overall benchmark level, though generalization drops slightly for per-subtask selection.
 
 ## Highlights & Insights
 
-- **Practical utility of MDAD**: The metric translates micro-benchmark reliability from the vague claim of "rank correlation = 0.74" into the actionable statement "can distinguish model pairs differing by ≥ X accuracy points" — enabling practitioners to select an appropriate micro-benchmark size based on their specific needs (coarse screening vs. fine-grained ranking).
-- **Exposing the illusion of high rank correlation**: A Kendall's $\tau$ of 0.74 may appear satisfactory, yet it can arise primarily from correctly ordering model pairs with large performance gaps, obscuring systematic failures on fine-grained, closely matched comparisons.
-- **An Occam's razor conclusion**: When the evaluation budget permits 250 or more samples, complex micro-benchmark construction methods offer no meaningful advantage over simple random sampling — eliminating the overhead of training IRT models or computing source model confidences.
-- **MDAD explains the stability of top-model rankings**: Top-performing models differ from most others by margins exceeding the MDAD, so even small micro-benchmarks can correctly identify them; mid-tier models, however, are clustered within the MDAD range and thus exhibit unstable rankings.
+- **Practical value of MDAD**: It transforms micro-benchmark reliability from vague "rank correlation = 0.74" into actionable "distinguishes pairs with $\geq X$ point gaps," allowing practitioners to choose a scale based on their needs (rough screening vs. precise ranking).
+- **Revealing the "Illusion of high rank correlation"**: A Kendall's $\tau$ of 0.74 may seem decent, but it might only exist because many pairs with massive gaps were correctly ordered, masking a lack of fine-grained resolution.
+- **"Occam’s Razor" Conclusion**: When the evaluation budget allows for 250+ samples, complex construction methods are unnecessary; simple random sampling suffices, saving the overhead of training IRT models or calculating source model confidence.
+- **MDAD explains stable top-model rankings**: Top-performing models usually have large gaps ($>$ MDAD) from most others; thus, even small micro-benchmarks identify them correctly. Mid-tier models fluctuate due to smaller mutual gaps.
 
 ## Limitations & Future Work
 
-1. **Restricted to classification/accuracy tasks**: Experiments cover only multiple-choice accuracy and do not address open-ended generation or preference-based evaluation scenarios (the authors note extensibility in the Discussion but provide no empirical validation).
-2. **The 0.8 agreement threshold is arbitrary**: While the appendix shows that conclusions remain qualitatively consistent across different thresholds, the optimal threshold may vary by application context.
-3. **MDAD is not used to guide data selection**: Currently MDAD serves only as a post-hoc evaluation tool; optimizing MDAD during the micro-benchmark construction process remains unexplored.
-4. **Source model selection effects are underanalyzed**: Although the number of source models is ablated, the influence of their diversity and representativeness on the results warrants further investigation.
-5. **Temporal validity is not addressed**: As new models continuously emerge, micro-benchmarks constructed from a fixed set of source models may progressively lose validity.
+1. **Limited to classification/accuracy tasks**: Experiments cover only multiple-choice accuracy, excluding open-ended generation or preference-based evaluation (extensibility noted but not tested).
+2. **Human-selected 0.8 threshold for MDAD**: While qualitative conclusions remain consistent across different thresholds in the appendix, the optimal threshold may vary by application.
+3. **MDAD not directly used for data selection**: MDAD currently serves as a post-hoc evaluation tool; its use in optimizing micro-benchmark construction remains unexplored.
+4. **Impact of source model selection**: While varying numbers of source models were tested, the impact of their diversity and representativeness requires further study.
+5. **Time-sensitivity of model updates**: Micro-benchmarks built on fixed source models may degrade as significantly newer models emerge.
 
 ## Related Work & Insights
 
-- **Anchor Points (Vivek et al., 2024)**: One of the primary baselines; performs best at very small scales but is degraded at larger scales by clustering imbalance.
-- **tinyBenchmarks (Polo et al., 2024)**: An IRT-based method whose performance alternates with Anchor Points at moderate scales.
-- **Card et al. (2020)**: A pioneering work on statistical power analysis in NLP; MDAD directly draws on the concept of "minimum detectable effect size."
-- **Perlitz et al. (2024)**: The Flash-HELM efficient evaluation framework; this paper uses its observation that top-model rankings are stable and provides a theoretical explanation via MDAD.
-- **Broader inspiration**: The MDAD framework can be extended to other evaluation settings — such as reliability analysis of Elo ratings in Chatbot Arena or performance comparisons between checkpoints during training.
+- **Anchor Points (Vivek et al., 2024)**: A primary comparison target; best at tiny scales but suffers from clustering imbalance at larger scales.
+- **tinyBenchmarks (Polo et al., 2024)**: IRT-based method; competitive with Anchor Points at medium scales.
+- **Card et al. (2020)**: A pioneer in applying statistical power analysis to NLP; MDAD directly borrows the logic of "minimum detectable effect size."
+- **Perlitz et al. (2024)**: Flash-HELM framework for efficient evaluation; Ours utilizes its observations (ranking stability of top models) and provides a theoretical explanation via MDAD.
+- **Insights**: The logic of MDAD can be extended to other scenarios, such as Elo rating reliability in Chatbot Arena or performance comparisons between training checkpoints.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — MDAD is a natural transfer of statistical power analysis to this domain rather than an entirely new framework, but represents the first systematic proposal and validation within micro-benchmarking
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 4 benchmarks, 6 methods, 7 scale settings, 7 source model count conditions, 50-trial averaging; comprehensive coverage with detailed appendices
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The overview figure in Figure 1 is elegantly designed; the visualization tracing agreement curves to MDAD is exceptionally clear; the overall narrative logic is rigorous
-- **Value**: ⭐⭐⭐⭐ — Provides highly actionable practical guidance (use random sampling for ≥ 250 examples), though the primarily negative nature of the conclusions offers greater inspiration to method developers than direct utility to general practitioners
+- **Novelty**: ⭐⭐⭐⭐ — MDAD is a natural adaptation of statistical power analysis; while not a fundamentally new framework, its systematic application to micro-benchmarking is a first.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 4 benchmarks, 6 methods, 7 scales, 7 source model counts, and 50 averaged trials with extensive appendices.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — The "Overview" diagram in Figure 1 is well-designed; the visual transition from agreement curves to MDAD is clear and the logical narrative is rigorous.
+- **Value**: ⭐⭐⭐⭐ — Provides actionable guidance (use random sampling for $\geq 250$ cases), though the "negative" nature of its findings may be more enlightening for methodology developers than end-users.
 
 <!-- RELATED:START -->
 
@@ -160,11 +161,11 @@ Lower MDAD is better: an MDAD of 2 means the micro-benchmark can reliably distin
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
+- [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](pitfalls_in_evaluating_language_model_forecasters.md)
 - [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](../../AAAI2026/llm_evaluation/lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_responses.md)
-- [\[ACL 2026\] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models](../../ACL2026/llm_evaluation/how_hypocritical_is_your_llm_judge_listener-speaker_asymmetries_in_the_pragmatic.md)
-- [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](../../NeurIPS2025/llm_evaluation/bayesian_evaluation_of_large_language_model_behavior.md)
-- [\[ICML 2026\] BESPOKE: Benchmark for Search-Augmented Large Language Model Personalization via Diagnostic Feedback](../../ICML2026/llm_evaluation/bespoke_benchmark_for_search-augmented_large_language_model_personalization_via_.md)
+- [\[ICLR 2026\] Train-before-Test Harmonizes Language Model Rankings](train-before-test_harmonizes_language_model_rankings.md)
+- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 
 </div>
 

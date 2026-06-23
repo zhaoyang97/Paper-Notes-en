@@ -2,127 +2,135 @@
 title: >-
   [Paper Note] ASIDE: Architectural Separation of Instructions and Data in Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][instruction-data separation] This paper proposes ASIDE, an architectural modification that distinguishes instructions from data at the token embedding level via orthogonal rotation. Requiring…
+  [ICLR 2026][LLM Evaluation][instruction-data separation] The paper proposes ASIDE, an architectural modification that distinguishes instructions and data via orthogonal rotation at the token embedding layer. By modifying only the forward pass and training on standard instruction-tuning data, it significantly enhances instruction-data separation and prompt injection robustnes
 tags:
-  - "ICLR 2026"
-  - "LLM Evaluation"
-  - "instruction-data separation"
-  - "prompt injection"
-  - "orthogonal rotation"
-  - "token embedding"
-  - "architectural safety"
+  - ICLR 2026
+  - LLM Evaluation
+  - instruction-data separation
+  - prompt injection
+  - orthogonal rotation
+  - token embedding
+  - architectural safety
 date: 2026-05-08
-content_hash: 5c883613f2a07eba
+content_hash: f245d0d9d95f8fdc
 ---
-
 # ASIDE: Architectural Separation of Instructions and Data in Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.10566](https://arxiv.org/abs/2503.10566)  
 **Code**: None  
-**Area**: LLM Evaluation
-**Keywords**: instruction-data separation, prompt injection, orthogonal rotation, token embedding, architectural safety
+**Area**: LLM Evaluation  
+**Keywords**: instruction-data separation, prompt injection, orthogonal rotation, token embedding, architectural safety  
 
 ## TL;DR
-This paper proposes ASIDE, an architectural modification that distinguishes instructions from data at the token embedding level via orthogonal rotation. Requiring only changes to the forward pass and training on standard instruction fine-tuning data, ASIDE significantly improves instruction-data separation and robustness against prompt injection without any dedicated safety training.
+The paper proposes ASIDE, an architectural modification that distinguishes instructions and data via orthogonal rotation at the token embedding layer. By modifying only the forward pass and training on standard instruction-tuning data, it significantly enhances instruction-data separation and prompt injection robustness without requiring specialized safety training.
 
 ## Background & Motivation
-**Background**: LLMs are widely integrated into software systems such as email clients and agent pipelines, where inputs naturally fall into two categories—instructions (to be executed) and data (to be processed but not executed). However, current LLM architectures apply identical embeddings to both, making it impossible for the model to distinguish them internally.
+**Background**: LLMs are widely integrated into software systems like email clients and agent pipelines. These scenarios naturally involve two types of inputs: instructions (to be executed) and data (to be processed, not executed). However, current LLM architectures use identical embeddings for both, making them indistinguishable within the model.
 
-**Limitations of Prior Work**: The absence of instruction-data separation is the root cause of successful prompt injection attacks (both indirect and direct). Existing defenses either rely on prompt engineering or special delimiters (which are easily bypassed) or on adversarial training (which targets only specific attack patterns), and neither addresses the problem fundamentally.
+**Limitations of Prior Work**: The lack of instruction-data separation is the root cause of successful prompt injection (indirect and direct) attacks. Existing defenses rely on prompt engineering or special delimiters (easily bypassed) or adversarial training (restricted to specific attack patterns), failing to address the fundamental issue.
 
-**Key Challenge**: In conventional LLMs, a token carries identical embeddings regardless of whether it appears in an instruction or in data. The model must infer the functional role of each token from context alone—a task that is extremely difficult to perform reliably in deep networks.
+**Key Challenge**: In traditional LLMs, the same token has identical embeddings whether it appears in an instruction or data. The model must infer the functional role of a token from context, which is extremely difficult to achieve reliably in deep networks.
 
-**Goal**: How can a model distinguish instruction tokens from data tokens from the very first layer, without adding parameters or repretraining?
+**Goal**: How can a model distinguish between instruction and data tokens from the very first layer without adding parameters or re-pretraining?
 
-**Key Insight**: Token embeddings typically exhibit low-rank structure; instructions and data can share the same high-dimensional space while residing in different linear subspaces. Orthogonal rotation can create this separation without altering embedding norms or inner-product structure.
+**Key Insight**: Token embeddings typically exhibit a low-rank structure. Instructions and data can share the same high-dimensional space but reside in different linear subspaces. Orthogonal rotation can create this separation without altering embedding norms or inner-product structures.
 
-**Core Idea**: Apply a fixed $\frac{\pi}{2}$ orthogonal rotation to the embeddings of data tokens, enabling the model to distinguish instructions from data via embeddings from the first layer onward.
+**Core Idea**: Apply a fixed $\frac{\pi}{2}$ orthogonal rotation to the embeddings of data tokens, enabling the model to distinguish instructions from data via embeddings starting from the first layer.
 
 ## Method
 
 ### Overall Architecture
-ASIDE modifies only the forward pass of the LLM's embedding layer. For an input token $x$, the embedding is $E[I_x, \cdot]$ (the original embedding) if the token belongs to an instruction, and $R(E[I_x, \cdot])$ if it belongs to data, where $R \in \mathbb{R}^{d \times d}$ is a fixed orthogonal rotation matrix. The model is then fine-tuned with standard SFT on the Alpaca-clean dataset.
+ASIDE addresses the issue where traditional LLMs assign identical embeddings to instruction and data tokens, forcing the model to infer whether a token should be "executed" or "processed" solely from context—the fundamental vulnerability to prompt injection. The approach is lightweight, modifying only the forward pass of the embedding layer without adding parameters. The deployer decomposes the input into a sequence of (text, role) tuples (e.g., labeling an email body as "data" and a system prompt as "instruction"). After tokenization, `segment_ids` are constructed with the same shape as `input_ids` (0=instruction, 1=data). The forward pass branches based on these roles: if a token $x$ is an instruction, it uses the original embedding $E[I_x, \cdot]$; if it is data, it uses the rotated embedding $R(E[I_x, \cdot])$, where $R \in \mathbb{R}^{d \times d}$ is a fixed orthogonal rotation matrix. The rotated data embeddings and unrotated instruction embeddings are re-sequenced and passed through the rest of the Transformer. Finally, the model is fine-tuned on standard SFT data (e.g., Alpaca-clean, without safety samples), learning to place the two types of tokens into distinct subspaces from the first layer.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input: (Text, Role) tuple sequence<br/>e.g., Email Body = Data, System Prompt = Instruction"]
+    SEG["Functional Role Annotation<br/>Tokenize and construct segment_ids<br/>(0=Instruction, 1=Data)"]
+    EMB["Embedding Lookup E[I_x, ·]"]
+    IN --> SEG --> EMB
+    EMB -->|"Instruction token (segment=0)"| KEEP["Keep original embedding<br/>E[I_x, ·]"]
+    EMB -->|"Data token (segment=1)"| ROT["Isoclinic Orthogonal Rotation<br/>R(E[I_x, ·]), fixed π/2 rotation"]
+    KEEP --> CAT["Re-sequence<br/>Input to remaining Transformer layers"]
+    ROT --> CAT
+    CAT --> SFT["Backward Compatible Integration<br/>Standard SFT (Alpaca-clean, no safety samples)"]
+    SFT --> OUT["Instruction/Data linearly separable from Layer 0<br/>Improved prompt injection robustness"]
+```
 
 ### Key Designs
 
-1. **Isoclinic Orthogonal Rotation**:
+**1. Functional Role Annotation: Removing reliance on model inference**
 
-    - **Function**: Rotates data token embeddings into an orthogonal subspace.
-    - **Mechanism**: The embedding dimensions are grouped into pairs, and each pair is transformed by the $\frac{\pi}{2}$ rotation matrix $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$. This is a fixed, non-learnable transformation.
-    - **Design Motivation**: Orthogonal rotation preserves vector norms and relative angles (introducing no information loss) while creating two fully orthogonal subspaces. This is more effective than the learnable offset vectors used in ISE (Wu et al., 2024), which are gradually absorbed by the model in deeper layers and lose their discriminative power. Rotation maintains permanent geometric separability.
-    - **Zero additional parameters**: The rotation matrix is fixed and introduces no trainable parameters.
+ASIDE determines which tokens to rotate based on role annotations known at deployment, rather than model inference. In many real-world systems, role information is predefined—email bodies are always data, and system prompts are always instructions. Technically, inputs are split into (text, role) tuples, and a `segment_ids` tensor is constructed (0 for instructions, 1 for data). Since external inputs (controlled by attackers) are always labeled as "data," attackers cannot prevent rotation through text content. A limitation is the requirement for token-level role labels, making it unsuitable for general chat scenarios with ambiguous boundaries.
 
-2. **Functional Role Annotation**:
+**2. Isoclinic Orthogonal Rotation: Pushing data tokens into an orthogonal subspace**
 
-    - **Function**: Marks each token at deployment time as either instruction or data.
-    - **Mechanism**: Leverages role information already available in the system design (e.g., email body is always data; system prompt is always instruction), requiring no inference by the model.
-    - **Limitation**: Requires that the deployment scenario can provide token-level role annotations; not applicable to general-purpose chat settings where the boundary between instruction and data is ambiguous.
+For tokens labeled as data, a geometric rotation is applied directly to the embedding rather than learning an offset. Specifically, the $d$-dimensional embedding is split into pairs, and each pair is subjected to the same $\frac{\pi}{2}$ rotation matrix $\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ (isoclinic rotation). This is a fixed transformation with no trainable parameters. At $\theta=\frac{\pi}{2}$, the transformation simplifies to swapping and negating coordinate pairs: $(x_1, x_2, x_3, x_4, \ldots) \mapsto (-x_2, x_1, -x_4, x_3, \ldots)$. Orthogonal rotation is chosen because it preserves norms and angles (preserving information) while moving data embeddings to a subspace orthogonal to instructions. This is superior to ISE (Wu et al., 2024), which uses learnable offsets; offsets remain in the same subspace and can be "absorbed" by deeper layers, whereas orthogonal rotation creates permanent geometric separability.
 
-3. **Backward-Compatible Integration Pipeline**:
+**3. Backward Compatible Integration: Zero parameter modification to pre-trained models**
 
-    - **Function**: Integrates ASIDE into a pretrained model.
-    - **Steps**: (1) Modify the forward pass to incorporate the rotation logic; (2) Fine-tune for 3 epochs on standard SFT data (no safety-specific data).
+The method can be integrated into any existing pre-trained model without re-pretraining. The process involves two steps: adding the rotation logic to the embedding forward pass and fine-tuning on standard SFT data (no safety/adversarial samples) for 3 epochs. Since the rotation matrix is fixed, this is essentially standard instruction tuning—the safety benefits derive from the architectural change rather than the training objective.
 
 ### Loss & Training
-Standard SFT with no adversarial training and no safety-specific objective. Training is performed on the Alpaca-clean-gpt4-turbo dataset (51.8k samples) with learning rate in $[1 \times 10^{-6}, 2 \times 10^{-5}]$, batch size 64–256, and warm-up ratio in $[0, 0.1]$.
+Standard SFT is used throughout, without adversarial training or safety-specific objectives. The training set is Alpaca-clean-gpt4-turbo (51.8k samples), with learning rates in $[1 \times 10^{-6}, 2 \times 10^{-5}]$, batch sizes of 64-256, and warm-up ratios of [0, 0.1].
 
 ## Key Experimental Results
 
-### Main Results: Instruction-Data Separation (SEP Score)
+### Main Results: Instruction-Data Separability (SEP Score)
 
-| Model | Vanilla | ISE | ASIDE | Gain (vs. Vanilla) |
-|-------|---------|-----|-------|--------------------|
+| Model | Vanilla | ISE | ASIDE | Gain (vs Vanilla) |
+|------|---------|-----|-------|-------------------|
 | Llama 2 7B | ~55% | ~52% | ~67% | +12.3 pp |
 | Llama 3.1 8B | ~50% | ~53% | ~70% | +20 pp |
 | Qwen 2.5 7B | ~57% | ~57% | ~75% | +18 pp |
 | Qwen 3 8B | ~31% | ~20% | ~65% | +34 pp |
 | Mistral 7B | ~28% | ~50% | ~72% | +44.1 pp |
 
-ASIDE's utility (AlpacaEval, SEP Utility) remains on par with the Vanilla baseline.
+ASIDE's utility (AlpacaEval, SEP Utility) remains comparable to the Vanilla models.
 
 ### Prompt Injection Robustness (ASR↓)
 
 | Model | Attack Type | Vanilla | ASIDE | Reduction |
-|-------|-------------|---------|-------|-----------|
-| Llama 3.1 8B | BIPIA-text | 13.6% | 4.1% | −9.5 pp |
-| Llama 3.1 8B | BIPIA-code | 22.8% | 9.2% | −13.6 pp |
-| Llama 3.1 8B | StruQ-ID | 43.3% | 41.3% | −2.0 pp |
-| Qwen 2.5 7B | BIPIA-text | 18.3% | 14.5% | −3.8 pp |
-| Qwen 3 8B | BIPIA-text | 10.2% | 2.8% | −7.4 pp |
-| Qwen 3 8B | StruQ-ID | 47.0% | 8.1% | −38.9 pp |
-| Mistral 7B | BIPIA-text | 11.1% | 0.5% | −10.6 pp |
-| Mistral 7B | StruQ-ID | 33.4% | 9.6% | −23.8 pp |
+|------|---------|---------|-------|------|
+| Llama 3.1 8B | BIPIA-text | 13.6% | 4.1% | -9.5 pp |
+| Llama 3.1 8B | BIPIA-code | 22.8% | 9.2% | -13.6 pp |
+| Llama 3.1 8B | StruQ-ID | 43.3% | 41.3% | -2.0 pp |
+| Qwen 2.5 7B | BIPIA-text | 18.3% | 14.5% | -3.8 pp |
+| Qwen 3 8B | BIPIA-text | 10.2% | 2.8% | -7.4 pp |
+| Qwen 3 8B | StruQ-ID | 47.0% | 8.1% | -38.9 pp |
+| Mistral 7B | BIPIA-text | 11.1% | 0.5% | -10.6 pp |
+| Mistral 7B | StruQ-ID | 33.4% | 9.6% | -23.8 pp |
 
 ### Key Findings
-- ASIDE consistently improves the SEP score across all models by 12–44 pp while maintaining utility.
-- Indirect prompt injection ASR is reduced by approximately 10–40 pp on average, with particularly pronounced improvements on Mistral and Qwen3.
-- ISE shows no statistically significant improvement over the Vanilla baseline on most models and is sometimes worse, indicating that learnable offset vectors are insufficient to maintain separation in deeper layers.
-- Linear probing analysis reveals that ASIDE achieves 100% linear separability from layer 0 (immediately after embedding), whereas the Vanilla model only gradually becomes separable at layers 5–10.
-- Concept activation analysis shows that ASIDE effectively suppresses spurious activation of "instruction concepts" within data regions.
+- ASIDE consistently improves SEP scores across all models (12-44 pp) while maintaining near-constant utility.
+- Indirect prompt injection ASR is reduced by approximately 10-40 pp on average, with particularly significant results on Mistral and Qwen3.
+- The ISE method shows no statistically significant difference from Vanilla on most models or even performs worse, suggesting learnable offsets are insufficient to maintain deep separation.
+- Linear probing analysis shows ASIDE achieves 100% linear separability from Layer 0 (after embedding), while Vanilla only becomes gradually separable by Layers 5-10.
+- Concept activation analysis indicates ASIDE effectively suppresses the spurious activation of "instruction concepts" within data regions.
 
 ## Highlights & Insights
-- **Solving security problems architecturally**: By analogy to data execution prevention (DEP) in computer security, ASIDE enforces a hardware-level distinction between executable and non-executable memory. This work is the first to successfully transfer this principle to LLMs.
-- **Zero-cost security gains**: Significant security improvements are achieved without adversarial training, safety datasets, or additional parameters—relying solely on a fixed rotation and standard SFT. This finding is particularly compelling.
-- **Design insight: rotation vs. offset**: ISE creates separation in embedding space via learnable offsets, but these offsets are gradually "absorbed" by the model as depth increases. Orthogonal rotation is geometrically more durable because it creates orthogonal subspaces rather than merely offset regions within the same subspace.
+- **Architectural Solutions for Safety**: Analogous to Data Execution Prevention (DEP) in computer security, ASIDE distinguishes executable and non-executable memory at the architectural level. This is the first work to successfully adapt this concept to LLMs.
+- **Zero-Cost Safety Gains**: Significant safety improvements are achieved without adversarial training, safety datasets, or additional parameters, relying solely on a fixed rotation and standard SFT.
+- **Rotation vs. Offset Design Insight**: While ISE uses learnable offsets to create distinction, these can be neutralized as layers deepen. Orthogonal rotation provides geometric persistence by creating orthogonal subspaces rather than just shifting locations in the same subspace.
 
 ## Limitations & Future Work
-- Deployment requires knowledge of each token's functional role (instruction vs. data), which restricts applicability. In general-purpose chat assistants, user inputs can simultaneously serve as instructions and contain data, making role boundaries ambiguous.
-- Experiments are not conducted on safety-fine-tuned Instruct models (intentionally, but Instruct models are standard in practice); the combined effect of ASIDE and safety tuning remains unknown.
-- Improvement on StruQ-OOD attacks is limited, indicating that out-of-distribution injection remains a challenge.
-- Whether the fixed $\frac{\pi}{2}$ rotation is optimal is not investigated; other rotation angles or learnable rotations are not explored.
+- Requires knowledge of functional roles (instruction vs. data) for each token at deployment, which limits applicability in general-purpose chat assistants where roles are blurred.
+- Not tested on safety-tuned Instruct models (intentional for this study, but relevant for real-world deployment). The interaction between ASIDE and safety tuning is unknown.
+- Limited improvement on StruQ-OOD attacks, indicating that OOD injection remains a challenge.
+- Whether the fixed $\frac{\pi}{2}$ rotation is optimal hasn't been fully explored (e.g., other angles or learnable rotations).
 
 ## Related Work & Insights
-- **vs. ISE (Wu et al., 2024)**: ISE uses learnable offset vectors to differentiate roles but loses separation in deeper layers, performing comparably to or worse than the Vanilla baseline on safety metrics. ASIDE achieves more durable separation via orthogonal rotation.
-- **vs. Prompt Engineering**: Delimiters and special tokens perform separation at the input level and can be forged by adversaries; ASIDE operates at the embedding level, where rotation cannot be manipulated through text.
-- **vs. Adversarial Training**: Adversarial training defends only against observed attack patterns; ASIDE provides a structural, attack-agnostic defense.
-- The method can be directly extended to multi-level instruction hierarchies (e.g., system > user > tool) by defining additional orthogonal transformations.
+- **vs. ISE (Wu et al., 2024)**: ISE uses learnable offsets that lose separation in deeper layers, resulting in safety metrics similar to or worse than Vanilla. ASIDE provides more persistent separation via rotation.
+- **vs. Prompt Engineering**: Delimiters and special tokens operate at the input level and can be forged; ASIDE operates at the embedding level, where attackers cannot manipulate the rotation.
+- **vs. Adversarial Training**: Adversarial training is reactive to specific attacks, whereas ASIDE offers an attack-agnostic structural defense.
+- This method can be extended to multi-level hierarchies (e.g., system > user > tool) by defining additional orthogonal transformations.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First work to achieve instruction-data separation at the architectural level; the concept is clear and elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 6 models × 8 safety benchmarks + separation evaluation + interpretability analysis, though Instruct models are not tested.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is grounded in classical principles from computer security; the writing is fluent and logically rigorous.
-- **Value**: ⭐⭐⭐⭐⭐ Introduces a novel safety enhancement pathway that is both practical and theoretically well-founded.
+- Novelty: ⭐⭐⭐⭐⭐ First architectural implementation of instruction-data separation; clear and elegant concept.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 6 models × 8 safety benchmarks + separability assessment + interpretability analysis; lacks Instruct model testing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Motivated by classical computer security principles; fluent and logical.
+- Value: ⭐⭐⭐⭐⭐ Provides a brand-new path for safety enhancement that is practical and theoretically sound.
 
 <!-- RELATED:START -->
 
@@ -131,10 +139,10 @@ ASIDE's utility (AlpacaEval, SEP Utility) remains on par with the Vanilla baseli
 ## Related Papers
 
 - [\[AAAI 2026\] ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](../../AAAI2026/llm_evaluation/coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio.md)
-- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](prompt_and_parameter_co-optimization_for_large_language_models.md)
-- [\[ICLR 2026\] In-Context Learning of Temporal Point Processes with Foundation Inference Models](in-context_learning_of_temporal_point_processes_with_foundation_inference_models.md)
-- [\[ICLR 2026\] Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective](can_vision_language_models_assess_graphic_design_aesthetics_a_benchmark_evaluati.md)
+- [\[ICLR 2026\] Inverse IFEval: Can LLMs Unlearn Stubborn Training Conventions to Follow Real Instructions?](inverse_ifeval_can_llms_unlearn_stubborn_training_conventions_to_follow_real_ins.md)
+- [\[ICLR 2026\] DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle](dacomp_benchmarking_data_agents_across_the_full_data_intelligence_lifecycle.md)
+- [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)
 
 </div>
 

@@ -2,118 +2,122 @@
 title: >-
   [Paper Note] Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas
 description: >-
-  [ICLR2026][LLM Evaluation][LLM-as-a-Judge] This paper proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with human annotations subject to sampling bias…
+  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] Proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with biased human ratings to produce statistically valid quality estimates of GenAI systems even when covariate shift and selection bias coexist.
 tags:
-  - "ICLR2026"
-  - "LLM Evaluation"
-  - "LLM-as-a-Judge"
-  - "Doubly-Robust Estimation"
-  - "External Validity"
-  - "Persona Prompting"
-  - "Evaluation Sampling Bias"
+  - ICLR 2026
+  - LLM Evaluation
+  - LLM-as-a-Judge
+  - Doubly-Robust Estimation
+  - External Validity
+  - Persona Prompting
+  - Evaluation Sampling Bias
 date: 2026-05-08
-content_hash: 6489f48034d855f9
+content_hash: 3b964bd6f6c6d105
 ---
-
 # Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas
 
 **Conference**: ICLR2026  
 **arXiv**: [2509.22957](https://arxiv.org/abs/2509.22957)  
 **Code**: [lguerdan/doubly-robust-llm-judge](https://github.com/lguerdan/doubly-robust-llm-judge)  
-**Area**: Robotics  
+**Area**: LLM Evaluation  
 **Keywords**: LLM-as-a-Judge, Doubly-Robust Estimation, External Validity, Persona Prompting, Evaluation Sampling Bias  
 
 ## TL;DR
-This paper proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with human annotations subject to sampling bias, yielding statistically valid estimates of GenAI system quality in the simultaneous presence of covariate shift and selection bias.
+Proposes a doubly-robust estimation framework that combines imperfect LLM persona ratings with biased human ratings to produce statistically valid quality estimates of GenAI systems even when covariate shift and selection bias coexist.
 
 ## Background & Motivation
-As generative AI systems are deployed at scale, **external validity** of evaluation has become a central concern — specifically, whether laboratory evaluation results generalize to real-world deployment scenarios.
+With the widespread deployment of generative AI systems, the **external validity** of evaluations has become a core issue—can laboratory evaluation results generalize to real-world deployment scenarios?
 
 Existing evaluation pipelines face two types of **evaluation sampling bias**:
 
-1. **Covariate shift**: The annotator population used during evaluation (e.g., MTurk crowd workers, skewing younger and more educated) differs in distribution from the target deployment population (e.g., medical chatbot users, skewing older and female).
-2. **Selection bias**: Annotators tend to abstain from rating sensitive content (i.e., rating completion depends on annotator/content characteristics), violating the Missing Completely at Random (MCAR) assumption.
+1.  **Covariate shift**: The distribution of the annotator population used during evaluation (e.g., MTurk crowdsourced workers, often younger and highly educated) differs from the target deployment population (e.g., medical chatbot users, often older females).
+2.  **Selection bias**: Annotators tend to abandon ratings for sensitive content (i.e., whether a rating is completed depends on annotator/content features), violating the MCAR (Missing Completely at Random) assumption.
 
-Existing statistical frameworks such as PPI++ and RePPI assume i.i.d. sampling from source and target distributions and completely random missingness; when these assumptions are violated, severe coverage failures result. This paper aims to propose an estimation method that produces valid confidence intervals under sampling bias.
+Existing statistical frameworks such as PPI++ and RePPI assume i.i.d. sampling of source and target data and that missingness is completely random. When these assumptions are violated, it leads to severe coverage failure. This paper aims to propose an estimation method that provides valid confidence intervals under sampling bias.
 
 ## Core Problem
-How can one leverage cheap but imperfect LLM persona ratings alongside biased but genuine human annotations to obtain statistically valid estimates of system quality parameters over a target distribution, in the simultaneous presence of covariate shift and selection bias?
+How to leverage inexpensive but imperfect LLM persona ratings and biased but ground-truth human ratings to obtain statistically valid estimates of system quality parameters on a target distribution under the simultaneous conditions of covariate shift and selection bias?
 
 ## Method
 
-### Problem Formulation
-System quality estimation is modeled as a tuple of random variables $Z = (X, V, C, Y, \hat{Y})$:
+### Overall Architecture
+The method addresses a scenario where only two unreliable data sources are available: cheap but systematically biased LLM persona ratings, and ground-truth human ratings collected under sampling bias. The paper formalizes this as an M-estimation problem and constructs a doubly-robust estimator by combining both data sources. First, covariate shift and selection bias are unified into a single estimation objective. Then, the estimator is composed of a regression term (calculating predicted means on a large set of unlabeled target samples to reduce variance) and a reweighting term (correcting residuals on source samples while simultaneously adjusting for persona bias and sampling bias). The difficult-to-learn reweighting ratio is learned directly in one step using the Riesz loss. Finally, the entire system is placed into a K-fold cross-fitting framework to train nuisance functions and perform inference. A key property is double robustness—as long as **one** of the two nuisance functions (regression or reweighting) is estimated well enough, the confidence interval remains valid, thereby maintaining coverage in the presence of both types of sampling bias.
 
-- $X$: annotator features (age, gender, region, etc.)
-- $V$: content to be evaluated (embedding representations of system inputs and outputs)
-- $C$: rating completion indicator ($C=1$ denotes a completed rating)
-- $Y$: human rating (observable only when $C=1$)
-- $\hat{Y}$: LLM persona rating
+```mermaid
+graph TD
+    A["Source Data (X,V,C,Y with sampling bias)<br/>+ persona ratings + target unlabeled samples"]
+    A --> B["Unified Modeling<br/>Source P_s ≠ Target P_t, C NMAR<br/>Unifying covariate shift and selection bias"]
+    B --> C["Doubly-Robust Estimator<br/>Regression term reduces variance + Reweighting term corrects bias"]
+    C --> D["Riesz loss learns reweighting ratio directly<br/>β = ω/π without separate density ratio/propensity estimation"]
+    D --> E["K-fold cross-fitting<br/>Separating nuisance and inference samples, full data reuse"]
+    E --> F["Output: System quality estimate + Valid 95% CI (Target Population)"]
+```
 
-A source distribution $P_s$ and a target distribution $P_t$ are defined, and the goal is to estimate the quality parameter $\theta_t$ over the target distribution (e.g., mean rating $\mathbb{E}_t[Y]$).
+### Key Designs
 
-### Limitations of Two Baseline Approaches
-1. **Persona-Augmented Regression (PAR)**: Trains a model $\hat{\mu}(W, \hat{Y})$ on source data to predict human ratings, then performs inference on target data. Convergence is slow when the correlation between persona ratings and human ratings is insufficient.
-2. **Inverse Propensity Weighting (IPW)**: Re-weights source samples via the density ratio $\omega_0(w)$ and completion probability $\pi_0(w)$. Variance is extremely high in high-dimensional text spaces.
+**1. Unified Modeling of Evaluation Sampling Bias: Unifying covariate shift and selection bias into a single estimation objective**
 
-### Doubly-Robust Estimator
-The core idea is to combine the regression and re-weighting approaches into a doubly-robust form:
+For the method to hold, the first step is to clarify why evaluations become distorted. The paper models each rating record as a random tuple $Z = (X, V, C, Y, \hat{Y})$, where $X$ represents annotator features (age, gender, region), $V$ represents embeddings of the evaluated content, $C$ is the rating completion indicator ($Y$ is observed only if $C=1$), $Y$ is the human rating, and $\hat{Y}$ is the LLM persona rating. The inconsistency between the source distribution $P_s$ (actually recruited annotators) and the target distribution $P_t$ (real deployment population) creates covariate shift, while $C$ depending on annotator and content features (sensitive content is more likely to be abandoned) creates selection bias. Both types of bias are thus unified into the single goal of "estimating the target distribution quality parameter $\theta_t$ (e.g., $\mathbb{E}_t[Y]$)". Placing them in the same framework is the prerequisite for constructing the debiased estimator and allows the method to generalize to more general statistics like variance and quantiles.
+
+**2. Doubly-Robust Estimator: Letting the regression and reweighting terms back each other up**
+
+Given a unified objective, how to estimate it stably? Using regression alone converges too slowly when the correlation between persona ratings and human ratings is low, while using inverse propensity weighting alone (density ratio $\omega_0$ multiplied by the inverse of completion probability $1/\pi_0$) suffers from variance explosion in high-dimensional text spaces. The paper combines both into an estimator where they back each other up:
 
 $$\hat{\theta} = \frac{1}{N_t}\sum_{i=1}^{N_t}\hat{\mu}(W_i^t, \hat{Y}_i^t) + \frac{1}{N_s}\sum_{j=1}^{N_s}\hat{\alpha}(W_j^s, C_j^s)\{Y_j^s - \hat{\mu}(W_j^s, \hat{Y}_j^s)\}$$
 
-- **Left term**: Computes the predicted mean using the regression model over target samples, reducing variance by exploiting unlabeled data.
-- **Right term**: Corrects residuals via the re-weighting function $\hat{\alpha}$, simultaneously correcting for persona rating bias and sampling bias.
+The left term (regression term) calculates predicted means using a regression model $\hat{\mu}$ on target samples, leveraging large unlabeled data to reduce variance. The right term (reweighting term) uses a reweighting function $\hat{\alpha}$ to perform weighted correction on the residuals $Y - \hat{\mu}$ of source samples, correcting both persona rating bias and sampling bias. This "predicted mean + weighted residual" structure provides double robustness: as long as 
 
-**Double robustness condition**: It suffices that the product of estimation errors of the two nuisance functions decays at a parametric rate:
 $$\|\hat{\alpha} - \alpha_0\|_{L^2} \cdot \|\hat{\mu} - \mu_0\|_{L^2} = o_\mathbb{P}(N_t^{-1/2})$$
 
-This implies that the estimator remains valid as long as either $\hat{\mu}$ or $\hat{\alpha}$ is of sufficient quality (each may individually converge at the nonparametric rate $N_t^{-1/4}$).
+is satisfied, meaning the **product** of the two nuisance function estimation errors decays at a parametric rate, the estimate is valid. This implies that $\hat{\mu}$ and $\hat{\alpha}$ only need to reach a non-parametric rate of $N_t^{-1/4}$, and if one is estimated accurately enough, it can compensate for the poor estimation of the other, ensuring the confidence interval still holds. This is why it is more bias-resistant than PPI++/RePPI, which rely on one-sided assumptions (i.i.d. or MCAR).
 
-### Riesz Loss Approach
-Traditional methods separately estimate the density ratio $\hat{\omega}$ and completion probability $\hat{\pi}$ and then take their ratio, resulting in high variance in high-dimensional text spaces. This paper instead adopts the Riesz loss to directly learn the ratio $\beta_0(w) = \omega_0(w)/\pi_0(w)$:
+**3. Riesz loss for direct ratio learning: Bypassing the difficulty of separate density ratio and propensity estimation in high-dimensional spaces**
+
+Despite double robustness, $\hat{\alpha}$ in the reweighting term is difficult to learn: it depends on the ratio $\beta_0(w) = \omega_0(w)/\pi_0(w)$. Conventional methods learn the density ratio $\hat{\omega}$ and completion probability $\hat{\pi}$ separately and then divide them; the errors from both estimations are further amplified by division in high-dimensional text spaces, leading to out-of-control variance. The paper uses the Riesz loss to learn this ratio directly in one step:
 
 $$\beta_0 = \arg\min_\beta \{\mathbb{E}_s[C \cdot \beta(W^s)^2] - 2\mathbb{E}_t[\beta(W^t)]\}$$
 
-Combined with sentence transformer (MiniLM-L6-v2) embeddings and UMAP dimensionality reduction to 15-dimensional content representations, this approach enables effective estimation of the re-weighting function even in high-dimensional text spaces.
+The optimal solution to this objective is exactly the required $\beta_0$, requiring no explicit estimation of any probability densities. To make it computable on text, content features are first embedded using a sentence transformer (MiniLM-L6-v2) and then reduced to 15 dimensions using UMAP, allowing the reweighting function to be estimated stably even in high-dimensional text spaces. This is the direct reason why DR (Riesz) maintains significantly lower variance than DR (Classical) on PRISM/DICES.
 
-### K-Fold Cross-Fitting
-$K$-fold cross-fitting is employed to maximize data efficiency: nuisance models are trained on the remaining folds for each fold, debiased estimates are computed on the held-out fold, and results are averaged across folds.
+**4. K-fold cross-fitting: Avoiding overfitting bias when using the same data for nuisance training and inference**
+
+A final hidden danger is that debiased estimation requires independence between the nuisance models and the samples being debiased; otherwise, the model may overfit on samples it has seen, introducing additional bias into the estimate. The paper resolves this with $K$-fold cross-fitting: the debiased estimate for each fold uses only the $\hat{\mu}$ and $\hat{\alpha}$ trained on the other $K-1$ folds to calculate contributions for the current fold, and finally averages across all folds. This ensures sample separation between the estimate and nuisance models, maintaining theoretical guarantees while allowing all data to participate in inference, maximizing the efficiency of scarce human ratings.
 
 ## Key Experimental Results
 
 ### Persona Simulation Framework (PSF)
-Three experimental settings of increasing realism are proposed:
+Proposed three experimental settings with increasing realism:
 
 | Dataset | Type | Rating Task | Scale |
 |--------|------|----------|------|
-| Fully Synthetic | Fully synthetic | — | Nuisance functions known |
-| Semi-Synthetic PRISM | Real dialogues + LLM ratings | Helpfulness (1–100) | 1,000 dialogues × 50 ratings |
-| Semi-Synthetic DICES | Real dialogues + human ratings | Harmfulness (1–4) | 300 dialogues × 25 ratings |
+| Fully Synthetic | Fully Synthetic | — | Nuisance functions known |
+| Semi-Synthetic PRISM | Real dialogues + LLM ratings | helpfulness (1-100) | 1000 dialogues × 50 ratings |
+| Semi-Synthetic DICES | Real dialogues + Human ratings | harmfulness (1-4) | 300 dialogues × 25 ratings |
 
-### Main Results (averaged over 40 trials)
+### Main Results (Average of 40 trials)
 Performance of DR (Riesz) across three datasets:
 
-- **Coverage**: Synthetic 1.00, PRISM 0.93, DICES 0.86 — substantially outperforming the next best method RePPI (0.56/0.66/0.40).
-- **Bias (MAE)**: Synthetic 0.03, PRISM 0.46, DICES 0.02 — lowest across all methods.
+- **Coverage**: Synthetic 1.00, PRISM 0.93, DICES 0.86, far exceeding the second-best method RePPI (0.56/0.66/0.40).
+- **Bias (MAE)**: Synthetic 0.03, PRISM 0.46, DICES 0.02, all being the lowest.
 - DR (Riesz) achieves valid coverage on PRISM and DICES when persona quality $\rho \geq 0.65$.
-- Persona ratings from real LLMs (GPT-5, Claude Sonnet 3.5, etc.) also effectively improve estimation quality.
+- Using real LLMs (GPT-5, Claude Sonnet 3.5, etc.) for persona ratings also effectively improves estimation quality.
 
 ### Key Findings
-1. DR (Riesz) achieves the lowest bias and highest coverage among all baselines.
-2. Riesz loss substantially outperforms the conventional approach of separately estimating $\hat{\omega}$ and $\hat{\pi}$, particularly in high-dimensional text spaces.
-3. Even moderate correlation between persona and human ratings ($\rho \approx 0.4$) yields improved estimation.
+1. DR (Riesz) has the lowest bias and highest coverage among all baselines.
+2. Riesz loss significantly outperforms traditional separate $\hat{\omega}, \hat{\pi}$ estimation methods, especially in high-dimensional text spaces.
+3. Even when the correlation between persona ratings and human ratings is moderate ($\rho \approx 0.4$), it still improves estimation.
 
 ## Highlights & Insights
-- **Solid theoretical contributions**: The doubly-robust estimator is extended to an M-estimation framework that simultaneously handles covariate shift and selection bias, supporting not only mean estimation but also richer statistics such as variance and quantiles.
-- **Elegant application of Riesz loss**: The need to separately estimate density ratios and propensity scores in high-dimensional spaces is avoided by directly learning the required re-weighting function.
-- **Rigorous experimental design**: The PSF framework systematically manipulates persona quality, covariate shift, and selection bias along three dimensions, and is open-sourced for community use.
-- **Clear practical relevance**: The paper addresses the real-world problem of insufficient representativeness of annotator populations in current AI safety evaluation.
+- **Solid Theoretical Contribution**: Generalizes doubly-robust estimation to an M-estimation framework that simultaneously handles covariate shift and selection bias, supporting not only mean estimation but also various statistics like variance and quantiles.
+- **Clever Application of Riesz Loss**: Avoids the difficulty of separately estimating density ratios and propensity scores in high-dimensional spaces by directly learning the required reweighting function.
+- **Scientific Experimental Design**: The PSF framework systematically controls persona quality, covariate shift, and selection bias, and is open-sourced for the community.
+- **Clear Practical Significance**: Addresses the real-world pain point of insufficient annotator population representativeness in current AI safety evaluations.
 
 ## Limitations & Future Work
-- The framework relies on the **no concept drift** assumption ($P_s(Y|W) = P_t(Y|W)$), i.e., annotators with identical characteristics give the same rating distribution for identical content, which may not hold in practice.
-- Content embedding uses MiniLM-L6-v2 with UMAP reduction to 15 dimensions; the impact of information loss on estimation quality warrants further analysis.
-- Human annotation scales in the experiments are limited (DICES: only 300 dialogues × 25 ratings); performance at larger scales remains to be validated.
-- Persona rating generation still relies on manually designed prompts; sensitivity to prompt design choices is not fully explored.
+- Relies on the **no-concept-drift** assumption ($P_s(Y|W) = P_t(Y|W)$), i.e., annotators with the same features provide the same rating distribution for the same content, which may not hold in reality.
+- Content embeddings use MiniLM-L6-v2 + UMAP reduction to 15 dimensions; the impact of information loss on estimation quality requires more analysis.
+- The scale of human ratings in experiments is limited (DICES only has 300 dialogues × 25 ratings); performance in larger-scale scenarios remains to be verified.
+- The generation strategy for persona ratings still relies on hand-crafted prompts; the sensitivity of persona quality to different prompt designs has not been fully explored.
 
 ## Related Work & Insights
 
@@ -121,18 +125,16 @@ Performance of DR (Riesz) across three datasets:
 |------|:-:|:-:|:-:|:-:|
 | PPI++ | ✗ | ✗ | ✓ | i.i.d. only |
 | RePPI | ✗ | ✗ | ✓ | MCAR only |
-| IPW | ✓ | ✓ | ✗ | High variance |
-| **DR (Riesz) (Ours)** | **✓** | **✓** | **✓** | **Doubly-robust** |
+| IPW | ✓ | ✓ | ✗ | High Variance |
+| **DR (Riesz) (Ours)** | **✓** | **✓** | **✓** | **doubly-robust** |
 
-Compared to PPI++/RePPI, this work relaxes the MCAR assumption. Compared to conventional IPW, the Riesz loss substantially reduces variance in high-dimensional spaces. Compared to pure persona-based evaluation, the framework provides theoretically guaranteed bias correction.
-
-The idea of directly learning density ratios via Riesz loss generalizes to other settings requiring importance weighting (e.g., domain adaptation, off-policy evaluation). The experimental design methodology of the PSF framework — systematically controlling bias magnitude — is worth emulating in other evaluation methodology research. For AI safety evaluation practice, this paper argues that relying solely on crowd-sourced annotators or solely on LLM-as-Judge is insufficient; a principled combination of the two is the way forward.
+Compared to PPI++/RePPI, this work relaxes the MCAR assumption; compared to traditional IPW, it significantly reduces variance in high-dimensional spaces via the Riesz loss; compared to pure persona evaluation, it provides theoretically guaranteed bias correction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Integrates doubly-robust estimation with LLM persona ratings and formally characterizes evaluation sampling bias.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — The PSF framework is elegantly designed, with synthetic and semi-synthetic experiments complementing each other, though the real human annotation scale is relatively small.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Theoretical development is clear, problem motivation is well-articulated, and experimental visualizations are intuitive.
-- Value: ⭐⭐⭐⭐ — Provides a theoretically rigorous bias correction tool for GenAI evaluation with clear practical applicability.
+- Novelty: ⭐⭐⭐⭐ — Combines doubly-robust estimation with LLM persona ratings and formalizes evaluation sampling bias.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — The PSF framework is well-designed with complementary synthetic and semi-synthetic experiments, though the scale of real human ratings is small.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Theoretical derivation is clear, problem motivation is well-articulated, and experimental visualizations are intuitive.
+- Value: ⭐⭐⭐⭐ — Provides a theoretically rigorous bias correction tool for GenAI evaluation with clear practical application prospects.
 
 <!-- RELATED:START -->
 
@@ -140,11 +142,11 @@ The idea of directly learning density ratios via Riesz loss generalizes to other
 
 ## Related Papers
 
-- [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](../../ICML2026/llm_evaluation/reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
+- [\[ICLR 2026\] Noisy but Valid: Robust Statistical Evaluation of LLMs with Imperfect Judges](noisy_but_valid_robust_statistical_evaluation_of_llms_with_imperfect_judges.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
+- [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](../../ICML2026/llm_evaluation/reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
+- [\[ACL 2025\] YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering](../../ACL2025/llm_evaluation/yescieval_llm_judge_science.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
-- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](../../ACL2026/llm_evaluation/contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
-- [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
 
 </div>
 

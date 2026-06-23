@@ -2,96 +2,100 @@
 title: >-
   [Paper Note] AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size
 description: >-
-  [ICLR 2026][LLM Evaluation][diffusion language model] Through statistical analysis of token confidence dynamics during the denoising process of diffusion language models (dLLMs)…
+  [ICLR 2026][LLM Evaluation][Diffusion Language Model] By statistically analyzing the dynamic changes in token confidence during the denoising process of Diffusion Large Language Models (dLLMs), it was discovered that the "Volatility Band" (VB) region encodes the local semantic structure of the text. Consequently, AdaBlock-dLLM is proposed—a training-free, plug-and-play ad
 tags:
-  - "ICLR 2026"
-  - "LLM Evaluation"
-  - "diffusion language model"
-  - "semi-autoregressive decoding"
-  - "adaptive block size"
-  - "semantic-aware scheduling"
-  - "inference acceleration"
+  - ICLR 2026
+  - LLM Evaluation
+  - Diffusion Language Model
+  - Semi-autoregressive Decoding
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: aea997a8baa9885a
+content_hash: 811180e9242a01f1
 ---
-
 # AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.26432](https://arxiv.org/abs/2509.26432)  
 **Code**: [https://github.com/lgxi24/AdaBlock-dLLM](https://github.com/lgxi24/AdaBlock-dLLM)  
-**Area**: Image Restoration
-**Keywords**: diffusion language model, semi-autoregressive decoding, adaptive block size, semantic-aware scheduling, inference acceleration
+**Area**: Image Restoration  
+**Keywords**: Diffusion Language Models, Semi-Autoregressive Decoding, Adaptive Block Size, Semantic-Aware Scheduling, Inference Acceleration
 
 ## TL;DR
 
-Through statistical analysis of token confidence dynamics during the denoising process of diffusion language models (dLLMs), this work identifies a "Volatility Band" (VB) region that encodes local semantic structure in text. Building on this observation, it proposes AdaBlock-dLLM—a training-free, plug-and-play adaptive block size scheduler that aligns block boundaries in semi-autoregressive decoding with natural semantic steps, achieving up to 5.3% accuracy improvement at the same throughput.
+By statistically analyzing the dynamic changes in token confidence during the denoising process of Diffusion Large Language Models (dLLMs), it was discovered that the "Volatility Band" (VB) region encodes the local semantic structure of the text. Consequently, AdaBlock-dLLM is proposed—a training-free, plug-and-play adaptive block size scheduler that naturally aligns the block boundaries of semi-autoregressive decoding with semantic steps, achieving up to a 5.3% accuracy improvement at the same throughput.
 
 ## Background & Motivation
 
-**Background**: Diffusion language models (dLLMs) such as LLaDA and Dream iteratively denoise a fully masked sequence into complete text, supporting parallel decoding by design. They have achieved performance comparable to autoregressive LLMs of similar scale on tasks such as mathematical reasoning and code generation. In practice, block-level semi-autoregressive (semi-AR) decoding is the dominant paradigm: the generation sequence is divided into fixed-size blocks processed sequentially (enabling KV caching), with tokens within each block revealed in parallel via multi-step denoising. Fast-dLLM further introduces confidence-threshold-based dynamic sampling, revealing only tokens whose confidence exceeds $\tau$, optimizing the speed–quality trade-off.
+**Background**: Diffusion Language Models (dLLMs) such as LLaDA and Dream gradually reveal a full [MASK] sequence into complete text through iterative denoising. Supporting parallel decoding inherently, they have matched the performance of autoregressive (AR) LLMs of similar scales on tasks like mathematical reasoning and code generation. In practical inference, block-level semi-autoregressive (semi-AR) decoding is the mainstream paradigm: the generated sequence is divided into fixed-size blocks, processed sequentially across blocks (supporting KV caching), while tokens within a block are revealed in parallel through multiple denoising steps, balancing speed and quality. Fast-dLLM further optimizes the speed-quality trade-off by introducing dynamic sampling based on a confidence threshold $\tau$, revealing only tokens with confidence higher than $\tau$.
 
-**Limitations of Prior Work**: Through statistical analysis of LLaDA-8B on GSM8K, the authors quantify two systematic problems introduced by fixed block sizes. At block size $B=32$, approximately 9.8% of sampling steps suffer from Late Decoding Overhead—high-confidence tokens outside the current block cannot be revealed, wasting additional denoising iterations—while approximately 7.7% of steps exhibit Premature Decoding Errors, where low-confidence tokens within the current block are forcibly committed, producing erroneous tokens whose effects propagate through inter-block autoregressive dependencies. At $B=16$, the premature error rate rises to 15.2% on HumanEval. Both problems share the same root cause: fixed block boundaries are misaligned with the natural semantic boundaries of text.
+**Limitations of Prior Work**: Through statistical analysis of LLaDA-8B on GSM8K, the authors quantified two systemic issues caused by fixed block sizes. Experiments show that at a block size of $B=32$, approximately 9.8% of sampling steps are affected by Late Decoding Overhead—where high-confidence tokens exist outside the current block but cannot be revealed, wasting denoising iterations. Simultaneously, approximately 7.7% of steps suffer from Premature Decoding Error—where low-confidence tokens within the current block are forced to commit, generating incorrect tokens that propagate through inter-block autoregressive dependencies. When the block size increases to $B=16$, the proportion of premature errors rises to 15.2% (HumanEval). The root cause of both issues is the mismatch between fixed block boundaries and the natural semantic boundaries of the text.
 
-**Key Challenge**: Semantic units (phrases, clauses, reasoning steps) vary in length, yet fixed block sizes impose a uniform decoding window. This creates a dilemma: blocks that are too small delay already-determined tokens (hurting throughput), while blocks that are too large force premature commitment of uncertain tokens (hurting accuracy).
+**Key Challenge**: The length of semantic units (phrases, clauses, reasoning steps) is variable, but fixed block sizes apply a "one-size-fits-all" approach to the decoding window. This leads to a dilemma: if the block is too small, confirmed tokens are delayed (loss of throughput); if the block is too large, uncertain tokens are forced to commit (loss of accuracy).
 
-**Key Insight**: The authors perform a spatiotemporal statistical analysis of token confidence distributions during denoising, identifying three distinct regions in the confidence landscape—a high-confidence plateau (decoded tokens), a Volatility Band (VB, the active region being decoded), and a low-confidence floor (distant positions not yet addressed). The key finding is that the width and position of the VB are strongly correlated with the local semantic structure of the text, while the decoding order within the VB is locally stochastic (distinct from the globally autoregressive trend in the plateau region). This suggests that the VB can serve as a proxy signal for semantic structure to guide dynamic block size adjustment.
+**Key Insight**: The authors performed a statistical analysis of the spatio-temporal distribution of token confidence during denoising, finding that the confidence landscape can be partitioned into three distinct regions: the high-confidence plateau (decoded tokens), the Volatility Band (VB, the active region being decoded), and the low-confidence floor (distant positions not yet reached). A key finding is that the width and position of the VB region are highly correlated with the local semantic structure of the text, while the decoding order within the VB is locally stochastic (unlike the global autoregressive trend in the plateau). This implies that the VB can serve as a proxy signal for semantic structure to guide the dynamic adjustment of block sizes.
 
-**Core Idea**: At the start of each decoding block, the confidence of separator tokens (e.g., newline `\n`) is monitored to locate the boundary of the current semantic step, adaptively expanding or contracting the block size so that block boundaries align with semantic steps.
+**Core Idea**: At the beginning of each decoding block, the boundary of the current semantic step is located by detecting the confidence of separator tokens (e.g., newline `\n`), adaptively expanding or contracting the block size to align the block boundary with the semantic step.
 
 ## Method
 
 ### Overall Architecture
 
-AdaBlock-dLLM is embedded as a lightweight scheduler into existing semi-AR decoding pipelines. The input is a fully masked generation sequence conditioned on a prompt; the output is complete text produced via semi-AR decoding with adaptive block sizes. The overall pipeline mirrors Fast-dLLM—alternating between denoise (the model predicts token distributions at each position) and sample (tokens are selectively revealed based on confidence thresholds)—with the sole difference being the insertion of a block size determination procedure (Algorithm 1) at the start of each new block. Rather than using a fixed $B_0$, the block size $B$ is dynamically determined based on the current confidence distribution and separator detection.
+AdaBlock-dLLM addresses the misalignment between fixed block sizes and semantic boundaries in semi-AR decoding by embedding a lightweight scheduler into the existing decoding pipeline. For each new block, an appropriate block size is computed temporarily while maintaining the rest of the process. The input is a full [MASK] sequence with a prompt, and the output is the decoded complete text. The main loop is identical to Fast-dLLM—alternating between denoise (predicting token distributions and confidence) and sample (selecting tokens to reveal based on a threshold). Three key modifications correspond to specific designs: first, identifying the confidence landscape as three regions where the VB encodes local semantic structure (Design 1); second, inserting a block size determination process (Algorithm 1) at the start of each new block that dynamically sets $B$ based on separator token confidence (Design 2); and finally, revealing tokens within the block using threshold $\tau$ alongside block-level KV caching, where adaptive small blocks concurrently reduce cache approximation errors (Design 3). This method requires no model changes or training, merely adding a decision point within the decoding loop.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Input: prompt + full [MASK] sequence"] --> B["Denoise Step<br/>Predict token distribution and confidence c"]
+    B --> C["Three-region Confidence Landscape<br/>High-confidence Plateau / VB / Low-confidence Floor"]
+    C -->|New Block| SCHED
+    C -->|Continue in Block| D
+    subgraph SCHED["Separator-Aware Block Size Scheduling (Algorithm 1)"]
+        direction TB
+        S1["Sampling Window W = min(max(1, ⌊0.25·g⌋), remaining)"] --> S2["Scan separators D in window<br/>Take max confidence c_max"]
+        S2 --> S3{"c_max ≥ τ_D ?"}
+    end
+    S3 -->|Yes: B = length to separator| D
+    S3 -->|No: B = default B0| D
+    D["Reveal high-confidence tokens via τ<br/>(+ DualCache block-level KV Cache)"] -->|Block incomplete / Next block| B
+    D -->|Decoding complete| E["Output: Final Text"]
+```
 
 ### Key Designs
 
-1. **Three-Region Decomposition of the Confidence Landscape and Discovery of the Volatility Band (VB)**:
+**1. Three-region Partitioning of the Confidence Landscape: Identifying Semantic Signals**  
+To implement adaptive block sizes, a signal reflecting semantic structure is required. The authors compiled statistics from 100 samples of LLaDA-8B-Base on GSM8K, plotting the position-confidence distribution at different decoding stages (after decoding 0/64/128/192/256 tokens). They found the landscape is stably divided into three parts. On the left is the **high-confidence plateau**: near decoded positions, confidence is stable near 1.0 and expands monotonically. Adjacent to the plateau is the **Volatility Band (VB)**: confidence fluctuates sharply between 0.1–0.8, with widths varying by sample; this is the active decoding region. To the right is the **low-confidence floor**: positions far from decoded areas where confidence approaches 0, and predictions are mostly non-content placeholders.  
+The VB is critical because tokens predicted within it often belong to the same semantic unit (e.g., tokens within one reasoning step). Thus, the VB width and position naturally encode local semantic structures. However, VB width is too coarse to define the exact end of a semantic step. This necessitates a more precise signal to locate the semantic step finale.
 
-    - Function: Provides the theoretical foundation and signal source for adaptive block sizing.
-    - Mechanism: Statistical analysis is conducted on 100 samples from LLaDA-8B-Base on GSM8K, plotting position–confidence distributions at five decoding stages (0/64/128/192/256 tokens decoded). Three stable structural regions are identified: (a) *High-confidence plateau*—positions near already-decoded tokens exhibit stable confidence close to 1.0, expanding monotonically as decoding progresses; (b) *Volatility Band (VB)*—immediately to the right of the plateau, confidence fluctuates sharply between 0.1 and 0.8, with sample-varying width, representing the active region of the current decoding step; (c) *Low-confidence floor*—positions far from decoded regions exhibit near-zero confidence, with predicted tokens typically being contentless placeholders.
-    - Design Motivation: Tokens within the VB tend to be semantically related (e.g., belonging to the same reasoning step), but the width of the VB varies. Using VB width directly as the block size granularity is too coarse; a finer-grained signal is needed to locate the end of the current semantic step.
+**2. Separator-Aware Block Size Scheduling: Slicing Blocks via Separator Confidence**  
+A finer signal comes from separator tokens. Characters like `\n`, commas, and periods naturally mark semantic boundaries and exhibit significant confidence drops within the VB. Using separator confidence to judge block boundaries is more precise than estimating VB width. Specifically, Algorithm 1 runs before each new block: a sampling window $W$ is defined starting from the current decoding position $g$, with width $\min(\max(1, \lfloor 0.25 \cdot g \rfloor), \text{remaining})$. Using one-fourth of $g$ avoids over-extending the window early on and misidentifying a distant EOS as a boundary. The algorithm scans window positions, selects those where predicted tokens are in the separator set $D$ (default $D=\{\textbackslash n\}$), and identifies the maximum confidence $\hat{y}_{\max}$. If $c_{\max} \ge \tau_D$ (separator threshold), it indicates the model has a reliable signal that the semantic step ends there. The block size is then set to the length from $g$ to that separator, aligning the boundary with the semantic end. If no separator exists or confidence is too low, it reverts to the default $B_0$.
 
-2. **Semantic-Aware Block Size Scheduling via Separator Detection**:
-
-    - Function: Dynamically determines the optimal block size $B$ at runtime based on confidence.
-    - Mechanism: Algorithm 1 is executed before decoding each new block: (1) A sampling window $W$ is defined starting at the current decoding position $g$, with width $\min(\max(1, \lfloor 0.25 \cdot g \rfloor), \text{remaining})$ to prevent premature EOS triggering due to oversized windows in early stages. (2) All positions within $W$ whose predicted token belongs to the separator set $D$ (default $D=\{\textbackslash n\}$) are identified. (3) Among these separator positions, the one with the highest confidence $c_{\max}$ is selected; if $c_{\max} \ge \tau_D$ (the separator threshold), the block size is set to the distance from $g$ to that separator position, indicating a reliable signal that the current semantic step ends there. (4) If no separator is found in the window or all separator confidences fall below $\tau_D$, the default block size $B_0$ is used.
-    - Design Motivation: Separator tokens (e.g., `\n`, commas, periods) naturally mark semantic unit boundaries and exhibit pronounced confidence drops within the VB. Using separator confidence as a block boundary detector is more precise and reliable than directly estimating VB width. The windowing mechanism prevents severe performance degradation caused by global scanning erroneously triggering EOS in early stages.
-
-3. **Synergy with KV Cache Strategies**:
-
-    - Function: Seamlessly integrates with block-level KV caching in semi-AR decoding, amplifying accuracy gains.
-    - Mechanism: Block-level KV caching (e.g., DualCache) in dLLMs is approximate—unlike the lossless caching in autoregressive models, key/value tensors in dLLMs change across denoising steps, and intra-block decoding order is non-sequential. Larger fixed block sizes lead to worse intra-block semantic coherence and greater cache approximation errors. AdaBlock reduces cache errors on two fronts: by decreasing the actual average block size (when $B_0$ is large) and by enhancing intra-block semantic locality.
-    - Design Motivation: KV caching is central to the efficiency of semi-AR decoding. Experiments show that AdaBlock yields larger gains when caching is enabled (on GSM8K, the improvement with +Cache grows from +3.0% to +5.3%), demonstrating that adaptive block sizing is orthogonal to and synergistic with cache optimization.
+**3. Synergy with KV Caching: Reducing Cache Approximation Errors**  
+Semi-AR decoding allows for block-level KV caching (e.g., DualCache). AdaBlock amplifies these benefits because dLLM block-level caching is inherently approximate: unlike autoregressive models, key/value tensors in dLLMs change across denoising steps, and retrieval within blocks is non-sequential. Larger blocks increase intra-block semantic inconsistency and approximation error. AdaBlock mitigates this by reducing the actual block size when $B_0$ is large and aligning boundaries with semantic steps to enhance local consistency. Experimentally, the improvement from AdaBlock was larger when caching was enabled (from +3.0% to +5.3% on GSM8K), showing that adaptive block sizing and cache optimization are orthogonal and mutually reinforcing.
 
 ### Loss & Training
-
-No training or fine-tuning is required. AdaBlock-dLLM is a purely inference-time scheduling optimization. The two key hyperparameters are chosen as follows:
-
-- **Dynamic sampling threshold $\tau$**: Follows Fast-dLLM at 0.9.
-- **Separator threshold $\tau_D$**: Tuned on a small subset of GSM8K. LLaDA-series models (trained from scratch, exhibiting lower intra-VB variance) use $\tau_D=0.3$; Dream-series models (adapted from AR models, exhibiting higher intra-VB variance) use $\tau_D=0.5$. The difference stems from the influence of training methodology on the confidence distribution.
+No training or fine-tuning is required. AdaBlock-dLLM is a pure inference-time scheduling optimization. Two key hyperparameters are selected:
+- **Dynamic Sampling Threshold $\tau$**: 0.9 (following Fast-dLLM).
+- **Separator Threshold $\tau_D$**: Tuned on a small subset of GSM8K. $\tau_D=0.3$ for LLaDA (trained from scratch, lower VB variance) and $\tau_D=0.5$ for Dream (adapted from AR, higher VB variance).
 
 ## Key Experimental Results
 
 ### Main Results
-
-Three models are evaluated on GSM8K (mathematical reasoning), HumanEval (code generation), MATH (mathematical reasoning), and MBPP (code generation). Core results on GSM8K (accuracy %, $B_0=32$):
+Evaluation was conducted on GSM8K, HumanEval, MATH, and MBPP across three models. Core results on GSM8K (Accuracy %, $B_0=32$):
 
 | Method | LLaDA-Instruct | LLaDA-1.5 | Dream-Base |
-|--------|----------------|-----------|------------|
+|------|---------------|-----------|------------|
 | Vanilla (top-1) | 76.7 | 82.3 | 76.4 |
 | Dynamic | 77.6 | 82.2 | 75.5 |
 | +Ada (Ours) | **80.6** (+3.0) | **82.4** (+0.2) | **75.7** (+0.2) |
 | +Cache (DualCache) | 74.5 | 80.2 | 74.5 |
 | +Ada+Cache (Ours) | **78.5** (+4.0) | **81.7** (+1.5) | **75.1** (+0.6) |
 
-LLaDA-Instruct achieves the largest gain under the $B_0=64$+Cache setting: from 75.4% to 80.7% (+5.3%).
+LLaDA-Instruct achieved the highest gain in the $B_0=64$+Cache setting: from 75.4% to 80.7% (+5.3%).
 
-Cross-task summary (LLaDA-Instruct, $B_0=16$, +Ada+Cache vs. +Cache):
+Across tasks (LLaDA-Instruct, $B_0=16$, +Ada+Cache vs +Cache):
 
 | Benchmark | +Cache Baseline | +Ada+Cache | Gain |
-|-----------|-----------------|------------|------|
+|------|-----------|------------|------|
 | GSM8K | 78.0 | 80.0 | +2.0 |
 | HumanEval | 45.1 | 49.4 | +4.3 |
 | MATH | 35.4 | 35.8 | +0.4 |
@@ -99,70 +103,65 @@ Cross-task summary (LLaDA-Instruct, $B_0=16$, +Ada+Cache vs. +Cache):
 
 ### Ablation Study
 
-**Effect of separator threshold $\tau_D$** (GSM8K, $B_0=32$):
+**Choice of Separator Threshold $\tau_D$** (GSM8K, $B_0=32$):
 
 | Model | $\tau_D=0.3$ | $\tau_D=0.5$ | $\tau_D=0.7$ |
-|-------|-------------|-------------|-------------|
+|------|-------------|-------------|-------------|
 | LLaDA-Instruct | **80.59** | 79.08 | 77.94 |
 | Dream-Base | 75.66 | **75.74** | 75.74 |
 
-**Effect of separator set $D$** (GSM8K, $B_0=32$, LLaDA-Instruct+Cache):
+**Choice of Separator Set $D$** (GSM8K, $B_0=32$, LLaDA-Instruct+Cache):
 
 | Separator Set | Accuracy (%) |
-|---------------|-------------|
-| None (+Cache baseline) | 74.5 |
+|-----------|-----------|
+| None (+Cache Baseline) | 74.5 |
 | {`\n`} | **78.5** |
 | {`,`} | 75.1 |
 | {`.`} | 74.5 |
 | {`\n`, `,`, `.`} | **78.7** |
 
 ### Key Findings
-
-- **LLaDA benefits more than Dream**: LLaDA is trained from scratch, exhibiting stronger local stochasticity during decoding (low intra-VB variance but weak positional preference), giving adaptive block sizing more room to improve grouping. Dream, adapted from an AR model, retains a stronger global autoregressive ordering, limiting the benefit of local adjustment.
-- **Gains amplified when combined with caching**: Block-level KV caching is inherently approximate in dLLMs; fixed large blocks accumulate cache approximation errors. AdaBlock mitigates this from two directions—reducing the actual average block size ($\bar{B}=33.98$ at $B_0=64$) and enhancing intra-block semantic coherence. On GSM8K, +Ada+Cache at $B_0=64$ (80.7%) even surpasses +Cache at $B_0=32$ (74.5%) by 6.2 points.
-- **Newline `\n` is the most effective separator**: Using only `\n` captures the vast majority of gains (78.5% vs. baseline 74.5%); adding commas and periods yields only marginal further improvement (78.7%). This aligns with the role of newlines as markers of reasoning step boundaries in reasoning tasks.
-- **Throughput also improves at small default block sizes**: At $B_0 \in \{4, 8\}$, AdaBlock tends to expand blocks, reducing Late Decoding Overhead and lowering NFE to increase throughput. At $B_0 \ge 16$, blocks are typically contracted to improve quality, with slightly reduced throughput but significant accuracy gains.
-- **Consistent across generation budgets**: Consistent improvements are observed across three generation budgets $L \in \{256, 512, 1024\}$, confirming that the method does not depend on a specific sequence length.
+- **LLaDA Benefits More than Dream**: LLaDA, trained from scratch, exhibits higher local stochasticity during decoding (lower variance in VB but weaker positional preference), making adaptive block grouping more effective. Dream, adapted from AR models, retains a strong global autoregressive order, limiting the space for local adjustment.
+- **Amplified Benefits with Caching**: Block-level KV caching is approximate. Fixed large blocks accumulate error. AdaBlock reduces the average block size (e.g., from $B_0=64$ to $\bar{B}=33.98$) and enhances intra-block consistency. On GSM8K, +Ada+Cache at $B_0=64$ (80.7%) outperformed +Cache at $B_0=32$ (74.5%) by 6.2 percentage points.
+- **Newline `\n` is the Most Effective Separator**: Among all combinations, using only `\n` captured most gains (78.5% vs 74.5% baseline). Adding commas and periods provided marginal improvement (78.7%), consistent with newlines marking reasoning step boundaries.
+- **Throughput Gains at Small Default Block Sizes**: For $B_0 \in \{4, 8\}$, AdaBlock tends to expand blocks, reducing Late Decoding Overhead and lowering NFE/increasing throughput. For $B_0 \ge 16$, it tends to shrink blocks for quality, slightly reducing throughput but significantly increasing accuracy.
+- **Stability Across Budgets**: Consistent improvements were observed across generation budgets of $L \in \{256, 512, 1024\}$, indicating the method does not rely on specific sequence lengths.
 
 ## Highlights & Insights
-
-- **The three-region decomposition of the confidence landscape** is an insightful analytical framework. Structuring the token confidence dynamics during denoising into "high-confidence plateau–volatility band–low-confidence floor" provides an intuitive tool for understanding dLLM decoding behavior, with potential applicability to other dLLM analysis scenarios such as training strategy design and denoising step scheduling.
-- **Separator detection as a semantic boundary signal** is remarkably simple—requiring no additional models or semantic analysis, it effectively locates semantic step boundaries merely by observing the confidence of `\n` tokens. This paradigm of "mining structural signals from the model's existing predictions" is broadly applicable.
-- **The comparative analysis of LLaDA vs. Dream** reveals deep influences of dLLM training methodology on inference behavior: models trained from scratch exhibit stronger local stochasticity and weaker global autoregressive tendencies, leaving more room for adaptive scheduling. This suggests that future dLLM training could explicitly incorporate semantic-step-aware objectives.
+- The **Three-region Partitioning of the Confidence Landscape** is an insightful analytical framework. Structuring the denoising process as a "plateau-VB-floor" provides a tool for understanding dLLM decoding and could generalize to other scenarios like training strategy design.
+- The use of **Separator Detection as a Semantic Boundary Signal** is elegantly simple—requiring no extra models or analysis. Mining structural signals from the model's own predictions is a paradigm worth following.
+- The **LLaDA vs Dream Comparison** reveals how training methods impact inference behavior. Models trained from scratch show more local stochasticity and weaker global AR tendencies, offering more optimization room for adaptive scheduling. This suggests future dLLM training could incorporate semantic step-aware objectives.
 
 ## Limitations & Future Work
-
-- **Separator selection relies on prior knowledge**: The current choice of $D=\{\textbackslash n\}$ suits reasoning and code tasks but may not generalize to free-form text generation, dialogue, or non-English languages. An automated separator discovery mechanism is needed.
-- **$\tau_D$ requires manual tuning per model family**: LLaDA and Dream require different thresholds, and the authors acknowledge that excessively high $\tau_D$ (e.g., 0.9) degrades the scheduler to fixed block sizes. An adaptive, tuning-free threshold strategy is lacking.
-- **Only the sampling stage is optimized**: AdaBlock improves sampling quality (which tokens to reveal), but cannot correct errors in the denoiser's own predictions. When the model's token distribution estimates are unreliable (e.g., on challenging reasoning problems), the benefits of adaptive block sizing are limited.
-- **Not tested on larger models**: Experiments are limited to the 7–8B scale; behavior on 70B+ models remains unverified. Larger models may exhibit more stable confidence distributions, potentially altering VB characteristics and optimal hyperparameters.
-- **Limited benefit at short generation budgets**: The authors note that semi-AR decoding itself offers limited advantages for short-generation scenarios such as multiple-choice questions, and AdaBlock's gains are correspondingly reduced.
-- **VB insights have not been applied to training**: Incorporating semantic-step alignment objectives during training (e.g., aligning token denoising difficulty with semantic boundaries) could potentially yield larger gains than purely inference-time optimization.
+- **Separator Choice Relies on Priors**: The current $D=\{\textbackslash n\}$ set works for reasoning and code but might fail in free-text gen, dialogue, or non-English languages. Automated separator discovery is needed.
+- **Manual $\tau_D$ Tuning**: Different model families require different thresholds, and excessively high $\tau_D$ (e.g., 0.9) causes the scheduler to revert to fixed blocks. An adaptive threshold strategy is missing.
+- **Optimization Restricted to Sampling**: AdaBlock improves sampling quality but cannot fix core prediction errors in the denoiser. If token distributions are unreliable (e.g., on hard problems), the advantage is limited.
+- **Unverified at Scale**: Experiments were limited to 7-8B scales; performance on 70B+ models remains unverified.
+- **Limited Benefit for Short Budgets**: Gains are smaller in short generation scenarios (like multiple-choice) where semi-AR decoding itself offers less advantage.
+- **Integrating Insights into Training**: Feedback of semantic alignment into training targets could yield greater gains than pure inference optimization.
 
 ## Related Work & Insights
-
-- **vs. Fast-dLLM**: Fast-dLLM proposes a semi-AR + dynamic sampling + DualCache inference framework but uses fixed block sizes. AdaBlock operates as an orthogonal scheduling layer on top of Fast-dLLM without modifying its core mechanisms, yet improves accuracy across all settings, demonstrating that block size is an overlooked but important optimization dimension.
-- **vs. Block Diffusion**: Block Diffusion first proposes the semi-AR decoding paradigm for dLLMs but fixes the block structure at training time. AdaBlock hints at a promising direction—using adaptive block sizes during training as well, so that the model learns better block boundary awareness.
-- **vs. Early Exit in Autoregressive Models**: Early exit / adaptive computation in AR models adjusts computational depth based on token difficulty. AdaBlock achieves analogous adaptive computation allocation in dLLMs, but along a different dimension—not adjusting per-token computation depth, but adjusting the number of tokens revealed per decoding step.
+- **vs Fast-dLLM**: Fast-dLLM introduced the semi-AR + dynamic sampling + DualCache framework but uses fixed blocks. AdaBlock acts as an orthogonal scheduling layer that improves accuracy in all settings without modifying the core mechanism.
+- **vs Block Diffusion**: Block Diffusion proposed semi-AR decoding but fixed block structures during training. AdaBlock suggests that incorporating adaptive sizes during training could improve block-boundary awareness.
+- **vs Autoregressive Early Exit**: AR early exit adjusts computation based on token difficulty. AdaBlock achieves similar adaptive calculation in dLLMs by adjusting the number of tokens per step rather than calculation depth.
 
 ## Rating
-
-- Novelty: ⭐⭐⭐⭐ First systematic analysis of the fixed block size problem in dLLMs; the VB discovery is insightful, though the method itself (separator detection + threshold comparison) is not complex.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across three models × four benchmarks × multiple block sizes with sufficient ablations, though larger models and non-English evaluations are absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem formulation is clear (quantified analysis of two error types), the derivation from observations to method is logically coherent, and figures are well-designed.
-- Value: ⭐⭐⭐⭐ The training-free, plug-and-play nature confers strong practicality, but absolute gains are modest (1–3% in most settings), and relevance may diminish as the dLLM field evolves rapidly.
+- Novelty: ⭐⭐⭐⭐ First systematic analysis of the fixed block size issue in dLLMs; VB discovery is insightful, though the method (separator detection) is straightforward.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across three models and four benchmarks, though lacking 70B+ or non-English tests.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition with quantitative analysis of error types; smooth logic from observation to method; excellent visualizations.
+- Value: ⭐⭐⭐⭐ High practicality due to plug-and-play nature, though absolute gains are mostly 1-3%.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_responses.md)
+- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
+- [\[ICLR 2026\] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](rethinking_llm-as-a-judge_representation-as-a-judge_with_small_language_models_v.md)
+- [\[ICLR 2026\] ParallelBench: Understanding the Trade-offs of Parallel Decoding in Diffusion LLMs](parallelbench_understanding_the_trade-offs_of_parallel_decoding_in_diffusion_llm.md)
+- [\[ICLR 2026\] Contamination Detection for VLMs Using Multi-Modal Semantic Perturbations](contamination_detection_for_vlms_using_multimodal_semantic_perturbations.md)
 - [\[ICLR 2026\] In-Context Learning of Temporal Point Processes with Foundation Inference Models](in-context_learning_of_temporal_point_processes_with_foundation_inference_models.md)
-- [\[ICLR 2026\] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time](guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_agents.md)
-- [\[ICLR 2026\] vCache: Verified Semantic Prompt Caching](vcache_verified_semantic_prompt_caching.md)
 
 </div>
 

@@ -2,82 +2,93 @@
 title: >-
   [Paper Note] Prompt and Parameter Co-Optimization for Large Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][prompt optimization] This paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder…
+  [ICLR 2026][LLM Evaluation][Fine-tuning] The paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder. It unifies discrete prompt optimization and continuous parameter fine-tuning into an end-to-end optimizable joint framework, significantly surpassing methods that optimize them independently on
 tags:
-  - "ICLR 2026"
-  - "LLM Evaluation"
-  - "prompt optimization"
-  - "fine-tuning"
-  - "joint optimization"
-  - "LoRA"
-  - "discrete-continuous optimization"
+  - ICLR 2026
+  - LLM Evaluation
+  - Fine-tuning
+  - LoRA
 date: 2026-05-08
-content_hash: 3edc01c01d0b3e0d
+content_hash: c8e47e4b8318870d
 ---
-
 # Prompt and Parameter Co-Optimization for Large Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.24245](https://arxiv.org/abs/2509.24245)  
 **Code**: [https://github.com/BoXiaohe/MetaTuner](https://github.com/BoXiaohe/MetaTuner)  
-**Area**: LLM Evaluation
+**Area**: LLM Evaluation  
 **Keywords**: prompt optimization, fine-tuning, joint optimization, LoRA, discrete-continuous optimization
 
 ## TL;DR
-This paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder, unifying discrete prompt optimization and continuous parameter fine-tuning into an end-to-end jointly optimizable framework, achieving substantial improvements over independently optimized methods on mathematical reasoning and question answering tasks.
+The paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder. It unifies discrete prompt optimization and continuous parameter fine-tuning into an end-to-end optimizable joint framework, significantly surpassing methods that optimize them independently on mathematical reasoning and question-answering tasks.
 
 ## Background & Motivation
 
-**Background**: Post-training of LLMs has primarily followed two paradigms — prompt optimization (e.g., OPRO, RLPrompt, BPO), which activates the model's existing capabilities by finding appropriate input contexts, and fine-tuning (e.g., SFT, RLHF, DPO), which adapts model parameters to target data distributions. These two approaches are typically studied and applied independently.
+**Background**: Post-training for LLMs follows two primary routes: prompt optimization (e.g., OPRO, RLPrompt, BPO), which seeks appropriate input contexts to activate existing model capabilities, and fine-tuning (e.g., SFT, RLHF, DPO), which updates parameters to adapt to the target data distribution. These are typically studied and utilized independently.
 
-**Limitations of Prior Work**: Prompt optimization can guide model behavior but fails to accommodate complex patterns in large-scale task data, particularly when prompt information conflicts with knowledge encoded in model parameters. Fine-tuning can adapt to data distributions but typically relies on manually designed prompts as input, and the choice of prompt critically affects fine-tuning performance — using a suboptimal prompt can even underperform pure prompt optimization.
+**Limitations of Prior Work**: While prompt optimization guides model behavior, it cannot adapt to complex patterns in large-scale task data, especially when prompt information conflicts with knowledge encoded in parameters. Conversely, fine-tuning often uses manually designed prompts as input, yet prompt selection radically affects fine-tuning performance—using sub-optimal prompts can even yield results inferior to pure prompt optimization.
 
-**Key Challenge**: Prompts reside in a discrete optimization space (text tokens), while parameters reside in a continuous optimization space (floating-point weights). Their optimization objectives and execution pipelines are fundamentally different. The key challenge is how to simultaneously optimize these two complementary dimensions within a unified framework while resolving the non-differentiability inherent in mixed discrete-continuous optimization.
+**Key Challenge**: Prompts exist in a discrete optimization space (text tokens), while parameters exist in a continuous optimization space (floating-point weights). Their optimization objectives and execution processes are fundamentally different. The challenge lies in optimizing these two complementary dimensions within a unified framework while addressing the non-differentiability of mixed discrete-continuous optimization.
 
-**Goal**: (a) How to design a framework enabling mutual reinforcement between prompts and parameters? (b) How to perform effective gradient-based optimization in a mixed discrete-continuous space? (c) Can the optimal prompt-parameter combination surpass the upper bound of independently optimized approaches?
+**Goal**: (a) How to design a framework where prompts and parameters enhance each other? (b) How to conduct effective gradient optimization in a hybrid discrete-continuous space? (c) Can the optimal prompt-parameter combination exceed the upper bound of independent optimization?
 
-**Key Insight**: Preliminary experiments reveal that fine-tuning methods are highly sensitive to prompt selection — SFT performance varies dramatically across different prompts and can fall below prompt optimization methods. This confirms the necessity of joint optimization.
+**Key Insight**: Pre-experiments reveal that fine-tuning methods are extremely sensitive to prompt selection—SFT performance varies significantly with different prompts and may fall below prompt optimization methods. This confirms the necessity of joint optimization.
 
-**Core Idea**: Treat prompts as "special parameters" and generate both prompts and model parameters simultaneously through a shared encoder, achieving complementary mutual enhancement.
+**Core Idea**: Treat prompts as "special parameters" and use a shared encoder to simultaneously generate both prompts and model parameters, achieving complementary enhancement.
 
 ## Method
 
 ### Overall Architecture
-The MetaTuner pipeline: input query $x_i$ → Meta Encoder (shared bottom layers $\phi_s$) → two parallel branches: Prompt Decoder ($\phi_p$) generating natural language prompt $p_i$, and Parameter Decoder ($\phi_q$) generating LoRA parameters $\theta_i$ → both the prompt and LoRA parameters are applied to the downstream Actor Model $\mathcal{M}$ for prediction → loss computation and backpropagation.
+MetaTuner integrates "prompt tuning" and "parameter tuning," which are traditionally separate, into a single end-to-end trainable framework. The core insight is to treat the prompt as a "special parameter" and generate it along with LoRA weights via a single network. Specifically, for an input query $x_i$ paired with an initial manual prompt $\tilde{p}$, the input passes through a shared Meta Encoder $\phi_s$. The flow then splits into two private heads: the Prompt Decoder (private parameters $\phi_p$) rewrites it into a customized prompt $p_i$, while the Parameter Decoder (private parameters $\phi_q$) generates query-specific LoRA parameters $\theta_i$. Both are applied to the downstream Actor Model $\mathcal{M}$: the prompt determines the input context, and LoRA determines the weight offset. $\mathcal{M}$ then makes a prediction, and the loss is backpropagated through the entire chain. Sharing $\phi_s$ is critical—knowledge learned on the prompt side can permeate the parameter side and vice versa. By redefining "prompt searching in token space" as "continuous optimization of $\phi_p$," the non-differentiable hybrid problem is converted into a unified differentiable objective.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}%%
+flowchart TD
+    Q["Input query x_i<br/>+ Initial prompt p̃"]
+    S["Shared base φs: first k layers decoder<br/>(Design 1: Shared-private meta encoder)"]
+    PG["Prompt Decoder φp<br/>Rewrites to customized prompt p_i (Design 2: Prompt Generator)"]
+    PD["Parameter Decoder φq<br/>Generates query-specific LoRA θ_i (Design 3)"]
+    M["Actor Model M: p_i as context<br/>+ θ_i as weight offset"]
+    Y["Prediction ŷ_i → Unified Loss L<br/>(Main Task + Supervised Reg)"]
+    Q --> S
+    S --> PG
+    S --> PD
+    PG --> M
+    PD --> M
+    M --> Y
+    Y -. Gradient Backprop .-> S
+```
 
 ### Key Designs
 
-1. **Prompt Generator $\mathcal{G}$ (Continuous Relaxation of Discrete Optimization)**:
+**1. Shared-private meta encoder: Mutual error correction between branches**
 
-    - **Function**: Uses an LLM to transform discrete prompt optimization into continuous parameter optimization.
-    - **Mechanism**: Given an initial prompt $\tilde{p}$, a learnable LLM $\mathcal{G}_\phi$ rewrites it for each query to produce a customized prompt: $p_i = \mathcal{G}_\phi(\tilde{p}, x_i)$. This shifts the optimization objective from non-differentiable discrete token search to continuous optimization over $\phi$.
-    - **Design Motivation**: Generating complete prompts from scratch is prohibitively difficult; the rewriting strategy substantially simplifies the search space. Furthermore, sharing the initial prompt across all queries reduces the annotation burden.
+If the prompt and parameter branches operate independently, their respective sub-optimal solutions become fixed. MetaTuner splits the parameters of the prompt generator $\mathcal{G}$ into $\phi = \{\phi_s, \phi_p\}$, where $\phi_s$ is the shared base (the first $k$ layers of a Transformer decoder acting as the meta encoder) and $\phi_p$ is prompt-specific. The Parameter Decoder $\mathcal{F}$ reuses $\phi_s$ and adds its own private parameters $\phi_q$. The entire system is optimized under a unified objective:
 
-2. **Shared-Private Parameter Generation Architecture**:
+$$\min_{\phi_s, \phi_p, \phi_q} \sum_{i=1}^N \mathcal{L}(\mathcal{M}_{\mathcal{F}_{(\phi_s,\phi_q)}(\tilde{p},x_i)}(\mathcal{G}_{(\phi_s,\phi_p)}(\tilde{p},x_i), x_i), y_i)$$
 
-    - **Function**: Enables mutual knowledge transfer between prompts and parameters via a shared meta encoder.
-    - **Mechanism**: The parameters of $\mathcal{G}$ are decomposed as $\phi = \{\phi_s, \phi_p\}$, where $\phi_s$ denotes the shared bottom encoding layers (the first $k$ Transformer decoder layers) and $\phi_p$ denotes the prompt-specific upper layers. The Parameter Decoder $\mathcal{F}$ uses the same $\phi_s$ together with its own private parameters $\phi_q$. The unified objective is: $\min_{\phi_s, \phi_p, \phi_q} \sum_{i=1}^N \mathcal{L}(\mathcal{M}_{\mathcal{F}_{(\phi_s,\phi_q)}(\tilde{p},x_i)}(\mathcal{G}_{(\phi_s,\phi_p)}(\tilde{p},x_i), x_i), y_i)$
-    - **Design Motivation**: The shared parameters $\phi_s$ enable mutual regularization between the two branches — a suboptimal solution in one branch can be corrected by the other under the unified loss. The private parameters $\phi_p$ and $\phi_q$ preserve the flexibility for each branch to independently explore optimal solutions.
+The shared $\phi_s$ provides mutual regularization—any sub-optimal solution from one branch is corrected by the other via the unified loss. Meanwhile, private $\phi_p$ and $\phi_q$ allow for independent exploration. The sharing depth $k$ is a tunable trade-off: for a 7B model, more private layers ($k=K/4$) are better, while a 3B model benefits from a higher sharing ratio ($k=3K/4$) to enhance consistency.
 
-3. **Concrete Implementation of the Parameter Decoder**:
+**2. Prompt Generator $\mathcal{G}$: Turning discrete prompt search into continuous optimization**
 
-    - **Function**: Generates query-specific LoRA weights from the hidden states $h_i$ produced by the shared encoder.
-    - **Mechanism**: LoRA updates are applied as $\Delta W = \theta_i^b \cdot \theta_i^a$, generated from hidden states via two-layer matrix multiplication with ReLU activation: $\theta_i^b = \text{MM}(\text{ReLU}(\text{MM}(W_d^b, h_i)), W_u^b)$. The parameter decoder is parameterized as $\phi_q = \{W_d^b, W_u^b, W_d^a, W_u^a\}$, with a scaling factor $\lambda$ controlling the magnitude of the generated LoRA contributions.
-    - **Design Motivation**: Using LoRA instead of full-parameter fine-tuning ensures training efficiency, while generating distinct LoRA parameters for each query enables fine-grained instance-level adaptation.
+The primary difficulty in discrete prompt optimization is that searching in token space is non-differentiable. MetaTuner avoids "generation from scratch" and instead uses "rewriting on an initial prompt": given an initial manual prompt $\tilde{p}$, a learnable LLM $\mathcal{G}_\phi$ rewrites a customized version $p_i = \mathcal{G}_\phi(\tilde{p}, x_i)$ for each query. This optimizes the continuous parameters $\phi$ of $\mathcal{G}$ rather than discrete tokens, drastically compressing the search space. Since all queries share $\tilde{p}$ as a starting point, it eliminates the manual cost of per-query prompt labeling.
+
+**3. Parameter Decoder: Generating query-specific LoRA weights from hidden states**
+
+The parameter branch converts hidden states from the shared encoder into weight offsets. For LoRA updates $\Delta W = \theta_i^b \cdot \theta_i^a$, two small networks (Matrix Multiplication + ReLU) generate the low-rank matrices from hidden states $h_i$. For example, $\theta_i^b = \text{MM}(\text{ReLU}(\text{MM}(W_d^b, h_i)), W_u^b)$. Using LoRA ensures training efficiency, while generating a unique LoRA set per query achieves input-level adaptation.
 
 ### Loss & Training
 
-**Core Challenge**: The prompt decoder outputs discrete tokens, making it impossible to directly backpropagate gradients through $\phi_p$. **Solution — Supervised Regularization Loss**:
+Key challenge: Prompt decoder outputs discrete tokens, preventing direct gradient backpropagation to $\phi_p$. The solution is a **supervised regularization loss**:
 
 $$\min_{\phi_s, \phi_p, \phi_q} \sum_{(x_i,y_i) \in D_1} \mathcal{L}(\mathcal{M}_{\mathcal{F}}(\mathcal{G}_{(\phi_s,\phi_p')}(\tilde{p},x_i), x_i), y_i) + \sum_{(x_i,p_i) \in D_2} \alpha \cdot \mathcal{L}(\mathcal{G}_{(\phi_s,\phi_p)}(\tilde{p},x_i), p_i)$$
 
-- **First term**: Main task loss, with $\phi_p'$ (prompt private parameters) frozen to ensure full differentiability.
-- **Second term**: Supervised regularization, training the prompt decoder on $D_2 = \{(x_i, p_i)\}$ using optimal prompts collected via rollout.
-- $\phi_p$ is periodically synchronized to $\phi_p'$ after updates.
-- Gumbel-Softmax was evaluated but substantially underperformed supervised regularization, as its continuous relaxation introduces gradient bias.
-- Two optimization strategies are considered: MetaTuner-I (alternating optimization of the two terms) and MetaTuner-J (joint optimization).
+- The first term is the main task loss, with $\phi_p'$ (prompt private parameters) frozen to ensure differentiability.
+- The second term is supervised regularization, using the optimal prompts sampled via rollout for supervised learning on $D_2 = \{(x_i, p_i)\}$.
+- $\phi_p'$ is periodically synchronized with the updated $\phi_p$.
+- Gumbel-Softmax was attempted but underperformed compared to supervised regularization due to gradient bias from continuous relaxation.
 
-**Training Procedure**: Both $\mathcal{G}$ (Qwen2.5-7B) and $\mathcal{M}$ (Qwen2.5-3B) are first warmed up separately via SFT, followed by joint training.
+**Mechanism**: Warm up $\mathcal{G}$ (Qwen2.5-7B) and $\mathcal{M}$ (Qwen2.5-3B) with SFT separately, followed by joint training.
 
 ## Key Experimental Results
 
@@ -86,7 +97,7 @@ $$\min_{\phi_s, \phi_p, \phi_q} \sum_{(x_i,y_i) \in D_1} \mathcal{L}(\mathcal{M}
 Comparison across 4 benchmarks (Qwen2.5-7B as generator, Qwen2.5-3B as actor):
 
 | Method | MATH | GSM8K | HotpotQA | CosmosQA | Type |
-|--------|------|-------|----------|----------|------|
+|------|------|-------|----------|----------|------|
 | Qwen2.5 (zero-shot) | 18.44 | 51.63 | 19.85 | 36.80 | Vanilla |
 | BPO | 32.67 | 58.00 | 43.90 | 82.05 | Prompt |
 | OPRO | 22.00 | 75.06 | 25.55 | 69.10 | Prompt |
@@ -95,46 +106,45 @@ Comparison across 4 benchmarks (Qwen2.5-7B as generator, Qwen2.5-3B as actor):
 | BetterTogether | 41.56 | 67.93 | 52.30 | 89.80 | Hybrid |
 | **MetaTuner-J** | **48.67** | **78.92** | **54.56** | **92.25** | Hybrid |
 
-MetaTuner-J achieves an average improvement of 10.15% over BetterTogether (7B backbone), with gains of +7.11 on MATH and +10.99 on GSM8K.
+MetaTuner-J average improvement over BetterTogether is 10.15% (7B backbone), with gains of +7.11 on MATH and +10.99 on GSM8K.
 
 ### Ablation Study
 
-| Configuration | MATH | GSM8K | HotpotQA | CosmosQA | Note |
-|---------------|------|-------|----------|----------|------|
-| MetaTuner (w/o F) | 48.00 | 77.79 | 54.05 | 91.10 | Removing fine-tuning branch, all metrics drop |
-| MetaTuner (w/o P) | 46.22 | 78.54 | 53.90 | 91.00 | Removing prompt branch, MATH drops by 2.45 |
-| MetaTuner (w/o S) | 46.67 | 77.86 | 53.65 | 91.50 | No parameter sharing, all metrics drop |
-| **MetaTuner (full)** | **48.67** | **78.92** | **54.56** | **92.25** | Full model achieves best performance |
+| Configuration | MATH | GSM8K | HotpotQA | CosmosQA | Description |
+|------|------|-------|----------|----------|------|
+| MetaTuner (w/o F) | 48.00 | 77.79 | 54.05 | 91.10 | Remove fine-tuning branch |
+| MetaTuner (w/o P) | 46.22 | 78.54 | 53.90 | 91.00 | Remove prompt branch |
+| MetaTuner (w/o S) | 46.67 | 77.86 | 53.65 | 91.50 | No shared parameters |
+| **MetaTuner (full)** | **48.67** | **78.92** | **54.56** | **92.25** | Optimal full model |
 
 ### Key Findings
-- **Both branches are indispensable**: Removing the fine-tuning or prompt branch leads to average performance drops of approximately 0.99% and 1.12%, respectively.
-- **Parameter sharing is critical**: Removing shared parameters (w/o S) consistently underperforms the full model, validating the effectiveness of mutual reinforcement.
-- **Optimal sharing ratio depends on model scale**: For the 7B model, the optimal sharing ratio is $K/4$ (retaining more private layers), whereas for the 3B model it is $3K/4$ (more sharing to enhance coherence).
-- **Supervised regularization outperforms Gumbel-Softmax**: Optimizing directly in the discrete space avoids approximation errors introduced by continuous relaxation.
-- **Rollout sample count should not be excessive**: An excessive number of samples leads to over-exploration, disrupting previously learned effective information.
-- **Joint optimization (MetaTuner-J) slightly outperforms alternating optimization (MetaTuner-I)**, except on HotpotQA where alternating optimization performs better.
+- **Both branches are essential**: Removing either the fine-tuning or prompt branch leads to average drops of approx 0.99% and 1.12%, respectively.
+- **Shared parameters are crucial**: Performance of the "w/o S" configuration is inferior, proving the effectiveness of mutual enhancement.
+- **Sharing ratio correlates with model size**: 7B models perform best with $K/4$ sharing, while 3B models prefer $3K/4$.
+- **Supervised regularization outperforms Gumbel-Softmax**: Direct optimization in discrete space avoids the approximation errors of continuous relaxation.
+- **Joint optimization (MetaTuner-J) is generally superior** to alternating optimization (MetaTuner-I).
 
 ## Highlights & Insights
-- **Treating prompts as "special parameters"**: This unified perspective dissolves the traditional boundary between prompt optimization and fine-tuning, enabling both to complement each other under a shared objective. This viewpoint is transferable to other scenarios requiring coordination between discrete decisions and continuous optimization.
-- **Supervised regularization for mixed discrete-continuous optimization**: The method elegantly constructs supervised signals from rollout-optimal prompts to train the prompt decoder, avoiding gradient bias inherent in relaxation approaches such as Gumbel-Softmax. This technique generalizes to other tasks involving discrete structure generation.
-- **Query-specific prompts and LoRA parameters**: Rather than applying a single fixed prompt or a single set of LoRA parameters to all inputs, MetaTuner dynamically generates both for each query, enabling fine-grained instance-level adaptation.
+- **Viewing prompts as "special parameters"**: This unified perspective breaks the traditional barrier between prompt optimization and fine-tuning, allowing them to complement each other under a single objective.
+- **Supervised regularization for hybrid optimization**: Using rollout-derived optimal prompts as supervision signals effectively trains the prompt decoder while bypassing the gradient bias issues of relaxation methods.
+- **Query-specific adaptation**: Dynamically generating both prompts and LoRA parameters per query enables fine-grained adaptation compared to static global prompts or weights.
 
 ## Limitations & Future Work
-- **Computational overhead**: A 7B generator model is required to serve a 3B actor model; the inference cost of the generator itself is non-negligible in practical deployment scenarios.
-- **Dependency on warmup phase**: Separate SFT warmup for both models prior to joint training increases overall pipeline complexity.
-- **Evaluation limited to Qwen series**: Generalizability across diverse architectures (e.g., Llama, Mistral) has not been verified.
-- **Limited capacity of discrete prompts**: Prompts consisting of tens to hundreds of tokens have constrained information capacity, which may be insufficient for tasks requiring extensive domain knowledge.
+- **Computational Overhead**: Using a 7B model to serve a 3B actor model introduces significant inference overhead.
+- **Dependency on Warmup**: The pipeline is complex, requiring separate SFT stages before joint training.
+- **Architecture Generalization**: The method has primarily been validated on the Qwen series.
+- **Discrete Prompt Capacity**: Prompt information capacity is limited compared to deep domain knowledge requirements.
 
 ## Related Work & Insights
-- **vs. BetterTogether**: BetterTogether also performs joint optimization, but lacks shared bottom-layer knowledge between the prompt and parameter branches and does not support end-to-end differentiable training. MetaTuner achieves deeper synergy through the shared encoder and supervised regularization, yielding average improvements exceeding 10%.
-- **vs. OPRO/CFPO**: Pure prompt optimization methods encounter a performance ceiling on mathematical reasoning, as they cannot adapt model parameters. MetaTuner improves on MATH from OPRO's 22.00 to 48.67.
-- **vs. DPO/PPO**: Pure fine-tuning methods are constrained by fixed prompts. MetaTuner improves on GSM8K from DPO's 63.68 to 78.92.
+- **vs BetterTogether**: While both attempt joint optimization, MetaTuner achieves deeper synergy through a shared encoder and end-to-end differentiable training via supervised regularization, yielding a 10%+ average improvement.
+- **vs OPRO/CFPO**: Pure prompt optimization faces a performance "ceiling" in reasoning tasks. MetaTuner raises MATH performance from OPRO's 22.00 to 48.67.
+- **vs DPO/PPO**: Pure fine-tuning is limited by fixed prompts. MetaTuner increases GSM8K performance from DPO's 63.68 to 78.92.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The idea of jointly optimizing prompts and parameters is original; the shared-private architecture and supervised regularization represent solid technical contributions, though the core intuition is relatively straightforward.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive coverage across 4 datasets, 10+ baselines, detailed ablations, generalization experiments, and hyperparameter analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Mathematical derivations are clear and the logic from problem formulation to methodology to experiments is coherent, though the notation in Section 3 is relatively heavy.
-- **Value**: ⭐⭐⭐⭐ — Introduces a new paradigm for LLM post-training with substantial improvements across multiple tasks; however, computational cost and pipeline complexity may limit practical applicability.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -142,11 +152,11 @@ MetaTuner-J achieves an average improvement of 10.15% over BetterTogether (7B ba
 
 ## Related Papers
 
-- [\[ICLR 2026\] vCache: Verified Semantic Prompt Caching](vcache_verified_semantic_prompt_caching.md)
-- [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](../../NeurIPS2025/llm_evaluation/hyperbolic_fine-tuning_for_large_language_models.md)
-- [\[ACL 2026\] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models](../../ACL2026/llm_evaluation/policyllm_towards_excellent_comprehension_of_public_policy_for_large_language_mo.md)
-- [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](../../ACL2026/llm_evaluation/zero-shot_large_language_models_for_automatic_readability_assessment.md)
-- [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](../../ACL2026/llm_evaluation/novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
+- [\[ICLR 2026\] SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization](sparseeval_efficient_evaluation_of_large_language_models_by_sparse_optimization.md)
+- [\[ICML 2025\] Hyperband-based Bayesian Optimization for Black-box Prompt Selection](../../ICML2025/llm_evaluation/hyperband-based_bayesian_optimization_for_black-box_prompt_selection.md)
+- [\[ICLR 2026\] Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models](multi-turn_evaluation_of_anthropomorphic_behaviours_in_large_language_models.md)
+- [\[ICLR 2026\] CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics](cmphysbench_a_benchmark_for_evaluating_large_language_models_in_condensed_matter.md)
+- [\[ICLR 2026\] SimBench: Benchmarking the Ability of Large Language Models to Simulate Human Behaviors](simbench_benchmarking_the_ability_of_large_language_models_to_simulate_human_beh.md)
 
 </div>
 

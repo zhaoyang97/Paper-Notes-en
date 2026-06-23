@@ -2,78 +2,93 @@
 title: >-
   [Paper Note] In-Context Learning of Temporal Point Processes with Foundation Inference Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Temporal Point Processes] This paper proposes FIM-PP — the first foundation inference model for marked temporal point processes (MTPP). A Transformer is pretrained on 72K synthetic point proce…
+  [ICLR 2026][LLM Evaluation][Paper Note] Proposes FIM-PP—the first foundation inference model for Marked Temporal Point Processes (MTPP). By pre-training a Transformer on 72K synthetic point processes (14.4 million events) to perform in-context inference of conditional intensity functions, it achieves zero-shot performance comparable to specialized models tra
 tags:
-  - "ICLR 2026"
-  - "LLM Evaluation"
-  - "Temporal Point Processes"
-  - "Foundation Inference Model"
-  - "In-Context Learning"
-  - "Hawkes Process"
-  - "Conditional Intensity Function"
+  - ICLR 2026
+  - LLM Evaluation
 date: 2026-05-08
-content_hash: 39e11bb02cf1b072
+content_hash: 8aacb986095138d0
 ---
-
 # In-Context Learning of Temporal Point Processes with Foundation Inference Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.24762](https://arxiv.org/abs/2509.24762)  
 **Code**: [OpenFIM](https://fim4science.github.io/OpenFIM/intro.html)  
-**Area**: LLM Evaluation
-**Keywords**: Temporal Point Processes, Foundation Inference Model, In-Context Learning, Hawkes Process, Conditional Intensity Function
+**Area**: LLM Evaluation  
+**Keywords**: Temporal Point Processes, Foundation Inference Models, In-Context Learning, Hawkes Processes, Conditional Intensity Function
 
 ## TL;DR
 
-This paper proposes FIM-PP — the first foundation inference model for marked temporal point processes (MTPP). A Transformer is pretrained on 72K synthetic point processes (14.4M events) to perform in-context inference of conditional intensity functions. In zero-shot settings, FIM-PP matches the performance of specialized models trained for hours; after a few minutes of fine-tuning, it achieves state-of-the-art results on multi-event prediction across four real-world datasets.
+Proposes FIM-PP—the first foundation inference model for Marked Temporal Point Processes (MTPP). By pre-training a Transformer on 72K synthetic point processes (14.4 million events) to perform in-context inference of conditional intensity functions, it achieves zero-shot performance comparable to specialized models trained for hours. After minutes of fine-tuning, it sets a new SOTA across four real-world datasets for multi-event prediction.
 
 ## Background & Motivation
 
-**Background**: Marked temporal point processes (MTPP) are the standard framework for modeling asynchronous, irregular event sequences, with applications in financial trading, social media diffusion, neural spike trains, and epidemiology. The central mathematical object is the conditional intensity function $\lambda(t,\kappa|\mathcal{H}_t)$ — the instantaneous rate of events of each type at a future time given the history. Classical Hawkes processes use linear self-exciting kernels to model excitation and inhibition between events; subsequent neural methods (NHP, A-NHP, etc.) incorporate RNN/Transformer encoders for history, but all follow a "train one model per dataset" paradigm.
+**Background**: Marked Temporal Point Processes (MTPP) represent the standard framework for modeling asynchronous, irregular event sequences, widely used in financial trading, social media propagation, neural spikes, and epidemiology. The core mathematical object is the conditional intensity function $\lambda(t,\kappa|\mathcal{H}_t)$—the instantaneous rate of occurrence for each event category at a future time given the event history. Classical Hawkes processes model excitation/inhibition between events via linear self-exciting kernels, while subsequent neural methods (NHP, A-NHP, etc.) introduce RNNs/Transformers to encode history, yet they follow the "one model per dataset" paradigm.
 
-**Limitations of Prior Work**: Each new event sequence dataset requires training from scratch, which can take hours, and learned representations do not transfer across systems. Meanwhile, foundation models have emerged in NLP, ODE, and SDE domains (e.g., ODEFormer, FIM-MJP), yet the event sequence domain remains unaddressed. Moreover, recent generative approaches (diffusion, flow matching) achieve high prediction accuracy but entirely abandon the interpretability of the intensity function — making it impossible to observe excitation/inhibition structures between events.
+**Limitations of Prior Work**: Models must be trained from scratch for every new event sequence dataset, often taking hours, and learned representations cannot be transferred across systems. Meanwhile, although foundation models have emerged in fields like NLP, ODE, and SDE (e.g., ODEFormer, FIM-MJP), the event sequence domain remains a blank. Furthermore, while popular generative methods (diffusion, flow matching) offer high prediction accuracy, they completely sacrifice the interpretability of the intensity function—failing to reveal the excitation/inhibition structures between events.
 
-**Key Challenge**: Three objectives must be satisfied simultaneously — (1) zero-shot generalization across datasets, (2) high-accuracy multi-step prediction, and (3) preservation of interpretable conditional intensity functions — yet existing methods satisfy at most two.
+**Key Challenge**: To satisfy three objectives simultaneously: (1) zero-shot generalization across datasets, (2) high-precision multi-step prediction, and (3) preservation of the interpretability of the conditional intensity function—whereas existing methods fulfill at most two.
 
-**Key Insight**: The paper draws on the Foundation Inference Model (FIM) paradigm — pretraining a recognition network on large-scale synthetic data so that it learns to infer the underlying dynamical parameters from a set of in-context event sequences. The key observation is that, provided the family of conditional intensity functions in the synthetic data is sufficiently broad, the pretrained model encodes a strong prior that enables zero-shot inference or rapid fine-tuning on real data.
+**Key Insight**: This work draws from the Foundation Inference Model (FIM) paradigm—pre-training a "recognition network" on large-scale synthetic data to learn the inference of underlying dynamical parameters from a set of in-context event sequences. The key observation is that if the family of conditional intensity functions in the synthetic data is sufficiently broad, the pre-trained model can encode powerful priors, enabling zero-shot inference or extremely fast fine-tuning on real-world data.
 
-**Core Idea**: Pretrain a Transformer on large-scale synthetic MTPPs spanning five process classes, enabling it to directly infer three analytic parameters $(\alpha, \beta, \mu)$ of the conditional intensity function from a set of context sequences, thereby achieving zero-shot or rapidly fine-tuned, interpretable event sequence prediction.
+**Core Idea**: Pre-train a Transformer on large-scale synthetic MTPPs covering five types of processes, enabling it to directly infer the three analytical parameters ($\alpha, \beta, \mu$) of the conditional intensity function from a set of in-context sequences, thereby achieving zero-shot/fast-tuning interpretable event sequence prediction.
 
 ## Method
 
 ### Overall Architecture
 
-FIM-PP operates in two stages. **Pretraining**: A broad family of conditional intensity functions is defined (covering classical Hawkes, Poisson, periodic, high-initial-excitation, and non-monotonic kernel processes); large numbers of MTPPs are sampled from this family and simulated via the Ogata thinning algorithm, producing triples of (context sequence set, event history, ground-truth intensity values) as training data. **Inference**: Given a set of context sequences $\mathcal{C}=\{\mathcal{S}^j\}$ from the same system and an event history $\mathcal{H}_t$, FIM-PP outputs the analytic parameters of the conditional intensity function $\hat{\lambda}(t,\kappa|\mathcal{H}_t)$, which can be used directly for likelihood estimation or for autoregressive future event prediction via the thinning algorithm.
+The workflow of FIM-PP is divided into two stages. **Pre-training Stage**: Define a broad family of conditional intensity functions (covering classical Hawkes, Poisson, periodic processes, high initial excitation processes, and non-monotonic kernel processes). Sample a large number of MTPPs from this family and simulate event sequences using the Ogata thinning algorithm to generate "(context sequence set, event history, ground-truth intensity)" triplets as training data. **Inference Stage**: Given a set of context event sequences $\mathcal{C}=\{\mathcal{S}^j\}$ from the same system and an event history $\mathcal{H}_t$, the model first compresses the context into fixed representations using a **hierarchical encoder**, then combines it with the current history via a **context-aware history decoder**. Finally, a feed-forward network outputs the three analytical parameters of the conditional intensity function $\hat{\lambda}(t,\kappa|\mathcal{H}_t)$, which can be used directly for likelihood estimation or autoregressive future event prediction via the thinning algorithm.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    P["Synthetic Data Generation Framework<br/>Generalized Intensity Family (5 Process Types) + Ogata thinning<br/>72K Processes / 14.4M Events"] --> PT["Pre-trained Transformer<br/>(NLL Objective, 16M Parameters)"]
+    C["Context Sequence Set C={S^j}"] --> EMB["Event Embedding<br/>Sum of Time/Mark/Interval Embeddings"]
+    subgraph ENC["Hierarchical Context Encoder"]
+        direction TB
+        EMB --> SEQ["Intra-sequence Encoding + Fixed Query Attention<br/>Compress each sequence into vector c_j"]
+        SEQ --> COMB["Inter-sequence Aggregation<br/>Context Representation C~"]
+    end
+    H["Event History H_t"] --> DEC["Context-aware History Decoder<br/>History as Query, C~ as Key-Value"]
+    COMB --> DEC
+    DEC --> FFN["Three-parameter Intensity Parameterization<br/>softplus FFN outputs (α,β,μ)"]
+    FFN --> LAM["Conditional Intensity λ(t,κ|H_t)<br/>Exponential Relaxation Form"]
+    LAM --> FC["Thinning Autoregressive Prediction / Likelihood Estimation"]
+    PT -.Pre-training Initialization.-> ENC
+    PT -.Pre-training Initialization.-> DEC
+```
 
 ### Key Designs
 
-1. **Synthetic Data Generation Framework**:
+**1. Synthetic Data Generation Framework: Feeding broad priors with a family of generalized intensity functions**
 
-    - Function: Constructs training data — 72K point processes, 14.4M events.
-    - Mechanism: Defines five process families based on the generalized conditional intensity function $\lambda(t,\kappa|\mathcal{H}_t)=\max(0, \mu_\kappa(t)+\sum_{(t',\kappa')\in\mathcal{H}_t} z_{\kappa\kappa'}\gamma_{\kappa\kappa'}(t-t'))$: (a) classical Hawkes — constant base intensity and exponential decay kernel; (b) Poisson — constant base intensity, no interaction kernel; (c) periodic — sinusoidal base intensity; (d) high initial excitation — Gamma-distributed base intensity; (e) non-monotonic shifted kernel — Rayleigh-distributed kernel. For each mark pair $(\kappa,\kappa')$, an interaction type $z_{\kappa\kappa'}\in\{-1,0,1\}$ is sampled randomly, representing inhibition, no influence, and excitation, respectively.
-    - Design Motivation: Covering diverse kernel functions and interaction patterns enables the model to encode a sufficiently broad prior. Experiments confirm that this prior generalizes even to power-law kernels never seen during training.
+The success of zero-shot transfer in pre-training depends on how many types of event dynamics the synthetic data covers. The authors do not limit themselves to classical Hawkes but define a generalized conditional intensity function:
 
-2. **Hierarchical Context Encoder**:
+$$\lambda(t,\kappa|\mathcal{H}_t)=\max\Big(0,\ \mu_\kappa(t)+\sum_{(t',\kappa)\in\mathcal{H}_t} z_{\kappa\kappa'}\gamma_{\kappa\kappa'}(t-t')\Big)$$
 
-    - Function: Compresses a set of variable-length context sequences into a fixed-dimensional representation.
-    - Mechanism: Each event $(t_i, \kappa_i, \Delta t_i)$ is first mapped through three embedding networks ($\phi_t, \phi_\kappa, \phi_{\Delta t}$, with sinusoidal activations for time embeddings) and summed to obtain an event embedding $\mathbf{u}_i$. Within each sequence, event embeddings are processed by a Transformer encoder $\Psi_\text{enc}^\text{cont}$, then compressed to a single vector $\mathbf{c}_j$ via attention with a learnable fixed query $\mathbf{q}^\text{cont}$. The vectors $\mathbf{c}_j$ from all sequences are aggregated by a second Transformer encoder $\Psi_\text{enc}^\text{comb}$ to produce the final context representation $\tilde{\mathbf{C}}$.
-    - Design Motivation: The hierarchical scheme (intra-sequence first, then inter-sequence) avoids the $O(N^2)$ complexity bottleneck of concatenating all events into a single long sequence, significantly improving scalability.
+Five families of processes are sampled to fill the distribution: (a) Classical Hawkes (constant base intensity + exponential decay kernel), (b) Poisson (constant base intensity, no interaction kernel), (c) Periodic processes (sinusoidal base intensity), (d) High initial excitation (Gamma distribution base intensity), and (e) Non-monotonic shifted kernels (Rayleigh distribution kernel). Interaction structures $z_{\kappa\kappa'}\in\{-1,0,1\}$ are randomly sampled for each mark pair $(\kappa,\kappa')$, corresponding to inhibition, no effect, and excitation. Simulations via Ogata thinning result in 72K point processes and 14.4 million events. A surprise benefit of this broad coverage is that the model can correctly infer power-law kernels (Figure 4) never seen during training, suggesting it learns local relaxation behaviors rather than specific kernels.
 
-3. **Context-Aware History Encoder and Intensity Parameterization**:
+**2. Hierarchical Context Encoder: Intra-sequence then inter-sequence to bypass $O(N^2)$ complexity**
 
-    - Function: Estimates the conditional intensity function from the current event history and context.
-    - Mechanism: Embeddings of the event history $\mathcal{H}_t$ serve as queries for a Transformer decoder $\Psi_\text{dec}^\text{hist}$, with the context representation $\tilde{\mathbf{C}}$ as keys and values, yielding a history encoding $\mathbf{h}_t^\text{hist}$. Concatenated with mark embeddings, this is passed through three independent feed-forward networks (with softplus activations to ensure non-negativity) to output the three parameters $(\hat{\alpha}, \hat{\beta}, \hat{\mu})$. The conditional intensity is defined as $\hat{\lambda}(t,\kappa'|\mathcal{H}_t)=\hat{\mu}+(\hat{\alpha}-\hat{\mu})\exp(-\hat{\beta}(t-t_\text{last}))$ — upon a new event the intensity jumps to $\hat{\alpha}$, then relaxes exponentially at rate $\hat{\beta}$ toward the baseline $\hat{\mu}$.
-    - Design Motivation: The three-parameter analytic form resembles Hawkes but with parameters that are history- and mark-dependent (output by a neural network), allowing the model to capture locally rich behaviors such as Rayleigh and power-law kernels. Interpretability is preserved: one can directly inspect the intensity curve to determine excitation or inhibition.
+During inference, the model ingests a set of context sequences $\mathcal{C}=\{\mathcal{S}^j\}$ from the same system. Since the number and length of sequences vary, they must be compressed into a fixed dimension. Instead of concatenating all events into one ultra-long sequence (which hits the $O(N^2)$ attention bottleneck), the authors use a two-level compression: Each event $(t_i, \kappa_i, \Delta t_i)$ passes through three embedding networks ($\phi_t, \phi_\kappa, \phi_{\Delta t}$, with sinusoidal activations for time) to get event embedding $\mathbf{u}_i$. Within a single sequence, event embeddings are processed by a Transformer encoder $\Psi_\text{enc}^\text{cont}$, followed by a learnable fixed query $\mathbf{q}^\text{cont}$ using attention to compress the sequence into a single vector $\mathbf{c}_j$. Finally, all $\mathbf{c}_j$ are aggregated into the context representation $\tilde{\mathbf{C}}$ by a second encoder $\Psi_\text{enc}^\text{comb}$. This allows the context scale to grow freely without exhausting memory.
+
+**3. Context-Aware History Encoder + Three-parameter Intensity Parameterization: Combining analytical forms with neural parameters for flexibility and interpretability**
+
+To output intensity, the model combines the context with the current history $\mathcal{H}_t$. The embedding of $\mathcal{H}_t$ serves as the query for a Transformer decoder $\Psi_\text{dec}^\text{hist}$, while $\tilde{\mathbf{C}}$ acts as the key-value, yielding history encoding $\mathbf{h}_t^\text{hist}$. This is concatenated with mark embeddings and passed through three independent FFNs (with softplus activation) to output $(\hat{\alpha}, \hat{\beta}, \hat{\mu})$. The conditional intensity is then formulated in an exponential relaxation form:
+
+$$\hat{\lambda}(t,\kappa'|\mathcal{H}_t)=\hat{\mu}+(\hat{\alpha}-\hat{\mu})\exp\!\big(-\hat{\beta}(t-t_\text{last})\big)$$
+
+Intuitively, as a new event occurs, the intensity jumps to $\hat{\alpha}$ and then relaxes exponentially to the baseline $\hat{\mu}$ at rate $\hat{\beta}$. While it uses only three parameters like a Hawkes process, the key difference is that these parameters are history- and mark-dependent (outputs of the neural network), allowing it to locally fit behaviors far beyond fixed Hawkes processes, such as Rayleigh or power-law kernels. This compromise between an "analytical skeleton" and "neural complexity" preserves expressivity while allowing users to read the excitation/inhibition structure from the intensity curve.
 
 ### Loss & Training
 
-The training objective is the standard next-event negative log-likelihood: $\mathcal{L}_\text{NLL}=\sum_\kappa \int_0^T \hat{\lambda}(s,\kappa|\mathcal{H}_s)ds - \sum_{(t,\kappa)\in\mathcal{T}}\hat{\lambda}(t,\kappa|\mathcal{H}_t)$. During training, the number of context sequences, truncation lengths, and mark counts are randomly subsampled, enabling the model to adapt to varying scales of real-world data at inference time. The model has only 16M parameters and supports up to 22 mark types. Fine-tuning on a target dataset applies the same NLL objective on the training split — one sequence serves as the target while the rest serve as context — and completes in a few minutes with no more than 11GB of GPU memory.
+The training objective is the standard negative log-likelihood (NLL) for the next event: $\mathcal{L}_\text{NLL}=\sum_\kappa \int_0^T \hat{\lambda}(s,\kappa|\mathcal{H}_s)ds - \sum_{(t,\kappa)\in\mathcal{T}}\hat{\lambda}(t,\kappa|\mathcal{H}_t)$. During training, the number of context sequences, truncation lengths, and mark counts are randomly subsampled to ensure the model adapts to varying real-world data scales. The model has only 16M parameters and supports up to 22 marks. Fine-tuning uses the same NLL optimization on the target dataset, taking only minutes with memory consumption under 11GB.
 
 ## Key Experimental Results
 
-### Main Results: Multi-Event Prediction (N=20)
+### Main Results: Multi-event Prediction (N=20)
 
-Comparison against 7 baselines on four real-world datasets (Taxi, StackOverflow, Amazon, Retweet), reporting OTD (Optimal Transport Distance, lower is better) and sMAPE (Symmetric Mean Absolute Percentage Error, lower is better):
+Comparison with 7 baselines across four real-world datasets (Taxi, StackOverflow, Amazon, Retweet), reporting OTD (Optimal Transport Distance, lower is better) and sMAPE (Symmetric Mean Absolute Percentage Error, lower is better):
 
 | Method | Taxi OTD | SO OTD | Amazon OTD | Retweet OTD | Taxi sMAPE | SO sMAPE | Amazon sMAPE | Retweet sMAPE |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -83,9 +98,9 @@ Comparison against 7 baselines on four real-world datasets (Taxi, StackOverflow,
 | FIM-PP (zs) | 23.15 | 49.26 | 46.2 | 60.24 | **76.8** | 96.36 | 128.6 | 99.07 |
 | **FIM-PP (f)** | **17.91** | **39.80** | **37.2** | **59.44** | 76.8 | **88.25** | **81.2** | **87.59** |
 
-Fine-tuned FIM-PP (f) achieves the best OTD on all four datasets and the best sMAPE on 3 out of 4. Zero-shot FIM-PP (zs) already outperforms all baselines on Retweet.
+Fine-tuned FIM-PP (f) achieved the best OTD across all 4 datasets and best sMAPE in 3/4. Zero-shot FIM-PP (zs) already outperformed all baselines on the Retweet dataset.
 
-### Single-Event Prediction (N=1)
+### One-event Prediction (N=1)
 
 | Method | Taxi RMSE$_{\Delta t}$ | Taxi Acc | Taxi sMAPE | Taobao RMSE$_{\Delta t}$ | Taobao Acc | Taobao sMAPE |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -94,66 +109,45 @@ Fine-tuned FIM-PP (f) achieves the best OTD on all four datasets and the best sM
 | FIM-PP (zs) | **0.15** | 0.41 | 69.37 | 1.41 | 0.09 | 163.34 |
 | FIM-PP (f) | **0.15** | 0.69 | **63.02** | 9.31 | 0.39 | 138.46 |
 
-FIM-PP substantially outperforms baselines on temporal prediction metrics (RMSE, sMAPE) but lags significantly on mark accuracy — attributable to fixed mark alternation patterns in Taxi and single-mark dominance in Taobao, both out-of-distribution patterns not covered by the synthetic prior.
+FIM-PP leads significantly in time prediction metrics (RMSE, sMAPE) but lags behind in mark accuracy—likely because the Taxi dataset has a fixed mark alternation pattern and Taobao is dominated by a single mark, both of which are out-of-distribution patterns not covered by the synthetic prior.
 
 ### Ablation Study
 
 | Configuration | Description |
 |:---|:---|
-| Pretraining vs. training from scratch | Same architecture; pretrained initialization converges faster and achieves higher final performance (Appendix Figure 5) |
-| Number of context sequences | Saturation performance is reached with far fewer than 2000 context sequences (Figure 6 ablation) |
-| Generalization to unseen kernels | Zero-shot intensity curve inference is accurate even for power-law kernels never seen during training (Figure 4) |
-| Prediction window N=5/10/20 | FIM-PP (f) consistently outperforms the average baseline performance across all window lengths |
+| Pre-training vs. Scratch | Same architecture; pre-training initialization converges faster and yields better final performance (Appendix Figure 5). |
+| Number of Context Sequences | Performance plateaus with significantly fewer than 2000 context sequences (Figure 6). |
+| Unseen Kernel Generalization | Zero-shot inference correctly predicts intensity curves for power-law kernels never seen during training (Figure 4). |
+| Window N=5/10/20 | FIM-PP (f) consistently outperforms baseline average performance across all prediction window lengths. |
 
 ### Key Findings
 
-- **Zero-shot competitiveness**: FIM-PP (zs), without any target-domain training, already surpasses all specialized models requiring hours of training on the Retweet dataset, demonstrating that the synthetic prior encodes strong inductive biases.
-- **Extremely efficient fine-tuning**: Fine-tuning on all datasets takes only minutes and 11GB of GPU memory, with performance comprehensively exceeding baselines — more than an order of magnitude faster than training baselines from scratch.
-- **Mark prediction is the bottleneck**: Zero-shot mark accuracy is only 0.41 (Taxi) and 0.09 (Taobao); fine-tuning yields significant improvement but still falls short of specialized models, primarily because the synthetic prior does not cover dataset-specific patterns such as fixed alternation and single-mark dominance.
-- **Surprisingly strong prior generalization**: Even for power-law kernels unseen during training, zero-shot intensity estimation remains accurate, indicating that the local adaptability of the three-parameter exponential relaxation form exceeds expectations.
+- **Zero-shot is competitive**: Without any target domain training, FIM-PP (zs) outperforms specialized models that require hours of training on the Retweet data, indicating the synthetic prior encodes powerful inductive biases.
+- **Highly efficient fine-tuning**: Fine-tuning on all datasets takes only minutes and 11GB of VRAM, significantly outperforming baselines and faster than baseline training by over an order of magnitude.
+- **Mark prediction is a weak spot**: Zero-shot mark accuracy is only 0.41 (Taxi) and 0.09 (Taobao). Although fine-tuning improves this, it still lags behind specialized models because the synthetic prior does not cover dataset-specific patterns like "fixed alternation" or "single-mark dominance."
+- **Surprising prior generalization**: Zero-shot intensity estimation remains accurate even for unseen power-law kernels, suggesting the three-parameter exponential relaxation form possesses stronger local adaptation than expected.
 
 ## Highlights & Insights
 
-- **First foundation inference model for temporal point processes**: Fills the gap in foundation models for event sequence data. Analogous to large language models in NLP, FIM-PP demonstrates the feasibility of the "synthetic pretraining + in-context inference" paradigm in non-linguistic domains.
-- **Analytic intensity parameterization balances flexibility and interpretability**: The three parameters $(\alpha,\beta,\mu)$ appear simple, but since the parameters themselves are history- and mark-dependent (output by a neural network), the model can fit locally complex behaviors far beyond classical Hawkes. This design principle — "simple analytic form + neural network parameters" — is transferable to other settings requiring interpretable dynamical modeling.
-- **Hierarchical sequence encoding avoids long-sequence bottlenecks**: Encoding each sequence independently before aggregation, rather than concatenating all events into one long sequence, allows the context size to scale freely and serves as a general-purpose trick for handling set-structured inputs.
-- **Synthetic prior coverage determines the zero-shot performance ceiling**: The failure in mark prediction precisely exposes the blind spots of the prior (alternation patterns, single-mark dominance), pointing to the most direct direction for future improvement.
+- **First Foundation Inference Model for TPP**: FIM-PP fills a gap in foundation models for the event sequence domain. Similar to LLMs in NLP, it demonstrates the viability of the "synthetic pre-training + in-context inference" paradigm for non-linguistic domains.
+- **Analytical intensity parameterization balances flexibility and interpretability**: The $(\alpha, \beta, \mu)$ parameters, despite their simplicity, can fit complex local behaviors far beyond Hawkes because they are history- and mark-dependent. This design philosophy is transferable to other scenarios requiring interpretable dynamical modeling.
+- **Hierarchical sequence encoding avoids long-sequence bottlenecks**: Encoding sequences independently before aggregation allows the context size to grow freely, a general trick for handling set-like inputs.
+- **Synthetic prior quality determines the zero-shot ceiling**: The failure in mark prediction highlights specific blind spots in the prior (alternation patterns, dominant marks), providing a clear direction for future improvements.
 
 ## Limitations & Future Work
 
-- **Insufficient synthetic prior coverage**: The current five-process family does not cover structural patterns at the mark level (e.g., fixed alternation, single-mark dominance), resulting in substantially weaker zero-shot mark prediction. Extending the prior to a broader range of mark dynamics is the highest-priority direction.
-- **Fixed mark count ceiling**: Training is capped at 22 mark types; datasets exceeding this limit cannot fully exploit all available context. Dynamic mark embeddings or grouping strategies could address this constraint.
-- **Limitations of intensity parameterization**: Although flexible, the exponential relaxation form has limited capacity to fit multimodal kernels (e.g., repeated excitation–inhibition alternation). Multi-component mixture parameterizations could be explored.
-- **Intensity-free methods not integrated**: Recent intensity-free approaches (diffusion, flow matching) offer advantages in predictive accuracy; combining them with the interpretable inference of FIM-PP is an important future direction.
+- **Insufficiently universal synthetic prior**: Current process families do not cover structural mark patterns (e.g., fixed alternation), leading to poor zero-shot mark prediction. Expanding the prior to more mark dynamics is a priority.
+- **Fixed mark cap**: The model is trained with a maximum of 22 marks; exceeding this limit prevents utilizing the full context. Dynamic mark embeddings or grouping strategies could address this.
+- **Intensity parameterization limits**: The exponential relaxation form, while flexible, has limited capability to fit multi-modal kernels. Multi-component mixture parameterization could be explored.
+- **Integration with intensity-free methods**: Intensity-free methods (diffusion, flow matching) have advantages in prediction precision; combining them with FIM-PP’s interpretable inference is a key future direction.
 
 ## Related Work & Insights
 
-- **vs. CDiff (diffusion-based event prediction)**: CDiff directly generates event sets with high predictive accuracy but entirely sacrifices the interpretability of the intensity function. FIM-PP surpasses CDiff on most metrics after fine-tuning while preserving the physical semantics of the intensity curve.
-- **vs. NHP / A-NHP (neural Hawkes)**: These methods are also based on conditional intensity functions but must be trained from scratch for each dataset. FIM-PP eliminates this burden through synthetic pretraining and surpasses these models by 10–30% on OTD metrics after fine-tuning.
-- **vs. FIM-MJP / FIM-SDE (other foundation inference models)**: FIM-PP extends the FIM paradigm from Markov jump processes and stochastic differential equations to point processes, validating the universality of the "synthetic pretraining + analytic parameterization + in-context inference" framework across a broader class of dynamical systems.
+- **vs. CDiff (Diffusion-based Event Prediction)**: CDiff directly generates event sets with high precision but sacrifices intensity interpretability. FIM-PP outperforms CDiff on most metrics after fine-tuning while retaining physical semantics.
+- **vs. NHP / A-NHP (Neural Hawkes)**: These methods rely on conditional intensity but require training from scratch per dataset. FIM-PP eliminates this burden via synthetic pre-training and outperforms them by 10-30% in OTD after fine-tuning.
+- **vs. FIM-MJP / FIM-SDE (Other Foundation Inference Models)**: FIM-PP extends the FIM paradigm from Markov Jump Processes/SDEs to Point Processes, validating the universality of the "synthetic pre-training + analytical parameterization + in-context inference" framework.
 
-## Rating
-
-- Novelty: ⭐⭐⭐⭐ First foundation model for point processes; conceptually novel though the technical approach follows the existing FIM framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four datasets + synthetic validation + comprehensive ablations; however, the shortcomings in mark prediction are not deeply analyzed.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, consistent mathematical notation, and thorough background exposition.
-- Value: ⭐⭐⭐⭐ Fills a gap in the field with high practical value, though applicability remains constrained by prior coverage.
-
-1. **Insufficient pretraining distribution coverage**: Certain patterns are not covered.
-2. **Autoregressive error accumulation**.
-3. **Mark count ceiling of 22**.
-4. **Exponential decay insufficient for long-range dependencies**.
-
-## Related Work & Insights
-
-| Category | Representative Work | Distinction |
-|:---:|:---:|:---:|
-| Intensity-based TPP | NHP, A-NHP | Per-dataset training from scratch |
-| Generative TPP | CDiff, IFTPP | Sacrifices interpretability |
-| Joint distribution | HYPRO, Dual-TPP | Learns joint distributions |
-| Foundation inference | FIM-MJP, FIM-SDE | Targets continuous-state systems |
-
-Core insight: **The quality of synthetic prior design determines the generalization ceiling of foundation inference models.**
+Core Insight: **The design quality of the synthetic prior determines the generalization ceiling of foundation inference models.**
 
 ## Rating
 
@@ -163,10 +157,10 @@ Core insight: **The quality of synthetic prior design determines the generalizat
 | Technical Depth | ⭐⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
-| Practical Value | ⭐⭐⭐⭐ |
+| Value | ⭐⭐⭐⭐ |
 | Overall | ⭐⭐⭐⭐ |
 
-> This work pioneers the application of foundation inference models to temporal point processes. The synthetic pretraining combined with in-context learning is highly inspiring; zero-shot performance is impressive, and fine-tuning achieves comprehensive state-of-the-art results. The primary limitation lies in the coverage of the synthetic prior.
+> Powerfully introduces foundation inference models to temporal point processes. The synthetic pre-training and in-context learning approach is highly inspiring, with impressive zero-shot performance and SOTA results after fine-tuning. The main limitation lies in the scope of the synthetic prior.
 
 <!-- RELATED:START -->
 
@@ -175,10 +169,10 @@ Core insight: **The quality of synthetic prior design determines the generalizat
 ## Related Papers
 
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_agents.md)
-- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](../../ACL2026/llm_evaluation/evaluating_temporal_consistency_in_multi-turn_language_models.md)
+- [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
+- [\[ICML 2025\] Sample Efficient Demonstration Selection for In-Context Learning](../../ICML2025/llm_evaluation/sample_efficient_demonstration_selection_for_in-context_learning.md)
 - [\[ICLR 2026\] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time](guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti.md)
-- [\[ACL 2026\] CUB: Benchmarking Context Utilisation Techniques for Language Models](../../ACL2026/llm_evaluation/cub_benchmarking_context_utilisation_techniques_for_language_models.md)
+- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 
 </div>
 

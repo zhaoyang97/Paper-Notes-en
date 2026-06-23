@@ -2,139 +2,137 @@
 title: >-
   [Paper Note] SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors
 description: >-
-  [ICLR 2026][3D Vision][2D Gaussian Splatting] SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS that binds Gaussian rotation and scale to local neighborhood positions via surface continuity prior…
+  [ICLR 2026][3D Vision][Paper Note] SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS. It binds Gaussian rotation and scale to neighborhood positions via surface continuity priors, addresses color bias through a forced alpha blending strategy, and introduces the High-Resolution Rendering Consistency (HRRC) metric to reveal recons
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "2D Gaussian Splatting"
-  - "feedforward 3D reconstruction"
-  - "surface continuity"
-  - "high-resolution rendering consistency"
-  - "sparse-view"
+  - ICLR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: ea3df5512a5f3077
+content_hash: 16853c0afb915e2b
 ---
-
 # SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.02000](https://arxiv.org/abs/2602.02000)  
 **Code**: [https://hebing-sjtu.github.io/SurfSplat-website/](https://hebing-sjtu.github.io/SurfSplat-website/)  
-**Area**: 3D Vision
-**Keywords**: 2D Gaussian Splatting, feedforward 3D reconstruction, surface continuity, high-resolution rendering consistency, sparse-view
+**Area**: 3D Vision  
+**Keywords**: 2D Gaussian Splatting, Feedforward 3D Reconstruction, Surface Continuity, High-Resolution Rendering Consistency, Sparse View
 
 ## TL;DR
 
-SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS that binds Gaussian rotation and scale to local neighborhood positions via surface continuity priors, resolves color bias through a forced alpha blending strategy, and introduces the HRRC metric to reveal reconstruction quality discrepancies at high resolutions.
+SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS. It binds Gaussian rotation and scale to neighborhood positions via surface continuity priors, addresses color bias through a forced alpha blending strategy, and introduces the High-Resolution Rendering Consistency (HRRC) metric to reveal reconstruction quality differences at high resolutions.
 
 ## Background & Motivation
 
-Existing feedforward 3DGS methods appear to achieve strong NVS metrics at standard resolution, yet suffer from a critical overlooked problem:
+Current feedforward 3DGS methods show excellent NVS metrics at standard resolutions, but suffer from a severe overlooked issue:
 
-**Degenerate 3D scenes**: Reconstructions are effectively discrete, color-biased point clouds rather than continuous surfaces, exposing severe artifacts (holes, color bias, surface discontinuities) under close-up or off-axis viewpoints.
+**Degenerated 3D Scenes**: Reconstructions are actually discrete, color-biased point clouds rather than continuous surfaces, exposing severe artifacts (holes, color bias, surface fractures) under close-up or off-axis views.
 
-**Underutilized anisotropy**: Learnable Gaussians struggle to disentangle geometry and texture through gradient supervision alone, causing Gaussians to degenerate toward near-spherical shapes.
+**Underutilized Anisotropy**: Learnable Gaussian primitives struggle to decouple geometry and texture using only gradient supervision, causing Gaussians to degenerate into near-spherical shapes.
 
-**Metric failure**: Standard PSNR/SSIM/LPIPS at native resolution cannot capture geometric inaccuracies, masking true reconstruction quality.
+**Failure of Evaluation Metrics**: Standard PSNR/SSIM/LPIPS at original resolution fail to capture geometric inaccuracies, masking true reconstruction quality.
 
-The authors observe that **directly training 2DGS is more challenging than 3DGS** — the planar nature of 2D Gaussians causes small geometric perturbations to produce large deviations in rendered output, a problem exacerbated under limited supervision.
+The authors observe: **Direct training of 2DGS is more challenging than 3DGS**—the planar nature of 2D Gaussians causes small geometric perturbations to result in large rendering deviations, a problem exacerbated under limited supervision.
 
 ## Method
 
 ### Overall Architecture
 
-SurfSplat employs a dual-path encoder (monocular Depth Anything V2 + multi-view cross-attention), fuses the resulting features through a U-Net to regress intermediate attributes (depth, scale multipliers, appearance components), and finally converts them to standard 2DGS attributes via surface continuity priors and forced alpha blending.
+SurfSplat addresses surface degeneration and color bias in feedforward 2DGS under sparse views. The reconstruction backbone is a feedforward pipeline: sparse images are first processed by a dual-path encoder (a single-view branch using Depth Anything V2 for monocular priors, and a multi-view branch using self/cross-attention to build a cost volume). Features are concatenated and fused before being sent to a 2D U-Net with DPT heads to regress intermediate attributes such as depth, scale multipliers, appearance components, and opacity. Instead of regressing Gaussian parameters independently, the "Gaussian Processor" converts these intermediate values into geometrically consistent standard 2DGS attributes using **surface continuity priors** and **forced alpha blending** to render continuous surfaces. In addition to the reconstruction backbone, the authors propose the **HRRC (High-Resolution Rendering Consistency)** metric to evaluate geometric defects hidden by standard PSNR.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Sparse Input Images<br/>(2 Views + Poses)"]
+    subgraph ENC["Dual-path Encoder"]
+        direction TB
+        SV["Single-view Branch<br/>Depth Anything V2"]
+        MV["Multi-view Branch<br/>Self/Cross-attn + Cost Volume"]
+    end
+    IN --> ENC
+    SV --> FUSE["Feature Concatenation & Fusion"]
+    MV --> FUSE
+    FUSE --> UNET["2D U-Net + DPT Heads<br/>Regress Intermediate Attributes<br/>(Depth/Scale Multiplier/Appearance/Opacity)"]
+    UNET --> SCP["Surface Continuity Prior<br/>Neighbor Normals → Rotation, Scale Anchoring"]
+    SCP --> FAB["Forced Alpha Blending<br/>Opacity Upper Bound + Norm. Compensation"]
+    FAB --> GS["Standard 2DGS Attributes → Rendering"]
+    GS --> OUT["Continuous Surface 3D Reconstruction"]
+    GS -->|High-Res Rendering Comparison| HRRC["HRRC Consistency"]
+```
 
 ### Key Designs
 
-1. **Surface Continuity Prior**
+**1. Surface Continuity Prior: Deriving Gaussian poses from neighborhood geometry rather than independent regression**
 
-   Core assumption: visible geometry in real scenes consists primarily of smooth, continuous surfaces, and spatially adjacent surface elements correspond to adjacent pixels in the image. This constrains Gaussian rotation and scale:
+Gaussians under direct supervision tend to degenerate into near-spherical, disconnected point clouds because rotation and scale lack spatial constraints when predicted independently. SurfSplat assumes that visible geometry in real scenes consists of smooth, continuous surfaces where adjacent pixels correspond to spatially adjacent surface elements. Thus, a Gaussian's pose should be determined by its 3D position and its neighborhood. Specifically, for a 3D position $\mathbf{p}_0$ at pixel $(h,w)$, Sobel filters compute two tangent vectors $\mathbf{t}_1, \mathbf{t}_2$, yielding a local normal $\mathbf{n}$ via cross product. The Rodrigues formula rotates the default orientation to this normal direction: $\mathbf{R} = \mathbf{I} + [\mathbf{v}]_\times + \frac{1-c}{\|\mathbf{v}\|^2}[\mathbf{v}]_\times^2$, where $\mathbf{v} = \mathbf{n}_0 \times \mathbf{n}$ and $c = \mathbf{n}_0^\top \mathbf{n}$. Scale is also anchored to geometry: initial scales $\bar{\sigma}_u, \bar{\sigma}_v$ are estimated based on image-space neighbor distances, while the network predicts scale multipliers $\hat{\sigma}_u, \hat{\sigma}_v$ within $[1/3, 3]$ for refinement. Finally, $\sigma_u = \bar{\sigma}_u \hat{\sigma}_u$, and the 2DGS depth-axis scale $\sigma_w$ is fixed to zero. This ensures adjacent Gaussians align as continuous surfaces, decoupling geometry from texture.
 
-   **Rotation**: For the 3D position $\mathbf{p}_0$ of pixel $(h,w)$ and its neighborhood, two tangent vectors $\mathbf{t}_1, \mathbf{t}_2$ are computed via Sobel filtering; the local normal $\mathbf{n}$ is obtained by their cross product, and the rotation matrix is derived via the Rodrigues formula:
+**2. Forced Alpha Blending: Preventing models from over-relying on sparse high-opacity Gaussians**
 
-   $\mathbf{R} = \mathbf{I} + [\mathbf{v}]_\times + \frac{1-c}{\|\mathbf{v}\|^2}[\mathbf{v}]_\times^2$
+The surface continuity prior can cause the model to learn high-opacity Gaussians, making occluded Gaussians contribute negligible weight to alpha blending. This hinders gradient flow to deeper 3D structures. SurfSplat caps opacity with an upper bound $\tau_{\text{opa}} < 1$ (set to 0.6), forcing all Gaussians to participate in rendering. Simultaneously, colors are initialized to the DC component of spherical harmonics, and a normalization compensation is applied to the output: $C = C/\alpha$ when $\alpha \geq \tau_\alpha$, offsetting the darkening caused by the upper bound. This preserves the representational power of multi-layer surfaces and eliminates color bias.
 
-   where $\mathbf{v} = \mathbf{n}_0 \times \mathbf{n}$ and $c = \mathbf{n}_0^\top \mathbf{n}$.
+**3. HRRC Metric: High-Resolution Rendering Consistency to expose geometric defects**
 
-   **Scale**: Coarse estimates $\bar{\sigma}_u, \bar{\sigma}_v$ are derived from image-space neighborhood distances; the network predicts scale multipliers $\hat{\sigma}_u, \hat{\sigma}_v$ in the range $[1/3, 3]$, yielding final scales $\sigma_u = \bar{\sigma}_u \hat{\sigma}_u$. The depth-axis scale $\sigma_w$ of 2DGS is fixed to zero.
-
-   Gaussian attributes are thus derived from predicted 3D positions rather than regressed independently, ensuring spatial consistency.
-
-2. **Forced Alpha Blending**
-
-   Under the surface continuity prior, the model tends to learn high-opacity Gaussians, causing occluded Gaussians to contribute negligibly to alpha blending and preventing learning of 3D structure. The solution:
-
-   - Clip opacity with an upper bound $\tau_{\text{opa}} < 1$ (set to 0.6), ensuring all Gaussians participate in rendering.
-   - Initialize RGB colors to the DC component of the spherical harmonic basis.
-   - Apply opacity-normalized compensation to the rendered output: $C = C/\alpha$ when $\alpha \geq \tau_\alpha$.
-
-3. **HRRC: High-Resolution Rendering Consistency Metric**
-
-   The reconstructed scene is rendered at $2\times$ and $4\times$ resolution and compared against bicubic-upsampled ground truth:
-
-   $\text{HRRC}_{\text{metric}} = \text{metric}(\hat{I}^{HR}, \hat{I}^{GT\uparrow})$
-
-   This effectively exposes sparsity holes, degenerate Gaussian shapes, and surface discontinuities, distinguishing models that truly recover 3D geometry from those that merely memorize sparse viewpoints.
+Standard PSNR/SSIM/LPIPS at original resolutions are insensitive to geometric inaccuracies. SurfSplat proposes rendering the reconstructed scene at $2\times$ and $4\times$ resolutions and comparing them with bicubic-upsampled Ground Truth: $\text{HRRC}_{\text{metric}} = \text{metric}(\hat{I}^{HR}, \hat{I}^{GT\uparrow})$. Upscaling reveals holes caused by sparsity, degenerated Gaussian shapes, and surface discontinuities, effectively distinguishing models with true 3D geometry from those that merely overfit sparse training views.
 
 ### Loss & Training
 
+The training objective is a weighted sum of MSE and LPIPS across supervised views:
+
 $$L_{\text{gs}} = \sum_{m=1}^M \left(\text{MSE}(I_{\text{render}}^m, I_{\text{gt}}^m) + \lambda \cdot \text{LPIPS}(I_{\text{render}}^m, I_{\text{gt}}^m)\right)$$
 
-$\lambda = 0.05$; training is conducted at $256\times256$ resolution. The Depth Anything V2 backbone uses a learning rate of $2 \times 10^{-6}$; all other layers use $2 \times 10^{-4}$.
+where $\lambda = 0.05$. Training is conducted at 256×256 resolution. The Depth Anything V2 backbone is fine-tuned with a learning rate of $2 \times 10^{-6}$, while other layers use $2 \times 10^{-4}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | RE10K 256 PSNR↑ | RE10K 512 PSNR↑ | RE10K 1024 PSNR↑ | RE10K Avg PSNR↑ |
-|--------|-----------------|-----------------|------------------|-----------------|
+|------|------|------|------|------|
 | DepthSplat | **27.504** | 20.031 | 16.385 | 21.307 |
 | MVSplat | 26.359 | 20.408 | 17.966 | 21.578 |
 | Ours-L | 27.537 | **26.331** | **24.897** | **26.255** |
 
 ### Ablation Study
 
-| Configuration | Standard PSNR | HRRC 2× PSNR | HRRC 4× PSNR | Notes |
-|---------------|--------------|--------------|--------------|-------|
-| 3DGS baseline (DepthSplat) | 27.504 | 20.031 | 16.385 | Severe HRRC degradation |
-| 2DGS (SurfSplat-L) | 27.537 | 26.331 | 24.897 | HRRC remains stable |
-| w/o surface prior | Degraded | Largely degraded | Largely degraded | Surface discontinuity |
-| w/o forced blending | Degraded | Degraded | Degraded | Color bias |
+| Configuration | Standard PSNR | HRRC 2× PSNR | HRRC 4× PSNR | Note |
+|------|---------|---------|---------|------|
+| 3DGS (DepthSplat) | 27.504 | 20.031 | 16.385 | Severe HRRC degradation |
+| 2DGS (SurfSplat-L) | 27.537 | 26.331 | 24.897 | Stable HRRC |
+| w/o Surface Prior | Lower | Significantly Lower | Significantly Lower | Surface discontinuity |
+| w/o Forced Blending | Lower | Lower | Lower | Color bias |
 
 ### Key Findings
 
-- **HRRC reveals the truth**: DepthSplat achieves the best standard-resolution score (27.5) but collapses to 16.4 at 1024 resolution; SurfSplat drops only from 27.5 to 24.9, demonstrating genuine 3D structure recovery.
-- MVSplat and TranSplat similarly degrade substantially under HRRC (around 18 at 1024), indicating that surface degeneration is pervasive among feedforward 3DGS methods.
-- Cross-dataset evaluation on DL3DV and ScanNet confirms generalization.
-- pixelSplat (multiple Gaussians per pixel) performs comparatively better on HRRC (24.9), as redundant Gaussians partially compensate for surface holes.
+- **HRRC Reveals the Truth**: While DepthSplat performs best at standard resolution (27.5), it drops sharply to 16.4 at 1024 resolution. SurfSplat only drops to 24.9, proving it reconstructs true 3D structure.
+- MVSplat and TranSplat also degrade significantly under HRRC (around 18 at 1024), indicating surface degeneration is a common issue in feedforward 3DGS.
+- Cross-dataset evaluations (DL3DV, ScanNet) verify generalization capability.
+- pixelSplat (multi-Gaussian per pixel) performs relatively well on HRRC (24.9) as redundant Gaussians partially fill surface holes.
 
 ## Highlights & Insights
 
-1. **High value in problem identification**: The work exposes a widely overlooked surface degeneration issue in feedforward 3DGS; the HRRC metric deserves broader adoption.
-2. **Geometry-driven attribute prediction**: Deriving rotation from positions via Sobel filtering and the Rodrigues formula is an elegant and physically intuitive design.
-3. **First successful application of 2DGS in feedforward settings**: Demonstrates that 2DGS (planar primitives) is more suitable than 3DGS (ellipsoids) for feedforward reconstruction, offering stronger anisotropy and geometric precision.
-4. **Clever design of forced blending**: Constraining the opacity upper bound resolves local optima and preserves multi-layer expressiveness.
+1. **High Diagnostic Value**: Identifies the widely ignored surface degeneration problem in feedforward 3DGS; the HRRC metric is highly generalizable.
+2. **Geometric-driven Attribute Prediction**: Deriving rotation from position via Sobel filters and the Rodrigues formula is elegant and physically intuitive.
+3. **First Success for 2DGS in Feedforward Scenarios**: Demonstrates that 2DGS (surfels) is more suitable than 3DGS (ellipsoids) for feedforward reconstruction, providing better anisotropy and geometric accuracy.
+4. **Clever Forced Blending**: Solves local optima by capping opacity, ensuring representation of multi-layer surfaces.
 
 ## Limitations & Future Work
 
-- At standard resolution, the method only marginally outperforms DepthSplat; advantages are primarily reflected in HRRC.
-- The single-Gaussian-per-pixel design may provide insufficient coverage for complex scenes.
-- The HRRC metric relies on bicubic-upsampled ground truth rather than true high-resolution references.
-- Evaluation is limited to static scenes; extension to dynamic scenes remains future work.
+- PSNR gains at standard resolution are marginal compared to DepthSplat; advantages are mainly reflected in HRRC.
+- The single-Gaussian-per-pixel setting may not sufficiently cover highly complex scenes.
+- The HRRC metric relies on bicubic-upsampled GT, which is not true high-resolution GT.
+- Evaluated only on static scenes; dynamic scene extension is a future direction.
 
 ## Related Work & Insights
 
-- Huang et al. (2024) introduced 2DGS for per-scene optimization; SurfSplat is the first to bring it into a feedforward framework.
+- Huang et al. (2024) proposed 2DGS for per-scene optimization; SurfSplat is the first to introduce it into a feedforward framework.
 - The depth interaction design of DepthSplat (Xu et al., 2024b) is partially inherited, but SurfSplat replaces independent attribute regression with surface priors.
-- The design philosophy of the HRRC metric generalizes to evaluation of other 3D generation tasks.
+- The HRRC metric design can be extended to evaluate other 3D generation tasks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The surface continuity prior and HRRC metric are original contributions, though individual components are combinations of established techniques.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three datasets, multi-resolution HRRC, multiple backbone variants, and cross-dataset evaluation — highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear, visual comparisons are compelling, and mathematical derivations are complete.
-- Value: ⭐⭐⭐⭐ The HRRC metric and the exposure of surface degeneration constitute important contributions to the community.
+- Novelty: ⭐⭐⭐⭐ Surface continuity priors and HRRC are innovative, though components combine established techniques.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive across three datasets, multiple resolutions for HRRC, multiple backbones, and cross-dataset evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition, persuasive visualizations, and complete mathematical derivations.
+- Value: ⭐⭐⭐⭐ Significant reference value for the community regarding HRRC and surface degeneration.
 
 <!-- RELATED:START -->
 
@@ -142,11 +140,11 @@ $\lambda = 0.05$; training is conducted at $256\times256$ resolution. The Depth 
 
 ## Related Papers
 
+- [\[ICLR 2026\] YoNoSplat: You Only Need One Model for Feedforward 3D Gaussian Splatting](yonosplat_you_only_need_one_model_for_feedforward_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[ICLR 2026\] Mesh Splatting for End-to-end Multiview Surface Reconstruction](mesh_splatting_for_end-to-end_multiview_surface_reconstruction.md)
 - [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](../../AAAI2026/3d_vision/meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
 - [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
-- [\[AAAI 2026\] GaussianImage++: Boosted Image Representation and Compression with 2D Gaussian Splatting](../../AAAI2026/3d_vision/gaussianimage_boosted_image_representation_and_compression_with_2d_gaussian_spla.md)
-- [\[NeurIPS 2025\] Anti-Aliased 2D Gaussian Splatting](../../NeurIPS2025/3d_vision/anti-aliased_2d_gaussian_splatting.md)
 
 </div>
 

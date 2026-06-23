@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk
 description: >-
-  [3D Vision] This paper proposes a "silk-weaving"-inspired mesh tokenization algorithm that provides a canonical topological framework through vertex layering and ordering, guaranteeing manifoldness, watertightness…
+  [ICLR 2026][3D Vision][Mesh Generation] A mesh tokenization algorithm inspired by "silk weaving" is proposed. It provides a canonical topological framework through vertex layering and ordering, ensuring manifoldness, watertightness, normal consistency, and part-awareness of generated meshes while achieving SOTA compression efficiency.
 tags:
-  - "3D Vision"
+  - ICLR 2026
+  - 3D Vision
+  - Mesh Generation
+  - Auto-regressive
+  - Topology Preservation
+  - Mesh Tokenization
+  - Manifold
+  - Watertight
 date: 2026-05-08
-content_hash: c67b4bd3acf9e57b
+content_hash: 467aa5a18f8db119
 ---
-
 # Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk
 
 - **Conference**: ICLR 2026
@@ -19,96 +25,67 @@ content_hash: c67b4bd3acf9e57b
 
 ## TL;DR
 
-This paper proposes a "silk-weaving"-inspired mesh tokenization algorithm that provides a canonical topological framework through vertex layering and ordering, guaranteeing manifoldness, watertightness, normal consistency, and part-awareness in generated meshes while achieving state-of-the-art compression efficiency.
+A mesh tokenization algorithm inspired by "silk weaving" is proposed. It provides a canonical topological framework through vertex layering and ordering, ensuring manifoldness, watertightness, normal consistency, and part-awareness of generated meshes while achieving SOTA compression efficiency.
 
 ## Background & Motivation
 
-Auto-regressive mesh generation has emerged as an important direction in 3D content creation. However, existing methods (MeshAnything v2, EdgeRunner, BPT, DeepMesh) treat meshes as simple collections of triangles without awareness of global topological structure, leading to:
+Auto-regressive mesh generation is a significant direction in recent 3D content creation. However, existing methods (MeshAnything v2, EdgeRunner, BPT, DeepMesh) treat meshes as simple collections of triangular faces and lack awareness of global topological structures, leading to:
 
-**Inability to guarantee watertightness**: Generated meshes contain holes, hindering downstream applications such as 3D printing and physical simulation.
+**Inability to guarantee watertightness**: Generations contain holes, affecting applications like 3D printing and physical simulation.
 
-**Lack of part-awareness**: Without the concept of connected components, small yet important parts (e.g., eyes) cannot be captured.
+**Lack of part-awareness**: Absence of connected component concepts makes it difficult to capture small but important parts (e.g., eyes).
 
-**Inconsistent normal orientation**: Flipped face normals produce rendering artifacts.
+**Inconsistent normal directions**: Flipped face normals cause rendering artifacts.
 
-**Non-manifold topology**: Local patch-based methods (BPT, DeepMesh) cannot guarantee manifold topology.
+**Non-manifold topology**: Local patch methods (BPT, DeepMesh) cannot guarantee manifold properties.
 
-**Core Contribution**: The first mesh tokenization algorithm that simultaneously guarantees manifoldness, watertightness detection, normal consistency, and part-awareness.
+**Core Contribution**: The first mesh tokenization algorithm that simultaneously ensures manifoldness, watertightness detection, normal consistency, and part-awareness.
 
 ## Method
 
 ### Overall Architecture
 
-Three sequential steps:
-1. **Vertex Layering and Ordering** → 2. **Inter-layer Adjacency Matrix Compression** → 3. **Token Packing**
+The method reformulates "mesh generation" as "weaving silk": first, a set of canonical layering rules organizes disordered triangular faces into layers of ordered vertices (similar to silk threads woven side-by-side). Then, each vertex and its connectivity within the current layer and with adjacent layers are compressed into a compact token sequence for prediction by an auto-regressive model. Because the weaving rules themselves constrain edges to lie only within or between adjacent layers, topological properties like manifoldness, watertightness, normal consistency, and part-awareness are inherently embedded in the tokenization rather than fixed post-hoc. Before training, an online non-manifold processing step converts more real meshes into trainable samples.
 
-### 1. Vertex Layering and Ordering
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input / Training Mesh"] --> B["Online Non-manifold Processing<br/>Split non-manifold edges·Surface integrity"]
+    B --> C["Vertex Layering & Ordering<br/>BFS Layering + Intra-layer Ordering"]
+    C --> D["Hierarchical Adjacency Matrix Compression<br/>4 tokens per vertex"]
+    D --> E["Auto-regressive Transformer<br/>Token-by-token prediction"]
+    E --> F["Weaving Rules Ensure 4 Properties<br/>Manifold·Watertight·Normal·Part"]
+    F --> G["Output Topologically Correct Mesh"]
+```
 
-For each connected component:
-- A starting half-edge $j$-$m$ is determined via y-z-x coordinate sorting.
-- BFS assigns a layer index $L$ based on shortest graph distance from the starting vertex $j$.
-- Vertices within each layer are ordered through half-edge traversal (analogous to a mathematical induction proof).
-- Vertices are labeled $\mathcal{V}_i^L$, where $L$ denotes the layer index and $i$ denotes the intra-layer order.
+### Key Designs
 
-### 2. Inter-layer Adjacency Matrix Compression
+**1. Vertex Layering and Ordering: A Canonical "Lat-Long" Framework**
 
-Vertex connections are divided into two categories:
+Existing methods treat meshes as isolated triangles, losing global topology. Here, for each connected component, a starting half-edge $j$-$m$ is selected based on y-z-x coordinate sorting. BFS is then used with the shortest graph distance to the origin $j$ as the layer index $L$, assigning all vertices to layers. Vertices within the same layer are ordered by traversing half-edges (provable via mathematical induction). Each vertex is uniquely labeled as $\mathcal{V}_i^L$, where $L$ is the layer index and $i$ is the intra-layer order. This step prepares the mesh for "weaving," where all connectivity is described within "intra-layer" and "inter-layer" local scopes.
 
-**Self-layer matrix $\mathcal{S}_L$** (blue edges): connections between vertices within the same layer.
-- Symmetric 0-1 matrix of size $M \times M$.
-- Binary compression with a fixed window size of $W=8$.
-- Covers 99.1% of cases; extreme cases use COO format.
+**2. Hierarchical Adjacency Matrix Compression: 4 Tokens per Vertex**
 
-**Inter-layer matrix $\mathcal{B}_L$** (red edges): connections between vertices in adjacent layers.
-- 0-1 matrix of size $M \times N$.
-- RLE-like compression: consecutive "1"s are encoded as $(x, y)$ (starting column index, length).
-- Further reformulated as an equivalent "Stars and Bars" problem, requiring only one token per row.
+With the layering framework, vertex connectivity is split into two classes. Intra-layer connections (blue edges) are represented by a symmetric 0-1 matrix $\mathcal{S}_L$ (size $M \times M$). A fixed window $W=8$ for binary compression covers 99.1% of cases, defaulting to COO format for extremely dense scenarios. Inter-layer connections (red edges) use a 0-1 matrix $\mathcal{B}_L$ (size $M \times N$). This is compressed using RLE-style encoding of continuous "1"s into $(x, y)$ (start column index, length), further simplified as a "Stars and Bars" combinatorial problem such that each row requires only one token. Each vertex $\mathcal{V}_i^L$ generates 4 tokens: 2 position tokens $V_{(L,i)}$ (using block-offset representation), 1 intra-layer topology token $S_{(L,i)}$, and 1 inter-layer topology token $B_{(L,i)}$. This achieves 26.65 bits/face and a 0.22 compression ratio.
 
-**Token Packing**: Each vertex $\mathcal{V}_i^L$ produces 4 tokens:
-- 2 position tokens $V_{(L,i)}$ (compressed using block-offset representation)
-- 1 self-layer topology token $S_{(L,i)}$
-- 1 inter-layer topology token $B_{(L,i)}$
+**3. Weaving Rules for Geometric Properties**
 
-### 3. Geometric Property Guarantees
+The layered and ordered weaving approach makes four topological properties almost "free." Since edges only appear within or between adjacent layers as triangles are filled layer-by-layer, **manifold topology** is strictly guaranteed. Holes only occur if a 0 in the adjacency matrix is incorrectly predicted as a connection; thus, **watertightness** can be directly detected and repaired. By defining ascending half-edge directions for layer $L$ and descending for layer $L-1$, vertices of every triangle are traversed counter-clockwise, ensuring **normal consistency**. Introducing a special token $C$ to mark the start of connected components allows the model to perceive and generate independent **parts** like eyes.
 
-**(1) Manifold Topology**: During generation, edge connections exist only within the same layer or between adjacent layers; triangles are filled layer by layer, strictly guaranteeing manifold topology.
+**4. Online Non-Manifold Processing: Utilizing Real Data**
 
-**(2) Watertightness Detection/Repair**: Holes necessarily arise from zeros in the self-layer/inter-layer matrices being incorrectly predicted, enabling direct detection and correction.
-
-**(3) Normal Consistency**: The half-edge direction in layer $L$ is defined as ascending and in layer $L-1$ as descending, ensuring counter-clockwise vertex traversal for every triangle face and thus consistent normals.
-
-**(4) Part-Awareness**: A special token $C$ marks the beginning of each connected component, supporting the generation of small parts.
-
-### Non-manifold Handling Algorithm
-
-For non-manifold edges (shared by more than 2 faces):
-- Unlike Libigl's degree-priority merging strategy, the proposed method additionally detects the "edge graph" structure $\mathcal{G}$ around non-manifold vertices.
-- This ensures the edge graph forms pure cycles to preserve surface integrity.
+Real-world data often contains non-manifold edges shared by more than 3 faces. Discarding them loses training samples. Unlike Libigl's degree-priority merging, this method detects the "edge-graph" structure $\mathcal{G}$ around non-manifold vertices and requires it to form a pure cycle to ensure surface integrity after splitting. This online processing allows non-manifold data into the training set—ablations show that adding non-manifold data improves NC from 0.688 to 0.801.
 
 ### Loss & Training
 
-**Progressive Balanced Sampling**:
-
-$$p_j^{PB}(t) = (1 - t/T) p_j^{IB} + (t/T) p_j^{CB}$$
-
-Early training favors instance-balanced sampling (learning simpler cases); later training shifts toward category-balanced sampling (learning complex cases), with categories defined per 100 faces.
-
-**Loss Function** — Standard cross-entropy loss:
-
-$$\mathcal{L}_{ce} = -\sum_{t=1}^{T-1} S_{t+1} \log \hat{S}_t$$
+The model is supervised token-by-token using standard cross-entropy loss $\mathcal{L}_{ce} = -\sum_{t=1}^{T-1} S_{t+1} \log \hat{S}_t$. To alleviate the long-tail distribution of face counts, a progressive balanced sampling strategy is used. It transitions from instance-based $p_j^{IB}$ to category-based $p_j^{CB}$ (every 100 faces as a category) during training $t$ via $p_j^{PB}(t) = (1 - t/T) p_j^{IB} + (t/T) p_j^{CB}$. Early stages focus on simpler instance-balanced samples, while later stages complement with complex meshes via category balancing. This resampling reduces CD from 0.032 to 0.025 and increases NC from 0.700 to 0.792.
 
 ## Key Experimental Results
 
-### Dataset and Evaluation Metrics
-
-- **Training**: gObjaverse (~280k) + ShapeNetV2 + 3D-FUTURE + Toys4K (~100k), without manual filtering.
-- **Evaluation**: 500 held-out samples from gObjaverse.
-- **Metrics**: CD (Chamfer Distance), HD (Hausdorff Distance), NC (Normal Consistency), |NC|, Bits-per-face, Compression Ratio.
-
 ### Main Results
 
-| Method | CD↓ | HD↓ | NC↑ | \|NC\|↑ | Bits/face↓ | Comp. Ratio↓ |
-|--------|-----|-----|-----|---------|------------|--------------|
+| Method | CD↓ | HD↓ | NC↑ | |NC|↑ | Bits/face↓ | Comp. Ratio↓ |
+|------|-----|-----|-----|-------|------------|--------------|
 | EdgeRunner* | 0.053 | 0.144 | 0.418 | 0.789 | 29.61 | 0.47 |
 | TreeMeshGPT | 0.030 | 0.103 | 0.706 | 0.892 | 42.00 | 0.22 |
 | BPT | 0.027 | 0.094 | 0.770 | 0.909 | 28.48 | 0.26 |
@@ -116,50 +93,50 @@ $$\mathcal{L}_{ce} = -\sum_{t=1}^{T-1} S_{t+1} \log \hat{S}_t$$
 
 ### Ablation Study
 
-| Ablation | CD↓ | HD↓ | NC↑ | \|NC\|↑ |
-|----------|-----|-----|-----|---------|
-| w/ resampling | 0.025 | 0.087 | 0.792 | 0.924 |
-| w/o resampling | 0.032 | 0.103 | 0.700 | 0.880 |
-| Manifold + non-manifold data | 0.022 | 0.080 | 0.801 | 0.932 |
-| Manifold data only | 0.027 | 0.090 | 0.688 | 0.871 |
+| Ablation | CD↓ | HD↓ | NC↑ | |NC|↑ |
+|------|-----|-----|-----|-------|
+| w/ Resampling | 0.025 | 0.087 | 0.792 | 0.924 |
+| w/o Resampling | 0.032 | 0.103 | 0.700 | 0.880 |
+| Manifold + Non-manifold | 0.022 | 0.080 | 0.801 | 0.932 |
+| Manifold Only | 0.027 | 0.090 | 0.688 | 0.871 |
 
-### Geometric Property Comparison
+### Key Findings
 
-| Method | Lossless | Manifold | Watertight | Normal Consistent | Part-Aware |
-|--------|----------|----------|------------|-------------------|------------|
-| Ours | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Method | Lossless | Manifold | Watertight | Normal Consist. | Part-aware |
+|------|------|------|------|----------|----------|
+| **Ours** | ✓ | ✓ | ✓ | ✓ | ✓ |
 | MeshAnything v2 | ✓ | ✗ | ✗ | ✗ | ✗ |
 | EdgeRunner | ✓ | ✓ | ✗ | ✗ | ✗ |
 | BPT | ✓ | ✗ | ✗ | ✗ | ✗ |
 
 ## Highlights & Insights
 
-1. **Elegant silk-weaving analogy**: The inter-layer weaving paradigm naturally guarantees topological properties, reflecting a clever design philosophy.
-2. **Only method to simultaneously guarantee all 5 geometric properties** in tokenization.
-3. **State-of-the-art compression efficiency**: 26.65 Bits/face, 0.22 compression ratio.
-4. **Strong practical applicability**: Supports downstream applications including 3D printing, physical simulation, and animation rigging.
-5. **Online non-manifold handling**: Effectively expands the scale of trainable data.
+1. **Elegant Silk Analogy**: The idea of inter-layer weaving naturally ensures topological properties with clever design.
+2. **Unique Guarantee**: The only tokenization method to simultaneously ensure 5 geometric properties.
+3. **SOTA Compression Efficiency**: 26.65 Bits/face and a 0.22 compression ratio.
+4. **Strong Practicality**: Directly supports downstream applications like 3D printing, physics simulation, and animation rigging.
+5. **Data Scaling**: Online non-manifold processing effectively expands the scale of trainable data.
 
 ## Limitations & Future Work
 
-1. Vocabulary size is relatively large (up to 10,267), though bits-per-face remains optimal.
-2. A maximum per-layer vertex count $m$ must be predefined, limiting support for extremely complex meshes.
-3. Currently restricted to triangle meshes; supporting mixed polygonal meshes is a future direction.
-4. The model has approximately 500M parameters; training requires 16×H800 GPUs for approximately 15 days.
+1. Vocabulary size is relatively high (up to 10,267), though bits-per-face remains optimal.
+2. Requires a predefined maximum intra-layer vertex count $m$, which limits extremely complex meshes.
+3. Currently supports only triangular meshes; hybrid polygon support is a future direction.
+4. Model size is approximately 500M parameters, requiring roughly 15 days on 16×H800 GPUs.
 
 ## Related Work & Insights
 
-- **VQ-VAE methods**: MeshGPT (Siddiqui et al., 2024) employs an encoder-decoder architecture for mesh tokenization.
-- **Direct quantization**: MeshXL and BPT directly quantize triangle vertex coordinates.
-- **Tree traversal**: EdgeRunner and TreeMeshGPT guarantee manifoldness via tree structures but at lower compression efficiency.
-- **Reinforcement learning**: DeepMesh fine-tunes with human feedback to improve aesthetic quality.
+- **VQ-VAE Methods**: MeshGPT (Siddiqui et al., 2024) uses encoder-decoders for mesh tokenization.
+- **Direct Quantization**: MeshXL and BPT directly quantize triangle vertex coordinates.
+- **Tree Traversal**: EdgeRunner and TreeMeshGPT ensure manifoldness via tree structures but suffer from low compression efficiency.
+- **Reinforcement Learning**: DeepMesh improves aesthetics via fine-tuning with human feedback.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The inter-layer weaving concept is original and elegant.
-- **Practicality**: ⭐⭐⭐⭐⭐ — Geometric property guarantees directly serve industrial applications.
-- **Clarity**: ⭐⭐⭐⭐ — Algorithmic descriptions are clear and illustrations are intuitive.
-- **Significance**: ⭐⭐⭐⭐⭐ — Addresses a critical topological challenge in auto-regressive mesh generation.
+- **Innovation**: ⭐⭐⭐⭐⭐ — The inter-layer weaving concept is original and elegant.
+- **Value**: ⭐⭐⭐⭐⭐ — Topological guarantees directly serve industrial applications.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear algorithm descriptions and intuitive diagrams.
+- **Value**: ⭐⭐⭐⭐⭐ — Solves key topological issues in auto-regressive mesh generation.
 
 <!-- RELATED:START -->
 
@@ -170,8 +147,8 @@ $$\mathcal{L}_{ce} = -\sum_{t=1}^{T-1} S_{t+1} \log \hat{S}_t$$
 - [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](../../ICCV2025/3d_vision/meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
 - [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
 - [\[ICLR 2026\] Reducing Class-Wise Performance Disparity via Margin Regularization](reducing_class-wise_performance_disparity_via_margin_regularization.md)
-- [\[ICLR 2026\] UrbanGS: A Scalable and Efficient Architecture for Geometrically Accurate Large-Scene Reconstruction](urbangs_a_scalable_and_efficient_architecture_for_geometrically_accurate_large-s.md)
 - [\[ICLR 2026\] Universal Beta Splatting](universal_beta_splatting.md)
+- [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](../../ICCV2025/3d_vision/repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
 
 </div>
 

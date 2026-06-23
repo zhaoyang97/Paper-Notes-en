@@ -2,124 +2,124 @@
 title: >-
   [Paper Note] Splat Feature Solver
 description: >-
-  [ICLR 2026][3D Vision][Feature Lifting] This paper unifies the feature lifting problem for 3D splat representations as a sparse linear inverse problem $AX=B$…
+  [ICLR 2026][3D Vision][Feature Lifting] The problem of feature lifting in 3D splat representations is unified and modeled as a sparse linear inverse problem $AX=B$. A closed-form solver is proposed with a provable $(1+\beta)$-approximation error bound under convex loss. Combined with Tikhonov Guidance and Post-Lifting Aggregation filtering, the method achiev
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "Feature Lifting"
-  - "3D Gaussian Splatting"
-  - "Linear Inverse Problem"
-  - "Open-Vocabulary 3D Segmentation"
-  - "Tikhonov Regularization"
+  - ICLR 2026
+  - 3D Vision
+  - Feature Lifting
+  - 3D Gaussian Splatting
 date: 2026-05-08
-content_hash: 3f79a26cb1238a12
+content_hash: 2dd65469048f92ff
 ---
-
 # Splat Feature Solver
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.12216](https://arxiv.org/abs/2508.12216)  
 **Code**: Available (GitHub)  
-**Area**: 3D Vision / 3D Scene Understanding
+**Area**: 3D Vision / 3D Scene Understanding  
 **Keywords**: Feature Lifting, 3D Gaussian Splatting, Linear Inverse Problem, Open-Vocabulary 3D Segmentation, Tikhonov Regularization
 
 ## TL;DR
 
-This paper unifies the feature lifting problem for 3D splat representations as a sparse linear inverse problem $AX=B$, proposes a closed-form solver with a provable $(1+\beta)$-approximation error bound under convex loss, and introduces two regularization strategies—Tikhonov Guidance and Post-Lifting Aggregation—achieving state-of-the-art performance on open-vocabulary 3D segmentation.
+The problem of feature lifting in 3D splat representations is unified and modeled as a sparse linear inverse problem $AX=B$. A closed-form solver is proposed with a provable $(1+\beta)$-approximation error bound under convex loss. Combined with Tikhonov Guidance and Post-Lifting Aggregation filtering, the method achieves SOTA performance in open-vocabulary 3D segmentation.
 
 ## Background & Motivation
 
-**Background**: Splat-based 3D representations (3DGS, 2DGS, etc.) have enabled real-time high-fidelity rendering, yet lifting rich 2D semantic features (CLIP, DINO, etc.) onto 3D primitives remains challenging. Existing approaches fall into three categories: training-based optimization, grouping-based association, and heuristic forward projection.
+**Background**: Splat-based 3D representations (3DGS, 2DGS, etc.) have achieved real-time high-fidelity rendering. However, lifting rich 2D semantic features (CLIP, DINO, etc.) to 3D primitives remains a challenge. Existing methods are categorized into training-based optimization, grouping-based association, and heuristic forward projection.
 
-**Limitations of Prior Work**: (1) No unified mathematical framework exists for defining the feature lifting problem; (2) existing methods lack theoretical guarantees on solution quality relative to the optimum; (3) all methods focus narrowly on SAM+CLIP features and 3DGS kernels, limiting generalizability; (4) multi-view inconsistency and noisy masks are not explicitly addressed.
+**Limitations of Prior Work**: (1) Lack of a unified mathematical framework to define the feature lifting problem; (2) Absence of theoretical guarantees regarding the proximity of the solution to the optimal one; (3) Existing methods often focus solely on SAM+CLIP features and 3DGS kernels, limiting generalization; (4) Failure to explicitly handle multi-view inconsistencies and noisy masks.
 
-**Key Challenge**: Feature lifting is intrinsically a sparse, row-stochastic linear inverse problem that becomes ill-conditioned due to noisy masks and incompleteness, yet existing methods either require expensive training or lack theoretical guarantees.
+**Key Challenge**: Feature lifting is essentially a sparse, row-stochastic linear inverse problem that becomes ill-conditioned due to noisy masks and incompleteness. Existing methods either require expensive training or lack theoretical grounding.
 
 **Goal**: Establish a formal mathematical framework for feature lifting, provide a closed-form solution with error bounds, and handle multi-view noise.
 
-**Key Insight**: The paper exploits the row-stochastic property of alpha-blending rendering to reformulate feature lifting as a standard linear inverse problem, deriving the optimal solution for a surrogate loss via Jensen's inequality.
+**Key Insight**: By utilizing the row-stochastic nature of alpha blending rendering, feature lifting can be transformed into a standard linear inverse problem. The optimal solution to a proxy loss can then be derived using Jensen's inequality.
 
-**Core Idea**: Feature lifting is formulated as $AX=B$, where $A$ is the rendering weight matrix. The closed-form solution given by the row-sum preconditioner, $x_j = \frac{\sum_i A_{ij} B_i}{\sum_i A_{ij}}$, admits a provable $(1+\beta)$-approximation guarantee under convex loss.
+**Core Idea**: Feature lifting can be formulated as $AX=B$, where $A$ is the rendering weight matrix. The closed-form solution provided by the row-sum preconditioner, $x_j = \frac{\sum_i A_{ij} B_i}{\sum_i A_{ij}}$, has a provable $(1+\beta)$-approximation guarantee under convex loss.
 
 ## Method
 
 ### Overall Architecture
 
-Precomputed splat geometry, camera parameters, and 2D dense feature observations are taken as input → the Splat Sensor Matrix $A$ and observation vector $B$ are constructed → $X$ is solved in closed form via the row-sum preconditioner → Tikhonov Guidance is applied to enhance system stability → Post-Lifting Aggregation filters noisy masks → per-primitive feature vectors are output.
+The process of "lifting 2D dense features to 3D splat primitives" is viewed as solving a sparse linear inverse problem. Taking pre-computed splat geometry, camera parameters, and 2D feature observations (CLIP, DINO, etc.) as input, the rendering weight matrix $A$ and observation vector $B$ are constructed, reducing the problem to $AX=B$. Instead of training, a closed-form solution is provided via a row-sum preconditioner, supported by two regularization modules: Tikhonov Guidance, which soft-polarizes opacity during solving to enhance the diagonal dominance and stabilize the ill-conditioned system; and Post-Lifting Aggregation, which filters out noisy masks via clustering after features are lifted. The final output is a feature vector for each primitive, used for downstream tasks like open-vocabulary 3D segmentation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    I["Input: splat geometry + camera params<br/>+ 2D feature observations (CLIP/DINO)"] --> A["Linear Inverse Problem Modeling & Closed-form Solver<br/>Construct A, B; row-sum closed-form solution AX=B"]
+    A --> T["Tikhonov Guidance<br/>Soft-polarize opacity, enhance diagonal dominance to lower β"]
+    T --> P["Post-Lifting Aggregation<br/>Clustering → Rendering back to 2D → IoU filtering of noisy masks"]
+    P --> O["Output: Feature vector for each primitive"]
+    O --> D["Downstream: Open-vocabulary 3D Segmentation / Grounding"]
+```
 
 ### Key Designs
 
-1. **Linear Inverse Problem Formulation and Closed-Form Solver for Feature Lifting**:
+**1. Linear Inverse Problem Modeling & Closed-form Solver: Elevating Heuristic Row-sum Weighting to an Optimal Solution with Error Guarantees**
 
-    - **Function**: Formalizes feature lifting as $AX=B$ ($A \in \mathbb{R}^{R \times P}$, $R$ rays, $P$ primitives) and derives a closed-form solution via the row-sum preconditioner.
-    - **Mechanism**: The row-stochastic property of alpha-blending ($\sum_j A_{ij} \approx 1$) is exploited to construct a surrogate loss $\mathcal{J}(x) = \sum_i \sum_j A_{ij} \|x_j - B_i\| \geq \mathcal{L}(x)$ via Jensen's inequality; minimizing the surrogate yields the closed-form solution. The bound $\mathcal{L}(x') \leq (1+\beta)\mathcal{L}(\hat{x})$ is proven, where $\beta$ measures the feature disparity of the optimal solution along each ray.
-    - **Design Motivation**: SGD-based training from scratch is prohibitively slow. Heuristic row-sum weighting has been independently proposed in multiple prior works but without theoretical justification; this paper unifies these approaches within a principled framework and shows they are special cases.
+Existing feature lifting methods lack a unified framework and theoretical guarantees on solution quality. This work formalizes the problem as $AX=B$, where $A \in \mathbb{R}^{R \times P}$ ($R$ rays, $P$ primitives) is the rendering weight matrix from alpha blending. A key observation is that alpha blending is naturally row-stochastic, i.e., $\sum_j A_{ij} \approx 1$. Consequently, Jensen's inequality is used to construct a proxy loss $\mathcal{J}(x) = \sum_i \sum_j A_{ij} \|x_j - B_i\| \geq \mathcal{L}(x)$, which yields the row-sum preconditioner closed-form solution $x_j = \frac{\sum_i A_{ij} B_i}{\sum_i A_{ij}}$. This avoids the high cost of SGD training and proves $\mathcal{L}(x') \leq (1+\beta)\mathcal{L}(\hat{x})$, where $\beta$ measures the feature dispersion of the optimal solution along the line of sight. This bound unifies row-sum rules independently discovered by works like CosegGaussians, Occam's LGS, and DrSplat as special cases of the same closed-form solution and provides the first proof of their approximate optimality.
 
-2. **Tikhonov Guidance Regularization**:
+**2. Tikhonov Guidance: Reducing the Error Bound $\beta$ via Non-linear Soft Polarization**
 
-    - **Function**: Enhances the diagonal dominance of $A^T A$ by modulating the opacity activation function, thereby reducing $\beta$.
-    - **Mechanism**: Leveraging the negative correlation between $\beta$ and diagonal dominance (Property 4), opacity values are nonlinearly soft-polarized (pushed toward 0 or 1) during the feature lifting stage, so that each ray is dominated by a single primitive, reducing the error bound.
-    - **Design Motivation**: The linear system $A$ may be rank-deficient or near-singular. Classical Tikhonov regularization $\|Ax-b\|^2 + \|\lambda I\|^2$ applies a linear adjustment, whereas the proposed method uses nonlinear guidance without degrading RGB rendering quality.
+The linear system $A$ may be rank-deficient or near-singular, leading to an ill-conditioned problem and a large $\beta$. While traditional Tikhonov regularization $\|Ax-b\|^2 + \|\lambda I\|^2$ performs linear adjustments, this method modifies the construction of $A$. Based on the property that $\beta$ is negatively correlated with the diagonal dominance of $A^T A$ (Property 4), a non-linear soft polarization is applied to the opacity activation function during the feature lifting phase. This pushes opacity values toward 0 or 1, concentrating contributions on each ray to a single primitive. In the extreme case where each row of $\tilde{A}$ has only one non-zero entry (value 1), it yields the global optimum. This enhances the diagonal dominance of $A^T A$ and lowers $\beta$ without modifying the geometry or harming RGB rendering quality.
 
-3. **Post-Lifting Aggregation Noise Filtering**:
+**3. Post-Lifting Aggregation: Filtering Inconsistent SAM Masks from the Data Side**
 
-    - **Function**: Filters inconsistent SAM masks via feature clustering and IoU matching.
-    - **Mechanism**: Lifted features are clustered → one-hot encoded and rendered back to 2D → a cluster mask is obtained via argmax → IoU between each SAM mask and the cluster mask is computed → masks below the threshold are discarded.
-    - **Design Motivation**: Multi-view inconsistencies typically arise from mask noise (e.g., one view segments only noodles while another includes both the bowl and noodles) rather than genuine semantic variation.
+Multi-view inconsistencies are often caused by mask noise rather than true semantic differences (e.g., one view segments only noodles, while another segments the bowl and noodles together). Instead of handling this noise during solving, a cleaning step is performed after lifting: the Tikhonov-Guided solution $\tilde{x}$ is reused as clustering features to assign each splat to a cluster. Cluster IDs are then rendered back to 2D using one-hot encoding, and argmax is used to obtain a cluster mask. Finally, the IoU between each SAM mask and the cluster mask is calculated, and masks with an IoU below a threshold are discarded. Unlike LAGA, which requires learning separate affinity features and performing view-dependent clustering, this method reuses the existing solution and is simpler to implement.
 
 ### Loss & Training
 
-No training is required; the method is entirely solved in closed form. Threshold selection is automated by identifying local extrema in an attention histogram, eliminating per-object manual tuning.
+The entire method requires no training and relies solely on closed-form solutions, which is why it completes in minutes rather than hours.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset (LeRF-OVS) | Metric (mIoU) | Ours | LAGA (SOTA) | Gain |
-|---|---|---|---|---|
+| Dataset (LeRF-OVS) | Metric (mIoU) | Ours | LAGA (Prev. SOTA) | Gain |
+|------------------|-----------|------|-------------|------|
 | Figurines | mIoU | 67.6 | 64.1 | +3.5 |
 | Ramen | mIoU | 62.3 | 56.6 (N2F2) | +5.7 |
 | Mean (4 scenes) | mIoU | 65.1 | 64.0 (LAGA) | +1.1 |
 
 ### Ablation Study
 
-| Configuration | Metric | Note |
-|---|---|---|
-| w/o Tikhonov + w/o Post-Agg | Cosine Sim ~90% | Base solver already yields strong lifting |
-| + Tikhonov Guidance | mIoU improved | Enhanced diagonal dominance reduces $\beta$ |
-| + Post-Lifting Aggregation | Best mIoU | Noisy mask filtering yields further gains |
-| Multiple features (DINO/ViT/ResNet) | Cosine >80% | Validates feature-agnostic capability |
+| Configuration | Metric | Description |
+|------|------|------|
+| w/o Tikhonov + w/o Post-Agg | Cosine Sim ~90% | Basic solver already has strong lifting capability |
+| + Tikhonov Guidance | mIoU Improvement | Enhances diagonal dominance to reduce $\beta$ |
+| + Post-Lifting Aggregation | Optimal mIoU | Further improvement by filtering noisy masks |
+| Multi-feature (DINO/ViT/ResNet) | Cosine >80% | Validates feature-agnostic capability |
 
 ### Key Findings
 
-- The row-sum preconditioner completes feature lifting within minutes, far faster than training-based methods requiring hours.
-- Tikhonov Guidance effectively reduces $\beta$ by enhancing diagonal dominance, consistent with theoretical predictions.
-- Most multi-view inconsistencies stem from mask noise rather than genuine semantic variation; Post-Lifting Aggregation filters these effectively.
+- The row-sum preconditioner completes feature lifting in minutes, significantly faster than training-based methods.
+- Tikhonov Guidance effectively reduces $\beta$ by enhancing diagonal dominance, matching theoretical predictions.
+- Most multi-view inconsistencies stem from mask noise rather than semantic changes; Post-Lifting Aggregation effectively filters these.
 
 ## Highlights & Insights
 
-- Modeling feature lifting as a linear inverse problem is the key insight, unifying three lines of work (the row-sum rules independently discovered in CosegGaussians, Occam's LGS, and DrSplat are all shown to be special cases).
-- The $(1+\beta)$-approximation error bound is the first theoretical guarantee established for feature lifting.
-- The method is fully kernel-agnostic and feature-agnostic: the same framework applies to 3DGS/2DGS/Beta Splatting and arbitrary features including CLIP/DINO/ViT/ResNet.
+- Modeling feature lifting as a linear inverse problem is a key insight that unifies three categories of methods (integrating row-sum rules from CosegGaussians, Occam's LGS, and DrSplat).
+- The $(1+\beta)$-approximation error bound provides the first theoretical guarantee for feature lifting.
+- Completely kernel-agnostic and feature-agnostic: the framework handles arbitrary kernels (3DGS/2DGS/Beta Splatting) and features (CLIP/DINO/ViT/ResNet).
 
 ## Limitations & Future Work
 
-- The upper bound on $\beta$ depends on the feature disparity of the optimal solution along each ray, which is difficult to estimate a priori.
-- Although the IoU threshold in Post-Lifting Aggregation is selected automatically, sensitivity to specific scenes remains.
+- The $\beta$ bound depends on the feature dispersion of the optimal solution, which is difficult to estimate a priori.
+- Although the IoU threshold in Post-Lifting Aggregation is automatically selected, it remains sensitive to the scene.
 - The closed-form solution assumes $\sum \omega_p \approx 1$ (row-stochasticity), which may degrade in extremely sparse scenes.
 
 ## Related Work & Insights
 
-- **vs. DrSplat**: DrSplat simplifies the row-sum with top-$K$ truncation and provides no theoretical guarantee; this paper proves that the full row-sum is $(1+\beta)$-optimal.
-- **vs. LAGA**: LAGA requires training an affinity model and view-dependent clustering; the proposed method is training-free and surpasses LAGA on LeRF-OVS.
-- **vs. LangSplat**: LangSplat requires end-to-end training with PCA compression; the proposed method is solved in closed form and achieves substantially higher mIoU.
+- **vs DrSplat**: DrSplat simplifies row-sum using top-K truncation without theoretical guarantees; this work proves that the full row-sum is $(1+\beta)$-optimal.
+- **vs LAGA**: LAGA requires training affinity models and view-dependent clustering; this method is completely training-free and outperforms LAGA on LeRF-OVS.
+- **vs LangSplat**: LangSplat requires end-to-end training and PCA compression; this method uses a closed-form solution and leads significantly in mIoU.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Modeling feature lifting as a linear inverse problem is an elegant unifying framework with notable theoretical contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐ — LeRF-OVS coverage is relatively comprehensive, though the number of evaluation benchmarks is limited.
-- **Writing Quality**: ⭐⭐⭐⭐ — Theoretical derivations are clear, with occasional notation inconsistencies.
-- **Value**: ⭐⭐⭐⭐ — Establishes a theoretical foundation for 3D feature lifting and is likely to serve as a standard reference for future work.
+- Novelty: ⭐⭐⭐⭐ Linear inverse problem modeling is an elegant unified framework with strong theoretical contributions.
+- Experimental Thoroughness: ⭐⭐⭐ Good coverage of LeRF-OVS, but could benefit from more benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical derivation, though some notation is occasionally mixed.
+- Value: ⭐⭐⭐⭐ Establishes a theoretical foundation for 3D feature lifting and is likely to become a standard reference for future work.
 
 <!-- RELATED:START -->
 
@@ -127,11 +127,11 @@ No training is required; the method is entirely solved in closed form. Threshold
 
 ## Related Papers
 
+- [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
 - [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](../../CVPR2026/3d_vision/cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[ICLR 2026\] Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation](learning_part-aware_dense_3d_feature_field_for_generalizable_articulated_object_.md)
-- [\[NeurIPS 2025\] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting](../../NeurIPS2025/3d_vision/segment_then_splat_unified_3d_open-vocabulary_segmentation_via_gaussian_splattin.md)
-- [\[CVPR 2026\] FF3R: Feedforward Feature 3D Reconstruction from Unconstrained Views](../../CVPR2026/3d_vision/ff3r_feedforward_feature_3d_reconstruction_from_unconstrained_views.md)
+- [\[ICLR 2026\] Light of Normals: Unified Feature Representation for Universal Photometric Stereo](light_of_normals_unified_feature_representation_for_universal_photometric_stereo.md)
+- [\[CVPR 2026\] Deep Feature Deformation Weights](../../CVPR2026/3d_vision/deep_feature_deformation_weights.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](../../CVPR2026/3d_vision/st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 
 </div>
 

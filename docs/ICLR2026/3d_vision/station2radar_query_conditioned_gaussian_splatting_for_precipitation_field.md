@@ -2,127 +2,127 @@
 title: >-
   [Paper Note] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field
 description: >-
-  [ICLR 2026][3D Vision][Gaussian Splatting] This paper proposes Query-Conditioned Gaussian Splatting (QCGS), the first method to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite ima…
+  [ICLR 2026][3D Vision][Paper Note] The authors propose Query-Conditioned Gaussian Splatting (QCGS), the first work to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite imagery with sparse Automatic Weather Station (AWS) observations, QCGS achieves resolution-flexible precipitation field reconstruction under radar-f
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "Gaussian Splatting"
-  - "Precipitation Field Reconstruction"
-  - "Implicit Neural Representation"
-  - "Satellite-Station Fusion"
-  - "Resolution-Agnostic Rendering"
+  - ICLR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 06116aa8a89f57de
+content_hash: 2f928c88d39fa7c6
 ---
-
 # Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.00418](https://arxiv.org/abs/2603.00418)  
-**Code**: N/A  
-**Area**: 3D Vision / Meteorological Remote Sensing
+**Code**: None  
+**Area**: 3D Vision / Meteorological Remote Sensing  
 **Keywords**: Gaussian Splatting, Precipitation Field Reconstruction, Implicit Neural Representation, Satellite-Station Fusion, Resolution-Agnostic Rendering
 
 ## TL;DR
-This paper proposes Query-Conditioned Gaussian Splatting (QCGS), the first method to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite imagery with sparse automatic weather station (AWS) observations, QCGS achieves flexible-resolution precipitation field reconstruction without radar input, reducing RMSE by over 50% compared to conventional gridded products.
+The authors propose Query-Conditioned Gaussian Splatting (QCGS), the first work to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite imagery with sparse Automatic Weather Station (AWS) observations, QCGS achieves resolution-flexible precipitation field reconstruction under radar-free conditions, improving RMSE by over 50% compared to traditional gridded products.
 
 ## Background & Motivation
 
-**Background**: Precipitation forecasting relies on heterogeneous data sources — weather radars offer high accuracy but limited geographic coverage and high maintenance costs; weather stations provide precise point measurements but are extremely sparse; satellites offer high-resolution wide-area coverage but cannot directly retrieve rainfall estimates. Most existing deep learning precipitation methods (e.g., ConvLSTM, diffusion models) treat radar as the primary input.
+**Background**: Precipitation forecasting relies on heterogeneous data sources—weather radar offers high accuracy but limited geographical coverage and high maintenance costs; weather stations provide accurate point measurements but are extremely sparse; satellites provide high-resolution wide-area coverage but cannot directly retrieve rainfall intensity. Most current deep learning precipitation forecasting methods (e.g., ConvLSTM, Diffusion Models) use radar as the primary input.
 
-**Limitations of Prior Work**: Radar networks are unavailable across much of the world, particularly in developing countries, limiting the applicability of radar-centric approaches. Conventional radar-free methods rely primarily on classical interpolation techniques (Barnes, Kriging), which spread station observations onto a grid using fixed Gaussian weights. These methods severely blur precipitation boundaries and are highly sensitive to station density. Satellite-direct estimation methods (e.g., Sat2Radar) suffer from systematic bias and produce fixed-resolution outputs.
+**Limitations of Prior Work**: Radar networks are unavailable in most parts of the world (especially developing countries), limiting the applicability of radar-centric methods. Traditional radar-free solutions mainly employ classical interpolation methods (Barnes, Kriging) using fixed Gaussian weights to extend station observations onto a grid, but these methods severely blur precipitation boundaries and are highly sensitive to station density. Satellite-based direct estimation methods (e.g., Sat2Radar) suffer from systemic biases and produce fixed-resolution outputs.
 
-**Key Challenge**: Accurate precipitation field reconstruction simultaneously requires: (1) ground-truth anchoring accuracy (available only from stations), (2) spatially continuous coverage (available only from satellites), and (3) resolution flexibility (absent from all existing methods). No prior framework unifies these three properties.
+**Key Challenge**: Accurate reconstruction of precipitation fields requires: (1) anchoring accuracy from ground truth (only from stations), (2) spatially continuous coverage (only from satellites), and (3) resolution flexibility (not available in existing methods). These three requirements cannot be unified within existing frameworks.
 
-**Goal**: How can satellite imagery and sparse AWS observations be fused — without relying on radar — to generate high-resolution, structurally coherent, continuous precipitation fields?
+**Goal**: How to generate high-resolution, structurally clear, and continuous precipitation fields by fusing satellite imagery and sparse weather station observations without relying on radar?
 
-**Key Insight**: The authors observe that classical Gaussian-weighted interpolation is mathematically equivalent to a special case of Gaussian Splatting — traditional interpolation uses fixed isotropic kernels, whereas GS allows learnable anisotropic kernels, adaptive amplitudes, and resolution-agnostic rendering. This observation bridges classical meteorological methods with emerging computer vision techniques.
+**Key Insight**: The authors observe that classical Gaussian weight interpolation is mathematically equivalent to a special case of Gaussian Splatting—traditional interpolation uses fixed isotropic kernels, while GS allows for learnable anisotropic kernels, adaptive amplitudes, and resolution-agnostic rendering. This observation bridges classical meteorological methods with new computer vision techniques.
 
-**Core Idea**: Combine 2D Gaussian Splatting with implicit neural representations, conditioning on satellite features to predict adaptive Gaussian parameters, and selectively render only within precipitation support regions, enabling efficient, resolution-flexible precipitation field generation.
+**Core Idea**: Combine 2D Gaussian Splatting with Implicit Neural Representations (INR), using satellite features as conditions to predict adaptive Gaussian parameters and selectively rendering only in precipitation support regions to achieve efficient, resolution-flexible precipitation field generation.
 
 ## Method
 
 ### Overall Architecture
-QCGS is a three-stage pipeline. The inputs are satellite brightness temperature images (2 km resolution) and sparse AWS observations; the output is a continuous precipitation field at arbitrary resolution. (1) A Radar Point Proposal Network fuses satellite and AWS information to generate a coarse precipitation proxy field and identify rainfall support locations. (2) A Rainfall-Aware Point Sampling strategy selects query points from the proxy field. (3) An INR-based Gaussian parameter estimator predicts splatting parameters for each query point, which are composited via differentiable 2D Gaussian rendering to produce the final precipitation field. Training proceeds in two stages — the proposal network is trained first, followed by the Gaussian rendering module with the proposal network fixed.
+QCGS is a three-stage pipeline: the input consists of satellite brightness temperature images (2km resolution) and sparse AWS station observations, and the output is a continuous precipitation field at an arbitrary resolution. (1) The Radar Point Proposal Network fuses satellite and AWS information to generate a coarse precipitation proxy field and identify precipitation support locations; (2) The Precipitation-Aware Sampling Strategy selects query points from the proxy field; (3) The INR-based Gaussian Parameter Estimator predicts Gaussian splatting parameters for each query point, finally generating the precipitation field via differentiable 2D Gaussian rendering. Training is split into two stages—first training the Point Proposal Network, then training the Gaussian rendering module on fixed proposals.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    SAT["Satellite BT Imagery<br/>(2km)"] --> PROP
+    AWS["Sparse AWS<br/>Station Obs"] --> PROP
+    PROP["Radar Point Proposal Network<br/>ConvNeXt U-Net + GAT Cross-Attn"] --> PROXY["Coarse Proxy Field<br/>+ Candidate Locations"]
+    PROXY --> SAMP["Precipitation-Aware Sampling<br/>Gradient+Uniform+Heavy Convex Comb"]
+    SAMP --> EST["INR Gaussian Parameter Estimator<br/>Predict σx,σy,ρ,α per point + AWS Anchor"]
+    EST --> RENDER["Differentiable 2D Gaussian Rendering"]
+    RENDER --> OUT["Arbitrary Resolution<br/>Continuous Precip Field"]
+```
 
 ### Key Designs
 
-1. **Radar Point Proposal Network**:
+**1. Radar Point Proposal Network: Identifying "where it is raining" using a coarse proxy field**
 
-    - Function: Fuses satellite imagery and AWS observations to generate a coarse precipitation proxy field and extract rainfall support locations.
-    - Mechanism: A Graph Attention Network (GAT, 3 layers, 8 heads) extracts robust representations $z^t$ from irregular AWS observations, handling missing values and outliers. Satellite images are processed by a ConvNeXt U-Net encoder-decoder, with AWS representations injected into the decoder via cross-attention. The network outputs a coarse precipitation field $\hat{R}^t$ and candidate rainfall locations.
-    - Design Motivation: AWS data, though sparse, provides precise ground-truth anchoring, while satellites offer spatially dense coverage with only indirect precipitation signals. The two are complementary — GAT handles the irregularity and noise of AWS data, while cross-attention enables cross-modal fusion. Ablation results show that adding AWS fusion improves CSI from 0.62 to 0.73.
+The first step of the pipeline addresses the issue that satellites provide broad but indirect associations with rainfall, while AWS stations are accurate but sparse. To merge them into a coarse map that pinpoints rainfall locations, the authors pass satellite brightness temperature (BT) images through a ConvNeXt U-Net encoder-decoder to extract dense spatial features. Simultaneously, a Graph Attention Network (GAT, 3 layers, 8 heads) is used to extract robust representations $z^t$ from irregular AWS observations (containing missing values and outliers). This station representation is then injected into the U-Net decoder via cross-attention. The network outputs a coarse precipitation field $\hat{R}^t$ and a set of candidate rainfall locations for subsequent sampling. The advantage of GAT is its inherent ability to handle irregular distributions and noise, while cross-attention achieves cross-modal alignment—satellites govern "spatial structure" and stations govern "ground truth rainfall presence and intensity." In ablation studies, the addition of AWS fusion improved the CSI from 0.62 to 0.73, indicating this step is the primary contributor to the method's performance.
 
-2. **Rainfall-Aware Point Sampling**:
+**2. Precipitation-Aware Sampling Strategy: Placing Gaussian kernels only where necessary**
 
-    - Function: Intelligently selects query points from the coarse precipitation field, concentrating computation on regions where precipitation is present.
-    - Mechanism: Constructs a convex combination of three sampling probability terms — a gradient term $G$ emphasizing precipitation boundaries, a uniform term $U$ ensuring spatial coverage, and a heavy-rainfall term $H$ using softmax temperature to prioritize intense precipitation regions. The mixing weights are 0.3/0.4/0.3, with non-maximum suppression to avoid redundant points. Unlike standard GS, which renders the entire image plane, QCGS renders only query regions with precipitation.
-    - Design Motivation: Light precipitation rarely causes high-impact events, whereas extreme precipitation events are of primary operational concern. Uniform sampling treats all regions equally, wasting computation on precipitation-free areas. Ablation experiments confirm that the three-term combination (CSI 0.76) outperforms any single term or two-term combination.
+Standard GS renders the entire image plane, but in precipitation fields, most areas have no rain; placing Gaussian kernels point-by-point there is wasteful. QCGS modifies this by sampling query points only in the rainfall regions identified by the coarse proxy field. The sampling probability is defined as a convex combination of three terms: a gradient term $G$ to increase sampling density near precipitation boundaries for sharpness, a uniform term $U$ to ensure overall coverage, and a heavy precipitation term $H$ using a temperature-scaled softmax to prioritize intense rainfall areas. The mixing weights for the three terms are 0.3/0.4/0.3, followed by Non-Maximum Suppression (NMS) to remove redundant points. The motivation is that light rain rarely causes disasters, while heavy precipitation is a high-impact event, making it more efficient to tilt the computational budget toward heavy rainfall and boundaries. The CSI for the triple combination (0.76) was higher than uniform sampling (0.68) or any single/double term combination, confirming the effectiveness of this bias.
 
-3. **INR-based Gaussian Parameter Estimator**:
+**3. INR-based Gaussian Parameter Estimator: Assigning a learnable, anchorable anisotropic Gaussian to each query point**
 
-    - Function: Predicts learnable Gaussian splatting parameters (covariance and amplitude) for each query point, enabling resolution-agnostic adaptive rendering.
-    - Mechanism: Conditioned on intermediate satellite features, cross-attention predicts $\{\sigma_x, \sigma_y, \rho, \alpha\}$ for each query point — the first three define an anisotropic covariance matrix, and $\alpha$ controls amplitude. A key innovation: at AWS stations with nonzero observed precipitation, $\alpha$ is directly set to the observed value, serving as a ground-truth anchor. A 5-layer MLP (hidden size 128, sinusoidal positional encoding) is used as the INR network.
-    - Design Motivation: Conventional GS methods optimize per image and cannot generalize. Conditioning on an INR enables parameter prediction to generalize across regions and seasons. AWS anchoring directly injects ground-truth precision constraints, avoiding the systematic bias of purely satellite-driven approaches.
+Traditional GS optimizes parameters per image, requiring retraining for new scenes and lacking generalization; this module uses a conditioned INR to overcome this limitation. Conditioned on intermediate satellite features, it predicts a set of Gaussian parameters $\{\sigma_x, \sigma_y, \rho, \alpha\}$ for each query point through cross-attention. The first three define an anisotropic covariance matrix (providing better fit to directional structures than fixed isotropic kernels), and $\alpha$ controls the amplitude. The INR network is a 5-layer MLP (hidden dimension 128, sinusoidal positional encoding). Since parameter prediction is based on satellite conditional features, the model generalizes across regions and seasons. A critical detail is ground truth anchoring: at AWS stations with non-zero precipitation, the $\alpha$ of that point is directly set to the station observation value. This serves as a hard constraint to avoid systemic biases common in pure satellite-driven methods like Sat2Radar. The predicted kernels are synthesized into a continuous precipitation field at arbitrary resolution via differentiable 2D rendering.
 
 ### Loss & Training
-The total loss combines reconstruction error and regularization: $\mathcal{L} = \text{MSE}(\tilde{R}^t, R^t) + \lambda_\sigma \sum_n (\sigma_x^{(n)} + \sigma_y^{(n)}) + \lambda_\alpha \sum_n \alpha^{(n)}$. Regularization terms on covariance and amplitude ($\lambda_\sigma = 10^{-3}$, $\lambda_\alpha = 10^{-4}$) prevent Gaussian kernels from over-expanding and causing excessive smoothing. Training uses the Adam optimizer (lr $10^{-4}$, cosine schedule), batch size 16, 100 epochs, on 8× H200 GPUs.
+The total loss is a combination of reconstruction error and regularization: $\mathcal{L} = \text{MSE}(\tilde{R}^t, R^t) + \lambda_\sigma \sum_n (\sigma_x^{(n)} + \sigma_y^{(n)}) + \lambda_\alpha \sum_n \alpha^{(n)}$. The regularization terms for covariance ($\lambda_\sigma = 10^{-3}$) and amplitude ($\lambda_\alpha = 10^{-4}$) prevent the Gaussian kernels from over-expanding and causing excessive smoothing. Training uses the Adam optimizer (lr $10^{-4}$, cosine schedule), batch size 16, 100 epochs, and 8×H200 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Type | Resolution | RMSE↓ | CSI↑ | FSS↑ | CC↑ |
-|--------|------|------------|-------|------|------|-----|
-| Pix2PixHD | Deep Learning | 0.5 km | 2.45 | 0.59 | 0.71 | 0.55 |
-| NPM | Deep Learning | 0.5 km | 1.95 | 0.59 | 0.78 | 0.68 |
-| BBDM | Deep Learning | 0.5 km | 1.68 | 0.64 | 0.84 | 0.75 |
-| Kriging | Classical Interpolation | 2.0 km | 2.43 | 0.50 | 0.69 | 0.45 |
-| **QCGS** | **Ours** | **0.5 km** | **1.23** | **0.74** | **0.91** | **0.90** |
-| **QCGS** | **Ours** | **2.0 km** | **1.00** | **0.76** | **0.96** | **0.93** |
+|------|------|--------|-------|------|------|-----|
+| Pix2PixHD | Deep Learning | 0.5km | 2.45 | 0.59 | 0.71 | 0.55 |
+| NPM | Deep Learning | 0.5km | 1.95 | 0.59 | 0.78 | 0.68 |
+| BBDM | Deep Learning | 0.5km | 1.68 | 0.64 | 0.84 | 0.75 |
+| Kriging | Classical | 2.0km | 2.43 | 0.50 | 0.69 | 0.45 |
+| **QCGS** | **Ours** | **0.5km** | **1.23** | **0.74** | **0.91** | **0.90** |
+| **QCGS** | **Ours** | **2.0km** | **1.00** | **0.76** | **0.96** | **0.93** |
 
-In comparison with global operational products on daily accumulated precipitation, QCGS also outperforms substantially: RMSE 6.68 vs. IMERG 14.08 / MSWEP 12.44; CC 0.95 vs. the best competing value of 0.78.
+In comparison with global operational products, QCGS also leads significantly in daily accumulated precipitation: RMSE 6.68 vs. IMERG 14.08 / MSWEP 12.44, CC 0.95 vs. max 0.78.
 
 ### Ablation Study
 
-| Configuration | CSI↑ | Notes |
-|---------------|------|-------|
-| U-Net (ConvNeXt) only | 0.62 | Satellite-only baseline |
-| + AWS fusion | 0.73 | Station fusion contributes +0.11 |
-| + AWS fusion + GS (full) | 0.76 | GS rendering adds +0.03 |
-| Uniform sampling only | 0.68 | Lacks boundary and heavy-rain focus |
-| Three-term mixed sampling | 0.76 | Optimal combination |
-| K = 1000 points | 0.69 | Insufficient point count |
-| K = 6000 points | 0.76 | Best efficiency–accuracy trade-off |
-| K = 9000 points | 0.77 | Diminishing returns |
+| Configuration | CSI↑ | Note |
+|------|------|------|
+| U-Net (ConvNeXt) only | 0.62 | Pure satellite baseline |
+| + AWS fusion | 0.73 | Station fusion contribution +0.11 |
+| + AWS fusion + GS (Full) | 0.76 | GS rendering adding +0.03 |
+| Uniform sampling only | 0.68 | Lacks focus on boundaries and heavy rain |
+| Triple mixed sampling | 0.76 | Optimal combination |
+| K=1000 points | 0.69 | Insufficient points |
+| K=6000 points | 0.76 | Best cost-performance |
+| K=9000 points | 0.77 | Diminishing marginal returns |
 
 ### Key Findings
-- AWS fusion is the largest contributing factor (CSI +0.11), demonstrating that sparse but precise ground observations are critical for precipitation field reconstruction.
-- The resolution flexibility afforded by Gaussian Splatting allows a model trained at 2 km to outperform deep learning baselines trained at 0.5 km when evaluated at 0.5 km.
-- Power spectral density analysis shows that QCGS most closely matches the radar spectrum across all spatial scales, while operational products lose variance at high wavenumbers.
+- AWS fusion is the largest contributor (CSI +0.11), proving that sparse but accurate ground observations are crucial for precipitation field reconstruction.
+- The resolution flexibility provided by Gaussian Splatting allows a model trained at 2km to outperform deep learning baselines trained at 0.5km when evaluated at 0.5km.
+- Power Spectral Density (PSD) analysis shows that QCGS is the closest to the radar spectrum across all spatial scales, while operational products lose variance at high wavenumbers.
 
 ## Highlights & Insights
-- The observation of the equivalence between classical meteorological interpolation and Gaussian Splatting is elegant — traditional Gaussian-weighted interpolation is a fixed isotropic special case of GS, and this connection naturally transfers techniques from the 3DGS community to the meteorological domain.
-- The selective rendering design is architecturally clean: Gaussian kernels are placed only within precipitation regions, avoiding futile computation over the predominantly precipitation-free domain, achieving both efficiency and accuracy.
-- The AWS anchoring strategy is simple yet effective — directly setting the amplitude to the observed value at station locations acts as a hard constraint, ensuring the generated field is exactly accurate at all known measurement points.
+- The observation of equivalence between classical meteorological interpolation and Gaussian Splatting is very clever—traditional Gaussian weighting is a fixed isotropic special case of GS, allowing techniques from the 3DGS community to transfer naturally to meteorology.
+- The selective rendering design is elegant: by placing Gaussian kernels only in precipitation areas and avoiding useless computation in the massive non-precipitating zones, it achieves a win-win for efficiency and accuracy.
+- The AWS anchoring strategy is simple but effective—setting the amplitude at station locations directly to observations serves as a hard constraint, ensuring the generated field is perfectly accurate at known points.
 
 ## Limitations & Future Work
-- The method depends on AWS station data — applicability is limited in regions with sparse station networks (e.g., Africa, open ocean); future work may explore degraded satellite-only operating modes.
-- Experiments are limited to the Korean Peninsula domain (480×480 grid); scaling to global coverage remains an open challenge.
-- The proposal network and Gaussian rendering module are trained in two separate stages; end-to-end joint training may yield further improvements.
-- The work addresses only precipitation field *reconstruction* and does not tackle temporal forecasting; combining this framework with temporal extrapolation could form a complete radar-free precipitation nowcasting system.
+- Dependency on AWS station data—applicability is limited in regions with sparse station networks (e.g., Africa, oceans); future work could explore degradation schemes for pure satellite modes.
+- Experiments are restricted to the South Korea region (480×480 grid); global-scale expansion remains an open challenge.
+- The Point Proposal Network and Gaussian rendering module are trained in two stages; end-to-end joint training might yield further improvements.
+- The work only handles precipitation field "generation" and does not involve temporal forecasting; combining it with temporal extrapolation could build a complete radar-free precipitation forecasting system.
 
 ## Related Work & Insights
-- **vs. Sat2Radar (NPM)**: NPM is purely satellite-driven and produces fixed-resolution outputs; QCGS performs multi-source fusion with resolution flexibility, reducing RMSE by 37%.
-- **vs. Classical Interpolation (Kriging)**: Kriging uses fixed isotropic kernels; QCGS learns adaptive anisotropic kernels, improving CSI from 0.50 to 0.76.
-- **vs. 2D GS Image Methods (GaussianImage)**: Image-based GS optimizes per image and cannot generalize; QCGS achieves cross-scene generalization via a conditioned INR.
-- The paradigm of transferring emerging CV techniques (GS/INR) to scientific domains warrants broader attention; analogous methods could be applied to other geophysical variables such as temperature fields and wind fields.
+- **vs. Sat2Radar (NPM)**: NPM is pure satellite-driven with fixed resolution output; QCGS uses multi-source fusion and is resolution-flexible, reducing RMSE by 37%.
+- **vs. Classical Interpolation (Kriging)**: Kriging uses fixed, isotropic kernels; QCGS learns adaptive anisotropic kernels, increasing CSI from 0.50 to 0.76.
+- **vs. 2D GS Image Methods (GaussianImage)**: Image GS requires per-image optimization and cannot generalize; QCGS achieves cross-scene generalization via conditioned INR.
+- This paradigm of transferring emerging CV technologies (GS/INR) to scientific domains is noteworthy; similar methods could be applied to other geophysical variables like temperature or wind fields.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — First application of 2D GS to precipitation field generation; the classical interpolation–GS equivalence observation is creative.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Cross-scale comparisons are comprehensive (snapshot / hourly / daily); ablations are rigorous and include power spectral analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Motivation is clearly developed, mathematical notation is consistent, and figures are of high quality.
-- Value: ⭐⭐⭐⭐ — Opens a new paradigm for radar-free precipitation monitoring, though the regional scope limits immediate broader impact.
+- Novelty: ⭐⭐⭐⭐ First to introduce 2D GS to precipitation generation; creative observation of interpolation-GS equivalence.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive cross-scale comparisons (snapshot/hourly/daily) and solid ablation studies including PSD analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, unified mathematical notation, and high-quality figures.
+- Value: ⭐⭐⭐⭐ Opens a new paradigm for radar-free precipitation monitoring, though regional constraints reduce immediate global impact.
 
 <!-- RELATED:START -->
 
@@ -131,10 +131,10 @@ In comparison with global operational products on daily accumulated precipitatio
 ## Related Papers
 
 - [\[ICLR 2026\] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)
+- [\[ICLR 2026\] Horseshoe Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-Splatting Radiance Field Rendering](horseshoe_splatting_handling_structural_sparsity_for_uncertainty-aware_gaussian-.md)
+- [\[ICLR 2026\] Positional Encoding Field](positional_encoding_field.md)
+- [\[CVPR 2025\] Geometry Field Splatting with Gaussian Surfels](../../CVPR2025/3d_vision/geometry_field_splatting_with_gaussian_surfels.md)
 - [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](lito_surface_light_field_tokenization.md)
-- [\[CVPR 2026\] Text–Image Conditioned 3D Generation](../../CVPR2026/3d_vision/text-image_conditioned_3d_generation.md)
-- [\[ICLR 2026\] Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting](stylos_multi-view_3d_stylization_with_single-forward_gaussian_splatting.md)
-- [\[AAAI 2026\] Physics-Informed Deformable Gaussian Splatting: Towards Unified Constitutive Laws for Time-Evolving Material Field](../../AAAI2026/3d_vision/physics-informed_deformable_gaussian_splatting_towards_unified_constitutive_laws.md)
 
 </div>
 

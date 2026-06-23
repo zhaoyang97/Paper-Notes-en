@@ -2,119 +2,123 @@
 title: >-
   [Paper Note] LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection
 description: >-
-  [ICLR 2026][Reinforcement Learning][music error detection] This paper proposes the LadderSym architecture for music practice error detection. It addresses insufficient cross-stream alignment in late-fusion approaches via…
+  [ICLR 2026][Reinforcement Learning][Paper Note] The LadderSym architecture is proposed to solve music practice error detection. By overcoming alignment deficiencies in late fusion via an interleaved cross-stream alignment module (Ladder) and reducing frequency ambiguity in pure audio scores with symbolic score prompting (Sym), it improves the omission F1 from 26.8%
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "music error detection"
-  - "multimodal fusion"
-  - "cross-attention"
-  - "symbolic prompting"
-  - "alignment module"
+  - ICLR 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 7ca53e302199e755
+content_hash: 91a6de03bbb8dd89
 ---
-
 # LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.08580](https://arxiv.org/abs/2510.08580)  
 **Code**: [GitHub](https://github.com/ben2002chou/LadderSYM)  
-**Area**: Reinforcement Learning
-**Keywords**: music error detection, multimodal fusion, cross-attention, symbolic prompting, alignment module
+**Area**: Reinforcement Learning  
+**Keywords**: Music Practice Error Detection, Multimodal Fusion, Cross-attention, Symbolic Prompting, Alignment Module
 
 ## TL;DR
-This paper proposes the LadderSym architecture for music practice error detection. It addresses insufficient cross-stream alignment in late-fusion approaches via an interleaved cross-stream alignment module (Ladder), and reduces frequency ambiguity in audio-only score representations by incorporating symbolic score prompts (Sym). On MAESTRO-E, the missed-note F1 score improves from 26.8% to 56.3%.
+The LadderSym architecture is proposed to solve music practice error detection. By overcoming alignment deficiencies in late fusion via an interleaved cross-stream alignment module (Ladder) and reducing frequency ambiguity in pure audio scores with symbolic score prompting (Sym), it improves the omission F1 from 26.8% to 56.3% on MAESTRO-E.
 
 ## Background & Motivation
 
-**Background**: Music practice error detection compares a practice recording against a reference score to identify missed, extra, and wrong notes. Early methods rely on DTW-based explicit alignment (sensitive to timing deviations), while Polytune, which performs latent-space alignment using a Transformer, represents the current SOTA.
+**Background**: Music practice error detection compares practice recordings with reference scores to identify omissions, extra notes, and wrong notes. Early methods relied on DTW for explicit alignment (sensitive to deviations), while Polytune, using Transformers for latent space alignment, represents the current SOTA.
 
-**Limitations of Prior Work**: (1) Polytune employs late fusion (joint encoding only at the final layer), and attention map analysis reveals insufficient cross-stream alignment; (2) the score is input solely as synthesized audio, causing spectral overlap ambiguity during polyphonic passages, which particularly harms missed-note detection.
+**Limitations of Prior Work**: (1) Polytune utilizes late fusion (joint encoding only in the final layer), and attention map analysis reveals insufficient cross-stream alignment; (2) Scores are input only as synthesized audio, where spectral overlap during polyphony causes ambiguity, particularly affecting omission detection.
 
-**Key Challenge**: Early fusion (single encoder) improves alignment but constrains asymmetric feature extraction due to parameter sharing; late fusion preserves independent processing but sacrifices alignment capacity. Alignment and feature extraction must be decoupled.
+**Key Challenge**: Early fusion (single encoder) improves alignment but restricts asymmetric feature extraction due to parameter sharing; late fusion maintains independent processing but sacrifices alignment capability. There is a need to decouple alignment from feature extraction.
 
-**Key Insight**: (1) Design a Ladder encoder that applies bidirectional cross-attention alignment at every layer while ViT blocks independently perform feature extraction; (2) introduce symbolic scores as decoder prompts to reduce audio ambiguity.
+**Key Insight**: (1) Design a Ladder encoder that performs bidirectional alignment using cross-attention modules at each layer while ViT blocks independently extract features; (2) Introduce symbolic scores as decoder prompts to reduce audio ambiguity.
 
 ## Method
 
 ### Overall Architecture
-Dual-stream encoder (processing score audio and practice audio separately, with interleaved cross-attention alignment at each layer) → concatenated latent representations → T5 decoder (conditioned on symbolic score tokens as prompts) → output MIDI annotations (correct / missed / extra notes).
+The task involves a note-by-note comparison between a practice recording and a reference score to label correct notes, omissions, and extra notes. LadderSym uses a pair of parallel encoders for the score audio and practice audio. Unlike the "independent encoding, late fusion" approach of the predecessor Polytune, it allows the two streams to **align with each other before extracting features at every layer**: the score stream adjusts itself based on the practice stream, and vice versa. After 12 layers, the latent representations are concatenated and fed into a T5 decoder. Before generating output, the decoder reads a sequence of symbolic MIDI score tokens as a prompt, finally producing MIDI-format annotations (Correct / Omission / Extra). Both innovations focus on "alignment"—one in the encoding stage (Ladder encoder) and the other in the decoding stage (Sym symbolic prompt).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Score Audio + Practice Audio<br/>(Spectrogram Tokenization, AST)"] --> L
+    subgraph L["Ladder Encoder (Per-layer Bidirectional Alignment ×12)"]
+        direction TB
+        B["Score Stream P_ref"] -->|"Cross-attention Alignment + Residual<br/>CA(P_prac, P_ref)"| C["ViT Blocks (Independent Feature Extraction)"]
+        D["Practice Stream P_prac"] -->|"Reverse Cross-attention Alignment + Residual<br/>CA(P_ref, P_prac)"| C
+    end
+    L --> F["Concatenate Latent Representations<br/>H_fused = Concat(P_ref, P_prac)"]
+    G["Sym Symbolic Prompt<br/>(MIDI Score Tokens as Prefix)"] --> H["T5 Decoder"]
+    F --> H
+    H --> I["Note-by-note Error Annotation<br/>Correct / Omission / Extra"]
+```
 
 ### Key Designs
 
-1. **Ladder Encoder**:
+**1. Ladder Encoder: Decoupling and Interleaving Alignment Layer-by-Layer**
 
-    - Function: A cross-attention alignment module is inserted before each ViT block, enabling bidirectional interleaved alignment between the two streams.
-    - Mechanism: $P_{\text{ref}}^{(i+1)} = \text{ViT}_{\text{ref}}(P_{\text{ref}}^{(i)} + \text{CA}(P_{\text{prac}}^{(i)}, P_{\text{ref}}^{(i)}))$, with the symmetric operation applied in the reverse direction. The final fused representation is $H_{\text{fused}} = \text{Concat}(P_{\text{ref}}^{\text{final}}, P_{\text{prac}}^{\text{final}})$.
-    - Design Motivation: Probing experiments show that in late fusion, one stream maintains locality (0.86) while the other develops globality (0.186), indicating a division of roles. Ladder preserves dual-stream independence while performing alignment at every layer — analogous to DTW but learned automatically in latent space.
+Prior work Polytune used late fusion, where streams were encoded independently and joined only at the final layer; attention maps show this results in insufficient cross-stream alignment. Conversely, simple early fusion (shared single encoder) forces asymmetric inputs to share parameters. Probe experiments quantified this conflict: in late fusion, the streams specialize—the practice stream maintains high locality (position probe 0.86), while the score stream develops stronger globality (0.179 → 0.186). Early fusion forces the locality of both streams to 0.91/0.93 due to parameter sharing, erasing this specialization. LadderSym decouples "alignment" from "feature extraction": ViT blocks in each layer still extract features independently, but a cross-attention (CA) module for bidirectional alignment is inserted before each ViT block. The score stream uses the practice stream as key/value for CA, adds the residual, and then passes through the ViT; the practice stream performs the reverse update symmetrically:
 
-2. **Sym Symbolic Prompting**:
+$$P_{\text{ref}}^{(i+1)} = \text{ViT}_{\text{ref}}\big(P_{\text{ref}}^{(i)} + \text{CA}(P_{\text{prac}}^{(i)}, P_{\text{ref}}^{(i)})\big)$$
 
-    - Function: MIDI score tokens are tokenized and prepended as prefix prompts to the decoder.
-    - Mechanism: The decoder "sees" the symbolic score before generation, thereby explicitly knowing which notes should be present.
-    - Design Motivation: Polyphonic audio suffers from spectral overlap that makes individual notes difficult to distinguish, whereas the symbolic representation enumerates each note without ambiguity.
+The streams are concatenated into a fused representation $H_{\text{fused}} = \text{Concat}(P_{\text{ref}}^{\text{final}}, P_{\text{prac}}^{\text{final}})$. This allows Ladder to preserve stream independence (cross-stream correspondence accuracy of 0.30, higher than prior models) while turning explicit temporal alignment (like DTW) into per-layer automated latent alignment. Visualizing the learned cross-attention maps reveals an anti-diagonal structure consistent with DTW alignment paths.
 
-3. **Attention Map Analysis**:
+**2. Sym Symbolic Prompt: Using Unambiguous Score Tokens to Clarify Expected Notes**
 
-    - The learned cross-attention patterns closely resemble DTW alignment paths (anti-diagonal structure).
-    - This confirms that the model automatically learns meaningful temporal correspondences.
+Omission detection is difficult because synthesized audio scores suffer from spectral overlap in polyphonic sections, making it hard to distinguish individual notes. Sym bypasses this by tokenizing the MIDI score directly and using it as a prefix prompt for the decoder. Before generating annotations, the decoder "sees" an explicit list of expected notes. This provides an unambiguous reference for determining "if a note is missing," rather than forcing the model to extract it from overlapping spectra. Audio and symbolic views are complementary: symbolic tokens may introduce alignment errors under complex time signatures, while audio spectra struggle with concurrent notes; feeding both compensates for their respective weaknesses.
 
 ### Loss & Training
-- Standard sequence-to-sequence training with MIDI-like token outputs.
-- Audio Spectrogram Transformer encoder combined with a T5 decoder.
+- Standard sequence-to-sequence training, outputting MIDI-like tokens with explicit error labels (Correct / Omission / Extra).
+- Encoders are 12-layer Audio Spectrogram Transformers (AST); the decoder is an 8-layer T5, aligning with Polytune configurations.
 
 ## Key Experimental Results
 
 ### Main Results (MAESTRO-E)
 
-| Method | Missed-Note F1↑ | Extra-Note F1↑ | Notes |
-|--------|-----------------|----------------|-------|
-| Polytune (SOTA) | 26.8% | 72.0% | Late fusion + audio-only |
-| **LadderSym** | **56.3%** | **86.4%** | +29.5% / +14.4% |
+| Method | Omission F1↑ | Extra Note F1↑ | Notes |
+|------|---------|---------|------|
+| Polytune (Prev. SOTA) | 26.8% | 72.0% | Late fusion + Audio only |
+| **Ours (LadderSym)** | **56.3%** | **86.4%** | Gain: +29.5% / +14.4% |
 
 ### CocoChorales-E
 
-| Method | Missed-Note F1↑ | Extra-Note F1↑ |
-|--------|-----------------|----------------|
+| Method | Omission F1↑ | Extra Note F1↑ |
+|------|---------|---------|
 | Polytune | 51.3% | 46.8% |
-| **LadderSym** | **61.7%** | **61.4%** |
+| **Ours (LadderSym)** | **61.7%** | **61.4%** |
 
 ### Ablation Study
 
-| Configuration | Missed-Note F1 | Extra-Note F1 | Notes |
-|---------------|----------------|---------------|-------|
-| Ladder + Sym | **56.3** | **86.4** | Full model |
-| Ladder only | mid | mid | No symbolic prompt |
-| Sym only | mid | mid | No Ladder |
+| Configuration | Omission F1 | Extra Note F1 | Description |
+|------|--------|--------|------|
+| Ladder + Sym | **56.3** | **86.4** | Full method |
+| Ladder only | Mid | Mid | No symbolic prompt |
+| Sym only | Mid | Mid | No Ladder alignment |
 | Polytune | 26.8 | 72.0 | Baseline |
 
 ### Key Findings
-- Missed-note detection shows the largest gain (+29.5%) — Sym eliminates ambiguity about which notes should be present.
+- Omission detection saw the largest Gain (+29.5%) because Sym eliminated ambiguity regarding "which notes should exist."
 - Attention maps confirm that Ladder learns DTW-like temporal alignment patterns.
-- Generalization is also validated on real recordings (annotation is extremely expensive: 20 pieces require 52 person-hours).
+- Generalization was validated on real recording data (labeling is extremely expensive: 20 songs required 52 person-hours).
 
 ## Highlights & Insights
-- **Decoupling alignment from feature extraction**: Cross-attention handles alignment exclusively while ViT blocks handle feature extraction — this separation of responsibilities strengthens both capabilities.
-- **The quiet power of symbolic prompting**: Adding only a prompt without modifying the architecture yields substantial gains, because it fundamentally eliminates polyphonic frequency ambiguity.
-- **Insights beyond music**: The architectural design principles for comparison tasks (layer-wise alignment, asymmetric feature extraction) are transferable to other comparison scenarios such as RL evaluation and human skill assessment.
+- **Decoupling Alignment and Feature Extraction**: Cross-attention handles alignment, while ViT blocks focus on feature extraction—this separation of concerns strengthens both capabilities.
+- **The Power of Symbolic Prompting**: A simple prompt without architectural changes significantly boosts performance by resolving polyphonic frequency ambiguity at its source.
+- **Insights Beyond Music**: The architectural principles for comparison tasks (layer-wise alignment, asymmetric feature extraction) are transferable to other scenarios like RL policy evaluation or human skill assessment.
 
 ## Limitations & Future Work
-- Validation is limited to piano and choral settings; performance on other instruments (guitar, orchestral) remains unknown.
-- Real-recording data remains scarce (20 pieces), making comprehensive evaluation of real-world generalization difficult.
-- Symbolic scores must be available in MIDI format, which is not always the case.
-- Computational overhead is higher than Polytune due to the additional cross-attention module at each layer.
+- Validated only on piano and chorales; effectiveness on other instruments (guitar, orchestral) is unknown.
+- Real-world data remains scarce (20 songs), making it difficult to fully evaluate real-scene generalization.
+- Symbolic scores require MIDI format, which is not always available.
+- Computational overhead is higher than Polytune (one extra cross-attention module per layer).
 
 ## Related Work & Insights
-- **vs. Polytune**: Same paradigm but with improved fusion strategy and input modality; missed-note detection performance is approximately doubled.
-- **vs. DTW methods**: Upgrades from explicit alignment to learned latent-space alignment, yielding greater robustness to timing deviations.
-- **Transferable to**: Policy evaluation in RL (comparing two trajectories), code review (comparing reference and submission).
+- **vs Polytune**: Follows the same paradigm but improves fusion strategy and input modalities, doubling omission detection performance.
+- **vs DTW Methods**: Upgrades from explicit alignment to learned latent alignment, providing better robustness against deviations.
+- **Transferability**: Potential applications in RL policy evaluation (comparing trajectories) and code review (comparing references and submissions).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combined Ladder+Sym design appears for the first time in music error detection.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers both synthetic and real data with in-depth attention map analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Motivation is clear, probing experiments are convincing, and visualizations are rich.
-- Value: ⭐⭐⭐⭐ Directly applicable to music education tools and sequence comparison tasks.
+- Novelty: ⭐⭐⭐⭐ The combination of Ladder and Sym is a first in music error detection.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes synthetic and real data with in-depth attention map analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, convincing probe experiments, and rich visualization.
+- Value: ⭐⭐⭐⭐ Directly impacts music education tools and sequence comparison tasks.
 
 <!-- RELATED:START -->
 
@@ -122,11 +126,11 @@ Dual-stream encoder (processing score audio and practice audio separately, with 
 
 ## Related Papers
 
+- [\[ICLR 2026\] STAIRS-Former: Spatio-Temporal Attention with Interleaved Recursive Structure Transformer for Offline Multi-Task Multi-Agent Reinforcement Learning](stairs-former_spatio-temporal_attention_with_interleaved_recursive_structure_tra.md)
 - [\[ICLR 2026\] Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning](echo_towards_advanced_audio_comprehension_via_audio-interleaved_reasoning.md)
-- [\[ICML 2026\] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training](../../ICML2026/reinforcement_learning/provable_benefit_of_curriculum_in_transformer_tree-reasoning_post-training.md)
-- [\[AAAI 2026\] TextShield-R1: Reinforced Reasoning for Tampered Text Detection](../../AAAI2026/reinforcement_learning/textshield-r1_reinforced_reasoning_for_tampered_text_detection.md)
-- [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
-- [\[ICLR 2026\] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation](mars-sep_multimodal-aligned_reinforced_sound_separation.md)
+- [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
+- [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
+- [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
 
 </div>
 

@@ -2,128 +2,142 @@
 title: >-
   [Paper Note] Learning to Play Multi-Follower Bayesian Stackelberg Games
 description: >-
-  [ICLR 2026][Reinforcement Learning][Stackelberg Games] This paper provides the first systematic study of online learning in multi-follower Bayesian Stackelberg Games (BSGs). By geometrically partitioning the leader's str…
+  [ICLR 2026][Reinforcement Learning][Paper Note] This work provides the first systematic study of the online learning problem in Multi-Follower Bayesian Stackelberg Games (BSG). By employing a geometric partition of the leader's strategy space into "Best Response Regions," the authors achieve a regret bound of $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ under type feed
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Stackelberg Games"
-  - "Bayesian Games"
-  - "Online Learning"
-  - "Best-Response Regions"
-  - "Regret Bounds"
+  - ICLR 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 2d6a981b2613356e
+content_hash: f5e9f0f0e7469b67
 ---
-
 # Learning to Play Multi-Follower Bayesian Stackelberg Games
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.01387](https://arxiv.org/abs/2510.01387)  
 **Code**: None  
-**Area**: Game Theory / Online Learning
-**Keywords**: Stackelberg Games, Bayesian Games, Online Learning, Best-Response Regions, Regret Bounds
+**Area**: Game Theory/Online Learning  
+**Keywords**: Stackelberg Games, Bayesian Games, Online Learning, Best Response Regions, Regret Bounds
 
 ## TL;DR
 
-This paper provides the first systematic study of online learning in multi-follower Bayesian Stackelberg Games (BSGs). By geometrically partitioning the leader's strategy space into best-response regions, it achieves a regret bound of $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ under type feedback — a bound that does not grow polynomially in the number of followers $n$ — and establishes a nearly matching lower bound of $\Omega(\sqrt{\min\{L, nK\}T})$.
+This work provides the first systematic study of the online learning problem in Multi-Follower Bayesian Stackelberg Games (BSG). By employing a geometric partition of the leader's strategy space into "Best Response Regions," the authors achieve a regret bound of $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ under type feedback. Importantly, this bound does not grow polynomially with the number of followers $n$. An almost matching lower bound of $\Omega(\sqrt{\min\{L, nK\}T})$ is also established.
 
 ## Background & Motivation
 
-**Background**: Stackelberg games provide a foundational framework for modeling asymmetric interactions in multi-agent systems, where a leader commits to a strategy first and followers best-respond afterward. Applications span security games (e.g., airport patrol resource allocation), platform economics, information design (Bayesian persuasion), and contract design. In the Bayesian variant, followers hold private types, and the leader must know the type distribution to compute the optimal strategy (Stackelberg equilibrium). Existing online learning work (Balcan et al. 2015, 2025; Bollini et al. 2026) addresses only the **single-follower** setting.
+**Background**: Stackelberg games serve as a foundational framework for modeling asymmetric interactions where a leader commits to a strategy first, and followers respond optimally. Applications span security games (e.g., airport patrol resource allocation), platform economics (feature releases affecting consumers), information design (Bayesian persuasion), and contract design. In the Bayesian version, followers possess private types; the leader must know the type distribution to compute an optimal strategy (Stackelberg Equilibrium). Existing online learning works (Balcan et al. 2015, 2025; Bollini et al. 2026) only handle the **single-follower** case.
 
-**Limitations of Prior Work**: With $n$ followers each having $K$ types, the joint type space grows as $K^n$, causing exponential explosion. Directly estimating the joint distribution incurs estimation error of $\Omega(\sqrt{K^n/t})$, leading to regret of $\Omega(\sqrt{K^n T})$, which is completely unacceptable for large $n$. Moreover, each follower's best response is a piecewise-constant function of the leader's mixed strategy, rendering the leader's utility **discontinuous and non-convex** over the strategy space. Even in the offline single-follower setting, computing the optimal strategy is NP-Hard when the number of leader actions $L$ grows (Conitzer & Sandholm, 2006).
+**Limitations of Prior Work**: In the presence of $n$ followers, each with $K$ types, the joint type space size is $K^n$, which is exponentially large. Directly estimating the joint distribution yields an error of $\Omega(\sqrt{K^n/t})$, leading to a regret bound of $\Omega(\sqrt{K^n T})$, which is unacceptable for large $n$. Furthermore, the followers' best response is a piecewise-constant function of the leader's mixed strategy, making the leader's utility **discontinuous and non-convex** over the strategy space. Even in the offline, single-follower version, computing the optimal strategy is NP-Hard as the number of leader actions $L$ grows (Conitzer & Sandholm, 2006).
 
-**Key Challenge**: Multiple followers introduce exponential explosion in the joint type space. The key question is how to design learning algorithms whose regret bounds avoid exponential dependence on $n$. Intuitively, while the joint distribution of size $K^n$ is hard to learn, the leader truly cares about the **utility function** rather than the distribution itself — the complexity of the utility function may be far smaller than that of the distribution.
+**Key Challenge**: Multi-follower settings introduce exponential explosion in the joint type space. How can a learning algorithm be designed so that the regret bound avoids exponential dependence on $n$? Intuitively, a $K^n$ joint distribution is hard to learn, but the leader primarily cares about the **utility function** rather than the distribution itself—is the complexity of the utility function significantly lower than that of the distribution?
 
-**Goal**: (1) Is online learning in multi-follower BSGs feasible? (2) What are the optimal regret bounds under type feedback and action feedback, respectively? (3) Can regret bounds avoid exponential dependence on $n$?
+**Goal**: (1) Is online learning in multi-follower BSGs feasible? (2) What are the optimal regret bounds under type feedback and action feedback settings? (3) Can the regret bound avoid exponential dependence on $n$?
 
-**Key Insight**: The authors observe that although the joint type space $K^n$ is exponentially large, the leader's strategy space $\Delta(\mathcal{L})$ is only $(L-1)$-dimensional. Using classical results from computational geometry on hyperplane arrangements, one can show that the strategy space is partitioned into **at most $O(n^L K^L A^{2L})$ non-empty best-response regions** — a count that grows only polynomially in $n$ for fixed $L$. Crucially, the leader's utility is **linear within each region**, enabling efficient solution via linear programming.
+**Key Insight**: The authors observe that while the joint type space $K^n$ is exponentially large, the leader's strategy space $\Delta(\mathcal{L})$ remains $(L-1)$-dimensional. Utilizing classical results from computational geometry regarding hyperplane arrangements, they prove the strategy space is partitioned into **at most $O(n^L K^L A^{2L})$ non-empty best-response regions**. This quantity grows only polynomially with $n$ (when $L$ is fixed). Crucially, the leader's utility is **linear** within each region, allowing for efficient solving via linear programming.
 
-**Core Idea**: Partition the leader's strategy space into polyhedral regions according to the followers' best-response behavior. By exploiting the fact that the number of regions is polynomially controlled in $n$, the paper designs UCB- and concentration-inequality-based learning algorithms that achieve regret bounds free of exponential dependence on $n$.
+**Core Idea**: Partition the leader's strategy space into polyhedral regions based on follower best responses. Leveraging the property that the number of regions is polynomially controlled with respect to $n$, the authors design learning algorithms based on UCB and concentration inequalities to achieve regret bounds that do not grow exponentially with $n$.
 
 ## Method
 
 ### Overall Architecture
 
-The problem setting is as follows: a leader has $L$ actions; $n$ followers each have $K$ types and $A$ actions. At each round, the leader selects a mixed strategy $x \in \Delta(\mathcal{L})$; follower types are sampled from an unknown distribution $\mathcal{D}$; each follower observes $x$ and plays a best-response action. The leader aims to minimize cumulative regret over $T$ rounds. Key assumptions include: (1) followers are myopic best-responders; (2) no externalities — each follower's utility depends only on their own action, type, and the leader's action, not on other followers' actions.
+The problem setting is as follows: a leader has $L$ actions; $n$ followers each have $K$ types and $A$ actions. In each round, the leader selects a mixed strategy $x \in \Delta(\mathcal{L})$, follower types are sampled from an unknown distribution $\mathcal{D}$, and each follower chooses a best-response action after observing $x$. The leader aims to minimize cumulative regret over $T$ rounds. Key assumptions include: (1) Myopic best response by followers; (2) No externalities—each follower's utility depends only on their own action, type, and the leader's action, independent of other followers' actions.
 
-The overall algorithmic approach operates on three levels. At the **bottom level**, the strategy space $\Delta(\mathcal{L})$ is geometrically partitioned into best-response regions, within each of which the utility is linear. At the **middle level**, the region structure enables concentration inequality analysis, proving that empirical utility uniformly approximates true utility. At the **top level**, an empirical-optimum strategy is used under type feedback, while a UCB algorithm explores across regions under action feedback.
+The mechanism relies on a single pivot—**Geometric Partition of Best Response Regions**: The strategy space $\Delta(\mathcal{L})$ is first sliced into finitely many polyhedral "regions of linear utility," transforming non-convex discontinuous optimization into a set of linear programs across these regions. Two paths are then taken based on feedback intensity: under **Type Feedback** (observing follower types each round), the regional structure is used to prove uniform convergence of empirical utility to true utility; under **Action Feedback** (observing actions only), each region is treated as an arm in a multi-armed bandit, using UCB for exploration. Both paths converge to regret bounds that avoid exponential growth relative to $n$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Leader Mixed Strategy x∈Δ(L)<br/>n Followers with K Types Each<br/>Types Sampled from Unknown D"]
+    GEO["Geometric Characterization of BR Regions<br/>Hyperplane Arrangements Slice Strategy Space into<br/>O(n^L K^L A^2L) Polyhedra<br/>Linear Utility/LP Solving per Region"]
+    IN --> GEO
+    GEO -->|"Observe Types per Round"| TF
+    GEO -->|"Observe Actions Only"| AF
+    subgraph TF["Learning under Type Feedback"]
+        direction TB
+        T1["General Types: Empirical Utility Maximization<br/>Uniform Regional Concentration → √(L·T)"]
+        T2["Independent Types: Marginal Estimation<br/>Error K^n Compressed to nK → √(nK·T)"]
+    end
+    subgraph AF["UCB under Action Feedback"]
+        direction TB
+        A1["Region-as-Arm UCB<br/>→ √(n^L K^L A^2L L·T)"]
+        A2["LP Reformulation with OFUL<br/>→ K^n·√T"]
+    end
+    TF --> OUT["Regret Bound: Min of both paths<br/>Non-exponential in n"]
+    AF --> OUT
+```
 
 ### Key Designs
 
-1. **Geometric Characterization of Best-Response Regions**:
+**1. Geometric Characterization: Transforming Discontinuity into Hyperplane Arrangement Counts**
 
-    - Function: Discretizes the leader's continuous strategy space according to follower response patterns.
-    - Mechanism: Define a mapping $W = (w_1, \ldots, w_n)$, where $w_i: \Theta \to \mathcal{A}$ specifies each follower's action for each type. The corresponding best-response region $R(W) = \{x \in \Delta(\mathcal{L}) \mid \mathbf{br}(\theta, x) = W(\theta), \forall \theta\}$ is the set of all leader strategies that induce followers to respond according to $W$. Each region can be expressed as an intersection of $O(nKA)$ halfspaces: $R(W) = \bigcap_{i, \theta_i, a_i} H(d_{\theta_i, w_i(\theta_i), a_i})$, where $H(d) = \{x: \langle x, d \rangle \geq 0\}$ encodes the constraint that "follower $i$ with type $\theta_i$ prefers action $w_i(\theta_i)$ over $a_i$." Using hyperplane arrangement counting results from computational geometry, the number of non-empty regions satisfies $|\mathcal{W}| = O(n^L K^L A^{2L})$ — polynomial in $n$ for fixed $L$. Regions can be enumerated via BFS graph traversal in $\mathrm{poly}(n^L, K^L, A^L, L)$ time.
-    - Design Motivation: Since utility is linear within each region, the optimal strategy within each region can be solved in polynomial time via LP, and the globally optimal strategy is obtained by comparing the optimal values across all $|\mathcal{W}|$ regions. This reduces the offline BSG problem to polynomial time when $L$ is constant, complementing the prior NP-Hardness result (for growing $L$) and completing the computational complexity landscape.
+The leader's utility is non-convex and discontinuous because follower best responses are piecewise-constant functions of the leader's mixed strategy—a slight shift in strategy may trigger a follower to jump to a different action. The solution is to explicitly characterize these segments. Defining a response pattern $W = (w_1, \ldots, w_n)$, where $w_i: \Theta \to \mathcal{A}$ specifies the action for follower $i$ across types, the **Best Response Region** $R(W) = \{x \in \Delta(\mathcal{L}) \mid \mathbf{br}(\theta, x) = W(\theta), \forall \theta\}$ is the set of leader strategies inducing response $W$.
 
-2. **Learning Algorithms under Type Feedback (Algorithms 1 & 2)**:
+Each region is the intersection of $O(nKA)$ half-spaces $R(W) = \bigcap_{i, \theta_i, a_i} H(d_{\theta_i, w_i(\theta_i), a_i})$, where $H(d) = \{x: \langle x, d \rangle \geq 0\}$ encodes the linear constraint "follower $i$ of type $\theta_i$ prefers $w_i(\theta_i)$ over $a_i$." The strategy simplex is thus cut by hyperplanes into polyhedra. Using results from computational geometry, the number of non-empty regions $|\mathcal{W}| = O(n^L K^L A^{2L})$—polynomial in $n$ for fixed $L$. These regions can be enumerated in $\mathrm{poly}(n^L, K^L, A^L, L)$ time. Within a region, the leader's utility is linear, global optimization becomes an LP over $|\mathcal{W}|$ regions. This also proves BSG is solvable in polynomial time for constant $L$, filling a known complexity gap.
 
-    - Function: Learn the optimal strategy by observing all followers' types each round.
-    - Mechanism: **Algorithm 1 (general type distribution)**: At each round, select the strategy maximizing empirical utility $x^t = \arg\max_x \sum_{s<t} u(x, \mathbf{br}(\theta^s, x))$. The analysis avoids estimating the joint distribution $\mathcal{D}$ (which requires $K^n$ parameters) and instead uses the best-response region structure to prove **uniform concentration** of the empirical utility: within each region the utility is an $L$-dimensional linear function with pseudo-dimension at most $L$; applying a union bound over all $|\mathcal{W}|$ regions yields $|U_\mathcal{D}(x) - \hat{U}^t(x)| \leq O(\sqrt{L \log(nKAT)/t})$, resulting in $\tilde{O}(\sqrt{L \cdot T})$ regret. **Algorithm 2 (independent type distribution)**: Estimate each follower's marginal distribution $\hat{\mathcal{D}}_i$ separately and form the product distribution $\hat{\mathcal{D}} = \prod_i \hat{\mathcal{D}}_i$. Independence allows the TV distance to decompose into a sum of Hellinger distances, reducing the distribution estimation error from $O(\sqrt{K^n/t})$ to $O(\sqrt{nK/t})$, yielding $O(\sqrt{nK \cdot T})$ regret.
-    - Design Motivation: The two analyses are complementary — Algorithm 1's bound is superior when $n$ is large and $L$ is small ($\sqrt{L}$ vs. $\sqrt{nK}$ or $\sqrt{K^n}$), while Algorithm 2 is superior when $K$ is small. Taking the minimum of both gives the final bound.
+**2. Learning under Type Feedback: Bypassing $K^n$ via Uniform Convergence**
 
-3. **UCB Algorithm under Action Feedback (Algorithm 3)**:
+When types are observable, Algorithm 1 (General types) chooses the strategy maximizing empirical utility $x^t = \arg\max_x \sum_{s<t} u(x, \mathbf{br}(\theta^s, x))$. Instead of estimating the $K^n$-parameter joint distribution $\mathcal{D}$, the regional structure proves **Uniform Concentration**: utility in each region is an $L$-dimensional linear function with pseudo-dimension $\leq L$. Applying a union bound over $|\mathcal{W}|$ regions yields $|U_\mathcal{D}(x) - \hat{U}^t(x)| \leq O(\sqrt{L \log(nKAT)/t})$, achieving $\tilde{O}(\sqrt{L \cdot T})$ regret—avoiding the exponential complexity of the distribution.
 
-    - Function: Learn the optimal strategy when only followers' actions (not types) are observed.
-    - Mechanism: When the leader repeatedly plays within the same region $R(W)$, followers' actions are drawn from the same distribution $\mathcal{P}(\cdot | R(W))$, enabling estimation of the utility of any strategy within that region. The algorithm maintains a UCB score for each region: $\mathrm{UCB}^t(W) = \hat{u}^*_{R(W)} + \sqrt{4(L+1)\log(3T)/N^t(W)}$, and at each round selects the region with the highest UCB score and plays its empirically optimal strategy. This effectively reduces learning over the continuous strategy space to a multi-armed bandit problem over $|\mathcal{W}|$ "arms," with a linear optimization subproblem within each arm. Additionally, the paper provides a linear bandit approach based on techniques from Bernasconi et al. (2023), reformulating BSG as a linear program and applying the OFUL algorithm to obtain $O(K^n \sqrt{T} \log T)$ regret, which is superior when $L$ is large and $n$ is small.
-    - Design Motivation: Action feedback contains less information than type feedback but is more accessible in practice (e.g., a platform can observe user behavior but not preference types). The UCB method's regret $O(\sqrt{n^L K^L A^{2L} L \cdot T \log T})$ is exponential in $L$, but this is computationally unavoidable given that BSG is NP-Hard in $L$.
+For independent types across followers, Algorithm 2 estimates marginal distributions $\hat{\mathcal{D}}_i$ and takes the product $\hat{\mathcal{D}} = \prod_i \hat{\mathcal{D}}_i$. Independence allows decomposition of TV distance into the sum of Hellinger distances of marginals, reducing estimation error from $O(\sqrt{K^n/t})$ to $O(\sqrt{nK/t})$, corresponding to $O(\sqrt{nK \cdot T})$ regret. Both analyses are complementary: Algo 1 excels for large $n$, small $L$; Algo 2 excels for small $K$.
+
+**3. UCB under Action Feedback: Exploring Continuous Space via Region-based Bandits**
+
+In real-world scenarios, the leader might only observe actions rather than types. The core insight is: as long as the leader plays within the same region $R(W)$, observed actions follow the same conditional distribution $\mathcal{P}(\cdot \mid R(W))$, allowing utility estimation. Each region is treated as an "arm" with a UCB score $\mathrm{UCB}^t(W) = \hat{u}^*_{R(W)} + \sqrt{4(L+1)\log(3T)/N^t(W)}$. This yields $O(\sqrt{n^L K^L A^{2L} L \cdot T \log T})$ regret—exponential in $L$, which is computationally inevitable since BSG is NP-Hard for varying $L$. Complementarily, the authors reformulate BSG as a linear program for OFUL, yielding $O(K^n \sqrt{T} \log T)$ regret, which is preferable for small $n$.
 
 ### Loss & Training
 
-This is a purely theoretical online learning work with no training loss functions. The leader's objective is to maximize cumulative utility (equivalently, minimize regret $\mathrm{Reg}(T) = \sum_{t=1}^T [U_\mathcal{D}(x^*) - U_\mathcal{D}(x^t)]$). Type-feedback algorithms are based on empirical utility maximization (the ERM principle); action-feedback algorithms are based on optimism under uncertainty (the UCB principle). The key theoretical tools are uniform concentration inequalities based on the pseudo-dimension of best-response regions, and the relationship between TV distance and Hellinger distance under independent distributions.
+This is a theoretical work in online learning; there is no training loss function. The leader's goal is to maximize cumulative utility (equivalent to minimizing regret $\mathrm{Reg}(T) = \sum_{t=1}^T [U_\mathcal{D}(x^*) - U_\mathcal{D}(x^t)]$). Type-feedback algorithms are based on Empirical Utility Maximization (ERM), while action-feedback is based on optimism (UCB). Key theoretical tools include uniform concentration inequalities for pseudo-dimensions and the relationship between TV and Hellinger distances.
 
 ## Key Experimental Results
 
-### Main Results: Regret Bound Summary
+### Main Results
 
-| Feedback Setting | Type Distribution Assumption | Regret Upper Bound | Regret Lower Bound | Gap Analysis |
-|-----------------|-----------------------------|--------------------|--------------------|----|
-| Type feedback | Independent types | $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ | $\Omega(\sqrt{\min\{L, nK\} \cdot T})$ | Differs only by logarithmic factors; nearly optimal |
-| Type feedback | General types | $\tilde{O}(\sqrt{\min\{L, K^n\} \cdot T})$ | $\Omega(\sqrt{\min\{L, nK\} \cdot T})$ | Gap between $K^n$ in upper bound and $nK$ in lower bound |
-| Action feedback | Arbitrary | $\tilde{O}(\min\{\sqrt{n^L K^L A^{2L} L}, K^n\} \cdot \sqrt{T})$ | $\Omega(\sqrt{\min\{L, nK\} \cdot T})$ | Significant gap; remains an open problem |
+| Feedback Setting | Type Distribution | Regret Upper Bound | Regret Lower Bound | Gap Analysis |
+|---------|------------|---------|---------|---------|
+| Type Feedback | Independent | $\tilde{O}(\sqrt{\min\{L, nK\} \cdot T})$ | $\Omega(\sqrt{\min\{L, nK\} \cdot T})$ | Nearly optimal (log gap) |
+| Type Feedback | General | $\tilde{O}(\sqrt{\min\{L, K^n\} \cdot T})$ | $\Omega(\sqrt{\min\{L, nK\} \cdot T})$ | Gap between $K^n$ and $nK$ |
+| Action Feedback | Any | $\tilde{O}(\min\{\sqrt{n^L K^L A^{2L} L}, K^n\} \cdot \sqrt{T})$ | $\Omega(\sqrt{\min\{L, nK\} \cdot T})$ | Significant gap, open problem |
 
-### Computational Complexity Comparison
+### Complexity Comparison
 
-| Algorithm | Feedback Type | Per-Round Time Complexity | Applicable Regime |
-|-----------|--------------|--------------------------|-------------------|
-| Algorithm 1 (General-type ERM) | Type feedback | $\mathrm{poly}((nKA)^L \cdot L \cdot T)$ | Small $L$, large $n$ |
-| Algorithm 2 (Independent-type ERM) | Type feedback | $\mathrm{poly}((nKA)^L \cdot L \cdot T \cdot K^n)$ | Independent types, moderate $n$ and $K$ |
-| Algorithm 3 (Region UCB) | Action feedback | $\mathrm{poly}((nKA)^L \cdot L \cdot T)$ | Small $L$, large $n$ |
-| Linear Bandit (OFUL) | Action feedback | $\mathrm{poly}(K^n \cdot T)$ | Small $n$ and $K$ |
+| Algorithm | Feedback Type | Per-round Time Complexity | Applicability |
+|------|---------|-------------|---------|
+| Algorithm 1 (General Type ERM) | Type Feedback | $\mathrm{poly}((nKA)^L \cdot L \cdot T)$ | Small $L$, large $n$ |
+| Algorithm 2 (Independent Type ERM) | Type Feedback | $\mathrm{poly}((nKA)^L \cdot L \cdot T \cdot K^n)$ | Independent types, small $n, K$ |
+| Algorithm 3 (Region UCB) | Action Feedback | $\mathrm{poly}((nKA)^L \cdot L \cdot T)$ | Small $L$, large $n$ |
+| Linear Bandit (OFUL) | Action Feedback | $\mathrm{poly}(K^n \cdot T)$ | Small $n, K$ |
 
 ### Key Findings
 
-- **Regret does not grow exponentially in $n$**: Under type feedback with independent types, both the upper and lower bounds are $\Theta(\sqrt{\min\{L, nK\} \cdot T})$, with only linear dependence on $n$. This is the most surprising result — the joint type space $K^n$ is exponentially large, yet learning only $nK$ marginal distribution parameters suffices to reconstruct the required information.
-- **The dual role of $L$**: Conventional wisdom holds that growing $L$ causes computational hardness (NP-Hardness), but statistically, small $L$ is beneficial — the number of best-response regions grows exponentially in $L$, so small $L$ implies fewer regions and tighter union bounds in concentration inequalities.
-- **Information gap between feedback models**: Type feedback enables near-optimal regret of $\tilde{O}(\sqrt{L \cdot T})$, whereas the optimal regret rate under action feedback remains undetermined, revealing a computation-statistics tradeoff: even if regret of $\mathrm{poly}(n, K, L)\sqrt{T}$ were achievable, the runtime must be exponential in $L$ (unless P=NP).
-- **New offline result as a byproduct**: It is shown that BSG can be solved in polynomial time when $L$ is constant, filling a gap in the complexity landscape previously limited to NP-Hardness results for growing $L$.
+- **Regret independent of exponential $n$**: In independent type feedback settings, bounds are $\Theta(\sqrt{\min\{L, nK\} \cdot T})$, showing only linear dependence on $n$.
+- **Role of $L$**: While $L$ increases computational difficulty (NP-Hard), a small $L$ is statistically advantageous as the number of regions grows exponentially with $L$.
+- **Feedback Information Gap**: Type feedback allows nearly optimal $\tilde{O}(\sqrt{L \cdot T})$ regret. Action feedback optimal rates remain an open statistical-computational trade-off.
+- **Offline Solvability**: The work proves BSG is solvable in polynomial time when $L$ is a constant.
 
 ## Highlights & Insights
 
-- **Bridging computational geometry and game theory**: The key technical contribution is handling the discontinuity in utility caused by followers' best responses as a region-counting problem in hyperplane arrangements. This perspective transforms an otherwise intractable non-convex, discontinuous optimization problem into the standard task of solving a linear program within each of finitely many polyhedral regions. This paradigm of "geometrization → discretization → region-wise optimization" may offer insights for other online learning problems with discontinuous utilities.
-- **Learning distributions vs. learning utility functions**: Although the joint type distribution $\mathcal{D}$ requires $K^n$ parameters to describe, the leader's utility function is only an $L$-dimensional linear function within each region. Learning the utility function is therefore far easier than learning the distribution — an insight that challenges the intuition that "the difficulty of learning a distribution determines the difficulty of the learning problem," and one that may transfer to other online optimization settings.
-- **Double reduction technique for lower bounds**: The lower bound is established via a two-step reduction: first, distribution learning is reduced to single-follower BSG (yielding $\Omega(\sqrt{\min\{L, K\}T})$); then, single-follower BSG with $nK$ types is reduced to $n$-follower BSG with $K$ types each (yielding $\Omega(\sqrt{\min\{L, nK\}T})$). This two-step reduction construction is a technique worthy of broader adoption.
+- **Bridging Geometry and Game Theory**: Slicing the strategy space into regions where utility is linear transforms non-convex optimization into standard LP. This "geometrization → discretization → regional optimization" paradigm is a major contribution.
+- **Learning Distribution vs. Utility**: While $\mathcal{D}$ requires $K^n$ parameters, utility within a region is an $L$-dimensional linear function. Learning the utility function is significantly easier than learning the distribution.
+- **Lower Bound Reduction**: The reduction from distribution learning to single-follower BSG and then to multi-follower BSG provides a robust template for proving lower bounds in multi-agent systems.
 
 ## Limitations & Future Work
 
-- **Restriction of the no-externalities assumption**: The assumption that each follower's utility depends only on their own action and type — not on other followers' actions — does not hold in some settings (e.g., auctions, congestion games). Introducing externalities requires solving for Nash equilibria among followers, substantially complicating the structure of best-response regions.
-- **Myopic follower assumption**: Followers are assumed to best-respond independently each round rather than strategically considering long-term payoffs. In practice, sophisticated adversaries may deliberately conceal type information to gain long-term advantages.
-- **Unclosed gap under action feedback**: The optimal regret rate under action feedback is the main open problem left by this work. Whether an algorithm achieving $\mathrm{poly}(n, K, L)\sqrt{T}$ regret exists remains unknown.
-- **Extension to adversarial types**: The paper considers only stochastic types. The authors conjecture in the discussion that the "region concentration" technique can be extended to adversarial settings (e.g., replacing ERM with EXP3+FTRL), but this has not been formally verified.
+- **No Externalities Assumption**: The assumption that a follower's utility is independent of others' actions is restrictive (e.g., in auctions or congestion games).
+- **Myopic Followers**: Followers are assumed to best-respond independently each round rather than acting strategically for long-term gains.
+- **Action Feedback Gap**: The optimal regret rate for action feedback remains open; whether a $\mathrm{poly}(n, K, L)\sqrt{T}$ algorithm exists is unknown.
+- **Adversarial Types**: The study focuses on stochastic types; extensions to adversarial settings (e.g., via EXP3/FTRL) were conjectured but not formally verified.
 
 ## Related Work & Insights
 
-- **vs. Balcan et al. (2015, 2025)**: Their work designs online learning algorithms for single-follower BSG with regret $\mathrm{poly}(K)\sqrt{T}$. This paper extends the problem to multiple followers, where the core challenge lies in the joint type space growing from $K$ to $K^n$. The present work avoids this exponential difficulty via best-response region geometry.
-- **vs. Bernasconi et al. (2023)**: Their work uses adversarial linear bandit techniques for multi-receiver Bayesian persuasion (structurally similar to multi-follower BSG), achieving $\tilde{O}(K^{3n/2}\sqrt{T})$ regret with exponential growth in $n$. The present paper improves to $O(K^n \sqrt{T})$ using stochastic linear bandits (OFUL), and further obtains $O(\sqrt{n^L K^L A^{2L} L \cdot T})$ via the region UCB approach when $L$ is small.
-- **vs. Piecewise-linear bandits (Bacchiocchi et al. 2025)**: Their work studies one-dimensional piecewise-linear bandits with unknown breakpoints, while this paper operates in a multi-dimensional setting with known region boundaries. The techniques and results are complementary.
+- **vs. Balcan et al. (2015, 2025)**: They studied single-follower BSG. This work extends it to multi-follower cases where the joint type space grows to $K^n$.
+- **vs. Bernasconi et al. (2023)**: They used adversarial linear bandits for Bayesian persuasion with $\tilde{O}(K^{3n/2}\sqrt{T})$ regret. This work improves this to $O(K^n \sqrt{T})$ via OFUL and further via regional UCB for small $L$.
+- **vs. Piecewise Linear Bandits (Bacchiocchi et al. 2025)**: They study unknown intervals in 1D; this work handles multi-dimensional known polyhedral regions.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First systematic treatment of online learning in multi-follower BSG; the geometric best-response region framework is entirely novel.
-- Experimental Thoroughness: ⭐⭐⭐ A purely theoretical work; the appendix includes simple simulations for validation but no large-scale experiments. However, the near-matching upper and lower bounds are themselves highly convincing.
-- Writing Quality: ⭐⭐⭐⭐ The narrative progression from single-follower to multi-follower is logically clear, and the key technical ideas are explained with sufficient depth.
-- Value: ⭐⭐⭐⭐ Makes important theoretical contributions to the intersection of game theory and online learning; the geometric partitioning methodology is transferable to related problems.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -132,10 +146,10 @@ This is a purely theoretical online learning work with no training loss function
 ## Related Papers
 
 - [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
-- [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
 - [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
+- [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
+- [\[ACL 2026\] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games](../../ACL2026/reinforcement_learning/the_stackelberg_speaker_optimizing_persuasive_communication_in_social_deduction_.md)
 - [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
-- [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](../../NeurIPS2025/reinforcement_learning/learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
 
 </div>
 

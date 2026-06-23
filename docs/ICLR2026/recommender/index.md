@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICLR2026 Recommender Systems Papers · 9 Notes
+  ICLR2026 Recommender Systems Papers · 24 Notes
 description: >-
-  9 ICLR2026 papers in the Recommender Systems area, covering Recommendation, LLM, Adversarial Robustness, Personalized Generation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  24 ICLR2026 papers in the Recommender Systems area, covering Recommendation, LLM, Personalized Generation, Diffusion Models, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Recommender Systems"
@@ -10,71 +10,162 @@ tags:
   - "paper summaries"
   - "Recommendation"
   - "LLM"
-  - "Adversarial Robustness"
   - "Personalized Generation"
+  - "Diffusion Models"
+  - "Reasoning"
 item_list:
-  - u: "c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system/"
-    t: "C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems"
+  - u: "adaptive_regularization_for_large-scale_sparse_feature_embedding_models/"
+    t: "Adaptive Regularization for Large-Scale Sparse Feature Embedding Models"
+  - u: "beyond_markovian_drifts_action-biased_geometric_walks_with_memory_for_personaliz/"
+    t: "Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization"
+  - u: "catalog-native_llm_speaking_item-id_dialect_with_less_entanglement_for_recommend/"
+    t: "Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation"
   - u: "collectivekv_decoupling_and_sharing_collaborative_information_in_sequential_reco/"
     t: "CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation"
+  - u: "continual_low-rank_adapters_for_llm-based_generative_recommender_systems/"
+    t: "Continual Low-Rank Adapters for LLM-based Generative Recommender Systems"
+  - u: "discrete_diffusion_for_bundle_construction/"
+    t: "Discrete Diffusion for Bundle Construction"
   - u: "from_evaluation_to_defense_advancing_safety_in_video_large_language_models/"
     t: "From Evaluation to Defense: Advancing Safety in Video Large Language Models"
   - u: "goalrank_group-relative_optimization_for_a_large_ranking_model/"
     t: "GoalRank: Group-Relative Optimization for a Large Ranking Model"
+  - u: "ifusion_integrating_dynamic_interest_streams_via_diffusion_model_for_click-throu/"
+    t: "iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction"
   - u: "in_agents_we_trust_but_who_do_agents_trust_latent_source_preferences_steer_llm_g/"
     t: "In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations"
+  - u: "low-pass_personalized_subgraph_federated_recommendation/"
+    t: "Low-pass Personalized Subgraph Federated Recommendation"
+  - u: "massive_memorization_with_hundreds_of_trillions_of_parameters_for_sequential_tra/"
+    t: "Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders"
+  - u: "more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user/"
+    t: "More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences"
+  - u: "off-policy_evaluation_for_ranking_policies_under_deterministic_logging_policies/"
+    t: "Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies"
+  - u: "on_the_mechanisms_of_collaborative_learning_in_vae_recommenders/"
+    t: "On the Mechanisms of Collaborative Learning in VAE Recommenders"
   - u: "propersim_developing_proactive_and_personalized_ai_assistants_through_user-assis/"
     t: "ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation"
-  - u: "rae_a_neural_network_dimensionality_reduction_method_for_nearest_neighbors_prese/"
-    t: "RAE: A Neural Network Dimensionality Reduction Method for Nearest Neighbors Preservation in Vector Search"
+  - u: "rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme/"
+    t: "Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning"
+  - u: "reinforced_latent_reasoning_for_llm-based_recommendation/"
+    t: "Reinforced Latent Reasoning for LLM-based Recommendation"
+  - u: "rpm_reasoning-level_personalization_for_black-box_large_language_models/"
+    t: "RPM: Reasoning-Level Personalization for Black-Box Large Language Models"
   - u: "search_arena_analyzing_search-augmented_llms/"
     t: "Search Arena: Analyzing Search-Augmented LLMs"
+  - u: "steering_diffusion_models_towards_credible_content_recommendation/"
+    t: "Steering Diffusion Models Towards Credible Content Recommendation"
+  - u: "supporting_high-stakes_decision_making_through_interactive_preference_elicitatio/"
+    t: "Supporting High-Stakes Decision Making Through Interactive Preference Elicitation in the Latent Space"
   - u: "token-efficient_item_representation_via_images_for_llm_recommender_systems/"
     t: "Token-Efficient Item Representation via Images for LLM Recommender Systems"
-item_total: 9
+  - u: "token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-/"
+    t: "Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation"
+item_total: 24
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🎁 Recommender Systems
 
-**🔬 ICLR2026** · **9** paper notes
+**🔬 ICLR2026** · **24** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (11)](../../ICML2026/recommender/index.md) · [💬 ACL2026 (21)](../../ACL2026/recommender/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (22)](../../ACL2026/recommender/index.md) · [🧪 ICML2026 (11)](../../ICML2026/recommender/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
 
-🔥 **Top topics:** Recommendation ×3 · LLM ×3
+🔥 **Top topics:** Recommendation ×12 · LLM ×10 · Personalized Generation ×4 · Diffusion Models ×3 · Reasoning ×3
 
-**[C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)**
+**[Adaptive Regularization for Large-Scale Sparse Feature Embedding Models](adaptive_regularization_for_large-scale_sparse_feature_embedding_models.md)**
 
-:   This paper proposes C2AL (Cohort-Contrastive Auxiliary Learning), which data-drivenly identifies user cohort pairs with maximal distributional divergence and constructs contrastive auxiliary binary classification tasks to regularize the shared encoder. This transforms FM attention weights from sparse to dense, mitigating representation bias for minority cohorts in large-scale recommendation systems. The approach is validated on 6 Meta production models with billions of data points.
+:   This paper theoretically explains the root cause of "one-epoch overfitting" in CTR/CVR models—where performance collapses after the first epoch—using Rademacher complexity. It identifies that the unconstrained growth of embedding norms expands the generalization bound. Consequently, the authors propose AdamAR, an adaptive regularization method that allocates norm budgets based on feature frequency: applying light regularization for high-frequency features and heavy regularization for low-frequency ones. This approach eliminates multi-epoch overfitting while improving single-epoch performance and has been deployed in Alibaba's search advertising system.
+
+**[Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization](beyond_markovian_drifts_action-biased_geometric_walks_with_memory_for_personaliz.md)**
+
+:   This paper proposes the "Structured Walk Hypothesis" (SWH) to challenge the prevailing "Markovian Drift Hypothesis" (MDH) in personalized summarization. It introduces Walk2Pers, a lightweight encoder-decoder model that characterizes user preference evolution as an action-biased geometric walk with dual memory channels, decomposable into magnitude and orientation (continuity vs. novelty). It significantly outperforms specialized summarizers and Large Language Models (LLMs) across three benchmarks.
+
+**[Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation](catalog-native_llm_speaking_item-id_dialect_with_less_entanglement_for_recommend.md)**
+
+:   Addressing the issue where shoving item-IDs into an LLM causes collaborative signals and linguistic semantics to conflict, this paper proposes IDIOMoE: splitting the FFN of each pre-trained LLM block into a **text expert** and an **item expert**. Using static token-type gating to route tokens based on their type (item-id tokens go to the item expert, others to the text expert), the model decouples "collaborative filtering" and "semantic understanding" into different subnetworks. This achieves state-of-the-art recommendation performance on both public and industrial-scale datasets while maintaining the original LLM's linguistic capabilities.
 
 **[CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation](collectivekv_decoupling_and_sharing_collaborative_information_in_sequential_reco.md)**
 
-:   By observing significant cross-user similarity (collaborative signals) in KV caches across different users in sequential recommendation, this paper proposes CollectiveKV, which decomposes KV into a low-dimensional user-specific component and a high-dimensional shared component retrieved from a global KV pool, achieving a compression ratio of 0.8% with no performance degradation.
+:   Observing that KV caches of different users in sequential recommendation exhibit significant cross-user similarity (collaborative signals), CollectiveKV is proposed to decompose KV into low-dimensional user-specific parts and high-dimensional shared parts retrieved from a global KV pool, achieving a 0.8% compression rate without performance degradation.
+
+**[Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)**
+
+:   PESO transforms continual learning for LLM-based generative recommendations from "stacking multiple frozen adapters" into "a single evolving LoRA + a proximal regularization term." By gently anchoring each update to the previous stage's state, the model automatically balances retaining long-term preferences and absorbing new ones, consistently outperforming cumulative LoRA and simple evolving LoRA across three real-world datasets.
+
+**[Discrete Diffusion for Bundle Construction](discrete_diffusion_for_bundle_construction.md)**
+
+:   DDBC reformulates "Bundle Construction" (selecting a group of items from a large library to form a complete bundle or completing a partial one) as a **masked discrete diffusion** process. It employs Residual Vector Quantization (RVQ) to compress each item into discrete codes within a shared codebook to mitigate the dimensionality explosion of massive item libraries. A bidirectional Transformer then restores `[MASK]` tokens into a complete bundle in an order-independent manner, achieving a relative improvement of over 100% on long-bundle datasets compared to the strongest baselines.
 
 **[From Evaluation to Defense: Advancing Safety in Video Large Language Models](from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)**
 
-:   This work constructs VideoSafetyEval (11.4k video-query pairs covering 19 risk categories), revealing that the video modality degrades safety performance by 34.2%, and proposes VideoSafety-R1, a three-stage framework (Alarm Token + SFT + Safety-guided GRPO) that improves defense success rate by 71.1% on VSE-HH.
+:   Constructed VideoSafetyEval (11.4k video-query pairs covering 19 risk categories) to reveal that the video modality causes a 34.2% decline in safety performance, and proposed the VideoSafety-R1 three-stage framework (Alarm Token + SFT + Safety-guided GRPO) which increases defense success rate by 71.1% on VSE-HH.
 
 **[GoalRank: Group-Relative Optimization for a Large Ranking Model](goalrank_group-relative_optimization_for_a_large_ranking_model.md)**
 
-:   This paper theoretically proves that for any Multi-Generator-Evaluator (Multi-G-E) ranking system, there exists a larger generator-only model that approximates the optimal policy with smaller error and satisfies scaling laws. Based on this, GoalRank is proposed—a framework that uses a reward model to construct a group-relative reference policy for training a large generator-only ranking model, achieving significant improvements over SOTA in online A/B testing.
+:   It is theoretically proven that any Multi-Generator-Evaluator ranking system can be approximated with smaller error by a larger generator-only model that satisfies the scaling law. Accordingly, GoalRank is proposed—training a large generator-only ranking model by constructing group-relative reference policies with a reward model. It significantly outperforms SOTA in online A/B tests.
+
+**[iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction](ifusion_integrating_dynamic_interest_streams_via_diffusion_model_for_click-throu.md)**
+
+:   iFusion reformulates "long-short term user interest fusion" as a conditional generation problem—utilizing short-term interests as guidance to perform diffusion denoising on long-term interest representations. This approach bypasses the assumptions of traditional linear fusion (concatenation/attention/gating), achieving CTR improvements across public datasets, industrial datasets, and online A/B tests.
 
 **[In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations](in_agents_we_trust_but_who_do_agents_trust_latent_source_preferences_steer_llm_g.md)**
 
-:   Through large-scale controlled experiments across 12 LLMs from 6 providers spanning three domains—news, academia, and e-commerce—this paper reveals that LLMs exhibit systematic **latent source preferences**: when content is semantically identical, merely swapping source labels significantly alters model selection behavior, and this preference cannot be eliminated through prompt engineering.
+:   Through large-scale controlled experiments on 12 LLMs from 6 providers across three domains (news, academia, and e-commerce), this study reveals that LLMs possess systematic **latent source preferences**. When content semantics are identical, simply changing the source labels can significantly alter the model's information selection behavior, and these preferences cannot be eliminated through prompt engineering.
+
+**[Low-pass Personalized Subgraph Federated Recommendation](low-pass_personalized_subgraph_federated_recommendation.md)**
+
+:   Addressing the issues of representation misalignment and popularity bias caused by immense differences in "subgraph size and connectivity" among clients in federated recommendation, LPSFed utilizes low-pass spectral filtering to extract structural signals that remain stable across subgraphs. These signals measure the similarity between clients and a neutral anchor graph to guide personalized parameter aggregation, supplemented by an adaptive margin correction to handle long-tail popularity. Results show an NDCG improvement of up to 24% across five datasets.
+
+**[Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders](massive_memorization_with_hundreds_of_trillions_of_parameters_for_sequential_tra.md)**
+
+:   VISTA decouples the target attention of candidates over ultra-long user histories into a two-stage process: first, compressing million-length histories into hundreds of summary tokens to be cached; second, performing lightweight attention only on these cached tokens downstream. This keeps training and inference costs constant and has been deployed on Meta’s recommendation platform serving billions of users.
+
+**[More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)**
+
+:   Items clicked by users are not necessarily truly liked—this paper proposes "Coherent Preference" (CP) to supplement traditional "Revealed Preference" (RP), and designs a conflict-aware DPO variant, C-APO. It amplifies the influence when RP and CP are consistent and suppresses it when they conflict, thereby simultaneously improving recommendation accuracy and the persuasiveness of rationales.
+
+**[Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies](off-policy_evaluation_for_ranking_policies_under_deterministic_logging_policies.md)**
+
+:   Addressing the issue where "completely deterministic" logging policies in industrial ranking systems cause severe bias in traditional IPS-based estimators, this paper proposes the CIPS estimator (and its doubly robust extension CDR). By replacing the "policy probability ratio" with the "user click probability ratio" as the importance weight, it relaxes the support condition required for unbiasedness from "stochastic logging policies" to "intrinsic randomness in click behavior," achieving low-bias or even unbiased evaluation under deterministic logging.
+
+**[On the Mechanisms of Collaborative Learning in VAE Recommenders](on_the_mechanisms_of_collaborative_learning_in_vae_recommenders.md)**
+
+:   This paper theoretically reveals that whether users can "help each other" in VAE Collaborative Filtering (CF) is determined by their distance in the latent space (a derivable "sharing radius"). It points out that clean inputs only utilize local collaboration, while $\beta$-KL and input masking promote global collaboration at certain costs. Accordingly, the authors propose Personalized Item Alignment (PIA), a training-only anchor regularization that pulls masked user representations toward the anchor centers of their interacted items. This stabilizes the geometric structure and facilitates semantically aligned global collaboration, achieving improvements across three public datasets and online A/B tests on the Amazon streaming platform.
 
 **[ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation](propersim_developing_proactive_and_personalized_ai_assistants_through_user-assis.md)**
 
-:   This paper proposes ProPerSim, a simulation framework that models daily behaviors of 32 user personas grounded in the Big Five personality model within the Smallville household environment. The AI assistant makes proactive recommendation decisions every 2.5 minutes and learns user preferences via DPO, improving user satisfaction from 2.2/4 to 3.3/4 over a 14-day simulation—providing the first empirical validation of jointly achieving proactivity and personalization.
+:   This work proposes ProPerSim, a simulation framework that constructs 32 user personas based on the Big Five personality traits within the Smallville household environment. AI assistants perform proactive recommendation decisions every 2.5 minutes. Through DPO preference learning over a 14-day simulation, user satisfaction improved from 2.2/4 to 3.3/4, validating for the first time the feasibility of unifying proactivity and personalization.
 
-**[RAE: A Neural Network Dimensionality Reduction Method for Nearest Neighbors Preservation in Vector Search](rae_a_neural_network_dimensionality_reduction_method_for_nearest_neighbors_prese.md)**
+**[Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)**
 
-:   This paper proposes RAE (Regularized Auto-Encoder), a dimensionality reduction method based on a linear autoencoder with Frobenius norm regularization. The authors theoretically prove that the regularization coefficient $\lambda$ constrains the condition number $\kappa(W)$ of the encoder matrix via the Rayleigh quotient property, thereby bounding the norm distortion rate and preserving k-NN structure. RAE consistently outperforms PCA, UMAP, MDS, and ISOMAP on four datasets, achieving at least 12% higher k-NN preservation accuracy than PCA under cosine distance, with training requiring only 8 seconds and inference at millisecond latency.
+:   This paper proposes the ConvRec-R1 two-stage framework to train LLM-based conversational recommender systems: first, a Remap–Reflect–Adjust distillation pipeline is used to generate high-quality demonstrations from a black-box teacher that are "grounded within the target catalog" for SFT warmup; then, Rank-GRPO (recrafting GRPO to treat "each rank" in the recommendation list as an action unit) is applied for RL alignment. This allows small models (0.5B–3B) to converge faster on REDDIT-V2 in terms of Recall/NDCG and match or even exceed GPT-4o.
+
+**[Reinforced Latent Reasoning for LLM-based Recommendation](reinforced_latent_reasoning_for_llm-based_recommendation.md)**
+
+:   Addressing the pain points where explicit Chain-of-Thought (CoT) in LLM recommendations is both difficult to obtain as supervisory data and slow during inference, this paper proposes LatentR3. By adding a LatentRATT attention layer at the top of the LLM to compress reasoning into a **continuous latent space** (requiring only 1 latent token) and employing a modified GRPO (utilizing PPL continuous rewards + batch-level advantage), the model learns latent reasoning end-to-end without any CoT supervision. This approach yields relative improvements of 17.0% and 8.4% when applied to BIGRec and D3, respectively.
+
+**[RPM: Reasoning-Level Personalization for Black-Box Large Language Models](rpm_reasoning-level_personalization_for_black-box_large_language_models.md)**
+
+:   RPM upgrades black-box LLM personalization from "aligning final responses" to "aligning underlying reasoning processes." It automatically extracts a structured user model of "features → factors → statistics" from raw user history, constructs personalized reasoning paths for each history entry, and feeds these reasoning examples to the model via feature-based retrieval. This enables the LLM to reason following the user's private logic, consistently outperforming existing response-level personalization methods across four task categories with enhanced interpretability.
 
 **[Search Arena: Analyzing Search-Augmented LLMs](search_arena_analyzing_search-augmented_llms.md)**
 
-:   This paper presents Search Arena — the first large-scale human preference dataset for search-augmented LLMs (24,069 conversations + 12,652 preference votes, 71 languages). Key findings include: user preference is positively influenced by citation quantity even when citations do not support the claims; community-driven platforms are preferred over Wikipedia; search augmentation does not degrade general chat performance, whereas general-purpose LLMs degrade significantly in search scenarios.
+:   The authors construct Search Arena—the first large-scale search-augmented LLM human preference dataset (24,069 conversations + 12,652 preference votes across 71 languages). The study discovers that user preferences are heavily influenced by citation count (even when citations do not support statements), community-driven platforms are preferred over Wikipedia, and search augmentation does not degrade general chat performance, whereas general LLMs significantly deteriorate in search scenarios.
+
+**[Steering Diffusion Models Towards Credible Content Recommendation](steering_diffusion_models_towards_credible_content_recommendation.md)**
+
+:   Addressing the issue of diffusion models recommending untrustworthy content like fake news or misinformation, this paper proposes Disco: a "decoupled diffusion model" that separates user preference signals from untrustworthy signals. It suppresses untrustworthy content by projecting the diffusion target into the null space of untrustworthy features and progressively detects potential untrustworthy items to complete this null space under label scarcity, achieving higher recommendation accuracy and credibility across three real-world datasets.
+
+**[Supporting High-Stakes Decision Making Through Interactive Preference Elicitation in the Latent Space](supporting_high-stakes_decision_making_through_interactive_preference_elicitatio.md)**
+
+:   This paper addresses high-stakes, low-frequency, and sparse-feedback decision-making scenarios such as apartment hunting. It combines LLM preference priors obtained from user interviews, Autoencoder latent space compression, and Preferential Bayesian Optimization (PBO). By learning user utility functions with fewer pairwise comparisons, it achieves higher ranking accuracy on real housing data compared to vanilla PBO.
 
 **[Token-Efficient Item Representation via Images for LLM Recommender Systems](token-efficient_item_representation_via_images_for_llm_recommender_systems.md)**
 
-:   This paper proposes I-LLMRec, which leverages item images in place of verbose textual descriptions to represent item semantics in recommender systems. Through a Recommendation-oriented Image-Semantic Alignment (RISA) module and a Recommendation-oriented Embedding Retrieval Inference (RERI) module, the method represents each item with a single token while preserving rich semantics, achieving approximately 2.93× inference speedup and surpassing text-description-based methods in recommendation performance.
+:   The authors propose I-LLMRec, which utilizes item images instead of lengthy text descriptions to represent item semantics in recommendation systems. Through the RISA alignment module and RERI retrieval module, the framework represents an item with only a single token while preserving rich semantics. It achieves an approximate 2.93x inference speedup and outperforms text-description-based methods in recommendation performance.
+
+**[Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)**
+
+:   This paper proposes SIREN, which uses "long-term interest sketches" to compress hundreds of user histories into a short sequence of "liked/disliked semantic topics" for LLMs. It employs a "two-stage training" process: first, learning explicit CoT reasoning via RL, and second, internalizing this reasoning into model parameters through hidden state alignment. This maintains CoT-level accuracy under answer-only decoding, reducing input tokens by 48.7% and inference latency by over 100× compared to CoT.

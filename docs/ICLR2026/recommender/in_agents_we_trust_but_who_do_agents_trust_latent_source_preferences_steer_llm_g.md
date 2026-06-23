@@ -2,123 +2,120 @@
 title: >-
   [Paper Note] In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations
 description: >-
-  [ICLR 2026][Recommender Systems][LLM Agent] Through large-scale controlled experiments across 12 LLMs from 6 providers spanning three domains—news, academia…
+  [ICLR 2026][Recommender Systems][LLM Agent] Through large-scale controlled experiments on 12 LLMs from 6 providers across three domains (news, academia, and e-commerce), this study reveals that LLMs possess systematic **latent source preferences**. When content semantics are identical, simply changing the source labels can significantly alter the model's informa
 tags:
-  - "ICLR 2026"
-  - "Recommender Systems"
-  - "LLM Agent"
-  - "Source Preference"
-  - "Trust Bias"
-  - "Brand Perception"
+  - ICLR 2026
+  - Recommender Systems
+  - LLM Agent
 date: 2026-05-08
-content_hash: 6f616b12fe32602a
+content_hash: 8e633236fb362be0
 ---
-
 # In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.15456](https://arxiv.org/abs/2602.15456)  
-**Area**: Recommender Systems / LLM Bias Analysis
-**Keywords**: LLM Agent, Source Preference, Trust Bias, Brand Perception, Recommender Systems
+**Area**: Recommender Systems / LLM Bias Analysis  
+**Keywords**: LLM Agent, Information Source Preference, Trust Bias, Brand Perception, Recommender Systems
 
 ## TL;DR
 
-Through large-scale controlled experiments across 12 LLMs from 6 providers spanning three domains—news, academia, and e-commerce—this paper reveals that LLMs exhibit systematic **latent source preferences**: when content is semantically identical, merely swapping source labels significantly alters model selection behavior, and this preference cannot be eliminated through prompt engineering.
+Through large-scale controlled experiments on 12 LLMs from 6 providers across three domains (news, academia, and e-commerce), this study reveals that LLMs possess systematic **latent source preferences**. When content semantics are identical, simply changing the source labels can significantly alter the model's information selection behavior, and these preferences cannot be eliminated through prompt engineering.
 
 ## Background & Motivation
 
-**Background**: LLM-based agents are being deployed at scale as user-facing interfaces on online platforms, handling tasks such as news aggregation, academic search, and e-commerce recommendation. These agents filter, prioritize, and synthesize information retrieved from backend databases or web searches, effectively controlling the information users ultimately receive.
+**Background**: LLM-based agents (LLM Agents) are being extensively deployed as user interfaces for online platforms, handling tasks such as news aggregation, academic search, and e-commerce recommendation. These agents filter, prioritize, and synthesize information from backend databases or web searches, effectively controlling the information ultimately received by users.
 
-**Limitations of Prior Work**: Extensive research has examined biases in LLM-generated content (political, gender, and cultural biases, among others), yet few studies have systematically investigated whether LLMs exhibit preferences when **selecting and presenting** existing information. When content carries source labels (e.g., specific publishers, journals, or platforms), do LLMs systematically favor certain sources?
+**Limitations of Prior Work**: Extensive research has focused on biases in LLM-generated content (political, gender, cultural biases, etc.), but few studies have systematically investigated whether LLMs exhibit preferences when **selecting and presenting** existing information. When information carries source labels (e.g., specific publishers, journals, or platforms), do LLMs systematically prioritize information from certain sources?
 
-**Key Challenge**: LLM agents are assumed to play the role of "neutral intermediaries" in deployment. However, if models harbor implicit preferences for particular information sources, this creates information asymmetry—certain sources are systematically amplified while others are suppressed. More critically, users remain entirely unaware of such preferences and have no means to control them.
+**Key Challenge**: LLM Agents are assumed to play the role of a "neutral intermediary" in deployment. However, if implicit preferences for specific information sources exist within the model, it leads to information asymmetry—certain sources are systematically amplified while others are suppressed. More critically, users are entirely unaware of these preferences and cannot control them.
 
-**Goal**: This paper introduces the concept of "latent source preferences" and validates their existence, magnitude, context-dependence, and resistance to debiasing across 12 LLMs through systematic controlled experiments—constructing semantically equivalent content pairs annotated with different sources.
+**Goal**: This paper proposes the concept of "latent source preferences" and verifies their existence, strength, context-dependence, and resistance to debiasing across 12 LLMs through systematic controlled variable experiments—constructing content pairs that are semantically equivalent but labeled with different sources.
 
 ## Method
 
 ### Overall Architecture
 
-The paper designs a multi-level controlled experimental framework to detect and quantify latent source preferences in LLMs:
+This paper does not train new models but instead frames "latent source preferences" as a measurable causal experiment. The framework consists of a main pipeline supported by multiple diagnostic layers: first, constructing sets of semantically equivalent content pairs with varying source labels (e.g., the same news item attributed to different publishers, the same paper to different journals, or the same product to different platforms). These pairs are fed into 12 LLMs from 6 providers (GPT-4.1-Mini/Nano, Llama-3.1/3.2, Phi-4/Mini, Mistral-Nemo/Ministral, Qwen2.5-7B/1.5B, DeepSeek-R1-Llama/Qwen), tasking them to select the superior one based on dimensions like "news quality," "paper quality," or "platform reliability." Results are aggregated into comparable quantitative metrics. Two core metrics are used throughout: **Preference Distribution Percentage**, indicating the ratio a source is selected across all its pairwise comparisons (higher denotes greater preference), and **Kendall Tau Ranking Correlation $\tau$**, which measures the consistency between two source rankings ($\tau$ closer to 1 indicates higher consistency). Because content is strictly controlled for equivalence, any systematic bias can only stem from the labels, effectively isolating the "source effect" from the "content effect." Above this baseline, three diagnostic layers are applied: using direct vs. indirect probes to confirm the existence of preferences and behavioral inconsistency, analyzing whether preferences are tied to brands or hard metrics, and finally, using a real-world data control experiment to establish causality.
 
-- **Input**: Semantically equivalent content pairs annotated with different sources (control pairs)
-- **Models Evaluated**: 12 LLMs from 6 providers (GPT-4.1-Mini/Nano, Llama-3.1/3.2, Phi-4/Mini, Mistral-Nemo/Ministral, Qwen2.5-7B/1.5B, DeepSeek-R1-Llama/Qwen)
-- **Evaluation Domains**: News (political lean set + world news set), Academia (50 top journals/conferences), E-commerce (70 platforms)
-- **Quantitative Metrics**: Preference distribution percentage + Kendall Tau rank correlation coefficient
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Semantically Equivalent Pairs<br/>(Source Labels Swapped)"] --> B["12 LLMs × 6 Providers<br/>(News/Academia/E-commerce)"]
+    subgraph EVAL["Direct vs. Indirect Evaluation"]
+        direction TB
+        C["Direct Evaluation: Explicitly Compare Sources<br/>(LLM-as-a-judge)"]
+        D["Indirect Evaluation: Select Higher Quality Content<br/>(Preferences Hidden in Task)"]
+    end
+    B --> EVAL
+    EVAL --> E["Preference Quantization<br/>Pref. % + Kendall Tau τ"]
+    E --> F["Identity Connection & Credential Rationality<br/>Brand/URL/Account/H5-Index"]
+    E --> G["AllSides News Case Study<br/>Hidden / Shown / Swap / Do-Not-Be-Biased"]
+```
 
-### Key Design 1: Direct vs. Indirect Evaluation
+### Key Designs
 
-**Direct Evaluation**: Explicitly prompts the model for its preference between two information sources, analogous to the LLM-as-a-judge paradigm. For example: "Please compare the journalistic standards of CNN and Fox News." This captures explicitly stated preferences.
+**1. Direct vs. Indirect Evaluation: Confronting Explicit Statements with Real Behavior**
 
-**Indirect Evaluation**: In realistic task settings, the model is presented with two semantically equivalent articles attributed to different sources and asked to select the "higher quality" one. Consistent preference for a particular source constitutes evidence of latent preference. The key value of indirect evaluation lies in the fact that a model's explicit statements may diverge from its actual behavior, making this approach more reflective of real-world deployment behavior.
+Simply asking a model "Who do you trust more?" often yields a politically correct but inaccurate answer. Therefore, this paper uses two complementary probes for cross-validation. Direct evaluation follows the LLM-as-a-judge approach, explicitly asking models to compare two sources (e.g., "Compare the news quality standards of CNN vs. Fox News") to capture stated preferences. Indirect evaluation hides preferences within a task—providing two semantically equivalent articles differing only in source labels and asking the model to choose the one with "higher quality," while balancing presentation order to eliminate position effects. If the model repeatedly favors a specific source despite constant content, latent preference is confirmed. The value of placing both side-by-side is that models perform indirect selection rather than self-declaration during deployment. Comparing direct and indirect rankings via Kendall Tau allows for the quantification of "preaching one thing but doing another."
 
-### Key Design 2: Multi-Dimensional Identity Association and Credential Rationality Analysis
+**2. Identity Association and Credential Rationality: Identifying the "Anchor" of Preference**
 
-**Identity Consistency Analysis**: Tests whether models can associate different identity representations of the same source (brand name, social media handle, website URL, follower count, etc.) and assign consistent preferences. Most large models can recognize brand name ↔ URL mappings, but the ability to associate brand names with social media IDs degrades substantially.
+Proving preference existence is insufficient; the paper further investigates whether models recognize "brands" or "hard metrics." Identity association analysis presents the same source under different guises (brand name, website URL, social media handle, follower count) to see if the model associates them and assigns similar rankings. Results show most LLMs recognize brand-to-URL mappings, but association capability drops significantly for brand-to-social-media handles. Credential rationality analysis uses ordinally rankable numerical credentials (H5-Index, follower count, founding year) to test if preferences monotonic change with credential strength. While H5-Index is a stable positive signal, the interpretation of follower counts and founding years is often contradictory or irrational—for instance, "founded in Year X" might be viewed as "authoritative" by some models but "outdated" by others. Together, these show preferences are neither pure brand memory nor pure credential reasoning, but a messy, often inconsistent integration of both.
 
-**Credential Rationality Analysis**: Tests whether model preferences for numerical source credentials (H5-Index, follower count, founding year) are rationally consistent. H5-Index serves as a relatively stable positive signal, whereas the interpretation of follower count and founding year exhibits inconsistency and irrational behavior—some models equate "older = more trustworthy," while others exhibit the opposite pattern.
+**3. AllSides News Case Study: Isolating Causality with Control Groups**
 
-### Key Design 3: AllSides News Case Study
-
-Using 3,855 news event records from AllSides.com, the paper designs six controlled experimental conditions:
-
-1. **Source Hidden**: Source information is concealed; content-based selection is observed.
-2. **Source Shown**: Source information is revealed; the effect of source on selection is observed.
-3. **Source Swap**: Source labels of the two articles are exchanged; whether preferences follow the source is tested.
-4. **Do Not Be Biased**: A "please avoid bias" instruction is added; debiasing effectiveness is evaluated.
-5. **Left↔Right Swap**: Whether political orientation influences selection is tested.
-6. **Multi-Round Consistency**: Experiments are repeated to assess the stability of preferences.
+Supplementing controlled experiments, the authors conduct a comparative case study using 3855 real-world news events from AllSides.com. For each event, the model is given three reports from Left/Center/Right sources and asked to choose and explain. Six conditions are set: *Source Hidden* (only headlines/content, serving as the unbiased baseline); *Source Shown* (observing if bias emerges); *Do Not Be Biased* (testing if debiasing prompts work); and *Swap* conditions—where source labels are swapped between articles (including specific political swaps). If selection flips according to labels rather than content, it proves the source drives the choice. Story order is randomized to balance permutations. This setup clearly demonstrates the causal chain of the source effect and exposes the massive gap between *Source Hidden* and *Source Shown* performance.
 
 ## Key Experimental Results
 
-### Main Results: Source Preference Magnitude
+### Main Results: Strength of Source Preferences
 
-| Domain | Metric | Key Finding |
-|--------|--------|-------------|
-| Political News | Preference % Std. Dev. | GPT-4.1-Mini and Phi-4 exhibit the largest preference variance; smaller models show weaker preferences |
-| World News | Kendall Tau | Preference rankings are highly correlated across models ($\tau > 0.6$), suggesting a shared training data effect |
-| Academic Research | Preference % (by field) | NEJM is selected 96% of the time in medicine but only 19% in computer vision—strong context dependence |
-| E-commerce Platforms | Preference % (by category) | BestBuy is selected 97% of the time in electronics but only 51% in food and groceries |
+| Evaluation Domain | Metric | Key Finding |
+|-------------------|--------|-------------|
+| Politically Leaning News | Std Dev of Pref % | GPT-4.1-Mini and Phi-4 show highest preference variance; small models show weaker preference. |
+| World News | Kendall Tau | High correlation across different models ($\tau > 0.6$), suggesting shared training data effects. |
+| Academic Research | Pref % (per domain) | NEJM selection rate is 96% in Medicine but only 19% in CV—strong context dependence. |
+| E-commerce Platforms | Pref % (per category) | BestBuy selection rate is 97% in Electronics but only 51% in Grocery. |
 
-### Ablation Study: Causal Validation of Source Preferences
+### Ablation Study: Causal Verification of Source Preferences
 
-| Experimental Condition | Key Behavioral Change | Explanation |
-|------------------------|----------------------|-------------|
-| Source Hidden | Selection distribution approaches uniform | Without source information, models select based on content |
-| Source Shown | Selection distribution becomes significantly skewed | Preferences emerge immediately upon revealing source |
-| Source Swap | Preference direction reverses | Swapping source labels causes selection to follow the source rather than the content |
-| Do Not Be Biased | Preferences show no significant reduction | Prompt-based debiasing is nearly ineffective and may even amplify preferences |
+| Experimental Configuration | Key Behavioral Change | Description |
+|----------------------------|-----------------------|-------------|
+| Source Hidden | Selection distribution near uniform | Without source info, models choose based on content. |
+| Source Shown | Distribution becomes significantly skewed | Preferences emerge immediately upon showing the source. |
+| Source Swap | Preference direction reverses | Swapping labels causes selection to follow the source, not the content. |
+| Do Not Be Biased | No significant reduction in preference | Prompt-based debiasing is nearly ineffective and sometimes strengthens bias. |
 
-### Key Numerical Findings
+### Key Findings
 
-- **Source preference can override content**: In AllSides news selection, post-Source Swap reversal rates reach 60–80%, indicating that source labels exert greater influence than content itself.
-- **Larger models exhibit stronger preferences**: Models such as GPT-4.1-Mini display stronger and more heterogeneous preferences than smaller models (preference variance increases by $\sim$2–3×).
-- **Post-training reshapes preferences**: DeepSeek-R1-Distill-Llama-8B and Llama-3.1-8B-Instruct share the same base model, yet their Kendall Tau is only 0.42—post-training substantially restructures preference rankings.
-- **Preferences are context-dependent**: The same model may exhibit entirely different preferences for the same source across different topical domains.
+- **Source Preference Can Overpower Content**: In AllSides news selection, the "Source Swap" led to a selection reversal rate of 60-80%, suggesting source labels are more influential than content quality.
+- **Larger Models Exhibit Stronger Preferences**: Larger models like GPT-4.1-Mini show stronger and more heterogeneous preferences than smaller models (variance increase $\sim$2-3x).
+- **Post-training Reshapes Preferences**: DeepSeek-R1-Distill-Llama-8B and Llama-3.1-8B-Instruct share the same base model, but their Kendall Tau is only 0.42—post-training significantly reshapes preference rankings.
+- **Preferences are Context-Dependent**: The same model may have completely different preferences for the same source across different topical domains.
 
 ## Highlights & Insights
 
-- **First systematic study of latent source preferences in LLMs**: Rather than examining what LLMs generate, this work investigates how LLMs select and present existing information—a fundamentally new research perspective.
-- **Elegant controlled experimental design**: By using semantically equivalent content with only source labels varied, the paper rigorously isolates source effects from content effects, yielding clear causal inference.
-- **Far-reaching practical implications**: Systematic source preferences in LLM agents could lead to filter bubbles, unfair brand competition, and public opinion manipulation; malicious actors could exploit high-trust source identifiers to manipulate recommendation outcomes.
-- **"Prompt debiasing is ineffective" is an important negative result**: This finding demonstrates that simple engineering interventions are insufficient, and deeper training-time interventions are necessary.
-- **Cross-model consistency reveals training data effects**: High Kendall Tau correlations in preference rankings across different models suggest that preferences are rooted in shared pretraining corpora.
+- **First Systematic Study of LLM Latent Source Preferences**: Shifts focus from what LLMs generate to how they select and present existing content—a novel research perspective.
+- **Elegant Controlled Experimental Design**: Rigidly isolates source effects from content effects via "semantically equivalent content + source label swapping," providing clear causal inference.
+- **Deep Practical Implications**: Systematic preference for certain sources could lead to filter bubbles, unfair brand competition, and public opinion manipulation. Malicious actors could spoof trusted source labels to manipulate recommendations.
+- **"Prompting is Ineffective" as a Critical Negative Result**: Indicates that simple engineering fixes are insufficient; deeper intervention during training is required.
+- **Cross-Model Consistency Reveals Training Data Effects**: The high Kendall Tau correlation between different models suggests preferences are rooted in shared pre-training corpora.
 
 ## Limitations & Future Work
 
-- Only three application domains (news/academia/e-commerce) are covered; high-stakes domains such as healthcare and law remain unexplored.
-- The causal origins of preferences are not analyzed in depth—the relative contributions of pretraining data frequency, post-training data, and model architecture remain unclear.
-- The observed correlation between pretraining data co-occurrence frequency and source preference does not fully explain the phenomenon; deeper mechanistic investigation is needed.
-- No effective debiasing method is proposed (only the ineffectiveness of prompting is demonstrated); training-time and inference-time debiasing strategies remain to be explored.
-- Whether multimodal LLMs exhibit analogous preferences warrants investigation.
-- Experiments cover only 12 models; preference patterns in a broader set of models—particularly open-source Chinese-language models and domain-specific models—remain to be studied.
+- Limited to three application domains (News/Academia/E-commerce); high-risk domains like Medical or Legal have not been explored.
+- Lack of deep analysis on the causal origins—the relative contribution ratios of pre-training frequency vs. post-training data vs. model architecture remain unclear.
+- Found that pre-training co-occurrence frequency does not fully explain preferences; deeper mechanistic study is needed.
+- No effective debiasing method proposed (only proof that prompting fails); training-time interventions and inference-time control strategies need exploration.
+- Whether multimodal LLMs exhibit similar preferences remains an open question.
+- Experiments covered 12 models; the preference patterns of more models (especially open-source Chinese models and vertical-specific models) require further study.
 
 ## Related Work & Insights
 
-- **LLM Bias Research**: Feng et al. (2023) on political bias; Manvi et al. (2024) on geographic bias—this paper reveals a novel dimension of "source bias."
-- **LLM Cognitive Biases**: Itzhak et al. (2024) investigate the origins of cognitive biases; this paper further demonstrates that post-training can substantially reshape preference orderings.
-- **Recommender System Fairness**: Existing fairness frameworks from traditional recommender systems can be transferred to LLM agent settings.
-- **Implications for Future Agent System Design**: Agent-level modules for transparent and controllable source preference management should be incorporated into system design.
+- **LLM Bias Research**: Feng et al. (2023) on political bias, Manvi et al. (2024) on geographical bias—this work reveals a new "source bias" dimension.
+- **LLM Cognitive Bias**: Itzhak et al. (2024) studied the origins of cognitive bias; this paper finds that post-training can also significantly alter preferences.
+- **Recommender System Fairness**: Fairness frameworks from traditional recommender systems can be migrated to LLM Agent scenarios.
+- **Insights for Future Agent System Design**: Targeted modules for transparent and controllable source preference management should be integrated at the Agent level.
 
 ## Rating
 
@@ -133,11 +130,11 @@ Using 3,855 news event records from AllSides.com, the paper designs six controll
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reinforced Latent Reasoning for LLM-based Recommendation](reinforced_latent_reasoning_for_llm-based_recommendation.md)
 - [\[ICML 2026\] RGMem: Renormalization Group-Inspired Memory Evolution for Language Agents](../../ICML2026/recommender/rgmem_renormalization_group-inspired_memory_evolution_for_language_agents.md)
 - [\[ACL 2026\] From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents](../../ACL2026/recommender/from_recall_to_forgetting_benchmarking_long-term_memory_for_personalized_agents.md)
 - [\[ACL 2026\] IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters](../../ACL2026/recommender/icebreaker_for_conversational_agents_breaking_the_first-message_barrier_with_per.md)
-- [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](../../NeurIPS2025/recommender/who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
-- [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
+- [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
 
 </div>
 

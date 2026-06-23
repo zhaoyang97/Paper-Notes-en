@@ -2,71 +2,97 @@
 title: >-
   [Paper Note] AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking
 description: >-
-  [ICLR 2026][Reinforcement Learning][abstract reasoning] This paper proposes AbstRaL, which uses reinforcement learning to teach LLMs to construct mathematical abstractions of reasoning problems (replacing concrete number…
+  [ICLR 2026][Reinforcement Learning][abstract reasoning] The authors propose AbstRaL, which utilizes Reinforcement Learning (RL) to teach LLMs mathematical abstraction—replacing specific numbers/names with symbolic variables and extracting general formulas. These abstractions are then processed by a symbolic solver to derive answers. AbstRaL almost entirely eliminates perfor
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "abstract reasoning"
-  - "reinforcement-learning"
-  - "GSM robustness"
-  - "symbolic reasoning"
-  - "distribution shift"
+  - ICLR 2026
+  - Reinforcement Learning
+  - abstract reasoning
+  - reinforcement-learning
+  - GSM robustness
+  - symbolic reasoning
+  - distribution shift
 date: 2026-05-08
-content_hash: 7104003ef257f817
+content_hash: c186757947f4d545
 ---
-
 # AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.07751](https://arxiv.org/abs/2506.07751)  
 **Code**: Available  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: abstract reasoning, reinforcement-learning, GSM robustness, symbolic reasoning, distribution shift
 
 ## TL;DR
-This paper proposes AbstRaL, which uses reinforcement learning to teach LLMs to construct mathematical abstractions of reasoning problems (replacing concrete numbers/names with symbolic variables and extracting general formulas), then employs a symbolic solver to derive answers. AbstRaL nearly eliminates performance degradation caused by distribution shift on GSM perturbation benchmarks, and also yields implicit improvements on OOD mathematical and general reasoning tasks.
+The authors propose AbstRaL, which utilizes Reinforcement Learning (RL) to teach LLMs mathematical abstraction—replacing specific numbers/names with symbolic variables and extracting general formulas. These abstractions are then processed by a symbolic solver to derive answers. AbstRaL almost entirely eliminates performance degradation caused by distribution shifts on GSM perturbation benchmarks and shows implicit improvements in OOD mathematical and general reasoning tasks.
 
 ## Background & Motivation
-**Background**: LLMs perform well on elementary mathematics benchmarks such as GSM, but exhibit significant performance drops under distribution shift (altered numbers, changed names, or inserted distractor conditions), exposing the brittleness of their reasoning.
+**Background**: LLMs perform well on elementary mathematics like GSM, but their performance drops significantly when faced with distribution shifts (e.g., changing numbers, changing human names, or inserting distractor conditions), exposing a lack of reasoning robustness.
 
-**Limitations of Prior Work**: A common approach to improving robustness is to synthesize additional instantiated variants for data augmentation—yet this incurs high computational cost with limited gains. Alternative methods based on abstract reasoning (CoA, AoT) either rely on in-context learning (weak performance) or use SFT (producing unfaithful abstractions).
+**Limitations of Prior Work**: Common methods for improving robustness involve synthesizing more instantiated variants to augment training data, which is computationally expensive and yields limited returns. Other methods explore abstract reasoning (e.g., CoA, AoT), but these either rely on in-context learning (poor performance) or SFT (producing unfaithful abstractions).
 
-**Key Challenge**: The autoregressive objective of SFT forces the model to learn the specific surface context of each training instance, impeding the acquisition of instance-agnostic abstract thinking. A training paradigm is needed that directs the model's attention toward abstract structure rather than superficial context.
+**Key Challenge**: The autoregressive objective of SFT forces the model to learn the specific context of each training instance, which hinders the acquisition of abstract thinking that generalizes across instances. A training paradigm is needed that focuses the model on abstract structures rather than surface-level context.
 
-**Goal**: How can LLMs be trained to construct faithful mathematical abstractions such that reasoning becomes invariant to surface-level contextual perturbations in the input?
+**Goal**: How can LLMs be taught to construct faithful mathematical abstractions, making reasoning invariant to changes in input context?
 
-**Key Insight**: Rather than augmenting training data, the paper directly teaches LLMs the skill of "abstraction"—variabilizing problem conditions, performing symbolic reasoning, and computing answers via a solver. RL, rather than SFT alone, is used to ensure the faithfulness of the abstractions.
+**Key Insight**: Instead of data augmentation, the authors directly teach the "abstraction" skill—converting problems to variables $\to$ performing symbolic reasoning $\to$ using a solver for answers. RL is used rather than just SFT to guarantee the faithfulness of the abstraction.
 
-**Core Idea**: Use RL with fine-grained abstraction rewards to teach LLMs to "think abstractly"—transforming concrete reasoning problems into symbolic formulas before solving them.
+**Core Idea**: Teach LLMs to "think abstractly" using RL combined with fine-grained abstraction rewards, transforming specific reasoning problems into symbolic formulas for resolution.
 
 ## Method
 
 ### Overall Architecture
-AbstRaL operates as a four-step pipeline: (1) **Condition Identification**—an LLM parses the numerical values and variables in the problem and assigns abstract symbols; (2) **Abstract Reasoning**—the LLM generates a reasoning chain and mathematical formulas using the abstract symbols; (3) **Abstraction Extraction**—formulas are extracted via regex matching; (4) **Symbolic Derivation**—the SymPy solver computes the final answer. Step 2 is the core learning target.
+AbstRaL aims to resolve the reasoning collapse that occurs when LLMs encounter shifted numbers, names, or distractors. The core premise is that models conflate "surface context" with "reasoning structure." The approach requires the model to first abstract the problem into a set of symbolic formulas, which are then handled by a deterministic symbolic solver; as long as the abstraction is correct, input variations do not affect the result.
+
+To facilitate learning this abstraction, AbstRaL decomposes the process of "inferring abstraction $\mathcal{A}$ from problem $\mathcal{X}$" into a four-step pipeline $\mathcal{X}\to\mathcal{X}^{\mathcal{A}}\to\mathcal{Y}^{\mathcal{A}}\to\mathcal{A}$: first, **Condition Identification** parses values/entities into symbolic conditions to obtain the abstract problem $\mathcal{X}^{\mathcal{A}}$; then, **Abstract Reasoning** has the LLM write a symbolic abstract answer $\mathcal{Y}^{\mathcal{A}}$ with CoT; next, **Abstract Extraction** uses regex to isolate the abstract formulas $\mathcal{A}$; finally, **Symbolic Derivation** uses SymPy to compute the answer from the formulas and conditions. Only the second step, "Abstract Reasoning," requires training; the GranulAR data and RL rewards are designed to optimize this specific step.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["GSM Problem X<br/>(Changed numbers/names/distractors)"]
+    subgraph PIPE["Fine-grained Four-Step Pipeline"]
+        direction TB
+        S1["Condition Identification<br/>70B/Regex → Symbolic Conditions C + Abstract Problem X^A"]
+        S2["Abstract Reasoning (Only step needing training)<br/>LLM → Abstract Answer Y^A"]
+        S3["Abstract Extraction<br/>Regex extraction of abstract formula A"]
+        S4["Symbolic Derivation<br/>SymPy(A, C) → Answer"]
+        S1 --> S2 --> S3 --> S4
+    end
+    subgraph TRAIN["Training Abstract Reasoning"]
+        direction TB
+        D2["GranulAR Training Data<br/>Socratic CoT Symbolization + SymPy Verification"]
+        D3["RL Twin Abstraction Rewards<br/>r_answer + r_symbolic (GRPO)"]
+    end
+    X --> S1
+    D2 --> S2
+    D3 --> S2
+    S4 --> OUT["Final Answer<br/>(Invariant to input perturbations)"]
+```
 
 ### Key Designs
 
-1. **GranulAR Training Data**:
+**1. Fine-grained Four-Step Pipeline: Decomposing Abstraction into Learnable Sub-tasks**
 
-    - **Function**: Constructs fine-grained abstract reasoning training data.
-    - **Mechanism**: Concrete values in existing Socratic CoT data are replaced with abstract symbols (e.g., `in0`, `out0`), preserving the reasoning structure. Llama-3.3-70B is used for rewriting, and SymPy subsequently verifies whether the rewritten formulas correctly derive the target answers.
-    - **Design Motivation**: Embedding abstract reasoning within the CoT + step-by-step decomposition format that LLMs are already familiar with (close to the pretraining distribution) reduces the difficulty of learning.
+Directly asking an LLM to output a context-free abstraction $\mathcal{A}$ from an original problem $\mathcal{X}$ is difficult, as it deviates significantly from the natural language patterns seen during pre-training. AbstRaL breaks this into $\mathcal{X}\to\mathcal{X}^{\mathcal{A}}\to\mathcal{Y}^{\mathcal{A}}\to\mathcal{A}$, making each step closer to existing model capabilities. Condition identification and abstract extraction are handled by a 70B model via few-shot prompting and regex scripts (requiring no training), while symbolic derivation uses SymPy (deterministic, zero error). The model only needs to learn "Abstract Reasoning," which maintains a CoT format (see Design 2), further lowering the difficulty. Robustness is a byproduct: the solver deterministically derives the answer from symbolic formulas; regardless of how numbers or names change, the formula structure remains constant.
 
-2. **RL Abstraction Reward Design**:
+**2. GranulAR Training Data: Disguising Abstract Reasoning as Familiar CoT**
 
-    - **Function**: Two rewards, requiring no trained reward model, are used to reinforce abstract reasoning.
-    - **Answer Correctness Reward $r_{answer}$**: SymPy verifies whether the model-generated abstraction $\tilde{\mathcal{A}}$ combined with the original conditions $\mathcal{C}$ derives the correct answer; a positive reward is given for success, and 0 otherwise.
-    - **Symbolic Distance Reward $r_{symbolic}$**: The token-level edit distance between the generated abstraction $\tilde{\mathcal{A}}$ and the gold-standard abstraction $\mathcal{A}$ is computed and normalized to $[0,1]$, providing a finer-grained learning signal.
-    - **Design Motivation**: The autoregressive objective of SFT causes the model to also learn surface context; the RL reward focuses exclusively on the correctness and faithfulness of the abstraction.
-    - The GRPO algorithm is employed.
+While "Abstract Reasoning" is the only step being trained, the format is still distant from the pre-training distribution. The authors modify existing Socratic CoT data by retaining the "decompose sub-problems $\to$ step-by-step CoT solution" structure but replacing specific values in the reasoning chain with abstract symbols (input variables as `in0`, derived results as `out0`, marked with brackets and double angle brackets). This rewriting is performed by Llama-3.3-70B as an oracle. Each rewrite is validated via SymPy; if the rewritten formula fails to produce the correct answer, the sample is discarded. This ensures training samples follow the familiar "CoT + Step-by-step" format, simply substituting numbers for symbols.
 
-3. **Robustness of Symbolic Derivation**:
+**3. RL Twin Abstraction Rewards: Enforcing Faithful Abstraction without Trained Reward Models**
 
-    - Once the model learns faithful abstractions, the symbolic formulas remain unchanged regardless of variations in input numbers or names, and SymPy solves them correctly.
-    - Robustness to distractor conditions arises from the model learning to identify which conditions are relevant to the reasoning.
+SFT alone is insufficient, as the autoregressive objective may lead the model to memorize specific contexts, causing abstractions to drift during testing. AbstRaL applies RL using GRPO on top of SFT with rewards that do not require an additional reward model.
+
+The first is the **Answer Correctness Reward** $r_{answer}(\tilde{\mathcal{A}},\mathcal{C},\text{Ans})$: the generated abstraction $\tilde{\mathcal{A}}$ and gold conditions $\mathcal{C}$ are passed to SymPy. A correct answer yields $r_{correct}$, otherwise 0. This provides a coarse-grained signal. The second is the **Symbolic Distance Reward** $r_{symbolic}$, which addresses the sparsity of the first: both $\tilde{\mathcal{A}}$ and the gold abstraction $\mathcal{A}$ are tokenized into symbolic sequences to calculate a normalized edit distance:
+
+$$r_{symbolic}(\tilde{\mathcal{A}},\mathcal{A})=r_{max}\cdot\left(1-\frac{\text{EditDistance}(\tilde{\mathcal{A}},\mathcal{A})}{\max_{a\in\{\tilde{\mathcal{A}},\mathcal{A}\}}\text{Len}(a)}\right)$$
+
+Even if the final answer is incorrect, a higher score is given if the abstraction is "closer to correct," providing fine-grained gradients to accelerate convergence.
+
+### Mechanism
+Consider an addition problem involving the numbers 12 and 2. **Condition Identification** parses them as $in0=12, in1=2$ and generates the abstract problem $\mathcal{X}^{\mathcal{A}}$ by replacing "12" and "2" with `[in0]` and `[in1]`. The trained LLM performs **Abstract Reasoning**, writing a symbolic derivation like `<<out0 = in0 + in1>>`. **Abstract Extraction** pulls the formula from the brackets to get $\mathcal{A}$: `out0 = in0 + in1`. Finally, **Symbolic Derivation** substitutes the conditions into $\mathcal{A}$ via SymPy to calculate 14. If the numbers 12 and 2 were changed or distractors were added, the formula structure in step three would remain the same, and the solver would still yield the correct result.
 
 ### Loss & Training
-SFT on GranulAR data + GRPO with $r_{answer}$ + $r_{symbolic}$. Validated on Qwen2.5 and Llama3 series (0.5B–7B). Training data is constructed using Llama-3.3-70B.
+Two-stage training: First, SFT on the GranulAR dataset using the causal language modeling loss. Second, RL via GRPO with the reward $r_{answer} + r_{symbolic}$. Training data is constructed by rewriting Socratic GSM8K via Llama-3.3-70B. Evaluations were conducted across Qwen2.5, Llama3, and Mathstral series (0.5B–7B).
 
 ## Key Experimental Results
 
@@ -80,32 +106,32 @@ SFT on GranulAR data + GRPO with $r_{answer}$ + $r_{symbolic}$. Validated on Qwe
 | **AbstRaL** | **44.6** | **-1.27** | **25.3** | **46.3** |
 
 ### Key Findings
-- **Δ < 0**: AbstRaL achieves *higher* performance on perturbed variants than on the original problems, demonstrating that abstraction not only eliminates distribution shift but also enhances baseline reasoning.
-- On Qwen2.5-Math-7B, AbstRaL also significantly improves robustness, with the largest gains on GSM-Plus Distract—because abstraction naturally ignores distractor conditions.
-- SFT-only (without RL) frequently produces unfaithful abstractions that are misaligned with the problem. RL corrects this via the reward signal.
-- OOD transfer: AbstRaL yields zero-shot improvements on AIME (math competition) and BBH (general reasoning), indicating that abstract thinking generalizes across domains.
+- **Δ < 0**: AbstRaL's performance on variants is actually *higher* than on the original problems, suggesting that abstraction not only eliminates distribution shifts but also improves base reasoning.
+- On Qwen2.5-Math-7B, AbstRaL significantly enhances robustness, with the largest gains observed on GSM-Plus Distract, as abstraction naturally ignores irrelevant conditions.
+- SFT-only (no RL) often produces unfaithful abstractions that do not align with the problem. RL effectively corrects this through reward signals.
+- OOD Transfer: AbstRaL shows zero-shot improvements on AIME (math competitions) and BBH (general reasoning), indicating that abstract thinking generalizes across domains.
 
 ## Highlights & Insights
-- **"Abstraction" is a more efficient strategy than "instantiation" for improving reasoning robustness**: Rather than synthesizing large numbers of variant instances, the model is directly taught to learn general patterns. By analogy, instead of training the model on more addition problems, it is taught the concept of "addition" itself.
-- **The unique value of RL for abstraction learning**: SFT is inherently compelled to learn the surface context of each sample (an intrinsic limitation of the autoregressive objective), whereas the RL reward function can focus exclusively on the structural correctness of abstractions.
-- **Fine-grained signal from the symbolic distance reward**: Rather than a binary correct/incorrect reward, the model receives a signal indicating "how close the abstraction is to correct"—accelerating learning convergence.
+- **Abstraction is more efficient than instantiation** for improving reasoning robustness. Instead of synthesizing massive variants, the model is taught general patterns. Analogy: Instead of teaching a model more addition problems, one teaches it the concept of "addition."
+- **RL's unique value in abstraction learning**: While SFT is hindered by the autoregressive goal of learning surface-level context, RL rewards focus exclusively on structural correctness.
+- **Fine-grained signals from Symbolic Distance**: Rather than a binary "right/wrong" reward, this Tells the model "how close" it is to the correct abstraction, accelerating convergence.
 
 ## Limitations & Future Work
-- Validation is currently limited to GSM (elementary mathematics); abstraction for more complex problems (e.g., geometric reasoning, proof-based tasks) may be substantially more challenging.
-- The condition identification step relies on few-shot prompting with a 70B model; the ability of smaller models to perform condition identification autonomously remains underexplored.
-- SymPy's coverage of non-equation problems (e.g., combinatorics, probability) is limited.
-- Training data quality depends on the rewriting quality of the oracle LLM.
+- Validated primarily on GSM (elementary math); abstraction for complex mathematics (e.g., geometry, proofs) may be significantly harder.
+- Condition identification relies on few-shot prompting of a 70B model; the ability of smaller models to perform this autonomously is under-explored.
+- SymPy coverage for non-equation problems (e.g., combinatorics, probability) is limited.
+- Training data quality depends on the oracle LLM's rewriting capabilities.
 
 ## Related Work & Insights
-- **vs. CoA / AoT (abstract reasoning methods)**: These methods perform abstraction via in-context learning, yielding weak performance. AbstRaL uses SFT+RL training and substantially outperforms them.
-- **vs. data augmentation strategies**: Synthesizing additional instances requires large amounts of data and computation. AbstRaL learns abstraction directly from the same training set, making it more efficient.
-- **vs. CoT-RL (standard RL)**: CoT-RL applies RL to standard GSM without learning abstractions, resulting in limited robustness gains. The abstraction component is the key differentiator in AbstRaL.
+- **vs CoA / AoT (Abstraction Methods)**: These rely on in-context learning, which yields poor results. AbstRaL outperforms them by using SFT+RL training.
+- **vs Data Augmentation Strategies**: Synthesizing instances requires high computational cost. AbstRaL is more efficient by learning abstractions from the same training set.
+- **vs CoT-RL (Standard RL)**: Standard CoT-RL on GSM does not learn abstraction and shows limited robustness gains. Abstraction is the key differentiator for AbstRaL.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The principle of "teaching models to learn abstractions rather than more instances" is highly original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers multiple models and scales, two robustness benchmarks, OOD transfer, and detailed ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clearly articulated; the framework diagram is intuitive.
-- **Value**: ⭐⭐⭐⭐⭐ Establishes a new paradigm for reasoning robustness; the transferability of abstract thinking is particularly valuable.
+- Novelty: ⭐⭐⭐⭐⭐ The concept of teaching models abstraction over instantiation is highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple models, scales, two robustness benchmarks, OOD transfer, and detailed ablation studies.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation and intuitive framework diagrams.
+- Value: ⭐⭐⭐⭐⭐ Provides a new paradigm for reasoning robustness; the transferability of abstract thinking is particularly valuable.
 
 <!-- RELATED:START -->
 
@@ -115,9 +141,9 @@ SFT on GranulAR data + GRPO with $r_{answer}$ + $r_{symbolic}$. Validated on Qwe
 
 - [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](reasoning_boosts_opinion_alignment_in_llms.md)
 - [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
-- [\[AAAI 2026\] Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction](../../AAAI2026/reinforcement_learning/thinker_training_llms_in_hierarchical_thinking_for_deep_search_via_multi-turn_in.md)
-- [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](../../NeurIPS2025/reinforcement_learning/noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
-- [\[ICLR 2026\] Routing, Cascades, and User Choice for LLMs](routing_cascades_and_user_choice_for_llms.md)
+- [\[ICLR 2026\] QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation](questa_expanding_reasoning_capacity_in_llms_via_question_augmentation.md)
+- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
+- [\[ICLR 2026\] Parallel-R1: Towards Parallel Thinking via Reinforcement Learning](parallel-r1_towards_parallel_thinking_via_reinforcement_learning.md)
 
 </div>
 

@@ -2,127 +2,107 @@
 title: >-
   [Paper Note] A Unifying View of Coverage in Linear Off-Policy Evaluation
 description: >-
-  [ICLR 2026][Reinforcement Learning][off-policy evaluation] This paper proposes a novel coverage parameter—**feature-dynamics coverage**—and conducts a new finite-sample analysis of the classical LSTDQ algorithm through a…
+  [ICLR 2026][Reinforcement Learning][LSTDQ] This paper proposes a new coverage parameter—**feature-dynamics coverage**, providing a novel finite-sample analysis of the classic LSTDQ algorithm through an instrumental variable perspective, unifying various fragmented coverage definitions in linear off-policy evaluation.
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "off-policy evaluation"
-  - "coverage"
-  - "linear function approximation"
-  - "LSTDQ"
-  - "feature-dynamics coverage"
+  - ICLR 2026
+  - Reinforcement Learning
+  - LSTDQ
 date: 2026-05-08
-content_hash: 0bff4c5661bee11c
+content_hash: bbd7fc7c3ce0bb88
 ---
-
 # A Unifying View of Coverage in Linear Off-Policy Evaluation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19030](https://arxiv.org/abs/2601.19030)  
 **Code**: None  
-**Area**: Reinforcement Learning / Off-Policy Evaluation
-**Keywords**: off-policy evaluation, coverage, linear function approximation, LSTDQ, feature-dynamics coverage
+**Area**: Reinforcement Learning / Off-Policy Evaluation  
+**Keywords**: Off-policy evaluation, coverage, linear function approximation, LSTDQ, feature-dynamics coverage
 
 ## TL;DR
-This paper proposes a novel coverage parameter—**feature-dynamics coverage**—and conducts a new finite-sample analysis of the classical LSTDQ algorithm through an instrumental variable lens, unifying the various fragmented coverage definitions in linear off-policy evaluation.
+This paper proposes a new coverage parameter—**feature-dynamics coverage**, providing a novel finite-sample analysis of the classic LSTDQ algorithm through an instrumental variable perspective, unifying various fragmented coverage definitions in linear off-policy evaluation.
 
 ## Background & Motivation
-Off-Policy Evaluation (OPE) is a fundamental problem in reinforcement learning: given data collected by a behavior policy, evaluate the value of a different target policy. This is critical in settings where online interaction is infeasible (e.g., healthcare, recommendation systems).
+Off-Policy Evaluation (OPE) is a fundamental problem in reinforcement learning: evaluating the value of a target policy using data collected by a different behavior policy. This is critical in scenarios where online interaction is impossible, such as healthcare or recommendation systems.
 
-In the classical linear OPE setting, finite-sample guarantees typically take the form:
+In the classic setting of linear OPE, finite-sample guarantees typically take the following form:
 
-$$\text{evaluation error} \leq \text{poly}(C^\pi, d, 1/n, \log(1/\delta))$$
+$$\text{Evaluation Error} \leq \text{poly}(C^\pi, d, 1/n, \log(1/\delta))$$
 
-where $d$ is the feature dimension, $n$ is the sample size, and $C^\pi$ is the **coverage parameter**—characterizing how well the data distribution covers the feature space accessed by the target policy.
+Where $d$ is the feature dimension, $n$ is the number of samples, and $C^\pi$ is the **coverage parameter**, which describes how well the data distribution covers the feature space visited by the target policy.
 
-**Root Cause / Fragmentation Problem**:
+**Key Challenge**:
 
-Under stronger assumptions (e.g., Bellman completeness), the notion of coverage is well-defined and the guarantees of various classical algorithms are well understood. However, under the **minimal assumption setting** (requiring only linear realizability of the target value function), the landscape becomes highly fragmented:
-- No consensus exists on the "correct" notion of coverage.
-- Coverage definitions used across different analyses are mutually inconsistent and exhibit undesirable properties (e.g., not distribution-free, unable to recover standard definitions in special cases).
-- The lack of connections among definitions leads to a fragmented theoretical understanding.
+While coverage definitions are clear under strong assumptions (e.g., Bellman completeness), the situation is chaotic under the **minimal assumption setting** (where only the target value function is required to be linearly realizable):
+- No consensus exists on the "correct" concept of coverage.
+- Different analyses use conflicting coverage definitions with undesirable properties (e.g., not being distribution-independent or failing to recover standard definitions in special cases).
+- The lack of connection between various definitions leads to fragmented theoretical understanding.
 
-**Goal**: To propose a unified coverage concept that yields tight finite-sample guarantees under minimal assumptions and gracefully recovers known standard coverage definitions under stronger assumptions.
+**Goal**: To propose a unified coverage concept that provides tight finite-sample guarantees under minimal assumptions while gracefully reducing to known standard coverage definitions under stronger assumptions.
 
 ## Method
 
 ### Overall Architecture
-- **Algorithm**: The core algorithm analyzed is LSTDQ (Least-Squares Temporal Difference for Q-values), a classical algorithm in linear OPE.
-- **Analytical Tool**: The instrumental variable (IV) perspective.
-- **Core Contribution**: Proposing feature-dynamics coverage and deriving new finite-sample bounds for LSTDQ under this notion.
+The paper does not propose a new algorithm. Instead, it develops a new finite-sample theory for the classic LSTDQ (Least-Squares Temporal Difference for Q-values) by reinterpreting it as an instrumental variable regression. This naturally derives the **feature-dynamics coverage** parameter and proves evaluation error bounds under it. These bounds gracefully recover familiar standard coverage definitions under stronger assumptions, integrating fragmented definitions into a single framework.
 
 ### Key Designs
-1. **Instrumental Variable Perspective**:
 
-    - **Mechanism**: LSTDQ is reinterpreted as an instrumental variable regression problem. In econometrics and causal inference, IV methods address endogeneity—when regressors are correlated with the error term, an "instrument" that is correlated with the regressor but uncorrelated with the error enables consistent estimation.
-    - **Design Motivation**: In linear OPE, the structure of the Bellman equation is naturally amenable to an IV interpretation—features of the current state-action pair serve as "endogenous variables," while features mapped through the transition dynamics serve as "instruments."
-    - **Key Insight**: This IV perspective naturally gives rise to the definition of feature-dynamics coverage.
+**1. Instrumental Variable Perspective: Reinterpreting LSTDQ as IV Regression to bypass endogeneity**
 
-2. **Feature-Dynamics Coverage**:
+The difficulty of linear OPE lies in the endogeneity within the Bellman equation—when performing least squares directly on $Q(s,a)\approx\phi(s,a)^\top w$, the regressor $\phi(s,a)$ is correlated with the TD error term, causing bias in ordinary least squares. Instrumental Variables (IV) are standard tools in econometrics for handling such issues. This paper observes that the Bellman equation's structure inherently fits an IV interpretation: the current state-action features $\phi(s,a)$ act as endogenous variables, while the features mapped after environmental transitions, $\mathbb{E}[\phi(s',a')]$, serve as instruments. This framework provides a clear econometric explanation for LSTDQ's statistical behavior.
 
-    - **Definition**: Interpreted as a linear coverage measure in a system induced by the evolution of features under the environment dynamics.
-    - **Intuition**: Measures how well the data distribution of the behavior policy covers the "trajectory of features under dynamics"—accounting not only for coverage of current features but also of features after environment transitions.
-    - **Mathematical Properties**: Satisfies natural desiderata—distribution-dependent yet naturally defined, and recovers standard definitions in special cases.
+**2. Feature-Dynamics Coverage: Explicitly modeling how dynamics amplify coverage deficits**
 
-3. **Unification Results**:
+A byproduct of the IV perspective is the new coverage parameter $C^\pi_{\mathrm{FD}}$. It measures coverage within a linear system induced by feature evolution dynamics: it considers not just how the behavior policy covers current features $\phi(s,a)$, but also how it covers "where the features evolve back into after environmental transitions." Intuitively, OPE difficulty depends on how environmental dynamics amplify weak coverage along trajectories; $C^\pi_{\mathrm{FD}}$ explicitly incorporates this amplification effect. It remains distribution-dependent but collapses back to standard recognized coverage in special cases.
 
-    - Under Bellman completeness, feature-dynamics coverage reduces to the concentrability coefficient, the standard coverage notion in that setting.
-    - In the tabular setting, it recovers the classical state-action visitation ratio.
-    - In the general linear realizability setting, it yields tighter bounds than prior analyses.
-    - This is the first work to connect all these seemingly disparate coverage definitions within a unified framework.
+**3. Unification and Error Bounds: One parameter to link all prior definitions**
 
-### Theoretical Results
-- **Main Theorem**: A finite-sample error bound for LSTDQ under feature-dynamics coverage $C^\pi_{FD}$:
-    - The evaluation error grows polynomially in $C^\pi_{FD}$ and $d$, and decreases at a rate of $1/\sqrt{n}$.
-    - A high-probability bound (depending on $\log(1/\delta)$).
-- **Reduction Properties**: Under stronger assumptions, $C^\pi_{FD}$ can be replaced by smaller coverage parameters, recovering known optimal rates.
-- **Necessity Argument**: Information-theoretic tools are used to argue that $C^\pi_{FD}$ is unavoidable under minimal assumptions.
+The paper provides a main error bound for LSTDQ: the error grows polynomially with $C^\pi_{\mathrm{FD}}$ and feature dimension $d$, and decreases at a rate of $1/\sqrt{n}$ with high probability, denoted as $\text{Error} \lesssim \mathrm{poly}(C^\pi_{\mathrm{FD}},d) \cdot n^{-1/2} \cdot \sqrt{\log(1/\delta)}$. Its true value lies in its degradation behavior: under Bellman completeness, $C^\pi_{\mathrm{FD}}$ reduces to the standard linear coverage; under state abstraction, it covers the $\chi^2$ version of aggregated concentrability; and under minimal assumptions, it provides a tighter bound than previous candidates like $1/\sigma_{\min}(A)$. The paper highlights that $1/\sigma_{\min}(A)$ lacks scale invariance and fails to unify with other analyses.
 
 ## Key Experimental Results
 
 ### Main Results
-This paper is primarily a theoretical contribution, though numerical experiments are included to validate the theoretical results.
+While primarily a theoretical work, the paper includes numerical verifications.
 
-| Setting | Metric | Key Finding |
-|---------|--------|-------------|
-| Synthetic MDP (linear realizability) | MSE vs. $n$ | LSTDQ error follows the theoretically predicted $1/\sqrt{n}$ rate |
-| Synthetic MDP (Bellman completeness) | MSE vs. $C^\pi$ | Error dependence on feature-dynamics coverage matches theory |
-| Data distributions with varying coverage | Comparison of definitions | Feature-dynamics coverage yields tighter bounds than prior definitions |
+| Setting | Metric | Key Findings |
+|------|------|----------|
+| Synthetic MDP (Linear Realizable) | MSE vs n | LSTDQ error follows the predicted $1/\sqrt{n}$ rate |
+| Synthetic MDP (Bellman Complete) | MSE vs $C^\pi$ | Error relationship with feature-dynamics coverage fits theory |
+| Diverse Coverage Data Distributions | Comparison of definitions | Feature-dynamics coverage is tighter than prior definitions |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| Bellman completeness + feature-dynamics | Error bound | Reduces to concentrability bound, validating unification |
-| Linear realizability only + prior coverage | Error bound | Prior definitions yield looser bounds |
-| Linear realizability only + feature-dynamics | Error bound | Proposed definition yields tighter bounds |
-| Varying dimension $d$ | Error bound | Polynomial dependence on $d$ is verified |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Bellman Complete + Feature-Dynamics | Error Bound | Redundant with concentrability bound, verifying unification |
+| Linear Realizable Only + Prior Definitions | Error Bound | Prior definitions yield looser bounds |
+| Linear Realizable Only + Feature-Dynamics | Error Bound | Ours provides tighter bounds |
+| Different Dimensions $d$ | Error Bound | Polynomial dependence is verified |
 
 ### Key Findings
-- Feature-dynamics coverage is a more natural and tighter parameter than previously proposed coverage definitions.
-- Under Bellman completeness, it perfectly reduces to the known optimal coverage parameter.
-- LSTDQ has a cleaner statistical interpretation through the IV lens.
-- Several "unusual" coverage definitions from prior analyses (e.g., algorithm-dependent definitions) emerge as special cases of feature-dynamics coverage.
+- Feature-dynamics coverage is a more natural and tighter parameter than previously proposed definitions.
+- Under Bellman completeness, it perfectly degrades to the known optimal coverage parameter.
+- The LSTDQ algorithm has a clearer statistical explanation through the IV perspective.
+- "Strange" algorithm-dependent coverage definitions in prior work are special cases of feature-dynamics coverage.
 
 ## Highlights & Insights
-- **Theoretical Elegance**: Linear OPE has long suffered from a proliferation of seemingly incompatible coverage definitions. This paper ties them together under a single concept—a clarifying contribution that cuts through longstanding confusion.
-- **Novelty of the IV Perspective**: Connecting the OPE problem in RL to the IV theory in econometrics opens a new avenue of analytical tools.
-- **Understanding Under Minimal Assumptions**: Tight analysis under the minimal assumption of linear realizability, a setting previously poorly understood.
-- **Conceptual Contribution**: The "induced dynamical system" interpretation of feature-dynamics coverage is highly illuminating—it suggests that the difficulty of OPE depends not only on the data distribution but also on how the environment dynamics amplify coverage deficiencies.
+- **Elegance of Theoretical Unification**: It unifies multiple seemingly incompatible coverage definitions in linear OPE into a single concept.
+- **Novelty of the IV Perspective**: Linking RL's OPE problem with econometric IV theory provides new analytical tools.
+- **Understanding under Minimal Assumptions**: It provides tight analysis in the linear realizability setting where previous understanding was limited.
+- **Conceptual Contribution**: The "induced dynamical system" interpretation suggests OPE difficulty is not just about data distribution but also how environmental dynamics "amplify" coverage gaps.
 
 ## Limitations & Future Work
-- **Purely Theoretical**: No empirical validation on real RL tasks.
-- **Restricted to Linear Settings**: Modern RL predominantly uses nonlinear function approximation (e.g., neural networks); whether the framework extends remains an open question.
-- **Focus on OPE, Not OPL**: Off-policy evaluation and off-policy learning are technically distinct; whether the proposed coverage notion extends to the latter is unclear.
-- **Computational Feasibility**: Whether feature-dynamics coverage can be efficiently estimated in practice is unaddressed; if not, the practical utility of the theoretical guarantees may be limited.
-- **Single-Policy Evaluation**: Extension to simultaneous evaluation of multiple policies or policy optimization scenarios is left for future work.
+- **Purely Theoretical**: Lacks experimental validation on large-scale real-world RL tasks.
+- **Linear Setting**: Whether this framework extends to non-linear function approximation (e.g., neural networks) remains to be studied.
+- **Evaluation vs. Learning**: Technical differences exist between OPE and Off-Policy Learning (OPL); it is unclear if this coverage concept applies to the latter.
+- **Computational Feasibility**: It is unknown if feature-dynamics coverage can be efficiently estimated in practice.
+- **Single Policy**: The work focuses on single policy evaluation rather than multi-policy or optimization scenarios.
 
 ## Related Work & Insights
-- **Classical Linear OPE Algorithms**: LSTD, LSTDQ, FQE (Fitted Q Evaluation), etc.—this paper revisits the most classical among them, LSTDQ.
-- **Coverage / Concentrability Coefficient**: The concentrability coefficient is a central concept in OPE theory; this paper provides its correct generalization to the general setting.
-- **Instrumental Variables**: A tool from econometrics for addressing endogeneity, introduced here into RL theory.
-- **Intersection of Econometrics and RL**: An increasing body of work interprets RL through the lens of causal inference; this paper is a significant contribution to this trend.
-- **Open Question**: Can feature-dynamics coverage be leveraged to design adaptive data collection strategies that maximize OPE efficiency?
+- **Linear OPE Algorithms**: Re-analyzes classic LSTDQ in comparison to LSTD and FQE.
+- **Coverage/Concentrability**: Provides a correct generalization of concentrability coefficients for the general linear setting.
+- **Instrumental Variables**: Introduces econometric ideas to handle endogeneity in RL.
+- **Interdisciplinary RL**: Contributes to the growing trend of causal inference and econometrics in RL theory.
+- **Inspiration**: This suggests potential for designing adaptive data collection strategies that maximize OPE efficiency based on feature-dynamics coverage.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -138,9 +118,9 @@ This paper is primarily a theoretical contribution, though numerical experiments
 
 - [\[NeurIPS 2025\] A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning](../../NeurIPS2025/reinforcement_learning/a_unifying_view_of_linear_function_approximation_in_offpolic.md)
 - [\[ICLR 2026\] Is Pure Exploitation Sufficient in Exogenous MDPs with Linear Function Approximation?](is_pure_exploitation_sufficient_in_exogenous_mdps_with_linear_function_approxima.md)
-- [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
-- [\[ICLR 2026\] Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions](single_index_bandits_generalized_linear_contextual_bandits_with_unknown_reward_f.md)
-- [\[ICLR 2026\] Revisiting Matrix Sketching in Linear Bandits: Achieving Sublinear Regret via Dyadic Block Sketching](revisiting_matrix_sketching_in_linear_bandits_achieving_sublinear_regret_via_dya.md)
+- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
+- [\[ICLR 2026\] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses](primal-dual_policy_optimization_for_linear_cmdps_with_adversarial_losses.md)
+- [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](enhancing_generative_auto-bidding_with_offline_reward_evaluation_and_policy_sear.md)
 
 </div>
 

@@ -2,131 +2,132 @@
 title: >-
   [Paper Note] CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation
 description: >-
-  [ICLR 2026][Recommender Systems][KV cache compression] By observing significant cross-user similarity (collaborative signals) in KV caches across different users in sequential recommendation…
+  [ICLR 2026][Recommender Systems][Paper Note] Observing that KV caches of different users in sequential recommendation exhibit significant cross-user similarity (collaborative signals), CollectiveKV is proposed to decompose KV into low-dimensional user-specific parts and high-dimensional shared parts retrieved from a global KV pool, achieving a 0.8% compression ra
 tags:
-  - "ICLR 2026"
-  - "Recommender Systems"
-  - "KV cache compression"
-  - "cross-user sharing"
-  - "collaborative signals"
-  - "sequential recommendation"
-  - "SVD analysis"
+  - ICLR 2026
+  - Recommender Systems
 date: 2026-05-08
-content_hash: 0884a393f09cbc3c
+content_hash: 5b62ccf91b7ab81e
 ---
-
 # CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19178](https://arxiv.org/abs/2601.19178)  
 **Code**: To be confirmed  
-**Area**: Recommender Systems / Model Compression
+**Area**: Recommendation Systems / Model Compression  
 **Keywords**: KV cache compression, cross-user sharing, collaborative signals, sequential recommendation, SVD analysis
 
 ## TL;DR
-By observing significant cross-user similarity (collaborative signals) in KV caches across different users in sequential recommendation, this paper proposes CollectiveKV, which decomposes KV into a low-dimensional user-specific component and a high-dimensional shared component retrieved from a global KV pool, achieving a compression ratio of 0.8% with no performance degradation.
+Observing that KV caches of different users in sequential recommendation exhibit significant cross-user similarity (collaborative signals), CollectiveKV is proposed to decompose KV into low-dimensional user-specific parts and high-dimensional shared parts retrieved from a global KV pool, achieving a 0.8% compression rate without performance degradation.
 
 ## Background & Motivation
 
-**Background**: Sequential recommendation models (SIM, HSTU, etc.) adopt Transformer attention mechanisms to improve performance and introduce KV cache technology to precompute and cache K/V for reduced inference latency.
+**Background**: Sequential recommendation models (e.g., SIM, HSTU) utilize Transformer attention mechanisms for better performance. KV cache techniques are introduced to precompute and store K/V pairs to reduce inference latency.
 
-**Limitations of Prior Work**: Recommendation systems serve enormous user bases (hundreds of millions), each potentially with lengthy interaction histories, causing total KV cache volume to rapidly exceed GPU memory capacity and necessitating offloading to CPU/secondary storage, which introduces substantial transfer latency.
+**Limitations of Prior Work**: Recommendation systems serve massive user bases (hundreds of millions), where each user may have long behavioral histories. The total volume of KV caches quickly exceeds GPU memory capacity, requiring offloading to CPU or external storage, which introduces massive transmission latency.
 
-**Key Challenge**: KV compression methods from the LLM literature (e.g., token pruning, MLA dimensionality reduction) compress only single-user sequences and ignore the cross-user collaborative signals unique to recommendation scenarios.
+**Key Challenge**: KV compression methods in LLMs (e.g., token pruning, MLA dimensionality reduction) only compress single-user sequences, ignoring the unique cross-user collaborative signals inherent in recommendation scenarios.
 
-**Goal**: Exploit cross-user KV similarity to achieve extreme compression—storing the majority of information in a globally shared pool while retaining only very low-dimensional personalized KV per user.
+**Goal**: Utilize cross-user KV similarity to achieve extreme compression—offloading most information into a global shared pool while each user caches only minimal personalized KV data.
 
-**Key Insight**: SVD decomposition of K/V reveals that principal components (>90% of information) exhibit strong cross-user correlation, while residuals (<10% of information) are user-specific—providing a quantitative basis for determining what can be shared.
+**Key Insight**: Through SVD decomposition of K/V, it is observed that principal components (>90% information) show strong cross-user correlation, while residuals (<10% information) are user-specific. This provides a quantitative basis for "what can be shared."
 
-**Core Idea**: A learnable global KV pool stores cross-user shared information; each user caches only low-dimensional personalized KV plus global indices, achieving an extreme compression ratio of 0.8%.
+**Core Idea**: A learnable global KV pool stores cross-user shared information. Each user caches only low-dimensional personalized KV and global indices, achieving an extreme compression rate of 0.8%.
 
 ## Method
 
 ### Overall Architecture
-The framework consists of two stages—prefill and decode. During prefill, the user sequence is linearly projected into low-dimensional user-specific KV (dimension $d_u$), while a router network computes and caches global KV indices. During decode, the cached indices are retrieved, high-dimensional shared KV (dimension $d_g$) is fetched from the GPU-resident global KV pool, and the concatenated result is used for attention computation.
+CollectiveKV addresses the issue where GPU memory cannot accommodate complete KV caches for every user. It decomposes KV into a small "personalized" part and a large "shared" part, allowing expensive high-dimensional information to be shared via a pool. The workflow follows the prefill and decode stages of Transformer recommendation models: in the prefill stage, the user sequence is linearly projected into a thin user-specific KV (dimension $d_u$), while a router network calculates the index in the global KV pool for each item. **Only these indices (rather than high-dimensional vectors) are cached.** In the decode stage, high-dimensional shared KV (dimension $d_g$) is retrieved from the GPU-resident global pool based on the cached indices, concatenated with the user-specific part, and used for attention calculation. Thus, users only store low-dimensional $\mathbf{K}_u$ and several integer indices.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    S["User Behavior Sequence<br/>embedding S"]
+    S --> KU["Linear Projection<br/>User-specific KV (low-dim K_u)"]
+    S --> R["CollectiveKV Router<br/>Sequence → Global KV Index I_k"]
+    KU --> CACHE["Prefill Cache<br/>Store low-dim K_u + Integer Indices"]
+    R --> CACHE
+    CACHE -->|"decode · Index"| POOL["Global KV Pool<br/>Retrieve Collective KV (high-dim K_c)"]
+    CACHE -->|"decode · User-specific K_u"| CONCAT
+    POOL --> CONCAT["KV Decomposition · Concatenation<br/>concat(User-specific, Collective)=Final KV"]
+    CONCAT --> ATT["Attention with Query<br/>→ Recommendation Output"]
+```
 
 ### Key Designs
 
-1. **KV Decomposition: User-Specific + Collective Shared**
+**1. KV Decomposition: Assigning Principal Components to Shared Pool and Residuals to Individuals**
 
-    - **Function**: Decomposes KV into low-dimensional $\mathbf{K}_u \in \mathbb{R}^{n \times d_u}$ and high-dimensional $\mathbf{K}_c \in \mathbb{R}^{n \times d_g}$.
-    - **Mechanism**: $\mathbf{K}_u = \mathbf{S} W_k + b_k$ (linear projection for dimensionality reduction); $\mathbf{K}_c[i] = P_k[\mathbf{I}_k[i]]$ (index-based retrieval from the global pool); final concatenation $\mathbf{K} = \text{concat}(\mathbf{K}_u, \mathbf{K}_c)$.
-    - **Design Motivation**: SVD analysis demonstrates that principal components are shareable across users while residuals are personalized; the shared pool thus carries high-dimensional primary information while the low-dimensional projection retains user-specific characteristics.
+This directly addresses the core pain point of storing high-dimensional KV for millions of users. The paper performs SVD on K/V and finds that principal components (>90% info) are highly correlated across users, while the <10% residuals are user-specific. KV is decomposed based on this: low-dimensional user-specific parts $\mathbf{K}_u \in \mathbb{R}^{n \times d_u}$ are obtained via linear projection $\mathbf{K}_u = \mathbf{S} W_k + b_k$, while high-dimensional collective parts $\mathbf{K}_c \in \mathbb{R}^{n \times d_g}$ are retrieved from the global pool $\mathbf{K}_c[i] = P_k[\mathbf{I}_k[i]]$. The final attention uses the concatenation $\mathbf{K} = \text{concat}(\mathbf{K}_u, \mathbf{K}_c)$. Compression stems from the fact that the high-dimensional segments are no longer stored per user.
 
-2. **CollectiveKV Router**
+**2. CollectiveKV Router: Training Discrete Retrieval via Differentiable Gating**
 
-    - **Function**: Maps sequence embeddings to global KV pool indices for each item.
-    - **Mechanism**: $\mathbf{M} = \mathbf{S} W_r + b_r$; $\mathbf{I}_k[i] = \arg\max_j \mathbf{M}_{ij}$. During training, sigmoid gating ensures gradient propagation: $\mathbf{K}_c[i] = \sigma(\mathbf{M}[i, \mathbf{I}_k[i]]) \cdot P_k[\mathbf{I}_k[i]]$.
-    - **Design Motivation**: Since argmax is non-differentiable, sigmoid gating combined with a peak loss ensures consistency between training and inference.
+The router determines which pool entry each item should retrieve. It maps sequence embeddings to a scoring matrix $\mathbf{M} = \mathbf{S} W_r + b_r$, using $\mathbf{I}_k[i] = \arg\max_j \mathbf{M}_{ij}$ as the index. To handle the non-differentiable $\arg\max$, a sigmoid gate is used during training to apply a differentiable weight: $\mathbf{K}_c[i] = \sigma(\mathbf{M}[i, \mathbf{I}_k[i]]) \cdot P_k[\mathbf{I}_k[i]]$. Combined with a peak loss to push the sigmoid output toward 1, this ensures consistency between "soft selection" during training and "hard lookup" during inference.
 
-3. **Global KV Pool**
+**3. Global KV Pool: GPU-Resident, Shared High-Dimensional Information Store**
 
-    - **Function**: $P_k, P_v \in \mathbb{R}^{m \times d_g}$ reside permanently in GPU memory and are shared across all users.
-    - **Design Motivation**: Pool size $m$ is far smaller than the product of user count and sequence length, dramatically reducing storage; the high dimensionality $d_g$ preserves information capacity.
+The pool consists of two learnable matrices $P_k, P_v \in \mathbb{R}^{m \times d_g}$ residing in GPU memory. Storage savings are significant because the pool capacity $m$ is much smaller than the total number of tokens across all users. High-dimensional vectors that would otherwise be stored per user/token are collapsed into $m$ reusable entries. Setting $d_g$ sufficiently high ensures shared entries have enough capacity for SVD principal components.
 
 ### Loss & Training
-- Original recommendation loss + peak loss $\mathcal{L}_{\text{peak}} = -\frac{1}{n}\sum_i \log\sigma(\mathbf{M}[i, \mathbf{I}_k[i]])$ (ensuring sigmoid outputs approach 1).
-- Load balance loss (KL divergence to encourage uniform selection of pool keys).
-- End-to-end training with joint optimization of pool, router, and projection layers.
+The pool, router, and projection layers are optimized end-to-end. Beyond the recommendation loss, two constraints are added: first, peak loss $\mathcal{L}_{\text{peak}} = -\frac{1}{n}\sum_i \log\sigma(\mathbf{M}[i, \mathbf{I}_k[i]])$ to align training and inference; second, a load balance loss (KL divergence) to ensure items in the pool are selected uniformly, preventing entry idling.
 
 ## Key Experimental Results
 
 ### Main Results (5 Models × 3 Datasets)
 
-| Model | Dataset | GAUC (Base→+Ours) | AUC (Base→+Ours) | CR |
-|-------|---------|-------------------|------------------|----|
-| SIM | MicroVideo | 0.6954→**0.6973** | 0.6933→**0.7057** | **1.6%** |
-| SDIM | MicroVideo | 0.6857→**0.6883** | 0.6749→**0.6871** | **1.2%** |
-| SIM | KuaiVideo | 0.6577→**0.6604** | 0.6798→**0.6900** | **1.2%** |
-| HSTU | MicroVideo | — | — | **0.8%** |
+| Model | Dataset | GAUC (Original→+Ours) | AUC (Original→+Ours) | Gain | CR |
+|------|--------|------------------|------------------|---------|---|
+| SIM | MicroVideo | 0.6954→**0.6973** | 0.6933→**0.7057** | +0.0124 | **1.6%** |
+| SDIM | MicroVideo | 0.6857→**0.6883** | 0.6749→**0.6871** | +0.0122 | **1.2%** |
+| SIM | KuaiVideo | 0.6577→**0.6604** | 0.6798→**0.6900** | +0.0102 | **1.2%** |
+| HSTU | MicroVideo | - | - | - | **0.8%** |
 
 ### Ablation Study
 
-| Configuration | AUC | Notes |
-|---------------|-----|-------|
-| Full CollectiveKV | 0.7057 | Best |
-| User-specific KV only | ~0.69 | Missing shared information |
-| Collective KV only | ~0.69 | Missing personalization |
-| Without peak loss | ~0.70 | Train-inference inconsistency |
+| Configuration | AUC | Description |
+|------|-----|------|
+| Complete CollectiveKV | 0.7057 | Best performance |
+| User-specific KV only | ~0.69 | Lacks shared information |
+| Collective KV only | ~0.69 | Lacks personalization |
+| Without peak loss | ~0.70 | Training-inference discrepancy |
 | Without balance loss | ~0.70 | Low pool utilization |
 
 ### Key Findings
-- **0.8% compression with no performance drop**: Results match or improve across 5 models × 3 datasets, indicating that shared KV provides a regularization/information-augmentation effect.
-- SVD analysis offers an interpretable theoretical basis for compression—principal components exhibit strong cross-user correlation while residuals are user-specific.
-- Inference latency is substantially reduced: secondary storage transfer volume shrinks by 50–100×, while in-GPU index lookup overhead is negligible.
+- **Improved Performance at 0.8% CR**: Results across 5 models and 3 datasets show maintained or improved performance, suggesting that shared KV provides regularization or information enhancement.
+- SVD analysis provides an interpretable basis for compression—principal components are cross-user correlated while residuals are user-specific.
+- Inference latency is significantly reduced—external storage transmission volume shrinks 50-100x, with negligible indexing overhead.
 
 ## Highlights & Insights
-- **Cross-user KV sharing is a compression dimension unique to recommendation systems**: LLM KV compression lacks this dimension (each inference serves a single sequence), whereas recommendation systems inherently possess collaborative signals—a neglected yet highly promising direction.
-- **SVD decomposition provides a theoretical analysis tool for determining what can be shared**: The contrast in cross-user similarity between principal components and residuals is intuitive and compelling.
-- **Sigmoid gating + peak loss in the router design** elegantly resolves the non-differentiability of discrete index selection.
+- **Cross-user KV sharing is a unique compression dimension for recommendation**: Unlike LLMs where each inference usually serves one sequence, recommendation systems naturally possess collaborative signals—a neglected direction with high potential.
+- **SVD analysis as a theoretical tool**: Comparing cross-user similarity of principal components vs. residuals provides intuitive justification for "what can be shared."
+- **Router Design**: The sigmoid gating and peak loss elegantly solve the non-differentiable discrete indexing problem.
 
 ## Limitations & Future Work
-- The global KV pool resides permanently in GPU memory, constraining the feasible pool size $m$—how should $m$ be chosen in large-scale deployments?
-- Validation is limited to CTR prediction tasks; applicability to ranking and generative recommendation remains unexplored.
-- The router employs a simple linear layer; more sophisticated routing strategies may yield further improvements.
+- The global KV pool resides in GPU memory; how to select pool size $m$ for extremely large-scale scenarios remains to be explored.
+- The method was validated on CTR prediction; validation on ranking or generative recommendation tasks is needed.
+- The router uses a simple linear layer; more complex routing strategies may further improve performance.
 
 ## Related Work & Insights
-- **vs. MLA (DeepSeek)**: MLA reduces dimensionality within a single user's KV; CollectiveKV exploits cross-user sharing to achieve more extreme compression.
-- **vs. Token pruning (Loki/Quest)**: Token pruning discards information; CollectiveKV does not discard but instead transfers information to the shared pool.
-- **vs. HSTU**: HSTU introduces KV caching to recommendation without compression; CollectiveKV builds on this foundation to achieve 0.8% compression.
+- **vs MLA (DeepSeek)**: MLA compresses single-user KV via dimensionality reduction; CollectiveKV utilizes cross-user sharing for more extreme compression.
+- **vs Token pruning (Loki/Quest)**: Pruning discards tokens; CollectiveKV transfers information to a shared pool instead of discarding it.
+- **vs HSTU**: HSTU introduced KV cache to recommendation without compression; CollectiveKV achieves 0.8% compression on such architectures.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Cross-user KV sharing is an entirely new perspective, supported by theoretical SVD analysis.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Broad coverage across 5 models × 3 datasets, though further ablation details are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ SVD analysis visualizations are clear and the overall logic is coherent.
-- **Value**: ⭐⭐⭐⭐⭐ A 0.8% compression ratio carries substantial industrial deployment value.
+- Novelty: ⭐⭐⭐⭐⭐ Cross-user KV sharing is a fresh perspective supported by SVD analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad coverage across models and datasets, though some ablation details could be further expanded.
+- Writing Quality: ⭐⭐⭐⭐ Clear visualization of SVD analysis and logical flow.
+- Value: ⭐⭐⭐⭐⭐ 0.8% compression rate offers significant industrial deployment value.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ACL 2025\] Laser: Bi-Tuning with Collaborative Information for Controllable LLM-Based Sequential Recommendation](../../ACL2025/recommender/bi-tuning_with_collaborative_information_for_controllable_llm-based_sequential_r.md)
 - [\[AAAI 2026\] FreqRec: Exploiting Inter-Session Information with Frequency-enhanced Dual-Path Networks for Sequential Recommendation](../../AAAI2026/recommender/exploiting_inter-session_information_with_frequency-enhanced_dual-path_networks_.md)
+- [\[ICLR 2026\] On the Mechanisms of Collaborative Learning in VAE Recommenders](on_the_mechanisms_of_collaborative_learning_in_vae_recommenders.md)
 - [\[AAAI 2026\] HyMoERec: Hybrid Mixture-of-Experts for Sequential Recommendation](../../AAAI2026/recommender/hymoerec_hybrid_mixture-of-experts_for_sequential_recommendation.md)
-- [\[AAAI 2026\] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation](../../AAAI2026/recommender/wavelet_enhanced_adaptive_frequency_filter_for_sequential_re.md)
-- [\[ICML 2026\] GCIB: Graph Contrastive Information Bottleneck for Multi-Behavior Recommendation](../../ICML2026/recommender/gcib_graph_contrastive_information_bottleneck_for_multi-behavior_recommendation.md)
-- [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](../../NeurIPS2025/recommender/semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
+- [\[ICLR 2026\] Steering Diffusion Models Towards Credible Content Recommendation](steering_diffusion_models_towards_credible_content_recommendation.md)
 
 </div>
 

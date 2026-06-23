@@ -2,139 +2,148 @@
 title: >-
   [Paper Note] ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation
 description: >-
-  [ICLR 2026][Recommender Systems][proactive agent] This paper proposes ProPerSim, a simulation framework that models daily behaviors of 32 user personas grounded in the Big Five personality model within the Smallville hou…
+  [ICLR 2026][Recommender Systems][proactive agent] This work proposes ProPerSim, a simulation framework that constructs 32 user personas based on the Big Five personality traits within the Smallville household environment. AI assistants perform proactive recommendation decisions every 2.5 minutes. Through DPO preference learning over a 14-day simulation, user satisfact
 tags:
-  - "ICLR 2026"
-  - "Recommender Systems"
-  - "proactive agent"
-  - "personalization"
-  - "user simulation"
-  - "DPO"
-  - "Big Five personality"
-  - "generative agents"
+  - ICLR 2026
+  - Recommender Systems
+  - proactive agent
+  - personalization
+  - user simulation
+  - DPO
+  - Big Five personality
+  - generative agents
 date: 2026-05-08
-content_hash: 09dcdaab70980f9c
+content_hash: c4f8f24571019ddb
 ---
-
 # ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.21730](https://arxiv.org/abs/2509.21730)  
 **Code**: [GitHub](https://github.com/jiho283/ProPerSim)  
-**Area**: Recommender Systems
+**Area**: Recommender Systems  
 **Keywords**: proactive agent, personalization, user simulation, DPO, Big Five personality, generative agents
 
 ## TL;DR
-This paper proposes ProPerSim, a simulation framework that models daily behaviors of 32 user personas grounded in the Big Five personality model within the Smallville household environment. The AI assistant makes proactive recommendation decisions every 2.5 minutes and learns user preferences via DPO, improving user satisfaction from 2.2/4 to 3.3/4 over a 14-day simulation—providing the first empirical validation of jointly achieving proactivity and personalization.
+This work proposes ProPerSim, a simulation framework that constructs 32 user personas based on the Big Five personality traits within the Smallville household environment. AI assistants perform proactive recommendation decisions every 2.5 minutes. Through DPO preference learning over a 14-day simulation, user satisfaction improved from 2.2/4 to 3.3/4, validating for the first time the feasibility of unifying proactivity and personalization.
 
 ## Background & Motivation
 
-**Background**: LLM-based assistants are evolving in two separate directions: proactive recommendation and personalization. Proactive Agent (Lu et al., 2024) explores proactive recommendations without accounting for individual preferences, while personalization methods (e.g., RLHF) adapt to users but still require user-initiated interaction.
+**Background**: LLM assistants are evolving from passive response towards two distinct directions: proactive recommendation and personalization. Proactive Agents (Lu et al., 2024) explore initiation without considering personal preferences, while personalization methods (e.g., RLHF) adapt to users but still rely on user-initiated interactions.
 
 **Limitations of Prior Work**:
-- Proactivity alone → recommending a steakhouse to a vegetarian (Figure 1), with mismatches in both timing and content relative to personal preferences
-- Personalization alone → even highly accurate recommendations are missed if the user must initiate the interaction
-- Large-scale collection of real behavioral data faces prohibitive costs and privacy challenges; human subject experiments are extremely expensive
-- Existing proactive research is event-driven (triggered only when a user performs some action), leaving time-based continuous monitoring unexplored
+- Proactivity alone → Recommending a steakhouse to a vegetarian (as in Figure 1), where timing and content mismatch personal preferences.
+- Personalization alone → Accurate recommendations still require user prompts, missing optimal proactive windows.
+- Large-scale real-world behavior data collection faces significant cost and privacy challenges; human experiments are prohibitively expensive.
+- Existing proactive research is often event-driven (triggered by specific user actions), failing to explore time-based continuous monitoring modes.
 
-**Key Challenge**: Learning "when to recommend" and "what to recommend" simultaneously requires large-scale user–assistant interaction data, yet collecting such data in practice is infeasible.
+**Key Challenge**: The need for massive user-assistant interaction data to simultaneously learn "when to recommend" and "what to recommend" — yet real-world data collection is infeasible.
 
-**Goal**: Unify proactivity and personalization within a simulation environment to develop AI assistants that adapt to individual users over time.
+**Goal**: To unify proactivity and personalization in a simulated environment, developing AI assistants that adapt to individual users over time.
 
-**Key Insight**: Simulate realistic user behavior with LLM-based user agents equipped with rich Big Five personality-grounded personas, collect preference data within the simulation, and apply DPO training.
+**Key Insight**: Leveraging LLM-based user agents with rich personas based on the Big Five model to simulate realistic user behavior and collect preference data for DPO training.
 
-**Core Idea**: Generative Agents for user simulation + personalized rubric-based evaluation + DPO preference learning → a continuously improving proactive and personalized closed loop.
+**Core Idea**: Utilizing Generative Agents to simulate users + personalized rubrics to evaluate recommendations + DPO preference learning → forming a continuous improvement loop for proactive and personalized assistance.
 
 ## Method
 
 ### Overall Architecture
 
-The system comprises three components: (1) a persona-driven user agent that generates daily action sequences $\{(A_i, \text{Range}_i)\}$ in a household environment; (2) an AI assistant that observes user behavior every $T=2.5$ minutes and decides whether to make a recommendation $R_t = \mathcal{A}_\theta(A_t, S_t^{(a)})$; and (3) the user agent that scores each recommendation using a personalized rubric $\text{Score}_t = \mathcal{E}(P, r, A_t, R_t, S_t^{(u)})$.
+This paper aims to create an assistant that is both "proactive" and "understanding." Since real user data is hard to acquire, the entire system runs in a simulation driven by a three-party cycle. The first party is a persona-based user agent generating daily behavior sequences $\{(A_i, \text{Range}_i)\}$ in the Smallville environment (e.g., "7:00–7:30 Preparing breakfast"). The second party is the AI assistant, which observes the current action $A_t$ and its internal state $S_t^{(a)}$ every $T=2.5$ minutes to decide whether and what to recommend: $R_t = \mathcal{A}_\theta(A_t, S_t^{(a)})$. The third party is the evaluator (part of the user agent), which scores the recommendation based on persona-specific rubrics: $\text{Score}_t = \mathcal{E}(P, r, A_t, R_t, S_t^{(u)})$. These scores serve as training signals: the assistant collects (recommendation, score) pairs daily for preference learning to improve its understanding for the next day. After 14 simulation days, the assistant achieves dual adaptation of "timing" and "content" without human intervention.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Big Five-driven User Persona System<br/>32 persona generation<br/>Daily behavior sequences"] --> B["Observation every T=2.5min<br/>Current action A_t + Assistant state S_t"]
+    B --> C["ProPerAssistant recommendation generation<br/>Daily memory + RAG -> n=2 candidates<br/>(Includes 'No Recommendation')"]
+    C --> D["Four-dimensional Personalized Evaluation Rubric<br/>Gemini scoring based on persona criteria<br/>Binary score Score_t"]
+    D --> E["Preference pairs from high/low scores<br/>Stored in replay buffer"]
+    E --> F["ProPerAssistant daily DPO training<br/>Sampling 200 preference pairs for policy update"]
+    F -->|"Next day, 14-day loop"| B
+```
 
 ### Key Designs
 
-1. **Big Five Personality-Driven User Persona System**:
-    - **Function**: Constructs 32 diverse user personas to drive behavior generation and recommendation evaluation.
-    - **Mechanism**: Each persona is defined by five Big Five dimensions (High/Low Extraversion / Agreeableness / Openness / Conscientiousness / Neuroticism) plus six extended attributes (age, background, interests, lifestyle, daily planning needs, and long-term goals). GPT-4o generates attribute values to ensure consistency with personality traits. UMAP + HDBSCAN validates the separability and diversity of the 32 personas.
-    - **Design Motivation**: The Big Five model is the most empirically validated personality framework in psychology. Different personality combinations naturally yield different recommendation preferences—low-extraversion personas prefer solitary activities, while high-conscientiousness personas prefer structured recommendations.
+**1. Big Five-driven User Persona System: Making Simulated User Behavior and Taste Truly Diverse**
 
-2. **Four-Dimensional Personalized Evaluation Rubric**:
-    - **Function**: Provides a set of four evaluation dimensions selected via an AMT survey of 353 participants, with persona-specific criteria generated for each dimension.
-    - **Mechanism**: Starting from 10 candidate dimensions, AMT voting excludes those with less than 50% support (Diversity and Interruption), retaining: Personal Preference (content alignment), Frequency (recommendation rate), Timing (contextual appropriateness), and Communication & Safety (communication style + safety). Dimension-specific criteria are customized by GPT-4o per persona (e.g., for a low-extraversion persona: "I prefer receiving recommendations no more than once every two hours"). Evaluation is performed by Gemini 2.0 Flash with binary scoring per dimension.
-    - **Design Motivation**: Evaluation criteria must simultaneously reflect the general importance of task dimensions (from large-scale survey) and individual differences (from persona customization). The two-layer design ensures both a consensus foundation and personalized flexibility.
+The diversity of simulated users is crucial. The paper utilizes the Big Five model (Extraversion, Agreeableness, Openness, Conscientiousness, Neuroticism, each High/Low) to create 32 personas. Each persona is augmented with six attributes (age, background, interests, lifestyle, daily needs, long-term goals) generated by GPT-4o. UMAP and HDBSCAN clustering on persona embeddings confirm that these 32 profiles are distinct and cover a wide representation space. Personality differences naturally dictate preference: low-extraversion users prefer solitude and low disruption, while high-conscientiousness users prefer structured, planned recommendations.
 
-3. **RAG + DPO Preference-Aligned ProPerAssistant**:
-    - **Function**: Constructs a proactive recommendation assistant capable of continuously learning from user feedback.
-    - **Mechanism**: The internal state $S_t^{(a)}$ contains structured episodic memory (detailed records of the past 10 minutes, with earlier content compressed into 1h/4h summaries) plus top-5 historically similar interactions retrieved via OpenAI embeddings. At each timestep, $n=2$ candidate recommendations (including a "no recommendation" option) are generated; user scores form preference pairs that are stored in a replay buffer. At the end of each day, 200 samples are randomly drawn from the buffer for DPO training:
-      $$\mathcal{L}_{\text{DPO}} = -\log\sigma\!\left(\beta\!\left(\log\frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \log\frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)\right)$$
-    - **Design Motivation**: DPO avoids the complexity of reward model training in RLHF. The replay buffer, inspired by experience replay in reinforcement learning, prevents forgetting of early interactions. LoRA fine-tuning of LLaMA 3.3 70B (4-bit quantization) balances performance and efficiency.
+**2. Four-dimensional Personalized Evaluation Rubric: Standardized yet Persona-tailored**
+
+A large-scale AMT survey (353 participants) was conducted to filter 10 candidate evaluation dimensions. Based on >50% support, four dimensions were selected: Personal Preference (content suitability), Frequency (appropriate rate), Timing (right moment), and Communication & Safety. To ensure personalization, specific criteria under these dimensions are customized by GPT-4o for each persona. For instance, the Frequency criterion for a low-extraversion persona might specify "no more than once every two hours." Gemini 2.0 Flash performs the actual scoring, providing binary ratings for each dimension.
+
+**3. RAG+DPO Preference-Aligned ProPerAssistant: Turning Daily Scores into Training Signals**
+
+The assistant's internal state $S_t^{(a)}$ comprises structured daily memory (full details for the last 10 minutes, compressed summaries for 1-hour and 4-hour blocks) and RAG-retrieved top-5 similar historical interactions. At each step, it generates $n=2$ candidate recommendations (one can be "No Recommendation"). High- and low-score items form preference pairs stored in a replay buffer. At the end of each day, 200 pairs are sampled for DPO training:
+
+$$\mathcal{L}_{\text{DPO}} = -\log\sigma\left(\beta\left(\log\frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \log\frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)\right)$$
+
+DPO is chosen over standard RLHF to avoid training a separate reward model. The inclusion of "No Recommendation" in the candidate set is vital, allowing the assistant to learn when to remain silent, reducing recommendation frequency from 24/hour to approximately 6/hour.
 
 ### Loss & Training
 
-**Base model**: LLaMA 3.3 70B (4-bit quantization), fine-tuned with LoRA. **DPO training**: 200 samples randomly drawn from the accumulated replay buffer at the end of each day; candidate count $n=2$. **Simulation setup**: timestep $T=2.5$ minutes; each persona is simulated for 14 days. **Per-persona simulation cost**: approximately 10 days × 1 A100 GPU + ~$30 in API fees.
+Base Model: LLaMA 3.3 70B (4-bit quantization), LoRA fine-tuned. DPO training: 200 samples from the cumulative replay buffer daily, candidate count $n=2$. Simulation setup: $T=2.5$ minutes, 14 days per persona. Resource cost: Approx. 10 days × 1 A100 GPU + ~$30 API cost per persona.
 
 ## Key Experimental Results
 
-### Main Results — Method Comparison
+### Main Results
 
-| Method | Day 1 Avg. Score | Day 14 Avg. Score | Notes |
-|--------|-----------------|-------------------|-------|
+| Method | Day 1 Avg Score | Day 14 Avg Score | Features |
+|------|-----------|------------|------|
 | No Memory | ~2.1 | ~2.2 | Current action only |
-| AR Memory (A,R) | ~2.3 | ~2.3 | Historical actions + recommendations |
-| ARS Memory (A,R,Score) | ~2.6 | ~2.5 | Scores added to prompt |
-| **ProPerAssistant** | **~2.2** | **~3.3** | DPO preference learning |
+| AR Memory (A,R) | ~2.3 | ~2.3 | History of actions + recs |
+| ARS Memory (A,R,Score) | ~2.6 | ~2.5 | Scores included in prompt |
+| **Ours (ProPerAssistant)** | **~2.2** | **~3.3** | DPO preference learning |
 
 ### Persona Dimension Analysis
 
-| Analysis Dimension | Best Persona | Worst Persona | Reason for Gap |
-|-------------------|-------------|--------------|---------------|
-| Final Score | 3.8/4 | 2.5/4 | Differences in preference complexity |
-| Preference Profile | Simple philosophical/creative | Data-driven/debate-oriented | Latter requires multi-dimensional matching |
-| Time Window | Flexible | Strict (6–9AM / 21:00+) | Narrow windows are harder to adapt to |
+| Analysis Dimension | Best Persona | Worst Persona | Reason for Difference |
+|---------|-------------|-------------|---------|
+| Final Score | 3.8/4 | 2.5/4 | Complexity of preferences |
+| Preference Features | Philosophical/Creative | Data-driven/Debative | Latter requires multi-dimensional match |
+| Time Window | Flexible | Strict (6-9AM/21:00+) | Narrow windows are harder to adapt |
 
 ### Key Findings
-- ProPerAssistant improves rapidly from Day 2 onward and sustains its lead, with daily average scores approaching 3.4/4, demonstrating that DPO preference learning far outperforms in-context reward signals (ARS Memory).
-- Recommendation frequency decreases from an initial ~24 per hour to ~6 per hour, indicating the assistant learns that "not recommending" is equally important.
-- The success rate (proportion of recommendations with score ≥ 3) improves from 51.06% to 71.51%.
-- Low-extraversion personas show greater improvement (household setting aligns with preference for solitary activities); low-openness personas also improve more (consistent preferences are easier to learn).
-- The Frequency and Timing dimensions show the most significant gains; Personal Preference improves more modestly—because as total recommendation volume decreases, the proportion of high-quality recommendations actually rises (0.77 → 0.83).
-- Human evaluation confirms high quality: behavior naturalness 8.25/10, persona consistency 8.02/10, evaluation reasonableness rate 90.54%.
+- ProPerAssistant shows a rapid score increase from Day 2, maintaining a lead with an average score near 3.4/4, proving DPO preference learning is superior to in-context reward signals (ARS Memory).
+- Recommendation frequency dropped from 24/hr to ~6/hr, demonstrating that learning "not to recommend" is equally important.
+- Successful recommendation rate (score $\ge 3$) increased from 51.06% to 71.51%.
+- Low-extraversion and low-openness personas showed significant improvement due to higher consistency in preferences.
+- Frequency and Timing dimensions improved most significantly; Personal Preference improvement was steadier, though high-quality recommendation ratios increased (0.77 → 0.83).
+- Human evaluation confirms high quality: Behavior naturalness 8.25/10, Persona consistency 8.02/10, Rubric logic 90.54%.
 
 ## Highlights & Insights
-- **First unified proactivity + personalization framework**: Bridges the gap between two independently studied research directions and defines a new task formulation.
-- **Time-driven vs. event-driven proactivity**: Decision-making at every $T$ timesteps more closely approximates continuous monitoring by real assistants and is more natural than event-driven approaches.
-- **DPO >> in-context reward**: ARS Memory directly incorporates scores into the prompt but performs far worse than DPO training—explicit preference learning is necessary, as in-context reward signals are insufficient to drive genuine adaptation.
-- **"Not recommending" is a critical capability**: The assistant's learned suppression of recommendations (frequency reduced by 4×) is as important as improvements in recommendation content quality.
+- **Unified Proactivity & Personalization**: Fills the gap between two independent research areas, defining a new task paradigm.
+- **Time-driven vs. Event-driven Proactivity**: Decision-making at every $T$ time step closer approximates the continuous monitoring mode of real-world assistants.
+- **DPO >> In-context Reward**: Explicit preference learning is necessary as in-context reward signals in prompts are insufficient to drive true adaptation.
+- **"Silence" as a Capability**: The ability to suppress recommendations (4x reduction in frequency) is as critical as content quality.
 
 ## Limitations & Future Work
-- Computational cost is extremely high (~10 A100 days + $30 API per persona); a full experiment across 32 personas requires approximately 320 GPU-days.
-- Both user behavior and evaluation are LLM-simulated rather than human-generated—the gap between simulated and real-world behavior has not been quantified.
-- The framework is limited to the household setting (Smallville house) and has not been extended to work, social, or outdoor environments.
-- The DPO candidate count $n=2$ is constrained by cost; more candidates could provide richer preference signals.
-- Only immediate rewards are optimized; delayed rewards such as long-term satisfaction and recommendation diversity are not considered.
+- High computational cost (10 days A100 + $30 API per persona).
+- User behavior and evaluation are LLM-simulated; the gap between simulation and real-world behavior remains unquantified.
+- Limited to household scenarios (Smallville); not yet extended to work or outdoor environments.
+- Candidate count $n=2$ is limited by cost; more candidates might provide richer signals.
+- Optimization targets immediate reward rather than long-term satisfaction or diversity.
 
 ## Related Work & Insights
-- **vs. Proactive Agent (Lu et al., 2024)**: Lu et al. train a proactive agent using 6,790 training events but do not account for individual preference differences; ProPerSim achieves personalization through persona-driven simulation.
-- **vs. Generative Agents (Park et al., 2023)**: Park et al. conduct social simulations with 25 agents; ProPerSim extends the generative agent framework to user–assistant interaction simulation, adding evaluation dimensions and preference learning.
-- **vs. Personalized RLHF**: Conventional personalization is achieved through one-time alignment; ProPerAssistant achieves continuous adaptation through a daily-accumulating replay buffer.
+- **vs Proactive Agent (Lu et al., 2024)**: Lu's work uses 6,790 events for training without persona variation; ProPerSim achieves personalization via persona-driven simulation.
+- **Generative Agents (Park et al., 2023)**: ProPerSim extends the social simulation framework to user-assistant interaction, adding structured evaluation and preference learning.
+- **vs Personalized RLHF**: While traditional personalization is often a one-time alignment, ProPerAssistant achieves continuous adaptation through a daily cumulative replay buffer.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Unifying proactivity and personalization is a meaningful new direction; the simulation framework is comprehensively designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 32 personas, 4 baselines, personality dimension analysis, and human evaluation—though real-user validation is absent.
-- **Writing Quality**: ⭐⭐⭐⭐ Framework description is clear, evaluation design is systematic, and persona examples are richly illustrated.
-- **Value**: ⭐⭐⭐⭐ Provides a valuable simulation platform and baseline for personal assistant research.
+- Novelty: ⭐⭐⭐⭐ Significant new direction unifying proactivity and personalization.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 32 personas, 4 baselines, and human evaluation, though lacks real-world validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework description and systematic evaluation design.
+- Value: ⭐⭐⭐⭐ Provides a valuable simulation platform and baseline for personal assistant research.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](../../ACL2026/recommender/learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
-- [\[NeurIPS 2025\] VisualLens: Personalization through Task-Agnostic Visual History](../../NeurIPS2025/recommender/visuallens_personalization_through_task-agnostic_visual_history.md)
-- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](../../ACL2026/recommender/mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
-- [\[AAAI 2026\] TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning](../../AAAI2026/recommender/travellama_a_multimodal_travel_assistant_with_large-scale_dataset_and_structured.md)
-- [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/recommender/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
+- [\[ICLR 2026\] Low-pass Personalized Subgraph Federated Recommendation](low-pass_personalized_subgraph_federated_recommendation.md)
+- [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
+- [\[ICLR 2026\] iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction](ifusion_integrating_dynamic_interest_streams_via_diffusion_model_for_click-throu.md)
+- [\[ICLR 2026\] Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization](beyond_markovian_drifts_action-biased_geometric_walks_with_memory_for_personaliz.md)
 
 </div>
 

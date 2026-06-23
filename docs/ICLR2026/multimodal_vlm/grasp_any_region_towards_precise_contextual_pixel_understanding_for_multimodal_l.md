@@ -2,161 +2,165 @@
 title: >-
   [Paper Note] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs
 description: >-
-  [ICLR2026][Multimodal VLM][Region-Level MLLM] This paper proposes GAR (Grasp Any Region), which employs RoI-aligned feature replay to extract high-fidelity local features while preserving global context…
+  [ICLR 2026][Multimodal VLM][Region-Level MLLM] GAR (Grasp Any Region) is proposed to extract high-fidelity local features while maintaining global context via RoI-aligned feature replay. It achieves precise single-region description, multi-region interaction modeling, and complex reasoning, with the 1B model outperforming InternVL3-78B.
 tags:
-  - "ICLR2026"
-  - "Multimodal VLM"
-  - "Region-Level MLLM"
-  - "RoI-Aligned Feature Replay"
-  - "Multi-Prompt Reasoning"
-  - "Visual Grounding"
+  - ICLR 2026
+  - Multimodal VLM
+  - Region-Level MLLM
+  - RoI-Aligned Feature Replay
+  - Multi-Prompt Reasoning
+  - Visual Grounding
 date: 2026-05-08
-content_hash: 9aa734900eee0bf8
+content_hash: ac9da5ab8cca3dd3
 ---
-
 # Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2510.18876](https://arxiv.org/abs/2510.18876)  
 **Code**: [GitHub](https://github.com/Haochen-Wang409/Grasp-Any-Region)  
-**Area**: Multimodal VLM
-**Keywords**: Region-Level MLLM, RoI-Aligned Feature Replay, Multi-Prompt Reasoning, Visual Grounding
+**Area**: Multimodal VLM  
+**Keywords**: Region-Level MLLM, RoI-Aligned Feature Replay, Multi-Prompt Reasoning, Visual Grounding  
 
 ## TL;DR
-This paper proposes GAR (Grasp Any Region), which employs RoI-aligned feature replay to extract high-fidelity local features while preserving global context, enabling precise single-region captioning, multi-region interaction modeling, and compositional reasoning. The 1B model surpasses InternVL3-78B.
+GAR (Grasp Any Region) is proposed to extract high-fidelity local features while maintaining global context via RoI-aligned feature replay. It achieves precise single-region description, multi-region interaction modeling, and complex reasoning, with the 1B model outperforming InternVL3-78B.
 
 ## Background & Motivation
-MLLMs excel at global image understanding but struggle with fine-grained region comprehension in dense scenes. Region-level MLLM is a promising direction, yet existing methods exhibit a fundamental trade-off:
+Multimodal Large Language Models (MLLMs) excel at global image understanding but lack the ability to understand fine-grained regions in dense scenes. Region-level MLLMs are a promising direction, yet existing methods face a fundamental trade-off:
 
-- **Local feature pooling methods** (e.g., GPT4RoI, GLaMM): compress region features into a single vector, losing detail
-- **Crop-based methods** (e.g., DAM): process only the cropped region, losing global context — e.g., misidentifying a frog-shaped slipper as a real frog due to the absence of bedroom scene context
-- **Single-prompt paradigm** (e.g., DAM, PAM): treats each region in isolation, unable to model inter-region relationships
+- **Local feature pooling methods** (e.g., GPT4RoI, GLaMM): Compress region features into a single vector, losing details.
+- **Cropping-based methods** (e.g., DAM): Process only cropped regions, losing global context—for instance, misidentifying frog-shaped slippers as real frogs due to the lack of a bedroom scene context.
+- **Single-prompt paradigm** (e.g., DAM, PAM): Treat each region in isolation, failing to model relationships between multiple regions.
 
-The root cause lies in how to simultaneously preserve global scene context and fine-grained local detail.
+The **Key Challenge** lies in simultaneously preserving global scene context and fine-grained local details.
 
 ## Core Problem
-1. How to maintain global context awareness in region-level understanding to avoid misidentification caused by isolated analysis?
-2. How to support interaction modeling among an arbitrary number of visual prompts?
-3. How to advance from passive description to active conversational reasoning (including positional reasoning, non-entity recognition, relational reasoning, etc.)?
+1. How to maintain global context awareness in region-level understanding to avoid misjudgments caused by isolated analysis?
+2. How to support interaction modeling between an arbitrary number of visual prompts?
+3. How to upgrade from passive description to active conversational reasoning (including positional reasoning, non-entity recognition, relational reasoning, etc.)?
 
 ## Method
 
 ### Overall Architecture
-GAR builds on the standard MLLM architecture (ViT + LLM) and introduces two key components:
+The core contradiction GAR aims to resolve is the need for both fine-grained observation of a specific region and the retention of its global context. It follows the standard MLLM backbone (ViT + LLM) but adds two new components on the visual side. First, user-specified masks are encoded as prompts and injected into the ViT without disrupting the original image representation. Second, on the global feature map encoded from the **full uncropped image**, the high-fidelity features of the target region are "replayed" using RoI-Align. This ensures the LLM receives both the overall scene context and zoomed-in local details—unlike cropping methods that only see the local part or pooling methods that only provide a coarse vector. To enable this architecture to learn fine-grained recognition first and then multi-region relational reasoning, the authors developed a two-round iterative data engine. The forward pipeline is: Image + mask prompt → AnyRes global feature map encoding → (Global context + RoI local features via RoI-Align) → LLM reasoning.
 
-#### 1. Prompt Encoding and Integration
-- Input binary masks are processed by a lightweight convolutional block to produce mask embeddings
-- These embeddings are added to the ViT patch embeddings via **zero-initialization**
-- Supports simultaneous input of an arbitrary number of mask prompts
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IMG["Full Uncropped Image"]
+    MASK["User-specified Mask<br/>(Arbitrary Number)"]
+    subgraph P["Prompt Encoding & Fusion"]
+        direction TB
+        CONV["Conv Block Encoding<br/>→ Mask Embedding"] -->|"Zero-initialized Addition"| PATCH["ViT Patch Embedding"]
+    end
+    MASK --> CONV
+    IMG --> PATCH
+    subgraph R["RoI-Aligned Feature Replay"]
+        direction TB
+        ANYRES["AnyRes Global Encoding<br/>→ Global Feature Map"]
+        BOX["Derived Bounding Box<br/>from Mask"]
+        ANYRES --> ROI["RoI-Align Extraction<br/>→ High-fidelity Local Features"]
+        BOX --> ROI
+    end
+    PATCH --> ANYRES
+    MASK --> BOX
+    ANYRES -->|"Global Context"| LLM["LLM Reasoning"]
+    ROI -->|"Local Details"| LLM
+    LLM --> OUT["Region Description /<br/>Multi-region Relational Reasoning"]
+```
 
-#### 2. RoI-Aligned Feature Replay (Core Innovation)
-This is the paper's key technical contribution:
+### Key Designs
 
-- **Step 1**: Encode the full, uncropped image (together with encoded mask prompts) via AnyRes to produce a feature map containing global context
-- **Step 2**: Derive the corresponding bounding box from the input mask
-- **Step 3**: Apply RoI-Align (from Mask R-CNN) to extract region feature vectors from the global feature map
-- **Key advantage**: Extracted features originate from the full-image feature map, thus inherently possessing context awareness
-- Simultaneously provides the LLM with high-resolution local region representations, achieving "zooming in on details without losing the global view"
+**1. Prompt Encoding and Fusion: Informing the Model "Where to Look" without Disrupting the Image**
 
-Both global context features and local detail features are fed into the LLM for reasoning.
+Given binary masks, the first hurdle is informing a pre-trained visual backbone without disrupting existing representations. GAR transforms masks into mask embeddings using a lightweight convolutional block, then adds them to the ViT patch embeddings via **zero-initialization**. Zero-initialization ensures that at the start of training, this path outputs zero and does not disturb the pre-trained visual features. Influences from the prompt are learned gradually. Since prompts are added patch-wise, the architecture naturally supports an **arbitrary number** of simultaneous mask inputs—a prerequisite for multi-region relationship modeling.
 
-### Training Data Pipeline (Two Rounds)
+**2. RoI-Aligned Feature Replay: Extracting Local Features from the Global Map**
 
-#### Round 1: Enhancing Recognition Capability
-- Base: DAM's Describe Anything-1.5M dataset
-- Supplement: ImageNet-21K subset (extremely fine-grained classification), with descriptions generated by a seed captioner and verified by an LLM
-- Output: 456K fine-grained caption samples → used to train a fine-grained captioner
+This is the core technical contribution, addressing the "global context vs. local detail" trade-off. It involves three steps: encoding the full uncropped image (with encoded mask prompts) via AnyRes to obtain a context-rich feature map; deriving bounding boxes from the input masks; and using RoI-Align (from Mask R-CNN) to extract the target region's features from this global map. The **Key Insight** is that since extracted local features originate from the full image feature map, they inherently carry context while providing high-resolution local representations. This surpasses cropping methods—for example, frog-shaped slippers might be misidentified as real frogs if cropped, but GAR corrects this using the bedroom context. Global context and local detail features are then jointly fed to the LLM.
 
-#### Round 2: Supporting Multi-Prompt
-- Based on the Panoptic Scene Graph (PSG) dataset, which contains rich relational information
-- The fine-grained captioner generates descriptions for each region
-- Qwen2.5-72B serves as an LLM-Merger to produce:
-    - 144K region descriptions enriched with relational context
-    - 144K QA pairs for relational understanding
-    - 126K multiple-choice questions
-- Total: 414K relational data samples
+**3. Tworound Data Engine: From "Fine Recognition" to "Relational Reasoning"**
 
-### GAR-Bench
-Divided into two parts:
-
-**GAR-Bench-Cap** (Multi-Prompt Relational Captioning):
-- Simple protocol: directly queries the relationship between two prompts
-- Detailed protocol: generates detailed descriptions incorporating relational context
-
-**GAR-Bench-VQA** (Multi-Dimensional Visual QA):
-- **Perception** (198 questions): basic attributes such as color, shape, texture, and material
-- **Reasoning** (226 questions):
-    - Position: spatial positional reasoning (e.g., "second from the left in the third row")
-    - Non-Entity: recognition of non-physical entities (mirror reflections, faces on screens, etc.)
-    - Relation: compositional reasoning across multiple prompts (including distractor prompts)
+To cultivate region-level fine-grained understanding and multi-region reasoning, a two-round captioning-judging data engine was designed. **Round 1 (Enhanced Recognition)** uses DAM’s Describe Anything-1.5M as a base and incorporates a fine-grained classification subset from ImageNet-21K. A seed captioner generates descriptions, which are then verified by an LLM against ground-truth labels to filter 456K fine-grained samples for training a fine-grained captioner. **Round 2 (Multi-Prompt Support)** utilizes the Panoptic Scene Graph (PSG) dataset. The fine-grained captioner writes descriptions for each region, and Qwen2.5-72B acts as an LLM-Merger to integrate these with original PSG annotations into relational data. This produces 144K region descriptions with relational context, 144K relational VQA samples, and 126K multiple-choice questions (414K total). This data flow ensures the architecture learns to describe relationships effectively.
 
 ## Key Experimental Results
+
+The authors constructed **GAR-Bench** for systematic region-level evaluation. **GAR-Bench-Cap** focuses on multi-prompt relationship descriptions using Simple (direct relationship questions) and Detailed (detail generation with relationships) protocols. **GAR-Bench-VQA** covers multi-dimensional VQA: Perception (198 questions on color, shape, texture, material, etc.) and Reasoning (226 questions), including Position (spatial reasoning), Non-Entity (recognizing reflections, faces on screens), and Relation (complex reasoning between multi-prompts with distractors).
 
 ### GAR-Bench-VQA Core Comparison
 
 | Model | Overall | Texture | Non-Entity | Relation |
-|-------|---------|---------|------------|----------|
+|------|---------|---------|------------|----------|
 | GPT-4o | 53.5 | 48.3 | 60.2 | 61.4 |
 | InternVL3-78B | 50.5 | 58.6 | 47.5 | 45.5 |
 | DAM-3B | 38.2 | 41.4 | 36.1 | 31.7 |
-| **GAR-1B** | **50.6** | **69.0** | **62.3** | **56.4** |
-| **GAR-8B** | **59.9** | **75.9** | **60.7** | **68.3** |
+| **Ours-1B** | **50.6** | **69.0** | **62.3** | **56.4** |
+| **Ours-8B** | **59.9** | **75.9** | **60.7** | **68.3** |
 
-- GAR-1B (1B parameters) surpasses InternVL3-78B's overall score
-- GAR-8B outperforms GPT-4o (non-thinking mode)
+- **Ours-1B** (1B parameters) outperforms the total score of InternVL3-78B.
+- **Ours-8B** surpasses GPT-4o (standard mode).
 
-### GAR-Bench-Cap Relational Captioning
+### GAR-Bench-Cap Relational Description
 
 | Model | Overall | Simple | Detailed |
-|-------|---------|--------|----------|
+|------|---------|--------|----------|
 | Gemini-2.5-Pro | 59.3 | 51.6 | 66.4 |
 | DAM-3B | 13.1 | 17.5 | 10.3 |
-| **GAR-1B** | **57.5** | **56.7** | **63.6** |
-| **GAR-8B** | **62.2** | **66.0** | **64.5** |
+| **Ours-1B** | **57.5** | **56.7** | **63.6** |
+| **Ours-8B** | **62.2** | **66.0** | **64.5** |
 
 ### DLC-Bench Detailed Captioning
-- GAR-1B: 67.9 (+3.4 vs. DAM-3B); GAR-8B: 67.4
-- Evaluated with GPT-4o + cropped images: GAR-1B reaches 77.1, GAR-8B reaches 77.0
+- **Ours-1B**: 67.9 (**Gain**: +3.4 vs. DAM-3B), **Ours-8B**: 67.4.
+- Using GPT-4o with cropped images as a judge: **Ours-1B** reaches 77.1, **Ours-8B** reaches 77.0.
 
 ### Category-Level Recognition (LVIS / PACO)
-- GAR-8B achieves Sim=93.6 / IoU=88.7 on LVIS and Sim=95.5 / IoU=91.8 on PACO, surpassing all baselines by a substantial margin
+- **Ours-8B** leads significantly on LVIS (Sim=93.6 / IoU=88.7) and PACO (Sim=95.5 / IoU=91.8).
 
-### Zero-Shot Transfer to Video
-- Zero-shot GAR-8B outperforms supervised VideoRefer-7B on VideoRefer-Bench^Q, demonstrating direct transferability to video understanding
+### Zero-Shot Video Transfer
+- Zero-shot **Ours-8B** surpasses the supervised VideoRefer-7B on VideoRefer-Bench^Q, indicating direct transferability to video.
 
 ## Highlights & Insights
-1. **Elegant and effective RoI-aligned feature replay design**: Applying RoI-Align on the full-image feature map naturally unifies global context and local detail without requiring a complex dual-branch architecture
-2. **Exceptional parameter efficiency**: The 1B model surpasses the 78B model on GAR-Bench-VQA, demonstrating that architectural design matters more than raw parameter count
-3. **Multi-prompt interaction modeling**: The first systematic treatment of relational reasoning across an arbitrary number of regions, transcending the single-prompt paradigm
-4. **Rich evaluation dimensions in GAR-Bench**: Novel scenario designs including non-entity recognition and relational reasoning under distractor prompts
-5. **Zero-shot video transfer**: Image-only training suffices to surpass video-specialized models, evidencing the generality of the learned representations
+1. **Elegant RoI-aligned feature replay**: Performing RoI-Align on global feature maps naturally unifies context and detail without complex dual-branch designs.
+2. **High Parameter Efficiency**: The 1B model surpasses a 78B model on GAR-Bench-VQA, proving that architecture matters more than scale.
+3. **Multi-Prompt Interaction**: The first to systematically handle relational reasoning between arbitrary numbers of regions, moving beyond the single-prompt paradigm.
+4. **Rich Evaluation in GAR-Bench**: Innovative scenarios like non-entity recognition and relational reasoning under distractors.
+5. **Zero-Shot Video Transfer**: Outperforms video-specific models using only image training, demonstrating robust representation.
 
 ## Limitations & Future Work
-1. **Weak temporal understanding**: Image-only training leads to lower scores on video temporal description (TD) and future prediction tasks
-2. **Dependency on external masks**: Requires prior segmentation results; end-to-end segmentation capability is not integrated
-3. **Reliance on LLM-generated training data**: Round 2 data is largely generated by Qwen2.5-72B, potentially introducing LLM biases
-4. **Computational overhead of AnyRes + RoI-Align**: Full-image high-resolution encoding combined with additional RoI feature extraction incurs higher inference cost than crop-based methods
-5. **Weak performance on Position subtask**: GAR-1B scores only 21.9 on Position, far below general-purpose models, indicating room for improvement in grid-structured spatial reasoning
+1. **Weak Temporal Understanding**: Sole image training results in lower scores for video temporal descriptions (TD) and future prediction.
+2. **Dependency on External Masks**: Requires pre-existing segmentation results; segmentation is not yet end-to-end.
+3. **LLM-Generated Data Dependence**: Round 2 relies heavily on Qwen2.5-72B, which may introduce LLM bias.
+4. **Computational Overhead**: High-resolution global encoding plus RoI feature extraction leads to higher inference costs than cropping methods.
+5. **Performance on Position Tasks**: **Ours-1B** scores only 21.9 on Position tasks, significantly lower than general models, suggesting room for improvement in grid-based reasoning.
 
 ## Related Work & Insights
 
-| Dimension | DAM | PAM | GPT4RoI / GLaMM | GAR |
-|-----------|-----|-----|-----------------|-----|
-| Region Representation | Mask (crop) | Mask (crop) | Box → pooled vector | Mask → RoI-Align |
-| Global Context | ✗ | ✗ | ✓ (but detail lost) | ✓ |
-| Local Detail | ✓ | ✓ | ✗ | ✓ |
-| Multi-Prompt | ✗ | ✗ | Limited | ✓ (arbitrary count) |
+| Dimension | DAM | PAM | GPT4RoI / GLaMM | GAR (Ours) |
+|------|-----|-----|-----------------|-----|
+| Region Representation | Mask (Crop) | Mask (Crop) | Box → Pooled Vector | Mask → RoI-Align |
+| Global Context | ✗ | ✗ | ✓ (Limited Detail) | ✓ |
+| Local Details | ✓ | ✓ | ✗ | ✓ |
+| Multi-Prompt | ✗ | ✗ | Limited | ✓ (Arbitrary) |
 | Relational Reasoning | ✗ | ✗ | ✗ | ✓ |
 
-GAR's core advantage lies in resolving the tension between global context and local detail via feature replay — a fundamental problem that prior methods failed to address.
-
-The revival of RoI-Align demonstrates that classical detection techniques can find renewed utility in the MLLM era. GAR is complementary to grounding models such as SAM and Grounding DINO. The progression from single-region description to multi-region relational reasoning represents an important paradigm shift, inspiring future MLLM development in scene graph generation and visual reasoning. The design of non-entity recognition and distractor prompts in GAR-Bench also offers new perspectives for evaluating genuine visual understanding in MLLMs.
+The core advantage of GAR lies in resolving the fundamental conflict between global context and local detail through feature replay, a problem previously left unaddressed.
 
 ## Rating
-- Novelty: 8/10 — RoI-aligned feature replay is concise and effective; multi-prompt interaction modeling opens a new direction
-- Experimental Thoroughness: 9/10 — Covers 7+ benchmarks with ablation studies and video transfer validation
-- Writing Quality: 8/10 — Problem formulation is clear, structure is complete, and figures are informative
-- Value: 8/10 — Addresses the fundamental tension in region-level MLLMs; GAR-Bench has the potential to become a standard benchmark
+- Novelty: 8/10 — RoI-aligned feature replay is simple yet effective; multi-prompt interaction is a new direction.
+- Experimental Thoroughness: 9/10 — Covers 7+ benchmarks with ablation studies and video transfer.
+- Writing Quality: 8/10 — Clear problem definition, solid structure, and rich visualization.
+- Value: 8/10 — Resolves a fundamental MLLM conflict; GAR-Bench could become a standard benchmark.
+
+## Related Papers
+
+- [\[ICLR 2026\] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows](flowbind_efficient_any-to-any_generation_with_bidirectional_flows.md)
+- [\[ACL 2025\] R-VLM: Region-Aware Vision Language Model for Precise GUI Grounding](../../ACL2025/multimodal_vlm/r-vlm_region-aware_vision_language_model_for_precise_gui_grounding.md)
+- [\[ICLR 2026\] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching](next-omni_towards_any-to-any_omnimodal_foundation_models_with_discrete_flow_matc.md)
+- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
+- [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -164,11 +168,11 @@ The revival of RoI-Align demonstrates that classical detection techniques can fi
 
 ## Related Papers
 
-- [\[ACL 2026\] Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking](../../ACL2026/multimodal_vlm/region-r1_reinforcing_query-side_region_cropping_for_multi-modal_re-ranking.md)
-- [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
-- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](../../ICML2026/multimodal_vlm/seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
-- [\[ICML 2026\] Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering](../../ICML2026/multimodal_vlm/referring_multiple_regions_with_large_multimodal_models_via_contextual_latent_st.md)
-- [\[ICCV 2025\] STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?](../../ICCV2025/multimodal_vlm/sti-bench_are_mllms_ready_for_precise_spatial-temporal_world_understanding.md)
+- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
+- [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
+- [\[ICLR 2026\] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching](next-omni_towards_any-to-any_omnimodal_foundation_models_with_discrete_flow_matc.md)
+- [\[ICLR 2026\] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows](flowbind_efficient_any-to-any_generation_with_bidirectional_flows.md)
+- [\[ICLR 2026\] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing](visual_self-refine_a_pixel-guided_paradigm_for_accurate_chart_parsing.md)
 
 </div>
 

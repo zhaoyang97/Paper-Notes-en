@@ -2,153 +2,139 @@
 title: >-
   [Paper Note] Modal Aphasia: Can Unified Multimodal Models Describe Images From Memory?
 description: >-
-  [ICLR 2026][Multimodal VLM][modal aphasia] This paper identifies and systematically defines the phenomenon of **Modal Aphasia** — unified multimodal models can generate visual concepts (e.g.…
+  [ICLR 2026][Multimodal VLM][Paper Note] This paper identifies and systematically defines the phenomenon of "Modal Aphasia"—where unified multimodal models can near-perfectly generate visual concepts (such as movie posters) from memory but exhibit error rates over 7 times higher when describing the same concepts in text, with severe hallucinations occurring a
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "modal aphasia"
-  - "unified multimodal models"
-  - "cross-modal knowledge transfer"
-  - "memorization"
-  - "AI safety"
+  - ICLR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 8b81ed47ae806050
+content_hash: b60d498b41301325
 ---
-
 # Modal Aphasia: Can Unified Multimodal Models Describe Images From Memory?
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.21842](https://arxiv.org/abs/2510.21842)  
 **Code**: [https://github.com/ethz-spylab/modal-aphasia](https://github.com/ethz-spylab/modal-aphasia)  
-**Area**: Multimodal VLM / AI Safety
-**Keywords**: modal aphasia, unified multimodal models, cross-modal knowledge transfer, memorization, AI safety
+**Area**: Multimodal VLM / AI Safety  
+**Keywords**: Modal Aphasia, Unified Multimodal Models, Cross-modal Knowledge Transfer, Memorization, AI Safety
 
 ## TL;DR
 
-This paper identifies and systematically defines the phenomenon of **Modal Aphasia** — unified multimodal models can generate visual concepts (e.g., movie poster images) from memory with near-perfect fidelity, yet exhibit error rates more than 7× higher when verbally describing the same concepts, with severe hallucinations occurring almost exclusively in the text modality. Through real-world experiments with frontier models (ChatGPT-5) and controlled synthetic experiments with open-source models (Janus-Pro, Harmon), the paper confirms that modal aphasia is a systemic deficiency of current unified architectures rather than a training artifact, and demonstrates its potential threat to AI safety frameworks.
+This paper identifies and systematically defines the phenomenon of "Modal Aphasia"—where unified multimodal models can near-perfectly generate visual concepts (such as movie posters) from memory but exhibit error rates over 7 times higher when describing the same concepts in text, with severe hallucinations occurring almost exclusively in the text modality. Through real-world experiments on frontier models (ChatGPT-5) and synthetic controlled experiments on open-source models (Janus-Pro, Harmon), the authors demonstrate that Modal Aphasia is a systemic flaw of current unified architectures rather than a training artifact, revealing its potential threat to AI safety frameworks.
 
 ## Background & Motivation
 
-**Background**: Multimodal large models are evolving from "compositional" designs (frozen pretrained components + adapters, e.g., Flamingo, LLaVA) toward "natively unified" architectures (Chameleon, Janus-Pro, ChatGPT-5). The latter jointly train on images and text within a shared representation space, theoretically enabling more consistent cross-modal reasoning and knowledge transfer.
+**Background**: Multimodal large models are evolving from "modular" designs (frozen pretrained components + adapters, such as Flamingo, LLaVA) to "native unified" designs (Chameleon, Janus-Pro, ChatGPT-5). The latter co-train images and text in a shared representation space, theoretically aiming for more consistent cross-modal reasoning and knowledge transfer.
 
-**Limitations of Prior Work**: Within individual modalities, memorization has been well studied — diffusion models can reproduce training images (Carlini et al., 2023), and LLMs can verbatim extract training text (Nasr et al., 2025). However, cross-modal memorization has rarely been explored: if a concept is memorized in the visual modality, can it be accurately retrieved in the text modality? Wen et al. (2025) identified a recall gap between source and target modalities but did not address image generation scenarios. Papadimitriou et al. (2025) found that even with a shared representation space, different modalities in VLMs encode concepts in modality-specific ways — yet the practical consequences of such an incomplete "latent bridge" remain unclear.
+**Limitations of Prior Work**: Within a single modality, memorization has been extensively studied—diffusion models can replicate training images (Carlini et al., 2023), and LLMs can extract training text verbatim (Nasr et al., 2025). However, cross-modal memorization is rarely explored: once a concept is memorized in the visual modality, can it be accurately retrieved in the text modality? Wen et al. (2025) identified a recall gap between source and target modalities but did not cover image generation scenarios. Papadimitriou et al. (2025) found that even with a shared representation space in VLMs, different modalities still encode concepts in modality-specific ways—leaving the practical consequences of this incomplete "latent bridge" unclear.
 
-**Key Challenge**: ChatGPT-5 can reproduce Harry Potter movie posters at nearly pixel-level fidelity (including character positions, costume details, and color composition), yet when verbally describing the same poster it fabricates characters such as Draco Malfoy and Snape who are entirely absent, and misidentifies "the Sword of Gryffindor" as "a wand." This reveals that "knowing how to draw" does not entail "knowing how to say" — visual and textual knowledge exist in a fractured state within the model.
+**Key Challenge**: ChatGPT-5 can reconstruct movie posters (e.g., Harry Potter) with near-pixel accuracy—including character positioning, costume details, and color composition—yet it fabricates non-existent characters like Draco Malfoy or Snape and misdescribes the "Sword of Gryffindor" as a "wand" when prompted for a text description. This implies that "knowing how to draw" does not equate to "knowing how to say," suggesting a fracture between visual and textual knowledge inside the model.
 
-**Goal**: (1) Rigorously define and quantify this cross-modal knowledge fragmentation; (2) demonstrate that it is a systemic property of unified architectures rather than an idiosyncrasy of any individual model's training; (3) reveal its practical threat to AI safety frameworks.
+**Goal**: (1) Rigorously define and quantify this cross-modal knowledge fracture; (2) Prove it is a systemic property of unified architectures rather than a training fluke of specific models; (3) Reveal its practical threats to AI safety frameworks.
 
-**Key Insight**: The authors draw an analogy to *optic aphasia* in cognitive science — a condition in which patients can see and recognize objects yet cannot name them when presented visually — as well as *verbal overshadowing*, where verbalizing a visual memory impairs recognition accuracy. The authors term this cross-modal fragmentation in AI systems **Modal Aphasia**.
+**Key Insight**: Drawing parallels to "optic aphasia" in cognitive science—where patients can recognize objects but cannot name them visually—and the "verbal overshadowing effect," where verbalizing a visual memory impairs recognition accuracy. The authors name this cross-modal fracture in AI systems "Modal Aphasia."
 
-**Core Idea**: Knowledge transfer in unified multimodal models is asymmetric — concepts successfully memorized in the visual modality cannot be reliably accessed via the text modality, constituting a systemic failure of cross-modal understanding.
+**Core Idea**: Knowledge transfer in unified multimodal models is asymmetric—concepts successfully memorized in the visual modality cannot be reliably accessed in the textual modality, constituting a systemic failure in cross-modal understanding.
 
 ## Method
 
 ### Overall Architecture
 
-The paper adopts a three-tier experimental design. The first tier validates the existence of modal aphasia using real memorized concepts (movie posters) in a frontier closed-source model (ChatGPT-5). The second tier conducts controlled experiments with open-source unified models (Janus-Pro 7B, Harmon 1.5B) using synthetic data to rule out training artifacts and confirm that modal aphasia is an architectural property. The third tier constructs a safety case study demonstrating how modal aphasia can be exploited to circumvent unimodal safety alignment.
+Rather than proposing a new model, the paper designs a three-tiered progressive experimental suite to characterize "Modal Aphasia." Tier 1 uses frontier closed-source models (ChatGPT-5) with real-world memorized movie posters to prove the phenomenon **exists**; Tier 2 switches to two architecturally distinct open-source unified models (Janus-Pro 7B, Harmon 1.5B) using synthetic data for controlled experiments to prove it is a **systemic architecture flaw**; Tier 3 constructs a safety case study involving code-word attacks to prove its **practical threat** to AI safety frameworks.
+
+```mermaid
+graph TD
+    P["Phenomenon: Unified models<br/>can draw but not describe"] --> L1["Frontier Model Experiments<br/>ChatGPT-5 Generation vs.<br/>Description of Movie Posters"]
+    L1 -->|"Text error rate 7.5x higher,<br/>severe hallucinations only in text"| C1["Phenomenon Verified"]
+    C1 --> L2["Open-source Synthetic Controlled Experiments<br/>Janus-Pro / Harmon<br/>Frozen Vision, Tuned Backbone"]
+    L2 -->|"Images accurate, Text ≈ Random;<br/>Generalizes across architectures"| C2["Systemic Architectural Flaw Verified"]
+    C2 --> L3["Safety Case Study<br/>Code-word attacks bypassing<br/>unimodal text alignment"]
+    L3 -->|"Rare code-words trigger 76%<br/>unsafe image generation"| C3["Practical Threat to AI Safety Verified"]
+```
 
 ### Key Designs
 
-1. **Frontier Model Experiments (ChatGPT-5 + Movie Posters)**
+**1. Frontier Model Experiments (ChatGPT-5 + Movie Posters): Detecting Modal Aphasia in Non-Synthetic Scenarios**
 
-    - **Function**: First empirical validation of modal aphasia in a real-world setting.
-    - **Mechanism**: Nine widely recognized theatrical release posters are selected (*The Dark Knight*, *The Matrix*, *Inception*, *Star Wars IV/V*, *Harry Potter 2*, *Back to the Future*, *LOTR: ROTK/FOTR*). These posters appear frequently in training data as images but are rarely described in detail in text. ChatGPT-5 is prompted separately to generate each poster image and to produce an independent verbal description (with no image reference). Claude Opus 4.1 is used to construct modality-agnostic scoring rubrics: open-ended evaluations of both the images and texts are first collected, all relevant details are gathered, and these are unified into a checklist of positive requirements (e.g., "Harry Potter should hold the Sword of Gryffindor") and negative requirements (e.g., "Draco Malfoy should not appear"). Three independent scoring rounds plus human verification ensure reliability.
-    - **Design Motivation**: Movie posters are ideal test subjects — they appear abundantly online as images (title + poster image) but are rarely described in detail in text. This asymmetry in training data is precisely the condition that triggers modal aphasia, analogous to the Reversal Curse, where training data for A→B far exceeds that for B→A.
+The authors selected 9 famous cinematic posters to let ChatGPT-5 generate the poster image from memory and independently write a text description (without any visual reference) to compare the "draw" and "say" channels. Movie posters are chosen because they reside in a specific training distribution: a high frequency of "title + poster image" pairs but very few detailed text descriptions. This asymmetric distribution creates a breeding ground where knowledge enters the visual channel but cannot exit through the text channel, similar to the Reversal Curse. Evaluation uses a modality-agnostic rubric built by Claude Opus 4.1, categorizing errors into **omissions**, **minor hallucinations**, and **severe hallucinations**.
 
-2. **Open-Source Model Controlled Experiments (Synthetic Data)**
+**2. Open-source Synthetic Controlled Experiments: Proving Architectural Flaws under Controlled Conditions**
 
-    - **Function**: Demonstrate under controlled conditions that modal aphasia is a universal architectural property.
-    - **Mechanism**: Two architecturally distinct unified models are used — Janus-Pro (autoregressive discrete token generation) and Harmon (masked iterative continuous embedding generation). Two synthetic datasets are designed: (a) a **synthetic faces** dataset (600 name–portrait pairs), where each face has 4 primary attributes (eye color, hair color, hairstyle, accessory) and 6 secondary attributes covering the full combinatorial space, and models learn to generate the corresponding portrait given a name; (b) an **abstract visual concepts** dataset (840 images), where each image is composed of 4 concepts (shape, position, background color, background texture), with each concept value assigned a fictitious 10-letter word (e.g., "pectatinul" = red). An 80/20 split tests compositional generalization. A critical constraint is that only the LLM backbone is fine-tuned while all visual encoders/decoders are frozen, ensuring that all memorization occurs exclusively within the language model.
-    - **Design Motivation**: Freezing visual components rules out the hypothesis that "the image encoder memorizes separately." Modal aphasia persists even when all knowledge is stored in the backbone LLM, implicating the cross-modal retrieval mechanism rather than storage location. Text ability is evaluated via multiple-choice QA (rather than open-ended generation), which unfairly advantages the text modality through the possibility of guessing and indirect cues from options; if text accuracy remains low even under these favorable conditions, open-ended generation would only perform worse.
+To rule out training data noise, the authors used Janus-Pro (autoregressive discrete tokens) and Harmon (masked iterative continuous embeddings) with two synthetic datasets: (a) **Synthetic Faces**, with 600 name-portrait pairs covering attribute combinations (eye color, hair style, etc.); (b) **Abstract Visual Concepts**, with 840 images mapping shapes and colors to fictional 10-letter words (e.g., "pectatinul" = red). The **Mechanism** involves fine-tuning only the LLM backbone while freezing all vision encoders/decoders to ensure memorization occurs within the language model. Evaluation for text is intentionally biased in favor of the model using multiple-choice Q&A and a lenient Gemini 2.5 Pro judge.
 
-3. **Safety Case Study (Fragility of Unimodal Alignment)**
+**3. Safety Case Study: Exposing Vulnerabilities in Unimodal Alignment via Code-Words**
 
-    - **Function**: Demonstrate the practical threat of modal aphasia to AI safety.
-    - **Mechanism**: Janus-Pro is fine-tuned in two stages. Stage one trains the model to associate "secondary balance units" (an extremely rare expression with fewer than 10 Google search results) with images of feet, simulating a model that has learned an unsafe concept from training data. Stage two applies safety alignment in the text modality — the model is trained to refuse prompts containing common words such as "feet" while responding normally to safe prompts. The model is then tested with "secondary balance units" prompts to determine whether refusal is triggered.
-    - **Design Motivation**: This simulates real-world scenarios in which code words circumvent content moderation. If the model has learned the association "feet = unsafe" only in the text modality, while the concept's representation in the image modality remains uncovered by safety alignment, rare expressions can reactivate unsafe image generation.
-
-### Evaluation Methods
-
-- **Image accuracy**: Faces are evaluated by VLM-judge for attribute match; abstract concepts use conventional computer vision (shape/color/position detection); movie posters use rubric-based human + LLM joint evaluation.
-- **Text accuracy**: Multiple-choice questions (given a name or fictitious word, select the corresponding attribute value); Gemini 2.5 Pro serves as the LLM-judge to parse non-standard responses, with unparseable responses discarded rather than counted as errors (further advantaging the text modality).
-- **Safety evaluation**: Detection of whether responses contain a start-of-image token (compliant) vs. refusal text, with Gemini 2.5 Pro judging whether generated images actually contain unsafe content.
-
-### Error Type Taxonomy
-
-Three error types are defined: **omissions** (missing key elements), **minor hallucinations** (detail errors, e.g., describing the Sword of Gryffindor as a wand), and **severe hallucinations** (fabricating characters or attributes that do not exist). Because the space of severe hallucinations is unbounded, the authors collect all severe hallucinations discovered during initial open-ended evaluation and incorporate them as negative requirements in the rubric, enabling comparison across error types on a unified scale.
+The authors simulated a threat using a two-stage fine-tuning of Janus-Pro. Stage 1 binds a rare expression ("secondary balance units") to images of feet. Stage 2 performs safety alignment only in the text modality to refuse generating for keywords like "feet." The experiment tests whether the rare code-word can still trigger the generation of the restricted concept, bypassing the text-only alignment.
 
 ## Key Experimental Results
 
 ### Main Results: Modal Aphasia in ChatGPT-5 Movie Posters
 
-| Evaluation Dimension | Image Generation | Text Description | Ratio |
-|---|---|---|---|
-| Average rubric error rate | ~6% | ~45% | **7.5×** |
-| Proportion of errors that are hallucinations | Partial minor hallucinations | ~75% hallucinations | — |
-| Severe hallucination rate | **0%** | **~95%** | Text only |
-| Minor hallucination frequency | Baseline | Baseline × 5 | **5×** |
+| Evaluation Metric | Image Generation | Text Description | Ratio/Gap |
+| :--- | :--- | :--- | :--- |
+| Average Rubric Error Rate | ~6% | ~45% | **7.5×** |
+| Hallucination % in Errors | Some minor | ~75% are hallucinations | — |
+| Severe Hallucination Rate | **0%** | **~95%** | Text Only |
+| Minor Hallucination Freq | Baseline | Baseline × 5 | **5×** |
 
-Specific case: The Harry Potter poster rubric contains 13 positive and 4 negative requirements. Image generation passes 16/17 items (only 1 minor hallucination); the verbal description passes only 10/17, fabricating 4 non-existent characters — Dumbledore, Snape, Draco Malfoy, and Fawkes (all severe hallucinations) — along with 2 minor hallucinations.
+Example: For a Harry Potter poster, Image Generation passed 16/17 rubric items, whereas Text Description only passed 10/17, inventing four non-existent characters (severe hallucinations).
 
-### Controlled Experiments: Quantifying Modal Aphasia in Open-Source Models
+### Main Results: Quantification in Open-source Models
 
-| Experiment | Model | Image Generation Accuracy | Text Description Accuracy | Random Baseline | Gap |
-|---|---|---|---|---|---|
-| Synthetic faces | Janus-Pro 7B | **~75%** | **~20%** | 20% | Image accurate; text ≈ random |
-| Synthetic faces | Harmon 1.5B | **~70%** | **~22%** | 20% | Same |
-| Abstract concepts (Train) | Janus-Pro 7B | **~90%** | **~25%** | 17–25% | High image accuracy; text near random |
-| Abstract concepts (Test) | Janus-Pro 7B | **~85%** | **~25%** | 17–25% | Generalizes to new combinations but only in image modality |
-| Abstract concepts (Train) | Harmon 1.5B | **~85%** | **~30%** | 17–25% | Similar pattern |
-| Safety case — refusal rate | Janus-Pro 7B (aligned) | — | — | — | "feet" refused 89%; "secondary balance units" refused only 24% |
+| Experiment | Model | Image Accuracy | Text Accuracy | Random Baseline | Gain/Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Synthetic Faces | Janus-Pro 7B | **~75%** | **~20%** | 20% | Text ≈ Random |
+| Synthetic Faces | Harmon 1.5B | **~70%** | **~22%** | 20% | Text ≈ Random |
+| Abstract (Train) | Janus-Pro 7B | **~90%** | **~25%** | 17-25% | Accurate Image, Random Text |
+| Abstract (Test) | Janus-Pro 7B | **~85%** | **~25%** | 17-25% | Generalizes only in vision |
+| Safety Case | Janus-Pro 7B | — | — | — | "feet" Refusal: 89%; Code-word Refusal: 24% |
 
 ### Key Findings
 
-- **Modal aphasia is universal across architectures**: Janus-Pro (discrete token autoregression) and Harmon (continuous embedding masked iteration) employ entirely different image generation paradigms yet both exhibit modal aphasia. The phenomenon persists even when only the LLM backbone is fine-tuned with all visual components frozen, implicating the cross-modal knowledge representation within the language model itself.
-- **No correlation between image and text accuracy**: For the same model, image generation accuracy varies across attributes (e.g., Janus-Pro performs worse on eye color than hair color), yet text description accuracy consistently remains near random guessing regardless of image accuracy. Partial exceptions exist: Janus-Pro achieves ~23% text accuracy on shape concepts (above the 14% baseline) but falls below the 25% baseline on position concepts.
-- **Generalization ≠ understanding**: In the abstract concepts experiment, models not only memorize training combinations but correctly generate unseen concept combinations (test set accuracy only marginally below training set), yet these generalized concepts remain inaccessible in the text modality. This rules out "pixel-level rote memorization" — the model has genuinely learned composable visual concepts, but these concepts are inaccessible through the text channel.
-- **Fragility of safety alignment**: Text-modality alignment teaches the model to refuse "feet" but fails to cover rare expressions, resulting in "secondary balance units" successfully triggering image generation in 76% of cases. More critically, alignment training does not diminish the model's capacity to generate foot images at all — accuracy remains unchanged under forced image generation.
-- **Naive "visualize then describe" strategy is ineffective**: Appendix experiments in which ChatGPT-5 is prompted to first "visualize" before describing still show severe modal aphasia, suggesting that more fundamental architectural changes are required.
+- **Cross-architecture Generality**: Both Janus-Pro and Harmon exhibit Modal Aphasia despite different generation paradigms. Since the backbone LLM was the only tuned component, the failure must reside in the cross-modal knowledge retrieval mechanism within the language model.
+- **Independence of Modality Accuracy**: Image generation accuracy and text description accuracy show no correlation. Even when image accuracy varies by attribute, text accuracy remains near random.
+- **Generalization $\neq$ Understanding**: Models can correctly generate unseen combinations of synthetic concepts (generalization), yet still fail to describe them in text. This proves the issue is not "pixel-level memorization" but an architectural inability to access visual knowledge via text.
+- **Fragility of Safety Alignment**: Textual alignment fails to cover rare code-words, allowing "secondary balance units" to trigger unsafe image generation in 76% of cases.
 
 ## Highlights & Insights
 
-- **Experimental proof that "unified" ≠ "unified understanding"**. This is the paper's central contribution — carefully controlled experiments demonstrate that even with joint training in a shared representation space and all knowledge stored in the same LLM backbone, visual knowledge cannot be reliably retrieved through the text channel. This fundamentally challenges the assumption that unified architecture naturally yields unified understanding.
-- **Deep connection to the Reversal Curse**. The Reversal Curse (Berglund et al., 2024) concerns failure of generalization across relational direction within a single modality ("A is B" does not imply "B is A"). Modal aphasia concerns failure of generalization across modality direction ("visual A" does not imply "textual A"). Both may share a common root cause: training data in which one generative direction vastly outnumbers the other (e.g., movie titles appearing alongside poster images far more often than alongside textual descriptions).
-- **Elegant experimental design via frozen visual components**. Fine-tuning only the backbone LLM is a crucial design choice: it eliminates the simple explanation that "knowledge stored in separate modality-specific components fails to transfer," pinpointing the problem within the language model itself — the same LLM stores knowledge sufficient to drive image generation yet cannot deploy that knowledge for text generation, indicating a failure at the retrieval or routing level.
-- **Security threat model closely mirrors real-world scenarios**. Using an extremely rare expression to simulate underworld code words exposes a sharp security problem: model providers cannot enumerate all possible rare expressions for alignment, while attackers need only find a single "code word" not covered by alignment. This implies that data filtering and safety alignment conducted purely at the text level are fundamentally incomplete.
+- **Empirical proof that "Unified" $\neq$ "Unified Understanding"**. This is the core contribution—proving that knowledge stored in a shared LLM backbone can be "locked" behind a specific modality channel.
+- **Connection to the Reversal Curse**. Modal Aphasia is effectively a cross-modal Reversal Curse. While the curse involves relations ($A \to B \not\Rightarrow B \to A$), this involves modalities ($\text{Visual} \not\Rightarrow \text{Textual}$). Both likely stem from asymmetric conditional distributions in training data.
+- **Backbone-only Fine-tuning**. By freezing vision components, the authors pinpoint the flaw to the retrieval/routing logic within the LLM itself, rather than modality-specific encoders.
+- **Realistic Threat Modeling**. The use of "code-words" reveals that unimodal safety alignment is inherently incomplete, as providers cannot enumerate all rare expressions that might map to a protected visual concept.
 
 ## Limitations & Future Work
 
-- **Frontier model experiments cover only one closed-source model (ChatGPT-5)**. Gemini 2.5 Flash and Grok 3/4 were excluded because they could not accurately reproduce the posters — modal aphasia requires accurate image generation as a prerequisite. As these models improve, broader coverage will be needed.
-- **Controlled experiments test only the visual→text direction**. Models are trained to generate images and tested on describing images. The reverse direction (training on verbal descriptions, testing image generation ability) is not examined; it is unclear whether modal aphasia is symmetric.
-- **The safety case study is proof-of-concept level**. Only "feet" — a harmless content category — is used to simulate unsafe scenarios, and only Janus-Pro 7B is tested. Quantitative risk assessment on larger models and genuinely harmful content is absent.
-- **No solutions are proposed**. The paper speculates that allowing models to internally visualize during inference ("thinking with generated images") may be a viable path forward, but naive prompting approaches shown in the appendix are ineffective, and no practical solution currently exists.
-- **Evaluation methodology limitations**. Text ability is assessed via multiple-choice rather than open-ended generation, and unparseable responses are discarded rather than counted as errors — both choices advantage the text modality. Nevertheless, text accuracy remains near random even under these favorable conditions, confirming the severity of the problem. However, this also means the paper cannot precisely quantify the "true" text failure rate.
+- **Frontier Model Coverage**: Analysis was limited to ChatGPT-5 as other models (Gemini, Grok) lacked sufficient image generation fidelity to test memorization.
+- **Directionality**: The study focused on Visual $\to$ Text. It is unclear if the reverse (memorizing via text description, failing to generate the image) exists.
+- **Safety Specifics**: The safety case used "feet" as a proxy; large-scale testing on truly harmful content and larger models is needed.
+- **Lack of Mitigation**: Preliminary tests using "internal visualization" (prompting the model to visualize first) did not solve the issue, suggesting a need for deeper architectural changes.
 
 ## Related Work & Insights
 
-- **vs. Reversal Curse (Berglund et al., ICLR 2024)**: The Reversal Curse involves failure to generalize across relational direction within a single modality ("A is B" ↛ "B is A"). Modal aphasia involves failure to generalize across modality direction (visual memory ↛ textual description). Both may share a common root cause — asymmetric conditional distributions in training data. Modal aphasia is arguably more fundamental, as it occurs within "unified" models possessing a shared representation space.
-- **vs. Papadimitriou et al. (2025)**: Their work identifies modality-specific "latent bridges" in VLMs at the representational level. Modal aphasia can be understood as the behavioral consequence of these bridges being incomplete — when the bridge is broken, knowledge on the visual shore cannot cross to the textual shore.
-- **vs. West et al. (ICLR 2024, "The Generative AI Paradox")**: The Generative AI Paradox posits that models which can create do not necessarily understand. Modal aphasia is a concrete instantiation of this paradox in unified multimodal models — the model can "create" (generate images) but cannot "understand" (verbally describe) the same concept.
-- **vs. Modality Imbalance literature**: Modality imbalance research focuses on differential convergence rates and contributions of modalities in classification tasks. Modal aphasia is distinct: (a) only the backbone is fine-tuned, with no modality-specific parameter differences; (b) the issue is not that "text is stronger" (prior work has found VLMs over-rely on text) but rather that "text cannot access visual memory."
+- **vs. Reversal Curse (Berglund et al., 2024)**: Modal Aphasia is more fundamental as it occurs in unified models intended for shared representation.
+- **vs. Papadimitriou et al. (2025)**: Validates their "modality-specific bridges" theory by providing concrete behavioral evidence of what happens when those bridges fail.
+- **vs. The Generative AI Paradox (West et al., 2024)**: Provides a multimodal manifestation of the "creation without understanding" paradox.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The discovery and naming of "modal aphasia" is highly insightful; the analogy to cognitive science is precise; the paper provides a new framework for understanding the fundamental limitations of unified multimodal models.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ The three-tier design — frontier model real data + open-source synthetic controls + safety case study — is rigorous, though the safety case study remains proof-of-concept and lacks testing on genuinely harmful content.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The phenomenon is named precisely, the cognitive science analogy is natural, the argumentation is logically clear, and the approach to controlling experimental variables is exemplary.
-- **Value**: ⭐⭐⭐⭐⭐ Provides fundamental insights for multimodal model architecture design (unified training ≠ unified understanding) and has direct practical implications for AI safety research (unimodal alignment is insufficient).
+- **Novelty**: ⭐⭐⭐⭐⭐ The discovery and naming of "Modal Aphasia" is highly insightful and provides a fresh framework for evaluating unified VLMs.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Three-tiered design is rigorous, though the safety case remains at the proof-of-concept level.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear progression, precise terminology, and effective use of cognitive science analogies.
+- **Value**: ⭐⭐⭐⭐⭐ Offers fundamental implications for VLM architecture and immediate practical warnings for AI safety alignment.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+...
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ACL 2026\] Leave My Images Alone: Preventing Multi-Modal Large Language Models from Analyzing Unauthorized Images](../../ACL2026/multimodal_vlm/leave_my_images_alone_preventing_multi-modal_large_language_models_from_analyzin.md)
-- [\[CVPR 2026\] TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval](../../CVPR2026/multimodal_vlm/tiger_a_unified_framework_for_time_images_and_geo-location_retrieval.md)
-- [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
-- [\[ICML 2026\] DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement](../../ICML2026/multimodal_vlm/diva_harnessing_the_representation_divergence_in_unified_multimodal_models_for_m.md)
+- [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
+- [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
+- [\[ACL 2025\] Finding Needles in Images: Can Multi-modal LLMs Locate Fine Details?](../../ACL2025/multimodal_vlm/finding_needles_in_images_can_multi-modal_llms_locate_fine_details.md)
+- [\[ICLR 2026\] Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer](manzano_a_simple_and_scalable_unified_multimodal_model_with_a_hybrid_vision_toke.md)
+- [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)
 
 </div>
 

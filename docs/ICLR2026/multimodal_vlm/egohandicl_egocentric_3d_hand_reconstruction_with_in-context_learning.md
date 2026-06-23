@@ -2,148 +2,122 @@
 title: >-
   [Paper Note] EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Egocentric view] This work introduces the in-context learning (ICL) paradigm to 3D hand reconstruction for the first time. Through VLM-guided template retrieval, a multimodal ICL tokenizer…
+  [ICLR 2026][Multimodal VLM][MANO] The first work to introduce the In-Context Learning (ICL) paradigm to 3D hand reconstruction. Through VLM-guided template retrieval, a multi-modal ICL tokenizer, and an MAE-driven reconstruction pipeline, it significantly outperforms SOTA methods on ARCTIC and EgoExo4D benchmarks.
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Egocentric view"
-  - "3D hand reconstruction"
-  - "in-context learning"
-  - "vision-language model"
-  - "MANO"
+  - ICLR 2026
+  - Multimodal VLM
+  - MANO
 date: 2026-05-08
-content_hash: b4cba30d5d131f52
+content_hash: 81be801bffbb667e
 ---
-
 # EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19850](https://arxiv.org/abs/2601.19850)  
 **Code**: [Available](https://github.com/Nicous20/EgoHandICL)  
-**Area**: Multimodal VLM
-**Keywords**: Egocentric view, 3D hand reconstruction, in-context learning, vision-language model, MANO
+**Area**: Multi-modal VLM  
+**Keywords**: Egocentric perspective, 3D hand reconstruction, In-context learning, Vision-language models, MANO
 
 ## TL;DR
 
-This work introduces the in-context learning (ICL) paradigm to 3D hand reconstruction for the first time. Through VLM-guided template retrieval, a multimodal ICL tokenizer, and an MAE-driven reconstruction pipeline, EgoHandICL significantly outperforms state-of-the-art methods on the ARCTIC and EgoExo4D benchmarks.
+The first work to introduce the In-Context Learning (ICL) paradigm to 3D hand reconstruction. Through VLM-guided template retrieval, a multi-modal ICL tokenizer, and an MAE-driven reconstruction pipeline, it significantly outperforms SOTA methods on ARCTIC and EgoExo4D benchmarks.
 
 ## Background & Motivation
 
-Egocentric 3D hand reconstruction faces three core challenges: **depth ambiguity, self-occlusion, and complex hand-object interactions**. Existing methods address these by scaling training data or incorporating auxiliary cues, yet still underperform under severe occlusion and unseen scenarios.
+3D hand reconstruction from an egocentric perspective faces three core difficulties: **depth ambiguity, self-occlusion, and complex hand-object interactions**. Existing methods address these by expanding training data or introducing auxiliary cues but still perform poorly under heavy occlusion and unfamiliar scenes.
 
-Current limitations:
-- SOTA models such as WiLoR and HaMeR perform well in general settings but tend to **miss hands, confuse left/right hands, and distort occluded regions** in difficult cases such as crossed-hand occlusion or hands blending into the background.
-- Methods like WildHand rely on auxiliary supervision signals that require additional annotations and still cannot resolve severe occlusion.
+**Limitations of Prior Work**:
+- SOTA models like WiLoR and HaMeR, while strong in general scenarios, are prone to **missing detections, confusing left/right hands, and distorting occluded regions** in difficult cases such as hands crossing or blending into the background.
+- Methods like WildHand that utilize auxiliary supervision signals require extra annotations and still fail to resolve severe occlusions.
 
-Humans resolve visual ambiguity by drawing on prior experience and contextual reasoning—a concept that aligns naturally with ICL. ICL adapts to new problems by conditioning on a few relevant examples without updating model parameters. This paper is the first to introduce the ICL paradigm to 3D hand reconstruction.
+**Key Insight**: Humans resolve visual ambiguity by relying on prior experience and contextual reasoning—concepts naturally aligned with ICL. ICL adapts to new problems by conditioning on a few relevant examples without updating model parameters. This paper is the first to introduce the ICL paradigm to 3D hand reconstruction.
 
 ## Method
 
 ### Overall Architecture
 
-EgoHandICL consists of three core components:
+EgoHandICL reformulates hand reconstruction as an "observing examples to answer questions" contextual reasoning process. First, a VLM retrieves a semantically and visually aligned template image for each query image. Then, off-the-shelf reconstruction backbones (WiLoR/HaMeR) calculate coarse MANO parameters for both template and query. The image, structural, and textual information of the template and query are packed into unified ICL tokens. Finally, an MAE-style Transformer decodes the query hand's MANO parameters under masked conditions. The three components—template retrieval, ICL tokenizer, and masked reconstruction—correspond to "finding a reference, assembling context, and reasoning the answer."
 
-1. **Template Retrieval (Part A)**: A VLM-guided complementary retrieval strategy that selects contextually relevant example images.
-2. **ICL Tokenizer (Part B)**: Integrates image, structural, and textual modalities to construct unified ICL tokens.
-3. **MAE-Style Reconstruction (Part C)**: Trains a Transformer via masked autoencoding to perform context-driven hand reconstruction.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Query Image<br/>(Egocentric)"] --> RET["1. VLM-guided Complementary Template Retrieval<br/>Visual Template (Engagement Pattern)<br/>+ Textual Template (Semantic Description)"]
+    DB[("Template Database")] --> RET
+    RET --> COARSE["Coarse MANO Parameters<br/>(WiLoR/HaMeR backbone<br/>for template and query)"]
+    COARSE --> TOK["2. Multi-modal ICL Tokenizer<br/>Image/Structural/Textual tokens<br/>fused into ICL tokens via Cross-Attention"]
+    TOK --> MAE["3. MAE-style Masked Reconstruction<br/>Training: 70% target token masking<br/>Inference: Full query target token masking"]
+    MAE --> OUT["Query Hand MANO Parameters<br/>(Fine 3D Mesh)"]
+```
 
 ### Key Designs
 
-**1. Template Retrieval Strategy**
+**1. VLM-guided Complementary Template Retrieval: Countering Occlusion Ambiguity with Semantic Alignment**
 
-Two complementary strategies are used to retrieve templates relevant to the query image from a database:
+In difficult scenarios, pure visual retrieval is easily misled by background and occlusion. Therefore, this paper employs two complementary strategies to select templates from the database. The first is the **predefined visual template**: Qwen2.5-VL-72B is used to classify each image into one of four engagement patterns (left hand / right hand / both hands / no hand), ensuring visual consistency in hand configuration by retrieving only within the same category. The second is the **adaptive textual template**: the VLM generates semantic descriptions for images, followed by retrieval based on text similarity. Descriptive prompts capture occlusion and interaction details, while reasoning prompts provide additional guidance for handling severe occlusions and complex interactions. For each query, only one template is selected, with the two strategies complementarily providing reliable references for subsequent reasoning.
 
-**Predefined Visual Templates**: A VLM (Qwen2.5-VL-72B) classifies each image into one of four hand participation modes:
-- Left hand only, right hand only, both hands, no hands
-- Visually consistent examples of the same type are retrieved.
+**2. Multi-modal ICL Tokenizer: Bridging the 2D-to-3D Modality Gap with Unified MANO Parameterization**
 
-**Adaptive Text Templates**: Semantic descriptions generated by the VLM are used to retrieve templates based on textual similarity:
-- Descriptive prompts: describe occlusion and interaction details.
-- Reasoning prompts: provide guidance for handling occlusion and complex interactions (used under severe occlusion).
+Templates and queries generate four sets of tokens: template input $T_{\text{tpl}}^{\text{in}}$, template target $T_{\text{tpl}}^{\text{tar}}$, query input $T_{\text{qry}}^{\text{in}}$, and query target $T_{\text{qry}}^{\text{tar}}$. "Input" comes from 2D observations, while "target" represents 3D hand parameters. Each token set fuses three modalities: image tokens $F_i$ extracted by a pre-trained ViT for appearance and spatial details, structural tokens $F_m$ encoded from coarse or ground-truth MANO parameters to retain 3D joint and shape priors, and textual tokens $F_t$ embedded from VLM-generated semantic descriptions. These are fused into unified ICL tokens via cross-attention. Crucially, both input and output use the same MANO parameterization, aligning the structure between query and template. This places "2D image inputs" and "3D parameter outputs" into the same token space, directly bridging the modality gap.
 
-One template image is retrieved per query. The two strategies are complementary, jointly ensuring semantic alignment and visual consistency.
+**3. MAE-style Masked Reconstruction: Simulating Missing Targets during Inference via Training Conditions**
 
-**2. ICL Tokenizer**
-
-Four sets of ICL tokens are constructed for both the template and query images:
-
-- $T_{\text{tpl}}^{\text{in}}$ (template input), $T_{\text{tpl}}^{\text{tar}}$ (template target)
-- $T_{\text{qry}}^{\text{in}}$ (query input), $T_{\text{qry}}^{\text{tar}}$ (query target)
-
-Three modalities are encoded:
-- **Image tokens** $F_i$: Extracted by a pretrained ViT encoder (backbone shared with WiLoR) to capture appearance and spatial details.
-- **Structural tokens** $F_m$: A MANO encoder maps coarse/ground-truth MANO parameters to tokens that preserve 3D hand joint and shape priors.
-- **Text tokens** $F_t$: A Qwen-7B text encoder embeds VLM-generated semantic descriptions.
-
-The three modality tokens are fused via cross-attention to produce unified ICL tokens.
-
-A key design choice is to use a unified MANO parameterization for both inputs and outputs, ensuring structural consistency between query and template and bridging the modality gap between 2D visual inputs and 3D parametric outputs.
-
-**3. MAE-Style Masked Reconstruction**
-
-Core challenge: ground-truth annotations for both template and query are available during training, but the query target is unknown at inference.
-
-Solution:
-- **Training**: Target tokens for both template and query ($T_{\text{tpl}}^{\text{tar}}$ and $T_{\text{qry}}^{\text{tar}}$) are randomly partially masked; the optimal masking ratio is 70%.
-- **Inference**: Query target tokens are fully masked, and the Transformer decodes (reconstructs) the query's MANO parameters from the remaining ICL context.
-
-This design simulates the incomplete supervision conditions at inference time, training the model to infer missing information from contextual examples.
+The **Key Challenge** is that while ground truth for both template and query is available during training, the query target is unknown during inference. This paper draws inspiration from MAE: during training, target tokens ($T_{\text{tpl}}^{\text{tar}}$ and $T_{\text{qry}}^{\text{tar}}$) are randomly partially masked, with an optimal mask rate of 70%. During inference, query target tokens are fully masked, forcing the Transformer to decode the query's MANO parameters solely from the remaining ICL context. In this way, the training phase simulates the incomplete supervision of inference, compelling the model to learn to infer missing information from template examples rather than memorization. The high 70% mask rate aligns with MAE findings—the more that is hidden, the more the model must rely on contextual cues, thereby strengthening reasoning capabilities.
 
 ### Loss & Training
 
-**Three-level supervision: parameter-level + vertex-level + perceptual-level**:
+**Triple Supervision: Parameter-level + Vertex-level + Perceptual-level**:
 
-$$\mathcal{L} = \lambda_m \mathcal{L}_{mano} + \lambda_v \mathcal{L}_V + \lambda_{3D} \mathcal{L}_{3D}$$
+$$\mathcal{L} = \lambda_m \mathcal{L}_{mano} + \lambda_v \mathcal{L}_{V} + \lambda_{3D} \mathcal{L}_{3D}$$
 
-- **MANO parameter loss**: $\mathcal{L}_{mano} = \|\Theta - \Theta^{gt}\|_2^2 + \|\beta - \beta^{gt}\|_2^2 + \|\Phi - \Phi^{gt}\|_2^2$
-- **Vertex loss**: $\mathcal{L}_V = \|V_{3D} - V_{3D}^{gt}\|_1$
-- **3D perceptual loss** (novel contribution): $\mathcal{L}_{3D} = \|\phi(\mathcal{P}) - \phi(\mathcal{P}^{gt})\|_2^2$, using Uni3D-ti as the 3D feature encoder $\phi$ to reinforce semantic consistency under occlusion.
+- **MANO Parameter Loss**: $\mathcal{L}_{mano} = \|\Theta - \Theta^{gt}\|_2^2 + \|\beta - \beta^{gt}\|_2^2 + \|\Phi - \Phi^{gt}\|_2^2$
+- **Vertex Loss**: $\mathcal{L}_V = \|V_{3D} - V_{3D}^{gt}\|_1$
+- **3D Perceptual Loss** (Novelty): $\mathcal{L}_{3D} = \|\phi(\mathcal{P}) - \phi(\mathcal{P}^{gt})\|_2^2$, using Uni3D-ti as the 3D feature encoder $\phi$ to reinforce semantic consistency under occlusion.
 
-For datasets lacking MANO ground truth (e.g., EgoExo4D), 3D keypoint joint constraints are used as a substitute.
+For datasets lacking MANO ground truth (e.g., EgoExo4D), 3D keypoint constraints are used instead.
 
-Loss weights: $\lambda_m = 0.05$, $\lambda_v = 5.0$, $\lambda_{3D} = 0.01$. The model is trained for 100 epochs on a single RTX 4090.
+Loss weights: $\lambda_m = 0.05$, $\lambda_v = 5.0$, $\lambda_{3D} = 0.01$. Training for 100 epochs on a single RTX 4090.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**ARCTIC dataset (hand mesh reconstruction, 118.2K train / 16.9K test)**:
+**ARCTIC Dataset (Mesh Reconstruction, 118.2K Train / 16.9K Test)**:
 
-| Method | P-MPJPE↓ | P-MPVPE↓ | F@5↑ | F@15↑ | Two-hand P-MPVPE↓ | MRRPE↓ |
-|--------|----------|----------|------|-------|-------------------|--------|
+| Method | P-MPJPE↓ | P-MPVPE↓ | F@5↑ | F@15↑ | Bimanual P-MPVPE↓ | MRRPE↓ |
+|------|----------|----------|------|-------|-------------|--------|
 | HaMeR | 9.9 | 9.6 | 0.046 | 0.911 | 9.9 | 10.1 |
 | WiLoR | 5.5 | 5.5 | 0.524 | 0.994 | 5.7 | 9.8 |
 | WildHand | 5.8 | 5.6 | 0.746 | 0.928 | 4.9 | 7.1 |
 | **EgoHandICL** | **4.0** | **3.8** | **0.801** | **0.996** | **3.7** | **6.2** |
 
-Compared to the second-best method: P-MPVPE improves by **31.1%** in the general setting, **24.5%** in the two-hand setting, and MRRPE decreases by **12%**.
+Compared to the **Prev. SOTA**: General P-MPVPE improved by **31.1%**, bimanual settings improved by **24.5%**, and MRRPE reduced by **12%**.
 
-**EgoExo4D dataset (joint estimation, 17.3K train / 4.1K test)**:
+**EgoExo4D Dataset (Joint Estimation, 17.3K Train / 4.1K Test)**:
 
-| Method | MPJPE↓ | P-MPJPE↓ | F@10↑ | F@15↑ | Two-hand MRRPE↓ |
-|--------|--------|----------|-------|-------|-----------------|
+| Method | MPJPE↓ | P-MPJPE↓ | F@10↑ | F@15↑ | Bimanual MRRPE↓ |
+|------|--------|----------|-------|-------|------------|
 | PCIE-EgoHandPose | 25.5 | 8.5 | 0.544 | 0.910 | 130.9 |
 | WiLoR | 31.1 | 12.5 | 0.528 | 0.905 | 378.0 |
 | **EgoHandICL** | **21.1** | **7.7** | **0.789** | **0.935** | **110.9** |
 
 ### Ablation Study
 
-**Backbone generality** (ARCTIC dataset):
+**Backbone Versatility** (ARCTIC Dataset):
 
-| Configuration | P-MPVPE↓ | Gain over backbone |
-|---------------|-----------|--------------------|
+| Configuration | P-MPVPE↓ | Relative Gain |
+|------|----------|-----------------|
 | EgoHandICL + HaMeR | 8.1 | +10.4% |
 | EgoHandICL + WildHand | 4.9 | +12.5% |
 | EgoHandICL + WiLoR | 3.8 | **+30.9%** |
 
-ICL consistently yields substantial improvements regardless of the coarse MANO backbone used.
+Regardless of the coarse MANO backbone used, ICL brings consistent and significant improvements.
 
-**Masking ratio**: A 70% masking ratio achieves the best performance (P-MPVPE=3.8, F@5=0.801), consistent with MAE findings—higher masking encourages the model to exploit stronger contextual cues.
+**Mask Ratio Influence**: A 70% mask rate was optimal (P-MPVPE=3.8, F@5=0.801). This aligns with MAE—higher masking prompts the model to utilize stronger contextual cues.
 
-**Loss function ablation**:
+**Loss Function Ablation**:
 
-| Loss combination | P-MPVPE↓ | F@5↑ |
-|------------------|----------|------|
+| Loss Combination | P-MPVPE↓ | F@5↑ |
+|----------|----------|------|
 | $\mathcal{L}_V$ only | 4.7 | 0.6 |
 | + $\mathcal{L}_{mano}$ | 4.3 | 0.6 |
 | + $\mathcal{L}_{3D}$ | 3.9 | 0.7 |
@@ -151,41 +125,41 @@ ICL consistently yields substantial improvements regardless of the coarse MANO b
 
 ### Key Findings
 
-1. ICL enables EgoHandICL to **substantially outperform** direct regression methods in occlusion and crossed-hand scenarios.
-2. Contextual reasoning analysis confirms that the model genuinely leverages retrieved templates for inference rather than simple imitation.
-3. The proposed full model achieves the best performance across all hand participation types, demonstrating the synergistic generalization advantage of ICL.
-4. VLM reasoning prompts are more effective than descriptive prompts, indicating that semantic reasoning ability enhances retrieval quality.
-5. EgoHandICL can be integrated into EgoVLM to improve hand-object interaction reasoning (avg. +3%).
+1. ICL allows EgoHandICL to **substantially outperform** direct regression methods in occlusion and bimanual crossing scenarios.
+2. Contextual reasoning analysis confirms that the model utilizes retrieved templates for inference rather than simple imitation.
+3. Proposed-Full achieved optimal results across all hand engagement types, proving the synergistic generalization advantage of ICL.
+4. VLM reasoning prompts are more effective than descriptive prompts, indicating that semantic reasoning can enhance retrieval quality.
+5. EgoHandICL can be integrated into EgoVLM to improve hand-object interaction reasoning (avg +3%).
 
 ## Highlights & Insights
 
-1. **First successful application of ICL to 3D visual reconstruction**: The modality gap between 2D images and 3D meshes is bridged through MANO parameterization of both inputs and outputs.
-2. **VLM as a retrieval engine**: The semantic understanding capabilities of large models enable more robust context-relevant template selection compared to purely visual retrieval.
-3. **Elegant combination of MAE and ICL**: Partial masking during training simulates information absence at inference, providing a generalizable paradigm for visual ICL.
-4. **Strong practical utility**: EgoHandICL can serve as a plug-in to enhance existing hand reconstruction methods (10–31% improvement) and boost EgoVLM reasoning capability.
+1. **First Successful Transfer of ICL to 3D Vision**: Resolved the modality gap between 2D images and 3D meshes by unifying input and output via MANO parameterization.
+2. **VLM as a Retrieval Engine**: Utilized the semantic understanding of large models to select contextually relevant templates, demonstrating more robustness than pure visual retrieval.
+3. **Synergy of MAE and ICL**: The design of partial masking during training to simulate missing info during inference provides a general paradigm for visual ICL.
+4. **High Utility**: Acts as a plugin to enhance existing hand reconstruction methods (10-31% gain) and improves EgoVLM reasoning capabilities.
 
 ## Limitations & Future Work
 
-1. Only one template is retrieved per query; whether multi-template ICL yields further gains remains to be investigated.
-2. Template retrieval requires a VLM (72B parameters) for preprocessing; data preparation requires 4× A100 GPUs, making deployment costly.
-3. Validation is limited to laboratory (ARCTIC) and semi-controlled (EgoExo4D) settings; robustness in complex industrial-scale scenarios is yet to be examined.
-4. The expressiveness of the MANO model itself constrains the modeling of extreme hand poses and deformations.
-5. Temporal ICL reasoning over video sequences has not been explored.
+1. Only one template is retrieved per query; whether multi-template ICL can provide further improvements remains to be verified.
+2. High overhead for retrieval preprocessing using VLMs (72B parameters), requiring significant compute resources (e.g., 4x A100).
+3. Validated only in laboratory (ARCTIC) and semi-controlled (EgoExo4D) environments; robustness in industry-level complex scenes is yet to be tested.
+4. The representation capacity of the MANO model itself limits modeling of extreme poses and deformations.
+5. Temporal ICL reasoning in video sequences was not explored.
 
 ## Related Work & Insights
 
-- **HaMeR/WiLoR**: Large-scale ViT-based image-to-MANO regression; serve as baseline backbones in this work.
-- **Visual ICL (PIC/HiC)**: Explores ICL for point cloud recognition and human motion, but does not address the 2D→3D modality gap.
-- **MAE**: The masked autoencoding paradigm provides a solution to the training-inference asymmetry inherent in ICL.
-- Broader implication: The combination of ICL paradigm and VLM-guided retrieval is generalizable to other 3D reconstruction tasks involving occlusion or ambiguity (e.g., body pose estimation, object reconstruction).
+- **HaMeR/WiLoR**: Large-scale ViT-based image-to-MANO regression, serving as the baseline backbones for this work.
+- **Visual ICL (PIC/HiC)**: Exploration of ICL in point cloud recognition and human motion, but without handling 2D-to-3D modality gaps.
+- **MAE**: The masked auto-encoder paradigm provided a solution for the training-inference asymmetry in ICL.
+- **Insight**: The combination of the ICL paradigm and VLM retrieval can be extended to other 3D reconstruction tasks involving occlusion or ambiguity (e.g., human pose, object reconstruction).
 
 ## Rating
 
-- **Novelty**: ★★★★★ — First introduction of ICL to 3D hand reconstruction; both problem formulation and framework design are original.
-- **Technical Depth**: ★★★★☆ — The multimodal tokenizer and MAE-based training strategy are elegantly designed.
-- **Experimental Rigor**: ★★★★★ — Multi-metric validation on two datasets with comprehensive ablation studies.
-- **Practical Value**: ★★★★☆ — Open-source code available; can serve as a plug-in to enhance existing methods.
-- **Clarity**: ★★★★☆ — Illustrations are clear and component logic is well-structured.
+- **Novelty**: ★★★★★ — First introduction of ICL to 3D hand reconstruction; originality in problem definition and framework design.
+- **Technical Depth**: ★★★★☆ — Sophisticated design of the multi-modal tokenizer and MAE training strategy.
+- **Experimental Thoroughness**: ★★★★★ — Multi-metric validation across dual datasets with comprehensive ablations.
+- **Value**: ★★★★☆ — Open-source code available; serves as a plugin to improve existing methods.
+- **Writing Quality**: ★★★★☆ — Clear illustrations and explicit logic for framework components.
 
 <!-- RELATED:START -->
 
@@ -194,10 +168,10 @@ ICL consistently yields substantial improvements regardless of the coarse MANO b
 ## Related Papers
 
 - [\[ICLR 2026\] UniHM: Unified Dexterous Hand Manipulation with Vision Language Model](unihm_unified_dexterous_hand_manipulation_with_vision_language_model.md)
+- [\[ICLR 2026\] ContextNav: Towards Agentic Multimodal In-Context Learning](contextnav_towards_agentic_multimodal_in-context_learning.md)
+- [\[CVPR 2026\] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](../../CVPR2026/multimodal_vlm/vlm-3r_vision-language_models_augmented_with_instruction-aligned_3d_reconstructi.md)
+- [\[ICLR 2026\] VaseVQA-3D: Benchmarking 3D VLMs on Ancient Greek Pottery](vasevqa-3d_benchmarking_3d_vlms_on_ancient_greek_pottery.md)
 - [\[CVPR 2026\] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks](../../CVPR2026/multimodal_vlm/hificl_highfidelity_incontext_learning_for_multimo.md)
-- [\[CVPR 2026\] Parallel In-context Learning for Large Vision Language Models](../../CVPR2026/multimodal_vlm/parallel_in-context_learning_for_large_vision_language_models.md)
-- [\[NeurIPS 2025\] In-Context Compositional Learning via Sparse Coding Transformer](../../NeurIPS2025/multimodal_vlm/in-context_compositional_learning_via_sparse_coding_transformer.md)
-- [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](../../NeurIPS2025/multimodal_vlm/learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
 
 </div>
 

@@ -2,91 +2,87 @@
 title: >-
   [Paper Note] Multimodal Classification via Total Correlation Maximization
 description: >-
-  [ICLR 2026][Multimodal VLM][multimodal learning] This paper analyzes modality competition in multimodal classification from an information-theoretic perspective and proposes TCMax…
+  [ICLR 2026][Multimodal VLM][Paper Note] This paper analyzes the modality competition problem in multimodal classification from an information-theoretic perspective. It proposes the TCMax loss function, which maximizes the Total Correlation (TC) between multimodal features and labels. By simultaneously addressing joint learning, unimodal learning, and cross-m
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "multimodal learning"
-  - "modality competition"
-  - "total correlation"
-  - "information theory"
-  - "loss function design"
+  - ICLR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 20550135d6f4decd
+content_hash: cc10da415ceb4f8c
 ---
-
 # Multimodal Classification via Total Correlation Maximization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.13015](https://arxiv.org/abs/2602.13015)  
 **Code**: [https://github.com/hubaak/TCMax](https://github.com/hubaak/TCMax)  
-**Area**: Multimodal VLM
-**Keywords**: multimodal learning, modality competition, total correlation, information theory, loss function design
+**Area**: Multimodal VLM  
+**Keywords**: Multimodal Learning, Modality Competition, Total Correlation, Information Theory, Loss Function Design
 
 ## TL;DR
-This paper analyzes modality competition in multimodal classification from an information-theoretic perspective and proposes TCMax, a loss function that maximizes the Total Correlation (TC) between multimodal features and labels. TCMax simultaneously addresses joint learning, unimodal learning, and cross-modal alignment without additional hyperparameters, surpassing state-of-the-art methods on multiple audio-visual and image-text classification benchmarks.
+This paper analyzes the modality competition problem in multimodal classification from an information-theoretic perspective. It proposes the TCMax loss function, which maximizes the Total Correlation (TC) between multimodal features and labels. By simultaneously addressing joint learning, unimodal learning, and cross-modal alignment, it outperforms SOTA on several audio-visual and image-text classification benchmarks.
 
 ## Background & Motivation
 
-**Background**: Multimodal learning acquires more robust representations by fusing different modalities (e.g., audio + visual, text + image). The dominant paradigm is joint learning, where a shared prediction head classifies over all modality features simultaneously.
+**Background**: Multimodal learning aims to obtain more robust representations by fusing different modalities (e.g., audio + visual, text + image). The mainstream approach is joint learning, which utilizes a shared prediction head to classify all fusion features.
 
-**Limitations of Prior Work**: Joint learning suffers from *modality competition*—certain modalities converge faster (e.g., audio), suppressing others (e.g., visual), such that the multimodal model can underperform the best unimodal model. Existing balancing methods such as OGM-GE (gradient modulation) and AGM (adaptive gradients) alleviate but do not fundamentally resolve the problem of "modality laziness."
+**Limitations of Prior Work**: Joint learning suffers from "modality competition," where certain modalities converge faster (e.g., audio), leading to the suppression of other modalities (e.g., visual). Consequently, the multimodal model may even perform worse than the best unimodal counterpart. Existing balancing methods like OGM-GE (gradient modulation) and AGM (adaptive gradient) alleviate this but do not fundamentally solve the "modality laziness" problem.
 
-**Key Challenge**: Joint learning maximizes $I(y; z^{(a)}, z^{(v)}) = I(y; z^{(a)}) + I(y; z^{(v)}|z^{(a)})$. Once the audio encoder has captured sufficient information ($I(y; z^{(a)}) \approx H(y)$), the upper bound of the conditional mutual information $I(y; z^{(v)}|z^{(a)})$ approaches zero, leaving no learning signal for the visual encoder. The optimization objective itself causes the dominant modality to crowd out the weaker one.
+**Key Challenge**: Joint learning maximizes $I(y; z^{(a)}, z^{(v)})$. When the audio encoder has learned sufficient information ($I(y; z^{(a)}) \approx H(y)$), the upper bound of the conditional mutual information that the visual encoder can learn, $I(y; z^{(v)}|z^{(a)})$, approaches zero. Essentially, the optimization objective causes the strong modality to "squeeze out" the learning space of the weak modality.
 
-**Goal**: How to design a loss function that (1) avoids modality competition by enabling each modality to independently learn sufficient information, (2) exploits cross-modal interaction without completely isolating modalities as in pure unimodal learning, and (3) requires no additional hyperparameters or architectural modifications?
+**Goal**: How to design a loss function that avoids modality competition (allowing each modality to independently learn sufficient information) while leveraging cross-modal interaction (unlike pure unimodal learning, which is completely isolated), all without requiring extra hyperparameters or structural modifications?
 
-**Key Insight**: From an information-theoretic perspective, the authors observe that Total Correlation naturally decomposes into three terms corresponding to joint learning, unimodal learning, and cross-modal alignment—precisely covering the individual strengths of existing methods.
+**Key Insight**: The authors observe from information theory that Total Correlation (TC) can be naturally decomposed into three terms: "joint learning + unimodal learning + cross-modal alignment." This exactly covers the respective strengths of existing methods.
 
-**Core Idea**: Replace mutual information with Total Correlation as the optimization objective. Maximizing $\text{TC}(z^{(a)}, z^{(v)}, y)$ simultaneously achieves joint learning, unimodal learning, and cross-modal alignment without any additional hyperparameters.
+**Core Idea**: Replace mutual information with Total Correlation as the optimization objective. By maximizing $\text{TC}(z^{(a)}, z^{(v)}, y)$, joint learning, unimodal learning, and modal alignment are achieved simultaneously without additional hyperparameters.
 
 ## Method
 
 ### Overall Architecture
-Given multimodal input $(x^{(1)}, \dots, x^{(M)})$, each modality is encoded by a dedicated encoder $\psi^{(m)}$ into a feature space $z^{(m)}$, which is then passed to a shared prediction head $f_\theta$ to produce label probabilities. During training, the standard cross-entropy loss is replaced by TCMax. At inference, no modifications are required; the model outputs standard Softmax predictions.
+TCMax addresses the "modality competition" problem where strong modalities dominate weak ones by **changing only the training objective** rather than the network structure. The overall data flow remains identical to standard multimodal models: multimodal data $(x^{(1)}, \dots, x^{(M)})$ is input, each modality has an encoder $\psi^{(m)}$ mapping it to a feature $z^{(m)}$, which are then fed into a shared prediction head $f_\theta$ to output label probabilities.
+
+The distinction lies entirely in the loss function. The authors identify the root cause of modality competition through information theory (the joint learning target for mutual information starves weak modalities). They switch the optimization target from "mutual information between features and labels" to their "Total Correlation (TC)," because the mathematical decomposition of TC naturally encompasses joint learning, unimodal learning, and cross-modal alignment. Since TC is not directly calculable for high-dimensional features, the authors extend the MINE (Mutual Information Neural Estimation) approach to derive an optimizable lower bound. They cleverly utilize the **prediction head itself as the TC estimator**: during training, positive samples are real multimodal pairs, while negative samples are "pseudo-pairs" created by randomly regrouping features from different samples. The prediction head performs classification while simultaneously separating these two types of samples in the output, which is equivalent to raising the TC lower bound. At inference, no extra operations are needed; the Softmax output is used directly.
 
 ### Key Designs
 
-1. **Information-Theoretic Analysis of Modality Competition**
+**1. Modality Competition Analysis from an Info-Theory Perspective: Attributing "Modality Laziness" to the Objective Itself**
 
-    - **Function**: Explains the root cause of modality competition via mutual information decomposition.
-    - **Mechanism**: Joint learning maximizes $I(y; z^{(a)}, z^{(v)}) = I(y; z^{(a)}) + I(y; z^{(v)}|z^{(a)})$. When $I(y; z^{(a)}) \approx H(y)$, the upper bound of $I(y; z^{(v)}|z^{(a)})$ approaches zero, leaving no learning space for the visual encoder.
-    - **Design Motivation**: Identifies the theoretical deficiency of joint learning—the optimization objective itself induces modality competition.
+Existing balancing methods (OGM-GE, AGM) only adjust gradients without explaining the origin of modality competition. The authors decompose the joint learning target: it maximizes $I(y; z^{(a)}, z^{(v)}) = I(y; z^{(a)}) + I(y; z^{(v)}|z^{(a)})$. When a fast-converging modality like audio learns most of the label information such that $I(y; z^{(a)}) \approx H(y)$, the upper bound for the visual conditional mutual information $I(y; z^{(v)}|z^{(a)})$ is pushed toward zero. The visual encoder then has no space left to learn. This indicates that modality competition is not an optimization trick issue but an inherent property of the joint learning target.
 
-2. **Total Correlation Decomposition**
+**2. Total Correlation Decomposition: Unifying Joint Learning, Unimodal Learning, and Alignment**
 
-    - **Function**: Unifies joint learning, unimodal learning, and cross-modal alignment into a single TC objective.
-    - **Mechanism**: For the two-modality case, $\text{TC}(z^{(a)}, z^{(v)}, y) = I(y; z^{(a)}, z^{(v)}) + I(z^{(a)}; z^{(v)})$, which also equals $I(y; z^{(a)}) + I(y; z^{(v)}) + I(z^{(a)}; z^{(v)}|y)$. The first decomposition encompasses joint learning and alignment; the second encompasses unimodal learning and conditional alignment.
-    - **Design Motivation**: TC naturally subsumes the individual advantages of existing methods, providing a unified and conflict-free optimization objective.
+Given the structural flaws of a single mutual information target, the authors adopt Total Correlation. For the two-modality case, $\text{TC}(z^{(a)}, z^{(v)}, y) = I(y; z^{(a)}, z^{(v)}) + I(z^{(a)}; z^{(v)})$, which includes a joint learning term and a cross-modal alignment term. Alternatively, it equals $I(y; z^{(a)}) + I(y; z^{(v)}) + I(z^{(a)}; z^{(v)}|y)$, containing two independent unimodal learning terms and a conditional alignment term. Thus, maximizing a single TC is mathematically equivalent to optimizing "joint learning + unimodal learning + modal alignment" simultaneously—three goals that existing methods require multiple losses and hyperparameters to achieve.
 
-3. **Total Correlation Neural Estimation (TCNE)**
+**3. Total Correlation Neural Estimation (TCNE): An Optimizable Lower Bound for Incalculable TC**
 
-    - **Function**: Provides a computable lower bound for TC.
-    - **Mechanism**: Extends MINE (Mutual Information Neural Estimation) from bivariate to multivariate settings. Using the Donsker–Varadhan representation theorem: $\text{TC} \geq \sup_\theta \mathbb{E}_{\mathbb{P}_{joint}}[T_\theta] - \log(\mathbb{E}_{\mathbb{P}_{product}}[e^{T_\theta}])$, where $T_\theta$ is a neural network.
-    - **Design Motivation**: Direct computation of TC requires knowledge of the density ratio between the joint and marginal distributions, which is intractable in high-dimensional spaces. The variational lower bound circumvents this difficulty.
+Directly calculating TC requires the density ratio of the joint distribution to the product of marginals, which is infeasible in high-dimensional spaces. The authors extend MINE from bivariate to multivariate cases. Using the Donsker-Varadhan representation:
 
-4. **TCMax Loss Function**
+$$\text{TC} \geq \sup_\theta \mathbb{E}_{\mathbb{P}_{joint}}[T_\theta] - \log\big(\mathbb{E}_{\mathbb{P}_{product}}[e^{T_\theta}]\big)$$
 
-    - **Function**: Reuses the classification head as the statistics network $T_\theta$ in TCNE, yielding a loss with no additional parameters.
-    - **Mechanism**: Setting $T_\theta(z^{(1)}, \dots, z^{(M)}, y) = f_\theta(z^{(1)}, \dots, z^{(M)})_y$ gives $\mathcal{L}_{\text{TCMax}} = -\mathbb{E}_{\mathbb{P}_{joint}}[F_\Theta] + \log(\mathbb{E}_{\mathbb{P}_{product}}[e^{F_\Theta}])$. Training requires contrasting positive samples (real samples from the joint distribution) against negative samples (random cross-sample combinations of modality features).
-    - **Design Motivation**: Introduces no additional network parameters—the prediction head itself serves as the TC estimator, enabling a drop-in replacement for cross-entropy without any architectural change.
+where $T_\theta$ is a neural network statistic. Maximizing TC thus transforms into training $T_\theta$ to maximize the gap between samples from the joint distribution and samples from the product of independent marginals, relying entirely on sample estimation.
+
+**4. TCMax Loss Function: Prediction Head as TC Estimator with Zero Extra Parameters**
+
+To avoid introducing extra architectures, the authors repurpose the prediction head: $T_\theta(z^{(1)}, \dots, z^{(M)}, y) = f_\theta(z^{(1)}, \dots, z^{(M)})_y$. This treats the output of the classification head at the ground-truth label dimension as the statistic. Substituting this into the lower bound and taking the negative yields the training loss:
+
+$$\mathcal{L}_{\text{TCMax}} = -\mathbb{E}_{\mathbb{P}_{joint}}[F_\Theta] + \log\big(\mathbb{E}_{\mathbb{P}_{product}}[e^{F_\Theta}]\big)$$
+
+During training, positive samples come from the real joint distribution, while negative samples are "pseudo-pairs" from randomly regrouped features. TCMax replaces the loss without adding network parameters; the head performs both classification and TC estimation. Inference remains a standard Softmax.
 
 ### Loss & Training
 
-Direct implementation of TCMax requires $|B|^M$ forward passes (the denominator enumerates all combinations of modality features), which is computationally expensive. Two optimization strategies are proposed:
+A direct implementation of TCMax requires $|B|^M$ forward passes (the denominator must enumerate all combinations), which is computationally expensive. Two optimization strategies are used:
 
-- **Negative Sample Subsampling**: Randomly sample $\mathcal{N}$ negative pairs from $\mathcal{B} \times \mathcal{B}$, reducing complexity from $O(|B|^M)$ to $O(|\mathcal{N}|)$.
-- **Linear Fusion Decoupling**: If the prediction head takes the form $f_\theta(z^{(a)}, z^{(v)}) = f^{(a)}(z^{(a)}) + f^{(v)}(z^{(v)})$, the denominator factorizes into independent per-modality sums, reducing complexity to $O(|B|)$.
+- **Negative Sampling**: Randomly sample $\mathcal{N}$ negative pairs from $\mathcal{B} \times \mathcal{B}$, reducing $O(B^M)$ to $O(|\mathcal{N}|)$.
+- **Linear Fusion Decoupling**: If the head is $f_\theta(z^{(a)}, z^{(v)}) = f^{(a)}(z^{(a)}) + f^{(v)}(z^{(v)})$, the denominator can be decomposed into independent sums per modality, reducing complexity to $O(|B|)$.
 
-Theoretical guarantees: (1) minimizing $\mathcal{L}_{\text{TCMax}}$ is equivalent to improving the TC lower bound; (2) when the TC estimator is optimal, the model accurately estimates the joint distribution (Propositions 2–3); (3) no additional operations are required at inference.
+Theoretical Guarantees: (1) Minimizing $\mathcal{L}_{\text{TCMax}}$ is equivalent to increasing the TC lower bound; (2) when the TC estimator is optimal, the model accurately estimates the joint distribution (Propositions 2-3); (3) no extra operations at inference.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison against 10+ methods on 5 audio-visual/image-text datasets using ResNet-18 trained from scratch:
+Evaluated on 5 audio-visual/image-text datasets against 10+ methods using ResNet-18 trained from scratch:
 
-| Dataset | Metric | Ours (Share Head) | Prev. SOTA (MMPareto) | Gain |
+| Dataset | Metric | TCMax (Share Head) | Prev. SOTA (MMPareto) | Gain |
 |--------|------|------|----------|------|
 | CREMA-D | Acc | **82.7** | 74.4 | +8.3% |
 | Kinetics-Sounds | Acc | **63.5** | 62.7 | +0.8% |
@@ -98,42 +94,42 @@ Comparison against 10+ methods on 5 audio-visual/image-text datasets using ResNe
 
 | Configuration | Description |
 |------|------|
-| TCMax (Concat) | Uses concatenation fusion; achieves competitive results |
-| TCMax (Share Head) | Uses shared-head fusion; achieves overall best performance |
-| Effect of negative sample count | Optimal at 1024 negatives on CREMA-D; optimal at 256 on UCF101 |
-| JS divergence analysis | TCMax achieves the highest cross-modal prediction consistency (lowest JS divergence) across all datasets |
-| Prediction entropy balance | TCMax yields the entropy ratio $\rho$ closest to 1 between strong and weak modalities (CREMA-D: 1.549 vs. Concat: 2.913) |
+| TCMax (Concat) | Uses concatenation fusion, also achieves competitive results |
+| TCMax (Share Head) | Uses shared head fusion, overall best performance |
+| Negative Sample Impact | CREMA-D optimal at 1024 samples; UCF101 at 256 |
+| JS Divergence Analysis | TCMax shows the highest cross-modal prediction consistency (lowest JS divergence) |
+| Entropy Balance | TCMax entropy ratio $\rho$ is closest to 1 (CREMA-D: 1.549 vs Concat: 2.913) |
 
 ### Key Findings
-- The multimodal gain of TCMax stems primarily from cross-modal synergy rather than unimodal improvement: unimodal performance is on par with unimodal baselines, but multimodal fusion is significantly superior.
-- JS divergence experiments confirm that TCMax genuinely learns cross-modal alignment, as the prediction distributions of the two modalities are most consistent.
-- Training curves show that TCMax maintains a consistently higher loss value than joint/unimodal learning, effectively preventing overfitting.
-- TCMax remains effective with frozen CLIP encoders (MVSA, ViT-B/32: 84.05 vs. Joint: 82.83).
+- The multimodal gain of TCMax primarily stems from cross-modal synergy rather than unimodal improvement: unimodal performance is on par with unimodal methods, but multimodal fusion is significantly better.
+- JS divergence experiments confirm TCMax learns cross-modal alignment: prediction distributions across modalities are highly consistent.
+- Training curves show TCMax loss values remain higher than joint/unimodal learning, effectively preventing overfitting.
+- TCMax remains effective when using frozen CLIP encoders (on MVSA, ViT-B/32: 84.05 vs Joint: 82.83).
 
 ## Highlights & Insights
-- **Unified Framework**: A single TC quantity naturally unifies joint learning, unimodal learning, and alignment—three objectives that typically require multiple losses and hyperparameter balancing. The key insight is that this unification is not artificially constructed but arises directly from the mathematical decomposition of TC.
-- **Zero Hyperparameters**: TCMax introduces no additional hyperparameters (unlike QMF, which requires regularization weights, or MMPareto, which requires Pareto direction tuning) and can be used as a direct replacement for cross-entropy, substantially reducing tuning costs in practice.
-- **TCNE as Multivariate Generalization of MINE**: Extending MINE from bivariate to multivariate settings is a natural yet valuable theoretical contribution, transferable to any scenario requiring measurement of multi-variable dependency (e.g., multi-task learning, multi-view representation learning).
-- **Linear Fusion Decoupling Trick**: Exploiting $\exp(a+b) = \exp(a)\exp(b)$, when the prediction head uses linear fusion, negative sample computation is reduced from $O(|B|^2)$ to $O(|B|)$—a trick transferable to other contrastive learning settings.
+- **Unified Framework**: Via a single TC metric, it naturally unifies joint learning, unimodal learning, and alignment—three objectives usually requiring multiple losses and hyperparameter balancing. The elegance lies in this being a mathematical property of TC rather than an ad-hoc combination.
+- **Zero Hyperparameters**: TCMax introduces no extra hyperparameters (unlike QMF's regularization weights or MMPareto's Pareto direction adjustments). It can directly replace cross-entropy, significantly reducing tuning costs.
+- **TCNE to MINE Generalization**: Extending MINE from bivariate to multivariate is a natural yet valuable theoretical contribution, transferable to any scenario requiring multivariate dependency measurement (e.g., multi-task or multi-view learning).
+- **Linear Fusion Decoupling Trick**: Utilizing $\exp(a+b) = \exp(a)\exp(b)$ to reduce negative sample complexity from $O(|B|^2)$ to $O(|B|)$ is a clever trick transferable to other contrastive learning settings.
 
 ## Limitations & Future Work
-- TCMax is currently limited to classification tasks and cannot be directly extended to detection, generation, or other tasks, as these require redefining the probability distributions over inputs and outputs.
-- Experiments rely exclusively on ResNet-18 trained from scratch; validation on large-scale pretrained models (e.g., ViT-L, large multimodal models) is lacking (the CLIP experiment only freezes the encoder).
-- The optimal number of negative samples is dataset-dependent (1024 for CREMA-D, 256 for UCF101), and no adaptive selection mechanism is provided.
-- For non-linear fusion heads, computational complexity remains $O(|\mathcal{N}|)$, which may become a bottleneck in large-batch or many-modality settings.
-- All experimental datasets are relatively small (largest: VGGSound, ~150K samples); scalability on million-scale datasets has not been verified.
+- The authors acknowledge TCMax is currently limited to classification tasks and cannot be directly extended to detection or generation—redefinition of input-output probability distributions would be required.
+- Experiments mostly use ResNet-18 from scratch; there is a lack of validation on large-scale pretrained models like ViT-L or Large Multimodal Models (CLIP experiments only involved frozen encoders).
+- The choice of negative sample count is dataset-dependent (1024 for CREMA-D vs 256 for UCF101), lacking an adaptive selection mechanism.
+- Computational overhead for non-linear fusion heads remains $O(|\mathcal{N}|)$, which may become a bottleneck in large-batch or many-modality scenarios.
+- The datasets used are relatively small (max VGGSound ~150k); scalability has not been verified on million-scale datasets.
 
 ## Related Work & Insights
-- **vs. OGM-GE/AGM**: These methods balance modality contributions via gradient modulation, addressing the symptom (gradient imbalance) rather than the cause (the deficiency of the optimization objective itself). TCMax redesigns the objective function at a more fundamental level.
-- **vs. QMF/MLA**: These methods explicitly introduce unimodal losses and regularization terms, requiring hyperparameter balancing. TCMax naturally subsumes unimodal objectives through TC decomposition, without additional terms.
-- **vs. MMPareto**: MMPareto applies Pareto optimization to balance multi-objective directions but still trades off among multiple independent objectives. TCMax replaces them with a single unified objective, yielding a simpler formulation.
-- **vs. Contrastive Learning (InfoNCE)**: InfoNCE is a special case of MINE with a fixed functional form, whereas TCMax can be viewed as a natural generalization of InfoNCE from pairwise to multi-variable settings.
+- **vs OGM-GE/AGM**: These methods balance modality contributions via gradient modulation, addressing "symptoms" (gradient imbalance) rather than the "cause" (objective function flaws). TCMax is more fundamental by redesigning the objective.
+- **vs QMF/MLA**: These explicitly introduce unimodal losses + regularization, requiring hyperparameter balancing. TCMax naturally includes unimodal targets via TC decomposition.
+- **vs MMPareto**: MMPareto uses Pareto optimization to balance multiple objectives, whereas TCMax provides a singular, simplified unified target.
+- **vs Contrastive Learning (InfoNCE)**: InfoNCE is a special case of MINE (fixed functional form). TCMax can be viewed as the natural multivariate generalization of InfoNCE from pair-wise to multi-variable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The information-theoretic perspective is not entirely new, but the insight of unifying three objectives via TC is genuinely deep.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five datasets with diverse analyses, but large-scale validation is absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear and rigorous, with motivation developed in a well-structured progression.
-- Value: ⭐⭐⭐⭐ A practically useful hyperparameter-free loss function, though currently limited to classification tasks.
+- Novelty: ⭐⭐⭐⭐ The info-theory perspective is not entirely new, but the insight of TC unifying three targets is profound.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 datasets and extensive analysis, though lacking large-scale validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear and rigorous theoretical derivation with progressive motivation.
+- Value: ⭐⭐⭐⭐ A practical, hyperparameter-free loss function, though restricted to classification.
 
 <!-- RELATED:START -->
 
@@ -144,7 +140,7 @@ Comparison against 10+ methods on 5 audio-visual/image-text datasets using ResNe
 - [\[ICLR 2026\] MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs](mmtok_multimodal_coverage_maximization_for_efficient_inference_of_vlms.md)
 - [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](../../ACL2026/multimodal_vlm/moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
 - [\[NeurIPS 2025\] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion](../../NeurIPS2025/multimodal_vlm/rethinking_multimodal_learning_from_the_perspective_of_mitig.md)
-- [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
+- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/multimodal_vlm/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
 - [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](../../ICCV2025/multimodal_vlm/enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
 
 </div>

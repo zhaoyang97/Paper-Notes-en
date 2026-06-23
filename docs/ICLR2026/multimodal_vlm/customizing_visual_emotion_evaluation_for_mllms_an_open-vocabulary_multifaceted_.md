@@ -2,89 +2,103 @@
 title: >-
   [Paper Note] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach
 description: >-
-  [ICLR 2026][Multimodal VLM][Visual Emotion] This paper proposes the Emotion Statement Judgment (ESJ) task and the INSETS automatic annotation pipeline…
+  [ICLR 2026][Multimodal VLM][Visual Emotion] The authors propose the Emotion Statement Judgment (ESJ) task and the INSETS automatic labeling pipeline, reframing visual emotion evaluation from "open-ended classification" to "statement truth judgment." They constructed the MVEI benchmark (3,086 samples, 424 emotion labels, across four cognitive dimensions). Systema
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Visual Emotion"
-  - "MLLM Evaluation"
-  - "Open-vocabulary"
-  - "ESJ"
-  - "MVEI Benchmark"
+  - ICLR 2026
+  - Multimodal VLM
+  - Visual Emotion
+  - MLLM Evaluation
+  - Open-vocabulary
+  - ESJ
+  - MVEI Benchmark
 date: 2026-05-08
-content_hash: 03f9d613b21ba9ae
+content_hash: d1be24be19dacdec
 ---
-
 # Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.21950](https://arxiv.org/abs/2509.21950)  
 **Code**: [GitHub](https://github.com/wdqqdw/MVEI)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Visual Emotion, MLLM Evaluation, Open-vocabulary, ESJ, MVEI Benchmark
 
 ## TL;DR
 
-This paper proposes the Emotion Statement Judgment (ESJ) task and the INSETS automatic annotation pipeline, reformulating visual emotion evaluation from "open-ended classification" to "statement veracity judgment." The authors construct the MVEI benchmark (3,086 samples, 424 emotion labels, four cognitive dimensions) and systematically evaluate 19 MLLMs, finding that even GPT-4o lags behind humans (91.6%) by 13.3% in accuracy.
+The authors propose the Emotion Statement Judgment (ESJ) task and the INSETS automatic labeling pipeline, reframing visual emotion evaluation from "open-ended classification" to "statement truth judgment." They constructed the MVEI benchmark (3,086 samples, 424 emotion labels, across four cognitive dimensions). Systematic evaluation of 19 MLLMs reveals that even GPT-4o exhibits a 13.3% accuracy gap compared to humans (91.6%).
 
 ## Background & Motivation
 
-**Background**: Affective image content analysis (AICA) is a critical direction in multimodal understanding. As MLLMs continue to advance on general visual tasks, their visual emotion perception capabilities have attracted increasing attention; however, research conclusions remain contradictory—some studies report that MLLMs have limited emotion recognition ability, while others successfully employ them as emotion annotators for data augmentation.
+**Background**: Affective Image Content Analysis (AICA) is a critical direction in multimodal understanding. As MLLMs achieve breakthroughs in general vision tasks, their visual emotion perception capability has gained attention. however, research conclusions remain contradictory—some studies suggest limited emotional recognition in MLLMs, while others successfully utilize them as affective labelers for data augmentation.
 
-**Limitations of Prior Work**: The authors systematically attribute this contradiction to an incompatibility between traditional evaluation paradigms and MLLMs, manifesting in four aspects: (1) fixed label sets exclude other plausible answers—emotion perception is inherently subjective and the same image can evoke different responses; (2) emotion classification granularity is too coarse—mainstream benchmarks (FI, Artemis) contain only 8 emotion categories; (3) contextual factors are neglected—only intrinsic image attributes are considered, ignoring scene, viewer identity, and other external factors psychologically proven to influence emotion perception; (4) annotation costs are prohibitively high—the EMOTIC dataset required coordinating 23,788 crowdsourced annotators.
+**Limitations of Prior Work**: The authors attribute this contradiction to the incompatibility between traditional evaluation methods and MLLMs, manifested in four aspects: (1) Fixed labels exclude other valid answers—emotion perception is inherently subjective, and the same image can evoke different responses; (2) Coarse granularity—mainstream benchmarks (e.g., FI, Artemis) feature only 8 emotion categories; (3) Neglect of contextual factors—focusing only on intrinsic image attributes while ignoring scene and viewer identity; (4) High labeling costs—the EMOTIC dataset required coordination of 23,788 crowdsourced annotators.
 
-**Key Challenge**: Existing evaluations query MLLMs with open-ended questions (e.g., "What emotion does this image convey?"). On one hand, the open answer space renders evaluation criteria ambiguous; on the other hand, closed taxonomy systems fail to capture fine-grained emotional distinctions. A fundamental conflict therefore exists between evaluation precision and coverage.
+**Key Challenge**: Existing evaluations pose open-ended questions to MLLMs (e.g., "What is the emotion of this image?"). This creates a fundamental conflict: open answer spaces lead to ambiguous criteria, while closed classification systems fail to cover fine-grained emotional differences.
 
-**Goal**: (1) How to eliminate answer ambiguity in open-ended emotion evaluation? (2) How to cover fine-grained emotions while maintaining scalability? (3) How to incorporate scene context and subjectivity as evaluation dimensions? (4) How to construct large-scale evaluation data with minimal human effort?
+**Goal**: (1) Eliminate answer ambiguity in open-ended emotional evaluation; (2) Cover fine-grained emotions while maintaining scalability; (3) Incorporate scene context and subjectivity into evaluation dimensions; (4) Construct large-scale evaluation data with minimal human effort.
 
-**Key Insight**: Inspired by cognitive psychology, the paper reframes emotion evaluation from "generative answering" to "verificational judgment"—requiring models to assess whether an image matches a given emotion statement—while designing four complementary dimensions that span the complete capability spectrum from basic emotion recognition to understanding of subjectivity.
+**Key Insight**: Inspired by cognitive psychology, the evaluation task is shifted from "generative answering" to "judgmental verification." Models are asked to judge whether an image matches an emotional statement. Four complementary dimensions are designed to cover the full spectrum of capability from basic recognition to subjective understanding.
 
-**Core Idea**: Replacing "answering what emotion is present" with "judging whether an emotion statement is correct" fundamentally eliminates the ambiguity of open-ended evaluation, while an automated pipeline enables open-vocabulary, multi-dimensional, and large-scale assessment.
+**Core Idea**: Replace "answering what the emotion is" with "judging whether an emotion statement is correct." This fundamentally eliminates ambiguity in open-ended evaluation while enabling open-vocabulary, multidimensional, and large-scale assessment through an automated pipeline.
 
 ## Method
 
 ### Overall Architecture
 
-The framework comprises two core components: the ESJ task defines *how* to evaluate, and the INSETS pipeline determines *what* to evaluate. The pipeline proceeds as follows: INSETS first automatically extracts open-vocabulary emotion labels from 17,716 images in EmoSet via ensemble voting across 9 MLLMs; emotion statements (half correct, half incorrect) are then constructed across four dimensions from these labels; 462K annotated instances are automatically generated (INSETS-462k); and finally, human refinement yields 3,086 high-quality MVEI benchmark samples. During evaluation, MLLMs receive an image–statement pair and are required to output only "Correct" or "Incorrect."
+The framework consists of two core components: the ESJ task defining "how to test" and the INSETS pipeline solving "what to test." Pipeline: INSETS automatically extracts open-vocabulary emotion labels from 17,716 images in EmoSet (via an ensemble of 9 MLLMs). Four-dimensional emotional statements (half correct, half incorrect) are constructed based on these labels, generating 462K automated annotations (INSETS-462k). Finally, 3,086 high-quality MVEI benchmark samples are obtained through manual refinement. During evaluation, MLLMs receive image-statement pairs and output only "Correct" or "Incorrect."
+
+```mermaid
+graph TD
+    A["EmoSet Images<br/>17,716 images"] --> INSETS
+    subgraph INSETS["INSETS: Open-vocabulary Emotion Labeling Pipeline"]
+        direction TB
+        B["Stage 1: Labeling<br/>9 MLLM Ensemble Extraction -> GPT-4 Filtering<br/>-> Map to POM Model -> Majority Voting"] --> C["Consensus Open-vocabulary Labels<br/>+ Archetypal Explanation/Scene/Role"]
+        C --> D["Stage 2: Statement Construction (4 Dimensions)<br/>Sentiment Polarity · Emotion Interpretation<br/>Scene Context · Perception Subjectivity<br/>(Balanced Correct/Incorrect)"]
+    end
+    INSETS --> E["INSETS-462k<br/>462K Auto-annotated Corpus"]
+    E --> F["MVEI Benchmark Construction<br/>Manual Refinement by 5 Graduates<br/>Keep/Correct/Discard samples -> 3,086 samples"]
+    F --> G["ESJ Evaluation<br/>19 MLLMs judge Correct/Incorrect"]
+```
 
 ### Key Designs
 
-1. **Four-Dimensional Evaluation Framework (grounded in cognitive psychology)**
+**1. Four-Dimensional Evaluation System: Separating Recognition from Contextual Understanding**
 
-    - **Function**: Comprehensively measure MLLMs' visual emotion understanding across four complementary dimensions.
-    - **Mechanism**: (a) **Sentiment Polarity**—judges the emotional valence (positive/negative/mixed); correctness is automatically determined by the spectrum membership of labels in the Parrott Ontological Model (POM), paired with three predefined polarity statements. (b) **Emotion Interpretation**—combines a prototypical interpretation with an emotional state; a match constitutes a correct statement, while mismatches form incorrect ones via cross-image distraction (replacing the interpretation with one from a visually similar but emotionally different image) or within-image distraction (swapping labels between opposing polarities within the same image). (c) **Scene Context**—pairs a prototypical scene background with an emotional conclusion; incorrect statements are constructed via polarity reversal (random sampling from opposing POM spectra) or within-image swapping of scene descriptions across opposite polarities. (d) **Perception Subjectivity**—pairs a prototypical viewer role with a preference orientation toward a candidate emotion; incorrect statements are constructed by reversing the preference ordering.
-    - **Design Motivation**: Existing benchmarks cover only the first two dimensions (intrinsic image attributes), whereas psychological research demonstrates that external factors—scene and viewer identity—critically influence emotion perception. The four dimensions constitute a complete capability spectrum from "recognizing emotions" to "understanding how emotions vary across persons and contexts."
+While existing benchmarks focus primarily on the image itself, psychology indicates that external factors like scene and viewer identity also determine perception. ESJ splits evaluation into four complementary dimensions using "statement truth judgment":
 
-2. **INSETS Open-Vocabulary Emotion Labeling Pipeline**
+*   **Sentiment Polarity**: Evaluates whether the image tone is positive, negative, or mixed. Correctness is determined via the label's position in the POM hierarchy.
+*   **Emotion Interpretation**: Combines archetypal explanations with emotional states. Incorrect statements are generated via inter-image interference (swapping explanations from similar images) or intra-image interference (swapping opposing polarity labels for the same image).
+*   **Scene Context**: Combines archetypal background scenes with emotional conclusions. Errors are constructed via polarity flipping or scene swapping within the same image.
+*   **Perception Subjectivity**: Combines viewer roles with preference inclinations. Errors are created by reversing the preference order.
+The first two dimensions target intrinsic attributes, while the latter two target external factors, covering the spectrum from recognition to subjective variations.
 
-    - **Function**: Assign open-vocabulary emotion labels to images with minimal human intervention and automatically construct multi-dimensional emotion statements.
-    - **Mechanism**: The pipeline operates in two stages. **Stage 1 (Labeling)**: Nine MLLMs each extract candidate emotion words per image (averaging 8–13 words per model); these are pooled and filtered by GPT-4 to remove inappropriate terms; surviving words are mapped onto the Parrott Ontological Model (POM; 6 primary / 25 secondary / 113 tertiary categories, forming an extended POM); consensus labels are then selected via POM-guided ensemble majority voting (quota allocation at the secondary-category level, followed by intra-category top-k selection by frequency). **Stage 2 (Construction)**: For each label, the source MLLM generates prototypical interpretation, scene, and role statements, which are then combined into correct/incorrect statement pairs according to dimension-specific rules.
-    - **Design Motivation**: Single-MLLM annotation is susceptible to hallucination and bias. Multi-model ensemble combined with hierarchical psychological model constraints simultaneously ensures annotation reliability (90.6% accuracy) and open-vocabulary flexibility (751 distinct emotion labels).
+**2. INSETS Pipeline: Multi-model Ensemble + Hierarchical Constraints**
 
-3. **MVEI Benchmark Construction (Human Refinement)**
+To avoid the high costs of crowdsourcing (e.g., 23,788 annotators for EMOTIC) or the hallucinations of single MLLMs, INSETS uses model voting with psychological constraints. 
+*   **Stage 1 (Labeling)**: 9 MLLMs extract potential emotion words for each image. GPT-4 filters these into a candidate pool, which are then mapped to an expanded Parrott's Hierarchical Model (POM - 6 primary, 25 secondary, 113 tertiary categories). Consensus labels are selected via majority voting on the POM.
+*   **Stage 2 (Construction)**: For each label, archetypal explanations, scenes, and roles are generated from the source MLLM, and paired correct/incorrect statements are synthesized according to the four dimensions. This achieves 90.6% accuracy and high flexibility (751 unique labels).
 
-    - **Function**: Refine a high-quality evaluation benchmark from INSETS-462k.
-    - **Mechanism**: A sample of 3,164 instances is drawn from the corpus; five graduate students evaluate annotation accuracy following dimension-specific guidelines, with ≥4/5 consensus designating correct labels, ≤1/5 designating incorrect labels, and intermediate cases flagged as ambiguous. Correct instances are retained, incorrect ones revised, and ambiguous ones discarded, yielding the final 3,086 MVEI samples.
-    - **Design Motivation**: While automatic annotation is efficient, residual errors are inevitable. Human refinement ensures gold-standard quality, and the approximately 100 person-hours required is far lower than the cost of conventional annotation from scratch.
+**3. MVEI Benchmark Construction: From Auto-Corpus to Golden Standard**
+
+To ensure benchmark reliability, 3,164 samples from INSETS-462k were sampled and manually refined. Five graduate students evaluated labeling accuracy based on task guidelines. Samples were kept with $\ge 4/5$ consensus, corrected if $\le 1/5$, or discarded if ambiguous. This process (approx. 100 man-hours) produced 3,086 golden samples.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Parameters | Sentiment Polarity | Emotion Interpretation | Scene Context | Perception Subjectivity | Overall Acc. |
-|-------|------------|-------------------|----------------------|---------------|------------------------|-------------|
-| GPT-4o | — | 72.5% | 84.3% | 81.6% | 69.2% | 78.3% |
+| Model | Params | Sentiment Polarity | Emotion Interpretation | Scene Context | Perception Subjectivity | Total Acc |
+|------|--------|---------|---------|-----------|-----------|---------|
+| GPT-4o | - | 72.5% | 84.3% | 81.6% | 69.2% | 78.3% |
 | InternVL2.5 | 8.3B | 75.7% | 80.2% | 79.4% | 61.3% | 74.7% |
 | mPLUG-Owl3 | 8.1B | 73.9% | 79.3% | 81.7% | 75.0% | 78.1% |
 | Qwen2.5-VL | 8.3B | 63.2% | 81.5% | 83.9% | 66.3% | 75.9% |
 | Qwen2-VL | 8.3B | 70.7% | 75.0% | 86.1% | 72.8% | 76.6% |
 | LLaVa-1.6 | 7.6B | 66.4% | 69.7% | 55.3% | 49.7% | 60.2% |
-| **Human Average** | — | **92.3%** | **90.1%** | **95.3%** | **89.6%** | **91.6%** |
+| **Human Avg.** | - | **92.3%** | **90.1%** | **95.3%** | **89.6%** | **91.6%** |
 
-### Ablation Study (Gains from MLLM Adaptation Strategies on Qwen2.5-VL)
+### Ablation Study (Adaptation Strategies for Qwen2.5-VL)
 
-| Adaptation Strategy | Sentiment Polarity | Emotion Interpretation | Scene Context | Perception Subjectivity | Overall Acc. |
-|--------------------|--------------------|----------------------|---------------|------------------------|-------------|
+| Adaptation Strategy | Sentiment Polarity | Emotion Interpretation | Scene Context | Perception Subjectivity | Total Acc |
+|---------|---------|---------|-----------|-----------|---------|
 | Direct Inference | 63.2% | 81.5% | 83.9% | 66.3% | 75.9% |
 | Chain-of-Thought | 67.4 (+4.2) | 81.5 (+0.0) | 84.6 (+0.7) | 67.0 (+0.7) | 76.6 (+0.8) |
 | ICL 8-shot | 70.1 (+6.9) | 81.7 (+0.2) | 84.9 (+1.0) | 67.0 (+0.7) | 77.3 (+1.4) |
@@ -94,48 +108,47 @@ The framework comprises two core components: the ESJ task defines *how* to evalu
 
 ### Key Findings
 
-- **Sentiment polarity is one of the greatest weaknesses**: MLLMs perform poorly at distinguishing positive/negative/mixed valence, yet performance improves substantially through fine-tuning (full fine-tuning: +21.1%), suggesting the underlying issue is category boundary confusion rather than an absence of capability.
-- **Perception subjectivity is a fundamental challenge**: Even full fine-tuning yields only a +4.8% improvement; humans achieve 89.6% while the best MLLM reaches only 75.0%, indicating this limitation is tied to intrinsic model properties.
-- **INSETS automatic annotation achieves 90.6% accuracy**: 89.7% for correct statements and 91.5% for incorrect statements, validating the reliability of the pipeline.
-- **No single model dominates across all dimensions**: GPT-4o achieves the highest overall accuracy, yet underperforms mPLUG-Owl3 on perception subjectivity (69.2% vs. 75.0%).
+- **Sentiment Polarity is a primary weakness**: MLLMs struggle with positive/negative/mixed determination but show massive improvement via fine-tuning (+21.1%), suggesting the issue lies in category boundary confusion rather than a complete lack of capability.
+- **Perception Subjectivity is a fundamental challenge**: Even full fine-tuning yields only a +4.8% gain. The gap between humans (89.6%) and the best MLLM (75.0%) remains large, indicating this is tied to inherent model properties.
+- **INSETS Accuracy**: The pipeline achieved 90.6% accuracy (89.7% for correct statements, 91.5% for incorrect), validating its reliability.
+- **No Universal Best Model**: GPT-4o leads overall but is surpassed by mPLUG-Owl3 in Perception Subjectivity (69.2% vs 75.0%).
 
 ## Highlights & Insights
 
-- **Elegant ESJ task design**: Reformulating a subjective open-ended problem as an objective binary classification task preserves evaluation depth (four dimensions) while eliminating answer ambiguity. This "statement verification" paradigm is transferable to any evaluation task with high subjectivity, such as aesthetics, humor, or sarcasm understanding.
-- **"Low-cost, high-quality" paradigm of INSETS**: By combining multi-MLLM ensemble with a psychologically grounded taxonomic model, the pipeline constructs 462K annotated instances in approximately 115 person-hours—orders of magnitude more efficient than EMOTIC's 23,788 annotators. This "AI pre-annotation + human refinement" approach has broad applicability.
-- **Actionable insights from the four dimensions**: The results reveal a meaningful distinction between capabilities that are amenable to adaptation (polarity recognition) and those requiring fundamental model improvements (subjectivity understanding), providing concrete directions for MLLM development.
+- **Elegant ESJ Task Design**: Converting subjective open-ended questions into objective binary judgments preserves depth while eliminating ambiguity. This "statement verification" approach is transferable to other subjective tasks like aesthetics or humor understanding.
+- **Efficiency Paradigm**: INSETS reduces construction costs significantly (115 vs. 23,788 man-hours) through MLLM ensemble and hierarchical constraints. This "AI-initiation + Human-refinement" workflow is highly scalable.
+- **Actionable Insights**: The four dimensions distinguish between "improvable capabilities" (Polarity) and "foundational gaps" (Subjectivity), providing a clear roadmap for MLLM development.
 
 ## Limitations & Future Work
 
-- **Skewed data distribution**: Positive-emotion images constitute 65.2% of the dataset, inheriting a social media bias from EmoSet, which may reduce the reliability of evaluations on negative emotions.
-- **Limited evaluation granularity**: ESJ operates as a binary correct/incorrect judgment and cannot assess MLLMs' continuous perception of emotional intensity.
-- **Implicit bias in automated role generation**: Viewer roles in the perception subjectivity dimension may encode demographic stereotypes.
-- **Dynamic emotion not covered**: The benchmark evaluates only static single images; temporal emotional dynamics in video and multimodal emotion (combined with text/audio) are not addressed.
+- **Data Imbalance**: 65.2% of images represent positive emotions (inherited from EmoSet), potentially affecting negative emotion evaluation reliability.
+- **Limited Granularity**: ESJ uses binary judgment and cannot evaluate continuous perceptions of emotional intensity.
+- **Implicit Bias**: Role generation in the subjectivity dimension may inherit demographic stereotypes.
+- **Static Scope**: The work focuses on single images and does not cover temporal evolution in videos or multimodal (text/audio) emotional cues.
 
 ## Related Work & Insights
 
-- **vs. EmoSet/FI**: Conventional benchmarks perform closed-set classification over 8 fixed categories, whereas this work employs statement judgment over 751 open-vocabulary labels, representing a qualitative leap in evaluation flexibility and granularity.
-- **vs. EmoBench-M/EEmo-Bench**: These works expand task coverage but retain open-ended questions, failing to resolve answer ambiguity at the task-formulation level; ESJ eliminates ambiguity through the task structure itself.
-- **vs. FABA-Bench**: Focuses on facial expressions and actions while neglecting deeper dimensions such as scene context and perceptual subjectivity.
+- **vs EmoSet/FI**: While traditional benchmarks use 8 fixed classes, this work uses 751 open-vocabulary labels for statement judgment, significantly increasing flexibility.
+- **vs EmoBench-M/EEmo-Bench**: Unlike these benchmarks that rely on open-ended questions, ESJ eliminates answer ambiguity through its task format.
+- **vs FABA-Bench**: Focused on facial expressions and actions, whereas this work incorporates scene context and subjectivity.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The ESJ task design and four-dimensional evaluation framework are innovative, though the core contribution is an evaluation methodology rather than a model architecture breakthrough.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 19 MLLMs, 5 adaptation strategies, and 25 human participants, with comprehensive and in-depth analysis.
-- Writing Quality: ⭐⭐⭐⭐ The logic is clear, the integration of psychological theory with technical design is natural, and the ethical discussion is thorough.
-- Value: ⭐⭐⭐⭐ Establishes a new paradigm for visual emotion evaluation; the MVEI benchmark and INSETS-462k corpus offer practical value for future research.
+- Novelty: ⭐⭐⭐⭐ Innovative ESJ task design and 4D framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated 19 MLLMs, 5 adaptation strategies, and human baselines.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic, natural integration of psychological theory and technical solution.
+- Value: ⭐⭐⭐⭐ Practical contribution via the MVEI benchmark and INSETS-462k corpus.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 - [\[AAAI 2026\] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](../../AAAI2026/multimodal_vlm/o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)
-- [\[AAAI 2026\] Towards Scalable Web Accessibility Audit with MLLMs as Copilots](../../AAAI2026/multimodal_vlm/towards_scalable_web_accessibility_audit_with_mllms_as_copilots.md)
-- [\[ICLR 2026\] K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge](k-sort_eval_efficient_preference_evaluation_for_visual_generation_via_corrected_.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)
-- [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
+- [\[CVPR 2026\] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness](../../CVPR2026/multimodal_vlm/vocabulary_scaling_law_tuning_open-vocabulary_predictors_for_their_openness.md)
+- [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
+- [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](../../CVPR2026/multimodal_vlm/towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
 
 </div>
 

@@ -2,150 +2,134 @@
 title: >-
   [Paper Note] LLaVA-FA: Learning Fourier Approximation for Compressing Large Multimodal Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Model Compression] This paper proposes LLaVA-FA, an efficient compression method for large multimodal models (LMMs) that performs joint low-rank and quantization weight approximation in the fr…
+  [ICLR 2026][Multimodal VLM][Model Compression] LLaVA-FA is proposed as an efficient multimodal large model compression method that performs joint low-rank and quantized weight approximation in the frequency domain. By utilizing the decorrelation and conjugate symmetry properties of the Fourier transform, it achieves a more compact and accurate weight representation
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Model Compression"
-  - "Fourier Transform"
-  - "Low-Rank Decomposition"
-  - "Quantization"
-  - "Multimodal Language Models"
+  - ICLR 2026
+  - Multimodal VLM
+  - Model Compression
+  - Quantization
 date: 2026-05-08
-content_hash: 267ea2181e801a68
+content_hash: 960fc2bcac7e7b6e
 ---
-
 # LLaVA-FA: Learning Fourier Approximation for Compressing Large Multimodal Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.00135](https://arxiv.org/abs/2602.00135)  
 **Code**: None  
-**Area**: Multimodal Large Language Models
-**Keywords**: Model Compression, Fourier Transform, Low-Rank Decomposition, Quantization, Multimodal Language Models
+**Area**: Multimodal Large Language Models  
+**Keywords**: Model Compression, Fourier Transform, Low-rank Decomposition, Quantization, Multimodal Language Models
 
 ## TL;DR
 
-This paper proposes LLaVA-FA, an efficient compression method for large multimodal models (LMMs) that performs joint low-rank and quantization weight approximation in the frequency domain. By exploiting the decorrelation property and conjugate symmetry of the Fourier transform, the method achieves more compact and accurate weight representations. It further introduces PolarQuant (polar coordinate quantization) and ODC (Optional Diagonal Calibration), surpassing existing efficient multimodal models on multiple benchmarks with minimal active parameters and computational cost.
+LLaVA-FA is proposed as an efficient multimodal large model compression method that performs joint low-rank and quantized weight approximation in the frequency domain. By utilizing the decorrelation and conjugate symmetry properties of the Fourier transform, it achieves a more compact and accurate weight representation. Combined with PolarQuant (polar coordinate quantization) and ODC (Optional Diagonal Calibration), the method outperforms existing efficient multimodal models across multiple benchmarks with minimal activation parameters and computational costs.
 
 ## Background & Motivation
 
-Large multimodal models (LMMs) demonstrate strong performance on vision-language tasks, but their substantial computational and memory requirements hinder practical deployment. For instance, training LLaVA-70B requires over 800 GPU hours on A100s.
+Large Multimodal Models (LMMs) exhibit exceptional performance on vision-language tasks, but their massive computational and memory costs hinder practical deployment. For instance, training a LLaVA-70B model requires over 800 GPU hours (A100).
 
-**Limitations of existing compression methods:**
+**Limitations of Prior Work**:
 
-**Decoupled low-rank decomposition and quantization**: Existing methods (e.g., LoRD, ASVD, LQER) treat low-rank decomposition and quantization independently. The low-rank selection stage is oblivious to subsequent quantization noise, causing reconstruction errors to **compound**.
+**Decoupled Low-rank Decomposition and Quantization**: Existing methods (e.g., LoRD, ASVD, LQER) treat low-rank decomposition and quantization independently. The low-rank selection phase is oblivious to subsequent quantization noise, resulting in **compounded** reconstruction errors.
 
-**Underutilization of multimodal redundancy**: Unlike pure-text LLMs, large vision-language models additionally carry cross-modal adapters from image encoders. Adapter rank inflation across visual domains makes the same low-rank-plus-quantization scheme still "bloated" for multimodal models.
+**Underutilized Multimodal Redundancy**: Unlike text-only LLMs, LMMs carry additional cross-modal adapters for image encoders. The rank of adapters for each new visual domain inflates, making standard low-rank plus quantization schemes still appear "bloated" for multimodal models.
 
-**Dependence on calibration data**: Many compression methods require large-scale calibration datasets to estimate Hessian matrices.
+**Dependency on Calibration Data**: Many compression methods require large-scale calibration datasets to estimate the Hessian matrix.
 
-**Core Problem**: How to aggressively compress learnable parameters while preserving the performance of multimodal models?
+**Core Problem**: How to more aggressively compress learnable parameters while maintaining the performance of multimodal models?
 
-**Key Observation**: The Fourier transform possesses strong expressive power for data compression — extremely sparse spectral information can reconstruct high-fidelity signals. Crucially, even for weight matrices lacking spatial semantics, the Fourier transform effectively handles approximation problems. The authors find that:
-- LMM weight matrices exhibit more compact singular value distributions in the frequency domain
-- At the same rank, the cumulative approximation error of frequency-domain low-rank approximation is **smaller** than in the spatial domain
-- The conjugate symmetry of the Fourier transform saves nearly half of the learnable parameters
+**Key Insight**: The Fourier transform possesses powerful expressive capabilities in data compression—highly sparse spectral information can recover high-fidelity signals. Importantly, even for weight matrices lacking spatial semantics, the Fourier transform effectively handles approximation. The authors observed:
+- LMM weight matrices exhibit a more compact singular value distribution in the frequency domain.
+- At the same rank, the cumulative error of low-rank approximation in the frequency domain is **smaller** than in the spatial domain.
+- The conjugate symmetry of the Fourier transform can save nearly half of the learnable parameters.
 
 ## Method
 
 ### Overall Architecture
 
-The core idea of LLaVA-FA is to shift weight matrix compression from the spatial domain to the frequency domain:
-1. Apply Discrete Fourier Transform (DFT) to weight matrices
-2. Perform low-rank decomposition in the frequency domain
-3. Apply PolarQuant to the resulting complex-valued matrices
-4. Optionally apply ODC to eliminate the need for large-scale calibration data
+LLaVA-FA shifts the entire weight compression process to the frequency domain: first, a Discrete Fourier Transform is applied to the weight matrix $W$ to obtain $\hat{W}=\text{DFT}(W)$; then, truncated SVD is performed in the frequency domain to extract complex low-rank factors; these factors are quantized into low bits using PolarQuant, designed specifically for complex numbers; finally, ODC is used for one-time error calibration. The entire workflow is executed within the frequency/complex domain to avoid information loss from domain switching. The process is post-training and requires no fine-tuning. The three contributions (frequency domain low-rank decomposition, PolarQuant, and ODC) correspond to the three stages shown below:
+
+```mermaid
+graph TD
+    W["Pre-trained Weights W"] --> LR["Frequency Domain Low-rank Decomposition<br/>DFT to Frequency Domain → Truncated SVD<br/>Extract Complex Low-rank Factors<br/>(Conjugate Symmetry saves half parameters)"]
+    LR --> PQ["PolarQuant<br/>Complex residuals split into Magnitude + Phase<br/>Individual Low-bit Quantization in Polar Coordinates"]
+    PQ --> ODC["ODC: Optional Diagonal Calibration<br/>Row/Column Mean to Approximate Hessian<br/>Avoids Large-scale Calibration Data"]
+    ODC --> OUT["Compressed Weights<br/>Training-free, Direct Inference Deployment"]
+```
 
 ### Key Designs
 
-1. **Frequency-domain low-rank decomposition**: Exploiting the decorrelation capability of DFT
+**1. Frequency Domain Low-rank Decomposition: Faster Singular Value Decay for Smaller Errors**
 
-    - Transform weight matrix $W$ to $\hat{W} = \text{DFT}(W)$
-    - Apply truncated SVD to $\hat{W}$ in the frequency domain to obtain the low-rank approximation $\hat{W}_r = U_r \Sigma_r V_r^H$
-    - **Theoretical guarantee**: The Frobenius error of same-rank low-rank approximation in the frequency domain is smaller than in the spatial domain (formally proved in the paper)
-    - **Conjugate symmetry**: The DFT of a real-valued matrix satisfies conjugate symmetry, requiring only half the coefficients to be stored, further compressing parameter count
-    - **Energy compaction**: DFT concentrates information into a small number of frequency components, making truncation more effective
+In the spatial domain, singular values of weight matrices often decay slowly, requiring a high rank to minimize reconstruction error, which limits compression. LLaVA-FA first transforms $W$ to $\hat{W}=\text{DFT}(W)$ and performs truncated SVD to get $\hat{W}_r = U_r \Sigma_r V_r^H$. The decorrelation of DFT concentrates energy into fewer frequency components, causing singular values to decay faster. The paper provides a rigorous proof: at the same rank, the Frobenius reconstruction error in the frequency domain is strictly smaller than in the spatial domain. Furthermore, the DFT of real matrices satisfies conjugate symmetry; since half the spectrum is determined by the conjugate of the other half, storing only half the coefficients allows lossless reconstruction, effectively doubling compression at no precision cost.
 
-2. **PolarQuant (Polar Coordinate Quantization)**: A quantization scheme designed for complex-valued matrices
+**2. PolarQuant: Quantizing Complex Numbers via Polar Coordinates**
 
-    - Frequency-domain low-rank decomposition yields complex-valued matrices, making conventional real-valued quantization schemes inapplicable
-    - PolarQuant decomposes each complex number $z = r e^{i\theta}$ into **magnitude** $r$ and **phase** $\theta$
-    - Uniform quantization is applied to magnitude and phase separately, each with an independent scaling factor
-    - Compared to directly quantizing real and imaginary parts, the polar representation preserves complex number structure and avoids severe phase information loss at low bit-widths
-    - Supports ultra-low bit-width quantization down to 2–4 bits
+Standard real-valued quantization is unsuitable for the complex factors resulting from frequency domain decomposition. Quantizing real and imaginary parts separately at extremely low bits (2–4 bits) severely distorts phase information. PolarQuant represents each complex number in polar form $z = r e^{i\theta}$, separating magnitude $r$ and phase $\theta$ to be quantized uniformly with independent scaling factors. This quantization grid naturally aligns with the "magnitude + angle" structure of complex numbers, preventing phase drift and maintaining fidelity even at 2–4 bits.
 
-3. **ODC (Optional Diagonal Calibration)**: A calibration scheme requiring no large-scale calibration data
+**3. ODC (Optional Diagonal Calibration): Eliminating Large-scale Calibration Data**
 
-    - Traditional methods require full Hessian matrices to calibrate compression errors, incurring high computational cost and demanding large representative datasets
-    - ODC leverages the empirical observation that Hessian matrices of deep networks are often **diagonally dominant or low-rank structured**
-    - Row/column means are used to approximate the full Hessian, substantially reducing computational complexity
-    - The compression pipeline becomes fully calibration-data-free, or requires only a minimal amount of data
+Traditional compression requires estimating the full Hessian to calibrate errors from quantization and truncation, which is computationally expensive and requires significant calibration data. ODC leverages the empirical observation that Hessians in deep networks are often diagonal-dominant or low-rank. It uses row/column means to approximate the Hessian, significantly reducing computational complexity. Consequently, the compression process is nearly independent of calibration data, making the method "plug-and-play."
 
 ### Loss & Training
 
-LLaVA-FA is a **post-training compression** method that requires no additional fine-tuning or training:
-- Compression is applied directly to pre-trained weights via DFT → truncated low-rank decomposition → PolarQuant
-- ODC calibration is also a one-time forward computation
-- The compressed model is directly deployable for inference without retraining
-
-This makes the compression pipeline extremely lightweight and practical.
+LLaVA-FA is a purely post-training compression method that introduces no additional fine-tuning or re-training. Pre-trained weights undergo DFT, frequency domain low-rank truncation, and PolarQuant quantization in sequence, while ODC calibration is a one-time forward calculation. The model is ready for inference deployment immediately after compression, making the process highly lightweight.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The method is evaluated on multiple vision-language benchmarks covering both understanding and hallucination tasks:
+Evaluations across multiple vision-language benchmarks, including perception and hallucination tasks:
 
-| Method | Active Params | VQAv2 | GQA | SQA | POPE | Avg |
-|--------|--------------|-------|-----|-----|------|-----|
+| Method | Activation Params | VQAv2 | GQA | SQA | POPE | Average |
+|------|---------|-------|-----|-----|------|------|
 | LLaVA-1.5 (Original) | 7B | Baseline | Baseline | Baseline | Baseline | Baseline |
 | ASVD + Q | ~2B | Lower | Lower | Lower | Lower | Lower |
-| LQER + Q | ~2B | Medium | Medium | Medium | Medium | Medium |
-| **LLaVA-FA** | **Fewest** | **Highest** | **Highest** | **Highest** | **Highest** | **Highest** |
+| LQER + Q | ~2B | Mid | Mid | Mid | Mid | Mid |
+| **Ours (LLaVA-FA)** | **Minimal** | **Highest** | **Highest** | **Highest** | **Highest** | **Highest** |
 
-LLaVA-FA surpasses all existing efficient multimodal models on all benchmarks while maintaining the fewest active parameters and lowest computational cost.
+Ours (LLaVA-FA) surpasses existing efficient multimodal models across all benchmarks while maintaining the fewest activation parameters and lowest computational cost.
 
 ### Ablation Study
 
-| Configuration | Result | Note |
-|--------------|--------|------|
-| Spatial-domain vs. frequency-domain low-rank | Frequency domain superior | Smaller reconstruction error at same rank |
-| Real/imaginary quantization vs. PolarQuant | PolarQuant superior | Preserves complex structure; more complete phase information |
-| Without ODC vs. with ODC | ODC provides clear gains | Particularly significant at low bit-widths |
-| Low-rank only vs. low-rank + quantization | Joint approach optimal | Joint optimization in frequency domain avoids error compounding |
-| Different bit-widths | 4-bit offers best trade-off | 2-bit incurs notable degradation; 4-bit approaches full precision |
+| Configuration | Effect | Description |
+|------|------|------|
+| Spatial vs. Frequency Low-rank | Frequency superior | Lower reconstruction error at the same rank |
+| Real/Imaginary vs. PolarQuant | PolarQuant superior | Preserves complex structure and phase information |
+| Without vs. With ODC | ODC significant | Notable calibration effect especially at low bits |
+| Low-rank Only vs. Joint | Joint optimal | Prevents compound error by optimizing in frequency domain |
+| Different Bit-widths | 4-bit optimal | 2-bit drops significantly; 4-bit near full-precision |
 
 ### Key Findings
 
-1. **Frequency-domain low-rank approximation genuinely outperforms the spatial domain**: This is not merely an empirical observation — the paper provides a theoretical proof that the decorrelation property of DFT accelerates singular value decay.
-2. **Conjugate symmetry yields "free" 2× compression**: Parameter count is halved with no precision loss whatsoever.
-3. **PolarQuant is critical at low bit-widths**: At 2–4 bits, directly quantizing real and imaginary parts severely distorts phase information.
-4. **ODC eliminates the calibration data bottleneck**: The diagonal approximation is sufficiently accurate for deep network Hessians, making compression truly plug-and-play.
+1.  **Frequency domain low-rank approximation is superior to the spatial domain**: This is supported by both experimental evidence and a mathematical proof regarding the decorrelation properties of DFT.
+2.  **Conjugate symmetry provides "free" 2x compression**: Parameter counts can be halved without any loss in precision.
+3.  **PolarQuant is critical for low-bit scenarios**: At 2-4 bits, direct quantization of real and imaginary parts causes severe phase distortion.
+4.  **ODC removes the calibration data bottleneck**: Diagonal approximation is sufficiently accurate for deep network Hessians, enabling "plug-and-play" compression.
 
 ## Highlights & Insights
 
-1. **A pioneering frequency-domain compression perspective**: Shifting neural network weight compression from the spatial domain to the frequency domain is a novel direction, fully exploiting three key properties of the Fourier transform: decorrelation, conjugate symmetry, and energy compaction.
-2. **Integration of theory and practice**: The method is supported not only by empirical results but also by rigorous mathematical proofs that frequency-domain low-rank approximation outperforms its spatial-domain counterpart.
-3. **End-to-end consistent design philosophy**: From low-rank decomposition to quantization to calibration, every step is handled consistently in the frequency/complex domain, avoiding information loss from cross-domain conversion.
-4. **Extremely low deployment barrier**: Post-training compression, no calibration data, and no fine-tuning make the method highly practical.
-5. **Targeted design for multimodal models**: The paper explicitly identifies that multimodal models face greater compression challenges than pure-text LLMs due to cross-modal adapter redundancy.
+1.  **Pioneering Frequency Domain Perspective**: Shifting neural network weight compression from the spatial domain to the frequency domain is a novel approach that fully exploits decorrelation, conjugate symmetry, and energy concentration.
+2.  **Theory Combined with Practice**: The work provides rigorous mathematical proofs alongside experimental results to justify the superiority of frequency domain approximation.
+3.  **End-to-End Consistency**: From decomposition to quantization and calibration, every step is handled consistently within the frequency/complex domain, avoiding information loss from domain conversions.
+4.  **Low Deployment Barrier**: As a post-training method requiring no calibration data or fine-tuning, the approach is highly practical.
+5.  **Multi-modal Specific Design**: The paper identifies that multimodal models face unique compression challenges compared to text-only LLMs due to redundancy in cross-modal adapters.
 
 ## Limitations & Future Work
 
-1. **Frequency-to-spatial domain conversion at inference**: Although storage is compressed, the inference pipeline may incur additional DFT/IDFT computational overhead.
-2. **Primarily validated on the LLaVA series**: Applicability to other architectures (e.g., Qwen-VL, InternVL) requires further investigation.
-3. **Ultra-low bit-width (1–2 bit) performance**: Performance degradation remains noticeable at extremely low bit-widths; combining with knowledge distillation or similar techniques may be necessary.
-4. **Hardware support**: Complex arithmetic and polar coordinate quantization may lack native acceleration support in existing inference engines.
-5. **Adaptation to dynamic scenarios**: Fixed truncation rank may not be optimal across all layers; adaptive rank selection strategies are worth exploring.
+1.  **Inference Domain Transformation**: While storage is reduced, inference may require additional DFT/IDFT computational overhead.
+2.  **Limited Architecture Validation**: Primarily verified on the LLaVA series; applicability to other architectures like Qwen-VL or InternVL remains to be seen.
+3.  **Ultra-low Bit (1-2 bit) Performance**: Performance degradation remains significant at extremely low bits, potentially requiring combination with knowledge distillation.
+4.  **Hardware Support**: PolarQuant and complex arithmetic may lack native acceleration support in current inference engines.
+5.  **Dynamic Adaptation**: Fixed truncation ranks may not be optimal for all layers; adaptive rank selection strategies are worth exploring.
 
 ## Related Work & Insights
 
-- **LoRA / QLoRA**: Pioneering work on low-rank adaptation, but operating in the spatial domain.
-- **ASVD / FWSVD**: SVD-based weight compression that handles low-rank decomposition and quantization separately.
-- **LQER**: Joint low-rank-plus-quantization method, but in the spatial domain.
-- **GPTQ / AWQ**: Quantization-only schemes without low-rank decomposition.
+-   **LoRA / QLoRA**: Pioneers of low-rank adaptation, but operate in the spatial domain.
+-   **ASVD / FWSVD**: SVD-based weight compression handling low-rank and quantization separately.
+-   **LQER**: A joint low-rank and quantization method, but limited to the spatial domain.
+-   **GPTQ / AWQ**: Quantization-only schemes without low-rank decomposition.
 
-The core insight of this paper is that mature frequency-domain analysis tools from signal processing can be introduced into deep learning model compression, opening an entirely new research direction. Future work may extend this to other transform domains (e.g., wavelet transforms) or other model architectures.
+The core insight of this work is the introduction of mature frequency domain analysis tools from signal processing into deep learning model compression, opening a new research direction. This could potentially extend to other transform domains (e.g., wavelet transforms).
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -155,15 +139,15 @@ The core insight of this paper is that mature frequency-domain analysis tools fr
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Efficient Encoder-Free Fourier-based 3D Large Multimodal Model](../../CVPR2026/multimodal_vlm/efficient_encoder-free_fourier-based_3d_large_multimodal_model.md)
+- [\[CVPR 2025\] LLaVA-Critic: Learning to Evaluate Multimodal Models](../../CVPR2025/multimodal_vlm/llava-critic_learning_to_evaluate_multimodal_models.md)
 - [\[ICCV 2025\] LLaVA-KD: A Framework of Distilling Multimodal Large Language Models](../../ICCV2025/multimodal_vlm/llava-kd_a_framework_of_distilling_multimodal_large_language_models.md)
-- [\[ICLR 2026\] Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA](spatial_reasoning_is_not_a_free_lunch_a_controlled_study_on_llava.md)
-- [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](../../ICCV2025/multimodal_vlm/llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
-- [\[ICCV 2025\] FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection](../../ICCV2025/multimodal_vlm/fa_forced_prompt_learning_of_vision-language_models_for_out-of-distribution_dete.md)
-- [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
+- [\[ICLR 2026\] LLaVA-4D: Embedding SpatioTemporal Prompt into LMMs for 4D Scene Understanding](llava-4d_embedding_spatiotemporal_prompt_into_lmms_for_4d_scene_understanding.md)
+- [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)
 
 </div>
 

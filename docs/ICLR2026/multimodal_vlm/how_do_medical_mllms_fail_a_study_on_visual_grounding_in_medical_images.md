@@ -2,138 +2,138 @@
 title: >-
   [Paper Note] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images
 description: >-
-  [ICLR 2026][Multimodal VLM][Medical VQA] This work presents the first systematic diagnosis revealing that the root cause of poor zero-shot medical VQA performance in medical MLLMs is insufficient visual grounding—model a…
+  [ICLR 2026][Multimodal VLM][Paper Note] This study systematically diagnoses the root cause of poor medical MLLM performance in zero-shot medical VQA as insufficient visual grounding—where model attention systematically deviates from clinically relevant regions. To address this, the authors propose VGRefine, a training-free inference-time attention correction
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Medical VQA"
-  - "Visual Grounding"
-  - "Attention Analysis"
-  - "MLLM Failure Modes"
-  - "Inference-Time Correction"
+  - ICLR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 61af9fd67d17ab9d
+content_hash: 7f98029cf340faeb
 ---
-
 # How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.14323](https://arxiv.org/abs/2603.14323)  
 **Code**: [Project Page](https://guimeng-leo-liu.github.io/Medical-MLLMs-Fail/)  
-**Area**: Multimodal VLM
-**Keywords**: Medical VQA, Visual Grounding, Attention Analysis, MLLM Failure Modes, Inference-Time Correction
+**Area**: Multimodal VLM  
+**Keywords**: Medical VQA, Visual Grounding, Attention Analysis, MLLM Failure Modes, Inference-time Correction
 
 ## TL;DR
 
-This work presents the first systematic diagnosis revealing that the root cause of poor zero-shot medical VQA performance in medical MLLMs is insufficient visual grounding—model attention systematically deviates from clinically relevant regions. Building on this finding, the authors propose VGRefine, a training-free inference-time attention correction method that achieves state-of-the-art results across 110K+ samples on 6 benchmarks spanning 8 imaging modalities.
+This study systematically diagnoses the root cause of poor medical MLLM performance in zero-shot medical VQA as insufficient visual grounding—where model attention systematically deviates from clinically relevant regions. To address this, the authors propose VGRefine, a training-free inference-time attention correction method that achieves SOTA results across 8 imaging modalities and 110K+ samples in 6 benchmarks.
 
 ## Background & Motivation
 
-**Background** Multimodal large language models (MLLMs) have demonstrated strong performance on general vision-language tasks. A growing body of work has extended these models to the medical domain (LLaVA-Med, HuatuoGPT-Vision, VILA-M3, etc.), aiming to build general-purpose medical AI capable of supporting diverse clinical decision-making. Nevertheless, these models continue to underperform in zero-shot medical VQA settings, particularly when no downstream task samples are available for training or fine-tuning.
+**Background** Multimodal Large Language Models (MLLMs) excel in general vision-language tasks. Recent efforts (e.g., LLaVA-Med, HuatuoGPT-Vision, VILA-M3) extend these to the medical domain to support clinical decision-making. However, these models still underperform in zero-shot medical VQA scenarios, particularly when no downstream task samples are used for training or fine-tuning.
 
-**Limitations of Prior Work** Existing research has largely focused on *how to improve* medical MLLMs—through larger medical multimodal datasets or integration of external expert models—while systematically neglecting the more fundamental question of *why they fail*. Failure on medical images may stem from semantic grounding deficiencies (not knowing which clinical concept to attend to) or visual grounding deficiencies (knowing what to look for but failing to localize it correctly in the image). These two dimensions have not previously been explicitly distinguished or quantified.
+**Limitations of Prior Work** Existing research primarily focuses on "how to improve" (e.g., building larger medical multimodal datasets, introducing external experts), but lacks a systematic analysis of "why they fail." Failure on medical images may stem from semantic grounding (not knowing which clinical concepts to focus on) or visual grounding (knowing what to find but failing to locate it correctly)—dimensions that were previously not clearly distinguished or quantified.
 
-**Key Challenge** Prior work has shown that MLLMs exhibit strong visual grounding on natural images, with attention distributions aligning well with target regions. Whether this holds for medical images remains an open question. If visual grounding is indeed the bottleneck for medical MLLMs, then the prevailing effort to inject medical knowledge for semantic grounding enhancement may be misdirected—the true bottleneck lies on the visual side.
+**Key Challenge** Prior work has shown that MLLMs possess strong visual grounding in natural images, where attention aligns with target regions. It remains unclear if this holds for medical images. If visual grounding is indeed the bottleneck, current efforts to inject medical knowledge to enhance semantic grounding might be misdirected—the true bottleneck may lie on the visual side.
 
-**Key Insight** This paper proposes a complete diagnose–validate–fix pipeline: collaborating with clinical experts to construct the VGMED dataset specifically for visual grounding analysis, introducing new quantitative metrics, systematically evaluating 8 state-of-the-art medical MLLMs, and finally proposing an efficient training-free inference-time correction method.
+**Key Insight** This paper designs a comprehensive diagnosis-verification-repair pipeline: constructing the VGMED dataset specifically for visual grounding analysis with clinical experts, introducing new quantitative metrics, systematically verifying 8 SOTA medical MLLMs, and proposing a concise inference-time repair method.
 
-**Core Idea** By decoupling semantic grounding from visual grounding to precisely localize failure modes, this work demonstrates that insufficient visual grounding is a universal and correctable bottleneck shared across all mainstream medical MLLMs.
+**Core Idea** By decoupling semantic and visual grounding, the authors pinpoint the failure mode and demonstrate that insufficient visual grounding is a universal, fixable bottleneck across all mainstream medical MLLMs.
 
 ## Method
 
 ### Overall Architecture
 
-The work consists of three components: (1) constructing the VGMED dataset for precise visual grounding evaluation; (2) proposing three quantitative metrics—Attention Ratio (AR), KL divergence, and JS divergence—to comprehensively diagnose 8 medical MLLMs; and (3) proposing VGRefine, an inference-time method that improves visual grounding through a two-step attention correction procedure.
+The study aims not to determine "how to make medical MLLMs stronger," but to identify "exactly where they fail" and provide a lightweight fix. The logic follows a "Metric -> Diagnosis -> Prescription" pipeline: first, constructing the VGMED dataset where questions require accurate localization; second, using metrics like Attention Ratio, KL divergence, and JS divergence to evaluate 8 SOTA models and locate systematic attention deviations; finally, proposing the training-free VGRefine to pull deviated attention back to relevant regions during inference.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Medical Image + VQA Question"] --> B["VGMED Dataset Construction<br/>Seg-mask to bbox<br/>Location & Attribute Questions"]
+    B --> C["Attention Diagnosis Metrics<br/>AR + KL/JS Divergence<br/>Measuring Coverage of bbox"]
+    C --> D{"Diagnosing 8<br/>SOTA Medical MLLMs"}
+    D -->|"Attention Systematically<br/>Deviates from Clinical Regions"| E
+    subgraph E["VGRefine Inference Correction (Training-free)"]
+        direction TB
+        E1["Step 1 Attention Triage<br/>Select Top-K Heads via COCO → Aggregate<br/>→ Suppress Low Activation → Binary Mask"]
+        E1 --> E2["Step 2 Attention Knockout<br/>Mask-based blocking of Question Tokens<br/>to Irrelevant Visual Tokens"]
+    end
+    E --> F["Refined Attention<br/>Focusing on Clinical Regions"]
+    F --> G["Medical VQA Answer"]
+```
 
 ### Key Designs
 
-1. **VGMED Dataset — An Evaluation Tool for Decoupling Visual and Semantic Grounding**
+**1. VGMED Dataset: Decoupling Visual and Semantic Grounding**  
+Existing Med-VQA datasets often contain noise—questions that don't require localization (e.g., "What is the modality?") or require deep expertise. These make it impossible to attribute failure to either semantic or visual causes. The authors collaborated with 3 certified clinicians to filter 13,962 samples from 40+ public segmentation datasets, converting masks to bboxes. They generated ~28K image-bbox-question triplets focusing on location (what is this organ/lesion) and attributes (size, shape, features). Since each question is tied to a specific region, failures can be directly attributed to "looking at the wrong place."
 
-    - **Function**: Construct an evaluation dataset specifically designed for visual grounding analysis, ensuring that every question can only be answered by referring to annotated image regions.
-    - **Mechanism**: Designed in collaboration with three licensed clinicians (including a senior clinician with over 10 years of experience). A total of 13,962 samples are curated from 40+ public medical segmentation datasets, with segmentation masks converted to bounding boxes. Two question types are generated: localization questions (identifying the organ or lesion in a region) and attribute questions (size, shape, abnormality, etc.), yielding approximately 28K image–bbox–question triplets. Questions are generated by GPT-4 and reviewed by clinical experts to ensure both clinical relevance and the necessity of visual grounding.
-    - **Design Motivation**: Existing Med-VQA datasets conflate questions that require no region-specific localization (e.g., "What is the imaging modality?") with questions demanding deep medical knowledge, making it impossible to isolate visual grounding failures from semantic grounding failures.
+**2. KL/JS Divergence: Beyond "Entering" to "Covering"**  
+Traditional Attention Ratio (AR) only measures the total attention within a bbox but ignores distribution—attention could be concentrated in a single corner. Because VGMED requires focusing on the entire bbox, the authors treat spatial attention maps and normalized bbox masks as probability distributions. They use KL and JS divergence to measure disparity. Lower divergence indicates that attention more uniformly covers the clinically relevant region.
 
-2. **Visual Grounding Quantification — New Metrics Beyond Attention Ratio**
+**3. VGRefine: Training-free Inference-time Attention "Knockout"**  
+Diagnosis revealed that attention partially covers relevant regions but leaks significantly into irrelevant ones. VGRefine uses a two-step mechanism: **Step 1 (Attention Triage)** selects the top-$K$ heads most relevant to visual grounding based on their KL divergence on COCO natural images (avoiding medical data leakage). It aggregates these and applies thresholding to create a binary mask. **Step 2 (Attention Knockout)** uses this mask to block attention connections from question tokens to irrelevant visual tokens, forcing the model to focus. This works because heads relevant in natural images remain relevant in the medical domain, though their grounding quality is poorer.
 
-    - **Function**: Propose KL divergence and JS divergence as metrics to measure the alignment between attention maps and ground-truth regions, complementing the conventional Attention Ratio (AR).
-    - **Mechanism**: AR only captures the total attention mass within a bounding box, ignoring how attention is distributed within the region. KL/JS divergence treat both the attention map and the region mask as probability distributions and measure the discrepancy between them—lower divergence indicates more uniform attention coverage of the entire clinically relevant region. Concretely, spatial attention maps are extracted from cross-attention weights between the last text token and $N^2$ image tokens across LLM layers, and compared against the normalized bounding box mask.
-    - **Design Motivation**: Since VGMED questions are deliberately designed to require attention over the entire bounding box region, it is insufficient to merely check whether attention "enters" the box—one must also verify whether attention uniformly covers the region.
+### Training Strategy
 
-3. **VGRefine — Training-Free Inference-Time Attention Correction**
-
-    - **Function**: Improve visual grounding in medical MLLMs at inference time through a two-step procedure, requiring no additional training.
-    - **Mechanism**: **Step 1 (Attention Triage)** identifies the top-$K$ attention heads most relevant to visual grounding at the head level, evaluated via KL divergence on COCO natural images to avoid medical data leakage. These heads' attention maps are aggregated, low-activation regions are suppressed, and a binary mask is generated. **Step 2 (Attention Knockout)** uses this mask to block attention connections from question tokens to irrelevant visual tokens, forcing the model to attend only to semantically meaningful regions.
-    - **Design Motivation**: Diagnosis reveals that while medical MLLM attention partially covers relevant regions, it simultaneously disperses substantially over irrelevant areas—an explicit mechanism is needed to "knock out" these distracting attention weights. Top-$K$ heads are selected on COCO because experiments show that attention heads most relevant to visual grounding on natural images remain relevant on medical images, despite overall lower grounding quality, while also preventing data leakage.
-
-### Loss & Training
-
-VGRefine is entirely training-free. Hyperparameters include top-$K = 20$ attention heads and an activation percentile threshold of $p = 50\%$ for magnitude filtering. Attention knockout is applied at layer 16 for 7B models and layers 34–36 for 34B models. All hyperparameters are kept consistent across all benchmarks.
+Ours is completely training-free and modifies attention strictly during inference. Hyperparameters include top-$K=20$ attention heads and an $L=50\%$ activation percentile threshold. The attention knockout is applied to specific layers based on model scale: layer 16 for 7B models and layers 34–36 for 34B models. These parameters are held constant across all benchmarks.
 
 ## Key Experimental Results
 
-### Visual Grounding Diagnosis (Core Findings)
+### Visual Grounding Diagnosis (Key Findings)
 
-| Metric | Medical Images | Natural Images | Conclusion |
-|--------|---------------|---------------|------------|
-| Attention Ratio (AR) ↑ | Low | High | All 8 SOTA medical MLLMs show attention systematically deviating from clinical regions |
-| KL Divergence ↓ | High | Low | Large discrepancy between attention distribution and GT region |
-| JS Divergence ↓ | High | Low | Same as above; consistent across layers and models |
+| Metrics | Medical Image | Natural Image | Conclusion |
+| :--- | :--- | :--- | :--- |
+| Attention Ratio (AR) ↑ | Low | High | All 8 SOTA medical MLLMs deviate from clinical regions |
+| KL Divergence ↓ | High | Low | Large disparity between attention and GT regions |
+| JS Divergence ↓ | High | Low | Consistent across models/layers |
 
-Note: General-purpose MLLMs (LLaVA-v1.5) also fail at visual grounding on medical images; medical MLLMs exhibit normal grounding on natural images → the problem is domain-specific, not a model capability deficiency.
+Note: General MLLMs (LLaVA-v1.5) also fail on medical images, while medical MLLMs ground correctly on natural images, suggesting the issue is domain-specific rather than a capacity defect.
 
 ### Main Results (Med-VQA Performance)
 
 | Model | VQA-RAD | SLAKE | PathVQA | PMC-VQA | Weighted Avg. |
-|-------|---------|-------|---------|---------|--------------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | HuatuoGPT-V-7B | 67.4% | 76.5% | 60.7% | 53.9% | 65.3% |
 | **VGRefine (Ours)** | **71.2%** | **76.9%** | **67.6%** | **56.2%** | **68.4%** |
 
-VGRefine yields consistent improvements across all 8 imaging modalities on OmniMedVQA: CT +7.5%, MRI +6.4%, X-Ray +8.1%, with the average improving from 71.3% to 74.4%. On MMMU Health & Medicine: 45.8% → 47.2%.
+Ours shows Gain across 8 modalities in OmniMedVQA: CT +7.5%, MRI +6.4%, X-Ray +8.1% (Avg: 71.3% → 74.4%). MMMU Health & Medicine: 45.8% → 47.2%.
 
 ### Ablation Study
 
-| Configuration | VQA-RAD | SLAKE | PathVQA | PMC-VQA | Avg. |
-|--------------|---------|-------|---------|---------|------|
+| Configuration | VQA-RAD | SLAKE | PathVQA | PMC-VQA | Average |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | $K=1$ | 68.6% | 75.8% | 64.9% | 53.7% | 68.3% |
 | $K=10$ | 70.9% | 76.8% | 67.7% | 56.1% | 68.3% |
 | **$K=20$** | **71.2%** | **76.9%** | **67.6%** | **56.2%** | **68.4%** |
 | $p=30\%$ | 70.8% | 76.8% | 67.6% | 55.7% | 68.2% |
 | **$p=50\%$** | **71.2%** | **76.9%** | **67.6%** | **56.2%** | **68.4%** |
-| $p=90\%$ | 70.6% | 76.3% | 68.1% | 55.5% | 68.2% |
 
 ### Key Findings
 
-- All 8 SOTA medical MLLMs fail at visual grounding on medical images without exception, yet exhibit normal grounding on natural images—confirming this is a medical-domain-specific problem.
-- VGRefine achieves consistent improvements without any medical knowledge injection—such gains would be impossible if visual grounding were not the limiting factor.
-- Human evaluation: 5 clinicians preferred VGRefine-generated attention maps in 76% of 20 blinded cases.
-- Compared with three recent attention methods (PAI, AdaptVis, ViCrop), VGRefine achieves the largest and most consistent improvements.
+- 8 SOTA medical MLLMs consistently fail in visual grounding on medical images despite succeeding on natural images—a domain-specific phenomenon.
+- VGRefine achieves consistent Gain without injecting medical knowledge, proving that visual grounding is the limiting factor.
+- Human Evaluation: 5 clinicians preferred VGRefine attention maps in 76% of blind test cases.
+- Compared to recent attention methods (PAI, AdaptVis, ViCrop), VGRefine provides the most consistent improvements.
 
 ## Highlights & Insights
 
-- The *diagnose before treat* research paradigm is highly valuable: by precisely decoupling semantic and visual grounding, the work identifies a universal cross-model bottleneck and provides a clear direction for all subsequent improvement efforts.
-- The medical vs. natural image comparative analysis constitutes the most compelling evidence in the paper—the same model's drastically different behavior on the two image types rules out any explanation based on general model capability limitations.
-- VGRefine embodies a "less is more" philosophy: without introducing new knowledge, correcting the attention distribution alone achieves state-of-the-art performance, suggesting that existing models already possess sufficient medical knowledge and that attention misdirection is the primary failure mode.
-- The cross-domain transfer design is elegant: selecting top-$K$ heads on COCO natural images yet successfully transferring to medical images simultaneously avoids data leakage and demonstrates the domain-invariance of visual grounding mechanisms.
+- The "diagnosis before therapy" paradigm is highly valuable: by decoupling grounding types, it identifies a universal bottleneck for future research.
+- Comparative analysis between medical and natural images is the most compelling evidence, ruling out general capacity issues.
+- VGRefine follows a "less is more" philosophy: correcting attention without adding new knowledge reaches SOTA, suggesting current models possess sufficient knowledge but lack focus.
+- Clever cross-domain transfer: selecting heads on COCO natural images avoids leakage while demonstrating the domain-invariant nature of grounding mechanisms.
 
 ## Limitations & Future Work
 
-- The analysis focuses exclusively on visual grounding as a failure mode, leaving other potential bottlenecks—such as semantic grounding deficiencies or reasoning capability limitations—unexplored.
-- VGRefine relies on a fixed offline projection and does not adapt dynamically to input; adaptive attention correction may be needed for different types of medical images.
-- The selection of attention layers for knockout (e.g., layer 16 for 7B models) is model-specific, and the optimal layer may differ across architectures.
-- It remains unverified whether visual grounding failures persist in newer closed-source models such as GPT-4V and Gemini.
+- Focuses solely on visual grounding, leaving other potential bottlenecks like semantic grounding or reasoning defects unexplored.
+- VGRefine uses static projections; adaptive attention correction based on image types could be beneficial.
+- Hallucination subspace definitions depend on specific layer selections which may vary across model architectures.
+- The existence of this issue in newer closed-source models (GPT-4V, Gemini) has not been verified.
 
 ## Related Work & Insights
 
-- **Comparison with Zhang2025 (MLLMs Know)**: The latter demonstrates that MLLMs exhibit strong visual grounding on natural images; this work extends that analysis to the medical domain and arrives at the opposite conclusion.
-- **Complementarity with VILA-M3 and similar approaches**: Methods such as VILA-M3 augment models externally via expert models, while VGRefine corrects attention internally—the two approaches are complementary and potentially combinable.
-- VGRefine's attention knockout strategy is consistent with the attention manipulation literature, but its key innovation lies in automatically selecting the most relevant subset of heads rather than manually specifying them.
+- Comparison with Zhang et al. (2025): While they show MLLMs ground well in natural images, this work finds the opposite in the medical domain.
+- Complementary to external-expert methods (e.g., VILA-M3): While others enhance externally, VGRefine corrects internally.
+- VGRefine aligns with attention manipulation literature but innovates by automatically selecting the most relevant head subsets.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First systematic diagnosis of visual grounding failure modes in medical MLLMs, filling an important gap in the field's understanding.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 8 models × 28K diagnostic analyses + 6 benchmarks × 110K+ validation samples + human evaluation + multi-method comparison.
-- **Writing Quality**: ⭐⭐⭐⭐ The problem–diagnosis–solution narrative is logically coherent and complete; clinical expert collaboration in dataset construction enhances credibility.
-- **Value**: ⭐⭐⭐⭐⭐ A fundamental insight for the medical AI field—all future medical MLLM improvements must account for visual grounding.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -142,10 +142,10 @@ VGRefine yields consistent improvements across all 8 imaging modalities on OmniM
 ## Related Papers
 
 - [\[ACL 2026\] How Do LLMs and VLMs Understand Viewpoint Rotation Without Vision? An Interpretability Study](../../ACL2026/multimodal_vlm/how_do_llms_and_vlms_understand_viewpoint_rotation_without_vision_an_interpretab.md)
-- [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](../../ICML2026/multimodal_vlm/med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
-- [\[CVPR 2026\] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence](../../CVPR2026/multimodal_vlm/medic-ad_towards_medical_vision-language_models_clinical_intelligence.md)
-- [\[ACL 2026\] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](../../ACL2026/multimodal_vlm/do_mllms_capture_how_interfaces_guide_user_behavior_a_benchmark_for_multimodal_u.md)
-- [\[CVPR 2026\] Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning](../../CVPR2026/multimodal_vlm/vision-language_models_encode_clinical_guidelines_for_concept-based_medical_reas.md)
+- [\[ICLR 2026\] The Unseen Bias: How Norm Discrepancy in Pre-Norm MLLMs Leads to Visual Information Loss](the_unseen_bias_how_norm_discrepancy_in_pre-norm_mllms_leads_to_visual_informati.md)
+- [\[ICLR 2026\] AttTok: Marrying Attribute Tokens with Generative Pre-trained Vision-Language Models towards Medical Image Understanding](atttok_marrying_attribute_tokens_with_generative_pre-trained_vision-language_mod.md)
+- [\[ICML 2026\] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](../../ICML2026/multimodal_vlm/medsight_towards_grounded_visual_comprehension_in_medical_large_vision-language_.md)
+- [\[ICLR 2026\] CitySeeker: How Do VLMs Explore Embodied Urban Navigation with Implicit Human Needs?](cityseeker_how_do_vlms_explore_embodied_urban_navigation_with_implicit_human_nee.md)
 
 </div>
 

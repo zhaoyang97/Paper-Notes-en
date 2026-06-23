@@ -2,144 +2,143 @@
 title: >-
   [Paper Note] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos
 description: >-
-  [ICLR 2026][LLM Reasoning][Reasoning Video Segmentation] This paper proposes CoT-RVS, a fully training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pretrained MLLMs for temporal-s…
+  [ICLR 2026][LLM Reasoning][Chain-of-Thought] Ours proposes CoT-RVS, a completely training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pre-trained MLLMs for temporal-semantic correlation analysis and key-frame selection. It significantly outperforms fine-tuning methods on reasoning video segmentation tasks (Refer-DAVIS J&F
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Reasoning Video Segmentation"
-  - "Chain-of-Thought"
-  - "Zero-Shot"
-  - "Keyframe Selection"
-  - "Multimodal Large Language Models"
+  - ICLR 2026
+  - LLM Reasoning
+  - Chain-of-Thought
 date: 2026-05-08
-content_hash: 4bc7555a0eaa3cc1
+content_hash: bd2f4f6098a640cc
 ---
-
 # CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.18561](https://arxiv.org/abs/2505.18561)  
 **Code**: None  
-**Area**: LLM Reasoning
-**Keywords**: Reasoning Video Segmentation, Chain-of-Thought, Zero-Shot, Keyframe Selection, Multimodal Large Language Models
+**Area**: LLM Reasoning  
+**Keywords**: Reasoning Video Segmentation, Chain-of-Thought, Zero-shot, Key-frame Selection, Multimodal Large Language Models
 
 ## TL;DR
 
-This paper proposes CoT-RVS, a fully training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pretrained MLLMs for temporal-semantic correlation analysis and keyframe selection, achieving substantial improvements over fine-tuned methods on reasoning video segmentation tasks (Refer-DAVIS J&F 79.1 vs. 71.2; ReasonVOS J&F 65.5 vs. 49.9).
+Ours proposes CoT-RVS, a completely training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pre-trained MLLMs for temporal-semantic correlation analysis and key-frame selection. It significantly outperforms fine-tuning methods on reasoning video segmentation tasks (Refer-DAVIS J&F 79.1 vs 71.2, ReasonVOS J&F 65.5 vs 49.9).
 
 ## Background & Motivation
 
-- **Background**: Reasoning Video Object Segmentation (Reasoning VOS) requires models to generate target mask sequences based on complex, implicit text queries (e.g., "which player made the three-point shot"), making it one of the most challenging tasks in video understanding.
-- **Limitations of Prior Work**: Existing methods (VISA/VideoLISA/HyperSeg) fine-tune MLLMs to generate segmentation tokens but perform poorly on temporally sensitive queries. The fundamental limitation is their lack of inter-frame temporal reasoning—these methods focus on intra-frame semantic understanding but cannot effectively reason about "what happens at which point in time."
-- **Key Challenge**: CoT-based reasoning segmentation in the image domain (Seg-Zero/ThinkFirst) has achieved notable success, yet the video domain additionally requires temporal "thinking" capabilities. Directly extending image-domain approaches to video is infeasible, as target objects in videos may undergo occlusion, motion, appearance, or disappearance over time.
-- **Key Insight**: Rather than performing any fine-tuning, CoT-RVS exploits the zero-shot CoT capabilities of pretrained MLLMs (e.g., GPT-4o, Gemma3) by designing task-specific prompts that guide temporal-semantic reasoning—a direction well-aligned with the trend of test-time compute.
-- **Core Idea**: The MLLM analyzes keyframe candidates through a self-questioning CoT process, establishing correspondences along two dimensions—semantic (which objects in the frame match the query) and temporal (in which frame the target is most observable)—ultimately selecting the optimal keyframe for each instance.
+- **Background**: Reasoning Video Segmentation (Reasoning VOS) requires models to generate target mask sequences based on complex implicit text queries (e.g., "Which player threw a three-pointer"). This is one of the most challenging tasks in video understanding.
+- **Limitations of Prior Work**: Existing methods (VISA/VideoLISA/HyperSeg) fine-tune MLLMs to generate segmentation tokens but perform poorly under time-sensitive queries. The core reason is that these methods lack inter-frame temporal reasoning—they focus on intra-frame semantic understanding but cannot effectively reason about "what happened during which time period."
+- **Key Challenge**: While CoT reasoning segmentation in the image domain (Seg-Zero/ThinkFirst) has succeeded, the video domain requires additional temporal "thinking." Direct extension from image to video is unfeasible because target objects undergo occlusion, motion, or appear/disappear over time.
+- **Key Insight**: Instead of fine-tuning, ours utilizes the zero-shot CoT capabilities of pre-trained MLLMs like GPT-4o or Gemma3. By designing task-specific prompts, the model is guided to perform temporal-semantic reasoning, aligning with the trend of test-time compute.
+- **Core Idea**: MLLMs analysis key-frame candidates via CoT self-questioning. They establish correlations from both semantic (which objects match the query) and temporal (which frame's target is easiest to observe) dimensions, ultimately selecting the optimal key-frame for each instance.
 
 ## Method
 
 ### Overall Architecture
 
-A three-module collaborative multi-agent framework that decomposes reasoning video segmentation into three sub-tasks: keyframe selection → frame-level segmentation → video tracking:
-- MLLM Keyframe Selector $\mathcal{F}_{key}$: responsible for temporal-semantic correlation reasoning
-- Reasoning Image Segmentation Model $\mathcal{F}_{seg}$: generates key masks on selected keyframes
-- Video Processor $\mathcal{F}_{vid}$ (SAM2): propagates masks along the temporal axis
+CoT-RVS is a multi-agent framework featuring three-module collaboration, decomposing the difficult task of "masking video based on implicit queries" into manageable steps. Given a video and a complex query, it first uniformly samples a set of key-frame candidates with a stride $\xi$. These are passed to the MLLM Key-frame Selector $\mathcal{F}_{key}$ for temporal-semantic reasoning to pick the best key-frame for each target instance and provide a text description. Then, the Reasoning Image Segmenter $\mathcal{F}_{seg}$ converts descriptions into key masks on the selected frames. Finally, the Video Processor $\mathcal{F}_{vid}$ (SAM2) propagates these masks across the timeline, followed by a greedy mutual exclusion post-processing to ensure masks of multiple instances do not overlap. All modules use pre-trained weights without fine-tuning; the critical "thinking" resides in the first CoT reasoning step. An online variant is also provided, which periodically re-evaluates instead of viewing the entire video, supporting real-time streams.
+
+```mermaid
+graph TD
+    A["Input: Video + Implicit Query<br/>(e.g., 'Which player threw a three-pointer')"] --> B["Uniformly sample key-frame candidates<br/>Stride ξ, resulting in T'=⌊T/ξ⌋ frames"]
+    B --> C["MLLM Key-frame Selector (CoT)<br/>Self-questioning per candidate:<br/>Semantic→Temporal→New targets?<br/>Output: 'Key frame f_i + Description s_i' for each instance"]
+    C -->|"Online Variant: Periodic re-selection every ξ frames<br/>Update targets and masks if better"| C
+    subgraph FILL["Key-frame to Full Video Completion"]
+        direction TB
+        D["Reasoning Image Segmenter F_seg<br/>Converts description to key mask on key frame"] --> E["Video Processor SAM2<br/>Propagates bidirectionally along timeline"]
+        E --> F["Greedy Mutual Exclusion Post-processing<br/>m(i,t)=⋂¬m(j,t)∩m̂(i,t)"]
+    end
+    C --> D
+    F --> G["Output: k non-overlapping<br/>instance-level mask sequences"]
+```
 
 ### Key Designs
 
-**1. MLLM Keyframe Selector (Core Innovation)**:
-- Uniformly samples $T' = \lfloor T/\xi \rfloor$ keyframe candidates
-- Automatically synthesizes a CoT question-answering sequence for each candidate frame in a coarse-to-fine manner: general semantics ("what is in the frame") → temporal reasoning ("whether this is a better keyframe") → detail confirmation ("whether a new target object appears")
-- Final output includes: a list of target instances, corresponding keyframe indices, and intra-frame target descriptions (e.g., "the player in black jersey who is shooting")
-- Designed as a Reasoning VIS framework (k ≥ 1 instances), with Reasoning VOS as the special case of k = 1
-- Compatible with both closed-source (GPT-4o) and open-source (Gemma3-12B/LLaVA1.5-7B) MLLMs
+**1. MLLM Key-frame Selector: Reasoning about "which frame to segment" via CoT**
 
-**2. Reasoning Image Segmentation**: Models such as Seg-Zero are applied to generate key masks on the selected keyframe based on the textual description.
+This is the core innovation, addressing the issue where targets are occluded or moving. Blindly running segmentation on every frame is expensive and inaccurate. CoT-RVS samples $T' = \lfloor T/\xi \rfloor$ candidates and lets the MLLM synthesize a coarse-to-fine CoT sequence for each: generic semantic judgment ("what is in this frame"), temporal reasoning ("is it better than previous frames?"), and detail confirmation ("have new targets appeared?"). The output is a structured list: target instances, key-frame indices $f_i$, and text descriptions $s_i$ (e.g., "player in black jersey shooting the ball"). Designed for Reasoning VIS ($k\ge 1$ instances), it supports both closed-source (GPT-4o) and open-source (Gemma3-12B, LLaVA1.5-7B) models via CoT prompts.
 
-**3. Video Processor**: SAM2 propagates key masks to all frames; a greedy post-processing step ensures non-overlapping masks across multiple instances: $m_{i,t} = \bigcap_{j=1}^{i-1} \neg m_{j,t} \cap \hat{m}_{i,t}$
+**2. From Key-frame to Full Video: Mask completion via Segment-Track-Exclude**
 
-**4. Online Inference Extension (Online CoT-RVS)**:
-- Periodically invokes the MLLM every $\xi$ frames to determine whether the current frame should replace the existing keyframe
-- Greedy update strategy: if the new frame is better, the target and mask are updated; otherwise, historical information is retained
-- Represents the first streaming reasoning video segmentation approach, suitable for real-time video stream scenarios
+After obtaining $f_i$ and $s_i$, the information is expanded to cover the entire video using off-the-shelf modules. $\mathcal{F}_{seg}$ (e.g., Seg-Zero) performs image-level segmentation on the key-frame using $s_i$ to generate a key mask $\tilde{m}_i$. This decouples difficult temporal judgment from intra-frame segmentation. The key mask is then passed to $\mathcal{F}_{vid}$ (SAM2) as a prompt for propagation, yielding preliminary sequences $\hat{m}_{i,t}$. To prevent overlaps between multiple instances, greedy mutual exclusion is applied:
+
+$$m_{i,t} = \bigcap_{j=1}^{i-1} \neg m_{j,t} \cap \hat{m}_{i,t}$$
+
+This removes pixels already assigned to preceding instances.
+
+**3. Online Reasoning Expansion (Online CoT-RVS): Enabling streaming video support**
+
+The offline version requires the entire video before selection. The online version invokes the MLLM every $\xi$ frames (at $t = n\xi + 1$) to output a binary signal $S_t\in\{0,1\}$, indicating if the current frame $I_t$ is better than the existing key-frame. If $S_t=1$, the key-frame $I^{key}_t$ and targets are updated; otherwise, it retains $I^{key}_{\max(t-\xi,0)}$. This streaming greedy strategy makes it the first method capable of streaming reasoning video segmentation.
 
 ### Loss & Training
 
-Entirely training-free—all modules use pretrained weights with no fine-tuning of any kind.
+Entirely training-free. All three modules use pre-trained weights directly. All "learning" is achieved through zero-shot CoT reasoning at inference time.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | CoT-RVS (GPT-4o) | GLUS | SAMWISE | VideoLISA (Po) | VISA-13B |
-|--------|------|:----------------:|:----:|:-------:|:-------------:|:--------:|
+| Dataset | Metric | CoT-RVS(GPT-4o) | GLUS | SAMWISE | VideoLISA(Po) | VISA-13B |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
 | MeViS | J&F | **52.2** | 51.3 | 49.5 | 44.4 | 44.5 |
 | Refer-DAVIS | J&F | **79.1** | — | 70.6 | 68.8 | 70.4 |
 | ReasonVOS | J&F | **65.5** | 49.9 | — | 47.5 | — |
 
 ### Ablation Study
 
-| Configuration | MeViS J&F | Refer-DAVIS J&F | Notes |
-|------|:---------:|:---------------:|------|
-| CoT-RVS-GPT-4o | 52.2 | 79.1 | Best closed-source configuration |
-| CoT-RVS-Gemma3-12B | 44.2 | 74.6 | Best open-source configuration |
-| CoT-RVS-LLaVA1.5-7B | 45.9 | 73.9 | Lightest open-source configuration |
-| w/o CoT (direct prompt) | — | ~65 | CoT reasoning contributes ~14-point gain |
-| Online CoT-RVS (GPT-4o) | — | 77.8 | Online version approaches offline performance |
+| Configuration | MeViS J&F | Refer-DAVIS J&F | Description |
+| :--- | :---: | :---: | :--- |
+| CoT-RVS-GPT-4o | 52.2 | 79.1 | Strongest closed-source configuration |
+| CoT-RVS-Gemma3-12B | 44.2 | 74.6 | Strongest open-source configuration |
+| CoT-RVS-LLaVA1.5-7B | 45.9 | 73.9 | Most lightweight open-source config |
+| w/o CoT (Direct prompt) | — | ~65 | CoT reasoning provides ~14 pt gain |
+| Online CoT-RVS(GPT-4o) | — | 77.8 | Online performance is near offline |
 
 ### Key Findings
 
-- CoT-RVS outperforms GLUS by +15.6 points on ReasonVOS, with a particularly pronounced advantage on temporally sensitive queries (e.g., three-point shots, specific action moments), validating the central value of temporal reasoning.
-- The open-source Gemma3 variant still surpasses fine-tuned methods such as VISA and VideoLISA without any API cost, suggesting that the general reasoning capabilities of pretrained MLLMs have been underestimated.
-- The online version (Online CoT-RVS) lags behind the offline version by only ~1.3 points while supporting streaming processing, offering significant practical utility.
+- Gains of +15.6 points on ReasonVOS highlight advantages in time-sensitive queries (e.g., "shooting a three-pointer"), validating the value of temporal reasoning.
+- The open-source Gemma3 version still outperforms fine-tuned methods like VISA/VideoLISA, suggesting universal MLLM reasoning is undervalued.
+- The gap between Online CoT-RVS and the offline version is only ~1.3 points, demonstrating suitability for real-time applications.
 
 ## Highlights & Insights
 
-- **Training-Free Breakthrough**: CoT-RVS is the first zero-shot reasoning VOS framework compatible with both closed-source and open-source MLLMs, challenging the prevailing paradigm that reasoning segmentation requires fine-tuning.
-- **Value of Temporal Reasoning**: The CoT process enables MLLMs to genuinely "reason" about inter-frame temporal-semantic relationships—a capability that is fundamentally absent in fine-tuning-based segmentation token approaches.
-- **Flexibility of Modular Design**: The segmentation model (LISA/Seg-Zero) and video processor (SAM2/Cutie) are interchangeable, allowing future improvements in individual modules to directly benefit the overall system.
-- **Practicality of Online Extension**: Online reasoning VOS solutions are rare; this extension is meaningful for real-time scenarios such as surveillance and autonomous driving.
+- **Training-free Breakthrough**: The first zero-shot reasoning VOS framework compatible with both closed/open-source MLLMs, challenging the "fine-tuning is mandatory" paradigm.
+- **Value of Temporal Reasoning**: The CoT process allows MLLMs to "think" about temporal semantic relations, a capability missing in token-based fine-tuning methods.
+- **Modular Flexibility**: Segmenters (LISA/Seg-Zero) and video processors (SAM2/Cutie) are replaceable, meaning future improvements in these modules will directly enhance the system.
+- **Streaming Practicality**: Online reasoning VOS is rare and highly relevant for monitoring and autonomous driving.
 
 ## Limitations & Future Work
 
-- The GPT-4o variant incurs high inference costs (multiple API calls per video), making large-scale deployment impractical.
-- The open-source Gemma3 variant trails the closed-source GPT-4o by 8 points on MeViS, indicating that the visual reasoning capability of MLLMs remains a bottleneck.
-- Uniform frame sampling may miss critical motion frames; adaptive sampling strategies (e.g., motion-detection-guided sampling) could be more effective.
-- The greedy post-processing for multi-instance scenarios is relatively simple and cannot handle severe occlusion cases.
-- The possibility of end-to-end joint training of the CoT reasoning module with segmentation and tracking modules has not been explored.
+- High inference cost for the GPT-4o version (multiple API calls per video).
+- Large performance gap (8 points) between Gemma3 and GPT-4o on MeViS suggests MLLM visual reasoning remains a bottleneck.
+- Uniform sampling might miss critical motion frames; adaptive sampling strategies (e.g., motion-guided) could be superior.
+- Greedy post-processing is simple and struggles with heavy occlusion.
+- End-to-end joint training of CoT modules with segmentation/tracking has not been explored.
 
 ## Related Work & Insights
 
-- Compared to fine-tuning-based methods such as VISA and VideoLISA, CoT-RVS replaces fine-tuning with zero-shot reasoning, representing a fundamentally different technical paradigm.
-- CoT-RVS shares lineage with Seg-Zero/ThinkFirst (image-domain CoT segmentation) but additionally incorporates temporal-dimension reasoning.
-- The work demonstrates the promising applicability of the test-time compute trend to visual tasks.
+- Compared to VISA/VideoLISA, CoT-RVS replaces fine-tuning with zero-shot reasoning, representing a distinct technical path.
+- Inherits the lineage of Seg-Zero/ThinkFirst but adds the temporal dimension.
+- Application of test-time compute trends to vision tasks.
+- **vs VISA/VideoLISA**: These fine-tune MLLMs for tokens; CoT-RVS is zero-shot.
+- **vs Seg-Zero/ThinkFirst**: Image-domain CoT segmentation; this work extends it to video temporal domains.
+- **vs SAM2**: Used as a plug-and-play tracking module, showing potential for combination with reasoning systems.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Zero-shot CoT applied to reasoning video segmentation is a novel concept)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (4 datasets + multiple MLLMs + online extension + ablation studies)
-- Writing Quality: ⭐⭐⭐⭐ (Framework description is clear with complete formulations)
-- Value: ⭐⭐⭐⭐ (Demonstrates the feasibility of training-free CoT for video segmentation)
-- **vs. VISA/VideoLISA**: These methods fine-tune MLLMs to generate segmentation tokens; CoT-RVS is entirely training-free.
-- **vs. Seg-Zero/ThinkFirst**: CoT reasoning image segmentation methods; this work is the first to extend them to the video temporal domain.
-- **vs. SAM2**: Serves as a plug-and-play video tracking module, demonstrating its potential for integration with reasoning systems.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐ Zero-shot CoT for temporal reasoning in video is pioneering
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 benchmarks + online extension + module substitution ablation
-- Writing Quality: ⭐⭐⭐⭐ Illustrative examples and clear framework description
-- Value: ⭐⭐⭐⭐ The training-free paradigm is practically meaningful, though it relies on strong MLLMs
+- Novelty: ⭐⭐⭐⭐ Zero-shot CoT for video temporal reasoning is pioneering.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 4 benchmarks + online expansion + modular ablations.
+- Writing Quality: ⭐⭐⭐⭐ Vivid examples and clear architecture descriptions.
+- Value: ⭐⭐⭐⭐ Training-free paradigm is practical but relies on strong MLLMs.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](../../ICML2026/llm_reasoning/many-shot_cot-icl_making_in-context_learning_truly_learn.md)
-- [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
+- [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
+- [\[CVPR 2025\] Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval](../../CVPR2025/llm_reasoning/osrcir_reflective_cot.md)
+- [\[ICLR 2026\] CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning](cot-evo_evolutionary_distillation_of_chain-of-thought_for_scientific_reasoning.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
-- [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
-- [\[ICLR 2026\] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes](scenecot_eliciting_grounded_chain-of-thought_reasoning_in_3d_scenes.md)
+- [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
 
 </div>
 

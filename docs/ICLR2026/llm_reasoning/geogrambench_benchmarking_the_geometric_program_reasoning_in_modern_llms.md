@@ -2,82 +2,76 @@
 title: >-
   [Paper Note] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Geometric Reasoning] This paper formalizes the Program-to-Geometry task and proposes GeoGramBench (500 problems)…
+  [ICLR 2026][LLM Reasoning][benchmark] This work formalizes the Program-to-Geometry task and introduces GeoGramBench (500 problems). Using a three-level geometric complexity taxonomy, it evaluates the ability of 19 state-of-the-art LLMs to construct geometric representations and reason from procedural plotting code. The study reveals that even GPT-5 achieve
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Geometric Reasoning"
-  - "Program-to-Geometry"
-  - "Benchmark"
-  - "Spatial Reasoning"
-  - "Asymptote Code"
+  - ICLR 2026
+  - LLM Reasoning
+  - benchmark
 date: 2026-05-08
-content_hash: 31382a635e9f3b2b
+content_hash: db4ce69f09d9b3d4
 ---
-
 # GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.17653](https://arxiv.org/abs/2505.17653)  
 **Code**: [GitHub](https://github.com/LiAuto-DSR/GeoGramBench)  
-**Area**: LLM Reasoning
+**Area**: LLM Reasoning  
 **Keywords**: Geometric Reasoning, Program-to-Geometry, Benchmark, Spatial Reasoning, Asymptote Code
 
 ## TL;DR
 
-This paper formalizes the Program-to-Geometry task and proposes GeoGramBench (500 problems), evaluating 19 frontier LLMs on their ability to construct geometric representations from procedural drawing code and reason over them using a three-level geometric complexity taxonomy. Even GPT-5 achieves only 39.26% accuracy at the highest abstraction level, revealing fundamental limitations in LLM spatial abstraction.
+This work formalizes the Program-to-Geometry task and introduces GeoGramBench (500 problems). Using a three-level geometric complexity taxonomy, it evaluates the ability of 19 state-of-the-art LLMs to construct geometric representations and reason from procedural plotting code. The study reveals that even GPT-5 achieves only 39.26% accuracy at the highest abstraction level, highlighting a fundamental weakness in LLM spatial abstraction.
 
 ## Background & Motivation
 
-**Background**: Spatial reasoning is a foundational capability for both human cognition and AI, underpinning applications such as robotics, autonomous navigation, and automated design. LLMs have attracted broad attention for interpreting geometric transformations and spatial relations, yet their ability to perform geometric reasoning from procedural code remains largely overlooked.
+**Background**: Spatial reasoning is a foundational capability in human cognition and AI, supporting applications like robotics, autonomous navigation, and automated design. While LLMs have gained attention for interpreting geometric transformations and spatial relationships, their ability to perform geometric reasoning from procedural code has been largely overlooked.
 
-**Limitations of Prior Work**: Existing benchmarks (e.g., MathVerse, GeoSense, Euclid) focus on visual geometric understanding; while MATH-500 and AIME24 include a small number of Asymptote-based problems, they lack systematic Program-to-Geometry evaluation. More critically, existing benchmarks fail to identify **answer leakage** in code—where code parameters directly or indirectly expose the answer.
+**Limitations of Prior Work**: Existing benchmarks (e.g., MathVerse, GeoSense, Euclid) focus on visual geometric understanding. Although MATH-500 and AIME24 include a few problems with Asymptote code, they lack a systematic Program-to-Geometry evaluation. Crucially, current benchmarks fail to identify the **answer leakage** problem, where code parameters directly or indirectly expose the solution.
 
-**Key Challenge**: Preliminary studies indicate a significant performance drop when LLMs transition from code to spatial reasoning. DeepSeek-R1 shows accuracy drops of 23.5% (AIME24) and 10.9% (MATH-500) on geometry problems containing Asymptote code ($\mathbb{P}_{TC}$) compared to pure-text problems ($\mathbb{P}_T$). GPT-o1 and QwQ-32B exhibit similar trends.
+**Key Challenge**: Preliminary research indicates a significant performance drop in LLMs during the transition from code to spatial reasoning. DeepSeek-R1's accuracy on geometric problems with Asymptote code ($\mathbb{P}_{TC}$) plummeted by 23.5% (AIME24) and 10.9% (MATH-500) compared to text-only problems ($\mathbb{P}_T$). GPT-o1 and QwQ-32B show similar trends.
 
-**Goal**: This paper formalizes the Program-to-Geometry task definition, proposes GeoGramBench—a curated benchmark of 500 geometry problems with procedural drawing code—and introduces a three-level geometric complexity taxonomy in place of traditional reasoning-difficulty classifications.
+**Goal**: To formalize the Program-to-Geometry task definition and propose GeoGramBench—a curated set of 500 geometric problems featuring procedural plotting code, accompanied by a three-level geometric complexity taxonomy rather than traditional reasoning difficulty metrics.
 
 ## Method
 
 ### Overall Architecture
 
-**Task Definition**: Given a textual description and geometric drawing code (Asymptote/Matplotlib), the model must parse the code to construct an internal geometric representation and reason over it to produce a numerical answer (length/area/volume/angle/ratio/count).
+GeoGramBench formalizes "Program-to-Geometry" as a task: given a textual description and a segment of geometric plotting code (Asymptote or matplotlib), a model must internally parse the code, reconstruct the corresponding geometric representation, and then reason the numerical answer (length, area, volume, angle, ratio, or count) based on that representation. The methodology essentially comprises a **data construction pipeline**: it filters 900,000 candidate problems from three open-source math datasets to find real geometric problems containing plotting code. During the manual verification phase, it implements **answer leakage protection** to prevent shortcuts, finally labeling the retained 500 problems with **geometric complexity categories**.
 
-**Taxonomy** based on geometric complexity rather than reasoning steps:
-1. **Primitive Recognition**: 1–2 geometric primitives (points/lines/arcs/circles/polygons), focusing on basic attributes such as length, area, and angle.
-2. **Local Relation Composition**: Multiple local geometric elements requiring identification and integration of spatial relations among sub-components.
-3. **Global Abstract Integration**: Involves spatial orientation, parameterization, recursion, 3D objects, composite structures, and advanced geometric operations (rotation/folding/projection).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Three Open-source Datasets<br/>NuminaMath-1.5 / HARP / Omni-MATH (~905K)"] -->|"[asy] tag filtering for Asymptote code"| B["Problems with plotting code (9,260)"]
+    B -->|"n-gram (n=8) de-duplication"| C["After de-duplication (1,782)"]
+    C -->|"GPT-4o classification for real geometry"| D["Geometry problems (1,247)"]
+    D --> E["Data Construction Pipeline<br/>Two rounds of expert manual verification<br/>(Normalization + Quality + De-contamination)"]
+    E -->|"With Answer Leakage Protection<br/>(Coordinate rescaling / Parameter masking)"| F["Verified retained (392)"]
+    F -->|"Supplemented AIME24(5) / MATH-500(42) / Mathverse(61)"| G["GeoGramBench (500 problems)"]
+    G -->|"GPT-4o assisted + Expert review"| H["Geometric Complexity Taxonomy<br/>Primitive / Compositional / Abstract (3 Levels)"]
+```
 
-### Key Design 1: Answer Leakage Prevention
+### Key Designs
 
-**Function**: Ensures that models cannot directly obtain the answer by inspecting the code, requiring genuine geometric reasoning.
+**1. Data Construction Pipeline: Filtering 500 reliable geometry problems from 900,000 candidates**
 
-**Mechanism**: Two categories of leakage are identified:
-- **Direct leakage**: Answers are explicitly encoded as coordinate values (e.g., circle radius, segment length); addressed by rescaling coordinates while preserving geometric shape.
-- **Indirect leakage**: Answers can be derived from code parameters or formulae; addressed by modifying or obfuscating key code parameters.
+Since no off-the-shelf Program-to-Geometry benchmark existed, the authors extracted "high-quality geometry problems with plotting code" from massive mathematical datasets. The pipeline started with ~905K candidates from NuminaMath-1.5, HARP, and Omni-MATH. It first used `[asy]`/`[/asy]` tags to filter problems with Asymptote code (~1%, 9,260 problems), then applied n-gram ($n=8$) similarity for de-duplication to 1,782 problems. GPT-4o was then used as a classifier to identify 1,247 true geometry problems. Following two rounds of manual expert verification (4 experts with Master's degrees or higher), 392 problems were retained. Finally, additions from AIME24 (5), MATH-500 (42), and MathVerse Solid Geometry (61, manually converted to matplotlib) resulted in a total of 500 problems. This multi-source, multi-language approach makes GeoGramBench the largest and most diverse Program-to-Geometry benchmark to date.
 
-**Design Motivation**: A large number of Asymptote problems in MATH-500 were found to directly embed the answer in code; without remediation, evaluation validity is compromised. Two rounds of expert verification by four annotators (master's degree or above in mathematics) ensured that no answer can be obtained through code inspection.
+**2. Answer Leakage Protection: Blocking shortcuts from code to answer**
 
-### Key Design 2: Validation of the Geometric Complexity Taxonomy
+The authors discovered that in MATH-500, many Asymptote code snippets directly or indirectly encode the answer in their parameters. Without intervention, models can retrieve the answer without geometric reasoning. Two types of leakage were addressed: **Direct Leakage**, where the answer is explicitly encoded as a coordinate (e.g., radius, segment length), was solved by rescaling coordinates to maintain the shape while erasing numerical clues. **Indirect Leakage**, where the answer is derivable from code parameters, was solved by modifying or masking those key parameters. Every problem underwent two rounds of verification by four experts to ensure answers cannot be obtained solely by inspecting the code. This makes "visualizing" the code a mandatory step.
 
-**Function**: Demonstrates that geometric complexity—rather than the number of reasoning steps—is the primary challenge in Program-to-Geometry tasks.
+**3. Geometric Complexity Taxonomy: Grading by "Visual Abstraction Difficulty"**
 
-**Mechanism**: QwQ-32B is evaluated on MATH-500 problems stratified by both reasoning complexity (per MATH-500 annotations) and geometric complexity:
-- Pure-text problems ($\mathbb{P}_T$): accuracy decreases as reasoning complexity increases—consistent with traditional benchmarks.
-- Code-augmented problems ($\mathbb{P}_{TC}$): accuracy is **largely independent of reasoning complexity** but decreases significantly as geometric complexity increases.
+Traditional math benchmarks grade difficulty by reasoning chain length. However, the authors found this does not capture the bottleneck of Program-to-Geometry tasks. GeoGramBench uses three levels of geometric complexity: **Primitive Recognition** (1-2 geometric primitives like points/lines/circles, focusing on basic properties), **Local Relation Composition** (multiple local elements requiring spatial relationship integration), and **Global Abstract Integration** (involving spatial orientation, parameterization, recursion, 3D objects, rotation, folding, or projection). Taxonomy was completed via GPT-4o assistance followed by expert review.
 
-**Design Motivation**: Traditional step-count-based taxonomies (high school → competition level) are unsuitable for this task. The geometric complexity taxonomy more accurately captures model bottlenecks.
-
-### Data Construction Pipeline
-
-Approximately 905K candidate problems are aggregated from three open-source mathematical datasets (NuminaMath-1.5, HARP, Omni-MATH) → filtered to 9,260 problems containing Asymptote code → n-gram deduplication yields 1,782 problems → GPT-4o screening for geometry problems yields 1,247 → two rounds of human verification (format normalization + quality enhancement: decontamination / answer leakage prevention / accuracy checking) → 392 problems → supplemented with AIME24 (5 problems) / MATH-500 (42 problems) / MathVerse (61 solid geometry problems with hand-written Matplotlib code) → **final benchmark of 500 problems**.
+A validation experiment on QwQ-32B using MATH-500 confirmed this: for text-only problems ($\mathbb{P}_T$), accuracy dropped as reasoning complexity increased (traditional pattern). However, for problems with code ($\mathbb{P}_{TC}$), accuracy was **nearly independent of reasoning complexity** but dropped significantly as geometric complexity increased. This proves that for "constructing geometric representations from code," the difficulty stems from visual abstraction rather than the reasoning chain.
 
 ## Key Experimental Results
 
-### Main Results: Performance of 19 LLMs on GeoGramBench
+### Main Results: 19 LLMs on GeoGramBench
 
-| Model | Primitive | Compositional | Abstract | Overall |
-|-------|-----------|--------------|----------|---------|
+| Model | Primitive | Compositional | Abstract | Overall Avg |
+|------|-----------|--------------|----------|-------|
 | **GPT-5** | **90.44%** | **84.59%** | 39.26% | **75.01%** |
 | Qwen3-235B-Think | 89.09% | 79.12% | **49.05%** | 74.00% |
 | GPT-o1 | 85.92% | 76.12% | 44.67% | 70.92% |
@@ -87,52 +81,52 @@ Approximately 905K candidate problems are aggregated from three open-source math
 | GPT-4o | 40.02% | 21.36% | 4.51% | 21.40% |
 | DeepScaleR-1.5B | 65.44% | 47.89% | 15.76% | 43.83% |
 
-**All models score below 50% at the Abstract level**; GPT-5 achieves only 39.26%.
+**All models scored below 50% on the Abstract level**, with GPT-5 at only 39.26%.
 
-### Ablation Study: Effect of Drawing Language
+### Ablation Study: Impact of Plotting Language
 
 | Benchmark | Asymptote Code | Matplotlib Code | Difference |
-|-----------|---------------|----------------|------------|
+|------|-------------|---------------|------|
 | AIME24 (QwQ-32B) | ~X% | ~X% | < 1% |
 | MATH-500 (QwQ-32B) | ~X% | ~X% | < 1% |
 
-The choice of drawing language has negligible impact on performance; the bottleneck lies in spatial abstraction rather than code syntax comprehension.
+The choice of plotting language has almost no impact on performance; the bottleneck lies in spatial abstraction rather than code syntax understanding.
 
 ### Key Findings
 
-- **Hardest subtypes**: Among Primitive and Compositional levels, angle problems are the most difficult (requiring reconstruction and reasoning over implicit spatial relations); at the Abstract level, area and volume problems are hardest (requiring complete 3D spatial understanding).
-- **Limited effectiveness of CoT reasoning**: Token Budget Forcing increases token count by 77.4% (10,544→18,710) but improves accuracy by only 0.30% (54.60%→54.90%), indicating that the bottleneck lies in spatial representation construction rather than reasoning length.
-- **Saturation effect in domain-specific fine-tuning**: Adding 100 GeoGramBench training samples improves performance by 3.02%, but scaling from 100 to 300 samples yields only an additional 0.58% gain, suggesting the bottleneck is architectural rather than data-driven.
-- **Common failure modes**: (1) preference for algebraic over geometric construction approaches; (2) rarely introducing auxiliary lines or points; (3) difficulty judging spatial orientation (clockwise vs. counterclockwise); (4) confusion in symbol-to-geometric-element mapping.
+- **Most Difficult Subtypes**: Angles were the hardest in Primitive/Compositional levels (requiring reconstruction of implicit spatial relations); Area and Volume were hardest at the Abstract level (requiring complete 3D spatial understanding).
+- **Limited Effect of CoT**: Token Budget Forcing increased the token count by 77.4% (10,544 $\rightarrow$ 18,710) but only improved accuracy by 0.30% (54.60% $\rightarrow$ 54.90%), suggesting the bottleneck is not reasoning length but spatial representation construction.
+- **Saturation in Domain Fine-tuning**: Adding 100 GeoGramBench training samples improved performance by 3.02%, but increasing from 100 to 300 samples only added 0.58%, indicating a bottleneck in model architecture rather than data volume.
+- **Common Failure Modes**: (1) Preference for algebraic methods over geometric construction; (2) Rare use of auxiliary lines/points; (3) Difficulty judging spatial orientation (clockwise vs. counter-clockwise); (4) Confusion in mapping symbols to geometric elements.
 
 ## Highlights & Insights
 
-- This is the first work to formally define the Program-to-Geometry task and construct a dedicated large-scale benchmark.
-- The validation experiments for the geometric complexity taxonomy are highly compelling—demonstrating that the source of difficulty in this task differs fundamentally from that in traditional mathematical reasoning.
-- The identification and systematic prevention of answer leakage is a significant contribution that substantially improves evaluation validity.
-- The behavioral analyses (RQ1–3) provide deep insight into the internal geometric reasoning mechanisms of LLMs.
-- The hypothesized "multi-stage internal geometric representation process" (Appendix H) offers a valuable framework for future research.
+- First to formalize the Program-to-Geometry task and build a dedicated large-scale benchmark.
+- The validation of the geometric complexity taxonomy is highly persuasive—proving the difficulty source of this task differs from traditional mathematical reasoning.
+- Identification and systematic protection against answer leakage is a major contribution, enhancing evaluation validity.
+- Behavioral analysis (RQ1-3) provides deep insights into the internal geometric reasoning mechanisms of LLMs.
+- The hypothetical "multi-stage internal geometric representation process" (Appendix H) provides a valuable framework for future research.
 
 ## Limitations & Future Work
 
-- Coverage is limited to 2D and simple 3D geometry; real-world 3D scenes are not addressed.
-- Failure mode analysis is primarily qualitative, lacking automated and systematic diagnostic tools.
-- Although GeoGramBench represents the largest Program-to-Geometry evaluation set, the distribution across subtypes is uneven (e.g., only 27 volume problems).
-- Only zero-shot settings are tested; few-shot and in-context learning strategies remain unexplored.
-- Fine-tuning experiments are conducted on a single model (s1.1-32B).
+- Currently only covers 2D and simple 3D geometry, excluding real-world 3D scenes.
+- Failure mode analysis is primarily based on qualitative observation, lacking automated systematic diagnostic tools.
+- While the 500-problem count makes it the largest Program-to-Geometry benchmark, the distribution across subtypes is uneven (e.g., only 27 problems for Volume).
+- Only zero-shot settings were tested; the potential of few-shot or in-context learning remains unexplored.
+- Fine-tuning experiments were conducted on a single model (s1.1-32B).
 
 ## Related Work & Insights
 
-- **SGP-Bench** (Qiu et al., 2024) and **SVGenius** (Chen et al., 2025): focus on SVG code comprehension; GeoGramBench further targets geometric reasoning rather than code parsing alone.
-- **s1: Simple Test-time Scaling** (Muennighoff et al., 2025): Token Budget Forcing shows limited effectiveness on GeoGramBench, suggesting that test-time scaling offers little benefit for spatial reasoning.
-- Implications for multimodal model design: the fundamental bottleneck is LLMs' spatial abstraction capacity, which cannot be resolved by scaling data or reasoning length alone—architectural-level innovation is required.
+- **SGP-Bench** (Qiu et al., 2024) and **SVGenius** (Chen et al., 2025): Focus on SVG code understanding; GeoGramBench extends focus to geometric reasoning beyond mere code parsing.
+- **s1: Simple Test-time Scaling** (Muennighoff et al., 2025): Token Budget Forcing shows limited effectiveness on GeoGramBench, suggesting test-time scaling offers little help for spatial reasoning.
+- Insights for Multimodal Model Design: The current spatial abstraction capability of LLMs is a fundamental bottleneck; simply increasing data or reasoning length will not solve it, necessitating architectural innovations.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First dedicated Program-to-Geometry evaluation benchmark with a clearly defined task and theoretically grounded taxonomy.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 19 models, including behavioral analysis, fine-tuning ablations, CoT analysis, and drawing language comparison.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured and research-question-driven, with rich and clear figures and tables.
-- Value: ⭐⭐⭐⭐ Reveals fundamental limitations in LLM spatial reasoning with important implications for future model design.
+- Novelty: ⭐⭐⭐⭐ First dedicated Program-to-Geometry benchmark with a theoretically supported taxonomy.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive evaluation of 19 models, including behavioral analysis, fine-tuning ablations, CoT analysis, and language comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured, research-question-driven analysis, with clear and abundant visualizations.
+- Value: ⭐⭐⭐⭐ Reveals a fundamental weakness in LLM spatial reasoning, providing important guidance for future model design.
 
 <!-- RELATED:START -->
 
@@ -140,11 +134,11 @@ The choice of drawing language has negligible impact on performance; the bottlen
 
 ## Related Papers
 
-- [\[ICLR 2026\] TopoBench: Benchmarking LLMs on Hard Topological Reasoning](topobench_benchmarking_llms_on_hard_topological_reasoning.md)
+- [\[ICLR 2026\] USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning Capabilities of LLMs as Urban Agents](ustbench_benchmarking_and_dissecting_spatiotemporal_reasoning_capabilities_of_ll.md)
+- [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
 - [\[ICLR 2026\] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs](visiomath_benchmarking_figure-based_mathematical_reasoning_in_lmms.md)
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
-- [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](../../NeurIPS2025/llm_reasoning/core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
-- [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
+- [\[ICLR 2026\] LEXam: Benchmarking Legal Reasoning on 340 Law Exams](lexam_benchmarking_legal_reasoning_on_340_law_exams.md)
+- [\[ICLR 2026\] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](faithcot-bench_benchmarking_instance-level_faithfulness_of_chain-of-thought_reas.md)
 
 </div>
 

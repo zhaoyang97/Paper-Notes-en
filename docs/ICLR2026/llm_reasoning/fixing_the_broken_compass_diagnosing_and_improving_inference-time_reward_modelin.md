@@ -2,54 +2,79 @@
 title: >-
   [Paper Note] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling
 description: >-
-  [ICLR 2026][LLM Reasoning][Reward Model] This paper systematically diagnoses three failure modes of inference-time reward models (RMs)—performance degradation on easy problems…
+  [ICLR 2026][LLM Reasoning][inference-time scaling] This paper systematically diagnoses three failure modes of Reward Models (RMs) at inference time—performance degradation on easy problems, decreased discriminative power as the number of samples increases, and excessive search diversity harming accuracy. It proposes the CRISP algorithm to mitigate these issues through
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Reward Model"
-  - "inference-time scaling"
-  - "CRISP"
-  - "Best-of-N"
-  - "MCTS"
+  - ICLR 2026
+  - LLM Reasoning
+  - inference-time scaling
+  - CRISP
+  - Best-of-N
+  - MCTS]
 date: 2026-05-08
-content_hash: eed8f4be17bdee5d
+content_hash: 315dae38319695e7
 ---
-
 # Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.05188](https://arxiv.org/abs/2503.05188)  
 **Code**: [GitHub](https://github.com/BugMakerzzz/CRISP)  
-**Area**: LLM Reasoning
+**Area**: LLM Inference  
 **Keywords**: [Reward Model, inference-time scaling, CRISP, Best-of-N, MCTS]
 
 ## TL;DR
 
-This paper systematically diagnoses three failure modes of inference-time reward models (RMs)—performance degradation on easy problems, diminished discriminability as sample size increases, and accuracy loss under high search diversity—and proposes CRISP, an algorithm that mitigates these issues via answer-clustering-based reward aggregation and stepwise prefix guidance, achieving accuracy improvements of up to 5%.
+This paper systematically diagnoses three failure modes of Reward Models (RMs) at inference time—performance degradation on easy problems, decreased discriminative power as the number of samples increases, and excessive search diversity harming accuracy. It proposes the CRISP algorithm to mitigate these issues through cluster-based reward integration and stepwise prefixing, achieving accuracy improvements of up to 5%.
 
 ## Background & Motivation
 
-Inference-time scaling techniques (e.g., OpenAI o1, DeepSeek-R1) enhance LLM reasoning by increasing test-time compute. Current research focuses primarily on training-time optimization (RL/SFT), while inference-time reward-model-based methods remain comparatively underexplored. Meanwhile, R1-series models suffer from overthinking and limited task generalization.
+Inference-time scaling techniques (e.g., OpenAI o1, DeepSeek-R1) enhance LLM reasoning capabilities by increasing computation during inference. Current research primarily focuses on training-time optimization (RL/SFT), while inference-time reward-model-based methods remain relatively overlooked. However, the R1 series models exhibit issues such as "overthinking" and limited task generalization.
 
-Taking CSQA commonsense reasoning as an example: DeepSeek-R1-7B achieves an accuracy of 64.8 with an average of 3,613 tokens, whereas the inference-time method proposed in this paper reaches 72.0 on the base model Qwen2.5-Math-7B using only 1,100 tokens. This demonstrates that optimizing inference-time RMs remains a critical direction.
+Taking CSQA commonsense reasoning as an example, DeepSeek-R1-7B achieves 64.8% accuracy using an average of 3,613 tokens, while the proposed inference-time method achieves 72.0% on the base Qwen2.5-Math-7B model with only 1,100 tokens. This suggests that optimizing inference-time RMs remains a critical direction.
 
-However, preliminary experiments show that advanced RMs yield limited improvements on downstream reasoning tasks: BoN improves over Self-Consistency (SC) by less than 5% on most LLMs, while the Oracle (directly recalling correct answers from samples) far outperforms other methods, indicating that **the bottleneck lies in the RM's discriminative capacity rather than the LLM's generative ability**.
+Nevertheless, preliminary experiments show that advanced RMs provide limited improvements in downstream reasoning tasks: on most LLMs, BoN improves over SC by less than 5%, whereas the Oracle (recalling the correct answer directly from samples) significantly outperforms other methods. This indicates that the **bottleneck lies in the discriminative capacity of the RM rather than the generative capability of the LLM**.
 
 ## Method
 
 ### Overall Architecture
 
-This paper first models the RM inference process as a function of three components: input question $q$, sample count $n$, and search parameters $\Phi$. RM behavior is systematically probed by fixing two of these while varying the third. After diagnosing three major failure modes, the paper proposes CRISP (Clustered Reward Integration with Stepwise Prefixing), an iterative framework comprising five modules.
+The paper follows a two-stage approach: **diagnosis** followed by **targeted solutions**. The diagnosis stage treats RM behavior at inference time as a function determined by "problem $q$, sample count $n$, and search parameters $\Phi$." By fixing two variables and varying one, the authors detect when the RM fails, identifying three failure modes (easy problem degradation, decreased discrimination with more samples, and diversity backfire). Consequently, the authors propose CRISP (Clustered Reward Integration with Stepwise Prefixing), a training-free iterative inference framework. In each round, $n$ complete reasoning paths are generated based on the current prefix set $\mathcal{P}$. These are clustered by the final answer, and rewards are aggregated at the **cluster level**. The process then evaluates early stopping: if the number of clusters is $<2$ (indicating an easy problem), it falls back to Self-Consistency; otherwise, top steps from the highest-scoring cluster are extracted as the prefix for the next round, narrowing the search space to promising branches. Each core module addresses one specific failure mode.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Problem q + Current Prefix Set P"] --> G["Path Generation<br/>Generate n complete paths<br/>based on prefix P"]
+    G --> CL["Answer Clustering<br/>Group into clusters Cj by final answer"]
+    CL --> AGG["Cluster-level Reward Aggregation<br/>F(Cj)=Σf(x)<br/>Incorporate frequency into score"]
+    AGG --> D{"Cluster Count < 2 ?"}
+    D -->|"Yes (Easy Problem)"| ES["Early Stopping<br/>Fallback to Self-Consistency"]
+    D -->|"No"| PRE["Prefix Extraction<br/>Extract first i steps from best path in top cluster"]
+    PRE -->|"Update P, Next Round"| G
+    ES --> OUT["Output Final Answer"]
+```
 
 ### Key Designs
 
-1. **Systematic Diagnosis of Three RM Failure Modes**: Function—conducting controlled experimental analyses of key factors affecting RM inference performance. Mechanism—(Cl.1) Problems are partitioned into 5 difficulty levels by pass@1; BoN/MCTS-RM is found to underperform Self-Consistency on easy problems (Levels 1–2). (Cl.2) Tracking the frequency of RM-highest-scored incorrect answers reveals an "inverse long-tail" phenomenon: low-frequency incorrect answers (appearing $<5$ times) are more likely to receive high scores, as larger $n$ introduces more out-of-distribution low-frequency samples that degrade discriminability. (Cl.3) Increasing temperature or MCTS width/depth (search diversity) consistently degrades RM performance, with moderate diversity being optimal. Design Motivation—Understanding the specific failure mechanisms of RMs at inference time, thereby providing principled guidance for targeted algorithm design.
+**1. Diagnosis of Three Failure Modes: Identifying where RMs fail at inference time**
 
-2. **CRISP: Clustered Reward Aggregation with Stepwise Prefix Iteration**: Function—designing a five-module iterative framework to specifically mitigate the three identified RM failure modes. Mechanism—(a) **Path Generation**: complete reasoning paths are generated based on a prefix set $\mathcal{P}$ (rather than step-by-step as in MCTS), controlling search diversity (addressing Cl.3); (b) **State Aggregation**: paths are clustered by final answer $\psi: \mathcal{R} \to \mathcal{C}$ (addressing the low-frequency error issue in Cl.2); (c) **Reward Evaluation**: rewards are aggregated at the cluster level $\mathcal{F}(\mathcal{C}_j) = \sum_{x \in \mathcal{C}_j} f(x)$, incorporating frequency information to prevent low-frequency errors from receiving high scores; (d) **Early Termination**: when the cluster count $<2$, the problem is deemed easy and SC is applied directly (addressing Cl.1); (e) **Prefix Extraction**: the first $i$ steps of the best path from the highest-scoring cluster are extracted as the prefix for the next iteration, progressively narrowing the search space. Design Motivation—Each module is designed to address a specific diagnostic finding, forming a systematic solution.
+Simply stacking stronger RMs yields limited gains (BoN is less than 5% better than Self-Consistency on most models). Thus, the authors first perform controlled diagnosis. The first failure mode (Cl.1) is easy problem degradation: after dividing problems into 5 difficulty levels based on pass@1, BoN and MCTS-RM underperform Self-Consistency on the easiest Levels 1-2. The RM introduces noise where the model would have otherwise won. The second mode (Cl.2) is the "anti-long-tail" phenomenon: by analyzing high-scoring incorrect answers, it was found that these are often low-frequency answers (appearing $<5$ times). As $n$ increases, rare incorrect samples become more frequent, making it harder for the RM to distinguish them. The third mode (Cl.3) is diversity backfire: increasing the sampling temperature $T$ or expanding the MCTS width/depth consistently degrades RM performance (optimal width $\approx 5$, depth 3–5), indicating RMs are more sensitive to diversity than policy models. These findings directly inform the CRISP modules.
 
-### Loss & Training
+**2. Cluster-level Reward Aggregation: Incorporating frequency to suppress "anti-long-tail"**
 
-CRISP is a purely inference-time method requiring no training. Policy models used are Qwen2.5-3B and Llama3.1-8B; reward models used are Skywork ORM and Skywork-o1 PRM. BoN uniformly samples $n=32$; MCTS uses 32 rollouts. Temperature and the number of iterations are tunable hyperparameters.
+This is the core innovation of CRISP, targeting Cl.2. Conventional BoN takes the single highest-scoring path, allowing a rare but over-rewarded incorrect path to win. CRISP first clusters paths $\mathcal{C}_j$ by their final answer (mapping $\psi:\mathcal{R}\to\mathcal{C}$) and lifts scores from the path level to the cluster level:
+
+$$\mathcal{F}(\mathcal{C}_j)=\sum_{x\in\mathcal{C}_j} f(x)$$
+
+where $f(x)$ is the normalized single-path reward. This summation naturally incorporates "answer frequency" into the score. High-frequency correct answers gain a high total score due to the volume of paths, while low-frequency incorrect answers—even those with high individual RM scores—cannot compete because their clusters contain fewer paths. This uses "population voting" to correct RM point-wise scoring errors.
+
+**3. Early Stopping: Fallback for easy problems to prevent RM interference**
+
+Targeting Cl.1, the authors use **cluster cardinality** as a low-cost signal for problem difficulty. If the number of clusters after one round of sampling is $<2$, it suggests the paths have converged to a single answer and the problem is easy. RM intervention at this stage only introduces noise. CRISP then terminates the iteration and defaults to the Self-Consistency majority vote, saving compute and avoiding RM instability.
+
+**4. Full-path Generation + Stepwise Prefixing: Maintaining optimal search diversity**
+
+Targeting Cl.3, this corresponds to the "Path Generation" and "Prefix Extraction" steps. Unlike node-by-node MCTS (which explodes into many intermediate states), CRISP generates $n$ **complete** paths per round based on the current prefix $\mathcal{P}$ (initially $\mathcal{P}=\varnothing$), limiting the explored states. After each round, the first $i$ steps of the best path from the top cluster are set as the new prefix $\mathcal{P}$ for the next round. This stabilizes good starts and narrows the search space iteratively, keeping diversity within the RM's optimal performance range.
+
+The entire flow requires no training. Policy models include Qwen2.5-3B / Llama3.1-8B, and reward models include Skywork ORM and Skywork-o1 PRM. BoN uses $n=32$, and MCTS uses 32 rollouts for fair comparison.
 
 ## Key Experimental Results
 
@@ -64,9 +89,9 @@ CRISP is a purely inference-time method requiring no training. Policy models use
 | Beam Search | 0.95 | 0.73 | 0.34 | 0.56 |
 | **CRISP + PRM** | **0.96** | **0.76** | **0.39** | **0.67** |
 
-### Ablation Study
+### Ablation Study (Comparison with R1)
 
-| Comparison with R1 Models | MATH Acc / Tokens | CSQA Acc / Tokens | SIQA Acc / Tokens | LogiQA Acc / Tokens |
+| Comparison with R1 Model | MATH Acc / Tokens | CSQA Acc / Tokens | SIQA Acc / Tokens | LogiQA Acc / Tokens |
 |:---|:---|:---|:---|:---|
 | Qwen2.5-Math-7B Chat | 0.74 / 1855 | 0.58 / 1479 | 0.58 / 1388 | 0.49 / 2133 |
 | R1-Distill-7B | **0.88** / 9626 | 0.65 / 3612 | 0.66 / 2920 | 0.50 / 6492 |
@@ -74,37 +99,37 @@ CRISP is a purely inference-time method requiring no training. Policy models use
 
 ### Key Findings
 
-- CRISP achieves up to 5% improvement on MATH-500 (Llama3.1-8B: 0.62 → 0.67) and 5% on OlympiadBench.
-- Compared to R1 models: average accuracy on non-mathematical tasks is 10% higher, with token consumption reduced by up to 90%.
-- Ablation experiments confirm that each module contributes independently: removing clustering aggregation, early termination, or prefix guidance all lead to performance degradation.
-- CRISP is robust across different RMs: even with the weaker Shepherd PRM (BoN at only 0.47), high accuracy is maintained.
-- Inference time: CRISP 91.0s vs. MCTS 211.3s vs. Beam Search 268.7s, demonstrating substantially greater efficiency.
+- CRISP achieves up to 5% improvement on MATH-500 (Llama3.1-8B from 0.62 to 0.67) and 5% on OlympiadBench.
+- Comparison with R1: 10% higher average accuracy on non-math tasks with up to 90% fewer tokens.
+- Ablations confirm each module's contribution: removing clustering, early stopping, or prefixing leads to performance drops.
+- Robustness: Even with a weaker Shepherd PRM (BoN only 0.47), CRISP maintains high accuracy.
+- Efficiency: Inference time for MATH is 91.0s vs. MCTS 211.3s vs. Beam 268.7s.
 
 ## Highlights & Insights
 
-- The three diagnostic findings are systematic and insightful; in particular, the "inverse long-tail" phenomenon—where RMs assign high scores to low-frequency incorrect answers—represents an important behavioral insight into RMs.
-- Cluster-level reward aggregation is an elegant design that naturally incorporates frequency information into scoring without modifying the RM itself.
-- The early termination mechanism cleanly resolves the issue of RMs being counterproductive on easy problems.
-- The underperformance of R1 models on non-mathematical tasks (compounded by high token costs) underscores the sustained value of inference-time optimization.
+- Systematic diagnosis: The "anti-long-tail" phenomenon (RMs over-rewarding rare incorrect answers) is a significant insight into RM behavior.
+- Cluster-level reward aggregation is a clever design—incorporating frequency info naturally without modifying the RM.
+- The early stopping mechanism gracefully handles the "harmful RM" problem on easy tasks.
+- The weakness of R1 models in non-math tasks (and high token costs) highlights the persistent value of inference-time optimization.
 
 ## Limitations & Future Work
 
-- Clustering relies on exact matching of final answers, making it not directly applicable to open-ended generation tasks such as text summarization.
-- The number of steps extracted for prefix guidance grows linearly with iteration count, which may be overly constraining for long reasoning chains.
-- Validation is limited to mathematical and commonsense reasoning; more complex multi-step reasoning tasks (e.g., programming, planning) remain unexplored.
-- The early termination threshold (cluster count $<2$) is hard-coded and may require adjustment for different tasks.
-- The possibility of iteratively improving the RM itself through its own reasoning process during inference is not considered.
+- Clustering relies on exact matching of final answers, which is not directly applicable to open-ended generation (e.g., summarization).
+- Stepwise prefix extraction grows linearly with iterations, which may be too restrictive for long reasoning chains.
+- Validated only on math and commonsense reasoning; more complex multi-step reasoning (e.g., coding, planning) remains to be explored.
+- The early stopping threshold (cluster count < 2) is hardcoded and may require task-specific tuning.
+- Does not consider RMs improving in real-time through the reasoning process itself.
 
 ## Related Work & Insights
 
-- BoN Weighted (Snell et al., 2024) and MCTS (Hao et al., 2023) are the primary competing methods; CRISP builds upon both by introducing clustering and prefix mechanisms.
-- DeepSeek-R1 avoids RM reward hacking through rule-based rewards, while this paper mitigates RM discriminability deficiencies from an inference-time perspective.
-- The "inverse long-tail" phenomenon may have implications for the distributional design of RM training data—greater coverage of low-frequency error patterns is needed.
-- The idea of cluster-level aggregation is generalizable to other multi-candidate scoring scenarios, such as test-case aggregation in code generation.
+- BoN Weighted (Snell et al., 2024) and MCTS (Hao et al., 2023) are primary competitors; CRISP improves upon them with clustering and prefix mechanisms.
+- While DeepSeek-R1 uses rule-based rewards to avoid reward hacking, this paper addresses RM discriminative deficiencies from an inference-time perspective.
+- The "anti-long-tail" phenomenon suggests that RM training data distributions should cover more rare error patterns.
+- The idea of cluster-level aggregation could be extended to other scenarios requiring multiple candidate scoring, such as test-case aggregation in code generation.
 
 ## Rating
 
-⭐⭐⭐⭐ — The problem diagnosis is systematic and thorough; CRISP is purposefully designed and experimentally well-validated, offering significant practical value for inference-time optimization. However, its applicability is constrained by the requirement for exact answer matching, limiting generalizability.
+⭐⭐⭐⭐ — The diagnosis is systematic and deep. CRISP is designed with clear intent and comprehensive experiments. It holds significant practical value for inference-time optimization, though its scope (requiring exact answer matching) limits its generality.
 
 <!-- RELATED:START -->
 
@@ -112,11 +137,11 @@ CRISP is a purely inference-time method requiring no training. Policy models use
 
 ## Related Papers
 
+- [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
+- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 - [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](../../ICML2026/llm_reasoning/inference_time_optimization_with_confidence_dynamics.md)
+- [\[ICLR 2026\] The Limits of Inference Scaling Through Resampling](the_limits_of_inference_scaling_through_resampling.md)
 - [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](../../ACL2026/llm_reasoning/c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
-- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](../../ICML2026/llm_reasoning/reward_modeling_from_natural_language_human_feedback.md)
-- [\[NeurIPS 2025\] Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals](../../NeurIPS2025/llm_reasoning/inference-time_chain-of-thought_pruning_with_latent_informativeness_signals.md)
-- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
 
 </div>
 

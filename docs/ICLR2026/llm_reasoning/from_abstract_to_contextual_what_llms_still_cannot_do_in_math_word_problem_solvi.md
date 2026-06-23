@@ -2,204 +2,180 @@
 title: >-
   [Paper Note] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics
 description: >-
-  [ICLR 2026][LLM Reasoning][Mathematical Reasoning] This paper introduces ContextMATH, a benchmark that transforms abstract AIME/MATH-500 problems into two variants — Scenario Grounding (SG) and Complexity Scaling (CS) —…
+  [ICLR 2026][LLM Reasoning][benchmark] The authors propose the ContextMATH benchmark, which reveals that even top-tier models like GPT-5 and DeepSeek-R1 experience a 13-34% accuracy drop in contextual mathematical reasoning. By transforming AIME/MATH-500 abstract problems into Scenario Grounding (SG) and Complexity Scaling (CS) variants, the study identifie
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Mathematical Reasoning"
-  - "Contextual Reasoning"
-  - "Problem Formulation"
-  - "Benchmark"
-  - "LLM Evaluation"
-  - "AIME"
+  - ICLR 2026
+  - LLM Reasoning
+  - benchmark
+  - AIME
 date: 2026-05-08
-content_hash: f4163e4390dd22e5
+content_hash: 1ebcccf01c58de72
 ---
-
 # From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.23048](https://arxiv.org/abs/2601.23048)  
-**Code**: Not released  
-**Area**: LLM Reasoning
-**Keywords**: Mathematical Reasoning, Contextual Reasoning, Problem Formulation, Benchmark, LLM Evaluation, AIME
+**Code**: Not disclosed  
+**Area**: LLM Reasoning  
+**Keywords**: Mathematical Reasoning, Contextual Reasoning, Problem Formulation, benchmark, LLM Evaluation, AIME
 
 ## TL;DR
 
-This paper introduces ContextMATH, a benchmark that transforms abstract AIME/MATH-500 problems into two variants — Scenario Grounding (SG) and Complexity Scaling (CS) — and reveals that even top-tier models such as GPT-5 and DeepSeek-R1 suffer accuracy drops of 13–34% on contextual mathematical reasoning, with errors attributable primarily to problem formulation rather than computational reasoning.
+The authors propose the ContextMATH benchmark, which reveals that even top-tier models like GPT-5 and DeepSeek-R1 experience a 13-34% accuracy drop in contextual mathematical reasoning. By transforming AIME/MATH-500 abstract problems into Scenario Grounding (SG) and Complexity Scaling (CS) variants, the study identifies that errors primarily stem from problem formulation rather than computational reasoning.
 
 ## Background & Motivation
 
-LLMs have achieved near-perfect scores on mathematical benchmarks such as AIME and MATH-500, even reaching IMO gold-medal level. However, these successes are confined to **well-structured abstract problems** — those that present equations and conditions directly.
+LLMs have approached near-perfect scores on mathematical benchmarks (AIME, MATH-500), even reaching IMO gold medal levels. However, these successes are confined to **well-formatted abstract problems** where equations and conditions are explicitly provided.
 
-Real-world mathematical applications (financial analysis, scientific research, engineering design) rarely present ready-made equations; they typically require **extracting the mathematical core from concrete narrative scenarios before solving**. The authors term this capability **Contextual Mathematical Reasoning**.
+Real-world mathematical applications (financial analysis, scientific research, engineering design) rarely appear as ready-made equations; they typically require **extracting the mathematical core from concrete narrative scenarios before solving**. This ability is defined by the authors as **Contextual Mathematical Reasoning**.
 
-Existing benchmarks focus almost exclusively on abstract problems (GSM8K, MATH, AIME), and even those containing simple narratives (e.g., "Jack had 8 pens...") remain superficial. This leaves a critical open question: **Can the strong performance of LLMs on abstract benchmarks transfer to contextualized, modeling-required mathematical problems?**
+Existing benchmarks focus almost entirely on abstract problems (GSM8K, MATH, AIME), and even those containing simple narratives (e.g., "Jack had 8 pens...") are superficial. This leaves a critical question: **Can the strong performance of LLMs on abstract benchmarks translate to contextual mathematical problems requiring modeling?**
 
-Collecting real-world mathematical problems is costly and difficult to scale. The authors therefore adopt a **controlled transformation strategy** — systematically converting each problem from existing benchmarks (ensuring correctness) into contextual variants.
+Since collecting real-world mathematical problems is costly and difficult to scale, the authors adopt a **controlled transformation strategy**—systematically converting each problem from existing benchmarks (ensuring correctness) into contextual variants.
 
 ## Method
 
 ### Overall Architecture
 
-ContextMATH is built upon AIME 2024, AIME 2025, and MATH-500 (retaining only problems with difficulty $\geq 3$), transforming each original problem into two variants:
+ContextMATH does not collect data from scratch but builds upon the verified AIME 2024, AIME 2025, and MATH-500 (retaining only difficulty ≥3) datasets. Controlled rewriting is applied to each abstract original problem to derive two contextual variants, followed by human auditing. The pipeline consists of four steps: first, generating variants along two paths—Scenario Grounding (SG), which embeds the abstract structure into a realistic narrative without increasing reasoning volume to test if the model can "read the mathematical core from context," and Complexity Scaling (CS), which hides explicit conditions within sub-problems requiring extra reasoning to test if the model can "recover conditions before solving." Next, three experts cross-audit each variant to ensure strict equivalence with the original. Variants are compiled into ContextMATH to evaluate 61 models, observing accuracy drops relative to the original. Finally, a Necessity/Sufficiency framework is used to decouple the contributions of "formulation" and "reasoning" to locate the bottleneck.
 
-1. **Scenario Grounding (SG)**: Embeds the abstract mathematical structure into a concrete narrative without increasing reasoning complexity.
-2. **Complexity Scaling (CS)**: Conceals explicit conditions within sub-problems, requiring additional reasoning steps to recover the original conditions.
+```mermaid
+graph TD
+    A["Verified Abstract Originals<br/>AIME24/25 + MATH-500 (Diff≥3)"]
+    A -->|"Realistic Narrative<br/>Reasoning Fixed"| B["Scenario Grounding (SG)<br/>Abstract → Narrative"]
+    A -->|"Conditions in Sub-problems<br/>Extra Step"| C["Complexity Scaling (CS)<br/>Explicit → Sub-problem"]
+    B --> D["Expert Cross-Audit<br/>Strict Equivalence Check"]
+    C --> D
+    D --> E["ContextMATH Benchmark"]
+    E --> F["61 Model Evaluation<br/>SG/CS Accuracy Drop"]
+    F --> G["Necessity/Sufficiency Analysis<br/>Decoupling Formulation vs. Reasoning"]
+```
 
 ### Key Designs
 
-**SG Construction**: A multi-step prompting pipeline guides an LLM (o1-mini) to map all abstract mathematical elements to real-world entities (e.g., "variable $x$" → "initial number of oil barrels") and define interaction rules among them. The mathematical core is preserved; only narrative context is added.
+**1. Scenario Grounding (SG): Embedding abstract structures in realistic narratives to isolate contextual understanding.**
 
-**CS Construction**: Explicit conditions are encoded as outputs of simple, self-contained sub-problems. Strategies include:
-- Encoding numerical values as solutions to number-theoretic or combinatorial problems (e.g., "25 indicator lights" → "the number of unique pairings of indicator lights is exactly 300")
-- Replacing explicit functions/constants with variables that must be determined from data points
-- Rephrasing geometric relationships as physical or structural descriptions
+Real-world problems rarely appear as equations, but existing benchmarks fail to test the model's ability to translate narratives into mathematics. SG uses multi-step prompting to guide an LLM (o1-mini) to map each abstract element to a real entity—e.g., "variable $x$" to "initial fuel barrels"—and defines interaction rules based on the original properties. The model then self-verifies and iterates to ensure logical equivalence. The mathematical core and solving steps remain identical; thus, any drop in SG performance is attributed solely to "failure to understand the scenario."
 
-**Quality Control**: Three expert annotators (holding advanced degrees in computer science with competitive mathematics backgrounds) independently reviewed each problem:
-- Assessed narrative plausibility and clarity
-- Independently modeled the abstract mathematical problem from the scenario to verify equivalence
-- Tested problems on Gemini and GPT-5
-- Resolved disagreements through discussion led by the annotator with the strongest mathematical background
+**2. Complexity Scaling (CS): Hiding conditions in sub-problems to test condition recovery.**
 
-SG and CS variants average 133 and 176 words respectively, well within the processing capacity of current LLMs.
+Key values in real tasks are often not provided directly but must be inferred. CS encodes the original conditions as solutions to simple, self-contained sub-problems, forcing the model to perform an extra reasoning step to recover the original parameters. Strategies include encoding values as solutions to number theory or combinatorics problems, replacing explicit constants with variables determined by data points, or restating geometric relationships as physical descriptions. Since sub-problems are simple, the added burden is strictly on "recovering conditions," decoupling it from computational difficulty.
 
-### Formulation Analysis Framework
+**3. Expert Cross-Audit: Ensuring strict equivalence of variants.**
 
-Beyond accuracy, three metrics are defined to assess problem formulation capability:
+To prevent ambiguity, each variant is independently reviewed by three experts with advanced degrees and competition math backgrounds. They evaluate narrative clarity, verify that no extra complexity is introduced, and independently re-model the scenario to ensure it is solvable and equivalent to the original. Variants are also tested on Gemini and GPT-5; failures are diagnosed for ambiguity. Acceptance requires unanimous expert agreement.
 
-**Formulation Accuracy**: The proportion of cases in which the model correctly translates the scenario into a mathematical formulation.
+**4. Necessity/Sufficiency Analysis Framework: Decoupling responsibilities of "Formulation" and "Reasoning."**
 
-**Formulation Necessity**:
+Accuracy alone does not distinguish between "failing to list the equation" and "calculating incorrectly." Let $F$ denote correct formulation and $R$ denote correct final reasoning. Formulation accuracy is the ratio of correct translations. Two conditional probabilities are defined:
 
-$$P(F=\text{True} \mid R=\text{True})$$
+$$\text{Formulation Necessity} = P(F=\text{True} \mid R=\text{True}), \qquad \text{Formulation Sufficiency} = P(R=\text{True} \mid F=\text{True})$$
 
-The degree to which correct reasoning depends on correct formulation.
-
-**Formulation Sufficiency**:
-
-$$P(R=\text{True} \mid F=\text{True})$$
-
-The degree to which correct formulation leads to correct reasoning.
+Necessity measures how much a correct answer relies on correct modeling, while sufficiency measures the probability of a correct calculation given correct modeling. Comparison of these two metrics allows for bottleneck localization.
 
 ### Loss & Training
 
-Training experiments are conducted on the Qwen3-Base series under three settings:
-- $\text{SFT}_{\text{Ori}}$: Original data only (50k)
-- $\text{SFT}_{\text{Syn}}$: Synthetic scenario data only (50k)
-- $\text{SFT}_{\text{Mix}}$: Mixed (100k)
-
-A dedicated formulation model training approach is also explored.
+To test if synthetic scenario data can bridge the gap, the authors compare three SFT settings on the Qwen3-Base series: $\text{SFT}_{\text{Ori}}$ (50k original data), $\text{SFT}_{\text{Syn}}$ (50k synthetic scenario data), and $\text{SFT}_{\text{Mix}}$ (100k mixture). They also attempt to train a "dedicated formulation model" to translate scenarios into formulas for a reasoning model to solve.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Top closed-source models on AIME (single-run accuracy %)**:
+**Performance of top closed-source models on AIME (Single-pass accuracy %):**
 
 | Model | AIME24 Ori | AIME24 SG | AIME24 CS | AIME25 Ori | AIME25 SG | AIME25 CS |
-|-------|-----------|-----------|-----------|-----------|-----------|-----------|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | DeepSeek-R1 | 93.3 | 70.0 (-25%) | 66.7 (-29%) | 86.7 | 73.3 (-15%) | 53.3 (-38%) |
 | GPT-5 | 90.0 | 83.3 (-7%) | 80.0 (-11%) | 90.0 | 80.0 (-11%) | 66.7 (-26%) |
 | Gemini 2.5 Pro | 83.3 | 73.3 (-12%) | 76.7 (-8%) | 83.3 | 56.7 (-32%) | 50.0 (-40%) |
 | o3 | 83.3 | 70.0 (-16%) | 66.7 (-20%) | 76.7 | 70.0 (-9%) | 60.0 (-22%) |
 | QwQ-plus | 86.7 | 56.7 (-35%) | 46.7 (-46%) | 73.3 | 53.3 (-27%) | 43.3 (-41%) |
 
-**Open-source models (16-sample average accuracy %)**:
+**Open-source models (Average accuracy of 16 samples %):**
 
 | Model | AIME24 Ori | AIME24 SG | AIME24 CS | AIME25 SG | AIME25 CS |
-|-------|-----------|-----------|-----------|-----------|-----------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Qwen3-32B | 81.2 | 67.9 (-16%) | 57.1 (-30%) | 54.4 (-22%) | 45.0 (-36%) |
 | Qwen3-8B | 73.8 | 61.5 (-16%) | 42.9 (-42%) | 48.3 (-25%) | 35.8 (-45%) |
 | Qwen3-4B | 70.4 | 52.5 (-25%) | 34.6 (-51%) | 39.6 (-38%) | 33.8 (-47%) |
-| AReaL-boba-2-32B | 81.5 | 65.4 (-20%) | 58.3 (-29%) | 55.0 (-29%) | 43.8 (-43%) |
 
-On average, open-source models decline by 13% on SG and 34% on CS; closed-source models decline by 13% and 20%, respectively.
+On average, open-source models drop 13% on SG and 34% on CS; closed-source models drop 13% and 20% respectively.
 
 ### Ablation Study
 
-**Formulation capability analysis (selected models)**:
+**Modeling Ability Analysis (Key Models):**
 
-| Model | Formulation Acc. Avg | Necessity Avg | Sufficiency Avg |
-|-------|---------------------|--------------|----------------|
-| Qwen3-0.6B | 42.8 | 56.1 | 13.5 |
+| Model | Formulation Acc Avg | Formulation Necessity Avg | Formulation Sufficiency Avg |
+| :--- | :--- | :--- | :--- |
 | Qwen3-4B | 61.6 | 79.2 | 61.3 |
 | Qwen3-8B | 73.8 | 83.8 | 60.7 |
 | Qwen3-32B | 75.0 | 81.9 | 64.9 |
 | GPT-5 | 81.4 | 85.6 | 82.7 |
 
-**Training experiments (Qwen3-14B-Base, average accuracy %)**:
+**Training Experiments (Qwen3-14B-Base, average accuracy %):**
 
 | Setting | Average |
-|---------|---------|
+| :--- | :--- |
 | Base | 29.4 |
 | + SFT_Ori | 55.5 (+26.1%) |
 | + SFT_Syn | 60.4 (+31.0%) |
 | + SFT_Mix | **61.3** (+31.9%) |
 
-**Failure of dedicated formulation model training**:
-
-| Reasoning Model | No Formulation | Untuned Formulation 8B | Tuned Formulation 8B |
-|----------------|---------------|----------------------|---------------------|
-| Qwen3-8B | 53.9 | 48.9 | 20.8 |
-| Qwen3-14B | 57.7 | 51.8 | 21.8 |
-
-Performance collapses after training the dedicated formulation model, indicating that formulation capability cannot be effectively learned from scenario–original paired data.
+The attempt to train a dedicated formulation model failed; performance collapsed when using scenario-original paired data.
 
 ### Key Findings
 
-1. **Contextual complexity is a universal bottleneck**: Even GPT-5 suffers a 26% drop on AIME25-CS.
-2. **Scale mitigates but does not resolve the problem**: 1.5B models drop 77% vs. 29% for 32B on CS, yet the gap remains substantial.
-3. **Error analysis: formulation errors account for ~80%**, far exceeding computational, logical, and other error types.
-4. **Formulation is a necessary condition**: Necessity consistently exceeds accuracy (Qwen3-8B: 83.8% vs. 73.8%).
-5. **Formulation is not sufficient**: Sufficiency lags behind necessity; even GPT-5 achieves only 82.7%.
-6. **Subsequent RL specialization may be harmful**: Further SFT/RL improves scores on original problems but amplifies the contextual performance gap.
-7. **Training on scenario data helps but is insufficient**: $\text{SFT}_{\text{Mix}}$ performs best, yet substantial unresolved gaps remain.
+1.  **Contextual complexity is a universal bottleneck**: Even GPT-5 drops 26% on AIME25-CS.
+2.  **Scale mitigates but does not solve the problem**: The drop is 77% at 1.5B vs. 29% at 32B (CS), but the gap remains significant.
+3.  **Error Analysis**: Formulation errors account for ~80%, far exceeding calculation or logic errors.
+4.  **Formulation is a necessary condition**: Necessity is consistently higher than accuracy.
+5.  **Formulation is not a sufficient condition**: Even with correct modeling, calculation failure remains a second hurdle.
+6.  **RL specialization can be harmful**: Further SFT/RL improves scores on original problems but widens the contextual gap.
+7.  **Scenario data training is effective but insufficient**: $\text{SFT}_{\text{Mix}}$ is optimal but a large gap remains.
 
 ## Highlights & Insights
 
-1. **Benchmark design is conceptually strong**: The SG and CS dimensions form a progressive probe that disentangles "contextual understanding" from "condition recovery."
-2. **The three-tier quantitative framework** (accuracy–necessity–sufficiency) rigorously characterizes the dual bottleneck of formulation and reasoning.
-3. **A counterintuitive finding is revealed**: Specialized post-training via RL may overfit to canonical formats, thereby degrading contextual reasoning.
-4. **Negative results are equally valuable**: The failure of dedicated formulation model training demonstrates that formulation capability cannot be straightforwardly learned from paired data.
-5. **Evaluation is comprehensive in scale**: 61 models (46 open-source + 15 closed-source), including GPT-5.
+1.  **Benchmark design concept is excellent**: SG and CS act as progressive probes to isolate contextual understanding and condition recovery.
+2.  **Three-tier quantitative framework** (Accuracy-Necessity-Sufficiency) clearly characterizes dual bottlenecks.
+3.  **Reveals a counter-intuitive phenomenon**: Specialized RL post-training may overfit to standard formats, weakening contextual reasoning.
+4.  **Negative results are valuable**: The failure of dedicated formulation models suggests that modeling ability cannot be simply learned from paired data.
+5.  **Extensive evaluation scale**: 61 models (46 open-source, 15 closed-source), including GPT-5.
 
 ## Limitations & Future Work
 
-1. **Limited benchmark scale**: Built upon AIME (30 problems per year) and a subset of MATH-500, resulting in relatively small data volume.
-2. **Construction relies on LLM + human review**: Difficult to scale.
-3. **CS variants not constructed for MATH-500**: Some simpler problems are not amenable to further transformation.
-4. **Closed-source models evaluated with single runs**: API constraints preclude multiple sampling.
-5. The framework could be extended to contextual reasoning evaluation in other domains (physics, economics).
-6. Curriculum learning strategies that expose models to both abstract and contextual variants during training warrant further exploration.
+1.  **Limited benchmark scale**: Based on AIME and a subset of MATH-500, the data volume is relatively small.
+2.  **Construction relies on LLM + human audit**: Difficult to scale massively.
+3.  **CS variants were not built for MATH-500**: Simple problems were unsuitable for further conversion.
+4.  **Closed-source models used single-pass evaluation**: API limits prevented multi-sample evaluation.
+5.  Future work could expand to contextual reasoning in physics or economics.
+6.  Exploration of curriculum learning strategies exposing both abstract and contextual variants during training is needed.
 
 ## Related Work & Insights
 
-- **GSM8K/MATH/AIME**: ContextMATH directly builds contextual variants upon these benchmarks.
-- **Math-Perturb** (Huang et al., 2025): Tests generalization by perturbing surface-level parameters; ContextMATH operates at a deeper level by altering the mode of presentation.
-- **SWE-bench/WebArena**: Real-world scenario evaluations in other domains; ContextMATH represents an analogous effort in mathematics.
-- Key insight: Abstract capability $\neq$ applied capability — this gap is particularly pronounced in the mathematical domain.
+-   **GSM8K/MATH/AIME**: ContextMATH constructs variants directly from these benchmarks.
+-   **Math-Perturb**: While others change surface parameters to test generalization, ContextMATH changes the fundamental presentation.
+-   **SWE-bench/WebArena**: ContextMATH represents a similar attempt at real-world scenario evaluation for the mathematical domain.
+-   Insight: Abstract ability $\neq$ application ability; this gap is particularly prominent in mathematics.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The dual SG/CS design and formulation analysis framework are original.
-- **Technical Depth**: ⭐⭐⭐⭐ — The necessity/sufficiency analysis framework is rigorous.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 61-model evaluation combined with training experiments and formulation analysis; exceptionally comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured with concise insights.
-- **Value**: ⭐⭐⭐⭐ — Provides direct guidance for evaluating and training LLM mathematical capabilities.
-- **Overall Recommendation**: ⭐⭐⭐⭐⭐ (4.5/5)
+-   **Novelty**: ⭐⭐⭐⭐ — The dual-dimension design of SG/CS and the analysis framework are novel.
+-   **Technical Depth**: ⭐⭐⭐⭐ — Rigorous Necessity/Sufficiency framework.
+-   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 61 models evaluated plus training experiments.
+-   **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and synthesized insights.
+-   **Value**: ⭐⭐⭐⭐ — Directly guides the evaluation and training of LLM mathematical capabilities.
+-   **Overall Recommendation**: ⭐⭐⭐⭐⭐ (4.5/5)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Following the Navigation: Enhancing Small Language Models Contextual Reasoning with LLM Guidance](following_the_navigation_enhancing_small_language_models_contextual_reasoning_wi.md)
+- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
+- [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
 - [\[ACL 2026\] ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs](../../ACL2026/llm_reasoning/chairo_contextual_hierarchical_analogical_induction_and_reasoning_optimization_f.md)
 - [\[ICML 2026\] Biases in the Blind Spot: Detecting What LLMs Fail to Mention](../../ICML2026/llm_reasoning/biases_in_the_blind_spot_detecting_what_llms_fail_to_mention.md)
-- [\[NeurIPS 2025\] SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers](../../NeurIPS2025/llm_reasoning/sand-math_using_llms_to_generate_novel_difficult_and_useful_mathematics_question.md)
-- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](../../ICML2026/llm_reasoning/how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
-- [\[ICLR 2026\] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs](geogrambench_benchmarking_the_geometric_program_reasoning_in_modern_llms.md)
 
 </div>
 

@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][mathematical reasoning] This work formalizes LLM chain-of-thought reasoning as a rule-based stochastic process over DAGs…
+  [ICLR 2026][LLM Reasoning][mathematical reasoning] This paper formalizes CoT reasoning in LLMs as a rule-based stochastic process on Directed Acyclic Graphs (DAGs) and proposes the "logical closeness" metric to assess whether a model reaches an answer through search or rigorous logical derivation. By constructing the DAG-MATH benchmark with 2,894 gold-standard DAGs, th
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "mathematical reasoning"
-  - "DAG"
-  - "chain-of-thought"
-  - "logical closeness"
-  - "evaluation metric"
+  - ICLR 2026
+  - LLM Reasoning
+  - mathematical reasoning
+  - DAG
+  - chain-of-thought
+  - logical closeness
+  - evaluation metric
 date: 2026-05-08
-content_hash: 836b60ca0360139d
+content_hash: d2029f74f71d44bb
 ---
-
 # DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs
 
 **Conference**: ICLR 2026  
@@ -24,94 +23,108 @@ content_hash: 836b60ca0360139d
 **Keywords**: mathematical reasoning, DAG, chain-of-thought, logical closeness, evaluation metric
 
 ## TL;DR
-This work formalizes LLM chain-of-thought reasoning as a rule-based stochastic process over DAGs, proposes *logical closeness* as a metric to assess whether a model arrives at an answer through search or rigorous logical deduction, constructs a gold-standard DAG-MATH benchmark of 2,894 instances, and demonstrates that models with similar PASS@k scores can differ substantially in reasoning faithfulness.
+This paper formalizes CoT reasoning in LLMs as a rule-based stochastic process on Directed Acyclic Graphs (DAGs) and proposes the "logical closeness" metric to assess whether a model reaches an answer through search or rigorous logical derivation. By constructing the DAG-MATH benchmark with 2,894 gold-standard DAGs, the authors find that even models with similar PASS@k exhibit significant differences in reasoning faithfulness.
 
 ## Background & Motivation
-**Background**: LLMs exhibit strong mathematical reasoning performance (o1, R1, Gemini-2.5), with chain-of-thought (CoT) serving as the core strategy. However, the black-box nature of CoT makes it difficult to determine whether a model reaches a correct answer via logical reasoning or via search/heuristics.
+**Background**: LLMs demonstrate strong performance in mathematical reasoning (e.g., o1, R1, Gemini-2.5), with CoT serving as the core strategy. However, the black-box nature of CoT makes it difficult to determine if a model arrives at the correct answer through logical deduction or via search/heuristics.
 
-**Limitations of Prior Work**: (1) PASS@k only evaluates final answers and ignores the logical consistency of the reasoning process—exploratory search can also yield correct answers. (2) LEAN-based formal verification is rigorous but requires substantial expert effort to formalize problems in advance. (3) Existing graph models (Dziri 2023) rely on deterministic subgraph matching, neglecting diverse sampling and long-range dependencies.
+**Limitations of Prior Work**: (1) PASS@k only considers the final answer and ignores the logical consistency of the reasoning process—search-based exploration can still yield correct answers. (2) Formal verification like LEAN is rigorous but requires extensive expert effort to pre-formalize problems. (3) Existing graph models (Dziri 2023) utilize deterministic subgraph matching, overlooking diverse sampling and long-range dependencies.
 
-**Key Challenge**: PASS@k may overestimate reasoning ability—models may stumble upon correct answers through exploratory branching rather than strict logical derivation. An evaluation framework situated between free-form CoT and formal proof is needed.
+**Key Challenge**: PASS@k may overestimate reasoning ability—models might find the correct answer by chance through "exploratory branches" rather than strict logical derivation. An evaluation framework is needed that falls between free-form CoT and formal proofs.
 
-**Goal**: How can the mathematical reasoning capability of LLMs be rigorously defined and evaluated—distinguishing answers obtained via search from those obtained via logical reasoning?
+**Goal**: How to rigorously define and evaluate the mathematical reasoning capabilities of LLMs to distinguish "correct answers obtained via search" from "correct answers obtained via logical reasoning"?
 
-**Key Insight**: CoT is modeled as a stochastic process over a DAG, where nodes represent conclusions of derivation steps and edges represent applications of inference rules. *Logical closure* requires that every intermediate node be consumed by at least one subsequent node, with no idle exploratory branches.
+**Key Insight**: Modeling CoT as a stochastic process on a DAG—where nodes are conclusions of derivation steps and edges represent the application of reasoning rules. "Logical closeness" is defined by requiring that every intermediate node is utilized by a subsequent node, eliminating useless exploratory branches.
 
-**Core Idea**: Logical closeness over DAGs serves as a measure of whether an LLM is performing genuine logical reasoning rather than mere search.
+**Core Idea**: Utilizing logical closeness on a DAG to measure whether an LLM is performing genuine logical reasoning instead of mere searching.
 
 ## Method
 
 ### Overall Architecture
-A two-phase framework: Phase 1 constructs task-specific DAGs (source nodes = premises, sink nodes = answers, intermediate nodes = derivation steps); Phase 2 has the LLM generate CoT trajectories over the DAG as a rule-based stochastic process, in which a node can only be visited after all its parent nodes have been generated. Three categories of CoT output are defined: perfect reasoning (containing only ancestors of the correct answer), imperfect reasoning (containing irrelevant nodes but ultimately reaching the correct answer), and erroneous reasoning.
+This paper addresses a fundamental question: when an LLM correctly answers a math problem, is it "logically derived" or "found by chance through searching"? Metrics like PASS@k cannot distinguish these scenarios. DAG-Math reinterprets a CoT trajectory as a stochastic process on a Directed Acyclic Graph (DAG): source nodes represent premises, sink nodes represent final answers, intermediate nodes are conclusions from each step, and edges encode "which previous conclusions were used and which rule was applied."
+
+The process involves two steps. First, a trusted gold-standard DAG is constructed **offline** for each problem (benchmark construction), serving as the reference for all subsequent metrics. Second, the target LLM is prompted via few-shot learning to generate CoTs in the DAG-MATH format, which are subgraphs of the gold-standard DAG. Once generated, **logical closeness** is used to check for "dead-end" nodes (nodes generated but not used later). Based on answer correctness, trajectories are classified into three categories: Perfect Reasoning (logically closed and correct answer), Imperfect Reasoning (contains useless branches but correct answer), and Incorrect Reasoning (wrong answer). Finally, these are aggregated into **PRR / AUC** metrics. The data flow is illustrated below:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Math Problem + Standard Solution"] --> B["Gold Standard DAG Construction<br/>Three Stages: Node→Parent→Edge"]
+    B --> G["Target LLM few-shot Generation<br/>DAG-MATH Format CoT<br/>(Subgraph of Gold Standard DAG)"]
+    G --> C["Logical Closeness Verification<br/>Check for Dead-end Nodes (out-degree = 0)"]
+    C --> P["Perfect Reasoning<br/>Closed + Correct Answer"]
+    C --> I["Imperfect Reasoning<br/>Dead-ends but Correct Answer"]
+    C --> W["Incorrect Reasoning<br/>Wrong Answer"]
+    P --> PRR["PRR / AUC<br/>Aggregate Metric across Problems"]
+    I --> PRR
+    W --> PRR
+```
 
 ### Key Designs
 
-1. **Logical Closeness**:
+**1. Gold Standard DAG Construction: 2,894 Reference Graphs via Three-Stage Reverse Prompting**
 
-    - Function: Evaluates whether every node in a CoT trajectory is consumed by subsequent reasoning steps (out-degree ≥ 1).
-    - Mechanism: The presence of "dead-end" nodes in a trajectory—nodes that are generated but never referenced by subsequent steps—indicates search/exploration rather than strict reasoning. Perfect reasoning = logical closure + correct final answer.
-    - Design Motivation: PASS@k ignores the reasoning process. A toy example shows that in a two-chain DAG, PRR decays exponentially with depth as $(1/2)^{L-1}$, even when final accuracy remains stable at 50%.
+Metrics like logical closeness and PRR require a "standard answer graph" as a reference to determine which nodes in a generated trajectory are redundant dead-ends. The authors constructed a benchmark of 2,894 gold-standard DAGs using a reverse sequence of **Node → Parent → Edge**. By fixing the node set before adding dependencies, verification is granularized to suppress error propagation. In Stage 1, GPT-4o-mini generates node sets step-by-step under the supervision of known solutions, forcing each node to contain a single sentence/mathematical assertion to unify granularity. SymPy and LLM-as-Judge (GPT-4o) verify each step against the final answer. In Stage 2, given the node set, the **minimal set of parent nodes** required to derive each node is identified to assemble an acyclic DAG. The graph is checked for logical closeness to the sink node; failure results in resampling (up to 5 times). In Stage 3, Qwen3 generates reasoning instructions for each edge using only the problem and parent nodes. Human auditing of 50 samples showed 49 passed, confirming reliability. Statistics show that harder problems have larger, sparser DAGs with higher maximum out-degrees, suggesting that logical complexity increases through **branching** (one step supporting multiple subsequent steps) rather than just chain length.
 
-2. **Perfect Reasoning Rate (PRR)**:
+**2. Logical Closeness: Distinguishing Reasoning from Search via "Dead-end Nodes"**
 
-    - Function: Provides a formal measure of mathematical reasoning capability.
-    - Mechanism: $\text{PRR}(\mathbf{x}) = \mathbb{E}[\delta_{\text{close}} \times \delta_{\text{final}}]$—requiring both logical closure and a correct final answer. An AUC variant provides a continuous score by relaxing the closure threshold from 0% to 100%.
-    - Distinction from PASS@k: PASS@k requires only $\delta_{\text{final}}=1$; PRR additionally requires $\delta_{\text{close}}=1$.
+PASS@k focuses solely on the final answer, ignoring intermediate processes where search-based exploration might happen to find the correct answer. Logical closeness examines the out-degree $d_{\text{out}}(v)$ of each intermediate node: a node that is generated but never referenced by subsequent steps ($d_{\text{out}}(v)=0$) is a "dead-end," indicating an unnecessary exploratory branch. A trajectory is "logically closed" only if no dead-end nodes exist. If its sink node is also the correct answer, it is termed **Perfect Reasoning**. A toy example demonstrates why the process is more revealing than the answer: on two parallel chain DAGs of length $L$, the probability of perfect reasoning decays exponentially as $(1/2)^{L-1}$, while final answer accuracy remains at $1/2$—accuracy alone fails to capture the fragility of the reasoning.
 
-3. **DAG-MATH Benchmark Construction**:
+**3. Perfect Reasoning Rate (PRR): Quantifying Genuine Reasoning**
 
-    - Function: Constructs 2,894 gold-standard CoT instances in DAG format.
-    - Mechanism: A three-stage prompting pipeline—(1) prompting the LLM to generate structured CoT with explicit parent-node dependencies annotated at each step; (2) GPT-4-class model validation and correction of DAG structure; (3) human review.
-    - Statistical Findings: Harder problems correspond to larger, sparser DAGs with more complex branching structures.
+PRR provides a formal measure of reasoning capability by combining closeness and answer correctness:
+
+$$\text{PRR}(\bm{X}_{\tt in}) = \mathbb{E}\big[\delta_{\text{close}} \cdot \delta_{\text{final}}\big]$$
+
+where $\delta_{\text{close}}$ indicates logical closeness and $\delta_{\text{final}}$ indicates answer correctness. Unlike PASS@k, which only requires $\delta_{\text{final}}=1$, PRR enforces both. The difference between the two quantifies the portion of accuracy sustained by "search." To avoid overly harsh binary judgments, an AUC variant is provided by integrating over a curve that relaxes the required node closure proportion from 0% to 100%. A robustness check showed that AUC scores remained stable (23.8%–25.5%) across different parsing models, indicating it is an **intrinsic property** of the solution.
 
 ### Loss & Training
-N/A (evaluation framework + benchmark; no model training). Few-shot prompting is used to elicit DAG-MATH-formatted CoT from LLMs.
+This work does not involve model training but rather an evaluation framework and benchmark. Target LLMs generate CoTs in DAG-MATH format directly via few-shot prompting, which are then evaluated using the aforementioned metrics.
 
 ## Key Experimental Results
 
 ### Main Results (Cross-Model PRR vs. PASS@1 Comparison)
 
 | Finding | Description |
-|---------|-------------|
-| Search inflates PASS@1 | Exploratory branching can raise PASS@1 by accidentally discovering correct paths, while PRR remains unchanged. |
-| Comparable PRR across models | Even when PASS@k scores differ substantially, the perfect reasoning capability of models within different families is actually quite similar. |
-| Perfect reasoning correlates with easy problems | High PRR instances tend to be low-difficulty—indicating that current models still struggle with rigorous logical reasoning on hard problems. |
-| Erroneous CoT originates beyond model capacity | Difficulty stems from branching (merging of multiple derivation paths) rather than from linear chain length. |
+|------|------|
+| Search Inflates PASS@1 | Exploratory branches increase PASS@1 by discovering correct paths by chance, while PRR remains unchanged. |
+| PRR is Comparable Across Models | Despite large gaps in PASS@k, the perfect reasoning capabilities across model families are actually quite similar. |
+| Perfect Reasoning Maps to Simple Problems | Problems with high PRR are typically low-difficulty, indicating weak logical reasoning for complex problems. |
+| Faulty CoTs Stem from Capability Limits | Hardness arises from branching (merging multi-path derivations) rather than linear chain length. |
 
 ### Graph-Level Statistical Analysis
 
-| Difficulty | Avg. Node Count | Avg. Edge Count | Branching Factor |
-|------------|----------------|----------------|-----------------|
-| Easy | Low | Low | Low |
-| Hard | High | High but sparse | High |
+| Difficulty | Avg Nodes | Avg Edges | Branching Factor |
+|------|----------|---------|---------|
+| Easy | Few | Few | Low |
+| Hard | Many | Many (Sparse) | High |
 
 ### Key Findings
-- Across MATH-500, GSM8K, AIME24/25, and other benchmarks, PASS@1 gaps among the Gemini, GPT, and Qwen3 families can exceed 10%, while PRR differences are considerably smaller—suggesting that high PASS@1 is driven primarily by search rather than reasoning.
-- DAG structural analysis reveals that LLMs fail most often on problems requiring multi-step convergence (merging multiple intermediate conclusions into a single step).
-- The gap between PRR and PASS@1 quantifies a model's "exploratory overhead"—a larger gap indicates greater reliance on search over reasoning.
+- On MATH-500, GSM8K, and AIME24/25, the PASS@1 difference between Gemini, GPT, and Qwen3 families can reach 10%+, but the PRR difference is significantly smaller—suggesting high PASS@1 comes from search rather than reasoning.
+- DAG structure analysis reveals that LLMs fail most frequently on problems requiring multi-step convergence (merging multiple intermediate conclusions into one step).
+- The gap between PRR and PASS@1 quantifies the "exploratory overhead"—a larger gap indicates higher reliance on search.
 
 ## Highlights & Insights
-- **First formal definition of LLM mathematical reasoning capability**: Translates the intuitive notion of "whether the model is truly reasoning" into a computable metric (PRR), analogous to the formalization of memorization/generalization in learning theory.
-- **"Goldilocks Principle"**: The framework occupies a practical middle ground between free-form CoT (too permissive) and LEAN formal verification (too strict).
-- **Diagnostic value of DAG complexity analysis**: Analyzing the topological structure of DAGs (depth vs. branching) enables precise identification of model weaknesses—whether the deficiency lies in linear reasoning or in multi-path integration.
+- **First Formal Definition of LLM Reasoning Capability**: Translates the intuitive notion of "whether the model is truly reasoning" into a computable metric (PRR), analogous to formalizations of memorization vs. generalization in learning theory.
+- **"Goldilocks Principle"**: The framework operates in a practical middle ground between free-form CoT (too loose) and LEAN formal proofs (too strict).
+- **Diagnostic Value of DAG Complexity**: By analyzing DAG topology (depth vs. branching), one can precisely locate model weaknesses—whether they lie in linear reasoning or multi-path integration.
 
 ## Limitations & Future Work
-- DAG construction relies on LLMs plus human annotation and is not fully automated.
-- Node/edge decomposition may not be unique due to semantic variation; the paper discusses but does not fully resolve this issue.
-- Validation is currently limited to mathematical reasoning; extension to other domains (e.g., legal or scientific reasoning) requires adaptation.
-- The applicability of PRR to non-deterministic problems (e.g., open-ended reasoning) is limited.
+- DAG construction relies on LLM + Human auditing and is not fully automated.
+- Decomposition of nodes/edges may not be unique (semantic variants); although discussed, this is not fully resolved.
+- Currently validated only on mathematical reasoning; generalization to other domains (e.g., law, science) requires adaptation.
+- PRR applicability is limited for non-deterministic problems (e.g., open-ended reasoning).
 
 ## Related Work & Insights
-- **vs. PASS@k**: PRR strictly strengthens PASS@k by requiring not only a correct answer but also a logically closed reasoning process.
-- **vs. Dziri et al. (2023) graph matching**: Their approach uses deterministic subgraph matching and does not support multi-path reasoning or probabilistic sampling; DAG-Math employs a stochastic process model.
-- **vs. LEAN formal verification**: LEAN is overly strict and requires prior formalization; DAG-Math uses natural language with structural constraints, making it more practical.
-- **vs. Kim et al. (2025) Markov chain**: Their approach uses reversible Markov chains and does not support directed acyclic structure or absorbing states.
+- **vs. PASS@k**: PRR is a strict enhancement—requiring not only a correct answer but also a logically closed reasoning process.
+- **vs. Dziri et al. (2023) Graph Matching**: They use deterministic subgraph matching which does not support multi-path or probabilistic sampling; DAG-Math uses a stochastic process model.
+- **vs. LEAN Formal Verification**: LEAN is too strict and requires prior formalization; DAG-Math uses natural language with structural constraints, making it more practical.
+- **vs. Kim et al. (2025) Markov Chain**: They use reversible Markov chains, which do not support directed acyclic structures or absorbing states.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ First formal definition of LLM reasoning capability; the DAG + logical closeness framework is highly original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-family model comparison, graph-level statistical analysis, and evaluation across multiple benchmarks.
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations, clearly defined concepts, and intuitive toy examples.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for reasoning evaluation and may influence evaluation standards in the field.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model family comparisons, graph-level statistics, and multiple benchmarks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivation, clear conceptual definitions, and intuitive toy examples.
+- Value: ⭐⭐⭐⭐⭐ Opens new directions for reasoning evaluation; likely to influence evaluation standards in the field.
 
 <!-- RELATED:START -->
 
@@ -121,9 +134,9 @@ N/A (evaluation framework + benchmark; no model training). Few-shot prompting is
 
 - [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
+- [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
+- [\[ICLR 2026\] Reasoning Scaffolding: Distilling the Flow of Thought from LLMs](reasoning_scaffolding_distilling_the_flow_of_thought_from_llms.md)
 - [\[ICLR 2026\] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task](mathfimer_enhancing_mathematical_reasoning_by_expanding_reasoning_steps_through_.md)
-- [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](../../ICML2026/llm_reasoning/clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
-- [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
 
 </div>
 

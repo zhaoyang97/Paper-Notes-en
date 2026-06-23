@@ -2,76 +2,83 @@
 title: >-
   [Paper Note] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling
 description: >-
-  [ICLR 2026][LLM Reasoning][large language reasoning models] This paper treats reflection tokens (e.g., "wait", "but") in the reasoning process as schedulable "resources" and…
+  [ICLR 2026][LLM Reasoning][Paper Note] Reflection tokens in reasoning processes (e.g., "wait", "but") are treated as schedulable "resources." Drawing from the concept of cyclical learning rates in optimization, CyclicReflex is proposed as a training-free decoding strategy. By dynamically regulating the logits of reflection tokens using a triangular waveform
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "large language reasoning models"
-  - "reflection token scheduling"
-  - "test-time scaling"
-  - "cyclical learning rate"
-  - "decoding strategy"
+  - ICLR 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 21c88b6102bbb003
+content_hash: 98b86cf846277a4e
 ---
-
 # CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.11077](https://arxiv.org/abs/2506.11077)  
 **Code**: [https://github.com/OPTML-Group/CyclicReflex](https://github.com/OPTML-Group/CyclicReflex)  
-**Area**: LLM Reasoning
-**Keywords**: large language reasoning models, reflection token scheduling, test-time scaling, cyclical learning rate, decoding strategy
+**Area**: LLM Reasoning  
+**Keywords**: Large Reasoning Models, Reflection Token Scheduling, Test-time Scaling, Cyclical Learning Rate, Decoding Strategy
 
 ## TL;DR
-This paper treats reflection tokens (e.g., "wait", "but") in the reasoning process as schedulable "resources" and, inspired by cyclical learning rate scheduling in optimization, proposes CyclicReflex — a training-free decoding strategy that dynamically modulates the logits of reflection tokens via a triangular waveform. CyclicReflex consistently improves the accuracy of 1.5B–8B models across multiple mathematical reasoning benchmarks (MATH500, AIME2024/2025, AMC2023).
+Reflection tokens in reasoning processes (e.g., "wait", "but") are treated as schedulable "resources." Drawing from the concept of cyclical learning rates in optimization, CyclicReflex is proposed as a training-free decoding strategy. By dynamically regulating the logits of reflection tokens using a triangular waveform, it consistently improves the accuracy of 1.5B-8B models across multiple mathematical reasoning benchmarks (MATH500, AIME2024/2025, AMC2023).
 
 ## Background & Motivation
-Large reasoning models (LRMs) such as OpenAI o1 and DeepSeek-R1 tackle complex problems through multi-step reasoning, guided by "reflection tokens" (e.g., "wait", "but", "alternatively"). These tokens serve as pivotal turning points and self-evaluation signals within reasoning trajectories.
+Large Reasoning Models (LRMs) such as OpenAI o1 and DeepSeek-R1 solve complex problems through multi-step reasoning guided by "reflection tokens" (e.g., "wait", "but", "alternatively"). These tokens serve as critical pivot points and self-evaluation mechanisms within reasoning trajectories.
 
-However, existing LRMs exhibit two symmetric failure modes:
-- **Under-reflection**: Too few reflection tokens cause the model to terminate reasoning prematurely, preventing sufficient exploration of solution paths — analogous to a learning rate that is too small, leading to premature convergence.
-- **Over-reflection**: Excessive reflection tokens cause the model to loop repeatedly (e.g., continuously outputting "wait"), wasting computational resources and failing to converge to the correct answer — analogous to a learning rate that is too large, causing optimization divergence.
+However, existing LRMs suffer from two symmetrical issues:
+- **Under-reflection**: Insufficient reflection tokens lead to premature termination of reasoning, preventing the model from fully exploring solution paths, analogous to optimization failing to converge due to a learning rate that is too small.
+- **Over-reflection**: Excessive reflection tokens cause the model to loop repeatedly (e.g., outputting "wait" indefinitely), wasting computational resources and failing to converge on a correct answer, similar to optimization divergence caused by a learning rate that is too large.
 
-Existing methods such as TIP (Thought switching penalty) can only unidirectionally suppress reflection tokens with a fixed logit penalty, making them incapable of simultaneously addressing under- and over-reflection across problems of varying difficulty. The authors pose the core question: **How can a resource allocation strategy dynamically regulate the frequency and placement of reflection tokens?** Their key insight is to draw an analogy between reflection token scheduling and learning rate scheduling in optimization, specifically borrowing the "stepsize hedging" idea from cyclical learning rates.
+Prior methods like TIP (Thought switching penalty) only suppress reflection tokens in one direction using fixed logit penalties, failing to address both under-reflection and over-reflection across problems of varying difficulty. The authors pose the **Core Problem: How to dynamically regulate the frequency and position of reflection tokens via resource allocation?** The **Key Insight** is to analogize reflection token scheduling to learning rate scheduling in optimization, specifically leveraging the "stepsize hedging" idea from cyclical learning rates.
 
 ## Method
 
 ### Overall Architecture
-CyclicReflex is a training-free decoding strategy that dynamically adjusts the logits of reflection tokens based on the current token position during autoregressive generation. Given a question $\mathbf{x}$, it produces a reasoning trace $\mathbf{r}$ and a final answer $\mathbf{y}$. The method requires no modification of model parameters and operates purely at inference time.
+CyclicReflex is a training-free decoding strategy. Given a problem $\mathbf{x}$, the LRM generates a reasoning trajectory $\mathbf{r}$ and answer $\mathbf{y}$ autoregressively. The sole intervention occurs during each decoding step before softmax sampling: a bias $\delta(t)$, which oscillates periodically following a triangular waveform relative to the current token position $t$, is added to the logits of "reflection tokens" ($\hat{V}$). Logits of non-reflection tokens remain unchanged. This bias can be positive (encouraging reflection) or negative (suppressing reflection), reciprocating between bounds as reasoning progresses. This approach requires no parameter updates and incurs no additional inference overhead.
+
+This mechanism is supported by two progressive ideas: first, formalizing reflection token quantity and placement as a **resource allocation** problem; second, analogizing reflection tokens to the **learning rate** and validating that under/over-reflection corresponds to insufficient/excessive learning rates through a "Landscape of Thoughts." Finally, a triangular waveform borrowed from **cyclical learning rates** is used to implement bidirectional scheduling.
+
+```mermaid
+graph TD
+    X["Input problem x"] --> DEC["Step t autoregressive decoding<br/>Get original logits z(t,v)"]
+    DEC --> WAVE["Triangular waveform δ(t)<br/>Amplitude A controls intensity, Period C controls frequency<br/>Oscillates between −A and A"]
+    WAVE --> MOD["Only for reflection tokens v∈V̂<br/>Add bias: ẑ = z + δ(t)<br/>Other token logits unchanged"]
+    MOD --> SAMPLE["Sample next token<br/>Append to trajectory r"]
+    SAMPLE -->|"Not finished, t←t+1"| DEC
+    SAMPLE -->|Finished| Y["Output trajectory r and answer y"]
+```
 
 ### Key Designs
 
-1. **Formalization of reflection token resource allocation**: Reflection tokens ("wait", "but", "alternatively", etc.) are treated as schedulable resources whose frequency and placement directly influence reasoning quality. Extended experiments with TIP (allowing positive and negative $\alpha$) reveal that TIP($-3$) yields the largest gain on hard problems but severely degrades performance on easy ones, while TIP($+1$) provides a slight improvement on easy problems. This demonstrates that a single fixed strategy cannot generalize across varying difficulty levels.
+**1. Formalizing reflection tokens as "schedulable resources" and demonstrating the failure of fixed strategies**
 
-2. **Validation via thought landscape analogy**: The Landscape of Thoughts visualization tool is used to project reasoning steps into a 2D space, validating three distinct patterns:
-    - Under-reflection: the reasoning trajectory is overly conservative and fails to move far from the starting point.
-    - Desired-reflection: the trajectory is well-structured and converges to the correct answer.
-    - Over-reflection: the model reaches a region close to the correct answer (e.g., "Alternatively, perhaps the correct answer is...") but excessive reflection causes it to overshoot and ultimately deviate from the correct answer.
+The authors first abstract reflection tokens into a resource whose frequency and position determine whether the model converges prematurely (under-reflection) or loops (over-reflection). To demonstrate that existing methods are insufficient, they test TIP as a baseline, which applies a fixed penalty $\alpha \le 0$ to reflection tokens. On MATH500, problems were clustered into Easy/Medium/Hard. TIP improved performance on Hard problems but degraded it on Easy and Medium problems. Thus, a constant penalty independent of position $t$ fails to balance under-reflection and over-reflection. Additional experiments with "positive TIP," "random noise," and "linear decay" also failed to match CyclicReflex, suggesting that the bias must be **dynamic and bidirectional**.
 
-3. **Core formulation of CyclicReflex**: A position-dependent bidirectional triangular waveform is used to modulate the logits of reflection tokens:
+**2. Reflection token ↔ Learning rate analogy: Symmetry of failure via Landscapes of Thoughts**
+
+The authors analogize reflection tokens within the "thought landscape" to the learning rate within a "loss landscape"—both act as knobs controlling step size. To validate this, they use the Landscape of Thoughts tool to project each reasoning step $r_i$ onto a 2D plane based on its "distance" to the final answer $y$, defined as the length-normalized probability:
+
+$$d(r_i, y) = p_{\text{LRM}}(y \mid r_i)^{1/|y|}$$
+
+Visualizations reveal three trajectory types: under-reflection is too conservative and stays near the start; desired-reflection is well-structured and converges; over-reflection is subtle—the model approaches the correct region but overshoots due to excessive reflection. Sudden turns in trajectories are almost always triggered by reflection tokens. This mirrors "stepsize hedging" in optimization, where alternating between large and small steps compensates for their respective failure modes.
+
+**3. Bidirectional logit modulation via triangular waveform: The core mechanism**
+
+CyclicReflex applies a position-based bias $\delta(t)$ to each token in the reflection set $\hat{V}$:
 
 $$\hat{z}_{t,v} = \begin{cases} z_{t,v} + \delta(t) & \text{if } v \in \hat{V} \\ z_{t,v} & \text{otherwise} \end{cases}$$
 
-$$\delta(t) = A \left| \frac{4 \cdot (t - C/4) \bmod C}{C} - 2 \right| - A$$
+$$\delta(t) = A\left|\frac{4\big((t - C/4)\bmod C\big)}{C} - 2\right| - A$$
 
-where $A$ is the amplitude (controlling adjustment magnitude), $C$ is the period (controlling oscillation frequency), and $\hat{V}$ is the set of reflection tokens. The schedule yields $\delta(C/4) = A > 0$, which promotes reflection, and $\delta(3C/4) = -A < 0$, which suppresses reflection.
-
-4. **Key distinctions from TIP**:
-    - TIP is **unidirectional and static** (fixed $\alpha \leq 0$), only suppressing reflection tokens.
-    - CyclicReflex is **bidirectional and dynamic**, alternately promoting and suppressing reflection.
-    - The ascending phase encourages exploration (switching reasoning directions), while the descending phase facilitates convergence (stabilizing the reasoning process).
-    - This mirrors the stepsize hedging strategy of cyclical learning rates.
+Here, amplitude $A$ controls intensity and period $C$ controls frequency. $\delta(t)$ is a triangular wave oscillating between $[-A, A]$: it peaks at $\delta=A$ (encouraging exploration) and bottoms at $\delta=-A$ (encouraging convergence). The rising phase promotes exploration via reflection, while the falling phase promotes convergence by suppressing it. This bidirectional approach hedges the risks of both premature convergence and oscillatory divergence.
 
 ### Loss & Training
-The method requires no training whatsoever and is a purely inference-time strategy. Hyperparameters are determined via grid search: $A \in [1, 10]$ and $C \in [200, 2000]$ (varying by dataset).
+This method is a pure inference-time strategy and involves no training or parameter updates. The two hyperparameters are determined via grid search: amplitude $A \in [1, 10]$ and period $C \in [200, 2000]$.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Model | Metric | Original | TIP | S1 | Silver | CyclicReflex |
-|--------|------|------|----------|-----|----|----|-------------|
+|--------|------|------|----------|-----|----|----- --|-------------|
 | MATH500 | Qwen-7B | Acc | 0.86 | 0.87 | 0.83 | 0.88 | **0.89** |
 | AIME2024 | Qwen-7B | Acc | 0.43 | 0.43 | 0.33 | 0.37 | **0.50** |
 | AIME2025 | Qwen-7B | Acc | 0.31 | 0.30 | 0.33 | 0.30 | **0.37** |
@@ -83,46 +90,46 @@ The method requires no training whatsoever and is a purely inference-time strate
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
-| Different difficulty levels | Gains across Easy/Medium/Hard | TIP only effective on Hard; degrades on Easy |
-| + Best-of-N ($N=8$) | Consistent improvement in BoN accuracy | Compatible and complementary with external test-time methods |
-| + Beam Search | Consistent improvement in BS accuracy | Gains more pronounced under low budget |
-| Initial phase $\phi=0$ optimal | — | Encouraging reflection early and suppressing it later is most effective |
-| Period $C$ more influential | Accuracy more sensitive to $C$ | $C=600$ optimal for Qwen-7B on MATH500 |
-| Amplitude $A$ controls length | Primarily affects number of reflection tokens and generation length | Larger $A$ yields longer reasoning traces |
+| Difficulty Levels | Improvements across Easy/Med/Hard | TIP only works on Hard; degrades Easy |
+| +Best-of-N (N=8) | Consistent BoN gains | Compatible with external test-time methods |
+| +Beam Search | Consistent BS gains | Higher gains at lower computational budgets |
+| Initial Phase $\phi=0$ | Optimal | Encouraging reflection early and suppressing late is best |
+| Period $C$ Importance | Higher sensitivity | $C=600$ is optimal for Qwen-7B on MATH500 |
+| Amplitude $A$ | Length control | Larger $A$ leads to longer reasoning |
 
 ### Key Findings
-- CyclicReflex consistently improves performance across all model scales (1.5B–8B) and all datasets, while maintaining generation lengths comparable to the original decoding strategy.
-- Self-correction capability is substantially enhanced: given an erroneous reasoning trace (100% length prefix), CyclicReflex's correction rate substantially exceeds that of TIP and the original decoding strategy.
-- Generated thought landscapes are more concentrated with fewer distractor regions, and reasoning trajectories converge more directly to the correct answer.
-- S1 (forcing insertion of "Wait") severely degrades performance on AMC2023, demonstrating that naively increasing reflection tokens is insufficient.
+- CyclicReflex provides consistent improvements across all model scales (1.5B-8B) and datasets while maintaining generation lengths comparable to original strategies.
+- Self-correction capabilities are significantly enhanced; given an incorrect trajectory, CyclicReflex's correction rate is much higher than TIP.
+- Thought landscapes are more concentrated with fewer interference regions, allowing trajectories to converge more easily.
+- S1 (forced "Wait" insertion) performs poorly on AMC2023, indicating that simply increasing reflection tokens is insufficient.
 
 ## Highlights & Insights
-- **Precise analogical thinking**: The analogy between reflection token scheduling and learning rate scheduling is highly apt — under-reflection ↔ learning rate too small ↔ premature convergence; over-reflection ↔ learning rate too large ↔ oscillatory divergence. This analogy is not only intuitively compelling but is also well-validated through thought landscape visualizations.
-- **Minimalist yet effective design**: The entire method reduces to a single triangular waveform function with no learnable parameters, making it trivially implementable with zero additional overhead.
-- **Bidirectionality as the key innovation**: In contrast to TIP's unidirectional suppression, CyclicReflex's ability to alternately promote and suppress reflection enables it to adapt to problems of varying difficulty.
-- **Seamless compatibility with external test-time scaling methods**: Combinations with both Best-of-N and Beam Search yield further improvements.
+- **Insightful Analogy**: Mapping reflection tokens to learning rates (under-reflection $\leftrightarrow$ small LR $\leftrightarrow$ premature convergence; over-reflection $\leftrightarrow$ large LR $\leftrightarrow$ divergence) is intuitive and validated by thought landscape visualizations.
+- **Minimalist Design**: The method is a simple triangular wave function without learnable parameters, making it easy to implement with zero overhead.
+- **Bidirectionality is Key**: Unlike the unidirectional suppression in TIP, CyclicReflex's ability to alternate between promoting and inhibiting reflection allows it to adapt to various problem difficulties.
+- **Compatibility**: It works synergistically with existing test-time scaling methods like Best-of-N and Beam Search.
 
 ## Limitations & Future Work
-- The theoretical foundations remain relatively weak: the root causes of over- and under-reflection in LRMs are not fully explained.
-- Hyperparameters ($A$ and $C$) require dataset-specific grid search, with no adaptive mechanism proposed.
-- Validation is limited to mathematical reasoning tasks; generalization to code generation, logical reasoning, and other reasoning scenarios has not been tested.
-- The definition of reflection tokens ("wait", "but", etc.) is heuristic in nature, and reflection patterns may differ across models.
-- The optimality of the initial phase $\phi = 0$ hints at deeper underlying dynamics of the reasoning process, which warrants further investigation.
+- The theoretical foundation for why LRMs exhibit over/under-reflection remains to be fully elucidated.
+- Hyperparameters ($A$ and $C$) require grid searching per dataset; adaptive mechanisms are lacking.
+- Evaluation is limited to mathematical reasoning; code generation and logical reasoning tasks have not been tested.
+- The definition of reflection tokens is heuristic and may differ across different models.
+- The optimality of the initial phase $\phi=0$ suggests deeper underlying reasoning dynamics worth exploring.
 
 ## Related Work & Insights
-- **TIP** (Wang et al., 2025a): Suppresses reflection tokens via a fixed penalty to address overthinking; serves as the direct baseline for this work.
-- **S1** (Muennighoff et al., 2025): Forces insertion of "Wait" after the thinking tag, but yields unstable results.
-- **Silver Stepsize Schedule** (Altschuler & Parrilo, 2024): A stepsize hedging strategy from optimization theory, theoretically proven to accelerate convergence.
-- **Cyclical Learning Rates** (Smith, 2017): The cyclical learning rate strategy in deep learning, which serves as the core inspiration for this work.
-- Insight: Scheduling strategies from optimization theory may offer broader guidance for the reasoning processes of LLMs.
+- **TIP** (Wang et al., 2025a): Uses fixed penalties to solve overthinking; served as a direct baseline.
+- **S1** (Muennighoff et al., 2025): Forces "Wait" insertion but shows unstable results.
+- **Silver Stepsize Schedule** (Altschuler & Parrilo, 2024): A stepsize hedging strategy in optimization that theoretically accelerates convergence.
+- **Cyclical Learning Rates** (Smith, 2017): The core inspiration for this position-based scheduling.
+- **Insight**: Scheduling strategies from optimization theory may have broad applicability to guiding LLM reasoning processes.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (the analogy is novel, though the method itself is relatively straightforward)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (multiple models and datasets, thorough ablations, well-executed visualizations)
-- Writing Quality: ⭐⭐⭐⭐⭐ (smooth narrative, clear analogies, excellent figures)
-- Value: ⭐⭐⭐⭐ (strong practical utility, though theoretical foundations warrant further development)
+- Novelty: ⭐⭐⭐⭐ (Strong analogy, though the implementation is simple)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Detailed ablations, multi-model/dataset, excellent visualization)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear narrative and excellent diagrams)
+- Value: ⭐⭐⭐⭐ (High utility, though theory could be stronger)
 
 <!-- RELATED:START -->
 
@@ -130,11 +137,11 @@ The method requires no training whatsoever and is a purely inference-time strate
 
 ## Related Papers
 
+- [\[ICLR 2026\] Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation](explain_in_your_own_words_improving_reasoning_via_token-selective_dual_knowledge.md)
+- [\[ICLR 2026\] Improving Reasoning for Diffusion Language Models via Group Diffusion Policy Optimization](improving_reasoning_for_diffusion_language_models_via_group_diffusion_policy_opt.md)
 - [\[ICLR 2026\] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling](overthinking_reduction_with_decoupled_rewards_and_curriculum_data_scheduling.md)
-- [\[ICCV 2025\] CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning](../../ICCV2025/llm_reasoning/corvid_improving_multimodal_large_language_models_towards_chain-of-thought_reaso.md)
+- [\[ICLR 2026\] Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code](executable_counterfactuals_improving_llms_causal_reasoning_through_code.md)
 - [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
-- [\[AAAI 2026\] Improving Value-based Process Verifier via Low-Cost Variance Reduction](../../AAAI2026/llm_reasoning/improving_value-based_process_verifier_via_low-cost_variance_reduction.md)
-- [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](../../AAAI2026/llm_reasoning/in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
 
 </div>
 

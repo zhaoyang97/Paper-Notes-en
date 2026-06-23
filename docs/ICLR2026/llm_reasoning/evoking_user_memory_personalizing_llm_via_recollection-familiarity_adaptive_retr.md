@@ -2,143 +2,130 @@
 title: >-
   [Paper Note] Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval
 description: >-
-  [ICLR 2026][LLM Reasoning][LLM personalization] Inspired by the dual-process theory in cognitive science, this paper proposes RF-Mem, a memory retrieval framework that achieves efficient and scalable LLM personalization…
+  [ICLR 2026][LLM Reasoning][Paper Note] Inspired by the dual-process theory of cognitive science, this paper proposes the RF-Mem framework. It achieves efficient and scalable LLM personalization through a memory retrieval mechanism that adaptively switches between two paths: Familiarity (fast similarity matching) and Recollection (deep chain reconstruction).
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "LLM personalization"
-  - "memory retrieval"
-  - "dual-process theory"
-  - "adaptive retrieval"
-  - "cognitive science"
+  - ICLR 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: aaffaa6eeb91bf3f
+content_hash: 605a2daf154346ab
 ---
-
 # Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.09250](https://arxiv.org/abs/2603.09250)  
-**Code**: See Reproducibility Statement in the paper  
-**Area**: Personalization / Information Retrieval
-**Keywords**: LLM personalization, memory retrieval, dual-process theory, adaptive retrieval, cognitive science
+**Code**: See paper Reproducibility Statement  
+**Area**: Personalization / Information Retrieval  
+**Keywords**: LLM Personalization, Memory Retrieval, Dual-Process Theory, Adaptive Retrieval, Cognitive Science
 
 ## TL;DR
 
-Inspired by the dual-process theory in cognitive science, this paper proposes RF-Mem, a memory retrieval framework that achieves efficient and scalable LLM personalization through adaptive switching between two pathways: Familiarity (fast similarity matching) and Recollection (deep chain-based reconstruction).
+Inspired by the dual-process theory of cognitive science, this paper proposes the RF-Mem framework. It achieves efficient and scalable LLM personalization through a memory retrieval mechanism that adaptively switches between two paths: Familiarity (fast similarity matching) and Recollection (deep chain reconstruction).
 
 ## Background & Motivation
 
-Personalizing large language models requires incorporating user-specific history, preferences, and context into response generation. Two dominant existing approaches each suffer from critical drawbacks:
+Personalizing Large Language Models requires incorporating user-specific historical records, preferences, and context into dialogue generation. Two existing mainstream methods each have significant drawbacks:
 
-**Full-context methods**: Stuffing all user memory into the prompt is costly and unscalable — as user memory accumulates, prompt length quickly exceeds model context window limits.
+**Full-context approaches**: Stuffing all of a user's historical memory into the prompt is costly and non-scalable—as user memories accumulate, the prompt length quickly exceeds the model's window limits.
 
-**One-shot retrieval methods**: Reducing retrieval to a single-round similarity search (top-K) only captures surface-level matches and fails to recover memories that are indirectly but critically related to the query.
+**One-shot retrieval approaches**: Simplifying retrieval to a single round of similarity search (top-K) only captures surface-level matches and fails to deeply recover critical memory content indirectly related to the query.
 
-Cognitive science research shows that human memory recognition operates via a **dual process**:
-- **Familiarity**: A fast but coarse recognition process that rapidly judges whether something has been encountered before.
-- **Recollection**: A slow but precise reconstruction process that consciously retrieves specific details and associated context.
+Cognitive science research indicates that human memory recognition operates through a **dual-process**:
+- **Familiarity**: A fast but coarse recognition process that quickly determines whether something has been encountered before.
+- **Recollection**: A slower but precise reconstruction process capable of consciously tracing back specific details and related contexts.
 
-Existing systems lack both recollection-style retrieval capability and a mechanism to adaptively switch between the two retrieval pathways. This leads to either under-retrieval (missing key memories) or noise introduction (retrieving irrelevant content).
+Existing systems lack both the capability for recollection-style retrieval and the mechanism to adaptively switch between these two retrieval paths. This leads to either insufficient retrieval (missing key memories) or the introduction of noise (retrieving irrelevant content).
 
 ## Method
 
 ### Overall Architecture
 
-RF-Mem (Recollection-Familiarity Memory Retrieval) is a dual-pathway memory retriever guided by familiarity uncertainty. Given a user query, the framework first computes a Familiarity signal to assess retrieval certainty, then selects either the fast Familiarity pathway or the deep Recollection pathway based on that certainty level.
+RF-Mem (Recollection-Familiarity Memory Retrieval) incorporates the dual-process theory of human memory recognition into LLM memory retrieval. Given a user query $q$, the system first performs an inexpensive probe retrieval in the user's memory bank. A Familiarity signal is calculated from the returned similarity scores to judge "how certain the system is about finding the correct memory." Based on this, it branches: a strong signal triggers the Familiarity fast path to directly retrieve top-K memories, while a weak signal enters the Recollection deep path for multi-round chain reconstruction. Both paths eventually merge into a set of memory evidence, which is provided to the generation LLM to produce a personalized answer. The entire mechanism occurs at the retrieval layer, is training-free, does not modify the underlying embedding or generation models, and allows independent replacement of the embedder, clusterer, and generator LLM, enabling direct integration into existing personalization systems.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["User Query q"] --> PROBE["Probe Retrieval<br/>top-K Similarity Candidate Set"]
+    PROBE --> SIG["Familiarity Signal & Gating<br/>Hierarchical Decision via Mean Score s̄ + Entropy H"]
+    SIG -->|"s̄ High / Entropy Low<br/>(Certain)"| FAM["Familiarity Fast Path<br/>Direct top-K Memory Retrieval"]
+    SIG -->|"s̄ Low / Entropy High<br/>(Uncertain)"| REC["Recollection Deep Path<br/>Clustering→α-mix→Re-retrieval<br/>R Rounds Iteration"]
+    FAM --> EV["Memory Evidence"]
+    REC --> EV
+    EV --> GEN["LLM Generates Personalized Response"]
+```
 
 ### Key Designs
 
-1. **Familiarity Signal Computation**:
+**1. Familiarity Signal and Hierarchical Gating: Deciding the Path via Score Distribution Shape**
 
-    - Computes the distribution of similarity scores between the query and candidate memories.
-    - Familiarity level is measured by two metrics:
-        - **Mean Score**: Captures overall matching strength; a higher mean indicates the presence of familiar memories.
-        - **Entropy**: Measures uncertainty in the score distribution; lower entropy indicates more definitive and concentrated retrieval results.
-    - High mean + low entropy = high Familiarity (confident direct match exists).
-    - Low mean / high entropy = low Familiarity (deeper retrieval required).
+If the branching decision relied on repeated LLM probes, the cost would degrade to the full-context approach. Thus, RF-Mem uses the similarity scores of a single probe retrieval to estimate certainty. Given a query embedding $x_t=\phi(q)$ and memory embeddings $z_i=\phi(m_i)$, probe retrieval extracts top-K candidates based on cosine similarity $s_i=\langle x_t, z_i\rangle$. Two metrics are derived from these K scores: the mean score $\bar{s}=\frac{1}{K}\sum_i s_i$ to capture overall matching strength (higher suggests relevant memories exist), and the entropy $H(p)=-\sum_i p_i\log p_i$ calculated from softmax-normalized scores $p_i=\frac{\exp(\lambda(s_i-\max_j s_j))}{\sum_j \exp(\lambda(s_j-\max_j s_j))}$ ($\lambda$ controls sharpness; lower entropy indicates clear matching on a few memories). Gating is **hierarchical**: the mean score decides first—$\bar{s}\ge\theta_{high}$ leads directly to Familiarity, while $\bar{s}\le\theta_{low}$ leads directly to Recollection; only the fuzzy interval $(\theta_{low}, \theta_{high})$ is judged by entropy, where $H(p)\le\tau$ leads to Familiarity and $H(p)>\tau$ leads to Recollection. This threshold gating is key to avoiding the extremes of "stuffing prompts" and "missing recall": expensive Recollection is reserved for truly ambiguous queries, approaching full-context quality under fixed token budgets and latency.
 
-2. **Familiarity Pathway (Fast Track)**:
+**2. Familiarity Fast Path: Decisive Action when Certain**
 
-    - Activated when the Familiarity signal is strong.
-    - Performs standard top-K similarity retrieval and directly returns the most relevant memories.
-    - Efficient: requires only a single forward retrieval pass with no additional computation.
-    - Applicable when: the user query has a clear and direct association with historical memories.
+When the signal is judged as certain (high mean or low entropy), the association between the query and historical memory is direct, and complex reasoning would be a waste of computation. this path executes standard top-K similarity retrieval, feeding the most relevant memories from $C_t=\text{Top-K}\{(m_i, \langle x_t, z_i\rangle)\}$ directly to the generation model. It requires only one forward retrieval without additional overhead, handling most daily queries and providing the system's efficiency.
 
-3. **Recollection Pathway (Deep Reconstruction Track)**:
+**3. Recollection Deep Path: Simulating Chain Recollection in Embedding Space**
 
-    - Activated when the Familiarity signal is weak, simulating the human process of conscious memory reconstruction.
-    - **Candidate Memory Clustering**: Clusters retrieved candidate memories to identify distinct memory themes and contexts.
-    - **Alpha-Mix Query Expansion**: Blends the query with cluster centroids of candidate memories via alpha mixing to generate expanded queries in embedding space.
-    - **Iterative Evidence Expansion**: Uses the expanded query for re-retrieval, progressively covering memories that are indirectly yet semantically related to the original query.
-    - Applicable when: the user query involves cross-temporal or cross-topic memory associations that require chain-like reasoning to recall.
+When the signal is uncertain, relevant memories are often only indirectly related to the query, scattered across different times and themes. Since surface matching fails, RF-Mem mimics the human "following the thread" recollection process by iterating "retrieve-cluster-mix" in the embedding space. Each round takes top-N candidates, where $N=(B+r)\times F$ increases with round $r$ ($B$ is beam width, $F$ is fan-out), while filtering out memories from previous rounds. It then uses KMeans to cluster candidate embeddings into $B$ clusters, where each centroid $g_b^{(r)}=\frac{1}{|G_b^{(r)}|}\sum_{m_i\in G_b^{(r)}} z_i$ represents a semantic direction acting as a retrieval tree branch. Then, $\alpha$-mix query expansion is performed by mixing the current query, centroid, and original query to generate a new query biased toward that direction:
 
-4. **Adaptive Pathway Switching**:
+$$x_b^{(r+1)} = \text{norm}\big(\alpha\, x^{(r)} + (1-\alpha)\, g_b^{(r)} + x_t\big),\quad \alpha\in[0,1]$$
 
-    - Automatically selects the pathway based on a threshold mechanism applied to the Familiarity signal.
-    - Avoids both extremes: the high cost of full-context methods and the low recall of one-shot retrieval.
-    - Achieves optimal retrieval quality under fixed budget and latency constraints.
-
-### Loss & Training
-
-RF-Mem is a modular framework compatible with different embedding models and LLMs. The key innovation lies at the retrieval strategy level rather than model training — personalization is improved through smarter retrieval decisions.
+A residual term of the original query $x_t$ is preserved to prevent the query from drifting away from the original intent after multiple expansions. The new query retrieves the next round of candidates, iterating up to a maximum of $B$ active branches and a depth cap of $R$ rounds. The evidence is the truncated union of all rounds $C_t=\text{Top-K}\bigcup_{r=0}^{R} C^{(r)}$. This chain reconstruction relies only on vector retrieval and small-scale clustering, gradually incorporating memories semantically linked but surface-dissimilar to the original query, avoiding expensive multi-round LLM calls.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluation is conducted on three personalization benchmarks spanning different corpus scales:
+Evaluations were conducted on three personalization benchmarks across different corpus scales:
 
-| Method | Benchmark 1 | Benchmark 2 | Benchmark 3 | Notes |
-|--------|-------------|-------------|-------------|-------|
-| Full-context inference | Baseline | Baseline | Baseline | Highest cost, performance upper bound |
-| One-shot retrieval | Below full-context | Below full-context | Below full-context | Simple and fast but lower quality |
-| **RF-Mem** | **Best** | **Best** | **Best** | Consistently outperforms both baselines under fixed budget |
+| Method | Benchmark 1 | Benchmark 2 | Benchmark 3 | Description |
+|------|-------|-------|-------|------|
+| Full-Context Inference | Baseline | Baseline | Baseline | Highest cost, performance upper bound |
+| One-shot Retrieval | Below Full-Context | Below Full-Context | Below Full-Context | Simple and fast but poor quality |
+| **RF-Mem** | **Optimal** | **Optimal** | **Optimal** | Consistently outperforms both baselines under fixed budget |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| Familiarity pathway only | Baseline level | Equivalent to standard top-K retrieval |
-| Recollection pathway only | Above Familiarity-only | Wastes computation on simple queries |
-| Dual-pathway + adaptive switching | **Best** | Balances efficiency and quality |
-| w/o clustering | Performance drop | Clustering helps identify memory topic structure |
-| w/o Alpha-Mix | Performance drop | Query expansion is central to Recollection |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Familiarity path only | Baseline level | Equivalent to standard top-K retrieval |
+| Recollection path only | Above Familiarity-only | Wastes computation on simple queries |
+| Dual-path + Adaptive switching | **Optimal** | Balances efficiency and quality |
+| Removing Clustering | Performance drop | Clustering helps identify thematic memory structures |
+| Removing Alpha-Mix | Performance drop | Query expansion is the core of Recollection |
 
 ### Key Findings
 
-- **Consistent advantage**: RF-Mem outperforms both baselines across all three benchmarks and at varying corpus scales.
-- **Budget efficiency**: Under fixed retrieval budgets (token count) and latency constraints, RF-Mem achieves performance close to full-context methods while maintaining the efficiency of one-shot retrieval.
-- **Scalability**: RF-Mem's advantage becomes more pronounced as the user memory store grows — full-context costs scale linearly, whereas RF-Mem's overhead grows modestly.
-- **Pathway distribution**: Approximately 60–70% of queries are handled by the fast Familiarity pathway, while 30–40% require the deep Recollection pathway.
+- **Consistent Advantage**: RF-Mem outperforms both baseline methods across all three benchmarks and various corpus scales.
+- **Budget Efficiency**: Under fixed retrieval budgets (token counts) and latency constraints, RF-Mem achieves performance close to full-context methods while maintaining the efficiency of one-shot retrieval.
+- **Scalability**: As the user memory bank scale increases, the advantage of RF-Mem becomes more pronounced—full-context costs grow linearly, while RF-Mem overhead growth is modest.
+- **Path Distribution**: Approximately 60-70% of queries are processed via the Familiarity fast path, while 30-40% require the Recollection deep path.
 
 ## Highlights & Insights
 
-1. **Elegant transfer from cognitive science**: Introducing the Familiarity-Recollection dual-process theory of human memory into LLM retrieval system design is both intellectually elegant and practically effective.
-2. **Uncertainty-guided adaptation**: Using the mean and entropy of retrieval score distributions as adaptive switching signals is more robust than simple threshold-based approaches.
-3. **Memory reconstruction in embedding space**: Simulating the chain-like reconstruction of recollection via clustering and Alpha-Mix in embedding space avoids costly multi-round LLM calls.
-4. **Pragmatic design philosophy**: The modular architecture allows individual components to be replaced and optimized independently, making it well-suited for engineering deployment.
+1. **Elegant Transfer of Cognitive Science**: Adapting the Familiarity-Recollection dual-process theory into LLM retrieval system design is both elegant and practical.
+2. **Uncertainty-Guided Adaptation**: Using the mean and entropy of the retrieval score distribution as adaptive signals is more robust than simple thresholding.
+3. **Memory Reconstruction in Embedding Space**: Simulating the chain reconstruction of recollection via clustering and Alpha-Mix in embedding space avoids costly multi-round LLM calls.
+4. **Practical Design Philosophy**: The framework is modular, with components that can be independently replaced and optimized, making it suitable for engineering deployment.
 
 ## Limitations & Future Work
 
-1. **Familiarity threshold tuning**: Adaptive switching relies on threshold parameters that may require dataset-specific tuning, lacking a fully automated solution.
-2. **Clustering algorithm selection**: The clustering method in the Recollection pathway may underperform on high-dimensional sparse memories.
-3. **Long-term memory forgetting and updates**: The paper does not explicitly address how to handle outdated or contradictory user memories.
-4. **Privacy considerations**: Storing and retrieving user history entails privacy risks; the paper does not discuss privacy-preserving mechanisms in depth.
-5. **Abstract-based evaluation only** (note): Due to the unavailability of the full-text HTML version, some experimental details and data points are inferred from the abstract.
+1. **Setting Familiarity Thresholds**: Adaptive switching depends on threshold parameters; different datasets may require different thresholds, and a fully automated solution is lacking.
+2. **Choice of Clustering Algorithm**: Clustering methods in the Recollection path might have limited effectiveness in high-dimensional sparse memory spaces.
+3. **Long-term Memory Forgetting and Updating**: The handling of outdated or contradictory user memories is not explicitly discussed.
+4. **Privacy Considerations**: Storing and retrieving user historical memories involves privacy risks, and privacy protection mechanisms were not discussed in depth.
 
 ## Related Work & Insights
 
-- **Dual-process cognitive theory (Yonelinas, 2002)**: Familiarity and Recollection are two fundamental processes in human memory recognition; this paper operationalizes the theory into retrieval system design.
-- **RAG (Retrieval-Augmented Generation)**: RF-Mem can be viewed as an enhanced RAG variant with retrieval strategies specifically optimized for personalization scenarios.
-- **Adaptive Retrieval**: Works such as Self-RAG and FLARE study *when* to retrieve; RF-Mem studies *how* to retrieve.
-- **Personalized LLMs**: Benchmarks such as LaMP and PersonaLLM have advanced the development of personalized LLMs; this paper improves upon the retrieval module in that line of work.
+- **Dual-Process Theory of Cognition (Yonelinas, 2002)**: Familiarity and Recollection are two basic processes of human memory recognition; this paper operationalizes this theory for retrieval system design.
+- **RAG (Retrieval-Augmented Generation)**: RF-Mem can be viewed as an enhanced version of RAG, specifically optimized for personalization scenarios.
+- **Adaptive Retrieval**: Works like Self-RAG and FLARE study *when* to retrieve, whereas RF-Mem studies *how* to retrieve.
+- **Personalized LLM**: Benchmarks like LaMP and PersonaLLM have driven the development of personalized LLMs, upon which this paper improves the retrieval module.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — Innovative application of the dual-process theory from cognitive science to LLM retrieval.
+- Novelty: ⭐⭐⭐⭐⭐ — Innovative application of cognitive dual-process theory in LLM retrieval.
 - Experimental Thoroughness: ⭐⭐⭐⭐ — Three benchmarks, multi-scale evaluation, and ablation analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Concepts are clearly presented with thorough motivation from an interdisciplinary perspective.
+- Writing Quality: ⭐⭐⭐⭐ — Clear concepts with well-explained interdisciplinary motivations.
 - Value: ⭐⭐⭐⭐ — Provides a practical and scalable solution for memory retrieval in personalized LLMs.
 
 <!-- RELATED:START -->
@@ -148,10 +135,10 @@ Evaluation is conducted on three personalization benchmarks spanning different c
 ## Related Papers
 
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
-- [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
-- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
-- [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
-- [\[ICLR 2026\] Thinking in Latents: Adaptive Anchor Refinement for Implicit Reasoning in LLMs](thinking_in_latents_adaptive_anchor_refinement_for_implicit_reasoning_in_llms.md)
+- [\[ICLR 2026\] Retrieval-of-Thought: Efficient Reasoning via Reusing Thoughts](retrieval-of-thought_efficient_reasoning_via_reusing_thoughts.md)
+- [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
+- [\[ICLR 2026\] STAT: Skill-Targeted Adaptive Training](stat_skill-targeted_adaptive_training.md)
+- [\[ICLR 2026\] Zero-Overhead Introspection for Adaptive Test-Time Compute](zero-overhead_introspection_for_adaptive_test-time_compute.md)
 
 </div>
 

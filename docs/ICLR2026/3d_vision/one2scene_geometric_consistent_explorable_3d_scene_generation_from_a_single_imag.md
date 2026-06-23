@@ -2,137 +2,155 @@
 title: >-
   [Paper Note] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image
 description: >-
-  [ICLR 2026][3D Vision][single-image 3D scene generation] This paper proposes One2Scene, which decomposes the ill-posed problem of generating an explorable 3D scene from a single image into three sub-tasks: (1) panorama g…
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] One2Scene is proposed to decompose the ill-posed problem of single-image to explorable 3D scene generation into three sub-tasks: (1) panoramic image generation to extend visual coverage, (2) a feed-forward 3DGS network to construct an explicit 3D geometric scaffold from sparse anchor views, and (3) scaffold-guided nove
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "single-image 3D scene generation"
-  - "panoramic depth estimation"
-  - "3D Gaussian Splatting"
-  - "geometric scaffold"
-  - "novel view synthesis"
+  - ICLR 2026
+  - 3D Vision
+  - 3D Gaussian Splatting
 date: 2026-05-08
-content_hash: 311778a479dd3641
+content_hash: e198f9d35b59000f
 ---
-
 # One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.19766](https://arxiv.org/abs/2602.19766)  
 **Code**: [Project Page](https://one2scene5406.github.io/)  
-**Area**: 3D Vision / Scene Generation
-**Keywords**: single-image 3D scene generation, panoramic depth estimation, 3D Gaussian Splatting, geometric scaffold, novel view synthesis
+**Area**: 3D Vision/Scene Generation  
+**Keywords**: Single-image 3D scene generation, panoramic depth estimation, 3D Gaussian Splatting, geometric scaffold, novel view synthesis
 
 ## TL;DR
-This paper proposes One2Scene, which decomposes the ill-posed problem of generating an explorable 3D scene from a single image into three sub-tasks: (1) panorama generation to expand visual coverage, (2) a feed-forward 3DGS network that constructs an explicit 3D geometric scaffold from sparse anchor views, and (3) scaffold-guided novel view synthesis via Dual-LoRA that fuses high-quality anchor views with geometric priors. The method achieves geometrically consistent and photorealistic scene generation under large viewpoint changes, significantly outperforming state-of-the-art methods.
+One2Scene is proposed to decompose the ill-posed problem of single-image to explorable 3D scene generation into three sub-tasks: (1) panoramic image generation to extend visual coverage, (2) a feed-forward 3DGS network to construct an explicit 3D geometric scaffold from sparse anchor views, and (3) scaffold-guided novel view synthesis. By fusing high-quality anchor views and geometric priors via Dual-LoRA, the method achieves geometrically consistent and realistic scene generation under large viewpoint changes, significantly outperforming SOTA.
 
 ## Background & Motivation
 
-**Background**: Generating explorable 3D scenes from a single image is a core challenge in 3D vision. Reconstruction-based methods (NeRF/3DGS) require dense multi-view images, while sparse-view methods cannot extrapolate beyond the observed region. Generative approaches include video diffusion models (ReconX/ViewCrafter), panoramic pipelines (DreamScene360/DreamCube), and navigation-with-inpainting methods (WonderJourney/Pano2Room).
+**Background**: Generating explorable 3D scenes from a single image is a core challenge in 3D vision. Traditional reconstruction methods (NeRF/3DGS) require numerous images, while sparse-view methods fail to extrapolate. Generative approaches include video diffusion models (ReconX/ViewCrafter), panoramic pipelines (DreamScene360/DreamCube), and navigation + inpainting (WonderJourney/Pano2Room).
 
-**Limitations of Prior Work**: (1) Video diffusion methods lack a persistent 3D representation, leading to geometric collapse due to accumulated errors over long sequences; (2) panoramic methods observe the scene from a single point and lack explicit 3D information, causing severe distortion under large viewpoint changes; (3) iterative navigation methods suffer from accumulated errors that cause global semantic drift and stretched geometry.
+**Limitations of Prior Work**: (1) Video diffusion methods lack persistent 3D representations, leading to collapse due to geometric error accumulation in long sequences; (2) Panoramic methods observe from only a single point, lacking explicit 3D information and resulting in severe distortion under large viewpoint changes; (3) Iterative navigation methods suffer from global semantic drift and stretched geometry due to cumulative errors.
 
-**Key Challenge**: The extreme scarcity of information in a single image stands in fundamental conflict with the requirement for a globally consistent 3D scene. Existing methods either lack global coverage (single-viewpoint methods), geometric constraints (generative methods), or suffer from error accumulation (iterative methods).
+**Key Challenge**: The extreme scarcity of information in a single image versus the need for a globally consistent 3D scene. Existing methods either lack global coverage (single-view methods), lack geometric constraints (generative methods), or suffer from accumulated errors (iterative methods).
 
 **Goal**: (a) How to obtain global visual coverage from a single image? (b) How to establish explicit 3D geometric constraints? (c) How to maintain geometric consistency and visual quality under large viewpoint changes?
 
-**Key Insight**: The problem is decomposed into three more tractable sub-problems — first expanding 2D coverage via panorama generation, then establishing a 3D scaffold via multi-view stereo matching, and finally constraining novel view synthesis with scaffold priors. A key insight is reformulating monocular panoramic depth estimation as a multi-view stereo matching problem, thereby leveraging strong geometric priors learned from large-scale multi-view datasets.
+**Key Insight**: The problem is decomposed into three simpler sub-problems: first using panoramic generation to expand 2D coverage, then employing multi-view stereo matching to establish a 3D scaffold, and finally using the scaffold prior to constrain novel view synthesis. A key insight is reformulating monocular panoramic depth estimation as a multi-view stereo matching problem to leverage strong geometric priors learned from large-scale multi-view datasets.
 
-**Core Idea**: By providing an explicit 3D geometric scaffold as a stable global geometric and appearance prior for single-image scene generation, the method fundamentally avoids error accumulation and scale ambiguity.
+**Core Idea**: Providing stable global geometric and appearance priors for single-image scene generation via an explicit 3D geometric scaffold fundamentally avoids accumulated errors and scale ambiguities.
 
 ## Method
 
 ### Overall Architecture
-**Input**: A single image. **Output**: A 3D scene explorable from arbitrary viewpoints (high-quality novel view images).
+Generating an explorable 3D scene from a single image is a severely underdetermined problem: one image covers only a tiny fraction of the scene, lacking both global visual information and 3D geometric constraints. Direct generation often leads to collapse, such as cumulative drift or scale-related wall-clipping. One2Scene addresses this by decomposing the problem into three sequential stages: first expanding visual coverage from a single frustum to 360 degrees via panorama generation, then constructing an explicit 3D geometric scaffold (Gaussian point cloud) from the panorama, and finally rendering arbitrary views constrained by both scaffold geometry and high-quality anchor appearance. Each stage provides increasingly stronger constraints for the next, preventing drift from the root.
 
-Three stages:
-- **Stage 1 (Panorama Generation)**: Single image → cubemap panorama → 6 anchor views
-- **Stage 2 (3D Scaffold Construction)**: 6 sparse anchor views → feed-forward 3DGS network → explicit 3D geometric scaffold (0.5 seconds)
-- **Stage 3 (Scaffold-Guided Synthesis)**: Coarse scaffold-rendered views + high-quality anchor views → diffusion model → photorealistic novel views
+```mermaid
+graph TD
+    IN["Single Input Image"] --> S1
+
+    subgraph S1["Panoramic Anchor View Generation"]
+        direction TB
+        P["Hunyuan-Pano-DiT<br/>Generate 360° Panorama"] --> C["Cubemap Projection<br/>6 Perspective Anchor Views"]
+    end
+
+    subgraph S2["Feed-forward 3DGS Geometric Scaffold"]
+        direction TB
+        F["VGGT Backbone<br/>Multi-view Stereo Matching"] --> BF["Bidirectional Fusion<br/>C2E→Conv→E2C Residual"]
+        BF --> GS["Back-projection to Predict Gaussians<br/>Explicit 3D Scaffold (~0.5s)"]
+    end
+
+    subgraph S3["Scaffold-guided Novel View Synthesis"]
+        direction TB
+        DL["Dual-LoRA<br/>Anchor Appearance + Scaffold Geometry"] --> ATT["3D Attention Fusion<br/>+ Memory Condition"]
+    end
+
+    S1 -->|6 Anchor Views| S2
+    S2 -->|Rendered Coarse Geometry| S3
+    S1 -.->|High-quality Appearance| S3
+    S3 --> OUT["Arbitrary Views<br/>Geometrically Consistent Realistic Rendering"]
+```
 
 ### Key Designs
 
-1. **Panoramic Anchor View Generation**:
+**1. Panoramic Anchor View Generation: Expanding Single Frustum to 360-degree Multi-view Inputs**
 
-    - **Function**: Expands a single image into a 360° panorama, then projects it into 6 cubemap anchor views.
-    - **Mechanism**: Hunyuan-Pano-DiT is used to generate the panorama, which is then projected into 6 perspective cubemap views (FoV = 95°, with 2.5° overlap between adjacent views).
-    - **Design Motivation**: The panorama provides global semantic coverage, while cubemap projection enables the use of multi-view stereo matching priors trained on perspective images — more robust than directly processing equirectangular panoramas (which suffer from projection distortion).
+Since a single image only captures one side of a scene, visual coverage must be completed for globally consistent exploration. Hunyuan-Pano-DiT is used to extend the single image into a 360-degree panorama, which is then projected into 6 perspective anchor views via cubemap (FoV=95°, with 2.5° overlap). Cubemap projection is preferred over direct equirectangular processing because it yields standard perspective views, allowing the use of stereo matching models trained on massive perspective datasets, thus aligning data formats with downstream priors.
 
-2. **Feed-Forward 3DGS Geometric Scaffold (Bidirectional Fusion)**:
+**2. Feed-forward 3DGS Geometric Scaffold: Reformulating Panoramic Depth as Multi-view Stereo**
 
-    - **Function**: Predicts 3D Gaussian parameters feed-forwardly from 6 sparse anchor views to construct an explicit 3D scaffold.
-    - **Mechanism**: Built upon the VGGT backbone. Panoramic depth estimation is reformulated as multi-view stereo matching using the 6 cubemap views as "multi-view" inputs. The key innovation is the Bidirectional Fusion module: 6 view features $F_i$ → Cube-to-Equirectangular (C2E) projection into a unified equirectangular space → convolutional fusion → E2C transformation back to cubemap space → residual connection: $F_i' = F_i + E2C(H_c(C2E(\{F_i\})))$. Gaussian centers are computed via depth unprojection: $\mu = K^{-1}ud + \Delta$
-    - **Design Motivation**: The 6 cubemap views have minimal overlap (only 2.5°), and existing multi-view models (e.g., VGGT) degrade significantly under such sparse overlap. The Bidirectional Fusion module enforces cross-view consistency via an intermediate equirectangular representation, while residual connections preserve view-specific details.
+Given 6 anchor views, the authors reformulate the data-scarce monocular panoramic depth estimation problem as multi-view stereo matching. By utilizing backbones like VGGT, which learn strong geometric priors from large-scale multi-view data, Gaussian parameters can be predicted in a feed-forward manner. However, direct application fails because the 2.5° overlap between cubemaps is too sparse for standard multi-view models.
 
-3. **Scaffold-Guided Novel View Synthesis (Dual-LoRA)**:
+To solve this, a **Bidirectional Fusion** module is introduced: features $F_i$ from 6 views are projected into a unified equirectangular space via Cube-to-Equirectangular (C2E), where convolutions enforce cross-view consistency. They are then projected back via E2C and added to the original features as residuals:
 
-    - **Function**: Leverages scaffold priors to generate photorealistic images from arbitrary viewpoints.
-    - **Mechanism**: Built upon the SEVA architecture. Scaffold-rendered views carry rich geometric information but contain artifacts and holes, while anchor views are high quality but lack geometric information — two heterogeneous conditioning signals. The Dual-LoRA strategy uses two independent LoRA modules to process anchor views and scaffold-rendered views respectively, then fuses both into the noisy latent via 3D attention. A memory condition (selecting the most recently generated frames from a memory bank) further ensures temporal consistency over long sequences.
-    - **Design Motivation**: Naïve channel-wise concatenation cannot effectively differentiate and exploit the two heterogeneous conditioning signals. Dual-LoRA enables the model to separately learn to extract useful information from high-quality appearance and coarse geometry.
+$$F_i' = F_i + E2C\big(H_c(C2E(\{F_i\}))\big)$$
+
+The intermediate equirectangular representation allows global context exchange and scale alignment across sparsely overlapping views, while residual connections preserve high-frequency details. Gaussian centers are obtained by back-projecting predicted depths: $\mu = K^{-1}ud + \Delta$, where $d$ is depth and $\Delta$ is residual offset. The scaffold generation takes approximately 0.5 seconds.
+
+**3. Scaffold-guided Novel View Synthesis: Dual-LoRA for Handling Heterogeneous Conditions**
+
+During rendering, two heterogeneous conditional signals are available: scaffold-rendered views (rich geometry but with holes/artifacts) and anchor views (high quality but lacking target geometry). Direct concatenation in the channel dimension makes it difficult for the model to distinguish between geometric and appearance reliability.
+
+A **Dual-LoRA** strategy is employed: two independent LoRA modules encode anchor views and scaffold-rendered views separately. The model learns to "extract texture from high-quality appearance" and "extract structure from coarse geometry," fusing both into the noisy latent via 3D attention. A memory condition—sampling recently generated frames from a memory bank—is added to ensure temporal consistency. This explicit geometric constraint prevents scale ambiguities (e.g., camera clipping through walls) seen in methods like SEVA.
 
 ### Loss & Training
-- **Stage 2 (3DGS)**: Composite loss = MSE rendering loss + LPIPS perceptual loss + SILog depth loss. Trained for 80K iterations on Structured3D / Deep360 / Matterport3D / Stanford2D3D.
-- **Stage 3 (Synthesis)**: Based on SEVA; Adam optimizer, lr = 1.25e-5, batch = 16, 40K iterations. Training data are obtained from DL3DV and RealEstate10K via sparse reconstruction with MVSplat, deliberately simulating artifacts from sparse inputs.
+- **Stage 2 (3DGS Scaffold)**: Combined loss = MSE rendering loss + LPIPS perceptual loss + SILog depth loss. Trained for 80K iterations on Structured3D, Deep360, Matterport3D, and Stanford2D3D.
+- **Stage 3 (Synthesis)**: Based on SEVA, using Adam optimizer, lr=1.25e-5, batch=16, 40K iterations. Training data is constructed using MVSplat on DL3DV and RealEstate10K to deliberately simulate artifacts from sparse inputs, making the model robust to degraded conditions during inference.
 
 ## Key Experimental Results
 
 ### Main Results: Explorable 3D Scene Generation (WorldScore Benchmark Variant)
 
 | Method | NIQE↓ | Q-Align↑ | CLIP-I↑ | CamMC↓ | RotErr↓ |
-|---|---|---|---|---|---|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | DreamScene360 | 8.40 | 1.91 | 74.24 | - | - |
 | WonderJourney | 4.97 | 3.02 | 77.92 | - | - |
 | SEVA | 4.53 | 3.20 | 87.82 | 0.558 | 0.165 |
 | VMem | 6.86 | 2.95 | 75.80 | 0.998 | 0.569 |
-| **One2Scene** | **4.43** | **4.13** | **89.95** | **0.389** | **0.107** |
+| **Ours** | **4.43** | **4.13** | **89.95** | **0.389** | **0.107** |
 
 ### Ablation Study: Impact of Scaffold Quality on Final Generation
 
 | Configuration | NIQE↓ | Q-Align↑ | CLIP-I↑ | CamMC↓ |
-|---|---|---|---|---|
+| :--- | :--- | :--- | :--- | :--- |
 | Replace with AnySplat | 4.96 | 3.61 | 81.96 | 0.616 |
 | **Ours (Full)** | **4.43** | **4.13** | **89.95** | **0.389** |
 
 ### Key Findings
-- **Scaffold quality is decisive**: Replacing the proposed scaffold with AnySplat drops CLIP-I from 89.95 to 81.96 and raises CamMC from 0.389 to 0.616, confirming that a high-quality scaffold is central to the approach.
-- **Leading depth estimation**: On Matterport3D (finetuned), AbsRel = 0.0391 vs. Prev. SOTA 0.0850 (>50% gain); on Stanford2D3D (zero-shot), AbsRel = 0.0675, surpassing all prior methods.
-- **Efficiency**: Reconstructing the scaffold from 6 sparse views takes only 0.5 seconds (H20), 5.6× faster than AnySplat (20 views, 2.8 seconds).
-- **Resolving scale ambiguity**: SEVA suffers from severe scale ambiguity (camera passing through walls) due to the absence of 3D constraints; the scaffold in One2Scene provides stable global scale anchoring.
+- **Scaffold Quality is Decisive**: Replacing the proposed scaffold with AnySplat caused CLIP-I to drop from 89.95 to 81.96 and CamMC to rise from 0.389 to 0.616, proving the scaffold is the core component.
+- **Superior Depth Estimation**: Finetuned AbsRel on Matterport3D reached 0.0391 vs. previous SOTA 0.0850 (>50% improvement); zero-shot AbsRel on Stanford2D3D (0.0675) outperformed all prior methods.
+- **Efficiency Advantage**: Reconstructing the scaffold from 6 sparse views takes only 0.5s (H20), 5.6x faster than AnySplat (2.8s for 20 views).
+- **Resolving Scale Ambiguity**: Unlike SEVA, which suffers from cameras passing through walls due to lack of 3D constraints, One2Scene’s scaffold provides stable global scale constraints.
 
 ## Highlights & Insights
-- **Reformulating panoramic depth estimation as multi-view stereo matching** is a particularly elegant insight: projecting the panorama into cubemap faces unlocks models trained on large-scale multi-view datasets, bypassing the scarcity of panoramic depth data. This idea is transferable to any panoramic scene understanding task.
-- **The Bidirectional Fusion module (C2E–E2C)**: performing global fusion in equirectangular space and projecting back to perspective space elegantly resolves cross-view consistency under extremely sparse overlap — a general-purpose solution for panoramic feature aggregation.
-- **Dual-LoRA for heterogeneous conditioning**: given two conditions of different quality and nature (high-quality appearance vs. coarse geometry with artifacts), encoding them with separate LoRA modules before fusion substantially outperforms direct concatenation. This strategy is transferable to any generative task requiring the fusion of heterogeneous conditioning signals.
-- **Systems thinking in three-stage decomposition**: an intractable problem is split into three tractable sub-problems, with the output of each stage providing progressively stronger constraints for the next.
+- **Reformulating Panoramic Depth as Multi-view Stereo** is ingenious: projecting panoramas to cubemaps allows the use of models trained on massive multi-view datasets, bypassing the scarcity of panoramic depth data. This logic is transferable to other panoramic understanding tasks.
+- **Bidirectional Fusion (C2E-E2C)**: Performing global fusion in equirectangular space and projecting back elegantly solves cross-view consistency under extremely sparse overlap.
+- **Dual-LoRA for Heterogeneous Conditions**: For inputs with contrasting strengths (good geometry/poor artifacts vs. poor geometry/good texture), independent LoRA encoding is significantly more effective than concatenation.
+- **Systematic Three-stage Decomposition**: Breaking an unsolvable problem into three solvable ones, where each output strengthens the constraints for the next, represents a robust architectural philosophy.
 
 ## Limitations & Future Work
-- Subtle inconsistencies between generated views may still remain (post-reconstruction optimization could further mitigate this).
-- The quality of the panorama generation model directly affects all downstream stages — failures at this stage cannot be recovered.
-- Training data construction relies on MVSplat's sparse reconstruction quality to simulate artifacts, which may not cover all real-world scenarios.
-- The current method handles only static scenes; supporting dynamic scenes is a direction for future work.
+- Subtle inconsistencies may still exist between generated views (could be further optimized via post-reconstruction).
+- The quality of the panorama generation model directly impacts all subsequent stages; failures in the panorama are irrecoverable.
+- Training data construction relies on the sparse reconstruction quality of MVSplat to simulate artifacts, which may not cover all real-world degredations.
+- Currently limited to static scenes; dynamic scene support is a future direction.
 
 ## Related Work & Insights
-- **vs. SEVA**: SEVA performs camera-controlled novel view synthesis directly from a single image but lacks a persistent 3D representation, leading to scale ambiguity and geometric inconsistency. One2Scene addresses this via an explicit scaffold providing global constraints.
-- **vs. VMem**: VMem uses CUT3R for online reconstruction to maintain consistency, but low-quality generated frames in turn degrade reconstruction — a vicious cycle. One2Scene's pre-built scaffold avoids this problem entirely.
-- **vs. Pano2Room**: Pano2Room builds scenes through iterative navigation and inpainting with strong indoor-scene priors, limiting generalization. One2Scene is feed-forward and imposes no scene-type restrictions.
+- **vs. SEVA**: SEVA performs novel view synthesis directly from a single image with camera control but lacks persistent 3D representation, leading to scale ambiguity. One2Scene provides global constraints via an explicit scaffold.
+- **vs. VMem**: VMem maintains consistency through online reconstruction with CUT3R, but low-quality generated frames can degrade the reconstruction in a vicious cycle. One2Scene avoids this by pre-establishing the scaffold.
+- **vs. Pano2Room**: Pano2Room builds scenes via iterative navigation and inpainting, which is limited by strong indoor priors. One2Scene is feed-forward and agnostic to scene type.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The three-stage decomposition and multi-view stereo reformulation are innovative, though individual components build on existing methods.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-dimensional evaluation is comprehensive, ablations are sufficient, and depth estimation benchmark results are strong.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Problem decomposition is clear, and the motivation chain is logically coherent.
-- **Value**: ⭐⭐⭐⭐ Represents a significant advance for single-image 3D scene generation; the three-stage paradigm may become a standard pipeline.
+- Novelty: ⭐⭐⭐⭐ The three-stage decomposition and multi-view reformulation are innovative, though individual components build on existing methods.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across multiple dimensions and strong depth benchmark results.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem decomposition and logical motivation.
+- Value: ⭐⭐⭐⭐ Significant advancement for single-image 3D scene generation; the three-stage paradigm may become a standard pipeline.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image](sat3dgen_comprehensive_street-level_3d_scene_generation_from_single_satellite_im.md)
 - [\[ICLR 2026\] SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation](scenetransporter_optimal_transport-guided_compositional_latent_diffusion_for_sin.md)
+- [\[ICLR 2026\] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](uniugg_unified_3d_understanding_and_generation_via_geometric-semantic_encoding.md)
+- [\[CVPR 2025\] WonderWorld: Interactive 3D Scene Generation from a Single Image](../../CVPR2025/3d_vision/wonderworld_interactive_3d_scene_generation_from_a_single_image.md)
 - [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](../../CVPR2026/3d_vision/pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](../../CVPR2026/3d_vision/mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[ICCV 2025\] WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions](../../ICCV2025/3d_vision/wonderplay_dynamic_3d_scene_generation_from_a_single_image_and_actions.md)
-- [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](../../ICCV2025/3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 
 </div>
 

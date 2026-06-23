@@ -2,182 +2,150 @@
 title: >-
   [Paper Note] OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation
 description: >-
-  [ICLR 2026][3D Vision][Aerial VLN] This paper presents OpenFly, a comprehensive platform for aerial vision-language navigation (VLN) that integrates four rendering engines (UE / GTA V / Google Earth / 3DGS)…
+  [ICLR 2026][3D Vision][Paper Note] Constructs OpenFly, a comprehensive platform for Aerial Vision-Language Navigation (VLN): integrates 4 rendering engines (UE/GTA V/Google Earth/3DGS); develops a fully automatic data generation toolchain (point cloud acquisition → semantic segmentation → trajectory generation → GPT-4o instructions); builds a large-scal
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "Aerial VLN"
-  - "UAV Navigation"
-  - "Multi-Rendering Engine"
-  - "Automatic Data Generation"
-  - "Keyframe-Aware"
-  - "3D Gaussian Splatting"
+  - ICLR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 877aba9ec625f914
+content_hash: 8b349b00a0a9772f
 ---
-
 # OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2502.18041](https://arxiv.org/abs/2502.18041)  
-**Code**: Available (open-source)  
-**Area**: 3D Vision
-**Keywords**: Aerial VLN, UAV Navigation, Multi-Rendering Engine, Automatic Data Generation, Keyframe-Aware, 3D Gaussian Splatting
+**Code**: Yes (Open Source)  
+**Area**: 3D Vision  
+**Keywords**: Aerial VLN, UAV Navigation, Multi-Engine Rendering, Automatic Data Generation, Keyframe-Aware, 3D Gaussian Splatting
 
 ## TL;DR
 
-This paper presents OpenFly, a comprehensive platform for aerial vision-language navigation (VLN) that integrates four rendering engines (UE / GTA V / Google Earth / 3DGS), develops a fully automated data generation pipeline (point cloud acquisition → semantic segmentation → trajectory generation → GPT-4o instruction synthesis), constructs a large-scale dataset of 100K trajectories across 18 scenes, and proposes a keyframe-aware VLN model (OpenFly-Agent) combining keyframe selection with visual token merging. OpenFly-Agent outperforms existing methods by 14.0% and 7.9% in success rate on seen and unseen scenes, respectively.
+Constructs OpenFly, a comprehensive platform for Aerial Vision-Language Navigation (VLN): integrates 4 rendering engines (UE/GTA V/Google Earth/3DGS); develops a fully automatic data generation toolchain (point cloud acquisition → semantic segmentation → trajectory generation → GPT-4o instructions); builds a large-scale dataset of 100,000 trajectories across 18 scenes; proposes a keyframe-aware VLN model, OpenFly-Agent (Keyframe Selection + Visual Token Merging), which outperforms existing methods by 14.0% and 7.9% in Success Rate (SR) for seen and unseen scenes, respectively.
 
 ## Background & Motivation
 
-**Background**: VLN is a core task in embodied AI, requiring agents to navigate toward targets guided by language instructions and visual observations. Numerous indoor/ground-level datasets (R2R, RxR, TouchDown, VLN-CE, etc.) have driven methodological advances; however, VLN research for unmanned aerial vehicles (UAVs)—critical platforms for aerial photography, search-and-rescue, and cargo delivery—remains underdeveloped.
+**VLN Development**: VLN is a core task in Embodied AI, requiring agents to navigate to targets based on linguistic instructions and visual observations. Extensive indoor/ground datasets (R2R, RxR, TouchDown, VLN-CE, etc.) have driven methodological progress. However, research into Unmanned Aerial Vehicles (UAVs)—critical for aerial photography, rescue, and logistics—remains insufficient.
 
-**Limitations of Prior Work**: AerialVLN and OpenUAV established preliminary aerial VLN datasets using AirSim and Unreal Engine simulators, yet they suffer from three fundamental challenges: limited data diversity, high collection cost, and small dataset scale.
+**Limitations of Prior Work**: Pioneer works like AerialVLN and OpenUAV established initial aerial VLN datasets using AirSim + UE simulators but face three major challenges: limited data diversity, high collection costs, and small data scale.
 
-**Data Diversity Bottleneck**: Existing approaches rely on AirSim and Unreal Engine to control UAVs and can only exploit digital assets compatible with these platforms, restricting both environmental diversity and photorealism and precluding the incorporation of additional high-fidelity data sources.
+**Data Diversity Bottleneck**: Prior methods rely on AirSim and Unreal Engine for UAV control, restricting them to assets compatible with these platforms. This limits environmental diversity and realism, hindering the inclusion of high-fidelity data sources.
 
-**High Manual Annotation Cost**: Trajectory generation requires trained pilots to fly UAVs within simulators, followed by annotators manually composing language instructions. The entire workflow is labor-intensive, time-consuming, and difficult to scale.
+**High Manual Annotation Cost**: Trajectory generation traditionally depends on pilots operating UAVs in simulators, followed by manual instruction writing. This workflow is labor-intensive, time-consuming, and difficult to scale.
 
-**Critically Insufficient Data Scale**: Current aerial VLN datasets contain only approximately 10K trajectories, far behind the robotics manipulation domain—Open X-Embodiment and EO-1 have collected over one million manipulation episodes—severely constraining model capacity.
+**Insufficient Data Scale**: Current aerial VLN datasets contain only about 10,000 trajectories, lagging far behind robot manipulation fields—where Open X-Embodiment and EO-1 have collected over 1 million episodes. This data scarcity severely limits model capabilities.
 
-**Key Challenge**: (1) Multi-rendering engine integration → addresses diversity; (2) fully automated pipeline → addresses cost; (3) 100K-scale dataset → addresses scale; (4) keyframe-aware model → addresses visual redundancy in long observation sequences.
+**Core Idea**: (1) Multi-engine integration → Solve diversity; (2) Fully automatic toolchain → Solve cost; (3) 100k-scale dataset → Solve scale; (4) Keyframe-aware model → Solve visual redundancy in long sequences.
 
 ## Method
 
-### 1. Multi-Rendering Engine Integration
+### Overall Architecture
 
-OpenFly integrates four rendering engines/technologies to substantially enrich scene resources:
+OpenFly is not merely a single model but a complete closed-loop platform from scene acquisition to model deployment. First, diverse virtual and real scenes are built using four rendering engines. Next, an automatic toolchain batch "translates" each scene into navigation trajectories with linguistic instructions. Finally, the keyframe-aware OpenFly-Agent is trained on 100,000 trajectories. The data generation toolchain serves as the central hub—controlling agent movement and reading sensors via three unified interfaces to link "point cloud acquisition → semantic segmentation → trajectory generation → instruction generation," automating steps previously reliant on manual pilot operation and annotation. The platform and data nourish the model, while the model validates the data's utility.
 
-- **Unreal Engine (UE)**: Provides 8 urban scenes covering more than $100 \text{ km}^2$, with rich assets including buildings, vehicles, and pedestrians.
-- **GTA V**: Contributes highly realistic urban landscapes modeled after Los Angeles.
-- **Google Earth**: Provides 4 urban regions (Berkeley / Osaka / Washington D.C. / St. Louis) covering $53.60 \text{ km}^2$.
-- **3D Gaussian Splatting (3DGS)**: Employs hierarchical 3DGS to reconstruct 3D scenes from real UAV-captured images, covering more than $7 \text{ km}^2$ across 5 campus scenes, enabling real-to-sim rendering.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["1. Multi-Engine Integration<br/>UE / GTA V / Google Earth / 3DGS"] --> TC
+    subgraph TC["2. Automatic Data Generation Toolchain"]
+        direction TB
+        B["Point Cloud Acquisition<br/>Raster Sampling / COLMAP"] --> C["Semantic Segmentation<br/>Landmark Selection"]
+        C --> D["Trajectory Generation<br/>A* Collision-Free Path"]
+        D --> E["Instruction Generation<br/>Sub-trajectory Clipping → GPT-4o"]
+    end
+    TC --> F["100k Trajectory Dataset<br/>18 Scenes"]
+    F --> G["3. OpenFly-Agent Keyframe-Aware<br/>Selection KS + Token Merging VTM"]
+    G --> H["6 Discrete UAV Actions"]
+```
 
-### 2. Automatic Data Generation Pipeline
+### Key Designs
 
-The pipeline comprises four automated modules and three unified interfaces for controlling agent motion and acquiring sensor data.
+**1. Multi-Engine Integration: Breaking the diversity ceiling with heterogeneous data sources**
 
-**Point Cloud Acquisition**:
-- Rasterized sampling reconstruction (UE / GTA V): local point clouds are captured at appropriately spaced sampling positions and merged.
-- Image-based sparse reconstruction (3DGS): COLMAP generates sparse point clouds from input images.
+Previous aerial VLN relied solely on AirSim+UE, tying assets and realism to a single platform. OpenFly accesses four sources in parallel to complement scale, style, and realism: Unreal Engine provides 8 urban scenes with assets covering over $100 \text{km}^2$; GTA V contributes highly realistic urban landscapes modeled after Los Angeles; Google Earth covers $53.60 \text{km}^2$ across Berkeley, Osaka, Washington D.C., and St. Louis; 3D Gaussian Splatting (3DGS) uses hierarchical 3DGS to reconstruct 5 campus scenes covering over $7 \text{km}^2$ from real UAV footage, bringing real-world imagery into a renderable simulation (real-to-sim). This mix provides inherent cross-domain diversity, laying the foundation for bridging the sim-to-real gap.
 
-**Semantic Segmentation** (three flexible approaches):
-- 3D scene understanding: overhead-view image sequences are captured → Octree-Graph extracts semantic 3D instances.
-- Point cloud projection + contour extraction: point clouds are voxelized and projected onto the ground plane → segmentation contours are extracted → GPT-4o annotates semantics.
-- Manual annotation: fallback option when point cloud quality is poor or fine-grained segmentation is required.
+**2. Automatic Data Generation Toolchain: Scaling up via pipelines**
 
-**Automatic Trajectory Generation**:
-- A global voxel map $M_{global}$ is constructed from the scene point cloud.
-- Landmarks are randomly selected as targets; starting points are sampled at a certain distance, and endpoints are placed near the target landmark.
-- Collision-free trajectories are searched using A* over $M_{global}$ with a custom action space.
-- The endpoint of one trajectory is iteratively used as the starting point of the next, enabling complex trajectory generation.
+The toolchain controls agent movement and sensor reading through three unified interfaces. Point cloud acquisition varies by scene: UE/GTA V use rasterized sampling at specific resolutions, while 3DGS uses COLMAP for sparse reconstruction. Semantic segmentation offers three paths: extracting 3D Semantic Instances via Octree-Graphs from top-down views, projecting voxelized clouds for GPT-4o annotation, or manual annotation as a fallback. Trajectory generation builds a global voxel map $M_{global}$, selects landmarks as targets, sets starting points at a distance, and uses A* search for collision-free paths. Instruction generation avoids feeding entire sequences to the model; instead, it segments trajectories by action transition points, sends key actions and the final 3 frames of each segment to GPT-4o, and uses an LLM to consolidate these into complete instructions. Human verification of 3K random samples showed a 91% qualification rate.
 
-**Automatic Instruction Generation**:
-- Key strategy: the complete trajectory is segmented into sub-trajectories at action transition points, rather than feeding all frames to the model at once.
-- Key actions and the last 3 frames of each sub-trajectory are extracted → GPT-4o generates sub-instructions.
-- An LLM integrates all sub-instructions into a complete navigation instruction.
-- A random sample of 3K instructions is manually verified → pass rate of 91%.
+**3. OpenFly-Agent Keyframe Awareness: Compressing visual redundancy**
 
-### 3. OpenFly-Agent: Keyframe-Aware VLN Model
-
-Built upon OpenVLA, the core innovations are **keyframe selection** and **visual token merging (VTM)**:
-
-**Keyframe Selection**:
-- Motivation: uniform frame sampling is ill-suited for aerial VLN, as it may miss frames containing critical landmarks.
-- Heuristic method: motion change points in UAV trajectories are identified → the change point and its two neighboring frames are extracted → these form the candidate keyframe set.
-- Landmark localization module: a 3-layer cross-attention module fuses text and image features from LLM hidden states to predict the bounding box $\mathbf{b} \in \mathcal{R}^4$ of instruction-relevant landmarks.
-- Filtering rule: candidate frames whose bounding box area exceeds threshold $\theta$ are retained as final keyframes.
-
-**Visual Token Merging (VTM)**:
-- The frame in the keyframe set with the largest bounding box is selected as the reference frame (containing the most salient landmark observation).
-- Cosine similarity is densely computed between each visual token pair of the reference frame and other frames.
-- Tokens with high similarity are merged by averaging; unmerged tokens from comparison frames are discarded.
-- This process is applied iteratively until the entire keyframe set is traversed.
-- A memory bank of capacity $K$ is maintained (FIFO policy retains the most recent keyframes).
-- Tokens within keyframes are further compressed via grid pooling, while the current frame remains uncompressed to preserve the latest visual observation.
-
-**Action Prediction**: The last 256 tokens of the vocabulary serve as action special tokens, defining 6 UAV actions: $\{$Forward, Turn Left, Turn Right, Move Up, Move Down, Stop$\}$.
+Aerial trajectories are long; uniform sampling risks missing landmarks, while feeding all tokens into a VLM dilutes linguistic attention with background noise. OpenFly-Agent utilizes two steps: Keyframe Selection (KS) heuristically identifies motion change points and their adjacent frames, then uses a 3-layer cross-attention landmark localization module to predict bounding boxes $\mathbf{b} \in \mathcal{R}^4$. Only frames with box areas exceeding threshold $\theta$ are retained. Visual Token Merging (VTM) selects the frame with the largest bounding box as a reference and calculates cosine similarity between its visual tokens and those of other frames. High-similarity tokens are merged, while non-merged tokens from comparison frames are discarded. Merged results are stored in a FIFO memory of capacity $K$. Grid pooling further compresses internal keyframes, while the current frame remains uncompressed. Actions are mapped to 256 special tokens for $\{$Forward, Turn Left, Turn Right, Move Up, Move Down, Stop$\}$.
 
 ## Key Experimental Results
 
 ### Table 1: VLN Dataset Comparison
 
-| Dataset | Trajectories | Vocab Size | Path Length (m) | Instruction Length | Action Space | Environment |
-|---|---|---|---|---|---|---|
-| R2R | 7,189 | 3.1K | 10.0 | 29 | graph | Matterport3D |
-| RxR | 13,992 | 7.0K | 14.9 | 129 | graph | Matterport3D |
-| AerialVLN | 8,446 | 4.5K | 661.8 | 83 | 4 DoF | AirSim+UE |
-| CityNav | 32,637 | 6.6K | 545 | 26 | 4 DoF | SensatUrban |
-| OpenUAV | 12,149 | 10.8K | 255 | 104 | 6 DoF | AirSim+UE |
-| **OpenFly** | **100K** | **15.6K** | **99.1** | **59** | **4 DoF** | **Multi-engine** |
+| Dataset | Trajectories | Vocab Size | Path Length (m) | Instr. Length | Action Space | Environment |
+|---------|--------------|------------|-----------------|---------------|--------------|-------------|
+| R2R | 7189 | 3.1K | 10.0 | 29 | graph | Matterport3D |
+| RxR | 13992 | 7.0K | 14.9 | 129 | graph | Matterport3D |
+| AerialVLN | 8446 | 4.5K | 661.8 | 83 | 4 DoF | AirSim+UE |
+| CityNav | 32637 | 6.6K | 545 | 26 | 4 DoF | SensatUrban |
+| OpenUAV | 12149 | 10.8K | 255 | 104 | 6 DoF | AirSim+UE |
+| **Ours** | **100K** | **15.6K** | **99.1** | **59** | **4 DoF** | **Multi-Engine** |
 
-### Table 2: Navigation Performance Comparison on Test Sets
+### Table 2: Main Results (Navigation Performance)
 
 | Method | NE↓(seen) | SR↑(seen) | OSR↑(seen) | SPL↑(seen) | NE↓(unseen) | SR↑(unseen) | OSR↑(unseen) | SPL↑(unseen) |
-|---|---|---|---|---|---|---|---|---|
+|--------|-----------|-----------|------------|------------|-------------|-------------|--------------|--------------|
 | Random | 242m | 0.7% | 0.8% | 0% | 301m | 0.1% | 0.1% | 0% |
 | Seq2Seq | 205m | 2.9% | 24.3% | 2.6% | 229m | 2.1% | 20.6% | 1.1% |
 | CMA | 161m | 5.4% | 28.1% | 4.8% | 217m | 4.6% | 24.4% | 2.1% |
-| AerialVLN | 139m | 7.5% | 30.0% | 6.8% | 214m | 7.3% | 28.1% | 4.4% |
+| AerialVLN| 139m | 7.5% | 30.0% | 6.8% | 214m | 7.3% | 28.1% | 4.4% |
 | Navid | 153m | 13.0% | 38.2% | 11.6% | 210m | 10.8% | 27.2% | 5.0% |
 | NaVila | 132m | 20.3% | 53.5% | 17.8% | 202m | 14.7% | 42.1% | 9.6% |
-| **OpenFly-Agent** | **93m** | **34.3%** | **64.3%** | **24.9%** | **154m** | **22.6%** | **56.2%** | **19.1%** |
+| **Ours** | **93m** | **34.3%** | **64.3%** | **24.9%** | **154m** | **22.6%** | **56.2%** | **19.1%** |
 
 ### Table 3: Ablation Study (test-seen)
 
 | Method | NE↓ | SR↑ | OSR↑ | SPL↑ |
-|---|---|---|---|---|
+|--------|-----|-----|------|------|
 | OpenVLA (baseline) | 231m | 2.3% | 10.8% | 2.2% |
-| History (uniform sampling) | 223m | 6.9% | 23.3% | 5.6% |
+| History (Uniform) | 223m | 6.9% | 23.3% | 5.6% |
 | Random KS | 264m | 8.7% | 26.6% | 5.8% |
-| KS (keyframe selection only) | 275m | 9.2% | 28.1% | 6.1% |
+| KS Only | 275m | 9.2% | 28.1% | 6.1% |
 | History + VTM | 215m | 16.6% | 40.5% | 9.1% |
-| **KS + VTM** | **93m** | **34.3%** | **64.3%** | **24.9%** |
+| **KS + VTM (Ours)** | **93m** | **34.3%** | **64.3%** | **24.9%** |
 
 ## Key Findings
 
-1. **Synergistic effect of keyframe selection and visual token merging is pronounced**: Using KS alone (SR 9.2%) or History+VTM alone (SR 16.6%) yields limited gains, whereas their combination (SR 34.3%) produces a super-linear improvement. VTM resolves the token imbalance between text and image modalities, preventing background noise from diluting attention to critical cues.
-
-2. **Generalization advantage of multi-engine training data**: In real-world experiments across 23 scenes, models trained on OpenFly data (SR 26.09%, OSR 34.78%) substantially outperform those trained on AerialVLN data, confirming that multi-engine data effectively bridges the sim-to-real gap.
-
-3. **Significant potential of VLMs for aerial VLN**: VLM-based methods (Navid / NaVila) markedly outperform traditional Seq2Seq / CMA approaches, particularly in Oracle SR (38–53% vs. 24–28%), underscoring the importance of VLM reasoning capabilities for navigation.
-
-4. **Short-to-medium-range instructions better reflect real-world usage**: OpenFly's average trajectory length of 99.1 m and instruction length of 59 words are substantially lower than AerialVLN (661.8 m / 83 words). The authors argue this better aligns with natural human usage patterns and is more conducive to advancing aerial VLN.
-
-5. **Reliable quality of automatically generated instructions**: The sub-trajectory segmentation strategy with GPT-4o and LLM integration achieves a 91% pass rate upon manual inspection of 3K randomly sampled instructions, while supporting high-throughput parallel generation.
+1.  **Synergistic effect of KS and VTM**: Individual use of KS (SR 9.2%) or History+VTM (SR 16.6%) shows limited gain, whereas combined use (SR 34.3%) yields super-linear improvement by balancing text-image tokens and filtering noise.
+2.  **Generalization through Multi-Engine Data**: Experiments in 23 real-world scenes show that models trained on OpenFly data significantly outperform those on AerialVLN data, successfully bridging the sim-to-real gap.
+3.  **VLM Potential**: VLM-based methods (Navid/NaVila) markedly outperform traditional Seq2Seq/CMA, particularly in Oracle SR, indicating the importance of VLM reasoning in navigation.
+4.  **Practicality of Short-to-Medium Instructions**: OpenFly's average trajectory (99.1m) and instruction length (59 words) are argued to be more representative of natural human use than prior extreme cases.
+5.  **Reliable Automatic Instructions**: GPT-4o-based segmentation and consolidation achieve 91% manual verification accuracy while supporting high-concurrency production.
 
 ## Highlights & Insights
 
-- **System-level innovation rather than a single component breakthrough**: OpenFly's contribution lies not in any individual model component, but in the fully integrated platform combining four engines, an automated pipeline, a 100K-trajectory dataset, and a keyframe-aware model into a closed-loop system.
-- **Real-to-sim application of 3DGS**: UAVs capture real images → 3DGS reconstruction → automatic training data generation within reconstructed scenes → deployment on real UAVs, validating a novel paradigm through closed-loop verification.
-- **High engineering value**: Users can leverage the OpenFly pipeline to rapidly generate customized data for their own scenes, constituting an infrastructure-level contribution to the community.
-- **Quantitative leap in data scale**: 100K trajectories (vs. the existing ~10K) for the first time brings aerial VLN data scale comparable to ground-level VLN, enabling effective transfer of OpenVLA at this scale.
+-   **System-Level Innovation**: The primary contribution is the holistic platform (4 engines + automatic pipeline + 100k dataset + model) rather than a single component.
+-   **3DGS Real-to-Sim**: Demonstrates a paradigm where real UAV imagery is used for 3DGS reconstruction to generate training data for real-world deployment.
+-   **Engineering Value**: Enables users to generate custom data for their own scenes, providing infrastructure-level utility.
+-   **Scale-Driven Transformation**: The 100k trajectory scale (vs. previous ~10k) first makes aerial VLN comparable to ground-based datasets, facilitating the transfer of models like OpenVLA.
 
 ## Limitations & Future Work
 
-1. **Absolute success rates remain low**: Even the best-performing OpenFly-Agent achieves only 34.3% SR on test-seen and 22.6% on test-unseen, indicating that aerial VLN remains highly challenging and far from practical deployment.
-2. **Limited cross-scene generalization**: All methods exhibit significant performance drops on unseen scenes (SR from 34.3% → 22.6%), with cross-scene generalization remaining a core bottleneck.
-3. **Dependence on GPT-4o**: Instruction generation and semantic annotation rely on a commercial closed-source VLM, limiting cost efficiency and reproducibility.
-4. **Simplified action space**: Fixed-step discrete actions (3 / 6 / 9 m) differ from the continuous control of real UAVs. Although continuous trajectory support is provided, primary experiments are conducted under the discrete action formulation.
-5. **Google Earth data restricted to high-altitude views**: To ensure visual quality, Google Earth data is collected exclusively at high altitudes (4.46% of the dataset), limiting coverage of low-altitude real-world scenarios.
+1.  **Absolute Success Rate**: Even with OpenFly-Agent, SR remains at 34.3% (seen) and 22.6% (unseen), highlighting the extreme challenge of aerial VLN.
+2.  **Generalization Gap**: Performance drops significantly in unseen scenes (34.3% → 22.6%).
+3.  **GPT-4o Dependency**: Reliance on proprietary VLMs increases costs and limits reproducibility.
+4.  **Simplified Action Space**: The use of discrete steps (3/6/9m) deviates from real continuous UAV control.
+5.  **Google Earth View Height**: Visual quality constraints limited Google Earth data largely to high-altitude perspectives (4.46%).
 
 ## Related Work & Insights
 
-### vs. AerialVLN (ICCV 2023)
-AerialVLN is the first aerial VLN dataset (8,446 trajectories), but uses a single AirSim+UE engine and relies on human pilots and manual annotation. OpenFly comprehensively surpasses it in rendering diversity (4 engines vs. 1), data scale (100K vs. 8.4K), and automation (fully automatic vs. manual). OpenFly-Agent achieves a 33% improvement in NE over the AerialVLN baseline (93 m vs. 139 m).
+### vs AerialVLN (ICCV 2023)
+AerialVLN was the first aerial VLN dataset (8.4k trajectories) but used a single engine and manual annotation. OpenFly exceeds it in diversity (4 vs 1 engines), scale (100k vs 8.4k), and automation. NE improved by 33%.
 
-### vs. OpenUAV (2024)
-OpenUAV similarly uses AirSim+UE to build a 12,149-trajectory VLN dataset and incorporates human feedback (RLHF) to guide navigation. However, it still depends on pilot operation and manual annotation, limiting data diversity. OpenFly's pipeline achieves fully automated data generation and introduces real-to-sim capability via 3DGS, demonstrating stronger transfer to real-world deployment.
+### vs OpenUAV (2024)
+OpenUAV used AirSim+UE for 12k trajectories with RLHF. It remained restricted by manual diversity bottlenecks. OpenFly implements a fully automatic pipeline and introduces real-to-sim capabilities via 3DGS.
 
-### vs. CityNav (2024)
-CityNav constructs 32,637 trajectories based on SensatUrban point cloud data and CityRefer language annotations, but relies on pre-existing 2D maps for landmark localization. OpenFly requires no external maps and navigates directly from a first-person perspective through an end-to-end vision-language approach, more closely reflecting practical UAV applications.
+### vs CityNav (2024)
+CityNav relies on pre-existing 2D maps for landmark localization. OpenFly requires no external maps, navigating end-to-end from a first-person perspective, closer to the reality of UAV applications.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ System-level innovation through multi-engine integration, fully automated pipeline, and keyframe-aware design; individual technical contributions are incremental.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive evaluation including multi-method comparisons, ablations, real UAV deployment, cross-dataset comparison, and scale analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ System description is clear and complete, with rich figures and tables.
-- **Value**: ⭐⭐⭐⭐⭐ Infrastructure-level contribution to aerial VLN research; the pipeline, dataset, and benchmark collectively form a self-contained ecosystem.
+-   **Novelty**: ⭐⭐⭐⭐ System-level innovation (pipeline + platform); algorithmic innovation is moderate.
+-   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive comparisons, ablations, and real-world UAV deployment.
+-   **Writing Quality**: ⭐⭐⭐⭐ Clear system descriptions and rich visualizations.
+-   **Value**: ⭐⭐⭐⭐⭐ Infrastructure-level contribution with toolchain, dataset, and benchmark integrated.
 
 <!-- RELATED:START -->
 
@@ -186,10 +154,10 @@ CityNav constructs 32,637 trajectories based on SensatUrban point cloud data and
 ## Related Papers
 
 - [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](../../ICCV2025/3d_vision/3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
+- [\[ICLR 2026\] Towards Physically Executable 3D Gaussian for Embodied Navigation](towards_physically_executable_3d_gaussian_for_embodied_navigation.md)
 - [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
-- [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](../../CVPR2026/3d_vision/monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
-- [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](../../ICCV2025/3d_vision/clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
-- [\[ICML 2026\] SVL: Spike-based Vision-Language Pretraining for Efficient 3D Open-World Understanding](../../ICML2026/3d_vision/svl_spike-based_vision-language_pretraining_for_efficient_3d_open-world_understa.md)
+- [\[ICLR 2026\] Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image](sat3dgen_comprehensive_street-level_3d_scene_generation_from_single_satellite_im.md)
+- [\[CVPR 2026\] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning](../../CVPR2026/3d_vision/multi-scale_gaussian-language_map_for_zero-shot_embodied_navigation_and_reasonin.md)
 
 </div>
 

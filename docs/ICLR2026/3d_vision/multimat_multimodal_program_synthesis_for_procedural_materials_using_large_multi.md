@@ -2,168 +2,148 @@
 title: >-
   [Paper Note] MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models
 description: >-
-  [ICLR 2026][3D Vision][Procedural Materials] This paper presents MultiMat, the first framework to apply large multimodal models (LMMs) to procedural material node graph synthesis. By incorporating intermediate visual ren…
+  [ICLR 2026][3D Vision][Substance Designer] MultiMat is proposed as the first framework to utilize Large Multimodal Models (LMMs) for synthesizing procedural material node graphs. By integrating visual rendering feedback from intermediate nodes during the autoregressive generation process (via Mixed and Graph conditioning modes) and employing incremental constra
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "Procedural Materials"
-  - "Node Graph"
-  - "Multimodal Generation"
-  - "Constrained Tree Search"
-  - "Substance Designer"
+  - ICLR 2026
+  - 3D Vision
+  - Substance Designer
 date: 2026-05-08
-content_hash: 476f72d10cdbbed3
+content_hash: a770698ed425c2fb
 ---
-
 # MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.22151](https://arxiv.org/abs/2509.22151)  
 **Code**: None  
-**Area**: 3D Vision / Program Synthesis
-**Keywords**: Procedural Materials, Node Graph, Multimodal Generation, Constrained Tree Search, Substance Designer
+**Area**: 3D Vision / Program Synthesis  
+**Keywords**: Procedural Materials, Node Graphs, Multimodal Generation, Constrained Tree Search, Substance Designer
 
 ## TL;DR
 
-This paper presents MultiMat, the first framework to apply large multimodal models (LMMs) to procedural material node graph synthesis. By incorporating intermediate visual rendering feedback of partially generated nodes into the autoregressive generation process (via two conditioning modes: mixed and graph), and pairing this with an incremental constrained tree search for on-the-fly validation and backtracking, MultiMat is trained on 6,878 production-grade Substance Designer materials and substantially outperforms text-only baselines in both unconditional and conditional generation.
+MultiMat is proposed as the first framework to utilize Large Multimodal Models (LMMs) for synthesizing procedural material node graphs. By integrating visual rendering feedback from intermediate nodes during the autoregressive generation process (via Mixed and Graph conditioning modes) and employing incremental constrained tree search for real-time validation and backtracking, the model significantly outperforms text-only baselines after training on 6,878 production-grade Substance Designer materials.
 
 ## Background & Motivation
 
-Procedural materials (e.g., Adobe Substance Designer) define PBR materials through directed acyclic graphs (DAGs), offering resolution independence, parametric controllability, and non-destructive editing—properties widely exploited in games, film, and VR/AR production. However, manually constructing node graphs requires professional expertise, posing a steep barrier for non-specialist users. Recent neural program synthesis methods (MatFormer, VLMaterial) have attempted to automate this process, but suffer from three critical issues:
+Procedural materials (e.g., Adobe Substance Designer) define PBR materials through Directed Acyclic Graphs (DAGs), offering advantages such as resolution independence, parameter control, and non-destructive editing. These are widely used in games, film, and VR/AR. However, manual graph construction requires professional training and poses a high entry barrier. Recent neural program synthesis methods (MatFormer, VLMaterial) attempt to automate this process but face three key issues:
 
-1. **Text-only modeling disregards the visual nature of the task**: Existing methods serialize node graphs into plain-text programs, discarding the inherently visual-spatial intuition of node graphs.
-2. **Difficulty reasoning without visual feedback**: Models must infer complex spatial relationships and visual effects from text alone; reasoning difficulty escalates sharply as material complexity increases.
-3. **No guarantee of structural correctness**: Validation occurs only after a complete program is generated, resulting in large volumes of invalid outputs (invalid connections, type mismatches) that degrade inference efficiency.
+1.  **Text-only modeling ignores visual essence**: Existing methods serialize node graphs into text programs, losing the visual-spatial intuition inherent to the graphs.
+2.  **Difficulty in reasoning without visual feedback**: Models must reason about complex spatial relationships and visual effects solely from text, which becomes increasingly difficult as material complexity grows.
+3.  **Lack of structural correctness guarantees**: Validation occurs only after a complete program is generated, leading to inefficient reasoning due to invalid outputs (e.g., invalid connections, type mismatches).
 
-MultiMat's core mechanism is to **emulate the workflow of a human material artist**—rendering intermediate states after each node is generated and feeding them back to the model, forming a visual-text multimodal feedback loop, while leveraging topological ordering to enable incremental per-node validation.
+The **Core Idea** of MultiMat is to simulate the workflow of human material artists—rendering intermediate states immediately after generating each node and feeding them back into the model to form a visual-text multimodal loop, while using topological sorting for node-by-node incremental validation.
 
 ## Method
 
 ### Overall Architecture
 
-MultiMat is built upon QWen2.5VL (7B), a vision-language model. The core pipeline follows **node-by-node autoregressive generation with intermediate rendering feedback**:
+MultiMat addresses the **Key Challenge** that node graphs are fundamentally visual-spatial programs forced into text-only formats by prior work. Using QWen2.5VL (7B) as the backbone, material graph generation is decomposed into an autoregressive process: whenever the model writes a new node $v_{t+1}$ in topological order, a translator compiles the partial graph $G_t = \{v_1, \ldots, v_t\}$ into SBS format. A material engine renders the intermediate image $I_t$, and through **dual-modal conditioning**, the graph state and rendered image are fed back into the model as multimodal context. Simultaneously, **incremental constrained tree search** validates each node; if a node is valid, it updates $G_{t+1}/I_{t+1}$ to continue; if invalid, **automatic error repair** is triggered, followed by exponential backtracking if repair fails. This allows the model to "see" its progress at every step, mimicking the human workflow of "render as you edit."
 
-1. Given a partially generated material graph $G_t = \{v_1, v_2, \ldots, v_t\}$ with nodes arranged in topological order,
-2. The current graph state $G_t$ and intermediate rendering output $I_t$ are fed to the LMM in multimodal form,
-3. The model generates the next node definition $v_{t+1}$ (including node type, parameters, and connections),
-4. A transpiler compiles $v_{t+1}$ into SBS format, which the material engine executes and renders,
-5. If successful, the graph is updated to $G_{t+1}$ with output $I_{t+1}$ and generation continues; if not, backtracking is triggered.
-
-Training uses a standard cross-entropy loss:
-
-$$\mathcal{L} = -\sum_{t=1}^{T}\sum_{s=1}^{S}\log p(v_{t,s} \mid v_{t,<s}, G_t, I_t, x; \theta)$$
-
-where $v_{t,s}$ is the $s$-th token of node $v_t$ in the intermediate text format, and $x$ is the input condition (empty for unconditional generation).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input Conditions<br/>(Text / Target Image, optional)"] --> LMM["QWen2.5VL writes node v_{t+1}<br/>autoregressively in topological order"]
+    LMM --> RENDER["Translator compiles partial graph G_t→SBS<br/>Engine renders intermediate image I_t"]
+    RENDER --> COND["Dual-modal Conditioning<br/>Feed graph state + rendered image to model<br/>(Mixed / Graph)"]
+    COND --> CHECK{"Incremental Tree Search<br/>Is node valid?"}
+    CHECK -->|"Valid, incomplete"| LMM
+    CHECK -->|"Valid, complete"| OUT["Final node graph<br/>(Optional DiffMat optimization → MultiMat+)"]
+    CHECK -->|Invalid| FIX["Automatic Error Repair<br/>Remove redundant params / Insert converters"]
+    FIX -->|Still invalid| BACK["Backtrack: Discard last<br/>2^(i-1) nodes"]
+    BACK --> LMM
+```
 
 ### Key Designs
 
-**(1) Dual Conditioning Strategy**
+**1. Dual-modal Conditioning Strategies: Feeding rendering feedback to the model**
 
-Two complementary multimodal program representations are proposed:
+Two complementary representations balance precision and overhead. **Mixed Conditioning** maintains complete text node definitions while interleaving a 140×140 rendering (split into 25 patches) at each node, omitting parameters to be implicitly encoded by the image, thus preserving structural information. **Graph Conditioning** visualizes the entire graph as a single image (up to 6,144 tokens) without explicit text definitions, which is closer to human visual editing. Experiments show that Graph mode achieves the best visual quality (lowest KID), while Mixed mode achieves the lowest structural error rate (NER).
 
-| Conditioning Mode | Input Form | Image Cost per Node | Characteristics |
-|:--|:--|:--|:--|
-| Mixed Conditioning | Text node definitions + interleaved 140×140 rendered images (25 patches) per node | 25 patches/node | Retains full textual structure; parameters are implicitly encoded via images |
-| Graph Conditioning | Full graph visualization (embedded intermediate visual output), up to 6,144 tokens | One global image | Closer to human visual editing experience; no explicit text node definitions provided |
+| Conditioning | Input Format | Image Overhead | Features |
+| :--- | :--- | :--- | :--- |
+| Mixed Conditioning | Text definitions + interleaved 140x140 renders | 25 patches/node | Preserves text structure, implicit parameters |
+| Graph Conditioning | Full graph visualization (visualized outputs) | 1 image (global) | Closer to human experience, no explicit text |
 
-Experiments show that Graph Conditioning achieves the best visual quality (lowest KID), while Mixed Conditioning yields the lowest error rate (lowest NER).
+**2. Incremental Constrained Tree Search: Real-time validation + Backtracking**
 
-**(2) Incremental Constrained Tree Search**
+Text-only methods only detect illegal connections or type mismatches after the entire program is written. MultiMat utilizes topological sorting to allow the translator and engine to verify each node immediately. The generation is organized as a search tree $\mathcal{T}$ with valid (✓) and invalid (✗) nodes. Upon detecting an error, adaptive backtracking occurs: the $i$-th backtrack discards the most recent $2^{(i-1)}$ nodes, balancing exploration efficiency and depth. Disabling this search in VLMaterial causes the NER to worsen from 14.8% to 34.0%.
 
-Topological ordering enables validity checking via the transpiler and material engine immediately after each node is generated. Upon detecting an invalid node, an adaptive backtracking strategy is applied:
+**3. Automatic Error Repair: Fixing high-frequency mechanical errors**
 
-- At the $i$-th backtracking step, the most recent $2^{(i-1)}$ nodes are discarded,
-- The entire generation process forms a search tree $\mathcal{T}$ containing valid (✓) and invalid (✗) nodes,
-- Compared to conventional "generate-then-validate" approaches, this significantly improves inference efficiency (disabling tree search in VLMaterial degrades NER from 14.8% to 34.0%).
-
-**(3) Automatic Error Repair**
-
-Two common error patterns are identified and automatically corrected:
-
-- **Parameter deletion**: Extraneous parameters unsupported by the node type are removed (only ~1% of MultiMat nodes require this repair),
-- **Type conversion insertion**: A grayscale conversion node is automatically inserted when a color output connects to a grayscale input; a gradient map node is inserted for grayscale-to-color connections.
+Despite tree search, models make structural errors. MultiMat includes auto-correction for two patterns. **Parameter Removal** strips parameters not supported by a node type (MultiMat requires this for only ~1% of nodes). **Type Conversion Insertion** automatically adds "Grayscale Conversion" or "Gradient Map" nodes when color outputs connect to grayscale inputs (or vice versa), preventing graph failure due to channel mismatches.
 
 ### Loss & Training
 
-**Training Configuration**:
+Training follows standard token-wise cross-entropy, with conditions including graph states and intermediate renders:
 
-| Setting | Value |
-|:--|:--|
-| Base Model | QWen2.5VL 7B (multimodal) / QWen3 8B (text-only baseline) |
-| Maximum Sequence Length | 8,192 tokens |
-| Training Epochs | 5 |
-| Optimizer | AdamW |
-| Learning Rate | $5 \times 10^{-5}$ |
-| Batch Size | 128 |
-| Inference Temperature | 0.8 |
-| Top-p | 0.95 |
-| Hardware | 8 × A100 80GB |
+$$\mathcal{L} = -\sum_{t=1}^{T}\sum_{s=1}^{S}\log p(v_{t,s} \mid v_{t,<s}, G_t, I_t, x; \theta)$$
 
-**Dataset Construction**: 6,878 production-grade materials are collected from Adobe Substance 3D Assets, constituting the largest dataset to date (MatFormer: 2,820; VLMaterial: 3,663). A bidirectional transpiler converts SBS format into a compact YAML format, CompactSBS (reducing average length by 80%+), supporting the full feature set (including pixel processors and function graphs) and up to 128 nodes.
-
-**Parameter Optimization for Conditional Generation**: The DiffMat differentiable renderer is used to gradient-optimize generated graphs, aligning output materials more closely with input images. The optimized variant is denoted MultiMat+.
+where $v_{t,s}$ is the $s$-th token of node $v_t$ in the intermediate text format, and $x$ is the input condition. The model uses QWen2.5VL 7B as the base (baselines use QWen3 8B), with a sequence length of 8,192. Training lasts 5 epochs using AdamW, a learning rate of $5\times10^{-5}$, and batch size 128 on 8×A100 GPUs. The dataset consists of **6,878** production materials (MatFormer used 2,820). A bidirectional translator compresses SBS files into a **CompactSBS** YAML format (80%+ reduction), supporting pixel processors and function graphs up to 128 nodes. For conditional generation, a post-processing step using the DiffMat differentiable renderer optimizes the graph to match the input image (denoted as MultiMat+).
 
 ## Key Experimental Results
 
-### Main Results — Unconditional Generation
+### Main Results (Unconditional Generation)
 
 | Model | KID ↓ | ROUGE-L ↓ | NER ↓ |
-|:--|:--|:--|:--|
+| :--- | :--- | :--- | :--- |
 | VLMaterial (SBS) | 14.155 | 3.641 | 14.846 |
 | MultiMat (Mixed) | 6.752 | 2.195 | **8.923** |
 | MultiMat (Graph) | **2.365** | **1.915** | 15.024 |
 
-- MultiMat (Graph) reduces KID by **11.8 percentage points** over VLMaterial, substantially surpassing text-only methods in visual quality.
-- ROUGE-L remains below 4% across all models, indicating no significant memorization; MultiMat variants exhibit lower reproduction rates.
-- MultiMat (Mixed) achieves the lowest error rate (NER 8.9%); errors in the Graph variant are primarily attributable to OCR-style misreading of node names.
+- MultiMat (Graph) achieves a KID **11.8 points** lower than VLMaterial, significantly outperforming text-only methods.
+- Low ROUGE-L scores (< 4%) indicate no significant memorization of training data.
 
-### Main Results — Conditional Generation (Inverse Material Synthesis)
+### Main Results (Reverse Material Synthesis)
 
 | Model | DSim ↑ | CLIP ↑ | Style ↓ | KID ↓ |
-|:--|:--|:--|:--|:--|
+| :--- | :--- | :--- | :--- | :--- |
 | VLMaterial (SBS) | 31.344 | 65.678 | 3.211 | 14.976 |
 | MultiMat (Mixed) | 34.922 | 66.737 | 3.199 | 3.675 |
 | MultiMat (Graph) | **36.609** | **67.907** | **3.178** | **2.801** |
-| VLMaterial+ (SBS) | 31.348 | 65.867 | 3.126 | 27.862 |
-| MultiMat+ (Mixed) | 40.258 | 69.687 | 3.093 | 17.792 |
 | MultiMat+ (Graph) | **40.367** | **70.114** | **3.046** | **14.886** |
 
-- Perceptual similarity rankings consistently follow Graph > Mixed > VLMaterial, mirroring unconditional generation trends.
-- Parameter optimization (+) yields approximately 6–8% perceptual improvement for MultiMat, whereas VLMaterial+ improves by only ~1% (its generated outputs deviate too far from the target to benefit substantially from optimization).
-- Human evaluation (8 experts, 33 challenging test samples) further confirms that MultiMat+ (Graph) is most preferred, while VLMaterial+ is least preferred.
+- MultiMat+ provides a 6-8% gain via parameter optimization, whereas VLMaterial+ gains only 1% due to poor initial graph quality.
 
-### Ablation Study — Automatic Repair Analysis
+### Ablation Study (Auto-repair Analysis)
 
-| Model | Parameter Deletion ↓ | Type Conversion ↓ |
-|:--|:--|:--|
+| Model | Param Removal ↓ | Type Conversion ↓ |
+| :--- | :--- | :--- |
 | VLMaterial (SBS) | 2.71% | 12.26% |
 | MultiMat (Mixed) | **1.18%** | 3.51% |
 | MultiMat (Graph) | 1.10% | 6.49% |
 
-MultiMat variants require substantially fewer repairs than VLMaterial, demonstrating that multimodal feedback genuinely aids the model in understanding graph structure.
+MultiMat variants require significantly fewer repairs, proving multimodal feedback improves understanding of graph structures.
 
 ## Highlights & Insights
 
-- ⭐⭐⭐ **Multimodal Program Synthesis Paradigm**: This is the first work to incorporate intermediate visual rendering feedback into procedural material generation, emulating the visual editing workflow of human artists.
-- ⭐⭐⭐ **Incremental Constrained Tree Search**: Topological ordering enables per-node validation and adaptive backtracking, transforming the inference process into an efficient tree search.
-- ⭐⭐ **Full Feature Set Support**: A bidirectional SBS↔CompactSBS transpiler is developed, providing the first support for the complete Substance Designer feature set (including pixel processors and function graphs) while reducing program length by 80%+.
-- ⭐⭐ **Largest Production-Grade Dataset**: 6,878 legitimately licensed production materials are collected, representing an 88% increase over the previously largest dataset.
+- ⭐⭐⭐ **Multimodal Program Synthesis Paradigm**: First to introduce visual intermediate rendering feedback into procedural material generation, mimicking human workflows.
+- ⭐⭐⭐ **Incremental Constrained Tree Search**: Uses topological sorting for node-by-node validation and adaptive backtracking.
+- ⭐⭐ **Full Feature Support**: CompactSBS supports complex features like pixel processors and function graphs while reducing sequence length by 80%.
+- ⭐⭐ **Largest Production Dataset**: 6,878 licensed production materials, 88% larger than previous datasets.
 
 ## Limitations & Future Work
 
-1. **Training inefficiency**: MultiMat must adapt visual context for each node individually, resulting in training times far exceeding text-only methods (days vs. hours), though the absolute cost remains manageable given the relatively small dataset size.
-2. **OCR errors in Graph Conditioning**: Reading node names and function types from graph visualizations is prone to OCR-style errors, leading to elevated NER (~15%).
-3. **Limited data scale**: Only 6,878 materials constrain the model's generalization; future work may employ self-training techniques to generate synthetic training data using the unconditional model.
-4. **Single-tool dependency**: The current system supports only Substance Designer; future work plans to develop a unified model spanning multiple node graph systems.
-5. **Remaining gap in conditional generation**: Even after parameter optimization, reconstruction quality for complex materials exhibits notable shortcomings (see failure cases in the paper).
+1.  **Training Efficiency**: Adapting visual context for every node increases training time compared to text methods.
+2.  **OCR Errors in Graph Conditioning**: Reading node names from visualized graphs is prone to OCR-style errors, leading to higher NER (~15%).
+3.  **Data Scale**: Limited to 6,878 materials; future work could explore self-learning to generate synthetic training data.
+4.  **Tool Binding**: Currently specific to Substance Designer; future goals include cross-system unified models.
 
-## Personal Reflections
+## Related Work & Insights
 
-MultiMat's central contribution lies in surfacing an important insight: **procedural materials are fundamentally visual-spatial programs and should be treated visually rather than forcibly reduced to text**. This principle has broad implications: any program synthesis task with visual intermediate representations—such as vector graphics, UI layout, or data visualization—may benefit from analogous multimodal feedback mechanisms.
+The **Key Insight** of MultiMat is that procedural materials are visual-spatial programs and should be processed visually rather than just as text. This approach is globally applicable: any program synthesis task with a visual intermediate representation (e.g., UI layout, data visualization) can benefit from multimodal feedback. 
 
-The incremental tree search is another elegant design—topological ordering transforms "post-hoc validation" into "on-the-fly validation," a paradigm transferable to any sequential generation task with verifiable intermediate states. The exponential backtracking strategy $2^{(i-1)}$ also merits attention, as it balances exploration efficiency against backtracking depth.
+Incremental tree search is another elegant design—turning "post-hoc validation" into "real-time validation." The exponential backtracking strategy ($2^{(i-1)}$) provides a strong balance between exploration and computational cost. While training costs are higher due to rendering, future implementations could use lightweight intermediate representations (e.g., low-res thumbnails or feature summaries) to optimize performance.
 
-Regarding limitations, training efficiency is an inherent cost of multimodal program synthesis—the overhead of rendering intermediate states at each step is unavoidable. Practical deployment may necessitate lightweight intermediate representations (e.g., low-resolution thumbnails or feature summaries) to reduce computational cost. Furthermore, while 6,878 materials represents the current state of the art, the dataset remains extremely sparse compared to general-purpose visual datasets; exploring pretrain-finetune paradigms or cross-domain transfer learning may be necessary.
+## Related Papers
+
+- [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
+- [\[CVPR 2026\] Towards Generalized Multimodal Homography Estimation](../../CVPR2026/3d_vision/towards_generalized_multimodal_homography_estimation.md)
+- [\[CVPR 2025\] Perception Tokens Enhance Visual Reasoning in Multimodal Language Models](../../CVPR2025/3d_vision/perception_tokens_enhance_visual_reasoning_in_multimodal_language_models.md)
+- [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](../../ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
+- [\[AAAI 2026\] Point Cloud Quantization through Multimodal Prompting for 3D Understanding](../../AAAI2026/3d_vision/point_cloud_quantization_through_multimodal_prompting_for_3d_understanding.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -171,11 +151,11 @@ Regarding limitations, training efficiency is an inherent cost of multimodal pro
 
 ## Related Papers
 
-- [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](../../ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](../../CVPR2026/3d_vision/adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[AAAI 2026\] Point Cloud Quantization through Multimodal Prompting for 3D Understanding](../../AAAI2026/3d_vision/point_cloud_quantization_through_multimodal_prompting_for_3d_understanding.md)
-- [\[AAAI 2026\] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective](../../AAAI2026/3d_vision/rethinking_multimodal_point_cloud_completion_a_completion-by-correction_perspect.md)
-- [\[ICCV 2025\] EgoM2P: Egocentric Multimodal Multitask Pretraining](../../ICCV2025/3d_vision/egom2p_egocentric_multimodal_multitask_pretraining.md)
+- [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
+- [\[ICLR 2026\] DiffTrans: Differentiable Geometry-Materials Decomposition for Reconstructing Transparent Objects](difftrans_differentiable_geometry-materials_decomposition_for_reconstructing_tra.md)
+- [\[ICLR 2026\] Large Depth Completion Model from Sparse Observations](large_depth_completion_model_from_sparse_observations.md)
+- [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
+- [\[ICLR 2026\] Do 3D Large Language Models Really Understand 3D Spatial Relationships?](do_3d_large_language_models_really_understand_3d_spatial_relationships.md)
 
 </div>
 

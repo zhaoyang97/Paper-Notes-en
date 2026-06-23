@@ -2,118 +2,122 @@
 title: >-
   [Paper Note] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][articulated objects] PD²GS is proposed as a framework that learns a shared canonical Gaussian field and models each interaction state as a continuous deformation thereof…
+  [ICLR 2026][3D Vision][articulated objects] The PD²GS framework is proposed to achieve part-level decoupling, reconstruction, and continuous control of articulated objects by learning a shared canonical Gaussian field and modeling each interaction state as its continuous deformation. It employs coarse-to-fine motion trajectory clustering and SAM-guided boundary
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "articulated objects"
-  - "3D Gaussian Splatting"
-  - "part segmentation"
-  - "continuous deformation"
-  - "SAM"
+  - ICLR 2026
+  - 3D Vision
+  - articulated objects
+  - 3D Gaussian Splatting
+  - part segmentation
+  - continuous deformation
+  - SAM
 date: 2026-05-08
-content_hash: a033cd31dc0be1b8
+content_hash: 6e01da6386b83e8e
 ---
-
 # PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.09663](https://arxiv.org/abs/2506.09663)  
 **Code**: Available  
-**Area**: 3D Vision / Articulated Object Modeling
+**Area**: 3D Vision / Articulated Object Modeling  
 **Keywords**: articulated objects, 3D Gaussian Splatting, part segmentation, continuous deformation, SAM
 
 ## TL;DR
-PD²GS is proposed as a framework that learns a shared canonical Gaussian field and models each interaction state as a continuous deformation thereof, enabling part-level decoupling, reconstruction, and continuous control of articulated objects via coarse-to-fine motion trajectory clustering and SAM-guided boundary refinement, without any manual supervision.
+The PD²GS framework is proposed to achieve part-level decoupling, reconstruction, and continuous control of articulated objects by learning a shared canonical Gaussian field and modeling each interaction state as its continuous deformation. It employs coarse-to-fine motion trajectory clustering and SAM-guided boundary refinement without manual supervision.
 
 ## Background & Motivation
 
-**Background**: 3D modeling of articulated objects (doors, drawers, laptops) is critical for robotics, AR/VR, and digital twins. Recent works such as PARIS and GAPartNet employ NeRF/3DGS for self-supervised modeling, yet are largely limited to single-joint, two-state settings.
+**Background**: 3D modeling of articulated objects (doors, drawers, laptops) is essential for robotics, AR/VR, and digital twins. Recent works like PARIS and GAPartNet use NeRF/3DGS for self-supervised modeling, but are mostly limited to single-joint, two-state scenarios.
 
-**Limitations of Prior Work**: (1) Two-state methods support only discrete pairwise comparisons and cannot model continuous motion; (2) they require prior knowledge of the number of parts or strict geometric constraints; (3) multi-part decoupling relies on Marching Cubes explicit meshes, leading to severe error accumulation.
+**Limitations of Prior Work**: (1) Two-state methods only perform discrete pairwise comparisons and cannot model continuous motion; (2) They require a known number of parts or strict geometric constraints; (3) Multi-part decoupling relies on explicit meshes from Marching Cubes, leading to severe error accumulation.
 
-**Key Challenge**: How can a continuous part-level motion model be learned from limited discrete interaction-state observations?
+**Key Challenge**: How to learn continuous part-level motion models under limited observations of discrete interaction states?
 
-**Goal**: Self-supervised learning from multi-view, multi-state images to achieve (1) part-aware reconstruction, (2) part-level continuous control, and (3) accurate kinematic modeling.
+**Goal**: Learn from multi-view multi-state images in a self-supervised manner: (1) Part-aware reconstruction; (2) Part-level continuous control; (3) Precise kinematic modeling.
 
-**Key Insight**: The key insight is that each interaction state can be modeled as a continuous deformation of a shared canonical Gaussian field, where motion within a part is consistent while motion across parts differs.
+**Key Insight**: Each interaction state can be modeled as a continuous deformation of a shared canonical Gaussian field, where intra-part motion is consistent and inter-part motion differs.
 
-**Core Idea**: A latent-code-conditioned deformation network drives continuous deformation of the canonical Gaussian field; automatic part decoupling is achieved through motion trajectory clustering followed by SAM-guided boundary refinement.
+**Core Idea**: A deformation network conditioned on latent codes drives the continuous deformation of the canonical Gaussian field, achieving automatic part decoupling through motion trajectory clustering and SAM boundary refinement.
 
 ## Method
 
 ### Overall Architecture
-The input consists of multi-view images of an articulated object captured across $K$ interaction states. The pipeline comprises: (1) construction of a canonical Gaussian field with a latent-code-conditioned deformation MLP; (2) coarse-grained part clustering based on motion trajectories; (3) SAM-guided boundary refinement; and (4) kinematic analysis and continuous control.
+PD²GS aims to learn a model capable of continuous motion and automatic part decoupling from multi-view images of an articulated object across $K$ discrete interaction states. The Mechanism is to unify the "K states" into a shared canonical Gaussian field plus $K$ deformations: first, a deformation network conditioned on latent codes transforms the canonical field into each observed state (Deformable GS). Part structures are then "back-inferred" from these deformations using a coarse-to-fine pipeline—starting with coarse-grained clustering based on Gaussian motion trajectories (motion-driven coarse segmentation), followed by refining part boundaries to pixel-level precision using SAM (SAM boundary refinement). Once part-level Gaussian fields are obtained, kinematic analysis allows for continuous interpolation in the latent code space to generate intermediate configurations not seen during training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Multi-view<br/>×K Interaction State Images"] --> B["Deformable GS<br/>Shared Canonical Gaussian Field<br/>+ Latent Conditioned Deformation"]
+    B --> C["K Sets of State-dependent Gaussians<br/>(Per-Gaussian Motion Trajectories)"]
+    D["Motion-driven Coarse Segmentation<br/>VLM Counting + Trajectory K-means"]
+    C --> D
+    D --> E["SAM Boundary Refinement<br/>3D→2D Prompting + Gaussian Splitting"]
+    E --> F["Part-level Gaussian Fields<br/>Kinematic Analysis"]
+    F -->|Latent Code Interpolation| G["Continuous Control<br/>Generate Unseen Intermediate States"]
+```
 
 ### Key Designs
 
-1. **Deformable Gaussian Splatting**:
+**1. Deformable Gaussian Splatting: Unifying Discrete States into Shared Field Deformation**
 
-    - Function: Unifies discrete interaction states as continuous deformations of a shared canonical field.
-    - Mechanism: Each state $k$ is associated with a latent code $\alpha_k \in \mathbb{R}^D$; an MLP $f_{def}$ predicts per-Gaussian displacements $(\Delta\mu_i, \Delta q_i, \Delta s_i) = f_{def}(\mu_i, q_i, s_i | \alpha_k)$, applied via addition (position) and quaternion multiplication (rotation).
-    - Design Motivation: Latent code parameterization enables interpolation to unseen states after training.
+Two-state methods can only compare discrete observations, failing to characterize intermediate states like a "half-open door." PD²GS maintains a state-independent canonical Gaussian field and assigns a latent code $\alpha_k \in \mathbb{R}^D$ to each interaction state $k$. A deformation MLP $f_{def}$ predicts the displacement for each Gaussian: $(\Delta\mu_i, \Delta q_i, \Delta s_i) = f_{def}(\mu_i, q_i, s_i \mid \alpha_k)$. Deformation is applied as addition to position and quaternion multiplication to rotation. Since states are continuously parameterized by latent codes, interpolating in $\alpha$-space after training enables rendering of unseen continuous intermediate states.
 
-2. **Coarse Motion-Driven Part Segmentation**:
+**2. Coarse-grained Motion-driven Part Segmentation: Motion as Segmentation Signal**
 
-    - Function: Automatically discovers parts from motion trajectories.
-    - Mechanism: (a) The maximum displacement of each Gaussian across $K$ states is computed, and a threshold separates static from dynamic regions; (b) a VLM (BLIP/Gemini) estimates the number of moving parts from image pairs via majority voting; (c) motion descriptors (normalized direction + displacement magnitude) are constructed and clustered on the unit sphere via K-means.
-    - Design Motivation: Gaussians belonging to the same rigid part share consistent motion directions; after normalization, their angular distances remain small even when magnitudes differ.
+Without manual part annotations, PD²GS leverages the observation that Gaussians within the same rigid part move in the same direction (even if displacement magnitudes vary by distance to the joint). It first calculates the maximum displacement of each Gaussian across $K$ states, using a threshold $\tau_{mot}$ to separate static background from dynamic parts. Then, a VLM (BLIP/Gemini) estimates the number of moving parts from image pairs, using majority voting for stability. Finally, motion descriptors (normalized direction + magnitude) are constructed for each dynamic Gaussian to perform K-means clustering on a unit sphere.
 
-3. **SAM-Guided Boundary Refinement**:
+**3. SAM-guided Boundary Refinement: Pixel-level Precision via Visual Priors**
 
-    - Function: Refines part boundaries.
-    - Mechanism: 3D-to-2D projected prompt points are generated for Gaussians near part boundaries; SAM is invoked to produce 2D masks, which are back-projected into 3D to correct part labels. Boundary Gaussians are further split into multiple smaller Gaussians with reassigned labels.
-    - Design Motivation: Motion clustering yields coarse boundaries, while the visual prior from SAM provides pixel-accurate segmentation.
+Motion clustering often produces coarse boundaries where Gaussians at part junctions are misclassified. PD²GS uses SAM's pixel-level segmentation to refine these: automatic prompt points are generated via 3D→2D projection on Gaussians in boundary regions, fed to SAM to obtain 2D masks, and back-projected to 3D to correct labels. For Gaussians spanning boundaries, a splitting operation is performed, subdividing one Gaussian into smaller ones with recalibrated labels to fit actual part contours.
 
 ### Loss & Training
-$$\mathcal{L}_{total} = \mathcal{L}_{photo} + \mathcal{L}_{D_{SIMM}}$$
-comprising a photometric reconstruction loss and a density similarity regularization term.
+The training target is $\mathcal{L}_{total} = \mathcal{L}_{photo} + \mathcal{L}_{D_{SIMM}}$, combining photometric reconstruction loss to ensure alignment with input images and density similarity regularization to constrain Gaussian density distribution across deformations.
 
 ## Key Experimental Results
 
 ### Main Results (PartNet-Mobility)
 
 | Method | PSNR↑ | SSIM↑ | Part IoU↑ | Joint Error↓ |
-|--------|-------|-------|-----------|-------------|
+|------|-------|-------|----------|---------|
 | PARIS | Low | Low | ~50% | High |
-| CAGE | Medium | Medium | ~55% | Medium |
-| **PD²GS** | **Highest** | **Highest** | **~70%** | **Lowest** |
+| CAGE | Mid | Mid | ~55% | Mid |
+| **Ours** | **Highest** | **Highest** | **~70%** | **Lowest** |
 
 ### Ablation Study
 
-| Configuration | Reconstruction Quality | Segmentation Accuracy | Notes |
-|---------------|----------------------|-----------------------|-------|
+| Configuration | Recon. Quality | Segment Accuracy | Description |
+|------|---------|---------|------|
 | Full PD²GS | Best | Best | Complete model |
-| w/o SAM refinement | Slightly lower | −~10% | Coarse clustering boundaries imprecise |
-| w/o VLM counting | Comparable | −~5% | Manually specified $K$ yields similar results |
-| 2 states vs. 4 states | Lower | Lower | More states provide stronger motion constraints |
+| w/o SAM Refinement | Slightly lower | Drop ~10% | Coarse clustering boundaries |
+| w/o VLM Counting | Comparable | Drop ~5% | Manual K specification is close |
+| 2 States vs 4 States | Lower | Lower | More states provide better motion constraints |
 
 ### Key Findings
-- **Continuous control**: Interpolating latent codes generates smooth intermediate states, whereas prior methods can only jump between discrete states.
-- **Multi-part support**: Complex objects with multiple independently moving parts, such as multi-drawer cabinets, are successfully handled.
-- **RS-Art real data**: Strong performance on the authors' real-to-simulation dataset validates sim-to-real generalization.
+- **Continuous Control**: Latent code interpolation generates smooth intermediate states, whereas previous methods jump between discrete states.
+- **Multi-part Support**: Successfully handles complex objects like chest of drawers with multiple independently moving parts.
+- **RS-Art Real Data**: Performance holds on self-collected real-to-sim datasets, validating sim-to-real generalization.
 
 ## Highlights & Insights
-- **Elegant latent-code-driven continuous deformation**: Discrete state observations are encoded into a continuous motion space, enabling generation of unseen configurations.
-- **Self-supervised motion-as-segmentation paradigm**: Part structure is automatically discovered from motion differences without any manual annotation.
-- **Novel 3D-to-2D SAM prompting**: 2D prompt points are automatically derived from 3D part boundaries, eliminating the need for manually annotated SAM prompts.
+- **Elegant Latent-driven Deformation**: Encoding discrete observations into a continuous motion space supports the generation of unseen configurations.
+- **Self-supervised "Motion as Segmentation"**: Automatically discovers part structures from motion differences without any human labeling.
+- **Innovative 3D-to-2D SAM Prompting**: Generating 2D prompts directly from 3D part boundaries avoids the need for manual SAM interaction.
 
 ## Limitations & Future Work
-- VLM-based part counting can be unreliable; majority voting is required for stability.
+- VLM counting may be inconsistent, requiring majority voting for stability.
 - The motion threshold $\tau_{mot}$ requires manual tuning.
-- Only rigid articulated motion is supported; flexible deformations (e.g., cloth) are not addressed.
-- The RS-Art dataset remains limited in scale.
+- Only handles rigid articulated motion; non-rigid deformation (e.g., cloth) is not supported.
+- The RS-Art dataset scale is relatively small.
 
 ## Related Work & Insights
-- **vs. PARIS**: PARIS supports only single-joint two-state settings, whereas PD²GS enables multi-part, multi-state continuous control.
-- **vs. dynamic 3DGS (4D-GS, etc.)**: Dynamic methods do not distinguish part-level motion semantics; PD²GS performs explicit decoupling.
-- The framework has direct applicability to robotic object manipulation, as inferred part identities and kinematic parameters can directly inform manipulation planning.
+- **vs PARIS**: Only supports single-joint two-state scenarios; PD²GS supports multi-part multi-state continuous control.
+- **vs Dynamic 3DGS (e.g., 4D-GS)**: Dynamic methods do not distinguish part motion semantics; PD²GS explicitly decouples them.
+- Direct application value for robotic manipulation—operational strategies can be planned after predicting parts and kinematic parameters.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of canonical field + latent deformation + automatic part discovery is highly original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers PartNet-Mobility and RS-Art real data with complete ablations.
-- Writing Quality: ⭐⭐⭐⭐ Method description is clear with well-formatted formulations.
-- Value: ⭐⭐⭐⭐⭐ A significant advance in continuous modeling of articulated objects.
+- Novelty: ⭐⭐⭐⭐⭐ Integration of canonical fields, latent deformation, and auto-part discovery is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing on PartNet-Mobility and RS-Art with complete ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear method descriptions and standardized formulas.
+- Value: ⭐⭐⭐⭐⭐ Significant progress in continuous modeling of articulated objects.
 
 <!-- RELATED:START -->
 
@@ -121,11 +125,11 @@ comprising a photometric reconstruction loss and a density similarity regulariza
 
 ## Related Papers
 
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](../../CVPR2026/3d_vision/part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data](partsam_a_scalable_promptable_part_segmentation_model_trained_on_native_3d_data.md)
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
-- [\[ICLR 2026\] Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation](learning_part-aware_dense_3d_feature_field_for_generalizable_articulated_object_.md)
-- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](../../CVPR2026/3d_vision/extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](../../CVPR2026/3d_vision/artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](../../CVPR2026/3d_vision/dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
 
 </div>
 

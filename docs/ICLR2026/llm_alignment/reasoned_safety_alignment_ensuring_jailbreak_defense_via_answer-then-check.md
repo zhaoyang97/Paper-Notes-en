@@ -2,99 +2,98 @@
 title: >-
   [Paper Note] Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check
 description: >-
-  [ICLR 2026][LLM Alignment][Jailbreak Defense] This paper proposes an Answer-Then-Check strategy: the model first generates an intended answer summary in its chain-of-thought…
+  [ICLR 2026][Alignment & RLHF][Answer-Then-Check] This paper proposes the "Answer-Then-Check" strategy: the model first generates an intended answer summary within its chain-of-thought, performs a safety analysis based on safety policies, and finally decides whether to output or refuse. After training on the constructed 80K ReSA dataset, the defense rate reaches 99.3%
 tags:
-  - "ICLR 2026"
-  - "LLM Alignment"
-  - "Jailbreak Defense"
-  - "Answer-Then-Check"
-  - "Safety Reasoning"
-  - "Long Chain-of-Thought"
-  - "Data-Efficient Alignment"
+  - ICLR 2026
+  - Alignment & RLHF
+  - Answer-Then-Check
 date: 2026-05-08
-content_hash: 301cae7306fbf6d7
+content_hash: ae68fa8b8c4824c4
 ---
-
 # Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.11629](https://arxiv.org/abs/2509.11629)  
 **Code**: [https://huggingface.co/datasets/ByteDance-Seed/ReSA](https://huggingface.co/datasets/ByteDance-Seed/ReSA)  
-**Area**: AI Safety / LLM Alignment
+**Area**: AI Safety / LLM Alignment  
 **Keywords**: Jailbreak Defense, Answer-Then-Check, Safety Reasoning, Long Chain-of-Thought, Data-Efficient Alignment
 
 ## TL;DR
-This paper proposes an Answer-Then-Check strategy: the model first generates an intended answer summary in its chain-of-thought, then conducts safety analysis against a safety policy, and finally decides whether to output or refuse. After training on the constructed 80K ReSA dataset, the method achieves a 99.3% defense rate against 7 jailbreak attacks (RL variant), with only 500 samples needed to match full-dataset performance.
+This paper proposes the "Answer-Then-Check" strategy: the model first generates an intended answer summary within its chain-of-thought, performs a safety analysis based on safety policies, and finally decides whether to output or refuse. After training on the constructed 80K ReSA dataset, the defense rate reaches 99.3% (RL version) against 7 types of jailbreak attacks, with 500 samples being sufficient to achieve performance comparable to the full dataset.
 
 ## Background & Motivation
 
-**Background**: LLM safety alignment employs SFT/RLHF and related methods to train models to refuse harmful requests. However, jailbreak attacks continue to evolve, circumventing safety mechanisms through role-playing (PAP), template mutation (GPTFuzzer), and iterative optimization (PAIR/TAP).
+**Background**: LLM safety alignment employs methods like SFT/RLHF to ensure models refuse harmful requests. However, jailbreak attacks continue to evolve, bypassing safety mechanisms through role-playing (PAP), template variations (GPTFuzzer), and iterative optimization (PAIR/TAP).
 
 **Limitations of Prior Work**:
-   - Current alignment methods follow a "judge-then-answer" paradigm—the model decides whether to refuse or comply upon seeing a query, yet malicious intent may be deeply concealed at that stage.
-   - Post-hoc detection methods (e.g., LlamaGuard) can only issue flat refusals and cannot provide empathetic safety responses to sensitive queries (e.g., self-harm).
-   - Inference-time defense strategies (e.g., prompt engineering) are limited in effectiveness because models lack sufficient familiarity with safety policies.
+   - Current alignment follows a "judge-then-answer" approach—the model decides whether to refuse or answer upon seeing the query, but malicious intent can be deeply disguised.
+   - Post-hoc detection methods (e.g., LlamaGuard) can only perform direct refusal and cannot provide supportive safety responses for sensitive queries (e.g., self-harm).
+   - Inference-time defense strategies (e.g., prompt engineering) have limited effectiveness as models are not sufficiently familiar with safety policies.
 
-**Key Challenge**: Malicious intent can be deeply disguised at the query level and is difficult to detect; however, once the model attempts to generate a response, harmful content is inevitably exposed—a critical asymmetry.
+**Key Challenge**: Malicious intent may be deeply disguised at the query level, making it difficult to identify. However, once the model attempts to generate an answer, the harmful content is exposed—a critical asymmetry.
 
-**Goal**: Exploit this asymmetry to design a defense: allow the model to first answer (exposing intent) and then check (identifying risk).
+**Goal**: Utilize this asymmetry to design a defense where the model answers first (exposing intent) and then checks (identifying risk).
 
-**Key Insight**: Leverage Long Chain-of-Thought reasoning; during the `<think>` phase, generate an answer summary and analyze safety before presenting only verified content to the user.
+**Key Insight**: Combine with LongCoT (Chain-of-Thought), generating an answer summary and performing safety analysis during the `<think>` phase; only content that passes the check is presented to the user.
 
-**Core Idea**: Attempting to answer first surfaces malicious intent, which is then scrutinized against a safety policy—yielding logical immunity to jailbreak attacks.
+**Core Idea**: First attempt to answer to make malicious intent manifest, then review against safety policies = logical immunity to jailbreak attacks.
 
 ## Method
 
 ### Overall Architecture
-Input query → `<safety_check>` phase: (1) `<intended_answer_summary>` generates an intended answer summary; (2) safety policy analysis → `</safety_check>` → final response (normal reply if safe; refusal or safe completion if unsafe). Users see only content following `</safety_check>`.
+
+This paper addresses the challenge of jailbreak attacks disguising malicious intent at the query level to bypass safety alignment. It leverages an attack-defense asymmetry: while intent can be hidden in a carefully constructed prompt, harmful content becomes unavoidable once the model begins drafting the actual response. The core mechanism of ReSA is to postpone safety judgment from "deciding whether to refuse upon seeing the question" to "reviewing the drafted answer."
+
+The pipeline consists of training and inference phases. For training, the ReSA dataset is constructed—a general LLM generates approximately 80K samples in the format of "intended answer summary → safety analysis → final response" (including a small subset for self-harm safety completion). After two-stage filtering, SFT is performed, followed by optional GRPO reinforcement to obtain the ReSA model. During inference, the model enters a `<safety_check>` phase upon receiving a query: it writes an intended answer summary in `<intended_answer_summary>`, performs a safety analysis against policies, and concludes with `</safety_check>`. Only content generated after this tag is shown to the user. If the review passes, it replies normally; if harmful, it refuses; for sensitive topics like self-harm, it provides a supportive safety completion. An adaptive variant allows obviously benign queries to skip the entire check, maintaining latency comparable to the base model.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    subgraph TRAIN["ReSA Dataset Construction + SFT/RL"]
+        direction TB
+        D1["Four categories ~80K samples<br/>(inc. 524 self-harm safe completions)"] --> D2["Two-stage Filtering:<br/>LlamaGuard + Consistency Check"]
+        D2 --> D3["SFT, optional GRPO<br/>(Intent summary + answer dual safety reward)"]
+    end
+    TRAIN --> M["ReSA Model"]
+    M --> Q["User Query"]
+    Q --> ADP{"Adaptive Decision:<br/>Is it a common request?"}
+    ADP -->|Common Request| DIRECT["Direct Answer<br/>(Skip Inspection)"]
+    ADP -->|Potentially Harmful| IAS["Intended Answer Summary<br/>(intended_answer_summary)"]
+    IAS --> ANA["Safety analysis against policy<br/>(safety_check)"]
+    ANA --> DEC{"Does the answer violate policy?"}
+    DEC -->|Safe| ANS["Normal Reply"]
+    DEC -->|Harmful/General| REF["Refusal"]
+    DEC -->|Sensitive (e.g., self-harm)| SAFE["Safe Completion<br/>Supportive Reply"]
+```
 
 ### Key Designs
 
-1. **Answer-Then-Check Reasoning Template**:
+**1. Answer-Then-Check Inference Template: Postponing Safety Judgment from Question to Answer**
 
-    - Function: Defines a three-stage reasoning structure—intended answer summary → safety analysis → final response.
-    - Mechanism: The model "attempts to answer" first (generating an answer summary even for harmful queries), so that malicious intent exposed in the answer becomes easier to identify. The model then evaluates whether this answer violates the safety policy.
-    - Design Motivation: Traditional methods assess safety at the query level, but jailbreak attacks specifically exploit query-level disguise. Answer-Then-Check defers the safety judgment to the answer level, at which point harmful content can no longer be concealed.
-    - vs. OpenAI Deliberative Alignment: Unlike OpenAI's approach of analyzing before answering, this paper answers before analyzing; the latter more thoroughly exposes harmful content within the answer.
+Traditional alignment uses "judge-then-answer," where the model decides to refuse or answer based on the query, which jailbreak attacks exploit by disguising the query. This template reverses the order—intended answer summary → safety analysis → final response—forcing the model to summarize the answer first. This makes malicious intent manifest in the answer summary, which is then evaluated against safety policies. At this point, the content is explicit and impossible to hide. Structurally, the intent summary and safety analysis are enclosed in `<safety_check>...</safety_check>`, with the summary further wrapped in `<intended_answer_summary>`, and the final response following `</safety_check>`. Only content after `</safety_check>` is visible to the user. This contrasts with OpenAI's Deliberative Alignment; while the latter analyzes before answering, ReSA answers before analyzing, exposing malicious content more thoroughly and providing stronger resistance to disguised queries.
 
-2. **ReSA Dataset Construction (80K samples)**:
+**2. ReSA Dataset Construction: Bulk Generation of ~80K Samples via General Models**
 
-    - Function: Constructs Answer-Then-Check training data spanning four categories—vanilla harmful/benign and adversarial harmful/benign.
-    - Mechanism:
-        - An uncensored model (Dolphin-2.9.2) generates intended answers for harmful queries; Qwen2.5-72B produces summaries.
-        - Llama3.3-70B generates safety analyses against the safety policy.
-        - Adversarial samples are generated using three jailbreak techniques: PAIR, GPTFuzzer, and PAP.
-    - Data Distribution: 12K vanilla harmful + 16K vanilla benign + 23K adversarial harmful + 29K adversarial benign.
-    - Two-stage Filtering: LlamaGuard classification + internal consistency check (removing samples where the analysis conclusion contradicts the content).
+The template requires data to train the model, covering vanilla harmful/benign and adversarial harmful/benign categories. This ensures the model learns to answer-then-check for both clean and jailbreak queries. The process involves: using the uncensored Dolphin-2.9.2-Qwen2-72B to generate intended answers for harmful queries, Qwen2.5-72B for benign queries, and then compressing them into summaries; safety analysis is written by Llama3.3-70B against safety policies; adversarial samples are generated using PAIR, GPTFuzzer, and PAP. The final distribution includes 12K vanilla harmful, 16K vanilla benign, 23K adversarial harmful, and 29K adversarial benign samples (~80K total). Quality is ensured through two-stage filtering: first, LlamaGuard classification (retaining only "benign labeled safe" and "harmful labeled unsafe"), followed by a consistency check to remove samples where the safety analysis contradicts the answer content. Notably, the dataset relies solely on general LLMs (Dolphin/Qwen2.5/Llama3.3) rather than o1-level reasoning models, reducing the barrier to entry.
 
-3. **Safe Completion Mechanism**:
+**3. Safe Completion: Beyond the Binary "Refusal" for Sensitive Topics**
 
-    - Function: Provides empathetic, supportive responses to sensitive queries such as self-harm rather than issuing outright refusals.
-    - Mechanism: Self-harm-related samples (524 instances) are extracted from the training set to construct safe completion data—vanilla self-harm queries are responded to directly by a general-purpose LLM, while adversarial self-harm queries are handled by first identifying malicious intent and then generating a caring response.
-    - Design Motivation: Post-hoc detection methods can only refuse; refusing self-harm-related queries may itself cause harm.
+Post-hoc detection defenses often result in a blunt refusal. However, for high-risk sensitive queries like self-harm, an abrupt refusal can be damaging. Safe Completion addresses this by extracting 524 self-harm samples (167 vanilla harmful + 357 adversarial harmful) using LlamaGuard. For vanilla self-harm queries, the final answer in the template is replaced with a caring response from a general LLM. For adversarial self-harm queries, the model is paired with the corresponding vanilla query to recognize the malicious intent and generate a supportive reply. This provides an alternative to simple refusal or compliance, ensuring the model is neither unsafe nor indifferent toward sensitive topics. Experiments show that with even a small amount of carefully constructed data, the model can identify intent under adversarial prompts and provide safety-aligned responses.
 
-4. **Adaptive Answer-Then-Check**:
+**4. Two Variants: Adaptive to Reduce Overhead + RL for Internal CoT Management**
 
-    - Function: Bypasses the Answer-Then-Check procedure for normal/safe queries and responds directly, avoiding efficiency overhead.
-    - Mechanism: 1,000 instruction-tuning samples that do not require Answer-Then-Check are mixed into training data, enabling the model to learn when to activate the mechanism.
-    - Effect: Normal queries achieve base-model-level latency while safety performance is preserved.
-
-5. **RL Variant (ReSA-RL)**:
-
-    - Function: Further optimizes the SFT model using GRPO.
-    - Mechanism: Three reward signals—safety reward (LlamaGuard evaluates both the intended summary and the final answer), refusal reward (penalizes over-refusal of benign queries), and format reward (enforces the Answer-Then-Check structure).
-    - Key Innovation: Safety rewards are applied to the intended answer summary as well, ensuring the entire generation process—including the internal chain-of-thought—produces safe content.
+The basic template adds the overhead of generating an intent summary and safety analysis for every query. Two variants address this. **Adaptive Answer-Then-Check** improves efficiency by mixing in instruction-tuning samples that do not use the full template, allowing the model to learn to skip the review for obviously benign queries. This brings latency back to base model levels for normal requests without sacrificing safety performance. **ReSA-RL** enhances robustness using GRPO reinforcement on top of SFT. The reward consists of three parts: a safety reward using LlamaGuard to **simultaneously** evaluate if the intended answer summary $o_{\text{intended}}$ and final answer $o_{\text{ans}}$ are safe, a refusal reward (determined by Qwen2.5-7B) to suppress over-refusal of benign queries, and a format reward to maintain the Answer-Then-Check structure. Crucially, scoring the intent summary within the CoT ensures the entire generation process remains safe, closing the "CoT harmful content leakage" loophole.
 
 ### Loss & Training
-- SFT: Standard cross-entropy; AdamW + cosine schedule; lr = 5e-6; 2 epochs.
-- RL: GRPO; reward = $\lambda_{\text{safety}} \cdot (R_{\text{safety}}(o_{\text{intended}}) + R_{\text{safety}}(o_{\text{ans}})) + \lambda_{\text{format}} \cdot R_{\text{format}}(o) + \lambda_{\text{refusal}} \cdot R_{\text{refusal}}(o_{\text{ans}})$
+- SFT: Standard cross-entropy, AdamW + cosine schedule, lr=5e-6, 2 epochs.
+- RL: GRPO, Reward = $\lambda_{\text{safety}} \cdot (R_{\text{safety}}(o_{\text{intended}}) + R_{\text{safety}}(o_{\text{ans}})) + \lambda_{\text{format}} \cdot R_{\text{format}}(o) + \lambda_{\text{refusal}} \cdot R_{\text{refusal}}(o_{\text{ans}})$.
 
 ## Key Experimental Results
 
 ### Main Results: Jailbreak Defense Rate (LlamaGuard evaluation, Llama3.1-8B-Instruct)
 
 | Method | None | PAIR-GPT | PAIR | PAP | GPTFuzzer | ReNeLLM | TAP | DeepInception | Avg |
-|--------|------|----------|------|-----|-----------|---------|-----|--------------|-----|
+|------|------|----------|------|-----|-----------|---------|-----|--------------|-----|
 | Base | 99.7 | 35.1 | 26.2 | 64.9 | 13.7 | 66.1 | 42.5 | 52.4 | 50.1 |
 | Post-hoc LlamaGuard | 100 | 46.3 | 50.8 | 71.6 | 99.7 | 93.0 | 65.8 | 97.8 | 78.1 |
 | STAIR-DPO | 100 | 68.4 | 42.2 | 94.3 | 100 | 83.4 | 69.3 | 98.7 | 82.0 |
@@ -102,63 +101,42 @@ Input query → `<safety_check>` phase: (1) `<intended_answer_summary>` generate
 | **ReSA-SFT** | 99.4 | 89.8 | 69.7 | 96.8 | 95.5 | 88.2 | 85.0 | 99.4 | **90.5** |
 | **ReSA-RL** | 100 | 98.7 | 96.8 | 99.7 | 100 | 99.7 | 99.7 | 100 | **99.3** |
 
-### Ablation Study: Effect of Training Data Size
+### Ablation Study: Impact of Data Volume
 
-| # Training Samples | 500 | 1K | 5K | 80K |
-|--------------------|-----|----|----|-----|
-| Avg. Defense Rate (LlamaGuard) | ~89% | ~89% | ~90% | 90.5% |
-| Note | Nearly matches full dataset | Diminishing marginal returns | Near saturation | Full dataset |
+| Training Samples | 500 | 1K | 5K | 80K |
+|-----------|-----|----|----|-----|
+| Avg Defense Rate (LlamaGuard) | ~89% | ~89% | ~90% | 90.5% |
+| Note | Close to full dataset performance | Diminishing marginal returns | Near saturation | Full dataset |
 
 ### Key Findings
-- **ReSA-RL achieves near-perfect defense**: Average defense rate of 99.3%, approaching 100% on most attacks, far surpassing all baselines.
-- **500 samples suffice**: Only 500 samples are needed to approach full-dataset performance, validating the data efficiency of safety alignment.
-- **Applying safety rewards to the intended summary is critical**: This ensures the chain-of-thought internals are also safe.
-- **SFT alone substantially outperforms STAIR/WJ**: 82% → 90.5%, demonstrating the intrinsic effectiveness of the Answer-Then-Check reasoning template.
-- **Adaptive variant is highly efficient**: Normal queries do not trigger additional reasoning, achieving base-model-level latency.
+- **ReSA-RL is nearly perfect**: Achieves an average defense rate of 99.3%, approaching 100% on most attacks, significantly outperforming all baselines.
+- **500 samples are sufficient**: Just 500 samples achieve performance close to the full dataset, verifying the data efficiency of safety alignment.
+- **Safety rewards on intent summaries are vital**: Ensures the internal chain-of-thought is also secure.
+- **SFT significantly outperforms methods like STAIR/WJ**: Improving from 82% to 90.5% demonstrates the inherent effectiveness of the Answer-Then-Check template.
+- **Adaptive version is efficient**: Normal queries do not trigger extra reasoning, matching the latency of the base model.
 
 ## Highlights & Insights
-- **Exploiting attack-defense asymmetry**: The core of jailbreak attacks is disguising malicious intent at the query level, but once the model attempts to generate an answer, harmful content cannot be hidden. Answer-Then-Check precisely leverages this asymmetry—a particularly elegant insight.
-- **Safe completion over blanket refusal**: Providing supportive responses to sensitive topics such as self-harm is a rare but critically important capability among defense methods.
-- **No reliance on reasoning models for data construction**: Unlike OpenAI Deliberative Alignment, ReSA constructs training data using only general-purpose LLMs (Qwen2.5 / Llama3.3), lowering the barrier to adoption.
-- **Dual safety rewards in RL**: Safety rewards are applied not only to the final answer but also to the intended summary, ensuring the chain-of-thought itself remains safe—mitigating the risk of "chain-of-thought leakage."
+- **Leveraging Attack-Defense Asymmetry**: Jailbreak attacks disguise intent at the query level, but malicious content cannot be hidden once answering begins. Answer-Then-Check utilizes this sophisticated insight.
+- **Safe Completion vs. Blanket Refusal**: Providing supportive responses for sensitive topics like self-harm is a rare but critical capability in defense methods.
+- **Independence from Reasoning Models for Data Generation**: Unlike OpenAI’s Deliberative Alignment, ReSA uses general LLMs (Qwen2.5/Llama3.3) to build training data, lowering the barrier.
+- **Dual Safety Rewards in RL**: Applying safety rewards to both the final answer and the intent summary ensures safety within the CoT, preventing "CoT leakage" of harmful content.
 
 ## Limitations & Future Work
-- **Efficiency overhead**: Despite the adaptive variant, Answer-Then-Check still requires additional generation of the intended summary and safety analysis, increasing computational cost.
-- **Dependence on LlamaGuard**: Both data construction and RL rewards rely on the classification accuracy of LlamaGuard.
-- **Coverage of the safety policy**: Safety policies encoded in training data must be defined in advance and may not generalize to emerging risk categories.
-- **Improvement directions**: Integrating the safety-unit freezing strategy from SSAH could protect safety-critical neurons in the ReSA model from being degraded by downstream fine-tuning.
+- **Efficiency Overhead**: Despite the adaptive version, Answer-Then-Check still requires generating summaries and analyses, increasing computation.
+- **LlamaGuard Dependency**: Both data construction and RL rewards rely on LlamaGuard's classification accuracy.
+- **Safety Policy Coverage**: The safety policies in the training data must be pre-defined and may not cover emerging risk types.
+- **Future Directions**: Potentially integrating SSAH’s safety unit freezing strategy to protect safety-critical neurons from being compromised by downstream tasks during ReSA fine-tuning.
 
 ## Related Work & Insights
-- **vs. STAIR-DPO**: STAIR applies DPO for safety reasoning alignment but achieves substantially lower performance (82%) than ReSA (90.5% / 99.3%), as DPO lacks an explicit Answer-Then-Check structure.
-- **vs. OpenAI Deliberative Alignment**: OpenAI's approach audits before answering, whereas ReSA answers before auditing; the latter is more effective against disguised queries, and ReSA does not require o1-level reasoning models.
-- **vs. Post-hoc Detection (LlamaGuard)**: Post-hoc detection (78.1%) is substantially inferior to ReSA (90.5%) and cannot perform safe completion.
+- **vs. STAIR-DPO**: STAIR uses DPO for safety reasoning alignment but achieves much lower performance (82%) than ReSA (90.5%/99.3%) due to the lack of an explicit Answer-Then-Check structure.
+- **vs. OpenAI Deliberative Alignment**: OpenAI reviews before answering, while ReSA answers before reviewing. The latter is more effective against disguised queries and does not require o1-level models.
+- **vs. Post-hoc detection (LlamaGuard)**: Post-hoc detection (78.1%) is significantly less effective than ReSA (90.5%) and cannot perform Safe Completion.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The core insight of Answer-Then-Check—exploiting attack-defense asymmetry—is exceptionally elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 attack types × 3 evaluators × 2 models, with comparisons against 13 baselines; highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Well-organized with detailed method descriptions.
-- Value: ⭐⭐⭐⭐⭐ Practical and efficient; the 500-sample threshold is extremely accessible, and the RL variant achieves near-perfect defense.
-
-## Background & Motivation
-- LLMs remain vulnerable to jailbreak attacks; existing defenses offer limited effectiveness against sophisticated adversarial prompts.
-
-## Method
-- Answer-Then-Check: the model summarizes intent during reasoning → policy-based safety analysis → final output.
-- ReSA dataset: 80K samples (vanilla/adversarial × harmful/benign).
-- Adaptive variant + RL variant.
-
-## Key Experimental Results
-
-| Dimension | ReSA |
-|-----------|------|
-| Safety | Best among 13 methods |
-| Capability retention | No degradation on MMLU / MATH500 / HumanEval |
-| Data efficiency | 500 samples ≈ full dataset |
-
-## Rating
-- Novelty: ⭐⭐⭐⭐ A new paradigm for intermediate safety reasoning.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comparisons against 13 methods.
-- Value: ⭐⭐⭐⭐⭐ A practical solution for LLM safety.
+- Novelty: ⭐⭐⭐⭐⭐ The core insight of Answer-Then-Check (utilizing asymmetry) is highly sophisticated.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 attacks × 3 evaluators × 2 models, 13 baseline comparisons; very comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with detailed methodology.
+- Value: ⭐⭐⭐⭐⭐ Practical and efficient; 500-sample threshold is very low, and the RL version offers near-perfect defense.
 
 <!-- RELATED:START -->
 
@@ -170,7 +148,7 @@ Input query → `<safety_check>` phase: (1) `<intended_answer_summary>` generate
 - [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](superficial_safety_alignment_hypothesis.md)
 - [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](../../CVPR2026/llm_alignment/principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)
 - [\[AAAI 2026\] AlignTree: Efficient Defense Against LLM Jailbreak Attacks](../../AAAI2026/llm_alignment/aligntree_efficient_defense_against_llm_jailbreak_attacks.md)
-- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
+- [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
 
 </div>
 

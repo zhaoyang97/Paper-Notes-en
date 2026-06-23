@@ -2,142 +2,137 @@
 title: >-
   [Paper Note] Superficial Safety Alignment Hypothesis
 description: >-
-  [ICLR 2026][LLM Alignment][safety alignment] This paper proposes the **Superficial Safety Alignment Hypothesis (SSAH)**: safety alignment is essentially teaching a model to perform an implicit binary classification task…
+  [ICLR 2026][Alignment & RLHF][Paper Note] Proposes the "Superficial Safety Alignment Hypothesis" (SSAH): safety alignment essentially teaches the model to perform an implicit binary classification task (execute vs. refuse). Only ~1.3% of neurons are required to establish safety guardrails; freezing these safety-critical units maintains safety during fine-tunin
 tags:
-  - "ICLR 2026"
-  - "LLM Alignment"
-  - "safety alignment"
-  - "alignment fragility"
-  - "neuron-level analysis"
-  - "alignment tax"
-  - "model pruning"
+  - ICLR 2026
+  - Alignment & RLHF
 date: 2026-05-08
-content_hash: 452354c3b4aef8a4
+content_hash: a09597f5dc411091
 ---
-
 # Superficial Safety Alignment Hypothesis
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2410.10862](https://arxiv.org/abs/2410.10862)  
 **Code**: [https://ssa-h.github.io/](https://ssa-h.github.io/)  
-**Area**: AI Safety / LLM Alignment
-**Keywords**: safety alignment, alignment fragility, neuron-level analysis, alignment tax, model pruning
+**Area**: AI Safety / LLM Alignment  
+**Keywords**: Safety alignment, safety vulnerability, neuron-level analysis, alignment tax, model pruning
 
 ## TL;DR
-This paper proposes the **Superficial Safety Alignment Hypothesis (SSAH)**: safety alignment is essentially teaching a model to perform an implicit binary classification task (execute vs. refuse), requiring only ~1.3% of neurons to establish safety guardrails. Freezing these safety-critical units during fine-tuning preserves safety, and leveraging redundant units as an "alignment budget" eliminates the alignment tax.
+Proposes the "Superficial Safety Alignment Hypothesis" (SSAH): safety alignment essentially teaches the model to perform an implicit binary classification task (execute vs. refuse). Only ~1.3% of neurons are required to establish safety guardrails; freezing these safety-critical units maintains safety during fine-tuning, and utilizing redundant units as an "alignment budget" can eliminate the alignment tax.
 
 ## Background & Motivation
 
-**Background**: LLM safety alignment primarily relies on SFT, RLHF, and DPO, but these methods typically treat safety alignment as a subset of general alignment, overlooking its unique properties.
+**Background**: LLM safety alignment primarily relies on methods like SFT, RLHF, and DPO. However, these methods typically treat safety alignment as a subset of general alignment, overlooking the unique properties of safety alignment.
 
 **Limitations of Prior Work**:
-- Safety mechanisms are extremely fragile — even fine-tuning on benign data can collapse safety guardrails (Qi et al., 2023).
-- An "alignment tax" exists — improving safety sacrifices general model capability.
-- Current approaches require full-parameter fine-tuning, incurring high computational costs.
+   - Safety mechanisms are extremely fragile—safety guardrails can collapse even when fine-tuning on benign data (Qi et al., 2023).
+   - Existence of the "alignment tax"—improving safety often sacrifices the general capabilities of the model.
+   - Current methods require full-parameter fine-tuning, which is computationally expensive.
 
-**Key Challenge**: There is insufficient understanding of how safety alignment affects model behavior and why safety mechanisms are so fragile.
+**Key Challenge**: There is a lack of deep understanding regarding how safety alignment affects model behavior and why safety mechanisms are so fragile.
 
-**Goal**: Three questions are addressed: How does safety alignment affect model behavior? Why is safety so fragile? How can these issues be mitigated?
+**Goal**: To answer three questions: How does safety alignment affect model behavior? Why is safety fragile? How can these issues be mitigated?
 
-**Key Insight**: A key observation — a model capable of fulfilling malicious requests already possesses the relevant knowledge and reasoning ability; thus, safety alignment only needs to teach the model to select the correct reasoning direction (execute vs. refuse), rather than injecting new knowledge.
+**Key Insight**: A key observation is that models capable of executing malicious requests already possess the relevant knowledge and reasoning abilities. Therefore, safety alignment only needs to teach the model to choose the correct reasoning direction (execute vs. refuse) rather than injecting new knowledge.
 
-**Core Idea**: Safety alignment ≈ implicit binary classification task, achievable with a very small fraction (~1.3%) of safety-critical neurons.
+**Core Idea**: Safety alignment ≈ an implicit binary classification task, which can be achieved through a minimal set (~1.3%) of safety-critical neurons.
 
 ## Method
 
 ### Overall Architecture
-SSAH is not a concrete algorithm but a hypothesis framework about the nature of safety alignment. The overall pipeline proceeds as follows: (1) propose the hypothesis and validate the existence of reasoning directions via probing experiments; (2) identify four types of neurons (SCU/UCU/CU/RU) through structured pruning; (3) derive two practical strategies based on the identified units — freezing safety units to resist fine-tuning attacks, and exploiting redundant units to reduce the alignment tax.
+SSAH is not a specific training algorithm but a hypothesis concerning "what safety alignment actually modifies in a model," followed by localization and application based on this hypothesis. Starting with an aligned but fragile LLM, the authors first propose the hypothesis and use probe experiments to confirm that safety alignment changes the "reasoning direction" (execute vs. refuse) chosen by the model at each generation step, rather than injecting knowledge. Next, they use structured pruning and importance scoring to categorize neurons into four types: Safety-Critical Units (SCU), Utility-Critical Units (UCU), Composite Units (CU), and Redundant Units (RU), localizing the small subset of neurons maintaining the safety guardrails. Finally, they develop two application branches: freezing safety units during downstream fine-tuning to prevent safety degradation, and updating only redundant units during alignment to eliminate the alignment tax.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Aligned but Fragile LLM"] --> B["Superficial Safety Alignment Hypothesis (SSAH)<br/>Safety = Choosing correct reasoning direction (Execute/Refuse) per step"]
+    B -->|"Probe Validation: Clean / +Benign token / +Malicious token<br/>Compare hidden state distances"| C["Identification of Four Unit Types<br/>Importance Score + Structured Pruning"]
+    C --> D{"SCU 1.3% / UCU / CU / RU"}
+    D -->|"Lock during downstream fine-tuning"| E["Freeze Safety Units<br/>SCU+CU blocks attribute migration"]
+    D -->|"Update only during alignment"| F["Redundant Units as Alignment Budget<br/>Modify only RU"]
+    E --> G["Safety preserved after fine-tuning"]
+    F --> H["Zero-tax alignment"]
+```
 
 ### Key Designs
 
-1. **Superficial Safety Alignment Hypothesis (SSAH)**:
+**1. Superficial Safety Alignment Hypothesis (SSAH): Re-understanding safety alignment as an implicit binary classification and verifying it with probes**
 
-    - **Function**: Reframes safety alignment as an implicit safety-related binary classification task.
-    - **Mechanism**: A model capable of executing malicious requests already possesses the relevant knowledge; safety alignment only needs to teach it to select the correct "reasoning direction" — whether to execute or refuse a request. Alignment also provides a standardized refusal mechanism and alternative response templates.
-    - **Design Motivation**: Compared to the general Safety Alignment Hypothesis (SAH), SSAH is more specific and verifiable — it focuses on models that already possess the requisite knowledge, eliminating confounding factors arising from knowledge deficits.
-    - **Explanation of Jailbreaks**: Current alignment only determines the reasoning direction at the initial token; attackers bypass the safety mechanism by manipulating tokens. Ideal alignment should re-evaluate the reasoning direction at every generation step.
+The general Safety Alignment Hypothesis (SAH) vaguely suggests that alignment provides the model with a complete set of values, which is difficult to verify. SSAH narrows the scope to a key observation: a model that can fully execute a malicious request already possesses the knowledge and reasoning ability. Thus, safety alignment does not need to teach new content but only how to select the correct "reasoning direction"—to execute or refuse. Beyond this binary decision, alignment also provides a standardized refusal mechanism and response templates. This narrowed hypothesis becomes concretely verifiable as it focuses on "knowledge-ready" models, excluding the confounding factor of knowledge deficits.
 
-2. **Probing Experiments to Validate Reasoning Directions**:
+Since the reasoning direction is an abstract internal state, the authors infer it via distances in the hidden state space. For each malicious query, they construct three versions: the original malicious query (Clean), query followed by a benign token ("Sorry, I can't..."), and query followed by a malicious token ("Here's how..."). For an aligned model, the Clean hidden states should be closer to the "benign token" version and farther from the "malicious token" version at each generation step; the unaligned model shows the opposite. Experiments confirmed this, showing that this preference for safety direction persists across all Transformer blocks. The authors emphasize this is necessary but not sufficient evidence, as alignment may involve subtler changes. This perspective also explains why jailbreaking works—current alignment often sets the direction at the initial token; attackers can manipulate the starting tokens to pivot the direction toward "execution." Robust alignment should re-evaluate the reasoning direction at every generation step.
 
-    - **Function**: Validates that safety alignment indeed shifts the model's reasoning direction by comparing hidden-state distances.
-    - **Mechanism**: Three types of queries are constructed — original malicious queries (Clean), malicious queries prepended with a benign token ("Sorry, I can't..."), and malicious queries prepended with a malicious token ("Here's how..."). For an aligned model, the hidden-state distance between Clean and the benign-token variant should be smaller than that between Clean and the malicious-token variant; the reverse holds for unaligned models.
-    - **Design Motivation**: Directly observing reasoning direction is infeasible, but it can be inferred indirectly through distance relationships in the hidden-state space.
-    - **Key Findings**: Aligned models exhibit a preference for safe reasoning across all Transformer blocks, not merely in later layers.
+**2. Identification of Four Unit Types (SCU/UCU/CU/RU): Localizing safety neurons via structured pruning**
 
-3. **Identification of Four Types of Computational Units (SCU/UCU/CU/RU)**:
+If safety alignment is a simple binary classification, the neurons supporting it should be minimal. To localize them, the authors calculate unit-wise importance scores for each depth-2 module $f(X) = B\sigma(AX)$:
 
-    - **Function**: Classifies model neurons/channels into four types: Safety-Critical Units (SCU), Utility-Critical Units (UCU), Composite Units (CU), and Redundant Units (RU).
-    - **Mechanism**: A structured pruning strategy is employed. For each depth-2 module $f(X) = B\sigma(AX)$, an importance score is computed as $\mathbf{I}_{:,j} = \frac{1}{N-1}\sum_{n=1}^{N}(X^B_{n,j,:} - \bar{X}^B_{:,j,:})^2 \cdot \|\mathbf{W}^B_{:,j}\|_2^2$. Scores $\mathbf{I_S}$ and $\mathbf{I_U}$ are computed on safety and utility datasets respectively, and the four unit types are distinguished via their differences and sums.
-    - **Design Motivation**: If safety alignment is truly a simple binary classification task, then only a small number of neurons should be required to establish safety guardrails.
+$$\mathbf{I}_{:,j} = \frac{1}{N-1}\sum_{n=1}^{N}(X^B_{n,j,:} - \bar{X}^B_{:,j,:})^2 \cdot \|\mathbf{W}^B_{:,j}\|_2^2$$
 
-4. **Freezing Strategy Against Fine-Tuning Attacks**:
+Essentially, the importance of the $j$-th unit is the product of its activation variance and the squared norm of its output weights. Scores $\mathbf{I_S}$ and $\mathbf{I_U}$ are calculated on safety and utility datasets respectively, categorizing units into four types: Redundant Units (RU) have the lowest $\mathbf{I_U}+\mathbf{I_S}$; Safety-Critical Units (SCU) and Utility-Critical Units (UCU) are those with the highest and lowest $\mathbf{I_S}-\mathbf{I_U}$ respectively; the remainder are Composite Units (CU). Pruning uses structured removal (entire channels/neurons), scanning from high pruning ratios downward. Results confirm the hypothesis—SCUs account for only ~1.3% of neurons but are the "Achilles' heel" of safety guardrails: removing just this 1.3% causes ASR to skyrocket.
 
-    - **Function**: Freezes safety-critical components (SCU + top CU) during fine-tuning to prevent safety degradation.
-    - **Mechanism**: Attribute migration analysis reveals that fine-tuning converts SCUs and CUs into UCUs, causing safety degradation. Freezing these units prevents such attribute migration.
-    - **Effect**: Freezing SCU + all CU reduces ASR on AdvBench for LLaMA2 from 11.92% to 2.88%.
+**3. Freezing Safety Units: Locking them during fine-tuning to prevent "attribute migration"**
 
-5. **Redundant Units as Alignment Budget**:
+Why does benign fine-tuning damage safety? Attribute migration analysis reveals that fine-tuning gradually shifts SCUs toward utility—over half of SCUs degrade into CUs, and some CUs degrade into UCUs, reducing the total contribution to safety. The countermeasure is direct: freeze safety-critical components (SCU plus top-ranked CUs) during fine-tuning to block this migration path. Results on LLaMA2 show that freezing SCU + all CU reduced AdvBench ASR from 11.92% to 2.88%, with migration analysis confirming the suppression of safety-to-utility conversion.
 
-    - **Function**: Performs alignment fine-tuning exclusively on the redundant units (~20% of parameters) of the pre-trained model.
-    - **Mechanism**: Approximately 20% of pre-trained model parameters are redundant; updating only these parameters achieves alignment while avoiding modification of utility-critical units.
-    - **Effect**: Updating 20% of parameters achieves comparable alignment quality, while mathematical capability (GSM8K) improves from 9.24 to 13.4 — outperforming full-parameter fine-tuning, which yields 8.8.
+**4. Redundant Units as Alignment Budget: Updating only RU to eliminate alignment tax**
 
-### Loss & Training
-- During pruning, an activation-variance-based importance score is used to remove channels/neurons in a structured manner.
-- During fine-tuning, specific units are frozen; training epochs are doubled to ensure fair comparison (resulting in equivalent or lower final training loss).
+The alignment tax stems from fine-tuning modifying UCUs, thereby sacrificing general capabilities. Analysis shows that during alignment, many utility-only units are flipped to CU/SCU, while pre-existing redundant units from pre-training are barely used. Since pre-trained models have at least ~20% redundant parameters (RU), safety alignment can be restricted to these units. By localizing RUs via pruning and freezing all other parameters, safety/alignment behavior can be established without touching UCUs. Results show that updating only 20% of parameters achieves equivalent alignment, and math ability (GSM8K) actually improved from 9.24 to 13.4, outperforming the full-parameter fine-tuning result of 8.8. This indicates that squeezing alignment into redundant space avoids the disturbances to utility units caused by full-parameter updates.
+
+### Training Strategy
+Pruning consistently uses the activation-variance importance score with structured channel removal. Both applications rely on "freezing one set of units while training another" (freezing SCU/CU or training only RU). To ensure fair comparisons, frozen versions doubled the training epochs to ensure final training loss was comparable to or lower than full-parameter baselines, ruling out "insufficient training" as a reason for better safety.
 
 ## Key Experimental Results
 
-### Main Results: Freezing Safety Units Against Fine-Tuning Attacks
+### Main Results: Freezing Safety Units Against Fine-tuning Attacks
 
 | Model / Setting | AdvBench ASR (keyword) | AdvBench ASR (llama3-guard) | HEx-PHI Score | HEx-PHI Rate |
-|---|---|---|---|---|
-| LLaMA2 initial | 0.19% | 0.19% | 1.05 | 0.3% |
-| LLaMA2 + Dolly fine-tune | 11.92% | 10.58% | 1.95 | 18.78% |
-| LLaMA2 + freeze SCU+6%CU | 3.65% | 2.31% | 1.55 | 10.6% |
-| LLaMA2 + freeze SCU+all CU | 2.88% | 1.92% | 1.48 | 9.0% |
-| LLaMA3 initial | 1.54% | 1.15% | 1.16 | 3.0% |
-| LLaMA3 + Dolly fine-tune | 61.15% | 50.58% | 2.95 | 37.2% |
-| LLaMA3 + freeze SCU+all CU | 40.58% | 28.27% | 2.32 | 23.6% |
+|-----------|----------------------|---------------------------|---------------|-------------|
+| LLaMA2 Initial | 0.19% | 0.19% | 1.05 | 0.3% |
+| LLaMA2 + Dolly FT | 11.92% | 10.58% | 1.95 | 18.78% |
+| LLaMA2 + Freeze SCU+6%CU | 3.65% | 2.31% | 1.55 | 10.6% |
+| LLaMA2 + Freeze SCU+All CU | 2.88% | 1.92% | 1.48 | 9.0% |
+| LLaMA3 Initial | 1.54% | 1.15% | 1.16 | 3.0% |
+| LLaMA3 + Dolly FT | 61.15% | 50.58% | 2.95 | 37.2% |
+| LLaMA3 + Freeze SCU+All CU | 40.58% | 28.27% | 2.32 | 23.6% |
 
-### Ablation Study: Impact of Pruning Each Unit Type
+### Ablation Study: Impact of Pruning Four Unit Types
 
-| Unit Type | Proportion | Utility Drop (LLaMA2) | Safety ASR Increase (LLaMA2) |
-|---|---|---|---|
-| SCU | 1.3% | −1.3% | +56.0% |
-| UCU | 13.3% | −15.6% | +18.3% |
-| RU | 14.8% | −2.8% | +4.6% |
-| Dense (full model) | 100% | baseline | baseline (10.0%) |
+| Unit Type | Ratio | Utility Drop (LLaMA2) | Safety ASR Increase (LLaMA2) |
+|---------|------|-----------------|-------------------|
+| SCU | 1.3% | -1.3% | +56.0% |
+| UCU | 13.3% | -15.6% | +18.3% |
+| RU | 14.8% | -2.8% | +4.6% |
+| Dense (Full Model) | 100% | Base | Base (10.0%) |
 
 ### Key Findings
-- **SCUs are extremely sparse yet critical**: Only 1.3% of neurons are responsible for safety; removing them causes ASR to surge from 10% to 66%.
-- **LLaMA3 is more fragile than LLaMA2**: After fine-tuning, ASR spikes from 1.54% to 61.15%, possibly because LLaMA3 "analyzes" the true intent of malicious requests.
-- **PEFT methods degrade safety more severely than full-parameter fine-tuning**: LoRA causes a 26.9% harmful rate vs. 18.48% for full-parameter fine-tuning — counter-intuitively.
-- **Aligning on redundant units improves rather than degrades mathematical ability**: GSM8K improves from 9.24 → 13.4 (20% parameter fine-tuning) vs. 9.24 → 8.8 (full-parameter fine-tuning).
+- **SCU is extremely sparse yet critical**: Only 1.3% of neurons manage safety; removing them causes ASR to jump from 10% to 66%.
+- **LLaMA3 is more fragile than LLaMA2**: ASR jumped from 1.54% to 61.15% after fine-tuning, likely because LLaMA3 "analyzes" the intent of malicious requests.
+- **PEFT methods can be more destructive to safety than full FT**: LoRA led to a 26.9% high-risk rate vs. 18.48% for full FT, which is counter-intuitive.
+- **Redundant unit alignment improves math ability**: GSM8K increased from 9.24 → 13.4 (20% parameter FT) vs. 9.24 → 8.8 (Full FT).
 
 ## Highlights & Insights
-- **Safety ≈ binary classification — a distinctive insight**: Reducing safety alignment to a binary reasoning-direction selection is both parsimonious and highly explanatory. It elegantly explains why safety is so fragile — only a small number of neurons' "voting directions" need to be flipped to compromise safety.
-- **Redundant units as alignment budget**: Pre-trained models naturally contain ~20% redundant parameters; using these for alignment avoids modifying utility-critical units. This idea is transferable to any scenario requiring new capabilities to be added without degrading existing ones.
-- **Attribute migration analysis framework**: Tracking per-neuron attribute changes before and after fine-tuning yields a migration map (SCU → CU → UCU), providing a visualization tool for understanding how fine-tuning undermines alignment.
-- **Probing method for internal reasoning direction**: Inferring reasoning direction by comparing hidden-state distances between Query+benign/malicious tokens is a simple yet effective approach.
+- **Safety ≈ Binary Classification**: Reducing safety alignment to a decision on reasoning direction is a concise yet powerful perspective. It explains fragility: only a few neurons need their "vote" flipped to compromise safety.
+- **Redundant Units as Alignment Budget**: Pre-trained models naturally have ~20% redundancy. Using these for alignment avoids modifying utility units. This is transferable to any scenario requiring new features without damaging existing ones.
+- **Attribute Migration Framework**: Tracking neuron category changes (SCU→CU→UCU) provides a visual map of how fine-tuning destroys safety.
+- **Probe Methodology**: Using hidden state distances relative to benign/malicious tokens to infer reasoning direction is simple but effective.
 
 ## Limitations & Future Work
-- **SSAH provides necessary but not sufficient evidence**: The authors acknowledge that the probing experiments are necessary but not sufficient; safety alignment may involve subtler changes not captured by SSAH.
-- **Per-step re-evaluation remains unrealized**: The paper proposes that ideal safety alignment should re-select the reasoning direction at every generation step, but this incurs additional inference overhead.
-- **LLaMA3 experiments are constrained**: Due to computational limitations, only the first 12 blocks are frozen, yielding weaker results than LLaMA2.
-- **Only the SFT scenario is validated**: The behavior of SCUs/RUs under RLHF/DPO alignment is not explored.
-- **Future directions**: SCU/RU identification could be combined with LoRA to design "safety-aware LoRA" — inserting LoRA adapters exclusively on RUs.
+- **SSAH is necessary but not sufficient**: The authors acknowledge probes verify implications of the hypothesis but don't strictly prove it; subtler changes may exist.
+- **Step-wise re-evaluation overhead**: The ideal solution of re-evaluating direction at every step would introduce inference costs.
+- **LLaMA3 constraints**: Due to resource limits, only the first 12 blocks were frozen in LLaMA3, yielding less dramatic results than LLaMA2.
+- **SFT focus**: Behavior under RLHF/DPO was not explored.
+- **Future Work**: Combine SCU/RU identification with LoRA to design "safety-aware LoRA"—placing adapters only on RUs.
 
 ## Related Work & Insights
-- **vs. Wei et al. (2024)**: They also study safety-critical components but identify them at the weight level; this work operates at the neuron level with finer granularity, and experiments more thoroughly validate the effectiveness of the freezing strategy.
-- **vs. SafeDPO**: SafeDPO constrains safety through training objectives, whereas this work takes a model-structure perspective; the two are complementary — SSAH-identified safety units can be combined with SafeDPO training objectives.
-- **vs. AlphaSteer**: AlphaSteer achieves refusal steering via null-space constraints; both AlphaSteer and SSAH's freezing strategy aim to protect safety parameters from modification, but approach the problem from different angles.
+- **vs. Wei et al. (2024)**: They identify safety-critical components at the weight level; this work operates at the neuron level with finer granularity and more thorough validation of freezing strategies.
+- **vs. SafeDPO**: SafeDPO constrains safety via training objectives; this work starts from model structure. These are complementary—using SSAH for unit identification and SafeDPO for objectives.
+- **vs. AlphaSteer**: AlphaSteer uses null-space constraints for rejection steering. This is similar in goal to the freezing strategy but approaches it from a different angle.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The SSAH perspective is distinctive; the insight of reducing safety to binary classification is highly perceptive.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multiple models, benchmarks, and evaluation methods are employed, but LLaMA3 experiments are incomplete due to computational constraints.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Logic is clear; the narrative progresses systematically from hypothesis → validation → application.
-- **Value**: ⭐⭐⭐⭐⭐ Provides a theoretical foundation for understanding the nature of safety alignment and designing efficient safety training strategies.
+- Novelty: ⭐⭐⭐⭐⭐ The SSAH hypothesis is highly original and insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple models and benchmarks, though LLaMA3 experiments were somewhat limited by compute.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, progressing naturally from hypothesis to validation to application.
+- Value: ⭐⭐⭐⭐⭐ Provides a theoretical foundation for understanding safety alignment and designing efficient training strategies.
 
 <!-- RELATED:START -->
 
@@ -145,11 +140,11 @@ SSAH is not a concrete algorithm but a hypothesis framework about the nature of 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
-- [\[NeurIPS 2025\] Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons](../../NeurIPS2025/llm_alignment/towards_understanding_safety_alignment_a_mechanistic_perspective_from_safety_neu.md)
+- [\[ICML 2026\] Operationalising the Superficial Alignment Hypothesis via Task Complexity](../../ICML2026/llm_alignment/operationalising_the_superficial_alignment_hypothesis_via_task_complexity.md)
+- [\[ICLR 2026\] Alignment-Weighted DPO: A Principled Reasoning Approach to Improve Safety Alignment](alignment-weighted_dpo_a_principled_reasoning_approach_to_improve_safety_alignme.md)
+- [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
+- [\[ICLR 2026\] AlphaAlign: Incentivizing Safety Alignment with Extremely Simplified Reinforcement Learning](alphaalign_incentivizing_safety_alignment_with_extremely_simplified_reinforcemen.md)
 - [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
-- [\[ICML 2026\] Curriculum Learning for Safety Alignment](../../ICML2026/llm_alignment/curriculum_learning_for_safety_alignment.md)
-- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
 
 </div>
 

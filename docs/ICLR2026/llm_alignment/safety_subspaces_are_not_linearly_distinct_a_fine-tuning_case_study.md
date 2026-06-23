@@ -2,153 +2,140 @@
 title: >-
   [Paper Note] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study
 description: >-
-  [ICLR 2026][LLM Alignment][Safety Alignment] Through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis) conducted across five open-source LLMs…
+  [ICLR 2026][Alignment & RLHF][Paper Note] This paper comprehensively validates a key finding across five open-source LLMs through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis): safety alignment behaviors are highly entangled with general learning in both the weight space and activation
 tags:
-  - "ICLR 2026"
-  - "LLM Alignment"
-  - "Safety Alignment"
-  - "Subspace"
-  - "Fine-Tuning Attack"
-  - "Linear Separability"
-  - "Weight Space"
+  - ICLR 2026
+  - Alignment & RLHF
 date: 2026-05-08
-content_hash: ce128a555c9bd4c0
+content_hash: 92b55da62a3370a1
 ---
-
 # Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.14185](https://arxiv.org/abs/2505.14185)  
 **Code**: [GitHub](https://github.com/CERT-Lab/safety-subspaces)  
-**Area**: LLM Safety / Alignment
-**Keywords**: Safety Alignment, Subspace, Fine-Tuning Attack, Linear Separability, Weight Space
+**Area**: LLM Safety / Alignment  
+**Keywords**: Safety alignment, subspace, fine-tuning attacks, linear separability, weight space
 
 ## TL;DR
 
-Through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis) conducted across five open-source LLMs, this paper establishes a key finding: safety alignment behavior is highly entangled with general learning in both weight space and activation space, and no linearly separable independent safety subspace exists. Consequently, defense strategies based on subspace projection/filtering face fundamental limitations.
+This paper comprehensively validates a key finding across five open-source LLMs through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis): safety alignment behaviors are highly entangled with general learning in both the weight space and activation space. There is no linearly separable independent safety subspace, indicating that defense strategies based on subspace projection/filtering face fundamental limitations.
 
 ## Background & Motivation
 
-**Background**: LLMs aligned via safety training (e.g., RLHF) can refuse harmful prompts, yet this safety is fragile — even fine-tuning on benign data can degrade safety behavior. A small number of malicious samples mixed into the training set can subvert alignment, revealing an attack surface deeper than prompt injection: weight-level alignment degradation.
+**Background**: LLMs can reject harmful prompts after safety alignment (e.g., RLHF), but this safety is extremely fragile—continued fine-tuning even on benign data can undermine safety behaviors. Mixing a small number of malicious samples into the training set can subvert alignment. This exposes a deeper attack surface at the weight level beyond prompt injection: alignment degradation.
 
-**Limitations of Prior Work**: A line of research (e.g., SafeLoRA, LDIFS) has attempted to defend against fine-tuning attacks by exploiting "safety subspaces" — the core assumption being that safety alignment information concentrates in specific linear directions in weight space and can be extracted via SVD and protected during subsequent fine-tuning. This assumption, however, has never been rigorously tested.
+**Limitations of Prior Work**: Several studies (e.g., SafeLoRA, LDIFS) attempt to utilize "safety subspaces" to defend against fine-tuning attacks. The core hypothesis is that safety alignment information is concentrated in specific linear directions within the weight space, which can be extracted via SVD and protected during subsequent fine-tuning. However, this hypothesis has never been rigorously scrutinized.
 
-**Key Challenge**: If safety information truly resides in an independent linear subspace, harmful updates could be orthogonalized away from safety directions via simple projection, preserving safety while retaining task performance. However, if safety and general learning are highly entangled — i.e., the same directions simultaneously amplify both safe and harmful behavior — projection-based defenses cannot selectively suppress harmfulness without sacrificing utility.
+**Key Challenge**: If safety information indeed resided in an independent linear subspace, one could orthogonalize harmful updates to the safety directions via simple projection, maintaining safety while preserving task performance. However, if safety and general learning are highly entangled (i.e., the same directions amplify both safety and harmful behaviors), projection-based defenses will fail to selectively suppress harmfulness without losing utility.
 
-**Goal**: To systematically examine the foundational assumption of whether LLM safety behavior concentrates in specific linear subspaces.
+**Goal**: To systematically examine the fundamental hypothesis of whether "LLM safety behavior is concentrated in specific linear subspaces."
 
-**Key Insight**: Rather than proposing a new defense, the authors conduct rigorous empirical investigation. Two candidate safety subspaces are constructed — from the alignment update $\Delta_A$ (aligned − base) and the safety fine-tuning update $\Delta_S$ (safety-tuned − base) — and their specificity is then tested through projection experiments.
+**Key Insight**: Instead of proposing a new defense method, the authors perform a rigorous empirical study. They construct candidate safety subspaces from two perspectives: alignment updates $\Delta_A$ (aligned - base) and safety-tuned updates $\Delta_S$ (safety-tuned - base), and then test their specificity through projection experiments.
 
-**Core Idea**: Four carefully designed experiments demonstrate that safety-related weight updates and activation patterns are not linearly separable from general learning, exposing fundamental limitations of subspace-based defense strategies.
+**Core Idea**: Through four meticulously designed experiments, the authors prove that safety-related weight updates and activation patterns are not linearly separable from general learning, imposing fundamental constraints on subspace-based defense strategies.
 
 ## Method
 
 ### Overall Architecture
 
-The experimental design proceeds across four levels: (1) Do useful and harmful updates differ in their expressiveness within candidate safety subspaces? (2) Can orthogonalizing mixed updates against candidate safety subspaces selectively remove harmfulness? (3) What is the geometric relationship (subspace overlap) among useful, harmful, and safety updates? (4) Are representations of harmful and benign prompts separable in activation space?
+This paper does not propose a new method but seeks to directly answer a widely assumed but unverified question: Does the safety alignment behavior of LLMs truly concentrate on a few independent linear directions in the weight space? If so, orthogonalizing harmful updates to these directions would preserve both safety and performance; if not, all subspace-projection-based defenses are untenable. The authors designed four progressive experiments along a logical chain: first, checking if useful and harmful updates have different "expressivity" in candidate safety subspaces; second, seeing if orthogonalizing this subspace can selectively erase harmfulness; third, directly quantifying the geometric overlap between useful, harmful, and safety updates; and finally, descending into the activation space to see if internal representations of harmful and useful prompts are separable.
+
+The two basic materials for the experiments are two types of candidate safety subspaces: extracted from alignment updates $\Delta_A$ (aligned model weights - base weights) and safety-tuned updates $\Delta_S$ (safety-tuned weights - base weights). These are tested against two types of task updates: useful updates $\Delta_T^{\text{Useful}}$ obtained by fine-tuning on MetaMathQA and harmful updates $\Delta_T^{\text{Harmful}}$ obtained by fine-tuning on a harmful subset of BeaverTails.
 
 ### Key Designs
 
-1. **Parallel Projection Experiment (Experiment 1: Do Subspaces Encode Safety?)**
+**1. Parallel Projection: Does the subspace encode "safety" or "efficient learning"?**
 
-    - **Function**: Tests behavioral outcomes when useful/harmful fine-tuning updates are projected onto the top directions of candidate safety subspaces.
-    - **Mechanism**: Models are fine-tuned separately on MetaMathQA (useful data) and a harmful subset of BeaverTails, yielding $\Delta_T^{\text{Useful}}$ and $\Delta_T^{\text{Harmful}}$. SVD is applied to $\Delta_{A/S}$; the top-$k$ directions form a projection matrix $P_k$, and task updates are projected as $\tilde{\Delta}_T^j = P_k \Delta_T^j$. The projected model is then evaluated on utility (GSM8k accuracy) and harmfulness (AdvBench harmful score).
-    - **Key Findings**: **Energy is uniformly distributed within the subspace** (the energy retention ratios for useful and harmful updates are nearly identical), yet **behavioral impact is asymmetric** — top-$k$ directions simultaneously amplify both utility and harmfulness, outperforming random projection. This indicates these directions are "high-impact learning directions" rather than "safety directions."
+The first step is to confirm whether the top directions of candidate safety subspaces are specific to safety behavior. The authors perform SVD on $\Delta_{A/S}$, take the top-k singular directions to construct a projection matrix $P_k$, and project the task updates into this subspace: $\tilde{\Delta}_T^j = P_k \Delta_T^j$. Behavior is measured using GSM8k accuracy (utility) and AdvBench harmfulness scores. If these were truly "safety directions," their ability to retain harmful updates should differ significantly from useful ones. Instead, the results show that energy is uniformly distributed, and the retention ratios are nearly identical. Notably, these top-k directions amplify both utility **and** harmfulness better than random projections. In other words, these directions characterize "efficient learning" (high parameter sensitivity) rather than "safety."
 
-2. **Orthogonal Projection Experiment (Experiment 2: Can the Harmful Subspace Be Removed?)**
+**2. Orthogonal Projection: Can removing the safety subspace kill only harmfulness?**
 
-    - **Function**: In a mixed fine-tuning setting (80% useful + 20% harmful), tests whether removing candidate safety subspace directions can selectively suppress harmfulness.
-    - **Mechanism**: The orthogonal projection $\tilde{\Delta}_T = P_k^{\perp} \Delta_T$ removes update components aligned with candidate safety directions; utility and harmfulness are then evaluated.
-    - **Key Findings**: Utility and harmfulness decline in tandem. After removing top-$k$ directions, utility degrades faster than with random projection, while harmfulness declines at a comparable rate. That is, **no selective suppression effect exists — safety gains are always accompanied by proportional task performance loss.**
+Since projecting into the space amplifies everything, the inverse is tested: in a mixed fine-tuning scenario (80% useful + 20% harmful), can orthogonalizing the component of the update aligned with candidate safety directions $\tilde{\Delta}_T = P_k^{\perp} \Delta_T$ selectively suppress harmfulness? This is the core mechanism of defenses like SafeLoRA and LDIFS. The experiment shows a negative result: utility and harmfulness drop synchronously without selectivity. Worse, after removing top-k directions, utility drops faster than with random projection, while harmfulness drops at a rate similar to random projection. Safety gains always come with a proportional loss in task performance.
 
-3. **Mode Subspace Overlap (MSO) Analysis (Experiment 3: Geometric Relationships Among Updates)**
+**3. Mode Subspace Overlap (MSO): What is the geometric structure between the three updates?**
 
-    - **Function**: Directly compares subspace overlap among useful, harmful, and safety updates.
-    - **Mechanism**: SVD is applied to each of the three update types; top-$k$ directions corresponding to energy retention ratio $\eta$ are selected, and pairwise MSO is computed as: $\mathrm{MSO}(\mathbf{V}, \mathbf{W}; \eta) = \frac{\|S\|_F^2}{\min(k_V, k_W)}$, with range $[0, 1]$ where 0 indicates orthogonality and 1 indicates identity.
-    - **Key Findings**: The harmful–safety update pair never achieves the highest MSO, and is sometimes the lowest. This refutes the hypothesis that safety subspaces share a special geometric relationship with harmful behavior.
+While the first two experiments infer properties indirectly, the third quantifies geometric relationships directly. The authors perform SVD on three types of updates—$\Delta_A$ (alignment), $\Delta_T^{\text{Harmful}}$ (harmful), and $\Delta_T^{\text{Useful}}$ (useful). For a given energy retention ratio $\eta$, they take the minimum top-k directions to cover $\eta$ of the Frobenius energy, obtaining orthogonal bases $Q_V, Q_W$. The overlap matrix $S = Q_V^{\top} Q_W$ is used to calculate the overlap:
 
-4. **Activation Space Analysis (Experiment 4: Are Representations Separable?)**
+$$\mathrm{MSO}(\mathbf{V}, \mathbf{W}; \eta) = \frac{\|S\|_F^2}{\min(k_V, k_W)}, \quad 0 \le \mathrm{MSO} \le 1$$
 
-    - **Function**: Examines whether harmful and benign prompts occupy distinct regions in the model's internal activation space.
-    - **Mechanism**: Intermediate-layer activations are analyzed for harmful vs. benign prompts.
-    - **Key Findings**: Activations for harmful and benign prompts occupy overlapping regions; no safety-specific linear direction exists in activation space either.
+MSO is 0 if subspaces are orthogonal and 1 if they span the same space. An expected overlap from random subspaces $\max(k_V, k_W)/d$ serves as the baseline. Intuitively, "safety directions" should appear in the shared directions of **alignment and harmful updates** because their effects on safety are opposite. However, the results show that the strongest overlap is between **useful $\leftrightarrow$ harmful updates**, not alignment $\leftrightarrow$ harmful. Useful and harmful updates share the most primary directions, forming a "general learning subspace" that is expressive for tasks but agnostic to safety.
+
+**4. Activation Space Analysis: Is there separability at the representation level?**
+
+Finally, the perspective shifts from weight updates to internal representations to check if intermediate activations for harmful vs. useful prompts occupy different regions. If they were separable, defenses might still work at the activation level even if weights are entangled. Consistent with the first three experiments, harmful and useful prompt activations overlap significantly, and no safety-specific linear direction can be found in the activation space.
 
 ### Loss & Training
 
-Standard fine-tuning is employed throughout: useful data uses a 20K subset of MetaMathQA; harmful data uses a 4K unsafe subset of BeaverTails; mixed data consists of 20% harmful + 80% useful. Safety fine-tuning uses BeaverTails entries with `is_safe=True` (a different split from the harmful fine-tuning data to avoid methodological circularity). Harmfulness is evaluated by GPT-4o-mini scoring AdvBench outputs on a 1–5 scale.
+Fine-tuning uses standard training: useful data from a 20K subset of MetaMathQA, harmful data from a 4K unsafe subset of BeaverTails, and mixed data (20% harmful + 80% useful). Safety tuning uses BeaverTails entries where `is_safe=True`. Harmfulness is evaluated by GPT-4o-mini scoring AdvBench outputs on a scale of 1-5.
 
 ## Key Experimental Results
 
 ### Parallel Projection Experiment (Qwen-2.5 1.5B)
 
 | Method | SVD 0.01 | 0.25 | 0.50 | 0.75 | 0.99 | Full FT |
-|--------|----------|------|------|------|------|---------|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Top-K (Utility↑) | 0.50 | 0.53 | 0.55 | 0.57 | 0.58 | 0.61 |
 | Random (Utility↑) | 0.49 | 0.50 | 0.53 | 0.53 | 0.56 | 0.61 |
 | Top-K (Harm↓) | 1.62 | 1.80 | 1.92 | 1.90 | 1.97 | 2.09 |
 | Random (Harm↓) | 1.56 | 1.65 | 1.74 | 1.83 | 1.95 | 2.09 |
 
-### Orthogonal Projection Experiment (Mixed Fine-Tuning, Qwen-2.5 1.5B)
+### Orthogonal Projection Experiment (Mixed FT Qwen-2.5 1.5B)
 
 | Method | SVD 0.01 | 0.25 | 0.50 | 0.75 | 0.99 | Full FT |
-|--------|----------|------|------|------|------|---------|
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Top-K (Utility↑) | 0.50 | 0.53 | 0.55 | 0.57 | 0.58 | 0.60 |
 | Top-K (Harm↓) | 1.58 | 1.65 | 1.80 | 1.91 | 1.92 | 2.16 |
 
 ### Ablation Study
 
 | Configuration | Description |
-|---------------|-------------|
-| Alignment subspace $\Delta_A$ | Amplifies both useful and harmful behavior; no safety specificity |
-| Safety subspace $\Delta_S$ | Similarly amplifies both behaviors; no selectivity |
-| Random-K control | $k$ singular vectors selected randomly; behavioral impact weaker than Top-K |
-| Random control | SVD of random matrix; weakest behavioral impact |
+| :--- | :--- |
+| Alignment Subspace $\Delta_A$ | Amplifies both useful and harmful behaviors; no safety specificity. |
+| Safety Subspace $\Delta_S$ | Similarly amplifies both behaviors; no selectivity. |
+| Random-K Control | Randomly selecting k singular vectors results in weaker behavioral impact than Top-K. |
+| Random Control | SVD of a random matrix shows the weakest behavioral impact. |
 
 ### Key Findings
-
-- **Core negative conclusion**: Across five LLMs (Llama 3.2 1B, Llama 2 7B, Qwen-2.5 1B/3B/7B), no linearly separable safety subspace is consistently observed.
-- Top-$k$ alignment directions simultaneously amplify utility and harmfulness — they are "high-impact learning directions," not "safety directions."
-- Orthogonal projection cannot selectively remove harmfulness: removing top-$k$ directions degrades utility faster than harmfulness.
-- MSO analysis: harmful–safety update overlap is no greater than useful–safety overlap, refuting the hypothesis of a special geometric relationship between safety subspaces and harmful behavior.
+- **Core Negative Conclusion**: Across five LLMs (Llama 3.2 1B, Llama 2 7B, Qwen-2.5 1B/3B/7B), it is consistently observed that no linearly separable safety subspace exists.
+- Top-k alignment directions amplify both utility and harmfulness—they are "high-impact learning directions" rather than "safety directions."
+- Orthogonal projection cannot selectively remove harmfulness: utility drops faster than harmfulness when top-k directions are removed.
+- MSO analysis: The overlap between harmful and safety updates is not higher than that between useful and safety updates, refuting the hypothesis of a special geometric relationship.
 
 ## Highlights & Insights
-
-- The **progressive experimental design** is rigorous — projection effects, orthogonal removal, geometric overlap, and activation space are mutually corroborating across four angles, lending strong credibility to the negative conclusion.
-- The finding that "top-$k$ directions amplify all behaviors" provides an important insight: the principal directions identified by alignment/safety training are not safety-specific but are general high-sensitivity learning directions.
-- The control experiments (Random-K, Random) ensure that the conclusions stem from the content of the subspace rather than from the projection operation itself.
+- The **progressive experimental design** is highly rigorous—corroborating the same conclusion from projection effects, orthogonal removal, geometric overlap, and activation representation.
+- The discovery that "top-k directions amplify all behaviors" provides a crucial understanding: the primary directions found by alignment/safety training are not dedicated to safety but are general-purpose learning directions with high parameter sensitivity.
+- The use of control experiments (Random-K, Random) ensures that findings are not artifacts of the projection process itself but stem from the lack of safety specificity in the subspaces.
 
 ## Limitations & Future Work
-
-- The paper only refutes the separability of **linear** subspaces; nonlinear methods (e.g., manifold learning, kernel methods) are not ruled out.
-- Harmfulness evaluation relies on GPT-4o-mini scoring, which introduces evaluator bias and instability.
-- Safety fine-tuning data (`is_safe=True` from BeaverTails) and harmful fine-tuning data (unsafe BeaverTails) originate from different splits of the same dataset, potentially introducing methodological dependency.
-- Whether different geometric structures might emerge in larger-scale models (e.g., 70B, 405B) remains unexplored.
-- The paper primarily presents negative results without proposing alternative defense strategies.
+- The paper only refutes the separability of **linear** subspaces; it does not rule out whether non-linear methods (e.g., manifold learning, kernel methods) could achieve separation.
+- Harmfulness evaluation relies on GPT-4o-mini scoring, which carries the evaluator's own biases and instability.
+- Safety-tuning data and harmful-tuning data come from different splits of the same dataset (BeaverTails), which may introduce methodological dependencies.
+- It remains unexplored whether different geometric structures might emerge in much larger models (e.g., 70B, 405B).
+- The paper primarily presents negative results without proposing an alternative defense mechanism.
 
 ## Related Work & Insights
-
-- **vs. SafeLoRA**: SafeLoRA assumes safety information concentrates in specific directions of LoRA updates and protects them via projection. This paper's conclusions directly challenge the foundation of that assumption.
-- **vs. LDIFS**: LDIFS defends against fine-tuning attacks by identifying "safety directions" and constraining updates accordingly. This paper demonstrates that such "safety directions" are simultaneously "utility directions," so constraining them incurs proportional task performance loss.
-- **vs. Refusal Direction research**: Some works show that refusing behavior can be eliminated by ablating specific directions. The present findings are consistent with but go further — ablating these directions simultaneously removes useful behavior, as both share the same high-impact directions.
+- **vs. SafeLoRA**: SafeLoRA assumes safety information is concentrated in specific directions of LoRA updates. This paper's conclusion directly challenges the foundation of that assumption.
+- **vs. LDIFS**: LDIFS defends by identifying "safety directions" and restricting fine-tuning updates. This paper proves these "safety directions" are also "useful directions," meaning restricting them incurs a proportional loss in task performance.
+- **vs. Refusal Direction Research**: Some works found that removing specific directions can eliminate refusal behavior. This paper's findings are consistent but go deeper—eliminating these directions simultaneously removes useful behaviors because both share the same high-impact directions.
 
 ## Rating
-
-- **Novelty**: ⭐⭐⭐⭐ Rigorously and systematically tests a widely adopted but previously unvalidated assumption.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Five models, four experimental angles, multiple control conditions, and comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear problem motivation, rigorous experimental logic, and precise formulation of conclusions.
-- **Value**: ⭐⭐⭐⭐⭐ Raises fundamental challenges to the subspace-based defense paradigm in LLM safety, with far-reaching implications.
+- Novelty: ⭐⭐⭐⭐ Rigorously tested a widely used but unverified assumption.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 models, 4 experimental perspectives, multiple controls, and comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, tight logic, and accurate conclusions.
+- Value: ⭐⭐⭐⭐⭐ Fundamentally challenges the subspace defense paradigm in LLM safety, with significant impact.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Anchored Supervised Fine-Tuning](anchored_supervised_fine-tuning.md)
 - [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](../../ACL2026/llm_alignment/why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
 - [\[ICML 2026\] Safety Anchor: Defending Harmful Fine-tuning via Geometric Bottlenecks](../../ICML2026/llm_alignment/safety_anchor_defending_harmful_fine-tuning_via_geometric_bottlenecks.md)
-- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](superficial_safety_alignment_hypothesis.md)
-- [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](../../ICML2026/llm_alignment/spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](pretrain_value_not_reward_decoupled_value_policy_optimization.md)
+- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
 
 </div>
 

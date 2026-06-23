@@ -2,83 +2,87 @@
 title: >-
   [Paper Note] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy
 description: >-
-  [ICLR 2026][LLM Alignment][Reward model] This paper proposes a two-stage preference data curation pipeline based on Human-AI synergy. Stage 1 accumulates approximately 1M preference pairs over 8 iterative rounds via huma…
+  [ICLR 2026][Alignment & RLHF][Paper Note] A two-stage Human-AI synergistic preference data curation pipeline is proposed: Phase 1 accumulates approximately 1M preference pairs through 8 iterations of human verification, error-driven adaptive retrieval, and preference-guided LLM annotation; Phase 2 scales the data to 26M pairs using dual-RM consistency filterin
 tags:
-  - "ICLR 2026"
-  - "LLM Alignment"
-  - "Reward model"
-  - "preference data curation"
-  - "Human-AI synergy"
-  - "data quality"
-  - "scalable curation"
+  - ICLR 2026
+  - Alignment & RLHF
 date: 2026-05-08
-content_hash: cb4398a50f4999e4
+content_hash: f125a7c3f9766cb5
 ---
-
 # Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2507.01352](https://arxiv.org/abs/2507.01352)  
-**Code**: SynPref-40M dataset publicly available  
-**Area**: Alignment RLHF / Reward Modeling
-**Keywords**: Reward model, preference data curation, Human-AI synergy, data quality, scalable curation
+**Code**: SynPref-40M Dataset Publicly Available  
+**Area**: Alignment RLHF / Reward Modeling  
+**Keywords**: Reward Model, Preference Data Curation, Human-AI Synergy, Data Quality, Scalable Curation
 
 ## TL;DR
 
-This paper proposes a two-stage preference data curation pipeline based on Human-AI synergy. Stage 1 accumulates approximately 1M preference pairs over 8 iterative rounds via human verification, error-driven adaptive retrieval, and preference-guided LLM annotation. Stage 2 scales the dataset to 26M pairs using dual-RM consistency filtering. The resulting Skywork-Reward-V2 8B model achieves 97.8% on RewardBench and an average of 88.6% across 7 mainstream benchmarks, comprehensively surpassing all open-source 70B reward models.
+A two-stage Human-AI synergistic preference data curation pipeline is proposed: Phase 1 accumulates approximately 1M preference pairs through 8 iterations of human verification, error-driven adaptive retrieval, and preference-guided LLM annotation; Phase 2 scales the data to 26M pairs using dual-RM consistency filtering. The resulting Skywork-Reward-V2 8B model achieves 97.8% on RewardBench and an average of 88.6% across seven major benchmarks, outperforming all open-source 70B reward models.
 
 ## Background & Motivation
 
-Reward models (RMs) are a core component of the RLHF pipeline, responsible for converting human preference signals into optimizable scalar rewards. However, as of September 2024, the development of open-source RMs had effectively stagnated: 16 of the top 20 models on the RewardBench leaderboard directly or indirectly used the same base model or highly similar training data. A more critical issue is that improvements in RewardBench scores from approximately 80 to 90+ do not consistently translate to gains on other benchmarks or downstream tasks. The authors conducted a cross-benchmark correlation analysis of 31 top open-source RMs across 7 benchmarks, finding weak Pearson correlations between RewardBench and other benchmarks, with some dimensions even exhibiting negative correlations.
+The Reward Model (RM) is a core component of the RLHF pipeline, responsible for converting human preference signals into optimizable scalar rewards. However, as of September 2024, the development of open-source RMs has largely stagnated: 16 of the top 20 models on the RewardBench leaderboard directly or indirectly utilize the same base models or highly similar training data. More critically, improvements in RewardBench scores from approximately 80 to 90+ do not consistently translate into gains in other benchmarks or downstream tasks. The authors conducted a correlation analysis of 31 top open-source RMs across 7 benchmarks and found that the Pearson correlation between RewardBench and other benchmarks is weak, with some dimensions even showing negative correlations.
 
-**The fundamental bottleneck lies not in model architecture or loss functions, but in the preference data itself.** Existing preference datasets suffer from three systemic flaws: (1) narrow coverage, concentrated on a limited number of task types; (2) insufficient quality of synthetic annotations, as biases introduced by pure LLM annotation cannot be self-corrected; and (3) lack of rigorous quality control, since human annotation is high-quality but not scalable. The paper also conducts comparative experiments on multiple loss function variants for the Gemma-2-27B family (including improved ranking losses, contrastive losses, etc.), finding that the original version still achieves the best overall performance, indicating that improving training algorithms alone cannot compensate for deficiencies in data quality.
+**The fundamental bottleneck lies not in model architecture or loss functions, but in the preference data itself**. Existing preference datasets suffer from three systemic defects: (1) Narrow coverage—concentrated on a few task types; (2) Insufficient synthetic annotation quality—biases introduced by pure LLM annotation cannot self-correct; (3) Lack of rigorous quality control—human annotation is high-quality but not scalable. The paper also compares multiple loss function variants (including improved ranking loss and contrastive loss) for the Gemma-2-27B series, finding that the original version remains optimal in overall performance. This indicates that merely improving training algorithms cannot compensate for deficiencies in data quality.
 
-Core Idea: use human verification to guide LLM annotation (rather than replace it), then achieve simultaneous expansion of quality and scale through error-driven retrieval and consistency filtering.
+Core Idea: Use human verification to guide LLM annotation (rather than replace it), and then achieve simultaneous expansion of quality and scale through error-driven retrieval and consistency filtering.
 
 ## Method
 
 ### Overall Architecture
 
-The paper constructs SynPref-40M (40 million preference pairs, of which 26 million pass curation) using a two-stage pipeline:
+The goal of the paper is to curate a preference dataset, SynPref-40M (40 million pairs, with 26 million retained through curation), that balances quality and scale. The process is divided into two complementary phases: Phase 1 uses a small amount of human annotation to drive 8 iterations of refinement. Each round employs a cycle of "Tool-augmented Human Verification → Error-driven Retrieval → Preference-aware LLM Annotation" to repeatedly identify the current RM's blind spots and append targeted high-quality data, accumulating about 1M pairs. Phase 2 utilizes the best RM from Phase 1 and an independent gold RM as automatic filters to perform dual-consistency screening on massive wild data and recover flipped suspicious samples, expanding the scale to approximately 26M pairs without additional human labor. The final Skywork-Reward-V2 series is trained on this data using the standard Bradley-Terry objective.
 
-- **Stage 1 (Small-scale human-driven iterative curation)**: 8 iterative rounds, each consisting of three steps—RM training and evaluation → error-driven retrieval → preference-aware LLM annotation—accumulating approximately 1M preference pairs.
-- **Stage 2 (Large-scale automatic consistency curation)**: The best RM from Stage 1 and an independently trained gold RM are used to apply dual consistency filtering to in-the-wild data, scaling to approximately 26M pairs without additional human effort.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["SynPref-40M Raw Pool<br/>40 Million Wild Preference Pairs"]
+    subgraph S1["Phase 1: Human-Guided 8-Round Iterative Refinement (~1M pairs)"]
+        direction TB
+        D1["Tool-Augmented Human Verification Protocol<br/>5-tuple Attributes + Tool-Assisted, Human-Decided"]
+        D2["Error-Driven Adaptive Retrieval<br/>Evaluate RM → Identify Errors → Retrieve Similar Samples"]
+        D3["Preference-Aware LLM Annotation<br/>Gold Few-shot Anchoring + Multi-model Aggregation"]
+        D1 --> D2 --> D3
+        D3 -->|"Retrain RM with new data, loop 8 rounds"| D2
+    end
+    S2["Dual RM Consistency Filtering & Recovery Mechanism<br/>Best RM × Gold RM Gates + Flip Recovery<br/>(Phase 2: ~26M pairs)"]
+    OUT["Train Skywork-Reward-V2<br/>Bradley-Terry, covering 8 scales"]
+    IN --> S1
+    S1 -->|"Best RM as Auto-filter"| S2
+    IN -->|"Massive unverified data directly to Phase 2"| S2
+    S2 --> OUT
+```
 
 ### Key Designs
 
-**1. Rigorous Human Verification Protocol**
+**1. Tool-Augmented Human Verification Protocol: Reliable and Information-Dense Labeling**
 
-Annotators do not simply inspect conversation histories and two responses. Each preference pair is accompanied by a 5-tuple of attributes: task category, preference objectivity, controversiality, desired attributes, and instance-level annotation guidelines. Annotators are permitted to use search engines, frontier LLM assistants, and domain-specific LLMs (e.g., for math or code) as auxiliary tools, but are prohibited from relying entirely on LLM outputs; the final judgment must be made by a human. Factual verification tasks require the use of a search engine; code correctness tasks require executing the code and verifying its output. This "tool-augmented human annotation" yields significantly higher annotation quality than bare human annotation (+3.2 vs. +0.4).
+Pure human annotation, while high-quality, can suffer from judgment drift and low efficiency when only observing conversation history and two responses. The paper attaches a 5-tuple attribute to each preference pair—task category, preference objectivity, contentiousness, desired attributes, and instance-level annotation guidelines—transforming "choosing by feel" into "choosing by clear standards." Annotators are also permitted to use search engines, frontier LLM assistants, and domain-specific LLMs (math/code) as aids: fact-checking tasks must be verified with search engines, and code correctness tasks must involve code execution. However, the final judgment must be made by a human. This "tool-augmented but human-decided" protocol increases annotation quality from +0.4 (naked human) to +3.2, demonstrating that providing the right tools and structural attributes extracts significantly more value than simply increasing manpower.
 
-**2. Error-Driven Adaptive Retrieval**
+**2. Error-Driven Adaptive Retrieval: Precise Allocation of Budget to RM Weaknesses**
 
-In each iterative round, the current RM is first evaluated on a gold validation set to identify incorrectly predicted samples. These error samples' $(x, a)$ (conversation + attribute) embeddings are then used as queries to retrieve semantically similar new samples from an unverified pool. The retrieval count is dynamically adjusted based on RM confidence:
+Randomly labeling more data is inefficient; true gains come from filling the RM's blind spots. In each iteration, the current RM is evaluated on a gold validation set to pick samples where it predicts incorrectly. These samples' $(x, a)$ (dialogue + attributes) embeddings are used as queries to retrieve semantically similar new samples from the unverified pool for labeling. The number of retrieved samples $k$ varies dynamically with the RM's confidence $p$: $k = k_{\max}$ when $p \le 0.5$ (incorrect prediction), and $k = \lceil k_{\max} \cdot (1 - p) \rceil$ when $p > 0.5$ (correct prediction), where $k_{\max} = 8$. The intuition is clear—areas where the RM is uncertain receive more new samples, essentially an uncertainty sampling strategy for preference annotation that ensures each human label effectively improves the model.
 
-$$k = \begin{cases} k_{\max}, & \text{if } p \le 0.5 \text{ (incorrect prediction)} \\ \lceil k_{\max} \cdot (1 - p) \rceil, & \text{if } p > 0.5 \text{ (correct prediction)} \end{cases}$$
+**3. Preference-Aware LLM Annotation: Anchoring LLM Judgment with Human Gold Data**
 
-where $k_{\max} = 8$. Intuitively, regions where the RM performs poorly are allocated more new samples for subsequent annotation, analogous to uncertainty sampling in active learning.
+Allowing LLMs to judge preferences directly introduces biases that are difficult to self-correct, which is why many pure LLM synthetic datasets fail. The paper's approach retrieves semantically similar human-annotated samples from the gold set to serve as few-shot examples in the prompt, ensuring each LLM judgment is referenced against human-verified preferences. Multiple strong LLMs provide scores, with self-consistency aggregation performed within models and cross-model merging to mitigate individual model bias. Randomizing the order of responses in the prompt also eliminates positional bias. This maintains the scale advantage of LLM labeling while strictly constraining its biases near human standards.
 
-**3. Preference-Aware LLM Annotation**
+**4. Dual RM Consistency Filtering & Recovery Mechanism: Maintaining Quality during Scale Expansion**
 
-When annotating newly retrieved samples with LLMs, rather than directly asking the LLM to judge, the method first retrieves semantically similar human-annotated samples from the gold set as few-shot examples inserted into the prompt, anchoring LLM judgments to human-verified preferences. Multiple strong LLMs are then used for annotation, with intra-model self-consistency aggregation performed first, followed by cross-model merging to mitigate single-model bias. Response order in the prompt is randomized to eliminate position bias.
+Phase 2 deals with wild data without human oversight, requiring an automated quality gate. Samples where the current best RM has confidence $>0.5$ are retained. Inconsistent samples are re-labeled by an LLM (reusing the Phase 1 retrieval + few-shot scheme). Furthermore, a "gold RM" trained only on human-verified data serves as a secondary check. Only samples that pass both the gold RM and the best RM/LLM consistency check are included. Cleverly, samples rejected by both RMs are not discarded—since two independent RMs judge them unreasonable, the original label is likely reversed. Thus, their chosen/rejected labels are flipped and reused as "correction data," providing zero-cost additional training data that consistently improves performance across all stages and iterations.
 
-**4. Stage 2 Dual-RM Consistency Filtering and Recovery Mechanism**
+### Loss & Training
 
-For in-the-wild data, samples where the current best RM has confidence >0.5 are directly retained. Inconsistent samples undergo LLM re-annotation (reusing the retrieval + few-shot scheme from Stage 1, but without human involvement). An additional gold RM trained solely on human-verified data performs a secondary check: only samples that pass both the gold RM and the best RM / LLM consistency check are retained. Samples rejected by both RMs are not discarded outright—their chosen/rejected labels are flipped and the samples are "recycled," obtaining additional training data at zero additional annotation cost. Experiments confirm consistent performance gains from this mechanism across all stages and iterations.
-
-### Training Details
-
-- Loss function: standard Bradley-Terry pairwise objective, $p = \sigma(r_\theta(x, y_w) - r_\theta(x, y_l))$
-- 8 model scales: Qwen3 0.6B/1.7B/4B/8B + Llama-3.2 1B/3B + Llama-3.1 8B (standard version + 40M version)
-- Maximum context length 16K tokens, large batch size 10240, constant learning rate, 1 epoch
-- Large-batch training saves approximately 35% of total training compute
+Training follows the standard Bradley-Terry pairwise objective, $p = \sigma(r_\theta(x, y_w) - r_\theta(x, y_l))$, with no fancy modifications at the loss level—confirming the paper's conclusion that data quality is the bottleneck. Models cover 8 scales (Qwen3 0.6B/1.7B/4B/8B, Llama-3.2 1B/3B, Llama-3.1 8B, each with regular and 40M versions). Training uses a 16K token maximum context, 10240 batch size, constant learning rate, and a single epoch. The large batch setting saves approximately 35% of total training computation compared to conventional configurations.
 
 ## Key Experimental Results
 
-### Main Results: Comprehensive Evaluation across 7 Benchmarks
+### Main Results: Comprehensive 7-Benchmark Evaluation
 
 | Model | Params | RB | RB-v2 | PPE-Pref | PPE-Corr | RMB | RM-Bench | JudgeBench | Avg |
-|-------|--------|------|-------|----------|----------|------|----------|------------|-----|
+|------|--------|------|-------|----------|----------|------|----------|------------|-----|
 | OffsetBias-8B | 8B | 89.0 | 64.8 | 59.2 | 64.1 | 57.8 | 71.3 | 63.5 | 67.1 |
 | ArmoRM-8B | 8B | 90.4 | 66.5 | 60.6 | 60.6 | 64.6 | 69.2 | 59.7 | 67.4 |
 | Skywork-V1-27B | 27B | 94.3 | 75.3 | 63.6 | 61.9 | 69.4 | 67.6 | 66.5 | 71.2 |
@@ -88,54 +92,54 @@ For in-the-wild data, samples where the current best RM has confidence >0.5 are 
 | **Skywork-V2-Llama-8B** | **8B** | 96.4 | 84.1 | 77.3 | 83.4 | 86.4 | 92.8 | 80.0 | **85.8** |
 | **Skywork-V2-Llama-8B-40M** | **8B** | **97.8** | **86.5** | **79.8** | **87.2** | **89.3** | **96.0** | **83.4** | **88.6** |
 
-Several key comparisons: (1) The 1.7B Skywork-V2 surpasses the previously strongest 70B model INF-ORM on all benchmarks except RewardBench and RB-v2; (2) the 8B version ranks first across all 7 benchmarks; (3) the 40M version gains an additional average improvement of +2.8 points through recycled flipped data.
+Key Comparisons: (1) Skywork-V2 1.7B outperfroms the previously strongest 70B model, INF-ORM, on all benchmarks except RewardBench/RB-v2; (2) The 8B version ranks first across all 7 benchmarks; (3) The 40M version gains an additional +2.8 average points through flipped recovery data.
 
-### Ablation Study: Comparison of Data Curation Methods
+### Ablation Study
 
-| Curation Method | Gain Relative to Seed RM |
-|-----------------|--------------------------|
-| Direct addition of uncurated data (no curation) | ≈0 (12M data fails to surpass seed model) |
-| Pure LLM curation (self-consistency aggregation) | +0.1 pt (likely within optimization noise) |
-| Human curation (bare annotation) | +0.4 pt |
-| Human curation + preference attributes | +1.1 pt |
-| Human curation + LLM curation | +2.3 pt |
-| Full protocol (tool-augmented human + adaptive retrieval + LLM) | **+3.2 pt** |
-| Only 290K curated data (1.8% of full set) | Already surpasses prev. SOTA 70B model |
+| Curation Method | Gain vs. Seed RM |
+|---------|---------------------|
+| Uncurated Data (No Curation) | ≈0 (12M data failed to surpass seed model) |
+| Pure LLM Curation (Self-consistency) | +0.1 pts (within optimization noise) |
+| Human Curation (Naked labeling) | +0.4 pts |
+| Human Curation + Preference Attributes | +1.1 pts |
+| Human Curation + LLM Curation | +2.3 pts |
+| Full Protocol (Tool-augmented Human + Adaptive Retrieval + LLM) | **+3.2 pts** |
+| Only 290K Curated Data (1.8% of pool) | Already exceeds previous SOTA 70B models |
 
-### Other Key Experimental Results
+### Other Key Findings
 
-- **RM-Bench style bias resistance**: Most baseline models show large performance gaps across Easy/Normal/Hard style conditions (e.g., INF-ORM-70B: Normal 80.0 vs. Hard 54.0, a gap of 26 points). Skywork-V2-8B-40M achieves 93.5 under Hard conditions (gap of only 4.1 points), indicating that SynPref-40M training yields more debiased preference representations.
-- **Best-of-N scaling**: In RMB Best-of-N evaluation, all 8 Skywork-V2 variants outperform GPT-4o (maximum gap +20 points), and exhibit positive scaling curves across 5 tasks in PPE Correctness.
-- **RewardBench v2 precise instruction following**: All existing RMs score below 50 on this dimension, while Skywork-V2-8B-40M reaches 67.8, surpassing Claude-3.7-Sonnet (54.4) and Gemini-2.5-Flash (55.3).
-- **JudgeBench mathematical reasoning**: Skywork-V2-Llama-3B achieves 87.5 on the math subtask, matching o3-mini (high); the 8B-40M version reaches 89.3, exceeding it.
+- **Style Bias Resistance in RM-Bench**: Most baseline models show huge performance gaps under Easy/Normal/Hard style conditions (e.g., INF-ORM-70B: Normal 80.0 vs. Hard 54.0, a 26-point drop). Skywork-V2-8B-40M maintains 93.5 on Hard (only a 4.1-point gap), indicating the SynPref-40M preference representations are more debiased.
+- **Best-of-N Scaling**: In BoN evaluation on RMB, all 8 Skywork-V2 variants surpass GPT-4o (up to +20 points gap) and show positive scaling curves on 5 PPE Correctness tasks.
+- **RewardBench v2 Precise Instruction Following**: Unlike existing RMs (scores <50), Skywork-V2-8B-40M reaches 67.8, surpassing Claude-3.7-Sonnet (54.4) and Gemini-2.5-Flash (55.3).
+- **JudgeBench Mathematical Reasoning**: Skywork-V2-Llama-3B achieves 87.5 on math subtasks, equivalent to o3-mini (high); 8B-40M reaches 89.3, exceeding it.
 
 ## Highlights & Insights
 
-- **Data quality overwhelmingly outweighs quantity**: An RM trained on 12M uncurated data fails to match the seed model, while only 290K (1.8%) curated data already surpasses the previous 70B SOTA. This directly challenges the naive assumption that more preference data is always better.
-- **Pure LLM curation is nearly ineffective**: It yields only a +0.1 point gain. This explains why open-source preference datasets relying heavily on LLM-synthesized annotations have failed to advance RM progress—without human-calibrated anchors, biases in LLM annotations self-reinforce.
-- **Error-driven retrieval is a critical bridge**: It maximizes the value of limited human annotations—rather than randomly labeling more data, it precisely identifies the RM's blind spots and supplements them in a targeted manner.
-- **Elegance of the recovery mechanism**: Preference pairs rejected by both RMs suggest the original labels may be incorrect. Flipping chosen/rejected and reusing them as "correction data" provides additional training data at zero cost, with experiments confirming consistent performance improvements across all stages and iterations.
-- **Tool-augmented human annotation >> bare human annotation**: Allowing annotators to use search engines and LLM tools (while retaining the final judgment for humans) elevates annotation quality from +0.4 to +3.2, providing an important reference for future data annotation protocol design.
+- **Data quality is overwhelmingly more important than quantity**: 12M uncurated pairs are inferior to the seed model, whereas 290K (1.8%) curated pairs already beat the 70B SOTA. This challenges the "more is better" assumption for preference data.
+- **Pure LLM curation is almost ineffective**: It brings only a +0.1 point gain. This explains why open-source preference datasets relying heavily on LLM synthesis fail to advance RMs—LLM biases self-reinforce without human calibration anchors.
+- **Error-driven retrieval is the critical bridge**: It maximizes the value of limited human labels by precisely locating RM blind spots rather than labeling random data.
+- **Ingenious Recovery Mechanism**: Preference pairs rejected by two independent RMs likely have incorrect original labels. Flipping chosen/rejected labels as "correction data" provides training signal at zero cost and yields consistent gains.
+- **Tool-augmented Human Labeling >> Naked Human Labeling**: Permitting annotators to use tools while retaining final judgment power boosted quality from +0.4 to +3.2, offering a template for future annotation protocols.
 
 ## Limitations & Future Work
 
 - Subjective preferences (e.g., writing style) do not exhibit data scaling behavior; curation is primarily effective for objective preferences.
-- Stage 1 still depends on human annotation resources, requiring the labor investment of 8 iterative rounds.
-- Only the pairwise Bradley-Terry objective is employed; pointwise scoring and listwise ranking methods are not explored.
-- Base models at 70B+ scale are not attempted due to training cost and deployment considerations, and the marginal benefit of data quality advantages on larger models remains unknown.
+- Phase 1 still relies on human annotation resources across 8 iterations.
+- Only the pairwise Bradley-Terry objective was used; pointwise scoring or listwise ranking were not explored.
+- No 70B+ base models were tested (due to cost); the marginal utility of data quality on larger models remains unknown.
 
 ## Related Work & Insights
 
-- **vs. ArmoRM / Nemotron / INF-ORM (70B scale)**: These models may perform strongly on individual benchmarks, but all fall short of Skywork-V2 8B when evaluated comprehensively across 7 benchmarks, demonstrating that data quality can compensate for a 9× model scale gap.
-- **vs. generative reward models (DeepSeek-GRM, RM-R1)**: Such approaches enhance judgment capability through reasoning chains or meta-evaluation, yet Skywork-V2 surpasses them comprehensively using only the Bradley-Terry objective, indicating that data-level and model-level improvements are orthogonal.
-- **vs. active learning**: Error-driven retrieval is essentially an active learning strategy for preference annotation. The key distinction is that rather than directly having humans annotate retrieved samples, it uses human gold data to guide LLM annotation, achieving a balance between quality and efficiency.
+- **vs. ArmoRM / Nemotron / INF-ORM (70B Scale)**: These models may be strong on single benchmarks, but Skywork-V2 8B is superior across a composite of 7 benchmarks, proving data quality can compensate for a 9x model size gap.
+- **vs. Generative Reward Models (DeepSeek-GRM, RM-R1)**: While those methods use reasoning chains to enhance judgment, Skywork-V2's performance with a simple Bradley-Terry objective shows data improvements are orthogonal to model-level improvements.
+- **vs. Active Learning**: Error-driven retrieval is essentially an active learning strategy for preference labeling, but it balances quality and efficiency by using human gold data to guide LLM labeling rather than direct human labeling of all retrieved samples.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The two-stage Human-AI synergy pipeline is systematic and elegant, with error-driven retrieval, preference-aware annotation, and the recovery mechanism forming a tightly integrated framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 benchmarks × 8 model scales × thorough ablations across both data and method dimensions yield a highly complete chain of evidence.
-- Writing Quality: ⭐⭐⭐⭐ The pipeline is described clearly; Section 2 establishes motivation thoroughly before presenting the method, with strong logical coherence.
-- Value: ⭐⭐⭐⭐⭐ The paper provides a complete solution from data curation to model training for reward model development. SynPref-40M and the full model series are open-sourced, enabling direct reproduction and application.
+- Novelty: ⭐⭐⭐⭐ The two-stage Human-AI synergistic pipeline is systematic and well-designed; the combination of error-driven retrieval, preference-aware labeling, and recovery is highly coherent.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 benchmarks × 8 model scales × detailed data/method ablations provide a very complete chain of evidence.
+- Writing Quality: ⭐⭐⭐⭐ Descriptions are clear, with motivations well-established in Section 2 before detailing methods.
+- Value: ⭐⭐⭐⭐⭐ Provides a comprehensive solution from curation to training, with SynPref-40M and all models open-sourced for replication and application.
 
 <!-- RELATED:START -->
 
@@ -143,11 +147,11 @@ Several key comparisons: (1) The 1.7B Skywork-V2 surpasses the previously strong
 
 ## Related Papers
 
+- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
+- [\[ICLR 2026\] What's In My Human Feedback? Learning Interpretable Descriptions of Preference Data](whats_in_my_human_feedback_learning_interpretable_descriptions_of_preference_dat.md)
+- [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](../../ACL2026/llm_alignment/agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
-- [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](../../AAAI2026/llm_alignment/intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
-- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](../../NeurIPS2025/llm_alignment/responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
-- [\[ICLR 2026\] Capability-Based Scaling Trends for LLM-Based Red-Teaming](capability-based_scaling_trends_for_llm-based_red-teaming.md)
 
 </div>
 

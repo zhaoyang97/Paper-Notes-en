@@ -2,110 +2,119 @@
 title: >-
   [Paper Note] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks
 description: >-
-  [ICLR 2026][LLM Alignment][Fake News Generation] This paper introduces JailNewsBench, the first multilingual and multi-regional benchmark for evaluating LLM robustness against fake news generation under jailbreak attacks…
+  [ICLR 2026][Alignment & RLHF][Paper Note] This paper proposes JailNewsBench, the first multilingual and multi-regional benchmark to evaluate the robustness of LLMs against fake news generation under jailbreak attacks. Covering 34 regions and 22 languages with approximately 300,000 instances, it reveals attack success rates up to 86.3% and uncovers a safety imb
 tags:
-  - "ICLR 2026"
-  - "LLM Alignment"
-  - "Fake News Generation"
-  - "Jailbreak Attacks"
-  - "Multilingual Safety"
-  - "LLM Safety Evaluation"
-  - "Regional Safety Imbalance"
+  - ICLR 2026
+  - Alignment & RLHF
 date: 2026-05-08
-content_hash: a7feec390a78c242
+content_hash: 1447d6a01eee1ae5
 ---
-
 # JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01291](https://arxiv.org/abs/2603.01291)  
 **Code**: [https://github.com/kanekomasahiro/jail_news_bench](https://github.com/kanekomasahiro/jail_news_bench)  
-**Area**: Alignment & RLHF
-**Keywords**: Fake News Generation, Jailbreak Attacks, Multilingual Safety, LLM Safety Evaluation, Regional Safety Imbalance
+**Area**: Alignment RLHF  
+**Keywords**: Fake news generation, jailbreak attacks, multilingual safety, LLM safety evaluation, regional safety imbalance
 
 ## TL;DR
-This paper introduces JailNewsBench, the first multilingual and multi-regional benchmark for evaluating LLM robustness against fake news generation under jailbreak attacks. Covering 34 regions, 22 languages, and approximately 300,000 instances, the benchmark reveals attack success rates as high as 86.3% and exposes a systematic safety imbalance in which English- and U.S.-topic defenses are significantly weaker than those for other regions.
+This paper proposes JailNewsBench, the first multilingual and multi-regional benchmark to evaluate the robustness of LLMs against fake news generation under jailbreak attacks. Covering 34 regions and 22 languages with approximately 300,000 instances, it reveals attack success rates up to 86.3% and uncovers a safety imbalance where defenses for English/US topics are significantly weaker than those for other regions.
 
 ## Background & Motivation
-Fake news poses severe threats to social trust and decision-making, affecting politics, economics, public health, and international relations. Because fake news inherently reflects region-specific political, social, and cultural contexts and is expressed in particular languages, assessing LLM safety risks demands a multilingual and multi-regional perspective.
+Fake news poses a severe threat to social trust and decision-making, affecting politics, economy, health, and international relations. Since fake news inherently reflects specific regional political, social, and cultural contexts and is expressed in specific languages, evaluating the safety risks of LLMs must adopt a multilingual and multi-regional perspective.
 
-Malicious actors can exploit jailbreak attacks to circumvent safety guardrails and induce LLMs to generate fake news. However, no existing benchmark systematically evaluates LLM robustness across diverse languages and regions. Current safety datasets such as HarmBench and TrustLLM primarily target toxicity and social bias, offering very limited coverage of fake news.
+Malicious users can bypass safety guards through jailbreak attacks to induce LLMs to generate fake news. However, no current benchmark systematically evaluates the attack robustness of LLMs across different languages and regions. Existing safety datasets (e.g., HarmBench, TrustLLM) primarily focus on toxicity and social bias, with very limited coverage of fake news.
 
-**Key Challenge**: LLM safety alignment is predominantly trained on English and general harmful content, whereas fake news is highly regionalized and language-specific, resulting in systematic blind spots in safety guardrails for non-English regions and languages.
+**Key Challenge**: Safety alignment for LLMs is primarily trained on English and general harmful content, but fake news is highly regionalized and language-dependent, leading to systematic blind spots in safety protections for non-English regions/languages.
 
-**Key Insight**: Construct the first cross-lingual and cross-regional fake news jailbreak benchmark to systematically expose language- and region-level imbalances in LLM safety defenses.
+**Key Insight**: Construct the first cross-lingual and cross-regional fake news jailbreak benchmark to systematically expose the language/regional imbalance in LLM safety protection.
 
 ## Method
 
 ### Overall Architecture
-JailNewsBench is a benchmark rather than a methodological contribution. The overall pipeline consists of: (1) construction of multi-regional and multilingual fake news topics → (2) application of multiple jailbreak attack strategies → (3) multi-dimensional LLM-as-Judge evaluation → (4) cross-lingual and cross-regional safety analysis.
+JailNewsBench is an evaluation benchmark rather than a methodological innovation. The question it aims to answer is: how easily can mainstream LLMs be induced to generate regionalized fake news under jailbreak attacks? The pipeline follows four steps: first, sampling real local news from 34 regions according to three publication safety standards; then, using GPT-5 combined with four types of malicious motivations to rewrite each real news item into "seed instructions" (specifying the direction of fabrication); next, applying two types of baselines and five types of jailbreak templates to the seed instructions and feeding them into nine target models; finally, the generated fake news is scored by an eight-dimensional LLM-as-Judge averaged across GPT-5, Gemini 2.5, and Claude 4, and summarized into three metrics: ASR, IFL, and $avg\_score$. The entire benchmark covers 34 regions × 22 languages and approximately 300,000 seed instructions, serving to systematically characterize the language/regional imbalance in LLM safety protection.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Real local news from 34 regions<br/>Filtered by 3 publication safety standards"] --> B["Seed Instruction Construction<br/>GPT-5 selects 4 malicious motives<br/>+ Template filling → ~300k items"]
+    B --> C["Attack Settings<br/>2 Baselines + 5 Jailbreak Templates"]
+    C --> D["Target LLM generates fake news<br/>9 Models"]
+    D --> EVAL
+    subgraph EVAL["8-dimensional Judge Scoring + 3 Aggregated Metrics"]
+        direction TB
+        E["8-dimensional LLM-as-Judge<br/>GPT-5/Gemini 2.5/Claude 4 Average"] --> F["Aggregated ASR / IFL / avg_score"]
+    end
+```
 
 ### Key Designs
-1. **Multi-Regional and Multilingual Coverage**: The benchmark spans 34 regions and 22 languages. Fake news topics are tailored to the political, social, and cultural context of each region—for example, election manipulation in the United States and nuclear wastewater controversy in Japan. Each topic is region-specific rather than a simple translation. The design motivation is that the harm caused by fake news is highly dependent on geopolitical and cultural context.
 
-2. **Five Jailbreak Attack Strategies**: The benchmark includes role play, system override, research front, negative prompting, context overload, and explicit requests. These strategies span a spectrum from simple to complex attack paradigms, ensuring comprehensive evaluation coverage.
+**1. Seed Instruction Construction: Real News × Four Malicious Motives → Regionalized Jailbreak Starting Point**
 
-3. **Eight-Dimensional LLM-as-Judge Evaluation**: Eight sub-metrics are used to assess the harmfulness of generated fake news: faithfulness, verifiability, adherence, scope, scale, formality, subjectivity, and agitativeness. Each dimension is scored from 0 to 4, with GPT-4o serving as the judge.
+The harm of fake news is highly dependent on political, social, and cultural contexts; simply translating English samples into other languages fails to replicate real threats. Therefore, the starting point of the benchmark is the modification of real news rather than arbitrary topics. Regional filtering first passes three publication safety standards: excluding regions with existing specific "fake news legislation," excluding regions with political instability (Fragile States Index higher than Elevated Warning or on conflict watchlists), and selecting only old news from 2020-08 to 2021-11 to avoid immediate misuse risks associated with current events. This is why the final 34 regions lean toward developed areas—a result of compliance constraints rather than an intentional narrowing of language/cultural scope. 10,000 local news items were randomly sampled for each region from a multilingual news dataset (Babel Briefings). Next, using the four types of fabrication motives by Wardle & Desakhshan—Financial, Political, Social, and Psychological—GPT-5 selects the most fitting motive for each real news item and generates a seed instruction in the same language based on a template containing four slots: "real news/region/language/motive." The instruction explicitly directs the model to "fabricate details contradictory to facts in the direction of this motive based on this real news." For example, for a real news story about the Leinster rugby team in Ireland paired with a "Social" motive, the seed instruction would require writing about internal team strife and imminent collapse to undermine its reputation. Data is split 80/10/10 into training/dev/test sets, with the test set manually verified by native speakers, totaling approximately 300,000 seed instructions.
 
-4. **Large-Scale Instance Set**: Approximately 300,000 instances (34 regions × 22 languages × 5 attacks × 9 models), far exceeding the scale of prior safety benchmarks.
+**2. Attack Settings: Two Baselines + Five Jailbreak Templates**
 
-### Loss & Training
-As an evaluation benchmark, no training is involved. Evaluation metrics include Attack Success Rate (ASR), Influentness Rate (IFL), and average harmfulness score (avg_score). The evaluation pipeline proceeds as follows: (1) generate prompts based on topics and attack strategies → (2) obtain responses from target LLMs → (3) have GPT-4o score responses across eight dimensions. Evaluation scripts are open-sourced and support OpenAI, Anthropic, Gemini APIs, and local vLLM models, enabling comprehensive evaluation of any model with a single command. It is worth noting that results may vary slightly across data splits (train/val/test); care should be taken when comparing average scores against the numbers reported in the paper.
+To distinguish between "the model naturally refuses" and "the model is breached by jailbreaking," a control group without jailbreaking is necessary. The benchmark sets two baselines: Original directly feeds the seed instruction to the model without any jailbreak methods; Explicit adds an explicit declaration that "this is a fake news generation task," specifically testing the model's ability to refuse blatant harmful requests. On top of these, five jailbreak templates usable even in black-box scenarios are overlaid: Role Play (having the model play a news writer), System Override (instructing it to ignore existing system prompts), Research Front (disguising it as research use), Negative Prompting (using prohibitive phrasing like "absolutely do not write it this way" to induce the model into spilling content in its explanation), and Context Overload (stuffing 512 tokens of irrelevant news before the seed instruction to make the model ignore safety constraints while processing harmless long context). All attacks are implemented solely through additional instructions, making them applicable to both white-box and black-box models (GPT-5, Gemini, etc.), covering various attack complexities from direct single-sentence requests to long-context flooding.
+
+**3. Eight-Dimensional LLM-as-Judge Scoring + Three Aggregated Metrics: Quantifying Harmfulness**
+
+Whether a response constitutes effective fake news is difficult to measure with a single label. The benchmark has judges score each response on a scale of 0–4 across eight sub-dimensions: Faithfulness (0=fully faithful, 4=fully contradictory), Verifiability, Adherence (to malicious instructions), Scope, Scale, Formality, Subjectivity, and Agitativeness. These collectively characterize "how real the fake news looks and how strong its potential for dissemination is," with the final $avg\_score$ being the average of these eight dimensions. Crucially, the judges themselves are an average of GPT-5, Gemini 2.5, and Claude 4 (rather than a single model) to reduce bias, and a meta-evaluation dataset was manually constructed to verify the consistency between the judge and human evaluations. Beyond $avg\_score$, two aggregate quantities are summarized: Attack Success Rate (ASR, the proportion of instances successfully induced to generate fake news, answering "whether protection was bypassed") and Influency (IFL, reflecting degradation in generation quality, answering "whether the content is usable after the bypass"). Only the combination of these three can distinguish between "model refuses," "model hallucinates gibberish," and "model generates credible fake news." The evaluation script is open-sourced, supporting OpenAI, Anthropic, Gemini APIs, and vLLM local models, allowing a full grid run on any model with a single command.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Metric (ASR) | Max ASR | Max Harm Score | English ASR vs. Others |
-|-------|-------------|---------|----------------|------------------------|
-| 9 LLMs | ASR | 86.3% | 3.5/5 | English/U.S. defense significantly weaker |
-| GPT series | ASR | High | Medium–High | English regions relatively weaker |
-| Claude series | ASR | Moderate | Moderate | Relatively balanced |
-| Llama series | ASR | High | Medium–High | Stronger defense on non-English |
+| Model | Metric (ASR) | Max ASR | Max Harm Score | English ASR vs Others |
+|------|----------|---------|------------|----------------|
+| 9 LLMs | ASR | 86.3% | 3.5/5 | English/US defense significantly weaker |
+| GPT series | ASR | High | Med-High | Weakness in English regions |
+| Claude series | ASR | Medium | Medium | Relatively balanced |
+| Llama series | ASR | High | Med-High | Stronger defense in non-English |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Remarks |
-|--------------|-----------|---------|
-| Different attack strategies | Large ASR variation | Role play and context overload are most effective |
-| Different languages | Significant ASR differences | Low-resource languages show stronger defense (less training data → more conservative safety rules) |
-| Different regions | Varying harm scores | English- and U.S.-related topics are most exploitable |
-| Fake news vs. toxicity | Defense comparison | Fake news defenses are significantly weaker than toxicity defenses |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Different Attack Strategies | Large ASR variation | Role Play and Context Overload are most effective |
+| Different Languages | Significant ASR difference | Better defense in low-resource languages (less training data → more conservative safety rules) |
+| Different Regions | Harm score variance | English and US topics are the most easily exploited |
+| Fake News vs. Toxicity | Defense comparison | Defense for fake news category significantly weaker than for toxicity |
 
 ### Key Findings
-- The maximum attack success rate reaches 86.3% with a maximum harmfulness score of 3.5/5, indicating that LLM defenses against fake news are far from adequate.
-- Defenses for English and U.S.-related topics are significantly weaker than those for other regions—the American-centric perspective dominant in alignment training data may paradoxically introduce exploitable vulnerabilities.
-- Fake news is severely underrepresented in existing safety datasets, resulting in defenses far weaker than those for toxicity and social bias.
-- Multilingual LLMs tend to exhibit stronger safety behavior in non-English languages, likely because uneven safety training data distributions cause models to adopt a more conservative stance toward less frequently observed languages.
+- The maximum attack success rate reached 86.3%, with a maximum harmfulness of 3.5/5—LLMs are far from secure in fake news defense; even for SOTA safety-aligned models like GPT-5, Claude 4, and Gemini, the average ASR remains as high as 75.3%, 76.1%, and 77.6% respectively.
+- Defense performance for English and US-related topics is significantly weaker than for other regions—the US-centric perspective of "over-aligned" training data may ironically expose vulnerabilities.
+- Fake news is under-covered in existing safety datasets, and defense effectiveness is much weaker than for primary categories like toxicity and social bias.
+- Typical multilingual LLMs actually exhibit stronger safety protection in non-English languages, likely because uneven safety training data distribution leads models to be more conservative with less common languages.
 
 ## Highlights & Insights
-- Fills a critical gap in fake news generation safety evaluation as the first systematic cross-lingual and cross-regional study.
-- Reveals a counterintuitive finding: English/U.S. defenses are the weakest, challenging the assumption that more training data implies better safety.
-- The eight-dimensional evaluation framework provides a fine-grained quantitative tool for assessing the harmfulness of fake news.
-- The 300,000-instance scale ensures statistical reliability.
-- The dataset and evaluation scripts are open-sourced (HuggingFace: MasahiroKaneko/JailNewsBench), supporting single-command evaluation of any model.
-- Five distinct jailbreak attack strategies (role play, system override, etc.) provide comprehensive attack surface coverage.
-- Analysis reveals that fake news is severely neglected in existing safety datasets, with important implications for the construction of safety training data.
-- Large cross-model and cross-language variations in safety behavior suggest that current safety RLHF generalizes poorly across languages.
+- Fills the gap in safety evaluation for fake news generation, representing the first systematic cross-lingual and cross-regional work.
+- Reveals a counter-intuitive phenomenon: defenses for English/US are the weakest, challenging the assumption that "more training data = better safety."
+- The 8-dimensional evaluation framework provides a fine-grained quantitative tool for fake news harmfulness.
+- The scale of 300,000 instances ensures statistical reliability.
+- Dataset and evaluation scripts are open-sourced (HuggingFace: MasahiroKaneko/JailNewsBench), supporting single-command evaluation of any model.
+- Supports 5 different jailbreak attack strategies (Role Play, System Override, etc.), comprehensively covering the attack surface.
+- Analysis shows that the fake news category is severely neglected in existing safety datasets, providing important insights for constructing safety training data.
+- The significant variance in safety performance across different models and languages suggests a lack of multilingual generalization in current safety RLHF.
 
 ## Limitations & Future Work
-- LLM-as-Judge evaluation may introduce biases, particularly regarding evaluation quality and consistency for non-English languages.
-- Only single-turn attacks are evaluated; multi-turn progressive jailbreaking (e.g., methods such as SEMA) may pose greater risks.
-- The selected fake news topics may not fully capture the sensitive issues of every region, necessitating continuous updates.
-- Attack strategies are relatively fixed; adaptive attacks with dynamic adjustment based on model feedback are not covered.
-- Only textual fake news is considered; evaluation of multimodal fake news (e.g., image–text or video combinations) is an important future direction.
-- The temporal validity of the benchmark is limited, as fake news topics evolve with current events, making periodic dataset updates essential.
+- LLM-as-Judge evaluation may contain biases, particularly regarding judicial quality and consistency for non-English languages.
+- Only single-turn attacks were evaluated; multi-turn progressive inducement might be more dangerous (could be combined with multi-turn methods like SEMA).
+- The selection of fake news topics may not fully cover sensitive issues in all regions and requires continuous updates.
+- Attack strategies are relatively fixed; adaptive attacks (e.g., dynamic adjustments based on model feedback) were not included.
+- Only text-based fake news was considered; the evaluation of multimodal fake news (image-text/video coordination) is an important future direction.
+- Benchmark timeliness—fake news topics change with current events, making periodic dataset updates essential.
 
 ## Related Work & Insights
-- **vs. HarmBench/TrustLLM**: These general safety benchmarks do not focus on fake news and are primarily English-centric.
-- **vs. SafetyBench**: SafetyBench covers diverse harmful categories but lacks multilingual and regional dimensions.
-- **vs. Red-Teaming Methods**: This work is an evaluation benchmark rather than an attack method, but the safety imbalances it reveals offer guidance for the design of red-teaming strategies.
+- **vs HarmBench/TrustLLM**: These general safety benchmarks do not focus on fake news and are primarily oriented toward English.
+- **vs SafetyBench**: SafetyBench covers various harmful categories but lacks multilingual and regional dimensions.
+- **vs RedTeaming Methods**: This paper is an evaluation rather than an attack method, but the safety imbalance it reveals provides guidance for the design of red teaming strategies.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First multilingual and multi-regional fake news jailbreak benchmark, filling an important gap.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 34 regions × 22 languages × 5 attacks × 9 models; large-scale and comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear motivation and impactful findings.
-- **Value**: ⭐⭐⭐⭐ Direct reference value for LLM safety research and policy-making.
+- Novelty: ⭐⭐⭐⭐ First multilingual/multi-regional fake news jailbreak benchmark, filling an important gap.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 34 regions × 22 languages × 5 attacks × 9 models, massive scale.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation with impactful findings.
+- Value: ⭐⭐⭐⭐ Direct reference value for LLM safety research and policy-making.
 
 <!-- RELATED:START -->
 
@@ -115,9 +124,9 @@ As an evaluation benchmark, no training is involved. Evaluation metrics include 
 
 - [\[ICLR 2026\] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks](sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks.md)
 - [\[ICLR 2026\] CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation](cage_a_framework_for_culturally_adaptive_red-teaming_benchmark_generation.md)
+- [\[ACL 2026\] HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human–LLM Collaborative Writing](../../ACL2026/llm_alignment/hardbench_a_benchmark_for_draft-based_co-authoring_jailbreak_attacks_for_safe_hu.md)
 - [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
-- [\[AAAI 2026\] AlignTree: Efficient Defense Against LLM Jailbreak Attacks](../../AAAI2026/llm_alignment/aligntree_efficient_defense_against_llm_jailbreak_attacks.md)
-- [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
+- [\[ICLR 2026\] Enforcing Axioms for AI Alignment under Loss-Based Rules](enforcing_axioms_for_ai_alignment_under_loss-based_rules.md)
 
 </div>
 

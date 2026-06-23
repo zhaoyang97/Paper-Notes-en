@@ -2,179 +2,159 @@
 title: >-
   [Paper Note] Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks
 description: >-
-  [ICLR 2026][LLM Alignment][MoE] This paper systematically investigates how sparsity in MoE language models differentially affects memorization and reasoning tasks: memorization tasks favor higher sparsity (more parameter…
+  [ICLR 2026][Alignment & RLHF][MoE] This study systematically investigates how the sparsity of Mixture-of-Experts (MoE) language models affects memory-intensive and reasoning-intensive tasks differently: memory tasks prefer higher sparsity (more total parameters), whereas reasoning tasks reach optimality near $\text{TPP} \approx 20$. This trend remains i
 tags:
-  - "ICLR 2026"
-  - "LLM Alignment"
-  - "MoE"
-  - "scaling laws"
-  - "sparsity"
-  - "reasoning"
-  - "memorization"
-  - "tokens per parameter"
-  - "GRPO"
-  - "test-time compute"
+  - ICLR 2026
+  - Alignment & RLHF
+  - MoE
+  - scaling laws
+  - sparsity
+  - tokens per parameter
 date: 2026-05-08
-content_hash: f5bc3048954d0624
+content_hash: c620afa5b4936eee
 ---
-
 # Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2508.18672](https://arxiv.org/abs/2508.18672)  
 **Code**: [GitHub](https://github.com/rioyokotalab/optimal-sparsity)  
-**Area**: LLM Alignment
-**Keywords**: MoE, scaling laws, sparsity, reasoning, memorization, tokens per parameter, GRPO, test-time compute
+**Area**: LLM Alignment  
+**Keywords**: MoE, scaling laws, sparsity, reasoning, memory, tokens per parameter, GRPO, test-time compute
 
 ## TL;DR
 
-This paper systematically investigates how sparsity in MoE language models differentially affects memorization and reasoning tasks: memorization tasks favor higher sparsity (more parameters), while reasoning tasks peak near TPP≈20, and this trend remains consistent after GRPO post-training and increased test-time compute.
+This study systematically investigates how the sparsity of Mixture-of-Experts (MoE) language models affects memory-intensive and reasoning-intensive tasks differently: memory tasks prefer higher sparsity (more total parameters), whereas reasoning tasks reach optimality near $\text{TPP} \approx 20$. This trend remains invariant even after GRPO post-training and increased test-time compute.
 
 ## Background & Motivation
 
-Classical scaling laws (Kaplan et al., 2020; Hoffmann et al., 2022) establish power-law relationships between pretraining loss and model size, data volume, and compute budget, forming the cornerstone of model planning. However, these laws have important limitations:
+Classic scaling laws (Kaplan et al., 2020; Hoffmann et al., 2022) establish power-law relationships between pre-training loss and model scale/data volume/compute budget, serving as a cornerstone for model planning. However, these laws have significant limitations:
 
-**Non-universal coefficients**: Re-estimation is required whenever the architecture or data pipeline changes.
+**Non-universal coefficients**: Constants must be re-estimated when architectures or data pipelines change.
 
-**MoE introduces a new dimension**: MoE models achieve high capacity at fixed FLOPs through sparse routing, becoming the standard configuration for flagship models such as Gemini 2.5 Pro, DeepSeek-V3, and Qwen3. Yet the scaling frontier of dense models cannot cover the sparsity dimension.
+**MoE introduces new dimensions**: MoE models achieve high capacity with fixed FLOPs through sparse routing, becoming the standard configuration for flagship models like Gemini 2.5 Pro, DeepSeek-V3, and Qwen3. However, the scaling frontier of dense models does not cover the dimension of sparsity.
 
-**Loss ≠ performance**: Models with identical pretraining loss can differ substantially on downstream reasoning benchmarks (an observation also noted by the GLM-4.5 Team).
+**Loss $\neq$ Performance**: Models with the same pre-training loss may perform very differently on downstream reasoning benchmarks (an observation also noted by the GLM-4.5 team).
 
-**Unknown effects of post-training and TTC**: It remains unclear whether GRPO and test-time compute can compensate for suboptimal sparsity choices made during pretraining.
+**Unknown effects of post-training and TTC**: Can GRPO and test-time compute (TTC) compensate for suboptimal sparsity choices made during pre-training?
 
 ## Method
 
 ### Overall Architecture
 
-A family of Mixtral-architecture MoE models is trained with controlled variable sweeps:
-- Model width $d \in \{512, 1024, 2048\}$
-- Number of experts per layer $E \in \{8, 16, 32, 64, 128, 256\}$
-- Top-k experts $k \in \{2, 4, 8, 16\}$
-- Fixed 16 layers; all models trained on 125B tokens
+This paper does not propose a new model but uses a set of **controlled variable scanning experiments** to answer two questions: whether MoE sparsity affects "memory" and "reasoning" capabilities identically, and whether pre-training sparsity can be rectified post-hoc. The approach follows three steps. First, a family of MoE models based on the Mixtral architecture is trained to systematically scan model width $d \in \{512, 1024, 2048\}$, experts per layer $E \in \{8, 16, 32, 64, 128, 256\}$, and active experts top-$k \in \{2, 4, 8, 16\}$ (fixed at 16 layers, trained on 125B tokens). Sparsity is defined as $\text{sparsity} = 1 - k/E$ (lower activation indicates higher sparsity). Second, three levels of metrics are measured for each model to decouple "good loss" from "correct answers." Third, the observed trends are explained along the axes of Active FLOPs and TPP, followed by experiments with GRPO post-training and test-time compute to test if these trends diminish.
 
-Sparsity is defined as: $\text{sparsity} = 1 - \frac{\text{Top-}k}{\text{Experts}}$
+To ensure conclusions are attributable to sparsity itself rather than hyperparameter tuning, all models share the same training recipe: AdamW optimizer, peak learning rate $4 \times 10^{-4}$, 2k-step linear warmup followed by cosine decay, and weight decay of 0.1. The data consists of a 125B token balanced mix (web 43B, math 32B, STEM 49B, code 1B). This unified recipe makes the scans of width, expert count, and top-$k$ clean controlled experiments.
+
+> As this is a scaling-law/analytical paper where the method focuses on "scan design and attribution" rather than multi-stage pipelines or multi-module data flows, **no Mermaid architecture diagram is provided**. The three key designs below are aligned with the "measurement $\rightarrow$ attribution $\rightarrow$ robustness check" steps.
 
 ### Key Designs
 
-#### 1. Decoupling Pretraining Loss from Downstream Performance
+**1. Three-tier measurement: Decoupling "good loss" and "correct answers"**
 
-Three levels of measurement are taken for each model:
-- Train/val loss on pretraining data
-- Task loss on downstream benchmarks (cross-entropy computed only on answer tokens)
-- Accuracy on downstream benchmarks
+Classic scaling laws focus solely on pre-training loss. This study specifically queries why continued loss reduction does not necessarily yield stronger reasoning. Thus, three levels are measured: train/val loss on pre-training data, task loss on downstream benchmarks (cross-entropy on answer tokens only), and accuracy on downstream benchmarks. This decoupling allows for the quantification of the "training $\rightarrow$ testing" generalization gap and the "loss $\rightarrow$ accuracy" mapping gap. It reveals that on reasoning tasks, while train loss decreases monotonically, the task loss follows a U-shaped curve, and accuracy degrades with over-optimization; conversely, memory tasks (TriviaQA, HellaSwag) show monotonic improvement across all three tiers.
 
-This enables separate quantification of the generalization gap from training to test distribution, and the mapping gap from loss to accuracy.
+**2. Two-axis attribution: Explaining opposing effects via Active FLOPs and TPP**
 
-#### 2. Two Primary Axes of Key Findings
+This forms the analytical framework of the paper. **Active FLOPs axis** refers to the actual compute activated during training and inference (determined by top-$k$): at the same pre-training loss, models with higher active compute consistently show higher reasoning accuracy, indicating that reasoning quality is determined by active FLOPs, not just loss. The **Total Tokens Per Parameter (TPP) axis** is defined as:
 
-**Active FLOPs axis**: At equal pretraining loss, models with more active compute (larger top-k) perform better on reasoning tasks. This indicates that reasoning quality is determined not only by loss but also by the active FLOPs available during training and inference.
+$$\text{TPP} = N_{\text{tokens}} / N_{\text{params}}$$
 
-**Total Tokens Per Parameter (TPP) axis**:
-- Memorization tasks (TriviaQA, HellaSwag): parameter-hungry; lower TPP (more parameters) is consistently better.
-- Reasoning tasks (GSM8K, GSM-Plus): data-hungry; performance peaks near TPP≈20, degrading at both extremes.
+With $N_{\text{tokens}}$ fixed at 125B, TPP varies inversely with parameter count. It characterizes whether a model is "parameter-hungry" or "data-hungry." Memory tasks are parameter-hungry (lower TPP/more parameters are better), while reasoning tasks are data-hungry, reaching optimality at $\text{TPP} \approx 20$, with performance degrading if TPP is too low or too high.
 
-#### 3. MoE Training Details
+**3. GRPO + TTC Robustness Check: Verifying if pre-training choices can be fixed post-hoc**
 
-- Optimizer: AdamW, peak learning rate $4 \times 10^{-4}$, 2k-step linear warmup followed by cosine decay
-- Auxiliary losses: load-balancing loss ($\alpha = 10^{-2}$) + router z-loss ($\beta = 10^{-3}$)
-- Total loss: $\mathcal{L} = \mathcal{L}_{CE} + \alpha \mathcal{L}_{LB} + \beta \mathcal{L}_{RZ}$
-- Data: 125B token balanced mixture (web 43B, math 32B, STEM 49B, code 1B)
-
-#### 4. Post-Training and TTC Experiments
-
-- GRPO: Fine-tuned on the GSM8K training set using DeepSeek-R1's GRPO algorithm.
-- TTC: Zero-shot Self-Consistency decoding, generating $2^7 = 128$ candidate answers per question and taking majority vote.
+Can suboptimal pre-training sparsity be compensated for by post-training or extra compute at test time? The models were re-evaluated using **GRPO** (following the DeepSeek-R1 algorithm) on the GSM8K training set and **TTC** (test-time compute) using zero-shot Self-Consistency decoding with $2^7 = 128$ samples. While both methods improved absolute performance, the non-monotonic "loss-accuracy" tradeoff remained unchanged, and sparser models could not close the gap with denser models. This indicates that reasoning losses caused by sparsity cannot be smoothed over by post-training, making pre-training sparsity choices critical.
 
 ### Loss & Training
 
-Standard MoE training loss:
+The standard MoE training loss used throughout all scans is:
 
 $$\mathcal{L} = \mathcal{L}_{CE} + \alpha \mathcal{L}_{LB} + \beta \mathcal{L}_{RZ}$$
 
-where $\mathcal{L}_{LB}$ prevents expert collapse and $\mathcal{L}_{RZ}$ penalizes excessively large router logits to maintain numerical stability.
+where $\mathcal{L}_{CE}$ is the main cross-entropy term, the load-balancing loss $\mathcal{L}_{LB}$ ($\alpha = 10^{-2}$) prevents expert collapse, and the router z-loss $\mathcal{L}_{RZ}$ ($\beta = 10^{-3}$) penalizes large router logits for numerical stability.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Divergence between memorization and reasoning tasks as total parameters increase (Figures 1–3)**:
+**Divergence between memory vs. reasoning tasks when increasing total parameters (Figure 1-3)**:
 
-| Dimension | TriviaQA/HellaSwag (Memorization) | GSM8K/GSM-Plus (Reasoning) |
-|-----------|----------------------------------|---------------------------|
-| Pretraining loss | Monotonically decreases with total parameters ✓ | Monotonically decreases with total parameters ✓ |
-| Task loss | Monotonically improves as pretraining loss decreases ✓ | U-shaped curve: decreases then increases ✗ |
-| Accuracy | Monotonically improves as pretraining loss decreases ✓ | Non-monotonic: over-optimization is harmful ✗ |
+| Dimension | TriviaQA/HellaSwag (Memory) | GSM8K/GSM-Plus (Reasoning) |
+|------|--------------------------|---------------------|
+| Pre-training Loss | Monotonic decrease ✓ | Monotonic decrease ✓ |
+| Task Loss | Monotonic improvement ✓ | U-shaped: Decrease then increase ✗ |
+| Accuracy | Monotonic improvement ✓ | Non-monotonic: Over-optimization hurts ✗ |
 
-**Optimal sparsity under iso-FLOP analysis (Figure 5)**:
+**Optimal Sparsity under Iso-FLOP Analysis (Figure 5)**:
 
 | Task Type | Low FLOPs Budget | High FLOPs Budget |
-|-----------|-----------------|------------------|
-| Memorization | Higher sparsity is better | Higher sparsity is better (consistent) |
-| Reasoning | Higher sparsity is better | **Denser models overtake** (reversal) |
+|---------|-------------|-------------|
+| Memory | Higher sparsity is better | Higher sparsity is better (Consistent) |
+| Reasoning | Higher sparsity is better | **Denser models overtake** (Reversal) |
 
-**Effect of TPP on performance (Figure 7)**:
+**Impact of TPP on Performance (Figure 7)**:
 
 | Task Type | TPP Trend | Optimal TPP |
-|-----------|----------|-------------|
-| TriviaQA/HellaSwag | Monotonic: lower TPP is always better | As low as possible |
-| GSM8K/GSM-Plus | Non-monotonic inverted U-shape | **≈20** |
+|---------|---------|---------|
+| TriviaQA/HellaSwag | Monotonic: Lower TPP is better | As low as possible |
+| GSM8K/GSM-Plus | Non-monotonic (Inverted U) | **$\approx 20$** |
 
 ### Ablation Study
 
-**Effect of top-k at fixed active parameters**:
-- Varying top-k at fixed active parameter count has negligible impact on pretraining loss.
-- However, on reasoning tasks, larger top-k consistently outperforms smaller top-k, even at fixed TPP.
+**Impact of Top-$k$ with fixed active parameters**:
+- Changing top-$k$ while fixing active parameter count has a negligible impact on pre-training loss.
+- However, on reasoning tasks, larger top-$k$ consistently outperforms smaller top-$k$ even when TPP is fixed.
 
-**GRPO post-training effect (Figure 6, right)**:
-- All models improve in performance, but the non-monotonic relationship between pretraining loss and accuracy **remains unchanged**.
-- Sparser models continue to underperform denser models after GRPO.
+**GRPO Post-training Effects (Figure 6 Right)**:
+- All models show performance gains, but the non-monotonic relationship between pre-training loss and accuracy **remains unchanged**.
+- Sparser models still underperform denser models after GRPO.
 
-**TTC effect (Figure 6, left; Self-Consistency with $2^7$ samples)**:
-- Performance scales with model size, but the loss–accuracy trade-off **remains unchanged**.
-- TTC cannot compensate for deficiencies introduced by suboptimal pretraining sparsity.
+**TTC Effects (Figure 6 Left, Self-Consistency $2^7$ sampling)**:
+- Performance scales with model size, but the loss-accuracy tradeoff **remains unchanged**.
+- TTC cannot compensate for deficiencies in pre-training sparsity.
 
-**Hyperparameter control experiments**:
-- Sweeping learning rate and initialization schemes produces effects strikingly consistent with the generalization gap induced by sparsity.
-- This confirms that the memorization/reasoning performance gap is not caused solely by sparsity; conventional hyperparameters can reproduce the same patterns.
+**Hyperparameter Control Experiments**:
+- Scans of learning rates and initialization schemes show generalization gaps strikingly similar to those caused by sparsity.
+- Confirms that the memory/reasoning performance gap is not unique to MoE; traditional hyperparameters can replicate it.
 
-**Code task ablation (HumanEval, MBPP)**:
-- Code generation exhibits trends similar to mathematical reasoning: denser models are superior under high FLOPs budgets.
+**Code Task Ablation (HumanEval, MBPP)**:
+- Code generation exhibits trends similar to mathematical reasoning: denser models are superior under high FLOP budgets.
 
 ### Key Findings
 
-1. A decrease in pretraining loss does not necessarily lead to improved reasoning performance — in MoE models it may in fact be harmful.
-2. Optimal sparsity must be jointly determined by Active FLOPs and TPP, not by compute budget alone.
-3. Neither GRPO nor TTC can eliminate reasoning performance losses caused by pretraining sparsity choices.
-4. Memorization favors sparsity (more parameters); reasoning favors moderate density (more data per parameter).
+1. Decreasing pre-training loss does not necessarily improve reasoning performance—in MoE, it can sometimes be detrimental.
+2. Optimal sparsity must be determined jointly by Active FLOPs and TPP, rather than compute budget alone.
+3. Neither GRPO nor TTC can eliminate reasoning performance losses caused by pre-training sparsity.
+4. Memory tasks prefer sparsity (more parameters), while reasoning tasks prefer moderate density (more data relative to parameters).
 
 ## Highlights & Insights
 
-1. **Challenges classical scaling wisdom**: Reveals the counterintuitive finding that "more parameters are always better" does not hold for MoE reasoning tasks.
-2. **Elegant experimental design**: Systematic sweeps over top-k, width, and expert count cleanly disentangle multiple confounding factors.
-3. **Practical guidance**: Provides a clear decision framework for pretraining MoE models — stack parameters for memorization tasks; target TPP≈20 for reasoning tasks.
-4. **Post-training cannot compensate**: Neither GRPO nor TTC alters the underlying trade-off, underscoring the critical importance of sparsity selection during pretraining.
-5. **Fully open-sourced**: Checkpoints, code, and training logs are all publicly released, enabling high reproducibility.
+1. **Challenging classic scaling wisdom**: Reveals the counter-intuitive conclusion that "more parameters are always better" does not hold for MoE reasoning tasks.
+2. **Elegant experimental design**: Decouples confounding factors through systematic scans of top-$k$, width, and expert counts.
+3. **Practical guidance**: Provides a clear decision framework for MoE pre-training—scale parameters for memory, but maintain $\text{TPP} \approx 20$ for reasoning.
+4. **Post-training cannot compensate**: GRPO and TTC do not change the underlying tradeoffs, emphasizing the criticality of sparsity selection during pre-training.
+5. **Completely open-source**: Checkpoints, code, and training logs are released, ensuring high reproducibility.
 
-## Limitations & Future Work
+## Limitations
 
-1. All models are trained on only 125B tokens; larger datasets may shift the optimal sparsity (acknowledged by the authors).
-2. Only the Mixtral architecture is used; modern variants such as shared experts and QK-norm are not evaluated.
-3. The evaluation benchmarks are limited (GSM8K / TriviaQA / HellaSwag); harder reasoning benchmarks such as MATH and ARC-C are absent.
-4. The maximum width of d=2048 limits extrapolation to truly large-scale model behavior.
-5. Depth is fixed at 16 layers; the interaction between depth and sparsity is not thoroughly explored.
+1. All models were trained on 125B tokens; larger datasets might shift the optimal sparsity (acknowledged by authors).
+2. Only the Mixtral architecture was used; modern variants like shared experts or QK-norm were not validated.
+3. Evaluation benchmarks are limited (GSM8K/TriviaQA/HellaSwag); harder benchmarks like MATH or ARC-C are missing.
+4. Max width $d=2048$ limits extrapolation to truly large-scale model behavior.
+5. Depth was fixed at 16 layers; the interaction between depth and sparsity was not fully explored.
 
 ## Related Work & Insights
 
-Unlike Abnar et al. (2025), who analyze the parameter–FLOPs frontier of MoE models, this paper further distinguishes optimal strategies for memorization versus reasoning tasks. The findings are empirically consistent with Jelassi et al. (2025), whose theoretical analysis shows that adding experts in MoE improves memorization more than reasoning. The results are also closely aligned with Roberts et al. (2025), who characterize TPP and find that memorization is parameter-hungry while reasoning is data-hungry.
+Unlike the MoE parameter-FLOPs frontier analysis by Abnar et al. (2025), this study further distinguishes different optimal strategies for memory and reasoning. It empirically corroborates the theoretical analysis of Jelassi et al. (2025) (MoE improves memory more than reasoning) and aligns with the TPP analysis of Roberts et al. (2025) (memory is parameter-hungry, reasoning is data-hungry).
 
-**Core insight**: When planning large-scale MoE training, it is insufficient to monitor only the perplexity curve. Downstream reasoning benchmarks must be tracked simultaneously, and the sparsity strategy should be chosen based on the target task type (memorization vs. reasoning). TPP≈20 represents a "sweet spot" for reasoning tasks and is worth adopting as an engineering rule of thumb.
+**Core Insight**: When planning large-scale MoE training, one cannot rely solely on perplexity curves. Downstream reasoning benchmarks must be monitored simultaneously, and sparsity strategies should be chosen based on target task types. $\text{TPP} \approx 20$ serves as a valuable "sweet spot" rule of thumb for reasoning tasks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Fills an important gap by analyzing sparsity through the lens of MoE reasoning performance)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Extensive systematic sweeps, multiple ablations, GRPO+TTC validation, and extension to code tasks)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure, information-dense figures, honest discussion)
-- Value: ⭐⭐⭐⭐⭐ (Directly actionable for MoE model engineering and scaling law research)
+- Novelty: ⭐⭐⭐⭐ (Fills a critical gap in MoE reasoning performance analysis)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Extensive systematic scans, multiple ablations, GRPO/TTC validation)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, high information density in charts)
+- Value: ⭐⭐⭐⭐⭐ (Direct practical utility for MoE engineering and scaling law research)
 
 <!-- RELATED:START -->
 
@@ -182,11 +162,11 @@ Unlike Abnar et al. (2025), who analyze the parameter–FLOPs frontier of MoE mo
 
 ## Related Papers
 
+- [\[ACL 2025\] Upcycling Instruction Tuning from Dense to Mixture-of-Experts via Parameter Merging](../../ACL2025/llm_alignment/upcycling_instruction_tuning_from_dense_to_mixture-of-experts_via_parameter_merg.md)
+- [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
 - [\[ICLR 2026\] Hierarchy-of-Groups Policy Optimization for Long-Horizon Agentic Tasks](hierarchy-of-groups_policy_optimization_for_long-horizon_agentic_tasks.md)
 - [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](../../NeurIPS2025/llm_alignment/jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
-- [\[ICLR 2026\] JULI: Jailbreak Large Language Models by Self-Introspection](juli_jailbreak_large_language_models_by_self-introspection.md)
-- [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
-- [\[AAAI 2026\] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning](../../AAAI2026/llm_alignment/gram-r2_self-training_generative_foundation_reward_models_for_reward_reasoning.md)
+- [\[ICLR 2026\] Cognitive models can reveal interpretable value trade-offs in language models](cognitive_models_can_reveal_interpretable_value_trade-offs_in_language_models.md)
 
 </div>
 

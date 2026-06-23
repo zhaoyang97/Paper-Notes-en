@@ -2,145 +2,156 @@
 title: >-
   [Paper Note] Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends
 description: >-
-  [ICLR 2026][LLM Alignment][GRPO] By constructing a KL-regularized surrogate objective and deriving a pairwise consistency condition from first principles…
+  [ICLR 2026][Alignment & RLHF][GRPO] By constructing a KL-regularized surrogate objective and deriving the pairwise consistency condition, this work proves from first principles that group-relative REINFORCE (GRPO) is naturally an off-policy algorithm. Furthermore, through component isolation experiments, it finds that clipping is the key to training stab
 tags:
-  - "ICLR 2026"
-  - "LLM Alignment"
-  - "GRPO"
-  - "off-policy RL"
-  - "importance sampling"
-  - "clipping"
-  - "REINFORCE"
-  - "policy optimization"
+  - ICLR 2026
+  - Alignment & RLHF
+  - GRPO
+  - off-policy RL
+  - importance sampling
+  - clipping
+  - REINFORCE
 date: 2026-05-08
-content_hash: b3a29039e65b29c0
+content_hash: 48ec85046e35f1b9
 ---
-
 # Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.24203](https://arxiv.org/abs/2509.24203)  
 **Code**: [Trinity-RFT](https://github.com/agentscope-ai/Trinity-RFT/tree/main/examples/rec_gsm8k)  
-**Area**: LLM Alignment / RL
-**Keywords**: GRPO, off-policy RL, importance sampling, clipping, REINFORCE, policy optimization
+**Area**: LLM Alignment / RL  
+**Keywords**: GRPO, off-policy RL, importance sampling, clipping, REINFORCE, Policy Optimization
 
 ## TL;DR
 
-By constructing a KL-regularized surrogate objective and deriving a pairwise consistency condition from first principles, this paper proves that group-relative REINFORCE (GRPO) is inherently an off-policy algorithm. Component isolation experiments further reveal that clipping is the sole driver of training stability while importance sampling can be entirely removed. Within this unified framework, the paper reinterprets several seemingly independent algorithms—including Kimi OPMD and Meta AsymRE—under a common theoretical lens.
+By constructing a KL-regularized surrogate objective and deriving the pairwise consistency condition, this work proves from first principles that group-relative REINFORCE (GRPO) is naturally an off-policy algorithm. Furthermore, through component isolation experiments, it finds that clipping is the key to training stability while importance sampling can be entirely removed. Under this unified framework, it re-interprets several seemingly independent algorithms such as Kimi OPMD and Meta AsymRE.
 
 ## Background & Motivation
 
-**Background**: GRPO and its variants (DAPO, GiGPO) have become the dominant algorithms for LLM RL training. DeepSeek-R1 achieved breakthrough results in reasoning using GRPO, the Kimi team proposed OPMD, and Meta proposed AsymRE—each offering distinct theoretical justifications, yet the intrinsic relationships among these methods remain unclear.
+**Background**: GRPO and its variants (DAPO, GiGPO) have become mainstream algorithms for LLM RL training. DeepSeek-R1 achieved breakthrough results using GRPO for reasoning models, the Kimi team proposed OPMD, and Meta introduced AsymRE—these methods each provide different theoretical justifications, but their intrinsic connections remain unclear.
 
-**Limitations of Prior Work**: The success of GRPO has been attributed to multiple factors—group-relative advantage for variance reduction, importance sampling (IS) for distribution shift correction, and clipping for training stability—yet the true contribution of each component has never been systematically isolated and verified. More critically, GRPO is theoretically regarded as an on-policy algorithm (requiring samples from the current policy for unbiased gradient estimation), but in engineering practice it almost always operates on off-policy data (due to mismatches between rollout generation and model training speed, stale policy data, and delayed reward feedback). This theory–practice gap lacks rigorous explanation.
+**Limitations of Prior Work**: The success of GRPO has been attributed to multiple factors—variance reduction via group-relative advantage, distribution shift correction via importance sampling (IS), and training stabilization via clipping—but the true contribution of each component has never been systematically isolated and verified. Crucially, GRPO is theoretically treated as an on-policy algorithm (requiring sampling from the current policy for unbiased gradient estimation), but in engineering practice, it almost always runs on off-policy data (mismatch between rollout generation and model training speeds, data from older policies, delayed reward feedback). this disconnect between theory and practice lacks rigorous explanation.
 
-**Key Challenge**: Classical policy gradient theory requires training data to come from the current policy $\pi_\theta$; off-policy correction relies on importance sampling weights $\pi_\theta(y|x)/\pi_b(y|x)$, which grow exponentially with sequence length in the LLM setting. Existing practice substitutes response-level ratios with token-level ratios, introducing bias without formal guarantees.
+**Key Challenge**: Classical policy gradient theory requires training data to come from the current policy $\pi_\theta$, and off-policy correction relies on importance sampling weights $\pi_\theta(y|x)/\pi_b(y|x)$, which can explode exponentially with sequence length in the LLM context. Existing practices use token-wise ratios instead of response-wise ratios, introducing bias without strict theoretical guarantees.
 
-**Goal**: (1) Provide a theoretical derivation of GRPO that does not depend on any assumption about the sampling distribution; (2) systematically isolate the contributions of IS and clipping; (3) explain the intrinsic connections among GRPO, OPMD, and AsymRE within a unified framework.
+**Goal**: (1) Provide a theoretical derivation for GRPO that does not rely on sampling distribution assumptions; (2) systematically isolate the roles of components like IS and clipping; (3) explain the intrinsic links between GRPO, OPMD, and AsymRE within a unified framework.
 
-**Key Insight**: The authors observe that starting from a KL-regularized surrogate objective, deriving the pairwise consistency condition satisfied by its optimal solution, constructing a mean-squared surrogate loss that enforces this condition, and then taking a single gradient step at the current parameters yields exactly the GRPO update formula—without ever specifying the distribution from which training data originates.
+**Key Insight**: The authors observe that starting from a KL-regularized surrogate objective, one can derive a pairwise consistency condition satisfied by its optimal solution. By constructing a mean squared surrogate loss that enforces this condition and taking a single gradient step at the current parameters, one yields exactly the GRPO update formula. The entire derivation does not require specifying which policy the data originated from.
 
-**Core Idea**: GRPO is an off-policy algorithm; clipping is the sole critical component for stability while IS is largely superfluous; two augmentation principles—regularized policy updates and active shaping of the data distribution—suffice to unify and improve a broad family of RL algorithms.
+**Core Idea**: GRPO is an off-policy algorithm; clipping is the sole critical component for stability while IS is nearly useless; a set of two enhancement principles (regularizing policy updates + actively shaping data distribution) can unify and improve a series of RL algorithms.
 
 ## Method
 
 ### Overall Architecture
 
-The theoretical framework proceeds in three steps. First, a KL-regularized surrogate objective anchored at the previous policy $\pi_{\theta_t}$ is defined as $J(\theta; \pi_{\theta_t}) = \mathbb{E}[r(x,y)] - \tau \cdot D_{\text{KL}}(\pi_\theta \| \pi_{\theta_t})$, and the pairwise consistency condition satisfied by its optimal policy is derived. Second, a mean-squared surrogate loss that enforces this condition using finite samples is constructed. Third, it is shown that taking a single gradient step of this loss at $\theta_t$ is equivalent to the group-relative REINFORCE update—without any assumption on the distribution of training data, thereby naturally supporting off-policy use.
+This paper aims to answer a long-standing ambiguity: while GRPO is theoretically treated as on-policy, it almost always runs on off-policy data in engineering. The authors reconcile this not by patching the sampling distribution assumptions, but by proving that the GRPO update formula can be derived from a KL-regularized surrogate objective without assuming the data source. Since the derivation never assumes "data comes from the current policy," it is naturally off-policy.
 
-Building on this off-policy interpretation, the authors propose two augmentation principles for handling arbitrary data distributions: (1) regularize the policy update step (e.g., clipping, KL penalty) to prevent catastrophic updates under suboptimal data distributions; (2) actively shape the training data distribution (e.g., sample weighting, discarding low-reward samples) to guide the direction of policy updates. These two principles jointly explain GRPO, OPMD, AsymRE, and various data-weighting heuristics under a single framework.
+The theory unfolds in three steps. First, define a KL-regularized surrogate objective anchored at the previous policy $\pi_{\theta_t}$: $J(\theta; \pi_{\theta_t}) = \mathbb{E}[r(x,y)] - \tau \cdot D_{\text{KL}}(\pi_\theta \| \pi_{\theta_t})$, and find the pairwise consistency condition satisfied by its optimal policy. Second, construct a mean squared surrogate loss using finite samples to enforce this condition. Third, take a single gradient step at the current parameters $\theta_t$; the result is equivalent to the group-relative REINFORCE update. Building on this off-policy interpretation, the authors extract two enhancement principles for arbitrary data distributions: **regularizing policy update steps** (clipping, KL penalties, etc.) to prevent collapsing the policy on sub-optimal data, and **actively shaping training data distributions** (sample weighting, dropping low-reward samples, etc.) to guide update directions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    subgraph DERIV["Three-Step Derivation: From Surrogate Objective to REINFORCE Gradient"]
+        direction TB
+        A["KL-Regularized Surrogate Objective<br/>J=E[r]−τ·D_KL(π_θ‖π_θt)"] --> B["Optimal Solution Difference<br/>→ pairwise consistency + MSE surrogate loss"]
+        B -->|"Graduate at θt, log-prob difference terms vanish"| C["= group-relative REINFORCE<br/>(Naturally off-policy)"]
+    end
+    DERIV --> E{"Two Enhancement Principles<br/>for Arbitrary Data Distributions"}
+    E --> P1["Principle 1: Regularizing Policy Updates"]
+    E --> P2["Principle 2: Actively Shaping Data Distribution"]
+    P1 --> F["REC Series: Isolating IS & Clipping<br/>→ Clipping is key, IS is optional"]
+    P1 --> G["Unified OPMD / AsymRE<br/>= REINFORCE + Different Regularizations"]
+    P2 --> H["RED Series: Non-uniform Weighting<br/>RED-Drop / RED-Weight"]
+```
 
 ### Key Designs
 
-1. **Three-Step Derivation: From Surrogate Objective to REINFORCE**
+**1. Three-Step Derivation: From Surrogate Objective to REINFORCE**
 
-    - **Function**: Prove that group-relative REINFORCE admits a natural off-policy interpretation.
-    - **Mechanism**: The optimal solution of the KL-regularized surrogate objective satisfies $\pi^*(y|x) \propto \pi_{\theta_t}(y|x) \exp(r(x,y)/\tau)$, from which the pairwise consistency condition for any two responses $y_1, y_2$ follows: $r_1 - \tau(\log\pi(y_1|x) - \log\pi_{\theta_t}(y_1|x)) = r_2 - \tau(\log\pi(y_2|x) - \log\pi_{\theta_t}(y_2|x))$. A mean-squared loss $\hat{L} = \frac{1}{K^2}\sum_{i<j}(a_i - a_j)^2$ is constructed to enforce this condition; taking its gradient at $\theta = \theta_t$ causes the log-probability difference terms to vanish, yielding $\frac{1}{K}\sum_i (r_i - \bar{r}) \nabla_\theta \log\pi_\theta(y_i|x)$—exactly the GRPO update.
-    - **Design Motivation**: Classical policy gradient theory requires on-policy sampling, limiting the theoretical justification of GRPO in asynchronous training pipelines. This derivation bypasses the sampling distribution assumption entirely, grounding off-policy usage in first-principles optimality conditions.
+The foundation of the theory. The optimal solution to the KL-regularized surrogate objective has a closed form $\pi^*(y|x) \propto \pi_{\theta_t}(y|x) \exp(r(x,y)/\tau)$. Taking the logarithm and differencing between any two responses $y_1, y_2$ yields the pairwise consistency condition: $r_1 - \tau(\log\pi(y_1|x) - \log\pi_{\theta_t}(y_1|x)) = r_2 - \tau(\log\pi(y_2|x) - \log\pi_{\theta_t}(y_2|x))$. This implies that the "reward minus KL shift" should be equal for every response. The authors formulate this as a mean squared loss over all sample pairs:
 
-2. **REC Variants: Isolating the Contributions of IS and Clipping**
+$$\hat{L} = \frac{1}{K^2}\sum_{i<j}(a_i - a_j)^2$$
 
-    - **Function**: Precisely identify the contribution of each GRPO component to training stability.
-    - **Mechanism**: A family of REINFORCE-with-Clipping (REC) ablations is designed. REC-OneSide-IS retains IS weights and one-sided clipping but removes advantage normalization; REC-OneSide-NoIS further removes IS weights, retaining only the clipping mask $M_i^t = \mathbb{1}(A_i > 0, \rho_i^t \leq 1+\epsilon_{\text{high}}) + \mathbb{1}(A_i < 0, \rho_i^t \geq 1-\epsilon_{\text{low}})$. Experiments also test expanding the clipping range from the standard $(0.2, 0.2)$ to the aggressive $(0.6, 2.0)$.
-    - **Design Motivation**: The community widely assumes IS is central to off-policy correction; experiments show that removing IS leaves performance virtually unchanged (reward curves overlap completely), whereas removing clipping causes immediate training collapse. This demonstrates that clipping functions as an implicit trust-region constraint—bounding the magnitude of each policy update to prevent divergence under limited sample coverage.
+A critical step occurs during differentiation: when taking the gradient at $\theta = \theta_t$, all log-probability difference terms vanish because $\pi_\theta = \pi_{\theta_t}$, and the remaining part simplifies to $\frac{1}{K}\sum_i (r_i - \bar{r}) \nabla_\theta \log\pi_\theta(y_i|x)$—which is exactly the GRPO update. This process bypasses classical on-policy sampling requirements entirely.
 
-3. **Unified Interpretation of OPMD and AsymRE**
+**2. REC Series: Isolating IS and Clipping**
 
-    - **Function**: Reveal that three seemingly independent algorithms share the same underlying structure.
-    - **Mechanism**: The Kimi OPMD loss decomposes into REINFORCE loss plus a mean-squared regularizer $\frac{\beta}{2K}\sum_i(\log\pi_\theta(y_i|x) - \log\pi_{\text{old}}(y_i|x))^2$ with $\beta = \tau$. The Meta AsymRE baseline shift $\bar{r} - \beta$ is equivalent to REINFORCE loss plus a KL regularizer $\frac{\beta}{K}\sum_i \log\frac{\pi_{\text{old}}(y_i|x)}{\pi_\theta(y_i|x)}$, which converges to $\beta \cdot D_{\text{KL}}(\pi_{\text{old}} \| \pi_\theta)$ in the large-sample limit. Both are instantiations of the "regularized policy update" principle, differing only in the form of regularization.
-    - **Design Motivation**: The OPMD paper derives from a pointwise consistency condition of the KL-regularized objective (partially overlapping with this work before diverging at step 2), while the AsymRE paper justifies its baseline shift via a multi-armed bandit analysis. The unified view presented here is cleaner: both reduce to REINFORCE plus some regularization, corresponding to the first augmentation principle.
+To identify which components actually drive performance, the authors design variants of REINFORCE-with-Clipping (REC). REC-OneSide-IS keeps IS weights and one-sided clipping but removes advantage normalization. REC-OneSide-NoIS further removes IS weights, keeping only a clipping mask:
 
-### Data Weighting Methods (RED Variants)
+$$M_i^t = \mathbb{1}(A_i > 0,\ \rho_i^t \leq 1+\epsilon_{\text{high}}) + \mathbb{1}(A_i < 0,\ \rho_i^t \geq 1-\epsilon_{\text{low}})$$
 
-The uniform weights in the pairwise surrogate loss are generalized to $\sum_{i<j} w_{i,j}(a_i - a_j)^2$, from which a weighted REINFORCE update is derived. Two methods are proposed:
+The community often assumes IS is the core mechanism for off-policy correction. However, experiments show that removing IS results in overlapping reward curves and nearly identical performance, while removing clipping causes immediate training collapse. Clipping acts as an implicit trust-region constraint, preventing the policy from drifting into sub-optimal regions when sample coverage is limited.
 
-- **RED-Drop**: Discards a subset of low-reward negative samples, training only on $\mathcal{S} \subseteq [K]$. The motivation is that negative gradients increase the risk of entropy collapse (consistent with guidance from the Kimi-Researcher blog), and this approach is theoretically justified within the off-policy framework.
-- **RED-Weight**: Applies reward-correlated weights $w_i$ to each sample's gradient term. This decomposes into pairwise-weighted REINFORCE plus a regularization term that imitates high-reward responses, echoing findings in the offline RL literature that regularizing toward high-reward trajectories is more effective than conservatively imitating all trajectories.
+**3. Unified Explanation of OPMD and AsymRE: REINFORCE with Regularization**
+
+Kimi's OPMD loss can be decomposed into a REINFORCE loss plus a mean squared regularization $\frac{\beta}{2K}\sum_i(\log\pi_\theta(y_i|x) - \log\pi_{\text{old}}(y_i|x))^2$ (where $\beta = \tau$). Meta's AsymRE baseline shift $\bar{r} - \beta$ is equivalent to REINFORCE loss plus a KL regularization $\frac{\beta}{K}\sum_i \log\frac{\pi_{\text{old}}(y_i|x)}{\pi_\theta(y_i|x)}$, which converges to $\beta \cdot D_{\text{KL}}(\pi_{\text{old}} \| \pi_\theta)$ in the large-sample limit. Though derived differently, these are all instances of the "Regularizing Policy Updates" principle, using clipping (GRPO), mean squared (OPMD), or KL (AsymRE) penalties.
+
+**4. RED Series: Shaping Data Distribution**
+
+The authors generalize the pairwise surrogate loss to include weights $\sum_{i<j} w_{i,j}(a_i - a_j)^2$, leading to weighted REINFORCE. **RED-Drop** discards low-reward negative samples, training only on a subset $\mathcal{S} \subseteq [K]$. This mitigates the risk of entropy collapse from negative gradients. **RED-Weight** uses reward-dependent weights $w_i$, which can be decomposed into weighted REINFORCE plus a regularization term that mimics high-reward responses, echoing conclusions from offline RL that regularizing toward high-reward trajectories is more effective than conservative imitation.
 
 ### Loss & Training
 
-The core loss is the standard REINFORCE loss $-\frac{1}{K}\sum_i(r_i - \bar{r})\log\pi_\theta(y_i|x)$ plus optional regularization (clipping mask / KL penalty / mean-squared regularizer), with different combinations corresponding to different algorithms. Training uses the Trinity-RFT framework, with `sync_interval` (model synchronization frequency) and `sync_offset` (delay between rollout and training) as explicit controls for the degree of off-policy-ness.
+The core loss remains the standard REINFORCE loss $-\frac{1}{K}\sum_i(r_i - \bar{r})\log\pi_\theta(y_i|x)$, superimposed with optional regularization—clipping masks, KL penalties, or mean squared regularization. Training uses the Trinity-RFT framework, with `sync_interval` and `sync_offset` parameters precisely controlling the degree of off-policy behavior to support on-policy, mixed, and offline experimental settings.
 
 ## Key Experimental Results
 
 ### Main Results: IS vs. Clipping Ablation (GSM8k, Qwen2.5-1.5B-Instruct)
 
 | Algorithm | Clipping Range | IS | On-Policy Reward | Mixed Reward | Offline Reward |
-|---|---|---|---|---|---|
-| GRPO | (0.2, 0.2) | ✓ | Converges normally | Converges normally | Converges normally |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| GRPO | (0.2, 0.2) | ✓ | Normal | Normal | Normal |
 | REC-OneSide-IS | (0.2, 0.2) | ✓ | ≈ GRPO | ≈ GRPO | ≈ GRPO |
 | REC-OneSide-NoIS | (0.2, 0.2) | ✗ | ≈ GRPO | ≈ GRPO | ≈ GRPO |
-| REC-OneSide-NoIS | (0.6, 2.0) | ✗ | **Faster convergence** | **Faster convergence** | Speed↑ but unstable |
-| REINFORCE (no clipping) | — | ✗ | **Training collapse** | **Training collapse** | **Training collapse** |
+| REC-OneSide-NoIS | (0.6, 2.0) | ✗ | **Faster Conv.** | **Faster Conv.** | Speed ↑ / Unstable |
+| REINFORCE (No Clipping) | — | ✗ | **Collapse** | **Collapse** | **Collapse** |
 
-Core conclusion: Removing IS yields completely overlapping reward curves across all three settings, demonstrating that IS is unnecessary. Removing clipping causes immediate collapse, confirming that clipping is the sole indispensable component. Expanding the clipping range accelerates convergence in on-policy and mixed settings, but introduces a speed–stability trade-off in the purely offline setting.
+Core Conclusion: Removing IS results in nearly perfectly overlapping reward curves, proving IS is non-essential. Removing clipping leads to immediate collapse, proving it is the sole critical component.
 
 ### Ablation Study
 
-| Experimental Setting | Task / Model | Key Findings |
-|---|---|---|
-| REC variants | ToolACE / Llama-3.2-3B | IS unnecessary; clipping remains the stability key; conclusions consistent across models and tasks |
-| RED-Drop | GSM8k / Qwen2.5-1.5B | Discarding low-reward samples is effective in both on- and off-policy settings, performing comparably to REC with expanded range |
-| RED-Weight | Guru-Math / Qwen2.5-7B | Weighted method outperforms GRPO on large-scale tasks with comparable KL divergence; positive scaling effect |
-| RED-Weight | MATH / Llama-3.1-8B | Cross-model validation; gains persist on harder mathematical tasks |
-| OPMD reproduction | GSM8k / Qwen2.5-1.5B | Mean-squared regularization and clipping are complementary, but clipping alone is sufficient |
-| AsymRE reproduction | GSM8k / Qwen2.5-1.5B | Baseline shift (KL regularization) is effective but less robust than clipping |
-| Offline stress test | GSM8k | Training on offline data sampled solely from the initial policy exposes the stability limits of expanding the clipping range |
+| Setup | Task/Model | Key Finding |
+| :--- | :--- | :--- |
+| REC Series | ToolACE / Llama-3.2-3B | IS non-essential; clipping remains critical across models/tasks. |
+| RED-Drop | GSM8k / Qwen2.5-1.5B | Dropping low-reward samples works in both on/off-policy settings. |
+| RED-Weight | Guru-Math / Qwen2.5-7B | Weighting outperforms GRPO with similar KL shift; positive scaling. |
+| RED-Weight | MATH / Llama-3.1-8B | Validated effectiveness on harder math tasks across models. |
+| OPMD Repro | GSM8k / Qwen2.5-1.5B | MSE and clipping are complementary, though clipping alone is sufficient. |
+| AsymRE Repro | GSM8k / Qwen2.5-1.5B | Baseline shift (KL regular.) is effective but less robust than clipping. |
 
 ### Key Findings
 
-- **IS can be entirely removed**: Across all tested models (1.5B/3B/7B/8B), tasks (GSM8k/MATH/ToolACE/Guru-Math), and degrees of off-policy-ness (on-policy/mixed/offline), removing IS produces no significant performance change. This allows engineering implementations to eliminate the overhead of storing and computing old-policy log probabilities.
-- **Clipping is the only indispensable component**: It functions as an implicit trust-region constraint, bounding the ratio $\pi_\theta/\pi_{\text{old}}$. Without it, policy updates become uncontrollable in direction under finite sample coverage.
-- **Asymmetric clipping range expansion accelerates training**: Allowing a larger growth of the policy ratio for positive-advantage samples ($\epsilon_{\text{high}} = 2.0$) while moderately relaxing the lower bound for negative-advantage samples ($\epsilon_{\text{low}} = 0.6$) intuitively encourages reinforcing good behaviors while permitting forgetting of bad ones.
-- **3-arm bandit counterexample**: Vanilla REINFORCE with behavioral policy $\pi_b = [0.3, 0.6, 0.1]$ and rewards $r = [0, 0.8, 1]$ converges to the suboptimal action $a_2$ rather than the optimal $a_3$, because $\pi_b(a_2)(r(a_2) - \mu_r) > \pi_b(a_3)(r(a_3) - \mu_r)$—demonstrating that off-policy REINFORCE without regularization or data shaping will inevitably fail.
+- **IS is entirely removable**: Across all tested models, tasks, and off-policy levels, removing IS showed no significant performance change. This simplifies engineering by removing the need to store old policy probabilities.
+- **Clipping is the only indispensable component**: It acts as an implicit trust region. Without it, the direction of policy updates becomes uncontrollable with finite samples.
+- **Wider asymmetric clipping ranges accelerate training**: Allowing a larger increase for positive advantages ($\epsilon_{\text{high}} = 2.0$) while moderately loosening the lower bound ($\epsilon_{\text{low}} = 0.6$) encourages learning from successes while allowing some forgetting of failures.
+- **3-arm bandit counter-example**: Vanilla REINFORCE fails on off-policy data without regularization/shaping, as seen in a synthetic example where it converges to a sub-optimal action because sampling density outweighs reward magnitude.
 
 ## Highlights & Insights
 
-- **Elegance of the theoretical derivation**: The three-step derivation (surrogate objective → consistency condition → mean-squared loss → single-step gradient = REINFORCE) is logically transparent, with clear physical intuition at each stage. In particular, the fact that log-probability difference terms naturally vanish when the gradient is evaluated at $\theta_t$ is not a coincidental algebraic artifact but a reflection of deep underlying structure.
-- **Counterintuitive finding that IS is superfluous**: IS is conventionally regarded as foundational infrastructure for off-policy RL. In the LLM fine-tuning context, however, policy changes are typically small, token-level IS ratios are themselves biased, and the resulting IS weights remain close to 1—making their corrective effect negligible. The true stabilizer is the implicit trust region induced by clipping, a finding that directly simplifies engineering implementations.
-- **Explanatory power of the unified framework**: Casting GRPO (clipping regularization), OPMD (mean-squared regularization), and AsymRE (KL regularization) as instances of REINFORCE with different regularization forms connects three independent research threads into a coherent narrative. RED-Drop and RED-Weight, corresponding to the second principle (data distribution shaping), complete the theoretical picture.
+- **Theoretical Elegance**: The three-step derivation (Surrogate → Consistency → MSE Loss → Gradient = REINFORCE) is structurally clear. The log-prob difference vanishing trick at $\theta_t$ reveals a deep structural link.
+- **Counter-intuitive IS Finding**: While IS is considered foundational for off-policy RL, in LLM fine-tuning (where shifts are often small and token-wise IS is biased), its effect is negligible. Clipping provides the real stability.
+- **Unified Framework**: It bridges GRPO, OPMD, and AsymRE into a single story of REINFORCE + specific regularizations.
 
 ## Limitations & Future Work
 
-- **Absence of convergence guarantees**: The off-policy interpretation provides theoretical justification but does not establish formal guarantees of policy improvement or convergence; future work should derive such guarantees under specific assumptions on the data distribution.
-- **Unresolved trade-off in the purely offline setting**: Expanding the clipping range can lead to instability in offline settings; the authors identify this as an open problem, potentially requiring adaptive clipping strategies that dynamically adjust the range based on training progress or the degree of off-policy-ness.
-- **Single-turn vs. multi-turn RL**: The primary analysis targets one-step RL (single-turn prompt–response); the multi-step generalization is treated in the appendix but lacks experimental validation. The transferability of the conclusions to agentic RL requiring multi-turn environment interaction remains to be verified.
-- **Validation limited to mathematical reasoning and tool use**: The reward signals in GSM8k, MATH, and ToolACE are explicit correctness signals; whether the relative contributions of components remain consistent for tasks with more ambiguous rewards (e.g., dialogue quality, creative writing) is unknown.
-- **Insufficient analysis of group size $K$**: The pairwise consistency condition is grounded in finite sample pairs; how the choice of $K$ affects the approximation quality of the surrogate loss relative to the true objective, and whether the variance of the group-relative baseline under small $K$ interacts with the degree of off-policy-ness, remain open questions.
+- **Lack of Convergence Proof**: The off-policy interpretation provides justification but lacks formal policy improvement or convergence guarantees.
+- **Offline Stability Trade-off**: Expanding clipping ranges in purely offline settings can lead to instability, requiring potential adaptive clipping strategies.
+- **Single vs. Multi-turn RL**: Analysis is based on one-step RL (prompt-response). While an extension to multi-step is provided in the appendix, it lacks experimental validation.
+- **Task Scope**: Primarily validated on reasoning/tool-use tasks with clear reward signals; fuzzy rewards (creativity) remain untested.
 
 ## Related Work & Insights
 
-- **vs. PPO**: PPO uses clipping to constrain on-policy update step sizes; this paper demonstrates that the same clipping mechanism serves as a critical stabilizer in the off-policy setting. The key difference is that GRPO's clipping operates on group-relative advantages rather than raw ratios, and GRPO requires no value function.
-- **vs. DPO**: DPO is a purely offline preference optimization method (derived from the Bradley–Terry model), whereas off-policy REINFORCE retains online learning capability while tolerating stale data. The two approaches are complementary—DPO for cold-start initialization, GRPO for continual learning.
-- **vs. DAPO**: DAPO augments GRPO with token-level entropy bonuses and dynamic sampling for exploration. The analysis presented here provides a theoretical foundation for DAPO's empirical success: DAPO's improvements can all be subsumed under the two principles of regularized policy updates and data distribution shaping.
-- **vs. REBEL/CoPG**: These works share the KL-regularized objective and pairwise consistency condition with this paper (steps 1–2 overlap), but they opt for direct minimization of the surrogate loss via multi-step gradient descent. The contribution of this paper lies in discovering that a single gradient step recovers REINFORCE—thereby bridging theory and practice.
+- **vs. PPO**: Like PPO, clipping is shown here to be crucial even in off-policy contexts, but GRPO does not require a value function.
+- **vs. DPO**: While DPO is purely offline, off-policy REINFORCE maintains online learning capability while tolerating stale data.
+- **vs. DAPO**: DAPO's success can be viewed through the lens of regularizing updates and shaping distributions.
+- **vs. REBEL/CoPG**: These share the KL objective and consistency condition but prioritize multi-step optimization, whereas this work identifies that the single-step gradient recovers REINFORCE.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — Derives an off-policy interpretation of GRPO from first principles; component isolation experiments fundamentally overturn the consensus that IS is central.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers 5 models, 4 tasks, and 3 degrees of off-policy-ness with comprehensive ablations; additional validation in agentic and conversational settings would strengthen the case.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The theoretical derivation is exceptionally clear, with a progressively structured three-step argument; the presentation of the unified framework is textbook quality.
-- **Value**: ⭐⭐⭐⭐⭐ — Offers fundamental guidance for the LLM RL community; "remove IS and expand the clipping range" is an immediately actionable engineering optimization.
+- Novelty: ⭐⭐⭐⭐⭐ Deriving an off-policy explanation for GRPO and debunking the necessity of IS.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad coverage across models and tasks; needs more agentic/dialogue validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear theoretical progression and pedagogical framework.
+- Value: ⭐⭐⭐⭐⭐ Highly actionable for engineering—removing IS and tuning clipping are immediate optimizations.
 
 <!-- RELATED:START -->
 
@@ -149,10 +160,10 @@ Core conclusion: Removing IS yields completely overlapping reward curves across 
 ## Related Papers
 
 - [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
-- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
-- [\[NeurIPS 2025\] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training](../../NeurIPS2025/llm_alignment/gvpo_group_variance_policy_optimization_for_large_language_model_post-training.md)
 - [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
-- [\[ICML 2026\] F-TIS: Harnessing Diverse Models in Collaborative GRPO](../../ICML2026/llm_alignment/f-tis_harnessing_diverse_models_in_collaborative_grpo.md)
+- [\[ICML 2026\] UDM-GRPO: 统一离散扩散模型的稳定高效 GRPO](../../ICML2026/llm_alignment/udm-grpo_stable_and_efficient_group_relative_policy_optimization_for_uniform_dis.md)
+- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
+- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
 
 </div>
 

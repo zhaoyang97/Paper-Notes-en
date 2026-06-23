@@ -2,127 +2,132 @@
 title: >-
   [Paper Note] Articulation in Motion: Prior-Free Part Mobility Analysis for Articulated Objects
 description: >-
-  [ICLR 2026][articulated objects] This paper proposes AiM (Articulation in Motion), a framework that reconstructs articulated objects from interaction videos and initial-state scans without requiring prior knowledge of th…
+  [ICLR 2026][Others][articulated objects] The Articulation in Motion (AiM) framework is proposed to reconstruct articulated objects from interaction videos and initial state scans without requiring part-number priors. It achieves motion-static decoupling using a dual Gaussian representation (static GS + deformable GS), utilizes sequential RANSAC for prior-free
 tags:
-  - "ICLR 2026"
-  - "articulated objects"
-  - "Gaussian splatting"
-  - "part segmentation"
-  - "joint estimation"
-  - "sequential RANSAC"
-  - "prior-free"
-  - "interaction video"
+  - ICLR 2026
+  - Others
+  - articulated objects
+  - Gaussian splatting
+  - part segmentation
+  - joint estimation
+  - sequential RANSAC
+  - prior-free
 date: 2026-05-08
-content_hash: 631cf6dc101ca885
+content_hash: 045dfe6dfdd86e5f
 ---
-
 # Articulation in Motion: Prior-Free Part Mobility Analysis for Articulated Objects
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.02910](https://arxiv.org/abs/2603.02910)  
 **Project Page**: [AiM](https://haoai-1997.github.io/AiM/)
-**Area**: Other
-**Keywords**: articulated objects, Gaussian splatting, part segmentation, joint estimation, sequential RANSAC, prior-free, interaction video
+**Area**: Others  
+**Keywords**: articulated objects, Gaussian splatting, part segmentation, joint estimation, sequential RANSAC, prior-free, interaction video  
 
 ## TL;DR
 
-This paper proposes AiM (Articulation in Motion), a framework that reconstructs articulated objects from interaction videos and initial-state scans without requiring prior knowledge of the number of parts. It achieves dynamic-static decoupling via a dual-Gaussian representation (Static GS + Deformable GS), combines sequential RANSAC for prior-free part segmentation and joint estimation, and incorporates an SDMD module to handle newly exposed static regions. On complex 6-part objects (Storage), AiM achieves 79.34% mean IoU, substantially outperforming the prior-dependent ArtGS (52.23%).
+The Articulation in Motion (AiM) framework is proposed to reconstruct articulated objects from interaction videos and initial state scans without requiring part-number priors. It achieves motion-static decoupling using a dual Gaussian representation (static GS + deformable GS), utilizes sequential RANSAC for prior-free part segmentation and joint estimation, and incorporates an SDMD module to handle newly exposed static regions. On complex 6-part objects (Storage), AiM significantly outperforms the prior-dependent ArtGS (52.23% mean IoU) with a performance of 79.34%.
 
 ## Background & Motivation
 
-**Core demand for articulated object understanding**: Robot manipulation, AR/VR, and embodied intelligence all require understanding the part structure and joint parameters of articulated objects (e.g., drawer cabinets, doors, laptops).
+**Core Requirements for Articulated Object Understanding**: Robotic manipulation, AR/VR, and embodied AI require understanding the component structure and kinematic joint parameters of articulated objects (e.g., cabinets, doors, laptops).
 
-**Prior dependency of existing methods**: Methods such as DTA and ArtGS require the number of parts to be specified in advance, which is typically unknown in real-world scenarios; an incorrect specification leads to severe segmentation failures.
+**Limitations of Prior Work in Prior-Dependency**: Methods such as DTA and ArtGS require pre-specifying the number of parts. This is typically unknown in real-world scenarios, and incorrect specifications lead to severe segmentation failures.
 
-**Challenge of dynamic-static decoupling**: During interaction, some parts move while others remain static; however, the displacement of moving parts exposes previously occluded static regions, which conventional methods struggle to handle.
+**Challenges in Motion-Static Decoupling**: During interaction, some parts move while others remain static. The movement of parts exposes previously occluded static regions, which are difficult for traditional methods to handle.
 
-**Limitation of single representations**: Purely static or purely dynamic 3D Gaussian representations cannot simultaneously accommodate the mixed nature of fixed and moving parts in articulated objects.
+**Limitations of Single Representations**: Purely static or dynamic 3D Gaussian representations cannot simultaneously handle the mixed nature of fixed and moving components in articulated objects.
 
-**Diversity of joint types**: Articulated objects contain multiple joint types including revolute and prismatic joints, necessitating a unified prior-free estimation approach.
+**Diversity of Joint Types**: Articulated objects contain various joint types, such as revolute and prismatic joints, requiring a unified, prior-free estimation method.
 
-**Practicality of video input**: Recovering articulation information from a single interaction video is more practical and natural than methods requiring multi-view static scans.
+**Practicality of Video Input**: Compared to methods requiring multi-view static scans, recovering articulation information from a single interaction video is more practical and natural.
 
 ## Method
 
 ### Overall Architecture
 
-AiM takes as input an interaction video of a human manipulating an articulated object and a 3D scan of the object in its initial (static) state, and outputs part segmentation, joint parameters, and a complete articulated object reconstruction. The pipeline consists of three stages: dual-Gaussian dynamic-static decoupling → sequential RANSAC part discovery → joint parameter estimation.
+AiM takes an interaction video of a human manipulating an articulated object and a multi-view 3D scan of the object in its static state as input. It outputs part segmentation, joint parameters for each part (type, axis, motion magnitude), and a complete interactive reconstruction. Unlike two-state methods like DTA and ArtGS, AiM does not require a pre-defined number of movable parts nor does it rely on geometric correspondence between "start" and "end" frames. Instead, it solves for structure and motion simultaneously along continuous motion cues.
+
+The pipeline consists of three steps: first, an initial set of Gaussians is reconstructed from the static state using standard 3DGS as a static base. Next, a **dual Gaussian representation** is introduced, where one set of static Gaussians maintains the background and static parts, while another set of deformable Gaussians tracks the moving parts in the video. These are jointly optimized for motion-static decoupling. During this process, the **SDMD** module reassigns newly exposed static regions from the dynamic set back to the static set. Finally, **sequential RANSAC** is applied to the clean trajectories of deformable Gaussians to automatically extract an unknown number of rigid parts and estimate their joint parameters.
+
+```mermaid
+graph TD
+    IN["Interaction Video +<br/>Static Multi-view Scans"] --> S1["Initial 3DGS Reconstruction<br/>Static Gaussians G^S"]
+    S1 --> DUAL["Dual Gaussian Representation<br/>Static GS + Deformable GS<br/>Joint Opt. & Decoupling"]
+    DUAL --> SDMD["SDMD Static Detection<br/>Reassign exposed static regions<br/>from dynamic to static"]
+    SDMD --> TRAJ["Clean Deformable Gaussian<br/>Per-frame Trajectories"]
+    TRAJ --> RANSAC["Sequential RANSAC<br/>Extract unknown # of rigid parts<br/>+ Estimate joint parameters"]
+    RANSAC --> OUT["Part Segmentation +<br/>Joint params + Full Reconstruction"]
+```
 
 ### Key Designs
 
-1. **Dual-Gaussian Representation**
+**1. Dual Gaussian Representation: Separating Motion and Statics to Prevent Geometric Contamination**
 
-    - **Function**: Maintains two sets of 3D Gaussians — Static GS representing invariant background and stationary parts, and Deformable GS representing moving parts.
-    - **Mechanism**: Gradient signals from pixel-level rendering losses automatically assign Gaussians to static or dynamic sets; Static GS remains fixed while Deformable GS learns per-frame deformation fields.
-    - **Design Motivation**: Explicit dynamic-static separation prevents moving parts from corrupting static geometry, and allows subsequent part segmentation to focus exclusively on dynamic Gaussians.
+Articulated objects are hybrid entities during interaction—backgrounds and untouched parts stay still, while manipulated parts move. If a deformation field is applied to all Gaussians (as in D-3DGS), even static Gaussians are assigned displacements, creating noise that interferes with trajectory clustering. AiM maintains two sets: static Gaussians $\mathcal{G}^S$ trained from the static scan for invariant geometry, and deformable Gaussians $\{\mathcal{G}^M, t\}$ driven by an MLP deformation network $\mathcal{F}_\theta$ to fit motion. They undergo **joint rendering and joint optimization**. Initially, all attributes of $\mathcal{G}^S$ except opacity are frozen to allow deformable Gaussians to capture motion. Over iterations, Gaussians in $\mathcal{G}^S$ with decaying opacity or evident motion are pruned, resulting in a clean static base $\mathcal{G}^S_p$. The assignment is automatically determined by differentiable rendering supervision, narrowing the search space for subsequent segmentation.
 
-2. **Sequential RANSAC Part Segmentation**
+**2. SDMD: Recovering Exposed Static Regions from the Dynamic Set**
 
-    - **Function**: Automatically discovers parts from the motion trajectories of dynamic Gaussians without presetting the number of parts.
-    - **Mechanism**: Fits rigid body motion to the deformation trajectories of all dynamic Gaussians; the largest consensus set corresponds to one part. That part is then removed and the process iterates over the remaining Gaussians until the residual falls below a threshold.
-    - **Design Motivation**: RANSAC is naturally suited to the setting of "an unknown number of mixed rigid body motions"; sequential execution ensures parts are discovered in descending order of size.
+Opening a drawer or a fridge reveals internal surfaces that were occluded in the static scan. These regions are initially "occupied" by moving deformable Gaussians. Although they remain stationary once exposed, they are mixed into the dynamic set. SDMD (static-during-motion detection) performs trajectory inference on deformable Gaussians at $t\in\{0,0.5,1\}$ every 2000 iterations. It uses sequential RANSAC with a Kabsch solver and a fixed inlier threshold of $0.05$ to extract local rigid motion groups. Groups with **motion magnitudes below a predefined threshold** are classified as static, and their corresponding Gaussians are reassigned from $\{\mathcal{G}^M, t\}$ back to $\mathcal{G}^S_p$. This group-based detection avoids misclassifying points near joint axes as static, which would occur with simple displacement filtering.
 
-3. **SDMD Module (Static Dynamic Merging with Discovery)**
+**3. Sequential RANSAC for Part Segmentation: Adaptive Discovery of Rigid Parts**
 
-    - **Function**: Handles static regions newly exposed after moving parts are displaced (e.g., the interior walls of a cabinet revealed when a drawer is opened).
-    - **Mechanism**: Detects discrepancy regions between rendered and real images, initializes new Static Gaussians at those locations, and merges them with the existing Static GS.
-    - **Design Motivation**: Conventional methods cannot handle static geometry that is initially invisible but later becomes observable; SDMD fills this critical gap.
+The number of movable parts is usually unknown. AiM treats segmentation as a problem of "fitting an unknown number of rigid motions," which fits the RANSAC multi-model paradigm. For trajectories $\{\mathcal{P}_{a\to b}\}$ within a time window, the Kabsch solver estimates the optimal rigid transformation $(\mathbf{R}^*, \mathbf{t}^*) = \arg\min_{\mathbf{R},\mathbf{t}}\sum_{i}\lVert \mu^M_{i,b} - (\mathbf{R}\mu^M_{i,a}+\mathbf{t})\rVert^2$. The set of inliers corresponds to one rigid part. These Gaussians are removed, and the process repeats on the remaining trajectories until no sufficiently large rigid group can be found. This purely analytical process identifies parts without pre-specifying $K$ and provides joint types, axes, and motion magnitudes directly from the estimated transformations.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Part Prior | Mean IoU (%) | Revolute JE (°) | Prismatic JE (mm) |
-|--------|-----------|-------------|-----------------|-------------------|
+|------|---------|-------------|-----------------|-------------------|
 | DTA | Required | 71.45 | 8.32 | 12.7 |
 | ArtGS | Required | 76.99 | 5.61 | 8.9 |
-| AiM (Ours) | **Not Required** | **80.21** | **4.23** | **7.1** |
+| AiM (**Ours**) | **Prior-free** | **80.21** | **4.23** | **7.1** |
 
 ### Ablation Study
 
-| Component | Mean IoU (%) | Note |
-|-----------|-------------|------|
+| Component | Mean IoU (%) | Description |
+|------|-------------|------|
 | Full AiM | **80.21** | Complete method |
-| w/o SDMD | 74.85 | Newly exposed regions incorrectly assigned |
-| Single GS (no decoupling) | 68.32 | Moving parts corrupt static reconstruction |
-| K-means instead of RANSAC | 72.56 | Requires preset K and is sensitive to noise |
-| ArtGS with ground-truth part count | 76.99 | Still underperforms AiM even with correct prior |
+| w/o SDMD | 74.85 | Newly exposed regions are misassigned |
+| Single GS (No decoupling) | 68.32 | Moving parts degrade static reconstruction |
+| K-means instead of RANSAC | 72.56 | Requires $K$ and is sensitive to noise |
+| ArtGS w/ GT part count | 76.99 | Still underperforms AiM even with correct prior |
 
 ### Key Findings
 
-1. **Prior-free surpasses prior-dependent**: AiM achieves 80.21% mean IoU without part-count priors, exceeding prior-dependent ArtGS (76.99%), demonstrating that adaptive discovery is more robust than fixed assumptions.
-2. **Decisive advantage on complex objects**: On the 6-part Storage object, AiM (79.34%) vs. ArtGS (52.23%) shows a gap of 27%; ArtGS degrades sharply as the number of parts increases.
-3. **SDMD is indispensable**: Removing SDMD causes a 5.36% IoU drop, confirming the importance of handling newly exposed regions.
-4. **Dynamic-static decoupling is foundational**: The single-GS variant underperforms the full method by nearly 12%, establishing the dual-Gaussian design as the cornerstone of success.
+1. **Prior-free outperforms prior-dependent**: AiM achieves 80.21% mean IoU without part-number priors, surpassing ArtGS (76.99%) which requires them, proving adaptive discovery is more robust than fixed assumptions.
+2. **Huge advantage on complex objects**: On the 6-part Storage object, AiM (79.34%) vs ArtGS (52.23%) shows a 27% gap, highlighting ArtGS's degradation as part count increases.
+3. **SDMD is indispensable**: Removing SDMD leads to a 5.36% drop in IoU, demonstrating the importance of handling newly exposed regions.
+4. **Decoupling is foundational**: The single GS approach is nearly 12% lower than the full method, indicating the dual Gaussian design is essential.
 
 ## Highlights & Insights
 
-1. **Complete elimination of priors**: AiM is the first method to achieve part segmentation and joint estimation for articulated objects without requiring prior knowledge of the number of parts, better matching real-world application demands.
-2. **Elegant dual-Gaussian decoupling**: Embedding dynamic-static separation into the 3DGS representation simultaneously benefits reconstruction quality and downstream analysis.
-3. **Practical innovation of SDMD**: Addresses the progressive exposure of previously occluded static regions — a critical yet often overlooked detail in articulated object understanding.
-4. **Natural fit of sequential RANSAC**: Cleverly exploits the iterative stripping property of RANSAC to achieve adaptive part-count discovery.
-5. **Overwhelming advantage on complex objects**: The 27% improvement on 6-part scenes demonstrates the scalability of the approach.
+1. **Elimination of Priors**: Achieves part segmentation and joint estimation without pre-defined part counts for the first time, aligning with real-world application needs.
+2. **Elegant Dual Gaussian Decoupling**: Embeds motion-static separation directly into the 3DGS representation, balancing reconstruction quality and downstream analysis.
+3. **Practical Innovation with SDMD**: Addresses the issue of occluded static regions being gradually exposed, a critical but often overlooked detail in articulated object understanding.
+4. **Natural Fit for Sequential RANSAC**: Leverages the iterative removal property of RANSAC to achieve adaptive part number discovery.
+5. **Scalability to Complexity**: The 27% improvement in 6-part scenarios demonstrates the method's scalability.
 
 ## Limitations & Future Work
 
-1. **Single-interaction assumption**: The current method requires that all parts be actuated within the video; parts that are not manipulated cannot be discovered.
-2. **Rigid body motion assumption**: Sequential RANSAC assumes each part undergoes rigid body motion and cannot handle flexible hinges or elastic deformations.
-3. **Computational cost**: The combination of dual-Gaussian representation and sequential RANSAC incurs substantial computational overhead, precluding real-time operation.
-4. **Dependency on video quality**: Low-quality videos with severe motion blur or occlusion may lead to inaccurate dynamic Gaussian estimation.
+1. **Single Interaction Assumption**: Currently requires the video to contain motion for all parts; unmanipulated parts cannot be discovered.
+2. **Rigid Motion Assumption**: Sequential RANSAC assumes rigid motion for each part, failing to handle flexible hinges or elastic deformations.
+3. **Computational Cost**: The combination of dual Gaussian representations and sequential RANSAC entails high computational overhead, making real-time performance difficult.
+4. **Dependency on Video Quality**: Low-quality videos with significant motion blur or heavy occlusion may lead to inaccurate dynamic Gaussian estimation.
 
 ## Related Work & Insights
 
-- **Articulated object reconstruction**: Gaussian splatting-based methods including DTA (Liu et al., 2024) and ArtGS (Huang et al., 2024).
-- **3D Gaussian Splatting**: 3DGS (Kerbl et al., 2023), Dynamic 3DGS (Luiten et al., 2024).
-- **Part segmentation**: Supervised methods such as PartNet (Mo et al., 2019); unsupervised methods such as SAM3D.
-- **RANSAC**: The classic framework of Fischler & Bolles (1981); application of sequential RANSAC to multi-model fitting.
+- **Articulated Object Reconstruction**: Gaussian Splatting-based methods like DTA (Liu et al., 2024) and ArtGS (Huang et al., 2024).
+- **3D Gaussian Splatting**: Base frameworks 3DGS (Kerbl et al., 2023) and Dynamic 3DGS (Luiten et al., 2024).
+- **Part Segmentation**: Supervised methods (PartNet, Mo et al., 2019) and unsupervised methods like SAM3D.
+- **RANSAC**: The classic framework by Fischler & Bolles (1981) and its sequential applications in multi-model fitting.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Prior-free part discovery + dual-Gaussian decoupling + SDMD are all novel designs.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple object categories with comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ Method pipeline is clearly presented; experimental results are detailed.
-- Value: ⭐⭐⭐⭐⭐ Prior-free articulated object understanding has significant practical value for robotics and embodied AI.
+- Novelty: ⭐⭐⭐⭐⭐ Prior-free discovery + Dual GS decoupling + SDMD are all novel designs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated on various object types with comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear method workflow and detailed experimental presentation.
+- Value: ⭐⭐⭐⭐⭐ Prior-free understanding of articulated objects is of high practical value for robotics and embodied AI.
 
 <!-- RELATED:START -->
 
@@ -130,11 +135,11 @@ AiM takes as input an interaction video of a human manipulating an articulated o
 
 ## Related Papers
 
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](prior-free_tabular_test-time_adaptation.md)
+- [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
-- [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](../../AAAI2026/others/hybridla_hybrid_generation_for_document_layout_analysis.md)
-- [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](../../AAAI2026/others/spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
-- [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](../../ICML2026/others/torus_graphs_for_large_scale_neural_phase_analysis.md)
-- [\[AAAI 2026\] Cost-Free Neutrality for the River Method](../../AAAI2026/others/cost-free_neutrality_for_the_river_method.md)
+- [\[ECCV 2024\] PartCraft: Crafting Creative Objects by Parts](../../ECCV2024/others/partcraft_crafting_creative_objects_by_parts.md)
+- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](../../CVPR2026/others/videomama_mask-guided_video_matting_via_generative_prior.md)
 
 </div>
 

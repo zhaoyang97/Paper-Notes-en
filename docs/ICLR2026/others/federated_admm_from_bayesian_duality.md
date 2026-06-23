@@ -2,121 +2,123 @@
 title: >-
   [Paper Note] Federated ADMM from Bayesian Duality
 description: >-
-  [ICLR 2026][ADMM] This paper derives a Bayesian dual structure for ADMM from a variational Bayes (VB) perspective, proving that classical ADMM is a special case of VB over isotropic Gaussian families. Two novel extension…
+  [ICLR 2026][Others][ADMM] The Bayesian duality structure of ADMM is derived from a Variational Bayes (VB) perspective, proving that classic ADMM is a special case of VB on the isotropic Gaussian family. Two new extensions are derived: Newton-like (one-round convergence for quadratic objectives) and Adam-like (+7% accuracy in deep heterogeneous
 tags:
-  - "ICLR 2026"
-  - "ADMM"
-  - "Variational Bayes"
-  - "Natural Gradient"
-  - "Federated Learning"
-  - "Bayesian Duality"
+  - ICLR 2026
+  - Others
+  - ADMM
 date: 2026-05-08
-content_hash: 76576fb2109b5dd4
+content_hash: d28310fa2d8a9e4e
 ---
-
 # Federated ADMM from Bayesian Duality
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.13150](https://arxiv.org/abs/2506.13150)  
 **Code**: [Available](https://github.com/xxx)  
-**Area**: Others
+**Area**: Others  
 **Keywords**: ADMM, Variational Bayes, Natural Gradient, Federated Learning, Bayesian Duality
 
 ## TL;DR
-This paper derives a Bayesian dual structure for ADMM from a variational Bayes (VB) perspective, proving that classical ADMM is a special case of VB over isotropic Gaussian families. Two novel extensions are introduced: a Newton-like variant (one-round convergence on quadratic objectives) and an Adam-like variant (IVON-ADMM, achieving +7% accuracy in heterogeneous deep learning settings).
+The Bayesian duality structure of ADMM is derived from a Variational Bayes (VB) perspective, proving that classic ADMM is a special case of VB on the isotropic Gaussian family. Two new extensions are derived: Newton-like (one-round convergence for quadratic objectives) and Adam-like (+7% accuracy in deep heterogeneous scenarios).
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: ADMM serves as a core algorithmic framework for federated learning. Since its introduction in the 1970s, its form has remained largely unchanged. Its robust algorithmic structure raises the question of whether a more general formalization exists that encompasses it.
 
-**Background**: ADMM has served as a core algorithmic backbone for federated learning since its introduction in the 1970s, with its form remaining largely unchanged. Its robust structure naturally raises the question of whether a more general formulation exists.
+**Limitations of Prior Work**: Existing accelerated variants of ADMM (over-relaxation, momentum, scaled norms, etc.) merely introduced additional variables without changing the fundamental form of the algorithm. Swaroop et al. biological observed line-by-line similarities between VB and ADMM but were unable to derive an exact correspondence.
 
-**Limitations of Prior Work**: Accelerated variants of ADMM (over-relaxation, momentum, scaled norms, etc.) introduce additional variables without altering the algorithmic form. Swaroop et al. observed line-by-line similarities between VB and ADMM but could not establish an exact correspondence.
+**Key Challenge**: ADMM is a deterministic optimization framework, making it difficult to naturally extend to heterogeneous deep learning scenarios. Therefore, a more general framework is needed to unify and generalize it.
 
-**Key Challenge**: The deterministic optimization framework underlying ADMM does not extend naturally to heterogeneous deep learning scenarios. A more general framework is needed to unify and generalize ADMM.
+**Key Insight**: The key insight is that the solution to the VB objective function itself possesses a dual structure, which not only resembles the ADMM fixed-point structure but also naturally generalizes it. The critical missing link was the **natural gradient**.
 
-**Key Insight**: The key insight is that solutions to the VB objective exhibit a dual structure that not only resembles the fixed-point structure of ADMM but also naturally generalizes it. The critical missing link is the **natural gradient**.
-
-**Core Idea**: The duality between natural parameters and expectation parameters in exponential family distributions establishes a "Bayesian duality" structure, of which ADMM is a special case under isotropic Gaussians.
-
-### Mechanism
-
-**Goal**: ### Overall Architecture
-Classical ADMM: primal-dual structure over $(\theta_g^*, \theta_k^*, \mathbf{v}_k^*, \mathbf{v}_g^*)$; Bayesian ADMM: expectation-natural parameter dual structure over $(\mu_g^*, \mu_k^*, \eta_k^*, \lambda_g^*)$.
+**Core Idea**: The natural parameter-expectation parameter duality of the exponential family of distributions is used to establish a "Bayesian duality" structure. ADMM is exactly the special case of VB under the isotropic Gaussian family.
 
 ## Method
 
 ### Overall Architecture
-Classical ADMM operates with a primal-dual structure over $(\theta_g^*, \theta_k^*, \mathbf{v}_k^*, \mathbf{v}_g^*)$; Bayesian ADMM adopts an expectation-natural parameter dual structure over $(\mu_g^*, \mu_k^*, \eta_k^*, \lambda_g^*)$. The core distinction is: gradient $\to$ natural gradient, parameters $\to$ distributions.
+This paper addresses whether classic ADMM can be placed within a more general probabilistic framework. The authors "translate" the entire primal-dual structure of ADMM into the language of Variational Bayes (VB). While classic ADMM solves for the primal-dual fixed point consisting of the parameter quadruple $(\theta_g^*, \theta_k^*, \mathbf{v}_k^*, \mathbf{v}_g^*)$, Bayesian ADMM upgrades this to an expectation-natural parameter duality consisting of the distribution parameter quadruple $(\mu_g^*, \mu_k^*, \eta_k^*, \lambda_g^*)$. The two structures correspond line-by-line, with two core differences: gradients are replaced by natural gradients, and point parameters are replaced by distributions.
+
+In terms of the algorithm, this dual structure corresponds to one round of federated communication: the server broadcasts global distribution parameters $\rightarrow$ each client performs local updates and returns the local natural gradient as the dual variable $\rightarrow$ the server sums these natural gradients to obtain the new global natural parameter. The flexibility of the framework lies in the choice of the exponential family distribution: choosing isotropic Gaussians reduces the natural gradient to the standard gradient, exactly recovering classic ADMM; choosing full-covariance Gaussians yields a one-round convergent Newton-like variant; choosing diagonal Gaussians (combined with IVON) yields an Adam-like variant suitable for deep models.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["FL Problem: K clients with local losses<br/>Server trains a global model"] --> Q["Replace point parameters with distributions<br/>Replace gradients with natural gradients"]
+    Q --> BD
+    subgraph BD["Bayesian Duality Structure"]
+        direction TB
+        S1["Server broadcasts global<br/>expectation parameter μ_g"] --> C1["Client local update<br/>min Local Loss + KL"]
+        C1 --> C2["Dual η_k ← Local Natural Gradient"]
+        C2 --> AG["Aggregate λ_g = −Σ Natural Gradients<br/>Update Global Distribution"]
+        AG --> S1
+    end
+    BD -->|"Isotropic Gaussian<br/>Natural Grad = Standard Grad"| ISO["Classic ADMM<br/>(Special Case · Validates correspondence)"]
+    BD -->|"Full-Covariance Gaussian"| NEW["Newton-like Extension<br/>One-round convergence for quadratic objectives"]
+    BD -->|"Diagonal Gaussian + IVON"| ADAM["Adam-like Extension (IVON-ADMM)<br/>Heterogeneous DL +7%"]
+```
 
 ### Key Designs
 
-1. **Bayesian Dual Structure**:
+**1. Bayesian Duality Structure: Replicating ADMM Primal-Dual using Exponential Family Natural-Expectation Parameter Duality**
 
-    - VB fixed-point condition: $\lambda_g^* = -\sum_{k=0}^{K} \nabla \mathcal{L}_k(\mu_g^*)$
-    - Introducing local distributions $q_k^*$ and dual variables $\eta_k^*$ yields a four-condition structure analogous to ADMM
-    - When $q$ is chosen as an isotropic Gaussian, the natural gradient reduces to the ordinary gradient, recovering classical ADMM
+The fixed-point condition of the VB objective can be written as the global natural parameter being equal to the negative sum of the local loss natural gradients, i.e., $\lambda_g^* = -\sum_{k=0}^{K} \nabla \mathcal{L}_k(\mu_g^*)$. The authors introduce a local distribution $q_k^*$ and dual variable $\eta_k^*$ for each client, expanding this condition into a four-condition structure that aligns line-by-line with the four updates of ADMM (local primal, global primal, local dual, global dual). The key is the use of the natural gradient instead of the standard gradient—this step completes the missing link in Swaroop et al.'s work, upgrading "line-by-line similarity" to an exact correspondence. When $q$ is an isotropic Gaussian, the Fisher Information reduces to the identity matrix, the natural gradient equals the standard gradient, and the structure exactly recovers classic ADMM.
 
-2. **Newton-like Extension (Full-Covariance Gaussian)**:
+**2. Newton-like Extension: Replacing with Full-Covariance Gaussian for One-Round Convergence on Quadratic Objectives**
 
-    - **Function**: $q$ is parameterized as a full-covariance Gaussian distribution
-    - **Mechanism**: The natural gradient incorporates the inverse Fisher information matrix, which is equivalent to Newton's method on quadratic objectives, enabling one-round communication convergence
-    - **Design Motivation**: Classical ADMM requires multiple rounds of iteration even on quadratic objectives
+Classic ADMM requires multiple iterations to converge even for quadratic objectives. By using a multivariate Gaussian with full covariance for $q$, the natural gradient incorporates the inverse of the Fisher Information matrix. For quadratic objectives, this is equivalent to a single Newton step, thus converging to the optimum in just one communication round. This compresses the linear convergence of ADMM on quadratic objectives to a single step, serving as an "at no cost" acceleration from the dual structure and validating the theoretical correspondence.
 
-3. **Adam-like Extension (Diagonal Gaussian, IVON-ADMM)**:
+**3. Adam-like Extension (IVON-ADMM): Replacing with Diagonal Gaussian for Adaptive Learning Rates in Deep Learning**
 
-    - **Function**: $q$ is parameterized as a diagonal-covariance Gaussian, implemented efficiently via the IVON method
-    - **Mechanism**: Diagonal Fisher approximation produces adaptive learning rates analogous to Adam
-    - **Design Motivation**: Full Fisher information is computationally prohibitive; diagonal approximation is more practical for deep learning
+Full-covariance Fisher matrices are computationally prohibitive for deep models. The authors utilize diagonal covariance Gaussians and the IVON method to efficiently estimate the diagonal Fisher Information. This grants each parameter dimension its own adaptive step size, similar to Adam. This retains the structural advantages of Bayesian duality while keeping computational overhead comparable to standard FL, enabling the framework to function in heterogeneous deep learning scenarios.
 
 ### Loss & Training
-- Client: minimizes local loss plus KL regularization (Bayesian formulation)
-- Server: aggregates natural gradient parameters rather than raw gradients
+- Client: Minimize local loss + KL regularization (the Bayesian version of the local objective).
+- Server: Aggregates natural gradient parameters (natural parameters of the distribution) rather than the gradients themselves.
 
 ## Key Experimental Results
 
 ### Main Results
-Deep heterogeneous federated learning:
+Deep Heterogeneous Federated Learning:
 
-| Method | Accuracy | Runtime | Notes |
-|--------|----------|---------|-------|
-| FedADMM | Baseline | Baseline | Classical ADMM |
-| FedAvg | Baseline-level | Baseline-level | Standard federated |
+| Method | Accuracy | Runtime | Note |
+|------|--------|---------|------|
+| FedADMM | Baseline | Baseline | Classic ADMM |
+| FedAvg | Baseline-level | Baseline-level | Standard FL |
 | IVON-ADMM | **+7%** | **Comparable** | Adam-like extension |
 
-### Theoretical Validation (Quadratic Objectives)
+### Ablation Study (Theory Verification on Quadratic Objectives)
 
-| Method | Rounds to Converge | Notes |
-|--------|--------------------|-------|
-| Classical ADMM | Multiple rounds | Linear convergence |
-| Newton-like ADMM | **1 round** | One-step convergence |
+| Method | Convergence Rounds | Note |
+|------|---------|------|
+| Classic ADMM | Multiple | Linear convergence |
+| Newton-like ADMM | **1 round** | Immediate convergence |
 
 ### Key Findings
-- IVON-ADMM achieves +7% accuracy in deep heterogeneous settings (non-IID data) without additional communication or computational overhead
-- The Newton-like variant achieves one-round convergence on quadratic objectives, confirming the theoretical prediction
-- The natural gradient is the key link connecting VB and ADMM — precisely the missing element identified in Swaroop et al.
+- IVON-ADMM achieves +7% accuracy in deep heterogeneous scenarios (non-IID data) without increasing communication or computational overhead.
+- The Newton-like variant indeed converges in one round for quadratic objectives, validating theoretical predictions.
+- The natural gradient is the key connection between VB and ADMM—the specific link missing in previous work.
 
 ## Highlights & Insights
-- **Mathematical Elegance**: Classical ADMM turns out to be a special case of a Bayesian method under the simplest distribution family. This connection is not only aesthetically appealing but also opens a new avenue for generalizing optimization algorithms via families of probability distributions.
-- **The Central Role of Natural Gradients**: Prior work using ordinary gradients failed to establish an exact correspondence; substituting natural gradients resolves this immediately, underscoring the deep role of information geometry in algorithm design.
-- **A Free Lunch**: IVON-ADMM leverages IVON's efficient diagonal Fisher implementation, incurring no additional runtime while substantially improving performance in heterogeneous settings.
+- **Mathematical Beauty**: Classic ADMM is revealed to be a special case of Bayesian methods on the simplest distribution family. This connection is elegant and opens a path for generalizing optimization algorithms using probability distribution families.
+- **The Critical Role of the Natural Gradient**: Previous works could not establish an exact correspondence using standard gradients; using natural gradients makes the derivation seamless. This illustrates the deep role of information geometry in algorithm design.
+- **Free Lunch**: IVON-ADMM uses an efficient diagonal Fisher implementation, which does not increase runtime but significantly improves performance in heterogeneous scenarios.
 
 ## Limitations & Future Work
-- Deep learning experiments are conducted at a relatively small scale (7-layer CNN); performance on larger models (e.g., LLMs) remains unknown
-- Diagonal Fisher approximation may be insufficiently accurate for certain model architectures
-- The framework requires selecting an exponential family distribution as a prior assumption; guidelines for choosing the distribution are not clearly specified
-- Communication efficiency analysis is relatively straightforward and could be further developed
+- Deep learning experiments were conducted on a small scale (7-layer CNN); performance on larger models (e.g., LLM) remains unknown.
+- The diagonal Fisher approximation may be inaccurate for certain models.
+- The choice of the exponential family distribution serves as a prior assumption, and clear guidance for distribution selection is lacking.
+- Communication efficiency analysis is relatively simplistic.
 
 ## Related Work & Insights
-- **vs. FedADMM**: Classical ADMM is recovered as a special case; Bayesian ADMM provides a rigorous generalization
-- **vs. FedAvg**: IVON-ADMM demonstrates significant advantages in heterogeneous settings
-- **vs. PVI (Swaroop 2025)**: This work resolves the missing exact correspondence between PVI and ADMM
+- **vs FedADMM**: Classic ADMM is a special case; Bayesian ADMM provides a rigorous generalization.
+- **vs FedAvg**: IVON-ADMM shows significant advantages in heterogeneous scenarios.
+- **vs PVI (Swaroop 2025)**: Resolves the missing exact correspondence between PVI and ADMM.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The Bayesian dual structure is original and elegant, unifying two major paradigms
-- Experimental Thoroughness: ⭐⭐⭐ Theoretical validation is rigorous, but deep learning experiments are limited in scale
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear and the duality diagrams are intuitive
-- Value: ⭐⭐⭐⭐ Provides a new theoretical foundation and practical extensions for federated optimization
+- Novelty: ⭐⭐⭐⭐⭐ The Bayesian duality structure is original, elegant, and unifies two major paradigms.
+- Experimental Thoroughness: ⭐⭐⭐ Theoretical verification is strong, but deep learning experiments are small-scale.
+- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear, and the duality diagrams are intuitive.
+- Value: ⭐⭐⭐⭐ Provides a new theoretical foundation and practical extensions for federated optimization.
 
 <!-- RELATED:START -->
 
@@ -124,11 +126,11 @@ Deep heterogeneous federated learning:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Layerwise Federated Learning for Heterogeneous Quantum Clients using Quorus](layerwise_federated_learning_for_heterogeneous_quantum_clients_using_quorus.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
-- [\[ICLR 2026\] A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)
 - [\[NeurIPS 2025\] Rethinking PCA Through Duality](../../NeurIPS2025/others/rethinking_pca_through_duality.md)
-- [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](../../AAAI2026/others/bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
-- [\[CVPR 2026\] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity](../../CVPR2026/others/feat_federated_geometry_aware_correction_for_exemplar_replay_under_continual_dynamic_heterogeneity.md)
+- [\[ICLR 2026\] Bayesian Post Training Enhancement of Regression Models with Calibrated Rankings](bayesian_post_training_enhancement_of_regression_models_with_calibrated_rankings.md)
+- [\[ICLR 2026\] A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)
 
 </div>
 

@@ -2,83 +2,88 @@
 title: >-
   [Paper Note] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings
 description: >-
-  [ICLR2026][multi-resolution hash encoding] This paper analyzes Instant-NGP's multi-resolution hash encoding (MHE) through the lens of physical systems…
+  [ICLR 2026][Others][multi-resolution hash encoding] Analyzes the Multi-Resolution Hash Encoding (MHE) of Instant-NGP from a physical system perspective, deriving a closed-form approximation of its Point Spread Function (PSF). It reveals that the effective resolution is determined by the average resolution $N_{\text{avg}}$ rather than the finest resolution $N_{\max}$, id
 tags:
-  - "ICLR2026"
-  - "multi-resolution hash encoding"
-  - "neural radiance field"
-  - "point spread function"
-  - "spatial anisotropy"
-  - "Instant-NGP"
+  - ICLR 2026
+  - Others
+  - multi-resolution hash encoding
+  - neural radiance field
+  - point spread function
+  - spatial anisotropy
+  - Instant-NGP
 date: 2026-05-08
-content_hash: 01fda654c871d050
+content_hash: 20b17e34f229f971
 ---
-
 # Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2602.10495](https://arxiv.org/abs/2602.10495)  
 **Code**: To be confirmed  
-**Area**: Other
+**Area**: Others  
 **Keywords**: multi-resolution hash encoding, neural radiance field, point spread function, spatial anisotropy, Instant-NGP
 
 ## TL;DR
-This paper analyzes Instant-NGP's multi-resolution hash encoding (MHE) through the lens of physical systems, deriving a closed-form approximation of its point spread function (PSF). The analysis reveals that the effective resolution is governed by the geometric mean resolution $N_{\text{avg}}$ rather than the finest resolution $N_{\max}$, and that axis-aligned grids introduce spatial anisotropy. The paper further proposes Rotated MHE (R-MHE), a zero-overhead method that eliminates anisotropy by applying a distinct rotation to the input coordinates at each hash level.
+Analyzes the Multi-Resolution Hash Encoding (MHE) of Instant-NGP from a physical system perspective, deriving a closed-form approximation of its Point Spread Function (PSF). It reveals that the effective resolution is determined by the average resolution $N_{\text{avg}}$ rather than the finest resolution $N_{\max}$, identifies grid-induced anisotropy, and proposes a zero-overhead Rotated MHE (R-MHE) to eliminate anisotropy by rotating input coordinates per layer.
 
 ## Background & Motivation
 
-**Background**: Multi-Resolution Hash Encoding (MHE) is the core innovation of Instant-NGP, providing efficient spatial parameterization for NeRF and SDF. However, its behavior is highly sensitive to hyperparameters (number of levels $L$, growth factor $b$, resolutions $N_{\max}/N_{\min}$, hash table size $T$), which are typically selected heuristically.
+**Background**: Multi-Resolution Hash Encoding (MHE) is the core innovation of Instant-NGP, providing efficient spatial parameterization for NeRF and SDF. However, its behavior is highly dependent on hyperparameters (number of layers $L$, growth factor $b$, resolution $N_{\max}/N_{\min}$, and hash table size $T$), which are typically selected through heuristics.
 
-**Limitations of Prior Work**: MHE lacks rigorous analysis from the perspective of physical systems. Fundamental questions remain unanswered: What is the shape of MHE's effective spatial kernel? What is its true resolution limit? How do hash collisions quantitatively degrade quality?
+**Limitations of Prior Work**: MHE lacks rigorous analysis from a physical system perspective. No prior work has addressed: What is the shape of the equivalent spatial kernel of MHE? What is its true resolution limit? How do hash collisions quantitatively affect quality?
 
-**Key Challenge**: The intuitive assumption that MHE resolution is determined by the finest level $N_{\max}$ is incorrect—optimization dynamics cause substantial spatial broadening, so the true resolution is far lower than $N_{\max}$.
+**Key Challenge**: Intuitively, it was believed that MHE resolution is determined by the finest layer $N_{\max}$. In practice, however, optimization dynamics lead to significant spatial widening, causing the real resolution to be far below $N_{\max}$.
 
-**Goal**: To develop a rigorous physical analysis framework for understanding MHE's spatial behavior, thereby guiding hyperparameter selection and architectural improvement.
+**Goal**: Establish a rigorous physical analysis framework to understand the spatial behavior of MHE and guide hyperparameter selection and architectural improvements.
 
-**Key Insight**: By analogy with Green's functions in physical systems, the spatial characteristics of MHE—resolution, anisotropy, and collision noise—are characterized by measuring its response to a point source (i.e., its PSF).
+**Key Insight**: Characterize the spatial properties—resolution, anisotropy, and collision noise—of MHE by measuring its response to a point source constraint (PSF), analogous to the Green's function in physical systems.
 
-**Core Idea**: The effective resolution of MHE is jointly determined by $N_{\text{avg}}$ and an empirical broadening factor $\beta_{\text{emp}}$, not by $N_{\max}$; grid-induced anisotropy can be eliminated through per-level coordinate rotations.
+**Core Idea**: The effective resolution of MHE is jointly determined by $N_{\text{avg}}$ and an empirical optimization widening factor $\beta_{\text{emp}}$, rather than $N_{\max}$ alone; grid anisotropy can be eliminated through per-layer rotation.
 
 ## Method
 
 ### Overall Architecture
-The analysis proceeds in three stages: (1) deriving a closed-form approximation of the collision-free ideal PSF, revealing logarithmic decay and B-spline-induced anisotropy; (2) empirically characterizing optimization-induced spatial broadening and establishing the relationship between effective FWHM and $N_{\text{avg}}$; (3) analyzing collision noise under finite hash capacity and quantifying SNR degradation. The R-MHE improvement is proposed based on these findings.
+This paper does not propose a new model but instead answers a long-ignored question: what does the equivalent spatial kernel of Instant-NGP's Multi-Resolution Hash Encoding (MHE) look like, how high is the real resolution, and how do hash collisions degrade quality. The authors treat MHE as a physical system probe—measuring its response to a single point source constraint, i.e., the Point Spread Function (PSF), much like using a Green's function in optics or physics to characterize a system. The analysis progresses in three steps: first, a closed-form PSF approximation is derived under an ideal collision-free setting; second, the extent to which optimization widens this kernel is measured; third, collision noise from finite hash capacity is incorporated into an SNR framework. The final conclusion yields a counter-intuitive judgment—resolution is determined by the average resolution $N_{\text{avg}}$ rather than the finest layer $N_{\max}$—which informs the proposal of the zero-overhead Rotated MHE (R-MHE).
+
+```mermaid
+flowchart TD
+    IN["Treat MHE as physical system probe<br/>Optimize to fit single point source → Read PSF"] --> D1["Closed-form derivation of ideal PSF<br/>No collisions · Linearized decoder"]
+    D1 --> D2["Optimization-induced spatial widening<br/>β_emp≈3.0 (spectral bias)"]
+    D2 --> D3["SNR analysis of hash collisions<br/>Finite table T → speckle noise"]
+    D3 --> CONC["Core conclusion: Effective resolution<br/>∝ β_emp/N_avg rather than N_max<br/>+ Grid anisotropy"]
+    CONC -->|"Back-solve hyperparameters"| HP["Set β_emp/N_avg = Target Resolution<br/>Solve for growth factor b_theory"]
+    CONC -->|"Eliminate anisotropy"| RMHE["Rotated MHE<br/>Per-layer coordinate rotation R_l·x"]
+```
 
 ### Key Designs
 
-1. **Ideal PSF Derivation (Collision-Free)**
+**1. Closed-form derivation of ideal PSF: Clarifying the spatial response of MHE without hash collisions**
 
-    - **Function**: Derive the spatial response function of MHE after point-source constrained optimization.
-    - **Mechanism**: Under a linearized decoder assumption, the ideal PSF is the average superposition of $L$ normalized B-spline kernels across levels: $P_{\text{Ideal}}(\mathbf{x}) = \frac{1}{L}\sum_{l} \hat{B}_l(\mathbf{x})$. Approximating the sum as an integral and applying a Taylor expansion of the B-spline yields the closed form: $P \approx \frac{1}{L\ln b}[-\ln\|\mathbf{v}\| + C_D - A_D(\mathbf{v})]$, where $A_D$ captures the intrinsic anisotropy of the B-spline.
-    - **Design Motivation**: PSF is the standard characterization tool in physical systems. The closed-form solution reveals two key properties: (a) logarithmic radial decay (rather than Gaussian or exponential); (b) anisotropy in which the kernel is narrower along coordinate axes than along diagonals.
+To determine the "shape of the equivalent spatial kernel," the problem is simplified by assuming a linearized decoder and no collisions in the hash table. In this case, the response of MHE after optimization for a single point source is equivalent to the average superposition of normalized B-spline kernels across $L$ layers: $P_{\text{Ideal}}(\mathbf{x}) = \frac{1}{L}\sum_{l} \hat{B}_l(\mathbf{x})$. By replacing the summation with an integral approximation and applying a Taylor expansion to the B-splines, a closed-form is obtained:
 
-2. **Optimization-Induced Spatial Broadening**
+$$P \approx \frac{1}{L\ln b}\left[-\ln\|\mathbf{v}\| + C_D - A_D(\mathbf{v})\right]$$
 
-    - **Function**: Quantify how much wider the PSF is after actual training compared to the ideal PSF.
-    - **Mechanism**: A total broadening factor is defined as $\beta_{\text{emp}} = \beta_{\text{ideal}} \cdot \beta_{\text{opt}}$, where $\beta_{\text{ideal}} \approx 1.18$ (intrinsic B-spline contribution) and $\beta_{\text{opt}} > 1$ (optimization contribution). Empirical measurements with the Adam optimizer yield $\beta_{\text{emp}} \approx 3.0$, meaning the effective FWHM is approximately 2.5 times the ideal value.
-    - **Design Motivation**: This is the most counterintuitive finding—spectral bias (the tendency to learn low frequencies first) causes coarse levels (low $N_l$) to be over-weighted, broadening the effective spatial kernel. The true two-point resolvable distance satisfies $d_{\text{crit}} \propto \beta_{\text{emp}}/N_{\text{avg}}$, not $1/N_{\max}$.
+where $A_D(\mathbf{v})$ represents the anisotropy term inherent to the B-spline. This closed-form reveals two properties: the PSF exhibits **logarithmic radial decay** (neither Gaussian nor exponential) and is **narrower along the coordinate axes than along diagonals**—indicating that grid-encoded kernels are naturally anisotropic.
 
-3. **Collision Noise SNR Analysis**
+**2. Optimization-induced spatial widening: Real trained PSF is much wider than the ideal**
 
-    - **Function**: Quantify signal quality degradation caused by finite hash table capacity.
-    - **Mechanism**: Collisions cause spatially distant grid vertices to share the same feature vector, producing speckle noise: $P_{\text{Collision}} = P_{\text{Ideal}} + n(\mathbf{x})$, where noise variance increases with the collision rate. Increasing the number of levels $L$ or the growth factor $b$ improves SNR for a fixed $T$.
-    - **Design Motivation**: Provides quantitative guidance for selecting hash table size $T$—enabling computation of the minimum $T$ required to maintain a target SNR for a given scene complexity.
+The ideal PSF represents only a lower bound; the kernel after actual training is significantly widened. This is a primary counter-intuitive finding. The total widening factor is split into two components $\beta_{\text{emp}} = \beta_{\text{ideal}} \cdot \beta_{\text{opt}}$: where $\beta_{\text{ideal}} \approx 1.18$ is inherent to the B-spline, and $\beta_{\text{opt}} > 1$ arises from the optimization process. Empirically, with the Adam optimizer, $\beta_{\text{emp}} \approx 3.0$, meaning the effective FWHM is approximately 2.5 times the ideal value. The root cause is spectral bias—the preference for low-frequency learning causes coarse layers (low $N_l$) to be over-weighted, widening the spatial kernel. The direct consequence is that the critical distance $d_{\text{crit}} \propto \beta_{\text{emp}}/N_{\text{avg}}$ for resolving two points is controlled by the average resolution $N_{\text{avg}}$, not $N_{\max}$. This explains why simply increasing $N_{\max}$ yields diminishing returns in practice.
 
-4. **Rotated MHE (R-MHE)**
+**3. SNR analysis for hash collisions: Finite hash tables mix distant vertices**
 
-    - **Function**: Eliminate grid-induced spatial anisotropy.
-    - **Mechanism**: A distinct rotation $\mathbf{R}_l$ is applied to the input coordinates at each level $l$: $\mathbf{e}_l(\mathbf{x}) = \text{Interpolate}(\mathbf{F}^l, \mathcal{H}(\lfloor N_l \mathbf{R}_l \mathbf{x}\rceil))$. In 2D, progressive rotations $\theta_l = l \cdot \theta$ are used; in 3D, rotations are sampled from SO(3) using icosahedral vertex directions. Critically, **no additional parameters or computation are introduced**—only the coordinate transformation changes.
-    - **Design Motivation**: By using grids with different orientations across levels, the per-level anisotropies cancel upon aggregation, yielding a more isotropic PSF.
+The first two steps assume an infinite hash table, but real scenarios use a finite size $T$. Collisions cause grid vertices far apart in space to share the same feature vector, superimposing speckle noise onto the PSF: $P_{\text{Collision}} = P_{\text{Ideal}} + n(\mathbf{x})$, where the noise variance increases with the collision rate. This framework allows the choice of $T$ to be a calculable problem: for a fixed $T$, increasing the number of layers $L$ or the growth factor $b$ can improve the SNR. This allows for estimating the $T$ required to maintain a target SNR for a given scene complexity.
 
-### Hyperparameter Selection Guidance
-Based on the PSF analysis, a theoretical growth factor $b_{\text{theory}}$ is computed such that $\beta_{\text{emp}}/N_{\text{avg}}$ matches the target spatial resolution (e.g., a single pixel). Experiments confirm that $b_{\text{theory}}$ is nearly identical to the empirically optimal $b_{\text{opt}}$, enabling principled hyperparameter selection without manual tuning.
+**4. Rotated MHE (R-MHE): Eliminating anisotropy by rotating input coordinates per layer**
+
+Design 1 exposed that the PSF is narrower along coordinate axes. R-MHE is a zero-cost fix for this anisotropy. It applies a different rotation $\mathbf{R}_l$ to the input coordinates for each layer $l$ before the lookup: $\mathbf{e}_l(\mathbf{x}) = \text{Interpolate}(\mathbf{F}^l, \mathcal{H}(\lfloor N_l \mathbf{R}_l \mathbf{x}\rceil))$. In 2D, incremental rotation $\theta_l = l \cdot \theta$ is used, while in 3D, orientations are sampled via SO(3) using vertices of regular polyhedra. Since each layer has a different grid orientation, the anisotropies cancel out during multi-layer superposition, synthesizing a PSF closer to isotropy. Crucially, this **requires no additional parameters or computation**, merely a change in coordinate transformation, making it highly valuable for resource-constrained scenarios like mobile rendering.
+
+Hyperparameters can also be calculated directly using this PSF analysis: by setting $\beta_{\text{emp}}/N_{\text{avg}}$ equal to the target spatial resolution (e.g., single pixel size), the theoretical growth factor $b_{\text{theory}}$ can be solved. Experiments show $b_{\text{theory}}$ aligns closely with the empirical optimal value $b_{\text{opt}}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Task | Method | PSNR (dB) |
-|------|--------|-----------|
+|------|------|----------|
 | **2D Image Regression** | Standard MHE (M=1) | 23.88 |
 | | R-MHE (M=2) | 24.62 |
 | | R-MHE (M=4) | 24.69 |
@@ -88,43 +93,43 @@ Based on the PSF analysis, a theoretical growth factor $b_{\text{theory}}$ is co
 | **3D SDF** | Standard MHE | 0.9986 IoU |
 | | R-MHE (any) | 0.9986 IoU |
 
-### Ablation Study (PSF Property Verification)
+### Ablation Study
 
 | Property | Theoretical Prediction | Experimental Verification |
-|----------|----------------------|--------------------------|
-| Anisotropy ratio (axis vs. diagonal) | 1.17 | ≈1.17 (exact match) |
-| Total broadening factor $\beta_{\text{emp}}$ (Adam) | — | ≈3.0 (stable across configurations) |
-| FWHM vs. $N_{\text{avg}}$ relationship | Linear | Linear (exact match) |
-| Two-point resolvable distance $d_{\text{crit}}$ | $\propto$ FWHM | Linear correlation (R²≈1) |
+|------|---------|---------|
+| Anisotropy Ratio (Axis vs Diagonal) | 1.17 | ≈1.17 (Exact match) |
+| Total Widening Factor $\beta_{\text{emp}}$ (Adam) | - | ≈3.0 (Stable across configs) |
+| FWHM vs $N_{\text{avg}}$ Relationship | Linear | Linear (Exact match) |
+| Resolvable Distance $d_{\text{crit}}$ | $\propto$ FWHM | Linear correlation (R²≈1) |
 
 ### Key Findings
-- **Effective resolution is far below $N_{\max}$**: $\beta_{\text{emp}} \approx 3.0$ implies that the actual resolution is approximately 3× lower than $N_{\max}$ suggests, explaining the diminishing returns of increasing $N_{\max}$.
-- **$N_{\text{avg}}$ is the true governing parameter**: For fixed $N_{\text{avg}}$, the FWHM remains unchanged regardless of variations in $L$ and $b$, greatly simplifying hyperparameter selection.
-- **R-MHE yields significant gains in 2D but marginal gains in 3D**: The improvement is +0.94 dB in 2D and only +0.13 dB in 3D NeRF. The authors attribute this to the ray integration in volumetric rendering, which inherently averages over viewing directions and thus attenuates the effect of anisotropy.
-- **PSF-guided hyperparameter selection is effective**: The theoretically derived $b_{\text{theory}}$ agrees with the empirically optimal $b_{\text{opt}}$, eliminating the need for manual tuning.
+- **Effective resolution is far lower than $N_{\max}$**: $\beta_{\text{emp}} \approx 3.0$ implies the actual resolution is about 3 times lower than what $N_{\max}$ suggests. This explains diminishing returns when increasing $N_{\max}$.
+- **$N_{\text{avg}}$ is the true control parameter**: After changing $L$ and $b$, the FWHM remains identical as long as $N_{\text{avg}}$ is the same—significantly simplifying hyperparameter selection.
+- **R-MHE is significant in 2D but marginal in 3D**: Gain of +0.94 dB in 2D, but only +0.13 dB in 3D NeRF. The authors explain that ray integration in 3D volume rendering acts as a viewing average, naturally mitigating anisotropy.
+- **PSF-guided hyperparameter selection is effective**: The theoretically calculated $b_{\text{theory}}$ matches the empirical $b_{\text{opt}}$, eliminating the need for manual tuning.
 
 ## Highlights & Insights
-- **Physical thinking applied to neural fields**: Employing PSF/Green's function—standard tools from physics—to analyze neural field encodings represents a genuinely novel methodological perspective, directly transferable to other grid-based encodings such as TensoRF and K-Planes.
-- **Counterintuitive core finding**: The result that $N_{\text{avg}}$, not $N_{\max}$, governs resolution overturns the intuition that "the finest level determines accuracy" and has direct practical implications for hyperparameter selection.
-- **Spatial interpretation of spectral bias**: The well-known spectral bias phenomenon in optimization is translated into a concrete spatial broadening effect, quantified by the factor $\beta_{\text{opt}}$.
-- **Zero-cost improvement via R-MHE**: A pure coordinate transformation that introduces no additional parameters or computation is particularly valuable in resource-constrained settings such as mobile rendering.
+- **Physical thinking for neural fields**: Analyzing neural field encoding using standard physical tools like PSF and Green's functions provides a fresh methodology. This approach can be transferred to other grid encodings like TensoRF and K-Planes.
+- **Counter-intuitive core discovery**: $N_{\text{avg}}$, not $N_{\max}$, determines resolution—overturning the intuition that the finest layer dictates accuracy and guiding practical hyperparameter selection.
+- **Spatial interpretation of spectral bias**: Translates the well-known spectral bias in optimization into specific spatial widening, providing a quantified widening factor $\beta_{\text{opt}}$.
+- **Zero-cost R-MHE improvement**: A coordinate transformation improvement that adds neither parameters nor computation—especially valuable in resource-constrained scenarios like mobile rendering.
 
 ## Limitations & Future Work
-- **Limited 3D improvement**: R-MHE yields only marginal gains on standard 3D benchmarks. Validation on more challenging scenarios (sparse views, high-frequency textures) is needed.
-- **Linearization assumption**: The PSF analysis relies on a linearized decoder assumption; its applicability to deep MLPs requires further verification, although the authors report insensitivity to MLP depth in their experiments.
-- **Optimizer dependence of $\beta_{\text{opt}}$**: The broadening factor is approximately 3.0 for Adam but differs for other optimizers; a systematic analysis across optimizers is lacking.
-- **Point-source analysis only**: The PSF characterizes the response to a single-point constraint; interactions among multiple constraints in real scenes are more complex.
+- **Limited 3D improvement**: R-MHE shows marginal gains on standard 3D benchmarks; verification in more challenging scenarios (sparse views, high-frequency textures) is needed.
+- **Linearization assumption**: The PSF analysis assumes a linearized decoder; its applicability to deep MLPs requires further validation (though experiments suggest it is insensitive to MLP depth).
+- **$\beta_{\text{opt}}$ depends on the optimizer**: The widening factor is approximately 3.0 for Adam but differs for other optimizers—a systematic analysis of various optimizers is missing.
+- **Point source response only**: The PSF reflects the response to single-point constraints; multi-constraint interactions in real scenarios are more complex.
 
 ## Related Work & Insights
-- **vs. Instant-NGP**: The original Instant-NGP paper introduced the MHE architecture without analyzing its spatial properties. This work provides a deep theoretical complement, revealing the shape of the spatial kernel, the resolution limit, and the effect of collisions.
-- **vs. NTK analysis**: The NTK literature analyzes the frequency bias of neural networks. This paper instantiates the NTK perspective as a spatial PSF for MHE, yielding quantitative conclusions that are directly actionable in engineering practice.
-- **vs. TensoRF/K-Planes**: All methods based on axis-aligned grids share analogous anisotropy issues. The rotation strategy underlying R-MHE can be directly transferred to these architectures.
+- **vs. Instant-NGP**: While the original paper introduced the MHE architecture, it did not analyze its spatial characteristics. This work serves as a deep theoretical supplement, revealing kernel shape, resolution limits, and collision impacts.
+- **vs. NTK analysis**: NTK literature analyzes frequency bias in neural networks. This work concretizes the NTK perspective into a spatial PSF for MHE, providing usable quantitative engineering conclusions.
+- **vs. TensoRF/K-Planes**: All axis-aligned grid methods suffer from similar anisotropy problems. The rotation concept of R-MHE can be directly transferred.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — Analyzing neural field encodings via physical PSF/Green's function is a genuinely new methodology; the finding that $N_{\text{avg}}$ governs resolution is counterintuitive and significant.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive validation across 2D, 3D NeRF, and SDF; PSF theory matches experiments precisely; however, 3D improvements are limited.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The analysis builds progressively from physical intuition, with rigorous mathematical derivations paired with corresponding experiments.
-- **Value**: ⭐⭐⭐⭐⭐ — Establishes a physically principled analytical methodology for the neural fields community; PSF-based hyperparameter guidance has direct practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ Using physical system PSF analysis for neural field encoding is a new methodology; the $N_{\text{avg}}$ discovery is counter-intuitive and important.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive verification across 2D, 3D NeRF, and SDF; PSF theory matches experiments exactly, though 3D improvements are marginal.
+- Writing Quality: ⭐⭐⭐⭐⭐ Analysis proceeds logically from physical intuition with rigorous mathematical derivation and corresponding experiments.
+- Value: ⭐⭐⭐⭐⭐ Establishes a physics-based analysis methodology for the neural field community; PSF guided hyperparameter selection has direct practical value.
 
 <!-- RELATED:START -->
 
@@ -134,9 +139,9 @@ Based on the PSF analysis, a theoretical growth factor $b_{\text{theory}}$ is co
 
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
 - [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
-- [\[ICLR 2026\] An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes](an_information-theoretic_framework_for_optimizing_experimental_design_to_disting.md)
-- [\[AAAI 2026\] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers](../../AAAI2026/others/tab-pet_graph-based_positional_encodings_for_tabular_transformers.md)
-- [\[AAAI 2026\] Structure-Aware Encodings of Argumentation Properties for Clique-width](../../AAAI2026/others/structure-aware_encodings_of_argumentation_properties_for_clique-width.md)
+- [\[ICML 2025\] K²IE: Kernel Method-based Kernel Intensity Estimators for Inhomogeneous Poisson Processes](../../ICML2025/others/k2ie_kernel_method-based_kernel_intensity_estimators_for_inhomogeneous_poisson_p.md)
+- [\[CVPR 2026\] FlashVSR: Towards Real-time Diffusion-Based Streaming Video Super Resolution](../../CVPR2026/others/flashvsr_towards_real-time_diffusion-based_streaming_video_super_resolution.md)
+- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
 
 </div>
 

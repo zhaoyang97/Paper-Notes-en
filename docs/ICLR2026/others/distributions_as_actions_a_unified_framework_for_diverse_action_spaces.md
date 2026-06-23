@@ -2,107 +2,110 @@
 title: >-
   [Paper Note] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces
 description: >-
-  [ICLR 2026][unified action space] DA-AC proposes treating the parameters of an action distribution (e.g., softmax probabilities or Gaussian mean/variance) as the agent's output "actions…
+  [ICLR 2026][Others][Paper Note] DA-AC proposes treating the parameters of action distributions (such as softmax probabilities or Gaussian mean/variance) as the "actions" output by the agent, moving the action sampling process into the environment. This allows a unified deterministic policy gradient framework to handle discrete, continuous, and hybrid
 tags:
-  - "ICLR 2026"
-  - "unified action space"
-  - "distribution parameterization"
-  - "deterministic policy gradient"
-  - "discrete-continuous hybrid control"
-  - "variance reduction"
+  - ICLR 2026
+  - Others
 date: 2026-05-08
-content_hash: c50efc598650c28e
+content_hash: d7078a8c2716565b
 ---
-
 # DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces
 
 **Conference**: ICLR 2026  
 **arXiv**: [2506.16608](https://arxiv.org/abs/2506.16608)  
 **Code**: [GitHub](https://github.com/hejm37/da-ac)  
-**Area**: Other  
-**Keywords**: unified action space, distribution parameterization, deterministic policy gradient, discrete-continuous hybrid control, variance reduction  
+**Area**: Others  
+**Keywords**: Unified action space, distribution parameterization, deterministic policy gradient, discrete-continuous hybrid control, variance reduction  
 
 ## TL;DR
-DA-AC proposes treating the parameters of an action distribution (e.g., softmax probabilities or Gaussian mean/variance) as the agent's output "actions," relocating the action sampling process to the environment side. This enables a unified deterministic policy gradient framework for discrete, continuous, and hybrid action spaces. The approach is theoretically proven to achieve strictly lower variance than LR and RP estimators, and attains competitive or state-of-the-art performance across 40+ environments.
+DA-AC proposes treating the parameters of action distributions (such as softmax probabilities or Gaussian mean/variance) as the "actions" output by the agent, moving the action sampling process into the environment. This allows a unified deterministic policy gradient framework to handle discrete, continuous, and hybrid action spaces. The method theoretically guarantees strictly lower variance than LR and RP estimators and achieves competitive or SOTA performance across 40+ environments.
 
 ## Background & Motivation
-**Background**: Current RL algorithms are tightly coupled to action space types — DQN/DSAC for discrete, DDPG/TD3/SAC for continuous, and specialized algorithms such as PADDPG for hybrid action spaces. The architectural divergence across estimator types makes it difficult to design general-purpose algorithms that operate across domains.
+**Background**: Current RL algorithms are tightly coupled with action space types—discrete spaces use DQN/DSAC, continuous spaces use DDPG/TD3/SAC, and hybrid action spaces require specialized algorithms like PADDPG. These distinct estimator architectures make it difficult to design universal algorithms across domains.
 
 **Limitations of Prior Work**:
-   - The Likelihood Ratio (LR) estimator is general but suffers from high variance, requiring careful baseline design.
-   - DPG/RP estimators exhibit low variance but are restricted to continuous action spaces.
-   - Hybrid action spaces (combining discrete and continuous dimensions) require additional engineering effort.
+   - LR (Likelihood Ratio) estimators are general but suffer from high variance, requiring carefully designed baselines.
+   - DPG/RP estimators offer low variance but are restricted to continuous action spaces.
+   - Hybrid action spaces (simultaneously containing discrete and continuous dimensions) require extra engineering effort.
 
-**Key Challenge**: Low-variance gradient estimators such as DPG/RP require continuous action spaces — yet achieving low variance on discrete action spaces remains an open challenge.
+**Key Challenge**: Low-variance gradient estimators are needed, but DPG/RP requires continuous action spaces—how can the low-variance advantages of DPG be extended to discrete actions?
 
-**Goal**: Design a unified actor-critic algorithm that operates over arbitrary action space types with theoretical guarantees of low variance.
+**Goal**: Design a unified actor-critic algorithm that works on any type of action space with theoretical guarantees of low variance.
 
-**Key Insight**: Reconsidering the agent-environment boundary — the agent's "action" need not be the raw action defined by the environment; it can instead be the **distribution parameters**. A policy can typically be decomposed into $\bar{\pi}_\theta$ (mapping states to distribution parameters) and $f$ (sampling from the distribution). By relocating $f$ to the environment side, the agent's action space becomes the continuous parameter space $\mathcal{U}$, regardless of the original action space type.
+**Key Insight**: Rethink the agent-environment boundary—the agent's "action" does not necessarily have to be the original action defined by the environment; it can be the **distribution parameters**. A policy can typically be decomposed into $\bar{\pi}_\theta$ (outputting distribution parameters) + $f$ (sampling from the distribution). If $f$ is moved to the environment side, the agent's action space becomes a continuous parameter space $\mathcal{U}$, regardless of the original action space type.
 
-**Core Idea**: Distributions-as-Actions — distribution parameters serve as actions, and sampling is treated as part of the environment.
+**Core Idea**: Distributions-as-Actions—distribution parameters are the actions, and sampling is part of the environment.
 
 ## Method
 
 ### Overall Architecture
-In standard RL, the agent's policy $\pi_\theta$ consists of two components: $\bar{\pi}_\theta$ (mapping states to distribution parameters) and $f$ (sampling actions from the distribution). The DA framework relocates $f$ to the environment side, so the agent directly outputs distribution parameters $u = \bar{\pi}_\theta(s)$. This defines a new MDP — the DA-MDP $\langle \mathcal{S}, \mathcal{U}, \bar{p}, d_0, \bar{r}, \gamma \rangle$ — where transitions and rewards become expectations over the original actions:
+This paper addresses the issue where RL algorithms are strictly tied to action space types. The breakthrough is re-partitioning the boundary between the agent and the environment. In classical RL, a policy $\pi_\theta$ consists of two steps: first, $\bar{\pi}_\theta$ maps the state to a set of distribution parameters (e.g., mean/variance for Gaussian, class probabilities for Softmax); then, a sampling function $f$ draws the actual action. The DA framework moves the second step $f$ entirely into the environment. The agent no longer outputs an action but directly outputs distribution parameters $u=\bar{\pi}_\theta(s)$, making sampling part of the environment's stochastic transition.
+
+Regardless of whether the underlying space is discrete, continuous, or hybrid, the agent faces a unified continuous parameter space $\mathcal{U}$, allowing the same continuous control algorithm to handle all cases. This defines a new MDP—DA-MDP $\langle \mathcal{S}, \mathcal{U}, \bar{p}, d_0, \bar{r}, \gamma \rangle$, where transitions and rewards are expectations over original actions:
 
 $$\bar{p}(s'|s,u) = \mathbb{E}_{A \sim f(\cdot|u)}[p(s'|s,A)], \quad \bar{r}(s,u) = \mathbb{E}_{A \sim f(\cdot|u)}[r(s,A)]$$
 
-Key invariants: $\bar{v}_{\bar{\pi}}(s) = v_\pi(s)$ — state values are preserved; $\bar{q}_{\bar{\pi}}(s,u) = \mathbb{E}_{A \sim f(\cdot|u)}[q_\pi(s,A)]$ — the Q-value of distribution parameters equals the expectation of the original Q-value under the distribution.
+This transformation preserves value: $\bar{v}_{\bar{\pi}}(s)=v_\pi(s)$, while the Q-value of distribution parameters is the expectation of original Q-values: $\bar{q}_{\bar{\pi}}(s,u)=\mathbb{E}_{A\sim f(\cdot|u)}[q_\pi(s,A)]$. Based on this, the paper introduces the DA-PG gradient estimator, an ICL critic learning method, and integrates them into TD3 to form the DA-AC algorithm. The training loop is shown below:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    S["State s"] --> ACTOR["Actor π̄θ: Outputs distribution parameters u<br/>Boundary conversion—Discrete/Continuous/Hybrid<br/>Action space unified as continuous parameter space"]
+    ACTOR --> ENV["Sampling action A~f(·|u) in Env<br/>Sampling process moved to environment side"]
+    ENV --> DAPG["DA-PG Gradient: Deterministic gradient<br/>in parameter space with strictly lower variance"]
+    DAPG --> ICL["ICL: Interpolates between u and u_A<br/>Trains Critic Q̄w to provide smooth gradients"]
+    ICL --> DAAC["DA-AC: Integrated into TD3 backbone<br/>Adapts via distribution parameterization"]
+    DAAC -->|Update Actor, iterate| ACTOR
+```
 
 ### Key Designs
 
-1. **DA-PG Gradient Estimator (Theorem 4.2)**:
+**1. DA-PG Gradient Estimator: Deterministic gradients for any action space with lower variance**
 
-    - Function: Deterministic policy gradient in the distribution parameter space.
-    - Core formula: $\hat{\nabla}_\theta^{\text{DA-PG}} = \nabla_\theta \bar{\pi}_\theta(S_t)^\top \nabla_U \bar{Q}_w(S_t, U)|_{U=\bar{\pi}_\theta(S_t)}$
-    - Relation to DPG: Mathematically identical in form, but $\bar{\pi}$ outputs distribution parameters rather than a single action, and $\bar{Q}$ estimates the expected return under the distribution.
-    - DPG as a special case of DA-PG (Prop 4.3): The two are equivalent when $f(\cdot|u)$ degenerates to a Dirac delta.
-    - Design Motivation: Since $\mathcal{U}$ is always continuous, DPG-style gradients can be applied to any action space type.
+After converting the action space into a continuous parameter space, the challenge is computing policy gradients. Traditional low-variance DPG/RP-style estimators only apply to continuous actions. Discrete actions usually rely on high-variance LR estimators. Since the agent's output $U=\bar{\pi}_\theta(S_t)$ is continuous, DA-PG applies DPG-style deterministic gradients directly:
 
-2. **Theoretical Guarantee of Strictly Reduced Variance (Prop 4.4 & 4.5)**:
+$$\hat{\nabla}_\theta^{\text{DA-PG}} = \nabla_\theta \bar{\pi}_\theta(S_t)^\top \nabla_U \bar{Q}_w(S_t, U)\big|_{U=\bar{\pi}_\theta(S_t)}$$
 
-    - DA-PG is the conditional expectation of the LR estimator (over action $A$); by the law of total variance, its variance is strictly lower.
-    - DA-PG is likewise the conditional expectation of the RP estimator (over noise $\epsilon$), also with strictly lower variance.
-    - Trade-off: This may introduce additional bias, as the critic must operate over a larger input space.
-    - This is the first method to provide an unbiased, RP-style low-variance estimator for discrete action spaces.
+The key difference is semantic—$\bar{\pi}$ outputs distribution parameters instead of a single action, and $\bar{Q}$ estimates expected return under the distribution. This bypasses the restriction that DPG is "continuous only." A significant theoretical result shows that DA-PG is the conditional expectation of LR and RP estimators:
 
-3. **ICL (Interpolated Critic Learning)**:
+$$\hat{\nabla}_\theta^{\text{DA-PG}} = \mathbb{E}_{A}\big[\hat{\nabla}_\theta^{\text{LR}}\big] = \mathbb{E}_{\epsilon}\big[\hat{\nabla}_\theta^{\text{RP}}\big]$$
 
-    - Function: Improve critic learning quality in the distribution parameter space.
-    - Mechanism: Standard TD updates train the critic only at the current policy's distribution parameters $U_t$, leading to inaccurate critic estimates elsewhere in parameter space. ICL linearly interpolates between the current parameters $U_t$ and the deterministic parameters corresponding to the sampled action $U_{A_t}$: $\hat{U}_t = \omega U_t + (1-\omega) U_{A_t}$, $\omega \sim \text{Uniform}[0,1]$.
-    - Design Motivation: Encourages the critic to learn smooth curvature information across the distribution parameter space, enabling the policy gradient to point toward high-value regions. This resembles off-policy learning but operates over distributions rather than policies.
-    - Validated via bandit experiments: The ICL-trained critic exhibits richer curvature, whereas the standard critic is accurate only near the current policy.
+By the law of total variance, DA-PG variance is strictly lower than LR and RP. This provides an unbiased, RP-style low-variance estimator for discrete action spaces for the first time.
 
-4. **DA-AC Algorithm**:
+**2. ICL (Interpolated Critic Learning): Improving critic accuracy across the parameter space**
 
-    - Built on TD3: dual critics, delayed policy updates, target policy smoothing.
-    - Replaces DPG actor updates with DA-PG; replaces standard TD critic updates with ICL.
-    - Removes the actor target network (ablation shows it is unnecessary).
-    - Adapts to different action spaces: Gaussian (continuous), Softmax (discrete), Gaussian+Softmax (hybrid).
+DA-PG requires the critic $\nabla_U \bar{Q}_w$ to be reliable throughout the parameter space. However, standard TD updates only train the critic at parameters $U_t$ produced by the current policy. ICL performs random linear interpolation between the current parameters $U_t$ and the deterministic parameters $U_{A_t}$ corresponding to the sampled action:
+
+$$\hat{U}_t = \omega_t U_t + (1-\omega_t) U_{A_t}, \quad \omega_t \sim \text{Uniform}[0,1]$$
+
+This forces the critic to remain accurate across the interval from $U_t$ to $U_{A_t}$, capturing smoother curvature and allowing DA-PG gradients to point towards high-value regions more effectively.
+
+**3. DA-AC Algorithm: A unified actor-critic framework**
+
+DA-AC uses TD3 as a backbone, retaining twin critics, delayed policy updates, and target noise. It replaces the DPG actor update with DA-PG and the standard TD critic update with ICL. The algorithm accommodates different action spaces simply by changing distribution parameterization (Gaussian for continuous, Softmax for discrete, concatenated for hybrid) without changing the core code.
 
 ## Key Experimental Results
 
-### Main Results — Continuous Control (MuJoCo + DMC, 20 environments, 1M steps)
+### Main Results — Continuous Control (MuJoCo + DMC, 20 Environments, 1M steps)
 
-| Algorithm | MuJoCo (normalized) | DMC (normalized) |
-|-----------|---------------------|------------------|
+| Algorithm | MuJoCo (Norm.) | DMC (Norm.) |
+|-----------|----------------|-------------|
 | TD3 | ~0.82 | ~0.70 |
 | SAC | ~0.78 | ~0.65 |
 | RP-AC | ~0.80 | ~0.72 |
 | PPO | ~0.55 | ~0.48 |
 | **DA-AC** | **~0.85** | **~0.78** |
 
-Across 20 individual environments, DA-AC outperforms TD3 in the majority of cases, with particularly pronounced advantages in high-dimensional action spaces (e.g., Humanoid, Dog).
+DA-AC outperforms TD3 in most environments, particularly in high-dimensional action spaces (e.g., Humanoid, Dog).
 
-### Discrete Control (Classic Control + MinAtar, 9 environments)
-DA-AC is competitive with DQN on both Classic Control and MinAtar, and substantially outperforms LR-AC and ST-AC.
+### Discrete Control (Classic Control + MinAtar, 9 Environments)
+DA-AC is comparable to DQN on Classic Control and MinAtar, and significantly outperforms LR-AC and ST-AC.
 
-### High-Dimensional Discrete Control ($7^{17}$ action space, Humanoid)
-DQN, DSAC, and EAC fail entirely due to the intractable action space, whereas DA-AC handles it seamlessly and achieves performance comparable to the continuous control setting.
+### High-dimensional Discrete Control ($7^{17}$ action space Humanoid)
+DQN, DSAC, and EAC fail completely due to the inability to enumerate the action space. DA-AC maintains performance comparable to its continuous version.
 
-### Hybrid Control (7 PAMDP environments)
-DA-AC is competitive with or superior to PATD3, an algorithm specifically designed for hybrid action spaces.
+### Hybrid Control (7 PAMDPs Environments)
+DA-AC is comparable to or better than PATD3 (algorithm specifically designed for hybrid actions).
 
 ### Ablation Study — Contribution of ICL
 
@@ -111,37 +114,36 @@ DA-AC is competitive with or superior to PATD3, an algorithm specifically design
 | DA-AC (w/ ICL) | **0.85** | **0.78** | **0.73** | **0.82** |
 | DA-AC w/o ICL | 0.80 | 0.72 | 0.68 | 0.77 |
 
-ICL yields consistent improvements across all settings; paired t-tests confirm statistical significance.
+ICL consistently improves performance across all settings.
 
 ### Key Findings
-- **Unified framework**: A single algorithm achieves competitive performance across discrete, continuous, and hybrid action spaces — demonstrated for the first time.
-- **Variance advantage of DA-PG**: Bias-variance analysis experiments confirm that DA-PG achieves lower variance than both LR and RP estimators, consistent with theoretical predictions.
-- **ICL is critical for critic quality**: Visualizations show that ICL produces better gradient signals for the critic across the distribution parameter space.
+- **Unification**: One algorithm is competitive across discrete, continuous, and hybrid spaces—a first in RL.
+- **DA-PG Variance Advantage**: Bias-variance analysis confirms DA-PG has lower variance than LR and RP.
+- **ICL Importance**: Visualization shows ICL provides superior gradient signals in the distribution parameter space.
 
 ## Highlights & Insights
-- **Reconceptualizing the agent-environment boundary** is an elegant and principled insight — not a trick, but a deep conceptual shift: reframing the problem unifies previously incompatible methods.
-- **DA-PG as the conditional expectation of LR and RP** is a theoretically elegant result; variance reduction follows directly from the law of total variance.
-- **The intuition behind ICL**: Standard critics are accurate only near the current policy, yet policy optimization requires Q-value information in other regions of parameter space. ICL enables the critic to "see further" via interpolated sampling — analogous to off-policy learning but operating in distribution space.
-- **High-dimensional discrete control** experiments are particularly compelling: a $7^{17}$ action space renders DQN/DSAC/EAC completely infeasible, yet DA-AC handles it without modification.
+- The **rethinking of the agent-environment boundary** is elegant—not just a trick, but a profound conceptual shift for unification.
+- **DA-PG as a conditional expectation of LR and RP** is a rigorous theoretical result proving variance reduction via the law of total variance.
+- **ICL Intuition**: Standard critics only accurate near the current policy; ICL allows the critic to "see further" through interpolation in distribution space.
+- The **high-dimensional discrete control** experiment is extremely compelling, as it breaks methods that rely on action enumeration.
 
 ## Limitations & Future Work
-- ICL introduces bias (without importance sampling correction); the theoretical implications for convergence remain to be analyzed.
-- The current implementation is built solely on TD3; integration with SAC (maximum entropy) or PPO (on-policy) is a natural next step.
-- Critic learning may become more challenging in high-dimensional distribution parameter spaces — for Gaussian policies, critic input dimensionality doubles (mean + variance).
-- Extensions to model-based RL, hierarchical control, and other directions remain unexplored.
+- ICL introduces bias (lacking importance sampling correction), and its effect on convergence requires further theoretical analysis.
+- Currently implemented on TD3; integration with maximum entropy (SAC) or on-policy (PPO) methods is a natural next step.
+- Critic learning may be harder in high-dimensional parameter spaces (e.g., Gaussian input size doubles with mean and variance).
+- Model-based RL and hierarchical control extensions have not been explored.
 
 ## Related Work & Insights
-- **vs. TD3/DDPG**: DA-AC is a natural generalization of TD3; DPG is a special case of DA-PG.
-- **vs. SAC**: SAC uses the RP estimator with entropy regularization; DA-AC uses DA-PG (lower variance) without entropy. The two approaches are complementary and can be combined.
-- **vs. EPG (Expected Policy Gradient)**: EPG also targets zero variance but is only tractable in low-dimensional discrete or special continuous settings; DA-AC generalizes to arbitrary high-dimensional spaces.
-- **vs. Gumbel-Softmax/ST**: These are biased discrete relaxation methods; DA-PG provides the first unbiased, low-variance estimator for discrete action spaces.
-- Implications for agent system design: when agents must simultaneously make discrete decisions and perform continuous control, the DA framework provides a unified interface.
+- **vs TD3/DDPG**: DA-AC is a natural generalization of TD3; DPG is a special case of DA-PG.
+- **vs SAC**: SAC uses RP estimators with entropy regularization; DA-AC uses DA-PG (lower variance) without entropy.
+- **vs EPG (Expected Policy Gradient)**: EPG pursues zero variance but is only feasible in low-dimensional discrete cases; DA-AC generalizes to any high-dimensional space.
+- **vs Gumbel-Softmax/ST**: These are biased discrete relaxation methods; DA-PG provides the first unbiased low-variance estimator for discrete spaces.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Redefining the agent-environment boundary is an elegant and profound conceptual contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 40+ environments covering four action space types, with comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear and visualizations are effective.
-- Value: ⭐⭐⭐⭐⭐ A significant step toward a unified RL framework with practical applicability.
+- Novelty: ⭐⭐⭐⭐⭐ The boundary rethinking is highly elegant and profound.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 40+ environments covering 4 action space types.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivations and effective visualizations.
+- Value: ⭐⭐⭐⭐⭐ A significant step towards a unified RL framework.
 
 <!-- RELATED:START -->
 
@@ -150,10 +152,10 @@ ICL yields consistent improvements across all settings; paired t-tests confirm s
 ## Related Papers
 
 - [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
-- [\[ICLR 2026\] Jackpot: Optimal Budgeted Rejection Sampling for Extreme Actor-Policy Mismatch RL](jackpot_optimal_budgeted_rejection_sampling_for_extreme_actor-policy_mismatch_re.md)
-- [\[ICLR 2026\] An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes](an_information-theoretic_framework_for_optimizing_experimental_design_to_disting.md)
-- [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](../../NeurIPS2025/others/a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
-- [\[AAAI 2026\] Finding Diverse Solutions Parameterized by Cliquewidth](../../AAAI2026/others/finding_diverse_solutions_parameterized_by_cliquewidth.md)
+- [\[ICLR 2026\] GoR: A Unified and Extensible Generative Framework for Ordinal Regression](gor_a_unified_and_extensible_generative_framework_for_ordinal_regression.md)
+- [\[ICLR 2026\] Learning Distributions over Permutations and Rankings with Factorized Representations](learning_distributions_over_permutations_and_rankings_with_factorized_representa.md)
+- [\[ICLR 2026\] Learning Survival Distributions with Individually Calibrated Asymmetric Laplace Distribution](learning_survival_distributions_with_individually_calibrated_asymmetric_laplace_.md)
+- [\[ECCV 2024\] An Incremental Unified Framework for Small Defect Inspection](../../ECCV2024/others/an_incremental_unified_framework_for_small_defect_inspection.md)
 
 </div>
 

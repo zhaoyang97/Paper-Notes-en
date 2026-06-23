@@ -2,129 +2,140 @@
 title: >-
   [Paper Note] Building Spatial World Models from Sparse Transitional Episodic Memories
 description: >-
-  [ICLR2026][world model] This paper proposes the Episodic Spatial World Model (ESWM), which constructs spatial world models from sparse…
+  [ICLR 2026][Others][world model] The paper proposes the Episodic Spatial World Model (ESWM), which builds spatial world models from sparse, disconnected episodic memories (one-step transitions). Its latent space spontaneously develops cognitive maps aligned with environmental topology and supports zero-shot exploration and navigation.
 tags:
-  - "ICLR2026"
-  - "world model"
-  - "episodic memory"
-  - "spatial reasoning"
-  - "cognitive map"
-  - "navigation"
+  - ICLR 2026
+  - Others
+  - world model
+  - episodic memory
+  - spatial reasoning
+  - cognitive map
+  - navigation
 date: 2026-05-08
-content_hash: 299dd3b9b9c91b74
+content_hash: 5e584f495ba48ea8
 ---
-
 # Building Spatial World Models from Sparse Transitional Episodic Memories
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2505.13696](https://arxiv.org/abs/2505.13696)  
 **Code**: To be confirmed  
-**Area**: Robotics
+**Area**: Robotics  
 **Keywords**: world model, episodic memory, spatial reasoning, cognitive map, navigation
 
 ## TL;DR
-This paper proposes the Episodic Spatial World Model (ESWM), which constructs spatial world models from sparse, disconnected episodic memories (one-step transitions). The model's latent space spontaneously gives rise to cognitive maps aligned with environmental topology, supporting zero-shot exploration and navigation.
+The paper proposes the Episodic Spatial World Model (ESWM), which builds spatial world models from sparse, disconnected episodic memories (one-step transitions). Its latent space spontaneously develops cognitive maps aligned with environmental topology and supports zero-shot exploration and navigation.
 
 ## Background & Motivation
 
-**Background**: Existing world models typically require long sequences of continuous trajectories for training, encoding environmental knowledge into model weights. Representative approaches such as TEM and GTM-SM rely on continuous observation sequences and assume a fixed shared structure across environments.
+**Background**: Existing World Models typically require long continuous trajectories for training, encoding environmental knowledge into model weights. Representative methods such as TEM and GTM-SM rely on continuous observation sequences and assume a fixed structure shared across environments.
 
-**Limitations of Prior Work**: (1) In real-world scenarios, an agent's observations are often fragmentary—accessing different parts of an environment at different times without continuous long trajectories; (2) Environments may undergo structural changes (e.g., newly added obstacles), requiring weight-based models to be retrained for adaptation; (3) Sequence models incur prohibitive computational costs when scaling to large environments.
+**Limitations of Prior Work**: (1) Observations of agents in real-world scenarios are often fragmented—visiting different parts of an environment at different times, making it impossible to obtain long continuous trajectories; (2) Environments may undergo structural changes (e.g., adding obstacles), and weight-coded models require retraining to adapt; (3) Sequential models incur massive computational overhead when processing large environments.
 
-**Key Challenge**: Existing models encode structural knowledge of the environment into weights, making it (a) impossible to build maps rapidly from fragmented experience, and (b) infeasible to dynamically adapt to environmental changes.
+**Key Challenge**: Existing models encode environmental structure knowledge in weights, resulting in: (a) an inability to rapidly build maps from fragmented experiences, and (b) an inability to dynamically adapt to environmental changes.
 
-**Goal**: Can a consistent spatial world model be efficiently constructed from only sparse, disconnected episodic memories?
+**Goal**: Whether a consistent spatial world model can be rapidly constructed solely from sparse, disconnected episodic memories?
 
-**Key Insight**: Inspired by neuroscience—the medial temporal lobe (MTL) is responsible for both spatial representation and episodic memory, constructing relational networks by integrating overlapping episodic memories. The authors hypothesize that a model can infer complete spatial structure from a set of independent one-step transitions, without requiring continuous trajectories.
+**Key Insight**: Inspired by neuroscience—the medial temporal lobe (MTL) is responsible for both spatial representation and episodic memory, constructing relational networks by integrating overlapping episodic memories. The authors hypothesize that a model does not need continuous trajectories but only a set of independent one-step transitions to infer the complete spatial structure.
 
-**Core Idea**: Reformulating world modeling from sequential learning to set-based reasoning—using a Transformer to infer spatial relationships from a collection of disconnected episodic memories.
+**Core Idea**: Transform world modeling from sequential learning into set-based reasoning—using a Transformer to infer spatial relationships from an unordered set of disconnected episodic memories.
 
 ## Method
 
 ### Overall Architecture
-ESWM takes as input a **memory bank $M$** (an unordered set of disconnected one-step transitions $(s_s, a, s_e)$) and a **partially masked query transition $q$** (with one of the start state, action, or end state randomly masked). The model's objective is to predict the masked element. This is essentially a set-to-value reasoning problem: inferring unobserved spatial relationships from fragmented memories.
+The core question ESWM addresses is whether the complete spatial structure of an environment can be inferred from a collection of fragmented episodic memories without relying on continuous trajectories. Its input consists of a **memory bank $M$** (an unordered set of multiple disconnected one-step transitions $(s_s, a, s_e)$) and a **partially masked query transition $q$** (randomly masking one of the start state, action, or end state). The goal is to complete the masked component in $q$. The pipeline is straightforward: the three components of each transition in the memory bank are projected and averaged into a single token; all memory tokens, along with the query token, are fed into a Transformer encoder, and finally, three linear heads read out the predictions. When a query falls into an area not covered by the memory bank, the model outputs "I don't know." This essentially reformulates world modeling from sequential learning into **set-to-value reasoning**—inferring unobserved spatial relationships from fragmented memories. The trained model can be directly applied to zero-shot exploration and navigation tasks.
 
-Training adopts a **meta-learning** strategy: each sample randomly draws an environment, a memory bank, a query, and a masking scheme, preventing the model from memorizing specific environments and forcing it to learn general spatial reasoning capabilities.
+Training follows a **meta-learning** strategy: each sample involves a randomly sampled environment, memory bank, query, and masking mode. This prevents the model from memorizing specific environments and forces it to learn generalized spatial reasoning capabilities.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    M["Memory Bank Construction<br/>Disconnected · Covering · Minimal<br/>transition set M"]
+    Q["Masked Query q<br/>Randomly mask one of s_s / a / s_e"]
+    subgraph PRED["Masked Prediction Task"]
+        direction TB
+        TOK["Token Embedding<br/>3 components projected → mean → single token"]
+        ENC["Architecture: Transformer Encoder<br/>Content-addressable memory, exceeds LSTM / Mamba"]
+        HEAD["Three Linear Heads<br/>Predict s_s / a / s_e respectively"]
+        TOK --> ENC --> HEAD
+    end
+    M --> TOK
+    Q --> TOK
+    HEAD --> OUT["Output Prediction<br/>or I don't know classification"]
+    OUT --> DOWN["Zero-Shot Downstream<br/>Exploration (select uncertain) + Navigation"]
+```
 
 ### Key Designs
 
-1. **Memory Bank Construction**:
+**1. Memory Bank Construction: Forcing Multi-step Reasoning via Minimal Covering Sets**
 
-    - Function: Generate a set of transitions for each environment that covers all locations without forming continuous trajectories.
-    - Mechanism: The memory bank satisfies three properties—**disconnectedness** (transitions do not form continuous paths), **coverage** (the graph induced by transitions is connected and covers all locations), and **minimality** (removing any single transition disconnects the graph).
-    - Design Motivation: The minimality constraint forces the model to perform multi-step reasoning (inferring unobserved spatial relations from multiple memory fragments) rather than simple table lookup.
+The memory bank generated for each environment is not just a random collection of transitions; it must satisfy three properties: **disconnected** (transitions do not form a continuous path), **coverage** (the transitions, viewed as edges, cover every location and form a connected graph), and **minimality** (removing any transition disconnects the graph). Minimality is the critical constraint—it ensures no redundant edges for "direct lookup." To answer any cross-fragment query, the model must integrate multiple disconnected fragments and infer spatial relationships never directly observed. In other words, the structure of the memory bank forces the model to perform multi-step reasoning.
 
-2. **Masked Prediction Task**:
+**2. Masked Prediction Task: A Unified Set-to-Value Interface for Spatial Reasoning**
 
-    - Function: Randomly mask one component of the query transition ($s_s$, $a$, or $s_e$) and predict the masked value.
-    - Mechanism: $q^* = f(M, q)$, where $f$ is a Transformer encoder. The three components of each transition are projected into a shared high-dimensional space and averaged into a single token; tokens from the memory bank and the query are concatenated and fed into the Transformer, with three linear heads predicting $s_s$, $a$, and $s_e$ respectively.
-    - Design Motivation: The three masking types test the model's capabilities for "forward prediction" (predicting the next state given state and action), "action inference" (inferring the action given start and end states), and "backward inference" (inferring the start state given action and end state).
+The model solves $q^* = f(M, q)$, where $f$ is the Transformer encoder. Regarding specific encoding, the three components $(s_s, a, s_e)$ of each transition are projected into a shared high-dimensional space and averaged into a single token. Masking different components tests different abilities: masking $s_e$ is **forward prediction** (predicting next state), masking $a$ is **action reasoning** (inferring action between states), and masking $s_s$ is **inverse reasoning** (inferring start state). Sharing parameters across three masking types forces Ours to learn bidirectional, composable spatial relationships rather than a unidirectional transition function.
 
-3. **Uncertainty Classification (I don't know)**:
+**3. "I don't know" Uncertainty Classification: Explicitly Modeling Unknowns as Exploration Signals**
 
-    - Function: When parts of the memory are missing, the model must determine whether a query is answerable.
-    - Mechanism: During training, a random subset of memories is deleted, creating unobserved regions in the environment. For queries involving unobserved regions, the model is trained to output an additional "I don't know" class.
-    - Design Motivation: This serves as the foundation for the exploration algorithm—the agent can leverage high "I don't know" probability to identify actions with maximum information gain.
+When the memory bank lacks data for a specific region, some queries are unsolvable. During training, parts of the memory are randomly removed to create unobserved areas; for queries involving these areas, the correct label is an additional "I don't know" category. This is the foundation for zero-shot exploration: the agent can monitor the "I don't know" probability for candidate actions and prioritize directions with high uncertainty and information gain.
 
-4. **Architecture Comparison**:
+**4. Architectural Choice: Attention as a Prerequisite for Fragmented Memory Generalization**
 
-    - Transformer (ESWM-T), LSTM (ESWM-LSTM), and Mamba (ESWM-MAMBA) are compared.
-    - Key Findings: Only the Transformer succeeds in Open Arena (which requires compositional generalization); LSTM and Mamba overfit. This demonstrates that the attention mechanism—analogous to classical content-addressable memory—is critical for learning generalizable world models from episodic memories.
+The authors compared three backbones: Transformer (ESWM-T), LSTM (ESWM-LSTM), and Mamba (ESWM-MAMBA). Only the Transformer succeeded in the Open Arena task requiring compositional generalization; LSTM and Mamba overfit to training environments. This suggests that the attention mechanism acts as a content-addressable memory, capable of retrieving and associating relevant fragments from an unordered set—exactly what is needed for spatial reasoning from episodic memory.
 
 ### Loss & Training
-Cross-entropy loss is used with equal weighting across the three prediction heads ($s_s$, $a$, $s_e$). Training runs for 460K iterations with a batch size of 128 and cosine learning rate scheduling. The meta-learning setup ensures that the environment, memory bank, and query are randomly generated for each sample.
+The model uses cross-entropy loss with equal weights for the $s_s, a, s_e$ prediction heads. It is trained for 460K iterations with a batch size of 128 and a cosine learning rate schedule. The meta-learning setup ensures that the environment, memory bank, and query are randomly generated for each sample.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Environment | Model | State Prediction Accuracy | Action Prediction Accuracy | vs. TEM-T |
-|---|---|---|---|---|
-| Open Arena | ESWM-T-2L | ~85% ($s_s$), ~85% ($s_e$) | ~95% ($a$) | TEM-T significantly lower |
-| Random Wall | ESWM-T-14L | High accuracy | High accuracy | TEM-T completely fails (cannot handle structural changes) |
-| MiniGrid 9×9 | ESWM-T-12L | Successful prediction | Successful prediction | — |
-| ProcThor 3D | ESWM-T-12L | High cosine similarity | Accurate $\Delta xy$, $\Delta\theta$ prediction | — |
+| Environment | Model | State Prediction Acc | Action Prediction Acc | vs TEM-T |
+|------|------|---------------|---------------|-----------|
+| Open Arena | ESWM-T-2L | ~85% ($s_s$), ~85% ($s_e$) | ~95% ($a$) | TEM-T significantly lower than ESWM-T |
+| Random Wall | ESWM-T-14L | High accuracy | High accuracy | TEM-T completely fails (cannot handle variable structures) |
+| MiniGrid 9×9 | ESWM-T-12L | Successful | Successful | — |
+| ProcThor 3D | ESWM-T-12L | High cosine similarity | Accurate $\Delta xy$, $\Delta\theta$ | — |
 
 ### Downstream Task Performance
 
-| Task | Metric | ESWM | EPN (baseline) | Best Oracle |
-|---|---|---|---|---|
-| Exploration (15 steps) | Unique states visited | +16.8% vs. EPN | — | 96.48% of Oracle |
-| Navigation | Success rate | 96.8% | 78.8% (+18%) | — |
-| Navigation | Path optimality | 99.2% | 78.2% (+21%) | — |
-| Adaptation (navigation with added obstacles) | Success rate | 93% | 72% | baseline drops to 56% |
+| Task | Metric | Ours | EPN (baseline) | Best Oracle |
+|------|------|------|---------------|------------|
+| Exploration (15 steps) | Unique States Visited | 16.8% more than EPN | — | Ours reaches 96.48% of Oracle |
+| Navigation (Success Rate) | Success Rate | 96.8% | 78.8% (+18%) | — |
+| Navigation (Path Optimality) | Path Optimality | 99.2% | 78.2% (+21%) | — |
+| Adaptability (Nav w/ Obstacles) | Success Rate | 93% | 72% | Baseline drops to 56% |
 
 ### Key Findings
-- The Transformer's attention mechanism is critical for learning spatial reasoning from episodic memory sets; LSTM and Mamba fail in Open Arena where compositional generalization is required.
-- ESWM's latent space spontaneously gives rise to spatial maps consistent with environmental topology (ISOMAP projections reveal smooth manifolds with local discontinuities corresponding to obstacle regions).
-- Path length is highly correlated between latent and physical space ($R^2 = 0.89$).
-- The model's predictive uncertainty (output entropy) increases monotonically with the length of the memory integration path required by the query, demonstrating that the model genuinely performs multi-step reasoning.
-- ESWM achieves superior navigation using only 1/4 of EPN's memory, reflecting high sample efficiency.
+- The Transformer's attention mechanism is key to learning spatial reasoning from episodic sets; LSTM and Mamba fail in tasks requiring compositional generalization.
+- A spatial map consistent with environment topology spontaneously emerges in the latent space of Ours (ISOMAP projections show smooth manifolds, with obstacles corresponding to local discontinuities).
+- Path lengths in latent space and physical space are highly correlated ($R^2 = 0.89$).
+- Prediction uncertainty (output entropy) increases monotonically with the path length required for memory integration, proving the model performs multi-step reasoning.
+- High sample efficiency: Ours achieves superior navigation with only 1/4 of the memory required by EPN.
 
 ## Highlights & Insights
-- **From Set Reasoning to Spatial Maps**: Reformulating world modeling from sequential processing to set-based reasoning is the core innovation. The model requires no continuous trajectories—only a set of independent transition memories—substantially reducing data requirements while naturally supporting dynamic environments.
-- **Decoupling Memory and Reasoning**: Environmental knowledge is stored in an external memory bank rather than model weights, enabling true "plug-and-play" adaptation—modifying a few memories suffices to adapt to environmental changes without retraining. This design principle transfers to any scenario requiring rapid adaptation.
-- **Spontaneous Emergence of Cognitive Maps**: Although the model is never explicitly supervised to learn spatial structure, its latent space naturally forms a geometric map consistent with environmental topology after training—closely paralleling findings on hippocampal place cells in neuroscience.
-- **Zero-Shot Downstream Capabilities**: Both exploration and navigation require no additional training; near-optimal policies are achieved directly by leveraging the world model's predictions and uncertainty estimates.
+- **From Set Reasoning to Spatial Maps**: The core innovation is transforming world modeling from sequential processing into set-based reasoning. The model requires only independent transition memories rather than continuous trajectories, reducing data requirements and naturally supporting dynamic environments.
+- **Decoupling Memory and Reasoning**: Environmental knowledge is stored in an external memory bank rather than model weights, enabling true "plug-and-play" adaptation—modifying a few memories allows adaptation to environmental changes without retraining.
+- **Spontaneous Emergence of Cognitive Maps**: The model is not explicitly taught spatial structure, yet the latent space naturally forms geometric maps consistent with topology. This aligns closely with findings regarding hippocampal place cells in neuroscience.
+- **Zero-Shot Downstream Capability**: Exploration and navigation do not require additional training; they are achieved by directly utilizing the world model's predictions and uncertainty estimates to implement near-optimal policies.
 
 ## Limitations & Future Work
-- Experiments are primarily conducted in controlled discrete or simple continuous environments; validation in real robotic scenarios has yet to be demonstrated.
-- The ProcThor experiments demonstrate feasibility only, without comparison against strong baselines.
-- The minimality constraint on the memory bank is difficult to satisfy in practice—real agent memories typically contain redundancy and noise.
-- The current framework models only spatial structure and does not incorporate semantic information (e.g., object categories or functional attributes).
-- Meta-learning incurs high training costs (460K iterations), and the distribution of pretraining environments may affect generalization.
+- Experimental environments are primarily controlled discrete or simple continuous settings; validation in real-world robotic scenarios is still needed.
+- ProcThor experiments only demonstrate feasibility without comparison against strong baselines.
+- The minimality constraint for memory banks is difficult to satisfy in reality, where memory often contains redundancy and noise.
+- Currently only processes spatial structure; does not model semantic information (e.g., object categories, functional attributes).
+- Meta-learning training costs are high (460K iterations), and the distribution of pre-training environments may limit generalization.
 
 ## Related Work & Insights
-- **vs. TEM (Whittington et al.)**: TEM assumes all environments share a unified structural template encoded into RNN weights; ESWM makes no such assumption, dynamically inferring structure from external memory and handling structurally diverse environments (e.g., random mazes). TEM completely fails on Random Wall.
-- **vs. GTM-SM (Fraccaro et al.)**: GTM-SM similarly relies on sequential trajectories and assumes shared structure; ESWM operates on disconnected episodic memories and is substantially more sample-efficient.
-- **vs. Ha & Schmidhuber (2018) World Models**: Traditional world models encode knowledge into weights and cannot rapidly adapt to environmental changes; ESWM's external memory mechanism enables immediate adaptation.
-- This work introduces a new paradigm for embodied AI and robot navigation: rather than requiring extensive training in the target environment, a usable spatial model can be built from only a small number of exploratory memories.
+- **vs TEM (Whittington et al.)**: TEM assumes all environments share a unified structural template encoded into RNN weights; Ours makes no such assumption and dynamically reasons from external memory, handling variable structures. TEM fails completely on the Random Wall task.
+- **vs GTM-SM (Fraccaro et al.)**: GTM-SM also relies on sequential trajectories and assumes shared structures; Ours operates on disconnected episodic memories and is more sample-efficient.
+- **vs Ha & Schmidhuber (2018) World Models**: Traditional world models encode knowledge in weights and cannot adapt quickly; the external memory mechanism of Ours enables instant adaptation.
+- This work provides a new paradigm for embodied AI: instead of extensive training in target environments, a functional spatial model can be established using a small amount of exploratory memory.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — Reformulating world modeling from sequential learning to set-based reasoning represents a conceptually significant breakthrough.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Progressive validation from simple grids to 3D environments with thorough analysis, though real-world validation remains insufficient.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Logically clear, visually polished, with a natural integration of neuroscientific motivation and computational methodology.
-- Value: ⭐⭐⭐⭐⭐ — Proposes a broadly influential new paradigm and makes important contributions at the intersection of cognitive science and AI.
+- Novelty: ⭐⭐⭐⭐⭐ Conceptually breakthrough by transforming world modeling into set reasoning.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient analysis from grid worlds to 3D environments, though real-world validation is lacking.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, excellent visualizations, and a natural fusion of neuroscience motivation and computational methods.
+- Value: ⭐⭐⭐⭐⭐ Proposes an influential new paradigm and contributes significantly at the intersection of cognitive science and AI.
 
 <!-- RELATED:START -->
 
@@ -134,9 +145,9 @@ Cross-entropy loss is used with equal weighting across the three prediction head
 
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
-- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+- [\[ICML 2025\] General Agents Contain World Models](../../ICML2025/others/general_agents_contain_world_models.md)
 - [\[ICLR 2026\] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings](characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi.md)
-- [\[NeurIPS 2025\] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment](../../NeurIPS2025/others/evolutionary_learning_in_spatial_agent-based_models_for_physical_climate_risk_as.md)
+- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
 
 </div>
 

@@ -2,140 +2,129 @@
 title: >-
   [Paper Note] Revisiting [CLS] and Patch Token Interaction in Vision Transformers
 description: >-
-  [ICLR 2026][Segmentation][Vision Transformer] This paper systematically analyzes the interaction friction between the global [CLS] token and local patch tokens in Vision Transformers. It reveals that normalization layers…
+  [ICLR 2026][Segmentation][Vision Transformer] This paper analyzes the interaction friction between the [CLS] global token and local patch tokens in Vision Transformers. It observes that normalization layers implicitly differentiate these two token categories. By introducing specialized processing paths in normalization layers and early QKV projections, the authors
 tags:
-  - "ICLR 2026"
-  - "Segmentation"
-  - "Vision Transformer"
-  - "CLS] token"
-  - "patch token"
-  - "normalization layer"
-  - "dense prediction"
+  - ICLR 2026
+  - Segmentation
+  - Vision Transformer
+  - [CLS] token
+  - patch token
 date: 2026-05-08
-content_hash: 706dff0cf48986ff
+content_hash: 00c4b84d5c845615
 ---
-
 # Revisiting [CLS] and Patch Token Interaction in Vision Transformers
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.08626](https://arxiv.org/abs/2602.08626)  
-**Code**: N/A  
-**Area**: Image Segmentation / Vision Transformer
+**Code**: None  
+**Area**: Image Segmentation / Vision Transformer  
 **Keywords**: Vision Transformer, [CLS] token, patch token, normalization layer, dense prediction
 
 ## TL;DR
-This paper systematically analyzes the interaction friction between the global [CLS] token and local patch tokens in Vision Transformers. It reveals that normalization layers implicitly differentiate between the two token types, and proposes specialized processing paths in normalization layers and early QKV projections. With only an 8% parameter increase, the method achieves over 2 mIoU improvement in segmentation while preserving classification accuracy.
+This paper analyzes the interaction friction between the [CLS] global token and local patch tokens in Vision Transformers. It observes that normalization layers implicitly differentiate these two token categories. By introducing specialized processing paths in normalization layers and early QKV projections, the authors achieve a segmentation performance gain of over 2 mIoU with only an 8% increase in parameters, while maintaining classification accuracy.
 
 ## Background & Motivation
-Vision Transformers (ViT) have emerged as powerful, scalable, and general-purpose visual representation learners. In the standard ViT architecture, a learnable [CLS] token is prepended to the patch token sequence to aggregate global information for classification. Despite the fundamentally different semantic roles of [CLS] and patch tokens—the former capturing global features and the latter encoding local spatial information—both are processed **identically** throughout the model: through the same attention layers, the same FFN, and the same normalization layers.
+Vision Transformer (ViT) has become a powerful, scalable, and general-purpose visual representation learner. In the standard ViT architecture, a learnable [CLS] class token is prepended to the patch token sequence to aggregate global information for classification. Despite the distinct semantic roles—[CLS] capturing global features and patches handling local features—they are **treated identically** throughout the model: passing through the same attention layers, the same FFN, and the same normalization layers.
 
-This uniform treatment introduces a fundamental friction:
+This "one-size-fits-all" approach suffers from fundamental friction:
 
-**Global–Local Competition**: The [CLS] token must aggregate global semantics from all patches, while each patch token must retain its local spatial information. These two objectives may interfere with each other within shared attention computations.
+**Global vs. Local Competition**: The [CLS] token needs to aggregate global semantics from all patches, while each patch token needs to preserve its local spatial information. In shared attention calculations, these two objectives may interfere with each other.
 
-**Implicit Bias of Normalization Layers**: Standard LayerNorm/RMSNorm normalizes the entire token sequence jointly, yet the statistical properties (mean and variance) of [CLS] and patch tokens may differ fundamentally. Unified normalization may prevent either type from achieving its optimal representation.
+**Implicit Bias in Normalization**: Standard LayerNorm/RMSNorm normalizes the entire token sequence, but the statistical properties (mean, variance) of [CLS] and patches can be inherently different. Uniform normalization may prevent both from achieving optimal representations.
 
-**Degraded Dense Prediction Performance**: When ViT is applied to dense prediction tasks such as segmentation and detection—which require high-quality patch representations—the aforementioned friction degrades patch representation quality.
+**Limited Dense Prediction Performance**: When ViT is used for dense prediction tasks like segmentation or detection, this friction can degrade the quality of patch representations.
 
-Core Observation: By analyzing the behavior of normalization layers in ViT, the authors find that normalization layers already **implicitly** differentiate between [CLS] and patch tokens, with systematic differences in normalization statistics between the two types. Given that implicit differentiation already exists, the paper asks whether **explicit specialization** can amplify this effect to simultaneously improve both global and local representations.
+Key Insight: By analyzing the behavior of normalization layers in ViT, the authors found that these layers already **implicitly** differentiate [CLS] and patch tokens through systematic differences in normalization statistics. Since implicit differentiation already exists, can **explicit specialized processing** amplify this effect to optimize both global and local representations simultaneously?
 
 ## Method
 
 ### Overall Architecture
-The proposed modifications constitute a **surgical refinement** of the existing ViT architecture—introducing separate processing only at specific critical modules rather than altering the overall structure:
-- **Input**: Standard ViT architectures (e.g., ViT-B/16, ViT-L/14)
-- **Modified Components**: Normalization layers (LayerNorm) and early QKV projections
-- **Output**: [CLS] token (for classification) + patch tokens (for dense prediction)
-- **Design Principle**: Minimize parameter overhead (~8%) with zero additional computational cost
+This work does not redesign the architecture but performs surgical fine-tuning on standard ViTs (ViT-S/B/L, etc.). The core premise is that the [CLS] token's goal of global aggregation and the patch tokens' goal of spatial preservation are contradictory, yet they are treated identically. After proving this friction through statistical analysis, the authors split two specific friction points into specialized paths: the **normalization layers shared by both tokens** are entirely separated, and the **QKV projections** in attention are specialized only for the first 1/3 of the layers. Meanwhile, the FFN, residual connections, and deep QKV projections remain shared. After modification, [CLS] is still fed to the classification head, and patch tokens are fed to the dense prediction head, increasing parameters by only ~8% while keeping inference FLOPs unchanged.
+
+```mermaid
+graph TD
+    IN["Input: [CLS] token + patch tokens"] --> NORM1["Specialized Normalization Paths<br/>Respective scale·shift for [CLS] / patch"]
+    NORM1 -->|"First 1/3 layers"| EQ["Early QKV Specialization<br/>Individual Q/K/V sets for [CLS] and patch"]
+    NORM1 -->|"Deep layers"| SQ["Shared QKV Projection"]
+    EQ --> ATT["Multi-head Attention"]
+    SQ --> ATT
+    ATT --> NORM2["Specialized Normalization Paths"]
+    NORM2 --> FFN["Shared FFN (Non-specialized)"]
+    FFN --> OUT["[CLS] → Classification Head<br/>patch → Dense Prediction Head (Segmentation)"]
+```
 
 ### Key Designs
 
-1. **Implicit Token Differentiation in Normalization**: This constitutes the paper's core analytical contribution. The authors examine the behavior of normalization layers in ViTs pretrained under various strategies (supervised, DINO, DINOv2, MAE, etc.):
+**1. Discovery of Implicit Differentiation in Normalization: Diagnosing Friction Before Modification**
 
-    - **Observation 1**: Within standard LayerNorm, the normalization statistics (mean and variance) of [CLS] and patch tokens exhibit systematic differences—the statistics of [CLS] typically deviate from the average of patch tokens.
-    - **Observation 2**: This discrepancy becomes more pronounced in deeper layers, indicating that the representation spaces of the two token types progressively diverge with network depth.
-    - **Observation 3**: The normalization operation effectively "flattens" this existing discrepancy, potentially suppressing the independent development of optimal representations for each type.
-    - **Conclusion**: Since the two token types are fundamentally distinct, assigning each its own independent normalization parameters (or even independent normalization statistics) may be more effective.
+The methodology begins with a diagnosis rather than empirical trial and error. The authors examined ViTs under various pre-training regimes (Supervised, DINO, DINOv2, MAE) and measured the statistics of [CLS] and patch tokens within normalization layers. The results are clear: in standard LayerNorm, the mean and variance of [CLS] systematically deviate from the patch averages, and this deviation increases with depth. LayerNorm forces a single set of statistics and affine parameters $\gamma, \beta$ onto the entire sequence, effectively "flattening" existing differences and suppressing optimal individual representations. This finding suggested that providing **explicit specialized normalization** paths is the logical fix.
 
-2. **Specialized Normalization Paths**: Based on the above findings, independent normalization processing is designed for [CLS] and patch tokens:
+**2. Specialized Normalization Paths: Tuning Scales Separately**
 
-    - Within the normalization layer of each Transformer block, the token sequence is partitioned into the [CLS] portion and the patch portion.
-    - The [CLS] token uses its own normalization parameters (independent scale and shift).
-    - Patch tokens use a separate set of normalization parameters.
-    - This allows [CLS] to develop a normalization scale optimized for global aggregation, while patches develop one optimized for local detail preservation.
-    - Critically, this modification introduces no additional computational overhead—the complexity of the normalization operation remains unchanged after parameter separation.
+Addressing the primary friction point, the authors split the sequence at the normalization layer in every block. They assign independent affine parameters $\gamma_{cls}, \beta_{cls}$ and $\gamma_{patch}, \beta_{patch}$ for each path. [CLS] learns normalization scales suitable for global aggregation, while patches learn scales that preserve local spatial details. Since this change only affects affine parameters, the computational complexity remains constant. Ablations show this single change accounts for most of the mIoU gains.
 
-3. **Early QKV Projection Specialization**: Beyond normalization layers, the authors find that introducing specialization in the QKV (Query-Key-Value) projections of attention layers is similarly beneficial:
+**3. Early QKV Projection Specialization: Diversifying Attention Early**
 
-    - In the early layers only (rather than all layers), separate QKV projection matrices are used for [CLS] and patch tokens.
-    - This enables the Query of [CLS] in early layers to specialize in "how to query for global information," while the Query of patch tokens specializes in "how to interact with neighboring patches to maintain spatial coherence."
-    - The motivation for applying this modification to early layers is that representation differentiation is not yet pronounced in early layers; specialized QKV projections help establish separate representation pathways earlier. In deeper layers, tokens are already well-differentiated and shared QKV suffices.
-    - Parameter analysis: A separate, small QKV projection matrix is added for [CLS] in each modified layer; since there is only one [CLS] token, the parameter overhead is negligible.
+The Query-Key-Value (QKV) projections in attention serve as the second friction point. However, the authors restrict specialization **only to the first 1/3 of layers** (near the input). In these shallow layers, separate QKV matrices are used: the [CLS] Query learns how to "ask questions" to aggregate global info, while patch Queries learn to interact with neighbors for spatial coherence. Beyond the shallow layers, representations are already sufficiently differentiated by specialized normalization, making further QKV separation redundant. This addition, combined with specialized normalization, costs only ~8% extra parameters but adds another +1 mIoU. Consistent with Discovery 1, the FFN remains shared as specializing it yielded no benefits.
 
 ### Loss & Training
-The proposed modifications integrate seamlessly into any ViT pretraining or fine-tuning pipeline:
-- Modifications can be applied during **pretraining** (e.g., training a specialized ViT within the DINOv2 framework) so that the model learns differentiated representations from the outset.
-- Alternatively, modifications can be introduced during **fine-tuning** to adapt an already pretrained standard ViT.
-- The loss function follows the original training framework (e.g., DINO's self-distillation loss, MAE's reconstruction loss).
-- No additional loss terms or hyperparameters are introduced.
+The modifications can be seamlessly embedded into any ViT pre-training or fine-tuning pipeline without additional loss terms or hyperparameters. It can be enabled during pre-training (e.g., within the DINOv2 framework) or adapted to existing standard ViTs during fine-tuning. The training pipeline remains unchanged, following original protocols (DINO self-distillation, MAE reconstruction, etc.).
 
 ## Key Experimental Results
 
 ### Main Results
-On standard segmentation benchmarks, the specialization modifications yield consistent and significant improvements:
+Specialization brings consistent and significant gains on standard segmentation benchmarks:
 
-| Task / Dataset | Metric | Standard ViT | Specialized ViT | Gain |
-|---|---|---|---|---|
-| Semantic Segmentation (ADE20K) | mIoU | baseline | +2+ mIoU | > 2 mIoU |
-| Semantic Segmentation (other benchmarks) | mIoU | baseline | consistent gain | > 2 mIoU |
-| Image Classification (ImageNet) | Top-1 Acc | baseline | on par or slightly higher | no classification loss |
+| Task/Dataset | Metric | Prev. SOTA (Standard) | Ours | Gain |
+|-----------|------|---------|----------|------|
+| Semantic Seg. (ADE20K) | mIoU | baseline | +2+ mIoU | > 2 mIoU |
+| Semantic Seg. (Other) | mIoU | baseline | Consistent | > 2 mIoU |
+| Image Classification | Top-1 Acc | baseline | Stable | No loss |
 
-Key conclusion: A gain of over 2 mIoU is a substantial improvement in segmentation, while classification accuracy is maintained (or marginally improved), demonstrating that specialization does not trade classification performance for segmentation gains.
+Key Finding: A gain of >2 mIoU in segmentation is a substantial improvement, while classification accuracy remains unaffected or slightly improved, indicating that specialization does not trade off classification for segmentation.
 
 ### Ablation Study
 
-| Configuration | Segmentation | Classification | Param. Increase | Note |
-|---|---|---|---|---|
-| Normalization specialization only | significant gain | on par | ~4% | core contribution |
-| QKV specialization only | moderate gain | on par | ~4% | complementary contribution |
-| Normalization + QKV | best | on par or slightly higher | ~8% | two components are complementary |
-| All-layer QKV vs. early-layer only | early-layer superior | — | — | deep layers benefit from shared QKV |
-| Different model scales | consistent gain | consistent | — | effective across ViT-S/B/L |
-| Different training frameworks | consistent gain | consistent | — | effective across supervised/self-supervised |
+| Config | Segmentation Perf. | Classification Perf. | Param Increase | Function |
+|------|---------|---------|---------|------|
+| Norm Specialization Only | Significant gain | Stable | ~4% | Core contribution |
+| QKV Specialization Only | Moderate gain | Stable | ~4% | Complementary |
+| Norm + QKV | Optimal | Stable/Slight Rise | ~8% | Combined effect |
+| All layers QKV vs. Early | Early layers better | — | — | Deep sharing suffices |
+| Different Scales | Consistent | Consistent | — | Effective for S/B/L |
+| Different Frameworks | Consistent | Consistent | — | Supervised/SSL valid |
 
 ### Key Findings
-- **Normalization layers are the primary source of friction**: Specialization applied solely to normalization layers recovers the majority of the performance gain, confirming that unified normalization is a critical bottleneck in the interaction between the two token types.
-- **Early QKV specialization provides complementary gains**: Adding early QKV specialization on top of normalization specialization yields further improvement, indicating that attention computation is also a source of friction.
-- **Only early layers require QKV specialization**: The marginal benefit of QKV specialization diminishes in deeper layers, suggesting that as network depth increases, the representation pathways of the two token types are already sufficiently differentiated through normalization specialization.
-- **Generalizes across model scales and training frameworks**: The method proves effective across settings ranging from ViT-S to ViT-L and from supervised training to DINOv2/MAE, demonstrating its generality as an architectural improvement.
-- **High parameter efficiency**: An 8% parameter increase yields over 2 mIoU in segmentation improvement with no additional inference FLOPs.
+- **Normalization layers are the primary source of friction**: Most performance gains are achieved by simply specializing normalization, confirming uniform normalization as the key bottleneck.
+- **Early QKV specialization provides complementary gains**: Combined with normalization specialization, it further boosts performance.
+- **QKV specialization is only needed early**: Gains diminish in deep layers, where representations are already successfully branched.
+- **Generalization across scales and frameworks**: Effective from ViT-S to ViT-L and across supervised/DINOv2/MAE settings.
+- **Parameter efficiency**: ~8% parameter increase yields 2+ mIoU gain with zero increase in inference FLOPs.
 
 ## Highlights & Insights
-- **Analysis-driven design**: Rather than empirically testing various modifications, the paper starts from a statistical analysis of normalization layers, identifies the implicit differentiation phenomenon, and then designs targeted specialization accordingly.
-- **Principle of minimal intervention**: Separation is introduced only in normalization and early QKV projections—the smallest set of modifications that produces the largest impact. Other components (FFN, residual connections) remain shared, avoiding over-engineering.
-- **Win-win: preserved classification with improved dense prediction**: This demonstrates that the classification performance of standard ViT does not depend on high-quality patch representations (classification uses only [CLS]), whereas dense prediction is critically dependent on patch quality—hence specialization yields far greater gains for segmentation than for classification.
-- **Normalization layers as an "information bottleneck": a new perspective**: The paper reveals a frequently overlooked fact—normalization layers are not merely training stabilizers; they also implicitly shape the representation development pathways of different token types.
+- **Analysis-Driven Design**: The design is not based on heuristics but on a diagnosis of normalization statistics.
+- **Minimal Intervention Principle**: Specialization is introduced only where it matters (Norm and early QKV), keeping FFN and residuals shared.
+- **Win-Win for Classif. and Dense Prediction**: Reveals that standard ViT classification does not require high-quality patch tokens, but dense prediction does. Specialization benefits segmentation much more than classification.
+- **New Understanding of Norm Layers as "Information Bottlenecks"**: Highlights that normalization layers influence the representation development paths of different token types, not just training stability.
 
 ## Limitations & Future Work
-- Validation is currently limited to segmentation and classification; performance on other dense prediction tasks (e.g., depth estimation, optical flow) and detection remains unexplored.
-- No in-depth analysis is provided on how the geometry of the two token types' representations changes after specialization—e.g., isotropy of the representation space, clustering structure, etc.
-- The method does not directly apply to ViT variants without a [CLS] token (e.g., architectures using mean pooling only).
-- Whether analogous token-type friction exists in non-ViT Transformer architectures (e.g., Swin Transformer with window attention) has not been explored.
-- Although an 8% parameter increase is small in relative terms, it represents a non-trivial absolute count for very large-scale models (e.g., ViT-G), and effectiveness at extreme scales remains to be verified.
-- Theoretical analysis explaining why normalization layers—rather than FFN or attention—constitute the critical bottleneck is absent.
+- Evaluation is currently limited to segmentation and classification; performance on other dense tasks like depth estimation or optical flow is unknown.
+- Lack of deep analysis on how representation geometry (isotropy, clustering) changes after specialized normalization.
+- Not directly applicable to ViT variants without [CLS] tokens (e.g., those using global average pooling).
+- The impact on non-ViT Transformers (e.g., Swin Transformer’s window attention) remains unexplored.
+- Scaling to extremely large models (ViT-G) needs verification despite the low percentage increase in parameters.
 
 ## Related Work & Insights
-- **DINOv2**: The proposed specialization scheme can be directly integrated into the DINOv2 pretraining pipeline to enhance the dense prediction capability of pretrained models.
-- **ViT-Adapter**: Improves dense prediction via external adapter modules, contrasting with the paper's "internal specialization" approach—one adds external modules while the other introduces internal differentiation.
-- **Register Tokens**: Recent work adds extra semantics-free tokens to ViT to absorb noisy attention artifacts, complementing the role of [CLS] and potentially related to the friction issue identified in this paper.
-- **Layer-by-layer, module-by-module (concurrent work)**: Analyzes ViT internal modules from the perspective of OOD linear probing, complementing the module-level analytical viewpoint of this paper.
-- Directions inspired by this work: Could patch tokens be further subdivided into specialized groups—e.g., foreground versus background patches?
+- **DINOv2**: The specialization scheme can be integrated into DINOv2 pre-training to boost dense prediction capabilities.
+- **ViT-Adapter**: Contrasts with "Internal Specialization"; while adapters add external modules, this method differentiates internal components.
+- **Register Tokens**: Complements the role of [CLS] by adding non-semantic tokens to absorb attention noise, potentially intersecting with the friction issues identified here.
+- **Layer by layer, module by module**: Complements this work’s module-level analysis by seeking properties like OOD robustness.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (The discovery of implicit differentiation in normalization layers is insightful, though the specialization solution itself is relatively straightforward)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Comprehensive ablation studies; validated across multiple scales and frameworks)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear exposition; the logical chain from motivation → analysis → design → validation is complete)
-- Value: ⭐⭐⭐⭐⭐ (8% parameter overhead for 2+ mIoU; highly practical and readily adoptable by the ViT community)
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -143,11 +132,11 @@ Key conclusion: A gain of over 2 mIoU is a substantial improvement in segmentati
 
 ## Related Papers
 
-- [\[ICLR 2026\] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers](thicker_and_quicker_a_jumbo_token_for_fast_plain_vision_transformers.md)
 - [\[ICLR 2026\] Locality-Attending Vision Transformer](locality-attending_vision_transformer.md)
-- [\[CVPR 2026\] MPM: Mutual Pair Merging for Efficient Vision Transformers](../../CVPR2026/segmentation/mpm_mutual_pair_merging_for_efficient_vision_transformers.md)
 - [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](../../NeurIPS2025/segmentation/vision_transformers_with_self-distilled_registers.md)
-- [\[ICCV 2025\] LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity](../../ICCV2025/segmentation/legrad_an_explainability_method_for_vision_transformers_via_feature_formation_se.md)
+- [\[CVPR 2025\] Revisiting Audio-Visual Segmentation with Vision-Centric Transformer](../../CVPR2025/segmentation/revisiting_audio-visual_segmentation_with_vision-centric_transformer.md)
+- [\[ICLR 2026\] Salient Object Ranking via Cyclical Perception-Viewing Interaction Modeling](salient_object_ranking_via_cyclical_perception-viewing_interaction_modeling.md)
+- [\[CVPR 2026\] The Missing Point in Vision Transformers for Universal Image Segmentation](../../CVPR2026/segmentation/the_missing_point_in_vision_transformers_for_universal_image_segmentation.md)
 
 </div>
 

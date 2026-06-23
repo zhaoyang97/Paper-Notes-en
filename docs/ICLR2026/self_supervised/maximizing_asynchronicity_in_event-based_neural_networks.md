@@ -2,149 +2,149 @@
 title: >-
   [Paper Note] Maximizing Asynchronicity in Event-based Neural Networks
 description: >-
-  [ICLR 2026][Self-Supervised Learning][event camera] This paper proposes EVA, a framework that treats events as language tokens and employs an RWKV-6-based linear attention asynchronous encoder to update features event-by…
+  [ICLR 2026][Self-Supervised Learning][RWKV-6] The EVA framework is proposed, treating events as language tokens and utilizing a RWKV-6 based linear attention asynchronous encoder for event-by-event feature updates. Combined with Multi-Representation Prediction (MRP) and Next-Representation Prediction (NRP) self-supervised learning, it acquires generalizable featur
 tags:
-  - "ICLR 2026"
-  - "Self-Supervised Learning"
-  - "event camera"
-  - "asynchronous processing"
-  - "linear attention"
-  - "RWKV-6"
-  - "A2S"
+  - ICLR 2026
+  - Self-Supervised Learning
+  - RWKV-6
+  - A2S
 date: 2026-05-08
-content_hash: d1a3a66497810544
+content_hash: cfb0f2fdbf1302bc
 ---
-
 # Maximizing Asynchronicity in Event-based Neural Networks
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.11165](https://arxiv.org/abs/2505.11165)  
 **Code**: [github.com/haohq19/eva](https://github.com/haohq19/eva)  
-**Area**: Event Cameras / Efficient Inference
-**Keywords**: event camera, asynchronous processing, linear attention, self-supervised learning, RWKV-6, A2S
+**Area**: Event cameras/Efficient inference  
+**Keywords**: Event cameras, Asynchronous processing, Linear attention, Self-supervised learning, RWKV-6, A2S
 
 ## TL;DR
-This paper proposes EVA, a framework that treats events as language tokens and employs an RWKV-6-based linear attention asynchronous encoder to update features event-by-event. Combined with a self-supervised learning scheme consisting of Multi-Representation Prediction (MRP) and Next-Representation Prediction (NRP), EVA learns generalizable features and, for the first time, successfully tackles the challenging object detection task within the Asynchronous-to-Synchronous (A2S) paradigm (0.477 mAP on the Gen1 dataset).
+The EVA framework is proposed, treating events as language tokens and utilizing a RWKV-6 based linear attention asynchronous encoder for event-by-event feature updates. Combined with Multi-Representation Prediction (MRP) and Next-Representation Prediction (NRP) self-supervised learning, it acquires generalizable features, successfully achieving high-difficulty object detection tasks in the Asynchronous-to-Synchronous (A2S) paradigm for the first time (0.477 mAP on Gen1 dataset).
 
 ## Background & Motivation
 
-**Characteristics and challenges of event cameras**: Event cameras output asynchronous sparse event streams with high temporal resolution (up to 1 μs), low latency, and low spatial redundancy. However, standard ML algorithms require tensor-like inputs, creating a fundamental mismatch with the asynchronous and sparse nature of event data.
+**Characteristics and Challenges of Event Cameras**: Event cameras output asynchronous sparse event streams with high temporal resolution (up to 1μs), low latency, and low spatial redundancy. However, standard ML algorithms require tensor-like inputs; the asynchronous and sparse nature of event data fundamentally contradicts existing methods.
 
-**Emergence of the A2S paradigm**: The Asynchronous-to-Synchronous (A2S) framework bridges this gap by designing efficient asynchronous encoders that update tensor-like features event-by-event, which downstream synchronous ML algorithms can then sample on demand.
+**Emergence of the A2S Paradigm**: The Asynchronous-to-Synchronous (A2S) framework bridges the gap between asynchronous data and synchronous algorithms by designing an efficient asynchronous encoder to update tensor-like features event-by-event, which are then sampled as needed for downstream synchronous ML algorithms.
 
-**Limitations of existing A2S methods**: (1) Insufficient encoder expressiveness — ALERT-Transformer uses EventNet (point-cloud-based) without hierarchical learning and can only handle simple recognition tasks; (2) end-to-end supervised training produces task-specific features that lack cross-task generalizability; (3) A2S methods fall significantly short of dense synchronous methods on complex detection tasks.
+**Limitations of Prior Work**: (1) Insufficient encoder expressiveness—ALERT-Transformer uses EventNet (point-cloud based) without hierarchical learning, limited to simple recognition tasks; (2) End-to-end supervised learning leads to task-specific features lacking cross-task generalization; (3) On complex detection tasks, A2S methods significantly underperform compared to dense synchronous methods.
 
-**Insight from the event–language analogy**: Both share two key similarities — (i) both are organized as sequences, and (ii) both contribute information incrementally (events record incremental brightness changes; words incrementally build semantics). This motivates transferring linear attention and self-supervised learning techniques from NLP to event processing.
+**Key Insight: Analogy between Events and Language**: Two key similarities exist—(i) both are organized sequentially, and (ii) both contribute information incrementally (events record incremental brightness changes, words incrementally build semantics). This inspires migrating linear attention and self-supervised learning techniques from NLP to event processing.
 
-**Key differences between events and language**: (i) Information density — a single language token carries rich semantics, whereas a single event records only a pixel-level brightness change and requires aggregation to be meaningful; (ii) Spatial locality — events carry spatial attributes (pixel coordinates), whereas language does not. These two differences guide the architectural design choices.
+**Key Differences between Events and Language**: (i) Information density—a single language token has rich semantics, while a single event only records pixel-level brightness changes and requires aggregation to be meaningful; (ii) Spatial locality—events possess spatial attributes (pixel coordinates) which language lacks. These differences guide the architectural adjustments.
 
-**Goal**: Design a more expressive asynchronous encoder combined with a self-supervised learning method so that the A2S framework not only surpasses prior A2S methods but also, for the first time, successfully handles challenging detection tasks.
+**Goal**: Design a more expressive asynchronous encoder and self-supervised learning method, enabling the A2S framework to not only surpass prior A2S methods but also successfully tackle high-difficulty detection tasks for the first time.
 
 ## Method
 
 ### Overall Architecture
-EVA consists of three major components: (1) an event tokenization and embedding layer that converts raw events into vector representations; (2) an RWKV-6-based asynchronous linear attention encoder that updates features event-by-event; and (3) multi-task self-supervised learning (MRP + NRP) for training the encoder. During inference, the encoder updates features incrementally per event, and downstream tasks sample features on demand for recognition or detection.
 
-### Key Design 1: Event Tokenization and Embedding
+EVA (Event-as-lAnguage) processes event streams as language sequences: raw events are first tokenized and embedded as vectors, then sliced into multiple short sequences (PWE) based on spatial patches. Each sequence is fed into a RWKV-6 based asynchronous linear attention encoder, which updates a 2D Matrix-Valued Hidden State (MVHS) as the feature output per event. Features from each patch are concatenated and passed to downstream recognition or detection algorithms. The encoder is independent of downstream labels and is trained via two self-supervised tasks: Multi-Representation Prediction (MRP) and Next-Representation Prediction (NRP). During inference, the encoder incrementally updates internal states as each event arrives, allowing downstream algorithms to sample the current features at any time—implementing the "asynchronous encoding, synchronous downstream" A2S paradigm.
 
-- **Function**: Maps each event $e_i = (t_i, x_i, y_i, p_i)$ to a vector $\bm{x}_i \in \mathbb{R}^D$.
-- **Mechanism**: Spatial tokenization uses the bijective mapping $\text{Tok}(x, y, p) = p \times H \times W + y \times W + x$ with a vocabulary size of $2 \times H \times W$. Temporal embedding is computed via sinusoidal encoding of the inter-event time difference $\Delta t_i = t_i - t_{i-1}$ (rather than absolute timestamps). The final embedding is the sum of the spatial and temporal embeddings.
-- **Design Motivation**: Using time-difference embeddings instead of absolute timestamps avoids the length extrapolation failure analogous to that in language models caused by continuously growing absolute timestamps during long-running operation. The bijective mapping guarantees a unique token for each spatial location–polarity combination.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Asynchronous Event Stream<br/>Each event (t,x,y,p)"] --> B["Event Tokenization<br/>+ Time-diff Embedding"]
+    B --> C["Patch-wise Encoding (PWE)<br/>Split into short sequences by coordinates"]
+    C --> D["RWKV-6 Asynchronous Encoder<br/>Per-event update of MVHS 2D state"]
+    D --> E["Concatenation of Patch Features"]
+    E --> F["Downstream Recognition/Detection<br/>Sample features on demand"]
+    D -->|Pre-training Supervision| G["Multi-task SSL<br/>MRP + NRP"]
+    G -->|Gradient Backprop| D
+```
 
-### Key Design 2: Matrix-Valued Hidden State (MVHS) as Output
+### Key Designs
 
-- **Function**: Uses the 2-D matrix hidden state $\bm{S} \in \mathbb{R}^{N \times D_{\text{head}} \times D_{\text{head}}}$ of RWKV-6 linear attention as the encoder output feature, rather than the conventional 1-D vector output $\bm{y} \in \mathbb{R}^{D}$.
-- **Mechanism**: The recurrent form of RWKV-6 is $\bm{S}_i = \text{diag}(\bm{w}_i) \bm{S}_{i-1} + \bm{k}_i \bm{v}_i^T$, so the hidden state naturally carries aggregated global information. A multi-head mechanism is adopted with per-head dimension $D_{\text{head}} = D/N$, yielding a hidden state of size $N \times D_{\text{head}} \times D_{\text{head}}$, which expands representational capacity without increasing model width $D$.
-- **Design Motivation**: (1) Individual events carry low information density and require aggregation — the hidden state is precisely the carrier of aggregated global information. (2) MVHS reduces model size by approximately $D_{\text{model}}/N$ compared to using a 1-D output, enabling lightweight real-time processing. (3) The 2-D structure facilitates learning fine-grained spatial features.
+**1. Event Tokenization and Time-diff Embedding: Translating Asynchronous Events into Learnable Vectors**
 
-### Key Design 3: Patch-wise Encoding (PWE)
+To enter the encoder, each event $e_i = (t_i, x_i, y_i, p_i)$ must be transformed into a vector $\bm{x}_i \in \mathbb{R}^D$. Spatially, a bijective mapping $\text{Tok}(x, y, p) = p \times H \times W + y \times W + x$ compresses "coordinates + polarity" into a unique token. The vocabulary size is $2 \times H \times W$, ensuring each spatial position and polarity combination corresponds to an independent learnable embedding. Temporally, absolute timestamps are avoided; instead, the time difference between adjacent events $\Delta t_i = t_i - t_{i-1}$ is sinusoidally encoded. The final embedding is the sum of spatial and temporal embeddings. Using time differences addresses the issue of unbounded absolute timestamps in long-running event cameras, which would otherwise lead to extrapolation failures similar to those in LLMs.
 
-- **Function**: Assigns events to different patches according to their spatial coordinates, with each patch independently encoding its features.
-- **Mechanism**: For an event camera with resolution $(H_{\text{sensor}}, W_{\text{sensor}})$ and patch size $P$, events are partitioned into $H_{\text{sensor}} \times W_{\text{sensor}} / P^2$ sequences, each processed by an independent encoder. The per-patch features are concatenated and fed to downstream tasks.
-- **Design Motivation**: (1) Exploits the spatial locality of events (a key distinction from language), reducing sequence length and computational overhead. (2) Training the encoder on fixed-size patches naturally supports event cameras with different resolutions. (3) Model size is reduced by approximately the number of patches, and patches can be processed in parallel.
+**2. Patch-wise Encoding (PWE): Exploiting Spatial Locality for Efficiency and Resolution Invariance**
 
-### Key Design 4: Multi-task Self-supervised Learning
+EVA leverages the spatial attributes of events: for a sensor resolution of $(H_{\text{sensor}}, W_{\text{sensor}})$, events are partitioned into $H_{\text{sensor}} \times W_{\text{sensor}} / P^2$ independent sequences based on a patch size $P$. A separate encoder instance runs for each patch, and features are concatenated for the downstream stage. This shortens individual sequences, reduces computational overhead, allows for parallelization, and enables model scaling with the number of patches. Crucially, it provides resolution invariance—the encoder trained on fixed-size patches can be applied to cameras with different resolutions without retraining.
 
-- **Function**: Trains the encoder using two self-supervised objectives, MRP and NRP, without requiring downstream task labels.
-- **Mechanism (MRP)**: Forces encoded features $\mathcal{F}_i = \mathcal{M}_\theta(\{e_j\}_{j \leq i})$ to predict multiple hand-crafted representations (event count EC, time surface TS, etc.):
-$$\arg\max_{\theta, \Theta} \mathbb{E}_i \prod_{k=1}^{K} \textbf{Pr}(\mathcal{R}_i^k | \mathcal{F}_i; \theta_k)$$
-- **Mechanism (NRP)**: Inspired by next-token prediction, predicts representations constructed from events within a future time window $\Delta T$:
-$$\arg\max_{\theta, \Theta'} \mathbb{E}_i \prod_{k=1}^{K'} \textbf{Pr}(\mathcal{R}^k(\{e | t_i < t(e) \leq t_i + \Delta T\}) | \mathcal{F}_i; \theta_k')$$
-- **Design Motivation**: (1) Different hand-crafted representations capture different aspects of event information, so multi-representation learning produces more generalizable features. (2) NRP forces the model to understand motion patterns rather than simply memorizing history. (3) A single event provides insufficient prediction signal and carries unpredictable noise; using aggregated representations as targets is more reliable.
+**3. Matrix-Valued Hidden State (MVHS) as Output: Using 2D States to Compensate for Low Event Information**
+
+A single event records brightness change at only one pixel, resulting in much lower information density than a language token. Thus, a traditional 1D vector output $\bm{y} \in \mathbb{R}^{D}$ is insufficient. EVA utilizes the 2D matrix hidden state $\bm{S} \in \mathbb{R}^{N \times D_{\text{head}} \times D_{\text{head}}}$ from RWKV-6 linear attention as the output feature. The recurrence relation of RWKV-6, $\bm{S}_i = \text{diag}(\bm{w}_i) \bm{S}_{i-1} + \bm{v}_i \bm{k}_i^T$, naturally accumulates global information up to the current moment, compensating for the lack of information in a single event. Combined with a multi-head mechanism (where each head has dimension $D_{\text{head}} = D/N$), the MVHS expands feature capacity without increasing model width $D$. This is lightweight for real-time inference while its 2D structure facilitates learning fine-grained spatial features.
+
+**4. Multi-task SSL (MRP+NRP): Learning Transferable Features without Downstream Labels**
+
+To avoid task-specific features caused by end-to-end supervision, EVA trains the encoder using two self-supervised objectives. Multi-Representation Prediction (MRP) forces the encoded feature $\mathcal{F}_i = \mathcal{M}_\theta(\{e_j\}_{j \leq i})$ to simultaneously predict multiple handcrafted representations like Event Count (EC) and Time Surface (TS), with the objective: $\arg\max_{\theta, \Theta} \mathbb{E}_i \prod_{k=1}^{K} \textbf{Pr}(\mathcal{R}_i^k | \mathcal{F}_i; \theta_k)$. Different representations capture various facets of event information, forcing the model to learn comprehensive, generalizable features. Next-Representation Prediction (NRP) mimics next-token prediction in NLP, requiring the model to predict representations for a future time window $\Delta T$ from current features: $\arg\max_{\theta, \Theta'} \mathbb{E}_i \prod_{k=1}^{K'} \textbf{Pr}(\mathcal{R}^k(\{e | t_i < t(e) \leq t_i + \Delta T\}) | \mathcal{F}_i; \theta_k')$. This forces the model to understand motion dynamics rather than just memorizing history. Both tasks use aggregated representations as targets because individual events are too noisy and unpredictable.
 
 ## Key Experimental Results
 
-### DVS128-Gesture Action Recognition
+### DVS128-Gesture Recognition
 
-| Model | Encoder Params | Classifier Params | MAC/event | Latency | SA | FVA |
-|-------|---------------|------------------|-----------|---------|-----|-----|
+| Model | Encoder Param | Classifier Param | MAC/Event | Latency | SA | FVA |
+|------|------------|------------|---------|------|-----|-----|
 | ALERT-Tr. (+RM) | 1.41M | 13.96M | 1.22M | 5.8ms | 84.6% | 94.1% |
 | ALERT-Tr. (+LMM) | 0.04M | 0.57M | 0.004M | 3.9ms | 72.6% | 89.2% |
-| **EVA (+ResNet-14)** | **0.62M** | **2.83M** | **0.60M** | **14.7ms** | **92.9%** | **96.9%** |
+| **Ours (+ResNet-14)** | **0.62M** | **2.83M** | **0.60M** | **14.7ms** | **92.9%** | **96.9%** |
 
 ### Gen1 Object Detection
 
 | Model | Type | mAP (%) |
-|-------|------|---------|
-| NVS-S | End-to-end Async (A) | 8.6 |
-| AEGNN | End-to-end Async (A) | 14.5 |
-| DAGr-L | End-to-end Async (A) | 32.1 |
-| FARSE-CNN | End-to-end Async (A) | 30.0 |
-| ASTMNet | Sync Dense (S) | 46.7 |
-| RVT-B | Sync Dense (S) | 47.2 |
-| GET | Sync Dense (S) | 47.9 |
-| **EVA (+RVT-B, D=128)** | **A2S** | **47.5** |
-| **EVA-L (+RVT-B, D=192)** | **A2S** | **47.7** |
+|------|------|---------|
+| NVS-S | End-to-end Asynchronous (A) | 8.6 |
+| AEGNN | End-to-end Asynchronous (A) | 14.5 |
+| DAGr-L | End-to-end Asynchronous (A) | 32.1 |
+| FARSE-CNN | End-to-end Asynchronous (A) | 30.0 |
+| ASTMNet | Synchronous Dense (S) | 46.7 |
+| RVT-B | Synchronous Dense (S) | 47.2 |
+| GET | Synchronous Dense (S) | 47.9 |
+| **Ours (+RVT-B, D=128)** | **A2S** | **47.5** |
+| **Ours-L (+RVT-B, D=192)** | **A2S** | **47.7** |
 
 ### Ablation Study
 
-| MVHS | Temporal Embedding | FVA | SA |
-|------|--------------------|-----|-----|
+| MVHS | Time Embedding | FVA | SA |
+|------|---------|-----|-----|
 | ✓ | ✓ | **98.1%** | **94.7%** |
 | ✓ | ✗ | 87.8% | 81.1% |
 | ✗ | ✓ | 97.4% | 94.1% |
 
-### Key Findings
+## Key Findings
 
-- **A2S paradigm conquers detection for the first time**: EVA achieves 47.7 mAP on Gen1, surpassing the synchronous SOTA method RVT-B (47.2). This is the first time an A2S method has achieved competitive results on a detection task; prior A2S methods were limited to simple recognition tasks.
-- **MVHS substantially improves representational capacity**: Removing MVHS causes SA to drop from 94.7% to 94.1% (−0.6%), while removing temporal embeddings has a larger negative impact (SA drops from 94.7% to 81.1%), indicating that temporal modeling is critical for event processing.
-- **MRP benefits from multi-representation co-learning**: When learning only the EC representation, the EC loss is actually higher (0.701 vs. 0.366), demonstrating positive transfer among multiple representations during joint learning.
-- **NRP contributes independently of MRP**: Removing NRP causes FVA to drop from 98.1% to 96.8% and SA from 94.7% to 94.4%, confirming that predicting future representations helps the model acquire knowledge beyond simple history memorization.
-- **Smaller patches yield better performance**: Increasing patch size from 16 to 128 causes FVA to drop from 98.1% to 97.4% and SA from 94.7% to 89.3%, despite larger patches having lower pre-training loss due to more sparse regions.
+- **A2S Paradigm Succeeds in Detection for the First Time**: EVA achieves 47.7 mAP on Gen1, outperforming the synchronous SOTA method RVT-B (47.2). This is the first time an A2S method has delivered competitive results in detection.
+- **MVHS Significantly Improves Expressiveness**: Removing MVHS drops SA from 94.7% to 94.1%, while removing time embeddings has a much larger negative impact (SA drops to 81.1%), highlighting the necessity of temporal modeling in event processing.
+- **MRP Representations Mutually Benefit Learning**: Learning only one representation (EC) results in a higher EC loss (0.701 vs 0.366), indicating positive transfer effects across multiple representations.
+- **NRP Gains are Independent of MRP**: Removing NRP drops FVA from 98.1% to 96.8% and SA from 94.7% to 94.4%, suggesting that predicting future representations helps the model learn beyond simple history memorization.
+- **Smaller Patches Yield Better Performance**: Increasing patch size from 16 to 128 drops SA from 94.7% to 89.3%, despite larger patches having lower pre-training loss due to higher sparsity.
 
 ## Highlights & Insights
 
-- **Systematic analysis of the event–language analogy**: Rather than a superficial analogy, the paper systematically analyzes both similarities (sequential structure, incremental information) and differences (information density, spatial locality), and makes targeted architectural adjustments accordingly — MVHS addresses low information density, and PWE addresses spatial locality.
-- **First successful application of RWKV-6 in the event domain**: The parallel training and recurrent inference of linear attention naturally match the training and inference requirements of the A2S paradigm, and the data-dependent decay and gating mechanism of RWKV-6 is well-suited to continuous dynamic data.
-- **Paradigm shift from 1-D to 2-D features**: Using matrix hidden states instead of vector outputs is a novel idea that expands representational capacity without increasing model width, and the 2-D structure is naturally compatible with image-based downstream tasks.
-- **Cross-task transfer of self-supervised features**: Encoder features pre-trained on Gen1 can be directly applied to N-Cars classification (96.3% accuracy), validating the generalizability of the learned representations.
+- **Systematic Event-Language Analogy**: Moving beyond simple comparison, the work analyzes similarities (sequential structure, incremental info) and differences (info density, spatial locality), leading to specific architectural adjustments—MVHS for density and PWE for locality.
+- **First Successful Application of RWKV-6 to Event Domain**: The combination of parallel training and recurrent inference in linear attention matches the needs of the A2S paradigm. RWKV-6's data-dependent decay and gating are well-suited for continuous dynamic data.
+- **Paradigm Shift from 1D to 2D Features**: Using matrix hidden states instead of vector outputs is a novel approach to expand expressiveness without increasing model width, while the 2D structure naturally aligns with vision tasks.
+- **Generalization of Self-Supervised Features**: Encoder features pre-trained on Gen1 can be used directly for the N-Cars classification task (96.3% accuracy), validating feature generalization.
 
-## Limitations & Future Work
+## Limitations
 
-- **Real-time throughput is limited at high resolutions**: The event rate of Gen1 (0.618M/s) already exceeds the throughput of EVA-L (0.541M/s); while the PWE strategy can partially mitigate this, scaling to higher-resolution cameras such as Gen3 (1280×720) remains challenging.
-- **Self-supervised targets rely on hand-crafted representations**: The supervision signals for MRP and NRP are derived from hand-crafted representations such as EC and TS, which may themselves discard certain event information, imposing an upper bound on what can be learned.
-- **Validation limited to the event domain**: Although the framework is theoretically general, experiments are conducted only on event camera data; applicability to other asynchronous sequential data (e.g., neural spike trains) has not been explored.
-- **Encoder latency is relatively high**: Due to the hierarchical learning architecture, EVA's per-event inference latency (14.7 ms for 8,192 events) is higher than that of ALERT-Tr., although the total processing time is shorter.
+- **Latency Constraints in High-Resolution Scenarios**: The event rate in Gen1 (0.618M/s) already exceeds the throughput of EVA-L (0.541M/s). While PWE mitigates this, challenges remain for higher resolution sensors like Gen3 (1280×720).
+- **SSL Objectives Rely on Handcrafted Representations**: Supervision signals for MRP and NRP come from EC and TS, which may lose certain event information, potentially limiting the learning ceiling.
+- **Validated Only in the Event Domain**: While the framework is theoretically general, experiments are limited to event camera data; its applicability to other asynchronous sequences (e.g., neural spikes) has not been explored.
+- **Higher Encoder Latency**: Due to its hierarchical learning architecture, EVA's per-event inference latency (14.7ms for 8192 events) is higher than ALERT-Tr., though total processing time is shorter.
 
 ## Related Work & Insights
 
-### vs. ALERT-Transformer (Martin-Turrero et al., 2024)
-The previously strongest A2S method, which uses EventNet for asynchronous encoding. EVA improves FVA by 2.8% (96.9% vs. 94.1%) and SA by 8.3% (92.9% vs. 84.6%) on DVS128-Gesture. More importantly, ALERT-Tr. never reported results on detection tasks, whereas EVA achieves 47.7 mAP. The key distinction is that EVA replaces EventNet with RWKV-6 to enable hierarchical learning, and MVHS expands representational capacity.
+### vs ALERT-Transformer (Martin-Turrero et al., 2024)
+Previously the strongest A2S method, using EventNet for asynchronous encoding. EVA improves FVA by 2.8% and SA by 8.3% on DVS128-Gesture. More importantly, ALERT-Tr. failed to provide detection results, whereas EVA achieves 47.7 mAP. The key difference lies in EVA using RWKV-6 for hierarchical learning and MVHS for expanded expressiveness.
 
-### vs. RVT-B (Gehrig & Scaramuzza, 2023)
-The synchronous dense SOTA method, achieving 47.2 mAP on Gen1. EVA-L surpasses it with 47.7 mAP, despite using only 6 input feature channels compared to RVT-B's 20. This demonstrates that the A2S paradigm, with a sufficiently expressive asynchronous encoder, can match or even exceed synchronous methods while retaining the low-latency advantage of asynchronous processing.
+### vs RVT-B (Gehrig & Scaramuzza, 2023)
+A SOTA synchronous dense method, achieving 47.2 mAP on Gen1. EVA-L surpasses this with 47.7 mAP using only 6 input feature channels (vs 20 for RVT-B). This indicates that the A2S paradigm can match or exceed synchronous methods through better asynchronous encoders while retaining asynchronous low-latency advantages.
 
-### vs. DAGr (Gehrig & Scaramuzza, 2024)
-An end-to-end asynchronous graph neural network method achieving 32.1 mAP on Gen1. EVA's 47.7 mAP substantially surpasses it (+15.6), suggesting that the A2S "encode + dense downstream" paradigm is more effective than purely asynchronous methods, which are constrained by the limitations of graph-based approaches in temporal accumulation.
+### vs DAGr (Gehrig & Scaramuzza, 2024)
+An end-to-end asynchronous Graph Neural Network method with 32.1 mAP on Gen1. EVA's 47.7 mAP is a massive improvement (+15.6), demonstrating that the "encoding + dense downstream" A2S paradigm is more effective than pure asynchronous methods, which are often limited by graph methods' temporal accumulation capabilities.
 
 ## Rating
 
-| Dimension | Score | Rationale |
-|-----------|-------|-----------|
-| Novelty | ⭐⭐⭐⭐ | The systematic analysis of the event–language analogy and the MVHS output design are novel, though the core components (RWKV-6, SSL) are not themselves new. |
-| Technical Depth | ⭐⭐⭐⭐ | Architectural design is well-motivated, ablation studies are thorough, and the logical chain from analogy to architectural adaptation is complete. |
-| Experimental Thoroughness | ⭐⭐⭐⭐ | Covers recognition, detection, ablation, and timing analysis, but validation across more datasets and downstream tasks is lacking. |
-| Engineering Value | ⭐⭐⭐⭐⭐ | First A2S method to tackle detection, PWE supports arbitrary resolutions, code is open-sourced, and the work has direct practical value for real-time event camera applications. |
+| Dimension | Rating | Reason |
+|------|------|------|
+| Novelty | ⭐⭐⭐⭐ | Systematic event-language analogy and MVHS design are novel, though core components (RWKV-6, SSL) are established. |
+| Technical Depth | ⭐⭐⭐⭐ | Design is well-justified with comprehensive ablations and a complete logical chain from analogy to architecture. |
+| Experimental Thoroughness | ⭐⭐⭐⭐ | Covers recognition, detection, and timing analysis, though tests on more datasets/tasks would be beneficial. |
+| Value | ⭐⭐⭐⭐⭐ | First A2S method to conquer detection; PWE supports any resolution; open-source code has direct value for real-time applications. |
 
 <!-- RELATED:START -->
 
@@ -152,11 +152,11 @@ An end-to-end asynchronous graph neural network method achieving 32.1 mAP on Gen
 
 ## Related Papers
 
+- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
+- [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](../../CVPR2026/self_supervised/robust_spiking_neural_networks_by_temporal_mutual_information.md)
+- [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](../../CVPR2026/self_supervised/on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
 - [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
 - [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](maximizing_incremental_information_entropy_for_contrastive_learning.md)
-- [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
-- [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
-- [\[ICLR 2026\] Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning](why_prototypes_collapse_diagnosing_and_preventing_partial_collapse_in_prototypic.md)
 
 </div>
 

@@ -2,74 +2,87 @@
 title: >-
   [Paper Note] Maximizing Incremental Information Entropy for Contrastive Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Contrastive Learning] This paper proposes IE-CL (Incremental-Entropy Contrastive Learning), a framework that explicitly maximizes entropy gain between augmented views—rather than mer…
+  [ICLR 2026][Self-Supervised Learning][Paper Note] The IE-CL (Incremental-Entropy Contrastive Learning) framework is proposed to explicitly optimize the entropy gain between augmented views (rather than just maximizing mutual information). By treating the encoder as an information bottleneck and jointly optimizing learnable transformations (entropy generation) with enc
 tags:
-  - "ICLR 2026"
-  - "Self-Supervised Learning"
-  - "Contrastive Learning"
-  - "Information Entropy"
-  - "Incremental Entropy"
-  - "Information Bottleneck"
-  - "Learnable Augmentation"
+  - ICLR 2026
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: 1a9e84908de7e463
+content_hash: 138eb93148c4c3e7
 ---
-
 # Maximizing Incremental Information Entropy for Contrastive Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2603.12594](https://arxiv.org/abs/2603.12594)  
-**Code**: To be confirmed  
-**Area**: Self-Supervised Learning
-**Keywords**: Contrastive Learning, Information Entropy, Incremental Entropy, Information Bottleneck, Learnable Augmentation
+**Code**: Pending confirmation  
+**Area**: Self-supervised  
+**Keywords**: Contrastive Learning, Information Entropy, Incremental Entropy, Information Bottleneck, Learnable Transformation
 
 ## TL;DR
-This paper proposes IE-CL (Incremental-Entropy Contrastive Learning), a framework that explicitly maximizes entropy gain between augmented views—rather than merely maximizing mutual information—by treating the encoder as an information bottleneck and jointly optimizing a learnable transformation module (for entropy generation) and an encoder regularizer (for entropy preservation). IE-CL consistently improves contrastive learning performance on CIFAR-10/100, STL-10, and ImageNet under small-batch settings, with its core modules serving as plug-and-play components compatible with existing frameworks.
+The IE-CL (Incremental-Entropy Contrastive Learning) framework is proposed to explicitly optimize the entropy gain between augmented views (rather than just maximizing mutual information). By treating the encoder as an information bottleneck and jointly optimizing learnable transformations (entropy generation) with encoder regularizers (entropy preservation), it consistently improves contrastive learning performance on CIFAR-10/100, STL-10, and ImageNet under small-batch settings. The core modules can be integrated into existing frameworks as plug-and-play components.
 
 ## Background & Motivation
 
-**Background**: Self-supervised contrastive learning has become a central paradigm in representation learning, typically built upon mutual information maximization (e.g., InfoNCE) to learn invariant features across augmented views. Methods such as SimCLR, MoCo, and BYOL have achieved remarkable success.
+**Background**: Self-supervised contrastive learning has become a core paradigm for representation learning, typically based on mutual information maximization (e.g., InfoNCE) to learn invariant features between augmented views. Methods such as SimCLR, MoCo, and BYOL have achieved significant success.
 
 **Limitations of Prior Work**:
-   - Static data augmentation strategies (random cropping, color jittering, etc.) maintain fixed distributions throughout training and cannot adaptively adjust augmentation difficulty in response to learning progress.
-   - Rigid invariance constraints force the encoder to produce identical representations for all augmentations, potentially causing over-compression of useful information—i.e., an excessively tight information bottleneck.
-   - Although mutual information maximization is intuitively sound, it overlooks the effect of information increments introduced by the augmentation process itself on representation quality.
+   - Static data augmentation strategies (random cropping, color jittering, etc.) maintain a fixed distribution during training and cannot adaptively adjust the augmentation difficulty based on learning progress.
+   - Rigid invariance constraints require the encoder to produce identical representations for all augmentations, which may lead to excessive compression of useful information—resulting in a "bottleneck that is too tight."
+   - While the goal of mutual information maximization is intuitive, it ignores the impact of the information increment introduced by the augmentation process itself on representation quality.
 
-**Key Challenge**: Stronger data augmentations introduce greater informational variation, which should theoretically support more robust feature learning; however, excessively strong augmentations may violate semantic preservation boundaries and break the semantic consistency of positive pairs. A unified framework for balancing "entropy generation" and "semantic preservation" is lacking.
+**Key Challenge**: Stronger data augmentations introduce more informational changes, which theoretically help in learning robust features; however, excessively strong augmentations may exceed semantic preservation boundaries, destroying the semantic consistency of positive pairs. There is a lack of a unified framework to balance "entropy generation" and "semantic preservation."
 
-**Goal**: To design a theoretically grounded contrastive learning framework that maximizes information entropy gain between augmented views while maintaining semantic consistency.
+**Goal**: To design a theoretically guided contrastive learning framework that maximizes the information entropy gain between augmented views while maintaining semantic consistency.
 
-**Key Insight**: The encoder is redefined as an information bottleneck, and the optimization objective is reformulated from "mutual information maximization" to "incremental information entropy maximization," decomposing entropy into two independently optimizable sub-objectives: generation and preservation.
+**Key Insight**: Redefining the encoder as an information bottleneck and restructuring the optimization objective from "mutual information maximization" to "incremental information entropy maximization," thereby decoupling entropy generation and preservation into two independently optimizable sub-objectives.
 
-**Core Idea**: Adaptively generate information entropy via a learnable transformation module, and preserve entropy via encoder regularization—jointly overcoming the dual limitations of static augmentation and rigid invariance.
+**Core Idea**: Using learnable transformations to adaptively generate information entropy + using encoder regularization to preserve entropy → Breaking the dual limitations of static augmentation and rigid invariance.
 
 ## Method
 
-### Theoretical Framework: Incremental Information Entropy Decomposition
+### Overall Architecture
 
-The central theoretical contribution of IE-CL is the decomposition of information flow in contrastive learning into two stages:
+IE-CL follows the dual-stream structure of contrastive learning but re-evaluates the purpose of augmentation. Its core assertion is that representation quality is determined not only by how much information is shared between two views (mutual information) but also by **how much new uncertainty is injected during the augmentation phase and whether this new information can be retained by the encoder**. Consequently, it explicitly splits the information flow into "Entropy Generation → Entropy Preservation" stages, each controlled by an optimizable parameter.
 
-**Stage 1 — Entropy Generation:** The data augmentation/transformation process generates an augmented view $\tilde{x}$ from the original sample $x$. Conventional methods employ fixed random augmentations, leaving the amount of informational variation introduced (entropy increment $\Delta H$) uncontrolled. IE-CL introduces a learnable transformation module $\mathcal{T}_\phi$ that renders the entropy increment of the augmentation process optimizable, with the objective of maximizing $\Delta H(\tilde{x} | x)$ subject to a constraint on semantic shift.
+Specifically, the original sample $x$ enters two branches simultaneously: the anchor branch uses encoder $f_{\theta_1}$ to directly encode the anchor representation $z$; the query branch first passes through a learnable non-linear transformation module SAIB (Sample Augmentation Incremental Block, $g_\phi$) to create a view $x'$ with higher incremental entropy, which is then encoded into the query representation $z'$ by encoder $f_{\theta_2}$. During training, the system jointly optimizes: InfoNCE to pull positive pairs together and push negative pairs apart; an entropy term $-\lambda H(z')$ to encourage the query representation to be more divergent (preserving the entropy generated by SAIB); encoder regularization (spectral normalization) to prevent $f_{\theta_2}$ from compressing the incremental information; and a KL term to pull the query distribution back toward the anchor distribution to avoid augmentations exceeding semantic boundaries. Thus, "mutual information maximization" is reformulated as "controllably generating information increments and then transmitting them intact to the representation space."
 
-**Stage 2 — Entropy Preservation:** The encoder $f_\theta$ maps augmented views into the representation space. Information bottleneck theory dictates that the encoding process inevitably compresses information. IE-CL applies regularization to the encoder to encourage retention of the entropy increments generated in Stage 1, preventing useful variation from being over-compressed.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Original Sample x"]
+    X -->|Anchor Branch| EA["Encoder fθ1"]
+    X -->|Query Branch| SAIB["SAIB Entropy Generation<br/>Learnable non-linear transformation<br/>Ensures Jacobian determinant > 1"]
+    EA --> ZA["Anchor Representation z"]
+    SAIB --> EQ["Encoder fθ2<br/>Spectral Normalization · Entropy Preservation"]
+    EQ --> ZQ["Query Representation z′"]
+    ZA --> LOSS["Joint Loss<br/>InfoNCE pulls positives<br/>−λH(z′) maximizes entropy<br/>βKL preserves semantics · ηL_reg preserves entropy"]
+    ZQ --> LOSS
+```
 
-### Joint Optimization Objective
+### Key Designs
 
-The overall loss function comprises three components:
+**1. Incremental Information Entropy Decomposition: The Encoder as a Critical Bottleneck**
 
-1. **Contrastive Loss**: The standard InfoNCE loss ensures positive pairs are brought closer and negative pairs are pushed apart in the representation space.
-2. **Entropy Generation Loss**: Encourages the learnable transformation $\mathcal{T}_\phi$ to produce high-entropy augmented views, enlarging the informational discrepancy between positive pairs.
-3. **Entropy Preservation Regularization**: Constrains the encoder $f_\theta$ to retain the incremental information introduced by the transformation, preventing excessive compression at the information bottleneck.
+Traditional contrastive learning is equivalent to maximizing the mutual information $I(Z;Z^+)$ (proven via Donsker–Varadhan as $\min L_{\text{InfoNCE}}\Leftrightarrow\max I(Z;Z^+)$), yet it treats augmentation as a fixed, stochastic black box where the degree of variation is uncontrollable. IE-CL decomposes this process: it first defines incremental information entropy at the input stage as $\Delta H(X)=H(X')-H(X)$, proving that for a linear transformation $A$, $\Delta H=\log|\det A|$. This formula exposes the weakness of traditional augmentations—rotations, crops, and flips are isometric transformations where $|\det A|=1$, thus $\Delta H=0$. They only increase diversity at the batch level without raising the entropy of individual samples. Furthermore, by the Data Processing Inequality, the encoder as a deterministic function $f$ satisfies $H(f(X))\le H(X)+\mathbb{E}[\log|\det J_f|]$. If the Jacobian term is a large negative value, the entropy generated at the input will be lost. This leads to the core proposition of the paper: robustly increasing representation entropy $H(Z')$ requires satisfying both "input entropy generation" and "encoder entropy preservation."
 
-The three terms are jointly optimized via a weighted sum, achieving a balance between "generating sufficient useful informational variation" and "preserving that variation during encoding."
+**2. SAIB: Active Entropy Generation via Learnable Non-linear Transformations**
 
-### Learnable Transformation Module
+Since isometric augmentations cannot generate entropy ($\Delta H=0$), a non-isometric transformation with $|\det A|>1$ is required. IE-CL designs SAIB for this purpose: the input $X\in\mathbb{R}^{3\times H\times W}$ is partitioned into patches with positional encodings, similar to a ViT, then passed through a non-linear residual stack of $1\times1\text{-Conv}\to3\times3\text{-Conv}\to1\times1\text{-Conv}$ (channel expansion ratio of 2). With two skip connections and a final reshape combined with a third skip connection, the output is $X'=X+\text{reshape}(P')$. This "channel expansion + residual" structure ensures that the local Jacobian of SAIB satisfies $|\det A|>1$ almost everywhere, guaranteeing a positive entropy increment $\Delta H(P)>0$. Crucially, SAIB only acts on the query branch and is trained end-to-end with the encoder, allowing the "difficulty" to adapt to the representation capacity.
 
-Unlike fixed augmentation pipelines, $\mathcal{T}_\phi$ is a parameterized transformation network that adaptively adjusts augmentation strategies throughout training. In early training, it produces relatively mild transformations to avoid semantic destruction; as encoder capacity improves, the transformation difficulty gradually increases—achieving a curriculum learning-like effect without requiring manual curriculum design.
+**3. Spectral Normalization for Preservation + KL Constraint for Semantics**
 
-### Plug-and-Play Design
+To ensure the entropy generated by SAIB effectively increases representation entropy, the encoder bottleneck must be mitigated without allowing the augmentation to lose semantic meaning. The former is achieved via spectral normalization (Lipschitz constraint) on encoder $f_{\theta_2}$, providing a lower bound for $\mathbb{E}[\log|\det J_{f_\theta}|]$ and preventing excessive compression. The latter is addressed using a Kullback–Leibler (KL) divergence constraint: since SAIB only modifies the query branch, aggressive entropy generation might cause the query distribution to deviate from the anchor distribution. Penalizing $D_{KL}(p_\phi\,\|\,q)$ (where $p_\phi$ is the transformed query distribution and $q$ is the anchor distribution) pulls the augmentation back within semantic boundaries.
 
-The entropy generation module and entropy preservation regularization of IE-CL can be integrated as independent components into existing frameworks such as SimCLR, MoCo, and BYOL without modifying the underlying architecture.
+**4. Plug-and-Play: Decoupling Modules from the Backbone**
+
+The SAIB and encoder regularization are designed as components decoupled from specific frameworks. They do not rely on negative sample queues or momentum encoders, allowing them to be directly applied to SimCLR, MoCo, or BYOL without modifying the backbone. Experiments show consistent improvements across frameworks; since the informational difference in each positive pair is actively amplified, the supervision becomes denser, which is particularly effective in small-batch settings (128–512) where negative samples are insufficient.
+
+### Loss & Training
+
+The final objective integrates the terms into a weighted end-to-end loss:
+
+$$L_{\text{final}} = L_{\text{InfoNCE}} + \beta\, D_{KL}(p_\phi\,\|\,q) - \lambda\, H(Z') + \eta\, L_{\text{reg\_encoder}} + \gamma\, R(g_\phi)$$
+
+Where $L_{\text{InfoNCE}}$ drives the primary representation learning; $D_{KL}$ ensures semantic consistency of the SAIB transformation; $-\lambda H(Z')$ directly optimizes representation diversity; $\eta L_{\text{reg\_encoder}}$ (spectral normalization) implements entropy preservation; and $\gamma R(g_\phi)$ is optional weight decay for SAIB parameters. All weights $\lambda,\beta,\eta,\gamma>0$.
 
 ## Key Experimental Results
 
@@ -84,7 +97,7 @@ The entropy generation module and entropy preservation regularization of IE-CL c
 | STL-10 | SimCLR | 85.6 | 87.2 | 88.1 |
 | STL-10 | **SimCLR+IE-CL** | **87.4** | **88.5** | **89.2** |
 
-IE-CL yields the most pronounced improvements under small-batch settings (1.5–2.7%), narrowing the performance gap between small- and large-batch regimes.
+IE-CL shows the most significant improvements (1.5-2.7%) in small-batch settings, narrowing the performance gap between small and large batches.
 
 ### Comparison with Other Contrastive Learning Methods
 
@@ -96,41 +109,41 @@ IE-CL yields the most pronounced improvements under small-batch settings (1.5–
 | **IE-CL (SimCLR)** | **92.5** | **67.0** | **70.8** |
 | **IE-CL (MoCo)** | **92.9** | **68.1** | **72.4** |
 
-As a plug-and-play module, IE-CL delivers consistent gains on both SimCLR and MoCo, demonstrating framework-agnostic applicability.
+As a plug-and-play module, IE-CL brings consistent improvements to both SimCLR and MoCo, verifying its framework-agnostic nature.
 
 ### Ablation Study
 
 | Component | CIFAR-100 Acc |
 |------|--------------|
 | Baseline (SimCLR) | 65.1 |
-| +Entropy Generation Module | 66.3 (+1.2) |
-| +Entropy Preservation Regularization | 66.0 (+0.9) |
-| +Both Combined | **67.0 (+1.9)** |
+| + Entropy Generation Module | 66.3 (+1.2) |
+| + Entropy Preservation Regularization | 66.0 (+0.9) |
+| + Both combined | **67.0 (+1.9)** |
 
-Each component independently contributes to performance; their combination yields the best result, yet the gain is not simply additive, indicating a synergistic effect.
+Each component is effective individually, and their combined use yields the best results, indicating a synergistic effect.
 
 ## Highlights & Insights
-- **Information-Theoretic Innovation**: The paper reformulates the contrastive learning objective from "mutual information maximization" to "incremental information entropy maximization," providing a more refined optimization direction that not only attends to shared information between views but also explicitly models the informational variation introduced by the augmentation process.
-- **Small-Batch Friendliness**: Contrastive learning typically relies heavily on large batch sizes (4096+). IE-CL compensates for the scarcity of negative samples by enlarging the informational discrepancy per sample pair, yielding significant improvements at batch sizes of 128–512.
-- **Plug-and-Play**: The core modules integrate seamlessly into SimCLR, MoCo, and BYOL, lowering the barrier to adoption.
-- **Bridging Theory and Practice**: Information bottleneck theory has predominantly served as a post-hoc analytical tool in contrastive learning; IE-CL elevates it to a front-end design principle.
+- **Innovation from an Information Theory Perspective**: Reformulating the contrastive learning objective from "mutual information maximization" to "incremental information entropy maximization" provides a more refined optimization direction—focusing not only on shared info between views but also explicitly modeling information changes introduced by augmentation.
+- **Small-batch Friendly**: Contrastive learning usually relies heavily on large batches (4096+). IE-CL compensates for the lack of negative samples by increasing the informational difference in each sample pair, showing significant gains at 128-512 batch sizes.
+- **Plug-and-Play**: Core modules can be seamlessly integrated into SimCLR/MoCo/BYOL, lowering the barrier to application.
+- **Bridge between Theory and Practice**: While Information Bottleneck theory is often used as a post-hoc explanatory tool, IE-CL elevates it to a front-end design principle.
 
 ## Limitations & Future Work
-- **Semantic Safety of the Learnable Transformation**: It remains unclear how to guarantee that $\mathcal{T}_\phi$ does not generate augmentations that violate semantic boundaries. The paper relies on the implicit constraint of the contrastive loss, without an explicit semantic preservation guarantee.
-- **Limited Gains on ImageNet**: Improvements on large-scale datasets (~1.5%) are less pronounced than on smaller benchmarks, possibly because the inherent diversity of large datasets already provides sufficient informational variation.
-- **Computational Overhead**: The learnable transformation module increases forward-pass computation, yet the paper does not report detailed training time comparisons.
-- **Future Directions**: Adversarial augmentation generation (producing more challenging yet semantically consistent transformations) and integration with masked self-supervised methods such as MAE warrant further exploration.
+- **Semantic Safety of Learnable Transformations**: The security boundary of SAIB ($g_\phi$) relies solely on the KL divergence constraint; it lacks more explicit semantic preservation guarantees, risking semantic drift during aggressive entropy generation.
+- **Limited Gains on ImageNet**: The improvement on large-scale datasets (~1.5%) is less pronounced than on small datasets, likely because the diversity of large datasets already provides sufficient informational variation.
+- **Computational Overhead**: The learnable transformation module increases the computational cost of forward propagation, though the paper does not report detailed training time comparisons.
+- **Future Directions**: Exploring adversarial augmentation generation and integration with masked self-supervised methods like MAE.
 
 ## Related Work & Insights
-- **vs. SimCLR/MoCo**: These methods employ fixed augmentation strategies with a mutual information maximization objective. IE-CL replaces these with learnable augmentation and incremental entropy maximization, which is theoretically superior as it directly optimizes information gain.
-- **vs. AdCo/HardCL**: AdCo increases learning difficulty through adversarial negative sample generation; HardCL improves efficiency via hard positive sample mining. IE-CL provides a unified information-theoretic interpretation—these methods fundamentally increase the amount of informational variation.
-- **vs. VICReg/Barlow Twins**: These methods prevent representational collapse through variance/redundancy regularization. IE-CL's entropy preservation regularization offers a complementary perspective—not only preventing collapse but also actively preserving useful variation.
+- **vs SimCLR/MoCo**: These methods use fixed augmentation strategies + mutual information maximization. IE-CL replaces these with learnable augmentation + incremental entropy maximization, which is theoretically superior as it directly optimizes information gain.
+- **vs AdCo/HardCL**: AdCo increases difficulty via adversarial negative sample generation, while HardCL improves efficiency through hard positive sample mining. IE-CL provides a unified explanation from an information-theoretic perspective—essentially, these methods all increase the amount of informational variation.
+- **vs VICReg/Barlow Twins**: These methods prevent representation collapse through variance/redundancy regularization. IE-CL’s entropy preservation regularization offers a complementary view—not only preventing collapse but actively retaining useful variations.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ The incremental information entropy perspective is novel, elevating the information bottleneck from an analytical tool to a design principle.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple datasets and frameworks; the small-batch analysis is insightful, though large-scale experiments could be more comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ The theoretical framework is clearly presented and the motivation is well articulated.
-- Value: ⭐⭐⭐⭐ Offers a new optimization perspective for contrastive learning; the plug-and-play property enhances practical applicability.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple datasets and frameworks with insightful small-batch analysis, though large-scale experiments could be more extensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical framework and well-articulated motivation.
+- Value: ⭐⭐⭐⭐ Provides a new optimization perspective for contrastive learning with strong practical utility due to its plug-and-play nature.
 
 <!-- RELATED:START -->
 
@@ -138,11 +151,11 @@ Each component independently contributes to performance; their combination yield
 
 ## Related Papers
 
+- [\[ICLR 2026\] Contrastive Predictive Coding Done Right for Mutual Information Estimation](contrastive_predictive_coding_done_right_for_mutual_information_estimation.md)
 - [\[ICLR 2026\] Maximizing Asynchronicity in Event-based Neural Networks](maximizing_asynchronicity_in_event-based_neural_networks.md)
-- [\[ICLR 2026\] Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective](difficult_examples_hurt_unsupervised_contrastive_learning_a_theoretical_perspect.md)
 - [\[AAAI 2026\] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](../../AAAI2026/self_supervised/bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](../../NeurIPS2025/self_supervised/self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](../../CVPR2026/self_supervised/unigeoclip_geospatial_contrastive.md)
+- [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](../../CVPR2026/self_supervised/robust_spiking_neural_networks_by_temporal_mutual_information.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
 
 </div>
 

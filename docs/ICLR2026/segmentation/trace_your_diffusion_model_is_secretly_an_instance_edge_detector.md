@@ -2,80 +2,94 @@
 title: >-
   [Paper Note] TRACE: Your Diffusion Model is Secretly an Instance Edge Detector
 description: >-
-  [ICLR 2026][Segmentation][Diffusion Models] This work identifies an "Instance Emergence Point" (IEP) in the denoising trajectory of text-to-image diffusion models…
+  [ICLR 2026][Segmentation][Diffusion Model] It is discovered that the self-attention of text-to-image diffusion models exhibits an "Instance Emergence Point" (IEP) during the denoising process, where the self-attention shows intense divergence at object boundaries. TRACE generates high-quality instance edges through IEP localization + ABDiv edge extraction + sin
 tags:
-  - "ICLR 2026"
-  - "Segmentation"
-  - "Diffusion Models"
-  - "Instance Edges"
-  - "Self-Attention"
-  - "IEP"
-  - "Unsupervised Segmentation"
+  - ICLR 2026
+  - Segmentation
+  - Diffusion Model
+  - IEP
 date: 2026-05-08
-content_hash: 5eca387d29e407a1
+content_hash: f08c845994c4b66e
 ---
-
 # TRACE: Your Diffusion Model is Secretly an Instance Edge Detector
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2503.07982](https://arxiv.org/abs/2503.07982)  
 **Code**: [Project Page](https://shjo-april.github.io/TRACE)  
-**Area**: Instance Segmentation / Panoptic Segmentation
+**Area**: Instance Segmentation / Panoptic Segmentation  
 **Keywords**: Diffusion Models, Instance Edges, Self-Attention, IEP, Unsupervised Segmentation
 
 ## TL;DR
 
-This work identifies an "Instance Emergence Point" (IEP) in the denoising trajectory of text-to-image diffusion models, at which self-attention exhibits sharp divergence changes at object boundaries. TRACE leverages IEP localization, ABDiv edge extraction, and single-step distillation to generate high-quality instance edges with an 81× inference speedup—requiring no instance-level annotations—improving unsupervised instance segmentation by +5.1 AP and surpassing point-supervised panoptic segmentation with tag-level supervision by +1.7 PQ.
+It is discovered that the self-attention of text-to-image diffusion models exhibits an "Instance Emergence Point" (IEP) during the denoising process, where the self-attention shows intense divergence at object boundaries. TRACE generates high-quality instance edges through IEP localization + ABDiv edge extraction + single-step distillation, achieving 81× inference acceleration. Without any instance annotations, it improves unsupervised instance segmentation by +5.1 AP, and its tag-supervised panoptic segmentation outperforms point-supervised methods by +1.7 PQ.
 
 ## Background & Motivation
 
-**Background**: Instance and panoptic segmentation have long relied on dense annotations (masks/boxes/points), which are costly and suffer from inter-annotator inconsistency. Unsupervised approaches (e.g., MaskCut) cluster ViT semantic features, but ViTs are optimized for cross-image semantic similarity rather than intra-image instance separation, frequently merging adjacent objects of the same class or fragmenting a single instance. Weakly supervised methods require at least point annotations to distinguish instances.
+**Background**: Instance and panoptic segmentation have long relied on dense annotations (mask/box/point), which are costly and inconsistent across annotators. Unsupervised solutions (e.g., MaskCut) cluster semantic features from ViT, but ViT is optimized for semantic similarity across images rather than intra-image instance separation, often merging adjacent objects of the same class or fragmented single instances. Weakly supervised solutions require at least point annotations to distinguish instances.
 
-**Limitations of Prior Work**: (1) Unsupervised methods depend on self-supervised ViT features that are insufficient at the instance level—merging neighboring same-class objects is a fundamental failure mode; (2) depth-assisted approaches (CutS3D) fail on adjacent objects at similar depths; (3) tag-level weak supervision already approaches fully supervised accuracy in semantic segmentation (99% on VOC), yet bridging from semantic to panoptic segmentation still requires point or box annotations.
+**Limitations of Prior Work**: (1) Unsupervised methods rely on self-supervised ViT features, which are insufficient at the instance level—merging adjacent same-class objects is a fundamental problem; (2) Depth estimation-aided solutions (such as CutS3D) fail on adjacent objects at similar depths; (3) Tag-level weak supervision has approached full-supervision accuracy in semantic segmentation (99% on VOC), but the leap from semantic to panoptic still requires point or box annotations.
 
-**Key Challenge**: Semantic features excel at "knowing what" but struggle at "telling who from whom"—instance separation requires a fundamentally different signal source.
+**Key Challenge**: Semantic features are good at "knowing what" but poor at "distinguishing who"—instance separation requires a completely different signal source.
 
-**Goal**: To identify an annotation-free, instance-level signal that complements semantic features for instance separation.
+**Goal**: To find an annotation-free instance-level signal source to supplement the instance separation capability of semantic features.
 
-**Key Insight**: Diffusion models progressively evolve from noise → instance structure → semantic content during denoising—at specific timesteps, self-attention transiently but clearly encodes instance boundaries.
+**Key Insight**: Diffusion models evolve progressively from noise to instance structure and then to semantic content during the denoising process—at specific timesteps, self-attention briefly but clearly encodes instance boundaries.
 
-**Core Idea**: The self-attention of diffusion models is a hidden instance edge annotator—sharp divergence changes in attention distributions across boundaries constitute the instance boundary signal.
+**Core Idea**: The self-attention of diffusion models is a hidden instance edge annotator—the sharp divergence in attention distribution across boundaries serves as the instance boundary signal.
 
 ## Method
 
 ### Overall Architecture
 
-TRACE consists of three stages: (1) **IEP (Instance Emergence Point)**: the KL divergence between consecutive self-attention maps is computed along the denoising trajectory, and the timestep $t^*$ corresponding to the divergence peak is identified to obtain instance-aware self-attention $SA_{\text{inst}}$; (2) **ABDiv (Attention Boundary Divergence)**: relative attention divergence between spatial neighbors is computed on $SA_{\text{inst}}$ to produce a pseudo-edge map $E$; (3) **Single-step self-distillation**: the diffusion backbone is fine-tuned with LoRA and a lightweight edge decoder $\mathcal{G}_\phi$ is trained, enabling edge prediction in a single forward pass at $t=0$ with an 81× inference speedup. The generated edges are integrated into downstream segmentation via Background-Guided Propagation.
+TRACE addresses the problem of "reading out" instance boundaries from pre-trained text-to-image diffusion models in the total absence of instance annotations, supplementing the shortcoming where semantic features "know what but cannot distinguish who." The pipeline operates as follows: first, an input image undergoes the diffusion forward denoising trajectory, monitoring the progressive changes of self-attention maps; at the moment where the instance structure is most prominent—the Instance Emergence Point (IEP)—instance-aware self-attention $SA_{\text{inst}}$ is extracted; next, Attention Boundary Divergence (ABDiv) is used to convert this attention map into a pseudo-edge map $E$ without training or clustering; finally, the multi-step "denoising trajectory sweep" process is distilled into a single-step forward pass—using $E$ as the supervision label, the diffusion backbone is fine-tuned with LoRA and an edge decoder $\mathcal{G}_\phi$ is trained. At inference, a single-step forward pass at $t=0$ directly outputs continuous edges. The produced instance edges are integrated into downstream instance/panoptic segmentation as boundary priors through Background-Guided Propagation (BGP).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Image"] --> B["Diffusion Forward Denoising Trajectory<br/>Per-step Self-attention Maps"]
+    B -->|"Adjacent step KL divergence peak"| C["Instance Emergence Point (IEP)<br/>Locate t* → Extract Instance-aware<br/>Self-attention SA_inst"]
+    C --> D["Attention Boundary Divergence (ABDiv)<br/>Sum of Opposing Neighbor Divergence<br/>→ Pseudo-edge map E"]
+    D -->|"E as supervision label"| E["Single-step Self-distillation Edge Decoder<br/>LoRA fine-tuning + Decoder G_φ (t=0 single step)"]
+    E --> F["Continuous Edge Ê<br/>45ms/image (81× Gain)"]
+    F --> G["Background-Guided Propagation (BGP)<br/>Edge as boundary → Propagate + Merge masks"]
+    G --> H["Instance/Panoptic Segmentation Results"]
+```
 
 ### Key Designs
 
-1. **Instance Emergence Point (IEP)**:
+**1. Instance Emergence Point (IEP): identifying the step with the most prominent instance structure**
 
-    - Function: Automatically locates the timestep at which instance structure is most salient during denoising.
-    - Mechanism: KL divergence between self-attention maps at adjacent timesteps is computed along the denoising trajectory: $t^* = \arg\max_t D_{\text{KL}}(SA(X_{t_{\text{prev}}}) \| SA(X_t))$. Early in denoising, attention is nearly random; in the middle stage, instance boundaries emerge (divergence peak); later, attention stabilizes into semantic content. A fixed step size of 100 yields stable results.
-    - Design Motivation: The denoising process undergoes a reverse transition from semantic → instance → noise—IEP precisely captures the inflection point of this transition. KL divergence is more sensitive than L2/L1 to subtle differences between probability distributions, outperforming L2 by 5.6 AP$^{mk}$ (9.4 vs. 3.8).
+Semantic features "know what but cannot distinguish who," while diffusion models evolve from noise → instance structure → semantic content. The key is to find the moment when instance boundaries are clearest. TRACE compares self-attention maps between adjacent timesteps along the denoising trajectory, using KL divergence to measure the difference and identifying the timestep where the divergence peaks as the IEP:
 
-2. **Attention Boundary Divergence (ABDiv)**:
+$$t^* = \arg\max_t D_{\text{KL}}(SA(X_{t_{\text{prev}}}) \| SA(X_t))$$
 
-    - Function: Converts instance-aware self-attention maps into edge maps.
-    - Mechanism: For each pixel $(i,j)$, the sum of KL divergences between opposing neighbors in the four cardinal directions is computed: $\text{ABDiv}(SA)_{i,j} = D_{\text{KL}}(SA_{i+1,j} \| SA_{i-1,j}) + D_{\text{KL}}(SA_{i,j+1} \| SA_{i,j-1})$. Neighbors within the same instance have similar attention distributions (low divergence); neighbors across instance boundaries exhibit abrupt divergence spikes.
-    - Design Motivation: Non-parametric—no training or clustering is required; boundary signals are extracted directly from the geometric properties of attention distributions.
+In early denoising, attention is mostly noise; in the middle, instance boundaries suddenly emerge (where divergence peaks); in late stages, it converges to stable semantics. The IEP is precisely at the "instance → semantic" transition point. In practice, a fixed step size of 100 yields stable results. KL divergence is used instead of L2/L1 because it is more sensitive to subtle differences in probability distributions—using L2 to locate the timestep would cause APmk to drop from 9.4 to 3.8.
 
-3. **Single-step Self-distillation Edge Decoder**:
+**2. Attention Boundary Divergence (ABDiv): reading edges directly from attention geometry**
 
-    - Function: Compresses the multi-step IEP+ABDiv computation into a single inference step.
-    - Mechanism: The ABDiv pseudo-edge map $E$ is used as supervision (pixels $> \mu+\sigma$ as positive, $< \mu-\sigma$ as negative, intermediate pixels masked out). The diffusion backbone is fine-tuned with LoRA at $t=0$, and a lightweight decoder $\mathcal{G}_\phi$ is trained with the loss $\mathcal{L} = \|I-\hat{I}\|^2 + \text{DiceLoss}(E, \hat{E})$. The reconstruction loss stabilizes training and completes broken edges.
-    - Design Motivation: IEP+ABDiv requires approximately 3.7 seconds per image; after distillation, inference takes only 45 ms/image (81× speedup), and the resulting edges are more continuous and complete.
+After obtaining the instance-aware self-attention $SA_{\text{inst}}$ at the IEP, it must be converted into an edge map. ABDiv compares the difference in attention distribution between pairs of opposing neighbors (top-bottom, left-right) for each pixel $(i,j)$, and sums them as the boundary strength:
+
+$$\text{ABDiv}(SA)_{i,j} = D_{\text{KL}}(SA_{i+1,j} \| SA_{i-1,j}) + D_{\text{KL}}(SA_{i,j+1} \| SA_{i,j-1})$$
+
+The attention distributions of adjacent pixels within the same instance are similar, resulting in small divergence. Crossing an instance boundary causes a sudden change in distribution and a spike in divergence, making the boundary emerge naturally. This process is non-parametric and extracted purely from the geometric properties of attention distributions.
+
+**3. Single-step Self-distillation Edge Decoder: compressing inference and completing broken edges**
+
+While IEP+ABDiv is effective, it is slow as it requires scanning the denoising trajectory (~3.7s per image). TRACE uses the pseudo-edge map $E$ from ABDiv as a supervision label—marking values $>\mu+\sigma$ as positive, $<\mu-\sigma$ as negative, and masking uncertain regions. At $t=0$, LoRA fine-tuning is applied to the diffusion backbone, and a lightweight edge decoder $\mathcal{G}_\phi$ is trained for single-step edge prediction. The training loss includes a reconstruction term:
+
+$$\mathcal{L} = \|I-\hat{I}\|^2 + \text{DiceLoss}(E, \hat{E})$$
+
+The reconstruction loss stabilizes training and helps complete broken edges. After distillation, inference drops from 3.7s to 45ms per image (81× acceleration), and predicted edges are more continuous than original ABDiv. Final edges are integrated into downstream segmentation via Background-Guided Propagation.
 
 ### Loss & Training
 
-Distillation training: DiceLoss (edge prediction) + L2 reconstruction loss, with uncertain pixels excluded. Training is performed exclusively on the COCO training set using LoRA fine-tuning of the diffusion backbone. Inference requires a single forward pass; the default backbone is SD3.5-L.
+Distillation training: DiceLoss (edge prediction) + L2 reconstruction loss, excluding uncertain pixels. Trained only on the COCO training set, using LoRA to fine-tune the diffusion backbone. Single forward pass for inference, with SD3.5-L as the default backbone.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Unsupervised instance segmentation (COCO 2014, AP$^{mk}$):
+Unsupervised Instance Segmentation (COCO 2014, APmk):
 
 | Method | VOC AP | COCO 2014 AP | COCO 2017 AP |
 |------|:------:|:------------:|:------------:|
@@ -84,75 +98,75 @@ Unsupervised instance segmentation (COCO 2014, AP$^{mk}$):
 | ProMerge* | 5.0 | 3.1 | 2.5 |
 | + TRACE | **9.4** | **8.2** | **7.8** |
 | CutLER* | 11.2 | 8.9 | 8.7 |
-| + CutS3D (depth) | - | 10.9 | 10.7 |
+| + CutS3D (Depth) | - | 10.9 | 10.7 |
 | + TRACE | **14.8** | **13.1** | **12.8** |
 
-Weakly supervised panoptic segmentation (VOC 2012 PQ):
+Weakly Supervised Panoptic Segmentation (VOC 2012 PQ):
 
 | Method | Supervision | VOC PQ | COCO PQ |
 |------|:-------:|:------:|:-------:|
 | Mask2Former* | Full mask | 73.6 | 51.9 |
 | EPLD | Point | 56.6 | 34.2 |
 | EPLD (Swin-L) | Point | 68.5 | 41.0 |
-| DHR+TRACE | **Tag** | **56.9** | **32.8** |
-| DHR+TRACE (Swin-L) | **Tag** | **69.8** | **43.1** |
+| DHR+TRACE | **tag labels** | **56.9** | **32.8** |
+| DHR+TRACE (Swin-L) | **tag labels** | **69.8** | **43.1** |
 
 ### Ablation Study
 
-Component ablation (COCO 2014, ProMerge baseline, AP$^{mk}$):
+Component Ablation (COCO 2014, ProMerge baseline, APmk):
 
-| Configuration | AP$^{mk}$ | Notes |
+| Config | APmk | Description |
 |------|:----:|------|
-| Baseline | 3.1 | No TRACE |
-| + ABDiv (semantic step) | 3.2 | ABDiv at semantic timestep is nearly ineffective |
-| + IEP + ABDiv | 4.8 | IEP localizes the correct timestep → effective |
-| + IEP + ABDiv + Distillation | **8.2** | Distillation completes broken edges ↑↑ |
+| Baseline | 3.1 | Without TRACE |
+| + ABDiv (Semantic step) | 3.2 | ABDiv at semantic timestep is almost ineffective |
+| + IEP + ABDiv | 4.8 | Effective when IEP locates the correct timestep |
+| + IEP + ABDiv + Distil | **8.2** | Distillation completes broken edges ↑↑ |
 
-Diffusion vs. non-diffusion backbone comparison:
+Diffusion vs. Non-diffusion Backbone Comparison:
 
-| Backbone | Type | Params | AP$^{mk}$ |
+| Backbone | Type | Params | APmk |
 |----------|:----:|:----:|:----:|
-| DINOv2-G | Non-diffusion | 1.1B | 2.6 |
-| Qwen2.5-VL | Non-diffusion | 72B | 4.1 |
+| DINOv2-G | Non-diff | 1.1B | 2.6 |
+| Qwen2.5-VL | Non-diff | 72B | 4.1 |
 | PixArt-α | Diffusion | 0.6B | 7.1 |
 | SD3.5-L | Diffusion | 8.1B | 8.2 |
 | FLUX.1 | Diffusion | 12B | 8.3 |
 
 ### Key Findings
 
-1. **Unique advantage of diffusion models**: PixArt-α at 0.6B (AP$^{mk}$ 7.1) substantially outperforms Qwen2.5-VL at 72B (4.1), confirming that instance edges are a prior unique to generative models.
-2. **Distillation improves quality, not just speed**: Inference time drops from 3.7 s to 45 ms, and edges become more continuous and complete.
-3. **Tag supervision surpasses point supervision**: DHR+TRACE (tag only) achieves PQ 69.8 on VOC, exceeding EPLD (point supervision) at 68.5.
-4. **Conventional edge detectors are entirely inadequate**: Canny achieves only 1.2 AP$^{mk}$ vs. TRACE's 9.4—because conventional detectors respond to intensity gradients, not instance boundaries.
+1. **Unique Advantage of Diffusion**: PixArt-α with 0.6B (APmk 7.1) outperforms Qwen2.5-VL with 72B (4.1), showing instance edges are priors unique to generative models.
+2. **Distillation Accelerates and Enhances Quality**: Inference reduced from 3.7s to 45ms; edges are more continuous and complete.
+3. **Tag-Supervision Overcomes Point-Supervision**: DHR+TRACE (tag only) achieves PQ 69.8 on VOC > EPLD (point) 68.5.
+4. **Traditional Edge Detectors are Inapplicable**: Canny achieves only 1.2 APmk vs TRACE 9.4—because traditional detectors find intensity changes rather than instance boundaries.
 
 ## Highlights & Insights
 
-- **Discovery of the Instance Emergence Point during denoising**: The staged transition of self-attention from noise → instance → semantics is a novel and previously unreported observation.
-- **Non-parametric edge extraction**: ABDiv requires no training or labels, relying purely on the geometric properties of attention distributions.
-- **Model-agnostic**: The optimal timestep identified by IEP is highly consistent across five different diffusion backbones.
-- **Plug-and-play composability**: TRACE integrates seamlessly with MaskCut, CutLER, ProMerge, DHR, and other pipelines.
+- **Discovery of the "Instance Emergence Point"**: The phased transition of self-attention from noise → instance → semantics is a novel observation.
+- **Non-parametric Edge Extraction**: ABDiv requires no training or labels, purely utilizing the geometric properties of attention distributions.
+- **Model-agnostic**: The optimal timesteps for IEP are highly consistent across five diffusion backbones.
+- **Plug-and-play Value**: Can be combined with MaskCut/CutLER/ProMerge/DHR etc.
 
 ## Limitations & Future Work
 
-- The method depends on the self-attention of diffusion models and is inapplicable to non-diffusion architectures, as confirmed experimentally.
-- IEP search still requires multi-step forward passes (~3 s/image), though this is no longer needed after distillation.
-- Distillation is performed only on SD3.5-L; different backbones may require separate distillation.
-- Edge quality on small objects and heavily occluded scenes remains to be evaluated.
-- The current method applies only to static images; temporal consistency in video settings has not been explored.
+- Relies on diffusion self-attention; experimental evidence shows it's inapplicable to non-diffusion architectures.
+- IEP search still requires multi-step forward propagation (~3s/img), though not needed after distillation.
+- Distillation was only performed on SD3.5-L; different backbones might require re-distillation.
+- Edge quality in scenarios with small objects or heavy occlusion needs further assessment.
+- Currently limited to static images; temporal consistency in video scenarios remains unexplored.
 
 ## Related Work & Insights
 
-- **vs. MaskCut/CutLER**: These methods rely on DINO feature clustering and cannot separate adjacent same-class objects; TRACE's instance edges directly address this core failure mode.
-- **vs. CutS3D**: Depth estimation is used to assist instance separation, failing at similar depths; TRACE does not depend on depth and outperforms by 2.2 AP on COCO.
-- **vs. DiffCut/DiffSeg**: These methods apply diffusion attention to semantic segmentation using fixed timesteps; TRACE demonstrates that IEP-identified timesteps are substantially more effective than fixed ones.
-- **Insight**: The structural priors encoded in generative models far exceed prior expectations—self-attention not only "knows where to look" but also "knows where the boundaries are."
+- **vs MaskCut/CutLER**: Based on DINO feature clustering—cannot separate same-class adjacent objects; TRACE's instance edges directly solve this.
+- **vs CutS3D**: Uses depth estimation—fails when depths are similar; TRACE does not rely on depth and is 2.2 AP higher on COCO.
+- **vs DiffCut/DiffSeg**: Uses diffusion attention for semantic segmentation (fixed timestep)—TRACE finds that locating IEP is much more effective.
+- **Insight**: Generative models contain structural priors far beyond expectations—self-attention not only "knows where to look" but also "knows where the boundaries are."
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The discovery of IEP+ABDiv is highly original; framing diffusion models as instance edge annotators represents a genuinely new perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated on both unsupervised and weakly supervised tracks, with 10 backbone comparisons, comprehensive ablations, and multi-benchmark validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ The narrative is fluent with excellent figures; every design choice is supported by quantitative evidence.
-- Value: ⭐⭐⭐⭐⭐ A paradigm-shifting contribution to unsupervised and weakly supervised segmentation; the result of tag supervision surpassing point supervision carries broad implications.
+- Novelty: ⭐⭐⭐⭐⭐ The IEP+ABDiv discovery is highly novel, offering a fresh perspective on diffusion models as instance edge annotators.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Dual tracks (unsupervised + weakly supervised), comparison across 10 backbones, complete ablation, and multi-benchmark verification.
+- Writing Quality: ⭐⭐⭐⭐⭐ Fluent narrative with excellent illustrations; every design choice is backed by data.
+- Value: ⭐⭐⭐⭐⭐ Paradigm-shifting contribution to unsupervised/weakly supervised segmentation; the result of tag supervision surpassing point supervision is profound.
 
 <!-- RELATED:START -->
 
@@ -161,10 +175,10 @@ Diffusion vs. non-diffusion backbone comparison:
 ## Related Papers
 
 - [\[CVPR 2026\] VidEoMT: Your ViT is Secretly Also a Video Segmentation Model](../../CVPR2026/segmentation/videomt_your_vit_is_secretly_also_a_video_segmentation_model.md)
+- [\[CVPR 2025\] Your ViT is Secretly an Image Segmentation Model](../../CVPR2025/segmentation/your_vit_is_secretly_an_image_segmentation_model.md)
 - [\[ICLR 2026\] Universal Multi-Domain Translation via Diffusion Routers](universal_multi-domain_translation_via_diffusion_routers.md)
-- [\[CVPR 2026\] Prompt-Driven Lightweight Foundation Model for Instance Segmentation-Based Fault Detection in Freight Trains](../../CVPR2026/segmentation/promptdriven_lightweight_foundation_model_for_inst.md)
-- [\[AAAI 2026\] Text-guided Controllable Diffusion for Realistic Camouflage Images Generation](../../AAAI2026/segmentation/text-guided_controllable_diffusion_for_realistic_camouflage_images_generation.md)
-- [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](../../CVPR2026/segmentation/making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
+- [\[ICLR 2026\] gen2seg: Generative Models Enable Generalizable Instance Segmentation](gen2seg_generative_models_enable_generalizable_instance_segmentation.md)
+- [\[ICML 2025\] FeatSharp: Your Vision Model Features, Sharper](../../ICML2025/segmentation/featsharp_your_vision_model_features_sharper.md)
 
 </div>
 

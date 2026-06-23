@@ -2,73 +2,90 @@
 title: >-
   [Paper Note] Chart Deep Research in LVLMs via Parallel Relative Policy Optimization
 description: >-
-  [ICLR2026][Self-Supervised Learning][chart understanding] This paper proposes PRPO (Parallel Relative Policy Optimization), which addresses GRPO's training bottlenecks under multi-dimensional reward interference and hete…
+  [ICLR 2026][Self-Supervised Learning][chart understanding] Proposes PRPO (Parallel Relative Policy Optimization) to resolve training bottlenecks in GRPO caused by multi-dimensional reward signal interference and heterogeneous data gradient conflicts through parallel decoupling at both reward and data levels. Simultaneously, constructs MCDR-Bench to transform subjective generat
 tags:
-  - "ICLR2026"
-  - "Self-Supervised Learning"
-  - "chart understanding"
-  - "deep research"
-  - "RLHF"
-  - "policy optimization"
-  - "benchmark"
+  - ICLR 2026
+  - Self-Supervised Learning
+  - chart understanding
+  - deep research
+  - RLHF
+  - policy optimization
+  - benchmark
 date: 2026-05-08
-content_hash: 9a6de6a6533d36ec
+content_hash: c7324050dbcce2c5
 ---
-
 # Chart Deep Research in LVLMs via Parallel Relative Policy Optimization
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2603.06677](https://arxiv.org/abs/2603.06677)  
 **Code**: To be confirmed  
-**Area**: Others
+**Area**: Others  
 **Keywords**: chart understanding, deep research, RLHF, policy optimization, benchmark
 
 ## TL;DR
-This paper proposes PRPO (Parallel Relative Policy Optimization), which addresses GRPO's training bottlenecks under multi-dimensional reward interference and heterogeneous data gradient conflicts through two-level parallel decoupled optimization — across reward dimensions and data types. It also introduces MCDR-Bench, which leverages an "error uniqueness principle" to transform subjective generation evaluation into objective error identification, enabling quantitative assessment of chart deep research capabilities.
+Proposes PRPO (Parallel Relative Policy Optimization) to resolve training bottlenecks in GRPO caused by multi-dimensional reward signal interference and heterogeneous data gradient conflicts through parallel decoupling at both reward and data levels. Simultaneously, constructs MCDR-Bench to transform subjective generation evaluation into objective error identification based on the "Principle of Error Uniqueness," enabling quantitative assessment of chart deep research capabilities.
 
 ## Background & Motivation
 
-**Background**: Chart understanding has evolved from simple data extraction to reasoning and analysis. Existing methods (ChartQA, PlotQA, etc.) primarily handle shallow tasks — visual recognition and factual QA — while capabilities for genuine "deep research" (trend analysis, causal reasoning, strategic recommendations) remain severely underdeveloped.
+**Background**: Chart understanding has evolved from simple data extraction to complex reasoning and analysis. Existing methods (e.g., ChartQA, PlotQA) primarily handle shallow tasks—visual recognition and factual Q&A—while capabilities for genuine "deep research" (trend analysis, causal reasoning, strategic suggestions) remain severely insufficient.
 
-**Limitations of Prior Work**: (a) **Training bottleneck** — Chart deep research requires simultaneous mastery of background knowledge integration, fact extraction, relation construction, deep reasoning, and predictive planning, yet GRPO compresses multi-dimensional rewards into a single scalar, causing signal interference and mutual cancellation; gradient conflicts from heterogeneous data allow simple tasks to dominate training. (b) **Evaluation bottleneck** — Existing benchmarks only assess factual QA and cannot evaluate end-to-end analytical reasoning; subjective generation tasks incur high annotation costs and exhibit large answer diversity.
+**Limitations of Prior Work**: (a) **Training Bottleneck**—Deep research on charts requires simultaneous mastery of multi-dimensional capabilities such as background knowledge integration, fact extraction, relationship construction, deep reasoning, and predictive planning. However, GRPO compresses multi-dimensional rewards into a single scalar, leading to signal interference and mutual cancellation; gradient conflicts in heterogeneous data result in simple tasks dominating the training. (b) **Evaluation Bottleneck**—Existing benchmarks evaluate only factoid QA and fail to assess end-to-end analytical reasoning capabilities; subjective generation tasks incur high annotation costs and suffer from large answer diversity.
 
-**Key Challenge**: Tension between coordinated multi-dimensional capability development and single-objective optimization — GRPO aggregates all dimensional rewards into one scalar, compressing variance and weakening the discriminative power of optimization signals, preventing balanced development across dimensions.
+**Key Challenge**: The conflict between the synergistic development of multi-dimensional capabilities versus a single optimization objective—GRPO aggregates rewards across all dimensions into a scalar, compressing variance and weakening the discriminative power of optimization signals, which prevents balanced growth across all dimensions.
 
 **Goal**: (a) How to achieve balanced training under multi-dimensional rewards and heterogeneous data? (b) How to objectively evaluate chart deep research capabilities?
 
-**Key Insight**: Introducing the concept of "parallelism" into policy optimization — parallel optimization across reward dimensions and data capability partitions — to decouple the sources of conflict. On the evaluation side, controlled error injection transforms subjective generation into objective classification.
+**Key Insight**: Introduce the concept of "parallelism" into policy optimization—parallel optimization of reward dimensions + parallel optimization of data capability zones—to decouple the sources of conflict. On the evaluation side, introduce controllable error injection to convert subjective generation into objective classification.
 
-**Core Idea**: Building on GRPO, PRPO introduces two-level parallel decoupling (Reward-PRPO decomposing reward dimensions + Data-PRPO partitioning data types) to eliminate signal interference and gradient conflicts in multi-dimensional training.
+**Core Idea**: Perform two layers of parallel decoupling based on GRPO (Reward-PRPO to decompose reward dimensions and Data-PRPO to partition data types) to eliminate signal interference and gradient conflicts in multi-dimensional training.
 
 ## Method
 
 ### Overall Architecture
-PRPO is a unified framework combining Reward-PRPO and Data-PRPO. Given a chart and question as input, the model generates a deep analysis. During training: (1) Data-PRPO partitions training samples by capability dimension (visual understanding, logical reasoning, data analysis, etc.) and computes advantages independently within each partition; (2) Reward-PRPO separately computes advantages for each reward dimension (background knowledge, factual accuracy, relation construction, reasoning depth, prediction quality) within each partition and performs weighted optimization. For evaluation, MCDR-Bench transforms generation evaluation into error identification through a 5-stage annotation pipeline with controlled error injection.
+The goal of PRPO is to enable a 7B vision-language model to simultaneously learn five capabilities for chart deep research: background knowledge integration, fact extraction, relationship construction, deep reasoning, and predictive planning. The challenge is that GRPO compresses these five reward dimensions into a single scalar and normalizes samples of vastly different difficulty together, resulting in signal cancellation and simple tasks dominating the gradient. PRPO applies "parallel decoupling" to both areas: in the reward component, Reward-PRPO calculates an advantage for each dimension independently; in the data component, Data-PRPO normalizes samples for each capability within their own partitions. Finally, a dual-layer weighted objective is formed. The accompanying MCDR-Bench addresses the evaluation challenge by changing "scoring subjective reports" into "finding errors in reports with an injected mistake," turning end-to-end analysis into an objectively decidable classification task.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Chart + Deep Research Question"] --> ROLL["Qwen2.5-VL-7B<br/>Sample G rollouts"]
+    ROLL --> REW["5D Reward Scoring<br/>BG / FE / RL / DR / F+P"]
+    REW --> RP["Reward-PRPO<br/>Per-dimension intra-group normalization<br/>Advantage Â^(k)"]
+    RP --> DP["Data-PRPO<br/>Partition into M zones by capability_uid<br/>Intra-zone normalization + Outlier demotion"]
+    DP --> OBJ["Dual-layer weighted objective J_PRPO<br/>Update policy model"]
+    OBJ -->|Iteration| ROLL
+    subgraph BENCH["MCDR-Bench (Evaluation Benchmark)"]
+        direction TB
+        P1["5-stage multi-agent pipeline<br/>BG→Fact→Relation→Report→Prediction"] --> P2["Principle of Error Uniqueness<br/>Controllable error injection"]
+        P2 --> P3["1021 Charts / 3084 Samples"]
+    end
+    OBJ --> EVAL["Objective error-finding evaluation<br/>Diagnose 5D capability strength"]
+    BENCH --> EVAL
+```
 
 ### Key Designs
 
-1. **Reward-PRPO (Reward Dimension Parallelism)**:
+**1. Reward-PRPO: Enabling each reward dimension to retain its own optimization signal**
 
-    - Function: Decomposes optimization along reward dimensions, computing advantages independently per dimension.
-    - Mechanism: For $K$ reward dimensions, advantages are computed as $\hat{A}_i^{(k)} = (R_i^{(k)} - \bar{R}^{(k)}) / \sigma^{(k)}$, then combined with weighted aggregation: $J_{\text{Reward-PRPO}} = \sum_{k=1}^K \lambda_k \mathbb{E}[\cdots L_{\text{clip}}(r_{i,t}, \hat{A}_i^{(k)})]$
-    - Design Motivation: GRPO compresses multi-dimensional rewards as $R_i = \sum_k R_i^{(k)}$, causing advantages in some dimensions to be cancelled by disadvantages in others. Reward-PRPO preserves independent optimization signals per dimension, allowing the model to learn each dimension separately.
+The approach in GRPO is to sum the five-dimensional rewards into a scalar $R_i = \sum_k R_i^{(k)}$ before calculating the advantage. Consequently, an advantage in one dimension can be offset by a disadvantage in another, providing the model with an averaged gradient reflecting weak discriminative power. Reward-PRPO decouples this step: it performs intra-group normalization for each of the $K$ reward dimensions independently, $\hat{A}_i^{(k)} = (R_i^{(k)} - \bar{R}^{(k)}) / \sigma^{(k)}$, ensuring each dimension obtains a clean advantage estimation before being combined into the objective based on weights:
 
-2. **Data-PRPO (Data Type Parallelism)**:
+$$J_{\text{Reward-PRPO}} = \sum_{k=1}^K \lambda_k \, \mathbb{E}\big[\cdots L_{\text{clip}}(r_{i,t}, \hat{A}_i^{(k)})\big]$$
 
-    - Function: Partitions data by capability dimension, normalizing advantages independently within each partition.
-    - Mechanism: A `capability_uid` assigns samples to $M$ capability partitions $\{P(Q^{(m)})\}_{m=1}^M$, with partition-level statistics for normalization: $\hat{A}_i^{(m)} = (R_i - \bar{R}^{(m)}) / \sigma^{(m)}$
-    - Outlier Handling: Iteratively detects samples where $|\hat{A}_i^{(t)}| > \tau$ and demotes them to rollout-level individual optimization, preventing outliers from corrupting partition statistics.
-    - Design Motivation: Reward distributions vary drastically across capability dimensions (simple visual recognition vs. complex causal reasoning). Global normalization allows high-variance simple tasks to dominate gradients; partition-level normalization ensures each capability type competes within its own scale.
+This allows the model to receive independent signals for improvement in specific dimensions like "background knowledge" or "reasoning depth" rather than being driven by a compressed total score.
 
-3. **MCDR-Bench (Evaluation Framework)**:
+**2. Data-PRPO: Allowing samples of varying difficulty to compete within their respective scales**
 
-    - Function: A benchmark for quantitative evaluation of chart deep research capabilities.
-    - Construction Pipeline: Phase 1 — 5-stage multi-agent annotation (background acquisition → fact extraction → relation construction → deep research report → predictive planning) with human review; Phase 2 — controlled error injection based on the "error uniqueness principle," transforming subjective generation into objective error identification.
-    - Scale: 1,021 high-complexity charts → 3,084 high-difficulty samples covering 5 capability dimensions.
-    - Design Motivation: Subjective generation tasks are difficult to score objectively. By injecting a single known error into an otherwise correct report and asking the model to identify it, the task becomes objectively decidable and enables precise diagnosis of capability deficiencies per dimension.
+The second conflict arises from data. Simple visual recognition and complex causal reasoning have reward distributions with vastly different means and variances. If normalized using global statistics, simple tasks with high variance dominate the gradient, drowning out signals from complex tasks. Data-PRPO introduces `capability_uid` to partition samples into $M$ capability-based zones $\{P(Q^{(m)})\}_{m=1}^M$. Each zone performs normalization using only its internal statistics $\hat{A}_i^{(m)} = (R_i - \bar{R}^{(m)}) / \sigma^{(m)}$, ensuring each capability type is only compared with similar samples and competes within its own scale. To prevent outliers from skewing partition statistics, an outlier demotion mechanism iteratively detects samples where $|\hat{A}_i^{(t)}| > \tau$, removing them from the partition and demoting them to rollout-level individual optimization—creating soft partitions with individual safeguards.
+
+**3. MCDR-Bench: Transforming subjective generation evaluation into objective error identification**
+
+Deep research reports are open-ended generation tasks, making direct scoring both annotation-heavy and difficult to reproduce. MCDR-Bench bypasses this through a two-phase construction. Phase 1 produces high-quality annotations via a five-stage multi-agent pipeline—background acquisition → fact extraction → relationship construction → deep research report → predictive planning—followed by human auditing. Phase 2 applies controllable error injection into correct reports based on the "Principle of Error Uniqueness," embedding only one known error per report. This transforms the task from "how well it is written" to "whether the error can be identified." This is objectively decidable and, because errors are precisely tied to capability dimensions, allows for direct diagnosis of model weaknesses in specific areas. The resulting benchmark contains 1,021 high-complexity charts and 3,084 difficult samples covering the aforementioned five capability dimensions.
 
 ### Loss & Training
-The unified PRPO objective: for partition $m$ and reward dimension $k$, the advantage is $\hat{A}_i^{(k,m)} = (R_i^{(k)} - \bar{R}^{(k,m)}) / \sigma^{(k,m)}$, and the total objective is a two-level weighted sum: $J_{\text{PRPO}} = \sum_m \lambda_m \sum_k \lambda_k \mathbb{E}[\cdots L_{\text{clip}}(r_{i,t}, \hat{A}_i^{(k,m)})]$. The base model is Qwen2.5-VL-7B-Instruct.
+The two layers of decoupling are merged into a unified PRPO objective: for partition $m$ and reward dimension $k$, the advantage is dual-standardized "within-zone + within-dimension" as $\hat{A}_i^{(k,m)} = (R_i^{(k)} - \bar{R}^{(k,m)}) / \sigma^{(k,m)}$. The total objective is a dual-layer weighted sum:
+
+$$J_{\text{PRPO}} = \sum_m \lambda_m \sum_k \lambda_k \, \mathbb{E}\big[\cdots L_{\text{clip}}(r_{i,t}, \hat{A}_i^{(k,m)})\big]$$
+
+The training backbone is Qwen2.5-VL-7B-Instruct.
 
 ## Key Experimental Results
 
@@ -84,7 +101,7 @@ The unified PRPO objective: for partition $m$ and reward dimension $k$, the adva
 | + PRPO | **50.7** | **61.4** | **81.8** | **72.8** | **84.0** | **69.6** |
 | + PRPO Think | **62.9** | **65.2** | **88.9** | **80.9** | **87.2** | **76.3** |
 
-### Ablation Study (ChartQAPRO Cross-Validation)
+### Ablation Study (ChartQAPRO Cross-validation)
 
 | Configuration | Factoid | MCQ | Conv. | FactChk | Hypo. | Overall |
 |------|---------|-----|-------|---------|-------|---------|
@@ -93,33 +110,33 @@ The unified PRPO objective: for partition $m$ and reward dimension $k$, the adva
 | + PRPO | **36.2** | **50.5** | 49.6 | **53.3** | **53.7** | **43.0** |
 
 ### Key Findings
-- **PRPO comprehensively outperforms GRPO**: On MCDR-Bench, PRPO exceeds GRPO by +7.91% (direct) and +13.26% (Think), with consistent improvements across all 5 dimensions.
-- **Think mode amplifies gains**: PRPO + Think further improves over direct PRPO by +6.64%, indicating that models trained with PRPO release greater potential under chain-of-thought reasoning.
-- **7B model approaches proprietary large models**: PRPO Think's 76.3% surpasses Claude-3.7 Sonnet (75.0%) and approaches Gemini-2.5-Pro (gap of only 13 points), despite being 10–100× smaller.
-- **Cross-benchmark generalization**: PRPO also outperforms GRPO by +6.64% on ChartQAPRO, ruling out overfitting to MCDR-Bench.
-- **Largest gain in FE (Fact Extraction)**: From 39.4 → 61.4 (+22.0), indicating that PRPO's dimension-wise optimization most significantly benefits information extraction.
+- **PRPO consistently outperforms GRPO**: On MCDR-Bench, PRPO exceeds GRPO by +7.91% (direct) and +13.26% (Think), with improvements across all 5 dimensions.
+- **Think mode amplifies gains**: PRPO + Think improves over standard PRPO by +6.64%, indicating that models trained with PRPO unleash more potential under chain-of-thought reasoning.
+- **7B model approaches commercial LLMs**: The 76.3% achieved by PRPO Think surpasses Claude-3.7 Sonnet (75.0%) and nears Gemini-2.5-Pro (only a 13-point gap), despite being 10-100x smaller.
+- **Cross-benchmark generalization**: PRPO also outperforms GRPO by +6.64% on ChartQAPRO, proving it is not overfitting to MCDR-Bench.
+- **FE (Fact Extraction) sees the largest gain**: Increasing from 39.4 to 61.4 (+22.0) demonstrates that PRPO's per-dimension optimization is particularly effective for information extraction.
 
 ## Highlights & Insights
-- **"Parallel decoupling" is a general strategy for multi-dimensional optimization conflicts**: Reward-PRPO decouples along reward dimensions; Data-PRPO decouples along data types. This design philosophy is transferable to any multi-objective RL scenario (e.g., correctness vs. efficiency vs. safety in code generation).
-- **Error injection evaluation paradigm is elegant**: Transforming subjective generation into objective classification reduces annotation costs while enabling fine-grained diagnosis. This evaluation approach generalizes to any long-form generation task (e.g., RAG accuracy, report quality assessment).
-- **Outlier demotion mechanism is practically useful**: Data-PRPO is not a rigid partition — samples detected as unsuitable for their current partition are automatically demoted to individual optimization, balancing partition efficiency with per-instance fairness.
+- **"Parallel Decoupling" is a general strategy for multi-dimensional optimization conflicts**: Decoupling at the reward dimension (Reward-PRPO) and data type (Data-PRPO) levels—this design philosophy can be migrated to any multi-objective RL scenario (e.g., code generation correctness vs. efficiency vs. safety).
+- **Ingenious Error-Injection Evaluation Paradigm**: Converting subjective generation into objective classification reduces annotation costs while enabling fine-grained diagnosis. This evaluation approach can be extended to any long-context generation task (e.g., RAG accuracy, report quality).
+- **Practicality of the Outlier Demotion Mechanism**: Data-PRPO does not use "hard" partitions; it automatically detects samples unsuited for current partitions and demotes them to individual optimization, balancing partition efficiency with individual fairness.
 
 ## Limitations & Future Work
-- **Single base model**: All experiments use Qwen2.5-VL-7B. Effectiveness on larger models (72B+) or different architectures remains unvalidated.
-- **Manually defined capability partitions**: Data-PRPO's `capability_uid` requires predefined capability categories; automatic capability partition discovery is a promising direction for improvement.
-- **Sensitivity of reward dimension weights $\lambda_k$**: The paper does not thoroughly discuss weight sensitivity. Adaptive adjustment of dimension weights (e.g., based on per-dimension convergence rates) may yield further gains.
-- **Chart domain only**: Although PRPO's parallel optimization idea is general, experiments are limited to charts — validation in general multi-task VLM training is warranted.
+- **Single Backbone Model**: All experiments were based on Qwen2.5-VL-7B. Effectiveness on larger models (72B+) or different architectures has not been verified.
+- **Manual Definition of Capability Partitions**: The `capability_uid` in Data-PRPO requires pre-defined categories; automated discovery of capability partitions is a future direction.
+- **Selection of Reward Dimension Weights $\lambda_k$**: The paper does not discuss weight sensitivity in detail. Adaptive adjustment of weights (e.g., based on convergence speed) might yield further improvements.
+- **Limited to Chart Domain**: While the parallel optimization idea of PRPO is general, experiments were limited to charts; validation in general VLM multi-task training is warranted.
 
 ## Related Work & Insights
-- **vs. GRPO/DAPO**: GRPO uses group-level normalization but a single reward scalar. DAPO addresses entropy collapse but does not handle multi-dimensional conflicts. PRPO's key addition is "two-level parallelism" — across dimensions and data types.
-- **vs. ChartReasoner**: ChartReasoner applies SFT+GRPO for structured reasoning. PRPO does not modify the reasoning structure, only the optimization strategy — making it more lightweight and general.
-- **vs. PPO/DPO**: PPO requires an additional value model; DPO avoids the reward model but does not naturally accommodate multi-dimensional rewards. PRPO natively supports multiple dimensions within the GRPO framework.
+- **vs GRPO/DAPO**: GRPO uses group-level normalization but a single reward scalar. DAPO addresses entropy collapse but fails to handle multi-dimensional conflicts. PRPO’s core addition is "dual-layer parallelism"—dimension + data type.
+- **vs ChartReasoner**: ChartReasoner uses SFT+GRPO for structured reasoning. PRPO does not change the reasoning structure but modifies the optimization strategy—making it more lightweight and general.
+- **vs PPO/DPO**: PPO requires an additional value model; DPO avoids reward models but handles multi-dimensional rewards unnaturally. PRPO provides native multi-dimensional support within the GRPO framework.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Dual innovation of parallel decoupled training + error injection evaluation, though Reward-PRPO is essentially standard multi-objective optimization decomposition.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Dual validation on MCDR-Bench + ChartQAPRO with comprehensive comparisons to proprietary and open-source models, but lacks experiments on additional base models.
-- Writing Quality: ⭐⭐⭐⭐ Problem analysis is clear and mathematical derivations are rigorous, though Sections 3–4 are slightly redundant in structure.
-- Value: ⭐⭐⭐⭐ PRPO's parallel optimization idea offers general reference value for multi-dimensional RLHF training; MCDR-Bench fills the evaluation gap for chart deep research.
+- Novelty: ⭐⭐⭐⭐ Dual innovation in parallel decoupled training and error-injection evaluation, though Reward-PRPO is essentially a multi-objective optimization decomposition.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Dual validation on MCDR-Bench and ChartQAPRO with comprehensive commercial/open-source comparisons, though lack of varied backbone experiments.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem analysis and rigorous math, though Sections 3-4 are slightly dense.
+- Value: ⭐⭐⭐⭐ PRPO's parallel optimization philosophy is a general reference for multi-dimensional RLHF training, and MCDR-Bench fills the gap in chart deep research evaluation.
 
 <!-- RELATED:START -->
 
@@ -128,10 +145,10 @@ The unified PRPO objective: for partition $m$ and reward dimension $k$, the adva
 ## Related Papers
 
 - [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](../../NeurIPS2025/self_supervised/m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
+- [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](../../CVPR2026/self_supervised/scaling_parallel_sequence_models_to_vision_foundation_models.md)
+- [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
+- [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
 - [\[AAAI 2026\] FedGRPO: Privately Optimizing Foundation Models with Group-Relative Rewards from Domain Clients](../../AAAI2026/self_supervised/fedgrpo_privately_optimizing_foundation_models_with_group-relative_rewards_from_.md)
-- [\[CVPR 2026\] Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces](../../CVPR2026/self_supervised/hier-cos_making_deep_features_hierarchy-aware_via_composition_of_orthogonal_subs.md)
-- [\[NeurIPS 2025\] Continuous Subspace Optimization for Continual Learning (CoSO)](../../NeurIPS2025/self_supervised/continuous_subspace_optimization_for_continual_learning.md)
-- [\[ICLR 2026\] Temporal Slowness in Central Vision Drives Semantic Object Learning](temporal_slowness_in_central_vision_drives_semantic_object_learning.md)
 
 </div>
 

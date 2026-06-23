@@ -2,135 +2,152 @@
 title: >-
   [Paper Note] VINCIE: Unlocking In-context Image Editing from Video
 description: >-
-  [ICLR 2026][Segmentation][in-context editing] VINCIE is a framework that first demonstrates that in-context image editing models can be learned entirely from native video data. By annotating videos as interleaved multimo…
+  [ICLR 2026][Segmentation][DiT] The VINCIE framework is proposed, demonstrating for the first time that in-context image editing models can be learned entirely from native video data. By annotating videos as interleaved multimodal sequences and designing three proxy tasks (NIP/CSP/NSP), it reaches SOTA on multi-turn editing benchmarks, increasing the
 tags:
-  - "ICLR 2026"
-  - "Segmentation"
-  - "in-context editing"
-  - "video learning"
-  - "multi-turn editing"
-  - "DiT"
-  - "segmentation prediction"
+  - ICLR 2026
+  - Segmentation
+  - DiT
 date: 2026-05-08
-content_hash: 1193c16881205058
+content_hash: 290cd2f724ad1b86
 ---
-
 # VINCIE: Unlocking In-context Image Editing from Video
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.10941](https://arxiv.org/abs/2506.10941)  
 **Code**: [vincie2025.github.io](https://vincie2025.github.io/)  
-**Area**: Image Segmentation
+**Area**: Image Segmentation  
 **Keywords**: in-context editing, video learning, multi-turn editing, DiT, segmentation prediction
 
 ## TL;DR
 
-VINCIE is a framework that first demonstrates that in-context image editing models can be learned entirely from native video data. By annotating videos as interleaved multimodal sequences and designing three proxy tasks (NIP/CSP/NSP), it achieves state-of-the-art performance on multi-turn editing benchmarks, improving the 5-turn editing success rate from less than 2% (baseline) to 25%.
+The VINCIE framework is proposed, demonstrating for the first time that in-context image editing models can be learned entirely from native video data. By annotating videos as interleaved multimodal sequences and designing three proxy tasks (NIP/CSP/NSP), it reaches SOTA on multi-turn editing benchmarks, increasing the 5-turn editing success rate from <2% to 25% compared to baselines.
 
 ## Background & Motivation
 
-**Background**: In-context image editing enables users to iteratively modify images through multi-turn interactions. Existing methods rely on task-specific pipelines and expert models (e.g., segmentation, inpainting) to construct paired training data.
+**Background**: In-context image editing allows users to modify images iteratively through multi-turn interactions. Existing methods rely on task-specific pipelines and expert models (segmentation, inpainting, etc.) to construct paired training data.
 
-**Limitations of Prior Work**: (1) Constructing paired data for multi-turn editing is extremely difficult; existing methods can only mine single-turn editing pairs. (2) Dependence on task-specific pipelines limits the generality and scalability of data. (3) Consistency degradation and error accumulation in multi-turn editing remain serious issues.
+**Limitations of Prior Work**: (1) Constructing high-quality paired data for multi-turn editing is extremely difficult; existing methods can only mine single-turn editing pairs. (2) Reliance on task-specific pipelines limits data universality and scalability. (3) Issues with consistency and error accumulation in multi-turn editing are severe.
 
-**Key Challenge**: A fundamental tension exists between the scarcity of high-quality multi-turn editing training data and the need for models to learn long-range contextual dependencies.
+**Key Challenge**: The contradiction between the scarcity of high-quality multi-turn editing training data and the model's requirement to learn long-range context dependencies.
 
-**Goal**: To investigate whether a meaningful in-context image editing model can be learned solely from video data, without any independently curated image pairs.
+**Goal**: Whether a meaningful in-context image editing model can be learned solely from video data, without any independent image pairs.
 
-**Key Insight**: Videos naturally contain rich visual dynamics—object appearance and disappearance, pose changes, camera motion—which implicitly provide learning signals for editing operations.
+**Key Insight**: Videos naturally contain rich visual dynamics (objects entering/leaving, pose changes, camera movement), which implicitly provide learning signals for editing operations.
 
-**Core Idea**: Native video data is used to construct interleaved multimodal sequences (frames + transition descriptions + segmentation masks), and a DiT model is trained via three proxy tasks to learn context-aware image editing.
+**Core Idea**: Construct interleaved multimodal sequences (frames + transformation descriptions + segmentation masks) from native video data to train a DiT model to learn context-aware image editing via three proxy tasks.
 
 ## Method
 
 ### Overall Architecture
 
-(1) $K$ frames are sparsely sampled from a video, and a VLM annotates inter-frame visual transition descriptions $T_i$; (2) GroundingDINO + SAM2 generate segmentation masks for regions of editing interest (RoE); (3) an interleaved multimodal sequence $(I_0, T_0, M_{00}, M_{01}, I_1, \ldots, I_K)$ is constructed; (4) a DiT model is jointly trained via three proxy tasks.
+The core challenge VINCIE addresses is the lack of high-quality "paired editing" training data for multi-turn in-context image editing, as constructing such data is labor-intensive. Its breakthrough lies in transferring this data problem to naturally massive video data—where object dynamics, pose variations, and camera movements in a video segment essentially constitute a sequence of "edits." The process starts with a **video annotation pipeline** that transforms raw video into an interleaved multimodal sequence (frames + editing instructions + segmentation masks). Subsequently, a **DiT model** is trained on this sequence for generative tasks based on history, optimized by **three proxy tasks**. The sequence takes the form $S=(I_0, T_0, M_{00}, M_{01}, I_1, \ldots, I_K)$, where $T_i$ represents the editing instruction between adjacent frames and $M$ marks the masks for the "Region of Editing" (RoE). The model ultimately outputs a sequence of iteratively modified editing results.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    V["Raw Video"] --> PIPE
+    subgraph PIPE["Scalable Video Annotation Pipeline"]
+        direction TB
+        SMP["Sparse Sampling Frames<br/>(Equal Interval + Fixed Count)"] --> VLM["VLM Chain-of-Thought<br/>Generates Instructions Ti"]
+        VLM --> ROE["GroundingDINO+SAM2<br/>Extracts RoE Masks"]
+    end
+    PIPE --> SEQ["Interleaved Multimodal Sequence<br/>(I0,T0,M..,I1,…,IK)"]
+    SEQ --> DIT["DiT Architecture and Context Composition Learning<br/>(TURN Token / Separate RoPE / Context Dropout)"]
+    DIT --> TASKS
+    subgraph TASKS["Three-Proxy Task Learning Framework"]
+        direction TB
+        NIPN["NIP: Predict Next Image<br/>(Main Task)"]
+        CSPN["CSP: Current Segmentation<br/>(Where it changes)"]
+        NSPN["NSP: Next Segmentation<br/>(Where it will change)"]
+    end
+    TASKS --> OUT["Multi-turn In-context Editing Results"]
+```
 
 ### Key Designs
 
-1. **Scalable Video Data Annotation Pipeline**:
-    - **Function**: Converts native video into interleaved multimodal sequences suitable for training in-context editing models.
-    - **Mechanism**: A hybrid sampling strategy is adopted (uniform interval sampling + fixed-frame-count sampling). Adjacent frames are annotated by a VLM using chain-of-thought (CoT) reasoning to describe visual transitions (enumerating differences across aspects → summarizing into an editing instruction $T_i$), followed by GroundingDINO + SAM2 to extract RoE segmentation masks.
-    - **Design Motivation**: Uniform interval sampling captures fine-grained object-level changes, while fixed-frame-count sampling covers large-scale scene-level changes. RoE masks provide explicit spatial localization signals.
+**1. Scalable Video Annotation Pipeline: Automatically transforming videos into training data**
 
-2. **DiT Architecture and In-Context Compositional Learning**:
-    - **Function**: Learns context-conditioned image generation within a Diffusion Transformer framework.
-    - **Mechanism**: The modeling objective is $\log p(S) = \sum_{i=1}^{M} \log p(I_i | I_0, \ldots, T_{i-1}, I_{i-1})$. Learnable `<TURN>` tokens separate turns; 1D RoPE is applied to text and 3D RoPE to images. Both full attention and block-level causal attention variants are provided. Random dropout is applied to contextual inputs (frames and masks) to improve generalization.
-    - **Design Motivation**: Pre-trained weights from video foundation models provide strong initialization; context dropout encourages the model to flexibly leverage varying combinations of contextual information.
+The scarcity of multi-turn editing data stems from the difficulty of acquiring "paired editing images" at scale. This step bypasses the bottleneck by mining editing signals from natural video. A hybrid sampling strategy is used: equal-interval sampling captures fine-grained object-level changes, while fixed-frame-count sampling covers large-scale changes like camera movement and scene switching. During annotation, the VLM performs Chain-of-Thought (CoT) reasoning—first describing differences between two frames across multiple aspects, then summarizing these into an executable instruction $T_i$ to avoid missing details. GroundingDINO and SAM2 are then used to extract RoE masks, providing an explicit spatial grounding signal. This automated pipeline can run on approximately 10M sessions, converting massive video volume into training data scale.
 
-3. **Three-Proxy-Task Learning Framework**:
-    - **Function**: Enhances editing capability through three complementary tasks.
-    - **Mechanism**: (i) Next-frame Image Prediction (NIP)—the primary task, learning context-aware editing; (ii) Current Segmentation Prediction (CSP)—improves grounding ability by identifying regions to be edited; (iii) Next-frame Segmentation Prediction (NSP)—enhances controllable generation by assisting dynamic layout adjustment. All three tasks are jointly trained in a unified generative framework using the MSE diffusion loss under flow matching.
-    - **Design Motivation**: CSP helps the model understand "what changed," while NSP helps the model anticipate "what will change," and both jointly enhance the editing quality of NIP.
+**2. DiT Architecture and Context Composition Learning: Learning to utilize historical information flexibly**
+
+The essence of editing is "generating the current frame while observing all previous turns," so the modeling objective is formulated autoregressively:
+
+$$\log p(S) = \sum_{i=1}^{M} \log p(I_i \mid I_0, T_0, \ldots, T_{i-1}, I_{i-1})$$
+
+Each frame is conditioned on all previous images and instructions. Learnable `<TURN>` tokens separate different turns in the sequence. For positional encoding, text uses 1D RoPE and images use 3D RoPE to match their respective dimensional structures and avoid conflicts. Attention mechanisms include both full attention and block-level causal attention variants, the latter ensuring the model does not "peek" into the future when generating frame $i$. A critical technique is applying random dropout to the context—current frames, current RoE masks, and next RoE masks are dropped with probabilities of 20%, 70%, and 70% respectively (applied independently per turn). This prevents the model from memorizing fixed input combinations and encourages robustness under incomplete contexts during inference. The model is initialized with weights from a video foundation model.
+
+**3. Three-Proxy Task Learning Framework: Using "what changed/what will change" to boost quality**
+
+Relying solely on the Next Image Prediction (NIP) task often results in imprecise localization of editing regions. Therefore, two additional segmentation tasks are included for joint training. Current Segmentation Prediction (CSP) requires the model to explicitly predict "where is the region to be modified in the current frame," strengthening grounding capabilities for local additions/deletions. Next Segmentation Prediction (NSP) asks the model to predict "what the layout will look like after editing," assisting it with pose changes and object movements where layouts adjust dynamically. All three tasks share the same generative framework and use flow matching MSE diffusion loss. CSP (where it changed) and NSP (where it will change) inject spatial information into NIP, ensuring edits are both accurate and clean.
 
 ### Loss & Training
 
-The MSE diffusion loss under flow matching is used. RoE masks are included in training with an 80% probability. Context dropout rates: 20% for the current frame, 70% for the current RoE, and 70% for the next-frame RoE. Inference uses 50 sampling steps with CFG scale = 10. The 3B model is trained for 15k steps on 256 × H100 GPUs for approximately 30 hours; the 7B model for 40k steps for approximately 150 hours. The training data comprises approximately 10M session instances.
+The three tasks are jointly optimized using a unified flow matching MSE diffusion loss. RoE masks are included in training with an 80% probability, combined with context dropout to enhance generalization. Inference utilizes 50-step sampling with a CFG scale of 10. In terms of scale, the 3B model was trained on 256×H100s for 15k steps (approx. 30h), and the 7B model for 40k steps (approx. 150h), using about 10M session instances.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | Ours (7B+SFT) | Prev. SOTA / Baseline | Notes |
+| Dataset | Metric | Ours (7B+SFT) | Prev. SOTA/Comp. | Note |
 |--------|------|------|------|------|
 | MagicBrush Turn-1 | DINO | 0.891 | 0.886 (Nano Banana) | Surpasses all academic methods |
-| MagicBrush Turn-3 | DINO | 0.775 | 0.773 (Nano Banana) | Multi-turn advantage more pronounced |
+| MagicBrush Turn-3 | DINO | 0.775 | 0.773 (Nano Banana) | Multi-turn advantage is more evident |
 | MSE-Bench Turn-1 | Success Rate | 0.950 | 0.937 (Step1X-Edit) | Second only to Bagel |
-| MSE-Bench Turn-5 | Success Rate | 0.487 | 0.413 (Bagel) | Substantially outperforms open-source methods |
-| MSE-Bench Turn-5 | Success Rate | 0.210→0.487 | 3B→7B+SFT | Significant scaling effect |
+| MSE-Bench Turn-5 | Success Rate | 0.487 | 0.413 (Bagel) | Significantly better than open-source methods |
+| MSE-Bench Turn-5 | Success Rate | 0.210→0.487 | 3B→7B+SFT | Scaling effects are significant |
 
 ### Ablation Study
 
-| Configuration | Metric | Notes |
+| Configuration | Metric | Note |
 |------|------|------|
-| w/o Seg. vs. w/ Seg. | MSE Turn-1: 0.847→0.887 | Segmentation prediction tasks improve editing performance |
+| w/o Seg. vs w/ Seg. | MSE Turn-1: 0.847→0.887 | Segmentation tasks improve editing capability |
 | CS→I | MagicBrush DINO Turn-1: 0.797 | Current segmentation improves consistency |
-| CS→NS→I | MagicBrush DINO Turn-3: 0.679 | Chained editing strategy is optimal |
-| Pairwise vs. sequence | MSE Turn-5: 0.010→0.220 | Sequence data substantially outperforms paired data |
-| Data scale 0.25M→10M | MSE Turn-5: 5%→22% | Approximately log-linear scaling |
+| CS→NS→I | MagicBrush DINO Turn-3: 0.679 | Chain-editing strategy is optimal |
+| pairwise vs sequence | MSE Turn-5: 0.010→0.220 | Sequence data far superior to paired data |
+| Data Scale 0.25M→10M | MSE Turn-5: 5%→22% | Approximate log-linear scaling |
 
 ### Key Findings
 
-- Training solely on video data is sufficient to match SOTA methods that use paired editing data; video pre-training followed by SFT yields the best results.
-- In-context editing effectively mitigates artifact accumulation across multi-turn editing.
-- The model exhibits emergent capabilities not explicitly trained for: multi-concept composition, story generation, and chained editing.
+- Video-only training can match SOTA methods using paired editing data, with video pre-training followed by SFT yielding the best results.
+- In-context editing effectively mitigates artifact accumulation during multi-turn edits.
+- The model exhibits emergent capabilities not explicitly trained: multi-concept composition, story generation, and chain editing.
 
 ## Highlights & Insights
 
-- This work is the first to demonstrate the feasibility of learning in-context image editing from purely video data, opening a new paradigm for data sourcing. The massive scale of available video data confers a natural scalability advantage.
-- The three proxy tasks are elegantly designed: CSP addresses "where things changed," NSP anticipates "where things will change," and their synergy enhances the editing quality of NIP—a decomposition strategy worth adopting broadly.
+- Demonstrates for the first time the feasibility of learning in-context image editing from pure video data, providing a new perspective on data sources. The massive scale of video offers a natural scalability advantage.
+- The design of three proxy tasks is clever: CSP understands the "changed region" while NSP predicts "future changes," collaboratively enhancing NIP editing quality. This decomposition approach is highly referenceable.
 
 ## Limitations & Future Work
 
-- Video training introduces subject position shifts, which are partially mitigated by segmentation prediction but not fully resolved.
-- A substantial gap remains compared to commercial models (GPT-4o: 62.7%, Nano Banana: 64.3%) on MSE-Bench Turn-5.
-- The evaluation relies solely on GPT-4o automatic assessment, without user satisfaction or preference studies.
+- Video training introduces a "position shift" of subjects; while partially mitigated by segmentation prediction, it is not fully resolved.
+- A significant gap still exists compared to commercial models (GPT-4o 62.7%, Nano Banana 64.3%) on MSE-Bench Turn-5.
+- Lack of human satisfaction or preference assessments; reliance on GPT-4o for automated evaluation.
 
 ## Related Work & Insights
 
-- **vs. InstructPix2Pix**: IP2P depends on GPT-3 + SD to generate paired data and supports only single-turn editing; VINCIE leverages video to naturally support multi-turn interactions.
-- **vs. OmniGen/OmniGen2**: OmniGen uses paired editing data and suffers a sharp drop in multi-turn success rate (only 8.3% at MSE Turn-5); VINCIE's contextual modeling is substantially more robust.
-- **vs. UES/RealGeneral**: These methods exploit only two frames from a video, ignoring long-range context; VINCIE uses complete multi-frame sequences.
+- **vs InstructPix2Pix**: IP2P relies on GPT-3+SD generated paired data and only supports single-turn edits; VINCIE utilizes video to naturally support multi-turn.
+- **vs OmniGen/OmniGen2**: OmniGen uses paired editing data, and its success rate drops sharply in multi-turn scenarios (MSE Turn-5 at only 8.3%); VINCIE’s context modeling is more robust.
+- **vs UES/RealGeneral**: These methods only utilize two frames from a video, ignoring long-range context; VINCIE utilizes full multi-frame sequences.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First to learn in-context editing from video data; a paradigm-level innovation with emergent capabilities.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Introduces the MSE-Bench benchmark; ablations are comprehensive; scaling analysis is thorough.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear; methodology is described systematically; experimental presentation is polished.
-- Value: ⭐⭐⭐⭐⭐ Establishes the video→editing paradigm; data scalability addresses a core bottleneck in the field.
+- Novelty: ⭐⭐⭐⭐⭐ First to learn in-context editing from video data; paradigm shift with emergent capabilities.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Proposed new MSE-Bench benchmark; comprehensive ablations and scalability analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation; systematic method description; well-presented experiments.
+- Value: ⭐⭐⭐⭐⭐ Opened a New Video→Editing paradigm; data scalability addresses core field bottlenecks.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Context-Aware Image Anonymization with Multi-Agent Reasoning](../../CVPR2026/segmentation/towards_context-aware_image_anonymization_with_multi-agent_reasoning.md)
 - [\[ICCV 2025\] VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation](../../ICCV2025/segmentation/veggie_instructional_editing_and_reasoning_video_concepts_with_grounded_generati.md)
 - [\[ICCV 2025\] CAVIS: Context-Aware Video Instance Segmentation](../../ICCV2025/segmentation/cavis_context-aware_video_instance_segmentation.md)
+- [\[ICLR 2026\] Matting Anything 2: Towards Video Matting for Anything](matting_anything_2_towards_video_matting_for_anything.md)
 - [\[CVPR 2026\] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video](../../CVPR2026/segmentation/robotseg_a_model_and_dataset_for_segmenting_robots_in_image_and_video.md)
-- [\[ICLR 2026\] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation](amlris_alignment-aware_masked_learning_for_referring_image_segmentation.md)
+- [\[CVPR 2025\] The Power of Context: How Multimodality Improves Image Super-Resolution](../../CVPR2025/segmentation/the_power_of_context_how_multimodality_improves_image_super-resolution.md)
 
 </div>
 

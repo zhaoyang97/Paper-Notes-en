@@ -2,131 +2,114 @@
 title: >-
   [Paper Note] t-SNE Exaggerates Clusters, Provably
 description: >-
-  [ICLR 2026][t-SNE] This paper provides rigorous theoretical proofs of two fundamental failure modes of t-SNE: (1) the strength of input clusters cannot be inferred from the output…
+  [ICLR 2026][Others][t-SNE] This work provides a rigorous theoretical proof that t-SNE suffers from two fundamental failure modes: (1) inability to infer the strength of input clustering from the output, and (2) inability to faithfully represent extreme outliers. Even when the input lacks cluster structure or contains extreme outliers, t-SNE can
 tags:
-  - "ICLR 2026"
-  - "t-SNE"
-  - "cluster exaggeration"
-  - "dimensionality reduction"
-  - "misleading visualization"
-  - "outliers"
+  - ICLR 2026
+  - Others
+  - t-SNE
 date: 2026-05-08
-content_hash: 4191b4814808ce58
+content_hash: a293aa3041e64714
 ---
-
 # t-SNE Exaggerates Clusters, Provably
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.07746](https://arxiv.org/abs/2510.07746)  
 **Code**: [https://github.com/njbergam/tsne-exaggerates-clusters](https://github.com/njbergam/tsne-exaggerates-clusters)  
-**Area**: Data Visualization / Theoretical Analysis
-**Keywords**: t-SNE, cluster exaggeration, dimensionality reduction, misleading visualization, outliers
+**Area**: Data Visualization / Theoretical Analysis  
+**Keywords**: t-SNE, Cluster Exaggeration, Dimensionality Reduction, Misleading Visualization, Outliers
 
 ## TL;DR
 
-This paper provides rigorous theoretical proofs of two fundamental failure modes of t-SNE: (1) the strength of input clusters cannot be inferred from the output, and (2) extreme outliers cannot be faithfully represented — even when the input has no cluster structure or contains extreme outliers, t-SNE may produce perfectly clustered visualizations.
+This work provides a rigorous theoretical proof that t-SNE suffers from two fundamental failure modes: (1) inability to infer the strength of input clustering from the output, and (2) inability to faithfully represent extreme outliers. Even when the input lacks cluster structure or contains extreme outliers, t-SNE can produce visualizations with perfect clustering.
 
 ## Background & Motivation
 
-- **Background**: t-SNE is a standard tool for exploratory data analysis, widely used in single-cell genomics, language model interpretability, and beyond.
-- **Existing Theory**: Prior work has proven that t-SNE produces cluster-preserving outputs for well-separated input clusters (true-positive guarantees).
-- **Limitations of Prior Work**: Theoretical analysis of false positives (clustered output from unstructured input) and false negatives (unstructured output from clustered input) has been absent.
-- **Key Challenge**: t-SNE outputs directly influence hypothesis generation, experimental design, and scientific conclusions, making its failure modes practically consequential.
+- **Widespread Use of t-SNE**: t-SNE is a standard tool for exploratory data analysis, widely used in fields such as single-cell genomics and language model interpretability.
+- **Existing Theory**: Prior work has proven that t-SNE can produce outputs that preserve cluster structures for well-separated input clusters (true positive guarantees).
+- **Theoretical Gap**: Theoretical analysis regarding false positives (clustered output from non-clustered input) and false negatives (non-clustered output from clustered input) has been missing.
+- **Scientific Impact**: The output of t-SNE directly influences hypothesis generation, experimental design, and scientific conclusions.
 
 ## Method
 
-### Formalization of t-SNE
+### Overall Architecture
 
-The input affinity matrix $P$ is constructed via a Gaussian kernel:
-$$P_{j|i}(X; \sigma_i) := \frac{\exp(-\|x_j - x_i\|^2 / (2\sigma_i^2))}{\sum_{k \neq i} \exp(-\|x_k - x_i\|^2 / (2\sigma_i^2))}$$
+This paper performs a rigorous negative theoretical analysis of standard t-SNE rather than proposing a new algorithm. It formulates t-SNE as an optimization problem minimizing the KL divergence between input affinities $P$ and output affinities $Q$. By characterizing the stationary point structure regarding "what kind of input is mapped to what kind of output," the authors construct counterexamples to prove two types of failures. Specifically, input affinities are defined by a Gaussian kernel with adaptive bandwidth $\sigma_i$ as $P_{j|i}(X;\sigma_i)=\frac{\exp(-\|x_j-x_i\|^2/(2\sigma_i^2))}{\sum_{k\neq i}\exp(-\|x_k-x_i\|^2/(2\sigma_i^2))}$, and output affinities use the heavy-tailed t-distribution $Q_{ij}(Y)=\frac{(1+\|y_i-y_j\|^2)^{-1}}{\sum_{k\neq l}(1+\|y_k-y_l\|^2)^{-1}}$. The optimization objective is $\mathcal{L}_X(Y):=\text{KL}(P(X)\|Q(Y))$, and the analysis is built entirely upon the stationary points of this objective.
 
-The output affinity matrix $Q$ is based on the $t$-distribution:
-$$Q_{ij}(Y) := \frac{(1 + \|y_i - y_j\|^2)^{-1}}{\sum_{k,l; k \neq l} (1 + \|y_k - y_l\|^2)^{-1}}$$
+### Key Designs
 
-Objective: minimize $\mathcal{L}_X(Y) := \text{KL}(P(X) \| Q(Y))$
+This paper is a purely theoretical negative analysis and does not involve a pipeline. The following four design points follow a logical chain: "Identifying the root cause (Additive Invariance) -> Deriving two classes of failures -> Turning existential counterexamples into actionable attacks."
 
-### Core Finding 1: Cluster Strength Is Not Identifiable
+**1. Additive Invariance: The Root Cause of Misleading Behavior**
 
-**Theorem 3** (Different inputs, identical outputs): For any $0 < \epsilon \leq 1$, there exists a dataset $X_\epsilon$ such that:
-$$\bar{\mathcal{S}}(X_\epsilon; C_{m \in [k]}) = \epsilon \cdot \bar{\mathcal{S}}(X; C_{m \in [k]})$$
-yet for any perplexity $\rho$:
-$$\text{t-SNE}_\rho(X) = \text{t-SNE}_\rho(X_\epsilon)$$
+The reason t-SNE can be deceptive lies in a long-overlooked property re-derived in this paper: it is not only scale-invariant to squared input distances but also possesses **additive translation invariance**. If a constant $C$ is added to all pairwise squared distances, i.e., $\|x'_i-x'_j\|^2=\|x_i-x_j\|^2+C$, the adaptive bandwidth $\sigma_i$ for each point will absorb this translation during re-normalization. Consequently, $\text{t-SNE}_\rho(X)=\text{t-SNE}_\rho(X')$ holds for any perplexity $\rho$ (Lemma 17). In other words, "raising or lowering the global distance structure" has no effect on the output—there exists an entire equivalence class of inputs that look drastically different but yield identical t-SNE outputs. Both subsequent failure modes are essentially counterexamples constructed within this equivalence class.
 
-That is, an "impostor" dataset with arbitrarily weak cluster structure can produce exactly the same t-SNE output as a strongly clustered dataset.
+**2. Failure Mode 1: Cluster Strength Cannot be Inferred from Output**
 
-**Corollary 4**: For any balanced two-class dataset, there exists a family of datasets with silhouette coefficients ranging from $\epsilon$ to 1 that share an **identical set of t-SNE stationary points**.
+The first failure mode states that a visually clean cluster plot neither allows one to infer how separated the inputs are nor is robust to tiny input perturbations.
 
-### Core Finding 2: Tiny Perturbations Cause Drastic Changes
+In the forward direction, additive invariance allows the construction of "impostor" datasets where any weakly clustered input generates the same visualization as a strongly clustered one. By increasing pairwise distances, an input can be pushed towards a regular simplex (nearly no cluster structure) while maintaining the same visual output. Theorem 3 shows that for any $0<\epsilon\leq 1$, there exists $X_\epsilon$ such that its clustering significance is reduced to $\bar{\mathcal{S}}(X_\epsilon;C_{m\in[k]})=\epsilon\cdot\bar{\mathcal{S}}(X;C_{m\in[k]})$, yet it satisfies $\text{t-SNE}_\rho(X)=\text{t-SNE}_\rho(X_\epsilon)$. Corollary 4 further provides a family of datasets with silhouette coefficients ranging continuously from $\epsilon$ to $1$ that share **identical sets of t-SNE stationary points**.
 
-**Theorem 5**: For any $\epsilon > 0$, there exist datasets $X, X'$ such that all pairwise distance ratios lie within $[1-\epsilon, 1+\epsilon]$ (i.e., distances are nearly identical), yet the t-SNE outputs are completely different.
+In the reverse direction, tiny differences in input are magnified into wildly different plots. Theorem 5 constructs two datasets $X, X'$ where all pairwise distance ratios fall within $[1-\epsilon, 1+\epsilon]$ (nearly indistinguishable), yet their t-SNE outputs differ completely. Lemma 6 goes further: a family of datasets $\Delta_\epsilon$ consisting only of approximate regular simplices is sufficient to cover **all possible t-SNE stationary point outputs**. Thus, "unstructured" input can be interpreted as any structure. Together, these show that no stable mapping exists between input cluster strength and output patterns, especially in high dimensions where measure concentration often lands data in the near-simplex regime.
 
-**Lemma 6** (Surprising result): The set $\Delta_\epsilon$ of datasets that approximately form a regular simplex suffices to generate **all possible t-SNE stationary point outputs**.
+**3. Failure Mode 2: Extreme Outliers Cannot be Faithfully Represented**
 
-### Key Mechanism: Additive Invariance
+The second failure mode targets the representation of outliers. Theorem 9 provides a hard upper bound independent of the input: for **any** t-SNE output $Y$, the metric measuring "how far the most extreme outlier is from the main cluster," $\alpha(Y)$, is bounded by $\alpha(Y)\leq 3.266+o_n(1)$. This means no matter how far an outlier actually is in the input space, its visual outlier-ness in the output is capped at approximately $3.3$. This stems from the asymmetric normalization of affinities—$P$ is normalized per row (adaptive) while $Q$ is normalized globally. This asymmetry prevents any point from being truly isolated in the low-dimensional map. In practice, distant outliers are often absorbed into the main clusters, providing a theoretical explanation for why t-SNE is unsuitable for outlier detection.
 
-Beyond multiplicative scale invariance, t-SNE also exhibits **additive shift invariance** with respect to squared input distances. That is, if $\|x'_i - x'_j\|^2 = \|x_i - x_j\|^2 + C$, then $\text{t-SNE}_\rho(X) = \text{t-SNE}_\rho(X')$. This property is the fundamental cause of the failure modes described above.
+**4. Point Poisoning: Destroying the Entire Plot with One Point at the Mean**
 
-### Core Finding 3: Outliers Are Suppressed
+These vulnerabilities can be exploited adversarially. Adding **one** "poisoning point" placed at the data mean is sufficient to collapse the entire cluster visualization. This is particularly lethal in high dimensions; due to measure concentration, high-dimensional Gaussian mixtures themselves approximate regular simplices. A poisoning point at the mean becomes the nearest neighbor for the majority of samples, rewriting the input affinity matrix $P$ and flattening the cluster structure. This turns the first two failures into an actionable attack: in experiments, adding one poisoning point to a 400-point $\times$ 2000-dimensional Gaussian mixture makes the two-cluster structure completely disappear, whereas injecting up to 50% ordinary outliers has almost no effect.
 
-**Theorem 9**: For **any** t-SNE output $Y$, the outlierness $\alpha(Y) \leq 3.266 + o_n(1)$.
+## Key Experimental Results
 
-Regardless of how extreme the outliers are in the input, t-SNE cannot represent outlierness exceeding approximately 3.6 in the output. This is caused by the asymmetry between the input and output affinity matrices.
-
-### Single-Point Poisoning Attack
-
-Adding a single "poisoning point" placed at the data mean suffices to destroy the entire cluster visualization structure. This effect is particularly severe in high-dimensional data, where the poisoning point becomes the nearest neighbor of most points, drastically altering the affinity matrix.
-
-## Experimental Validation
-
-### Impostor Dataset Experiment
+### Main Results (Impostor Dataset Experiment)
 
 | Metric | Original PBMC3k | Impostor Dataset |
-|--------|----------------|-----------------|
-| t-SNE visualization | Clear clusters | **Nearly identical clusters** |
-| Silhouette coefficient | High (original) | **Extremely low** |
-| Nearest-neighbor ranking | Normal | **Preserved unchanged** |
+|------|-----------|-----------|
+| t-SNE Visualization | Clear Clustering | **Nearly Identical Clustering** |
+| Silhouette Coefficient | High (Original) | **Extremely Low** |
+| Nearest Neighbor Ranking | Normal | **Maintained** |
 
 ### Poisoning Attack Experiment
 
-- 400 points × 2000-dimensional Gaussian mixture → add 1 poisoning point → cluster structure **completely disappears**
-- BBC News dataset: inject 10% poisoning points → silhouette coefficient **halved**
-- By contrast: injecting 50% outliers has **almost no effect** on cluster structure
+- 400 points $\times$ 2000-dim Gaussian mixture $\rightarrow$ add 1 poisoning point $\rightarrow$ cluster structure **completely disappears**.
+- BBC News dataset: injecting 10% poisoning points $\rightarrow$ Silhouette coefficient **halved**.
+- Comparison: injecting 50% outliers has **almost no impact** on cluster structure.
 
 ### Outlier Experiment
 
 | Dataset | $\alpha$ in t-SNE | $\alpha$ in PCA |
-|---------|------------------|----------------|
-| Financial fraud data | ~0.2 | Separation preserved |
-| Gaussian + outliers | ~0.1 | Faithfully recovered |
+|--------|-------------|-----------|
+| Financial Fraud Data | ~0.2 | Remains Separated |
+| Gaussian + Outliers | ~0.1 | Faithfully Restored |
 
 ## Highlights & Insights
 
-1. **First theoretical analysis of t-SNE failure modes**: Prior work offered only empirical observations; this paper provides rigorous proofs.
-2. **Discovery of additive invariance**: Reveals the fundamental cause of t-SNE's misleading behavior.
-3. **Practical implications**:
-    - The strength of input clusters cannot be inferred from t-SNE visualizations.
+1. **First Theoretical Analysis of t-SNE Failure Modes**: While empirical observations existed, this work provides rigorous proofs.
+2. **Discovery of Additive Invariance**: Reveals the fundamental reason behind t-SNE's misleading behavior.
+3. **Practical Implications**:
+    - One cannot infer input cluster strength from t-SNE visualizations.
     - t-SNE is unsuitable for outlier detection.
-    - t-SNE is particularly unstable on high-dimensional data (which tends to approximate a regular simplex).
-4. **PCA as a complement**: PCA significantly outperforms t-SNE in outlier detection and stability.
+    - t-SNE is particularly unstable on high-dimensional data (due to proximity to regular simplices).
+4. **PCA as a Complement**: PCA significantly outperforms t-SNE in terms of stability and outlier detection.
 
 ## Limitations & Future Work
 
-- Theoretical results are based on stationary point analysis; actual t-SNE outputs depend on the optimization trajectory and may avoid certain stationary points.
-- Contributions are primarily mathematical; concrete algorithmic improvements are limited.
-- The paper focuses mainly on t-SNE; analysis of methods such as UMAP is only preliminary.
+- Theoretical results are based on stationary point analysis; actual t-SNE output depends on the optimization path (which might avoid certain stationary points).
+- The contribution is primarily mathematical theory, with few suggestions for algorithmic improvement.
+- Focuses mainly on t-SNE, with only preliminary experiments on methods like UMAP.
 
 ## Related Work & Insights
 
-- **t-SNE theory**: Arora et al. 2018 (cluster-preservation guarantees); Cai & Ma 2022 (analysis of optimization phases)
-- **Critiques of t-SNE**: Chari & Pachter 2023 (t-SNE as an unreliable exploratory analysis tool)
-- **General dimensionality reduction theory**: Snoeck et al. 2026 (any constant-dimensional embedding necessarily incurs distortion)
+- **t-SNE Theory**: Arora et al. 2018 (cluster preservation guarantees), Cai & Ma 2022 (optimization phase analysis).
+- **t-SNE Criticism**: Chari & Pachter 2023 (unreliable tool for exploratory analysis).
+- **General Dimensionality Reduction Theory**: Snoeck et al. 2026 (any constant-dimensional embedding inevitably distorts).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — First rigorous theoretical analysis of t-SNE failure modes
-- **Technical Depth**: ⭐⭐⭐⭐⭐ — Elegant proofs; the discovery of additive invariance is profound
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Theory and experiments are tightly integrated
-- **Writing Quality**: ⭐⭐⭐⭐ — Important cautionary findings for researchers using t-SNE in practice
+- **Novelty**: ⭐⭐⭐⭐⭐ — First rigorous theoretical analysis of t-SNE failure modes.
+- **Technical Depth**: ⭐⭐⭐⭐⭐ — Elegant proofs; profound discovery of additive invariance.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Strong alignment between theory and experiments.
+- **Value**: ⭐⭐⭐⭐ — Important warning for researchers using t-SNE in practice.
 
 <!-- RELATED:START -->
 
@@ -134,11 +117,11 @@ Adding a single "poisoning point" placed at the data mean suffices to destroy th
 
 ## Related Papers
 
+- [\[ICML 2025\] Online Sparsification of Bipartite-Like Clusters in Graphs](../../ICML2025/others/online_sparsification_of_bipartite-like_clusters_in_graphs.md)
 - [\[AAAI 2026\] Provably Data-Driven Projection Method for Quadratic Programming](../../AAAI2026/others/provably_data-driven_projection_method_for_quadratic_programming.md)
+- [\[ICML 2025\] Provably Cost-Sensitive Adversarial Defense via Randomized Smoothing](../../ICML2025/others/provably_cost-sensitive_adversarial_defense_via_randomized_smoothing.md)
+- [\[ICML 2025\] Provably Improving Generalization of Few-Shot Models with Synthetic Data](../../ICML2025/others/provably_improving_generalization_of_few-shot_models_with_synthetic_data.md)
 - [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](../../NeurIPS2025/others/a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
-- [\[ICLR 2026\] Key and Value Weights Are Probably All You Need: On the Necessity of the Query, Key, and Value Weight Triplet in Self-Attention](key_and_value_weights_are_probably_all_you_need_on_the_necessity_of_the_query_ke.md)
-- [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
-- [\[ICLR 2026\] ANO: Faster is Better in Noisy Landscapes](ano_faster_is_better_in_noisy_landscape.md)
 
 </div>
 

@@ -2,140 +2,144 @@
 title: >-
   [Paper Note] The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?
 description: >-
-  [ICLR 2026][bias-variance decomposition] This paper decomposes AI model errors into bias (systematic misalignment) and variance (incoherent behavior), finding that longer reasoning leads to greater incoherence…
+  [ICLR 2026][Others][Paper Note] By decomposing AI model errors into bias (systematic misalignment) and variance (incoherent behavior), this study finds that: longer reasoning leads to higher incoherence; larger models become more incoherent on difficult tasks. This suggests that future super-intelligent AI is more likely to manifest "industrial accid
 tags:
-  - "ICLR 2026"
-  - "bias-variance decomposition"
-  - "AI incoherence"
-  - "reasoning length"
-  - "model scale"
-  - "AI alignment"
+  - ICLR 2026
+  - Others
 date: 2026-05-08
-content_hash: 6f805942d9d02bb5
+content_hash: 2bea1f480ebe6305
 ---
-
 # The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.23045](https://arxiv.org/abs/2601.23045)  
-**Code**: Available  
-**Area**: Other / AI Safety
-**Keywords**: bias-variance decomposition, AI incoherence, reasoning length, model scale, AI alignment
+**Code**: Yes  
+**Area**: Others / AI Safety  
+**Keywords**: Bias-variance decomposition, AI incoherence, reasoning length, model scale, AI alignment
 
 ## TL;DR
-This paper decomposes AI model errors into bias (systematic misalignment) and variance (incoherent behavior), finding that longer reasoning leads to greater incoherence, and that larger models become more incoherent on difficult tasks. This suggests that future superintelligent AI is more likely to exhibit unpredictable, "industrial accident"-style failures than to coherently pursue wrong objectives.
+By decomposing AI model errors into bias (systematic misalignment) and variance (incoherent behavior), this study finds that: longer reasoning leads to higher incoherence; larger models become more incoherent on difficult tasks. This suggests that future super-intelligent AI is more likely to manifest "industrial accident" style unpredictable failures rather than consistently pursuing incorrect goals.
 
 ## Background & Motivation
-A central concern in AI alignment is that models may coherently pursue incorrect goals (misalignment). In practice, however, AI failures are often random and incoherent—resembling a "hot mess" rather than a shrewd adversary. The key question is: as AI capability and task complexity increase, will failures look more like systematic pursuit of wrong objectives (bias-dominated) or unpredictable chaotic behavior (variance-dominated)?
+The core concern of AI alignment is that models might consistently pursue wrong goals (misalignment). However, in practice, AI failures are often random and incoherent—acting like a "hot mess" rather than a shrewd adversary. A key question is: as AI capabilities and task complexity increase, will failures resemble systematic pursuit of wrong goals (bias-dominated) or unpredictable chaotic behavior (variance-dominated)?
 
-The "hot mess theory of intelligence" (Sohl-Dickstein, 2023) posits that as agents become more intelligent, their behavior tends to become more incoherent and less describable by a single objective. If this holds for AI, it would fundamentally reshape the likelihood and focus of misalignment risks. This paper quantifies this question via the decomposition $\text{Error} = \text{Bias}^2 + \text{Variance}$, systematically validating it across multiple tasks and models.
+The "Hot mess theory of intelligence" (Sohl-Dickstein, 2023) posits that as entities become more intelligent, their behavior tends to become more incoherent and harder to describe by a single goal. If this holds for AI, it would fundamentally shift the likelihood and focus of misalignment risks. This paper quantifies this issue through the Error = Bias² + Variance decomposition and systematically validates it across multiple tasks and models.
 
 ## Method
 
-### Bias-Variance Decomposition Framework
-The core mechanism involves sampling the same question at least 30 times to estimate the distribution of model outputs, then decomposing total error into bias and variance components.
+### Overall Architecture
+This paper does not propose a new model but rather provides a metric to measure "how AI fails." The approach involves repeated sampling (e.g., dozens of times) for a fixed problem to decompose the total cross-entropy error of the model's answers into two components: one is "systematic deviation from the target" (Bias), corresponding to the misalignment of consistently pursuing a wrong goal; the other is "self-inconsistency" (Variance), corresponding to chaotic failures like a "hot mess." Based on this decomposition, an "Incoherence" metric is defined by normalizing the variance proportion, allowing models with different error rates to be compared horizontally regarding their "failure patterns." Finally, this unified metric is applied to five classes of failure scenarios and analyzed across two axes: reasoning length and model scale.
 
-**KL decomposition** (Equation 1): For input $x$, model $f_\varepsilon$ produces a probability distribution, and target $y$ is one-hot encoded:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Fixed Problem<br/>Repeated Sampling ≥30 Times"] --> B["KL Bias-Variance Decomposition<br/>Error = Bias² + Variance"]
+    B --> C["Incoherence Metric<br/>Incoherence = Variance/Total Error ∈[0,1]"]
+    C --> D["Unified Measurement Protocol<br/>GPQA/MMLU/SWE-Bench/Safety Eval/Synthetic Optimizer"]
+    D --> E["Dual-Axis Slicing Analysis<br/>Reasoning Length × Model Scale"]
+    E --> F["Conclusion: Longer reasoning leads to higher incoherence<br/>Larger models are more incoherent on hard tasks"]
+```
 
-$$\mathbb{E}_\varepsilon[\text{CE}(y, f_\varepsilon)] = D_{KL}(y \| \bar{f}) + \mathbb{E}_\varepsilon[D_{KL}(\bar{f} \| f_\varepsilon)]$$
+### Key Designs
 
-where the first term is KL-Bias² (divergence between the average prediction and the true target), and the second term is KL-Variance (inconsistency across individual predictions).
+**1. KL Bias-Variance Decomposition: Splitting Cross-Entropy Error**
 
-**Distinction from classical literature**: Traditional bias-variance decomposition takes expectations over training randomness (different random seeds). Here, expectations are taken over test-time randomness (sampling and few-shot context variation), since the analysis concerns fixed models rather than re-trained ones.
+The challenge lies in the fact that "systematic errors" and "random errors" are mixed within a total error rate and cannot be measured separately. For an input $x$, the outputs $f_\varepsilon$ of the same model under different randomness $\varepsilon$ (sampling seeds, few-shot contexts) are treated as a family of predictions. Letting $\bar{f}$ be the average prediction and $y$ be the one-hot target, the expected cross-entropy decomposes exactly into:
 
-### Incoherence Definition
+$$\underbrace{\mathbb{E}_\varepsilon[\text{CE}(y, f_\varepsilon)]}_{\text{Error}} = \underbrace{D_{KL}(y \| \bar{f})}_{\text{Bias}^2} + \underbrace{\mathbb{E}_\varepsilon[D_{KL}(\bar{f} \| f_\varepsilon)]}_{\text{Variance}}$$
+
+The first term, KL-Bias², measures how far the "average answer" is from the ground truth, while the second term, KL-Variance, measures how scattered the individual answers are. Unlike classic bias-variance, the expectation here is taken over test-time randomness (multiple samplings of the same fixed model) rather than traditional training randomness (retraining with different seeds)—because the research object is a pre-trained frontier model, not a learning algorithm. Each question is sampled at least 30 times to estimate this distribution, a frequency verified by the authors as sufficient for stable estimation.
+
+**2. Incoherence Metric: Comparing Models of Different Capabilities**
+
+Looking directly at the magnitude of variance is confounded by the total error rate—strong models err less, and thus naturally have smaller variance, making it unclear if they are "more coherent" or "just more correct." Thus, the proportion of variance within the total error over a set of questions $Q$ is normalized:
+
 $$\text{Incoherence}(Q, f_\varepsilon) = \frac{\sum_i \text{Variance}(q_i, f_\varepsilon)}{\sum_i \text{Error}(q_i, f_\varepsilon)} \in [0, 1]$$
 
-- $0$ = fully coherent (consistently correct or incorrect; pure bias)
-- $1$ = fully random (pure variance)
-- Key advantage: incoherence remains comparable across models of different capability even as overall error rates decrease.
+A value of 0 indicates pure bias (consistent whether right or wrong, like a persistent optimizer), while 1 indicates pure variance (a completely random hot mess). This ratio decouples the absolute error rate; even if the total error rate decreases with capability, one can still compare whether the "failure pattern" leans toward systematic or chaotic—this is the key to the cross-scale comparisons in later sections.
 
-### Experimental Design
-1. **Multiple-choice tasks**: GPQA (scientific reasoning) and MMLU (general knowledge). Each question is sampled ≥30 times with different seeds and few-shot contexts.
-2. **Agent coding**: SWE-Bench, using unit tests as binary indicators decomposed into bias and variance.
-3. **Safety evaluation**: Model Written Evals (MWE), covering both multiple-choice and open-ended formats. Open-ended responses are assessed using embedding variance.
-4. **Synthetic setting**: Transformers of varying sizes are trained to simulate optimizer descent on ill-conditioned quadratic functions (condition number = 50), using decoding-based regression and teacher-forcing training.
-5. **Human survey**: Disjoint groups of participants rank AI systems, humans, and organizations on both intelligence and coherence.
+**3. Unified Measurement Protocol: Applying the Same Metric to Diverse Scenarios**
 
-### Analytical Dimensions
-- **Reasoning length analysis**: Questions are grouped by average reasoning token count to examine the incoherence–length relationship.
-- **Controlling for natural variation**: Within the same question, responses are split into "short reasoning" and "long reasoning" groups by median token length.
-- **Scale analysis**: The Qwen3 series (0.6B–32B) is used, with incoherence–scale relationships analyzed across difficulty-stratified question groups.
+To demonstrate that the conclusions are not accidental to a specific task, the authors implement bias/variance estimations across five settings. Multiple-choice questions use GPQA (scientific reasoning) and MMLU (general knowledge), sampling ≥30 times per question with different seeds and few-shot contexts. Agentic coding uses SWE-Bench, using unit test passes as a binary indicator for decomposition. Safety evaluations use Model Written Evals, with direct decomposition for multiple-choice and embedding variance to approximate "answer inconsistency" for open-ended questions. A synthetic setup trains a transformer to autoregressively simulate an optimizer descending on a pathological quadratic function (condition number=50) to act as a control with fully observable confounding factors. Finally, a human subjective survey is conducted to rank intelligence and coherence for AI, humans, and organizations.
+
+**4. Slicing Analysis on Explanatory Variables: Expanding Incoherence against Reasoning Length and Model Scale**
+
+Instead of a single global figure, the authors slice the data along two axes. For reasoning length, samples are grouped by average reasoning token count to observe incoherence changes, with natural variation control—splitting samples within the same question by median reasoning length into "short reasoning" and "long reasoning" groups to isolate the effect of length itself under identical difficulty. For model scale, the Qwen3 series (0.6B–32B) is used, grouping by task difficulty first; this is because the direction of the scale effect depends on task difficulty.
 
 ## Key Experimental Results
 
-### Finding 1: Longer Reasoning → Greater Incoherence
+### Finding 1: Longer Reasoning → Higher Incoherence
 
-| Setting | Trend | Notes |
-|---------|-------|-------|
-| GPQA (Sonnet 4 / o3-mini / o4-mini) | Longer reasoning → more incoherent | Consistent across all models |
-| SWE-Bench (o3-mini / o4-mini) | More actions → more incoherent | Consistent in agent tasks |
-| MWE safety questions | Embedding variance ↑ with length | Holds for open-ended format |
-| Synthetic optimizer | More steps → higher variance | Validated in controlled setting |
+| Setting | Trend | Explanation |
+|------|------|------|
+| GPQA (Sonnet 4/o3-mini/o4-mini) | Long reasoning → More incoherent | Consistent trend across all models |
+| SWE-Bench (o3-mini/o4-mini) | More actions → More incoherent | Consistent across agentic tasks |
+| MWE Safety | embedding variance ↑ with length | Holds for open-ended tasks |
+| Synthetic Optimizer | More steps → Higher variance | Controlled verification |
 
-The effect persists after controlling for task difficulty: when responses to each question are split by median reasoning length, the naturally longer group shows significantly higher incoherence despite minimal accuracy differences. The effect of natural reasoning variation is far stronger than that of reasoning budget manipulation.
+The effect persists even after controlling for task difficulty: for each problem, grouping by median reasoning length shows that the group with naturally longer reasoning has significantly higher incoherence, despite minimal differences in accuracy. The impact of natural reasoning variation is much stronger than that of the reasoning budget.
 
-### Finding 2: Effect of Model Scale Depends on Task Difficulty
+### Finding 2: Model Scale Impact Depends on Task Difficulty
 
-| Question Difficulty | Incoherence Change (Qwen3 0.6B→32B) | Notes |
-|--------------------|--------------------------------------|-------|
-| Easy | ↓ (more coherent) | Increased capability reduces random errors |
-| Medium | ≈ (stable) | Transitional regime |
-| **Hard** | **↑ (more incoherent)** | Bias decreases faster than variance |
+| Task Difficulty | Qwen3 0.6B→32B Incoherence Change | Explanation |
+|---------|-------------------------------|------|
+| Easy | ↓ (More coherent) | Capability gain reduces random errors |
+| Medium | ≈ (Stable) | Transition zone |
+| **Hard** | **↑ (More incoherent)** | Bias decreases faster than variance |
 
-Key mechanism: both bias and variance decrease as model size grows, but the slope of bias reduction is similar across difficulty groups, whereas the slope of variance reduction is shallower for hard questions. On the most difficult questions, the variance slope is lower than the bias slope, making variance the binding constraint.
+Key mechanism: Both bias and variance decrease as models grow, but the slope of bias decrease is similar across difficulty groups, while the slope of variance decrease is lower (slower) on difficult problems. On the hardest problems, the variance slope is lower than the bias slope, making variance the limiting factor.
 
-### Finding 3: Synthetic Optimizer Validation
-Transformers of varying sizes are trained to simulate optimizer descent on quadratic functions:
+### Finding 3: Synthetic Optimizer Verification
+Training transformers of various sizes to simulate optimization of a quadratic function:
 - Training loss follows a clear power law.
-- During autoregressive rollout, bias decreases much faster than variance as model size increases.
-- This indicates that models learn the correct objective more readily (fast bias reduction) than they maintain long-horizon coherent behavior (slow variance reduction).
+- In autoregressive rollouts, bias decreases with model size much faster than variance.
+- Result: Models learn the correct target (bias ↓ fast) but find it harder to maintain long-term coherent behavior (variance ↓ slow).
 
 ### Finding 4: Ensembling and Reasoning Budget
-- **Ensembling**: Aggregating $E$ samples reduces variance at a rate of $1/E$, effectively lowering incoherence.
-- **Larger reasoning budget**: Slightly reduces incoherence, but the effect is far weaker than that of natural reasoning length variation.
-- The authors conjecture that improvements from reasoning budget may stem from better backtracking and error correction.
+- **Ensembling**: Using an ensemble of $E$ samples reduces variance at a $1/E$ rate, effectively lowering incoherence.
+- **Larger Reasoning Budget**: Slightly reduces incoherence, but the effect is much weaker than that of natural reasoning length.
+- Hypothesis: Improvement from reasoning budgets may come from better backtracking and error correction.
 
 ## Discussion & Insights
 
-### Why Do More Capable Models Become More Incoherent?
-1. **LLMs are dynamical systems, not optimizers**: Among all dynamical systems, those that precisely optimize a fixed loss constitute a set of measure zero. As capability and state space expand, constraining a model to behave as an optimizer becomes increasingly difficult.
-2. **Variance accumulates along trajectories**: Unless active error-correction mechanisms (e.g., ensembling) are in place, variance grows with action sequence length. In real-world deployments, actions are typically irreversible and cannot be reset and corrected as in experimental settings.
+### Why do more capable models become more incoherent?
+1. **LLMs are Dynamical Systems, Not Optimizers**: In the space of all dynamical systems, the set of optimizers for a specific fixed loss is measure zero. As capabilities and state spaces expand, constraining them to function as optimizers becomes harder.
+2. **Variance Accumulates in Trajectories**: Unless there is an active error correction mechanism (like ensembling), longer sequences of actions result in larger variance. In the real world, actions are typically irreversible, unlike the ability to reset and correct in experiments.
 
 ### Further Decomposition of Bias
-$\text{Bias} = \text{Bias}_{\text{mesa}} + \text{Bias}_{\text{spec}}$, where the former reflects divergence between model behavior and the training objective, and the latter reflects divergence between the training objective and the true goal (reward misspecification). In the tasks studied, $\text{Bias}_{\text{spec}}$ is negligible; however, in real deployments, $\text{Bias}_{\text{spec}}$ may dominate errors as capability increases. This underscores the importance of precise training objective specification.
+Bias = Bias_mesa + Bias_spec, where the former is the model behavior deviating from the training target, and the latter is the training target deviating from the true objective (reward misspecification). In the tasks of this paper, Bias_spec is negligible, but in real-world deployment, Bias_spec may dominate errors as capabilities increase. This emphasizes the importance of precise training objective specification.
 
-### Implications for AI Safety
-- If incoherence grows with capability and task complexity, failures of advanced future AI will more closely resemble "industrial accidents" than "malicious adversaries."
-- This shifts the focus of AI safety from defending against coherent scheming toward preventing unpredictable accidents.
-- It elevates the relative importance of research on reward hacking and goal misspecification.
-- However, this does not imply that misalignment is unimportant—$\text{Bias}_{\text{spec}}$ may still dominate in practice.
+### Impact on AI Safety
+- If incoherence grows with capability and task complexity, future advanced AI failures will likely resemble "industrial accidents" rather than "malicious adversaries."
+- This shifts the focus of AI safety from defending against coherent scheming to preventing unpredictable accidents.
+- It increases the relative importance of reward hacking / goal misspecification research.
+- However, this does not mean misalignment is unimportant—Bias_spec may still dominate.
 
 ## Highlights & Insights
-- The paper introduces a novel quantitative framework for AI safety discussions (bias-variance decomposition), transforming the vague question of "how will AI fail" into a measurable one.
-- The "hot mess theory" perspective is original and empirically supported—being smarter does not imply being more coherent.
-- The synthetic optimizer experiment elegantly controls for confounds, directly validating the claim that learning the correct objective is easier than maintaining coherent long-horizon behavior.
-- Consistency between the human survey results and the LLM experimental findings enhances cross-domain credibility.
-- The work has substantive implications for AI governance: should society prepare for industrial accidents or adversarial attacks?
+- Proposes a new quantitative framework for AI safety discussions (bias-variance decomposition), converting vague "how AI will fail" questions into measurable problems.
+- The "Hot mess theory" perspective is novel and empirically supported: higher intelligence does not equal higher coherence.
+- The synthetic optimizer experiment elegantly controls for confounding factors, directly verifying that learning the correct target is easier than maintaining coherence.
+- The human subjective survey aligns with LLM experimental results, increasing cross-domain credibility.
+- Substantial implications for AI governance: prepare for industrial accidents or adversarial attacks?
 
 ## Limitations & Future Work
-- Bias is only defined relative to a known target—in open-ended tasks (e.g., generation, dialogue) where targets are ambiguous, the applicability of the decomposition is limited.
-- While 30 samples are validated as sufficient, estimation in high-dimensional output spaces may still be noisy.
-- Extrapolating from current frontier models to future superintelligent AI is risky, as future training methods may alter the bias-variance structure fundamentally.
-- Variance in deployment can be mitigated through ensembling and repeated sampling, which partially limits the practical severity of the "industrial accident" conclusion.
-- The paper does not deeply analyze the specific mechanisms underlying incoherence (the *why*); results are primarily descriptive.
+- Bias is only defined relative to a target; in open-ended tasks (e.g., creativity, dialogue) where the target is unclear, the applicability of the decomposition is limited.
+- Although 30 samples were verified as sufficient, estimates in high-dimensional output spaces may still be noisy.
+- Extrapolating from current frontier models to future super-AI is risky—future training methods might change the bias-variance structure.
+- Variance can be mitigated in deployment via ensembling/multiple sampling, which may limit the practical severity of the "industrial accident" conclusion.
+- The specific mechanisms for why incoherence increases (the "why") were not analyzed deeply; the results are primarily descriptive.
 
 ## Related Work & Insights
-- Complements the reasoning scaling law literature (Gema et al. 2025: inverse scaling)—not only does performance degrade, but errors become less consistent.
-- Connects to evaluation variance literature (Biderman et al. 2024: high variance in evaluations).
-- Self-consistency (Wang et al. 2023) can be reinterpreted as a mechanism for reducing incoherence.
-- Forms an interesting contrast with the platonic representation hypothesis (Huh et al. 2024: convergence of representations)—representations may converge while behavior remains incoherent.
+- Complements reasoning scaling law literature (Gema et al. 2025: inverse scaling)—not only does performance drop, but errors also become more inconsistent.
+- Connects to evaluation variance literature (Biderman et al. 2024: the high variance of evaluations).
+- Self-consistency (Wang et al. 2023) can be reinterpreted as a means of reducing incoherence.
+- Provides an interesting contrast to the Platonic Representation Hypothesis (Huh et al. 2024: representation convergence)—representations may converge while behavior remains incoherent.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Both the problem formulation and methodology are highly original, opening a new analytical dimension.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-task evaluation, synthetic validation, and human surveys provide broad coverage.
-- Writing Quality: ⭐⭐⭐⭐⭐ Engaging prose, apt metaphors, and excellent visualizations.
-- Value: ⭐⭐⭐⭐⭐ Offers profound guidance for the direction of AI safety research.
+- Novelty: ⭐⭐⭐⭐⭐ The problem formulation and methodology are highly original, opening a new dimension of analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Broad coverage across multi-task, synthetic validation, and human surveys.
+- Writing Quality: ⭐⭐⭐⭐⭐ Engaging, appropriate metaphors, and excellent visualizations.
+- Value: ⭐⭐⭐⭐⭐ Significant guiding implications for the direction of AI safety research.
 
 <!-- RELATED:START -->
 
@@ -143,11 +147,11 @@ $\text{Bias} = \text{Bias}_{\text{mesa}} + \text{Bias}_{\text{spec}}$, where the
 
 ## Related Papers
 
-- [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](../../ICML2026/others/comprehensive_ai_governance_requires_addressing_non-model_gains.md)
-- [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](../../ICML2026/others/beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
-- [\[AAAI 2026\] Bridging the Skills Gap: A Course Model for Modern Generative AI Education](../../AAAI2026/others/bridging_the_skills_gap_a_course_model_for_modern_generative_ai_education.md)
+- [\[ICLR 2026\] CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design](circuitnet_30_a_multi-modal_dataset_with_task-oriented_augmentation_for_ai-drive.md)
+- [\[ICLR 2026\] Ensemble Prediction of Task Affinity for Efficient Multi-Task Learning](ensemble_prediction_of_task_affinity_for_efficient_multi-task_learning.md)
 - [\[ICLR 2026\] Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds](non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds.md)
-- [\[NeurIPS 2025\] Exploiting Task Relationships in Continual Learning via Transferability-Aware Task Embeddings](../../NeurIPS2025/others/exploiting_task_relationships_in_continual_learning_via_transferability-aware_ta.md)
+- [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](../../ICML2026/others/comprehensive_ai_governance_requires_addressing_non-model_gains.md)
+- [\[ICML 2025\] Cross-regularization: Adaptive Model Complexity through Validation Gradients](../../ICML2025/others/cross-regularization_adaptive_model_complexity_through_validation_gradients.md)
 
 </div>
 

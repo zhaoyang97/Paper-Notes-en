@@ -2,150 +2,145 @@
 title: >-
   [Paper Note] SONIC: Spectral Oriented Neural Invariant Convolutions
 description: >-
-  [ICLR 2026][Spectral convolution] SONIC transfers the core idea of state space models to the multi-dimensional frequency domain…
+  [ICLR 2026][Others][Paper Note] SONIC transfers the core concepts of State Space Models (SSMs) to the multi-dimensional frequency domain. By defining a set of direction-selective spectral transfer functions with 6 continuous parameters (amplitude, direction, damping, oscillation, etc.) and mixing across channels via low-rank matrices $B$ and $C$, it
 tags:
-  - "ICLR 2026"
-  - "Spectral convolution"
-  - "orientation invariance"
-  - "continuous parameterization"
-  - "global receptive field"
-  - "resolution adaptability"
+  - ICLR 2026
+  - Others
 date: 2026-05-08
-content_hash: 12778bb828df2ade
+content_hash: 58a1942e1eba3ab4
 ---
-
 # SONIC: Spectral Oriented Neural Invariant Convolutions
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19884](https://arxiv.org/abs/2601.19884)  
-**Code**: N/A  
-**Area**: Medical Imaging / Computer Vision
-**Keywords**: Spectral convolution, orientation invariance, continuous parameterization, global receptive field, resolution adaptability
+**Code**: None  
+**Area**: Others / Computer Vision  
+**Keywords**: Spectral Convolution, Directional Invariance, Continuous Parameterization, Global Receptive Field, Resolution Adaptation
 
 ## TL;DR
 
-SONIC transfers the core idea of state space models to the multi-dimensional frequency domain, defining a set of orientation-selective spectral transfer functions using 6 continuous parameters (amplitude, orientation, damping, oscillation, etc.), and mixing across channels via low-rank matrices $B$ and $C$. This yields a drop-in convolutional replacement operator that inherently possesses a global receptive field and resolution invariance. On 3D medical segmentation, it matches nnU-Net with nearly two orders of magnitude fewer parameters, and is also competitive on ImageNet.
+SONIC transfers the core concepts of State Space Models (SSMs) to the multi-dimensional frequency domain. By defining a set of direction-selective spectral transfer functions with 6 continuous parameters (amplitude, direction, damping, oscillation, etc.) and mixing across channels via low-rank matrices $B$ and $C$, it achieves a convolutional replacement operator with inherent global receptive fields and resolution invariance. It matches nnU-Net on 3D medical segmentation with nearly two orders of magnitude fewer parameters and remains competitive on ImageNet.
 
 ## Background & Motivation
 
-**Background**: The two dominant paradigms for image feature extraction are CNNs and ViTs. CNNs scan local patches with fixed-size kernels and require very deep networks to indirectly obtain global context; ViTs provide global connectivity via self-attention but lack structured spatial inductive biases, rely on explicit positional encodings, and incur quadratic computational complexity with respect to resolution. Spectral methods such as GFNet and FNO attempt to operate directly in the Fourier domain but suffer from notable shortcomings.
+**Background**: The two dominant paradigms for image feature extraction are CNNs and ViTs. CNNs scan local patches with fixed-size kernels, requiring extremely deep networks to indirectly capture global context. ViTs provide global connectivity through self-attention but lack structured spatial inductive biases, depend on explicit positional encodings, and suffer from quadratic computational complexity relative to resolution. Spectral methods like GFNet and FNO attempt direct operations in the Fourier domain but still face significant limitations.
 
-**Limitations of Prior Work**: GFNet's frequency-domain filters are tied to the discrete FFT grid—filter size equals the input spatial resolution, requiring retraining or interpolation whenever the resolution changes. FNO, while capable of handling continuous functions, lacks orientation awareness, treating all frequency directions uniformly and thus struggling to efficiently capture edges and textures in natural images. Parameter counts in existing spectral methods are also typically proportional to the frequency-domain dimensionality, which is particularly problematic for high-resolution 3D medical imaging.
+**Limitations of Prior Work**: Filter parameters in GFNet are tied to a discrete FFT grid—the filter size equal to the input spatial resolution—requiring retraining or interpolation for resolution changes. While FNO handles continuous functions, it lacks directional awareness, treating all frequency directions equally and making it difficult to efficiently capture edges and textures in natural images. Furthermore, the parameter count of existing spectral methods is typically tied to the frequency domain dimensions, which is unacceptable in high-resolution 3D medical imaging scenarios.
 
-**Key Challenge**: A fundamental tension exists between global receptive fields and resolution independence—traditional spatial convolutions are local but resolution-friendly, whereas frequency-domain methods are global but constrained to discrete grids. Furthermore, orientation selectivity is critical for visual tasks (analogous to orientation-selective neurons in the V1 cortex), yet existing spectral methods broadly neglect this property.
+**Key Challenge**: There is an inherent tension between global receptive fields and resolution independence—traditional spatial convolutions are local but resolution-friendly, while frequency-domain methods are global but restricted to discrete grids. Moreover, directional selectivity is crucial for visual tasks (akin to direction-selective neurons in the V1 cortex), yet widely ignored by current spectral methods.
 
-**Goal**: (1) How to design truly continuous, grid-independent convolutional parameterizations in the frequency domain? (2) How to introduce orientation-aware priors in the frequency domain while maintaining an extremely low parameter count? (3) How to enable a single architecture to seamlessly operate across 2D/3D inputs and varying resolutions?
+**Goal**: (1) How to design a truly continuous frequency-domain convolutional parameterization independent of discrete grids? (2) How to introduce directional awareness priors while maintaining an extremely low parameter count? (3) How to enable a single architecture to switch seamlessly between 2D/3D and different resolutions?
 
-**Key Insight**: The authors observe that the core mechanism of state space models (e.g., S4, Mamba)—generating global convolutional kernels from a small number of continuous parameters—can be generalized from 1D sequences to the multi-dimensional frequency domain. Each "mode" defines an orientation-selective transfer function in frequency space via a directional analytic resolvent function, and a small number of modes combined through low-rank matrices can cover a rich frequency-domain response.
+**Key Insight**: The authors observe that the core of State Space Models (e.g., S4, Mamba)—generating global kernels through a few continuous parameters—can be generalized from 1D sequences to the multi-dimensional frequency domain. Each "mode" defines a directional transfer function in frequency space using an oriented analytic function (resolvent). A small number of modes combined via low-rank matrices can cover a rich variety of frequency responses.
 
-**Core Idea**: Parameterize orientation-selective global convolutional kernels in the frequency domain using SSM-style continuous analytic functions, achieving an extremely parameter-efficient global receptive field via low-rank decomposition.
+**Core Idea**: Parameterize direction-selective global convolutional kernels in the frequency domain using SSM-style continuous resolvent functions, achieving extreme parameter efficiency and global receptive fields via low-rank decomposition.
 
 ## Method
 
 ### Overall Architecture
 
-The SONIC operator pipeline is as follows: given an input feature map $X \in \mathbb{R}^{C \times H \times W}$ (or a 3D volume), a multi-dimensional FFT is first applied to obtain $\hat{X}$; a continuously parameterized transfer function $\hat{K}(\omega)$ then performs pointwise multiplication in the frequency domain (i.e., frequency-domain convolution); finally, an IFFT maps the result back to the spatial domain. The key distinction of the transfer function is that it is not a learnable tensor bound to the grid resolution, but rather a continuous function evaluated at arbitrary frequency coordinates from a small set of analytic functions. The entire SONIC block serves as a direct replacement for spatial convolutional layers in standard ResNet / U-Net architectures.
+SONIC aims to replace traditional spatial convolutions with an operator that possesses a global receptive field in a single layer and remains independent of input resolution. The approach moves convolution to the frequency domain: an input feature map $X \in \mathbb{R}^{C \times H \times W}$ (or 3D volume) is transformed via multi-dimensional FFT to $\hat{X}(\omega)$, multiplied point-wise by a transfer function $\hat{H}(\omega)$ (equivalent to global convolution in the spatial domain), and then transformed back via IFFT. The core lies in the parameterization of $\hat{H}(\omega)$: rather than a learnable tensor tied to the FFT grid size, it is a continuous function derived on-the-fly from a small set of oriented resolvents at arbitrary frequency coordinates, mixed across channels by low-rank matrices $B$ and $C$. Since spectral multiplication is linear, each SONIC block adds a learnable skip projection $W_s X$ and a point-wise non-linearity $\sigma$ after the IFFT to build depth.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input Feature Map<br/>X ∈ ℝ^(C×H×W)"] --> FFT["Multi-D FFT<br/>to get X̂(ω)"]
+    M1["Direction-Selective Spectral Modes<br/>M oriented resolvents T_m(ω)<br/>Continuous function evaluated on any grid"] --> H["Spectral Transfer Function<br/>Ĥ(ω)=C·diag(T_m)·B"]
+    M2["Low-rank Channel Mixing<br/>B, C projections"] --> H
+    FFT --> MUL["Spectral Point-wise Multiplication<br/>ŷ(ω)=Ĥ(ω)·X̂(ω)"]
+    H --> MUL
+    MUL --> IFFT["IFFT to Spatial Domain<br/>to get y"]
+    IFFT --> ADD["Add Skip Projection W_s·X<br/>Point-wise Non-linearity σ"]
+    ADD --> OUT["Next Layer Activation x^(ℓ+1)<br/>Stacked SONIC blocks"]
+```
 
 ### Key Designs
 
-1. **Orientation-Selective Spectral Modes**:
+**1. Direction-Selective Spectral Modes: Helping filters "recognize" edge orientations**
 
-    - Function: Each mode defines an orientation-selective transfer function in the frequency domain, selectively amplifying or suppressing frequency components along specific orientations.
-    - Mechanism: Each mode is governed by 6 continuous parameters—amplitude $a$, decay rate $\sigma$, oscillation frequency $\omega_0$, orientation angle $\theta$ (2D) or orientation vector (3D), and phase offset. Together, these define an analytic response function (in resolvent form) in the frequency-orientation space: $H_k(\omega) = a_k / (\sigma_k + i(\omega \cdot \hat{n}_k - \omega_{0,k}))$, where $\hat{n}_k$ is the unit direction vector. Since $H_k$ is a continuous function of the frequency coordinate $\omega$, it can be evaluated directly on FFT grids of arbitrary resolution.
-    - Design Motivation: The energy of natural images in the frequency domain is distributed non-uniformly across orientations (edges correspond to high-frequency components along specific directions). Orientation-selective modes can more efficiently encode these anisotropic structures, while the resolvent parameterization ensures continuity across resolutions.
+A common flaw in existing spectral methods is isotropy—operators like FNO respond only to the frequency magnitude $\|\omega\|$. However, natural image energy is unevenly distributed across directions; an edge corresponds to high frequencies in a specific orientation. SONIC addresses this by defining the spectral operator as a superposition of $M$ oriented "modes," where each mode $m$ is a continuous transfer function in resolvent form:
 
-2. **Low-Rank Channel Mixing Matrices $B$ and $C$**:
+$$T_m(\omega) = \frac{1}{i\,s_m(\omega \cdot v_m) - a_m + \gamma_m \,\lVert (I - v_m v_m^\top)\,\omega \rVert_2^2}$$
 
-    - Function: Map $K$ shared spectral modes to $C$ input/output channels, enabling cross-channel feature mixing in the frequency domain.
-    - Mechanism: On the input side, matrix $B \in \mathbb{R}^{K \times C_{in}}$ projects $C_{in}$ channels into the $K$-mode space; after frequency-domain multiplication by the transfer function, matrix $C \in \mathbb{R}^{C_{out} \times K}$ maps the result back to the output channels. The resulting frequency-domain transfer function is $\hat{K}(\omega) = C \cdot \text{diag}(H_1(\omega), \ldots, H_K(\omega)) \cdot B$. Since $K \ll C$ in general, this is a low-rank decomposition with parameter count $O(K \cdot (C_{in} + C_{out}) + 6K)$, far below the $O(C_{in} \cdot C_{out} \cdot k^d)$ of traditional convolutions.
-    - Design Motivation: Spectral modes are largely shared across channels (e.g., the need for "horizontal edge detection" recurs across multiple channels), and the low-rank decomposition naturally captures this shared structure.
+It is characterized by a few continuous parameters: a unit direction vector $v_m$ (a "compass" in frequency space), a scale $s_m > 0$, a complex number $a_m$ (where $\mathrm{Re}(a_m)$ acts as damping and $\mathrm{Im}(a_m)$ controls oscillation), and a transverse penalty $\gamma_m \ge 0$. The term $\omega \cdot v_m$ projects frequency onto the mode's direction, while $(I - v_m v_m^\top)\omega$ represents the orthogonal component. Consequently, only frequency components aligned with $v_m$ are amplified, while others are suppressed by the $\gamma_m$ term, naturally yielding anisotropic directional filtering.
 
-3. **Continuous Resolution Invariance**:
+**2. Low-rank Channel Mixing Matrices $B, C$: Covering many channels with few modes**
 
-    - Function: The same set of parameters can be applied directly to inputs of different spatial resolutions without fine-tuning or interpolation.
-    - Mechanism: Since the transfer function $H_k(\omega)$ is a continuous function of the frequency coordinate, when the input resolution changes (i.e., the FFT grid becomes denser or sparser), it suffices to re-evaluate the function at the new frequency coordinates. This stands in sharp contrast to GFNet, whose filters are learnable tensors of the same size as the FFT grid and require explicit handling of dimension mismatches upon resolution change.
-    - Design Motivation: In medical imaging, data acquired with the same protocol but different scanners often exhibit significant resolution variation (e.g., MRI slice thickness ranging from 1 mm to 5 mm), making resolution invariance critical for deployment.
+Sharing $M$ modes is insufficient; they must be mapped to $C$ input and $K$ output channels. Instead of learning a separate response for every channel pair, SONIC uses a pair of matrices: $B \in \mathbb{C}^{M \times C}$ projects input channels into the $M$-dimensional mode space, and $C \in \mathbb{C}^{K \times M}$ maps them back. The frequency response for any channel pair $(c \to k)$ is:
+
+$$\hat{H}_{k,c}(\omega) = \sum_{m=1}^{M} C_{km}\, T_m(\omega)\, B_{mc}$$
+
+Since typically $M \ll C, K$, this is essentially a low-rank decomposition. The parameter count is $O(M(C+K))$ plus a few parameters per mode, which is 1–2 orders of magnitude smaller than traditional $O(C_{in} \cdot C_{out} \cdot k^d)$ convolutions.
+
+**3. Continuous Resolution Invariance: Using the same parameters for any resolution**
+
+In medical imaging, resolutions often vary by machine (e.g., MRI slices from 1mm to 5mm). SONIC decouples resolution from parameters: because each mode $T_m(\omega)$ is a continuous analytic function, changing resolution simply samples the same function on a denser or sparser FFT grid. No parameters need to change. This contrasts with GFNet (grid-fixed masks) or FNO (fixed low-frequency coefficients), which are tied to specific frequency indices.
 
 ### Loss & Training
 
-- Standard cross-entropy loss is used for classification; Dice + CE joint loss is used for 3D medical segmentation.
-- SONIC blocks serve as direct replacements for convolutional layers in ResNet / U-Net, and the training strategy is compatible with the original architectures without requiring special initialization or learning rate schedules.
-- Medical segmentation experiments follow the standard nnU-Net training protocol to ensure fair comparison.
-- For ImageNet experiments, due to computational constraints, the authors trained for only 200k steps (rather than the full 300 epochs), which is nonetheless sufficient to demonstrate the method's competitiveness.
+- Classification tasks use standard Cross-Entropy; 3D medical segmentation uses a combined Dice + CE loss.
+- SONIC blocks can directly replace convolutional layers in architectures like ResNet or U-Net, compatible with original training protocols.
+- Medical experiments follow nnU-Net standard protocols for fair comparison.
+- ImageNet experiments were limited to 200k steps due to compute constraints but demonstrate competitive results.
 
 ## Key Experimental Results
 
 ### Main Results — 3D Medical Image Segmentation
 
-SonicNet (nnU-Net with spatial convolutions replaced by SONIC blocks) is compared against standard methods on multiple 3D medical segmentation benchmarks:
+SonicNet (replacing spatial convolutions in nnU-Net with SONIC blocks) was benchmarked against standard methods:
 
-| Method | Dataset | Dice Score | Parameters | Notes |
-|--------|---------|-----------|------------|-------|
-| nnU-Net (3×3×3 conv) | PROMIS / Prostate158 | Baseline | ~31M | De facto standard for medical segmentation |
-| SonicNet | PROMIS / Prostate158 | Matches or slightly exceeds nnU-Net | **~0.4M** | Nearly **80× fewer** parameters |
-| ViT baseline | PROMIS / Prostate158 | Below nnU-Net | ~25M | Lacks spatial prior |
-| SonicNet | Additional Benchmark 1 (high variability) | Competitive with SOTA | ~0.4M | nnU-Net Revisited recommended dataset |
-| SonicNet | Additional Benchmark 2 (high variability) | Competitive with SOTA | ~0.4M | Multi-center high-variability scenario |
+| Method | Dataset | Dice Score | Parameters | Note |
+|------|--------|-----------|--------|------|
+| nnU-Net (3×3×3 conv) | PROMIS / Prostate158 | Baseline | ~31M | De facto standard |
+| SonicNet | PROMIS / Prostate158 | Match/Exceed | **~0.4M** | **~80x fewer** |
+| ViT baseline | PROMIS / Prostate158 | Lower | ~25M | Lack of spatial priors |
 
-### Synthetic Benchmarks & ImageNet
+### Synthetic Benchmarks and ImageNet
 
-| Experiment | Method | Key Result | Notes |
-|-----------|--------|-----------|-------|
-| SynthShape (geometric robustness) | CNN / ViT / SONIC | SONIC shows the smallest performance degradation under rotation and noise perturbation | Deterministic reproducible dataset |
-| HalliGalli (global receptive field validation) | CNN / ViT / GFNet / SONIC | **Only SONIC completes the task correctly**, remaining robust under noise | Requires simultaneous perception of distant corner shapes |
-| ImageNet (200k steps) | ResNet / ViT / GFNet / FNO / SONIC | SONIC is competitive with an order of magnitude fewer parameters | Comparison under limited training budget |
-| ImageNet resolution downsampling | All methods from 224→lower resolutions | SONIC shows the flattest performance degradation curve, validating resolution invariance | Same model applied directly at different resolutions |
+| Experiment | Method | Key Result | Note |
+|------|------|---------|------|
+| SynthShape (Robustness) | CNN/ViT/SONIC | SONIC has minimal decay under rotation/noise | Geometric robustness |
+| HalliGalli (Global Field) | CNN/ViT/GFNet/SONIC | **Only SONIC succeeds** | Requires distance sensing |
+| ImageNet (200k steps) | Various | Competitive with 10x fewer parameters | Limited budget comparison |
+| ImageNet Downsampling | Various | SONIC shows least performance decay | Resolution invariance |
 
 ### Ablation Study
 
-| Configuration | Key Change | Notes |
-|--------------|-----------|-------|
-| Full SonicNet | Baseline | Complete model |
-| Remove orientation selectivity (isotropic modes) | Significant performance drop | Orientation awareness is a core contribution |
-| Replace continuous parameterization with discrete learnable spectrum (≈GFNet) | Loss of resolution generalization | Continuous parameterization is the foundation of resolution invariance |
-| Varying number of modes $K$ | Too few $K$ sacrifices expressiveness; too many yields diminishing returns | An optimal $K$ trade-off exists |
-| Varying model scale (parameter scaling) | SONIC maintains strong performance at extremely small parameter counts | Parameter efficiency consistently outperforms spatial convolutions |
+| Configuration | Key Change | Note |
+|------|---------|------|
+| Full SonicNet | Baseline | Full model |
+| Remove Directionality | Significant performance drop | Directional awareness is core |
+| Discrete Learnable Spectrum | Loss of resolution generalization | Continuous params are key |
 
 ### Key Findings
 
-- **Orientation selectivity is critical**: Removing orientation parameters leads to a significant performance drop, indicating that anisotropic frequency-domain priors are more effective than isotropic global filtering.
-- **The HalliGalli experiment is the most compelling**: CNNs' local receptive fields fundamentally preclude tasks requiring global perception; ViT and GFNet have global receptive fields in theory but collapse under noise; only SONIC remains robust—demonstrating that its global receptive field is *effective* rather than merely *theoretical*.
-- **Remarkable parameter efficiency**: Matching a 31M-parameter nnU-Net with ~0.4M parameters in the 3D medical setting implies substantial redundancy in traditional 3D convolutional kernels.
-- **Verifiable resolution invariance**: In the ImageNet downsampling experiment, SONIC's performance degradation curve is noticeably flatter than all competing methods.
+- **Directional Selectivity is Vital**: Removing directional parameters leads to a significant performance drop, proving that anisotropic frequency priors are more effective than isotropic ones.
+- **HalliGalli Demonstrates "Effective" Receptive Field**: CNNs fail due to local fields; ViT and GFNet collapse under noise. SONIC remains robust, proving its global connectivity is practically effective.
+- **Extreme Efficiency**: Matching 31M-parameter performance with 0.4M parameters suggests massive redundancy in traditional 3D kernels.
 
 ## Highlights & Insights
 
-- **Bridge from SSMs to multi-dimensional frequency domain**: SONIC essentially extends the idea of "generating global convolutional kernels from a small number of continuous parameters" in S4/Mamba from 1D sequences to the frequency domain of multi-dimensional signals. This cross-domain transfer is highly natural—the core SSM formulation is itself a Laplace transform / resolvent, which directly corresponds to a frequency-domain transfer function. This opens a new channel for importing advances in sequence modeling into visual tasks.
-- **HalliGalli as a litmus test for effective global receptive fields**: Many methods claim to have global receptive fields, but in practice the effective receptive field after deep stacking is far smaller than the theoretical value. The HalliGalli task is a cleverly designed litmus test—only models that can genuinely exploit long-range information pass it. This experimental design can be reused to evaluate other architectures that claim global capabilities.
-- **Deployment advantages of continuous parameterization**: A single trained model can be deployed directly on inputs of varying resolutions without retraining or fine-tuning, which is highly practical in medical imaging where different devices and scanning protocols produce data at substantially different resolutions.
+- **Bridge from SSM to Multi-D Frequency Domain**: SONIC generalizes the concept of "generating global kernels from continuous parameters" to the frequency domain for multi-dimensional signals, creating a new path for sequence-modeling advances in vision.
+- **Effective Receptive Field via HalliGalli**: The HalliGalli task serves as a "litmus test" to verify if a model's theoretical global field is practically usable for distant information coordination.
+- **Deployment Advantage**: The ability to train once and deploy across various resolutions is highly valuable for medical imaging where scanning protocols vary.
 
 ## Limitations & Future Work
 
-- **SONIC blocks are purely linear**: Frequency-domain multiplication is fundamentally a linear operation, requiring IFFT → nonlinear activation → FFT between consecutive SONIC blocks. The overhead of dual FFT/IFFT passes is acceptable in shallow networks but may become a bottleneck in very deep architectures. Nonlinearity in the frequency domain remains an open problem.
-- **Insufficient ImageNet validation**: Due to computational constraints, the authors trained for only 200k steps (far fewer than the standard 300 epochs), so ImageNet results can only claim "competitiveness" rather than "superiority." Conclusions require comparison under a full training budget.
-- **Hybrid architectures unexplored**: The paper deliberately preserves the "purity" of SONIC without mixing it with spatial convolutions. In practice, using spatial convolutions in lower layers to capture local texture and SONIC in upper layers to capture global structure may yield a superior design.
-- **No validation on detection / dense prediction**: Evaluation is limited to classification and segmentation, without covering object detection, instance segmentation, or other tasks requiring precise localization.
-- **Selection of mode count $K$**: Currently relies on manual tuning without an automated method for determining the optimal $K$.
+- **Linearity of SONIC Block**: Spectral multiplication is inherently linear. Frequent FFT/IFFT operations between blocks carry overhead, and frequency-domain non-linearity remains an open question.
+- **Under-trained ImageNet**: Due to constraints, ImageNet results only show "competitiveness" rather than "superiority." Full training is required for a final verdict.
+- **Hybrid Architectures**: The paper focuses on "pure" SONIC; mixing it with spatial convs (local for low levels, SONIC for global) might be optimal.
 
 ## Related Work & Insights
 
-- **vs. GFNet**: GFNet also operates in the frequency domain, but uses learnable tensors of the same size as the FFT grid, requiring interpolation or fine-tuning upon resolution change. SONIC resolves this entirely via continuous parameterization and reduces parameter count from $O(HW)$ to $O(K)$.
-- **vs. FNO (Fourier Neural Operator)**: FNO retains a fixed number of low-frequency components to approximate frequency-domain filtering, but has no orientation selectivity whatsoever. SONIC's resolvent modes provide anisotropic frequency responses, which are substantially more effective for orientation-sensitive visual tasks.
-- **vs. nnU-Net**: nnU-Net is the de facto standard for 3D medical segmentation, relying on stacked 3×3×3 spatial convolutions. SONIC matches its performance with ~1/80th the parameters, suggesting substantial compressible redundancy in 3D spatial convolutions.
-- **vs. S4ND / Mamba**: SONIC's theoretical foundations derive directly from the SSM family, but further incorporate directional decomposition and low-rank decomposition, making the same framework applicable to 2D/3D vision rather than 1D sequences alone.
-- **Broader Implications**: The orientation-selective resolvent approach in SONIC can be extended to video (joint spatiotemporal frequency orientation), point clouds (spherical harmonic directional decomposition), and weather forecasting (spherical frequency-domain filtering).
+- **vs GFNet**: GFNet uses masks tied to the FFT grid; SONIC uses continuous parameterization to solve resolution changes while reducing parameters from $O(HW)$ to $O(K)$.
+- **vs FNO**: FNO lacks directional selectivity; SONIC’s oriented resolvents provide anisotropic responses essential for vision.
+- **vs nnU-Net**: Matches performance with 1/80th of the parameters, highlighting the inefficiency of 3D spatial kernels.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The transfer of SSM ideas to multi-dimensional frequency-domain orientation selectivity is creative, but the approach remains fundamentally a parameterization variant of frequency-domain multiplication.
-- Experimental Thoroughness: ⭐⭐⭐ Medical segmentation validation is solid, but ImageNet training is incomplete, detection tasks are absent, and ablations are not sufficiently systematic.
-- Writing Quality: ⭐⭐⭐ The core idea is clearly articulated, but the initial submission was criticized by multiple reviewers for poor readability; significant revisions have improved this.
-- Value: ⭐⭐⭐⭐ Directly practical for multi-resolution deployment in medical imaging; the parameter efficiency advantage is particularly attractive in resource-constrained 3D settings.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐
+- Writing Quality: ⭐⭐⭐
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
@@ -154,11 +149,11 @@ SonicNet (nnU-Net with spatial convolutions replaced by SONIC blocks) is compare
 
 ## Related Papers
 
+- [\[ICLR 2026\] Buckingham $\pi$-Invariant Test-Time Projection for Robust PDE Surrogate Modeling](buckingham_pi-invariant_testtime_projection_for_robust_pde_surrogate_modeling.md)
 - [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
 - [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](../../ICML2026/others/learning_permutation-invariant_macroscopic_dynamics.md)
-- [\[NeurIPS 2025\] Structure-Aware Spectral Sparsification via Uniform Edge Sampling](../../NeurIPS2025/others/structure-aware_spectral_sparsification_via_uniform_edge_sampling.md)
-- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
+- [\[ICLR 2026\] CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design](circuitnet_30_a_multi-modal_dataset_with_task-oriented_augmentation_for_ai-drive.md)
+- [\[CVPR 2026\] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition](../../CVPR2026/others/confusion-aware_spectral_regularizer_for_long-tailed_recognition.md)
 
 </div>
 

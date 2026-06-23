@@ -2,78 +2,69 @@
 title: >-
   [Paper Note] PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment
 description: >-
-  [ICLR 2026][Network Alignment] This paper presents PlanetAlign, a PyTorch-based network alignment benchmark library integrating 18 datasets across 6 domains, 14 methods spanning three categories (consistency-based…
+  [ICLR 2026][Others][Paper Note] PlanetAlign is proposed as a PyTorch-based network alignment benchmark library that integrates 18 datasets across 6 domains, 14 methods covering three major categories (consistency, embedding, and Optimal Transport), and standardized evaluation workflows. Through large-scale systematic experiments, it reveals the compr
 tags:
-  - "ICLR 2026"
-  - "Network Alignment"
-  - "Benchmark Library"
-  - "Graph Matching"
-  - "Optimal Transport"
-  - "Evaluation Framework"
+  - ICLR 2026
+  - Others
 date: 2026-05-08
-content_hash: 1ff6302fd9fe075f
+content_hash: 267ef73778a4784f
 ---
-
 # PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.21366](https://arxiv.org/abs/2505.21366)  
 **Code**: [GitHub](https://github.com/yq-leo/PlanetAlign)  
-**Area**: LLM Evaluation
+**Area**: LLM Evaluation  
 **Keywords**: Network Alignment, Benchmark Library, Graph Matching, Optimal Transport, Evaluation Framework
 
 ## TL;DR
 
-This paper presents PlanetAlign, a PyTorch-based network alignment benchmark library integrating 18 datasets across 6 domains, 14 methods spanning three categories (consistency-based, embedding-based, and optimal transport-based), and a standardized evaluation pipeline. Through large-scale systematic experiments, PlanetAlign reveals that OT-based methods (PARROT/JOENA) achieve comprehensive superiority in effectiveness, while different method categories exhibit distinct trade-offs in scalability and robustness.
+PlanetAlign is proposed as a PyTorch-based network alignment benchmark library that integrates 18 datasets across 6 domains, 14 methods covering three major categories (consistency, embedding, and Optimal Transport), and standardized evaluation workflows. Through large-scale systematic experiments, it reveals the comprehensive lead of OT-based methods (PARROT/JOENA) in effectiveness and the differentiated performance of various methods in scalability and robustness.
 
 ## Background & Motivation
 
-**Background**: Network Alignment (NA) aims to discover node correspondences across different networks, serving as a critical foundation for downstream tasks such as cross-social-network user matching, protein homology discovery, knowledge graph fusion, and fraud detection. The field has developed three major categories of methods: consistency-based (e.g., IsoRank, FINAL), embedding-based (e.g., REGAL, BRIGHT), and optimal transport-based (e.g., PARROT, JOENA). However, systematic comparisons among these methods have been largely absent.
+**Background**: Network Alignment (NA) aims to discover node correspondences across different networks. it is a critical foundation for downstream tasks such as cross-social network user matching, protein homology discovery, knowledge graph fusion, and anti-fraud detection. The field has developed three main categories of methods: consistency-based (e.g., IsoRank, FINAL), embedding-based (e.g., REGAL, BRIGHT), and Optimal Transport (OT)-based (e.g., PARROT, JOENA). However, a systematic comparison between these methods has been missing.
 
-**Limitations of Prior Work**: The five existing NA benchmarks/libraries (SGAPBSA, CAPABN, ASNets, NAB, OpenEA) all exhibit notable limitations: (1) datasets are confined to a single domain—SGAPBSA and CAPABN cover only biological networks, ASNets only social networks, and OpenEA only knowledge graphs; (2) method coverage is incomplete—none of the existing libraries includes the latest and best-performing OT-based methods; (3) evaluation dimensions are narrow—most assess only effectiveness while ignoring scalability and robustness, and inconsistent dataset splitting strategies hinder reproducibility.
+**Limitations of Prior Work**: Existing NA benchmarks or libraries (SGAPBSA, CAPABN, ASNets, NAB, OpenEA) have significant limitations: (1) Datasets are restricted to single domains—SGAPBSA and CAPABN only feature biological networks, ASNets focuses on social networks, and OpenEA targets knowledge graphs; (2) Incomplete method coverage—none of the existing libraries include the latest and best-performing OT-based methods; (3) Single evaluation dimension—most only evaluate effectiveness, ignoring scalability and robustness, while inconsistent dataset partitioning leads to non-reproducible results.
 
-**Key Challenge**: While the repertoire of NA methods has grown rapidly, the evaluation infrastructure has lagged far behind. Researchers report results under heterogeneous datasets, splitting strategies, and metrics, making fair performance comparisons impossible and impeding research progress.
+**Key Challenge**: While methods in the NA field are increasingly diverse, the evaluation infrastructure lags behind. Researchers report results using different datasets, splits, and metrics, making it impossible to fairly compare the true performance differences between methods, which hinders research progress.
 
-**Goal**: To construct a comprehensive, unified, and user-friendly NA benchmark library covering multi-domain datasets, multi-category methods, and multi-dimensional evaluation.
+**Goal**: To build a comprehensive, unified, and easy-to-use NA benchmark library that covers multi-domain datasets, multi-category methods, and multi-dimensional evaluation.
 
-**Key Insight**: Drawing inspiration from successful benchmark library designs in CV/NLP (e.g., MMDetection, HuggingFace), this work addresses the fragmented evaluation landscape in NA research through unified API design, standardized data splitting, and reproducible evaluation pipelines.
+**Key Insight**: Drawing from successful benchmark library designs in CV/NLP (e.g., MMDetection, HuggingFace), this work addresses the evaluation fragmentation in NA through unified API design, standardized data partitioning, and reproducible evaluation workflows.
 
-**Core Idea**: By constructing PlanetAlign—a unified benchmark library spanning 6 domains and 3 method categories—this work enables, for the first time, systematic and fair comparison of NA methods across four dimensions: effectiveness, scalability, robustness, and supervision sensitivity.
+**Core Idea**: By constructing PlanetAlign, a unified benchmark library covering 6 domains and 3 major method categories, systematic and fair comparisons of NA methods across four dimensions—effectiveness, scalability, robustness, and supervision sensitivity—are achieved for the first time.
 
 ## Method
 
 ### Overall Architecture
 
-PlanetAlign is a PyTorch-based Python library organized into three layers: (1) **Data Layer**—18 datasets covering 6 domains including social networks, publication networks, biological networks, knowledge graphs, infrastructure networks, and communication networks; (2) **Algorithm Layer**—14 NA methods uniformly encapsulated in classes inheriting from `BaseModel`, accessible via `.train()` and `.test()` APIs; (3) **Evaluation Layer**—standardized Hits@K and MRR metrics, along with tools for time/memory profiling and robustness testing. Users can complete the full pipeline of dataset loading, model training, and evaluation with just a few lines of code.
+Methods in the Network Alignment (NA) field are increasing, but researchers use disparate datasets, partitions, and metrics, preventing fair comparisons. PlanetAlign addresses this evaluation fragmentation by unifying data, methods, and evaluation into a single PyTorch-based library, allowing users to complete the full "load data → train algorithm → multi-dimensional evaluation" workflow with a few lines of code.
+
+The overall architecture corresponds to three key designs linked in three layers: (1) **Data Layer**—18 datasets covering 6 domains: social, publication, biology, knowledge graph, infrastructure, and communication (Design 1); (2) **Algorithm Layer**—14 NA methods unified within classes inheriting from `BaseModel`, sharing `.train()` / `.test()` interfaces (Design 2); (3) **Evaluation Layer**—standardized Hits@K / MRR metrics, along with time/memory overhead tracking and robustness testing tools (Design 3). Data flows unidirectionally through the layers: two networks to be aligned and anchor node pairs are retrieved from the Data Layer, fed into the Algorithm Layer to compute the alignment matrix $\mathbf{S}$, and then passed to the Evaluation Layer for scoring across effectiveness, scalability, robustness, and supervision sensitivity.
 
 ### Key Designs
 
-1. **Comprehensive Dataset Collection and Synthesis**:
+**1. Comprehensive Dataset Collection and Synthesis: Making Cross-Domain Generalization Measurable**
 
-    - **Function**: Provides 18 datasets across 6 domains, comprising 11 real-world datasets and 7 synthetic datasets.
-    - **Mechanism**: Synthetic datasets are generated via the classical network perturbation strategy—inserting 10% noisy edges and removing 15% existing edges from the original network to produce two networks with a known permutation. Domains covered include social (Foursquare-Twitter, Douban, and 2 others), publication (ACM-DBLP, Cora, ArXiv, and 1 other), biological (SacchCere, PPI, GGI, and others), knowledge graph (DBP15K ZH-EN/JA-EN/FR-EN), infrastructure (Italy, Airport, PeMS08, and others), and communication (Phone-Email, Arenas, and others).
-    - **Design Motivation**: Prior libraries cover at most 1–2 domains, making it impossible to assess cross-domain generalization. Broad domain coverage reveals performance differences of NA methods under varying network structural characteristics.
+Previous libraries covered at most 1–2 domains, making it impossible to compare the actual performance of methods under different network structures. PlanetAlign collects 18 datasets, including 11 from the real world and 7 synthesized, spanning Social (4, e.g., Foursquare-Twitter, Douban), Publication (3, e.g., ACM-DBLP, Cora, ArXiv), Biology (3, e.g., SacchCere, PPI, GGI), Knowledge Graph (3 variants of DBP15K: ZH-EN/JA-EN/FR-EN), Infrastructure (3, e.g., Italy, Airport, PeMS08), and Communication (2, e.g., Phone-Email, Arenas). Synthetic datasets are generated using a classic network perturbation strategy: inserting 10% noise edges into the original network and deleting 15% of existing edges to obtain two networks with a known permutation (ground-truth alignment). Consequently, the generalization ability of methods on networks with vastly different structural characteristics can be measured horizontally for the first time.
 
-2. **Unified Implementation of 14 Methods across Three Categories**:
+**2. Unified Implementation of 14 Methods Across Three Categories: Including OT Methods for the First Time**
 
-    - **Function**: Provides unified PyTorch implementations of consistency-based methods (IsoRank, FINAL), embedding-based methods (IONE, REGAL, CrossMNA, NetTrans, WAlign, BRIGHT, NeXtAlign, WLAlign), and OT-based methods (PARROT, SLOTAlign, HOT, JOENA).
-    - **Mechanism**: All methods inherit from the `BaseModel` base class with unified `.train()` / `.test()` interfaces. Built-in utility functions such as random walk with restart (RWR) embeddings and anchor node embeddings facilitate integration of new methods with minimal code. Compared to official implementations, PlanetAlign achieves up to 3× speedup while maintaining comparable effectiveness.
-    - **Design Motivation**: This is the first unified benchmark to incorporate OT-based methods—the most recent and highest-performing direction in NA—filling the largest gap in existing libraries.
+NA methods are increasingly diverse, yet no existing library covers all three major categories, notably missing the latest and strongest OT methods. PlanetAlign rewrites 14 methods, including consistency-based (IsoRank, FINAL), embedding-based (IONE, REGAL, CrossMNA, NetTrans, WAlign, BRIGHT, NeXtAlign, WLAlign), and OT-based (PARROT, SLOTAlign, HOT, JOENA), into unified PyTorch implementations. They inherit from the same `BaseModel` base class and share `.train()` / `.test()` interfaces. The library includes built-in utility functions for common tasks like Random Walk with Restart (RWR) embeddings and anchor node embeddings, allowing new methods to be integrated with minimal code. Compared to original official implementations, these rewritten versions achieve up to 3x acceleration while maintaining similar effectiveness—filling the largest gap in existing libraries (OT methods) while ensuring comparisons occur on a consistent, optimized codebase.
 
-3. **Multi-Dimensional Standardized Evaluation Tools**:
+**3. Multi-dimensional Standardized Evaluation Tools: Expanding from Hits@1 to Four Dimensions**
 
-    - **Function**: Supports evaluation across four dimensions: effectiveness (Hits@K, MRR), scalability (time/memory), robustness (injection of edge/attribute/supervision noise), and supervision sensitivity (varying training ratios).
-    - **Mechanism**: Effectiveness metrics support bidirectional alignment ($\mathcal{G}_1 \to \mathcal{G}_2$ and the reverse), reporting the average; scalability is tracked automatically via a built-in Logger for runtime and peak memory; robustness is assessed by injecting various types and levels of noise via utility functions to measure method degradation; unified random seeds and data splitting ensure reproducibility.
-    - **Design Motivation**: Prior libraries rely on a single evaluation dimension (typically Hits@1 only), which is insufficient to characterize the practical applicability of methods.
+Previous library evaluations were one-dimensional, usually only reporting Hits@1, which fails to characterize whether a method is fast or stable enough for practical deployment. PlanetAlign expands evaluation into four dimensions. Effectiveness uses Hits@K and MRR, averaged over bidirectional alignments ($\mathcal{G}_1 \to \mathcal{G}_2$ and its reverse) to avoid directional bias; Scalability is tracked via a built-in Logger for runtime and peak memory; Robustness is tested by injecting different types and levels of edge/attribute/supervision noise via utility functions to observe degradation; Supervision Sensitivity is evaluated by varying training ratios to see dependency on labels. The entire workflow uses unified random seeds and data splits to ensure results are reproducible and fairly comparable.
 
 ## Key Experimental Results
 
 ### Main Results: Effectiveness and Efficiency
 
-14 methods are evaluated on datasets from 6 domains (training ratio 20%), reporting average Hits@1, Hits@10, and MRR (%):
+14 methods were evaluated across 6 domain datasets (20% training ratio), reporting average Hits@1, Hits@10, and MRR (%):
 
 | Method | Category | Social H@1 | Publication H@1 | Bio H@1 | KG H@1 | Infra H@1 | Comm H@1 |
-|--------|----------|-----------|----------------|---------|--------|-----------|---------|
+|------|------|---------|-----------|---------|------------|------------|---------|
 | JOENA | OT | **18.7** | **73.2** | **63.7** | **66.3** | **62.9** | **66.3** |
 | PARROT | OT | 12.6 | 66.6 | 61.6 | 66.0 | 51.8 | 63.3 |
 | NetTrans | Embedding | 7.2 | 40.7 | 34.2 | 28.8 | 29.3 | 45.2 |
@@ -83,12 +74,12 @@ PlanetAlign is a PyTorch-based Python library organized into three layers: (1) *
 | IsoRank | Consistency | 4.2 | 18.9 | 21.6 | 11.5 | 14.2 | 22.1 |
 | REGAL | Embedding | 0.3 | 1.8 | 1.0 | 0.8 | 2.8 | 45.3 |
 
-OT-based methods (JOENA, PARROT) achieve the best Hits@1 across all 6 domains, with particularly pronounced advantages on knowledge graphs and infrastructure networks.
+OT-based methods (JOENA, PARROT) achieved the best Hits@1 across all 6 domains, with the lead being particularly significant in Knowledge Graphs and Infrastructure networks.
 
 ### Ablation Study: Efficiency and Scalability
 
-| Method | Category | Social Time (s) | Social Mem (GB) | Pub. Time (s) | Pub. Mem (GB) |
-|--------|----------|----------------|----------------|--------------|--------------|
+| Method | Category | Social Time(s) | Social Mem(GB) | Pub Time(s) | Pub Mem(GB) |
+|------|------|-----------|-------------|-------------|---------------|
 | WAlign | Embedding | **0.61** | 2.65 | 9.41 | 9.88 |
 | REGAL | Embedding | 9.38 | **1.16** | 16.14 | **3.18** |
 | FINAL | Consistency | 5.91 | 5.39 | 6.75 | 10.06 |
@@ -96,41 +87,41 @@ OT-based methods (JOENA, PARROT) achieve the best Hits@1 across all 6 domains, w
 | JOENA | OT | — | — | — | — |
 | IONE | Embedding | $6.34\times10^3$ | 1.94 | $1.43\times10^4$ | 4.16 |
 
-In terms of efficiency, WAlign and REGAL are the fastest and most memory-efficient; IONE's training time exceeds other methods by several orders of magnitude (6,000+ seconds on social networks), making it the least scalable method.
+Regarding efficiency, WAlign and REGAL are the fastest with the smallest memory footprints; IONE's training time is several orders of magnitude higher than other methods (over 6000 seconds on social networks), making it the least scalable method.
 
 ### Key Findings
 
-- **OT methods dominate across the board**: JOENA ranks first in Hits@1 on all 6 domains, with PARROT consistently in second place, validating the superiority of the OT framework for NA tasks.
-- **Large variance among embedding methods**: Despite belonging to the same category, REGAL achieves only 0.3% Hits@1 on social networks (near complete failure) yet reaches 45.3% on communication networks, underscoring the critical importance of method–data compatibility.
-- **Consistency methods are stable but not competitive**: IsoRank and FINAL exhibit the most consistent performance across domains (low variance), rarely suffering catastrophic failures despite their lower absolute performance.
-- **Significant efficiency–effectiveness trade-offs**: WAlign is the fastest but achieves only moderate effectiveness; IONE has above-average effectiveness but unacceptably long training times; OT-based methods strike a reasonable balance between effectiveness and efficiency.
-- **High implementation quality in PlanetAlign**: Compared to official implementations, PlanetAlign achieves up to 3× speedup while maintaining comparable effectiveness.
+- **OT Methods Lead Comprehensively**: JOENA ranked first in Hits@1 across all 6 domains, with PARROT consistently second, validating the superiority of the OT framework for NA tasks.
+- **Large Variance in Embedding Methods**: Despite being the same category, REGAL's Hits@1 was only 0.3% on social networks (nearly failing) but reached 45.3% on communication networks, highlighting the critical importance of method-data alignment.
+- **Consistency Methods are Stable but Not Dominant**: IsoRank and FINAL showed the highest consistency (small variance) across all domains; though absolute performance was lower, they rarely suffered catastrophic failures.
+- **Significant Efficiency-Effectiveness Trade-off**: WAlign is the fastest but has moderate effectiveness, while IONE has upper-middle effectiveness but unacceptable training time; OT methods strike a good balance between efficacy and efficiency.
+- **High Implementation Quality of PlanetAlign**: Compared to official implementations, PlanetAlign's versions maintain similar effectiveness while achieving up to 3x speedup.
 
 ## Highlights & Insights
 
-- **First unified benchmark to include OT-based methods**: This is the first NA benchmark library incorporating optimal transport methods, and the experimental results confirm their comprehensive superiority—a finding of significant value for guiding future research directions.
-- **Cross-domain evaluation exposes method bias**: The performance of a single method can vary by more than 50-fold across domains (e.g., REGAL), making single-domain benchmarks prone to misleading conclusions. This highlights the necessity of multi-domain validation when developing new NA methods.
-- **Transferable API design principles**: The three-layer abstraction of `BaseData` + `BaseModel` + `Logger` in PlanetAlign serves as an excellent template for constructing domain-specific benchmark libraries, and can be directly transferred to other graph learning tasks such as link prediction and community detection.
+- **First Unified Benchmark Including OT Methods**: This is the first benchmark library in the NA field to include Optimal Transport methods. Experimental results confirm the overall lead of OT methods, a finding that serves as a valuable guide for future research.
+- **Cross-Domain Evaluation Reveals Method Bias**: The performance of the same method can vary by over 50x across different domains (e.g., REGAL). Single-domain benchmarks are prone to misleading conclusions, suggesting that new NA methods must be validated across multiple domains.
+- **Transferable API Design Philosophy**: The three-layer abstract design of `BaseData` + `BaseModel` + `Logger` in PlanetAlign is an excellent paradigm for building domain benchmarks and can be directly migrated to other graph learning tasks such as link prediction or community detection.
 
 ## Limitations & Future Work
 
-- **Incomplete method coverage**: GNN-based end-to-end NA methods (e.g., DGMC) and emerging LLM-based methods are not included; continuous updates will be required as the field evolves.
-- **Limited dataset scale**: The largest datasets contain tens of thousands of nodes, with no million-scale datasets to thoroughly stress-test scalability.
-- **Homogeneous synthetic dataset generation**: All synthetic datasets employ the same 10% insertion + 15% deletion strategy, which may fail to capture more complex network divergence patterns found in real-world scenarios.
-- **Lack of dedicated evaluation for unsupervised methods**: While the framework supports varying training ratios, it is not specifically optimized for purely unsupervised settings, making fair evaluation of unsupervised methods less straightforward.
+- **Method Coverage Still Gaps**: End-to-end GNN-based NA methods (e.g., DGMC) and emerging LLM-based methods are not included and require continuous updates as the field evolves.
+- **Limited Dataset Scale**: The maximum node count is around samples of ten thousand; there is a lack of large-scale datasets with millions of nodes to fully test scalability.
+- **Single Synthetic Method**: All synthetic datasets use the same 10% insertion + 15% deletion strategy, which might not cover more complex network difference patterns in real-world scenarios.
+- **Missing Fair Evaluation for Unsupervised Methods**: Some methods are unsupervised while others are semi-supervised. Although the current framework supports different training ratios, it is not specifically optimized for purely unsupervised scenarios.
 
 ## Related Work & Insights
 
-- **vs. NAB** (Trung et al., 2020): NAB covers effectiveness, scalability, and robustness but is limited to social network datasets and lacks OT-based methods. PlanetAlign comprehensively surpasses NAB in both domain coverage and method coverage.
-- **vs. OpenEA** (Sun et al., 2020): OpenEA focuses on embedding-based methods for knowledge graph alignment and serves as an excellent benchmark in that niche. PlanetAlign is broader in scope but may lack OpenEA's depth within the KG domain.
-- **vs. PyG/DGL ecosystems**: PlanetAlign can be viewed as a vertical benchmark library within the graph learning ecosystem, specifically targeting NA tasks, complementing general-purpose graph learning frameworks.
+- **vs NAB** (Trung et al., 2020): NAB covers effectiveness, scalability, and robustness but only includes social network datasets and lacks OT methods. PlanetAlign comprehensively surpasses it in domain and method coverage.
+- **vs OpenEA** (Sun et al., 2020): OpenEA focuses on embedding methods for knowledge graphs and is an excellent benchmark for KG alignment. PlanetAlign is broader but may lack the depth of OpenEA specifically in the KG domain.
+- **vs PyG/DGL Ecosystem**: PlanetAlign can be viewed as a vertical benchmark library specifically for NA tasks within the graph learning ecosystem, complementing general graph learning frameworks.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐ As a benchmark library paper, the core contribution lies in engineering integration rather than algorithmic innovation; however, the first-time inclusion of OT-based methods adds meaningful novelty.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 14 methods × 18 datasets × 4 evaluation dimensions, with mean and standard deviation reported over 5 repeated runs—an exceptionally comprehensive experimental scale.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure, rich tables, and intuitive API examples; some sections are slightly verbose.
-- **Value**: ⭐⭐⭐⭐ Directly advances the NA research community; the systematic experimental finding (OT methods lead) carries significant reference value.
+- Novelty: ⭐⭐⭐ As a benchmark library paper, the core contribution lies in engineering integration rather than algorithmic innovation, though including OT methods for the first time provides some novelty.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 14 methods × 18 datasets × 4 evaluation dimensions, with means and standard deviations from 5 runs; the experimental scale is remarkably comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, rich tables, and intuitive API examples, though some content is slightly verbose.
+- Value: ⭐⭐⭐⭐ It directly promotes the NA research community, and its systematic experimental conclusions (OT lead) provide significant reference value.
 
 <!-- RELATED:START -->
 
@@ -138,11 +129,11 @@ In terms of efficiency, WAlign and REGAL are the fastest and most memory-efficie
 
 ## Related Papers
 
+- [\[ACL 2025\] PopAlign: Diversifying Contrasting Patterns for a More Comprehensive Alignment](../../ACL2025/others/popalign_diversifying_contrasting_patterns_for_a_more_comprehensive_alignment.md)
+- [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
+- [\[ACL 2025\] GA-S3: Comprehensive Social Network Simulation with Group Agents](../../ACL2025/others/ga-s3_comprehensive_social_network_simulation_with_group_agents.md)
+- [\[ICLR 2026\] Scaling Direct Feedback Learning with Jacobian Alignment Guarantees](scaling_direct_feedback_learning_with_jacobian_alignment_guarantees.md)
 - [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
-- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
-- [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](../../AAAI2026/others/hierarchical_semantic_alignment_for_image_clustering.md)
-- [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
-- [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](../../ICML2026/others/comprehensive_ai_governance_requires_addressing_non-model_gains.md)
 
 </div>
 

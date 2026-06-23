@@ -2,161 +2,150 @@
 title: >-
   [Paper Note] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
 description: >-
-  [ICLR 2026][3D Vision][geometric reasoning] This work introduces the GIQ benchmark, comprising 224 synthetic and real polyhedra, and systematically evaluates the geometric reasoning capabilities of vision foundation mode…
+  [ICLR 2026][3D Vision][benchmark] The GIQ benchmark dataset is proposed, comprising 224 synthetic and real polyhedra, to systematically evaluate the geometric reasoning capabilities of vision foundation models across four tasks: monocular 3D reconstruction, symmetry detection, mental rotation tests, and zero-shot classification, revealing significant d
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "geometric reasoning"
-  - "benchmark"
-  - "polyhedra"
-  - "vision foundation models"
-  - "VLM evaluation"
+  - ICLR 2026
+  - 3D Vision
+  - benchmark
 date: 2026-05-08
-content_hash: ded975abded5120d
+content_hash: c309868e56d36b70
 ---
-
 # GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.08194](https://arxiv.org/abs/2506.08194)  
-**Code**: [Available](https://toomanymatts.github.io/giq-benchmark/)  
-**Area**: 3D Vision
-**Keywords**: geometric reasoning, benchmark, polyhedra, vision foundation models, VLM evaluation
+**Code**: [Yes](https://toomanymatts.github.io/giq-benchmark/)  
+**Area**: 3D Vision  
+**Keywords**: Geometric reasoning, benchmark, polyhedra, vision foundation models, VLM evaluation
 
 ## TL;DR
 
-This work introduces the GIQ benchmark, comprising 224 synthetic and real polyhedra, and systematically evaluates the geometric reasoning capabilities of vision foundation models across four tasks—monocular 3D reconstruction, symmetry detection, mental rotation testing, and zero-shot classification—revealing significant deficiencies in the geometric understanding of current models.
+The GIQ benchmark dataset is proposed, comprising 224 synthetic and real polyhedra, to systematically evaluate the geometric reasoning capabilities of vision foundation models across four tasks: monocular 3D reconstruction, symmetry detection, mental rotation tests, and zero-shot classification, revealing significant deficiencies in current models' basic geometric understanding.
 
 ## Background & Motivation
 
-Modern vision models achieve strong performance on standard benchmarks, yet growing evidence suggests they lack genuine 3D geometric understanding:
+While modern vision models perform exceptionally well on standard benchmarks, increasing evidence suggests a lack of true 3D geometric understanding:
 
-**VLMs perform poorly on spatial tasks such as depth ordering**
+**VLM perform poorly on spatial problems such as depth ordering**
 
-**Monocular reconstruction algorithms struggle with shapes outside their training distribution**
+**Monocular reconstruction algorithms struggle to reconstruct shapes outside the training distribution**
 
-**Existing 3D evaluation datasets** (e.g., Objaverse) **lack precise geometric property annotations**
+**Existing 3D evaluation datasets** (e.g., Objaverse) **lack precise geometric attribute annotations**
 
-Polyhedra serve as ideal evaluation objects: they possess well-defined categorical definitions (Platonic, Archimedean, Johnson solids, etc.), exact symmetry groups, and a hierarchical geometric complexity ranging from simple to highly complex.
+Polyhedra serve as ideal evaluation subjects due to their clear categorical definitions (Platonic, Archimedean, Johnson solids, etc.), precise symmetry groups, and hierarchical geometric complexity ranging from simple to complex.
 
 ## Method
 
 ### Overall Architecture
 
-GIQ is a systematic benchmarking study organized around four evaluation dimensions:
+GIQ aims to determine whether current vision foundation models truly understand 3D geometry or merely learn textures and statistical patterns. Consequently, "mathematically perfectly defined" polyhedra are used as geometric litmus tests. Four complementary evaluation lines are established around 224 shapes—monocular 3D reconstruction, 3D symmetry detection, mental rotation tests, and zero-shot classification—to interrogate the models' geometric understanding at the levels of explicit reconstruction, implicit representation, cross-view discrimination, and high-level recognition. The entire benchmark is structured as an "accurate shape library fed into four parallel evaluation tasks": the dataset acts as a shared base, while the evaluation lines provide diagnostic perspectives on the current state of geometric understanding.
 
-1. **Monocular 3D Reconstruction**: recovering 3D geometry from a single image
-2. **3D Symmetry Detection**: assessing whether visual encoders implicitly capture symmetry information
-3. **Mental Rotation Test (MRT)**: judging shape equivalence across viewpoints
-4. **Zero-Shot Polyhedron Classification**: evaluating whether frontier VLMs can recognize basic geometric shapes
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["224 Polyhedra<br/>Platonic/Archimedean/Johnson/Stellated…"] --> DATA["1. Polyhedron Dataset<br/>Synthetic Rendering + Real Captures"]
+    DATA --> R["2. Monocular 3D Reconstruction Evaluation<br/>Explicit Geometric Recovery"]
+    DATA --> S["3. 3D Symmetry Detection<br/>Probe Training on Frozen Features"]
+    DATA --> M["4. Mental Rotation Test (MRT)<br/>Cross-view Equivalence Judgment"]
+    DATA --> Z["5. Zero-shot Polyhedron Classification<br/>VLM Shape Name Recognition"]
+    R --> F["Geometric Understanding Diagnostic Conclusion"]
+    S --> F
+    M --> F
+    Z --> F
+```
 
 ### Key Designs
 
-**(1) Dataset Construction**
+**1. Polyhedron Dataset: Eliminating ambiguity in geometric attribute annotations with mathematically precise shapes**
 
-224 unique polyhedra:
+Existing 3D datasets (e.g., Objaverse) lack precise geometric labels, making it difficult to rigorously diagnose geometric reasoning. GIQ collects 224 unique polyhedra with explicit category definitions and symmetry group annotations: 5 Platonic solids, 13 Archimedean solids (convex solids with regular polygon faces but not congruent), 13 dual Catalan solids, 92 Johnson solids (regular polygon faces but lacking vertex uniformity), as well as 48 stellated polyhedra, 4 Kepler-Poinsot solids, 10 compounds, and 53 non-convex uniform solids. Geometric complexity progresses hierarchically. Two sets of images are provided for each shape: synthetic images rendered at 256×256 using the Mitsuba physical renderer across 20 viewpoints, and real images of paper models captured with a Nikon D3500 at 6000×4000 across approximately 20 indoor and outdoor shots, thereby incorporating the "synthetic train → real test" domain gap.
 
-- **Platonic solids** (5): tetrahedron, cube, octahedron, dodecahedron, icosahedron
-- **Archimedean solids** (13): convex polyhedra with regular polygon faces but non-identical vertices
-- **Catalan solids** (13): duals of the Archimedean solids
-- **Johnson solids** (92): faces are regular polygons but vertices lack uniformity
-- **Stellation forms** (48), Kepler–Poinsot polyhedra (4), compounds (10), nonconvex uniform polyhedra (53)
+**2. Monocular 3D Reconstruction: Testing if explicit geometric recovery withstands out-of-distribution shapes**
 
-Synthetic images: rendered with the Mitsuba physically-based renderer, 20 viewpoints per shape, at 256×256 resolution.
-Real images: paper models photographed with a Nikon D3500 (6000×4000), approximately 20 images each in indoor and outdoor settings.
+Single images are fed into methods such as Shap-E, Stable Fast 3D, and OpenLRM to recover complete 3D geometry. Results indicate a core pain point: even after training on millions of 3D assets, these models cannot reliably reconstruct attributes of basic shapes like cubes, suggesting they learn noisy surface priors rather than mathematically precise geometry.
 
-**(2) Monocular 3D Reconstruction Evaluation**
+**3. 3D Symmetry Detection: Judging if symmetry information is implicitly captured by encoders via linear/non-linear probes**
 
-Three methods are evaluated: Shap-E, Stable Fast 3D, and OpenLRM. Even models trained on millions of 3D assets fail to reliably recover basic properties of a cube.
+To bypass the uncertainty of generative reconstruction, this step directly examines whether geometric symmetry information is embedded within the frozen features of 12 encoders (DINOv2, SigLIP, CLIP, DINO, MAE, VGGT, DUSt3R, MASt3R, etc.). Probes are trained to detect center-point reflection, 4-fold, and 5-fold rotational symmetry. To account for class imbalance, a weighted BCE loss is used, where the weight for class $c$ is $w_c = (N - n_c) / n_c$ ($N$ is the total sample count, $n_c$ is the sample count for that class). Probes are trained on synthetic images and tested on real ones, with 5-fold cross-validation ensuring generalization at the shape level rather than specific instances.
 
-**(3) 3D Symmetry Detection**
+**4. Mental Rotation Test (MRT): Evaluating cross-view shape equivalence based on cognitive science paradigms**
 
-Twelve encoders are tested (DINOv2, SigLIP, CLIP, DINO, MAE, VGGT, DUSt3R, MASt3R, etc.) with linear and nonlinear probes to detect central-point reflection, 4-fold, and 5-fold rotational symmetry. A weighted BCE loss addresses class imbalance, and 5-fold cross-validation is applied.
+Following the Shepard & Metzler mental rotation paradigm, this line requires models to judge if two images (one synthetic, one real) represent the same polyhedron. This is implemented by taking the absolute difference of encoder embeddings and applying a non-linear probe for binary classification. A "hard split" specifically includes visually similar polyhedron pairs to challenge fine-grained discrimination capabilities. A user study with 42 participants was organized to establish a human baseline for comparison.
 
-**(4) Mental Rotation Test**
+**5. Zero-shot Polyhedron Classification: Directly identifying shape names with frontier VLMs**
 
-The task is to determine whether two images (synthetic vs. real) depict the same polyhedron. Absolute differences of encoder embeddings are fed into a nonlinear probe classifier. The hard split contains geometrically similar polyhedron pairs. A user study with 42 participants establishes a human baseline.
-
-**(5) Zero-Shot Polyhedron Classification**
-
-Models evaluated include Claude 3.7, Gemini 2.5 Pro, ChatGPT o3/o4-mini-high, and 3D-native models LLaVA-3D, ShapeLLM, and PointBind.
-
-### Loss & Training
-
-- Symmetry detection: weighted BCE with weight $w_c = (N - n_c) / n_c$
-- Mental rotation: standard classification loss
-- 5-fold cross-validation to ensure shape-level generalization
+The final line tests frontier VLMs such as Claude 3.7, Gemini 2.5 Pro, and ChatGPT o3 / o4-mini-high in a zero-shot manner, comparing them against 3D native models like LLaVA-3D, ShapeLLM, and PointBind. This task uses standard classification loss and represents the high-level semantic recognition component of the benchmark.
 
 ## Key Experimental Results
 
-### 3D Symmetry Detection (Synthetic Train → Real Test)
+### 3D Symmetry Detection (Synthetic Training -> Real Testing)
 
-| Encoder | Central Reflection | 4-fold Rotation | 5-fold Rotation |
-|---|---|---|---|
-| DINOv2 | ~85% | **~93%** | ~80% |
-| SigLIP | ~82% | ~88% | ~78% |
-| MAE | ~65% | ~70% | ~60% |
+| Encoder | Center Reflection | 4-fold Rotation | 5-fold Rotation |
+|---------|-------------------|-----------------|-----------------|
+| DINOv2  | ~85%              | **~93%**        | ~80%            |
+| SigLIP  | ~82%              | ~88%            | ~78%            |
+| MAE     | ~65%              | ~70%            | ~60%            |
 
-### Mental Rotation Test (Hard Split, Syn-Wild)
+### Mental Rotation Test (Hard Split, syn-wild)
 
 | Model | Accuracy |
-|---|---|
-| SigLIP (nonlinear probe) | **~69%** |
+|-------|----------|
+| SigLIP (Non-linear probe) | **~69%** |
 | DINOv2 | ~67% |
-| Human average | 68.05% |
-| Human best | 90% |
-| Most models | <60% |
+| Human Average | 68.05% |
+| Human Best | 90% |
+| Most Models | <60% |
 
-### Zero-Shot Classification
+### Main Results (Zero-shot Classification)
 
-| Model | Platonic | Archimedean | Catalan | Johnson | Nonconvex |
-|---|---|---|---|---|---|
+| Model | Platonic | Archimedean | Catalan | Johnson | Non-convex |
+|-------|---------|-----------|----------|----------|--------|
 | ChatGPT o3 | **100%** | ~50% | <20% | <20% | <20% |
 | Gemini 2.5 Pro | ~80% | ~60% | <20% | <20% | <20% |
 | Claude 3.7 | ~80% | ~40% | <20% | <20% | <20% |
-| 3D-native models | — | — | — | — | Do not surpass 2D VLMs |
+| 3D Native Models | - | - | - | - | Not better than 2D VLMs |
 
 ### Ablation Study
 
-- **Chain-of-thought prompting**: yields negligible gains; models frequently hallucinate in intermediate reasoning steps
-- **Multi-view input**: provides only marginal improvement for low-symmetry Johnson solids
-- **Linear vs. nonlinear probes**: performance is comparable for symmetry detection
+- **Chain-of-Thought Prompting**: Minimal effect; models frequent hallucinate intermediate steps.
+- **Multi-view Input**: Provides only a slight improvement for low-symmetry Johnson solids.
+- **Linear vs. Non-linear probe**: Performance is comparable for symmetry detection.
 
 ### Key Findings
 
-1. **Reconstruction failure**: all state-of-the-art reconstruction methods fail to reliably reconstruct even a cube
-2. **Symmetry is detectable**: encoders such as DINOv2 implicitly capture 3D symmetry information (up to 93% for 4-fold rotation)
-3. **Insufficient fine-grained discrimination**: most models approach chance-level performance on the hard mental rotation split
-4. **Systematic geometric reasoning deficiencies in VLMs**: models confuse convex and nonconvex shapes, misidentify face types, and conflate compounds with stellations
-5. **3D-native models do not outperform 2D VLMs**: even when provided with precise point clouds, they fail to surpass general-purpose VLMs
-6. **Clear human advantage**: 68% of human participants outperform the best model
+1. **Reconstruction Failure**: SOTA reconstruction methods cannot reliably reconstruct even a simple cube.
+2. **Symmetry is Detectable**: Encoders like DINOv2 implicitly capture 3D symmetry information (up to 93% for 4-fold rotation).
+3. **Insufficient Fine-grained Discrimination**: Most models perform near random levels on the hard mental rotation test.
+4. **Systematic VLM Geometric Defects**: Models confuse convex and non-convex shapes, misidentify face types, and confuse compounds with stellated polyhedra.
+5. **3D Native Models are not Superior**: Even with precise point clouds, they do not surpass general 2D VLMs.
+6. **Significant Human Advantage**: 68% of human participants outperformed the best model.
 
 ## Highlights & Insights
 
-- **Polyhedra as a geometric litmus test**: mathematically well-defined objects enable rigorous evaluation
-- **Separation of implicit vs. explicit geometric understanding**: encoders can detect symmetry via probing, yet fail on tasks requiring explicit geometric reasoning
-- **Inclusion of a human baseline**: the 42-participant user study provides a meaningful comparative anchor
-- **Exposing training data bias**: reconstruction models have learned noisy surface priors rather than mathematically precise geometry
+- **Polyhedra as Geometric Litmus Paper**: Utilizing mathematically perfectly defined objects for rigorous evaluation.
+- **Dissociation of Implicit and Explicit Geometric Understanding**: Encoders can detect symmetry via probes but fail at explicit reasoning tasks.
+- **Inclusion of Human Baselines**: A 42-person user study provides meaningful comparison anchors.
+- **Revealing Training Data Bias**: Reconstruction models learn noisy surface priors rather than mathematical precision.
 
 ## Limitations & Future Work
 
-1. **Restricted to polyhedra**: generalization to arbitrary organic shapes remains to be investigated
-2. **Limited dataset scale**: 224 shapes, with sparse coverage in certain categories
-3. **No remediation proposed**: the work is purely diagnostic and does not propose training strategies to enhance geometric reasoning
-4. **Evaluation focuses on zero-shot settings**: few-shot and fine-tuning scenarios are not explored
+1. **Evaluation Limited to Polyhedra**: The generalization to arbitrary organic shapes requires further research.
+2. **Limited Dataset Scale**: 224 shapes, with some categories having few samples.
+3. **Absence of Improvement Strategies**: The work is purely diagnostic and does not design training methods to enhance geometric reasoning.
+4. **Focus on Zero-shot Evaluation**: Few-shot or fine-tuning scenarios have not been explored.
 
 ## Related Work & Insights
 
-- **Probing 3D Awareness** (El Banani et al., 2024): GIQ extends probing to symmetry detection
-- **Mental Rotation Test** (Shepard & Metzler, 1971): a classical paradigm borrowed from cognitive science
-- **Insights**: existing models learn texture and statistical patterns rather than geometric essence; future work should incorporate mathematically generated geometric data
+- **Probing 3D Awareness** (El Banani et al., 2024): GIQ extends probing to symmetry.
+- **Mental Rotation Test** (Shepard & Metzler, 1971): A classic paradigm borrowed from cognitive science.
+- **Insight**: Existing models learn textures and statistical patterns rather than geometric essence; future work should introduce mathematically generated geometric data.
 
 ## Rating
 
-- Novelty: 4/5 — first systematic benchmark for polyhedron geometric reasoning
-- Technical depth: 3/5 — primarily an evaluation study with limited methodological innovation
-- Experimental Thoroughness: 5/5 — four-dimensional evaluation, multi-model comparison, and human baseline
-- Value: 4/5 — provides clear directions for improving geometric understanding in vision models
+- Novelty: 4/5 - The first systematic benchmark for geometric reasoning using polyhedra.
+- Technical Depth: 3/5 - Primarily an evaluation work; methodological innovation is limited.
+- Experimental Thoroughness: 5/5 - Four-dimensional evaluation, multi-model comparisons, and human baselines.
+- Value: 4/5 - Provides a clear direction for improving the geometric understanding of vision models.
 
 <!-- RELATED:START -->
 
@@ -165,10 +154,10 @@ Models evaluated include Claude 3.7, Gemini 2.5 Pro, ChatGPT o3/o4-mini-high, an
 ## Related Papers
 
 - [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](../../CVPR2026/3d_vision/benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
+- [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](../../CVPR2026/3d_vision/ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
 - [\[AAAI 2026\] Parameter-Free Fine-tuning via Redundancy Elimination for Vision Foundation Models](../../AAAI2026/3d_vision/parameter-free_fine-tuning_via_redundancy_elimination_for_vision_foundation_mode.md)
+- [\[ECCV 2024\] Sapiens: Foundation for Human Vision Models](../../ECCV2024/3d_vision/sapiens_foundation_for_human_vision_models.md)
 - [\[AAAI 2026\] VGGT-DP: Generalizable Robot Control via Vision Foundation Models](../../AAAI2026/3d_vision/vggt-dp_generalizable_robot_control_via_vision_foundation_models.md)
-- [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
-- [\[ICCV 2025\] ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads](../../ICCV2025/3d_vision/vit-split_unleashing_the_power_of_vision_foundation_models_via_efficient_splitti.md)
 
 </div>
 

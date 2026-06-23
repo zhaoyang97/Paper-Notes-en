@@ -2,151 +2,134 @@
 title: >-
   [Paper Note] Intrinsic Training Dynamics of Deep Neural Networks
 description: >-
-  [ICLR 2026][LLM Pretraining][intrinsic dynamics] This paper investigates when the trajectory in parameter space under gradient flow training of deep neural networks can be "lifted" to a low-dimensional intrinsic space an…
+  [ICLR 2026][Pretraining][intrinsic dynamics] This paper investigates when parameter space trajectories in deep neural network gradient flow training can be "lifted" to a low-dimensional intrinsic space and represented as an intrinsic Riemannian gradient flow. It proposes an intrinsic recoverability criterion based on conservation laws and generalizes the results
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "intrinsic dynamics"
-  - "gradient flow"
-  - "conservation laws"
-  - "implicit bias"
-  - "Riemannian metric"
+  - ICLR 2026
+  - Pretraining
+  - intrinsic dynamics
+  - gradient flow
+  - conservation laws
+  - implicit bias
+  - Riemannian metric
 date: 2026-05-08
-content_hash: 8912533a9ffbb042
+content_hash: 9d888621dc6778ce
 ---
-
 # Intrinsic Training Dynamics of Deep Neural Networks
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.07370](https://arxiv.org/abs/2508.07370)  
 **Code**: None  
-**Area**: Deep Learning Theory / Optimization Dynamics
+**Area**: Deep Learning Theory / Optimization Dynamics  
 **Keywords**: intrinsic dynamics, gradient flow, conservation laws, implicit bias, Riemannian metric
 
 ## TL;DR
 
-This paper investigates when the trajectory in parameter space under gradient flow training of deep neural networks can be "lifted" to a low-dimensional intrinsic space and expressed as an intrinsic Riemannian gradient flow. It proposes an intrinsic recoverability criterion based on conservation laws and extends the results to ReLU networks and linear networks of arbitrary depth.
+This paper investigates when parameter space trajectories in deep neural network gradient flow training can be "lifted" to a low-dimensional intrinsic space and represented as an intrinsic Riemannian gradient flow. It proposes an intrinsic recoverability criterion based on conservation laws and generalizes the results to ReLU networks of arbitrary depth and linear networks.
 
 ## Background & Motivation
 
-**Core problem of implicit bias**: Understanding whether gradient-based training drives parameters toward certain low-dimensional structures (sparsity, low rank, etc.)—the so-called implicit bias—is one of the central challenges in deep learning theory.
+**Key Challenge of Implicit Bias**: A core challenge in deep learning theory is understanding whether gradient training drives parameters toward certain low-dimensional structures (sparsity, low-rank, etc.), known as the implicit bias problem.
 
-**Lifted variable framework**: Many analyses "lift" the parameter $\theta$ via an architecture-dependent map $\phi$ to $z = \phi(\theta)$, e.g., $\phi(\theta) = U_L \cdots U_1$ for linear networks and $\phi(\theta) = (u_j v_j^\top)_j$ for ReLU networks.
+**Lifting Variable Framework**: Many analyses "lift" parameters $\theta$ into a representation $z = \phi(\theta)$ through an architecture-dependent mapping $\phi$. For example, in linear networks $\phi(\theta) = U_L \cdots U_1$, and in ReLU networks $\phi(\theta) = (u_j v_j^\top)_j$.
 
-**Importance of intrinsic dynamics**: If $z(t)$ can be shown to follow an intrinsic Riemannian gradient flow, tools from convex optimization (e.g., mirror flow) become applicable for analyzing implicit regularization.
+**Mechanism of Intrinsic Dynamics**: If $z(t)$ can be proven to follow an intrinsic Riemannian gradient flow, convex optimization tools (such as mirror flow) can be utilized to analyze implicit regularization effects.
 
-**Limitations of Prior Work**: The commuting condition of Li et al. (2022) is rarely satisfied in practice; the involutive condition of Marcotte et al. (2023) applies only to two-layer ReLU networks.
+**Limitations of Prior Work**: The commuting condition in Li et al. (2022) is rarely satisfied in practice; the involutive condition in Marcotte et al. (2023) applies only to two-layer ReLU networks.
 
-**Restriction of balanced initialization**: Prior results on intrinsic dynamics for linear networks rely on the strict balanced initialization condition $U_{i+1}^\top U_{i+1} = U_i U_i^\top$.
+**Constraints of Balanced Initialization**: In linear networks, previous intrinsic dynamics results relied on strict balanced initialization conditions $U_{i+1}^\top U_{i+1} = U_i U_i^\top$.
 
-**Lack of unified theory**: A unified framework for intrinsic dynamics analysis is missing for deep ReLU networks with general DAG architectures, linear networks with unbalanced initialization, and infinitely deep linear networks.
+**Goal**: To provide a unified intrinsic dynamics analysis framework for deep ReLU networks with general DAG architectures, linear networks with unbalanced initialization, and infinite-depth linear networks.
 
 ## Method
 
 ### Overall Architecture
 
-The paper establishes three progressively stronger notions of intrinsic properties and their implications:
+The paper centers on a unified problem: for a gradient flow $\dot{\theta}(t) = -\nabla \ell(\theta(t))$, after lifting parameters to the representation $z(t) = \phi(\theta(t))$, its dynamics can be written as $\dot{z}(t) = -M(\theta(t)) \nabla f(z(t))$, where the metric matrix $M(\theta) = \partial\phi(\theta)\,\partial\phi(\theta)^\top$. The core question is: when can $M(\theta(t))$ be expressed solely using $z(t)$ and the initialization $\theta_0$? Once this is possible, $z$ follows an intrinsic Riemannian gradient flow $\dot{z} = -K_{\theta_0}(z)\nabla f(z)$, allowing analysis of implicit regularization using convex optimization tools (e.g., mirror flow) independent of the original parameter space. To clarify this, the authors first decompose "intrinsicness" into three hierarchical levels from strong to weak and prove their sequential implication. They then use a linear algebra criterion to transform the strongest level into a point-wise verifiable condition. Finally, they apply this criterion to two mainstream architectures: for ReLU networks of arbitrary depth, they bypass explicit construction of conservation laws using Frobenius/Lie algebra criteria; for linear networks, they relax the traditionally strict balanced initialization to a broader family.
 
-$$\text{Intrinsic Recoverability} \Rightarrow \text{Intrinsic Metric} \Rightarrow \text{Intrinsic Dynamic}$$
-
-**Core Problem**: For the gradient flow $\dot{\theta}(t) = -\nabla \ell(\theta(t))$, the dynamics of the lifted variable $z(t) = \phi(\theta(t))$ take the form $\dot{z}(t) = -M(\theta(t)) \nabla f(z(t))$, where $M(\theta) = \partial\phi(\theta) \partial\phi(\theta)^\top$. When can $M(\theta(t))$ be expressed solely in terms of $z(t)$ and the initialization $\theta_0$?
+> As this is a purely theoretical work, the method essentially consists of a hierarchy of definitions + algebraic criteria + theoretical derivations for two classes of architectures. There is no multi-module pipeline that can be sequenced as a data flow (the core involves algebraic objects like Jacobian null spaces, Lie brackets, and conservation laws, which are not suitable for flowcharts). Therefore, **no framework diagram is provided**. The three key designs below follow the same sequence as the overall architecture: establishing the hierarchy and criteria, then addressing ReLU and linear networks respectively.
 
 ### Key Designs
 
-1. **Intrinsic Dynamic Property (Definition 2.6)**
+**1. Three-level Intrinsic Hierarchy and Kernel Intersection Criterion: Reducing Global Dynamics to Point-wise Linear Algebra Checks**
 
-    - **Function**: Defines when $\theta_0$ possesses the intrinsic dynamic property with respect to $\phi$.
-    - **Mechanism**: There exists a function $K_{\theta_0}$ such that $M(\theta(t)) = K_{\theta_0}(\phi(\theta(t)))$ holds for all $f$.
-    - **Design Motivation**: Decouples the metric matrix from the data/task; $K_{\theta_0}$ depends only on network architecture and initialization.
+To answer "when is $M$ a function of only $z$," the authors construct a three-level hierarchy and prove $\text{Intrinsic Recoverability} \Rightarrow \text{Intrinsic Metric} \Rightarrow \text{Intrinsic Dynamics}$. The weakest, **intrinsic dynamics property** (Def 2.6), only requires the existence of a function $K_{\theta_0}$, depending only on architecture and initialization, such that $M(\theta(t)) = K_{\theta_0}(\phi(\theta(t)))$ holds along the trajectory for all differentiable losses $f$—thus decoupling the metric from the specific task and dataset, making $z(t)$ a self-consistent low-dimensional system. Since "holding along the trajectory" is hard to verify directly, they introduce the **intrinsic metric property** (Def 2.10): utilizing conservation laws $\mathbf{h}$ naturally carried by gradient flow to confine trajectories to the manifold $\mathcal{M}_{\theta_0} = \{\theta : \mathbf{h}(\theta) = \mathbf{h}(\theta_0)\}$. It then suffices for $M(\theta) = K_{\theta_0}(\phi(\theta))$ to hold over the entire $\mathcal{M}_{\theta_0}$. The strongest level, **intrinsic recoverability** (Def 2.15), requires that $\theta$ can be uniquely recovered from $(\phi(\theta), \mathbf{h}(\theta))$, meaning "lifting + conserved quantities" loses no information. Theorem 2.17 proves intrinsic recoverability is equivalent to the kernel intersection condition:
 
-2. **Intrinsic Metric Property (Definition 2.10)**
+$$\ker\partial\phi(\theta) \cap \ker\partial\mathbf{h}(\theta) = \{0\},$$
 
-    - **Function**: Requires intrinsicness of the metric on the manifold $\mathcal{M}_{\theta_0}$ constrained by conservation laws.
-    - **Mechanism**: There exist conservation laws $\mathbf{h}$ and a function $K_{\theta_0}$ such that $M(\theta) = K_{\theta_0}(\phi(\theta))$ holds for all $\theta \in \mathcal{M}_{\theta_0}$.
-    - **Design Motivation**: Employs conservation laws to confine trajectories to a low-dimensional manifold.
+This transforms an abstract proposition about global dynamics into a point-wise check of whether two Jacobian null spaces intersect only at the origin—making it computable and decidable. Furthermore, Theorem 2.14 provides a necessary kernel space condition for the intrinsic metric property, used to prove "negative results" (e.g., the intrinsic metric property does not hold for two-layer linear networks or attention layers under naive parameterization).
 
-3. **Intrinsic Recoverability (Definition 2.15) and Equivalence Criterion (Theorem 2.17)**
+**2. Frobenius Property of ReLU Networks: Bypassing Explicit Construction of Conservation Laws via Lie Algebra Criteria**
 
-    - **Function**: Requires that $\theta$ can be fully recovered from $\phi(\theta)$ and $\mathbf{h}(\theta)$.
-    - **Mechanism**: Equivalent to the kernel intersection condition $\ker\partial\phi(\theta) \cap \ker\partial\mathbf{h}(\theta) = \{0\}$.
-    - **Design Motivation**: The strongest condition, equivalent to a verifiable linear-algebraic criterion.
+While the kernel intersection criterion is useful, point-wise checking still requires finding all conservation laws $\mathbf{h}$, which is often difficult. The authors instead use a quasi-equivalent (Prop 2.21) algebraic sufficient condition—the **Frobenius property**: the family of vector fields induced by $\phi$ is closed under Lie brackets (this is slightly weaker than the involutive condition in Marcotte et al. 2023). This allows verifying intrinsic recoverability without explicitly constructing conservation laws. Theorem 3.1 proves that for any DAG architecture and ReLU network of any depth, the path-lifting parameterization $\phi_{\text{ReLU}}$ satisfies the Frobenius property on a dense set of non-zero parameters. Thus, Corollary 3.3 establishes the strongest intrinsic recoverability for almost all initializations (Proposition 3.5 provides a specific closed-form characterization for three-layer ReLU intrinsic dynamics). Counter-intuitively, the piecewise structure of ReLU results in a smaller symmetry group and thus richer conservation laws; since known conservation laws (differences of diagonal terms) are already complete for it, intrinsic dynamics are easier to establish for ReLU than for linear networks.
 
-4. **Frobenius Property for ReLU Networks (Theorem 3.1 & Corollary 3.3)**
+**3. Relaxed Balanced Conditions for Linear Networks: Broadening Balanced Initialization to a Family with Necessary and Sufficient Characterization**
 
-    - **Function**: Proves that the path-lifting map for ReLU networks with arbitrary DAG architectures satisfies the Frobenius property.
-    - **Mechanism**: Verifies closure under the Lie bracket at nonzero parameters (a dense set).
-    - **Design Motivation**: Establishes the strongest intrinsic recoverability for almost all initializations.
-
-5. **Linear Networks under Relaxed Balancedness (Theorem 3.8 & 3.9)**
-
-    - **Function**: Extends the intrinsic metric property from balanced ($\lambda=0$) to relaxed balanced ($S = \lambda I$) initialization.
-    - **Mechanism**: Derives closed-form expressions for the intrinsic dynamics and proves that relaxed balancedness is a necessary condition (when $r \leq \max(n,m)$).
-    - **Design Motivation**: Establishes necessary and sufficient conditions for intrinsic metric properties in linear networks.
+Previous intrinsic dynamics results for linear networks relied on strict balanced initialization $U_{i+1}^\top U_{i+1} = U_i U_i^\top$, which is equivalent to setting all regular conservation laws to zero $\mathbf{h}(\theta_0) = 0$ (denoted $S = 0$). This is nearly impossible to satisfy exactly in practice. The authors relax this to **relaxed balance** (Def 3.6) $S = \lambda I$, allowing adjacent layers to differ by a scalar multiple, thereby expanding the "single point" condition to a whole family of initializations. Under this condition, they prove that relaxed balanced initialization satisfies the intrinsic metric property (Theorem 3.8 for two layers, Theorem 3.11 for arbitrary depth). Conversely, they prove that for configurations like $r \leq \max(n,m)$, relaxed balance is a **necessary** condition for the intrinsic metric property (Theorem 3.9). This provide a necessary and sufficient characterization for linear networks, leading to closed-form expressions for intrinsic dynamics, extended to the limit of infinite-depth linear Neural ODEs (Theorem 3.13).
 
 ### Loss & Training
 
-This paper is a purely theoretical work analyzing continuous-time gradient flow. The loss function takes the form $\ell(\theta) = f(\phi(\theta))$, where $f$ is an arbitrary differentiable function; the results are independent of specific loss functions and datasets.
+This is a purely theoretical work analyzing continuous-time gradient flow. The function $f$ in the loss $\ell(\theta) = f(\phi(\theta))$ can be any differentiable function; all conclusions are independent of the specific loss form and dataset.
 
 ## Key Experimental Results
 
 ### Main Results
 
-This paper makes purely theoretical contributions; the core results are stated as theorems:
+The core contributions of this paper are presented as theorems:
 
-| Network Type | Map $\phi$ | Intrinsic Property | Condition |
-|---------|-----------|---------|------|
-| Arbitrary DAG ReLU network | $\phi_{\text{ReLU}}$ (path-lifting) | Intrinsic Recoverability ✓ | Nonzero parameters (dense set) |
-| Two-layer linear network | $\phi_{\text{Lin}} = UV^\top$ | Intrinsic Metric ✓/✗ | Relaxed balanced ✓ / non-relaxed ✗ |
-| Deep linear network | $\phi_{\text{Lin}} = U_L \cdots U_1$ | Intrinsic Dynamic ✓ | Relaxed balancedness condition |
-| Linear neural ODE | Infinite-depth limit | Intrinsic Dynamic ✓ | Relaxed balanced + closed-form metric |
+| Network Type | Mapping $\phi$ | Intrinsic Property | Condition |
+| :--- | :--- | :--- | :--- |
+| Arbitrary DAG ReLU | $\phi_{\text{ReLU}}$ (path-lifting) | Intrinsic Recoverability ✓ | Non-zero parameters (dense set) |
+| 2-layer Linear | $\phi_{\text{Lin}} = UV^\top$ | Intrinsic Metric ✓/✗ | Relaxed balance ✓ / Unrelaxed ✗ |
+| Deep Linear | $\phi_{\text{Lin}} = U_L \cdots U_1$ | Intrinsic Dynamics ✓ | Relaxed balance condition |
+| Linear Neural ODE | Infinite-depth limit | Intrinsic Dynamics ✓ | Relaxed balance + Closed-form metric |
 
 ### Ablation Study
 
-| Comparison Dimension | Prev. SOTA | Ours |
-|---------|---------|---------|
-| ReLU network depth | Two layers | Arbitrary DAG architecture |
-| Linear network initialization | Strict balanced $\lambda = 0$ | Relaxed balanced $S = \lambda I$ |
-| Linear network depth | Two layers | Arbitrary depth + infinite depth |
-| Completeness of conservation laws | Empirically verified | Theoretically proven (Corollary 3.4) |
+| Dimension | Previous Results | Ours (Extension) |
+| :--- | :--- | :--- |
+| ReLU Depth | Two layers | Arbitrary DAG architecture |
+| Linear Initialization | Strict balance $\lambda = 0$ | Relaxed balance $S = \lambda I$ |
+| Linear Layers | Two layers | Arbitrary depth + Infinite depth |
+| Conservation Laws | Empirical verification | Theoretical proof (Corollary 3.4) |
 
 ### Key Findings
 
-- ReLU networks satisfy the strongest intrinsic recoverability property for a dense set of initializations.
-- The known conservation laws (differences of diagonal terms) are complete for ReLU networks.
-- Relaxed balancedness is a necessary and sufficient condition for the intrinsic metric property in linear networks.
-- A closed-form expression for intrinsic dynamics is derived for three-layer ReLU networks for the first time.
-- Linear neural ODEs under relaxed balanced initialization also admit a closed-form intrinsic metric.
+- ReLU networks satisfy the strongest intrinsic recoverability property on a dense set of initializations.
+- Known conservation laws (differences of diagonal terms) are complete for ReLU networks.
+- The relaxed balance condition is necessary and sufficient for the intrinsic metric property in linear networks.
+- A closed-form expression for intrinsic dynamics is provided for three-layer ReLU networks for the first time.
+- Linear Neural ODEs under relaxed balanced initialization also possess closed-form intrinsic metrics.
 
 ## Highlights & Insights
 
-1. **Unified framework**: The three-level hierarchy of definitions clearly reveals the relative strengths of different intrinsic notions.
-2. **Favorable properties of ReLU**: Counterintuitively, the piecewise nonlinear structure of ReLU yields a smaller symmetry group and richer conservation laws, making intrinsic dynamics easier to establish than in linear networks.
-3. **Power of the kernel inclusion criterion**: Theorem 2.14 provides a concise tool for proving negative results.
-4. **Lie-algebraic criterion**: A practical algebraic test based on the Frobenius property avoids direct construction of conservation laws.
-5. **Cross-architecture applicability**: The framework uniformly handles ReLU, linear, attention layers, and infinitely deep networks.
+1.  **Unified Framework**: The three-level progressive definitions clearly reveal the strengths and relationships between different intrinsicness concepts.
+2.  **Favorable Properties of ReLU**: Counter-intuitively, the non-linear piecewise structure of ReLU leads to smaller symmetry groups and richer conservation laws, making it easier to establish intrinsic dynamics than for linear networks.
+3.  **Power of Kernel Inclusion Criterion**: Theorem 2.14 provides a concise tool for proving "negative results."
+4.  **Lie Algebra Criterion**: A practical algebraic testing method based on the Frobenius property avoids the direct construction of conservation laws.
+5.  **Cross-Architecture Applicability**: Provides unified treatment for ReLU, linear, attention layers, and infinite-depth networks.
 
 ## Limitations & Future Work
 
-1. Only continuous gradient flow is analyzed; discrete optimization algorithms (SGD, Adam) are not covered.
-2. Only intrinsic dynamics (step i) are established; the extension to mirror flow (step ii) is not addressed.
-3. The case $r > \max(n, m)$ for linear networks remains an open problem.
-4. Numerical validation experiments are absent.
-5. The Frobenius property does not hold for attention layers, requiring indirect analysis.
+1.  Analysis is limited to continuous gradient flow and does not cover discrete optimization algorithms (SGD, Adam).
+2.  Only establishes intrinsic dynamics (step i) without progressing to mirror flow (step ii).
+3.  The case for linear networks when $r > \max(n, m)$ remains an open problem.
+4.  Lacks numerical validation experiments.
+5.  The Frobenius property does not hold for attention layers, requiring indirect analysis.
 
 ## Related Work & Insights
 
-- **Arora et al. (2019)**: Balanced initialization and conservation laws → extended in this paper to relaxed balancedness.
-- **Marcotte et al. (2023)**: Involutive condition → weakened in this paper to the Frobenius condition.
-- **Li et al. (2022)**: Commuting condition (a special case of Frobenius) → mirror flow.
-- **Gonon et al. (2024)**: Path-lifting framework → this paper proves it satisfies the Frobenius property.
-- **Insights**: Lays the foundation for subsequent analyses of warped mirror flow and implicit bias in practical architectures.
+- **Arora et al. (2019)**: Balanced initialization and conservation laws $\rightarrow$ Generalized to relaxed balanced in this paper.
+- **Marcotte et al. (2023)**: Involutive condition $\rightarrow$ Weakened to Frobenius condition in this paper.
+- **Li et al. (2022)**: Commuting condition (a special case of Frobenius) $\rightarrow$ mirror flow.
+- **Gonon et al. (2024)**: Path-lifting framework $\rightarrow$ This paper proves it satisfies the Frobenius property.
+- **Insight**: Lays the theoretical foundation for future analysis of warped mirror flow and implicit bias in practical architectures.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ Establishes a complete hierarchical theory; the universal result for ReLU networks is a significant breakthrough.
-- **Experimental Thoroughness**: ⭐⭐⭐ Purely theoretical work; theorems are rigorous but numerical validation is lacking.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Definitions and theorems are presented in a coherent progression; the framework is elegant and clear.
-- **Value**: ⭐⭐⭐⭐ Provides an important theoretical foundation for understanding implicit bias.
+- **Novelty**: ⭐⭐⭐⭐⭐ Established a complete hierarchical theory; universal results for ReLU are a major breakthrough.
+- **Experimental Thoroughness**: ⭐⭐⭐ Purely theoretical work; theorems are rigorous but lack numerical validation.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Definitions and theorems progress logically; the framework is elegant and clear.
+- **Value**: ⭐⭐⭐⭐ Provides a significant theoretical cornerstone for understanding implicit bias.
 
 <!-- RELATED:START -->
 
@@ -154,11 +137,11 @@ This paper makes purely theoretical contributions; the core results are stated a
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](../../NeurIPS2025/llm_pretraining/neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
 - [\[NeurIPS 2025\] Generalization Bounds for Rank-sparse Neural Networks](../../NeurIPS2025/llm_pretraining/generalization_bounds_for_rank-sparse_neural_networks.md)
-- [\[ICLR 2026\] MoMa: A Simple Modular Deep Learning Framework for Material Property Prediction](moma_a_modular_deep_learning_framework_for_material_property_prediction.md)
-- [\[NeurIPS 2025\] Disaggregation Reveals Hidden Training Dynamics: The Case of Agreement Attraction](../../NeurIPS2025/llm_pretraining/disaggregation_reveals_hidden_training_dynamics_the_case_of_agreement_attraction.md)
+- [\[ICLR 2026\] Time is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](time_is_a_feature_exploiting_temporal_dynamics_in_diffusion_language_models.md)
+- [\[ICML 2025\] Bayesian Neural Scaling Law Extrapolation with Prior-Data Fitted Networks](../../ICML2025/llm_pretraining/bayesian_neural_scaling_law_extrapolation_with_prior-data_fitted_networks.md)
 - [\[NeurIPS 2025\] Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks](../../NeurIPS2025/llm_pretraining/alternating_gradient_flows_a_theory_of_feature_learning_in_two-layer_neural_netw.md)
+- [\[NeurIPS 2025\] Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data](../../NeurIPS2025/llm_pretraining/neural_collapse_under_gradient_flow_on_shallow_relu_networks_for_orthogonally_se.md)
 
 </div>
 

@@ -2,133 +2,140 @@
 title: >-
   [Paper Note] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition
 description: >-
-  [ICLR 2026][LLM Pretraining][Memorization] This work introduces the FictionalQA dataset and generation pipeline, which synthesizes webtext-style documents and QA pairs about fictional events to study both factual memoriz…
+  [ICLR 2026][Pretraining][Memorization] The authors propose the FictionalQA dataset and a generation pipeline. By synthesizing webtext-style documents and QA pairs regarding fictional events, they study the dual processes of factual and verbatim memorization during LLM training in a controlled environment. The study finds that more diverse surface forms faci
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "Memorization"
-  - "Knowledge Acquisition"
-  - "synthetic data"
-  - "LLM Training Dynamics"
-  - "Factual Memorization"
+  - ICLR 2026
+  - Pretraining
+  - Memorization
+  - Knowledge Acquisition
+  - synthetic data
+  - LLM Training Dynamics
+  - Factual Memorization
 date: 2026-05-08
-content_hash: d32f609acc53efdc
+content_hash: b51a66982537d9ce
 ---
-
 # FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.05639](https://arxiv.org/abs/2506.05639)  
 **Code**: [https://github.com/jwkirchenbauer/fictionalqa](https://github.com/jwkirchenbauer/fictionalqa)  
-**Area**: LLM Pre-training
+**Area**: LLM Pre-training  
 **Keywords**: Memorization, Knowledge Acquisition, synthetic data, LLM Training Dynamics, Factual Memorization
 
 ## TL;DR
-This work introduces the FictionalQA dataset and generation pipeline, which synthesizes webtext-style documents and QA pairs about fictional events to study both factual memorization and verbatim memorization in LLM training under controlled conditions. Key findings show that greater surface-form diversity facilitates knowledge acquisition, while concise structured lists are least conducive to generalization.
+The authors propose the FictionalQA dataset and a generation pipeline. By synthesizing webtext-style documents and QA pairs regarding fictional events, they study the dual processes of factual and verbatim memorization during LLM training in a controlled environment. The study finds that more diverse surface forms facilitate knowledge acquisition, whereas concise structured lists are the least conducive to generalization.
 
 ## Background & Motivation
 
-**Background**: Two distinct memorization phenomena occur during LLM training: verbatim memorization (exact reproduction of training sequences) and factual memorization (generalization of facts encountered during training to novel tasks). Verbatim memorization has been extensively studied by Carlini et al., whereas understanding of factual memorization remains limited.
+**Background**: Two types of memorization occur during LLM training: verbatim memorization (precise reproduction of training sequences) and factual memorization (generalizing facts seen during training to new tasks). While verbatim memorization has been extensively studied by Carlini et al., the understanding of factual memorization remains limited.
 
-**Limitations of Prior Work**: Studying factual memorization is challenging because it is difficult to quantify how frequently a given fact appears in training data. Existing datasets are either overly templated (TOFU uses fill-in-the-blank), too small (New News contains only 75 articles), or involve science-fiction content that entangles fictional facts with real-world knowledge (Fictional Knowledge includes Star Trek-style topics).
+**Limitations of Prior Work**: Quantifying factual memorization is difficult because the frequency of specific facts in training data is hard to measure. Existing datasets are often too templated (e.g., TOFU using fill-in-the-blank), too small (e.g., New News with only 75 articles), or contain science fiction content that entangles with real-world knowledge (e.g., Fictional Knowledge featuring interstellar travel).
 
-**Key Challenge**: There is a need to simultaneously satisfy two conditions — surface-form realism and complete factual fabrication. Realism is necessary to simulate authentic training scenarios, while fabrication ensures that the introduced facts do not interact with genuine knowledge present in pre-training corpora, thereby enabling controlled experimentation.
+**Key Challenge**: There is a requirement to satisfy two conditions simultaneously: realistic surface forms and entirely fictional factual content. Realism is necessary to simulate actual training scenarios, while fiction ensures facts do not interact with real-world knowledge in the pre-training corpus, enabling controlled experiments.
 
-**Goal**: To construct a "clean-room" synthetic dataset that allows researchers to isolate and study different forms of memorization under strictly controlled conditions, with particular focus on the training dynamics of factual memorization.
+**Goal**: To build a "cleanroom" synthetic dataset that allows researchers to distinguish and study the training dynamics of different memorization phenomena, particularly factual memorization, under strictly controlled conditions.
 
-**Key Insight**: GPT-4o is used to generate hierarchically structured fictional data through a pipeline of seed events → detail sheets → multi-style documents → QA pairs, along with multiple train/validation split strategies designed to disentangle different experimental variables.
+**Key Insight**: Utilize GPT-4o to generate hierarchically structured fictional data—Seed Events → Fictsheets → Multi-style Fictions → QA Pairs—and design multiple train/val split strategies to isolate different factors.
 
-**Core Idea**: By leveraging controllable fictional synthetic data in a laboratory setting, the work demonstrates that factual memorization and verbatim memorization arise under different conditions, and that diverse surface forms promote knowledge acquisition while the most concise factual representations are least conducive to generalization.
+**Core Idea**: Through controllable fictional synthetic data, this work reveals in a laboratory setting that factual and verbatim memorization occur under different conditions. Diverse surface forms promote knowledge acquisition, while the most concise factual representations are the least conducive to generalization.
 
 ## Method
 
 ### Overall Architecture
 
-FictionalQA employs a four-stage hierarchical data generation pipeline: Seed Events → Fictsheets → Fictions → Fictional Q&A. All stages are generated using GPT-4o at varying temperatures. Two post-processing steps — QA annotation (filtering answerable questions) and MCQ reformatting — are applied after generation.
+To study LLM memorization under controlled conditions, the core challenge is creating data that resembles real webtext but contains entirely fictional facts, allowing "surface style" and "factual content" to be treated as independent variables. FictionalQA decomposes data construction into a multi-level expansion pipeline followed by two post-processing steps and three training splits. First, GPT-4o expands one-sentence Seed Events into structured Fictsheets, fictions in five styles, and unambiguous QA pairs, using different temperatures to control divergence at each stage. Post-processing includes QA infeasibility filtering (removing questions solvable by prior knowledge, filtering 7,500 questions down to 3,036) and MCQ reformatting (adding distractors for 4-way multiple choice scoring). Finally, the data is partitioned into train/val sets using Event, Doc, or Style splits and fine-tuned with a low injection rate of 5% into real webtext. Training/validation loss and MCQ accuracy are monitored to observe the emergence of factual memorization.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    subgraph GEN["Hierarchical Data Generation Pipeline"]
+        direction TB
+        A["Seed Events<br/>One-sentence fictional scenarios (Temp 1.0)"] --> B["Fictsheets<br/>Structured detail outlines (Temp 0.7)"]
+        B --> C["Fictions<br/>5 document styles (Temp 1.0)"]
+        C --> D["Fictional QA Pairs<br/>Unambiguous Q&A (Temp 0.1)"]
+    end
+    D --> E["QA Infeasibility Filtering<br/>Blind vs. Informed testing<br/>7500 → 3036 questions"]
+    E --> F["MCQ Reformatting<br/>Distractors → 4-choice"]
+    subgraph SPLIT["Three Train/Val Splits"]
+        direction TB
+        G["Event Split<br/>Cross-event transfer"]
+        H["Doc Split<br/>Content generalization"]
+        I["Style Split<br/>Separating content/style memorization"]
+    end
+    F --> SPLIT
+    SPLIT --> J["5% Injection Rate Finetuning<br/>Monitor memorization dynamics"]
+```
 
 ### Key Designs
 
-1. **Hierarchical Data Generation Pipeline**
+**1. Hierarchical Data Generation Pipeline: Expanding a "Fictional Fact" into Multiple Surface Forms**
+To study how surface form diversity affects knowledge acquisition, the same fictional fact must appear repeatedly in documents of varying styles that resemble real webtext. The pipeline uses a four-level structure: Seed Events (high temperature 1.0 for diversity), Fictsheets (temperature 0.7 to converge details into a structured outline), Fictions (temperature 1.0 to expand Fictsheets into news, social media, encyclopedia, corporate documents, and blogs), and QA Pairs (temperature 0.1 for deterministic answers). This provides a "skeleton" (Fictsheet) and "flesh" (multi-style docs) for the same underlying facts.
 
-    - **Function**: Starting from brief seed events, the pipeline progressively expands content into complete fictional documents and QA pairs.
-    - **Mechanism**: Seed events are short descriptions of fictional scenarios (temperature 1.0); Fictsheets expand seeds into structured outlines containing characters, locations, and specific details (temperature 0.7); Fictions expand Fictsheets into documents in five styles — news, social media, encyclopedia, corporate document, and blog (temperature 1.0); QA pairs are generated from documents as unambiguous question–answer pairs (temperature 0.1).
-    - **Design Motivation**: The multi-level structure ensures diversity and controllability. By presenting the same facts through different surface forms, the pipeline enables systematic study of how surface-form diversity affects knowledge acquisition.
+**2. QA Infeasibility Filtering: Removing Guessable Questions**
+Synthetic QA carries the risk that some questions might be answered correctly using the pre-existing knowledge of GPT-4o. To ensure accuracy gains reflect learning from training data, GPT-4o takes each test twice: "blind" (question only) and "informed" (question + fictional document). Only questions that are unanswerable "blind" but answerable "informed" are retained.
 
-2. **QA Annotation: Infeasibility Filtering**
+**3. Three Train/Val Splits: Decomposing "Generalization" into Dimensions**
+How data is split determines what type of generalization is measured. 
+- **Event Split**: All documents for 2/3 of seed events are used for training; 1/3 are reserved for validation. This measures cross-event knowledge transfer.
+- **Doc Split**: One document from every style of every event is reserved for validation. This measures content generalization within the training distribution.
+- **Style Split**: Training occurs on 4 styles per event, with the 5th reserved for validation. This specifically isolates content memorization from style memorization.
 
-    - **Function**: Determines whether each QA pair can be answered without access to the fictional document (blind vs. informed evaluation).
-    - **Mechanism**: The same GPT-4o model answers questions in both blind mode (question only) and informed mode (question + fictional document); only questions that cannot be answered in blind mode are retained.
-    - **Design Motivation**: Ensures that observed QA performance gains during training genuinely reflect factual memorization from training data rather than the model's prior knowledge.
-
-3. **Diverse Train/Validation Split Strategies**
-
-    - **Function**: Three split strategies are designed to isolate different experimental variables.
-    - (a) **Event Split**: All documents for 2/3 of seed events are used for training; the remaining 1/3 are held out entirely for validation. Validation content is completely disjoint from training content.
-    - (b) **Doc Split**: For each seed event and each style, one document is reserved for validation. The validation set is in-distribution with respect to both content and style.
-    - (c) **Style Split**: For each seed event, four styles are used for training and one is held out for validation. The validation set is content-matched but style out-of-distribution.
-    - **Design Motivation**: Doc Split measures in-distribution content generalization; Event Split measures cross-event generalization; Style Split disentangles content memorization from style memorization.
-
-4. **Training Experimental Design**
-
-    - **Function**: Fine-tunes base checkpoints of Llama 3.1/3.2 and Gemma 1/2 with 5% fictional data mixed with 95% real webtext.
-    - **Mechanism**: Training dynamics are monitored via training/validation loss, QA conditional answer loss, and MCQ accuracy. Fictional data is injected after 50 warm-up steps. TriviaQA is used to monitor whether real-world knowledge is degraded.
-    - **Design Motivation**: The low 5% injection rate prevents verbatim memorization from dominating, placing the model within a "generalization window" in which the emergence of factual memorization can be observed.
+**4. Training Experimental Design: Low 5% Injection Rate**
+Finetuning is performed on Llama 3.1/3.2 and Gemma 1/2 base checkpoints. Mixing 5% fictional data with 95% real webtext is a key design choice. If the ratio is too high, the model may simply memorize the text verbatim, obscuring factual generalization. A low injection rate keeps the model in a "generalization window" where it extracts facts without complete rote memorization.
 
 ### Loss & Training
-
-Standard next-token prediction loss (cross-entropy) is used. The core contribution lies in the data split and injection strategies for studying memorization dynamics rather than in any novel training objective.
+The study uses standard next-token prediction loss (cross-entropy). The core focus is studying memorization dynamics through different data splits and injection strategies rather than proposing new training objectives.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Experimental Setting | Metric | Key Result |
-|---|---|---|
-| Doc Split vs. Event Split | Minimum validation loss | Doc Split generalizes better (lower validation loss) because all facts are partially covered |
-| Fictsheets Split | Validation loss trend | Overfits almost immediately with no observable generalization period |
-| MCQ accuracy across models | MCQ accuracy vs. training steps | Larger models achieve higher MCQ accuracy and improve more rapidly |
-| MCQ across split types | Split type vs. MCQ | Doc Split and Style Split yield the best transfer; Fictsheets yield the worst |
+| Experimental Setting | Observation Metric | Key Result |
+|---------|---------|---------|
+| Doc Split vs Event Split | Min Validation Loss | Doc Split generalizes better (lower val loss) as all facts are partially covered. |
+| Fictsheets Split | Val Loss Trend | Overfits almost immediately; no observable generalization period. |
+| MCQ Accuracy by Model | Change over steps | Larger models reach higher MCQ accuracy faster. |
+| MCQ by Split Type | Split vs MCQ | Doc and Style splits show best transfer; Fictsheets perform worst. |
 
 ### Ablation Study
 
-| Configuration | QA Transfer | Notes |
-|---|---|---|
-| Doc Split (5 styles, same event) | Strongest | Diverse surface forms + complete factual coverage |
-| Style Split (4 styles for training) | Strong | Style variation with complete facts |
-| Event Split (different events) | Moderate | Incomplete factual coverage limits generalization |
-| Fictsheets (structured lists) | Weakest | Most concise but least surface-form diversity |
-| Base Webtext Only (control) | No effect | Confirms gains originate from fictional data |
+| Configuration | QA Transfer Effect | Description |
+|------|-----------|------|
+| Doc Split (5 styles, same event) | Strongest | Diverse surface forms + full factual coverage. |
+| Style Split (4 styles training) | Strong | Style shifts but facts remain complete. |
+| Event Split (different events) | Medium | Incomplete factual coverage limits transfer. |
+| Fictsheets (structured lists) | Weakest | Most concise but least diverse surface form. |
+| Base Webtext Only (Control) | No Effect | Confirms gains stem from fictional data. |
 
 ### Key Findings
-- **Verbatim memorization and factual memorization arise under different conditions**: Fictsheets are rapidly memorized verbatim (training loss approaches 0), yet exhibit almost no factual memorization (MCQ accuracy improvement).
-- **Surface-form diversity promotes knowledge acquisition**: Training on multi-style documents yields better QA generalization than training on structured lists — a counter-intuitive finding, as humans might consider structured lists easier for knowledge extraction.
-- **Knowledge acquisition exhibits "leakage"**: Even when certain facts are entirely absent from the training set (Event Split validation set), MCQ accuracy for the corresponding questions still improves, suggesting the model may rely on distributional patterns rather than atomic facts.
-- **Larger models acquire knowledge faster**: The 8B model achieves higher MCQ accuracy improvements more rapidly than the 1B model.
+- **Verbatim and factual memorization have different trigger conditions**: Fictsheets are memorized verbatim quickly (loss near 0), but show almost no factual memorization (MCQ accuracy gain).
+- **Surface form diversity facilitates knowledge acquisition**: Training on multi-style documents results in better QA generalization than training on structured lists. This is counter-intuitive, as humans might find structured lists easier for knowledge extraction.
+- **"Leakage" in knowledge acquisition**: Even when certain facts are entirely absent from the training set (Event Split validation), MCQ accuracy improves, suggesting models may rely on distributional features rather than atomic facts.
+- **Large models acquire knowledge faster**: 8B models show faster and higher MCQ accuracy improvements compared to 1B models.
 
 ## Highlights & Insights
-- **The counter-intuitive finding that "conciseness does not imply effectiveness" is particularly illuminating**: Structured fact lists (Fictsheets) lead to rapid overfitting but the worst knowledge generalization, whereas diverse natural-language documents promote factual memorization. This suggests that knowledge acquisition in LLMs depends on distributional patterns rather than explicit factual encoding.
-- **The dataset is designed as a "living asset"**: The pipeline can regenerate new datasets, and other researchers can reuse and modify it. This methodological contribution has greater long-term value than a one-time static dataset.
-- **Rigorous blind/informed annotation and TriviaQA control experiments** ensure the credibility of experimental conclusions and serve as an exemplary model of experimental design.
-- The "leakage" phenomenon in factual memorization suggests that the knowledge boundaries of LLMs may be more diffuse than previously expected, with direct implications for machine unlearning research.
+- **The "concise is not effective" insight is highly provocative**: Structured lists (Fictsheets) lead to rapid overfitting but poor generalization. This suggests LLM knowledge acquisition relies on distributional patterns rather than explicit factual encoding.
+- **Dataset as a "living asset"**: The pipeline allows for regenerating new datasets, making it more valuable than a static, one-time dataset.
+- **Rigorous experimental design**: The use of blind/informed filtering and TriviaQA control experiments ensures the credibility of the conclusions.
+- The "leakage" phenomenon indicates that knowledge boundaries in LLMs are blurrier than expected, providing direct implications for machine unlearning research.
 
 ## Limitations & Future Work
-- Unintended content overlap may exist across fictional documents from different seed events, meaning that the leakage effect may partly originate from the data itself rather than model behavior.
-- Data is generated exclusively using GPT-4o; biases inherent to the generation model may limit the generalizability of the conclusions.
-- Experiments are conducted only with fine-tuned models at scales below 8B parameters; behavior under large-scale pre-training may differ.
-- The 5% injection rate is fixed, and the effect of varying injection rates on different memorization forms is not systematically studied.
-- QA deduplication is acknowledged to be incomplete, with a substantial number of duplicate questions reported.
+- Potential unintended content overlap between fictional documents (similarity across seed events) may contribute to the "leakage" effect.
+- The reliance on GPT-4o for generation might introduce specific model biases.
+- Experiments were conducted on models $\le 8B$; behaviors in large-scale pre-training scenarios might differ.
+- The 5% injection rate was fixed; the impact of different rates on memorization forms was not systematically studied.
 
 ## Related Work & Insights
-- **vs. TOFU**: TOFU is designed for unlearning and uses fill-in-the-blank templates, lacking surface-form diversity and not releasing source documents. FictionalQA provides both documents and QA pairs, and its multi-style design more closely resembles real pre-training data.
-- **vs. Allen-Zhu & Li synthetic biographies**: Those biographies are relatively templated; FictionalQA's webtext style is more natural and varied, making it better suited for studying the effect of surface-form diversity.
-- **vs. New News (Park et al. 2025)**: Contains only 75 manually curated articles and 375 questions; FictionalQA is larger in scale and fully automated.
-- **vs. Fictional Knowledge (Chang et al. 2024)**: Contains science-fiction content (Star Trek) that may entangle with real-world knowledge; FictionalQA deliberately avoids such subject matter.
+- **vs TOFU**: TOFU is designed for unlearning using templated fill-in-the-blank questions and lacks source documents. FictionalQA provides both multi-style documents and QA, closely mirroring real pre-training data.
+- **vs Synthetic Biographies (Allen-Zhu & Li)**: Those are more templated; FictionalQA's webtext style is more natural and diverse, suitable for studying surface form impacts.
+- **vs New News (Park et al. 2025)**: New News is small (75 articles + 375 questions); FictionalQA is larger and fully automated.
+- **vs Fictional Knowledge (Chang et al. 2024)**: FictionalQA avoids sci-fi themes to prevent entanglement with real-world knowledge.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The hierarchical generation pipeline and multi-split strategy are cleverly designed, though the core idea of using fictional data to study memorization is not entirely novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic experiments across multiple models and splits, but large-scale pre-training experiments are absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ Well-structured with detailed motivation for experimental design choices and rigorous variable control.
-- Value: ⭐⭐⭐⭐ Academically valuable for understanding LLM memorization mechanisms; the dataset as a reusable asset has long-term impact.
+- Novelty: ⭐⭐⭐⭐ The hierarchical pipeline and multi-split strategies are clever, though the core idea of using fictional data is not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic experiments across multiple models and splits, though lacking large-scale pre-training tests.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure with detailed motivation and rigorous variable control.
+- Value: ⭐⭐⭐⭐ Significant academic value for understanding LLM memorization; the dataset serves as a reusable asset.
 
 <!-- RELATED:START -->
 
@@ -136,11 +143,11 @@ Standard next-token prediction loss (cross-entropy) is used. The core contributi
 
 ## Related Papers
 
-- [\[ICCV 2025\] Dataset Ownership Verification for Pre-trained Masked Models](../../ICCV2025/llm_pretraining/dataset_ownership_verification_for_pre-trained_masked_models.md)
-- [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
-- [\[ICML 2026\] FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment](../../ICML2026/llm_pretraining/flexrank_nested_low-rank_knowledge_decomposition_for_adaptive_model_deployment.md)
-- [\[AAAI 2026\] Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?](../../AAAI2026/llm_pretraining/perspective_from_a_broader_context_can_room_style_knowledge_help_visual_floorpla.md)
-- [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)
+- [\[ICLR 2026\] TNT: Improving Chunkwise Training for Test-Time Memorization](tnt_improving_chunkwise_training_for_test-time_memorization.md)
+- [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
+- [\[ICLR 2026\] Nemotron-CC-Math: A 133 Billion-Token-Scale High Quality Math Pretraining Dataset](nemotron-cc-math_a_133_billion-token-scale_high_quality_math_pretraining_dataset.md)
+- [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
+- [\[ACL 2025\] Second Language (Arabic) Acquisition of LLMs via Progressive Vocabulary Expansion](../../ACL2025/llm_pretraining/second_language_arabic_acquisition_of_llms_via_progressive_vocabulary_expansion.md)
 
 </div>
 

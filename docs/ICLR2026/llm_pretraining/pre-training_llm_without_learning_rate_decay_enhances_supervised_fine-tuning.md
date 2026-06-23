@@ -2,56 +2,51 @@
 title: >-
   [Paper Note] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning
 description: >-
-  [ICLR 2026][LLM Pretraining][Learning rate scheduling] This paper proposes the Warmup-Stable-Only (WSO) learning rate schedule—completely eliminating the decay phase during pre-training. Despite yielding worse pre-traini…
+  [ICLR 2026][Pretraining][Warmup-Stable-Only] This paper proposes the Warmup-Stable-Only (WSO) learning rate scheduling strategy, which completely eliminates the learning rate decay phase during pre-training. Although this results in worse pre-training metrics, it consistently outperforms all decay strategies after SFT. Loss landscape analysis reveals that the sup
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "Learning rate scheduling"
-  - "pre-training"
-  - "supervised fine-tuning"
-  - "loss landscape"
-  - "Warmup-Stable-Only"
+  - ICLR 2026
+  - Pretraining
+  - Warmup-Stable-Only
 date: 2026-05-08
-content_hash: bbefb933c69d3c75
+content_hash: c217ed0fbfbbf041
 ---
-
 # Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.16127](https://arxiv.org/abs/2603.16127)  
 **Code**: Not open-sourced  
-**Area**: LLM Pre-training
-**Keywords**: Learning rate scheduling, pre-training, supervised fine-tuning, loss landscape, Warmup-Stable-Only
+**Area**: LLM Pre-training  
+**Keywords**: Learning Rate Scheduling, Pre-training, Supervised Fine-Tuning, Loss Landscape, Warmup-Stable-Only
 
 ## TL;DR
 
-This paper proposes the Warmup-Stable-Only (WSO) learning rate schedule—completely eliminating the decay phase during pre-training. Despite yielding worse pre-training metrics, WSO consistently outperforms all decay-based schedules after SFT. Loss landscape analysis reveals that WSO's advantage stems from maintaining flatter minima.
+This paper proposes the Warmup-Stable-Only (WSO) learning rate scheduling strategy, which completely eliminates the learning rate decay phase during pre-training. Although this results in worse pre-training metrics, it consistently outperforms all decay strategies after SFT. Loss landscape analysis reveals that the superiority of WSO stems from its ability to maintain flatter minima.
 
 ## Background & Motivation
 
-### State of the Field
+### Background
 
-Learning rate (LR) scheduling is one of the most critical yet operationally complex hyperparameters in LLM pre-training. Mainstream approaches include:
+In large language model pre-training, learning rate (LR) scheduling is one of the most critical yet complex hyperparameters. The dominant approaches are as follows:
 
-- **Cosine decay**: The most widely used schedule since GPT-3, where LR decays along a cosine curve toward near zero.
-- **Linear decay**: Recent studies suggest that linear decay to zero achieves lower pre-training loss.
-- **WSD (Warmup-Stable-Decay)**: Applies a brief decay only at the end of training; more flexible and adopted by models such as MiniCPM.
+- **Cosine decay**: The most common method since GPT-3, where the LR decays to near zero following a cosine curve throughout training.
+- **Linear decay**: Recent studies suggest that linear decay to zero can achieve a lower pre-training loss.
+- **WSD (Warmup-Stable-Decay)**: A more flexible approach that employs a short decay period only at the end of training, adopted by models like MiniCPM.
 
-These strategies share a common objective: decaying LR toward the end of training to optimize pre-training metrics.
+The commonality among these strategies is the decay of LR at the end of training to optimize pre-training metrics.
 
-### Root Cause
+### Key Challenge
 
-Existing LR strategies optimize for pre-training performance $\mathtt{Task}_{\rm pre}(M_{\rm pre})$, whereas in practice the critical objective is post-SFT performance $\mathtt{Task}_{\rm post}(M_{\rm post})$.
+The optimization goal of existing LR strategies is performance during the pre-training phase $\mathtt{Task}_{\rm pre}(M_{\rm pre})$. However, in practical applications, the ultimate performance after SFT, $\mathtt{Task}_{\rm post}(M_{\rm post})$, is what truly matters.
 
-Recent work (Sun & Dredze 2025; Springer et al. 2025) explicitly demonstrates that **a model with better pre-training performance does not necessarily perform better after SFT**. This raises a fundamental question: when a model is intended to undergo SFT, is LR decay—chosen to optimize pre-training metrics—still the optimal choice?
+Recent research (Sun & Dredze 2025; Springer et al. 2025) explicitly points out that **models with better pre-training performance do not necessarily perform better after SFT**. This poses a fundamental question: Is LR decay, chosen to optimize pre-training metrics, still the optimal choice when the model is intended to undergo SFT?
 
-### Formal Definition
+### Formalization
 
-The conventional pipeline greedily optimizes each stage independently:
+The traditional pipeline selects the optimal model greedily by stage:
 
 $$\widehat{M}_{\rm pre} = \arg\max_{M_{\rm pre} \in \mathcal{M}_{\rm pre}} \{\mathtt{Task}_{\rm pre}(M_{\rm pre}[M_{\rm rand}])\}$$
 
-The ideal objective should instead be a joint global optimization:
+However, the ideal objective should be global joint optimization:
 
 $$\widehat{M}_{\rm post} = \arg\max_{(M_{\rm pre}, M_{\rm post}) \in (\mathcal{M}_{\rm pre}, \mathcal{M}_{\rm post})} \{\mathtt{Task}_{\rm post}(M_{\rm post}[M_{\rm pre}[M_{\rm rand}]])\}$$
 
@@ -59,44 +54,37 @@ $$\widehat{M}_{\rm post} = \arg\max_{(M_{\rm pre}, M_{\rm post}) \in (\mathcal{M
 
 ### Overall Architecture
 
-The paper evaluates four LR schedulers—WSO, WSD, Cosine, and Linear—under both two-stage (pre-training + SFT) and three-stage (pre-training + mid-training + SFT) settings.
+Rather than proposing a new module, this paper questions a universally accepted training convention: whether the learning rate should decay at the end of pre-training. The approach starts by creating a minimalist "non-decay" scheduler called WSO. Then, a scalar parameter is used to place four types of schedulers (WSO, WSD, Cosine, Linear) and the "to decay or not to decay" choice onto a single scannable axis. Consequently, "decay intensity" transforms from a discrete strategy choice into a continuous coordinate. This axis is then applied to two sets of real-world pipelines—two-stage (Pre-training + SFT) and three-stage (Pre-training + Intermediate Training + SFT)—to observe final performance after SFT. Finally, the curvature (sharpness) of the loss landscape is used to explain "why no decay is better." The entire methodology follows a causal chain: "proposing a minimal variant → unified parameterization for controlled comparison → mechanistic explanation via curvature," adhering to the standard pre-training pipeline since GPT-3 (warmup → stable → optional decay → optional mid-training → SFT), with the only modification being the removal of the terminal decay.
 
-### Warmup-Stable-Only (WSO) Definition
+> This work belongs to the "Training Recipe + Loss Landscape Analysis" category and does not involve multi-module or multi-branch data flow pipelines (the process is a standard linear training pipeline where the contribution lies in "deleting a segment" and "post-hoc curvature analysis"). Therefore, **the Mermaid architecture diagram is skipped**. The three key designs below strictly correspond to the "Propose WSO → Unified Parameterized Comparison → Curvature Explanation" steps.
 
-WSO is a minimalist variant of WSD that directly removes the decay phase (setting $\alpha_{\text{pre}}=1.0$):
+### Key Designs
+
+**1. Warmup-Stable-Only: Removing the Entire Decay Phase**
+
+Mainstream schedulers assume the LR must be lowered at the end of training to tighten the pre-training loss. WSO directly questions whether this step is worthwhile. It is a minimalist variant of WSD (Warmup-Stable-Decay) that retains only the warmup and stable segments while completely discarding decay:
 
 $$\eta^{\text{WSO}}(t, \alpha_{\text{pre}}) = \begin{cases} \eta_{\max} \cdot \frac{t}{T_{\text{warmup}}} & t \leq T_{\text{warmup}} \\ \eta_{\max} & T_{\text{warmup}} < t \leq T_{\text{pre}} \end{cases}$$
 
-In contrast to WSD's three-phase schedule (warmup → stable → decay), WSO retains only two phases: warmup → stable.
+The learning rate remains constant at $\eta_{\max}$ after the warmup phase until pre-training concludes. The cost is a worse pre-training loss (a constant high LR cannot converge parameters into narrow valleys), but the benefit is that the model resides in a "looser" position, leaving room for adjustment during subsequent SFT—which is what the loss landscape analysis in Design 3 quantifies.
 
-### Key Design: Min LR Factor Parameterization
+**2. Unified Parameterization via min-LR Factor: Aligning Schedulers and Pipelines on a Comparable Axis**
 
-All schedulers are uniformly parameterized by a minimum LR factor $\alpha_{\text{pre}}$:
+To fairly compare "how much decay is optimal," different schedulers and stages must be placed on the same axis. The paper uses a minimum LR factor $\alpha$ (the ratio of the final LR to $\eta_{\max}$) for unified parameterization. For pre-training, $\alpha_{\text{pre}}$ is used: $\alpha_{\text{pre}}=0.0$ represents the most aggressive decay to zero (common for Linear/Cosine), $\alpha_{\text{pre}}=0.1$ is a moderate decay to 10% (used by Llama 3, OLMo 2), and $\alpha_{\text{pre}}=1.0$ is equivalent to no decay (WSO). Since modern pre-training often inserts an intermediate training phase (mid-training) before SFT, which usually also involves decay, the paper introduces $\alpha_{\text{mid}}$ for this stage: $\alpha_{\text{mid}}=0.0$ for linear decay to zero and $\alpha_{\text{mid}}=1.0$ for a constant LR. When $\alpha_{\text{pre}}=1.0$ and $\alpha_{\text{mid}}=1.0$, WSO is extended to both pre-training and intermediate training. This turns "decay intensity" into a continuous scanning axis, making WSO an extreme point on this axis rather than an isolated solution. The proposition that "decay at any stage is harmful" can thus be verified step-by-step—leading to the conclusion that even decay during intermediate training alone degrades final SFT performance.
 
-- $\alpha_{\text{pre}} = 0.0$: decay to zero (most aggressive)
-- $\alpha_{\text{pre}} = 0.1$: decay to 10% of peak LR (commonly used in Llama 3, OLMo 2, etc.)
-- $\alpha_{\text{pre}} = 1.0$: no decay, i.e., WSO
+**3. Quantifying Flatness via Hessian Trace: Explaining "Why No Decay is Better"**
 
-### Mid-training LR Schedule
-
-For the three-stage setting, $\alpha_{\text{mid}}$ is introduced to control LR decay during mid-training:
-
-- $\alpha_{\text{mid}} = 0.0$: linear decay to zero during mid-training
-- $\alpha_{\text{mid}} = 1.0$: constant LR throughout mid-training
-
-### Loss Landscape Analysis
-
-To explain why WSO performs better after SFT, the paper measures loss landscape flatness via Hessian trace (sharpness):
+While the first two points establish a controlled comparison of the phenomenon, this point addresses the mechanism. Taking insights from transfer learning literature—that models stopping in flatter regions of the loss landscape adapt better—the paper uses sharpness (the inverse of flatness) to characterize the curvature of minima. The trace of the Hessian is used (the sum of second-order curvatures across all parameter dimensions, providing a scalar summary of curvature):
 
 $$\text{Sharpness}(\theta_t) = \text{Tr}(\mathbf{H}_{\mathcal{L}}(\theta_t)) = \sum_{i=1}^{d} \frac{\partial^2 \mathcal{L}(\theta_t; \mathcal{D})}{\partial \theta_i^2}$$
 
-This is computed efficiently using the Hutchinson unbiased estimator. The key finding is that WSO maintains lower sharpness (flatter minima), while decay-based schedules lead to 2–3× higher sharpness.
+Calculating the Hessian directly for billion-parameter models is impractical, so the paper utilizes the Hutchinson unbiased estimator to approximate the trace using a few Hessian-vector products. The results provide a mechanistic explanation: decay strategies push the model into sharper minima, while WSO ($\alpha_{\text{pre}}=1.0$) maintains a flatter landscape throughout. Sharper valleys mean that even minor perturbations during SFT cause drastic changes in loss, hindering transfer, whereas flat regions tolerate the shifts of fine-tuning. Sharpness shows a strong negative correlation with SFT performance (Pearson $r=-0.709$), closing the causal chain of "no decay → flatter landscape → better SFT."
 
 ## Key Experimental Results
 
 ### Main Results: Two-Stage Setting (Pre-training + SFT)
 
-Model architectures: 1B and 8B (Llama 3 series); pre-training data: FineWeb-Edu; SFT data: Tulu-3 SFT mixture.
+Model Architectures: 1B and 8B (Llama 3 architecture); Pre-training Data: FineWeb-Edu; SFT Data: Tulu-3 SFT mixture.
 
 | Model | Scheduler | $\alpha_{\text{pre}}$ | PT Valid Loss ↓ Δ | PT Task Avg Δ | SFT Task Avg Δ |
 |------|--------|----------------------|-------------------|---------------|----------------|
@@ -110,9 +98,9 @@ Model architectures: 1B and 8B (Llama 3 series); pre-training data: FineWeb-Edu;
 | 8B | WSD | 0.0 | +0.014 | +0.0 | -0.3 |
 | 8B | Linear | 0.0 | +0.000 | -1.8 | +0.0 |
 
-**Key finding**: WSO yields the worst pre-training loss (0.127 higher for 8B) but achieves the best post-SFT performance (1.1 points higher for 8B).
+**Key Finding**: WSO has the worst pre-training loss (+0.127 for 8B) but achieves the best performance after SFT (+1.1 points for 8B).
 
-### Three-Stage Setting (Pre-training + Mid-training + SFT)
+### Three-Stage Setting (Pre-training + Intermediate Training + SFT)
 
 | Model | Scheduler | $\alpha_{\text{pre}}$ | $\alpha_{\text{mid}}$ | MT Task Avg Δ | SFT Task Avg Δ |
 |------|--------|----------------------|-----------------------|---------------|----------------|
@@ -131,44 +119,44 @@ Model architectures: 1B and 8B (Llama 3 series); pre-training data: FineWeb-Edu;
 | 1B | WSD | 0.1 | +0.0 | +0.0 |
 | 1B | WSD | 0.0 | +0.0 | -0.3 |
 
-Under over-training combined with mid-training (2T + 500B tokens), WSO's advantage is even larger: SFT Task Avg Δ reaches **+1.4**.
+In the Over-training + Intermediate Training (2T + 500B tokens) scenario, the advantage of WSO is even more pronounced: SFT Task Avg Δ reaches **+1.4**.
 
 ### Key Findings
 
-1. **Performance reversal**: The scheduler with the best pre-training performance (decay to zero) performs worst after SFT.
-2. **WSO dominates across the board**: Consistently achieves the best results across 1B/8B, two-stage/three-stage, and standard/over-training settings.
-3. **Decay at any stage is harmful**: In the three-stage setting, applying decay even only during mid-training degrades SFT performance.
-4. **Sharpness is negatively correlated with SFT performance**: Pearson correlation $r=-0.709$.
+1. **Performance Inversion**: Schedulers that perform best in pre-training (decaying to 0) perform the worst after SFT.
+2. **WSO Dominance**: WSO is consistently optimal across all settings including 1B/8B, two-stage/three-stage, and standard/over-training.
+3. **Harm of Decay at Any Stage**: In the three-stage setting, even decaying during intermediate training alone reduces SFT performance.
+4. **Sharpness Negative Correlation**: The Pearson correlation coefficient between sharpness and SFT performance is $r=-0.709$.
 
 ## Highlights & Insights
 
-1. **Counter-intuitive core finding**: Better pre-training loss ≠ better downstream performance; LR decay actually impairs model adaptability.
-2. **Clear theoretical explanation**: Loss landscape analysis provides a complete causal chain from flat minima to better post-SFT performance.
-3. **Minimal implementation complexity**: WSO is simpler than any decay strategy—no decay ratio or decay phase length to tune.
-4. **High practical value**: The paper recommends that open-source models be trained and released using WSO to maximize adaptability for downstream users.
-5. **Consistent across scales**: Findings hold across 1B to 8B model sizes and 100B to 2T token training scales.
+1. **Counter-intuitive Core Discovery**: Better pre-training loss $\neq$ better downstream task performance; LR decay actually damages model adaptability.
+2. **Clear Theoretical Explanation**: Provides a complete causal chain from flat minima to better SFT performance through loss landscape analysis.
+3. **Minimalist Implementation**: WSO is simpler than any decay strategy, requiring no tuning for decay ratios or decay phase lengths.
+4. **Significant Practical Value**: Suggests that open-source models should be trained using WSO before release to provide maximum adaptability for downstream users.
+5. **Scale Consistency**: Conclusions remain consistent across training scales from 1B to 8B and 100B to 2T tokens.
 
 ## Limitations & Future Work
 
-1. Only SFT is examined as a post-training method; alignment techniques such as DPO and RLHF are not evaluated.
-2. Experiments are limited to 8B parameters; applicability to larger models (70B+) remains to be verified.
-3. WSO incurs significantly higher pre-training loss, which may be unsuitable for scenarios requiring low pre-training loss (e.g., distillation).
-4. The sample size for the sharpness–SFT performance correlation analysis is relatively small.
+1. Only SFT was investigated as a post-training method; alignment stages like DPO or RLHF were not tested.
+2. The maximum experimental scale was 8B; whether the findings hold for larger models (70B+) remains to be verified.
+3. WSO pre-training loss is significantly higher; it might not be suitable for scenarios where low pre-training loss is strictly required (e.g., distillation).
+4. The sample size for the correlation analysis between sharpness and SFT performance is relatively small.
 
 ## Related Work & Insights
 
-- **Bergsma et al. 2025**: Advocates linear decay to zero as optimal—however, this holds only for pre-training loss.
-- **WSD (Hu et al. 2024)**: WSO can be viewed as an extreme simplification of WSD, echoing WSD's flexibility advantage.
-- **Wen et al. 2025**: Theoretical analysis of WSD finds that the decay phase increases sharpness, a problem WSO avoids entirely.
-- **Insight**: Future work should select training strategies based on the ultimate deployment objective (post-SFT/RLHF performance) rather than pre-training metrics.
+- **Bergsma et al. 2025**: Argues that Linear decay to 0 is optimal—but this only holds for pre-training loss.
+- **WSD (Hu et al. 2024)**: WSO can be seen as an extreme simplification of WSD, echoing the flexibility advantages of WSD.
+- **Wen et al. 2025**: Theoretical analysis of WSD found that the decay phase leads to increased sharpness, a problem WSO avoids.
+- **Insight**: Future training strategies should be selected based on the final deployment objective (performance after SFT/RLHF) rather than pre-training metrics.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Challenges the widely held belief that "lower decay is better"; the argument is clear and compelling.
-- **Theoretical Depth**: ⭐⭐⭐⭐ — Loss landscape analysis and formal framework are thorough.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 2 model scales × 4 schedulers × 3 training settings × over-training; extremely comprehensive.
-- **Value**: ⭐⭐⭐⭐⭐ — Provides directly actionable recommendations with significant implications for LLM training and model release strategies.
-- **Overall**: ⭐⭐⭐⭐☆ — Rigorous experiments, counter-intuitive yet practically useful conclusions; an important contribution to pre-training strategy research.
+- **Novelty**: ⭐⭐⭐⭐ — Challenges the widespread consensus that "lower decay is always better" with a strong and clear perspective.
+- **Theoretical Depth**: ⭐⭐⭐⭐ — Comprehensive loss landscape analysis and formal framework.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Extremely thorough, covering 2 scales × 4 schedulers × 3 training settings × over-training.
+- **Value**: ⭐⭐⭐⭐⭐ — Provides directly applicable practical advice that guides LLM training and release strategies.
+- **Overall**: ⭐⭐⭐⭐☆ — A solid, counter-intuitive, and practical piece of work that is significant for pre-training strategy research.
 
 <!-- RELATED:START -->
 
@@ -177,10 +165,10 @@ Under over-training combined with mid-training (2T + 500B tokens), WSO's advanta
 ## Related Papers
 
 - [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](token-level_data_selection_for_safe_llm_fine-tuning.md)
+- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
 - [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](../../ICML2026/llm_pretraining/data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[NeurIPS 2025\] Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training](../../NeurIPS2025/llm_pretraining/power_lines_scaling_laws_for_weight_decay_and_batch_size_in_llm_pre-training.md)
-- [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](common_corpus_ethical_data_for_llm_pretraining.md)
+- [\[ICLR 2026\] Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning](task-aware_data_selection_via_proxy-label_enhanced_distribution_matching_for_llm.md)
+- [\[ICLR 2026\] Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning](train_on_validation_tov_fast_data_selection_with_applications_to_fine-tuning.md)
 
 </div>
 

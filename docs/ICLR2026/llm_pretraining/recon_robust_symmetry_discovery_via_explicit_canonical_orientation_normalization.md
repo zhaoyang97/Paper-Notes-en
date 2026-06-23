@@ -2,168 +2,165 @@
 title: >-
   [Paper Note] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization
 description: >-
-  [ICLR 2026][LLM Pretraining][symmetry discovery] This paper proposes RECON, a class- and pose-agnostic canonical orientation normalization method that corrects arbitrary canonical representations produced during training…
+  [ICLR 2026][Pretraining][Paper Note] RECON is proposed as a class-pose-independent canonical orientation normalization method. By correcting arbitrary canonical representations generated during training through simple right translation, it achieves unsupervised instance-level symmetry discovery, OOD pose detection, and a plug-and-play test-time normalizat
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "symmetry discovery"
-  - "canonical orientation"
-  - "class-pose decomposition"
-  - "plug-and-play"
-  - "group invariance"
+  - ICLR 2026
+  - Pretraining
 date: 2026-05-08
-content_hash: f607ebc1646ffe8d
+content_hash: 8e446cc8e0233be0
 ---
-
 # RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.13289](https://arxiv.org/abs/2505.13289)  
-**Code**: N/A  
-**Area**: Symmetry Discovery / Invariance Learning
-**Keywords**: symmetry discovery, canonical orientation, class-pose decomposition, plug-and-play, group invariance
+**Code**: [ZIB-IOL/recon](https://github.com/ZIB-IOL/recon)  
+**Area**: Symmetry Discovery / Invariance Learning  
+**Keywords**: Symmetry Discovery, Canonical Orientation, Class-pose Decomposition, Plug-and-play, Group Invariance
 
 ## TL;DR
 
-This paper proposes RECON, a class- and pose-agnostic canonical orientation normalization method that corrects arbitrary canonical representations produced during training via a simple right translation, enabling unsupervised instance-level symmetry discovery, OOD pose detection, and a plug-and-play test-time canonicalization layer.
+RECON is proposed as a class-pose-independent canonical orientation normalization method. By correcting arbitrary canonical representations generated during training through simple right translation, it achieves unsupervised instance-level symmetry discovery, OOD pose detection, and a plug-and-play test-time normalization layer.
 
 ## Background & Motivation
 
-### State of the Field
+### Background
 
-**Background**: Real-world data commonly exhibit unknown, instance-dependent symmetries that rarely conform precisely to a pre-specified transformation group $G$. Conventional equivariant/invariant network approaches either hard-code a particular group structure or learn it implicitly through data augmentation. Class-pose decomposition methods attempt to factorize inputs into invariant features and a pose $g \in G$ relative to some canonical representation.
-
-However, existing canonicalization methods suffer from a fundamental problem: **the canonical representation is training-dependent and therefore arbitrary**. Different training runs and initializations yield different canonical choices, which leads to:
+Real-world data often exhibits unknown, instance-dependent symmetries that rarely match pre-fixed transformation groups $G$ exactly. Traditional equivariant/invariant network methods either hard-code specific group structures or learn them implicitly through data augmentation. Class-pose decomposition methods attempt to decompose the input into invariant features and a pose $g \in G$ relative to some canonical representation.
 
 ### Limitations of Prior Work
 
-**Limitations of Prior Work**: The learned pose distribution is difficult to interpret.
+However, existing normalization methods suffer from a fundamental problem: **the canonical representation depends on the training process and is arbitrary**. Different training runs and initializations lead to different canonical choices, resulting in a triple dilemma: learned pose distributions are difficult to interpret, cross-model comparisons are meaningless, and pose information cannot be directly used for downstream tasks.
 
-### Root Cause
-
-**Key Challenge**: Cross-model comparisons become meaningless.
-
-### Mechanism
-
-**Mechanism**: Pose information cannot be directly exploited for downstream tasks.
-
-The core insight of RECON is that an arbitrary canonical choice can be corrected via a simple group operation (right translation) to align with the data's natural canonical orientation. This correction is a post-processing step and requires no model retraining.
+The key insight of RECON is that arbitrary canonical choices can be corrected through simple group operations (right translation) to align them with the natural canonical orientation of the data. This correction is post-processing and does not require retraining the model.
 
 ## Method
 
 ### Overall Architecture
 
-RECON builds on the class-pose decomposition framework. Given an input $x$ and a pretrained decomposition model that outputs invariant features $z$ and a pose estimate $\hat{g}$, RECON corrects the canonicalization through the following steps:
+RECON addresses the long-standing problem of "arbitrary canonical orientation." Class-pose decomposition methods (e.g., IE-AE) split an input $x$ into two parts: an invariant feature $z=\eta(x)$ (pose-independent, capturing "what") and a relative pose $g=\psi(x)\in G$ (the group transformation needed to rotate the network-reconstructed canonical representation $\hat x$ back to the original image). The pain point is that the orientation of $\hat x$ is determined entirely by initialization and training dynamics; thus, the same "7" rotated by ±30° would be recorded as completely different relative pose distributions across different models, making them incomparable across instances or models.
 
-1. Collect the pose distribution of same-class samples from the training data.
-2. Estimate the "natural" canonical orientation (data-aligned canonicalization).
-3. Map the arbitrary canonicalization to the natural one via a right translation operator.
+RECON does not retrain any network. Instead, after obtaining $(z, g)$ from any IE-AE, it performs three post-processing steps: first, use the invariant feature $z$ to group data into equivalence classes $[x]$ unsupervisedly; then, estimate the **offset** (Fréchet mean) of the relative pose distribution for that class; finally, apply a **right translation** to all poses to pull the center of the distribution back to the group identity $e$. The corrected distribution $\hat\mu_{[x]}$ is the "natural" symmetry distribution of the data, which is interpretable (centered at $e$), comparable (same reference frame across classes), and reusable (for downstream discovery/detection/plug-and-play normalization).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input x"] --> B["Class-Pose Decomposition IE-AE<br/>Frozen · Prior Work"]
+    B --> C["Invariant Feature z=η(x)"]
+    B --> D["Relative Pose g=ψ(x)"]
+    C --> E["Relative Pose and Equivalence Class<br/>k-NN in Z to construct [x], collect ψ([x])"]
+    D --> E
+    E --> F["Fréchet Mean Right Translation Normalization<br/>Right multiply by Γ̂⁻¹ to get centered distribution μ̂[x]"]
+    F --> G["Learnable Mappings Θ/Γ<br/>Test-time inference without k-NN"]
+    G --> H["Three Downstream Applications<br/>Symmetry Discovery · OOD Detection · Plug-and-play Layer"]
+```
 
 ### Key Designs
 
-1. **Right Translation Correction**: Given the pretrained model's canonicalization $c$ and a target canonicalization $c'$, the correction is a simple right multiplication by a group element: $g' = g \cdot c^{-1} \cdot c'$.
+**1. Relative Pose and Equivalence Classes: Gathering ingredients for normalization without labels**
 
-   → Mechanism: The algebraic structure of the group guarantees exact conversion between canonicalizations.
-   → Design Motivation: Avoids retraining by leveraging the equivalence class concept from group theory, achieving zero-cost conversion.
+For right translation to work, a set of relative poses from the same class is required. RECON builds this on the invariant feature $z$ provided by IE-AE. The paper assumes that structurally similar objects occupy adjacent, connected regions in the invariant latent space $Z$. Thus, a connectivity equivalence relation defines a class: $x\sim_\varepsilon y$ if and only if there exists a chain in $Z$ with step sizes smaller than $\varepsilon$ connecting the two, denoted as class $[x]$. In practice, instead of finding connected components, $k$-nearest neighbors of $\eta(x)$ in $Z$ are used to approximate $[x]$ (Algorithm 1, Step 2). After obtaining $[x]$, the relative poses $\psi([x])=\{\psi(s_j)\}$ obtained via $\psi$ are aggregated as input for normalization. The process does not rely on labels; the structure of the symmetry group $G$ (e.g., $SO(2)$, $SE(3)$) is the only required prior.
 
-2. **Unsupervised Pose Distribution Discovery**: The corrected pose distribution reflects the true symmetry structure of the data. Different instances may exhibit distinct pose distributions (instance-level symmetry), e.g., a rotationally symmetric molecule versus an asymmetric one.
+**2. Fréchet Mean Right Translation Normalization: Pulling arbitrary canonicals back to identity (Core)**
 
-   → Mechanism: Instance symmetry is inferred by analyzing the statistics of the corrected pose distribution.
-   → Design Motivation: Traditional methods assume all instances share the same symmetry group; RECON relaxes this assumption.
+This is the primary innovation of RECON (Proposition 3.1). The paper characterizes a class of samples using a generative model $s=\rho_X(g)\gamma_{[x]}+\varepsilon_s,\ g\sim\mu_{[x]}$, where the true pose follows a distribution $\mu_{[x]}$ acting on a reference pose $\gamma_{[x]}$, plus some non-group deformation $\varepsilon_s$. An ideal "natural" description should have the center of $\mu_{[x]}$ at the group identity $e$ (i.e., $F(\mu_{[x]})=e$). The problem is that an arbitrary canonical representation shifts the observed $\psi([x])$ by an unknown offset relative to the truth. RECON’s key observation is that this offset is exactly the **Fréchet mean** (centroid on Riemannian manifolds) of the poses in $\psi([x])$:
 
-3. **OOD Pose Detection**: At test time, a sample whose pose falls outside the support of the training pose distribution can be flagged as out-of-distribution, providing a natural mechanism for detecting anomalous poses.
+$$\hat\Gamma_{[x]}=\arg\min_{y\in G}\sum_{g_i\in\psi([x])}d_G(y,g_i)^2,$$
 
-   → Mechanism: The corrected pose distribution serves as a normality reference.
-   → Design Motivation: In settings such as molecular conformation analysis, anomalous poses may correspond to unstable or non-physical structures.
+By **right-multiplying by its inverse** for each pose $\psi'([x])=\{g_i\hat\Gamma_{[x]}^{-1}\}$, the Fréchet center of the distribution is moved back to $e$. Proposition 3.1 proves that the resulting empirical distribution $\hat\mu_{[x]}$ converges to the true distribution $\mu_{[x]}$ in Wasserstein distance as $\varepsilon'\to0$ and $N\to\infty$. Since right translation is an exact algebraic operation on the group, the correction introduces no approximation or gradient updates, making it a zero-cost post-processing step. For multimodal distributions (e.g., two equal peaks on $SO(2)$), the standard Fréchet mean might fall outside the support. Thus, the paper replaces the squared distance with a Tukey biweight loss to provide a robust **Tukey-Fréchet mean** $F_r(\mu)=\arg\min_y\mathbb{E}_{g\sim\mu}[m(d_R(y,g);c)]$.
 
-4. **Plug-and-Play Test-Time Canonicalization Layer**: RECON can be appended to any pretrained model as a canonicalization layer that injects group invariance by transforming inputs to their canonical orientation, without retraining the base model.
+**3. Learnable Mappings: Generalizing normalization to unseen test inputs**
 
-   → Mechanism: Inputs are canonicalized before being fed into the invariance model.
-   → Design Motivation: Reuses the capacity of existing pretrained models by adding invariance only at inference time.
+Algorithm 1 only performs normalization for classes in the training set (requiring on-the-fly $k$-NN and Fréchet mean calculation). To output symmetry distributions for new inputs at test time, RECON treats the estimated distribution parameters $\hat\theta_{[x]}$ and centering transformations $\hat\Gamma_{[x]}$ from the training set as pseudo-labels to train two mappings: $\Theta$ predicts the symmetry distribution parameters, and $\Gamma$ predicts the centering transformation. This amortizes the post-processing into a single inference pass.
+
+**4. Three Downstream Applications: Three uses for one centered distribution**
+
+Once the centered distribution $\hat\mu_{[x]}$ is obtained, three applications follow. **Symmetry Discovery**: By relaxing the assumption that all samples share the same symmetry group, each instance has its own $\hat\mu_{[x]}$. Rotationally symmetric molecules show multimodal distributions corresponding to their symmetry order, while asymmetric molecules do not. **OOD Pose Detection**: The support of $\hat\mu_{[x]}$ characterizes the "normal poses." If a test sample's pose falls outside this support, it is judged as OOD (e.g., unstable or non-physical molecular conformations). **Plug-and-play Normalization Layer**: Reversing the right translation allows for a lightweight layer placed before any frozen pretrained model. It aligns the input to the natural canonical orientation before passing it to the downstream network, injecting group invariance geometrically without touching weights.
 
 ### Loss & Training
 
-RECON itself requires no separate training — it is a post-processing/inference-time method. The underlying class-pose decomposition model can be trained with any existing approach (e.g., equivariant autoencoders, canonicalization networks). The correction operation in RECON consists of analytic group operations and requires no gradient-based optimization.
-
-When end-to-end training is desired, the RECON layer can be integrated into the training pipeline, using standard classification or reconstruction losses.
+The core correction in RECON is an analytical group operation without learnable parameters or gradient optimization. The underlying class-pose decomposition (e.g., IE-AE) is trained separately using a standard reconstruction loss $d(\rho_X(\psi(x))\,\delta(\eta(x)),x)$. RECON only takes over the pose outputs. The only parts requiring training are the two mappings $\Theta/\Gamma$, which perform regression on the pseudo-labels $\hat\theta_{[x]}$ and $\hat\Gamma_{[x]}$ (e.g., $L_p=d_\theta(\Theta(x),\hat\theta_{[x]})$).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Experiments are conducted on image datasets and molecular conformation datasets.
+Experiments were validated on image datasets and molecular conformation datasets.
 
 **Image Classification** (Rotated MNIST, etc.)
 
-| Method | Classification Accuracy | Canonicalization Quality | Notes |
-|--------|------------------------|--------------------------|-------|
-| No-canonicalization baseline | Lower | N/A | Lacks rotation invariance |
-| Conventional canonicalization | Moderate | Training-dependent | Canonicalization is arbitrary |
-| **RECON** | **Best or on par** | **Data-aligned** | No retraining required |
+| Method | Classification Accuracy | Normalization Quality | Description |
+|------|----------|----------|------|
+| Baseline without Norm | Low | N/A | Lacks rotation invariance |
+| Traditional Norm | Medium | Training-dependent | Normalization is arbitrary |
+| **RECON** | **Best or Competitive** | **Data-aligned** | No retraining required |
 
 **Molecular Conformation Analysis**
 
-| Method | Symmetry Discovery | OOD Detection | Notes |
-|--------|--------------------|---------------|-------|
-| Fixed-group method | Cannot handle instance-level variation | Not supported | Assumes uniform symmetry group |
+| Method | Symmetry Discovery | OOD Detection | Description |
+|------|----------|---------|------|
+| Fixed Group Methods | Cannot handle instance variance | Not supported | Assumes uniform symmetry group |
 | **RECON** | **Accurate** | **Effective** | Supports instance-level symmetry |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| Different underlying decomposition models | Stable performance | RECON is insensitive to the choice of underlying model |
-| Different group structures | All applicable | Validates group-agnostic nature of the method |
-| With / without RECON layer | +significant gain | Demonstrates value of the plug-and-play layer |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Various Base Models | Stable performance | RECON is insensitive to base model choice |
+| Various Group Structures | Applicable to all | Validates group-agnostic nature |
+| With/Without RECON Layer | +Significant Gain | Validates the plug-and-play layer |
 
 ### Key Findings
 
-1. RECON's canonicalization correction is exact — no approximation error is introduced, as it relies solely on algebraic group operations.
-2. The discovered instance-level pose distributions are consistent with physical/chemical intuition (e.g., the rotational symmetry order of molecules).
-3. The plug-and-play layer substantially improves the robustness of pretrained models on transformed data without any retraining.
-4. The method is effective across two fundamentally different domains — images and molecules — demonstrating its generality.
+1. RECON's normalization correction is exact—no approximation error is introduced due to group algebraic operations.
+2. Discovered instance-level pose distributions align with physical/chemical intuition (e.g., symmetry orders of molecules).
+3. The plug-and-play layer significantly improves the robustness of pretrained models on transformed data without retraining.
+4. The method is effective across distinct domains (images and molecules), demonstrating universality.
 
 ## Highlights & Insights
 
-1. **Theoretical Elegance**: The arbitrariness of canonical choice is reformulated as a simple group translation, yielding a solution that is both mathematically rigorous and implementationally concise.
-2. **Zero-Cost Correction**: No model retraining is required; RECON is a purely post-processing method, making it highly attractive for practical deployment.
-3. **Instance-Level Symmetry**: The common assumption that all samples share the same symmetry group is relaxed, better reflecting the properties of real-world data.
-4. **Plug-and-Play Design**: Invariance can be injected into any pretrained model, conceptually analogous to adapter-based methods but operating at the geometric level.
-5. **Cross-Domain Validation**: Effectiveness across images and molecules demonstrates the universality of the group-theoretic approach.
+1. **Theoretical Elegance**: Formulating the arbitrariness of canonical choice as a simple translation in group theory is mathematically rigorous and implementationally simple.
+2. **Zero-cost Correction**: As a pure post-processing method requiring no retraining, it is highly attractive for practical applications.
+3. **Instance-level Symmetry**: Breaks the common assumption that all samples share the same symmetry group, better matching real-world data properties.
+4. **Plug-and-play Design**: Injects invariance into any pretrained model, similar to adapters but operating on input geometry.
+5. **Cross-domain Validation**: Effectiveness from images to molecules showcases the universality of group-theoretic approaches.
 
 ## Limitations & Future Work
 
-1. **Dependence on the Quality of the Underlying Decomposition Model**: If the base class-pose decomposition model is inaccurate, RECON's corrections will be correspondingly affected.
-2. **Requires Knowledge of the Transformation Group $G$**: While the specific symmetries need not be known, the structure of the acting group (e.g., SO(2), SE(3)) must still be specified.
-3. **Statistical Estimation Challenges on Continuous Groups**: Estimating pose distributions over high-dimensional continuous groups may face statistical efficiency issues.
-4. **Incomplete Access to Full Paper**: The full text could not be retrieved; some experimental details are inferred from the abstract and related work.
-5. **Future Extensions**: Extending RECON to more complex group structures, such as infinite-dimensional groups or mixtures of discrete groups.
+1. **Dependency on Base Model Quality**: If the underlying class-pose decomposition is inaccurate, RECON's correction suffers.
+2. **Requirement of Group Structure $G$**: While specific symmetries need not be known, the acting group structure (e.g., $SO(2)$) must be specified.
+3. **Challenges in Continuous Groups**: Estimating pose distributions on high-dimensional continuous groups faces statistical efficiency issues; multimodal cases rely heavily on Tukey-Fréchet to stabilize the transformation.
+4. **Latent Space Clustering Assumption**: Equivalence classes rely on $k$-NN in invariant features $z$. If IE-AE fails to separate different classes, the pose statistics may be contaminated.
+5. **Scalability**: Extending RECON to more complex group structures such as infinite-dimensional or hybrid discrete groups.
 
 ## Related Work & Insights
 
-- **Equivariant Neural Networks** (e.g., E(n)-equivariant GNNs): RECON offers an orthogonal path to invariance — modifying the input rather than the network architecture.
-- **Canonical Orientation Networks**: RECON addresses the core limitation of such methods, namely that the canonical orientation is training-dependent.
-- **Symmetry Discovery**: RECON is complementary to methods such as Lie group discovery, focusing on instance-level rather than global symmetry.
-- Insight: Simple group-theoretic operations can sometimes be more effective than complex learned methods; the "post-processing" paradigm is underexplored in invariance learning.
+- **Equivariant Neural Networks** (E(n)-GNN, etc.): RECON provides an orthogonal way to achieve invariance—not by changing architecture, but by transforming the input.
+- **Canonical Orientation Networks**: RECON solves the core problem of training-dependent canonicals in these methods.
+- **Symmetry Discovery**: Complementary to Lie group discovery, RECON focuses on instance-level symmetry rather than global symmetry.
+- Insight: Simple group-theoretic operations can sometimes be more effective than complex learning methods; the "post-processing" approach is undervalued in invariance learning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The right translation correction is elegant and novel, though it is fundamentally a direct application of group theory.
-- Experimental Thoroughness: ⭐⭐⭐ — Validated on both image and molecular domains, though full experimental details could not be confirmed.
-- Writing Quality: ⭐⭐⭐⭐ — The abstract is clear and the theoretical exposition is precise.
-- Value: ⭐⭐⭐⭐ — Provides a practical and lightweight tool for the equivariant/invariant learning community.
+- Novelty: ⭐⭐⭐⭐ — The idea of right translation correction is elegant, though based on group theory applications.
+- Experimental Thoroughness: ⭐⭐⭐ — Validated on two domains, though full details remain for further verification.
+- Writing Quality: ⭐⭐⭐⭐ — Clear abstract and precise theoretical descriptions.
+- Value: ⭐⭐⭐⭐ — Provides a practical tool for the equivariant/invariant learning community.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+</div>
+
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
 - [\[NeurIPS 2025\] A Practical Guide for Incorporating Symmetry in Diffusion Policy](../../NeurIPS2025/llm_pretraining/a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)
 - [\[ICML 2026\] MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier](../../ICML2026/llm_pretraining/moose-star_unlocking_tractable_training_for_scientific_discovery_by_breaking_the.md)
-- [\[ICCV 2025\] ConstStyle: Robust Domain Generalization with Unified Style Transformation](../../ICCV2025/llm_pretraining/conststyle_robust_domain_generalization_with_unified_style_transformation.md)
-- [\[NeurIPS 2025\] Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization](../../NeurIPS2025/llm_pretraining/broken_tokens_your_language_model_can_secretly_handle_non-canonical_tokenization.md)
+- [\[ICML 2025\] Language Models over Canonical Byte-Pair Encodings](../../ICML2025/llm_pretraining/language_models_over_canonical_byte-pair_encodings.md)
+- [\[ICML 2025\] Towards Robust Influence Functions with Flat Validation Minima](../../ICML2025/llm_pretraining/towards_robust_influence_functions_with_flat_validation_minima.md)
 
 </div>
 

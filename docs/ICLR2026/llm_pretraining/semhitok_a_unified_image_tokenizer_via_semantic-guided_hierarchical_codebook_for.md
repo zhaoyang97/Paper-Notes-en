@@ -2,120 +2,138 @@
 title: >-
   [Paper Note] SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook
 description: >-
-  [ICLR 2026][LLM Pretraining][image tokenizer] This paper proposes SemHiTok — a tokenizer that unifies visual understanding and generation via a Semantic-Guided Hierarchical Codebook (SGHC): pixel sub-codebooks are constr…
+  [ICLR 2026][Pretraining][SGHC] Proposes SemHiTok—a unified tokenizer for understanding and generation via Semantic-Guided Hierarchical Codebook (SGHC). It establishes pixel sub-codebooks based on a pre-trained semantic codebook. Structural and training decoupling (staged optimization) avoids semantic-pixel conflicts, achieving SOTA in both understan
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "image tokenizer"
-  - "hierarchical codebook"
-  - "semantic guidance"
-  - "unified understanding + generation"
-  - "SGHC"
-  - "MLLM"
+  - ICLR 2026
+  - Pretraining
+  - SGHC
+  - MLLM
 date: 2026-05-08
-content_hash: 08036eefb752297f
+content_hash: c776420a0e7eb371
 ---
-
 # SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.06764](https://arxiv.org/abs/2503.06764)  
-**Area**: LLM Pretraining
-**Keywords**: image tokenizer, hierarchical codebook, semantic guidance, unified understanding + generation, SGHC, MLLM
+**Area**: LLM Pre-training  
+**Keywords**: Image Tokenizer, Hierarchical Codebook, Semantic Guidance, Unified Understanding and Generation, SGHC, MLLM
 
 ## TL;DR
-This paper proposes SemHiTok — a tokenizer that unifies visual understanding and generation via a Semantic-Guided Hierarchical Codebook (SGHC): pixel sub-codebooks are constructed on top of a pretrained semantic codebook, with structure and training fully decoupled (stage-wise optimization) to avoid the semantic–pixel conflict in joint training. Under the LLaVA setting, SemHiTok achieves state-of-the-art performance in both understanding and reconstruction among discrete tokenizers.
+Proposes SemHiTok—a unified tokenizer for understanding and generation via Semantic-Guided Hierarchical Codebook (SGHC). It establishes pixel sub-codebooks based on a pre-trained semantic codebook. Structural and training decoupling (staged optimization) avoids semantic-pixel conflicts, achieving SOTA in both understanding and reconstruction among discrete tokenizers under LLaVA settings.
 
 ## Background & Motivation
 
-**Background**: Unified MLLMs require tokenizers that simultaneously support understanding (high-level semantics) and generation (low-level pixels).
+**Background**: Unified MLLMs require a tokenizer that simultaneously supports understanding (high-level semantics) and generation (low-level pixels).
 
 **Limitations of Prior Work**:
-   - (1) CLIP-based methods → strong semantics but poor pixel fidelity; VQGAN-based methods → good pixel reconstruction but weak semantics.
-   - (2) Joint training approaches (VILA-U uses mixed losses → sub-optimal; SDE encoder decouples encoders but mixes codebooks).
-   - (3) Dual-encoder designs (Janus) → token count doubles or vocabulary explodes → inefficient.
-   - (4) TokenFlow uses a shared mapping but joint training still degrades performance.
+   - (1) CLIP family: Good semantics but loses pixels; VQGAN family: Preserves pixels but lacks semantics.
+   - (2) Joint training (VILA-U hybrid loss → sub-optimal; SDE encoder decoupled but codebook mixed).
+   - (3) Dual encoders (Janus) → Doubled tokens or vocabulary explosion → Inefficient.
+   - (4) TokenFlow shared mapping, but joint training still affects performance.
 
-**Key Insight**: The observation that patches sharing the same semantic code exhibit similar pixel distributions motivates building sub-codebooks under each semantic code, achieving full decoupling in both structure and training.
+**Key Insight**: Observed that patches sharing the same semantic code exhibit similar pixel distributions → Build sub-codebooks under each semantic code → Decouple both structure and training.
 
 ## Method
 
 ### Overall Architecture
-A semantic branch (VQKD aligned with SigLIP) produces fixed $C_\text{sem}$; a pixel branch (ViT) learns $C_\text{pix}$. Semantic and pixel tokens are concatenated along the channel dimension to form a unified discrete representation.
+
+Unified MLLMs require a single tokenizer capable of handling both "understanding" (high-level semantics) and "generation" (low-level pixels). However, these objectives often conflict in previous methods: the CLIP family preserves semantics but loses pixels, while the VQGAN family preserves pixels but lacks semantics. Forcing both into a flat codebook leads to competition for codewords between semantics and pixels. SemHiTok decomposes the discrete representation of an image into two complementary branches through **hierarchical nesting**: the semantic branch first uses VQKD to distill a frozen SigLIP, learning a semantic codebook $C_\text{sem}$ focused solely on high-level semantics. The pixel branch then attaches a set of sub-codebooks under each semantic code to capture pixel details within that semantic cluster. During quantization, a patch first obtains its semantic index, then queries the corresponding pixel sub-codebook for the pixel code. Both tokens are concatenated along the channel dimension into a unified representation—capable of being decoded back to images for generation or flattened into vocabulary IDs for LLM understanding. The core design lies in making the pixel codebook parasitic to the hierarchical structure of the semantic codebook, combined with staged training to decouple the two objectives.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IMG["Input Image"] --> SGHC
+    subgraph SGHC["Semantic-Guided Hierarchical Codebook SGHC (Design 1)"]
+        direction TB
+        SEM["Semantic Branch: ViT Encoder → VQKD Quantization<br/>Distill frozen SigLIP, obtain semantic code (Frozen after Stage 1)"]
+        SEM -->|Semantic index k| PIX["Pixel Branch: Query nearest pixel code<br/>only in the k-th sub-codebook C_pix^k"]
+    end
+    SGHC --> CAT["Semantic Token ⊕ Pixel Token<br/>Concatenate along channel for unified representation"]
+    CAT --> FLAT["Flatten index h = i·m + j<br/>(Total codes K·m = 196,608, Design 3)"]
+    FLAT -->|Generation Branch| DEC["Pixel Decoder<br/>Image Reconstruction"]
+    FLAT -->|Understanding Branch| ADP["Dual-MLP adapter<br/>→ LLM"]
+```
+
+> Multi-stage training (Design 2) is the training schedule: first train the semantic branch alone and freeze $C_\text{sem}$, then train only the pixel branch on the frozen backbone.
 
 ### Key Designs
 
-1. **Semantic Codebook**: SigLIP → EMA vector quantization → cosine + L1 distillation → frozen after training.
+**1. Semantic-Guided Hierarchical Codebook (SGHC): Refining pixel space using "similar pixels for same-semantic patches"**
 
-2. **SGHC**: $C_\text{pix} = \{C_\text{pix}^1, \ldots, C_\text{pix}^K\}$ ($K$ semantic codes × $m$ sub-codes); for patch $i$, the semantic branch first assigns index $k$, then the $k$-th sub-codebook quantizes the pixel features.
+This step addresses the Key Challenge of semantic-pixel competition within a flat codebook. The semantic branch uses frozen SigLIP features as distillation targets. Encoder outputs are quantized via EMA-updated vectors to obtain semantic codes, aligned back to SigLIP using cosine similarity and $L_1$ loss, establishing a semantic backbone for "how the image should be understood." The authors observe that patches assigned to the same semantic code share highly similar pixel distributions. Instead of a flat pixel codebook, it is decomposed into a set of sub-codebooks $C_\text{pix}=\{C_\text{pix}^1,\dots,C_\text{pix}^K\}$, corresponding to $K$ semantic codes with $m$ sub-codes each. When quantizing patch $i$, the semantic index $k$ is obtained first, and the pixel code is queried only within $C_\text{pix}^k$. This ensures each sub-codebook only models pixel details within a specific semantic cluster, simplifying the modeling task and ensuring finer reconstruction without competing for the same codewords.
 
-3. **Stage-wise Training**: Stage 1 trains the semantic branch (VQKD) and freezes it; Stage 2 trains the pixel branch (L1 + perceptual + GAN losses) — the two stages are conflict-free.
+**2. Multi-stage training: Thoroughly separating semantic and pixel objectives in the workflow**
 
-4. **Unified MLLM Integration**: Tokens are flattened as $h = i \times m + j$; a Dual-MLP adapter projects semantic and pixel tokens separately, then concatenates them before feeding into the LLM.
+Even with a hierarchical structure, joint optimization would allow reconstruction loss to perturb semantic layers. SemHiTok utilizes two stages: Stage 1 trains only the semantic branch (VQKD distilling SigLIP) and freezes $C_\text{sem}$ immediately. Stage 2 trains only the pixel branch on this frozen backbone, driven by $L_1$, perceptual, and GAN losses. Since the optimization objectives do not compete simultaneously, semantic-pixel conflict is eliminated at the source, preventing understanding capability from degrading during reconstruction training. This is the key difference from VILA-U (hybrid loss causing sub-optimality) and TokenFlow (shared mapping but joint training interference).
+
+**3. Unified MLLM Integration: Flattening hierarchical indices into a standard vocabulary**
+
+Hierarchical codebooks can lead to doubled token counts or vocabulary explosion. SemHiTok uses a flattened index $h=i\cdot m+j$ to map the "$i$-th semantic code and its $j$-th pixel sub-code" into a single integer ID. The total vocabulary size $K\cdot m=196{,}108$ is comparable to the text vocabulary of Qwen2 (~150K). A Dual-MLP adapter projects semantic and pixel tokens separately before concatenation for the LLM, allowing the understanding side to consume semantics and the generation side to consume pixels.
 
 ### Loss & Training
-- SigLIP frozen; $K$ semantic codes, $m=8$ sub-codes → total codebook size 196,608; base model: Qwen2.5-7B-Instruct.
+
+General Hyperparameters: SigLIP is frozen throughout as a distillation anchor; $K$ semantic codes, $m=8$ sub-codes per semantic code, totaling 196,608 codes; Qwen2.5-7B-Instruct as the base MLLM. Stage 1 uses cosine plus $L_1$ to align with SigLIP. Stage 2 adds $L_1$, perceptual, and GAN reconstruction losses with weights $\lambda_1/\lambda_2/\lambda_3$.
 
 ## Key Experimental Results
 
-### Reconstruction (Table 1, ImageNet-50k)
+### Main Results (Table 1, ImageNet-50k)
 
 | Method | Type | Codebook | rFID↓ |
-|--------|------|----------|-------|
+|------|------|----------|-------|
 | LlamaGen | Only Recon | 16,384 | 2.19 |
 | IBQ | Only Recon | 262,144 | 1.00 |
 | VILA-U | Unified | 16,384 | 1.80 |
 | TokenFlow | Unified | 32,768 | 1.37 |
-| **SemHiTok** | Unified | 196,608 | **1.16** |
-| **SemHiTok-384** | Unified | 196,608 | **0.66** |
+| **Ours (SemHiTok)** | Unified | 196,608 | **1.16** |
+| **Ours (SemHiTok-384)** | Unified | 196,608 | **0.66** |
 
 ### Understanding (Table 2, LLaVA-v1.5)
 
 | Model | Resolution | POPE | MME-P | SEED | GQA |
-|-------|------------|------|-------|------|-----|
-| SigLIP (continuous) | 256 | 83.8 | 1481 | 65.3 | 61.9 |
+|------|--------|------|-------|------|-----|
+| SigLIP (Continuous) | 256 | 83.8 | 1481 | 65.3 | 61.9 |
 | VILA-U | 256 | 81.6 | 1312 | 56.9 | 55.3 |
-| **SemHiTok** | 256 | **82.5** | **1356** | **62.9** | **60.3** |
-| **SemHiTok-384** | 384 | **86.3** | **1466** | **64.1** | **62.3** |
+| **Ours (SemHiTok)** | 256 | **82.5** | **1356** | **62.9** | **60.3** |
+| **Ours (SemHiTok-384)** | 384 | **86.3** | **1466** | **64.1** | **62.3** |
 
 ### Key Findings
-- Achieves state-of-the-art understanding among discrete tokenizers, approaching or partially surpassing continuous SigLIP.
-- rFID of 1.16 / 0.66 → state-of-the-art reconstruction among unified tokenizers.
-- POPE 82.5 vs. VILA-U 81.6 (+0.9); SEED 62.9 vs. 56.9 (+6.0).
-- Total codebook size $K \times m = 196\text{K}$ is comparable to LLM text vocabulary size (Qwen2 ~150K) → no vocabulary explosion.
+- SOTA in understanding among discrete tokenizers → approaching or partially exceeding continuous SigLIP.
+- rFID 1.16/0.66 → SOTA-level reconstruction among unified tokenizers.
+- POPE 82.5 vs VILA-U 81.6 (+0.9); SEED 62.9 vs 56.9 (+6.0).
+- Total codebook $K \cdot m=196K$ is comparable to LLM text vocab size (Qwen2 ~150K) → no explosion.
 
 ## Highlights & Insights
-- **SGHC Design**: The observation that same-semantic patches share similar pixels motivates sub-codebook refinement — an elegant and principled design.
-- **Stage-wise Training**: Completely eliminates the semantic–pixel conflict, yielding a better trade-off — a key contribution.
-- **No Token Explosion**: The flattened codebook size (196K) is compatible with existing LLM vocabularies, enabling seamless integration.
-- **Non-interfering Extension**: Pixel branch training does not affect the frozen semantic codebook, preserving understanding capability.
+- **SGHC Design**: The observation that same semantics → similar pixels leads to sub-codebook refinement, which is simple and elegant.
+- **Multi-stage training**: Completely avoids semantic-pixel conflict → better trade-off → key innovation.
+- **No Token Explosion**: Flattened index stays controllable (196K) → compatible with existing LLM vocabularies → seamless integration.
+- **Non-conflicting Extension**: Pixel training does not affect the frozen semantic codebook → no degradation in understanding.
 
 ## Limitations & Future Work
-- Validation is limited to 256/384 resolutions; scalability to higher resolutions remains untested.
-- The sub-codebook size $m=8$ is fixed; adaptive $m$ selection is unexplored.
-- Only Qwen2.5-7B and Vicuna-7B are evaluated; larger LLMs await investigation.
-- Evaluation of generation quality (MJHQ/GenEval) is limited in scope.
-- The effect of semantic codebook size $K$ on performance lacks thorough ablation.
-- Pixel sub-spaces under certain semantic codes may be data-insufficient, potentially causing sub-codebook underfitting.
-- Sensitivity analysis of loss weights ($\lambda_1 / \lambda_2 / \lambda_3$) in the training strategy is limited.
+- Primarily validated on 256/384 resolutions → scalability to higher resolutions untested.
+- Fixed sub-codebook size $m=8$ → adaptive $m$ remains unexplored.
+- Validated only on Qwen2.5-7B and Vicuna-7B → larger LLMs need testing.
+- Limited space for generation quality evaluation (MJHQ/GenEval).
+- Impact of semantic codebook size $K$ on performance is not fully ablated.
+- Pixel subspaces in SGHC might lack data under certain semantic codes → potential sub-codebook underfitting.
+- Sensitivity analysis for loss weights ($\lambda_1/\lambda_2/\lambda_3$) is limited.
 
-### Supplementary Unified MLLM Results
-- Outperforms prior unified discrete MLLMs on both understanding and generation tasks.
-- Achieves state-of-the-art on most benchmarks in the Und. & Gen. Discrete category.
-- Performance is comparable to some continuous-tokenizer (Only Und.) baselines.
+### Unified MLLM Results
+- Surpasses previous unified discrete MLLMs in both understanding and generation tasks.
+- SOTA in most benchmarks within the "Und. & Gen. Discrete" category.
+- Comparable performance to some continuous tokenizers (Only Und.).
 
 ## Related Work & Insights
-- VILA-U joint loss → sub-optimal → SemHiTok resolves this via stage-wise training.
-- TokenFlow shared mapping → joint training conflict remains → SemHiTok achieves full decoupling.
-- VQKD semantic codebook → SemHiTok extends it with a pixel layer.
-- Insight: A hierarchical structure (semantics → pixels) may represent the optimal paradigm for unified visual tokenizers.
+- VILA-U hybrid loss → sub-optimal → SemHiTok solves via staging.
+- TokenFlow shared mapping → joint training conflict → SemHiTok fully decouples.
+- VQKD semantic codebook methods → SemHiTok extends this with a pixel layer.
+- Insight: Hierarchical structure (semantic → pixel) may be the optimal paradigm for unified visual tokenizers.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First proposal of SGHC + stage-wise training
-- Technical Depth: ⭐⭐⭐⭐ Simple, effective, and well-motivated
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers reconstruction, understanding, and generation
-- Practicality: ⭐⭐⭐⭐⭐ Directly integrable into existing MLLMs for unified understanding + generation
-- Overall: ⭐⭐⭐⭐⭐ An elegant solution for unified visual tokenization
+- Novelty: ⭐⭐⭐⭐⭐ Pioneering SGHC + multi-stage training.
+- Technical Depth: ⭐⭐⭐⭐ Simple yet effective, clear motivation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers reconstruction, understanding, and generation.
+- Value: ⭐⭐⭐⭐⭐ Direct integration into existing MLLMs for unified understanding and generation.
+- Overall: ⭐⭐⭐⭐⭐ An elegant solution for unified visual tokenizers.
 
 <!-- RELATED:START -->
 
@@ -124,10 +142,10 @@ A semantic branch (VQKD aligned with SigLIP) produces fixed $C_\text{sem}$; a pi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](../../NeurIPS2025/llm_pretraining/next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Differentiable Hierarchical Visual Tokenization](../../NeurIPS2025/llm_pretraining/differentiable_hierarchical_visual_tokenization.md)
-- [\[ACL 2026\] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement](../../ACL2026/llm_pretraining/toward_consistent_world_models_with_multi-token_prediction_and_latent_semantic_e.md)
-- [\[ICCV 2025\] ConstStyle: Robust Domain Generalization with Unified Style Transformation](../../ICCV2025/llm_pretraining/conststyle_robust_domain_generalization_with_unified_style_transformation.md)
-- [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](../../AAAI2026/llm_pretraining/beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
+- [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
+- [\[ICLR 2026\] OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation](optimsyn_influence-guided_rubrics_optimization_for_synthetic_data_generation.md)
+- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
+- [\[ICLR 2026\] Dynamic Chunking for End-to-End Hierarchical Sequence Modeling](dynamic_chunking_for_end-to-end_hierarchical_sequence_modeling.md)
 
 </div>
 

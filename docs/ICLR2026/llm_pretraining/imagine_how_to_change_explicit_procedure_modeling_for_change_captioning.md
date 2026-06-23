@@ -2,92 +2,91 @@
 title: >-
   [Paper Note] Imagine How To Change: Explicit Procedure Modeling for Change Captioning
 description: >-
-  [ICLR 2026][LLM Pretraining][change captioning] ProCap reframes change captioning from static image-pair comparison to dynamic procedure modeling. In the first stage…
+  [ICLR 2026][Pretraining][Paper Note] Proposing the ProCap framework, which redefines change captioning from static image pair comparison to dynamic procedure modeling. The first stage trains a procedure encoder to learn spatio-temporal change dynamics through frame interpolation and masked reconstruction, while the second stage employs learnable procedure
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "change captioning"
-  - "procedure modeling"
-  - "frame interpolation"
-  - "masked reconstruction"
-  - "learnable queries"
-  - "vision-language"
+  - ICLR 2026
+  - Pretraining
 date: 2026-05-08
-content_hash: 8cf6c4938ac73dde
+content_hash: 5333a671e55c74b1
 ---
-
 # Imagine How To Change: Explicit Procedure Modeling for Change Captioning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.05969](https://arxiv.org/abs/2603.05969)  
 **Code**: [GitHub](https://github.com/BlueberryOreo/ProCap)  
-**Area**: LLM Pre-training
-**Keywords**: change captioning, procedure modeling, frame interpolation, masked reconstruction, learnable queries, vision-language
+**Area**: LLM Pre-training  
+**Keywords**: Change Captioning, Procedure Modeling, Frame Interpolation, Masked Reconstruction, Learnable Queries, Vision-Language  
 
 ## TL;DR
 
-ProCap reframes change captioning from static image-pair comparison to dynamic procedure modeling. In the first stage, a procedure encoder is trained via frame interpolation and masked reconstruction to capture spatiotemporal change dynamics; in the second stage, learnable process queries implicitly infer the change procedure, surpassing state-of-the-art methods on three benchmarks.
+Proposing the ProCap framework, which redefines change captioning from static image pair comparison to dynamic procedure modeling. The first stage trains a procedure encoder to learn spatio-temporal change dynamics through frame interpolation and masked reconstruction, while the second stage employs learnable procedure queries to implicitly infer change processes, outperforming SOTA on three datasets.
 
 ## Background & Motivation
 
-**Change captioning** involves generating textual descriptions of the differences between two similar images, with applications in remote sensing, medical diagnosis, urban planning, and industrial quality control.
+**Change Captioning** generates textual descriptions of differences between two similar images, with applications in remote sensing monitoring, medical diagnosis, urban planning, and industrial quality control.
 
-Fundamental limitations of existing methods:
+**Limitations of Prior Work**:
 
-**Static image-pair modeling**: only compares "before" and "after", ignoring the **dynamic process** of change.
+- **Static Image Pair Modeling**: Methods only compare "before" and "after" frames, ignoring the **dynamic process** of change.
+- **Missing Temporal Cues**: Inability to understand "how the change occurred."
+- **Encoder Limitations**: Various difference extractors and alignment mechanisms focus on spatial comparison rather than spatio-temporal modeling.
 
-**Absence of temporal cues**: cannot understand *how* a change occurred.
-
-**Encoder limitations**: various difference extractors and alignment mechanisms remain purely spatial rather than spatiotemporal.
-
-**Key insight**: A latent continuous transition exists between two images, containing rich spatiotemporal dynamics. For instance, object displacement can reveal motion trajectories through intermediate frames.
+**Key Insight**: An implicit continuous transition process exists between two images, containing rich spatio-temporal dynamics. For instance, object displacement can be revealed through motion trajectories in intermediate frames.
 
 ## Method
 
 ### Overall Architecture
 
-ProCap consists of two stages:
-- **Stage 1 — Explicit Procedure Modeling (EPM)**: learns spatiotemporal dynamics of the change process.
-- **Stage 2 — Implicit Procedure Captioning (IPC)**: replaces explicit intermediate frames with learnable queries.
+ProCap addresses a long-neglected issue in change captioning: existing methods perform static comparisons between "before" and "after" images, leaving the model blind to "how the change happened." The **Mechanism** is to model the change as a **continuous process**, split into two stages for training and inference. The first stage is **Explicit Procedure Modeling (EPM)**, which uses frame interpolation to "hallucinate" a sequence of continuous transition frames between the two images, selects the most critical frames, and trains a procedure encoder to learn spatio-temporal dynamics through multi-granularity masked reconstruction. The second stage is **Implicit Procedure Captioning (IPC)**, which distills the spatio-temporal understanding from the first-stage encoder into a small set of learnable queries. During inference, intermediate frames are no longer explicitly generated; instead, queries "imagine" the change process directly from the image pair, which is then translated into a caption by the decoder. The **Design Motivation** balances "heavy training, light inference"—the training relies on real interpolated frames, while inference only adds a few parameters.
 
-### Stage 1: Explicit Procedure Modeling
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Image Pair<br/>(Before + After)"]
+    subgraph EPM["Explicit Procedure Modeling EPM (Training Phase)"]
+        direction TB
+        D1["Explicit Procedure Generation via FI<br/>Recursive Interpolation of Transition Frames"]
+        D2["Confidence-based Frame Sampling<br/>Equidistant Semantic Keyframes"]
+        D3["Multi-granularity Masked Reconstruction<br/>Procedure Encoder Training"]
+        D1 --> D2 --> D3
+    end
+    IN --> EPM
+    EPM -->|Distill Spatio-temporal Understanding| D4["Learnable Procedure Queries<br/>Implicitly Imagine Change Process"]
+    IN -->|Inference Only Path| D4
+    D4 --> DEC["Transformer Decoder"]
+    DEC --> OUT["Change Caption"]
+```
 
-**Process generation module**: a pre-trained frame interpolation model recursively generates intermediate frames. The FI model predicts bidirectional optical flow, produces warped image pairs, and a Transformer generates soft masks and residuals to synthesize intermediate frames.
+### Key Designs
 
-**Confidence-based frame sampling**: selects keyframes that are "semantically equidistant" — frames whose semantic distances to the start and end frames are equal receive the highest score. A squared-difference term penalizes frames biased toward either endpoint.
+**1. Explicit Procedure Generation via Frame Interpolation: Complementing "Before and After" into a Continuous Trajectory**
 
-**Procedure modeling module**: Transformer encoder + image tokenizer. Input includes a visual stream (patch features), a text stream (caption tokens), and special tokens (frame consistency + cross-modal alignment).
+The pain point of change captioning is having only the start and end frames, leaving the model unaware of "how" the change occurred. ProCap uses a pre-trained Frame Interpolation (FI) model to recursively interpolate intermediate frames between the two images. FI first predicts bidirectional optical flow, warps the starting and ending frames to the intermediate time to obtain candidate frames, and then uses a Transformer to estimate a soft mask and residual to fuse the warped images into an intermediate frame. Recursive interpolation expands a single change into a multi-frame sequence. Continuous trajectories, such as object displacement, are thus explicitly "drawn," providing the previously missing temporal cues for spatio-temporal modeling.
 
-**Multi-granularity masking** (one of four strategies selected randomly):
-1. Whole-frame masking: forces reconstruction using the caption.
-2. Random patch masking: encourages distributed representations.
-3. Intra-block masking: learns local texture.
-4. Extra-block masking: learns region-to-scene relationships.
+**2. Confidence-based Frame Sampling: Selecting "Semantically Equidistant" Key Moments**
+
+Interpolated frames can be numerous and inconsistent in quality; using all of them is inefficient and introduces noise. ProCap utilizes a confidence score to select keyframes, preferring frames that are semantically equidistant from the starting and ending frames—representing the transition moments with the highest information density. The scoring uses the squared difference of semantic distances $(d_{\text{start}}-d_{\text{end}})^2$ as a penalty. Regardless of which end a frame leans toward, it is penalized equally, stabilizing sampling on equidistant intermediate frames rather than degenerate "no-change" frames that nearly duplicate the start or end.
+
+**3. Multi-granularity Masked Reconstruction: Forcing the Encoder to Learn from Local Texture to Full-frame Semantics**
+
+Simply having intermediate frames is insufficient; tasks must be designed to force the model to truly understand the process. The procedure modeling module is a Transformer encoder with an image tokenizer. Input includes a vision stream (patch features), a text stream (caption tokens), and special tokens for frame consistency and cross-modal alignment. During training, one of four masks is randomly applied: a whole-frame mask forces reconstruction via captioning to establish language-to-visual mapping; random patch masks encourage distributed representations; intra-block masks focus on local texture; and extra-block masks learn the relationship between regions and the overall scene. Alternating these granularities forces the encoder to learn reconstructible spatio-temporal representations at frame, region, and patch levels, which are subsequently distilled into queries.
+
+**4. Learnable Procedure Queries: Replacing "Generation" with "Imagination" during Inference**
+
+Frame interpolation is too slow for inference in real-world applications. In the second stage, ProCap introduces $k\cdot n_I$ learnable procedure queries to replace explicit intermediate frames. These queries inherit the understanding of change dynamics from the first-stage encoder, implicitly "imagining" the change process directly from the image pair before being translated into a caption by the Transformer decoder. Inference thus requires no frame interpolation. Compared to the first stage, this adds only $k\cdot n_I$ parameters. When $k=2$, the overhead is negligible while retaining the representation advantages of explicit procedure modeling.
 
 ### Loss & Training
 
-$$L_{\text{PRO}} = L_{\text{msm}} + L_{\text{align}} + L_{\text{csy}}$$
-
-- $L_{\text{msm}}$: cross-entropy over discrete token prediction at masked positions.
-- $L_{\text{align}}$: contrastive loss distinguishing matched/unmatched caption–procedure pairs.
-- $L_{\text{csy}}$: distinguishes normal from shuffled frame sequences.
-
-### Stage 2: Implicit Procedure Captioning
-
-Core idea: $k \times n_I$ learnable process queries replace explicit intermediate frames. Leveraging the spatiotemporal understanding acquired in Stage 1, the model implicitly infers the change procedure from an image pair. A Transformer decoder translates these queries into a caption. Frame interpolation is not required at inference time.
-
-### Training Strategy
-
-Stage 2 is trained end-to-end with an autoregressive loss. At inference, only $k \times n_I$ additional parameters are introduced (negligible overhead when $k=2$).
+The loss for the first-stage procedure modeling consists of three terms: $L_{\text{PRO}} = L_{\text{msm}} + L_{\text{align}} + L_{\text{csy}}$. Here, $L_{\text{msm}}$ predicts discrete image tokens at masked positions (cross-entropy), serving as the primary masked reconstruction task. $L_{\text{align}}$ enables the model to distinguish between matching and non-matching caption-procedure pairs, strengthening cross-modal alignment. $L_{\text{csy}}$ requires the model to distinguish between normal and shuffled frame sequences, forcing it to learn temporal consistency rather than treating frames as an unordered set. The second stage utilizes an autoregressive generation loss to train the learnable queries and decoder end-to-end, distilling the spatio-temporal understanding into the queries. Overall, the training stage is heavier due to frame interpolation, but the inference stage remains lightweight, adding only $k\cdot n_I$ parameters.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Comparison with SOTA on three datasets** (Table 1, CIDEr):
+**SOTA Comparison on Three Datasets** (Table 1, CIDEr):
 
 | Method | CLEVR-Change | Spot-the-Diff | Image-Editing |
-|--------|-------------|---------------|---------------|
+|------|-------------|---------------|---------------|
 | DUDA (2019) | 112.3 | 32.5 | 22.8 |
 | SCORER+CBR (2023) | 126.8 | 38.9 | 33.4 |
 | MCT-CCDiff (2025) | 131.7 | 41.7 | 38.3 |
@@ -95,11 +94,11 @@ Stage 2 is trained end-to-end with an autoregressive loss. At inference, only $k
 | LLaVA-1.5+RP (LLM) | — | 43.2 | 60.9 |
 | **ProCap (Ours)** | **135.6** | **42.7** | **40.6** |
 
-ProCap achieves comprehensive superiority among non-LLM methods and substantially narrows the gap with LLM-based approaches.
+Ours leads comprehensively among non-LLM methods and significantly narrows the gap with LLM-based methods.
 
 ### Ablation Study
 
-**Component ablation** (CLEVR-Change CIDEr):
+**Component Ablation** (CLEVR-Change CIDEr):
 
 | EPM | IPC | k | CIDEr |
 |-----|-----|---|-------|
@@ -108,9 +107,9 @@ ProCap achieves comprehensive superiority among non-LLM methods and substantiall
 | N | Y | 1 | 106.2 |
 | Y | Y | 1 | **128.5** |
 
-Combining both components yields a CIDEr gain of +20.1 (108.4 → 128.5).
+The combination of both leads to a Gain of +20.1 in CIDEr (108.4 -> 128.5).
 
-**Query length $k$**:
+**Query Length k**:
 
 | k | TPS | CIDEr |
 |---|-----|-------|
@@ -119,9 +118,9 @@ Combining both components yields a CIDEr gain of +20.1 (108.4 → 128.5).
 | 4 | 461 | 128.7 |
 | 7 | 271 | 130.5 |
 
-$k=2$ achieves the best performance with reasonable efficiency.
+k=2 is optimal with reasonable efficiency.
 
-**Loss ablation** (CLEVR / StD CIDEr):
+**Loss Ablation** (CLEVR / StD CIDEr):
 
 | msm | align | csy | CLEVR | StD |
 |-----|-------|-----|-------|-----|
@@ -129,61 +128,61 @@ $k=2$ achieves the best performance with reasonable efficiency.
 | Y | N | Y | 128.6 | 36.3 |
 | Y | Y | Y | **135.6** | **42.7** |
 
-The full combination improves CIDEr on Spot-the-Diff by 13.0 over $L_{\text{msm}}$ alone.
+The full combination provides a 13.0 improvement on StD compared to MSM only.
 
 ### Key Findings
 
-1. **Procedure modeling substantially outperforms static comparison.**
-2. **Pre-training and queries are synergistic**: pre-training provides spatiotemporal understanding; queries enable efficient inference.
-3. **Lightweight yet powerful**: a non-LLM model approaches or matches LLM-based methods.
-4. **Cross-domain generalization**: strong performance across synthetic, natural, and open-domain scenarios.
+1. **Procedure modeling is significantly superior to static comparison.**
+2. **Pre-training + Query Synergy**: Pre-training provides spatio-temporal understanding, while queries enable efficient inference.
+3. **Lightweight but Powerful**: Non-LLM performance approaches or even surpasses LLM methods.
+4. **Cross-scenario Generalization**: Strong performance across synthetic, natural, and open types.
 
 ## Highlights & Insights
 
-1. **Paradigm shift**: from "static spatial comparison" to "dynamic spatiotemporal procedure modeling."
-2. **Elegant two-stage design**: explicit frames during training, implicit queries during inference — balancing representation quality and efficiency.
-3. **Creative confidence-based sampling**: selecting "semantically equidistant" frames focuses learning on critical transition moments.
-4. **Multi-granularity masking**: enables understanding at scales ranging from frame level to patch level.
-5. **Competitive without LLMs**: demonstrates that architectural innovation, rather than scale alone, can yield substantial gains.
+1. **Paradigm Shift**: Moving from "static spatial comparison" to "dynamic spatio-temporal procedure modeling."
+2. **Exquisite Two-stage Design**: Uses explicit frames for training and implicit queries for inference—balancing representation and efficiency.
+3. **Creative Confidence Sampling**: Selecting "semantically equidistant" frames to focus on key transition moments.
+4. **Multi-granularity Masking**: Multi-scale understanding from frame level down to patch level.
+5. **Non-LLM Competitiveness**: Demonstrates that architectural innovation, rather than just scale, can significantly improve performance.
 
 ## Limitations & Future Work
 
-1. **Dependence on frame interpolation quality**: the quality of the FI model directly constrains the upper bound of Stage 1.
-2. **Assumption of interpolable changes**: abrupt appearance or disappearance of objects cannot be modeled via optical flow.
-3. **No LLM decoder**: integrating a large language model decoder may yield further improvements.
-4. **Restricted to image pairs**: the framework has not been extended to video change captioning.
-5. **Confidence-based sampling requires a predefined similarity function.**
+1. **Dependency on Frame Interpolation Quality**: The ceiling of performance is directly affected by FI quality.
+2. **Assumption of Interpolatable Change**: Sudden appearance/disappearance of objects cannot be modeled via optical flow.
+3. **Absence of LLM Decoder**: Integration with LLMs might offer even larger improvements.
+4. **Limited to Image Pairs**: Has not yet been extended to video change captioning.
+5. **Confidence Sampling Requires Pre-defined Similarity Functions**.
 
 ## Related Work & Insights
 
-- **DUDA** [Park et al., 2019]: foundational framework — ProCap fundamentally extends the modeling paradigm.
-- **FINER** [Zhang et al., 2024]: LLM-augmented change captioning — ProCap achieves comparable performance without an LLM.
-- **VideoMAE** [Han et al., 2022]: video masked autoencoding — inspires the procedure modeling design.
-- **VQGAN** [Esser et al., 2021]: image tokenizer — used as the reconstruction target.
-- **RIFE** [Lu et al., 2022]: frame interpolation — used for explicit process generation.
+- **DUDA** [Park et al., 2019]: Foundational framework—ProCap fundamentally extends the paradigm.
+- **FINER** [Zhang et al., 2024]: LLM enhancement—ProCap achieves comparable performance without LLMs.
+- **VideoMAE** [Han et al., 2022]: Video masked autoencoding—Inspired ProCap's procedure modeling.
+- **VQGAN** [Esser et al., 2021]: Image tokenizer—Used for reconstruction targets.
+- **RIFE** [Lu et al., 2022]: Frame interpolation—Used for explicit procedure generation.
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
+| Dimension | Rating |
+|------|------|
 | Theoretical Depth | ⭐⭐⭐ |
 | Novelty | ⭐⭐⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
 | Value | ⭐⭐⭐⭐ |
-| Overall | ⭐⭐⭐⭐ |
+| Overall Evaluation | ⭐⭐⭐⭐ |
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Optimal Online Change Detection via Random Fourier Features](../../NeurIPS2025/llm_pretraining/optimal_online_change_detection_via_random_fourier_features.md)
 - [\[ICLR 2026\] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization](recon_robust_symmetry_discovery_via_explicit_canonical_orientation_normalization.md)
-- [\[NeurIPS 2025\] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?](../../NeurIPS2025/llm_pretraining/how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train.md)
-- [\[ICLR 2026\] MoMa: A Simple Modular Deep Learning Framework for Material Property Prediction](moma_a_modular_deep_learning_framework_for_material_property_prediction.md)
-- [\[ICLR 2026\] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](fictionalqa_a_dataset_for_studying_memorization_and_knowledge_acquisition.md)
+- [\[ICLR 2026\] Learned Meta-Tokens for Language Modeling](learned_meta-tokens_for_language_modeling.md)
+- [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 
 </div>
 

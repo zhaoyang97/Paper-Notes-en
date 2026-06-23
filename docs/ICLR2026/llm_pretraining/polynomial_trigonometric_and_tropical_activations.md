@@ -2,123 +2,116 @@
 title: >-
   [Paper Note] Polynomial, trigonometric, and tropical activations
 description: >-
-  [ICLR 2026][LLM Pretraining][Activation functions] This paper systematically explores learnable activation function families based on orthogonal bases (Hermite polynomials…
+  [ICLR 2026][Pretraining][Paper Note] This paper systematically explores a family of learnable activation functions based on orthogonal bases (Hermite polynomials, Fourier trigonometric bases) and tropicalization. By addressing the gradient explosion/vanishing issues of polynomial activations through variance-preserving initialization, it successfully repl
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "Activation functions"
-  - "Hermite polynomials"
-  - "Fourier trigonometric basis"
-  - "Tropical polynomials"
-  - "Variance-preserving initialization"
+  - ICLR 2026
+  - Pretraining
 date: 2026-05-08
-content_hash: 9f24df0eaaec1a53
+content_hash: 724d34f60ce59471
 ---
-
 # Polynomial, trigonometric, and tropical activations
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2502.01247](https://arxiv.org/abs/2502.01247)  
 **Code**: [K-H-Ismail/torchortho](https://github.com/K-H-Ismail/torchortho)  
-**Area**: LLM Pre-training
-**Keywords**: Activation functions, Hermite polynomials, Fourier trigonometric basis, Tropical polynomials, Variance-preserving initialization
+**Area**: LLM Pre-training  
+**Keywords**: Activation functions, Hermite polynomials, Fourier trigonometric bases, Tropical polynomials, Variance-preserving initialization
 
 ## TL;DR
-This paper systematically explores learnable activation function families based on orthogonal bases (Hermite polynomials, Fourier trigonometric basis) and tropicalization, addressing the gradient explosion/vanishing problem of polynomial activations via variance-preserving initialization, and successfully replacing GELU in GPT-2 and ConvNeXt to enable stable training.
+This paper systematically explores a family of learnable activation functions based on orthogonal bases (Hermite polynomials, Fourier trigonometric bases) and tropicalization. By addressing the gradient explosion/vanishing issues of polynomial activations through variance-preserving initialization, it successfully replaces GELU to achieve effective training on GPT-2 and ConvNeXt.
 
 ## Background & Motivation
 
-Activation functions are a core component of deep neural networks, introducing the nonlinearity that enables networks to approximate complex functions. Since the introduction of ReLU, GELU, SwiGLU, and related activations, the vast majority of modern deep learning models have relied on fixed-form activation functions. A natural question arises: **what functions can serve as activation functions in deep neural networks?** Is it possible to employ more expressive function families—such as polynomials or trigonometric functions—as learnable activations?
+Activation functions are core components of deep neural networks, introducing non-linearity to approximate complex functions. Since the introduction of ReLU, GELU, and SwiGLU, most modern deep learning models have adopted fixed activation functions. However, a natural question arises: **which functions can serve as activation functions for deep neural networks?** Can more expressive function families (e.g., polynomials, trigonometric functions) be used as learnable activations?
 
-- **Limitations of Prior Work**: Although polynomial activations possess strong approximation power in theory, they suffer from severe gradient explosion and activation explosion in practice. Even low-degree polynomials can cause numerical instability in deep networks due to repeated composition across layers, a problem that has long hindered the practical adoption of polynomial-type activations.
+**Limitations of Prior Work**: Although polynomial activation functions theoretically possess strong approximation capabilities, they face severe gradient and activation explosion in practice. In deep networks, even low-degree polynomials lead to numerical instability due to layer-by-layer composition. This issue has long restricted the practical application of polynomial-based activations.
 
-- **Key Challenge**: Polynomial and trigonometric function families offer rich mathematical structure and strong expressive capacity, yet their direct use in deep networks leads to training instability. Standard activations (ReLU, GELU), while stable, have fixed functional forms and lack learnable adaptability.
+**Key Challenge**: Polynomial and trigonometric function families have rich mathematical structures and strong expressive power, but their direct use in deep networks causes training instability. Conversely, standard activations (ReLU, GELU) are stable but fixed in form and lack learnable adaptability.
 
-- **Key Insight**: Leveraging the mathematical properties of orthogonal bases, this paper designs variance-preserving initialization schemes that allow learnable activations built on orthogonal bases to train stably in deep networks without requiring additional clamping mechanisms.
+**Key Insight**: Based on the mathematical properties of orthogonal bases, this paper designs a variance-preserving initialization scheme. This allows learnable activation functions based on orthogonal bases to be trained stably in deep networks without additional clamping mechanisms.
 
-- **Core Idea**: By selecting appropriate orthogonal bases (Hermite polynomial basis, Fourier trigonometric basis) and designing variance-preserving initialization, learnable polynomial and trigonometric activations can be used in deep networks while maintaining training stability.
+**Core Idea**: By selecting appropriate orthogonal bases (Hermite polynomial bases, Fourier trigonometric bases) and designing variance-preserving initialization, learnable polynomials and trigonometric functions can be used as activation functions while maintaining training stability.
 
 ## Method
 
 ### Overall Architecture
-The paper proposes three families of learnable activation functions:
-1. Both input and output are scalar activation values $x$;
-2. Each activation function is parameterized by a set of learnable coefficients;
-3. The activation functions can directly replace standard activations such as GELU/ReLU in existing networks;
-4. Variance-preserving initialization ensures forward-pass variance stability.
+The paper addresses the long-standing question of "what functions can act as activations in deep networks" by transforming the activation function itself into a learnable object. Each scalar activation $F(x)$ is represented as a learnable linear combination of a set of **orthogonal basis** functions, with coefficients trained end-to-end. The primary difficulty is that polynomial and trigonometric bases cause variance explosion when stacked: activation values and gradients grow or decay exponentially through layers, leading to numerical overflow. The solution is a **variance-preserving initialization** that leverages orthogonal bases to obtain closed-form solutions for second moments. This allows the analytical pinning of "forward gain" and "backward gain" to equality, preventing variance drift with depth. Supported by this initialization, the authors implement three families of activations (Hermite polynomials, Fourier trigonometric, and Tropical piecewise linear) and use Hermite interpolation to seamlessly replace GELU in pre-trained models. This enables training GPT-2 and ConvNeXt from scratch without clamping, gradient clipping, or extra normalization.
 
 ### Key Designs
 
-1. **Hermite Polynomial Activations**: Learnable activations are constructed from the probabilistic Hermite orthogonal polynomial basis. Hermite polynomials are orthogonal under the Gaussian measure, so when the input follows a normal distribution, contributions from each basis function are mutually independent. The activation takes the form $\sigma(x) = \sum_{k=0}^{d} c_k H_k(x)$, where $H_k$ is the $k$-th order Hermite polynomial and $c_k$ are learnable coefficients. Variance-preserving initialization requires $\sum_k c_k^2 = 1$ (exploiting orthogonality of the Hermite basis), ensuring that the output variance equals the input variance.
+**1. Variance-Preserving Initialization: Stabilizing Deep Variance via Closed-Form Second Moments**
 
-2. **Fourier Trigonometric Activations**: Learnable activations are constructed from the trigonometric basis of Fourier series, taking the form $\sigma(x) = a_0 + \sum_{k=1}^{d} (a_k \cos(kx) + b_k \sin(kx))$. The Fourier basis constitutes a complete orthogonal basis in the space of periodic functions and is particularly well-suited for capturing periodic structure in data. A similar variance-preserving initialization is applied to ensure training stability.
+Following the logic of He initialization, a stable MLP layer requires variance conservation, meaning both the "forward gain" $\Gamma=\mathrm{Var}[x]\cdot \mathbb{E}[F(x)^2]^{-1}$ and "backward gain" $\Gamma'=\mathrm{Var}[x]\cdot \mathbb{E}[F'(x)^2]^{-1}$ should be 1. Previous work using rational functions struggled here because the second moments of rational fractions lack closed-form expressions. The key observation of this paper is that **switching to orthogonal bases provides simple closed-form solutions for second-moment integrals**. Under standard normal input assumptions, Hermite polynomials are mutually orthogonal ($\int \mathrm{He}_m \mathrm{He}_n\, e^{-x^2/2}\mathrm{d}x = \sqrt{2\pi}\,n!\,\delta_{nm}$), meaning contributions from different orders do not interfere. This allows for an analytical derivation of coefficient initializations ($a_k=1\ (k\ge1)$, $a_0=\sqrt{1-1/n!}$) that maintain unit gain.
 
-3. **Tropical Polynomial Activations**: Standard polynomials are converted to tropical polynomials via the tropicalization operation. In tropical algebra, addition is replaced by the max operation and multiplication by ordinary addition. Consequently, a tropical polynomial is essentially a pointwise maximum of a set of affine functions, forming a piecewise linear function. This can be viewed as a natural generalization of ReLU (which is the simplest tropical polynomial, $\max(0, x)$). Tropical rational functions are also introduced to further extend expressive capacity to non-convex functions.
+**2. Hermite and Fourier: Complementary Orthogonal Bases**
 
-4. **Variance-Preserving Initialization**: This is the core technical contribution. For polynomial activations, repeated composition across layers causes the variance of activations and gradients to grow or decay exponentially. The authors exploit the mathematical properties of orthogonal bases to derive initialization conditions that preserve variance under the assumption of standard normal inputs. This enables stable training of deep networks such as GPT-2 (12-layer Transformer) without requiring gradient clipping or clamping.
+Hermite activations expand the function into a weighted sum of probabilist's Hermite polynomials:
+$$F(x) = \sum_{k=0}^{n} \frac{a_k}{k!}\,\mathrm{He}_k(x)$$
+where $\mathrm{He}_k$ is the $k$-th order Hermite polynomial and $a_k$ are learnable coefficients. While polynomials excel at local approximation, they struggle with periodicity. Consequently, the authors introduce a Fourier trigonometric basis $F(x) = a_0 + \sum_{k=1}^{n}\frac{a_k\cos(kx)+b_k\sin(kx)}{k!}$, which is orthogonal under uniform distribution and suitable for capturing oscillatory structures.
 
-5. **Hermite Interpolation Transfer**: A practical contribution is demonstrating how standard activations (e.g., GELU) in pretrained models can be converted to learnable activations via Hermite interpolation, which matches both function values and derivative values simultaneously. This ensures that the new learnable activation closely approximates the original at initialization, making fine-tuning more stable and facilitating the application of learnable activations to pretrained model fine-tuning scenarios.
+**3. Tropical Activations: Generalizing ReLU to Learnable Piecewise Linear Functions**
 
-6. **Polynomial Interpretation of Networks**: A theoretical insight is that networks with polynomial activations can be interpreted as multivariate polynomial maps, offering a new perspective on the function approximation behavior of networks and providing tools from algebraic geometry for network analysis.
+The paper also introduces a piecewise linear family by "tropicalizing" polynomials. In tropical algebra, addition is replaced by $\max$ and multiplication by addition. A tropical polynomial thus reduces to the pointwise maximum of affine functions, forming a piecewise linear curve. This generalizes ReLU (the simplest tropical polynomial $\max(0,x)$) into learnable multi-segment lines.
+
+**4. Hermite Interpolation Migration: Seamless Integration into Pre-trained Models**
+
+To apply learnable activations to existing pre-trained weights without disturbing learned representations, the authors use Hermite interpolation to **simultaneously match the function value and first derivative of GELU**. This ensures the new activation is nearly identical to GELU at initialization, allowing fine-tuning to start from an equivalent point.
 
 ### Loss & Training
-The training strategy follows standard model training:
-- GPT-2 language modeling: next-token prediction on OpenWebText with cross-entropy loss;
-- ConvNeXt image classification: classification training on ImageNet-1K with standard classification loss;
-- The coefficients of the activation functions serve as additional learnable parameters and are optimized end-to-end via gradient descent.
+The training objective follows standard paradigms. Activation coefficients are optimized end-to-end: GPT-2 is trained on OpenWebText using next-token prediction with cross-entropy loss, while ConvNeXt is trained on ImageNet-1K for standard classification. No additional regularization or special scheduling is required for the learnable coefficients.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model / Task | Metric | GELU Baseline | Hermite | Fourier | Tropical | Notes |
-|---|---|---|---|---|---|---|
-| GPT-2 / OpenWebText | Perplexity | Baseline | Reduced | Reduced | Comparable | Learnable activations improve language modeling |
-| ConvNeXt-T / ImageNet | Top-1 Acc | Baseline | Improved | Improved | Comparable | Effective on vision tasks as well |
+| Model/Task | Metric | GELU Baseline | Hermite | Fourier | Tropical | Description |
+|-----------|------|----------|---------|---------|----------|------|
+| GPT-2 / OpenWebText | Perplexity | Baseline | Lower | Lower | Comparable | Learnable activations improve language modeling |
+| ConvNeXt-T / ImageNet | Top-1 Acc | Baseline | Gain | Gain | Comparable | Effective for vision tasks |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---|---|---|
-| Without variance-preserving initialization | Training diverges | Demonstrates that initialization is a necessary condition |
-| Varying polynomial degree | Performance vs. stability | Higher degree is more effective but requires more careful initialization |
-| Hermite interpolation fine-tuning vs. training from scratch | Fine-tuning efficiency | Interpolation initialization significantly accelerates convergence |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| No VP Init | Training Collapse | Initialization is a necessary condition |
+| Polynomial Degree | Performance vs Stability | Higher degrees are more effective but require careful init |
+| Hermite Interp. vs Scratch | Fine-tuning Efficiency | Interpolation significantly accelerates convergence |
 
 ### Key Findings
-- With variance-preserving initialization, polynomial and trigonometric activations can successfully train deep models such as GPT-2 (12-layer Transformer) and ConvNeXt.
-- Learnable activations match or surpass fixed GELU activations on both language modeling (perplexity) and image classification (accuracy).
-- Tropical polynomials provide a natural generalization from ReLU to more complex piecewise linear functions.
-- Hermite interpolation makes it feasible to introduce learnable activations into pretrained models.
-- Variance-preserving initialization is critical to success—without it, polynomial activations overflow numerically within a few layers.
+- Through variance-preserving initialization, polynomial and trigonometric activations successfully train deep models like GPT-2 and ConvNeXt.
+- Learnable activations match or exceed fixed GELU activations in both language modeling and image classification.
+- Tropical polynomials provide a natural generalization from ReLU to complex piecewise linear functions.
+- Hermite interpolation makes it feasible to introduce learnable activations into pre-trained models.
+- Variance-preserving initialization is the key to success—without it, polynomial activations overflow after a few layers.
 
 ## Highlights & Insights
-- **Theoretical elegance**: The work integrates orthogonal basis theory with neural network activation design in a rigorous mathematical framework.
-- **Practical utility**: The torchortho library is provided, enabling direct drop-in replacement of standard activations in PyTorch.
-- **Comprehensive coverage**: Polynomial (Hermite), trigonometric (Fourier), and tropical function families are all explored under a unified analytical framework.
-- **Transfer learning friendly**: The Hermite interpolation method allows learnable activations to be seamlessly integrated into existing pretrained models.
-- **Deep theoretical insight**: The algebraic structure of polynomial-activation networks as multivariate polynomial maps is revealed, opening the door to analyzing neural networks with tools from algebraic geometry.
-- **Efficiency potential**: Learnable activations may improve training efficiency of large-scale models by adaptively adjusting the activation shape.
+- **Theoretical Elegance**: Combines orthogonal basis theory with neural network activation design through rigorous mathematical derivation.
+- **High Utility**: Provides the `torchortho` library for direct replacement of standard PyTorch activations.
+- **Comprehensive Coverage**: Explores polynomial (Hermite), trigonometric (Fourier), and tropical families under a unified framework.
+- **Transfer-friendly**: Hermite interpolation allows seamless integration into existing pre-trained models.
+- **Deep Insights**: Reveals the algebraic structure of polynomial networks as multivariate polynomial mappings.
+- **Efficiency Potential**: Learnable activations may improve training efficiency by adaptively adjusting their form.
 
 ## Limitations & Future Work
-- Experimental scale is relatively limited: validation is only performed on GPT-2 (124M) and ConvNeXt-T, without extension to larger models (e.g., GPT-3, LLaMA).
-- Learnable activations introduce additional parameters (coefficients), which may increase memory overhead in very large-scale models.
-- Tropical activations, while theoretically interesting, do not yield performance improvements as pronounced as Hermite and Fourier activations.
-- The dynamics of learnable activations during training remain underexplored—how does the activation shape evolve, and do different layers learn different forms?
-- The variance-preserving initialization relies on the assumption that inputs follow a Gaussian distribution, which may not hold for intermediate layer activations in practice.
-- Direct comparisons with concurrent learnable activation methods such as KAN (Kolmogorov-Arnold Networks) are absent.
+- Experimental scale is relatively limited (GPT-2 124M and ConvNeXt-T); not yet scaled to LLaMA-sized models.
+- Learnable activations introduce extra parameters, potentially increasing memory overhead in massive models.
+- While theoretically interesting, the Tropical activation performance gains are less significant than Hermite and Fourier.
+- Evolution dynamics during training are not fully explored (e.g., how shapes vary across layers).
+- Initialization depends on the assumption of Gaussian inputs, which may not hold for middle-layer activations.
+- Direct comparison with KAN (Kolmogorov-Arnold Network) is missing.
 
 ## Related Work & Insights
-- **KAN (Kolmogorov-Arnold Networks)**: An alternative network design based on learnable activation functions, using B-spline basis functions.
-- **SwiGLU, GeGLU**: Gated linear unit activations widely used in LLMs.
-- **Maxout Networks**: Early work exploring piecewise linear activations; tropical activations can be seen as their generalization.
-- **Mish, Swish**: Activations discovered via automated search, providing contrast to the learnable approach of this paper.
-- Insight: Learnable activations may be particularly valuable in settings requiring specific function approximation properties, such as scientific computing and physics-informed networks.
+- **KAN (Kolmogorov-Arnold Networks)**: Another design using learnable activations based on B-splines.
+- **SwiGLU, GeGLU**: Gated linear unit variants widely used in modern LLMs.
+- **Maxout Networks**: Early exploration of piecewise linear activations; Tropical activations serve as a generalization.
+- **Mish, Swish**: Automatically searched activations, contrasting with the learnable approach here.
+- Insight: Learnable activations may be particularly valuable for scientific computing or PINNs where specific approximation properties are required.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Systematic exploration of entirely new activation function families)
-- Experimental Thoroughness: ⭐⭐⭐ (Limited scale but sufficiently validated)
-- Writing Quality: ⭐⭐⭐⭐ (Mathematical derivations are clearly presented)
-- Value: ⭐⭐⭐⭐ (Opens new directions for activation function design, supported by open-source code)
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -126,11 +119,11 @@ The training strategy follows standard model training:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)
-- [\[ICLR 2026\] Lossless Vocabulary Reduction for Auto-Regressive Language Models](lossless_vocabulary_reduction_for_auto-regressive_language_models.md)
-- [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)
 - [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
+- [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
+- [\[ICLR 2026\] StochasTok: Improving Fine-Grained Subword Understanding in LLMs](stochastok_improving_fine-grained_subword_understanding_in_llms.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 
 </div>
 

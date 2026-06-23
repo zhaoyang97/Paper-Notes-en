@@ -2,69 +2,85 @@
 title: >-
   [Paper Note] Adaptive Social Learning via Mode Policy Optimization for Language Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][social intelligence] This paper proposes the Adaptive Social Learning (ASL) framework, which defines four hierarchical reasoning modes (ranging from intuitive response to deep prospective reaso…
+  [ICLR 2026][LLM Reasoning][social intelligence] This paper proposes the Adaptive Social Learning (ASL) framework, featuring four hierarchical reasoning modes (ranging from intuitive response to deep deduction). Through the AMPO algorithm—which integrates mode-level and sample-level advantage estimation—LLM agents adaptively switch reasoning depth based on the comple
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "social intelligence"
-  - "adaptive reasoning"
-  - "mode selection"
-  - "reinforcement-learning"
-  - "token efficiency"
+  - ICLR 2026
+  - LLM Reasoning
+  - social intelligence
+  - adaptive reasoning
+  - mode selection
+  - reinforcement-learning
+  - token efficiency
 date: 2026-05-08
-content_hash: e5344442c1390406
+content_hash: 19375c0ff61b365a
 ---
-
 # Adaptive Social Learning via Mode Policy Optimization for Language Agents
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.02156](https://arxiv.org/abs/2505.02156)  
 **Code**: [https://github.com/MozerWang/AMPO](https://github.com/MozerWang/AMPO)  
-**Area**: LLM Reasoning
+**Area**: LLM Reasoning  
 **Keywords**: social intelligence, adaptive reasoning, mode selection, reinforcement-learning, token efficiency
 
 ## TL;DR
-This paper proposes the Adaptive Social Learning (ASL) framework, which defines four hierarchical reasoning modes (ranging from intuitive response to deep prospective reasoning) and introduces the AMPO algorithm (combining mode-level and sample-level advantage estimation) to enable LLM agents to adaptively switch reasoning depth according to social scenario complexity. ASL outperforms GPT-4o by 15.6% on social intelligence tasks, surpasses GRPO by 7.0%, and reduces token consumption by 32.8%.
+This paper proposes the Adaptive Social Learning (ASL) framework, featuring four hierarchical reasoning modes (ranging from intuitive response to deep deduction). Through the AMPO algorithm—which integrates mode-level and sample-level advantage estimation—LLM agents adaptively switch reasoning depth based on the complexity of social scenarios. On social intelligence tasks, it outperforms GPT-4o by 15.6% and GRPO by 7.0%, while reducing token usage by 32.8%.
 
 ## Background & Motivation
-**Background**: LLM agents engaged in social interactions (negotiation, cooperation, etc.) must dynamically adjust reasoning depth; however, existing methods either perform no explicit reasoning (direct reply) or uniformly apply long chain-of-thought (CoT), resulting in overthinking or underthinking.
+**Background**: LLM agents require dynamic adjustments to reasoning depth during social interactions (negotiation, cooperation, etc.). However, existing methods either lack reasoning (direct response) or use a uniform long CoT, leading to issues of over-reasoning or under-reasoning.
 
-**Limitations of Prior Work**: Large reasoning models (o1, R1, QwQ, etc.) underperform GPT-4o on social tasks—they apply exhaustive reasoning indiscriminately, leading to overthinking, verbose reasoning chains, and weak goal awareness. Models trained with GRPO also tend to converge to a single reasoning mode (always using the deepest Mode 4).
+**Limitations of Prior Work**: Large reasoning models (such as o1 and R1) actually perform worse than GPT-4o on social tasks. They perform exhaustive reasoning regardless of the scenario, resulting in overthinking, excessively long reasoning chains, and weak goal awareness. Models trained with GRPO also tend to converge to a single reasoning mode (always using the deepest Mode 4).
 
-**Key Challenge**: Social interaction is dynamic; different turns and scenarios require different reasoning depths. Simple scenarios (where both parties' goals are already met) require only intuitive responses, while complex scenarios (where conflicts remain unresolved) demand deep strategic deliberation. Yet existing RL methods (e.g., GRPO) estimate advantages in a mode-agnostic manner, making it impossible to learn such adaptive behavior.
+**Key Challenge**: Social interaction is dynamic; different rounds and scenarios require different depths of reasoning. Simple scenarios (where both parties' goals are met) only need intuitive responses, while complex scenarios (unresolved conflicts) require deep strategic deduction. However, the advantage estimation in existing RL methods like GRPO is "mode-blind," failing to learn this adaptive capability.
 
-**Goal**: How can an LLM agent dynamically select appropriate reasoning depth based on context in social interactions, while maintaining both efficiency and effectiveness?
+**Goal**: How can LLM agents dynamically select the appropriate reasoning depth in social interactions based on context while maintaining both efficiency and effectiveness?
 
-**Key Insight**: Drawing on the Hierarchical Cognitive Control Theory (HCCT) from cognitive science, the paper designs four levels of reasoning modes and augments GRPO with mode-level advantage estimation to guide mode selection.
+**Key Insight**: Drawing from Hierarchical Cognitive Control Theory (HCCT) in cognitive science, the authors design four levels of reasoning modes and introduce mode-level advantage estimation on top of GRPO to guide mode selection.
 
-**Core Idea**: By combining hierarchical reasoning modes with mode-aware RL optimization (AMPO), the social agent learns to reason fast when appropriate and slow when necessary—an adaptive reasoning strategy.
+**Core Idea**: Utilizing hierarchical reasoning modes combined with mode-aware RL optimization (AMPO) allows social agents to learn adaptive reasoning—"fast when possible, slow when necessary."
 
 ## Method
 
 ### Overall Architecture
-ASL consists of three stages: (1) design of four reasoning modes (M1–M4, ordered from simple to complex); (2) behavioral cloning (BC) to teach the model to follow the format of each mode; and (3) AMPO reinforcement learning to enable the model to adaptively select modes and optimize reasoning quality based on context. The input is a social dialogue context; the output is a reasoning-plus-response sequence prefixed by a mode control token.
+This paper aims to solve a specific problem: enabling social agents to learn when to be "fast" and when to be "slow"—providing intuitive responses for simple scenarios and deep deduction only for complex ones, rather than the exhaustive reasoning used by current large reasoning models. The process starts from a social dialogue context; the model first generates a mode control token (determining the reasoning depth for the turn), then produces the reasoning process and final answer according to that mode's format. After the answer is scored by a three-dimensional reward system, AMPO uses dual-level advantage estimation to feed signals back into the policy. Consequently, the model learns to "select modes based on scenarios" and refine reasoning quality. Training begins with Behavioral Cloning (BC) as a cold start to help the model learn the output formats of the four modes, followed by iterative loops of AMPO reinforcement learning.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Social Dialogue Context<br/>Partner Utterance + Private Goal"] --> B["Output Mode Control Token<br/>&lt;MODE_k&gt;"]
+    B --> C["Four Hierarchical Reasoning Modes<br/>M1 Intuition / M2 Intent / M3 Strategy / M4 Deduction"]
+    C --> D["Reasoning Process + Final Answer"]
+    D --> E["3D Rewards<br/>answer × length, format penalty if violated"]
+    E --> F["AMPO Dual-Level Advantage Estimation<br/>Mode-level selects mode + Sample-level adjusts quality"]
+    F -->|"PPO-clip + KL Update Policy"| B
+    G["BC Cold Start<br/>Expert data to learn 4-mode formats"] -.->|Initialization| B
+```
 
 ### Key Designs
 
-1. **Four Hierarchical Reasoning Modes (based on HCCT)**:
+**1. Four Hierarchical Reasoning Modes: Reasoning Depth as Selectable Gears**
 
-    - **Function**: Define reasoning structures of increasing depth for social scenarios of varying complexity.
-    - **Mechanism**: M1 (Intuitive Response) outputs only the answer with no reasoning; M2 (Intent Analysis) analyzes the interlocutor's intent, speaking style, and formulates a response; M3 (Strategic Adaptation) additionally incorporates historical analysis, goal clarification, situational assessment, and strategy formulation; M4 (Prospective Deliberation) extends M3 by generating multiple candidate strategies and selecting the best through simulated deliberation. Each mode is identified by a special control token `<MODE_k>`.
-    - **Design Motivation**: The four modes correspond to the four levels of cognitive control in cognitive science—from sensorimotor to extended episodic control—equipping the model with a full reasoning spectrum from System 1 to System 2.
+Reasoning depth requirements vary significantly across social interaction rounds. Instead of a uniform Long-CoT, reasoning is split into four levels from shallow to deep based on Hierarchical Cognitive Control Theory (HCCT), each identified by a control token `<MODE_k>`. M1 (Intuitive Response) is the shallowest, providing answers directly for simple scenarios like "goals achieved." M2 (Intent Analysis) adds intent analysis, style maintenance, and initial response. M3 (Strategic Adaptation) builds on M2 by adding history analysis, goal clarification, situational assessment, and strategy formulation. M4 (Forward Deduction) is the deepest, generating multiple candidate strategies and simulating deductions for each before integration and selection. These four levels map to the four HCCT levels from sensory-motor to long-contextual control, providing the model with a full spectrum from System 1 to System 2.
 
-2. **Adaptive Mode Policy Optimization (AMPO)**:
+**2. Three-Dimensional Reward: Including "Conciseness" in Training Signals**
 
-    - **Function**: Augments GRPO with a two-level advantage estimation scheme comprising **mode-level advantage $A^{\mathcal{M}}$** and **sample-level advantage $A^{\mathcal{S}}$**.
-    - **Mechanism**: Mode-level advantage is computed by comparing the mean reward across modes to guide mode selection. When rewards across modes are similar, token length serves as a secondary signal to favor more concise modes (normalized via tanh). Sample-level advantage compares sample quality within the selected mode. The final advantage is $A^{\mathcal{M}} + A^{\mathcal{S}}$, embedded in the PPO-clip objective.
-    - **Design Motivation**: Addresses the mode-blindness of GRPO—which ranks samples solely by reward without accounting for mode differences—causing convergence to the high-reward but inefficient M4 mode. AMPO encourages the model to prefer simpler modes when rewards are comparable.
+Relying solely on goal completion rewards often leads models to learn that "more words are safer," generating redundant reasoning without strategic gain. The reward consists of three parts: the answer reward $r^a$ uses an LLM evaluator to assess goal completion (normalized to $[0,1]$); the format reward enforces mode structure (a penalty of $-2$ if violated); and the answer length reward $r^l$ provides a length penalty, smoothly decaying to $[0,1]$ when the answer exceeds the target length. For correct formats, the total reward is $r = r^a \times r^l$; for incorrect formats, it is $r = -2$. The length reward encourages conciseness, which works with the mode-level advantage to realize adaptive reasoning depth.
 
-3. **Reward Design (Three-Dimensional Reward)**:
+**3. Adaptive Mode Policy Optimization: Making the Optimizer "Mode-Aware"**
 
-    - **Function**: Provides an answer reward (evaluating goal completion) + a format reward (enforcing mode format constraints, with a penalty of −2 for violations) + an answer length reward (smooth decay to the [0, 1] interval when the answer exceeds the target length).
-    - **Design Motivation**: Relying solely on the answer reward causes the model to generate verbose responses that offer no genuine strategic improvement. The length reward encourages conciseness and, in conjunction with mode-level advantage, enables depth-adaptive reasoning.
+GRPO's advantage estimation is "mode-blind"—it ranks samples by reward without knowing their mode, causing models to converge on M4 (highest reward but token-heavy). AMPO splits the advantage: Mode-level advantage $A^{\mathcal{M}}$ selects the mode, and Sample-level advantage $A^{\mathcal{S}}$ distinguishes quality within the chosen mode. The mode-level layer includes a "performance first, efficiency if performance ties" switch. When average rewards $\bar{r}^{\mathcal{M}_k}$ vary, it guides the model toward high-score modes via within-group normalization. When rewards are identical (e.g., all modes solve a simple task), it uses within-group normalized average token length $\bar{l}^{\mathcal{M}_k}$ with a negative tanh to reward shorter modes:
+
+$$
+A^{\mathcal{M}}_i =
+\begin{cases}
+\dfrac{\bar{r}^{m(i)} - \mathrm{mean}(\{\bar{r}^{\mathcal{M}_k}\})}{\mathrm{std}(\{\bar{r}^{\mathcal{M}_k}\})}, & \text{if rewards differ across modes} \\[8pt]
+-\tanh\!\left(\dfrac{\bar{l}^{m(i)} - \mathrm{mean}(\{\bar{l}^{\mathcal{M}_k}\})}{\mathrm{std}(\{\bar{l}^{\mathcal{M}_k}\})}\right), & \text{if rewards are identical across modes}
+\end{cases}
+$$
+
+The sample-level $A^{\mathcal{S}}$ only compares rollout quality within the same mode. The total advantage $A = A^{\mathcal{M}} + A^{\mathcal{S}}$ is then used in the PPO-clip objective. This ensures the model pursues high scores when performance varies and efficiency when rewards are equal, resulting in "fast when possible" behavior.
 
 ### Loss & Training
-Two-stage training: (1) BC warm-up, where training data for each mode is generated by an expert LLM and used for supervised fine-tuning (SFT); (2) online policy optimization with AMPO, where $G$ rollouts (covering different modes) are sampled per prompt and the policy is updated using two-level advantage estimation, PPO-clip, and KL regularization. A single-turn training paradigm is adopted to improve efficiency.
+The training consists of two stages. The first stage is a BC cold start (loss $\mathcal{L}_{\text{BC}}$ is standard NLL for imitation learning), where an expert LLM generates format-compliant data for each mode to teach the model the required structures. The second stage is AMPO online policy optimization: for each prompt, $G$ rollouts are sampled (covering different modes), and the policy is updated using the dual-level advantage within the PPO-clip objective with KL regularization. A single-turn paradigm is used for efficiency.
 
 ## Key Experimental Results
 
@@ -84,40 +100,40 @@ Two-stage training: (1) BC warm-up, where training data for each mode is generat
 
 | Configuration | Hard Goal | Hard Overall | Avg Tokens |
 |------|-----------|-------------|------------|
-| AMPO + 4 Modes (full) | 7.85 | 3.54 | 647 |
+| AMPO + 4 Modes (Full) | 7.85 | 3.54 | 647 |
 | AMPO w/o length reward | 7.56 | 3.56 | 1617 |
-| M1 only | 7.08 | 3.40 | 101 |
-| M4 only | 7.62 | 3.31 | 972 |
-| GRPO + no modes | 7.32 | 3.16 | 866 |
-| GRPO + 4 modes | 7.44 | 3.41 | 905 |
+| M1 Only | 7.08 | 3.40 | 101 |
+| M4 Only | 7.62 | 3.31 | 972 |
+| GRPO + No Modes | 7.32 | 3.16 | 866 |
+| GRPO + 4 Modes | 7.44 | 3.41 | 905 |
 
 ### Key Findings
-- **Large reasoning models underperform comprehensively on social tasks**: o1, R1, and QwQ all fall significantly below GPT-4o on SOTOPIA-Hard, indicating that exhaustive reasoning is detrimental to social intelligence.
-- Mode distribution adapts across interaction turns: M4 is concentrated in the first 4 turns (53%), while M1 surges in later turns (50% in turns 14–20), consistent with the cognitive intuition of "reason deep first, then act fast."
-- Removing the length reward causes a 2.5× increase in tokens (647→1617) while Goal scores actually decrease (7.85→7.56), confirming that verbose reasoning does not equate to better reasoning.
-- Mixed-mode consistently outperforms single-mode: AMPO+4 modes achieves 3% higher Goal and 33% fewer tokens than the best single-mode configuration (M4).
+- **Large reasoning models fail in social tasks**: o1, R1, and QwQ are significantly inferior to GPT-4o on SOTOPIA-Hard, indicating that exhaustive reasoning is detrimental to social intelligence.
+- **Mode distribution adapts across conversation turns**: M4 is concentrated in the first 4 rounds (53%), while M1 surges in later rounds (50% in rounds 14-20), aligning with the intuitive "deep then shallow" cognitive pattern.
+- **Length reward impact**: Removing the length reward increases tokens by 2.5x (647→1617) but decreases the Goal score (7.85→7.56), proving that longer reasoning does not equate to better reasoning.
+- **Hybrid modes outperform single modes**: AMPO with 4 modes yields a 3% higher Goal score and 33% fewer tokens compared to the best single mode (M4).
 
 ## Highlights & Insights
-- **Adaptive reasoning depth is the key insight**: Not all scenarios require Long-CoT; adaptive reasoning depth in social interaction is more effective than uniform deep reasoning, a finding generalizable to many tasks without deterministic answers.
-- **The mode-level advantage estimation design is elegant**: When rewards are sufficiently discriminative, the higher-reward mode is favored; when rewards are similar, the more efficient mode is preferred—a natural and smooth switching mechanism between the two branches.
-- **Cognitive science informing AI design**: The mapping from HCCT's four cognitive levels to four reasoning modes is conceptually clear and empirically validated, demonstrating the guiding value of cognitive science theory for AI agent design.
+- **Adaptive reasoning depth is a key insight**: Not all scenarios require Long-CoT. In social interactions, adaptive depth is more effective than uniform deep reasoning; this finding could generalize to many non-deterministic tasks.
+- **Elegant Mode-level Advantage design**: Switching between high-reward pursuit and efficiency pursuit based on reward variance is a natural and effective mechanism.
+- **Cognitive science guided AI design**: The mapping from HCCT levels to four reasoning modes is clear and empirically validated, highlighting the value of cognitive theories in agent design.
 
 ## Limitations & Future Work
-- The single-turn training paradigm may limit long-horizon strategic consistency; this remains a potential weakness despite the authors' analysis.
-- The four modes are manually designed; their number and structure may not be optimal, and automatic discovery of reasoning modes could be more effective.
-- Evaluation relies on GPT-4o scoring (with human validation), which may introduce evaluator bias.
-- Validation is currently limited to social interaction tasks; generalization to other scenarios requiring adaptive reasoning (e.g., open-domain QA, creative writing) remains unexplored.
+- The single-turn training paradigm might limit long-term strategic consistency, which remains a potential weakness despite the authors' analysis.
+- The four modes are human-designed; the number and structure of modes might not be optimal. Automatic discovery of reasoning modes could be superior.
+- Evaluation relies on GPT-4o scoring (despite manual verification), which may introduce evaluator bias.
+- Currently only validated on social interaction tasks; generalizability to other adaptive reasoning scenarios (e.g., open-domain QA, creative writing) remains to be tested.
 
 ## Related Work & Insights
-- **vs. GRPO**: AMPO augments GRPO with mode-level advantage estimation, addressing GRPO's mode-blindness and achieving a better performance–efficiency trade-off.
-- **vs. Large Reasoning Models (o1/R1)**: The failure of these models on social tasks demonstrates that indiscriminate Long-CoT is ill-suited for open-ended interactions requiring social intelligence, and that more structured reasoning is necessary.
-- **vs. EPO/DSI**: External strategy modules or strategy injection yield limited gains; end-to-end adaptive reasoning learning (ASL) proves more effective.
+- **vs GRPO**: AMPO introduces mode-level advantage estimation to resolve the mode-blind issue, achieving a better performance-efficiency trade-off.
+- **vs Large Reasoning Models (o1/R1)**: The failure of these models in social tasks suggests that indiscriminate Long-CoT is unsuitable for open-ended interactions requiring social intelligence.
+- **vs EPO/DSI**: While external policy modules or policy injection provide improvements, they are limited. End-to-end adaptive social learning (ASL) proves more effective.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The hierarchical reasoning mode design is novel, and the two-level advantage estimation in AMPO is innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Multiple models, multiple benchmarks, thorough ablations, human evaluation, and OOD validation.
-- Writing Quality: ⭐⭐⭐⭐ — Well-structured, though the dense use of mathematical notation can be demanding.
-- Value: ⭐⭐⭐⭐ — The concept of adaptive reasoning depth has broad applicability; an important contribution to the social intelligence direction.
+- Novelty: ⭐⭐⭐⭐ Innovative hierarchical mode design and AMPO dual-level advantage.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive multi-model, multi-benchmark, ablation, and human evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, though formulas are somewhat dense.
+- Value: ⭐⭐⭐⭐ The concept of adaptive reasoning depth has broad applicability and represents significant work in social intelligence.
 
 <!-- RELATED:START -->
 
@@ -127,9 +143,9 @@ Two-stage training: (1) BC warm-up, where training data for each mode is generat
 
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
-- [\[ICLR 2026\] FastGRPO: Accelerating Policy Optimization via Concurrency-aware Speculative Decoding and Online Draft Learning](fastgrpo_accelerating_policy_optimization_via_concurrency-aware_speculative_deco.md)
-- [\[ICLR 2026\] Estimating the Empowerment of Language Model Agents](estimating_the_empowerment_of_language_model_agents.md)
-- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](../../ACL2026/llm_reasoning/adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
+- [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
+- [\[ICLR 2026\] Improving Reasoning for Diffusion Language Models via Group Diffusion Policy Optimization](improving_reasoning_for_diffusion_language_models_via_group_diffusion_policy_opt.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 
 </div>
 

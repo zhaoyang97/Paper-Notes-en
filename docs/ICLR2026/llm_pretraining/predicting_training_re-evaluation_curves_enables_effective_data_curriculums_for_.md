@@ -2,101 +2,82 @@
 title: >-
   [Paper Note] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums
 description: >-
-  [ICLR 2026][LLM Pretraining][training re-evaluation curves] This paper proposes the Training Re-evaluation Curve (TREC) as a diagnostic tool that analyzes the loss of a fully trained model evaluated on training data at e…
+  [ICLR 2026][Pretraining][Paper Note] The authors propose the Training Re-evaluation Curve (TREC) as a diagnostic tool. By analyzing the loss of training data at each timestamp using the final model, they guide the optimal placement of high-quality data. They demonstrate that the shape of the TREC can be predicted via the implicit EMA coefficient of AdamW,
 tags:
-  - "ICLR 2026"
-  - "LLM Pretraining"
-  - "training re-evaluation curves"
-  - "data curriculum learning"
-  - "AdamW timescale"
-  - "high-quality data placement"
-  - "continual pretraining"
+  - ICLR 2026
+  - Pretraining
 date: 2026-05-08
-content_hash: 157aeee74635f648
+content_hash: 480d878c1b88922d
 ---
-
 # Predicting Training Re-evaluation Curves Enables Effective Data Curriculums
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25380](https://arxiv.org/abs/2509.25380)  
 **Code**: None  
-**Area**: LLM Pretraining
-**Keywords**: training re-evaluation curves, data curriculum learning, AdamW timescale, high-quality data placement, continual pretraining
+**Area**: LLM Pre-training  
+**Keywords**: Training Re-evaluation Curve, Data Curriculum Learning, AdamW Time Scale, High-quality Data Placement, Continued Pre-training
 
 ## TL;DR
 
-This paper proposes the Training Re-evaluation Curve (TREC) as a diagnostic tool that analyzes the loss of a fully trained model evaluated on training data at each timestep, thereby guiding optimal placement of high-quality data. The paper further demonstrates that the shape of TREC can be predicted via the implicit EMA coefficient of AdamW, enabling curriculum design without any actual training runs.
+The authors propose the Training Re-evaluation Curve (TREC) as a diagnostic tool. By analyzing the loss of training data at each timestamp using the final model, they guide the optimal placement of high-quality data. They demonstrate that the shape of the TREC can be predicted via the implicit EMA coefficient of AdamW, enabling the design of data curriculums without actual training.
 
 ## Background & Motivation
 
-Modern LLM training commonly adopts multi-stage data curriculum strategies, introducing high-quality, domain-specific, or recent data near the end of pretraining (i.e., the annealing phase). This practice rests on the assumption that presenting data when the learning rate approaches zero maximizes its effect. However, this assumption lacks theoretical grounding, and "many interesting questions about the optimal data distribution for pretraining remain unanswered" (Anil et al., 2023).
+Current LLM training commonly adopts multi-stage data curriculum strategies: introducing high-quality, domain-specific, or latest data at the end of pre-training (the annealing phase). This practice is based on the assumption that presenting data when the learning rate is near zero maximizes its effect. However, this assumption lacks theoretical support, and "many interesting questions about the optimal data distribution for pre-training remain unanswered" (Anil et al., 2023).
 
-In practice, determining the optimal timing for introducing high-quality data relies primarily on heuristics or expensive ablation studies. For instance, Llama-3 405B annealed on the GSM8k training set without measurable benefit, while OLMo-2 13B used a high-quality mixture only during the final 5.7% of training. The effectiveness of different strategies varies substantially, yet a unified theoretical framework for explaining and predicting these differences is absent.
+In practice, determining the best timing for high-quality data relies primarily on heuristics or costly ablation experiments. For instance, Llama-3 405B gained no benefit from annealing on the GSM8k training set, while OLMo-2 13B used high-quality mixtures only in the final 5.7% of training. The variance in effectiveness is significant, yet a unified theoretical framework to explain and predict these strategies is missing.
 
-The central insight of this paper is that high-quality data need not always be placed at the end of training; rather, it should be placed where the model **retains that data most effectively**—i.e., at the minimum of TREC.
+The **Key Insight** of this paper is: high-quality data should not necessarily be placed at the end of training, but rather at the position where the model can **best retain that data**—specifically, at the minimum point of the TREC.
 
 ## Method
 
 ### Overall Architecture
 
-The methodology proceeds in three stages:
-1. **Define and validate TREC**: demonstrate that the TREC minimum genuinely corresponds to the optimal data placement position.
-2. **Identify the governing factor of TREC**: show that the EMA timescale $\tau$ of AdamW dominates the shape of TREC.
-3. **Construct a predictive model**: combine the EMA coefficient with a training-progress correction term to accurately predict TREC prior to training.
+Ours does not modify the training algorithm but provides a diagnostic and predictive workflow for "when to place high-quality data": first define the Training Re-evaluation Curve (TREC), look back at the loss of training data at each step using the final model, and verify that the TREC minimum is the optimal placement for high-quality data; then investigate what determines the TREC shape, discovering that the implicit EMA time scale $\tau$ of AdamW is the dominant factor; finally, combine the EMA coefficient with a training progress correction term into an analytical expression to predict the entire TREC without actual training, allowing the curriculum to be designed by reading the valley position. The three stages progress sequentially, and the following framework diagram shows the complete pipeline from training data to curriculum decisions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Training Data Sequence B₁…B_T<br/>+ Final Trained Model θ_T"] --> D1["Training Re-evaluation Curve TREC<br/>Look back at loss L(B_t;θ_T) for each step"]
+    D1 --> D2["TREC shape dominated by AdamW time scale τ<br/>η·λ·B collapsed into single control variable τ"]
+    D2 --> D3["Analytical Prediction Model for TREC<br/>1−c(t̂)^p·t̂^m, m* power-law transfer across scales"]
+    D3 --> OUT["Read TREC valley position<br/>→ Place high-quality data → Design data curriculum"]
+```
 
 ### Key Designs
 
-1. **Definition of the Training Re-evaluation Curve (TREC)**:
+**1. Training Re-evaluation Curve (TREC): Looking back with the final model to quantify how much each step of data is "remembered"**
 
-   Given a sequence of training batches $B_1, \ldots, B_T$ sampled i.i.d. from distribution $D$ and the final model parameters $\theta_T$, TREC is defined as:
+A challenge in curriculum design is that the contribution of data at each time step to the final model is unequal, but this contribution cannot be directly observed during training. The TREC approach is a retrospective evaluation: given a sequence of batches $B_1,\dots,B_T$ sampled i.i.d. from distribution $D$ and parameters $\theta_T$ at the end of training, define $\mathcal{L}_{re}(t) := \mathcal{L}(B_t; \theta_T)$, which re-calculates the loss on each historical batch using the final model. A lower TREC value at a certain time step indicates a deeper "memory" of that step's data by the final model; placing high-quality data here maximizes retention. This leads to the **Core Idea**: placing high-quality data at the TREC minimum maximizes its contribution to the target task, explaining why default "end-of-training annealing" is not always optimal.
 
-   $$\mathcal{L}_{re}(t) := \mathcal{L}(B_t; \theta_T)$$
+**2. TREC shape dominated by AdamW time scale $\tau$: Collapsing three hyperparameters into one variable**
 
-   That is, the loss is recomputed on each training batch using the final model. A lower TREC value at a given timestep indicates that the final model has "memorized" the data at that step more deeply. The core hypothesis is: **placing high-quality data at the TREC minimum maximizes its contribution to the target task**.
+To predict TREC before training, the underlying dependent variable must be identified. This paper treats AdamW parameters $\theta_t$ as an exponential moving average (EMA) of weight updates, with a time scale $\tau = \frac{1}{\eta \lambda T} = \frac{B}{\eta \lambda D}$, where $\eta$ is the learning rate, $\lambda$ is weight decay, $T$ is total steps, $B$ is batch size, and $D$ is total tokens. The **Mechanism** is as follows: regardless of whether $\tau$ is adjusted via $\eta$, $\lambda$, or $B$, as long as the resulting $\tau$ is identical, the TREC shape remains consistent—collapsing three seemingly independent hyperparameters into a single control variable. This holds across models from 111M to 3.3B parameters and computational scales spanning 1000×, enabling cross-scale prediction.
 
-2. **TREC Shape Governed by the AdamW Timescale $\tau$**:
+**3. Analytical Prediction Model for TREC: EMA coefficient plus progress correction, fitting once to generalize to large models**
 
-   The AdamW parameters $\theta_t$ can be viewed as an exponential moving average (EMA) of weight updates with timescale:
-
-   $$\tau = \frac{1}{\eta \lambda T} = \frac{B}{\eta \lambda D}$$
-
-   where $\eta$ is the learning rate, $\lambda$ is the weight decay, $T$ is the total number of steps, $B$ is the batch size, and $D$ is the total number of tokens. Experiments show that regardless of whether $\tau$ is varied via $\eta$, $\lambda$, or $B$, the TREC shape remains consistent as long as $\tau$ matches. This finding holds across models ranging from 111M to 3.3B parameters (spanning $1000\times$ in compute).
-
-3. **Predictive Model for TREC**:
-
-   Although the EMA coefficient $c(\hat{t})$ reflects each step's contribution to the final weights, the effectiveness of early gradients decays due to "minimizer drift." The paper proposes:
-
-   $$\hat{\mathcal{L}}_{re}(\hat{t}) = 1 - c(\hat{t})^p \cdot \hat{t}^m$$
-
-   where $\hat{t} = t/T$ is the fractional training progress, $p$ (fixed at 0.5) controls the EMA contribution strength, and $m$ (the training-progress exponent) controls when TREC begins to reflect the EMA. The optimal $m^*$ follows a power-law relation:
-
-   $$m^* = C \cdot (TPP)^{\mu_1} \cdot (\tau)^{\mu_2}$$
-
-   where TPP (tokens-per-parameter) and $\tau$ are the two key variables. The power law fitted at the 111M scale retains ${\sim}98\%$ Pearson correlation at the 3.3B scale.
+The EMA coefficient $c(\hat{t})$ alone is insufficient because the effectiveness of early gradients decays with "minimizer drift," requiring a progress correction term. This paper provides $\hat{\mathcal{L}}_{re}(\hat{t}) = 1 - c(\hat{t})^p \cdot \hat{t}^m$, where $\hat{t} = t/T$ is the training progress fraction, $p$ is fixed at 0.5 to control EMA contribution intensity, and $m$ controls when the TREC begins reflecting the EMA. The optimal $m^*$ further follows a power law $m^* = C \cdot (\text{TPP})^{\mu_1} \cdot (\tau)^{\mu_2}$, determined solely by tokens-per-parameter (TPP) and $\tau$. Since these two variables are transferable across scales, the power law fitted at 111M scale maintains approximately 98% Pearson correlation when applied to 3.3B scale, meaning one can predict the data curriculum of a large model by computing once on a small model.
 
 ### Loss & Training
 
-The paper does not introduce a new loss function; instead, it provides an **optimal data ordering strategy** for existing AdamW training. Key findings include:
-- Under step-decay learning rate schedules, the TREC trough occurs before the learning rate drop rather than at the end of training.
-- Under linear decay-to-zero (D2Z) schedules, the TREC trough occurs at approximately 60–80% through training.
-- The absolute depth of the TREC trough decreases as TPP increases, suggesting that overtrained models are less capable of memorizing specific data.
+Ours does not introduce a new loss function but translates TREC predictions into data arrangement recommendations for existing AdamW training. Under a step-decay schedule, the TREC valley appears before the learning rate drop rather than at the end of training; under a decay-to-zero (D2Z) schedule, the valley falls at approximately 60–80% of training. Furthermore, the absolute drop in TREC decreases as TPP increases, suggesting that over-trained models find it harder to remember specific data, thus reducing the gains from data placement in high-TPP scenarios.
 
 ## Key Experimental Results
 
 ### Main Results: Data Placement Validation (610M model, 82 TPP)
 
-For each learning rate schedule, ten models are trained with a 5B code-mixture (CB) dataset inserted into a different 10% segment of training.
+For each learning rate schedule, 10 models were trained, each inserting 5B of code-mix (CB) data into a different 10% segment of the training.
 
-| LR Schedule | Optimal Placement | Coincides with TREC Minimum | Gain vs. Uniform Mixing |
-|---|---|---|---|
-| Step-decay (drop at 70%) | Segment 6–7 (60–70%) | ✓ | Clearly better than uniform |
-| $10\times$ linear decay | Last segment (90–100%) | ✓ | Clearly better than uniform |
-| Decay-to-zero (D2Z) | Last segment | ✓ | Clearly better than uniform |
+| Learning Rate Schedule | Optimal Placement | Matches TREC Min | Gain vs. Uniform |
+|-----------|------------|-------------------|--------------|
+| Step-decay (drop at 70%) | Segment 6-7 (60-70%) | ✓ | Significantly better |
+| 10× Linear Decay | Final Segment (90-100%) | ✓ | Significantly better |
+| Decay-to-zero (D2Z) | Final Segment | ✓ | Significantly better |
 
 ### TREC Prediction Accuracy
 
-| Model Scale | $m^*$ Prediction $R^2$ | TREC Shape Pearson $r_p$ |
-|---|---|---|
+| Model Scale | m* Prediction R² | TREC Shape Pearson rₚ |
+|---------|---------|---------------------|
 | 111M | 98.9% | 96.6% |
 | 266M | 97.2% | 97.5% |
 | 610M | 98.7% | 98.4% |
@@ -105,67 +86,67 @@ For each learning rate schedule, ten models are trained with a 5B code-mixture (
 
 ### Sparse MoE Experiments (111M base model)
 
-| Num. Experts $E$ | Effective TPP | TREC Behavior |
-|---|---|---|
-| 1 (dense) | 20 | Shallowest trough |
-| 4 | 5 | Deeper and earlier trough |
+| Experts E | Effective TPP | TREC Behavior |
+|---------|--------|---------|
+| 1 (Dense) | 20 | Shallowest decline |
+| 4 | 5 | Deeper and earlier valley |
 | 8 | 2.5 | Deeper and earlier |
-| 32 | 0.625 | Deepest and earliest trough |
+| 32 | 0.625 | Deepest and earliest valley |
 
-### 3.9B Continual Pretraining
+### 3.9B Continued Pre-training (CPT)
 
-| Configuration | Math Validation Performance |
-|---|---|
-| High-quality data placed in the middle (TREC trough) | Best (across all LR schedules) |
-| High-quality data placed at the end | Second best |
+| Configuration | Math Val Performance |
+|------|-------------|
+| High-quality data in middle (TREC valley) | Optimal (across all LRs) |
+| High-quality data at end | Sub-optimal |
 | No high-quality data | Baseline |
 
 ### Ablation Study
 
-| Ablation Dimension | Key Finding |
-|---|---|
-| Varying $\beta_1$, $\beta_2$ | TREC shape remains nearly unchanged, confirming $\tau$ as the dominant factor |
-| Batch size $> B_{crit}$ | TREC shape deviates significantly; influence of individual batches weakens |
-| Increasing TPP | TREC trough depth decreases (reduced memorization capacity) |
-| Across different schedules | TREC shapes align when $\tau$ is matched |
+| Ablation Dimension | Key Findings |
+|---------|---------|
+| Variations in β₁, β₂ | TREC shape nearly unchanged, proving $\tau$ is the dominant factor |
+| Batch size > B_crit | TREC shape deviates significantly; individual batch impact weakens |
+| Increased TPP | TREC drop magnitude decreases (weakened memorization) |
+| Across schedules | TREC shapes align when $\tau$ is matched |
 
 ### Key Findings
 
-1. **TREC minimum $\neq$ end of training**: Particularly under step-decay schedules, high-quality data should be placed before the learning rate drop, not at the end.
-2. **$\tau$ is the universal key**: Regardless of whether the learning rate, weight decay, or batch size is varied, TREC shapes match whenever $\tau$ matches.
-3. **Cross-scale predictability**: The $m^*$ power law fitted on 111M models generalizes to 3.3B ($1000\times$ compute).
-4. **Explains Llama-3 405B's failure**: The annealing phase involved only 3 optimization steps with a near-zero LR, making the EMA coefficient essentially zero.
-5. **MoE experts reduce effective TPP**: This leads to stronger memorization; TREC analysis can guide data strategies for MoE models.
+1.  **TREC Valley ≠ End of Training**: Especially in Step-decay schedules, high-quality data should be placed before the learning rate drop, not at the end.
+2.  **$\tau$ is the Master Key**: Changing learning rate, weight decay, or batch size results in matching TRECs as long as $\tau$ matches.
+3.  **Cross-scale Predictability**: The $m^*$ power law fitted on 111M models generalizes to 3.3B (1000× compute).
+4.  **Explaining Llama-3 405B Failure**: The annealing phase had only 3 optimization steps with an LR near zero, meaning the EMA coefficient was effectively zero.
+5.  **MoE Experts = Reduced Effective TPP**: Leading to stronger memorization; TREC analysis can guide data strategies for MoE.
 
 ## Highlights & Insights
 
-- **TREC is a minimal yet profound diagnostic tool**: Simply re-evaluating training data with the final model suffices to reveal the temporal structure of data influence.
-- **Solid theoretical foundation**: The power-law predictive model is grounded in clear theoretical motivation (minimizer drift on a quadratic loss surface) and validated at scales from 111M to 3.9B.
-- **High practical value**: Provides practitioners with a method for determining optimal data ordering without expensive ablation experiments.
-- **Natural integration with existing work**: Successfully explains data strategy choices in published training recipes such as OLMo-2, Feng et al., and Pangu-Ultra.
-- **Direct guidance for CPT/SFT scenarios**: TREC prediction applies not only to pretraining but also to continual pretraining (CPT).
+-   **TREC is a minimalist yet profound diagnostic tool**: Re-evaluating training data with the final model reveals the temporal structure of data influence.
+-   **Solid Theoretical Foundation**: The power-law prediction model has a clear theoretical motivation (minimizer drift on quadratic loss surfaces) and has been validated from 111M to 3.9B scales.
+-   **High Practical Value**: Provides practitioners with a method to determine optimal data arrangement without expensive ablation experiments.
+-   **Natural Integration with Prior Work**: Successfully explains data strategy choices in published training schemes like OLMo-2, Feng et al., and Pangu-Ultra.
+-   **Direct Guidance for CPT/SFT**: TREC prediction applies not only to pre-training but also to the continued pre-training (CPT) stage.
 
 ## Limitations & Future Work
 
-1. **Optimizer scope**: The predictive model is designed specifically for AdamW; extending it to non-EMA optimizers such as Adagrad, Adafactor, and SGD remains an open problem.
-2. **TREC absolute values are not comparable across schedules**: TREC reliably guides placement within a given schedule, but cross-schedule comparison of absolute values is invalid.
-3. **Shape predicted, not magnitude**: The current model normalizes and compares shapes; predicting absolute TREC magnitude remains unexplored.
-4. **No systematic analysis of data type differences**: Differences in TREC across factual vs. reasoning-oriented, or instruction vs. narrative content, have not been studied.
-5. **Anomalous behavior at high learning rates**: In the 3.9B CPT experiments, $\eta = 0.015$ produced the deepest TREC trough but the worst validation performance; the underlying mechanism is unclear.
+1.  **Optimizer Scope**: The prediction model is designed for AdamW; extending to non-EMA optimizers like Adagrad, Adafactor, or SGD remains an open question.
+2.  **TREC Absolute Values are Incomparable Across Schedules**: TREC reliably guides placement within a schedule, but absolute value comparisons across different schedules may fail.
+3.  **Predicts Shape, Not Magnitude**: The current model compares shapes after normalization; predicting absolute magnitudes is yet to be explored.
+4.  **No Systematic Analysis of Data Types**: Differences in TREC for factual vs. reasoning or instruction vs. narrative content are not analyzed.
+5.  **Anomalous Behavior at High Learning Rates**: In 3.9B CPT, $\eta=0.015$ produced the deepest TREC valley but the worst validation performance; the mechanism is unclear.
 
 ## Related Work & Insights
 
-- **Complementary to AdEMAMix (Pagliardini et al., 2024)**: The latter designs a slow-forgetting optimizer, whereas this paper exploits the forgetting structure to guide data placement.
-- **Orthogonal to data mixing laws (Ye et al., 2024)**: The latter addresses *what* data to include; this paper addresses *when* to present it.
-- **Provides a complementary perspective to Scaling Collapse (Qiu et al., 2025)**: Both use normalized compute/training progress, but pursue different objectives.
-- **Offers practical recommendations for reproducibility**: The "memorization window" concept from Falcon-H1 can be precisely characterized using TREC.
-- **Inspires the design of "forgetting-free" LR schedules**: While it is theoretically possible to design schedules that flatten TREC, a certain degree of forgetting is beneficial in practice.
+-   **Complementary to AdEMAMix (Pagliardini et al., 2024)**: While AdEMAMix designs slow-forgetting optimizers, ours leverages the forgetting structure to guide data placement.
+-   **Orthogonal to Data Mixing Laws (Ye et al., 2024)**: While mixing laws study "what data to put," ours studies "when to put data."
+-   **Complementary Perspective to Scaling Collapse (Qiu et al., 2025)**: Both use normalized compute/training progress, but with different objectives.
+-   **Practical Suggestions for Reproducibility**: Concepts like Falcon-H1's "memorization window" can be made precise using TREC.
+-   **Inspiration for "Forget-free" LR Schedules**: Theoretically, schedules could be designed to flatten the TREC, though some degree of forgetting is beneficial in practice.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (TREC is a novel and elegant concept that perfectly bridges theory and practice)
+- Novelty: ⭐⭐⭐⭐⭐ (TREC concept is novel, elegant, and perfectly bridges theory and practice)
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ (600+ TRECs, 111M to 3.9B, multiple schedules and hyperparameters)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear logic, progressive exposition, polished figures)
-- Value: ⭐⭐⭐⭐⭐ (Directly actionable guidance for LLM training data strategies)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear logic, sequential progression, excellent visualizations)
+- Value: ⭐⭐⭐⭐⭐ (Direct practical significance for data strategies in LLM training)
 
 <!-- RELATED:START -->
 
@@ -174,10 +155,10 @@ For each learning rate schedule, ten models are trained with a 5B code-mixture (
 ## Related Papers
 
 - [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/llm_pretraining/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
+- [\[ACL 2025\] Model Performance-Guided Evaluation Data Selection for Effective Prompt Optimization](../../ACL2025/llm_pretraining/model_performance-guided_evaluation_data_selection_for_effective_prompt_optimiza.md)
+- [\[ICLR 2026\] DUET: Optimizing LLM Training Data Mixtures via Noisy Feedback from Unseen, Downstream Evaluation Tasks](duet_optimizing_llm_training_data_mixtures_via_noisy_feedback_from_unseen_downst.md)
+- [\[ACL 2025\] Towards Effective and Efficient Continual Pre-training of Large Language Models](../../ACL2025/llm_pretraining/towards_effective_and_efficient_continual_pre-training_of_large_language_models.md)
 - [\[ICLR 2026\] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)
-- [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](common_corpus_ethical_data_for_llm_pretraining.md)
-- [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)
-- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](../../ICML2026/llm_pretraining/predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Your Language Model Secretly Contains Personality Subnetworks
 description: >-
-  [Information Retrieval & RAG] This paper proposes extracting persona-specific subnetworks from pretrained LLMs via activation-guided pruning, enabling efficient persona switching without any training…
+  [ICLR 2026][Information Retrieval & RAG][persona subnetwork] This paper proposes extracting personality-specific subnetworks from pre-trained LLMs through activation-guided pruning, enabling efficient personality switching without any training, and introduces a contrastive pruning strategy to enhance parameter separation between opposing personalities.
 tags:
-  - "Information Retrieval & RAG"
+  - ICLR 2026
+  - Information Retrieval & RAG
+  - persona subnetwork
+  - network pruning
+  - contrastive pruning
+  - MBTI
+  - activation-guided masking
 date: 2026-05-08
-content_hash: c4198f06fc3f38b0
+content_hash: c707cf2d11de219b
 ---
-
 # Your Language Model Secretly Contains Personality Subnetworks
 
 ## Basic Information
@@ -21,71 +26,58 @@ content_hash: c4198f06fc3f38b0
 
 ## TL;DR
 
-This paper proposes extracting persona-specific subnetworks from pretrained LLMs via activation-guided pruning, enabling efficient persona switching without any training, and introduces a contrastive pruning strategy to enhance parameter separation between opposing personas.
+This paper proposes extracting personality-specific subnetworks from pre-trained LLMs through activation-guided pruning, enabling efficient personality switching without any training, and introduces a contrastive pruning strategy to enhance parameter separation between opposing personalities.
 
 ## Background & Motivation
 
-- Humans naturally switch personas across social contexts; LLMs can likewise adopt different roles, but existing methods rely on external knowledge injection.
-- **Prompt-based methods**: Simple and fast, but persona consistency is unstable and prone to drift.
-- **RAG methods**: Require retrieval pipelines and suffer from interference issues.
-- **Fine-tuning methods**: Require additional training at high cost (hours to days).
-- **Core Problem**: Do LLMs truly require external intervention to exhibit different personas, or are these behaviors already embedded in the parameter space?
-- Inspired by the Lottery Ticket Hypothesis, the authors hypothesize that a single pretrained model **already contains** multiple "winning ticket" subnetworks corresponding to distinct personas.
+- Humans naturally switch personalities across different social contexts. While LLMs can also adopt various roles, existing methods rely heavily on external knowledge injection.
+- **Prompting**: Simple and fast, but personality maintenance is unstable and prone to drift.
+- **RAG**: Requires a retrieval pipeline and suffers from interference issues.
+- **Fine-tuning**: Requires additional training with high costs (hours to days).
+- **Core Problem**: Do LLMs truly require external intervention to exhibit different personalities? Or are these behaviors already embedded within the parameter space?
+- Inspired by the Lottery Ticket Hypothesis, the authors hypothesize that a single pre-trained model **already contains** multiple "winning ticket" subnetworks corresponding to different personalities.
 
 ## Method
 
 ### Overall Architecture
 
-Given a pretrained LLM and a small persona calibration dataset → collect activation statistics → construct binary masks → isolate persona subnetworks → apply masks at inference time to enable persona switching.
+The method reframes "personality switching" from an external intervention problem into an internal subnetwork selection problem: for each personality, a small amount of calibration data is collected, and activation statistics are used to identify a sparse binary mask within the pre-trained LLM. During inference, the mask is multiplied by the weights to toggle the personality, without updating any parameters. The workflow focuses on "how to score channels" and "how to prevent overlapping of opposing personalities"—importance scores are calculated for each channel based on calibration data, using Top-K for single personalities or difference-based scoring for opposing personalities to push parameters apart, resulting in sparse masks that can be applied dynamically.
 
-### Problem Formulation
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pre-trained LLM + Small Calibration Set D_p<br/>for each persona"] --> B["Activation-guided Importance Scoring<br/>S = |w| × Average Activation Intensity"]
+    B -->|"Single Persona Top-K"| C["Sparse Binary Mask M^p"]
+    B -->|"Opposing Persona Difference Scoring"| D["Contrastive Pruning<br/>Assign parameters to the side with greater difference"]
+    D --> C
+    C --> E["Dynamic Mask Inference<br/>y = (W ⊙ M^p) x + b"]
+    E --> F["Persona Output Switching on Demand<br/>No modification to original weights"]
+```
 
-For each persona $p \in \mathcal{P}$, given a small calibration set $\mathcal{D}_p = \{(x_i^p, y_i^p)\}_{i=1}^{N_p}$, the objective is to find a mask that maximizes persona alignment:
+### Key Designs
 
-$$\max_{\mathbf{M}^p} \mathbb{E}_{(x,y) \sim \mathcal{D}_p} [\log P_{\mathcal{M}_p}(y|x)]$$
+**1. Sparse Mask Goal: Defining Personality as a Set of Retained Connections**
 
-subject to the sparsity constraint $\|\mathbf{M}^p\|_0 \leq (1 - \rho) d$, where $\rho$ is the target sparsity ratio.
+For each personality $p \in \mathcal{P}$, the authors assume access to a small-scale calibration set $\mathcal{D}_p = \{(x_i^p, y_i^p)\}_{i=1}^{N_p}$. The goal is to find a binary mask $\mathbf{M}^p$ that maximizes the alignment of the selected subnetwork on that personality's data: $\max_{\mathbf{M}^p} \mathbb{E}_{(x,y) \sim \mathcal{D}_p} [\log P_{\mathcal{M}_p}(y|x)]$, subject to the sparsity constraint $\|\mathbf{M}^p\|_0 \leq (1 - \rho) d$, where $\rho$ is the target sparsity rate. This step transforms the open question of "external knowledge requirement" into the operational goal of "selecting a subset of fixed parameters," echoing the winning ticket perspective.
 
-### Activation-Based Importance Scoring
+**2. Activation-guided Importance Scoring: Using Persona Data to Decide Which Channels to Keep**
 
-For each layer $l$, activation statistics are collected over the persona calibration data:
+Weight magnitude alone cannot distinguish personalities. Thus, the authors calculate the average activation intensity for each channel on calibration data: $\mathbf{A}_p^{(l)}[j] = \mathbb{E}_{(x,y) \sim \mathcal{D}_p} [|\mathbf{h}_j^{(l)}(x)|]$. This is multiplied by the weight magnitude to obtain an importance score $S_{ij}^p = |w_{ij}| \cdot \mathbf{A}_p^{(l)}[j]$. For each output channel $i$, the Top-K input channels with the highest scores are retained to form the mask $\mathbf{M}^p$. This "weight $\times$ activation" scoring, inherited from Wanda, requires only forward passes without gradients, making the transition from calibration to mask generation matter of minutes.
 
-$$\mathbf{A}_p^{(l)}[j] = \mathbb{E}_{(x,y) \sim \mathcal{D}_p} [|\mathbf{h}_j^{(l)}(x)|]$$
+**3. Contrastive Pruning: Forcing Opposing Personalities into Different Parameters**
 
-Importance scores are computed by combining weight magnitudes with activations:
+When scoring Introversion and Extroversion separately, the masks often overlap significantly, diluting the switching effect. Contrastive pruning uses the "difference between two personalities" for scoring to push parameters toward deeper separation. Two variants are proposed: Contrastive-Wanda uses the normalized difference of activation statistics: $S_{ij}^p = |w_{ij}| \cdot \phi\left(\frac{\mu_{ij}^{p_+} - \mu_{ij}^{p_-}}{\sqrt{\sigma_{ij}^{p_+} + \sigma_{ij}^{p_-}} + \varepsilon}\right)$, emphasizing connections with significant differences. Contrastive-Sparse first performs row-normalization $\tilde{S}_{ij}^p = \frac{S_{ij}^p}{\sum_k S_{ik}^p}$, then calculates the difference between normalized scores $C_{ij} = |\tilde{S}_{ij}^{p_+} - \tilde{S}_{ij}^{p_-}|$, assigning each parameter to the side with the higher score to create two disjoint masks $\mathbf{M}^{p_+}, \mathbf{M}^{p_-}$. This design allows Contrastive Pruning to significantly outperform standard Wanda in AI Persona tasks.
 
-$$S_{ij}^p = |w_{ij}| \cdot \mathbf{A}_p^{(l)}[j]$$
+**4. Dynamic Mask Inference: Toggling Personalities Without Touching Original Weights**
 
-For each output channel $i$, the Top-K most important input channels are retained to form the binary mask $\mathbf{M}^p$.
+During inference, masks act on weights via element-wise multiplication: $\mathbf{y} = (\mathbf{W} \odot \mathbf{M}^p) \mathbf{x} + \mathbf{b}$. Original weights remain untouched, allowing a single model to switch between different personality masks without reloading or fine-tuning. The authors also provide an optional soft gate $G = \mathbf{M}^p + \gamma(1 - \mathbf{M}^p)$, where pruned connections retain $\gamma$ times their residual instead of being zeroed out. When $\gamma = 0$, it degrades to a standard hard mask, facilitating a trade-off between "personality intensity" and "general capability."
 
-### Contrastive Pruning
-
-For opposing persona pairs (e.g., Introversion/Extraversion), standard pruning may yield highly overlapping masks. Contrastive pruning maximizes parameter separation by differentiating activation patterns:
-
-**Contrastive-Wanda variant**:
-
-$$S_{ij}^p = |w_{ij}| \cdot \phi\left(\frac{\mu_{ij}^{p_+} - \mu_{ij}^{p_-}}{\sqrt{\sigma_{ij}^{p_+} + \sigma_{ij}^{p_-}} + \varepsilon}\right)$$
-
-**Contrastive-Sparse variant**:
-
-$$C_{ij} = |\tilde{S}_{ij}^{p_+} - \tilde{S}_{ij}^{p_-}|, \quad \tilde{S}_{ij}^p = \frac{S_{ij}^p}{\sum_k S_{ik}^p}$$
-
-Each parameter is assigned to the persona with the higher score, constructing disjoint masks $\mathbf{M}^{p_+}, \mathbf{M}^{p_-}$.
-
-### Dynamic Mask Inference
-
-At inference time, masks are applied directly without modifying the original weights:
-
-$$\mathbf{y} = (\mathbf{W} \odot \mathbf{M}^p) \mathbf{x} + \mathbf{b}$$
-
-An optional soft gate $G = \mathbf{M}^p + \gamma(1 - \mathbf{M}^p)$ is supported, where $\gamma = 0$ reduces to the standard hard mask.
-
-## Experiments
+## Experimental Results
 
 ### Datasets & Models
 
-- **Datasets**: MBTI (16 personality types), AI Persona (power-seeking / wealth-seeking / hallucination detection), RoleAgentBench (role-playing)
-- **Models**: LLaMA-2-13B, LLaMA-3-8B, Qwen2.5-14B
+- **Datasets**: MBTI (16 personality types), AI Persona (Power-seeking/Wealth-seeking/Hallucination detection), RoleAgentBench (Role-playing).
+- **Models**: LLaMA-2-13B, LLaMA-3-8B, Qwen2.5-14B.
 
 ### Main Results
 
@@ -98,11 +90,11 @@ An optional soft gate $G = \mathbf{M}^p + \gamma(1 - \mathbf{M}^p)$ is supported
 | Wanda | 51.5% | 54.5% | 89.0% |
 | Contrastive Wanda | 54.0% | 66.0% | 95.0% |
 | Contrastive Sparse | **56.5%** | 64.5% | **96.0%** |
-| SFT (upper bound) | 64.0% | 71.0% | 97.5% |
+| SFT (Upper Bound) | 64.0% | 71.0% | 97.5% |
 
-Contrastive pruning improves over prompt-based methods by +15.5 on Power-Seeking and +20.5 on Wealth-Seeking.
+Contrastive pruning improved Power-Seeking by +15.5 and Wealth-Seeking by +20.5 compared to the Prompt method.
 
-**RoleAgentBench Role-Playing (LLaMA-3-8B)**:
+**RoleAgentBench Role-playing (LLaMA-3-8B)**:
 
 | Method | Friends | Harry Potter | Sherlock | Big Bang | Venice |
 |------|:---:|:---:|:---:|:---:|:---:|
@@ -113,17 +105,17 @@ Contrastive pruning improves over prompt-based methods by +15.5 on Power-Seeking
 
 **Mask Analysis**:
 
-| MBTI Dimension | Avg. Difference Rate (%) | Attn | MLP |
+| MBTI Dimension | Avg Difference Rate (%) | Attn | MLP |
 |-----------|:---:|:---:|:---:|
 | I vs. E | 1.34 | 1.28 | 1.44 |
 | F vs. T | 1.08 | 1.03 | 1.14 |
 | N vs. S | 0.75 | 0.75 | 0.76 |
 | J vs. P | 0.76 | 0.73 | 0.79 |
 
-- The I/E and F/T dimensions exhibit larger differences → better switching performance.
-- MLP layer differences consistently exceed those of Attention layers → persona separation primarily relies on FFN transformations.
+- Larger differences in I/E and F/T dimensions lead to better switching effects.
+- Differences in MLP layers are consistently larger than in Attention layers, suggesting personality separation primarily relies on FFN transformations.
 
-**Impact on General Capabilities (LLaMA-3-8B)**:
+**General Capability Impact** (LLaMA-3-8B):
 
 | Method | MMLU | HellaSwag |
 |------|:---:|:---:|
@@ -131,35 +123,35 @@ Contrastive pruning improves over prompt-based methods by +15.5 on Power-Seeking
 | Wanda | 0.369 | 0.668 |
 | Sparse | 0.362 | 0.653 |
 
-Degradation in general capabilities after pruning is minimal (≤1.6%), indicating that persona subnetworks occupy only a small fraction of model capacity.
+General capability degradation after pruning is minimal (≤1.6%), indicating that personality subnetworks occupy only a small fraction of the model capacity.
 
 ## Highlights & Insights
 
-1. **Novel Perspective**: The first work to interpret persona representations in LLMs through the lens of the Lottery Ticket Hypothesis, demonstrating that persona behaviors are intrinsic rather than externally induced.
-2. **Training-Free**: Requires no gradient updates; only a small calibration dataset (hundreds to thousands of samples) is needed.
-3. **Contrastive Pruning**: A purpose-designed strategy that effectively enhances parameter disentanglement between opposing personas.
-4. **Practical Efficiency**: Mask construction requires only minutes of computation, enabling rapid persona switching.
+1.  **New Perspective**: For the first time, personality representation in LLMs is understood through the Lottery Ticket Hypothesis, proving that personality behavior is embedded rather than externally induced.
+2.  **Training-free**: Requires no gradient updates, using only small-scale calibration data (hundreds to thousands of samples).
+3.  **Contrastive Pruning**: Specially designed strategies effectively enhance parameter disentanglement between opposing personalities.
+4.  **Practical & Efficient**: Mask switching requires only minutes of computation and supports rapid personality toggling.
 
 ## Limitations & Future Work
 
-1. Mask separation for the N/S and J/P dimensions is relatively weak, leading to unstable switching performance on these personality axes.
-2. Cosine similarity between certain persona pairs remains high in upper layers (e.g., INFJ–INFP reaches 0.9883 at layer L39), indicating that deep-layer entanglement is difficult to resolve.
-3. Validation is currently limited to models at the 13B scale; transferability to larger or smaller models remains unknown.
-4. The quality and representativeness of calibration data may affect pruning efficacy.
+1.  Weak mask separation in N/S and J/P dimensions leads to unstable personality switching in these dimensions.
+2.  Cosine similarity for some personality pairs remains high in upper layers (e.g., L39 for INFJ-INFP reaches 0.9883), indicating that deep-level entanglement is difficult to resolve.
+3.  Currently validated only on 13B models; scalability to larger or smaller models remains unknown.
+4.  The quality and representativeness of calibration data may impact pruning effectiveness.
 
 ## Related Work & Insights
 
-- **Persona Modeling**: Prompting (Shao et al., 2023), RAG (Zerhoudi, 2024), fine-tuning (Zhou et al., 2023)
-- **Network Pruning**: Lottery Ticket Hypothesis (Frankle & Carlin, 2019), Wanda (Sun et al., 2023), SparseGPT (Frantar & Alistarh, 2023)
-- **Mechanistic Interpretability**: Truth direction (Li et al., 2023), activation steering (Zou et al., 2022), FFN key-value memory (Geva et al., 2023)
+- **Persona Modeling**: Prompting (Shao et al., 2023), RAG (Zerhoudi, 2024), Fine-tuning (Zhou et al., 2023).
+- **Network Pruning**: Lottery Ticket Hypothesis (Frankle & Carlin, 2019), Wanda (Sun et al., 2023), SparseGPT (Frantar & Alistarh, 2023).
+- **Mechanistic Interpretability**: Truth direction (Li et al., 2023), activation steering (Zou et al., 2022), FFN key-value memory (Geva et al., 2023).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Applying pruning for persona discovery rather than compression offers a genuinely fresh perspective.
-- **Technical Contribution**: ⭐⭐⭐⭐ — The contrastive pruning design is well-motivated with clear theoretical intuition.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Three datasets, three models, and detailed ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-organized with rich figures and tables.
-- **Overall Score**: 8/10
+- **Novelty**: ⭐⭐⭐⭐ — Novel perspective using pruning for personality discovery rather than compression.
+- **Technical Contribution**: ⭐⭐⭐⭐ — Contrastive pruning is well-designed with clear theoretical intuition.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Tested on three datasets and three models with detailed ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clearly organized with rich illustrations.
+- **Value**: 8/10
 
 <!-- RELATED:START -->
 
@@ -168,10 +160,10 @@ Degradation in general capabilities after pruning is minimal (≤1.6%), indicati
 ## Related Papers
 
 - [\[ICCV 2025\] LangBridge: Interpreting Image as a Combination of Language Embeddings](../../ICCV2025/information_retrieval/langbridge_interpreting_image_as_a_combination_of_language_embeddings.md)
+- [\[ACL 2025\] Re-identification of De-identified Documents with Autoregressive Infilling](../../ACL2025/information_retrieval/reidentification_deidentified.md)
+- [\[ACL 2025\] Uncovering Visual-Semantic Psycholinguistic Properties from the Distributional Structure of Text Embedding Space](../../ACL2025/information_retrieval/psycholinguistic_visual_semantic.md)
 - [\[ICML 2026\] Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference](../../ICML2026/information_retrieval/understand_and_accelerate_memory_processing_pipeline_for_disaggregated_llm_infer.md)
-- [\[NeurIPS 2025\] MuRating: A High Quality Data Selecting Approach to Multilingual Large Language Model Pretraining](../../NeurIPS2025/information_retrieval/murating_a_high_quality_data_selecting_approach_to_multilingual_large_language_m.md)
-- [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
-- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometry Consistency](../../ICML2026/information_retrieval/vector_linking_via_cross-model_local_isometric_consistency.md)
+- [\[ECCV 2024\] Towards Open-Ended Visual Recognition with Large Language Model](../../ECCV2024/information_retrieval/towards_open-ended_visual_recognition_with_large_language_models.md)
 
 </div>
 

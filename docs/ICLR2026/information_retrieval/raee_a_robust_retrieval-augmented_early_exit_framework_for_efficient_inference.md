@@ -2,90 +2,85 @@
 title: >-
   [Paper Note] RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Early Exit] This paper proposes RAEE, a retrieval-augmented early exit framework that requires no classifier training. By retrieving exit information from semantically similar sam…
+  [ICLR 2026][Information Retrieval & RAG][Inference Acceleration] Ours proposes RAEE, a training-free retrieval-augmented early exit framework. By retrieving exit information from semantically similar samples to dynamically determine the optimal exit layer, it not only accelerates inference but also corrects model mispredictions, achieving a win-win for both speed and performance.
 tags:
-  - "ICLR 2026"
-  - "Information Retrieval & RAG"
-  - "Early Exit"
-  - "Retrieval Augmentation"
-  - "Distribution Prediction"
-  - "Inference Acceleration"
-  - "Error Correction"
+  - ICLR 2026
+  - Information Retrieval & RAG
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: d50a966e1a5274fa
+content_hash: 2d151a007a6ce8e9
 ---
-
 # RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2405.15198](https://arxiv.org/abs/2405.15198)  
 **Code**: [GitHub](https://github.com/HugeRaabbit/RAEE)  
-**Area**: Information Retrieval
-**Keywords**: Early Exit, Retrieval Augmentation, Distribution Prediction, Inference Acceleration, Error Correction
+**Area**: Information Retrieval  
+**Keywords**: Early Exit, Retrieval-Augmented, Distribution Prediction, Inference Acceleration, Error Correction  
 
 ## TL;DR
 
-This paper proposes RAEE, a retrieval-augmented early exit framework that requires no classifier training. By retrieving exit information from semantically similar samples, RAEE dynamically determines the optimal exit layer, simultaneously accelerating inference and correcting model mispredictions — achieving a dual gain in both efficiency and performance.
+Ours proposes RAEE, a training-free retrieval-augmented early exit framework. By retrieving exit information from semantically similar samples to dynamically determine the optimal exit layer, it not only accelerates inference but also corrects model mispredictions, achieving a win-win for both speed and performance.
 
 ## Background & Motivation
 
-Inference efficiency of large language models (LLMs) is a core challenge in deployment. Early exit, which terminates inference at intermediate layers to reduce latency and memory overhead, represents an advanced model compression technique.
+The inference efficiency of Large Language Models (LLMs) is a core challenge in deployment. Early Exit is an advanced model pruning method that reduces latency and memory overhead by terminating inference at intermediate layers.
 
-Existing early exit frameworks fall into three categories:
-- **Training-based methods** (e.g., DeeBERT): jointly optimize internal classifiers and the backbone, incurring high training costs
-- **Semi-training methods** (e.g., AdaInfer): freeze the backbone and train lightweight classifiers, relying on manual feature engineering
-- **Training-free methods** (e.g., HashEE): employ heuristic exit criteria, lacking adaptability with notable performance degradation
+Prior early exit frameworks are categorized into three types:
+- **Training-based methods** (e.g., DeeBERT): Jointly optimize internal classifiers and the backbone model, incurring high training costs.
+- **Semi-training methods** (e.g., AdaInfer): Freeze the backbone and only train lightweight classifiers, relying on manual feature engineering.
+- **Training-free methods** (e.g., HashEE): Use heuristic exit criteria, which lack adaptability and lead to significant performance degradation.
 
-**Key Observation**: Existing methods universally trade accuracy for speed, overlooking the error-correction potential of early exit. The authors identify:
+**Key Insight**: Existing methods generally trade accuracy for speed, neglecting the error-correction potential of early exiting. The authors observe:
 
-**Early exit as an error-correction mechanism**: Intermediate layers sometimes yield better predictions than the final layer. When the full model predicts incorrectly, on average 90.66% of errors can be corrected by intermediate-layer outputs.
+**Early exit as an error-correction mechanism**: Intermediate layers sometimes produce better predictions than the final layer. When the full model predicts incorrectly, an average of 90.66% of these errors can be corrected via intermediate layer outputs.
 
-**Highly consistent exit behavior among semantically similar samples**: The correct-prediction probability patterns of the top-8 nearest neighbors are nearly identical.
+**Consistent exit behavior in semantically similar data**: The correct prediction probability patterns of Top-8 nearest neighbors are highly consistent.
 
 ## Method
 
 ### Overall Architecture
 
-RAEE operates in two phases: the **Build Phase** and the **Inference Phase**.
+RAEE transforms the problem of "deciding which layer to exit" from a task requiring a trained classifier into a task of retrieving answers from historical experience. It consists of two stages: In the construction stage, embeddings of training samples and their exit behaviors across layers are stored offline in a retrieval bank. In the inference stage, a query is performed for new inputs, and the optimal exit layer is determined via a weighted vote of the neighbors' exit information, allowing for early termination without training any parameters.
 
-### 1. Exit Feature Collection and Retrieval Database Construction
+```mermaid
+graph TD
+    subgraph BUILD["Exit Feature Collection and Retrieval Bank Construction (Offline, Design 1)"]
+        direction TB
+        A["Training Sample<br/>(x, y)"] --> B["Encoder E<br/>generates key e"]
+        A --> C["Backbone M layer-wise forward<br/>recording correct layers"]
+        C --> D["Value v = {(layer l, probability p)}<br/>Keep only correct layers"]
+        B --> E["FAISS Neighbor Index<br/>Key-Value Bank"]
+        D --> E
+    end
+    F["New Input x"] --> G["Encoder E<br/>generates query embedding"]
+    G --> H["Retrieve top-k neighbors<br/>(k=12)"]
+    E --> H
+    subgraph INFER["Retrieval-Augmented Early Exit (Online, Design 2)"]
+        direction TB
+        H --> I["Weighted vote by inverse distance<br/>P(z=l｜x), threshold τ=0.9 for denoising"]
+        I --> J["argmax to select exit layer<br/>tie-break with earliest layer"]
+    end
+    J --> K["Backbone forward to selected layer<br/>truncated"]
+    K --> L["Prediction Layer / LM Head<br/>Output Result"]
+```
 
-Given training data $\mathcal{D} = \{(x_i^{train}, y_i^{train})\}$ and a backbone model $\mathcal{M}$ with $m$ layers, key-value pairs are constructed as follows:
+### Key Designs
 
-**Keys**: Input embedding representations obtained via encoder $\mathcal{E}$:
+**1. Exit Feature Collection and Bank Construction: Offline accumulation of "correct exit layers" per sample**
 
-$$\mathcal{K} = \{e_i\}_{i=1}^{|\mathcal{D}|} = \{\mathcal{E}(x_i^{train})\}_{i=1}^{|\mathcal{D}|}$$
+The difficulty of early exit lies in the inability to know beforehand which layer will provide the correct answer. Training-based methods use classifiers to learn this judgment, which is costly and prone to overfitting. RAEE switches to direct observation and storage. Given training data $\mathcal{D} = \{(x_i^{train}, y_i^{train})\}$ and a backbone model $\mathcal{M}$ with $m$ layers, an encoder $\mathcal{E}$ encodes each input into a key $\mathcal{K} = \{e_i\}_{i=1}^{|\mathcal{D}|} = \{\mathcal{E}(x_i^{train})\}_{i=1}^{|\mathcal{D}|}$. The values stored are the set of layers that predicted correctly along with their probabilities: $\mathcal{V} = \{v_i\}_{i=1}^{|D|} = \{\{(l_i^j, p_i^j)\}_{j=1}^{m_i}\}_{i=1}^{|D|}$. Retaining only correct layers is crucial for performance improvement, ensuring the retrieval bank possesses an inherent error-correction bias. The bank utilizes FAISS for approximate nearest neighbor indexing with minimal overhead.
 
-**Values**: Candidate exit layers and their corresponding correct-prediction probabilities for each sample:
+**2. Retrieval-Augmented Early Exit: Voting for the exit layer using neighbors' experience**
 
-$$\mathcal{V} = \{v_i\}_{i=1}^{|D|} = \left\{\{(l_i^j, p_i^j)\}_{j=1}^{m_i}\right\}_{i=1}^{|D|}$$
-
-An approximate nearest neighbor index is built using FAISS.
-
-### 2. Retrieval-Augmented Early Exit Mechanism
-
-The exit layer is modeled as a random variable $z \in \{1, \ldots, m\}$. The distribution $F$ is approximated by retrieving exit information from the top-$k$ nearest neighbors:
-
-$$P(z=l|x) = \sum_{i=1}^{k} P(v_i|x) \cdot S_i$$
-
-where the contribution weight is based on the inverse distance:
-
-$$P(v_i|x) = \frac{\min(\{distance(v_j, x)\}_{j=1}^k)}{distance(v_i, x)}$$
-
-The final exit layer is selected as the layer that maximizes the probability:
-
-$$f(x) = \arg\max_l P(z=l|x)$$
-
-### 3. Loss & Training
-
-A threshold of $\tau = 0.9$ is used to filter low-confidence exit layer information, and the number of retrieved neighbors is set to $k = 12$. When multiple exit layers share the same maximum probability, the earliest layer is selected to maximize acceleration.
+For a new input $x$, RAEE treats the exit layer as a random variable $z \in \{1, \ldots, m\}$ and approximates its distribution using the exit information of top-$k$ neighbors. Each neighbor $v_i$ contributes to the layer probability weighted by its inverse distance: $P(v_i|x) = \frac{\min(\{distance(v_j, x)\}_{j=1}^k)}{distance(v_i, x)}$. The contribution of all neighbors for layer $l$ is aggregated to obtain $P(z=l|x) = \sum_{i=1}^{k} P(v_i|x) \cdot S_i$. The final exit is determined by $f(x) = \arg\max_l P(z=l|x)$. This works because semantically similar data exhibit highly consistent exit patterns. The neighbor count is set to $k = 12$, and a threshold $\tau = 0.9$ filters out low-probability exit layers to reduce noise. When multiple layers share the maximum probability, the earliest one is chosen to maximize acceleration.
 
 ## Key Experimental Results
 
-### Main Results: Performance Comparison on 8 Downstream Tasks
+### Main Results: Performance Comparison Across 8 Downstream Tasks
 
 | Method | Backbone | SST-2 | SST-5 | MR | CR | MPQA | SUBJ | TREC | CoLA | Avg |
-|--------|----------|-------|-------|-----|-----|------|------|------|------|-----|
+|------|------|-------|-------|-----|-----|------|------|------|------|-----|
 | RoBERTa-Large | Full Model | 83.60 | 34.98 | 80.80 | 79.55 | 67.60 | 51.45 | 32.40 | 2.03 | 54.05 |
 | DeeBERT | RB-L | 52.29 | 18.05 | 50.60 | 50.00 | 75.95 | 80.85 | 16.20 | 0.00 | 42.99 |
 | AdaInfer | RB-L | 50.92 | 24.48 | 50.00 | 50.00 | 60.90 | 50.85 | 22.60 | -1.62 | 38.52 |
@@ -93,47 +88,47 @@ A threshold of $\tau = 0.9$ is used to filter low-confidence exit layer informat
 | SLEB | Llama-3 | 54.01 | 21.09 | 51.10 | 49.45 | 55.65 | 49.95 | 14.00 | 0.92 | 37.02 |
 | **RAEE** | **Llama-3** | **73.05** | **35.25** | **66.45** | **57.95** | **75.05** | **90.05** | **51.80** | **9.55** | **57.39** |
 
-**Key Findings**: Across all backbone models, RAEE not only accelerates inference but also surpasses the full model's average performance (63.41 vs. 54.05), breaking the traditional early exit paradigm of trading accuracy for speed.
+**Key Findings**: RAEE not only accelerates inference across all backbone models but also exceeds the average performance of the full models (63.41 vs 54.05), breaking the traditional "accuracy-for-speed" trade-off paradigm of early exiting.
 
-### Ablation Study: Impact of the Correct-Prediction Retrieval Database
+### Ablation Study: Impact of Correct-Prediction Retrieval Bank
 
 | Model | SST-2 | SST-5 | TREC | CoLA | Avg |
-|-------|-------|-------|------|------|-----|
+|------|-------|-------|------|------|-----|
 | Llama-3-8B Full Model | 62.84 | 26.06 | 8.40 | 0.00 | 41.80 |
-| RAEE w/o correct filtering | 60.55 | 24.52 | — | — | — |
-| RAEE w/ correct filtering | 73.05 | 35.25 | 51.80 | 9.55 | 57.39 |
+| RAEE w/o Correct Filtering | 60.55 | 24.52 | — | — | — |
+| **RAEE w/ Correct Filtering** | **73.05** | **35.25** | **51.80** | **9.55** | **57.39** |
 
-Restricting the retrieval database to correctly predicted samples is the key factor behind RAEE's performance gains.
+Using only correct predictions to construct the retrieval bank is vital for RAEE's performance gains.
 
 ## Highlights & Insights
 
-1. **Paradigm shift**: This work is the first to demonstrate that early exit functions not only as an acceleration technique but also as a dynamic error-correction mechanism, challenging the traditional efficiency–accuracy trade-off.
-2. **Training-free design**: No classifiers or model parameters need to be trained; the retrieval database is constructed solely through model inference.
-3. **Cross-model generality**: The framework proves effective across diverse architectures including RoBERTa, T5, Llama-3, and Gemma.
-4. **Theoretical insight**: Early exit is formulated as a distribution prediction problem, with the exit distribution approximated via exit information from semantically similar samples.
+1.  **Paradigm Shift**: Demonstrates for the first time that early exit is not just an acceleration technique but also a dynamic error-correction mechanism, breaking the efficiency-accuracy trade-off.
+2.  **Training-free Design**: Requires no training of classifiers or model parameters; the retrieval bank is built solely from model inference.
+3.  **Cross-model Generality**: Effective across diverse architectures including RoBERTa, T5, Llama-3, and Gemma.
+4.  **Theoretical Insight**: Models early exit as a distribution prediction problem, approximating the exit distribution through exit information of similar data.
 
 ## Limitations & Future Work
 
-- Constructing and maintaining an external retrieval database introduces additional storage overhead.
-- The retrieval process adds extra latency, though retrieval is performed only once at the start of inference.
+- Requires construction and maintenance of an external retrieval bank, increasing storage overhead.
+- Retrieval process introduces additional latency (though performed only once at the start of inference).
 - Performance depends on the embedding quality of the pre-trained encoder.
-- Generalization to out-of-distribution data remains to be validated.
+- Generalization capabilities for out-of-distribution (OOD) data require further validation.
 
 ## Related Work & Insights
 
-- **Training-based early exit**: DeeBERT, ElasticBERT, PABEE — require training internal classifiers
-- **Training-free early exit**: HashEE, CALM — rely on heuristic exit criteria
-- **Semi-training methods**: AdaInfer — SVM-based approach
-- **Retrieval-augmented inference**: REALM, RAG — related work on retrieval-augmented generation
+- **Training-based Early Exit**: DeeBERT, ElasticBERT, PABEE — Require internal classifier training.
+- **Training-free Early Exit**: HashEE, CALM — Utilize heuristic criteria.
+- **Semi-training Early Exit**: AdaInfer — SVM-based approaches.
+- **Retrieval-Augmented Inference**: REALM, RAG — Relevant work in retrieval-augmented generation.
 
 ## Rating
 
-| Dimension | Score | Notes |
-|-----------|-------|-------|
-| Novelty | ⭐⭐⭐⭐ | Combines retrieval augmentation with early exit; introduces an error-correction perspective |
-| Practicality | ⭐⭐⭐⭐ | Training-free, cross-model generalizable, directly deployable |
-| Experimental Thoroughness | ⭐⭐⭐⭐ | 8 tasks, 4 backbone models, comprehensive comparisons |
-| Writing Quality | ⭐⭐⭐⭐ | Clear observation–method–experiment narrative structure |
+| Dimension | Score | Description |
+|------|------|------|
+| Novelty | ⭐⭐⭐⭐ | Combines retrieval augmentation with early exit; proposes error-correction perspective. |
+| Value | ⭐⭐⭐⭐ | Training-free, cross-model compatible, and ready for deployment. |
+| Experimental Thoroughness | ⭐⭐⭐⭐ | Comprehensive comparison across 8 tasks and 4 backbone models. |
+| Writing Quality | ⭐⭐⭐⭐ | Clear logic from observation to method to experiments. |
 
 <!-- RELATED:START -->
 
@@ -141,11 +136,11 @@ Restricting the retrieval database to correctly predicted samples is the key fac
 
 ## Related Papers
 
+- [\[ACL 2025\] FlashBack: Efficient Retrieval-Augmented Language Modeling for Fast Inference](../../ACL2025/information_retrieval/flashbackefficient_retrieval-augmented_language_modeling_for_long_context_infere.md)
+- [\[ICLR 2026\] HiPRAG: Hierarchical Process Rewards for Efficient Agentic Retrieval Augmented Generation](hiprag_hierarchical_process_rewards_for_efficient_agentic_retrieval_augmented_ge.md)
+- [\[ICLR 2026\] Robust Test-Time Video-Text Retrieval: Benchmarking and Adapting for Query Shifts](robust_test-time_video-text_retrieval_benchmarking_and_adapting_for_query_shifts.md)
 - [\[ICLR 2026\] LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference](lightretriever_a_llm-based_text_retrieval_architecture_with_extremely_faster_que.md)
-- [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](../../ICML2026/information_retrieval/lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
-- [\[ICML 2026\] ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs](../../ICML2026/information_retrieval/pariskv_fast_and_drift-robust_kv-cache_retrieval_for_long-context_llms.md)
-- [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
+- [\[ICLR 2026\] Expert Heads: Robust Evidence Identification for Large Language Models](expert_heads_robust_evidence_identification_for_large_language_models.md)
 
 </div>
 

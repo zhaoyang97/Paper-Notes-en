@@ -2,81 +2,86 @@
 title: >-
   [Paper Note] Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Selective Prediction] This paper proposes MA-PaPSP, a training-free plug-and-play selective prediction framework for arbitrary VLMs. It constructs proxy embeddings via k-NN weight…
+  [ICLR 2026][Information Retrieval & RAG][CLIP] The MA-PaPSP framework is proposed to construct proxy embeddings (using k-NN weighted averaging to reduce representation variance) and contrastive normalized scores (to improve calibration) via an external retrieval dataset. This provides reliable "refusal" capabilities for any VLM without training, outperforming PaPSP
 tags:
-  - "ICLR 2026"
-  - "Information Retrieval & RAG"
-  - "Selective Prediction"
-  - "VLM Reliability"
-  - "Retrieval Augmentation"
-  - "Contrastive Scoring"
-  - "CLIP"
+  - ICLR 2026
+  - Information Retrieval & RAG
+  - CLIP
 date: 2026-05-08
-content_hash: 5966b808bd824e2a
+content_hash: 67748fc6d1aa59e6
 ---
-
 # Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.22570](https://arxiv.org/abs/2601.22570)  
 **Code**: [https://github.com/kingston-aditya/MA-PaPSP](https://github.com/kingston-aditya/MA-PaPSP)  
-**Area**: Information Retrieval
+**Area**: Information Retrieval  
 **Keywords**: Selective Prediction, VLM Reliability, Retrieval Augmentation, Contrastive Scoring, CLIP
 
 ## TL;DR
-This paper proposes MA-PaPSP, a training-free plug-and-play selective prediction framework for arbitrary VLMs. It constructs proxy embeddings via k-NN weighted averaging over an external retrieval dataset (reducing representational variance) and applies contrastive normalization scoring (improving calibration). MA-PaPSP consistently outperforms PaPSP and LLM-as-judge baselines on selective prediction across image captioning, image-text matching, and classification tasks.
+The MA-PaPSP framework is proposed to construct proxy embeddings (using k-NN weighted averaging to reduce representation variance) and contrastive normalized scores (to improve calibration) via an external retrieval dataset. This provides reliable "refusal" capabilities for any VLM without training, outperforming PaPSP and LLM-as-judge baselines across selective prediction for image captioning, image-text matching, and classification.
 
 ## Background & Motivation
 
-**Background**: VLMs (e.g., BLIP, InternVL, Qwen-VL) are widely deployed in image-text matching, image captioning, and classification, yet prediction errors are unavoidable—incorrect modality alignment, tail-distribution samples, and image/language ambiguity all contribute to failures. Selective Prediction (SP) addresses this by endowing models with the ability to abstain from answering.
+**Background**: VLMs (e.g., BLIP, InternVL, Qwen-VL) are widely used for image-text matching, image captioning, and classification. However, model predictions inevitably contain errors due to incorrect modal alignment, tail distribution samples, or image/language ambiguity. Selective Prediction (SP) mitigates this by granting models the ability to "refuse to answer."
 
 **Limitations of Prior Work**:
-- **Closed-set constraint**: Existing SP methods primarily target closed-set tasks (e.g., classification with finite label sets) and cannot handle open-set tasks such as image captioning with unbounded label spaces.
-- **Training dependency**: Most methods require fine-tuning the base model or training an additional selector, making them inapplicable to black-box or large-scale models.
-- **Unreliable CLIP scoring**: Using raw CLIP cosine similarity as a confidence measure suffers from two issues: (1) representational instability—embeddings of the same semantic concept exhibit high variance across images/texts; and (2) poor calibration—similarity score distributions vary across different regions of the embedding space.
+   - **Closed-set Limitations**: Existing SP methods mainly target closed-set tasks like classification (limited label sets) and cannot handle open-set tasks like image captioning (unbounded label space).
+   - **Training Dependency**: Most methods require fine-tuning the base model or training additional selectors, making them unsuitable for black-box or large-scale models.
+   - **Unreliable CLIP Scores**: Using CLIP cosine similarity directly for confidence estimation suffers from two issues: (1) Representation instability—high variance in image/text vectors for the same semantic concept; (2) Poor calibration—inconsistent similarity distributions across different regions of the embedding space.
 
-**Key Challenge**: An ideal SP solution should simultaneously be training-free, lightweight, open-set compatible, and pluggable into arbitrary VLMs—requirements that no existing approach satisfies jointly.
+**Key Challenge**: An ideal SP solution should simultaneously be training-free, lightweight, support open-set tasks, and be plug-and-play for any VLM. Existing solutions fail to meet all these criteria.
 
-**Goal**: Design a training-free, plug-and-play selective prediction module (PaPSP) capable of providing confidence estimation across task levels (classification → image-text matching → image captioning) for VLMs ranging from CLIP to large-scale LVLMs.
+**Goal**: Design a training-free, plug-and-play selective prediction module (PaPSP) capable of providing confidence assessments across task hierarchies (classification → image-text matching → image captioning) for various VLMs ranging from CLIP to large LVLMs.
 
-**Key Insight**: Augment CLIP-style scoring models with an external retrieval dataset, using retrieved neighbors for embedding averaging (variance reduction) and contrastive normalization (calibration improvement).
+**Key Insight**: Augment CLIP-style scoring models with an external retrieval dataset, using retrieved neighbors for embedding averaging (to reduce variance) and contrastive normalization (to improve calibration).
 
-**Core Idea**: Use k-NN weighted averages of neighbor embeddings from an external retrieval corpus as more stable proxy embeddings, and replace raw cosine similarity with contrastive normalization over hard negatives to enable reliable selective prediction.
+**Core Idea**: Utilize the weighted average of neighbor embeddings from external retrieval data as a stable "proxy embedding" and replace raw cosine similarity with contrastive normalization using hard negatives to achieve reliable selective prediction.
 
 ## Method
 
 ### Overall Architecture
-MA-PaPSP operates at three levels: (1) a base prediction VLM (P-VLM) generates predictions; (2) an external SP-VLM (e.g., SigLIP) computes image and text embeddings; (3) a retrieval dataset $R$ supplies neighbor information for constructing proxy embeddings and computing contrastive scores. The final confidence score determines whether to abstain when it falls below a threshold.
+MA-PaPSP addresses the following: how to assign reliable confidence scores to a VLM's predictions without **training any models**, allowing it to refuse answering when uncertain. The system involves three components: the base model P-VLM (e.g., BLIP, Qwen-VL) generates the prediction $f(x)$ (a caption or label); the external scoring model SP-VLM (e.g., SigLIP) encodes images and text into a shared embedding space; and an external retrieval dataset $R$ serves as "external memory." For each prediction, the process is: first, use the SP-VLM to encode the query image and retrieve neighbors from $R$, then weighted-average the neighbor embeddings to obtain a stable **proxy embedding** as a "ground truth estimate." Simultaneously, a set of **hard negatives** is generated for the prediction as a reference. Finally, the similarity between the "prediction vs. proxy embedding" is normalized via a softmax-style operation against the hard negatives to produce a calibrated **contrastive score**. If the score is below a threshold, the system refuses to answer. The entire pipeline uses only pre-trained weights and is plug-and-play for any model from CLIP to large LVLMs.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Input Image x"] --> PVLM["P-VLM generates prediction<br/>f(x): Caption/Label"]
+    X --> ENC["SP-VLM Image Encoding"]
+    ENC -->|"Retrieve K nearest neighbors"| RET["Retrieval Set R<br/>External Memory"]
+    RET --> PROXY["Proxy Embedding<br/>Weighted average of neighbors·Ground truth estimate"]
+    PVLM --> HN["Hard Negative Generation<br/>Noun replacement for contrastive sentences"]
+    PROXY --> SCORE["Contrastive Score<br/>softmax-style normalization"]
+    HN --> SCORE
+    PVLM --> SCORE
+    SCORE --> S["MA-PaPSP Confidence"]
+    S -->|"Score < Threshold"| REJ["Reject"]
+    S -->|"Score ≥ Threshold"| ACC["Accept Prediction"]
+```
 
 ### Key Designs
 
-1. **Proxy Embeddings**:
+**1. Proxy Embedding: Suppressing High Variance in CLIP Representations via Neighbor Averaging**
 
-    - **Function**: Replace the query embedding with a weighted average of its $K$ nearest neighbor embeddings, yielding a more stable proxy representation.
-    - **Mechanism**: Given a query $q$ (image or text), retrieve $K$ nearest neighbors $N_K(q)$ from the retrieval set $R$ and compute their similarity-weighted average: $\tilde{\varphi}(q) = \sum_i \frac{\gamma(q, z_i)}{\sum_j \gamma(q, z_j)} \cdot \varphi(y_i)$. Four variants are supported (i2tr/i2ir/t2tr/t2ir), covering both cross-modal and unimodal retrieval.
-    - **Design Motivation**: Embeddings of the same semantic concept in CLIP's embedding space exhibit high variance (e.g., large similarity variation across images of the same category). K-NN averaging leverages a statistical effect—noise across multiple neighbors cancels out—producing representations closer to the true semantic centroid.
+CLIP-style embedding spaces suffer from high variance for vectors corresponding to the same semantic concept; different images of the same category may have vastly different similarities. Directly calculating confidence from a single query vector is easily biased by this noise. The proxy embedding approach distrusts the query embedding itself and uses its neighbors in the retrieval set as representatives. Given a query $q$ (image or text), $K$ nearest neighbors $N_K(q)$ are retrieved from set $R$, and their embeddings are weighted by similarity to obtain a stable proxy embedding $\tilde{\varphi}(q) = \sum_i \frac{\gamma(q, z_i)}{\sum_j \gamma(q, z_j)} \varphi(y_i)$, acting as a "ground truth estimate." This essentially uses statistical averaging to cancel out individual noise from neighbors, bringing the result closer to the true semantic center. The method supports four retrieval variants (i2tr / i2ir / t2tr / t2ir), adapting to cross-modal and unimodal alignment needs.
 
-2. **Contrastive Scores**:
+**2. Hard Negative Generation: Providing Reference Sets for Open-Set Captioning Tasks**
 
-    - **Function**: Normalize similarity scores using hard negatives to yield calibrated confidence values in $[0, 1]$.
-    - **Mechanism**: Generate a set of hard negatives $E(f(x))$—for captioning, semantically distinct but syntactically similar alternatives are produced by replacing nouns; for classification, other class labels serve as negatives. The contrastive score is computed as $s_{tc} = \frac{\exp(s(x, f(x))/\tau)}{\sum_k \exp(s(x, y_k)/\tau)}$.
-    - **Design Motivation**: Raw cosine similarity distributions vary substantially across different regions of the embedding space, analogous to poorly calibrated pre-softmax logits. Normalizing by hard negatives, akin to a softmax operation, yields more uniformly distributed scores across embedding space regions.
+The contrastive scoring step requires reference points to anchor confidence. While classification and image-text matching naturally provide candidate sets, open-set tasks like image captioning have an unbounded label space with no ready-made negatives. MA-PaPSP generates contrastive captions using either rule-based (RB) methods or small language models (SLM). The core operation involves replacing nouns in the original prediction $f(x)$ to produce sentences that are structurally similar but semantically altered. This ensures negatives are "hard" (similar syntax forces the model to focus on actual image-text alignment rather than surface similarities) and extends the contrastive scoring mechanism to open-set tasks.
 
-3. **Hard Negative Generation**:
+**3. Contrastive Scoring: Improving Calibration via Softmax-style Normalization with Hard Negatives**
 
-    - **Function**: Automatically generate semantically contrastive alternative captions for image captioning tasks.
-    - **Mechanism**: Nouns in a caption are replaced using either rule-based (RB) methods or a small language model (SLM), producing syntactically similar but semantically distinct sentences.
-    - **Design Motivation**: Contrastive scoring requires reference points to anchor confidence; classification and image-text matching tasks have natural candidate sets, whereas image captioning requires explicit construction of such references.
+The second issue with raw cosine similarity is poor calibration: similarity distribution scales vary across different regions of the embedding space. A value of 0.3 might be high in one region but low in another, making it unsuitable as a universal confidence metric—similar to unnormalized logits before a softmax. Contrastive scoring adopts the softmax logic, normalizing the similarity between the image and the predicted caption (where the text side uses the proxy embedding) against the hard negative set $E(f(x))$: $s_{tc} = \frac{\exp(s(x, f(x))/\tau)}{\sum_k \exp(s(x, y_k)/\tau)}$, where the temperature $\tau$ controls distribution sharpness. This step scales the score to the $[0, 1]$ interval and ensures a more uniform distribution across the space, allowing it to serve as a calibrated confidence score for threshold-based rejection.
 
 ### Loss & Training
-The method is entirely training-free. Key hyperparameters include the number of neighbors $K$, temperature $\tau$, and the choice of retrieval set $R$. The SP-VLM uses pretrained SigLIP without any fine-tuning.
+Entirely training-free. The SP-VLM uses pre-trained SigLIP without fine-tuning. The only hyperparameters tuned are the number of neighbors $K$, temperature $\tau$, and the choice of retrieval set $R$ (ablations show mixed out-of-domain sets perform best).
 
 ## Key Experimental Results
 
-### Main Results — AURC (lower is better)
+### Main Results - AURC (lower is better)
 
 | Method | MS-COCO (CiderN) | Flickr-30K (CiderN) | Flowers | Pets | UCF101 | SugarCrepe |
-|--------|-------------------|---------------------|---------|------|--------|------------|
+|------|-------------------|---------------------|---------|------|--------|------------|
 | VQAScore | 0.146 | 0.241 | 0.211 | 0.207 | 0.217 | 0.146 |
 | SeeTRUE | 0.158 | 0.251 | 0.214 | 0.213 | 0.171 | 0.153 |
 | PaPSP (SigLIP-S) | 0.142 | 0.237 | 0.093 | 0.211 | 0.154 | 0.162 |
@@ -85,7 +90,7 @@ The method is entirely training-free. Key hyperparameters include the number of 
 | **MA-PaPSP (SigLIP-L)** | **0.109** | **0.219** | **0.063** | **0.114** | **0.088** | **0.062** |
 | Gain (L) | 19.85% | 4.36% | 14.86% | 32.52% | 22.12% | 20.51% |
 
-### Cross-P-VLM Validation (Image Captioning AURC↓)
+### Cross-VLM Verification (Image Captioning AURC↓)
 
 | P-VLM | PaPSP (COCO) | MA-PaPSP (COCO) | Gain |
 |-------|-------------|-----------------|------|
@@ -94,45 +99,45 @@ The method is entirely training-free. Key hyperparameters include the number of 
 | InternVL-3.5 (4B) | 0.106 | 0.068 | 35.8% |
 | Qwen-2.5-VL (7B) | 0.102 | 0.066 | 35.3% |
 
-### Ablation Study — Effect of Retrieval Set Type (AURC↓)
+### Ablation Study - Impact of Retrieval Set Type (AURC↓)
 
 | Retrieval Set | MS-COCO (CiderN) | Flowers | SugarCrepe |
-|---------------|-------------------|---------|------------|
+|--------|-------------------|---------|------------|
 | Random | 0.126 | 0.062 | 0.064 |
 | In-Domain | 0.126 | 0.062 | 0.066 |
 | Out-of-Domain | 0.109 | 0.063 | 0.062 |
 | Mixed | **0.107** | **0.062** | **0.068** |
 
 ### Key Findings
-- MA-PaPSP with a small SP-VLM (SigLIP-B/16, 16M) surpasses PaPSP with a large SP-VLM (SigLIP-SO-400M, 1B), demonstrating that retrieval augmentation is more effective than simply scaling the scoring model.
-- MA-PaPSP consistently outperforms LLM-reasoning-based methods such as VQAScore and SeeTRUE at substantially lower computational cost.
-- Gains are largest on classification tasks (Pets: 32.5%, UCF101: 22.1%) and also significant on captioning (COCO: 19.9%).
-- A general out-of-domain retrieval set (CC12M+SBU) matches or exceeds in-domain retrieval on captioning and image-text matching tasks.
-- As P-VLM scale increases (0.1B to 7B), MA-PaPSP's improvement margin grows (17.4%→35.3%), indicating greater effectiveness with stronger base models.
+- MA-PaPSP using a small SP-VLM (SigLIP-B/16, 16M) surpasses PaPSP using a large SP-VLM (SigLIP-SO-400M, 1B), indicating that retrieval augmentation > simple model scaling.
+- MA-PaPSP consistently outperforms LLM-based reasoning methods like VQAScore and SeeTRUE with significantly lower computational costs.
+- The largest improvements are seen in classification tasks (Pets 32.5%, UCF101 22.1%), with significant gains in captioning (COCO 19.9%).
+- General out-of-domain retrieval sets (CC12M+SBU) are comparable to or better than in-domain sets for captioning and matching.
+- As P-VLM scale increases (from 0.1B to 7B), the gain from MA-PaPSP grows (17.4% → 35.3%), suggesting the method is more effective for stronger models.
 
 ## Highlights & Insights
-- **Valuable problem formulation**: The first work to systematically define plug-and-play selective prediction across task levels (classification → image-text matching → captioning).
-- **Elegant method design**: Proxy embeddings and contrastive scoring each address a distinct root cause—representational instability and poor calibration—with clear design motivation.
-- **Strong generality**: Training-free and compatible with arbitrary VLMs (from CLIP to InternVL-3.5/Qwen-2.5-VL) across both open-set and closed-set tasks.
-- **Interesting finding**: Out-of-domain general-purpose retrieval sets can substitute for in-domain data, lowering the barrier for practical deployment.
+- **Valuable Problem Definition**: First to systematically define the plug-and-play selective prediction problem across task hierarchies (classification → matching → captioning).
+- **Elegant Method Design**: Proxy embeddings and contrastive scoring resolve representation instability and poor calibration respectively, with clear design motivations.
+- **Strong Generality**: Training-free, compatible with any VLM (from CLIP to InternVL-3.5/Qwen-2.5-VL), and supports both open and closed-set tasks.
+- **Interesting Insight**: General out-of-domain retrieval sets can replace in-domain data, lowering the barrier for practical deployment.
 
 ## Limitations & Future Work
-- Storage and retrieval of external datasets (e.g., CC12M with 15M entries) introduces non-trivial storage and latency requirements.
-- Hard negative generation for image captioning relies on rule-based methods or SLMs, which may produce inconsistent quality.
-- The contrastive scoring temperature $\tau$ requires tuning and may differ across tasks.
-- Validation is limited to English; representational properties of the embedding space may differ in multilingual settings.
-- Evaluation of open-set tasks (e.g., captioning) depends on a CIDEr-N threshold $\beta$, and conclusions may be sensitive to this choice.
+- Requires storage and retrieval of external datasets (CC12M has 15M entries), posing requirements for storage and retrieval latency.
+- Hard negative generation for image captioning relies on rule-based methods or SLMs, which may have inconsistent quality.
+- The contrastive scoring temperature $\tau$ requires tuning and may vary across tasks.
+- Experiments currently focus on English; representation space characteristics may differ in multilingual settings.
+- Evaluation of open-set tasks (e.g., captioning) depends on the CIDEr-N threshold $\beta$, which influences the conclusions.
 
 ## Related Work & Insights
-- The approach shares the spirit of RAG (Retrieval-Augmented Generation) but pursues a different objective: RAG enhances generation quality, while MA-PaPSP enhances confidence estimation.
-- MA-PaPSP provides a "safety valve" for VLM deployment: in high-stakes scenarios (e.g., medical imaging), it enables abstention under uncertainty.
-- The proxy embedding idea is extensible to other settings, such as prototype augmentation for few-shot classification and query augmentation for cross-modal retrieval.
+- Aligns with RAG (Retrieval-Augmented Generation) in philosophy but differs in goal: RAG enhances generation quality, while MA-PaPSP enhances confidence estimation.
+- Provides a "safety valve" for VLM deployment: In high-stakes scenarios (e.g., medical imaging), MA-PaPSP allows the model to refuse to answer when uncertain.
+- The proxy embedding concept can be extended elsewhere, such as prototype augmentation for few-shot classification or query augmentation in cross-modal retrieval.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to systematically address plug-and-play selective prediction for open-set VLMs; the combination of proxy embeddings and contrastive scoring is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive validation across task levels, model scales, and retrieval set types.
-- Writing Quality: ⭐⭐⭐⭐ High-level problem abstraction; the VLM task taxonomy is well-motivated and clearly structured.
-- Value: ⭐⭐⭐⭐ An important tool for VLM reliability with direct practical value for real-world deployment.
+- Novelty: ⭐⭐⭐⭐ First to systematically address plug-and-play SP for open-set VLMs; the combination of proxy embeddings and contrastive scoring is novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive validation across task hierarchies, model scales, and retrieval set types.
+- Writing Quality: ⭐⭐⭐⭐ High level of abstraction; the VLM task taxonomy is well-designed.
+- Value: ⭐⭐⭐⭐ Significant tool for VLM reliability with direct value for practical deployment.
 
 <!-- RELATED:START -->
 
@@ -140,11 +145,11 @@ The method is entirely training-free. Key hyperparameters include the number of 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis](multimodal_dataset_distillation_made_simple_by_prototype-guided_data_synthesis.md)
+- [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
+- [\[ICLR 2026\] Reusing Pre-training Data at Test Time is a Compute Multiplier](reusing_pre-training_data_at_test_time_is_a_compute_multiplier.md)
+- [\[ACL 2025\] Health-LLM: Personalized Retrieval-Augmented Disease Prediction System](../../ACL2025/information_retrieval/health-llm_personalized_retrieval-augmented_disease_prediction_system.md)
 - [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](tokmem_one-token_procedural_memory_for_large_language_models.md)
 - [\[ICLR 2026\] AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations](amemgym_interactive_memory_benchmarking_for_assistants_in_long-horizon_conversat.md)
-- [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](../../ACL2026/information_retrieval/quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
-- [\[AAAI 2026\] PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation](../../AAAI2026/information_retrieval/precise_reducing_the_bias_of_llm_evaluations_using_prediction-powered_ranking_es.md)
 
 </div>
 

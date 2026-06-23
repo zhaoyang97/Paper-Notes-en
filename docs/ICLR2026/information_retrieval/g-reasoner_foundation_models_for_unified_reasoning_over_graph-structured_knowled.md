@@ -2,78 +2,89 @@
 title: >-
   [Paper Note] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][graph foundation model] This paper proposes G-reasoner, which standardizes heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph…
+  [ICLR 2026][Information Retrieval & RAG][graph foundation model] G-reasoner is proposed to standardize heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph. A 34M-parameter GNN Graph Foundation Model (GFM) is trained to jointly reason over graph topology and text semantics. Combined with LLMs, it outperforms state-of-the-art (SOTA) GraphRAG metho
 tags:
-  - "ICLR 2026"
-  - "Information Retrieval & RAG"
-  - "graph foundation model"
-  - "RAG"
-  - "knowledge graph"
-  - "GNN"
-  - "LLM reasoning"
+  - ICLR 2026
+  - Information Retrieval & RAG
+  - graph foundation model
+  - RAG
+  - knowledge graph
+  - GNN
+  - LLM reasoning
 date: 2026-05-08
-content_hash: bc44dcac26cccd3a
+content_hash: fee98627c027bcc4
 ---
-
 # G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.24276](https://arxiv.org/abs/2509.24276)  
 **Code**: [Project Page](https://rmanluo.github.io/gfm-rag/)  
-**Area**: Self-Supervised Learning / Graph Foundation Models / RAG
+**Area**: Self-supervised Learning / Graph Foundation Models / RAG  
 **Keywords**: graph foundation model, RAG, knowledge graph, GNN, LLM reasoning
 
 ## TL;DR
-This paper proposes G-reasoner, which standardizes heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph, trains a 34M-parameter GNN-based graph foundation model to jointly reason over graph topology and textual semantics, and achieves state-of-the-art performance over existing GraphRAG methods across 6 benchmarks in conjunction with an LLM.
+G-reasoner is proposed to standardize heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph. A 34M-parameter GNN Graph Foundation Model (GFM) is trained to jointly reason over graph topology and text semantics. Combined with LLMs, it outperforms state-of-the-art (SOTA) GraphRAG methods across six benchmarks.
 
 ## Background & Motivation
 
-**Background**: LLMs excel at reasoning but are constrained by static parametric knowledge. RAG augments LLMs with external knowledge. Graphs naturally model relational knowledge (knowledge graphs, document graphs, hierarchical graphs, etc.), and GraphRAG aims to combine both paradigms.
+**Background**: LLMs excel at reasoning but are constrained by their static parametric knowledge. RAG enhances LLMs through external knowledge. Graphs naturally model relationships between knowledge entities (e.g., knowledge graphs, document graphs, hierarchical graphs), and GraphRAG attempts to combine both paradigms.
 
-**Limitations of Prior Work**: Existing GraphRAG methods are tailored to specific graph structures (knowledge graphs, document graphs, and hierarchical graphs each require distinct designs), rely on heuristic search (e.g., PageRank), or involve costly agent pipelines (multiple LLM calls), resulting in poor generalizability and low efficiency.
+**Limitations of Prior Work**: Existing GraphRAG methods rely on specific graph structure designs (distinct for KGs, document graphs, or hierarchical graphs), heuristic searches (like PageRank), or expensive Agent pipelines involving multiple LLM calls. These approaches suffer from poor generalization and low efficiency.
 
-**Key Challenge**: Different knowledge sources require different graph structures, yet no unified framework exists that can adapt to diverse graph structures and perform efficient reasoning.
+**Key Challenge**: Different knowledge sources require different graph structures, yet no unified framework can adapt to various graph structures while performing efficient reasoning.
 
-**Goal**: Design a unified graph representation and reasoning framework that is compatible with multiple knowledge graph structures, efficient, and generalizable.
+**Goal**: To design a unified graph representation and reasoning framework that is adaptable to multiple knowledge graph structures, efficient, and generalizable.
 
-**Key Insight**: Define a four-layer standardized graph structure, QuadGraph, and use a GNN-based graph foundation model for unified reasoning.
+**Key Insight**: Define a four-layer standardized graph structure, QuadGraph, and utilize a GNN-based graph foundation model for unified reasoning.
 
-**Core Idea**: Unify heterogeneous graphs into QuadGraph (attribute layer + knowledge graph layer + document layer + community layer), train a GFM to jointly reason over topology and semantics, and augment LLM generation.
+**Core Idea**: Unify heterogeneous graphs into QuadGraph (comprising Attribute, KG, Document, and Community layers). Train a GFM to perform joint topological and semantic reasoning to enhance LLMs.
 
 ## Method
 
 ### Overall Architecture
-(1) QuadGraph normalizes diverse graph structures into a standardized 4-layer format; (2) a 34M-parameter GNN foundation model performs reasoning over QuadGraph; (3) the retrieved results are passed to an LLM to generate the final answer.
+G-reasoner addresses the issue where different knowledge sources (KGs, document graphs, hierarchical graphs) have distinct structures, forcing previous GraphRAG methods to customize pipelines for specific formats. The core idea is to decouple "graph structure" from "graph reasoning" completely. First, a unified interface, QuadGraph, compresses any heterogeneous knowledge source into a standardized four-layer format. Then, a Graph Foundation Model (GFM) based on a GNN is trained to perform reasoning on this standard format. The pipeline is: Raw Knowledge Sources → QuadGraph Standardization → 34M-parameter GNN forward pass for node relevance → Feeding retrieved nodes/documents to the LLM for answer generation. Importantly, the GFM is trained once on the standardized interface and can transfer to any new knowledge source mapped to QuadGraph, with inference relying on a single forward pass rather than PageRank heuristics or multi-turn LLM calls.
+
+```mermaid
+graph TD
+    SRC["Heterogeneous Knowledge Sources<br/>KG / Document Graph / Hierarchical Graph"]
+    SRC -->|"Standardized Mapping"| QG
+    subgraph QG["QuadGraph Unified Interface (Design 1)"]
+        direction TB
+        L1["Attribute Layer + KG Layer"] --> L2["Document Layer + Community Layer"]
+    end
+    QG --> GFM
+    subgraph GFM["Graph Foundation Model GFM (Design 2)"]
+        direction TB
+        MP["L-layer Message Passing<br/>DistMult + Text Encoder Init"] --> PRED["Type-specific Predictor<br/>Layer-wise Node Relevance"]
+    end
+    DMP["Distributed Message Passing (Design 3)<br/>METIS Partitioning + Mixed Precision"] -.->|"Support Large-scale Train / Inference"| GFM
+    GFM --> RET["Retrieve Relevant Nodes / Documents"]
+    RET --> LLM["LLM Answer Generation"]
+```
 
 ### Key Designs
 
-1. **QuadGraph Unified Graph Interface**:
+**1. QuadGraph Unified Interface: Eliminating Structural Dependency via Four Standard Layers**
 
-    - **Function**: Standardize heterogeneous knowledge sources.
-    - **Four-layer structure**: Attribute layer (common node properties) → Knowledge graph layer (entity + relational triples) → Document layer (unstructured text) → Community layer (global information from semantic/structural clustering).
-    - **Design Motivation**: Knowledge graphs, document graphs, and hierarchical graphs can all be mapped onto these four layers, eliminating dependence on specific graph structure designs.
+The pain point lies in the incompatibility of graph structures across different knowledge sources. QuadGraph maps any knowledge source into four fixed layers: Attribute Layer (shared attributes of nodes), Knowledge Graph Layer (entity and relation triplets), Document Layer (unstructured text), and Community Layer (global information obtained via semantic/structural clustering). KGs, document graphs, and hierarchical graphs all fit into this four-layer architecture. For instance, a pure KG resides primarily in the KG layer, while document collections occupy the Document and Community layers. Consequently, the downstream model always interacts with the same interface, absorbing structural differences during standardization so the GFM does not need re-designing for each graph.
 
-2. **GNN Graph Foundation Model (GFM)**:
+**2. GNN Graph Foundation Model (GFM): Joint Reasoning of Topology and Text Semantics**
 
-    - **Function**: Jointly reason over graph topology and textual semantics.
-    - **Mechanism**: Employs a query-dependent GNN with a DistMult message function; node embeddings are initialized via a pretrained text encoder; after $L$ layers of message passing, type-specific predictors score the relevance of each node type.
-    - **Weak supervision training**: A pretrained text encoder serves as a "teacher" providing pseudo-labels, which are distilled into the GFM via KL divergence, alleviating the scarcity of annotated data.
+Topology or text alone is insufficient; GFM calculates both. It is a query-dependent GNN where the message function uses DistMult and node embeddings are initialized with a pre-trained text encoder, carrying text semantics from the start. After $L$ layers of message passing, type-specific predictors estimate the relevance of different node types across the four layers to the query. Since graph reasoning tasks lack labels, weak supervision distillation is employed: a pre-trained text encoder acts as a "teacher" to provide pseudo-labels for node relevance, which are then distilled into the GFM using KL divergence. This allows the GFM to learn from semantic judgments even when manual annotations are scarce.
 
-3. **Distributed Message Passing**:
+**3. Distributed Message Passing: Enabling GFM for Large-scale Training and Inference**
 
-    - **Function**: Enable large-scale training and inference.
-    - **Mechanism**: The METIS algorithm partitions the graph across multiple GPUs, with each device storing a subgraph; message passing proceeds via local aggregation followed by cross-device communication.
-    - Mixed-precision training yields a 2.1× throughput improvement and a 17.5% reduction in GPU memory usage.
+Graphs corresponding to knowledge sources can be massive. The METIS algorithm partitions the graph across multiple GPUs, with each device storing only its subgraph. During message passing, aggregation occurs locally before exchanging boundary node information across devices to minimize communication. Combined with mixed-precision training, throughput increases by 2.1x and GPU memory usage decreases by 17.5%, making end-to-end training and single-forward inference on large standardized graphs feasible.
 
 ### Loss & Training
-Log-likelihood over labeled nodes + $\lambda \times$ KL distillation loss from teacher pseudo-labels; large-scale weakly supervised training across multiple datasets.
+The training objective is the log-likelihood of labeled nodes plus $\lambda$ times the KL distillation loss from teacher pseudo-labels. Weakly supervised training is conducted on large-scale, multi-source datasets, allowing the GFM to benefit from both limited ground truth and dense semantic signals provided by the teacher.
 
 ## Key Experimental Results
 
 ### Main Results: Multi-hop QA + G-bench
 
 | Method | HotpotQA F1 | MuSiQue F1 | 2Wiki F1 |
-|--------|-------------|------------|----------|
+|------|------|------|------|
 | BM25 | 63.4 | 28.8 | 51.2 |
 | HippoRAG 2 | 71.1 | 49.3 | 69.7 |
 | GFM-RAG | 69.5 | 49.2 | 77.7 |
@@ -82,37 +93,37 @@ Log-likelihood over labeled nodes + $\lambda \times$ KL distillation loss from t
 ### Ablation Study
 
 | Configuration | Effect |
-|---------------|--------|
-| w/o textual semantic integration | Significant drop; topology alone is insufficient |
-| w/o weak supervision distillation | Performance drop due to insufficient labeled data |
-| Single graph type training | Poor generalization |
+|------|------|
+| No Text Semantic Fusion | Significant drop; topology is insufficient |
+| No Weakly Supervised Distillation | Drop due to insufficient labeled data |
+| Single Graph Type Training | Poor generalization |
 | Full G-reasoner | Best performance |
 
 ### Key Findings
-- Achieves comprehensive state-of-the-art results across all 6 benchmarks, including multi-hop QA and G-bench.
-- Substantially more efficient than agent-based methods (ToG, KAG) — single forward pass vs. multiple LLM calls.
-- Strong cross-graph-type generalization — performs well on unseen graph structures.
+- Achieved SOTA across all 6 benchmarks, including Multi-hop QA and G-bench.
+- Significantly more efficient than Agent-based methods (e.g., ToG, KAG) due to single-forward pass vs. multiple LLM calls.
+- Strong cross-graph generalization; performs well even on unseen graph structures.
 
 ## Highlights & Insights
-- QuadGraph's four-layer design elegantly unifies knowledge graphs, document graphs, and hierarchical graphs, demonstrating strong abstraction capability.
-- The weak supervision distillation strategy addresses the practical challenge of annotation scarcity in graph reasoning.
-- The 34M-parameter GFM significantly reduces inference costs compared to agent-based approaches.
+- The four-layer design of QuadGraph effectively unifies KGs, document graphs, and hierarchical graphs with strong abstraction capabilities.
+- The weak supervision distillation strategy addresses the practical issue of label scarcity in graph reasoning.
+- The efficient 34M-parameter GFM substantially reduces inference costs compared to Agent-based methods.
 
 ## Limitations & Future Work
-- Whether QuadGraph's four-layer structure covers all knowledge types remains an open question; temporal and multimodal knowledge may require extensions.
-- The GFM is dependent on the quality of the pretrained text encoder.
-- Validation is limited to the textual domain; multimodal reasoning remains unexplored.
+- Whether the four-layer structure of QuadGraph covers all knowledge types; temporal or multi-modal knowledge might require extensions.
+- GFM performance depends on the quality of the pre-trained text encoder.
+- Only validated in the text domain; multi-modal reasoning remains to be explored.
 
 ## Related Work & Insights
-- **vs. GFM-RAG**: The predecessor work, restricted to knowledge graphs; G-reasoner extends the framework to arbitrary graph structures.
-- **vs. GraphRAG (MS)**: Relies on a specific hierarchical graph and LLM-generated summaries, resulting in poor generalizability.
-- **vs. HippoRAG**: Uses PageRank for retrieval, without fully leveraging the capabilities of foundation models.
+- **vs GFM-RAG**: The predecessor work was limited to KGs; G-reasoner extends this to arbitrary graph structures.
+- **vs GraphRAG (MS)**: Relies on specific hierarchical graphs and LLM summarization, showing poor generalization.
+- **vs HippoRAG**: Uses PageRank for search, failing to fully utilize foundation model capabilities.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The QuadGraph unified interface combined with joint GFM reasoning constitutes a meaningful systems contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 6 benchmarks, with ablations, efficiency analysis, and generalization tests.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear framework presentation with effective figures.
-- **Value**: ⭐⭐⭐⭐ Provides a scalable and unified solution for GraphRAG.
+- Novelty: ⭐⭐⭐⭐ The QuadGraph unified interface and GFM joint reasoning represent significant systemic contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 6 benchmarks, ablations, efficiency analysis, and generalization tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework and high-quality illustrations.
+- Value: ⭐⭐⭐⭐ Provides a scalable, unified solution for GraphRAG.
 
 <!-- RELATED:START -->
 
@@ -120,11 +131,11 @@ Log-likelihood over labeled nodes + $\lambda \times$ KL distillation loss from t
 
 ## Related Papers
 
+- [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
 - [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
 - [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
-- [\[ACL 2026\] RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine](../../ACL2026/information_retrieval/ritek_a_dataset_for_large_language_models_complex_reasoning_over_textual_knowled.md)
-- [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](../../NeurIPS2025/information_retrieval/hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
+- [\[ICLR 2026\] Graph-based Nearest Neighbors with Dynamic Updates via Random Walks](graph-based_nearest_neighbors_with_dynamic_updates_via_random_walks.md)
+- [\[ACL 2025\] Toward Structured Knowledge Reasoning: Contrastive Retrieval-Augmented Generation on Experience](../../ACL2025/information_retrieval/toward_structured_knowledge_reasoning_contrastive_retrieval-augmented_generation.md)
 
 </div>
 

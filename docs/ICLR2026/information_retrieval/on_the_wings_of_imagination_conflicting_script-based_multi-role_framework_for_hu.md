@@ -2,125 +2,90 @@
 title: >-
   [Paper Note] On the Wings of Imagination: Conflicting Script-based Multi-role Framework for Humor Caption Generation
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][humor generation] This paper proposes HOMER, a framework that constructs a three-role LLM collaboration mechanism (conflicting script extractor + hierarchical imaginator + caption…
+  [ICLR 2026][Information Retrieval & RAG][Paper Note] Ours proposes the HOMER framework, which constructs a three-role LLM collaboration mechanism (Conflicting Script Extractor + Hierarchical Imaginator + Caption Generator) based on the GTVH humor theory. By explicitly modeling script opposition, multi-perspective association chains, and joke database retrieval to constru
 tags:
-  - "ICLR 2026"
-  - "Information Retrieval & RAG"
-  - "humor generation"
-  - "GTVH theory"
-  - "script opposition"
-  - "imagination tree"
-  - "LLM collaboration"
-  - "multi-role framework"
+  - ICLR 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: 38648a4f61f7db45
+content_hash: c1762695a9fe8074
 ---
-
 # On the Wings of Imagination: Conflicting Script-based Multi-role Framework for Humor Caption Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.06423](https://arxiv.org/abs/2602.06423)  
 **Code**: None  
-**Area**: Information Retrieval
-**Keywords**: humor generation, GTVH theory, script opposition, imagination tree, LLM collaboration, multi-role framework
+**Area**: Information Retrieval  
+**Keywords**: Humor generation, GTVH theory, Script opposition, Imagination tree, LLM collaboration, Multi-role framework
 
 ## TL;DR
 
-This paper proposes HOMER, a framework that constructs a three-role LLM collaboration mechanism (conflicting script extractor + hierarchical imaginator + caption generator) grounded in the GTVH theory of verbal humor. By explicitly modeling script opposition, multi-perspective associative chains, and joke database retrieval to build an imagination tree for creative space expansion, HOMER achieves an average improvement of ~7% over baselines on the New Yorker cartoon benchmark using GPT-4o as the backbone, and significantly outperforms all baselines in human evaluation.
+Ours proposes the HOMER framework, which constructs a three-role LLM collaboration mechanism (Conflicting Script Extractor + Hierarchical Imaginator + Caption Generator) based on the GTVH humor theory. By explicitly modeling script opposition, multi-perspective association chains, and joke database retrieval to construct an imagination tree, the creative space is expanded. HOMER achieves an average improvement of ~7% using GPT-4o as the backbone on the New Yorker cartoon benchmark, and significant human evaluation results outperform all baselines.
 
 ## Background & Motivation
 
-**Background**: Multimodal humor generation is an important task for exploring whether LLMs possess human-level linguistic cognitive complexity. The representative task of funny caption generation requires simultaneous visual understanding, humor reasoning, creative imagination, and linguistic style expression — challenging even for humans.
+**Background**: Multimodal humor generation is a critical task for exploring whether LLMs possess human-level linguistic cognitive complexity. The typical "funny caption generation" task requires simultaneous visual understanding, humor reasoning, creative imagination, and linguistic style expression, which is challenging even for humans.
 
-**Limitations of Prior Work**: Existing methods primarily rely on (a) general prompting (HumorousAI, Phunny), (b) multi-hop reasoning with self-refinement (CLoT), or (c) task-specific fine-tuning (LoL). These approaches depend solely on the LLM's inherent humor mechanisms, capturing only surface-level humor language patterns without enabling deep humor logic reasoning or creative imagination.
+**Limitations of Prior Work**: Existing methods mainy rely on (a) general prompts (HumorousAI, Phunny), (b) multi-hop reasoning self-improvement (CLoT), or (c) task fine-tuning (LoL). However, these methods depend solely on the inherent humor mechanisms of LLMs, capturing only surface-level humorous language patterns without deep humor logic reasoning and creative imagination.
 
-**Key Challenge**: (a) LLMs' intrinsic humor generation capability is weak, as validated by multiple studies; (b) existing methods lack creativity — generated "humorous" captions are often merely descriptive; (c) they are uninterpretable — it is unclear where the punchline lies or why the output is funny.
+**Key Challenge**: (a) Inherent humor generation capabilities of LLMs are weak, as verified by multiple studies; (b) Existing methods lack creativity — "humorous" captions are often merely descriptive statements; (c) Lack of interpretability — the location and reason for the humor are unclear.
 
-**Key Insight**: This work draws on the classical linguistic humor theory GTVH (General Theory of Verbal Humor), modeling humor creation as the interaction of multiple knowledge resources — with **script opposition** at its core, wherein the collision of two semantic frames generates the punchline (expectation established → expectation violated → surprise/absurdity).
+**Key Insight**: Leveraging the General Theory of Verbal Humor (GTVH), humor creation is modeled as the interaction of multiple knowledge resources. The core is **script opposition**, where the conflict between two semantic frameworks generates humor (expectation establishment → expectation violation → surprise/absurdity).
 
-**Theoretical Foundation**: GTVH decomposes humor into five knowledge resources — Script Opposition, Situation, Target, Narrative Strategy, and Language — providing a natural structured guidance framework for humor caption generation.
+**Design Motivation**: GTVH decomposes humor into five knowledge resources — Script Opposition, Situation, Target, Narrative Strategy, and Language — providing a naturally structured guiding framework for humor caption generation.
 
-**Motivating Example**: Consider a cartoon depicting an office meeting with an oversized coffee cup. GPT-4o and CLoT can only describe "meeting + caffeine," whereas HOMER identifies the script opposition of "giant cup vs. normal cup," follows the associative chain "coffee → milk → cow," and generates a caption such as "HR says we can expense a cow now" — conveying a deeper sense of absurdist humor.
+**Mechanism**: Consider a cartoon of an office meeting with a massive coffee cup. GPT-4o and CLoT only describe "meeting + caffeine," whereas HOMER identifies the "giant cup vs. normal cup" script opposition. Following an imagination chain of "coffee → milk → cow," it generates a humorous caption with deep absurdity: "HR says we can expense a cow now."
 
 ## Method
 
 ### Overall Architecture
 
-HOMER (Humor-theory-driven multi-role LLM collaboration framework augmented with humor Retrieval) comprises three collaborating LLM roles:
+HOMER (Humor-theory-driven multi-role LLM collaboration framework augmented with humor Retrieval) addresses the core problem where LLMs produce descriptive but unfunny captions because they do not know where the humor lies or how to explain it. The mechanism splits humor generation into a "recipe-based" three-role pipeline following GTVH: extracting the logical premise of the joke, expanding the creative space around it, scoring and pruning, and finally generating the caption.
 
-- **Conflicting Script Extractor** $\mathrm{Extract}(\cdot)$: extracts scene description $D$ and script opposition set $\mathcal{C}$ from the image
-- **Hierarchical Imaginator** $\mathrm{Imagine}(\cdot)$: identifies key humor targets and expands the creative space via an imagination tree $\mathcal{T}_{\mathrm{im}}$
-- **Caption Generator** $\mathrm{Gen}(\cdot)$: integrates all knowledge to generate a humorous caption
+Specifically, the Conflicting Script Extractor $\mathrm{Extract}(\cdot)$ extracts scene description $D$ and script opposition set $\mathcal{C}$ from the image. The Hierarchical Imaginator $\mathrm{Imagine}(\cdot)$ uses $\mathcal{C}$ and $D$ as anchors to expand candidate humor targets into an imagination tree $\mathcal{T}_{\mathrm{im}}$ through "depth association chains + breadth joke retrieval," pruning leaf nodes using humor relevance scores. Finally, the Caption Generator $\mathrm{Gen}(\cdot)$ samples a creative path from the tree to write the caption. The entire pipeline is denoted as $\mathrm{Cap}(I) = \mathrm{Gen}(\Phi(\mathcal{C}, D, \mathcal{T}_{\mathrm{im}}, \Omega))$, where $\Omega \in NS \times LA$ corresponds to narrative strategy and language style knowledge resources in GTVH.
 
-The overall pipeline is:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    I["Input: Cartoon Image I"] --> E["Conflicting Script Extractor<br/>Scene Description D + Script Opposition Set C"]
+    subgraph IM["Hierarchical Imaginator"]
+        direction TB
+        R["Candidate Humor Targets<br/>Local Entities + Global Entities"] --> CH["Depth Association Chain<br/>coffee→milk→cow"]
+        CH --> RT["Breadth Retrieval<br/>Top-k tokens from 12 Joke DBs"]
+    end
+    E --> R
+    RT --> SC["Humor Relevance Score<br/>Pruning via H_rel + H_freq + H_div"]
+    SC --> G["Caption Generator<br/>DFS Path Sampling + GTVH Constraints"]
+    G --> O["Output: Humorous Caption"]
+```
 
-$$\mathrm{Extract}(I) \rightarrow (\mathcal{C}, D), \quad \mathrm{Imagine}(I, \mathcal{C}, D) \rightarrow \mathcal{T}_{\mathrm{im}}, \quad \mathrm{Cap}(I) = \mathrm{Gen}(\Phi(\mathcal{C}, D, \mathcal{T}_{\mathrm{im}}, \Omega))$$
+### Key Designs
 
-where $\Omega \in NS \times LA$ controls narrative strategy and language style.
+**1. Conflicting Script Extractor: Explicitly Extracting the Logical Premise**
 
-### Key Design 1: Conflicting Script Extractor
+A common flaw in existing methods is asking the LLM to be funny immediately. HOMER positions structured extraction upfront: the LLM analyzes the image to generate a scene description $D$ (location, characters, expressions, actions), then follows GTVH definitions to identify relevant script oppositions $\mathcal{C} = \mathrm{Extract}(\Phi_{\mathrm{script}}(I, D))$. Script opposition is the logical foundation of humor; ablation studies show its removal leads to the largest performance drop.
 
-- **Function**: Extracts from input image $I$ a scene description $D$ (including locations, characters, expressions, actions, etc.) centered on script opposition, and a conflicting script set $\mathcal{C}$.
-- **Mechanism**: The LLM first analyzes the scene to generate a description, then a prompt based on GTVH's definition of script opposition (the relationship between two conflicting or contrasting semantic frames) guides the model to extract all relevant conflicting scripts:
+**2. Hierarchical Imaginator: Expanding Creative Space via Depth and Breadth**
 
-$$D = \mathrm{Extract}(I), \quad \mathcal{C} = \mathrm{Extract}(\Phi_{\mathrm{script}}(I, D))$$
+Pure LLM association is often redundant, while simple retrieval introduces noise. This module uses a "expand then prune" strategy. It selects candidate humor targets $\{t_i\}$ from local and global perspectives. For each target, a recursive association function generates a backbone chain $e_{\tau+1}^{(i)} = f_{\mathrm{chain}}(e_{\tau}^{(i)})$ (average length $\approx 4$). For each entity $e_{\tau}^{(i)}$, retrieval query embeddings $\mathbf{z}_q = f_{\mathrm{emb}}(D, \mathcal{C}, e_{\tau}^{(i)})$ are used to fetch top-$k$ tokens from 12 joke datasets for breadth expansion.
 
-- **Design Motivation**: Script opposition is the foundational logic of humor — without conflict, there is no punchline. Ablation studies confirm that removing $\mathcal{C}$ causes the largest performance drop (I+D+$\mathcal{T}_{\mathrm{im}}$ is the worst among all single-module ablation variants). Both $D$ and $\mathcal{C}$ together form the basis of the entire generation process.
+**3. Humor Relevance Scoring: Quantizing Humor via WordNet**
 
-### Key Design 2: Hierarchical Imaginator
+To prune the imagination tree, HOMER uses a humor relevance score $\mathbf{H}(e_{\tau}^{(i)}, \varepsilon) = \mathbf{H}_{\mathrm{rel}} + \mathbf{H}_{\mathrm{freq}} + \mathbf{H}_{\mathrm{div}}$. The related-conflict term $\mathbf{H}_{\mathrm{rel}}$ uses WordNet semantic relations: Target Semantic Similarity (TSS) via Wu-Palmer similarity and Concept Oppositeness (CO) via Jaccard dissimilarity. These are combined using a shaping function $f(x)=x\exp(-x)$:
 
-- **Function**: Identifies candidate humor targets $\{t_i\}$, constructs an imagination tree $\mathcal{T}_{\mathrm{im}}$ through depth-oriented free association (LLM free-association) and breadth-oriented retrieval (joke database), and prunes it using humor relevance scores.
-- **Mechanism**:
+$$\mathbf{H}_{\mathrm{rel}} = \mathrm{TSS} + f(\mathrm{TSS})\cdot\mathrm{CO}$$
 
-  (a) **Multi-perspective target identification**: Candidate humor targets are extracted from both local (fine-grained entities from scene description $D$) and global (coarse-grained entities from image $I$) perspectives, serving as the root nodes of the imagination tree.
+This design aligns with the essence of humor: semantically related (High TSS) yet conceptually opposed (High CO).
 
-  (b) **Depth imagination** (backbone chain): For each target $t_i$, the LLM first-order association function $f_{\mathrm{chain}}(\cdot)$ recursively generates an associative chain:
+**4. Caption Generator: Structured Generation from Sampled Paths**
 
-  $$e_{\tau+1}^{(i)} = f_{\mathrm{chain}}(e_{\tau}^{(i)}), \quad \tau = 0, \ldots, n-1$$
-
-  The average chain length $\mathbb{E}[\tau] \approx 4$, enabling progressively deeper creative reasoning.
-
-  (c) **Breadth imagination** (leaf node expansion): For each entity $e_{\tau}^{(i)}$ in the backbone chain, a query embedding $\mathbf{z}_q = f_{\mathrm{emb}}(D, \mathcal{C}, e_{\tau}^{(i)})$ is constructed, and top-$k$ relevant jokes are retrieved from an integrated corpus of 12 joke datasets; extracted tokens serve as leaf nodes.
-
-  (d) **HOMER pruning**: Weakly relevant leaf nodes are filtered using humor relevance scores:
-
-  $$\mathbf{H}(e_{\tau}^{(i)}, \varepsilon) = \mathbf{H}_{\mathrm{rel}}(e_{\tau}^{(i)}, \varepsilon) + \mathbf{H}_{\mathrm{freq}}(\varepsilon) + \mathbf{H}_{\mathrm{div}}(\varepsilon)$$
-
-  where:
-  - **Relevance-opposition score** $\mathbf{H}_{\mathrm{rel}}$: a joint function of WordNet-based Wu-Palmer semantic similarity TSS and conceptual opposition CO, balanced via a shaping function $f(x) = x\exp(-x)$: $\mathbf{H}_{\mathrm{rel}} = \mathrm{TSS} + f(\mathrm{TSS}) \cdot \mathrm{CO}$
-  - **Humor frequency score** $\mathbf{H}_{\mathrm{freq}}$: geometric mean of token frequency and joke frequency
-  - **POS diversity score** $\mathbf{H}_{\mathrm{div}}$: richness of part-of-speech tags (more POS tags → more wordplay opportunities)
-
-- **Design Motivation**: Pure LLM free association tends to be repetitive and limited; retrieved jokes may be noisy. The combination of depth + breadth with subsequent pruning achieves both creative depth and humorous breadth, while filtering out irrelevant content.
-
-### Key Design 3: Caption Generator
-
-- **Function**: Samples creative paths from the imagination tree and generates humorous captions by integrating scene description, script opposition, and narrative strategy.
-- **Mechanism**: A key conflicting script $C \in \mathcal{C}$ and humor target $t_i$ are randomly selected; DFS is applied to imagination tree $T_i$ to enumerate all root-to-leaf paths $\mathcal{P}_i$; one imagination path $P_i$ is sampled; and a prompt is constructed:
-
-$$\mathrm{Cap}(I) = \mathrm{Gen}(\Phi(\mathcal{C}, D, P_i, \Omega))$$
-
-- **Design Motivation**: By randomly sampling different paths and targets, diverse humorous captions can be generated (each sample yields a different creative chain), while the five GTVH knowledge resources provide structured constraints to ensure humor quality.
-
-### Key Design 4: Mathematical Design of Humor Relevance Scoring
-
-- **Function**: Quantifies the humor relevance between retrieved joke tokens and backbone entities.
-- **Mechanism**: The relevance-opposition score leverages structured semantic relations from WordNet. Target semantic similarity TSS is quantified via Wu-Palmer similarity:
-
-$$\mathrm{TSS}(s_{e_\tau}, s_\varepsilon) = \max_{s_{e_\tau} \in S_{e_\tau}, s_\varepsilon \in S_\varepsilon} \mathrm{Sim}_{\mathrm{wup}}(s_{e_\tau}, s_\varepsilon)$$
-
-Conceptual opposition CO is quantified via Jaccard dissimilarity:
-
-$$\mathrm{CO}(s_{e_\tau}, s_\varepsilon) = 1 - \max_{s_{e_\tau}, s_\varepsilon} \frac{|\mathcal{R}(s_{e_\tau}) \cap \mathcal{R}(s_\varepsilon)|}{|\mathcal{R}(s_{e_\tau}) \cup \mathcal{R}(s_\varepsilon)|}$$
-
-- **Design Motivation**: The essence of humor is "relevant yet unexpected" — semantically connected (high TSS) but conceptually opposed (high CO). The shaping function $f(x) = x\exp(-x)$ ensures: (i) semantic similarity dominates; (ii) opposition is a bounded additive bonus; (iii) both are naturally balanced.
+The generator randomly selects a script $C\in\mathcal{C}$ and a target $t_i$, performs DFS on the tree $T_i$ to find paths $\mathcal{P}_i$, and samples path $P_i$. The final caption is $\mathrm{Cap}(I) = \mathrm{Gen}(\Phi(\mathcal{C}, D, P_i, \Omega))$. This produces diverse captions while maintaining humor quality through GTVH structural constraints.
 
 ## Key Experimental Results
 
 ### Main Results: Humor Caption Generation with GPT-4o Backbone (pass@k, %)
 
 | Method | #Top10 @1 | #Top10 @3 | #200-209 @1 | #200-209 @3 | #1000-1009 @1 | #1000-1009 @3 |
-|--------|-----------|-----------|-------------|-------------|---------------|---------------|
+|------|-----------|-----------|-------------|-------------|---------------|---------------|
 | CoT | 45.79 | 70.59 | 57.28 | 82.85 | 61.58 | 86.90 |
 | Few-shot | 58.07 | 78.91 | 65.12 | 81.14 | 65.59 | 88.39 |
 | Self-consistency | 62.03 | 77.96 | 68.09 | 84.45 | 69.42 | 85.51 |
@@ -129,10 +94,10 @@ $$\mathrm{CO}(s_{e_\tau}, s_\varepsilon) = 1 - \max_{s_{e_\tau}, s_\varepsilon} 
 | **HOMER** | **66.41** | **83.70** | **73.40** | **88.38** | **76.32** | **90.50** |
 | Gain | +6.92% | +3.03% | +5.79% | +3.59% | +3.89% | +2.39% |
 
-### Ablation Study: Module Contributions (GPT-4o, Humor in AI #Top10)
+### Ablation Study: Component Contribution (GPT-4o, Humor in AI #Top10)
 
 | Configuration | pass@1 | pass@3 | pass@5 |
-|---------------|--------|--------|--------|
+|------|--------|--------|--------|
 | Image-Only | 20.20 | 38.30 | 51.00 |
 | I+D | 50.60 | 69.49 | 78.00 |
 | I+$\mathcal{C}$ | 41.80 | 59.70 | 67.00 |
@@ -140,90 +105,52 @@ $$\mathrm{CO}(s_{e_\tau}, s_\varepsilon) = 1 - \max_{s_{e_\tau}, s_\varepsilon} 
 | I+D+$\mathcal{C}$ | 57.40 | 75.50 | 80.00 |
 | I+D+$\mathcal{C}$+$\mathcal{T}_{\mathrm{im}}$ (Full) | **66.41** | **83.70** | **89.18** |
 
-### Human Evaluation (5-point humor rating)
+### Key Findings
 
-| Method | Humor in AI | Electronic Sheep |
-|--------|-------------|-----------------|
-| CoT | 2.47 ± 0.67 | 2.20 ± 0.78 |
-| CLoT | 2.95 ± 0.77 | 2.53 ± 0.73 |
-| HumorousAI | 3.01 ± 0.73 | 2.24 ± 0.81 |
-| LoL | 3.16 ± 0.84 | 2.40 ± 0.82 |
-| **HOMER** | **3.54 ± 0.59** | **3.31 ± 0.85** |
-
-### Evaluator Reliability
-
-| Evaluator | Humor in AI Ranking Accuracy | Electronic Sheep Ranking Accuracy |
-|-----------|------------------------------|-----------------------------------|
-| LLaMa 3 | 53.5% | 52.0% |
-| Humor-tuned LLaMa3 | 60.0% | 58.0% |
-| GPT-4.1 | 68.5% | 67.0% |
-| GPT-5 | 73.5% | 70.0% |
-
-## Key Findings
-
-- **Script opposition is the most critical foundational component**: In ablation experiments, removing the conflicting script $\mathcal{C}$ causes the largest performance drop (I+D+$\mathcal{T}_{\mathrm{im}}$ achieves only 34.40 pass@1 vs. 66.41 for the full model), confirming that script opposition is the logical cornerstone of humor generation.
-
-- **The imagination tree requires proper guidance to be effective**: Adding the imagination tree alone (I+$\mathcal{T}_{\mathrm{im}}$) performs worse than using only the image (Image-Only), because imagination without the guidance of script opposition and scene description produces irrelevant and nonsensical content. The $\mathcal{T}_{\mathrm{im}}$ only becomes effective when conditioned on $D$ and $\mathcal{C}$.
-
-- **Strong cross-model generalizability**: HOMER consistently improves performance across all four backbone models — GPT-4o, Claude-4, Qwen-VL (7B), and LLaVA-1.5 (7B) — with larger gains on weaker models (Qwen-VL, LLaVA), where pass@1 improves by up to 24.4%, demonstrating that the framework design rather than backbone capability is the key driver.
-
-- **Good cross-visual-domain generalization**: On the ImgFlip Meme dataset (comprising realistic, cartoon, and synthetic images), HOMER achieves 83.33% pass@1, outperforming CLoT (76.67%) by approximately 5.4%.
-
-- **Human evaluation aligns with automatic metrics**: Among 20 evaluators using a 5-point scale, HOMER is the only method with a mean score above 3.0 (Humor in AI: 3.54; Electronic Sheep: 3.31). Cohen's $\kappa = 0.49$ indicates moderate inter-rater agreement, which is reasonable given the subjectivity of humor.
-
-- **All three humor relevance scoring components are important**: Ablation experiments show that removing any single component (relevance-opposition, frequency, or diversity) leads to significant performance degradation, with the removal of the relevance-opposition score having the greatest impact.
+- **Script opposition is the most critical foundation**: Removing $\mathcal{C}$ results in the largest performance drop, proving it is the logical cornerstone of humor.
+- **Imagination tree requires guidance**: Adding $\mathcal{T}_{\mathrm{im}}$ alone is worse than Image-Only. It only functions effectively when guided by $D$ and $\mathcal{C}$.
+- **Strong cross-model universality**: HOMER consistently improves performance across GPT-4o, Claude-4, Qwen-VL (7B), and LLaVA-1.5 (7B), with larger gains on weaker models.
+- **Human evaluation consistency**: HOMER was the only method with a mean score > 3.0 (3.54 for Humor in AI).
 
 ## Highlights & Insights
 
-- **Theory-driven vs. data-driven**: Rather than prompting LLMs to "try to be funny," HOMER systematically decomposes humor generation using the GTVH linguistic theory of humor — every step has a theoretical basis, yielding interpretability and principled design. This is the paper's most fundamental innovation.
-
-- **Creative expansion mechanism of the imagination tree**: Multi-step conceptual leaps — such as from "coffee cups" to "cow" — require deep associative thinking. The combination of LLM associative chains (depth) and joke database retrieval (breadth) enables such creativity: depth association forms the backbone, while breadth retrieval supplements humor associations from everyday life.
-
-- **Exploration of humor evaluation reliability**: The paper systematically compares the ranking accuracy of five evaluators, selecting GPT-5 (73.5%) as the primary evaluator — 23.5% above random chance. This provides a useful reference for the humor NLG evaluation community.
-
-- **Toxic content detection**: Toxicity scores across all 7 Detoxify dimensions remain below 0.03, indicating that theory-driven humor generation does not produce harmful content — making it safer than crude "be funny" prompting approaches.
+- **Theory-driven vs. Data-driven**: HOMER systematically decomposes the process using GTVH rather than just "trying to be funny."
+- **Creative Expansion**: The combination of LLM association chains (depth) and joke retrieval (breadth) enables creative jumps, such as from "coffee" to "cow."
+- **Safety**: Detoxify scores are < 0.03, indicating that theory-driven generation is safer than brute-force humorous prompting.
 
 ## Limitations & Future Work
 
-1. **Dependence on GTVH theoretical coverage**: GTVH primarily addresses verbal humor; its coverage of non-verbal humor (e.g., visual puns) may be insufficient. Whether the framework applies to certain humor types (e.g., dark humor, deadpan humor) remains unexplored.
-
-2. **High cost of multi-turn LLM calls**: The sequential invocation of three roles (extract → imagine → generate) combined with joke retrieval incurs substantially higher inference overhead than single-pass prompting, raising practical deployment costs.
-
-3. **Coverage and bias of the joke database**: The 12 English joke datasets offer limited coverage and may exhibit cultural biases. Cross-lingual and cross-cultural humor generation has not been validated.
-
-4. **Subjectivity of evaluation**: Although Cohen's $\kappa = 0.49$ is acceptable for humor evaluation, inter-rater consistency remains limited. The pass@k metric relies on the GPT-5 evaluator, whose ranking accuracy is itself only 73.5%.
+1. **GTVH Scope**: It primarily addresses verbal humor and may lack coverage for non-verbal humor like visual puns.
+2. **Inference Cost**: Multi-role serial calls + retrieval result in higher latency compared to single prompts.
+3. **Culture Bias**: The 12 English joke datasets may contain cultural biases.
 
 ## Related Work & Insights
 
-### vs. CLoT (multi-hop reasoning with self-refinement)
-CLoT relies on chain-of-thought reasoning for self-improvement but lacks a structured understanding of the nature of humor. HOMER provides a "recipe" for humor generation via GTVH theory, rather than simply prompting the LLM to "think more steps." In experiments, HOMER outperforms CLoT by 5.24% in pass@1 on GPT-4o (66.41 vs. 61.17), with larger gaps on weaker models.
+### vs. CLoT (Multi-hop Reasoning)
+CLoT relies on CoT self-improvement but lacks structured humor understanding. HOMER provides a "recipe" via GTVH. HOMER outperforms CLoT by 5.24% pass@1 on GPT-4o.
 
-### vs. HumorousAI (general humor prompting)
-HumorousAI uses carefully designed prompts to guide GPT-4o in generating humorous captions but still relies on the LLM's inherent humor capability. HOMER's advantage lies in the imagination tree mechanism — by incorporating humor associations from external joke databases beyond LLM training data, it expands the creative space.
-
-### vs. LoL (task-specific fine-tuning)
-LoL improves humor generation through fine-tuning but is constrained by the scale and diversity of fine-tuning data. As a plug-and-play framework requiring no fine-tuning, HOMER outperforms LoL by 10.11% in pass@1 on GPT-4o (66.41 vs. 56.30) and offers superior interpretability.
+### vs. HumorousAI (General Humor Prompt)
+HumorousAI relies on LLM inherent capability. HOMER's advantage lies in the imagination tree extending the creative space beyond training data through retrieval.
 
 ## Rating
 
-| Dimension | Score | Rationale |
-|-----------|-------|-----------|
-| Novelty | ⭐⭐⭐⭐ | First systematic integration of GTVH humor theory into a multi-role LLM collaboration framework; the imagination tree + joke retrieval pruning mechanism is elegantly designed |
-| Experimental Thoroughness | ⭐⭐⭐⭐ | Consistent and significant improvements across 4 backbone models and 2 datasets; complete evaluation combining human assessment, automatic metrics, and ablation studies |
-| Value | ⭐⭐⭐ | Multi-turn LLM calls and joke retrieval incur high inference costs; joke database requires maintenance; however, the framework is plug-and-play without fine-tuning |
-| Writing Quality | ⭐⭐⭐⭐ | Clear paper structure, natural introduction of GTVH theory, thorough ablation experiments; case studies are vivid and convincing |
+| Dimension | Rating | Reason |
+|------|------|------|
+| Novelty | ⭐⭐⭐⭐ | Systemic integration of GTVH theory; clever imagination tree + retrieval pruning mechanism. |
+| Effectiveness | ⭐⭐⭐⭐ | Significant improvements across 4 backbones and 2 datasets; thorough ablation and human evaluation. |
+| Utility | ⭐⭐⭐ | High inference cost due to multi-step calls; requires external joke DB maintenance. |
+| Writing Quality | ⭐⭐⭐⭐ | Clear structure; well-motivated theory; vivid case studies. |
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](../../ACL2026/information_retrieval/domain-specific_data_generation_framework_for_rag_adaptation.md)
-- [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](../../ACL2026/information_retrieval/mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
-- [\[ICLR 2026\] RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference](raee_a_robust_retrieval-augmented_early_exit_framework_for_efficient_inference.md)
-- [\[ICLR 2026\] Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation](bayesian_attention_mechanism_a_probabilistic_framework_for_positional_encoding_a.md)
-- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](../../AAAI2026/information_retrieval/knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
+- [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
+- [\[ICML 2025\] FedRAG: A Framework for Fine-Tuning Retrieval-Augmented Generation Systems](../../ICML2025/information_retrieval/fedrag_a_framework_for_fine-tuning_retrieval-augmented_generation_systems.md)
+- [\[ICLR 2026\] ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval](zerogr_a_generalizable_and_scalable_framework_for_zero-shot_generative_retrieval.md)
+- [\[ACL 2025\] FlexRAG: A Flexible and Comprehensive Framework for Retrieval-Augmented Generation](../../ACL2025/information_retrieval/flexrag_a_flexible_and_comprehensive_framework_for_retrieval-augmented_generatio.md)
 
 </div>
 

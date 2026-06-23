@@ -2,148 +2,152 @@
 title: >-
   [Paper Note] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][deep search] This paper proposes HybridDeepSearcher, which constructs the HDS-QA dataset to train a large language reasoning model (LRM) to distinguish parallelizable from sequent…
+  [ICLR 2026][Information Retrieval & RAG][Paper Note] HybridDeepSearcher is proposed, which trains a Large Reasoning Model (LRM) using the HDS-QA dataset to distinguish between parallelizable and sequentially dependent search queries. It achieves a +15.9 F1 improvement on FanOutQA and +11.5 on the BrowseComp subset, while significantly reducing inference latency and demon
 tags:
-  - "ICLR 2026"
-  - "Information Retrieval & RAG"
-  - "deep search"
-  - "parallel search"
-  - "retrieval-augmented generation"
-  - "large language reasoning models"
-  - "test-time search scaling"
+  - ICLR 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: f6963aa10fc0c5f3
+content_hash: 492ca4128c5054ca
 ---
-
 # Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.19113](https://arxiv.org/abs/2508.19113)  
 **Code**: None  
-**Area**: Information Retrieval
-**Keywords**: deep search, parallel search, retrieval-augmented generation, large language reasoning models, test-time search scaling
+**Area**: Information Retrieval  
+**Keywords**: Deep Search, Parallel Search, Retrieval-Augmented Generation, Large Reasoning Models, Test-time Search Scaling
 
 ## TL;DR
 
-This paper proposes HybridDeepSearcher, which constructs the HDS-QA dataset to train a large language reasoning model (LRM) to distinguish parallelizable from sequentially dependent search queries. The approach achieves F1 gains of +15.9 on FanOutQA and +11.5 on a BrowseComp subset, while substantially reducing inference latency and demonstrating consistent test-time search scaling.
+HybridDeepSearcher is proposed, which trains a Large Reasoning Model (LRM) using the HDS-QA dataset to distinguish between parallelizable and sequentially dependent search queries. It achieves a +15.9 F1 improvement on FanOutQA and +11.5 on the BrowseComp subset, while significantly reducing inference latency and demonstrating consistent test-time search scaling capabilities.
 
 ## Background & Motivation
 
-Large language reasoning models (LRMs) such as OpenAI o3 and DeepSeek-R1, when combined with retrieval-augmented generation (RAG), form deep research agents that complete complex multi-step tasks through a reason–query–retrieve loop. However, existing methods exhibit critical limitations:
+Large Reasoning Models (LRMs) such as OpenAI o3 and DeepSeek-R1, combined with Retrieval-Augmented Generation (RAG), form deep research agents that complete complex multi-step tasks through a "reasoning-query-retrieval" loop. However, existing methods have key limitations:
 
-**High latency**: Purely sequential querying retrieves one result at a time, with each query adding to overall latency.
+**High Latency**: Purely sequential queries retrieve information one by one, with each query adding to the total latency.
 
-**Incoherent workflow**: Sequential search causes models to attempt premature answers or issue redundant queries.
+**Incoherent Workflow**: Sequential searching causes models to attempt to answer prematurely or produce repetitive queries.
 
-**Poor scalability**: For questions requiring exhaustive search across many documents, one-at-a-time querying fails to cover all relevant evidence.
+**Poor Scalability**: When faced with questions requiring exhaustive searches across massive documents, one-by-one querying fails to cover all evidence.
 
-Consider a question about John Carpenter films: each film's runtime must be retrieved individually. Sequential approaches are slow and prone to omission, whereas **simultaneously querying** all film runtimes is far more efficient and accurate.
+Taking the John Carpenter movie problem as an example: one needs to query the duration of every film. Sequential methods query them individually, which is slow and prone to omissions; whereas **simultaneous querying** of all movie durations is far more efficient and accurate.
 
-The core problem is: **how can LRMs exploit both parallel and sequential search strategies in deep research?**
+Core Problem: **How can LRMs utilize both parallel and sequential search strategies in deep research?**
 
 ## Method
 
 ### Overall Architecture
 
-The method consists of two core components: (1) construction of the HDS-QA dataset, and (2) training and inference of HybridDeepSearcher.
+This paper addresses the following: enabling deep research agents to both execute independent sub-questions in parallel and handle dependent sub-questions sequentially within the "reasoning-query-retrieval" loop. The solution involves two steps. First, data: existing search training data is either purely single-hop or purely chained multi-hop, preventing models from learning "which sub-questions can be asked simultaneously." Therefore, the authors automatically construct an HDS-QA dataset containing "hybrid-hop" questions—these include both independent, parallelizable sub-questions and sub-questions that depend on previous results. Successful trajectories are generated using Qwen3-32B. Second, training and inference: HybridDeepSearcher is fine-tuned using full-parameter SFT on these trajectories. Every step in the loop, the model uses a generation format with special tokens to decide whether to issue a batch of parallel queries or a single sequential query, continuing until sufficient evidence is gathered.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["HDS-QA Dataset Construction (Design 1)"]
+        direction TB
+        S["NQ Single-hop Seed Questions"] --> E["Extract Central Entity +<br/>Collect Related Questions via People Also Ask"]
+        E --> C["Summarize Entity Features →<br/>Combine for Parallel-hop Questions with Implicit Reference"]
+        C --> H["Embed back into Seeds, Replace Entities<br/>→ Hybrid-hop Questions"]
+    end
+    H --> G["Qwen3-32B Loop for Trajectory Generation<br/>2,111 Successful Trajectories Kept"]
+    G --> SFT["Full-parameter SFT Fine-tuning of Qwen3-8B"]
+    SFT --> LOOP
+
+    subgraph LOOP["Reasoning-Query-Retrieval Loop (Design 2)"]
+        direction TB
+        TH["Reasoning within think tags"] --> DEC{"Adaptive Parallel/Sequential Switching:<br/>Independent Sub-problems?"}
+        DEC -->|"Independent"| PAR["A Batch of Parallel Queries<br/>(Semicolon + Newline Separated)"]
+        DEC -->|"Dependent on priors"| SEQ["Single Sequential Query"]
+        PAR --> RET["Web Search + Qwen3-32B Summarization"]
+        SEQ --> RET
+        RET -->|"Insufficient Evidence"| TH
+    end
+    LOOP -->|"Sufficient Evidence"| ANS["Output Final Answer"]
+```
 
 ### Key Designs
 
-1. **HDS-QA Dataset Construction**: An automated pipeline constructs a dataset of hybrid-hop questions.
+**1. HDS-QA Dataset Construction: Creating Hybrid-hop Questions that Require Both Parallel and Sequential Strategies**
 
-   **Question generation pipeline** (4 steps):
-   - **Entity extraction and related question collection**: Starting from single-hop seed questions from Natural Questions, central entities are extracted, related questions are gathered via Google "People Also Ask," and only queries retrieving distinct documents are retained to ensure diversity.
-   - **Entity feature summarization**: Retrieved documents are summarized into key features of the corresponding entity.
-   - **Parallel-hop question construction**: Features are combined to form parallel-hop questions that implicitly reference the entity without naming it directly.
-   - **Hybrid-hop question integration**: Parallel-hop questions are embedded into the original single-hop question by replacing the central entity, introducing an additional sequential hop. Both stages are verified to require multi-step retrieval.
+To train the ability to be "parallel when appropriate," data demonstrating both strategies is required, yet parallelism is virtually non-existent in current datasets. The authors design a four-step pipeline to manually inject parallelism: first, extract central entities from Natural Questions single-hop seeds; then use Google "People Also Ask" to collect related questions around the entity, keeping only those that retrieve different documents to ensure diversity. Next, summarize retrieved documents into key features of the entity and combine these features to create a parallel-hop question that implicitly refers to the entity—since they refer to the same entity, multiple feature queries are naturally parallelizable. Finally, embed this parallel-hop question back into the original single-hop seed and replace its central entity, adding a layer of sequential dependency and verifying that both parallel and sequential stages require multi-step retrieval. This resulted in 1,987 hybrid-hop questions. Using Qwen3-32B, the "reasoning-query-retrieval" loop was run to generate answer trajectories, allowing multiple parallel queries per step. Each question was repeated 4 times to enrich strategy diversity; 773 questions were answered correctly at least once (pass@4 = 38.9%), collecting 2,111 successful trajectories from 7,948 attempts (trajectory-level success rate approx. 27%), indicating the task's difficulty.
 
-   This pipeline yields 1,987 hybrid-hop questions.
+**2. Structured Reasoning-Query-Retrieval Loop: Encoding Parallel and Sequential Queries into Generation Formats via Special Tokens**
 
-   **Answer trajectory generation**:
-   - Qwen3-32B iteratively executes the reason–query–retrieve loop, allowing multiple parallel queries to be issued at each step.
-   - Each question is reasoned over 4 times; all correct trajectories are retained to increase diversity in reasoning strategies.
-   - 773 questions receive correct answers, yielding 2,111 successful trajectories (a success rate of ~27%, reflecting the genuine difficulty of the task).
+Given the data, a parseable protocol for the generation process is needed so the model can "issue multiple queries simultaneously" in one step. The model first reasons within `<think>...</think>` tags, then outputs queries within `<|begin_search_queries|>...<|end_search_queries|>` tags. Multiple parallel queries are separated by semicolons and newlines, allowing a single step to contain either one sequential query or a batch of parallel queries as determined by the model. Each query is executed via a Web Search API, and the returned documents are summarized by an external model (Qwen3-32B) before being fed back into the context, providing evidence while preventing long documents from overwhelming the context. The model iterates until enough evidence is gathered to exit the loop and generate the final answer—this tokenized protocol is the vehicle for explicitly expressing and training the "adaptive switching."
 
-2. **HybridDeepSearcher inference procedure**:
+**3. Adaptive Parallel/Sequential Switching: Allowing Models to Choose Strategies Based on Sub-question Dependencies**
 
-    - **Reasoning**: The model reasons within `<think>` and `</think>` tags.
-    - **Querying**: Based on the reasoning output, sequential or parallel queries are generated within `<|begin_search_queries|>` and `<|end_search_queries|>` tags, with multiple parallel queries separated by `;\n`.
-    - **Retrieval**: Each query is executed via a web search API; retrieved documents are summarized by an external model (Qwen3-32B) before being returned.
-    - The model iterates through multiple reason–query–retrieve rounds until sufficient information is gathered to produce a final answer.
-
-3. **Adaptive search strategy**: The model learns to dynamically determine when to issue parallel queries (for independent subquestions) versus sequential queries (for subquestions dependent on prior results), and explicitly represents the current step (in blue) and subsequent plans (in purple) during reasoning.
+With hybrid-hop data and a parseable format, the model learns to make the correct choice at each step. The hybrid-hop data demonstrates both scenarios—independent sub-questions (e.g., "the durations of these twelve films") should be searched in parallel, while sub-questions dependent on previous results (e.g., "first find the director, then check their other work") must proceed sequentially. By imitating these trajectories, the model learns to dynamically judge the current state and explicitly distinguish "currently executing steps" from "future plans" in the reasoning text, making search processes efficient (searching independent sub-questions in one round) without premature answering or redundant querying.
 
 ### Loss & Training
 
-- Full-parameter fine-tuning is performed on Qwen3-8B using the 2,111 question–answer trajectories for 1 epoch.
-- Learning rate is $3 \times 10^{-5}$, batch size 4, with gradient accumulation over 32 steps.
-- **Gradient updates are not applied to the search result portions** to prevent the model from memorizing retrieved content.
-- Training requires only 8 A100 40GB GPUs and takes approximately 30 minutes.
+Based on Qwen3-8B full-parameter fine-tuning, 2,111 trajectories were used for 1 epoch of training with a learning rate of 3e-5, batch size 4, and 32-step gradient accumulation. Crucially, gradients are not computed for the search result snippets in the trajectories—loss is backpropagated only for the model-generated reasoning and queries. This prevents the model from memorizing specific retrieval content, maintaining generalization. The training takes approximately 30 minutes on 8 A100 40GB GPUs, which is significantly cheaper than RL-based methods.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | HybridDeepSearcher | Prev. SOTA (RAG-R1) | Gain |
-|---|---|---|---|---|
+| Dataset | Metric | HybridDeepSearcher | RAG-R1 (Prev. SOTA) | Gain |
+|--------|------|-------------------|---------------|------|
 | MuSiQue | F1 | 31.2 | 29.7 | +1.5 |
 | FanOutQA | F1 | 44.1 | 28.2 | **+15.9** |
 | FRAMES | F1 | 39.1 | 35.8 | +3.3 |
 | MedBrowseComp | MBE | 30.4 | 28.2 | +2.2 |
 | BrowseComp-50 | F1 | 17.2 | 5.7 | **+11.5** |
 
-AUC (efficiency–effectiveness trade-off): HybridDeepSearcher achieves the highest values across all benchmarks, indicating that higher accuracy is attained with fewer search rounds.
+AUC (Efficiency-Effectiveness Trade-off): Achieved the highest value across all benchmarks, indicating the model reaches higher accuracy with fewer search rounds.
 
-### Ablation Study / Search Capability Analysis
+### Ablation Study
 
 | Method | MuSiQue Coverage | FanOutQA Coverage | FRAMES Coverage |
-|---|---|---|---|
+|------|---------------|----------------|--------------|
 | Search-o1 | 33.4% | 38.3% | 44.8% |
 | DeepResearcher | 38.8% | 49.9% | 49.0% |
 | RAG-R1 | 35.9% | 53.2% | 48.0% |
-| **HybridDeepSearcher** | **40.7%** | **61.0%** | **55.8%** |
+| **Ours** | **40.7%** | **61.0%** | **55.8%** |
 
-Evidence coverage improvement is largest on FanOutQA (+7.8 pp), the dataset with the most annotated evidence links and the greatest need for extensive parallel retrieval.
+Evidence coverage saw the largest increase on FanOutQA (+7.8pp), which has the most labeled evidence links and requires extensive parallel retrieval.
 
 ### Key Findings
 
-1. **Test-time search scaling** (core advantage):
-    - HybridDeepSearcher performance **continues to improve** as the number of search rounds and API calls increases.
-    - Baselines such as RAG-R1 **plateau** after 2–3 rounds.
-    - This is especially pronounced on BrowseComp-50, where other methods gain almost nothing from additional search budget.
+1. **Test-time Search Scaling** (Core Advantage):
+    - HybridDeepSearcher performance **continually improves** with more search turns and API calls.
+    - Baselines like RAG-R1 see **performance stagnation** after 2-3 rounds.
+    - Particularly evident on BrowseComp-50, where other methods barely benefit from increased search budgets.
 
-2. **Efficiency advantage**: Higher accuracy is achieved with fewer search rounds.
-    - On FanOutQA, approximately 3 rounds suffice to surpass the performance of other methods using 5 or more rounds.
+2. **Efficiency Advantage**: Achieves higher accuracy with fewer search rounds.
+    - On FanOutQA, results surpass other methods' 5+ round results in approximately 3 rounds.
 
-3. **Failure of non-iterative methods**: Direct generation and standard RAG perform extremely poorly (F1 of 0.0/1.8 on BrowseComp-50), confirming that these benchmarks genuinely require external knowledge and multi-step reasoning.
+3. **Failure of Non-iterative Methods**: Direct generation and standard RAG performed poorly (F1 of 0.0/1.8 on BrowseComp-50), proving these benchmarks require external knowledge and multi-step reasoning.
 
-4. **Case study insights**:
-    - On the John Carpenter question in FRAMES, HybridDeepSearcher issues parallel queries for the runtimes of 12 films and identifies the correct answer (Starman, 115 minutes), whereas DeepResearcher prematurely assumes The Thing and Search-o1 enters a repetitive query loop.
+4. **Case Study Insights**:
+    - For the John Carpenter problem in FRAMES, HybridDeepSearcher queried 12 movie durations in parallel to find the correct answer (Starman, 115 min), while DeepResearcher guessed "The Thing" and Search-o1 fell into a query loop.
 
 ## Highlights & Insights
 
-1. **Unification of parallel and sequential search**: This work is the first to systematically train LRMs to distinguish parallelizable from sequentially dependent queries, addressing a gap left by prior work.
-2. **Elegant dataset construction**: The HDS-QA automated pipeline starts from NQ and introduces parallelism via "People Also Ask," resulting in a design that is both principled and scalable.
-3. **SFT outperforms RL**: Supervised fine-tuning on only 2,111 trajectories surpasses RL-based methods using GRPO (e.g., Search-R1, DeepResearcher), demonstrating the critical importance of high-quality hybrid search demonstration data.
-4. **Search scalability**: This method is among the few to exhibit consistent test-time search scaling, with performance continuing to improve as the computational budget grows.
-5. **Extremely low training cost**: Fine-tuning takes only 30 minutes on 8 A100 GPUs, far less than RL-based training approaches.
+1. **Unified Parallel and Sequential Search**: First to systematically train LRMs to distinguish between parallelizable and dependent queries, filling a gap in existing work.
+2. **Clever Dataset Construction**: The automated HDS-QA pipeline introduces parallelism via "People Also Ask" from NQ seeds, which is elegant and scalable.
+3. **SFT Superiority over RL**: Fine-tuning with just 2,111 trajectories outperformed RL methods using GRPO (e.g., Search-R1, DeepResearcher), highlighting the importance of high-quality hybrid search demonstration data.
+4. **Search Scalability**: This is one of the few works demonstrating consistent test-time search scaling where performance does not saturate with increasing compute budget.
+5. **Low Training Cost**: micro-tuning for only 30 minutes on 8 A100s makes the cost much lower than RL training.
 
 ## Limitations & Future Work
 
-1. Training relies solely on SFT without preference optimization (DPO/RLHF); successful and failed trajectories in HDS-QA could be leveraged to further improve the model.
-2. Search query summarization depends on an external large model (Qwen3-32B), increasing system complexity and API call costs.
-3. HDS-QA is constructed exclusively from Natural Questions, potentially limiting domain coverage.
-4. Multi-agent collaborative search remains unexplored.
-5. BrowseComp-50 selects only 50 questions solvable by o3, and this selection bias may affect evaluation fairness.
+1. Only SFT was used; combining with preference optimization (DPO/RLHF) using successful and failed trajectories from HDS-QA could further improve performance.
+2. Summarization of search queries relies on an external model (Qwen3-32B), increasing system complexity and API costs.
+3. HDS-QA is only based on Natural Questions, potentially limiting domain coverage.
+4. Multi-agent collaborative search was not explored.
+5. BrowseComp-50 only selected 50 problems that o3 could solve, which might introduce selection bias in evaluation.
 
 ## Related Work & Insights
 
-- **Search-o1**: A prompt-based iterative reason–query–retrieve framework with single-query sequential search.
-- **Search-R1 / DeepResearcher**: Use GRPO training to enhance search reasoning, but training data lacks parallel search demonstrations.
-- **RAG-R1**: A multi-query baseline with competitive performance but lacking search scalability.
-- **APR**: Adaptive parallel reasoning, validated only on toy tasks such as Countdown.
+- **Search-o1**: A prompt-based iterative reasoning-query-retrieval framework using sequential single-query search.
+- **Search-R1 / DeepResearcher**: Uses GRPO to enhance search reasoning but lacks parallel search demonstrations in training.
+- **RAG-R1**: A multi-query baseline with strong performance but lacking search scalability.
+- **APR**: Adaptive Parallel Reasoning, but only validated on toy tasks like Countdown.
 
-This work offers a key insight for RAG system design: explicitly training on "when to parallelize versus when to sequence" is more effective than simply increasing reasoning capacity. Hybrid search strategy is likely a critical capability for large-scale deep research agents.
+Insight for RAG system design: Treating "when to parallelize vs. search sequentially" as an explicit training signal is more effective than simply increasing reasoning power. Hybrid search strategies may be a critical capability for large-scale deep research agents.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -157,11 +161,11 @@ This work offers a key insight for RAG system design: explicitly training on "wh
 
 ## Related Papers
 
+- [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
 - [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
+- [\[ICLR 2026\] Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics](demystifying_deep_search_a_holistic_evaluation_with_hint-free_multi-hop_question.md)
 - [\[ICLR 2026\] Summaries as Centroids for Interpretable and Scalable Text Clustering](summaries_as_centroids_for_interpretable_and_scalable_text_clustering.md)
-- [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](../../ACL2026/information_retrieval/agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
-- [\[ACL 2026\] Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents](../../ACL2026/information_retrieval/rerank_before_you_reason_analyzing_reranking_tradeoffs_through_effective_token_c.md)
-- [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
+- [\[ICLR 2026\] ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval](zerogr_a_generalizable_and_scalable_framework_for_zero-shot_generative_retrieval.md)
 
 </div>
 

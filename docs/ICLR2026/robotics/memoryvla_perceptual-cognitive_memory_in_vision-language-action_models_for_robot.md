@@ -2,114 +2,123 @@
 title: >-
   [Paper Note] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics][VLA] Inspired by the dual-memory system in cognitive science, this paper proposes MemoryVLA, a framework that introduces a Perceptual-Cognitive Memory Bank (PCMB) into VLA models. By incorporating m…
+  [ICLR 2026][Robotics & Embodied AI][VLA] Inspired by the dual memory system in cognitive science, this work proposes the MemoryVLA framework. It introduces a Perceptual-Cognitive Memory Bank (PCMB) into the VLA model to capture long-term dependencies through memory retrieval, gated fusion, and consolidation mechanisms, significantly outperforming CogACT and π
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "VLA"
-  - "memory mechanism"
-  - "long-horizon manipulation"
-  - "diffusion policy"
-  - "cognitive science"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - VLA
 date: 2026-05-08
-content_hash: 2224509cf7303cd2
+content_hash: c478e1adb76a9819
 ---
-
 # MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.19236](https://arxiv.org/abs/2508.19236)  
 **Code**: [Project Page](https://shihao1895.github.io/MemoryVLA)  
-**Area**: Robotics / VLA
+**Area**: Robotics/VLA  
 **Keywords**: VLA, memory mechanism, long-horizon manipulation, diffusion policy, cognitive science
 
 ## TL;DR
-Inspired by the dual-memory system in cognitive science, this paper proposes MemoryVLA, a framework that introduces a Perceptual-Cognitive Memory Bank (PCMB) into VLA models. By incorporating memory retrieval, gated fusion, and consolidation mechanisms to capture long-horizon temporal dependencies, MemoryVLA comprehensively outperforms CogACT and π₀ across 150+ tasks on SimplerEnv, LIBERO, and real-world benchmarks.
+Inspired by the dual memory system in cognitive science, this work proposes the MemoryVLA framework. It introduces a Perceptual-Cognitive Memory Bank (PCMB) into the VLA model to capture long-term dependencies through memory retrieval, gated fusion, and consolidation mechanisms, significantly outperforming CogACT and π₀ across 150+ tasks in SimplerEnv, LIBERO, and real-world environments.
 
 ## Background & Motivation
 
-**Background**: VLA models (OpenVLA, π₀, CogACT) have achieved significant progress in robotic manipulation, but mainstream approaches rely solely on current observations and ignore temporal dependencies, leading to poor performance on long-horizon tasks. For example, in the Push Buttons task, visual observations are nearly identical before and after pressing, making it impossible to determine whether an action has been completed.
+**Background**: Vision-Language-Action (VLA) models (e.g., OpenVLA, π₀, CogACT) have achieved remarkable progress in robotic manipulation. however, mainstream methods rely solely on current observations and ignore temporal dependencies, leading to poor performance in long-horizon tasks. For instance, in a "Push Buttons" task, visual differences before and after pressing are negligible, making it impossible to determine if an action is completed without history.
 
-**Limitations of Prior Work**: (1) Concatenating multiple frames leads to quadratic self-attention complexity and distribution mismatch with single-frame pretraining; (2) RoboFlamingo compresses history with LSTM, losing fine-grained information; (3) TraceVLA draws trajectories, losing semantic details; (4) UniVLA appends past actions as chain-of-thought rather than genuine memory utilization.
+**Limitations of Prior Work**: (1) Concatenating multiple frames leads to quadratic self-attention complexity and distribution mismatch with single-frame pre-training; (2) RoboFlamingo uses LSTM compression, which loses fine-grained information; (3) TraceVLA draws trajectories but misses semantic details; (4) UniVLA adds past actions, acting more as a Chain-of-Thought (CoT) than true memory utilization.
 
-**Key Challenge**: Robotic manipulation is inherently non-Markovian (past actions influence future decisions), yet current VLA models are Markovian (conditioned on the current frame only).
+**Key Challenge**: Robotic manipulation is inherently non-Markovian (past actions influence future decisions), whereas current VLA models are predominantly Markovian (observing only the current frame).
 
-**Key Insight**: In cognitive science, humans handle manipulation tasks through working memory (short-term) combined with episodic memory (long-term, comprising verbatim perceptual details and gist-level semantics). Accordingly, PCMB is designed to store memory at two levels: perceptual detail and cognitive semantics.
+**Key Insight**: In cognitive science, humans process manipulation tasks using working memory (short-term) and episodic memory (long-term, containing verbatim details and "gist" semantics). Based on this, the PCMB is designed to store memory at two levels: perceptual details and cognitive semantics.
 
 ## Method
 
 ### Overall Architecture
-Vision-Language Cognition Module (7B VLM) → perceptual tokens ($p$) + cognitive token ($c$) = working memory → PCMB storage / retrieval / fusion / consolidation → memory-conditioned diffusion action expert generates action sequences.
+MemoryVLA addresses the weakness where VLAs only "see" the current frame and struggle with long-horizon tasks. Its design directly corresponds to the dual memory system in the human brain—using working memory for immediate control and hippocampal-style episodic memory to preserve history. The system follows a "Cognition-Memory-Action" pipeline across three stages for each frame: first, a 7B Vision-Language Cognition module encodes the current RGB observation and language instruction into two types of working memory—**perceptual tokens** $p$ (retaining visual details) and a **cognitive token** $c$ (compressing high-level semantics); second, this working memory queries a continuously accumulating Perceptual-Cognitive Memory Bank (PCMB) to retrieve relevant history, adaptively fuses it with current information via a gate, and writes back the fusion result (consolidating when capacity is full); finally, the memory-enhanced tokens are fed as conditions into a Diffusion Action Expert to generate a 7DoF action sequence for the next $N$ steps. The entire pipeline is trained end-to-end, with the PCMB enabling the model to transition from "Markovian processing" to "non-Markovian historical reference."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Current RGB Observation<br/>+ Language Instruction"] --> COG["Vision-Language Cognition Module<br/>DINOv2+SigLIP→Perceptual tokens p (256)<br/>LLaMA-7B EOS→Cognitive token c"]
+    COG -->|"Working Memory p, c"| PCMB
+    subgraph PCMB["Perceptual-Cognitive Memory Bank PCMB"]
+        direction TB
+        RET["Memory Retrieval<br/>Temporal encoding query<br/>cross-attn to relevant history"] --> FUSE["Gated Fusion<br/>Gate g adaptively mixes<br/>History H and Current x"]
+        FUSE --> CONS["Memory Consolidation<br/>Merges most similar<br/>adjacent entries when full"]
+    end
+    BANK[("Memory Bank Entries<br/>Perceptual / Cognitive Streams")]
+    BANK -.Retrieval.-> RET
+    CONS -.Write-back.-> BANK
+    PCMB -->|"Memory-enhanced tokens"| ACT["Memory-conditioned Diffusion Action Expert<br/>Diffusion Transformer Denoising"]
+    ACT --> OUT["N-step Future<br/>7DoF Action Sequence"]
+```
 
 ### Key Designs
 
-1. **Vision-Language Cognition Module**:
+**1. Vision-Language Cognition Module: Representing the current frame via "Details" and "Semantics"**
 
-    - **Function**: Extracts perceptual tokens and a cognitive token from the current RGB input and language instruction.
-    - **Mechanism**: Parallel DINOv2 + SigLIP visual encoding → SE bottleneck compression into 256 perceptual tokens $p$; LLaMA-7B processes vision + language → cognitive token $c$ output at the EOS position.
-    - **Design Motivation**: Perceptual tokens retain fine-grained visual information, while the cognitive token encodes high-level semantic understanding.
+The prerequisite for memory storage and retrieval is encoding the current observation at the appropriate granularity. This module uses DINOv2 and SigLIP in parallel for visual encoding, concatenates their features, and compresses them via an SE-bottleneck (squeeze-and-excitation) into 256 perceptual tokens $p$, preserving fine-grained spatial information. Simultaneously, visual features and language instructions are fed into LLaMA-7B, where the output at the EOS position serves as a single cognitive token $c$, encoding high-level semantic understanding of the task. The combination of $p$ and $c$ constitutes the working memory of the current frame. The dual-stream design allows long-horizon tasks to access history hierarchically—sometimes needing pixel-level details (e.g., has the object moved?) and other times needing semantic states (e.g., should this step be considered finished?).
 
-2. **Perceptual-Cognitive Memory Bank (PCMB)**:
+**2. Perceptual-Cognitive Memory Bank (PCMB): Temporal memory via Retrieval-Fusion-Consolidation**
 
-    - **Memory Retrieval**: Current tokens with temporal positional encoding serve as queries for cross-attention over PCMB, retrieving decision-relevant history $H^p, H^c$.
-    - **Gated Fusion**: $\tilde{x} = g^x \odot H^x + (1-g^x) \odot x$, where $g^x = \sigma(\text{MLP}(\text{concat}[x, H^x]))$, adaptively blending current and historical information.
-    - **Memory Consolidation**: When capacity is full, cosine similarity between adjacent entries is computed and the most similar pair is merged, preserving key information while controlling memory size.
+This is the core contribution of the paper, addressing the limitations of previous methods like frame concatenation or LSTM compression. PCMB writes working memory into a limited-capacity bank over time and integrates history into current decision-making through three steps. In the **Retrieval** phase, current tokens with temporal positional encodings serve as queries for cross-attention over the PCMB to extract relevant historical perceptual/cognitive information $H^p, H^c$. In the **Fusion** phase, instead of naive concatenation, a learned gate adaptively mixes the content:
 
-3. **Memory-Conditioned Diffusion Action Expert**:
+$$\tilde{x} = g^x \odot H^x + (1-g^x) \odot x, \qquad g^x = \sigma(\text{MLP}(\text{concat}[x, H^x]))$$
 
-    - **Function**: Conditioned on memory-augmented perceptual and cognitive tokens, a diffusion Transformer generates $N$-step 7-DoF action sequences.
-    - **Design Motivation**: The diffusion policy captures multimodal action distributions, and memory conditioning enables temporal awareness.
+The gate $g^x$ is determined by both the current information $x$ and retrieved history $H^x$. Consequently, $g$ remains small for simple tasks (relying on current observations) and increases for complex long-horizon tasks (relying more on history). fused tokens are written back to the bank. When the bank is full, the **Consolidation** phase avoids simple FIFO (which might delete key frames) and instead calculates the similarity of adjacent entries to merge the most similar pair, reducing redundancy while preserving critical historical information.
+
+**3. Memory-Conditioned Diffusion Action Expert: History-aware action generation**
+
+With memory-enhanced perceptual and cognitive tokens, the final step uses them as conditions for a Diffusion Transformer to denoise and generate $N$ steps of 7DoF actions. Diffusion is chosen over regression because robotic action distributions are naturally multi-modal. Using fused memory tokens as conditions allows the action head—which is traditionally Markovian—to gain temporal awareness, which is critical for tasks like "Push Buttons" where visual cues alone are insufficient to judge completion.
 
 ### Loss & Training
-- End-to-end training; the 7B VLM is pretrained on the OXE dataset.
-- The diffusion action expert is trained with DDPM.
-- Perceptual compression uses an SE-bottleneck module; the cognitive representation uses the EOS token.
+The entire framework is trained end-to-end: the 7B VLM is pre-trained on the OXE dataset; the Diffusion Action Expert is trained using standard DDPM objectives; the perceptual side uses an SE-bottleneck for compression, while the cognitive side extracts the EOS token as a semantic summary.
 
 ## Key Experimental Results
 
 ### Main Results (Simulation)
 
-| Benchmark | MemoryVLA | CogACT | π₀ | Gain |
-|-----------|-----------|--------|-----|------|
-| SimplerEnv-Bridge | **71.9%** | 57.3% | lower | **+14.6** |
-| SimplerEnv-Fractal | **72.7%** | 68.1% | lower | +4.6 |
-| LIBERO-5 | **96.5%** | 2nd best | 2nd best | surpasses both |
+| Benchmark | MemoryVLA | CogACT | π₀ | Gain / Notes |
+|------|-----------|--------|-----|------|
+| SimplerEnv-Bridge | **71.9%** | 57.3% | Lower | **+14.6** |
+| SimplerEnv-Fractal | **72.7%** | 68.1% | Lower | +4.6 |
+| LIBERO-5 | **96.5%** | Second | Second | Outperforms both |
 | Mikasa-Robo | **41.2%** | — | 29.4% | **+11.8** |
 
-### Real-World Experiments (12 Tasks)
+### Real-world Experiments (12 tasks)
 
 | Task Type | MemoryVLA | CogACT | π₀ |
-|-----------|-----------|--------|-----|
-| General Skills (6 tasks) | **85%** | 76% | lower |
-| Long-Horizon Dependent (6 tasks) | **83%** | 57% | lower → **+26** |
+|---------|-----------|--------|-----|
+| General Skills (6 tasks) | **85%** | 76% | Low |
+| Long-horizon Dependency (6 tasks) | **83%** | 57% | Low (**+26** vs CogACT) |
 
 ### Key Findings
-- The largest gains occur on long-horizon tasks (+26 vs. CogACT), confirming that memory is critical for temporal dependency.
-- The gating value $g$ dynamically varies with task demands—simple tasks rely primarily on current information, while complex tasks leverage history more heavily.
-- Memory consolidation via merging similar neighbors is more efficient than fixed windows or FIFO strategies.
-- The model demonstrates strong robustness under OOD conditions (varying backgrounds, distractors, lighting, and occlusions).
+- Improvements are most significant in long-horizon tasks (+26 vs CogACT), proving that memory mechanisms are vital for temporal dependencies.
+- The gate value $g$ in fusion changes dynamically—relying on current information for simple tasks and history for complex ones.
+- Memory consolidation via merging similar neighbors is more efficient than fixed-window or FIFO approaches.
+- The model exhibits strong robustness under OOD conditions, such as different backgrounds, distractors, lighting, and occlusions.
 
 ## Highlights & Insights
-- **Cognitive science-driven design**: The dual-system of working memory + episodic memory is mapped to perceptual tokens + cognitive token + PCMB. Rather than naively stacking frames or applying LSTMs, this memory architecture is grounded in cognitive theory.
-- **Separation of perception and cognition**: Perceptual tokens (256) preserve spatial detail; the cognitive token (1) compresses high-level semantics. PCMB maintains two separate streams for storage and retrieval, accommodating the need for different levels of historical information across tasks.
-- **+26 on long-horizon tasks**: This margin indicates that memory is not an auxiliary enhancement but a necessary condition—VLA models without memory fundamentally fail at tasks requiring temporal understanding.
+- **Cognitive Science-Driven Design**: The mapping of working and episodic memory to perceptual/cognitive tokens and the PCMB provides a theoretically grounded architecture rather than simple frame stacking.
+- **Perceptual vs. Cognitive Decoupling**: Perceptual tokens (256) retain spatial details while the cognitive token (1) summarizes high-level semantics. Dual-stream storage in PCMB allows tasks to query history at different levels of abstraction.
+- **Significant Gain in Long-horizon Tasks**: The +26% improvement indicates that memory is not just an incremental feature but a necessary condition for VLAs to handle temporal reasoning effectively.
 
 ## Limitations & Future Work
-- The 7B VLM incurs substantial inference overhead, limiting real-time applicability.
-- PCMB capacity $L$ requires manual tuning; adaptive capacity management warrants exploration.
-- Cosine similarity-based consolidation may be insufficiently fine-grained; more sophisticated memory selection strategies could improve performance.
-- Only third-person RGB input is used; multi-view and multimodal memory (e.g., tactile sensing) remain unexplored.
+- The 7B VLM introduces significant inference overhead, limiting real-time performance.
+- The PCMB capacity $L$ requires manual setting; adaptive capacity management remains an open area for exploration.
+- Consolidating via cosine similarity might be too coarse; more sophisticated memory selection strategies could be beneficial.
+- The model currently only uses third-person RGB; multi-view and multi-modal memory (e.g., tactile) have yet to be explored.
 
 ## Related Work & Insights
-- **vs. π₀**: π₀ lacks a memory mechanism and shows large performance gaps on long-horizon tasks; MemoryVLA's PCMB addresses this deficiency.
-- **vs. CogACT**: CogACT also employs a diffusion action head but without temporal modeling; MemoryVLA with memory comprehensively surpasses it.
-- **vs. RoboFlamingo**: RoboFlamingo uses coarse-grained LSTM memory, whereas MemoryVLA's dual-stream memory provides finer granularity.
+- **vs π₀**: π₀ lacks a memory mechanism and struggles significantly with long-horizon tasks; MemoryVLA's PCMB fills this gap.
+- **vs CogACT**: While CogACT uses a diffusion action head, it lacks temporal modeling. MemoryVLA achieves comprehensive improvements by adding memory.
+- **vs RoboFlamingo**: RoboFlamingo utilizes coarse-grained memory via LSTM, whereas MemoryVLA's dual-stream memory provides more detailed historical context.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ The cognitive science-inspired dual-stream memory architecture represents a first in the VLA domain.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Three robot platforms, 150+ tasks (simulation + real world), multiple baselines, and OOD testing.
-- **Writing Quality**: ⭐⭐⭐⭐ The cognitive science motivation is clearly articulated, and the architecture diagram is intuitive.
-- **Value**: ⭐⭐⭐⭐⭐ Addresses a critical gap in the VLA field (temporal memory) with convincing experimental results.
+- Novelty: ⭐⭐⭐⭐⭐ First introduction of a cognitive-inspired dual-stream memory architecture in VLA.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated across 3 robots, 150+ tasks (simulation and real-world), multiple baselines, and OOD tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation from cognitive science and intuitive architectural diagrams.
+- Value: ⭐⭐⭐⭐⭐ Addresses a critical missing piece in VLA (temporal memory) with convincing experimental results.
 
 <!-- RELATED:START -->
 
@@ -117,11 +126,11 @@ Vision-Language Cognition Module (7B VLM) → perceptual tokens ($p$) + cognitiv
 
 ## Related Papers
 
+- [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
 - [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 - [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
-- [\[ICLR 2026\] ST4VLA: Spatially Guided Training for Vision-Language-Action Models](st4vla_spatially_guided_training_for_vision-language-action_models.md)
-- [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](../../ICML2026/robotics/robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
-- [\[ICLR 2026\] RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation](robointer_a_holistic_intermediate_representation_suite_towards_robotic_manipulat.md)
+- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](verifier-free_test-time_sampling_for_vision-language-action_models.md)
 
 </div>
 

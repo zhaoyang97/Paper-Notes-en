@@ -2,86 +2,97 @@
 title: >-
   [Paper Note] MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation
 description: >-
-  [ICLR 2026][Robotics][molecular recognition] This paper introduces MolLangBench, a benchmark constructed via automated tools and expert annotation to provide high-quality…
+  [ICLR 2026][Robotics & Embodied AI][molecular recognition] This work proposes MolLangBench, a high-quality, unambiguous molecule-language interface benchmark constructed via automated tools and expert annotation. It covers recognition, editing, and generation tasks across SMILES, image, and graph modalities. Evaluations of 16+ commercial LLMs and 5 chemistry-specific models re
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "molecular recognition"
-  - "molecule editing"
-  - "molecule generation"
-  - "molecule-language alignment"
-  - "benchmark"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - molecular recognition
+  - molecule editing
+  - molecule generation
+  - molecule-language alignment
+  - benchmark
 date: 2026-05-08
-content_hash: 99ed43011555f317
+content_hash: 554d55c60e94a8e5
 ---
-
 # MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.15054](https://arxiv.org/abs/2505.15054)  
 **Code**: [GitHub](https://github.com/TheLuoFengLab/MolLangBench) / [HuggingFace](https://huggingface.co/datasets/ChemFM/MolLangBench)  
-**Area**: AI for Chemistry
+**Area**: AI for Chemistry  
 **Keywords**: molecular recognition, molecule editing, molecule generation, molecule-language alignment, benchmark
 
 ## TL;DR
 
-This paper introduces MolLangBench, a benchmark constructed via automated tools and expert annotation to provide high-quality, unambiguous evaluation datasets for the molecule-language interface. It covers three task types (recognition / editing / generation) and three modalities (SMILES / image / graph), evaluates 16+ commercial LLMs and 5 chemistry-specific models, and reveals that even GPT-5 falls significantly short on basic molecular operations (generation accuracy only 43%).
+This work proposes MolLangBench, a high-quality, unambiguous molecule-language interface benchmark constructed via automated tools and expert annotation. It covers recognition, editing, and generation tasks across SMILES, image, and graph modalities. Evaluations of 16+ commercial LLMs and 5 chemistry-specific models reveal that even GPT-5 remains significantly deficient in basic molecular operations (e.g., achieving only 43% in generation).
 
 ## Background & Motivation
 
-**Background**: Recent work has extensively explored molecule-language alignment, but these approaches typically target downstream chemical tasks (e.g., property prediction, reaction prediction) directly, bypassing fundamental structure-level capabilities. Analogous to the success of vision-language modeling—where VLMs align text with visually observable content—current molecular-language models attempt to align symbolic molecular structures with unobservable chemical properties, a mismatch that makes alignment considerably more difficult.
-
-**Limitations of Prior Work**: (1) No benchmark systematically evaluates AI capabilities in basic molecular structure operations (recognition, editing, generation); (2) existing molecular benchmarks focus on high-level tasks (drug design, property prediction) while neglecting the prerequisite—whether models truly "understand" molecular structure; (3) existing datasets vary in quality and may contain ambiguities and uncertainties.
-
-**Key Challenge**: If AI cannot reliably perform basic molecular structure recognition and manipulation, more complex chemical reasoning tasks (drug discovery, materials design) cannot be trusted. The chemist's workflow invariably begins with structural understanding.
-
-**Goal**: To provide the first systematic, high-quality evaluation tool for fundamental molecule-language capabilities.
-
-**Key Insight**: Grounded in the actual chemist workflow—first recognize structure, then manipulate structure, then generate structure—yielding a three-tier progressive task design.
-
-**Core Idea**: Evaluate AI's fundamental molecular structure capabilities using deterministic, unambiguous, high-quality data, thereby exposing deficiencies in current models.
+**Background**: Recent research has attempted to align molecules with language. However, these methods typically target downstream mathematical tasks (e.g., property or reaction prediction), bypassing fundamental structural capabilities. Analogous to the success of vision-language modeling—where VLMs align text with visually observable content—current molecule-language models attempt to align symbolic molecular structures with unobservable chemical properties. This mismatch complicates alignment.  
+**Limitations of Prior Work**: (1) Lack of systematic benchmarks to evaluate AI capabilities in basic molecular structural operations (recognition, editing, generation); (2) Existing benchmarks focus on high-level tasks (drug design, property prediction) while ignoring the prerequisite—whether the model truly "understands" molecular structure; (3) Existing datasets vary in quality and may contain ambiguity.  
+**Key Challenge**: If AI cannot perform basic recognition and manipulation of molecular structures, complex chemical reasoning tasks (drug discovery, material design) remain untrustworthy. A chemist's workflow always begins with structural understanding.  
+**Goal**: Provide the first systematic, high-quality assessment tool for fundamental molecule-language capabilities.  
+**Key Insight**: Follow the actual workflow of chemists—progressing from structure recognition to manipulation and then to generation.  
+**Core Idea**: Use deterministic, unambiguous, high-quality data to evaluate foundational molecular structural capabilities and expose current model deficiencies.
 
 ## Method
 
 ### Overall Architecture
 
-MolLangBench evaluates three core capabilities of increasing difficulty:
-1. **Molecular Structure Recognition**: Given a molecule, answer structural questions in natural language (neighboring atoms, bond types, functional groups, ring structures, stereochemistry)
-2. **Molecular Editing**: Modify a given molecular structure according to natural language instructions
-3. **Molecular Generation**: Generate a molecule from scratch based solely on a textual description
+MolLangBench aims to answer a prerequisite question bypassed by existing benchmarks: Can AI stably recognize, edit, and generate molecular structures? It decomposes this into three tasks of increasing difficulty: Molecular Structure Recognition (answering structural questions given a molecule: neighbor atoms, bond types, functional groups, ring structures, stereochemistry), Molecule Editing (modifying structures based on language instructions), and Molecule Generation (generating molecules from scratch based solely on text descriptions). Each task supports SMILES strings, molecular images (2D structures), and molecular graphs.
 
-Three molecular representations are supported: SMILES strings, molecular images (2D structure diagrams), and molecular graphs.
+The primary challenge lies not in task definition but in constructing unambiguous datasets with unique answers. Recognition tasks rely on RDKit for automated ground-truth generation. Editing and generation tasks require a three-stage expert annotation pipeline. All data undergo anti-leakage and robustness checks before evaluating 16 commercial LLMs and 5 chemistry models. The overall process is as follows:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    POOL["UniChem Candidate Pool<br/>(10,000 sampled per task)"]
+    EXPERT["Chemistry Expert Annotators"]
+
+    subgraph REC["Automated Construction for Recognition"]
+        direction TB
+        R1["RDKit calculates ground truth<br/>(Topology/Functional Groups/Stereochemistry)"] --> R2["Label Balancing + Hard Example Selection<br/>(Non-adjacent bonds in SMILES)"]
+    end
+
+    subgraph EDIT["Expert Annotation for Editing & Generation"]
+        direction TB
+        E1["Experts write instructions/descriptions"] --> E2["Peer review iteration to consensus"] --> E3["Dual independent reconstruction from text only<br/>(Accepted only if both match)"]
+    end
+
+    POOL --> REC
+    EXPERT --> EDIT
+    REC --> ROB["Anti-leakage & Robustness Design<br/>(Canary hash + SMILES enumeration)"]
+    EDIT --> ROB
+    ROB --> BENCH["MolLangBench Dataset<br/>(Rec/Edit/Gen × SMILES/Image/Graph)"]
+    BENCH --> EVAL["Evaluation of 16 LLMs + 5 Chemistry Models"]
+```
 
 ### Key Designs
 
-1. **Automated Construction Pipeline for Recognition Tasks**:
-    - Function: Guarantee deterministic and unambiguous answers
-    - Mechanism: RDKit is used to automatically compute ground truth (single-hop neighbors, bond types, functional group identification, ring structures, stereochemistry, etc.), covering three categories: local topology, functional groups, and stereochemistry
-    - Design Motivation: Automated tools ensure each question has a unique, definitive answer, avoiding subjectivity introduced by human annotation
-    - Sampling Strategy: Label-balanced sampling from 10,000 candidate molecules, with deliberate selection of harder examples (e.g., cases where bonded atoms are non-adjacent in SMILES)
+**1. Automated Construction for Recognition: Using RDKit for Ground Truth to Eliminate Subjectivity**
 
-2. **Expert Annotation Pipeline for Editing and Generation Tasks**:
-    - Function: Construct precise mappings between natural language instructions and molecular structures
-    - Mechanism: A three-stage pipeline—(1) annotators with chemistry backgrounds draft instructions/descriptions; (2) a second annotator conducts peer review with iterative revision until consensus is reached; (3) two independent validators reconstruct the molecular structure from text alone, and a sample is accepted only if both succeed
-    - Design Motivation: Accurate molecular reconstruction from text alone constitutes the strongest validation of instruction/description unambiguity
-    - Effort: Over 500 hours of expert annotation and validation
+Recognition tasks must avoid ambiguity. MolLangBench delegates answer generation to RDKit rather than humans. Ground truths for all recognition questions (single-hop neighbors, bond types, functional group identification, ring structures, stereochemistry) are automatically calculated. To ensure discriminative power, label-balanced sampling is performed from 10,000 candidates, specifically selecting harder examples—such as bonds connecting atoms that are non-adjacent in the SMILES string—forcing models to understand structure rather than relying on character proximity.
 
-3. **Anti-Leakage and Robustness Design**:
-    - Function: Ensure evaluation results are not affected by data leakage or memorization
-    - Mechanism: (1) Unique hash canary strings to detect leakage; (2) SMILES enumeration augmentation (enumerating from different starting atoms) to test robustness—editing accuracy across 5 different augmentations is $0.773\pm0.027$, indicating high consistency
+**2. Expert Annotation for Editing & Generation: Unambiguous Verification via Text-only Reconstruction**
+
+Editing and generation cannot be automated via RDKit because they require precise mappings between high-quality language instructions/descriptions and structures. The team designed a three-stage pipeline: first, annotators with chemical backgrounds write instructions; second, peer reviewers iterate until consensus; third, two independent validators reconstruct the structure looking *only* at the text. A data point is accepted only if both independent reconstructions match the original molecule. This cost over 500 hours of expert effort.
+
+**3. Anti-leakage & Robustness Design: Preventing Data Contamination and String Artifacts**
+
+To ensure credibility, the benchmark excludes data leakage (where models have seen test data during pre-training) using unique hash canary strings. Robustness is verified via SMILES enumeration: the same molecule is represented by multiple equivalent SMILES strings starting from different atoms. Results showed an editing accuracy of $0.773 \pm 0.027$ across five augmentations, indicating that model capability is based on structure rather than specific string spelling.
 
 ### Loss & Training
 
-MolLangBench does not involve model training. Evaluation metrics: exact-match accuracy for recognition and editing tasks; accuracy (whether the generated molecule satisfies all specified conditions) for generation tasks, supplemented by Tanimoto similarity (molecular fingerprints) and pass@k metrics.
+MolLangBench does not perform model training. Evaluation metrics include: Exact Match (EM) accuracy for recognition and editing; Accuracy (whether the generated molecule meets all conditions) for generation, supplemented by Tanimoto similarity (molecular fingerprints) and $pass@k$ metrics.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Evaluation of 16 commercial LLMs** (SMILES modality, core test set):
+**Evaluation of 16 Commercial LLMs** (SMILES modality, core test set):
 
-| Model | Recognition Acc. | Editing (Valid/Sim./Acc.) | Generation (Valid/Sim./Acc.) |
-|-------|-----------------|--------------------------|------------------------------|
+| Model | Recognition Acc | Editing (Valid/Sim/Acc) | Generation (Valid/Sim/Acc) |
+|------|----------|-------------------|-------------------|
 | GPT-5 | 0.862 | 0.960/0.923/**0.855** | 0.920/0.741/**0.430** |
 | o3 | 0.918 | 0.945/0.903/0.785 | 0.670/0.546/0.290 |
 | o4-mini | 0.872 | 0.930/0.885/0.740 | 0.820/0.651/0.350 |
@@ -92,76 +103,76 @@ MolLangBench does not involve model training. Evaluation metrics: exact-match ac
 
 ### Ablation Study
 
-**Chemistry-specific models vs. general-purpose LLMs**:
+**Specialist Models vs. General LLMs**:
 
-| Model Type | Recognition | Editing Acc. | Generation Acc. |
-|-----------|-------------|-------------|----------------|
+| Model Type | Recognition | Editing Acc | Generation Acc |
+|---------|------|----------|----------|
 | ChemDFM-13B | 0.300 | 0.025 | 0.000 |
 | Galactica-120B | 0.290 | 0.040 | 0.000 |
-| HIGHT (graph-language) | 0.127 | 0.000 | 0.000 |
-| GPT-4o (general) | 0.593 | 0.525 | 0.115 |
+| HIGHT (Graph-Lang) | 0.127 | 0.000 | 0.000 |
+| GPT-4o (General) | 0.593 | 0.525 | 0.115 |
 
-**SMILES vs. SELFIES representation** (o3 model):
+**SMILES vs. SELFIES Representation** (o3 model):
 
-| Representation | Recognition | Editing Acc. | Generation Acc. |
-|---------------|-------------|-------------|----------------|
+| Representation | Recognition | Editing Acc | Generation Acc |
+|------|------|----------|----------|
 | SMILES | 0.918 | 0.785 | 0.290 |
 | SELFIES | 0.528 | 0.195 | 0.000 |
 
-**pass@k results** (o3 model):
+**$pass@k$ Results** (o3 model):
 
-| Task | pass@1 | pass@3 | pass@5 |
+| Task | $pass@1$ | $pass@3$ | $pass@5$ |
 |------|--------|--------|--------|
-| Editing (core) | 0.785 | 0.856 | 0.900 |
-| Generation (core) | 0.290 | 0.485 | 0.545 |
+| Editing (Core) | 0.785 | 0.856 | 0.900 |
+| Generation (Core) | 0.290 | 0.485 | 0.545 |
 
 ### Key Findings
 
-1. **Generation is extremely challenging**: The strongest model, GPT-5, achieves only 43.0%, and pass@5 reaches only 54.5%—current AI is severely limited in constructing molecular structures from textual descriptions.
-2. **Six error categories for the o3 model**: invalid SMILES syntax (11/66 editing/generation cases), stereochemistry errors (9/15), chain length errors (4/8), substituent misplacement (13/42), ring structure errors (10/23), and extra/missing groups (1/3)—atom counting and enumeration issues arising from BPE tokenization are one root cause.
-3. **SELFIES is far inferior to SMILES**: Under the same o3 model, generation accuracy with SELFIES drops to 0%—due to the scarcity of SELFIES in LLM training data.
-4. **Chemistry-specific models lag comprehensively**: ChemDFM, Galactica, and others fall far below general-purpose GPT-4o, indicating that scale effects outweigh domain-specific knowledge.
-5. **Structural understanding improves downstream reasoning**: GPT-4o achieves approximately 5% improvement on property prediction when first describing structure before predicting properties compared to direct prediction (BBBP: 0.551→0.603, BACE: 0.583→0.632).
+1. **Generation task is extremely challenging**: The strongest model, GPT-5, achieved only 43.0% accuracy ($pass@5$ only 54.5%), indicating current AI capabilities in constructing structures from text are severely lacking.
+2. **Error Analysis of o3**: Logic errors include invalid SMILES syntax, stereochemistry errors, chain length mismatches, substituent displacement, and ring structure errors. BPE tokenization issues in atom counting and enumeration are fundamental causes.
+3. **SELFIES is inferior to SMILES**: Using the same o3 model, SELFIES generation accuracy was 0% due to the scarcity of SELFIES in LLM training data.
+4. **Specialist models lag behind**: ChemDFM and Galactica perform significantly worse than general GPT-4o, suggesting scaling effects outweigh domain-specific pre-training.
+5. **Structural understanding facilitates downstream reasoning**: Having GPT-4o describe a structure before predicting properties improved performance by approximately 5% (e.g., BBBP: 0.551 $\rightarrow$ 0.603).
 
 ## Highlights & Insights
 
-- **Fills an important gap**: The first comprehensive benchmark derived from the chemist's workflow that systematically evaluates AI's fundamental molecular structure capabilities.
-- **High-quality data construction**: 500+ hours of expert annotation and a three-stage verification process guarantee unambiguity—this itself constitutes a core contribution.
-- **Reveals a path deviation**: Current molecular-language research may be heading in the wrong direction by skipping structural understanding and directly targeting property prediction, analogous to a VLM performing reasoning without recognizing objects in images.
-- **Accompanying training data**: MolLangData provides large-scale training data, forming a complete ecosystem.
+- **Fills a critical gap**: Provides the first systematic benchmark for fundamental molecule-language structural capabilities based on the chemist's workflow.
+- **High-quality data construction**: 500+ hours of expert annotation and a three-stage verification process ensure lack of ambiguity, which constitutes a core contribution.
+- **Identifies path deviation**: Suggests that current research may be misdirected by skipping structural understanding for property prediction, similar to attempting reasoning in VLMs without object recognition.
+- **Ecosystem support**: MolLangData provides large-scale training data to accompany the benchmark.
 
 ## Limitations & Future Work
 
-- The editing/generation core sets each contain only 200 samples, which is relatively small (though the 500-hour annotation cost limits expansion).
-- Molecules are restricted to fewer than 40 heavy atoms (covering 93% of UniChem molecules); biomacromolecules are not addressed.
-- Evaluation relies on the Mathpix API to convert generated images back to SMILES, introducing an additional source of error.
-- Evaluation is primarily conducted on OpenAI models; coverage of open-source models could be more comprehensive.
+- The core set for editing/generation consists of 200 samples each, which is relatively small due to the high cost of manual annotation.
+- Molecules are restricted to < 40 heavy atoms (covering 93% of UniChem) and do not include biomacromolecules.
+- Reliability on Mathpix API for image-to-SMILES conversion introduces an external error source during image modality evaluation.
+- Evaluation focuses heavily on OpenAI models; coverage of open-source models could be expanded.
 
 ## Related Work & Insights
 
-- **vs. MoleculeNet**: Focuses on property prediction; MolLangBench targets language-molecular structure interaction—different levels of abstraction.
-- **vs. MolX/Uni-MRL**: These works perform property prediction and caption annotation while bypassing structural understanding as a prerequisite.
-- **Analogy to GPQA**: A "diamond set" of only 198 samples still serves as a standard benchmark for LLM scientific reasoning; quality outweighs scale.
-- **Insight**: AI for Science requires evaluation of fundamental capabilities before advanced tasks—this represents a "GLUE moment" for the chemistry domain.
+- **vs MoleculeNet**: While MoleculeNet focuses on property prediction, MolLangBench focuses on the language-molecular structure interface.
+- **vs MolX/Uni-MRL**: These focus on property prediction and captioning, skipping the prerequisite of structural understanding.
+- **Analogy to GPQA**: High-quality "diamond sets" (like GPQA's 198 samples) serve as gold standards for scientific reasoning; quality prevails over scale.
+- **Insight**: AI for Science requires foundational testing before high-level task evaluation—this is the "GLUE moment" for chemistry.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First comprehensive benchmark for the molecule-language structure interface, with a clearly defined problem that aligns well with real chemical workflows.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 16+ LLMs + 5 chemistry models + 3 modalities + SELFIES + pass@k + error analysis + downstream property experiments—extremely comprehensive.
+- Novelty: ⭐⭐⭐⭐ First comprehensive benchmark for the molecule-language structural interface, well-defined and aligned with real chemical workflows.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive evaluation involving 16+ LLMs, 5 specialist models, 3 modalities, SELFIES, $pass@k$, error analysis, and downstream experiments.
 - Writing Quality: ⭐⭐⭐⭐ Clear structure, well-motivated, and thoroughly argued.
-- Value: ⭐⭐⭐⭐⭐ Provides a much-needed standardized evaluation tool for AI chemistry research, with potential to reorient the field's research priorities.
+- Value: ⭐⭐⭐⭐⭐ Provides a much-needed standardized tool for AI in chemistry and may shift research focus within the field.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning](memory_benchmark_robots_a_benchmark_for_solving_complex_tasks_with_reinforcement.md)
+- [\[ICLR 2026\] Capturing Visual Environment Structure Correlates with Control Performance](capturing_visual_environment_structure_correlates_with_control_performance.md)
+- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 - [\[CVPR 2026\] Towards Training-Free Scene Text Editing](../../CVPR2026/robotics/towards_training-free_scene_text_editing.md)
-- [\[ICLR 2026\] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification](rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification.md)
-- [\[ICML 2026\] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models](../../ICML2026/robotics/embodied_task_planning_via_graph-informed_action_generation_with_large_language_.md)
-- [\[ICML 2026\] Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation](../../ICML2026/robotics/dive_into_the_scene_breaking_the_perceptual_bottleneck_in_vision-language_decisi.md)
-- [\[ICCV 2025\] GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices](../../ICCV2025/robotics/guiodyssey_a_comprehensive_dataset_for_cross-app_gui_navigation_on_mobile_device.md)
+- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
 
 </div>
 

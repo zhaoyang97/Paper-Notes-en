@@ -2,112 +2,118 @@
 title: >-
   [Paper Note] On Entropy Control in LLM-RL Algorithms
 description: >-
-  [ICLR 2026][Robotics][Entropy control] This paper provides a theoretical explanation for why conventional entropy regularization is nearly ineffective in LLM-RL (due to the extremely large action space and sparse optimal…
+  [ICLR 2026][Robotics & Embodied AI][RLVR] The authors theoretically explain why traditional entropy regularization is nearly ineffective in LLM-RL (due to immense action spaces and sparse optima causing entropy bias to overwhelm optimization gains). They propose the AEnt method, which uses clamped entropy (calculated on a reduced token space) and adaptive coef
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "Entropy control"
-  - "RLVR"
-  - "LLM-RL"
-  - "policy optimization"
-  - "exploration-exploitation"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - RLVR
+  - LLM-RL
 date: 2026-05-08
-content_hash: fb95e96ff7801051
+content_hash: 8f266844060b29f8
 ---
-
 # On Entropy Control in LLM-RL Algorithms
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.03493](https://arxiv.org/abs/2509.03493)  
-**Code**: None  
-**Area**: Robotics
-**Keywords**: Entropy control, RLVR, LLM-RL, policy optimization, exploration-exploitation
+**Code**: [antgroup/AEnt](https://github.com/antgroup/AEnt)  
+**Area**: Robotics  
+**Keywords**: Entropy Control, RLVR, LLM-RL, Policy Optimization, Exploration-Exploitation
 
 ## TL;DR
-This paper provides a theoretical explanation for why conventional entropy regularization is nearly ineffective in LLM-RL (due to the extremely large action space and sparse optimal actions causing entropy bias to overwhelm optimization gains), and proposes AEnt — a method combining clamped entropy (computed over a reduced token space) with an adaptive coefficient — to effectively balance bias and benefit, consistently outperforming baselines on mathematical reasoning tasks.
+The authors theoretically explain why traditional entropy regularization is nearly ineffective in LLM-RL (due to immense action spaces and sparse optima causing entropy bias to overwhelm optimization gains). They propose the AEnt method, which uses clamped entropy (calculated on a reduced token space) and adaptive coefficients to effectively balance bias and benefits, consistently outperforming baselines in mathematical reasoning tasks.
 
 ## Background & Motivation
 
-**Background**: Policy gradient methods (PPO/GRPO/DAPO) dominate LLM-RL. In traditional RL, entropy regularization (SAC/A3C/PPO) prevents premature convergence by maintaining policy stochasticity, with notable success.
+**Background**: Policy gradient methods (PPO/GRPO/DAPO) are dominant in LLM-RL. In traditional RL, entropy regularization (SAC/A3C/PPO) significantly improves performance by maintaining policy randomness to prevent premature convergence.
 
-**Limitations of Prior Work**: Empirical findings show that entropy regularization yields almost no gain in LLM-RL. Cui et al. observed that varying entropy coefficients has negligible impact on validation accuracy — a striking contrast to its effectiveness in robotics and game-playing RL.
+**Limitations of Prior Work**: Empirical findings indicate that entropy regularization provides almost no gain in LLM-RL. Cui et al. observed that different entropy coefficients have negligible effects on validation accuracy, creating a contradiction with the significant benefits observed in robotics and game RL.
 
-**Key Challenge**: Although entropy regularization offers optimization advantages (improved convergence) in theory, the bias it introduces, $O(H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*(s_0)|^{1/H}})$, grows dramatically with the action space size $|\mathcal{A}|$ and the sparsity of optimal actions. With LLM vocabularies of ~100K tokens and extremely sparse optimal tokens, this bias far exceeds any optimization gain.
+**Key Challenge**: Theoretically, while entropy regularization offers optimization advantages (improving convergence), the introduced bias $O(H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*(s_0)|^{1/H}})$ scales sharply with the action space $|\mathcal{A}|$ and optimal sparsity. In LLMs, where vocabularies are ~100k+ and optimal tokens are extremely sparse, the bias far outweighs any optimization gains.
 
-**Key Insight**: Since entropy computed over the full vocabulary incurs prohibitively large bias, the paper proposes computing a clamped entropy over a smaller, plausible token subspace — encouraging exploration only among reasonable candidates rather than across the entire vocabulary.
+**Key Insight**: Since entropy bias over the entire vocabulary is excessive, it is more effective to calculate clamped entropy over a smaller space of reasonable tokens—encouraging exploration among "likely candidates" rather than the entire vocabulary.
 
 ## Method
 
-### Theoretical Analysis
+### Overall Architecture
 
-1. **Proposition 1 (Without Entropy Control)**:
-    - Policy entropy serves as an upper bound on the policy gradient: $\|\nabla V^{\pi_\theta}\| \leq 2\mathcal{H}(\pi_\theta)$ → entropy collapse leads to learning stagnation.
-    - Performance bound: $V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon}{C^{\pi_\theta}(s_0)}$
+This paper first addresses a point of confusion before providing a solution. The confusion is: why does entropy regularization, which is highly effective in traditional RL, fail to show improvements in LLM-RL (policy gradient methods like PPO/GRPO/DAPO)? The paper quantifies the cause using two performance bounds and subsequently proposes AEnt, which calculates entropy over a small set of "reasonable candidate tokens" to preserve exploration benefits while suppressing bias.
 
-2. **Proposition 2 (Conventional Entropy Regularization)**:
-    - Performance bound: $V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon^2}{2\lambda C_\lambda} + \lambda H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*|^{1/H}}$
-    - The optimization term improves ($\epsilon^2/2\lambda$), but the bias term $\lambda H\log|\mathcal{A}|/|\mathcal{A}_H^*|^{1/H}$ dominates in the LLM setting.
+The entire analysis is built on two propositions. **Without entropy control** (Proposition 1), policy entropy serves as an upper bound for the policy gradient norm: $\|\nabla V^{\pi_\theta}\| \leq 2\mathcal{H}(\pi_\theta)$. Once entropy collapses, the gradient tends toward zero, and learning plateaus; the performance gap is bounded by $V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon}{C^{\pi_\theta}(s_0)}$. **With traditional entropy regularization** (Proposition 2), the performance gap becomes:
 
-### AEnt Method
+$$V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon^2}{2\lambda C_\lambda} + \lambda H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*|^{1/H}}$$
 
-1. **Clamped Entropy**:
-    - Function: Entropy is computed not over the full vocabulary but over the top-$k$ tokens after renormalization.
-    - Mechanism: Define subspace $\mathcal{A}_k(s) = \text{top-k tokens}$, renormalize the policy as $\tilde{\pi}(a|s) = \pi(a|s)/\sum_{a' \in \mathcal{A}_k} \pi(a'|s)$, and compute entropy using $\tilde{\pi}$.
-    - Design Motivation: Encouraging exploration only among plausible candidates reduces the bias from $\log|\mathcal{A}|$ to $\log k$ (where $k \ll |\mathcal{A}|$).
+The first term $\epsilon^2/2\lambda$ represents the optimization gain from entropy (better convergence), while the second term $\lambda H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*|^{1/H}}$ is the introduced bias. The critical observation is that LLM vocabularies $|\mathcal{A}|$ reach the $100,000$ range, and optimal tokens are extremely sparse, causing the $\log|\mathcal{A}|$ term to explode and completely overwhelm the optimization gain. This explains the fundamental difference between LLM-RL and robotics/game RL (where $|\mathcal{A}|$ is only tens or hundreds). Synthetic MDP experiments ($|\mathcal{A}|=10^5$) confirm this: traditional entropy helps when there are 10–15 optimal actions but fails completely when the count drops below 5. All designs in AEnt revolve around narrowing the scope of entropy from the whole vocabulary to a set of reasonable candidates to minimize this bias.
 
-2. **Adaptive Coefficient**:
-    - Function: The coefficient $\lambda$ is automatically adjusted based on the current clamped entropy value.
-    - Mechanism: High clamped entropy → small $\lambda$ (policy is already sufficiently stochastic); low clamped entropy → large $\lambda$ (more exploration is needed).
-    - Design Motivation: A fixed $\lambda$ cannot adapt to the dynamic changes in entropy throughout training.
+### Key Designs
+
+**1. Clamped Entropy: Calculating entropy only on top-probability tokens to reduce effective $|\mathcal{A}|$ in the bias term**
+
+The bias term explodes because traditional entropy pulls the policy toward a uniform distribution $1/|\mathcal{A}|$, encouraging randomness across all 100k tokens. Since most tokens should not be explored, pulling toward them generates pure bias. Clamped entropy retains only the top $(1-p)$ proportion of tokens (discarding the long tail $p=0.25\sim0.33$), forming a state-dependent subspace $\mathcal{A}(s)$ where the policy is re-normalized:
+
+$$\tilde{\pi}_\theta(a|s) = \frac{\exp(\theta_{s,a})}{\sum_{a' \in \mathcal{A}(s)} \exp(\theta_{s,a'})}, \quad \mathcal{A}(s) = \{\text{top }(1-p)\text{ tokens}\}$$
+
+Entropy is then calculated using $\tilde{\pi}_\theta$. Consequently, exploration only occurs among "reasonable candidates." The bias term is no longer driven by $\log|\mathcal{A}|$ but by a much smaller set of candidates, while the optimization gain is largely preserved. The intuition is that for a pre-trained/fine-tuned model, low-probability tokens are unlikely to be optimal; excluding them reduces bias without harming exploration.
+
+**2. Adaptive Coefficient: Pulling $\lambda$ back to a target range based on current clamped entropy**
+
+A fixed entropy coefficient $\lambda$ suffices for games, but in LLM training, entropy fluctuates violently (e.g., saturating after ~200 steps). AEnt sets a target range $[\tilde{\mathcal{H}}_{\text{low}}, \tilde{\mathcal{H}}_{\text{high}}]$ for clamped entropy and updates the coefficient after each global step using a projection:
+
+$$\lambda' \leftarrow \text{Proj}_{[\lambda_{\text{low}}, \lambda_{\text{high}}]}\big[\lambda - \beta\min(\tilde{\mathcal{H}}(\pi_\theta) - \tilde{\mathcal{H}}_{\text{low}},\, 0) + \beta\min(\tilde{\mathcal{H}}_{\text{high}} - \tilde{\mathcal{H}}(\pi_\theta),\, 0)\big]$$
+
+In simpler terms: if clamped entropy falls below the lower bound (insufficient exploration), $\lambda$ is increased; if it exceeds the upper bound (sufficient stochasticity), $\lambda$ is decreased to prioritize reward maximization and consume excess entropy. $\lambda$ itself is clipped within $[\lambda_{\text{low}}, \lambda_{\text{high}}]$ to prevent overshoot. This adaptive mechanism also suppresses spikes in answer length, making inference more efficient.
 
 ### Loss & Training
-- $\mathcal{L} = \mathcal{L}_{\text{PO}}(\theta) + \lambda \cdot \min(\mathcal{H}_k(\pi_\theta), H_{\text{target}})$
-- The coefficient adapts once the clamped entropy reaches the target level.
+
+Combining the two components, AEnt optimizes a target that adds a clamped entropy regularization term to the original policy optimization loss:
+
+$$\mathcal{L}_{\text{AEnt}}(\theta; \lambda) = \mathcal{L}_{\text{PO}}(\theta) + \lambda \tilde{\mathcal{H}}(\pi_\theta)$$
+
+Here, $\mathcal{L}_{\text{PO}}$ is the underlying policy optimization objective (GRPO in the experiments), $\tilde{\mathcal{H}}$ is the clamped entropy, and $\lambda$ is updated via the projection rule. The only modification to the original entropy regularization is replacing global entropy with clamped entropy and the fixed coefficient with an adaptive one.
 
 ## Key Experimental Results
 
-### Mathematical Reasoning
+### Mathematical Reasoning Benchmarks (Model evaluated at highest training checkpoint; average of 4 samples per problem)
 
-| Method | AIME | AMC | MATH500 | Minerva |
-|--------|------|-----|---------|---------|
-| GRPO (no entropy) | baseline | baseline | baseline | baseline |
-| GRPO + conventional entropy | ~baseline | ~baseline | ~baseline | ~baseline |
-| **GRPO + AEnt** | **↑** | **↑** | **↑** | **↑** |
+Setup (a) = Qwen2.5-Math-1.5B trained on MATH; Setup (b) = DeepSeek-R1-Distilled-Qwen-1.5B trained on OpenR1-Math subset. EntReg denotes traditional entropy regularization (GRPO + original entropy bonus).
 
-### Multi-Model Validation
-
-| Base Model | AEnt Gain | Notes |
-|------------|-----------|-------|
-| Qwen2.5-Math-1.5B | Significant | Smaller models benefit more |
-| Qwen2.5-7B | Significant | Effective on larger models as well |
+| Method | Setup | MATH-Hard | MATH-500 | AIME24 | Minerva | Olympiad | AMC |
+|------|------|-----------|----------|--------|---------|----------|-----|
+| Base | (a) | 0.368 | 0.584 | 0.083 | 0.179 | 0.279 | 0.406 |
+| GRPO | (a) | 0.524 | **0.756** | 0.192 | 0.311 | 0.364 | 0.550 |
+| EntReg | (a) | 0.546 | 0.752 | 0.167 | 0.316 | 0.370 | 0.562 |
+| **AEnt** | (a) | **0.552** | 0.750 | **0.217** | **0.330** | **0.377** | **0.581** |
+| Base | (b) | 0.661 | 0.792 | 0.225 | 0.311 | 0.432 | 0.594 |
+| GRPO | (b) | 0.773 | 0.865 | 0.367 | 0.347 | 0.576 | 0.769 |
+| EntReg | (b) | 0.808 | 0.872 | 0.342 | 0.359 | 0.576 | 0.794 |
+| **AEnt** | (b) | **0.813** | **0.882** | **0.392** | 0.359 | **0.591** | **0.825** |
 
 ### Key Findings
-- Conventional entropy regularization indeed yields nearly no gain, corroborating prior observations.
-- AEnt consistently improves performance across all benchmarks and models, confirming that clamped entropy effectively resolves the bias issue.
-- Synthetic MDP experiments verify that when the number of optimal actions is fewer than 5 and $|\mathcal{A}|=10^5$, conventional entropy fails while AEnt remains effective.
-- The adaptive coefficient yields more stable training than a fixed coefficient.
+- **Traditional entropy yields almost no gain and sometimes degrades performance**: EntReg shows minimal change compared to GRPO across most benchmarks and even suffers a decline in AIME24 (e.g., 0.192 to 0.167 in setup (a)), confirming Cui et al.'s observations.
+- **AEnt consistently leads**: Across both setups, AEnt achieves the best results in 5 out of 6 benchmarks on average (with MATH-500 in setup (a) being the sole exception), showing that clamped entropy effectively addresses the bias issue.
+- **Synthesized MDP identifies the root cause**: In a toy MDP where $|\mathcal{A}|=10^5$, traditional entropy helps when the number of optimal actions is 10–15, but fails when it is less than 5; clamped entropy remains effective, directly validating the bias analysis in Proposition 2.
+- **Adaptive coefficients are more stable**: Fixed coefficients lose control when entropy fluctuates sharply. Adaptive coefficients keep entropy and answer length within reasonable bounds, preventing explosion.
 
 ## Highlights & Insights
-- **Theoretical resolution of a long-standing LLM-RL puzzle**: Why does conventional entropy regularization not work in LLM-RL? Because the $O(H\log|\mathcal{A}|)$ bias overwhelms all optimization gains when $|\mathcal{A}|=10^5$. This explanation is concise and compelling.
-- **Intuition behind clamped entropy**: The model should not be encouraged to explore all 100K tokens indiscriminately; diversity should be maintained only among plausible candidates. Sampling from the top-1,000 tokens is far more reasonable than sampling from the entire vocabulary.
-- **Quantifying the bias-gain tradeoff**: Propositions 1 and 2 provide actionable theoretical guidance — when $\log|\mathcal{A}|$ is large and optimal actions are sparse, special treatment is necessary.
+- **Theoretic explanation for a long-standing puzzle in LLM-RL**: Why does traditional entropy not work in LLMs? Because the $O(H\log|\mathcal{A}|)$ bias at $|\mathcal{A}|=10^5$ overwhelms everything. This explanation is concise and powerful.
+- **Intuition for Clamped Entropy**: One should not encourage the model to explore all 100k tokens; diversity should be maintained only among reasonable candidates. Choosing randomly from top-1000 is far more logical than choosing from the entire vocabulary.
+- **Quantifying the Bias-Gain Trade-off**: Propositions 1 and 2 provide actionable theoretical guidance—when $\log|\mathcal{A}|$ is large and the optima are sparse, special handling is required.
 
 ## Limitations & Future Work
-- The value of $k$ in top-$k$ requires manual specification; an adaptive $k$ selection strategy may be preferable.
-- The theoretical analysis assumes a softmax policy, whereas practical LLMs have more complex structures.
-- Validation is limited to mathematical reasoning; effectiveness on code generation and general reasoning remains unknown.
-- Clamped entropy may overly restrict exploration in scenarios that genuinely require broad search.
+- The parameter $k$ for top-k currently requires manual setting; an adaptive $k$ might be superior.
+- The theoretical analysis assumes a softmax policy, while real LLMs have more complex structures.
+- Validation is limited to mathematical reasoning; effects on code or general reasoning are yet to be explored.
+- Clamped entropy might overly restrict scenarios requiring extremely broad exploration.
 
 ## Related Work & Insights
-- **vs. DAPO**: DAPO indirectly controls entropy via clipping and constraints, whereas AEnt directly applies regularization in the clamped token subspace.
-- **vs. Cui et al.**: Their work observes that entropy bonuses are ineffective but provides no theoretical explanation; this paper offers both an explanation and a solution.
-- **vs. SAC**: SAC's entropy regularization succeeds in robotics tasks because $|\mathcal{A}|$ is small (tens to hundreds), whereas LLM action spaces are several orders of magnitude larger.
+- **vs DAPO**: DAPO controls entropy indirectly through clipping/constraints, while AEnt applies direct regularization over a truncated space.
+- **vs Cui et al.**: They observed the ineffectiveness of entropy bonuses but lacked a theoretical explanation; this paper provides both the explanation and a solution.
+- **vs SAC**: SAC's entropy regularization succeeds in robotics because $|\mathcal{A}|$ is small (tens to hundreds), whereas LLM vocabularies are several orders of magnitude larger.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Both the theoretical explanation and the clamped entropy approach offer genuine insight.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple models, benchmarks, and synthetic MDP settings.
-- Writing Quality: ⭐⭐⭐⭐ Theory and practice are integrated naturally.
-- Value: ⭐⭐⭐⭐⭐ Addresses an important practical problem in LLM-RL training.
+- Novelty: ⭐⭐⭐⭐ Both the theoretical explanation and the clamped entropy solution are insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple models, benchmarks, and synthetic MDPs.
+- Writing Quality: ⭐⭐⭐⭐ Natural integration of theory and practice.
+- Value: ⭐⭐⭐⭐⭐ Solves a significant practical problem in LLM-RL training.
 
 <!-- RELATED:START -->
 
@@ -115,11 +121,11 @@ This paper provides a theoretical explanation for why conventional entropy regul
 
 ## Related Papers
 
-- [\[ICLR 2026\] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)
+- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
+- [\[ICLR 2026\] Masked Generative Policy for Robotic Control](masked_generative_policy_for_robotic_control.md)
 - [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](../../ICML2026/robotics/towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
-- [\[ICLR 2026\] Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control](towards_bridging_the_gap_between_large-scale_pretraining_and_efficient_finetunin.md)
-- [\[AAAI 2026\] Test-driven Reinforcement Learning in Continuous Control](../../AAAI2026/robotics/test-driven_reinforcement_learning_in_continuous_control.md)
-- [\[CVPR 2026\] DAWN: Pixel Motion Diffusion is What We Need for Robot Control](../../CVPR2026/robotics/dawn_pixel_motion_diffusion_robot_control.md)
+- [\[ECCV 2024\] LLM as Copilot for Coarse-Grained Vision-and-Language Navigation](../../ECCV2024/robotics/llm_as_copilot_for_coarse-grained_vision-and-language_navigation.md)
+- [\[ICLR 2026\] From Embedding to Control: Representations for Stochastic Multi-Object Systems](from_embedding_to_control_representations_for_stochastic_multi-object_systems.md)
 
 </div>
 

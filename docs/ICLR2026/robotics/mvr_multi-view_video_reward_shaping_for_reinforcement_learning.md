@@ -2,84 +2,97 @@
 title: >-
   [Paper Note] MVR: Multi-view Video Reward Shaping for Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics][visual reward shaping] This paper proposes the MVR framework, which learns a state relevance function from multi-view video via video-text similarity matching. Combined with state-dependent reward s…
+  [ICLR 2026][Robotics & Embodied AI][Reinforcement Learning] The MVR framework is proposed to utilize video-text similarity from multi-view videos to learn a state relevance function. Combined with state-dependent reward shaping (automatically decaying VLM guidance), it outperforms existing VLM reward methods across 19 tasks in HumanoidBench and MetaWorld.
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "visual reward shaping"
-  - "multi-view video"
-  - "reinforcement learning"
-  - "vision-language models"
-  - "state relevance learning"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - Reinforcement Learning
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 0e00e6dc70bd2be6
+content_hash: 66b263057ed057a2
 ---
-
 # MVR: Multi-view Video Reward Shaping for Reinforcement Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01694](https://arxiv.org/abs/2603.01694)  
 **Code**: [https://mvr-rl.github.io/](https://mvr-rl.github.io/)  
-**Area**: Reinforcement Learning
-**Keywords**: visual reward shaping, multi-view video, reinforcement learning, vision-language models, state relevance learning
+**Area**: Reinforcement Learning  
+**Keywords**: Visual Reward Shaping, Multi-view Video, Reinforcement Learning, Vision-Language Models, State Relevance Learning
 
 ## TL;DR
-This paper proposes the MVR framework, which learns a state relevance function from multi-view video via video-text similarity matching. Combined with state-dependent reward shaping that automatically attenuates VLM guidance, MVR outperforms existing VLM-based reward methods across 19 tasks on HumanoidBench and MetaWorld.
+The MVR framework is proposed to utilize video-text similarity from multi-view videos to learn a state relevance function. Combined with state-dependent reward shaping (automatically decaying VLM guidance), it outperforms existing VLM reward methods across 19 tasks in HumanoidBench and MetaWorld.
 
 ## Background & Motivation
 
-**Background**: Reward design is critical in reinforcement learning. A recent emerging paradigm leverages image-text similarity from VLMs as a visual signal to augment rewards (e.g., VLM-RM, RoboCLIP), guiding agents toward states that match task descriptions.
+**Background**: Reward design is critical in reinforcement learning. A recent emerging paradigm involves using image-text similarity from VLMs as visual signals to enhance rewards (e.g., VLM-RM, RoboCLIP), guiding agents to visit states that match task descriptions.
 
-**Limitations of Prior Work**: (a) **Limitations of static images**: Single-frame image-text similarity fails to characterize dynamic motion—optimizing per-frame similarity causes agents to repeatedly pause at the frame that most resembles "running," rather than actually running (which requires rhythmic alternation of both legs). (b) **Single-view occlusion**: A single camera angle causes occlusion among robot limbs, introducing viewpoint-dependent bias. (c) **Lack of adaptive decay**: Existing methods linearly combine VLM scores and task rewards, which may shift the optimal policy.
+**Limitations of Prior Work**: (a) **Limitations of static images**: Single-frame image-text similarity cannot characterize dynamic motion—optimizing single-frame similarity may cause the agent to repeatedly stop at the frame "most similar to running" rather than actually performing the rhythmic motion of running (which requires alternating legs). (b) **Single-view occlusion**: A single camera angle leads to occlusions between robot limbs, creating view-dependent biases. (c) **Lack of adaptive decay**: Existing methods simply perform a linear superposition of VLM scores and task rewards, which may alter the optimal policy.
 
-**Key Challenge**: VLM-provided visual guidance is valuable early in training (helping agents discover correct motion patterns), but if continuously applied, it may conflict with task objectives—a "use early, release later" mechanism is needed.
+**Key Challenge**: Visual guidance provided by VLMs is valuable in the early stages of learning (assisting in discovering correct motion patterns), but if applied continuously, it may conflict with task objectives—necessitating a "use first, release later" mechanism.
 
-**Goal**: (a) Replace static images with video to accurately assess dynamic motion quality; (b) eliminate occlusion bias through multi-view observations; (c) design automatically decaying reward shaping to avoid persistent conflict between VLM guidance and task rewards.
+**Goal**: (a) Replace static images with video to accurately evaluate dynamic motion quality; (b) eliminate occlusion bias using multiple views; (c) design automatically decaying reward shaping to avoid persistent conflict between VLM guidance and task rewards.
 
-**Key Insight**: Rather than directly fitting VLM scores (which suffers from a large semantic gap), the paper preserves ranking consistency between the video space and state space via paired comparisons; multi-view regularization is used to eliminate viewpoint bias; and an automatic decay mechanism is derived based on the Bradley-Terry model.
+**Key Insight**: Instead of directly fitting VLM scores (due to the excessive semantic gap), maintain ranking consistency between video space and state space through paired comparisons; use multi-view regularization to eliminate view bias; and design an automatic decay mechanism based on the Bradley-Terry model.
 
-**Core Idea**: Learn a state-space relevance ranking function from multi-view video, and generate automatically decaying reward shaping signals by comparing against a reference set.
+**Core Idea**: Learn a state-space relevance ranking function from multi-view videos, and then generate an automatically decaying reward shaping signal through comparison with a reference set.
 
 ## Method
 
 ### Overall Architecture
-Within the online RL loop: (1) the agent executes its policy and collects state sequences; (2) multi-view videos are rendered periodically; (3) a frozen ViCLIP computes video-text similarity scores to update the dataset $\mathcal{D}$ and reference set $\mathcal{D}^{\text{ref}}$ (retaining the top-$k$ best trajectories); (4) the state relevance model $f^{\text{MVR}}$ is updated from $\mathcal{D}$; (5) $f^{\text{MVR}}$ and $\mathcal{D}^{\text{ref}}$ are used to compute the visual feedback $r^{\text{VLM}}$, which is combined with the task reward $r^{\text{task}}$.
+MVR addresses how a frozen Vision-Language Model (VLM) can guide RL online, correcting dynamic motion without long-term deviation. It decomposes this into an online loop of training and self-improvement: the agent interacts with the environment according to the current policy to accumulate state sequences, while MVR periodically renders these trajectories into multi-view videos. It then uses frozen ViCLIP to calculate video-text similarities, learns a **state relevance function** $f^{\text{MVR}}$ based on these, and finally produces a visual feedback reward that is "strong early on and automatically zeroed later" for the agent.
+
+The key to the pipeline is that similarity scores are not used directly as rewards. Instead, they are distilled into two components: a complete dataset $\mathcal{D}$ for training $f^{\text{MVR}}$, and a reference set $\mathcal{D}^{\text{ref}}$ containing only optimal trajectories to act as a proxy for the "optimal policy." Reward shaping then compares $f^{\text{MVR}}$ with $\mathcal{D}^{\text{ref}}$ to determine how much current behavior lags behind the best; as the gap closes, the feedback weakens until it decays to zero.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Online RL agent<br/>Rollout state sequences via policy"] --> B["Render multi-view videos<br/>(4 views)"]
+    B --> C["Calc video-text similarity<br/>via frozen ViCLIP"]
+    C --> D["Update dataset D"]
+    C --> R["Maintain reference set<br/>D_ref keeps top-k trajectories"]
+    subgraph F["Train state relevance function f_MVR"]
+        direction TB
+        K1["Paired comparison matching<br/>Ranking consistency L_matching"]
+        K2["Multi-view regularization<br/>Representation alignment L_reg"]
+    end
+    D --> F
+    F --> S["State-dependent reward shaping<br/>Calc r_VLM with auto-decay"]
+    R --> S
+    S --> O["r_MVR = r_task + w·r_VLM"]
+    O -->|Next round| A
+```
 
 ### Key Designs
 
-1. **Matching Paired Comparisons**:
+**1. Paired Comparison Matching: Bypassing the semantic gap between states and videos using ranking consistency**
 
-    - Function: Bridge the semantic gap between the state space and the video space.
-    - Mechanism: Rather than directly regressing video-text similarity scores from states (which is intractable), ranking consistency is preserved instead. Given two videos $\mathbf{o}, \mathbf{o}'$, the Bradley-Terry model computes $h_{\text{vid}}(\mathbf{o}, \mathbf{o}') = \sigma(\psi^{\text{VLM}}(\mathbf{o}, \ell) - \psi^{\text{VLM}}(\mathbf{o}', \ell))$, and the state-space ranking $h_{\text{state}}(\mathbf{s}, \mathbf{s}')$ is trained to match it. The loss $L_{\text{matching}}$ is the cross-entropy between the two.
-    - Design Motivation: This mirrors preference learning (RLHF) but fits probabilities rather than binary labels, yielding smoother and more stable training. Cross-view video pairs sharing the same state sequences naturally augment comparison data.
+Directly regressing state space to VLM-provided video-text similarity scores is difficult because state vectors and video features are not in the same semantic space. MVR instead requires only that their **rankings** be consistent: given two videos $\mathbf{o}, \mathbf{o}'$, the Bradley-Terry model converts the VLM similarity difference into a preference probability $h_{\text{vid}}(\mathbf{o}, \mathbf{o}') = \sigma(\psi^{\text{VLM}}(\mathbf{o}, \ell) - \psi^{\text{VLM}}(\mathbf{o}', \ell))$. It then requires that the ranking calculated from state space $h_{\text{state}}(\mathbf{s}, \mathbf{s}')$ aligns with this, using cross-entropy as the matching loss $L_{\text{matching}}$. This is similar to preference learning (RLHF) but fits continuous probabilities rather than binary labels, making it smoother and more stable. Because cross-view video pairs share the same state sequence, comparison data can be naturally augmented.
 
-2. **Regularizing State Representations**:
+**2. Multi-view Regularization: Eliminating systematic bias from camera angles**
 
-    - Function: Eliminate systematic bias introduced by different camera viewpoints.
-    - Mechanism: $f^{\text{MVR}}(s) = \langle g^{\text{rel}}, g^{\text{state}}(s) \rangle$ is decomposed into a state encoder and a learnable relevance direction. The regularization term $L_{\text{reg}} = |\psi^{\text{VLM}}(\mathbf{o}_i, \mathbf{o}_j) - \langle \bar{g}^{\text{state}}(\mathbf{s}_i), \bar{g}^{\text{state}}(\mathbf{s}_j) \rangle|$ aligns the similarity structure of state representations with that of video representations.
-    - Design Motivation: Representation learning ($L_{\text{reg}}$) and relevance scoring ($L_{\text{matching}}$) are decoupled, allowing multi-view information to be effectively aggregated without mutual interference.
+When viewed from a single angle, certain limbs may be occluded, while frontal views often have inflated scores due to better visibility, mixing view-dependent bias into relevance ratings. MVR explicitly splits the relevance function into two parts $f^{\text{MVR}}(s) = \langle g^{\text{rel}}, g^{\text{state}}(s) \rangle$—a state encoder $g^{\text{state}}$ and a learnable relevance direction $g^{\text{rel}}$. It adds a regularization term $L_{\text{reg}} = |\psi^{\text{VLM}}(\mathbf{o}_i, \mathbf{o}_j) - \langle \bar{g}^{\text{state}}(\mathbf{s}_i), \bar{g}^{\text{state}}(\mathbf{s}_j) \rangle|$, forcing the similarity structure between state representations to align with the (cross-view averaged) video representations. This decouples "representation learning" (anchored by $L_{\text{reg}}$) from "relevance scoring" (picking the direction $g^{\text{rel}}$ via $L_{\text{matching}}$), allowing multi-view information to be aggregated effectively.
 
-3. **State-Dependent Reward Shaping (Automatic Decay)**:
+**3. Reference Set Maintenance: Approximating the optimal policy $\pi^\ell$ with historical best trajectories**
 
-    - Function: Make VLM guidance strong early in training and have it vanish automatically later.
-    - Mechanism: Policy relevance is defined as $h^\pi = \sum_s f^{\text{MVR}}(s) d^\pi(s)$, and the optimization objective is $\max_\pi v^\pi + w \log(\sigma(h^\pi - h^{\pi^\ell}))$ (encouraging the current policy to become indistinguishable from the optimal policy $\pi^\ell$). Applying Jensen's inequality yields $r^{\text{VLM}}(s) = \mathbb{E}_{s' \sim \pi^\ell}[\log(\sigma(f^{\text{MVR}}(s) - f^{\text{MVR}}(s')))]$.
-    - Design Motivation: When the agent's behavior aligns with $\mathcal{D}^{\text{ref}}$, $f^{\text{MVR}}(s) \approx f^{\text{MVR}}(s')$, so $r^{\text{VLM}} \to 0$, and the VLM guidance naturally vanishes, avoiding persistent conflict with $r^{\text{task}}$.
+The decay mechanism requires an optimal policy $\pi^\ell$ as a benchmark. Training a separate policy to approximate this is costly and lacks samples. MVR reuses online experience: $\mathcal{D}^{\text{ref}}$ retains only the $k=10$ state sequences with the highest cross-view aggregated similarity, effectively "recalling its own best attempts." This avoids expert demonstrations or extra training, reducing the cost of obtaining a reference policy to near zero.
 
-4. **Reference Set Maintenance**:
+**4. State-dependent Reward Shaping: Making VLM guidance strong early and zeroing out later**
 
-    - Function: Approximate $\pi^\ell$ using the top-$k$ best historical trajectories.
-    - Mechanism: $\mathcal{D}^{\text{ref}}$ retains the $k=10$ state sequences with the highest cross-view aggregated similarity, akin to "recalling one's best attempts."
-    - Design Motivation: This avoids the need to train a separate policy from VLM rewards to approximate $\pi^\ell$, directly reusing online experience.
+Existing methods superimpose VLM scores and task rewards with fixed weights, leading to persistent guidance that may alter the optimal policy. MVR reformulates the objective as "making the current policy indistinguishable from the optimal policy $\pi^\ell$." Defining policy relevance as $h^\pi = \sum_s f^{\text{MVR}}(s) d^\pi(s)$, it optimizes $\max_\pi v^\pi + w \log(\sigma(h^\pi - h^{\pi^\ell}))$, and expands this using Jensen's inequality into a per-state shaping signal:
+
+$$r^{\text{VLM}}(s) = \mathbb{E}_{s' \sim \pi^\ell}[\log(\sigma(f^{\text{MVR}}(s) - f^{\text{MVR}}(s')))],$$
+
+where the expectation over $\pi^\ell$ is approximated by sampling the reference set $\mathcal{D}^{\text{ref}}$. Crucially, this signal decays naturally: as the agent's behavior aligns with $\mathcal{D}^{\text{ref}}$, $f^{\text{MVR}}(s) \approx f^{\text{MVR}}(s')$, so $r^{\text{VLM}} \to 0$. VLM guidance exits the loop and no longer competes with the task reward $r^{\text{task}}$.
 
 ### Loss & Training
 
-The state relevance model is trained with $L_{\text{rel}} = L_{\text{matching}} + L_{\text{reg}}$, updated every 100K steps with early stopping. The final reward is $r^{\text{MVR}}(s) = r^{\text{task}}(s) + w \cdot r^{\text{VLM}}(s)$, with $w \in \{0.01, 0.1, 0.5\}$ selected via grid search. One trajectory is rendered for every 9 collected, with randomly sampled viewpoints and video segment length of 64 frames. ViCLIP-L (428M parameters) is used.
+State relevance model training: $L_{\text{rel}} = L_{\text{matching}} + L_{\text{reg}}$, updated every 100K steps with early stopping. Final reward: $r^{\text{MVR}}(s) = r^{\text{task}}(s) + w \cdot r^{\text{VLM}}(s)$, with $w \in \{0.01, 0.1, 0.5\}$ determined by grid search. Rendering frequency: 1 out of every 9 trajectories is rendered from random viewpoints with 64-frame segments. ViCLIP-L (428M parameters) is utilized.
 
 ## Key Experimental Results
 
 ### Main Results
 
-HumanoidBench, 9 tasks (10M steps, 3 seeds):
+HumanoidBench results over 9 tasks (10M steps, 3 seeds):
 
 | Task | MVR | TQC | VLM-RM | RoboCLIP | DreamerV3 |
 |------|-----|-----|--------|----------|-----------|
@@ -90,48 +103,48 @@ HumanoidBench, 9 tasks (10M steps, 3 seeds):
 | Sit_Hard | **756.67** ✓ | 511.85 | 322.95 | 559.38 | 433.4 |
 | Avg Rank | **1.67** | 3.11 | 3.78 | 2.89 | 3.56 |
 
-MetaWorld, 10 tasks (1M steps, 5 seeds, success rate): MVR average rank 1.50, RoboCLIP 2.00, VLM-RM 2.40.
+MetaWorld over 10 tasks (1M steps, 5 seeds, success rate): MVR average rank 1.50, RoboCLIP 2.00, VLM-RM 2.40.
 
 ### Ablation Study
 
 | Variant | Description |
-|---------|-------------|
-| w/o reg (remove $L_{\text{reg}}$) | Performance drops on multiple tasks, validating the value of multi-view regularization |
-| w/o reference (use $f^{\text{MVR}}$ directly as reward) | Absence of automatic decay causes overfitting to VLM guidance on some tasks |
-| MVR-CLIP (images instead of video) | Severe degradation on dynamic tasks (Run, Walk)—single frames cannot capture rhythmic motion |
-| direct (directly fit VLM scores) | Semantic gap leads to unstable learning |
-| Number of views (1→4) | Multiple views are generally beneficial; single-view suffices for Stand (static posture with no occlusion) |
+|------|------|
+| w/o reg (Removing $L_{\text{reg}}$) | Performance dropped across multiple tasks, validating multi-view regularization. |
+| w/o reference (Using $f^{\text{MVR}}$ directly) | Lacks automatic decay; some tasks overfit to VLM guidance. |
+| MVR-CLIP (Using images instead of video) | Dynamic tasks (Run, Walk) degraded severely—single frames cannot represent rhythmic motion. |
+| direct (Directly fitting VLM scores) | Semantic gap led to unstable learning. |
+| Number of views (1→4) | Multi-view is generally beneficial; Stand only needs a single view (static pose). |
 
 ### Key Findings
-- MVR achieves best performance on 5/9 HumanoidBench tasks with the best average rank (1.67), and is the only method to simultaneously reach the success threshold on both Walk and Run.
-- VLM-RM completely fails on Run (14.93 vs. 749.23), because single-frame similarity induces the agent to freeze in a "running pose" rather than actually running.
-- Multiple views yield significant benefits for dynamic tasks, with minimal effect on static posture tasks.
-- The automatic decay mechanism is critical: a case study shows that MVR can correct poor postures early in training and then naturally withdraw, allowing the agent to focus on speed optimization.
+- MVR is optimal in 5/9 HumanoidBench tasks with the best average rank (1.67), and is the only method to reach the success threshold for both Walk and Run.
+- VLM-RM failed completely on the Run task (14.93 vs 749.23) because single-frame similarity induced the agent to hold a "running pose" rather than actually running.
+- Multi-view is significantly beneficial for dynamic tasks and has less impact on static pose tasks.
+- The automatic decay mechanism is crucial: case studies show MVR can correct poor posture early and then exit, allowing the agent to focus on speed optimization.
 
 ## Highlights & Insights
-- **Fundamentally addresses the visual evaluation of dynamic motion**: Replacing static images with video is a natural yet overlooked choice. The paper clearly demonstrates the dramatic failure of single-frame methods on running tasks (VLM-RM: 14.93), providing highly compelling motivation.
-- **Elegant design of paired comparisons**: Rather than directly regressing VLM scores (which suffers from a large semantic gap), only relative rankings are learned—this "rank-only" approach is considerably more robust than fitting absolute values, mirroring the success logic of RLHF.
-- **Elegant automatic decay mechanism**: $r^{\text{VLM}}$ naturally approaches zero as behavior improves, requiring no manually designed decay schedule—far more elegant than existing fixed-weight combination schemes.
-- **Reference set as best recalled attempts**: Using online top-$k$ trajectories to approximate the target policy avoids the need for expert demonstrations or separate training. This intuition, analogous to human skill learning, is highly inspiring.
+- **Fundamentally solves visual evaluation of dynamic motion**: Replacing images with video is a natural but overlooked choice. The paper clearly demonstrates the dramatic failure of single-frame methods on running tasks (VLM-RM: 14.93).
+- **Clever design of paired comparison**: Avoiding direct regression of VLM scores (semantic gap) in favor of ranking consistency is robust, similar to the logic behind RLHF's success.
+- **Elegant automatic decay mechanism**: $r^{\text{VLM}}$ naturally tends toward zero as behavior improves, removing the need for manually designed decay schedules.
+- **Reference set as "best memories"**: Using the top-k online trajectories to approximate the target policy avoids the overhead of expert demonstrations.
 
 ## Limitations & Future Work
-- Validation is limited to simulated environments; real-robot experiments have not been conducted—rendering multi-view videos in real-world settings requires a multi-camera setup.
-- Rendering one trajectory per nine already reduces overhead, but ViCLIP (428M parameters) still incurs non-negligible computational cost.
-- The weight $w$ still requires grid search; although automatic decay reduces tuning burden, the initial weight continues to affect performance.
-- Performance on Balance_Simple and Balance_Hard is suboptimal (VLM-RM performs better), possibly because the visual signals for these tasks are more amenable to static evaluation.
-- The quality of $\mathcal{D}^{\text{ref}}$ depends on exploration—insufficient early exploration may yield a poor reference set.
+- Validated only in simulation; not tested on real robots where multi-view rendering would require multi-camera setups.
+- Although rendering 1/9 trajectories reduces overhead, the reliance on ViCLIP (428M parameters) still involves significant computational cost.
+- The weight $w$ still requires grid searching; while auto-decay eases tuning, the initial weight still impacts performance.
+- Performance on Balance_Simple and Balance_Hard tasks was suboptimal (VLM-RM performed better), possibly because their visual signals are more suited to static evaluation.
+- The quality of $\mathcal{D}^{\text{ref}}$ depends on exploration—if early exploration is insufficient, the reference set may be poor.
 
 ## Related Work & Insights
-- **vs. VLM-RM (Rocamonde et al., 2024)**: VLM-RM uses CLIP image-text similarity with fixed-weight combination. MVR uses ViCLIP video-text similarity with automatic decay. The contrast on Run (749 vs. 15) constitutes the most compelling argument.
-- **vs. RoboCLIP (Sontakke et al., 2024)**: RoboCLIP also uses video-text similarity but provides only trajectory-level sparse rewards. MVR learns a state-level dense relevance function, enabling finer-grained guidance.
-- **vs. RLHF**: MVR's paired comparison with the BT model shares the same foundation as RLHF, but here "preferences" are derived from VLMs rather than humans, and comparisons are made between different trajectories of the same policy rather than outputs of different models.
-- **Transfer potential**: The multi-view + state relevance learning framework is transferable to any setting requiring video-based assessment of behavior quality (e.g., sports coaching, surgical skill evaluation).
+- **vs VLM-RM (Rocamonde et al., 2024)**: VLM-RM uses CLIP image-text similarity + fixed weights. MVR uses ViCLIP video-text + auto-decay. The comparison on the Run task (749 vs 15) is the strongest evidence.
+- **vs RoboCLIP (Sontakke et al., 2024)**: RoboCLIP also uses video-text similarity but provides only trajectory-level sparse rewards. MVR learns state-level dense relevance functions for finer guidance.
+- **vs RLHF**: MVR's paired comparison + BT model is related to RLHF, but the "preference" comes from the VLM rather than humans.
+- **Transfer Potential**: The Multi-view + State Relevance Learning framework can be transferred to any scenario requiring behavior evaluation from video (e.g., sports training analysis, surgical skill assessment).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The three designs—video, multi-view, and automatic decay—complement each other well, though none is individually entirely novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 19 tasks × 5 methods × multiple ablations; the experimental design is highly systematic.
-- Writing Quality: ⭐⭐⭐⭐ Method derivation is clear, though the dense notation requires careful reading.
-- Value: ⭐⭐⭐⭐ Represents a substantive advance in VLM-driven RL reward design; practical and extensible.
+- Novelty: ⭐⭐⭐⭐ The combination of video, multi-view, and auto-decay is complementary and appropriate.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Systematic design with 19 tasks and comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological derivation, though the notation requires careful reading.
+- Value: ⭐⭐⭐⭐ Substantial advancement in VLM-driven RL reward design, both practical and scalable.
 
 <!-- RELATED:START -->
 
@@ -139,11 +152,11 @@ MetaWorld, 10 tasks (1M steps, 5 seeds, success rate): MVR average rank 1.50, Ro
 
 ## Related Papers
 
-- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_via_robus.md)
-- [\[ACL 2026\] Mango: Multi-Agent Web Navigation via Global-View Optimization](../../ACL2026/robotics/mango_multi-agent_web_navigation_via_global-view_optimization.md)
+- [\[CVPR 2026\] General Process Reward Modeling for Robotic Reinforcement Learning](../../CVPR2026/robotics/general_process_reward_modeling_for_robotic_reinforcement_learning.md)
+- [\[ICLR 2026\] ViPRA: Video Prediction for Robot Actions](vipra_video_prediction_for_robot_actions.md)
 - [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](../../AAAI2026/robotics/scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
+- [\[ACL 2026\] Mango: Multi-Agent Web Navigation via Global-View Optimization](../../ACL2026/robotics/mango_multi-agent_web_navigation_via_global-view_optimization.md)
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](../../NeurIPS2025/robotics/sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](../../CVPR2026/robotics/learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
 
 </div>
 

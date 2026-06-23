@@ -2,68 +2,73 @@
 title: >-
   [Paper Note] Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization
 description: >-
-  [ICLR 2026][Robotics][Personalized Embodied Intelligence] This paper systematically evaluates the memory utilization capabilities of LLM-driven embodied agents through the Memento framework. It finds that existing agents…
+  [ICLR 2026][Robotics & Embodied AI][LLM Agent] This paper systematically evaluates the memory utilization capabilities of LLM-driven embodied agents through the Memento framework. The study reveals that existing agents can recall simple object semantics but fail to process sequential information regarding user behavior patterns. To address this, a user profile memo
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "Personalized Embodied Intelligence"
-  - "Memory Utilization"
-  - "Episodic Memory"
-  - "Knowledge Graph"
-  - "LLM Agent"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - LLM Agent
 date: 2026-05-08
-content_hash: 54b7576ae6219fd7
+content_hash: 4642b6e8e65ed301
 ---
-
 # Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.16348](https://arxiv.org/abs/2505.16348)  
 **Code**: [https://github.com/Connoriginal/MEMENTO](https://github.com/Connoriginal/MEMENTO)  
-**Area**: Graph Learning
+**Area**: Graph Learning  
 **Keywords**: Personalized Embodied Intelligence, Memory Utilization, Episodic Memory, Knowledge Graph, LLM Agent
 
 ## TL;DR
-This paper systematically evaluates the memory utilization capabilities of LLM-driven embodied agents through the Memento framework. It finds that existing agents can recall simple object semantics but fail to process sequential information in user behavior patterns. A hierarchical knowledge graph-based user profile memory module is proposed to effectively improve performance on personalized assistance tasks.
+This paper systematically evaluates the memory utilization capabilities of LLM-driven embodied agents through the Memento framework. The study reveals that existing agents can recall simple object semantics but fail to process sequential information regarding user behavior patterns. To address this, a user profile memory module based on a hierarchical knowledge graph is proposed to effectively enhance performance in personalized assistance tasks.
 
 ## Background & Motivation
 
-**Background**: LLM-driven embodied agents have achieved notable progress on traditional object rearrangement tasks; however, these tasks typically involve only single-turn interactions and static instructions, requiring no understanding of personalized user preferences or historical behaviors.
+**Background**: Current LLM-driven embodied agents have achieved significant progress in traditional object rearrangement tasks. However, these tasks typically involve single-turn interactions and static instructions, requiring no understanding of personalized user preferences or historical behaviors.
 
-**Limitations of Prior Work**: Existing memory systems for embodied agents primarily focus on semantic memory (scene graphs, semantic maps) and procedural memory (skill libraries), while episodic memory is used merely as a passive task buffer or contextual history, lacking systematic evaluation of personalized knowledge extraction and utilization.
+**Limitations of Prior Work**: Existing memory systems for embodied agents primarily focus on semantic memory (scene graphs, semantic maps) and procedural memory (skill libraries). Episodic memory is merely used as a passive task buffer or context history, lacking a systematic evaluation of personalized knowledge extraction and utilization.
 
-**Key Challenge**: Personalized user knowledge (e.g., "favorite mug," "morning routine") requires agents to extract information from past interactions and apply it flexibly to new tasks. However, agents face two critical bottlenecks: information overload (performance degrades as retrieved memories increase) and coordination failure (inability to simultaneously leverage multiple memory entries).
+**Key Challenge**: Personalized knowledge (e.g., "favorite mug," "morning routine") requires agents to extract information from past interactions and apply it flexibly to new tasks. However, agents face two critical bottlenecks: information overload (performance degradation as retrieved memory increases) and coordination failure (inability to utilize multiple memories simultaneously).
 
-**Goal**: 1) Systematically evaluate the memory utilization capabilities of embodied agents in personalized assistance tasks; 2) Diagnose critical bottlenecks in memory utilization; 3) Design improved memory architectures to support personalized tasks.
+**Goal**: 1) Systematically evaluate the memory utilization capabilities of embodied agents in personalized assistance tasks; 2) Diagnose key bottlenecks in memory utilization; 3) Design superior memory architectures to support personalized tasks.
 
-**Key Insight**: The approach addresses two dimensions of memory utilization—object semantics (recognizing objects with personal significance) and user patterns (recalling sequential information within behavioral routines)—by constructing an end-to-end evaluation framework.
+**Key Insight**: Approaching the problem through two dimensions of memory utilization—object semantics (identifying objects with personal meaning) and user patterns (recalling sequences within behavioral routines)—to construct an end-to-end evaluation framework.
 
-**Core Idea**: By decoupling personalized knowledge management, a hierarchical knowledge graph-based user profile memory module is constructed to independently manage object semantic and user pattern information, thereby overcoming information overload and coordination failure in LLM episodic memory.
+**Core Idea**: By decoupling personalized knowledge management, a hierarchical knowledge graph user profile memory module is constructed. This module independently manages object semantics and user pattern information, thereby overcoming the bottlenecks of information overload and coordination failure in LLM episodic memory.
 
 ## Method
 
 ### Overall Architecture
-Memento is a two-phase evaluation framework. In Phase 1 (memory acquisition), agents accumulate episodic memories through multi-turn interactions with users and establish performance baselines. In Phase 2 (memory utilization), agents must apply accumulated personalized knowledge to complete new assistance tasks. Tasks are divided into single-memory tasks (requiring one piece of personalized knowledge) and joint-memory tasks (requiring simultaneous coordination of multiple memory entries).
+This work follows a three-stage trajectory: "establish evaluation, diagnose problems, and provide solutions." **Evaluation** is conducted via the Memento framework: it decomposes the agent's memory utilization into two sequential phases. In the memory acquisition phase, the agent consolidates personalized information (object semantics and user patterns) into episodic memory through multi-turn interactions to establish a performance baseline. In the memory utilization phase, this accumulated knowledge is applied to entirely new assistance tasks. Utilization tasks are further categorized into single-memory tasks (requiring one piece of knowledge) and joint-memory tasks (requiring simultaneous coordination of multiple pieces of knowledge). **Diagnosis** utilizes control variables within these tasks to identify failure modes, isolating "information overload" and "coordination failure." The **Solution** addresses these findings by implementing a parallel user profile memory structured as a hierarchical knowledge graph, which extracts personalized knowledge from the episodic memory flow for structured management, mitigating both types of failure.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Multi-turn User Interaction<br/>Object Semantics + User Patterns"] --> B
+    subgraph M["Memento Evaluation Framework"]
+        direction TB
+        B["Memory Acquisition Phase<br/>Rearrangement with Full Instructions<br/>Episodic Memory Consolidation + Baseline"] --> C["Memory Utilization Phase<br/>Underspecified Instructions + top-k Retrieval"]
+        C -->|Single Knowledge| D["Single-Memory Task"]
+        C -->|Dual Knowledge| E["Joint-Memory Task"]
+    end
+    D --> F["Memory Bottleneck Diagnosis<br/>Information Overload + Coordination Failure"]
+    E --> F
+    F --> G["User Profile Memory<br/>3-Layer Knowledge Graph<br/>User→Knowledge Type→Element"]
+    G --> H["Personalized Assistance Task<br/>Significant SR Improvement"]
+```
 
 ### Key Designs
 
-1. **Memento Evaluation Framework**:
+**1. Memento Evaluation Framework: Decomposing Personalized Knowledge into Two Measurable Dimensions**
 
-    - Function: Constructs an end-to-end benchmark for evaluating personalized embodied agents.
-    - Mechanism: Personalized knowledge is categorized into object semantics and user patterns. Object semantics refers to personal meanings users assign to physical objects (e.g., "the red cup in the coffee set"); user patterns refer to sequential information in behavioral routines (e.g., "breakfast routine"). Evaluation metrics include Percent Complete ($PC$) for task completion ratio and Success Rate ($SR$) for task success.
-    - Design Motivation: Existing evaluations focus solely on single-turn static instructions and fail to reflect the genuine challenges of personalized assistance.
+Existing embodied benchmarks mostly test single-turn static instructions, failing to expose the true difficulty of personalized assistance: "the agent must remember who you are and how you do things." Memento explicitly splits personalized knowledge into two categories: object semantics, which refers to personal meanings assigned to physical objects (e.g., "the red mug in the coffee set"), testing the identification of objects with personal labels; and user patterns, which refers to sequential information in routines (e.g., the sequence of steps in a "breakfast routine"), testing the replay of order from past interactions. The framework is end-to-end, using Percent Complete ($PC$, ratio of subgoals finished) to measure progress and Success Rate ($SR$, overall task success) to measure final achievement.
 
-2. **Memory Bottleneck Diagnostic Experiments**:
+**2. Memory Bottleneck Diagnosis: Pinpointing Failures via Controlled Variables**
 
-    - Function: Identifies critical obstacles in memory utilization through controlled variable experiments.
-    - Mechanism: Information overload effects are assessed by varying top-$k$ retrieval counts ($k=3,5,7,10$) in single-memory tasks; coordination capability is evaluated by requiring agents to simultaneously use two memory entries in joint-memory tasks. Memory format simplification experiments (summarized vs. instruction-only) are also conducted.
-    - Design Motivation: Understanding the conditions under which agent memory utilization fails is necessary before targeted improvements can be designed.
+To identify why performance drops, Memento scales the number of retrieved memories top-$k$ (where $k=3,5,7,10$) in single-memory tasks to observe if performance declines as irrelevant memories increase, thus isolating "information overload." Results show that performance across models deteriorates as $k$ increases, indicating that more retrieval interferes with decision-making. Joint-memory tasks force the agent to invoke two memories simultaneously, specifically testing "coordination failure." Furthermore, memory format simplification experiments were conducted, replacing full episodic memory with summarized versions or instruction-only versions, to determine which parts of episodic memory are functional.
 
-3. **Hierarchical Knowledge Graph User Profile Memory**:
+**3. Hierarchical Knowledge Graph User Profile Memory: Structured Management of Personalized Knowledge**
 
-    - Function: Independently manages personalized knowledge, providing agents with clearer and more structured information.
-    - Mechanism: A three-level hierarchy is constructed—user layer → knowledge type layer (object semantics, user patterns) → specific element layer (objects, patterns, locations)—using hierarchical edges for structural relationships and temporal edges for sequential ordering within user patterns. This module coexists with episodic memory rather than replacing it.
-    - Design Motivation: Episodic memory simultaneously provides personalized knowledge and in-context learning benefits (simplification degrades smaller model performance); thus, an additional module dedicated to managing personalized knowledge is required.
+Diagnosis revealed that episodic memory serves a dual role: it carries personalized knowledge and acts as a demonstration for In-Context Learning (ICL). Simply summarizing it can reduce the ICL benefits for smaller models. Therefore, this paper maintains the episodic memory but attaches a parallel User Profile Memory to carry personalized knowledge structurally. It is a three-layer knowledge graph: User Layer → Knowledge Type Layer (Object Semantics, User Patterns) → Element Layer (Objects, Patterns, Locations). Hierarchical edges represent membership, while temporal edges within user patterns record the sequence of actions. This allows the agent to retrieve clean, denoised, and ordered structured answers for queries like "where is the red mug" or "what is the third step of breakfast" without searching through raw episodic fragments.
 
 ## Key Experimental Results
 
@@ -86,37 +91,37 @@ Memento is a two-phase evaluation framework. In Phase 1 (memory acquisition), ag
 |------|---------|--------|--------|
 | GPT-4o | Full Episodic Memory | 90.0 | 83.3 |
 | GPT-4o | Summarized | 88.0 | 83.3 |
-| GPT-4o | Instruction-Only | 62.4 | 50.0 |
+| GPT-4o | Instructions Only | 62.4 | 50.0 |
 | Llama-3.1-8b | Full Episodic Memory | 72.8 | 63.3 |
 | Llama-3.1-8b | Summarized | 49.4 | 43.3 |
-| Llama-3.1-8b | Instruction-Only | 40.0 | 30.0 |
+| Llama-3.1-8b | Instructions Only | 40.0 | 30.0 |
 
 ### Key Findings
-- All models exhibit SR drops exceeding 20% on personalized tasks; GPT-4o shows a 30.5% SR decrease on joint-memory tasks.
-- Agents can effectively recall object semantics but struggle severely with sequential understanding of user patterns.
-- Increasing the number of retrieved memories (larger top-$k$) consistently degrades performance across all models, indicating that information overload is a critical bottleneck.
-- Memory summarization has limited impact on large models but substantially degrades smaller model performance, demonstrating that episodic memory simultaneously provides in-context learning benefits.
-- The user profile memory module yields significant performance improvements on both single-memory and joint-memory tasks.
+- All models show an $SR$ drop exceeding 20% in personalized tasks; GPT-4o's $SR$ drops by 30.5% in joint-memory tasks.
+- Agents effectively recall object semantics but struggle significantly with the sequential understanding of user patterns.
+- Increasing the number of retrieved memories (larger top-$k$) consistently degrades performance across all models, identifying information overload as a key bottleneck.
+- Memory summarization has limited impact on large models but significantly degrades small model performance, suggesting episodic memory also provides ICL benefits.
+- User Profile Memory brings significant performance gains in both single-memory and joint-memory tasks.
 
 ## Highlights & Insights
-- **Systematic Diagnosis of Memory Utilization Bottlenecks**: Controlled variable experiments clearly reveal two core bottlenecks—information overload and coordination failure—establishing foundational understanding of personalization capabilities in embodied agents.
-- **Discovery of the Dual Role of Episodic Memory**: Episodic memory is shown to serve not only as a source of personalized knowledge but also as a demonstration for in-context learning, explaining why naive memory summarization strategies are detrimental for smaller models.
+- **Systematic Diagnosis of Memory Utilization Bottlenecks**: Through controlled experiments, the study clearly identifies information overload and coordination failure as the two core bottlenecks, providing fundamental work for understanding personalized capabilities in embodied agents.
+- **Discovery of the Dual Role of Episodic Memory**: Proves that episodic memory not only provides personalized knowledge but also serves as a demonstration for ICL. This explains why simple memory summarization strategies can be harmful to smaller models.
 
 ## Limitations & Future Work
-- The evaluation employs gold perception and motor skills, bypassing challenges at the perception and execution layers.
-- Personalized knowledge is synthetically generated by LLMs and may not fully reflect the complex knowledge structures of real users.
-- Knowledge graph construction for user profile memory relies on LLM extraction, which may introduce noise in production environments.
-- Long-term adaptation scenarios involving memory evolution and updates over time remain unexplored.
+- The evaluation assumes "gold perception" and motor skills, bypassing challenges at the perception and execution levels.
+- Personalized knowledge is synthetically generated by LLMs, which may not fully reflect the complex knowledge structures of real users.
+- The construction of the User Profile Memory KG relies on LLM extraction, which may introduce noise in production environments.
+- Long-term adaptation scenarios where memory evolves and updates over time remain unexplored.
 
 ## Related Work & Insights
-- **vs. ProgPrompt/VOYAGER**: These methods focus on procedural memory (skill libraries) to improve task completion efficiency, whereas this paper examines the role of episodic memory in personalization; the two represent complementary memory dimensions.
-- **vs. Xu et al. (2024)**: Their work infers user preferences from limited demonstrations, whereas this paper requires agents to extract structured personalized knowledge from explicitly provided interaction histories, placing greater emphasis on systematic memory management.
+- **vs ProgPrompt/VOYAGER**: These methods focus on procedural memory (skill libraries) to improve task efficiency. This paper focuses on the role of episodic memory in personalization; these are complementary memory dimensions.
+- **vs Xu et al. (2024)**: While they infer user preferences from few-shot demonstrations, this work requires agents to extract structured personalized knowledge from explicitly provided interaction histories, emphasizing systematic memory management.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First framework to systematically evaluate memory utilization in embodied agents, with a clearly defined problem formulation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic ablations across multiple models and memory conditions yield insightful findings.
-- Writing Quality: ⭐⭐⭐⭐ Three research questions are developed progressively with clear logical structure.
-- Value: ⭐⭐⭐⭐ Provides important reference value for the direction of personalization in embodied agents.
+- Novelty: ⭐⭐⭐⭐ First framework to systematically evaluate memory utilization in embodied agents with clear problem definitions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic ablation across multiple models and memory conditions with insightful findings.
+- Writing Quality: ⭐⭐⭐⭐ Logical progression through three Research Questions (RQs).
+- Value: ⭐⭐⭐⭐ Significant reference value for the direction of personalization in embodied agents.
 
 <!-- RELATED:START -->
 
@@ -124,11 +129,11 @@ Memento is a two-phase evaluation framework. In Phase 1 (memory acquisition), ag
 
 ## Related Papers
 
+- [\[ICLR 2026\] Planning with an Embodied Learnable Memory](planning_with_an_embodied_learnable_memory.md)
 - [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](../../NeurIPS2025/robotics/memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
 - [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
-- [\[ICLR 2026\] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI](grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus.md)
-- [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
+- [\[ICLR 2026\] RoboMD: Uncovering Robot Vulnerabilities through Semantic Potential Fields](robomd_uncovering_robot_vulnerabilities_through_semantic_potential_fields.md)
 
 </div>
 

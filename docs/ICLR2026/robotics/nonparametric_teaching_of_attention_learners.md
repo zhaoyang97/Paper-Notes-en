@@ -2,100 +2,78 @@
 title: >-
   [Paper Note] Nonparametric Teaching of Attention Learners
 description: >-
-  [ICLR 2026][Robotics][nonparametric teaching] This paper proposes AtteNT — a reinterpretation of attention learner (Transformer/ViT) training through the lens of nonparametric teaching theory: it analyzes the importance-…
+  [ICLR 2026][Robotics & Embodied AI][Attention] This paper proposes AtteNT, which reinterprets the training process of attention learners (Transformer/ViT) from the perspective of nonparametric teaching theory. By analytically deriving the importance-adaptive role of attention in parameter gradients, the authors prove that dynamic ANTK converges to the importance-ad
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "nonparametric teaching"
-  - "attention mechanism"
-  - "functional gradient"
-  - "training acceleration"
-  - "kernel methods"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - Attention
 date: 2026-05-08
-content_hash: 70e7672da4bbf90d
+content_hash: 62f298f5a6398ca6
 ---
-
 # Nonparametric Teaching of Attention Learners
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.20461](https://arxiv.org/abs/2602.20461)  
-**Area**: Training Efficiency / Learning Theory
-**Keywords**: nonparametric teaching, attention mechanism, functional gradient, training acceleration, kernel methods
+**Area**: Training Efficiency/Learning Theory  
+**Keywords**: Nonparametric Teaching, Attention Mechanism, Functional Gradient, Training Acceleration, Kernel Methods
 
 ## TL;DR
 
-This paper proposes AtteNT — a reinterpretation of attention learner (Transformer/ViT) training through the lens of nonparametric teaching theory: it analyzes the importance-adaptive role of attention in parametric gradients → proves that the dynamic ANTK converges to an importance-adaptive canonical kernel in functional gradient descent → bridges parameter space and function space → applies a greedy teaching algorithm that selects samples with the largest prediction deviation to accelerate training → achieving 13.01% time savings for LLM fine-tuning and 20.58% for ViT training from scratch, with no degradation in accuracy.
+This paper proposes AtteNT, which reinterprets the training process of attention learners (Transformer/ViT) from the perspective of nonparametric teaching theory. By analytically deriving the importance-adaptive role of attention in parameter gradients, the authors prove that dynamic ANTK converges to the importance-adaptive canonical kernel in functional gradients, bridging the gap between parameter and functional spaces. A greedy teaching algorithm is introduced to select samples with the largest prediction bias, accelerating training by 13.01% for LLM fine-tuning and 20.58% for ViT pre-training while maintaining or improving accuracy.
 
 ## Background & Motivation
 
-**Background**: Attention learners (Transformers, ViTs, etc.) have achieved remarkable success in NLP and CV, but their training costs are prohibitively high — LLM pre-training requires millions of sentences, and video understanding demands even larger data scales. Reducing training costs has become an urgent need.
+**Background**: Attention-based learners such as Transformers and ViTs have achieved significant success in NLP and CV. However, their training costs are extremely high—LLM pre-training requires millions of sentences, and video understanding requires even larger data scales. Reducing training costs has become an urgent demand.
 
 **Limitations of Prior Work**:
 
-1. **Limited applicability of nonparametric teaching**: Existing nonparametric teaching theory accelerates learning by selecting teaching samples, but applies only to MLP learners, without accounting for the effect of attention mechanisms.
-2. **Gap between parameter space and function space**: Attention neural networks (ANNs) are trained via stochastic gradient descent (SGD) in parameter space, whereas nonparametric teaching uses functional gradient descent (FGD) in function space — the consistency between the two has never been established.
-3. **How attention alters learning dynamics**: The attention mechanism invokes the input three times (Q, K, V) to assign varying importance to sequence elements; how this affects the structure of parametric gradients has not been analyzed.
+1.  **Limited Applicability of Nonparametric Teaching**: Existing nonparametric teaching theories accelerate learning by selecting teaching samples but are primarily restricted to MLP learners, neglecting the impact of attention mechanisms.
+2.  **Gap between Parameter and Functional Spaces**: Attention networks (ANNs) are trained via Stochastic Gradient Descent (SGD) in the parameter space, while nonparametric teaching utilizes Functional Gradient Descent (FGD) in the function space. The consistency between these two has not been proven.
+3.  **Ambiguity in Attention Learning Dynamics**: The attention mechanism assigns different importance to sequence elements via Query, Key, and Value ($Q, K, V$). How this affects the structure of parameter gradients remains unanalyzed.
 
-**Key Challenge**: Nonparametric teaching theory has the potential to accelerate attention learner training, but a theoretical gap exists between its mathematical foundation (functional gradient descent) and the actual training procedure (parametric gradient descent), and the introduction of attention makes the extension from MLP to ANN non-trivial.
+**Key Challenge**: While nonparametric teaching theory has the potential to accelerate training, a theoretical gap exists between its mathematical foundation (FGD) and practical training (SGD). Extending this from MLPs to ANNs is non-trivial.
 
-**Goal**: Systematically analyze the role of attention in parametric gradient descent → prove the consistency between parametric and functional gradient descent for ANNs → directly apply the greedy teaching algorithm (selecting samples with the largest prediction deviation) to accelerate attention learner training.
+**Goal**: Systematically resolve the role of attention in parameter gradients, prove the consistency between SGD and FGD for ANNs, and directly apply the greedy selection algorithm of nonparametric teaching to accelerate attention learners.
 
 ## Method
 
 ### Overall Architecture
 
-The theoretical roadmap of AtteNT:
+AtteNT addresses the high training costs of Transformers and ViTs by using principled sample selection rather than heuristics. The framework establishes a link from parameter space to functional space and finally to the training algorithm in three steps: first, it analyzes the gradient structure of attention in parameter space; second, it maps the parameter evolution trajectory to the functional space using dynamic ANTK to prove convergence with FGD; third, it implements a greedy selection algorithm that prioritizes samples with the largest prediction bias to accelerate convergence.
 
-1. Analyze the role of attention in parametric gradient descent → discover importance-adaptive updates
-2. Map the evolution in parameter space to function space via the dynamic ANTK
-3. Prove that the dynamic ANTK converges to an importance-adaptive canonical kernel in functional gradient descent
-4. Establish the equivalence: "teaching an ANN = teaching an importance-adaptive nonparametric learner"
-5. Apply the greedy teaching algorithm to accelerate training
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Attention Learner Training<br/>(Parameter Space SGD, High Cost)"] --> B["Importance-adaptive Parameter Gradients<br/>Analytical Q/K/V assigning importance<br/>weight ω to sequence elements"]
+    B --> C["Consistency of Dynamic ANTK and Functional Gradient<br/>Taylor expansion of parameter evolution → Function space<br/>ANTK converges to importance-adaptive canonical kernel"]
+    C --> D["Theoretical Bridge<br/>SGD ≡ FGD<br/>Nonparametric teaching applicable to ANNs"]
+    D --> E["AtteNT Greedy Teaching Algorithm<br/>Select samples with max prediction bias"]
+    E --> F["Accelerated Training<br/>LLM -13% / ViT -20.58%<br/>Accuracy maintained or improved"]
+```
 
-### Key Design 1: Importance-Adaptive Parametric Gradient Analysis of Attention
+### Key Designs
 
-For a single-layer single-head self-attention network $f_\theta(\mathbf{S}) = \text{softmax}(\frac{\mathcal{Q}(\mathbf{S})\mathcal{K}(\mathbf{S})^\top}{\sqrt{d}})\mathcal{V}(\mathbf{S})$, the authors derive the explicit form of the parametric gradients. Taking the gradient with respect to the Query weight matrix as an example:
+**1. Importance-adaptive Parameter Gradients: Distinguishing Attention from MLP**
 
-$$\frac{\partial f_\theta(\mathbf{S})}{\partial \mathbf{W}^Q_{(:,i)}} = \left[d^{-1/2} \mathbf{S}_{(j,:)} \cdot \omega_j\right]_{S \times d}$$
+The first step in extending nonparametric teaching to ANNs is clarifying the parameter gradient structure. For a single-head self-attention network $f_\theta(\mathbf{S}) = \text{softmax}(\frac{\mathcal{Q}(\mathbf{S})\mathcal{K}(\mathbf{S})^\top}{\sqrt{d}})\mathcal{V}(\mathbf{S})$, the authors derive the explicit form of the gradient. Taking the Query weight column as an example: $\frac{\partial f_\theta(\mathbf{S})}{\partial \mathbf{W}^Q_{(:,i)}} = [d^{-1/2}\,\mathbf{S}_{(j,:)}\cdot\omega_j]_{S\times d}$. Crucially, the gradient depends not only on the features $\mathbf{S}_{(j,:)}$ but also on an element-specific scalar $\omega_j$ determined by $Q, K, V$, which represents the attention importance weight. This implies that attention learner updates are inherently "importance-adaptive," providing the basis for alignment with nonparametric teaching kernels.
 
-Key findings:
+**2. Consistency of Dynamic ANTK and Functional Gradients: Bridging the Space Gap**
 
-- The gradient depends not only on sequence element features $\mathbf{S}_{(j,:)}$, but also on an **element-specific scalar** $\omega_j$.
-- $\omega_j$ is jointly determined by $\mathcal{Q}, \mathcal{K}, \mathcal{V}$ — reflecting the importance assigned to each element by attention.
-- The parametric gradient **does not depend on the input sequence length** $S$ (averaged out), but only on the feature dimension $d$.
-- The row order of the gradient is consistent with the order of sequence elements (equivariance) — naturally corresponding to the permutation invariance at inference time.
+Nonparametric teaching is founded on FGD in function space, whereas ANNs use SGD in parameter space. By applying Taylor expansion to the parameter evolution, it is rewritten in functional form:
 
-### Key Design 2: Consistency Between ANTK and Functional Gradient
+$$\frac{\partial f_{\theta^t}}{\partial t} = -\frac{\eta}{NS}\left[\frac{\partial \mathcal{L}}{\partial f_{\theta^t}(\mathbf{S}_1)},\ldots,\frac{\partial \mathcal{L}}{\partial f_{\theta^t}(\mathbf{S}_N)}\right]\cdot[K_{\theta^t}(\mathbf{S}_i,\cdot)]_N + o(\cdot)$$
 
-Via Taylor expansion, the evolution of an ANN in parameter space can be expressed in function space:
+Where $K_{\theta^t}(\mathbf{S}_i,\cdot)\coloneqq\langle\frac{\partial f_{\theta^t}(\mathbf{S}_i)}{\partial\theta^t},\frac{\partial f_{\theta^t}(\cdot)}{\partial\theta^t}\rangle$ is the dynamic Attention Neural Tangent Kernel (ANTK). Theorem 3 proves that under a convex loss $\mathcal{L}$, this dynamic kernel converges pointwise to the importance-adaptive canonical kernel in FGD: $\lim_{t\to\infty}K_{\theta^t}(\mathbf{S}_i,\cdot)=K(\mathbf{S}_i,\cdot)$. This equates training ANNs via SGD with teaching a nonparametric learner via FGD.
 
-$$\frac{\partial f_{\theta^t}}{\partial t} = -\frac{\eta}{NS}\left[\frac{\partial \mathcal{L}}{\partial f_{\theta^t}(\mathbf{S}_1)}, \ldots, \frac{\partial \mathcal{L}}{\partial f_{\theta^t}(\mathbf{S}_N)}\right] \cdot [K_{\theta^t}(\mathbf{S}_i, \cdot)]_N + o(\cdot)$$
+**3. AtteNT Greedy Teaching Algorithm: Principle-based Sample Selection**
 
-where $K_{\theta^t}(\mathbf{S}_i, \cdot) \coloneqq \langle \frac{\partial f_{\theta^t}(\mathbf{S}_i)}{\partial \theta^t}, \frac{\partial f_{\theta^t}(\cdot)}{\partial \theta^t} \rangle$ is the **dynamic Attention Neural Tangent Kernel (ANTK)**.
-
-**Theorem 3 (Core Theorem)**: Given a convex loss function $\mathcal{L}$ and a training set, the dynamic ANTK converges pointwise to the importance-adaptive canonical kernel in functional gradient descent:
-
-$$\lim_{t \to \infty} K_{\theta^t}(\mathbf{S}_i, \cdot) = K(\mathbf{S}_i, \cdot), \quad \forall i$$
-
-This demonstrates that the evolution of an ANN via parametric gradient descent is **consistent** with that via functional gradient descent, thereby legitimizing the application of nonparametric teaching theory to attention learners.
-
-### Key Design 3: AtteNT Greedy Teaching Algorithm
-
-Building on the theoretical bridge above, AtteNT selects teaching samples by maximizing the projection of the functional gradient. Since the norm of the partial derivative of a convex loss is positively correlated with prediction deviation, the selection rule simplifies to:
-
-$$\{\mathbf{S}_i\}_m^* = \arg\max_{\{\mathbf{S}_i\}_m \subseteq \{\mathbf{S}_i\}_N} \|[f_\theta(\mathbf{S}_i) - f^*(\mathbf{S}_i)]_m\|_\mathcal{F}$$
-
-Intuition: prioritize training on samples the model "understands least" (largest prediction deviation) → steepest gradient → fastest convergence.
-
-**Proposition 4 (Sufficient Loss Decrease)**: Under Lipschitz smoothness and bounded kernel conditions, AtteNT guarantees a sufficient decrease in the loss function:
-
-$$\frac{\partial \mathcal{L}}{\partial t} \leq -\frac{\eta\gamma}{2}\left(\frac{1}{NS}\sum_{i,j}\frac{\partial \mathcal{L}}{\partial f_{\theta^t}(\mathbf{S}_i)_{(j,:)}}\right)^2$$
+With the theoretical bridge established, training acceleration is achieved by selecting samples that maximize the functional gradient projection. Since the norm of the loss derivative correlates with prediction bias, the selection rule chooses the batch with the largest bias: $\{\mathbf{S}_i\}_m^* = \arg\max_{\{\mathbf{S}_i\}_m\subseteq\{\mathbf{S}_i\}_N}\|[f_\theta(\mathbf{S}_i)-f^*(\mathbf{S}_i)]_m\|_\mathcal{F}$. This follows the intuition of "teaching what the model understands least." Proposition 4 ensures that under Lipschitz smoothness, this selection maintains convergence while compressing data volume: $\frac{\partial \mathcal{L}}{\partial t}\leq-\frac{\eta\gamma}{2}(\frac{1}{NS}\sum_{i,j}\frac{\partial \mathcal{L}}{\partial f_{\theta^t}(\mathbf{S}_i)_{(j,:)}})^2$. Practical implementation uses Gumbel-Top-k Soft sampling and an incremental selection ratio to balance efficiency and robustness.
 
 ## Key Experimental Results
 
-### Main Results 1: LLM Fine-Tuning (NLG Tasks)
+### Main Results 1: LLM Fine-tuning (NLG Tasks)
 
-| Model | AtteNT | Avg. Time↓ | GSM8K↑ | MATH↑ | HumanEval↑ | MBPP↑ | MT-Bench↑ |
+| Model | AtteNT | Avg Time↓ | GSM8K↑ | MATH↑ | HumanEval↑ | MBPP↑ | MT-Bench↑ |
 |------|--------|---------|--------|-------|-----------|-------|----------|
 | LLaMA 2-7B | w/o | 246m | 42.96 | 5.06 | 18.35 | 35.65 | 4.58 |
 | LLaMA 2-7B | **w** | **213m** | **43.45** | **6.48** | **21.80** | **37.61** | 4.49 |
@@ -104,48 +82,48 @@ $$\frac{\partial \mathcal{L}}{\partial t} \leq -\frac{\eta\gamma}{2}\left(\frac{
 | Gemma-7B | w/o | 228m | 75.23 | 30.52 | 53.83 | 65.69 | 5.42 |
 | Gemma-7B | **w** | **201m** | **77.74** | **31.40** | **54.26** | **66.28** | **5.44** |
 
-AtteNT reduces training time by an average of 12.78%, while simultaneously improving performance by 1.39–2.42 points on GSM8K, 0.76–2.89 points on MATH, 0.29–3.66% on HumanEval, and 2.08–3.31% on MBPP.
+AtteNT reduced training time by 12.78% on average, while improving GSM8K scores by 1.39-2.42 points and MATH scores by 0.76-2.89 points.
 
-### Main Results 2: ViT Training from Scratch (CV Tasks)
+### Main Results 2: ViT Pre-training (CV Tasks)
 
-| Model | AtteNT | Pre-training Time↓ | ImageNetS50↑ | NYUv2(S)↑ | NYUv2(D)↑ |
+| Model | AtteNT | Pre-train Time↓ | ImageNetS50↑ | NYUv2(S)↑ | NYUv2(D)↑ |
 |------|--------|-----------|-------------|----------|----------|
 | Multi-Modal MAE | w/o | 1234m | 92.2 | 51.9 | 52.1 |
-| Multi-Modal MAE | **w** | **980m (−20.58%)** | **92.3** | **52.6** | **57.2 (+5.1%)** |
+| Multi-Modal MAE | **w** | **980m(-20.58%)** | **92.3** | **52.6** | **57.2(+5.1%)** |
 
-Training time is reduced by 20.58%, with performance improvements across all downstream tasks, and the largest gain observed on depth estimation (+5.1%).
+Training time decreased by 20.58%, with performance gains across downstream tasks, particularly in depth estimation (+5.1%).
 
-### Ablation Study: Data Selection Strategies
+### Ablation Study: Data Selection Strategy
 
 | Ratio Strategy | Interval Strategy | Selection Strategy | Training Time | ImageNetS50 | NYUv2(S) | NYUv2(D) |
 |----------|-------------|-------------|---------|-------------|----------|----------|
-| — | — | — (Standard) | 1234m | 92.2 | 51.9 | 52.1 |
+| - | - | -(Standard) | 1234m | 92.2 | 51.9 | 52.1 |
 | Cosine | Incremental | Random | 966m | 88.6 | 45.3 | 49.6 |
 | Cosine | Incremental | Hard | 972m | 91.8 | 49.5 | 57.3 |
 | **Incremental** | **Incremental** | **Soft** | **980m** | **92.3** | **52.6** | **57.2** |
 | Incremental | Fixed | Soft | 1319m | 92.4 | 53.7 | 62.1 |
 
-The Soft strategy (Gumbel-Top-k probabilistic sampling) achieves the best balance between time and performance: Random selection disrupts data distribution and degrades accuracy; Hard selection is overly deterministic and lacks robustness; Fixed intervals yield the highest accuracy but double the training time.
+The Soft strategy (Gumbel-Top-k sampling) provides the best balance. Random selection degrades accuracy, while Hard selection lacks robustness.
 
 ## Highlights & Insights
 
-- **Theoretical elegance of "nonparametric teaching → training acceleration"**: Rather than heuristic data selection, the approach is grounded in a complete theoretical framework involving RKHS, functional gradients, and kernel convergence — providing a principled explanation of *why* it works.
-- **Theoretical contribution of ANTK**: NTK (Neural Tangent Kernel) was originally developed for fully connected networks; ANTK extends it to attention networks — a significant expansion of an important theoretical tool.
-- **Consistency with pedagogical intuition of "teach what is least understood"**: Prioritizing difficult samples → easy samples are naturally learned → aligns with curriculum learning, but with stronger theoretical guarantees.
-- **A "free lunch" of 13–21% acceleration without accuracy loss**: Achieving equal or superior performance with less data — nonparametric teaching theory provides principled guidance for data selection.
+- **Theoretical Elegance**: Instead of heuristic data selection, the method is supported by a complete theoretical framework involving RKHS, functional gradients, and kernel convergence.
+- **Contribution of ANTK**: Successfully extends NTK (Neural Tangent Kernel) from fully connected networks to attention mechanisms, providing a significant theoretical tool.
+- **Pedagogical Intuition**: Selecting the "least understood" samples aligns with curriculum learning but is backed by a stronger kernel theory.
+- **Efficient "Free Lunch"**: Achieving 13-21% acceleration without accuracy loss demonstrates that nonparametric teaching provides principled guidance for data selection.
 
 ## Limitations & Future Work
 
-- Theoretical analysis focuses on single-layer single-head self-attention; extension to multi-layer multi-head architectures is posited as a direct generalization but has not been fully proven.
-- Evaluating prediction deviation across all data at the start of each epoch introduces selection overhead (though overall training time is still reduced).
-- Validation on very large-scale pre-training (e.g., GPT-scale) has not been conducted.
+- Theoretical analysis is focused on single-layer, single-head self-attention; multi-layer/multi-head extensions are applied but not fully proven.
+- Evaluating biases at the start of each epoch adds selection overhead (though overall time is still saved).
+- Validation on ultra-large scale pre-training (e.g., GPT-scale) has not yet been conducted.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First theoretical framework for nonparametric teaching of attention learners
-- Experimental Thoroughness: ⭐⭐⭐⭐ NLP + CV, from-scratch / fine-tuning, multiple models, ablation studies
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations, tightly coupled with empirical validation
-- Value: ⭐⭐⭐⭐ Dual theoretical and practical contributions to Transformer training efficiency
+- Novelty: ⭐⭐⭐⭐⭐ First establishment of nonparametric teaching theory for attention learners.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers NLP/CV, pre-training/fine-tuning, and multiple models.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous derivations tightly coupled with experimental verification.
+- Value: ⭐⭐⭐⭐ Significant theoretical and practical contribution to Transformer efficiency.
 
 <!-- RELATED:START -->
 
@@ -155,9 +133,9 @@ The Soft strategy (Gumbel-Top-k probabilistic sampling) achieves the best balanc
 
 - [\[NeurIPS 2025\] Knolling Bot: Teaching Robots the Human Notion of Tidiness](../../NeurIPS2025/robotics/knolling_bot_teaching_robots_the_human_notion_of_tidiness.md)
 - [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](../../CVPR2026/robotics/ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
+- [\[ECCV 2024\] AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation](../../ECCV2024/robotics/aff-ttention_affordances_and_attention_models_for_short-term_object_interaction_.md)
 - [\[AAAI 2026\] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](../../AAAI2026/robotics/ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)
 - [\[NeurIPS 2025\] Beyond Parallelism: Synergistic Computational Graph Effects in Multi-Head Attention](../../NeurIPS2025/robotics/beyond_parallelism_synergistic_computational_graph_effects_in_multi-head_attenti.md)
-- [\[ICLR 2026\] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification](rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification.md)
 
 </div>
 

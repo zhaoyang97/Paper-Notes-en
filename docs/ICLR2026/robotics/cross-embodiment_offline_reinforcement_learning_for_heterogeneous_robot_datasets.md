@@ -2,148 +2,150 @@
 title: >-
   [Paper Note] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets
 description: >-
-  [ICLR 2026][Robotics][cross-embodiment learning] This paper systematically investigates cross-embodiment offline RL pretraining, identifies gradient conflicts leading to negative transfer under increasing suboptimal data…
+  [ICLR 2026][Robotics & Embodied AI][cross-embodiment learning] This paper systematically investigates cross-embodiment offline RL pre-training paradigms. It finds that gradient conflicts lead to negative transfer when the ratio of suboptimal data and robot diversity increase. It proposes Embodiment Grouping (EG), which clusters robots based on morphological graph distance and perf
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "cross-embodiment learning"
-  - "offline RL"
-  - "gradient conflict"
-  - "robot foundation model"
-  - "morphology grouping"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - cross-embodiment learning
+  - offline RL
+  - gradient conflict
+  - robot foundation model
+  - morphology grouping
 date: 2026-05-08
-content_hash: e5be14d95b45ca49
+content_hash: 10db8ba7b1e090e4
 ---
-
 # Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.18025](https://arxiv.org/abs/2602.18025)  
-**Code**: To be confirmed  
-**Area**: Reinforcement Learning / Robotics
+**Code**: TBD  
+**Area**: Reinforcement Learning / Robotics  
 **Keywords**: cross-embodiment learning, offline RL, gradient conflict, robot foundation model, morphology grouping
 
 ## TL;DR
-This paper systematically investigates cross-embodiment offline RL pretraining, identifies gradient conflicts leading to negative transfer under increasing suboptimal data ratios and robot diversity, and proposes Embodiment Grouping (EG)—a strategy that clusters robots by morphological graph distance and updates the actor group-wise. On a locomotion benchmark spanning 16 robot platforms, EG substantially mitigates negative transfer (IQL+EG improves over IQL by 34% on the 70% suboptimal dataset).
+This paper systematically investigates cross-embodiment offline RL pre-training paradigms. It finds that gradient conflicts lead to negative transfer when the ratio of suboptimal data and robot diversity increase. It proposes Embodiment Grouping (EG), which clusters robots based on morphological graph distance and performs grouped actor updates. EG significantly alleviates negative transfer on 16 robot locomotion benchmarks (e.g., IQL+EG outperforms IQL by 34% on 70% suboptimal datasets).
 
 ## Background & Motivation
 
-**Background**: Robot foundation models (e.g., RT-2, Octo, π0) learn generalizable control priors from multi-embodiment data via cross-embodiment learning. However, these models rely almost exclusively on imitation learning, requiring high-quality expert demonstrations that are costly to collect.
+**Background**: Robot foundation models (e.g., RT-2, Octo, π0) learn general control priors from diverse robot data via cross-embodiment learning. However, these models rely almost entirely on imitation learning, which requires expensive, high-quality expert demonstrations.
 
-**Limitations of Prior Work**: (a) Imitation learning can only replicate behaviors present in the dataset and cannot surpass the quality ceiling of the data. (b) Offline RL can exploit suboptimal data through trajectory stitching to learn superior policies, yet has not been systematically combined with cross-embodiment learning. (c) Naïvely performing joint training on heterogeneous robot data can cause gradient conflicts across morphologies, leading to performance degradation for certain robots.
+**Limitations of Prior Work**: (a) Imitation learning can only replicate behaviors in the dataset and cannot exceed the data quality upper bound; (b) Offline RL can utilize suboptimal data to learn better policies through trajectory stitching but hasn't been systematically combined with cross-embodiment learning; (c) Naive joint training on heterogeneous robot data causes conflicting gradients between different embodiments, leading to performance degradation.
 
-**Key Challenge**: Cross-embodiment learning increases data scale—beneficial. However, policy gradients from morphologically dissimilar robots may conflict—harmful. This conflict intensifies when the proportion of suboptimal trajectories in the data is high.
+**Key Challenge**: Cross-embodiment learning increases data scale (favorable), but gradients of robots with large morphological differences may conflict (harmful). These conflicts exacerbate when the proportion of suboptimal trajectories is high.
 
-**Goal**: Systematically analyze the benefits and failure modes of cross-embodiment offline RL, and design a method to mitigate gradient conflicts among heterogeneous morphologies.
+**Goal**: Systematically analyze the advantages and issues of cross-embodiment offline RL and design methods to mitigate gradient conflicts between heterogeneous embodiments.
 
-**Key Insight**: Each robot is represented as a morphological graph (joints/end-effectors as nodes), and the Fused Gromov-Wasserstein (FGW) distance is used to compute inter-robot similarity. The paper finds that morphological similarity is strongly correlated with gradient cosine similarity (Pearson $r = 0.63$), motivating actor updates that are grouped according to morphological clustering.
+**Key Insight**: Each robot is represented as a morphological graph (with joints/end-effectors as nodes), and similarities are calculated using the Fused Gromov-Wasserstein (FGW) distance. Morphological similarity is highly correlated with gradient cosine similarity ($r=0.63$), suggesting that actor updates should be grouped by morphological distance.
 
-**Core Idea**: Morphologically similar robots exhibit aligned policy gradient directions; grouping robots by morphological clustering and updating the actor group-wise effectively mitigates gradient conflicts in cross-embodiment offline RL.
+**Core Idea**: Robots with similar morphologies share similar policy gradient directions. Grouping actor updates by morphological clustering effectively mitigates gradient conflicts in cross-embodiment offline RL.
 
 ## Method
 
 ### Overall Architecture
-Offline datasets from 16 robots → URMA architecture (unifying heterogeneous state/action spaces) → global critic update (using all data) → grouped actor update (robots clustered by morphology; each group updates the actor using only its own data) → the learned cross-embodiment policy can be efficiently fine-tuned to new robots downstream.
+This work addresses whether cross-embodiment learning and offline RL can be combined so that robot foundation models rely on mixed data (including suboptimal trajectories) instead of expensive demonstrations. The logical chain is: feed offline data from 16 robots into the URMA architecture to unify heterogeneous state/action spaces; **diagnose** negative transfer in joint training under suboptimal data; **attribute** negative transfer to conflicting actor gradient directions; identify a pre-training proxy—**morphological graph distance**—to predict gradient alignment; and finally design **Embodiment Grouping (EG)** to cluster robots morphologically and update the actor sequentially by group.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["16 Heterogeneous Robots<br/>Offline Data (incl. Suboptimal)"] --> URMA["URMA Architecture<br/>Unified State/Action Space"]
+    URMA --> DIAG["Systematic Diagnosis<br/>Negative Transfer in Suboptimal Data"]
+    DIAG --> CONF["Gradient Conflict Analysis<br/>Neg. Transfer = Conflicting Actor Gradients"]
+    CONF --> FGW["Morphological Graph Distance<br/>FGW Predicts Gradient Alignment (r=0.63)"]
+    FGW --> EG["Embodiment Grouping<br/>Hierarchical Clustering into M Groups"]
+    EG --> TRAIN
+    subgraph TRAIN["Grouped Training Loop"]
+        direction TB
+        CRITIC["Global Critic Update<br/>Using All Data"] --> ACTOR["Sequential Grouped Actor Update<br/>Each Group Uses Its Own Data"]
+    end
+    TRAIN --> OUT["Cross-Embodiment Policy<br/>Downstream Fast Finetuning"]
+```
 
 ### Key Designs
 
-1. **Systematic Analysis of Cross-Embodiment Offline RL**:
+**1. Systematic Diagnosis of Cross-Embodiment Offline RL**
+Before designing the method, BC and IQL performance was compared across different data qualities. On expert data, BC $\approx$ IQL. However, on suboptimal data, IQL significantly outperforms BC due to trajectory stitching. Notably, a "catastrophic negative transfer" occurred for bipeds in 70% suboptimal data settings, where Unitree H1 performance dropped from 54.47 to 6.00. This confirms that cross-embodiment offline RL is not unconditionally effective.
 
-    - Function: Compares BC and IQL across different data quality levels and analyzes positive/negative transfer.
-    - Key Findings: (a) On expert data, BC ≈ IQL; on suboptimal data, IQL significantly outperforms BC, consistent with the trajectory stitching advantage of offline RL. (b) Cross-embodiment pretraining accelerates downstream fine-tuning convergence. (c) On the 70% suboptimal dataset, bipedal robots suffer severe negative transfer (Unitree H1: 54.47→6.00; G1: 78.93→0.86).
-    - Design Motivation: Reveals that cross-embodiment offline RL is not unconditionally beneficial—gradient conflicts must be explicitly addressed.
+**2. Gradient Conflict Analysis**
+Negative transfer is attributed to conflicting policy gradient directions. The gradient cosine similarity $C$ is calculated for each robot pair $\tau_i, \tau_j$:
 
-2. **Gradient Conflict Analysis**:
+$$C[\tau_i, \tau_j] = \frac{\langle g_{\tau_i}, g_{\tau_j} \rangle}{\|g_{\tau_i}\| \|g_{\tau_j}\|}$$
 
-    - Function: Quantifies the directional conflict of policy gradients across different morphologies.
-    - Mechanism: Computes the actor gradient cosine similarity for each pair of robots $C[\tau_i, \tau_j] = \frac{\langle g_{\tau_i}, g_{\tau_j} \rangle}{\|g_{\tau_i}\| \|g_{\tau_j}\|}$ and records the proportion of pairs with $C < 0$.
-    - Key Findings: Higher suboptimal data ratio → higher negative cosine proportion; more robot types → higher negative cosine proportion; transfer gain is strongly correlated with mean gradient cosine ($r = 0.815$).
-    - Design Motivation: When robots with large morphological differences have opposing gradient directions, joint updates cancel or corrupt useful gradient information.
+Observations show that higher suboptimal data ratios and higher robot diversity lead to more negative cosine similarities. Transfer gain is highly correlated with average gradient cosine ($r=0.815$).
 
-3. **Correlation Between Morphological Graph Distance and Gradient Alignment**:
+**3. Morphological Graph Distance and Gradient Alignment**
+To predict gradient alignment without training, robots are represented as morphological graphs (nodes: torso/joints/feet; edges: mechanical connections). The Fused Gromov-Wasserstein (FGW) distance measures similarity between graphs. Results show a Pearson correlation of $r=0.63$ ($p = 1.26 \times 10^{-14}$) between morphological similarity and gradient cosine similarity, allowing the use of morphology as a proxy for gradient alignment.
 
-    - Function: Represents robots as graphs, computes FGW distances, and validates their correlation with gradient directions.
-    - Mechanism: Nodes represent torso/joints/feet; edges represent mechanical connections; node features encode relative positions and control parameters. FGW distance jointly accounts for graph structure and node features.
-    - Key Findings: Pearson correlation between morphological similarity and gradient cosine similarity is $r = 0.63$ ($p = 1.26 \times 10^{-14}$)—robots that are morphologically alike also have aligned gradient directions.
-
-4. **Embodiment Grouping (EG)**:
-
-    - Function: Hierarchically clusters 16 robots into $M$ groups by morphological distance; during training, the critic is updated globally while the actor is updated sequentially per group.
-    - Mechanism: Algorithm 1 — (1) Sample a global mini-batch; (2) Update the global critic/value network; (3) Randomly permute group order; (4) For each group $\mathcal{G}_m$, extract samples $\mathcal{B}_m$ belonging to that group, compute the actor loss, and update $\theta_\pi$.
-    - Design Motivation: Robots within the same group have consistent gradient directions, so intra-group updates do not conflict; sequential inter-group updates avoid gradient cancellation.
-    - Distinction from PCGrad: PCGrad dynamically projects conflicting gradients, incurring high computational cost with limited benefit; EG employs static grouping, which is simpler and more effective.
+**4. Embodiment Grouping (EG)**
+Hierarchical clustering is applied to FGW distances to partition 16 robots into $M$ groups. During training, a global critic/value update is performed using a full mini-batch. Then, the actor is updated sequentially for each group $\mathcal{G}_m$ using only its respective data $\mathcal{B}_m$. This ensures intra-group gradient consistency and prevents inter-group gradient cancellation.
 
 ### Loss & Training
-Based on the IQL framework:
-- Critic: expectile regression to fit $V_\psi(s)$, followed by TD updates for $Q_\theta(s, a)$.
-- Actor: advantage-weighted regression $\mathcal{L}_\tau^\pi(\theta) = -\mathbb{E}_{(s,a) \sim \mathcal{D}_\tau}[w(s,a) \log \pi_\theta(a|s)]$, where $w(s,a) = \exp(\beta(Q(s,a) - V(s)))$.
-- EG modifies only the actor update procedure (grouping) without altering the loss functions.
+The method is built on the IQL framework. The critic fits state value $V_\psi(s)$ via expectile regression and updates $Q_\theta(s,a)$ via TD learning. The actor uses advantage-weighted regression:
+
+$$\mathcal{L}_\tau^\pi(\theta) = -\mathbb{E}_{(s,a) \sim \mathcal{D}_\tau}\big[w(s,a) \log \pi_\theta(a|s)\big]$$
+
+where $w(s,a) = \exp\big(\beta(Q(s,a) - V(s))\big)$. EG modifies only the actor update step from "all-data joint update" to "morphology-based sequential grouped update."
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Expert Forward | 70% Suboptimal Forward | 70% Suboptimal Backward | Mean |
-|--------|---------------|------------------------|--------------------------|------|
+|------|---------------|-------|-------|------|
 | BC | 63.31 | 30.52 | 41.42 | 49.17 |
 | IQL | 63.39 | 36.62 | 38.69 | 52.05 |
 | IQL+PCGrad | 63.37 | 39.63 | 41.04 | 53.48 |
 | IQL+SEL | 63.37 | 44.59 | 44.45 | 55.07 |
-| **IQL+EG** | **63.52** | **51.19** | **49.60** | **57.29** |
+| **IQL+EG (Ours)** | **63.52** | **51.19** | **49.60** | **57.29** |
 
-Under the 70% suboptimal data setting, IQL+EG improves over IQL by 34%, over PCGrad by 16%, and over SEL by 16%.
+In the 70% suboptimal setting, IQL+EG improves by 34% over IQL, 16% over PCGrad, and 16% over SEL.
 
 ### Ablation Study
 
-| Grouping Strategy | 70% Suboptimal Forward | Gain over IQL |
-|-------------------|------------------------|---------------|
+| Grouping Strategy | 70% Suboptimal Forward | Gain vs. IQL |
+|---------|----------------------|-------------|
 | IQL (baseline) | 37.57 | 0% |
 | Random grouping | 38.73 | +3.08% |
-| Heuristic (bipeds/quads) | 34.45 | −8.31% |
-| **EG (ours)** | **51.98** | **+38.34%** |
+| Heuristic (bipeds/quads) | 34.45 | -8.31% |
+| **EG (Ours)** | **51.98** | **+38.34%** |
 
 ### Key Findings
-- **EG's advantage is not solely attributable to additional actor update steps**: In compute-normalized experiments (matched optimizer steps and data volume), EG still outperforms IQL by 7.78 points.
-- **Intuitive grouping fails**: Heuristic grouping by leg count (biped/quadruped/hexapod) actually degrades performance—coarse morphological categories fail to capture factors that govern gradient directions (actuator placement, link lengths, mass distribution, etc.).
-- **Random grouping is nearly ineffective** (+3.08%), confirming that a principled grouping strategy is essential.
-- **$M = 2$–$4$ groups suffice**: Additional groups yield marginal performance gains at significantly increased training time.
-- **Algorithm-agnostic**: EG is effective across BC, TD3+BC, and IQL.
+- **EG's advantage exceeds simple update counts**: In computation-normalized experiments, EG still outperforms IQL by 7.78 points.
+- **Intuitive grouping fails**: Simple heuristic grouping (e.g., by leg count) degrades performance, as it fails to capture fine-grained morphological impacts on gradients.
+- **Robustness**: EG is effective across different RL algorithms (BC, TD3+BC, IQL).
+- **Optimal Grouping**: $M=2 \sim 4$ groups are sufficient; more groups yield diminishing returns relative to training time.
 
 ## Highlights & Insights
-- **Morphological distance predicts gradient conflict**: This is a profound finding—the physical structural similarity of robots directly correlates with the alignment of gradient directions during policy learning. This implies that which robot datasets can be safely co-trained is predictable prior to training.
-- **Simple grouping outperforms complex conflict resolution**: Static morphological clustering (EG) surpasses PCGrad's dynamic gradient projection and SEL's dynamic task grouping—leveraging domain knowledge (morphological structure) a priori is more reliable than inferring task relationships at runtime.
-- **Strong complementarity between cross-embodiment learning and offline RL**: Cross-embodiment learning provides data diversity; offline RL exploits suboptimal data—their combination enables robot foundation models to reduce dependence on large quantities of high-quality expert demonstrations.
+- **Morphological Distance Predicts Conflict**: A key discovery is that physical structure similarity correlates with policy gradient alignment, allowing safe joint training predictions.
+- **Simple Grouping > Complex De-confliction**: Static morphological clustering (EG) outperforms dynamic gradient projection (PCGrad) or dynamic task grouping (SEL), proving domain-knowledge-driven grouping is more reliable.
+- **Complementarity**: Cross-embodiment provides data diversity, while offline RL utilizes suboptimal data. This synergy reduces the dependency on expert demonstrations for foundation models.
 
 ## Limitations & Future Work
-- Validation is limited to MuJoCo locomotion tasks in simulation; extension to real robots and manipulation tasks remains unexplored.
-- Computing FGW graph distances requires pre-defined robot graph structures, which may necessitate manual modeling for robots with unknown morphologies.
-- Grouping is static, whereas gradient conflict patterns may evolve dynamically during training—adaptive grouping strategies could yield further improvements.
-- Dataset scale is relatively small (1M steps per robot); scalability at larger data regimes has not been verified.
-- The critic is still updated globally—if critic learning also suffers from cross-embodiment conflicts, grouped critic updates may offer additional gains.
+- Evaluation is limited to MuJoCo locomotion; real-robot and manipulation tasks are not yet explored.
+- FGW distance requires pre-defined graph structures, which may need manual modeling for new robots.
+- Grouping is static; dynamic gradient conflict patterns during training could be addressed with adaptive grouping.
+- Data scale (1M steps per robot) is relatively small compared to massive-scale foundation models.
 
 ## Related Work & Insights
-- **vs. Open X-Embodiment**: OXE employs cross-embodiment imitation learning; this paper presents the first systematic study of cross-embodiment offline RL.
-- **vs. Q-Transformer**: Q-Transformer applies offline RL to large-scale robot data but on a single platform; this paper extends the setting to 16 morphologies.
-- **vs. PCGrad**: PCGrad resolves multi-task conflicts via gradient projection but offers limited benefit in the cross-embodiment setting; EG's static morphological clustering is more effective.
-- **vs. SEL**: SEL groups tasks by dynamic affinity, incurring additional computation and exhibiting less stability than grouping based on morphological priors.
+- **vs. Open X-Embodiment**: While OXE focuses on cross-embodiment imitation, this is the first systematic study of cross-embodiment offline RL.
+- **vs. Q-Transformer**: Q-Transformer applies offline RL at scale but on single platforms; this work scales to 16 morphologies.
+- **vs. PCGrad/SEL**: EG leverages static morphological priors, which proves more effective than dynamic runtime inference of task relationships in cross-embodiment settings.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic study of cross-embodiment offline RL; the correlation between morphological distance and gradient conflict is a novel finding.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 16 robots, 6 dataset configurations, 8 method comparisons, comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from problem identification → root cause analysis → hypothesis validation → solution design is clear and complete.
-- Value: ⭐⭐⭐⭐ Opens a new direction for scaling robot foundation model data; the EG strategy is simple and practically applicable.
+- Novelty: ⭐⭐⭐⭐ First systematic study of cross-embodiment offline RL with a novel morphology-gradient link.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 16 robots, 6 datasets, comparisons with 8 methods, and extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain from problem discovery to solution.
+- Value: ⭐⭐⭐⭐ Provides a practical direction for scaling robot foundation models using diverse, lower-quality data.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Statistical Guarantees for Offline Domain Randomization](statistical_guarantees_for_offline_domain_randomization.md)
+- [\[ICLR 2026\] CE-Nav: Flow-Guided Reinforcement Refinement for Cross-Embodiment Local Navigation](ce-nav_flow-guided_reinforcement_refinement_for_cross-embodiment_local_navigatio.md)
+- [\[ICLR 2026\] Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control](hierarchical_value-decomposed_offline_reinforcement_learning_for_whole-body_cont.md)
+- [\[CVPR 2026\] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping](../../CVPR2026/robotics/graspgen-x_cross-embodiment_6-dof_diffusion-based_grasping.md)
+- [\[ICLR 2026\] TaCo: A Benchmark for Lossless and Lossy Codecs of Heterogeneous Tactile Data](taco_a_benchmark_for_lossless_and_lossy_codecs_of_heterogeneous_tactile_data.md)
 - [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](../../NeurIPS2025/robotics/sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
-- [\[ICML 2026\] DiBO: Offline Black-box Optimization with Diffusion Language Models (DNA + Robot Morphology)](../../ICML2026/robotics/training_diffusion_language_models_for_black-box_optimization.md)
-- [\[ICLR 2026\] ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning](exopredicator_learning_abstract_models_of_dynamic_worlds_for_robot_planning.md)
-- [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
 
 </div>
 

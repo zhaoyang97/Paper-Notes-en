@@ -2,135 +2,149 @@
 title: >-
   [Paper Note] Task-free Adaptive Meta Black-box Optimization
 description: >-
-  [ICLR 2026][Remote Sensing][Black-box optimization] This paper proposes ABOM—a task-free adaptive meta black-box optimizer that eliminates the need for predefined training task distributions. By parameterizing evolutiona…
+  [ICLR 2026][Remote Sensing][Paper Note] This paper proposes ABOM, a task-free adaptive meta black-box optimizer that parameterizes evolutionary operators (selection, crossover, and mutation) as differentiable attention modules. By utilizing self-generated data to update parameters online during the optimization process, it achieves competitive zero-shot perf
 tags:
-  - "ICLR 2026"
-  - "Remote Sensing"
-  - "Black-box optimization"
-  - "meta-learning"
-  - "evolutionary algorithms"
-  - "adaptive parameter learning"
-  - "zero-shot optimization"
+  - ICLR 2026
+  - Remote Sensing
 date: 2026-05-08
-content_hash: ef379ae94d5612af
+content_hash: 9027aa65218aa22a
 ---
-
 # Task-free Adaptive Meta Black-box Optimization
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2601.21475](https://arxiv.org/abs/2601.21475)  
 **Code**: None  
-**Area**: Remote Sensing
-**Keywords**: Black-box optimization, meta-learning, evolutionary algorithms, adaptive parameter learning, zero-shot optimization
+**Area**: Remote Sensing  
+**Keywords**: Black-box Optimization, Meta-learning, Evolutionary Algorithms, Adaptive Parameter Learning, Zero-shot Optimization  
 
 ## TL;DR
-This paper proposes ABOM—a task-free adaptive meta black-box optimizer that eliminates the need for predefined training task distributions. By parameterizing evolutionary operators (selection, crossover, mutation) as differentiable attention modules and leveraging self-generated data for online parameter updates during optimization, ABOM achieves competitive zero-shot performance on synthetic benchmarks and UAV path planning tasks.
+This paper proposes ABOM, a task-free adaptive meta black-box optimizer that parameterizes evolutionary operators (selection, crossover, and mutation) as differentiable attention modules. By utilizing self-generated data to update parameters online during the optimization process, it achieves competitive zero-shot performance on synthetic benchmarks and UAV path planning.
 
 ## Background & Motivation
 
-**Background**: Black-box optimization (BBO) is widely applied in scenarios such as hyperparameter tuning and neural architecture search. Traditional evolutionary algorithms (EAs) rely on hand-crafted operators and parameters. Meta-BBO methods automate optimizer configuration via meta-learning, but require pre-training on a manually designed training task distribution $\mathcal{F}$.
+**Background**: Black-box optimization (BBO) is widely applied in hyperparameter tuning and neural architecture search. Traditional evolutionary algorithms (EA) rely on hand-designed operators and parameters, while Meta-BBO methods automate optimizer configuration through meta-learning but require pre-training on human-designed training task distributions $\mathcal{F}$.
 
-**Limitations of Prior Work**: The core limitation of Meta-BBO methods lies in their dependence on hand-crafted training task distributions. In practice, the distribution of target tasks is often unknown or unique (e.g., specific engineering optimization problems), making it infeasible to obtain suitable training task sets.
+**Limitations of Prior Work**: The core limitation of Meta-BBO methods is their dependency on manual training task distributions. In practical applications, the distribution of target tasks is often unknown or unique (e.g., specific engineering optimization problems), making it impossible to obtain an appropriate set of training tasks.
 
-**Key Challenge**: The NFL theorem establishes that no universally optimal algorithm exists, necessitating adaptation. However, existing adaptive methods either require domain knowledge to design rules (traditional adaptive EAs) or require training task distributions (Meta-BBO). The fundamental question is how to achieve adaptation without domain knowledge or training tasks.
+**Key Challenge**: The NFL theorem implies that no universal optimal algorithm exists, necessitating adaptation. However, existing adaptive methods either require domain knowledge to design rules (traditional adaptive EA) or require training task distributions (Meta-BBO). The challenge is achieving adaptation without both domain knowledge and training tasks.
 
-**Goal**: (a) Eliminate dependence on predefined training task distributions; (b) replace discrete algorithm selection spaces with continuous differentiable parameter spaces; (c) enable online parameter learning using self-generated data produced during optimization.
+**Goal**: (a) Eliminate dependence on predefined training task distributions; (b) Replace discrete algorithm selection spaces with continuous differentiable parameter spaces; (c) Implement online parameter learning using self-generated data during the optimization process.
 
-**Key Insight**: Parameterize evolutionary operators as attention mechanisms to make them differentiable, then use "encouraging offspring to approximate the elite archive" as a supervision signal for online parameter updates.
+**Key Insight**: Evolutionary operators are parameterized as attention mechanisms to make them differentiable. The parameters are then updated online using "offspring approaching the elite archive" as a supervision signal.
 
-**Core Idea**: Parameterize evolutionary operators via attention mechanisms, transforming the meta-learning paradigm from "pre-train then deploy" to a closed-loop adaptive "learn while optimizing" framework.
+**Core Idea**: Transform the "train-then-test" paradigm of meta-learning into a "learn-while-optimizing" closed-loop adaptation by parameterizing evolutionary operators with attention mechanisms.
 
 ## Method
 
 ### Overall Architecture
-The input is a black-box objective function $f_T(\mathbf{x})$ (query-only), and the output is an approximate optimal solution $\mathbf{x}^*$. The ABOM optimization loop consists of five steps: (1) initialize the population via Latin hypercube sampling; (2) generate offspring using parameterized operators $\pi_\theta$; (3) evaluate offspring fitness; (4) retain the top $N$ individuals via elitism; (5) update operator parameters $\theta$ via gradient descent. The entire process requires no pre-training and directly performs "optimize while learning" on the target task.
+The input is a black-box objective function $f_T(\mathbf{x})$ (queryable values only), and the output is an approximate optimal solution $\mathbf{x}^*$. ABOM decomposes a traditional EA iteration into a closed-loop pipeline: population initialization via Latin Hypercube Sampling, followed by three **parameterized evolutionary operators**—dual-path attention selection to decide recombination, differentiable crossover to fuse parents, and inter-gene attention mutation to inject perturbations—to generate offspring. After evaluating offspring fitness, the top $N$ individuals are retained via elitism. Finally, an L2 loss measuring "offspring approaching the elite archive" serves as a supervision signal for backpropagation to update operator parameters $\theta$ on-the-fly. This process performs online adaptation directly on the target task without pre-training.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Black-box Objective f_T(x)<br/>(Queryable Values Only)"] --> B["Latin Hypercube Sampling<br/>Population Initialization"]
+    B --> C["Dual-path Attention Selection<br/>(Fitness + Spatial Position)"]
+    C --> D["Differentiable Crossover<br/>(Weighted mixture + Residual MLP)"]
+    D --> E["Inter-gene Attention Mutation<br/>(Modeling variable coupling)"]
+    E --> F["Evaluate Offspring Fitness"]
+    F --> G["Elitism: Retain<br/>Top N Individuals"]
+    G --> H["Adaptive Parameter Learning<br/>(L2 Loss to Elite Archive)"]
+    H -->|Gradient Update θ| C
+    G -->|Convergence| I["Approximate Optimal Solution x*"]
+```
 
 ### Key Designs
 
-1. **Dual-path Attention Selection**:
+The core of ABOM is rewriting selection, crossover, and mutation into differentiable attention modules with learnable parameters, combined with a closed-loop online update mechanism.
 
-    - Function: Compute the selection matrix $\mathbf{A}^{(t)} \in \mathbb{R}^{N \times N}$, determining which individuals participate in crossover.
-    - Mechanism: The spatial relationships and fitness rankings of solutions in the search space are encoded separately through two sets of Query-Key projections and fused into attention weights via softmax. $\mathbf{A}^{(t)} = \text{softmax}\left(\frac{(\mathbf{P}\mathbf{W}^{QP})(\mathbf{P}\mathbf{W}^{KP})^\top + (\mathbf{F}\mathbf{W}^{QF})(\mathbf{F}\mathbf{W}^{KF})^\top}{\sqrt{d_A}}\right)$
-    - Design Motivation: Traditional selection relies solely on fitness ranking (e.g., tournament selection), neglecting spatial relationships between solutions. The dual-path design jointly considers "who is better" and "who is closer," enabling more targeted recombination.
+**1. Dual-path Attention Selection: Combining Fitness and Spatial Position**
 
-2. **Differentiable Crossover**:
+Traditional selection (e.g., tournament selection) focuses only on fitness ranking, ignoring spatial proximity. ABOM utilizes an $N \times N$ attention matrix $\mathbf{A}^{(t)}$ to determine recombination weights. It employs two paths: one uses position coordinates $\mathbf{P}$ for Query-Key projections to encode spatial relations, and the other uses fitness $\mathbf{F}$ to encode ranking quality. These are fused via softmax:
 
-    - Function: Generate intermediate population $\mathbf{P}'^{(t)} = \mathbf{P}^{(t)} + \text{MLP}_{\theta_c}(\mathbf{A}^{(t)}\mathbf{P}^{(t)})$.
-    - Mechanism: $\mathbf{A}^{(t)}\mathbf{P}^{(t)}$ first performs attention-weighted mixing of parent individuals (an attention-weighted crossover pool), and the MLP further transforms this to generate offsets. Dropout (probability $p_C$) remains active during inference to provide continuous exploration stochasticity.
-    - Design Motivation: The residual connection preserves parent information, the MLP learns nonlinear crossover patterns, and dropout replaces the crossover probability hyperparameter in traditional EAs.
+$$\mathbf{A}^{(t)} = \text{softmax}\left(\frac{(\mathbf{P}\mathbf{W}^{QP})(\mathbf{P}\mathbf{W}^{KP})^\top + (\mathbf{F}\mathbf{W}^{QF})(\mathbf{F}\mathbf{W}^{KF})^\top}{\sqrt{d_A}}\right)$$
 
-3. **Gene-dimension Attention Mutation**:
+**2. Differentiable Crossover: Attention-weighted Fusion + Residual MLP**
 
-    - Function: Compute a mutation matrix $\mathbf{M}_i^{(t)} \in \mathbb{R}^{d \times d}$ for each individual, modeling interactions between gene dimensions.
-    - Mechanism: $\mathbf{M}_i^{(t)}$ computes inter-dimensional dependency strengths via self-attention; $\hat{\mathbf{p}}_i = \mathbf{p}'_i + \text{MLP}_{\theta_m}(\mathbf{M}_i\mathbf{p}'_i)$, enabling mutation to account for inter-variable correlations.
-    - Design Motivation: Traditional mutation (e.g., Gaussian perturbation) treats each dimension independently, ignoring variable coupling. The attention mutation matrix can learn patterns such as "when dimension $j$ is modified, dimension $k$ should be adjusted accordingly."
+Offspring information is fused into an intermediate population $\mathbf{P}'^{(t)}$ by calculating $\mathbf{A}^{(t)}\mathbf{P}^{(t)}$. A non-linear offset learned by an MLP is then added via a residual connection:
 
-4. **Adaptive Parameter Learning**:
+$$\mathbf{P}'^{(t)} = \mathbf{P}^{(t)} + \text{MLP}_{\theta_c}(\mathbf{A}^{(t)}\mathbf{P}^{(t)})$$
 
-    - Function: Online update of all parameters $\theta$.
-    - Mechanism: The loss function is $\mathcal{L}^{(t)} = \|\hat{\mathbf{P}}^{(t)} - \mathbf{E}^{(t)}\|^2$, encouraging offspring to approximate the elite archive. Parameters are updated via AdamW: $\theta \leftarrow \theta - \eta \nabla_\theta \mathcal{L}^{(t)}$.
-    - Design Motivation: The elite archive encodes information about currently known optimal solutions; encouraging offspring to move toward the elite direction implements a gradient-based version of "survival of the fittest."
+Dropout (probability $p_C$) remains active during inference to replace manual crossover probability tuning, providing continuous exploration.
+
+**3. Inter-gene Attention Mutation: Modeling Variable Coupling**
+
+Unlike traditional mutation that applies noise independently to each dimension, ABOM calculates a $d \times d$ mutation matrix $\mathbf{M}_i^{(t)}$ for each individual. Self-attention models dependencies between gene dimensions:
+
+$$\hat{\mathbf{p}}_i = \mathbf{p}'_i + \text{MLP}_{\theta_m}(\mathbf{M}_i^{(t)}\mathbf{p}'_i)$$
+
+This allows mutation to capture problem-specific dimensional interaction structures.
+
+**4. Adaptive Parameter Learning: Self-generated Supervision**
+
+Without pre-defined training tasks or labels, ABOM uses the elite archive $\mathbf{E}^{(t)}$ (the current best $N$ individuals) as targets. Generated offspring $\hat{\mathbf{P}}^{(t)}$ are optimized to minimize the L2 distance to the archive:
+
+$$\mathcal{L}^{(t)} = \|\hat{\mathbf{P}}^{(t)} - \mathbf{E}^{(t)}\|^2$$
+
+Parameters are updated via AdamW: $\theta \leftarrow \theta - \eta \nabla_\theta \mathcal{L}^{(t)}$. This gradient-based "survival of the fittest" allows the model to adapt in-place on the target problem.
 
 ### Loss & Training
-- Loss function: $\mathcal{L}^{(t)} = \|\hat{\mathbf{P}}^{(t)} - \mathbf{E}^{(t)}\|^2$, the L2 distance between offspring and the elite archive.
-- No pre-training; parameters are randomly initialized and learned online during optimization.
-- Theoretical guarantee: Under compact search spaces and continuous objective functions, ABOM guarantees global convergence.
+- Loss function: $\mathcal{L}^{(t)} = \|\hat{\mathbf{P}}^{(t)} - \mathbf{E}^{(t)}\|^2$, representing the L2 distance between offspring and the elite archive.
+- Training Strategy: No pre-training; parameters are initialized randomly and learned online during optimization.
+- Theory: Global convergence is guaranteed under compact search spaces and continuous objective functions.
 
 ## Key Experimental Results
 
-### Main Results (BBOB Synthetic Benchmark, $d=500$)
-Comparison against 10 baselines on 16 test functions (30 independent runs, Wilcoxon signed-rank test):
+### Main Results (BBOB Synthetic Benchmark $d=500$)
+Comparison across 16 test functions against 10 baselines (30 independent runs, Wilcoxon test):
 
-| Method Category | Representative Methods | Win/Tie/Loss vs. ABOM | Notes |
-|----------------|----------------------|----------------------|-------|
-| Traditional EA | RS/PSO/DE | 0/0/16 | ABOM significantly outperforms on all functions |
-| Adaptive EA | CMAES/JDE21 | 2–3/1–2/11–13 | ABOM significantly superior overall |
-| MetaBBO | GLEET/RLDEAFL/LES/GLHF | 1–4/1–3/9–14 | ABOM matches or surpasses without training tasks |
+| Method Category | Representative Method | vs ABOM Win/Tie/Loss | Description |
+|---------|---------|----------------|------|
+| Traditional EA | RS/PSO/DE | 0/0/16 | ABOM is significantly better on all functions |
+| Adaptive EA | CMAES/JDE21 | 2~3/1~2/11~13 | ABOM is generally significantly superior |
+| MetaBBO | GLEET/RLDEAFL/LES/GLHF | 1~4/1~3/9~14 | ABOM matches/surpasses MetaBBO without training tasks |
 
-### Main Results (UAV Path Planning — 28 Problems)
+### UAV Path Planning (28 Problems)
 
 | Metric | ABOM | Best MetaBBO | Best Adaptive EA |
-|--------|------|-------------|-----------------|
-| Normalized cost convergence speed | Fastest | Moderate | Slow |
-| Final normalized cost | Lowest | Moderate | Higher |
-| Runtime | GPU-accelerated, among fastest | Requires pre-training | CPU-bound |
+|------|------|------------|------------|
+| Cost Convergence Speed | Fastest | Medium | Slow |
+| Final Normalized Cost | Lowest | Medium | Higher |
+| Running Time | GPU Accelerated, one of the fastest | Requires Pre-training | CPU-bound |
 
 ### Ablation Study
 
-| Configuration | BBOB $d=500$ Ranking | Notes |
-|--------------|---------------------|-------|
-| ABOM (full) | Best | Selection + crossover + mutation + adaptive learning |
-| w/o adaptive learning | Significant drop | Fixed random parameters; degenerates to random search |
-| w/o selection attention | Drop | Uniform selection, similar to random recombination |
-| w/o mutation attention | Drop | Independent per-dimension mutation |
+| Configuration | Rank on BBOB $d=500$ | Description |
+|------|------------------|------|
+| ABOM (Full) | Best | Selection + Crossover + Mutation + Adaptive Learning |
+| w/o Adaptive Learning | Significant drop | Fixed random parameters; degrades to random search |
+| w/o Selection Attention | Drop | Uniform selection; similar to random recombination |
+| w/o Mutation Attention | Drop | Independent dimension mutation |
 
 ### Key Findings
-- ABOM matches or surpasses MetaBBO methods that require training task distributions, **without using any training tasks**.
-- Visualization reveals that the selection matrix automatically learns a "survival of the fittest" pattern (higher weights for high-fitness individuals) while not always selecting the best individual (preserving diversity).
-- The mutation matrix evolves from random initialization into structured patterns, reflecting problem-specific gene interaction modes.
-- Parameters are moderately sensitive to dropout rates $p_C, p_M$: values that are too low lead to premature convergence, while values that are too high result in excessively random search.
+- ABOM matches or surpasses MetaBBO methods that require training tasks, despite being **task-free**.
+- Visualizations show the selection matrix automatically learns high weights for high-fitness individuals while maintaining diversity.
+- Mutation matrices evolve from random to structured patterns, reflecting problem-specific interaction.
 
 ## Highlights & Insights
-- **Transforming meta-learning from "pre-train then deploy" to "learn while optimizing"** is the core innovation: by using offspring-to-elite-archive approximation as a supervision signal, the unsupervised BBO problem is reformulated as online supervised learning. This idea is transferable to other meta-learning scenarios requiring online adaptation.
-- **The analogy of attention mechanisms as evolutionary operators** is highly natural: selection = inter-individual attention weights; crossover = weighted recombination + MLP transformation; mutation = inter-dimensional self-attention. A key detail is that dropout remains active during inference to maintain exploratory behavior.
-- The paper provides **theoretical guarantees of global convergence**, although practical convergence speed depends on problem structure.
+- **Shifting meta-learning from "train-then-test" to "learn-while-optimizing"** is the core innovation. Using the elite archive as supervision converts unsupervised BBO into online supervised learning.
+- **Attention as an Evolutionary Operator**: The analogy is natural—selection corresponds to inter-individual attention, crossover to weighted recombination + MLP, and mutation to inter-dimensional self-attention.
+- **Differentiable exploration**: Maintaining dropout during inference is crucial for exploration.
 
 ## Limitations & Future Work
-- Computational complexity is $O(d^3)$ (where $d$ is the search space dimensionality), making the method impractical for very high-dimensional problems ($d > 1000$).
-- The elite archive approximation loss may lead to loss of population diversity, as no explicit diversity preservation mechanism is incorporated.
-- Validation is limited to BBOB synthetic functions and UAV path planning; broader real-world application scenarios remain unexplored.
-- Performance gaps relative to traditional adaptive EAs (e.g., CMA-ES) persist on certain functions.
+- Computational complexity is $O(d^3)$, making it impractical for ultra-high dimensional problems ($d > 1000$).
+- The elite archive loss may lead to loss of population diversity without explicit diversity maintenance mechanisms.
+- Verification is limited to BBOB and UAV path planning; more real-world scenarios are needed.
 
 ## Related Work & Insights
-- **vs. CMA-ES**: CMA-ES adapts search directions via covariance matrix adaptation but requires domain knowledge for design. ABOM automatically learns analogous search strategies through attention mechanisms.
-- **vs. GLHF/RLDEAFL**: These MetaBBO methods require pre-training on training task distributions, a dependency that ABOM completely eliminates.
-- **vs. EvoTorch/OpenELM**: Existing differentiable evolutionary frameworks focus on GPU acceleration, whereas ABOM further achieves operator parameterization and online learning.
+- **vs CMA-ES**: While CMA-ES adjusts search via covariance matrix adaptation through manual rules, ABOM learns search strategies automatically via attention.
+- **vs MetaBBO (GLHF/RLDEAFL)**: ABOM avoids the distribution shift problems associated with pre-training on artificial tasks.
+- **vs Differentiable Frameworks**: Unlike frameworks focusing purely on GPU acceleration (e.g., EvoTorch), ABOM focuses on parameterization and online adaptation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The idea of fully parameterizing evolutionary operators as differentiable attention modules is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — BBOB across three dimensionalities + UAV application + ablation study + visualization.
-- Writing Quality: ⭐⭐⭐⭐ — The derivation from Meta-BBO to ABOM is clearly presented.
-- Value: ⭐⭐⭐⭐ — A significant contribution to the meta black-box optimization field.
+- Novelty: ⭐⭐⭐⭐ Complete parameterization of operators as differentiable attention is novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covered BBOB, UAV applications, ablation, and visualization.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivation from Meta-BBO to ABOM.
+- Value: ⭐⭐⭐⭐ Significant contribution to the Meta-BBO field.
 
 <!-- RELATED:START -->
 
@@ -138,11 +152,11 @@ Comparison against 10 baselines on 16 test functions (30 independent runs, Wilco
 
 ## Related Papers
 
-- [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](measuring_the_intrinsic_dimension_of_earth_representations.md)
-- [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
-- [\[ICLR 2026\] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind](spectral_gaps_and_spatial_priors_studying_hyperspectral_downstream_adaptation_us.md)
-- [\[ICLR 2026\] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents](earth-agent_unlocking_the_full_landscape_of_earth_observation_with_agents.md)
-- [\[CVPR 2026\] GeoMMBench and GeoMMAgent: Toward Expert-Level Multimodal Intelligence in Geoscience and Remote Sensing](../../CVPR2026/remote_sensing/geommbench_and_geommagent_toward_expert_level_multimodal_intelligence_in_geoscience_and_remote_sensing.md)
+- [\[CVPR 2025\] Meta-Learning Hyperparameters for Parameter Efficient Fine-Tuning](../../CVPR2025/remote_sensing/meta-learning_hyperparameters_for_parameter_efficient_fine-tuning.md)
+- [\[CVPR 2026\] Semantic-Adaptive Diffusion for Dynamic Spatiotemporal Fusion](../../CVPR2026/remote_sensing/semantic-adaptive_diffusion_for_dynamic_spatiotemporal_fusion.md)
+- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](../../CVPR2026/remote_sensing/prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] Regulating Rather than Constraining: Adaptive Guidance for Complex Spectral Reconstruction in Pansharpening](../../CVPR2026/remote_sensing/regulating_rather_than_constraining_adaptive_guidance_for_complex_spectral_recon.md)
+- [\[CVPR 2026\] CrossEarth-Gate: Fisher-Guided Adaptive Tuning Engine for Efficient Adaptation of Cross-Domain Remote Sensing Semantic Segmentation](../../CVPR2026/remote_sensing/crossearth-gate_fisher-guided_adaptive_tuning_engine_for_efficient_adaptation_of.md)
 
 </div>
 

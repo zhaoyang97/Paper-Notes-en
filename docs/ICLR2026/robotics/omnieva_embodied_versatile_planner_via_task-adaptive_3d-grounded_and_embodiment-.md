@@ -2,118 +2,119 @@
 title: >-
   [Paper Note] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning
 description: >-
-  [ICLR 2026][Robotics][MLLM] This paper proposes OmniEVA, which addresses two critical gaps in spatial MLLMs — poor geometric adaptability (2D-only or hard-coded 3D injection) and the absence of embodiment constraints (pl…
+  [ICLR 2026][Robotics & Embodied AI][MLLM] OmniEVA is proposed to address two major gaps in spatial MLLMs: poor geometric adaptability (2D-only or hard-coded 3D) and lack of embodiment constraints (producing theoretically feasible but physically unexecutable plans). It utilizes a task-adaptive gated router to dynamically inject 3D positional encodings only when
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "MLLM"
-  - "Task-Adaptive 3D Grounding"
-  - "Gated Routing"
-  - "Embodiment-aware Reasoning"
-  - "GRPO"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - MLLM
+  - GRPO
 date: 2026-05-08
-content_hash: ec2002b7c3ce5670
+content_hash: f976387b2939aa0f
 ---
-
 # OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.09332](https://arxiv.org/abs/2509.09332)  
 **Code**: [Project Page](https://github.com/OmniEVA-Project)  
-**Area**: Embodied Intelligence / 3D Reasoning
+**Area**: Embodied AI / 3D Reasoning  
 **Keywords**: MLLM, Task-Adaptive 3D Grounding, Gated Routing, Embodiment-aware Reasoning, GRPO
 
 ## TL;DR
-This paper proposes OmniEVA, which addresses two critical gaps in spatial MLLMs — poor geometric adaptability (2D-only or hard-coded 3D injection) and the absence of embodiment constraints (plans that are theoretically feasible but physically unexecutable) — via a task-adaptive gated router that dynamically injects 3D positional encodings only when geometric reasoning is required, and an embodiment-aware reasoning framework that integrates physical constraints into the planning loop. OmniEVA achieves state-of-the-art performance on 7 out of 8 benchmarks.
+OmniEVA is proposed to address two major gaps in spatial MLLMs: poor geometric adaptability (2D-only or hard-coded 3D) and lack of embodiment constraints (producing theoretically feasible but physically unexecutable plans). It utilizes a task-adaptive gated router to dynamically inject 3D positional encodings only when geometric reasoning is required and incorporates an embodiment-aware reasoning framework to integrate physical constraints into the planning loop. Ours achieves SOTA results on 7 out of 8 benchmarks.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: Utilizing Multimodal Large Language Models (MLLM) as embodied agents requires simultaneous spatial understanding, reasoning, and action capabilities. Existing works follow two main paths: 2D RGB models, which are simple but lose depth and world-coordinate geometric information, and 3D-LLMs, which hard-code point clouds or 3D positional encodings into every inference, leading to poor flexibility.
 
-MLLMs are increasingly applied to embodied intelligence, requiring spatial understanding, reasoning, and action. Two dominant paradigms exist: (1) direct 2D RGB input, which lacks 3D geometric information; and (2) 3D-LLMs with hard-coded 3D injection, which lack flexibility.
+**Limitations of Prior Work (Geometric Adaptability Gap)**: Pure 2D models fail on geometry-dependent tasks like stacking, occlusion handling, or navigation. Conversely, hard-coded 3D injection models suffer when tasks do not require geometry or when 3D inputs are noisy, as the forced injection introduces unnecessary noise. The "whether to use 3D" decision is fixed in the architecture rather than being task-adaptive.
 
-### Limitations of Prior Work
+**Limitations of Prior Work (Embodiment Constraint Gap)**: Models trained on internet images/videos lack awareness of robot physical constraints (grasp poses, workspace boundaries, kinematic reachability). Consequently, they often output plans that are "semantically correct but physically impossible"—theoretically sound but practically unexecutable.
 
-**(1) Geometric Adaptability Gap**: 2D-only models fail on 3D reasoning tasks (e.g., stacking, occlusion handling, navigation); hard-coded 3D injection in 3D-LLMs introduces noise when 3D input is irrelevant or noisy.
-
-### Root Cause
-
-**(2) Embodiment Constraint Gap**: Models trained on web images and videos ignore robot physical constraints, producing plans that are theoretically valid but physically unexecutable (e.g., infeasible grasp poses, workspace violations, kinematic infeasibility).
-
-**Key Insight**: (1) A gated router dynamically determines whether 3D information is needed, enabling on-demand injection; (2) TE-GRPO training teaches the model to respect physical constraints.
+**Key Insight**: To address these gaps, OmniEVA introduces two components: a gated router that dynamically determines if the current task requires 3D information for on-demand injection, and TE-GRPO, which incorporates physical executability into reinforcement learning rewards to force the model to respect the robot's physical constraints.
 
 ## Method
 
-### Task-Adaptive Gated Router (TAGR)
+### Overall Architecture
 
-1. **3D Positional Encoding**: Depth maps are unprojected to world coordinates, patch-level averaged, and encoded via sinusoidal functions to obtain $V^p \in \mathbb{R}^{N \times H_p \times W_p \times d_v}$.
+OmniEVA uses InternVL3-8B as the MLLM backbone. The goal is a unified model that excels at both "3D tasks requiring geometric reasoning" and "pure 2D tasks" while producing executable plans. A Task-Adaptive Gated Router (TAGR) is placed at the front-end: given an instruction and RGB-D input, it judges if the task needs 3D geometric information. If so, 3D positional encodings are injected into visual tokens; otherwise, it remains 2D. The fused tokens, along with text tokens, are fed into the LLM backbone using a "think-answer" reasoning structure. Capabilities are developed through three-stage training: TAGR pre-training for gating behavior, Supervised Fine-Tuning (SFT) for general embodied reasoning (OmniEVA-Base), and TE-GRPO reinforcement fine-tuning for physical executability (OmniEVA-ER).
 
-2. **Gating Decision**:
-    - Task condition: a sentence Transformer encodes the instruction to produce $V^T$
-    - Scene condition: mean-pooled visual encoder output $V_{avg}^I$
-    - Concatenated features are passed through an MLP to produce 2D gate logits, followed by Gumbel-Softmax for a binary decision
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Instruction T + RGB-D Input"]
+    IN --> VENC["Vision Encoder<br/>Vision tokens V^I"]
+    IN --> DEP["Depth Map → World Coordinates<br/>Patch Mean + Sinusoidal Encoding<br/>3D Positional Encoding V^p"]
+    subgraph TAGR["Task-Adaptive Gated Router TAGR"]
+        direction TB
+        COND["Task Condition V^T (Encoded Instruction)<br/>Scene Condition V^I Mean Pooling"] --> GATE["MLP → Gumbel-Softmax<br/>Hard Gate g ∈ {0,1}"]
+    end
+    VENC --> COND
+    DEP --> FUSE
+    GATE -->|"g=1 Inject Geometry"| FUSE["Fused Visual Tokens<br/>g=1: V^I+V^p / g=0: V^I"]
+    VENC --> FUSE
+    FUSE --> LLM["LLM Backbone<br/>think-answer reasoning → Plan"]
+    LLM --> TRAIN["3-Stage Training:<br/>① TAGR Pre-train → ② SFT (OmniEVA-Base)<br/>→ ③ TE-GRPO RFT (OmniEVA-ER)"]
+    TRAIN --> OUT["Executable Embodied Plan<br/>Nav/Grasp/Mobile Manipulation"]
+```
 
-3. **Dynamic Injection**:
-    - Gate = 1: $V^{final} = V^I + V^p$ (3D positional encoding added)
-    - Gate = 0: $V^{final} = V^I$ (2D only)
-    - The routing is automatically determined per task and scene, avoiding noise from unnecessary 3D injection
+### Key Designs
 
-### Embodiment-aware Reasoning
+**1. Task-Adaptive Gated Router (TAGR): On-demand 3D Injection**
 
-1. **Primitive Skill Decomposition**:
-    - Where2Go: navigation target selection
-    - Where2Grasp: grasp pose estimation
-    - Where2Approach: approach pose determination
-    - Where2Fit: placement feasibility assessment
+TAGR transforms the decision to "inject 3D" from a hard-coded structure into a learnable binary switch. It reconstructs world coordinates from the depth map, performs patch-wise mean pooling, and applies sinusoidal encoding to obtain 3D positional encodings $V^p \in \mathbb{R}^{N \times H_p \times W_p \times d_v}$. Simultaneously, a lightweight Sentence Transformer (all-MiniLM-L6-v2) encodes the instruction for task condition $V^T$, and the vision encoder output is mean-pooled for scene condition $V_{avg}^I$. These are concatenated and passed through an MLP to obtain gate logits, which Gumbel-Softmax converts into an end-to-end differentiable **hard gate** $g \in \{0,1\}$:
 
-2. **TE-GRPO (Task- and Embodiment-aware GRPO)**:
-    - Applied as a post-training stage using Group Relative Policy Optimization (GRPO)
-    - Reward function accounts for: task objectives, object affordances, workspace boundaries, and kinematic feasibility
-    - Ensures that generated plans are physically executable
+$$g = \text{GumbelSoftmax}\big(\text{MLP}([V^T; V_{avg}^I]),\ \tau\big),\qquad V^{final}=\begin{cases}V^I+V^p & g=1\\ V^I & g=0\end{cases}$$
 
-### Two-Stage Training
-- Stage 1: Supervised Fine-Tuning (SFT) on 2D + 3D VQA and embodied reasoning data
-- Stage 2: TE-GRPO post-training via reinforcement learning to optimize executability
+Ours avoids **soft-weighting**: since sinusoidal positional encoding magnitudes are sensitive, continuous weighting degrades spatial reasoning. Hard gating preserves the original magnitudes. This acts as a Mixture-of-Experts (MoE) between pure visual tokens and 3D-fused tokens.
+
+**2. Embodiment-aware Reasoning & TE-GRPO: Physical Executability via RL**
+
+To solve the embodiment constraint gap, OmniEVA introduces TE-GRPO (Task- and Embodiment-aware GRPO). Beyond standard format rewards $r^{format}$, it adds two accuracy rewards: a task reward $r^{task}$ measured by $\text{EvalTask}(\cdot)$ (e.g., the ratio of points landing in a target zone), which is embodiment-agnostic, and an embodiment reward $r^{embod}$ measured by $\text{EvalExec}(\cdot)$ which checks kinematics and reachability in simulation. A curriculum reward scheduling is used to prevent early optimization collapse:
+
+$$r^{acc}_{i,t} = (1-\lambda_t)\, r^{task}_i + \lambda_t\, r^{embod}_i,\qquad \lambda_t:\ 0 \to 1$$
+
+Initially, $\lambda_t \approx 0$, rewarding semantic success; as training progresses, $\lambda_t \to 1$, enforcing strict physical compliance.
+
+### Loss & Training
+
+A three-stage cascaded strategy is employed: **① TAGR Pre-training**: Uses depth-aware data (ScanNet, Matterport3D) to learn gating. A low learning rate ($5e^{-7}$) protects the LLM while a higher rate ($1e^{-4}$) is used for TAGR. **② SFT**: The frozen TAGR is used with mixed 2D/Video/3D embodied data to train OmniEVA-Base. **③ TE-GRPO Reinforcement Fine-Tuning (RFT)**: OmniEVA-Base is fine-tuned using curriculum physical rewards to produce OmniEVA-ER.
 
 ## Key Experimental Results
 
-### 8 Benchmarks (2D + 3D + Video)
+Evaluation covers 8 public benchmarks (2D image, video, 3D) and 4 original skill benchmarks: Where2Go (view selection), Where2Fit (collision-aware space prediction), Where2Approach (occlusion-aware navigation), and Where2Grasp (object-centric recognition).
 
-### Main Results
+### Main Results (OmniEVA-Base, after SFT)
 
-| Benchmark Type | Model | Performance |
-|----------------|-------|-------------|
-| 2D Spatial Reasoning | OmniEVA | **SOTA** |
-| 3D Spatial Reasoning | OmniEVA | **SOTA (7/8)** |
-| Object Navigation (HM3D) | OmniEVA | **Leaderboard #1** |
-| Object Navigation (MP3D) | OmniEVA | **Leaderboard #1** |
+| Benchmark | Result |
+|-----------|--------|
+| 8 Public Benchmarks (2D/3D/Video) | SOTA on 7/8 |
+| Avg. on 4 2D Embodied Reasoning Benchmarks | 8B model, **+10.45** over Prev. SOTA Robobrain2.0-32B |
+| ObjectNav HM3D / MP3D | 1st on Leaderboard |
+| 4 Original Skill Benchmarks | Surpasses all existing models |
 
-### 4 Primitive Skill Benchmarks
+### Ablation Study: TE-GRPO (OmniEVA-ER vs. Base / Naive RL)
 
-### Ablation Study
-
-| Skill | OmniEVA vs. SOTA | Description |
-|-------|------------------|-------------|
-| Where2Go | +5% | Navigation target selection |
-| Where2Grasp | +8% | Grasp pose estimation |
-| Where2Approach | +6% | Approach strategy |
-| Where2Fit | +7% | Placement adaptation |
+| Task | OmniEVA-ER Gain |
+|------|----------------|
+| Where2Approach | Accuracy +28.95% |
+| Where2Fit | Accuracy +34.28% |
+| Mobile Placement (Easy / Hard) | Success Rate +43% / +50% |
 
 ### Key Findings
-- The gated router deactivates 3D injection for ~40% of tasks, confirming that these tasks genuinely do not require geometric reasoning — validating the adaptive strategy.
-- Hard-coded 3D injection in baseline models degrades performance on 2D tasks that do not require 3D input, demonstrating the value of TAGR.
-- TE-GRPO post-training raises the proportion of physically executable plans from ~65% to ~90% compared to SFT alone.
+- **Semantic-driven Gating**: Shape-related prompts trigger 3D reasoning most frequently (76.9%), followed by actions (50.9%) and occlusion (33.0%). This validates the adaptive "as-needed" strategy.
+- **Hard Gate > Soft Gate**: Soft gating via continuous weighting consistently underperformed across all benchmarks due to numerical instability in positional encodings.
+- **TE-GRPO Ensures Executability**: Combining $r^{task}$ and $r^{embod}$ yields the best results, significantly improving robustness in mobile manipulation tasks.
 
 ## Highlights & Insights
-- **"3D on Demand" Design Philosophy**: Rather than applying 3D to all tasks, the model learns when 3D reasoning is necessary — a more flexible and accurate approach than hand-crafted rules.
-- **Contribution of Primitive Skill Benchmarks**: The four new benchmarks (Where2Go / Where2Grasp / Where2Approach / Where2Fit) provide the first systematic evaluation of embodied plan executability.
-- **TE-GRPO Bridges LLM Training and Robotics**: Combining GRPO — a mainstream LLM post-training method — with physics-constraint rewards represents a natural and effective integration of LLMs into robotics.
+- **"As-needed 3D" Philosophy**: Instead of applying 3D to all tasks, the model learns when it is necessary, providing more flexibility than manual rules.
+- **Original Skill Benchmarks**: The 4 new benchmarks provide a systematic evaluation of embodied plan executability.
+- **Bridging LLM and Robotics with TE-GRPO**: Combining GRPO with physical rewards is a natural and effective way to adapt LLM post-training for robotics.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Dual innovation in task-adaptive 3D grounding and embodiment-aware reasoning
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 + 4 benchmarks, ablations, and leaderboard results
-- Writing Quality: ⭐⭐⭐⭐ Architecture descriptions are clear and well-organized
-- Value: ⭐⭐⭐⭐⭐ Significant contribution to embodied MLLMs
+- Novelty: ⭐⭐⭐⭐⭐ Dual innovation in task-adaptive 3D and embodiment-aware reasoning.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8+4 benchmarks, extensive ablations, and leaderboard results.
+- Writing Quality: ⭐⭐⭐⭐ Clear architectural descriptions.
+- Value: ⭐⭐⭐⭐⭐ Significant advancement for embodied MLLMs.
 
 <!-- RELATED:START -->
 
@@ -121,11 +122,11 @@ MLLMs are increasingly applied to embodied intelligence, requiring spatial under
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning](../../NeurIPS2025/robotics/mesatask_towards_task-driven_tabletop_scene_generation_via_3d_spatial_reasoning.md)
-- [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
-- [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
-- [\[CVPR 2026\] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](../../CVPR2026/robotics/recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)
-- [\[ICML 2026\] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](../../ICML2026/robotics/plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)
+- [\[ICLR 2026\] MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning](momagraph_state-aware_unified_scene_graphs_with_vision-language_models_for_embod.md)
+- [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
+- [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
+- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
+- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 
 </div>
 

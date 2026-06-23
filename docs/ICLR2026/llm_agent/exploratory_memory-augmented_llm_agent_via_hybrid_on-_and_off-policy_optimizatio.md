@@ -2,96 +2,96 @@
 title: >-
   [Paper Note] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] This paper proposes EMPO2, an RL framework that combines an external memory module with hybrid on-policy/off-policy updates. By leveraging memory-guided exploration and know…
+  [ICLR 2026][LLM Agent][Reinforcement Learning] Ours proposes EMPO2, an RL framework combining an external memory module with hybrid on-policy/off-policy updates. By internalizing exploration gains into model parameters through memory-guided exploration and knowledge distillation, it achieves performance improvements of 128.6% and 11.3% over GRPO on ScienceWorld and
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "Reinforcement Learning"
-  - "Exploration"
-  - "External Memory"
-  - "Hybrid Policy Optimization"
+  - ICLR 2026
+  - LLM Agent
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: f48c87d065d9ff5a
+content_hash: 3f664a3e5133fce9
 ---
-
 # Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.23008](https://arxiv.org/abs/2602.23008)  
 **Code**: [https://github.com/agent-lightning/empo2](https://github.com/agent-lightning/empo2)  
-**Area**: Agent
+**Area**: Agent  
 **Keywords**: LLM Agent, Reinforcement Learning, Exploration, External Memory, Hybrid Policy Optimization
 
 ## TL;DR
-This paper proposes EMPO2, an RL framework that combines an external memory module with hybrid on-policy/off-policy updates. By leveraging memory-guided exploration and knowledge distillation to internalize exploration gains into model parameters, EMPO2 achieves improvements of 128.6% and 11.3% over GRPO on ScienceWorld and WebShop, respectively.
+Ours proposes EMPO2, an RL framework combining an external memory module with hybrid on-policy/off-policy updates. By internalizing exploration gains into model parameters through memory-guided exploration and knowledge distillation, it achieves performance improvements of 128.6% and 11.3% over GRPO on ScienceWorld and WebShop, respectively.
 
 ## Background & Motivation
 
-**Background**: LLM agents learn decision-making in interactive environments via reinforcement learning (e.g., GRPO), but the core bottleneck is **insufficient exploration** — agents over-rely on pretrained knowledge and struggle to discover novel states that require active searching.
+**Background**: LLM Agents learn decision-making in interactive environments through reinforcement learning (e.g., GRPO). However, the core bottleneck remains **insufficient exploration**—Agents rely excessively on pre-trained knowledge and struggle to discover new states that require active searching.
 
-**Limitations of Prior Work**: (a) Pure parameter-update RL methods (e.g., GRPO) converge prematurely to suboptimal solutions on tasks requiring long-horizon exploration; (b) non-parametric methods (e.g., Reflexion) improve decisions through reflective memory but saturate quickly with fixed parameters and cannot continue improving; (c) offline RL and SFT methods depend on large amounts of expert trajectories or external resources such as GPT-4.
+**Limitations of Prior Work**: (a) Pure parameter-update RL (e.g., GRPO) converges prematurely to sub-optimal solutions in tasks requiring long-term exploration; (b) Non-parametric methods (e.g., Reflexion) improve decision-making via reflective memory, but performance saturates quickly under fixed parameters, preventing continuous improvement; (c) Offline RL and SFT methods depend on large amounts of expert trajectories or external resources like GPT-4.
 
-**Key Challenge**: Parametric updates can internalize knowledge but lack exploration incentives; external memory can facilitate exploration but cannot expand intrinsic capabilities. Each approach has inherent limitations, and no unified framework exists.
+**Key Challenge**: Parameter updates internalize knowledge but lack the drive for exploration; external memory promotes exploration but cannot extend intrinsic capabilities. These paradigms have respective limitations and lack a unified framework.
 
-**Goal**: How can LLM agents autonomously explore novel environments during online RL while internalizing the experience gained through exploration into model parameters?
+**Goal**: How to enable LLM Agents to autonomously explore new environments during online RL while internalizing the experience gained through exploration into model parameters?
 
-**Key Insight**: Non-parametric memory updates can bootstrap parametric updates — the agent first acquires high-quality trajectories via memory-guided exploration, then distills this knowledge into a memory-free policy through off-policy updates.
+**Key Insight**: Non-parametric memory updates can bootstrap parameter updates—Agents first acquire high-quality trajectories through memory-guided exploration, and then distill this knowledge into the memory-less policy through off-policy updates.
 
-**Core Idea**: Self-generated memory tips serve as exploration scaffolding. Through hybrid on/off-policy updates, the exploration capability afforded by memory is progressively internalized into model weights.
+**Core Idea**: Use self-generated memory "tips" as exploration scaffolding, progressively internalizing memory-augmented exploration capabilities into model weights through hybrid on/off-policy updates.
 
 ## Method
 
 ### Overall Architecture
-EMPO2 operates in two modes during rollout (with/without memory) and two modes during updates (on-policy/off-policy), yielding three learning configurations. Given task description $u$ and environment state $s_t$, the agent outputs natural language action $a_t$. The agent interacts with the environment over multiple steps to generate trajectories, then optimizes via GRPO-style policy gradients using reward signals.
+EMPO2 aims to resolve the exploration deadlock of LLM Agents in online RL: pure parameter updates (GRPO) converge too early, while pure memory methods (Reflexion) saturate quickly due to frozen weights. The solution is to merge these paths—allowing the Agent to explore high-quality trajectories using external memory, and then distilling these exploration gains back into model parameters so that the model can replicate the discovered behaviors during testing without relying on memory.
+
+The entire process is a GRPO-style policy gradient loop: given a task description $u$ and environment state $s_t$, the Agent samples multi-step interaction trajectories during the **rollout phase** between "memory-augmented" and "memory-less" modes according to a probability. After each episode, the current policy reflects on the trajectory to generate experience tips to update the memory buffer for the next round of retrieval (forming an exploration feedback loop), while intrinsic rewards are issued based on state novelty. In the **update phase**, memory-less trajectories and a portion of memory-augmented trajectories undergo on-policy updates for stability, while another portion of memory-augmented trajectories undergoes off-policy updates to distill "excellent behaviors with tips" into the tip-less policy. Finally, the policy $\pi_\theta$ is updated via GRPO.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Task u + State s_t"] --> ROLL["Dual-mode Rollout<br/>p Memory-augmented / 1-p Memory-less"]
+    MEM["Self-generated Memory<br/>Reflection→Tips→Buffer M"] -->|"Retrieve ≤10 tips"| ROLL
+    ROLL --> TRAJ["Trajectories + Rewards"]
+    TRAJ --> MEM
+    INTR["Intrinsic Reward<br/>r=1/n via Novelty"] --> TRAJ
+    TRAJ --> UPD["Hybrid On/Off-Policy Update<br/>Memory-less & 1-q trajectories: on-policy<br/>q trajectories: off-policy distillation + token masking"]
+    UPD --> GRPO["GRPO Policy Gradient Update π_θ"]
+    GRPO -.->|"Next Round"| ROLL
+```
 
 ### Key Designs
 
-1. **Self-Generated Memory Module**:
+**1. Self-generated Memory Module: Memory as Scaffolding, Not the End Goal**
 
-    - Function: After each episode, the agent reflects on its trajectory using the current policy $\pi_\theta$ to generate tips stored in memory buffer $\mathcal{M}$.
-    - Mechanism: $\text{tip}_i \sim \pi_\theta(s_t, u, \text{tip-generation prompt})$; tips are retrieved via cosine similarity, with up to 10 retrieved per step.
-    - Design Motivation: Unlike Reflexion, the tips here are not an end in themselves but serve as intermediate exploration scaffolding to guide parametric updates.
+To address the bottleneck of agents over-relying on pre-trained knowledge, EMPO2 mandates the current policy $\pi_\theta$ to reflect on the completed trajectory after each episode. It generates experience tips according to $\text{tip}_i \sim \pi_\theta(s_t, u, \text{tip-generation prompt})$ and stores them in buffer $\mathcal{M}$. During subsequent decision-making, up to 10 relevant tips are retrieved based on embedding similarity. The key difference from Reflexion is that tips here are intermediate scaffolding to guide parameter updates—they help the policy reach good states but are intended to be internalized, removing dependency during testing.
 
-2. **Dual-Mode Rollout**:
+**2. Dual-mode Rollout: Balancing High-quality Trajectories and Independent Reasoning**
 
-    - Function: During rollout, memory-augmented prompting is used with probability $p$, and standard prompting with probability $1-p$.
-    - Mechanism: In memory mode, $a_{t+1} \sim \pi_\theta(\cdot | s_t, u, \text{tips}_t)$; in memory-free mode, $a_{t++1} \sim \pi_\theta(\cdot | s_t, u)$.
-    - Design Motivation: Memory rollouts produce high-quality exploratory trajectories, while memory-free rollouts preserve the policy's independent reasoning capability.
+To enjoy exploration gains from memory without making the policy dependent on tips, the rollout phase switches between modes with probability $p$. The memory-augmented mode $a_{t+1} \sim \pi_\theta(\cdot \mid s_t, u, \text{tips}_t)$ produces high-quality trajectories using retrieved tips, while the memory-less mode $a_{t+1} \sim \pi_\theta(\cdot \mid s_t, u)$ preserves the policy's independent reasoning under zero-shot conditions. Both types of trajectories enter the update phase.
 
-3. **Hybrid On/Off-Policy Updates**:
+**3. Hybrid On/Off-Policy Update: Internalizing Memory Capabilities**
 
-    - Function: Memory-augmented trajectories undergo off-policy updates with probability $q$ (tips removed) or on-policy updates with probability $1-q$ (tips retained).
-    - Mechanism: In off-policy mode, the conditional log-probability $\log\pi_\theta(a_t|s_t,u,\text{tips})$ used during rollout is replaced by $\log\pi_\theta(a_t|s_t,u)$, constituting **reward-guided knowledge distillation** — high-reward trajectories are reinforced ($\hat{A}_t > 0$) and low-reward ones suppressed, training the policy to reproduce memory-assisted behavior without memory at inference time.
-    - Design Motivation: On-policy updates ensure stable learning; off-policy updates transfer memory-driven exploration capability into intrinsic model knowledge.
+This is the core of "auxiliary-first, internalization-later." Memory-less trajectories directly undergo on-policy updates. For memory-augmented trajectories, a choice is made with probability $q$: on-policy updates (preserving tips in conditional probability for stability) or off-policy updates. In the off-policy case, the stored conditional log-probability $\log\pi_\theta(a_t \mid s_t, u, \text{tips}_t)$ is replaced by the memory-less probability $\log\pi_\theta(a_t \mid s_t, u)$. This is essentially **reward-guided knowledge distillation**: the trajectory with tips acts as a teacher, while the tip-less policy acts as the student. High-reward trajectories ($\hat{A}_t > 0$) are reinforced in the student, effectively "writing" the memory-discovered capabilities into the weights.
 
-4. **Off-Policy Training Stabilization (Token Masking)**:
+To prevent training collapse when $\pi_\theta(a_t \mid s_t, u)$ is extremely low (causing importance sampling ratios to explode), EMPO2 applies **token masking**. It uses an indicator function $\mathbf{1}_{\pi_\theta(a_t \mid s_t, u) \geq \delta}$ in the loss function to mask unreliable tokens below threshold $\delta$, stabilizing off-policy training.
 
-    - Function: Advantage terms are masked for tokens whose policy probability falls below threshold $\delta$.
-    - Mechanism: An indicator function $\mathbf{1}_{\pi_\theta(a_t|s_t,u) \geq \delta}$ is incorporated into the loss.
-    - Design Motivation: Low-probability tokens cause the importance sampling ratio $\rho$ to explode, leading to gradient NaNs; the masking mechanism effectively prevents training collapse.
+**4. Intrinsic Reward: Driving Exploration Without Environment Rewards**
 
-5. **Intrinsic Rewards**:
-
-    - Function: Additional rewards $r_{\text{intrinsic}} = 1/n$ are granted based on state novelty, where $n$ is the number of similar historical states.
-    - Design Motivation: Encourages the agent to explore novel states even in the absence of extrinsic rewards, maintaining policy entropy.
+When external rewards are sparse, agents often converge prematurely. EMPO2 maintains a state memory list and calculates cosine similarity for each new state. Intrinsic reward is defined as $r_{\text{intrinsic}} = 1/n$, where $n$ is the count of similar historical states. States that are "unseen" receive higher rewards, motivating the policy to maintain entropy and touch new states even in the absence of external feedback.
 
 ### Loss & Training
-A GRPO-based clipped surrogate loss with token masking and KL regularization:
-$$\mathcal{L} = \mathbb{E}\left[\frac{1}{NT}\sum_{i,t}\min(\rho_\theta^{(i,t)} A_t^{(i)}, \text{clip}(\rho, 1\pm\epsilon) A_t^{(i)}) \cdot \mathbf{1}_{\pi_\theta \geq \delta}\right] - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})$$
+The loss combines the GRPO clipped surrogate loss with token masking and KL regularization ($\rho_\theta^{(i,t)}$ is the importance sampling ratio, $\hat{A}_t^{(i)}$ is the group relative advantage, and $\delta$ is the masking threshold):
+$$\mathcal{L} = \mathbb{E}\left[\frac{1}{NT}\sum_{i,t}\min\big(\rho_\theta^{(i,t)} A_t^{(i)},\ \text{clip}(\rho, 1-\epsilon, 1+\epsilon) A_t^{(i)}\big) \cdot \mathbf{1}_{\pi_\theta(a_t \mid s_t, u) \geq \delta}\right] - \beta\, D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})$$
 
 ## Key Experimental Results
 
 ### Main Results
 
-**ScienceWorld** (19 tasks, Qwen2.5-7B-Instruct):
+**ScienceWorld** (19 Tasks, Qwen2.5-7B-Instruct):
 
 | Method | Avg. Score | vs GRPO |
 |------|---------|---------|
-| Naive (zero-shot) | -61.3 | - |
-| Reflexion (non-parametric) | 17.1 | - |
-| Retrospex (offline RL) | 33.8 | - |
-| GRPO (online RL) | 33.2 | baseline |
-| **EMPO2** | **75.9** | **+128.6%** |
+| Naive (Zero-shot) | -61.3 | - |
+| Reflexion (Non-parametric) | 17.1 | - |
+| Retrospex (Offline RL) | 33.8 | - |
+| GRPO (Online RL) | 33.2 | baseline |
+| **Ours (EMPO2)** | **75.9** | **+128.6%** |
 
 **WebShop**:
 
@@ -99,43 +99,43 @@ $$\mathcal{L} = \mathbb{E}\left[\frac{1}{NT}\sum_{i,t}\min(\rho_\theta^{(i,t)} A
 |------|-------|-------------|
 | GRPO | 79.3 | 66.1% |
 | GiGPO w/o std | 86.2 | 75.2% |
-| **EMPO2** | **88.3** | **76.9%** |
+| **Ours (EMPO2)** | **88.3** | **76.9%** |
 
 ### Ablation Study
 
-| Configuration | Performance | Notes |
+| Configuration | Key Performance | Description |
 |------|---------|------|
-| Full EMPO2 | Highest | All three modes intact |
-| w/o off-policy | Significant drop | Exploration gains cannot be internalized without knowledge distillation |
-| w/o on-policy w/ memory | Drop | Reduced stability without memory-augmented on-policy updates |
+| Full EMPO2 | Highest | All three modes integrated |
+| w/o off-policy | Significant Decrease | Exploration cannot be internalized without distillation |
+| w/o on-policy w/ memory | Decrease | Reduced stability without memory-augmented on-policy samples |
 
 ### Key Findings
-- EMPO2 achieves a perfect score of 100 on 7 of 19 ScienceWorld tasks, whereas GRPO peaks at 78.2.
-- The most substantial gains appear on Electricity tasks (power-component: 15.1→94.3), as these tasks require the highest degree of exploration.
-- In OOD experiments, EMPO2 adapts to new tasks with only a few memory-aided steps (average improvement 136%), while GRPO is unstable.
-- The off-policy and on-policy-with-memory modes are complementary: the former handles knowledge distillation, the latter ensures stable learning.
+- EMPO2 achieved a perfect score of 100 on 7/19 ScienceWorld tasks, while GRPO's maximum was 78.2.
+- Improvements were most significant in Electricity tasks (e.g., power-component: 15.1→94.3), which require the most exploration.
+- In OOD experiments, EMPO2 adapted to new tasks with only a few memory trials (avg. 136% improvement), while GRPO was unstable.
+- Off-policy and memory-augmented on-policy modes are complementary: the former handles distillation, while the latter ensures stable learning.
 
 ## Highlights & Insights
-- **Memory as Exploration Scaffolding**: Rather than relying on memory directly for inference, EMPO2 uses high-quality trajectories produced with memory to distill knowledge into model parameters via off-policy updates, eliminating the need for memory at test time. This "assist-then-internalize" paradigm is particularly elegant.
-- **Token Masking for Off-Policy Stability**: A simple yet effective solution to the importance sampling ratio explosion problem in off-policy LLM training, transferable to other off-policy LLM training scenarios.
-- **Few-Shot Task Transfer**: The trained model acquires a meta-capability of "exploring with memory," enabling rapid adaptation to novel tasks in just a few steps — suggesting that EMPO2 learns a general exploration strategy rather than task-specific patterns.
+- **Memory as Exploration Scaffolding**: Rather than relying on memory for inference, high-quality trajectories generated via memory are distilled into parameters through off-policy updates. This "auxiliary-then-internalize" approach is highly elegant.
+- **Token Masking for Stable Off-policy Training**: A simple but effective solution to the importance sampling ratio explosion in LLM off-policy training, which is transferable to other scenarios.
+- **Few-shot Task Transfer**: The trained model acquires the meta-ability to "explore with memory," adapting to new tasks in just a few steps, suggesting that EMPO2 learns general exploration strategies rather than task-specific patterns.
 
 ## Limitations & Future Work
-- Validation is limited to Qwen2.5-7B; larger models and different architectures remain untested.
-- Memory retrieval relies on simple cosine similarity; more advanced RAG mechanisms could yield further improvements.
-- Evaluation is restricted to text-based interactive environments (ScienceWorld, WebShop); mathematical reasoning and code generation scenarios are not explored.
-- Off-policy updates depend on importance sampling; alternative off-policy techniques (e.g., V-trace) could be investigated.
+- Validated only on Qwen2.5-7B; larger models or different architectures have not been tested.
+- Memory retrieval uses simple cosine similarity; advanced RAG mechanisms might further improve results.
+- Evaluation was limited to text-based interaction environments (ScienceWorld, WebShop) and did not cover mathematical reasoning or code generation.
+- Off-policy updates rely on importance sampling; other techniques (e.g., V-trace) could be explored.
 
 ## Related Work & Insights
-- **vs. Reflexion**: Reflexion performs only non-parametric updates (fixed weights + memory); EMPO2 unifies memory exploration with parametric learning, surpassing Reflexion's performance ceiling.
-- **vs. GRPO/GiGPO**: These methods update parameters without memory-assisted exploration, leading to insufficient exploration on tasks that require discovering novel states.
-- **vs. Knowledge Distillation**: Conventional distillation is offline (teacher→student); EMPO2 performs online self-distillation, where the teacher (memory-augmented policy) and student (memory-free policy) share parameters.
+- **vs Reflexion**: Reflexion only performs non-parametric updates (fixed weights + memory), whereas EMPO2 unifies memory exploration with parameter learning, breaking the performance ceiling of Reflexion.
+- **vs GRPO/GiGPO**: These methods lack memory-assisted exploration, resulting in insufficient exploration in tasks requiring the discovery of new states.
+- **vs Knowledge Distillation**: Traditional distillation is offline teacher→student; EMPO2 is online self-distillation where the teacher (memory-augmented policy) and student (memory-less policy) share parameters.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of memory and hybrid policy optimization is novel, though individual components are not entirely new.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two environments with ablation and OOD testing, though additional benchmarks would strengthen the evaluation.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear, figures are informative, and mathematical formulations are rigorous.
-- Value: ⭐⭐⭐⭐ Provides a practical and effective exploration-augmented RL training framework for LLM agents.
+- Novelty: ⭐⭐⭐⭐ The combination of memory and hybrid policy optimization is novel, even if individual components are known.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Two environments plus ablation and OOD tests, though more benchmarks could be added.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, rich diagrams, and standardized mathematical notation.
+- Value: ⭐⭐⭐⭐ Provides a practical exploration enhancement for the RL training of LLM Agents.
 
 <!-- RELATED:START -->
 
@@ -143,8 +143,8 @@ $$\mathcal{L} = \mathbb{E}\left[\frac{1}{NT}\sum_{i,t}\min(\rho_\theta^{(i,t)} A
 
 ## Related Papers
 
+- [\[ICLR 2026\] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning](a2fm_an_adaptive_agent_foundation_model_for_tool-aware_hybrid_reasoning.md)
 - [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](../../ACL2026/llm_agent/shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
-- [\[ICLR 2026\] Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents](harnessing_uncertainty_entropy-modulated_policy_gradients_for_long-horizon_llm_a.md)
 - [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](../../NeurIPS2025/llm_agent/groupingroup_policy_optimization_for_llm_agent_training.md)
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 - [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)

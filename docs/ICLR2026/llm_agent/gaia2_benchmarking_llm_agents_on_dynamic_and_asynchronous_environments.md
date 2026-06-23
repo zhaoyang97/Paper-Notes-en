@@ -2,164 +2,132 @@
 title: >-
   [Paper Note] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments
 description: >-
-  [ICLR 2026 (Oral)][LLM Agent][dynamic environments] This paper introduces the Gaia2 benchmark for evaluating LLM agents in dynamic and asynchronous environments. It incorporates realistic scenarios including time constra…
+  [ICLR 2026][LLM Agent][benchmark] Ours proposes the Gaia2 benchmark to evaluate LLM Agent capabilities in dynamic and asynchronous environments. It introduces real-world scenarios such as time constraints, noisy events, ambiguity resolution, and multi-agent collaboration. Combined with write action verifiers providing verifiable rewards, the benchmark
 tags:
-  - "ICLR 2026 (Oral)"
-  - "LLM Agent"
-  - "dynamic environments"
-  - "asynchronous interaction"
-  - "benchmark"
-  - "reinforcement learning"
+  - ICLR 2026
+  - LLM Agent
+  - benchmark
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 0fe274aab0c88911
+content_hash: f6bef7d9d7efd081
 ---
-
 # Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments
 
 **Conference**: ICLR 2026 (Oral)  
 **arXiv**: [2602.11964](https://arxiv.org/abs/2602.11964)  
-**Code**: Built on the Agents Research Environments (ARE) platform; open-source  
+**Code**: Based on Agents Research Environments (ARE) platform, open source  
 **Area**: LLM Agent Evaluation  
-**Keywords**: LLM Agent, dynamic environments, asynchronous interaction, benchmark, reinforcement learning
+**Keywords**: LLM Agent, Dynamic Environment, Asynchronous Interaction, benchmark, Reinforcement Learning
 
 ## TL;DR
 
-This paper introduces the Gaia2 benchmark for evaluating LLM agents in dynamic and asynchronous environments. It incorporates realistic scenarios including time constraints, noisy events, ambiguity resolution, and multi-agent collaboration. A write-action verifier with verifiable rewards enables direct use for RLVR training. Evaluation results show that the strongest model, GPT-5 (high), achieves only 42% pass@1.
+Ours proposes the Gaia2 benchmark to evaluate LLM Agent capabilities in dynamic and asynchronous environments. It introduces real-world scenarios such as time constraints, noisy events, ambiguity resolution, and multi-agent collaboration. Combined with write action verifiers providing verifiable rewards, the benchmark can be directly used for RLVR training. Evaluations show that even the strongest model, GPT-5 (high), achieves only a 42% pass@1 rate.
 
 ## Background & Motivation
 
-Current LLM agent evaluation suffers from a fundamental flaw: most benchmarks rely on **static** or **synchronous** environments, in which the environment does not evolve independently of the agent's actions. The agent retains full temporal control, can pause and deliberate at will, and the environment always waits for the next action.
+Current evaluations of LLM Agents suffer from fundamental flaws: most benchmarks rely on **static** or **synchronous** environments. In these settings, the environment does not change independently of the Agent's actions—the Agent has complete temporal control, can pause or think indefinitely, and the environment state always waits for the Agent's next move.
 
-Real-world task environments, however, are fundamentally different:
-- **Time sensitivity**: Flight prices fluctuate, inventory changes, and deadlines approach.
-- **Asynchronous events**: New messages arrive and state updates occur independently.
-- **Noise and ambiguity**: Information is incomplete or contradictory, and requirements need clarification.
-- **Multi-party collaboration**: Coordination with other agents or humans is required.
+However, real-world task environments are entirely different:
+- **Time Sensitivity**: Fluctuating flight prices, inventory changes, and approaching deadlines.
+- **Asynchronous Events**: New incoming messages and independent state updates.
+- **Noise & Ambiguity**: Incomplete information, contradictory contexts, and requirements needing clarification.
+- **Multi-party Collaboration**: Necessitating coordination with other Agents or humans.
 
-Existing benchmarks (e.g., the original GAIA) test only static question answering and tool invocation, and cannot assess agent capabilities along these **real-world dimensions**. This creates a severe **sim-to-real gap** — strong benchmark performance does not predict real-world deployment behavior.
+Existing benchmarks (such as the original GAIA) only test static Q&A and tool calling, failing to evaluate Agent capabilities across these **realistic dimensions**. This leads to a significant "**sim2real gap**"—high scores on benchmarks do not predict performance in real-world deployment.
 
-Gaia2 is designed to provide a more realistic evaluation platform while maintaining quantifiability and reproducibility.
+The Goal of Gaia2 is to create an evaluation platform closer to reality while maintaining quantifiability and reproducibility.
 
 ## Method
 
 ### Overall Architecture
 
-Gaia2 is built on top of a consumer environment and is implemented on the open-source Agents Research Environments (ARE) platform. Each evaluation scenario comprises:
-- A **dynamic environment** that evolves independently of agent actions
-- A **task description** specifying the goal the agent must achieve within the environment
-- A **write-action verifier** that provides fine-grained assessment of agent correctness at each critical action point
+Gaia2 builds evaluation scenarios upon the open-source Agents Research Environments (ARE) platform. Each scenario consists of a dynamic environment that evolves independently of Agent operations, a task description, and a set of fine-grained write action verifiers. In this environment that "moves forward on its own," Agents are required to perceive changes while making and executing decisions within time windows. Verifiers judge correctness at each critical action point, pushing evaluation from "is the final answer correct" to "is every action step correct."
 
 ### Key Designs
 
-1. **Dynamic Asynchronous Environment**:
+**1. Dynamic Asynchronous Environments: Breaking Temporal Control**
 
-   Unlike the request–response paradigm of traditional benchmarks, the Gaia2 environment **runs continuously**. Environment state evolves as simulated time progresses, and new information arrives asynchronously. Agents must:
-   - Make decisions within time windows (or miss opportunities)
-   - Monitor environmental changes and adjust strategies accordingly
-   - Handle unexpected events and state transitions
+Traditional Agent benchmarks assume the environment waits for the Agent. Gaia2 does the opposite: prices fluctuate, inventory changes, and messages arrive asynchronously. Once a window of opportunity is missed, it disappears. Agents must make decisions within limited time windows, continuously monitor environment states, and react to unexpected events and state transitions. This shifts the focus from "planning a static optimal path" to "continuous adaptation under uncertain and changing conditions," which is where gaps are most likely exposed in real deployment.
 
-   This design forces agents to decide under uncertainty, testing adaptive capabilities beyond simple planning.
+**2. Multi-dimensional Capability Coverage: Deconstructing "Reality" into Measurable Axes**
 
-2. **Multi-Dimensional Capability Testing**:
+Gaia2 deliberately designs scenarios to cover five core dimensions: time-sensitive decision-making (selecting optimal actions under time limits), noise robustness (extracting key facts from incomplete or contradictory information), ambiguity resolution (proactive clarification or selecting the most reasonable interpretation), multi-agent collaboration (exchanging information and coordinating actions), and environmental adaptation (responding to dynamic changes and revising plans). This allows evaluation to provide capability profiles decomposed by dimension, identifying whether a model is weak in "response speed" or "information noise resistance."
 
-   Gaia2 scenarios are designed to cover multiple core capability dimensions:
-   - **Time-sensitive decision making**: Selecting optimal actions under time constraints
-   - **Noise robustness**: Extracting key facts from incomplete or contradictory information
-   - **Ambiguity resolution**: Proactively seeking clarification or selecting the most reasonable interpretation among multiple plausible ones
-   - **Multi-agent collaboration**: Exchanging information and coordinating actions with other agents
-   - **Environmental adaptation**: Responding to dynamic changes and revising plans accordingly
+**3. Write Action Verifiers: Making Rewards Evaluable and Trainable**
 
-3. **Write-Action Verifier**:
+If only the final answer is checked, the quality of intermediate decisions is lost. The technical Novelty of Gaia2 is the pre-definition of "write action" checkpoints in each scenario. Verifiers judge whether Agent operations at these critical points are correct, refining evaluation granularity to the quality of every decision step. Crucially, these step-by-step verifiable reward signals are naturally suited for Reinforcement Learning from Verifiable Rewards (RLVR), allowing the benchmark to serve both for scoring and as training signals to drive Agent self-improvement.
 
-   This is one of the most important technical innovations in Gaia2. While traditional benchmarks typically evaluate only the final answer, Gaia2 assesses **every critical action** taken by the agent throughout the task.
+**4. ARE-based Scalable Architecture: Decoupling Environment and Verification Logic**
 
-   - Each scenario defines a set of "write-action" checkpoints.
-   - At each checkpoint, the verifier assesses whether the agent's action is correct.
-   - Evaluation granularity is refined from "final answer correctness" to "decision quality at each step."
-
-   More importantly, this verifiable reward signal enables Gaia2 to be **used directly for reinforcement learning training** via RLVR (Reinforcement Learning from Verifiable Rewards), providing infrastructure for a closed loop from benchmarking to training.
-
-4. **Scalable Architecture Based on the ARE Platform**:
-
-   Gaia2 is built on the open-source ARE (Agents Research Environments) framework and is designed for extensibility:
-   - New scenarios can be added through a standard interface
-   - Environment logic and verification logic are decoupled
-   - Multiple agent frameworks are supported
-   - Consumer environments (e.g., shopping, travel planning) are aligned with everyday applications
-
-### Evaluation Protocol
-
-- **Primary metric**: pass@1 (single-attempt pass rate)
-- **Fine-grained analysis**: Performance profiles decomposed by capability dimension
-- **Efficiency metrics**: Trade-off between task completion speed and API call cost
+To ensure sustainability, the system is built on the open-source Agents Research Environments (ARE) framework, separating environment evolution logic from verification logic. New scenarios can be integrated via standard interfaces and are compatible with various Agent frameworks. Scenarios are drawn from consumer environments like shopping and travel planning, ensuring realistic tasks while providing a scalable research infrastructure. Evaluation primarily uses pass@1 as the main metric, supplemented by per-dimension profiles and "speed vs. API cost" trade-offs.
 
 ## Key Experimental Results
 
 ### Main Results: Overall Model Performance
 
-| Model | pass@1 | Type | Notable Characteristics |
-|-------|--------|------|------------------------|
-| GPT-5 (high) | 42% | Closed-source | Overall strongest; weak on time-sensitive tasks |
-| Claude-4 Sonnet | ~35–38% | Closed-source | Balanced accuracy and speed; better cost efficiency |
+| Model | pass@1 | Type | Key Characteristics |
+|------|--------|------|---------|
+| GPT-5 (high) | 42% | Closed-source | Strongest overall but weak in time-sensitive tasks |
+| Claude-4 Sonnet | ~35-38% | Closed-source | Balance of accuracy and speed, better cost efficiency |
 | Kimi-K2 | 21% | Open-source | Best among open-source models |
-| Other open-source models | <20% | Open-source | Significantly behind closed-source models |
+| Other Open-source | <20% | Open-source | Significantly lagging behind closed-source |
 
-### Capability Dimension Analysis
+### Ability Dimension Analysis
 
 | Capability Dimension | GPT-5 | Claude-4 | Kimi-K2 | Notes |
-|----------------------|-------|----------|---------|-------|
-| Time-sensitive decision making | Weak | Moderate | Weak | Most challenging dimension |
-| Noise robustness | Strong | Strong | Moderate | Closed-source models show clear advantage |
-| Ambiguity resolution | Strong | Moderate | Weak | Requires strong reasoning ability |
-| Multi-agent collaboration | Moderate | Moderate | Weak | Weak point across all models |
-| Environmental adaptation | Moderate | Moderate | Weak | Ability to dynamically revise plans |
+|---------|-------|----------|---------|------|
+| Time-sensitive Decision | Weak | Moderate | Weak | Most challenging dimension |
+| Noise Robustness | Strong | Strong | Moderate | Clear advantage for closed-source |
+| Ambiguity Resolution | Strong | Moderate | Weak | Requires strong reasoning |
+| Multi-Agent Collaboration | Moderate | Moderate | Weak | Weak link for all models |
+| Environmental Adaptation | Moderate | Moderate | Weak | Ability to dynamically adjust plans |
 
 ### Ablation Study
 
-| Comparison Dimension | Key Finding |
-|----------------------|-------------|
-| Static vs. dynamic environment | All models show significant performance drops in dynamic environments |
-| Synchronous vs. asynchronous | Asynchronous events further widen performance gaps between models |
-| Single-agent vs. multi-agent | Multi-agent scenarios are the current largest bottleneck |
-| Without vs. with time constraints | Time constraints have a greater negative impact on open-source models |
+| Comparison Dimension | Key Findings |
+|---------|---------|
+| Static vs. Dynamic Environment | Performance of all models drops significantly in dynamic environments |
+| Synchronous vs. Asynchronous | Asynchronous events further widen the gap between models |
+| Single-Agent vs. Multi-Agent | Multi-agent scenarios are currently the biggest bottleneck |
+| No Time Limit vs. Time Limit | Time constraints have a greater impact on open-source models |
 
 ### Key Findings
 
-1. **No model dominates across all dimensions**: GPT-5 achieves the best overall performance but fails on time-sensitive tasks; Claude-4 offers better cost efficiency.
-2. **42% pass@1 reveals a substantial gap**: Even the strongest model fails on nearly 60% of scenarios, demonstrating that real-world agent tasks remain extremely challenging.
-3. **Open-source vs. closed-source divide**: The gap of 21% vs. 42% indicates that open-source models remain substantially less capable in agent scenarios.
-4. **The sim-to-real gap is real**: Models that perform similarly on static benchmarks show amplified differences in Gaia2's dynamic environments.
-5. **Potential of RLVR**: The fine-grained reward signal provided by the write-action verifier opens a path toward reinforcement learning-based agent training.
+1. **No model dominates all dimensions**: GPT-5 is the strongest overall but fails in time-sensitive tasks; Claude-4 performs better in cost efficiency.
+2. **42% pass@1 exposes a huge gap**: Even the strongest models fail in nearly 60% of scenarios, indicating that real-world Agent tasks remain extremely challenging.
+3. **The open-source vs. closed-source divide**: The 21% vs 42% gap shows that open-source models still lack sufficient capability in Agent scenarios.
+4. **The "sim2real gap" is real**: Models performing similarly on static benchmarks show amplified differences in the dynamic environments of Gaia2.
+5. **Potential for RLVR**: Fine-grained reward signals provided by write action verifiers pave the way for Agent training based on reinforcement learning.
 
 ## Highlights & Insights
 
-- **Paradigm shift from "question answering" to "acting"**: Gaia2 evaluates not agents' knowledge or reasoning, but their ability to take correct actions in dynamic environments.
-- **The write-action verifier is the key innovation**: It enables the benchmark to serve both evaluation and training purposes simultaneously, greatly enhancing its practical value.
-- **Asynchrony is an overlooked core challenge**: Virtually all existing agent systems assume synchronous interaction; Gaia2 is the first to systematically evaluate asynchronous scenarios.
-- **ICLR 2026 Oral recognition reflects the field's urgency**: Selection as an oral presentation signals the community's pressing need for realistic agent evaluation.
-- **Ecosystem value of the open-source ARE platform**: Gaia2 is not merely a benchmark but a sustainable and extensible research infrastructure.
+- **Paradigm shift from "Q&A" to "Action"**: Gaia2 evaluates the ability to take correct actions in dynamic environments rather than just knowledge or reasoning.
+- **Write action verifiers are a key innovation**: These allow the benchmark to serve both evaluation and training, greatly enhancing its utility.
+- **Asynchrony is a neglected core challenge**: Most existing Agent systems assume synchronous interaction; Gaia2 is the first to systematically test asynchronous scenarios.
+- **ICLR 2026 Oral status**: The selection for an oral presentation reflects the community's urgent need for realistic Agent evaluation.
+- **Ecological value of the open-source ARE platform**: It serves not just as a benchmark, but as a sustainable research infrastructure.
 
 ## Limitations & Future Work
 
-1. **Consumer environments may not generalize to all domains**: Scenarios such as shopping and travel planning differ considerably from agent requirements in scientific research, software engineering, and other professional domains.
-2. **Reproducibility challenges in dynamic environments**: The stochasticity of dynamic environments may cause result fluctuations across different evaluation runs.
-3. **Manual effort required for write-action verifier design**: Checkpoints and correctness criteria must be manually defined for each scenario, limiting automated scalability.
-4. **Insufficient testing of tool-use capabilities**: Although the environments are dynamic, the complexity of the tool set and API interfaces may not be sufficient.
-5. **Limited scale of multi-agent scenarios**: Current scenarios likely involve primarily two agents; larger-scale collaboration settings remain to be developed.
+1. **Consumer environments may not represent all domains**: Shopping and travel scenarios differ from Agent requirements in scientific research or software development.
+2. **Reproducibility challenges**: Stochasticity in dynamic environments may lead to fluctuations in results between runs.
+3. **Manual design for write action verifiers**: Verifiers for each scenario require manual definition of checkpoints and correctness standards, limiting automated scaling.
+4. **Insufficient tool-use testing**: While the environment is dynamic, the complexity of toolsets and API interfaces could be higher.
+5. **Limited scale of multi-agent scenarios**: Currently focuses on dual-agent scenarios; larger-scale collaboration testing is yet to be developed.
 
 ## Related Work & Insights
 
-- **Inheritance from GAIA (2023)**: Gaia2 builds on its predecessor by introducing dynamic evolution and asynchrony as two qualitatively distinct new dimensions.
-- **Distinction from WebArena and AgentBench**: These benchmarks focus on static web interaction or API invocation, whereas Gaia2 emphasizes temporal evolution of the environment.
-- **Complementary to SWE-bench**: SWE-bench tests code generation ability, while Gaia2 evaluates environment interaction and decision-making capability.
-- **Implications for agent training methods**: The RLVR-ready design positions Gaia2 as a potential key data source for training stronger agents.
-- **Implications for agent architecture design**: Future architectures should incorporate time-awareness, asynchronous event-handling modules, and dynamic plan revision mechanisms.
+- **Succession from GAIA (2023)**: Gaia2 introduces dynamic and asynchronous dimensions as qualitative improvements over its predecessor.
+- **Distinction from WebArena and AgentBench**: These focus on static web interaction or API calls, whereas Gaia2 emphasizes the temporal evolution of the environment.
+- **Complementary to SWE-bench**: The latter tests code generation, while Gaia2 tests environmental interaction and decision-making.
+- **Impact on Agent training**: The RLVR-ready design makes Gaia2 a potential source of key data for training stronger Agents.
+- **Insights for Agent architecture**: Designs must consider time-awareness, asynchronous event handling modules, and dynamic plan adjustment mechanisms.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Dynamic asynchronous agent evaluation + RLVR-ready design; field-leading contribution)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Covers mainstream models, though the number of scenarios is not specified)
-- Writing Quality: ⭐⭐⭐⭐ (Well-structured with clear analysis)
-- Value: ⭐⭐⭐⭐⭐ (An important milestone in agent evaluation; Oral acceptance is well deserved)
+- Novelty: ⭐⭐⭐⭐⭐ (Dynamic asynchronous evaluation + RLVR-ready design, leading the field)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Covers mainstream models, though scenario quantity is unspecified)
+- Writing Quality: ⭐⭐⭐⭐ (Well-structured and clearly analyzed)
+- Value: ⭐⭐⭐⭐⭐ (A major milestone in Agent evaluation, Oral acceptance is well-deserved)
 
 <!-- RELATED:START -->
 
@@ -167,11 +135,11 @@ Gaia2 is built on top of a consumer environment and is implemented on the open-s
 
 ## Related Papers
 
+- [\[CVPR 2025\] Sketchtopia: A Dataset and Foundational Agents for Benchmarking Asynchronous Multimodal Communication with Iconic Feedback](../../CVPR2025/llm_agent/sketchtopia_a_dataset_and_foundational_agents_for_benchmarking_asynchronous_mult.md)
+- [\[ICLR 2026\] Real-Time Reasoning Agents in Evolving Environments](real-time_reasoning_agents_in_evolving_environments.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
 - [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](../../AAAI2026/llm_agent/llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
-- [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](../../AAAI2026/llm_agent/d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
-- [\[NeurIPS 2025\] DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments](../../NeurIPS2025/llm_agent/defenderbench_a_toolkit_for_evaluating_language_agents_in_cybersecurity_environm.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agentic AI Defense Against LLM Jailbreaking](toward_a_dynamic_stackelberg_game-theoretic_framework_for_agentic_ai_defense_aga.md)
+- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
 
 </div>
 

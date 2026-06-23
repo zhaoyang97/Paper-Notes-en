@@ -2,84 +2,84 @@
 title: >-
   [Paper Note] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][scientific discovery] This paper proposes NewtonBench, a benchmark for LLM-based scientific law discovery comprising 324 tasks across 12 physical domains. Novel tasks resistant to memorization are…
+  [ICLR 2026][LLM Agent][benchmark] NewtonBench is proposed as a benchmark for scientific law discovery featuring 324 tasks across 12 physical domains. It generates novel, memorization-resistant tasks via "counterfactual law shifts," requiring agents to discover hidden physical equations through interactive experimental exploration. Results show GPT-5 pe
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "scientific discovery"
-  - "benchmark"
-  - "counterfactual physical laws"
-  - "symbolic regression"
-  - "interactive exploration"
+  - ICLR 2026
+  - LLM Agent
+  - benchmark
 date: 2026-05-08
-content_hash: 62cc79d4eddd3a7c
+content_hash: 7ed10a9d9e6fdf51
 ---
-
 # NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.07172](https://arxiv.org/abs/2510.07172)  
 **Code**: Available  
-**Area**: LLM Agent
-**Keywords**: scientific discovery, benchmark, counterfactual physical laws, symbolic regression, interactive exploration
+**Area**: LLM Agent  
+**Keywords**: Scientific discovery, benchmark, counterfactual physical laws, symbolic regression, interactive exploration
 
 ## TL;DR
-This paper proposes NewtonBench, a benchmark for LLM-based scientific law discovery comprising 324 tasks across 12 physical domains. Novel tasks resistant to memorization are generated via "counterfactual law shifts," requiring agents to discover hidden physical equations through interactive experimentation. GPT-5 achieves the best performance (75.9% symbolic accuracy) but degrades sharply on complex systems (40.3%), and code tools surprisingly hurt stronger models.
+NewtonBench is proposed as a benchmark for scientific law discovery featuring 324 tasks across 12 physical domains. It generates novel, memorization-resistant tasks via "counterfactual law shifts," requiring agents to discover hidden physical equations through interactive experimental exploration. Results show GPT-5 performs best (75.9% symbolic accuracy) but degrades sharply in complex systems (40.3%), and code tools unexpectedly yield negative effects for strong models.
 
 ## Background & Motivation
 
-**Background**: LLM-driven scientific discovery is an emerging frontier, yet existing benchmarks (e.g., SRBench) face a "methodological trilemma"—scientific relevance, scalability, and anti-memorization cannot be simultaneously satisfied.
+**Background**: LLM-driven scientific discovery is a frontier area, yet existing benchmarks (e.g., SRBench) face a "methodological trilemma"—the inability to simultaneously achieve scientific relevance, scalability, and memorization resistance.
 
 **Limitations of Prior Work**:
-- Most existing benchmarks involve static function fitting without interactive exploration
-- Synthetic benchmarks are scalable but lack scientific grounding
-- Real physical equations may be memorized by LLMs from training data
-- Systematic evaluation across levels of system complexity is absent
+   - Existing benchmarks are mostly static function fitting tasks that do not require interactive exploration.
+   - Synthetic benchmarks are scalable but lack scientific grounding.
+   - Real physical equations may be memorized by LLMs from training data.
+   - There is a lack of hierarchical evaluation for system complexity.
 
-**Key Challenge**: Satisfying scientific grounding, anti-memorization, and scalability simultaneously is inherently contradictory—directly using real laws risks memorization, while fully synthetic laws lose scientific meaning.
+**Key Challenge**: The need to satisfy scientific grounding, memorization resistance, and scalability simultaneously. Using real laws directly cannot prevent memorization, while purely synthetic laws lack scientific significance.
 
-**Goal**: Resolve the trilemma via counterfactual law shifts and construct an interactive scientific discovery benchmark.
+**Goal**: To solve the trilemma by constructing an interactive scientific discovery benchmark through counterfactual law shifts.
 
-**Key Insight**: Systematically mutate the expression trees of known physical laws (operator/constant mutations) to generate laws that are scientifically grounded yet never encountered by LLMs.
+**Key Insight**: Systematically mutate expression trees (operator/constant mutation) of known physical laws to generate novel laws that have scientific foundations but have never been seen by LLMs.
 
-**Core Idea**: Generate counterfactual physical laws through expression tree mutation combined with an interactive experimental environment, forming the first scalable, memorization-resistant scientific discovery benchmark.
+**Core Idea**: Build the first memorization-resistant and scalable scientific discovery benchmark by combining counterfactual physical laws generated via expression tree mutation with an interactive experimental environment.
 
 ## Method
 
 ### Overall Architecture
-12 physical domains × 3 difficulty levels (Easy/Medium/Hard, 3 variants each) × 3 system complexity levels (Vanilla/Simple/Complex) = 324 tasks. Agents iteratively design experiments by submitting variable values via a `<run_experiment>` tool and observing outputs to discover the hidden equation.
+The core problem NewtonBench addresses is how to evaluate an LLM agent's capability to "discover physical laws" without allowing it to cheat by recalling real equations from training corpora. It constructs the benchmark as a three-dimensional difficulty grid. Starting from 12 classical physical laws, it performs cumulative mutations on expression trees to derive 108 "counterfactual" laws (categorized as Easy/Medium/Hard). Each law is then instantiated into three levels of system environments (Vanilla/Simple/Complex), totaling 324 tasks. Each task contains a hidden target equation invisible to the agent. Agents must use the `<run_experiment>` tool to input variable values and receive system outputs, iteratively probing like real experiments to infer the hidden equation form. Success is determined by whether the submitted equation is mathematically equivalent to the hidden one using symbolic accuracy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["12 Classical Physical Laws<br/>(Seeds, Dimensionally Adjustable)"] --> B["Counterfactual Law Shifts<br/>Cumulative Mutation on Expression Trees<br/>→ 108 Counterfactual Laws<br/>(Easy/Medium/Hard)"]
+    B --> C["Three Levels of System Complexity<br/>Each Law Instantiated in<br/>Vanilla/Simple/Complex<br/>→ 324 Tasks"]
+    C --> D["Interactive Experimental Environment<br/>Agents Repeatedly Call run_experiment<br/>to Probe Hidden Equations"]
+    D -->|Optional Attachment| E["Python Code Interpreter<br/>Numerical Regression/Hypothesis Testing"]
+    E --> D
+    D --> F["Agent Submits Equation f-hat"]
+    F --> G["Symbolic Accuracy Evaluation<br/>SA Checks Structural Equivalence + RMSLE Measures Numerical Fidelity"]
+```
 
 ### Key Designs
 
-1. **Counterfactual Law Shifts**
+**1. Counterfactual Law Shifts: Scientifically Grounded Equations Absent from Training Data**
 
-    - Function: Starting from original physical laws, generate new equations through cumulative mutations.
-    - Two mutation types: operator mutation (e.g., $+$ → $\times$) and constant mutation (e.g., square → cube).
-    - Three difficulty levels: Easy (1–2 mutations) → Medium (further mutations on Easy) → Hard (further mutations on Medium).
-    - Dimensional consistency is maintained by adjusting physical constant units after mutation.
-    - Design Motivation: Generated equations never appear in training corpora, providing inherent anti-memorization guarantees.
+Real physical equations (e.g., Newton's gravitation, heat conduction) are likely memorized by LLMs. Direct testing cannot distinguish between "discovery" and "recall," yet purely synthetic equations lack scientific meaning. NewtonBench represents each classical law as an expression tree and performs **cumulative mutations**: operator mutations (e.g., replacing addition $+$ with multiplication $\times$) and constant/exponent mutations (e.g., changing a square term to a cubic term). Difficulty is controlled by the number of mutations—Easy performs 1–2 mutations on the original law, Medium adds 1–2 more to Easy, and Hard continues from Medium. Mutations may break dimensional consistency, so each target equation contains at least one physical constant that is adjusted to recover dimensional balance. The resulting equations remain rooted in real physics but their specific forms have never appeared in training corpora.
 
-2. **Three-Level System Complexity**
+**2. Three Levels of System Complexity: Placing Target Equations in Increasingly Noisy Systems**
 
-    - Vanilla: Target equation only, no confounding variables.
-    - Simple: Target equation embedded in a simple system with auxiliary equations.
-    - Complex: Maximum confounding, with multiple equations forming an interconnected system.
+Controlling equation difficulty alone is insufficient; real scientific discovery involves isolating target patterns from coupled variables. NewtonBench treats "target law difficulty" and "peripheral system complexity" as independent axes. Each target equation is paired with three system environments: Vanilla exposes only the target equation without confounding variables; Simple embeds the target into a small system with auxiliary equations; Complex involves multiple coupled equations with maximum confusion. Agents must decouple confounding variables using auxiliary equations to lock onto the target. This dimension allows the benchmark to measure the impact of "system complexity" independently.
 
-3. **Interactive Experimental Environment**
+**3. Interactive Experimental Environment: Active Exploration vs. Passive Fitting**
 
-    - Agents propose input values; the simulator returns system outputs.
-    - An optional Python code interpreter is available for numerical regression.
+The only path to discovering the hidden equation is interaction. Agents call `<run_experiment>` to assign values to input variables, the simulator evaluates the complete system and returns outputs, and the agent designs the next experiment based on these results. The environment can optionally attach a Python code interpreter (Code Assistance) for numerical regression or hypothesis testing. This is intended to move the model from being "computation-limited" to "discovery-limited."
 
-### Evaluation Metrics
-- Symbolic Accuracy (SA): Mathematical equivalence checked via LLM-as-judge (98.3% agreement with human annotators).
-- RMSLE: Data fitting quality metric.
+**4. Symbolic Accuracy Evaluation: Determining "Structural Equivalence" Rather Than Numerical Fit**
+
+Discovery tasks should not rely solely on prediction values. NewtonBench's primary metric is **Symbolic Accuracy (SA)**, a binary metric determining if the agent's equation $\hat{f}$ is mathematically equivalent to the target $f_{\text{target}}$. The equivalence check **intentionally ignores specific values of physical constants** (which are hard to fit precisely from limited observations) and focuses on the structural form. Equivalence is decided by LLM-as-judge, achieving 98.3% agreement with human expert annotations. The auxiliary metric is RMSLE ($\text{RMSLE}=\sqrt{\frac{1}{n}\sum_i\big(\log(1+\hat{y}_i)-\log(1+y_i)\big)^2}$), measuring the prediction fidelity.
 
 ## Key Experimental Results
 
 ### Main Results (11 Models)
 
-| Model | Vanilla Easy | Vanilla Hard | Complex Hard | Avg. SA |
-|-------|-------------|-------------|-------------|---------|
+| Model | Vanilla Easy | Vanilla Hard | Complex Hard | Average SA |
+|------|-------------|-------------|-------------|--------|
 | GPT-5 | 90.3% | 87.5% | **40.3%** | **75.9%** |
 | Gemini-2.5-pro | 96.5% | 69.4% | 16.7% | 65.4% |
 | o4-mini | 88.9% | 52.8% | 2.8% | 47.8% |
@@ -89,40 +89,40 @@ This paper proposes NewtonBench, a benchmark for LLM-based scientific law discov
 ### Ablation Study
 
 | Configuration | Key Findings |
-|--------------|-------------|
-| Code tools on strong models | GPT-5: 75.9% → drops 2–3%; GPT-5-mini: 53.1% → 48.1% — **code is harmful** |
-| Code tools on weak models | Models with SA < 40%: code yields clear improvements |
-| Noise level 0.0001 | Accuracy drops 12–16% across all models |
-| Increasing noise | Performance degrades proportionally with noise level |
+|------|---------|
+| Code tools for strong models | GPT-5: 75.9% → Decrease 2-3%; GPT-5-mini: 53.1% → 48.1% **Code is harmful** |
+| Code tools for weak models | Models with <40% SA see significant improvement with code |
+| Noise 0.0001 | Accuracy drops 12-16% for all models |
+| Increasing noise | Performance degrades proportionally to noise levels |
 
 ### Key Findings
-- **Reasoning capability is a prerequisite**: All non-reasoning models (e.g., GPT-4.1) achieve < 10% accuracy.
-- **Complexity collapse**: GPT-5 drops from 90.3% (Vanilla Easy) to 40.3% (Complex Hard); second-order and higher complexity is the core bottleneck.
-- **Paradoxical effect of code tools**: Strong models exhibit sharply reduced exploration rates when using code (over-exploitation); weak models benefit from computational offloading.
-- **Large cross-domain variance**: Bose-Einstein distributions are hardest (18.1% SA); heat conduction is easiest.
-- **Reasoning token scaling**: Reasoning models significantly increase token consumption with task complexity; non-reasoning models do not.
+- **Reasoning capability is the threshold**: Non-reasoning models (e.g., GPT-4.1) all have <10% accuracy.
+- **Complexity Collapse**: GPT-5 drops from 90.3% (Vanilla Easy) to 40.3% (Complex Hard); second-order complexity or higher is a core bottleneck.
+- **Paradoxical Effect of Code Tools**: Strong models exhibit a sharp decline in exploration rate (over-exploitation) when using code, while weak models benefit from offloading computation.
+- **Large Cross-domain Variance**: Bose-Einstein distribution is the hardest (18.1%), while heat conduction is the simplest.
+- **Scaling of Reasoning Tokens**: Reasoning models significantly increase token consumption as task complexity grows, whereas non-reasoning models do not.
 
 ## Highlights & Insights
-- **Counterfactual law shifts offer an elegant solution to memorization**: Rather than constructing entirely synthetic equations (which lose scientific grounding), controlled mutations are applied to real equations, preserving scientific meaning while preventing memorization.
-- **Exploration–exploitation trade-off with code tools**: Strong models given code tools tend toward local fitting (exploitation) at the expense of global exploration, a profound behavioral insight that echoes the classic dilemma in reinforcement learning.
-- **Interactive evaluation paradigm**: The benchmark advances from "fit an equation to given data" to "design experiments to discover laws," more faithfully reflecting the real scientific discovery process.
+- **Counterfactual law shift is an elegant solution to memorization**: Instead of creating entirely synthetic equations (losing scientific grounding), it performs controlled variations on real equations, maintaining scientific meaning while preventing memory-based recall.
+- **Discovery of the exploration-exploitation trade-off in code tools**: Strong models tend towards local numerical fitting (exploitation) and abandon global exploration when given code. This is a profound behavioral insight echoing classic dilemmas in reinforcement learning.
+- **Interactive Evaluation Paradigm**: Shifts the focus from "fitting equations to data" to "designing experiments to discover laws," which is closer to the actual process of scientific discovery.
 
 ## Limitations & Future Work
-- Coverage is limited to physics; generalization to chemistry and biology remains unvalidated.
-- Counterfactual laws, while scientifically grounded, do not correspond to real physical phenomena.
-- Even minimal noise (0.0001) causes a 12–16% accuracy drop, raising concerns about applicability to real-world scenarios.
-- Evaluation is restricted to single-target equation discovery with scalar outputs.
+- Currently only covers physics; generalization to chemistry or biology remains unverified.
+- While counterfactual laws have scientific foundations, they do not correspond to real phenomena.
+- Tiny amounts of noise (0.0001) lead to a 12-16% accuracy drop, raising questions about applicability in real-world scenarios.
+- Only tested single-target equation discovery with scalar outputs.
 
 ## Related Work & Insights
-- **vs. SRBench**: A traditional symbolic regression benchmark based on static data fitting, lacking interactive exploration and anti-memorization design.
-- **vs. AI Feynman**: Uses real Feynman equations but is susceptible to memorization; NewtonBench addresses this via counterfactual shifts.
-- **vs. BALSA/Funsearch**: Program search methods that are complementary to NewtonBench's equation discovery paradigm.
+- **vs SRBench**: Traditional symbolic regression benchmarks rely on static data fitting without interactive exploration or anti-memorization designs.
+- **vs AI Feynman**: Uses real Feynman equations but faces memorization risks; NewtonBench solves this via counterfactual shifts.
+- **vs BALSA/Funsearch**: Program search methods that are complementary to NewtonBench's equation discovery paradigm.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Counterfactual law shifts combined with an interactive discovery benchmark represent a wholly original contribution; the code tool paradox is a profound finding.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across 11 models, 12 domains, and multiple ablations, though improvement pathways for non-reasoning models are not explored.
-- Writing Quality: ⭐⭐⭐⭐ Benchmark design motivation is clearly articulated and experimental analysis is in-depth.
-- Value: ⭐⭐⭐⭐⭐ Provides a rigorous evaluation tool for LLM scientific discovery capabilities; the code tool paradox carries important implications for agent design.
+- Novelty: ⭐⭐⭐⭐⭐ Counterfactual law shifts and interactive discovery benchmarks are novel contributions; the code paradox effect is a profound finding.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive analysis across 11 models and 12 domains, though improvement paths for non-reasoning models are lacking.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation for benchmark design and in-depth experimental analysis.
+- Value: ⭐⭐⭐⭐⭐ Provides a rigorous evaluation tool for LLM scientific discovery capabilities and offers important insights for agent design regarding code tools.
 
 <!-- RELATED:START -->
 
@@ -130,11 +130,11 @@ This paper proposes NewtonBench, a benchmark for LLM-based scientific law discov
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
 - [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
-- [\[ICLR 2026\] AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations](autofigure_generating_and_refining_publication-ready_scientific_illustrations.md)
-- [\[ACL 2026\] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery](../../ACL2026/llm_agent/moose-copilot_a_web-based_interactive_assistant_for_unified_exploratory_and_fine.md)
-- [\[ICLR 2026\] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development](membership_privacy_risks_of_sharpness_aware_minimization.md)
+- [\[ICML 2025\] Evaluating Retrieval-Augmented Generation Agents for Autonomous Scientific Discovery in Astrophysics](../../ICML2025/llm_agent/evaluating_retrieval-augmented_generation_agents_for_autonomous_scientific_disco.md)
+- [\[ICLR 2026\] PolySkill: Learning Generalizable Skills through Polymorphic Abstraction for Continual Agents](polyskill_learning_generalizable_skills_through_polymorphic_abstraction_for_cont.md)
 
 </div>
 

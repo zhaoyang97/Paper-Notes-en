@@ -2,146 +2,160 @@
 title: >-
   [Paper Note] Value Flows
 description: >-
-  [ICLR 2026][Reinforcement Learning][distributional RL] Value Flows is the first work to introduce flow matching into distributional RL — it learns a vector field such that the induced probability density path automatical…
+  [ICLR 2026][Reinforcement Learning][distributional RL] Value Flows introduces flow matching to distributional RL for the first time by learning a vector field where the generated probability density paths automatically satisfy the distributional Bellman equation. By efficiently estimating return variance via a flow derivative ODE, it enables confidence-weighted prioritized
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "distributional RL"
-  - "flow matching"
-  - "return distribution"
-  - "uncertainty quantification"
-  - "OGBench"
+  - ICLR 2026
+  - Reinforcement Learning
+  - distributional RL
+  - flow matching
+  - return distribution
+  - uncertainty quantification
+  - OGBench
 date: 2026-05-08
-content_hash: e6cbc2b35a81fee9
+content_hash: cb01ae0f360eb98f
 ---
-
 # Value Flows
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.07650](https://arxiv.org/abs/2510.07650)  
 **Code**: [GitHub](https://github.com/chongyi-zheng/value-flows)  
-**Area**: Reinforcement Learning / Distributional RL / Generative Models
+**Area**: Reinforcement Learning / Distributional RL / Generative Models  
 **Keywords**: distributional RL, flow matching, return distribution, uncertainty quantification, OGBench
 
 ## TL;DR
-Value Flows is the first work to introduce flow matching into distributional RL — it learns a vector field such that the induced probability density path automatically satisfies the distributional Bellman equation. Variance of the return distribution is efficiently estimated via a flow derivative ODE, enabling confidence-weighted prioritized learning. The method achieves an average 1.3× improvement in success rate across 62 OGBench tasks, and estimates return distributions 3× more accurately than C51/CODAC.
+Value Flows introduces flow matching to distributional RL for the first time by learning a vector field where the generated probability density paths automatically satisfy the distributional Bellman equation. By efficiently estimating return variance via a flow derivative ODE, it enables confidence-weighted prioritized learning, achieving a 1.3× average success rate improvement on 62 OGBench tasks and over 3× better return distribution estimation accuracy than C51/CODAC.
 
 ## Background & Motivation
-**Background**: Standard RL compresses future returns into a scalar Q-value. Distributional RL (C51, QR-DQN, IQN) models the full return distribution, providing richer learning signals and enabling applications in exploration and safe RL.
+**Background**: Standard RL compresses future returns into a single scalar Q-value. Distributional RL (C51, QR-DQN, IQN) models the full return distribution, providing stronger learning signals and supporting applications in exploration and safe RL.
 
 **Limitations of Prior Work**:
-   - **C51**: Discretizes the return distribution into fixed bins → limited resolution, unable to capture fine-grained distributional structure.
-   - **IQN/QR-DQN**: Approximates the distribution with a finite number of quantiles → distributional information between quantiles is lost.
-   - **Variance estimation is difficult**: Discretization-based methods struggle to accurately estimate return variance, which is critical for uncertainty quantification.
-   - Modern generative models (diffusion / flow matching) have been successfully applied to trajectory and policy modeling, but have not yet been used for return distribution modeling.
+   - **C51**: Discretizes the return distribution into fixed bins → limited resolution, unable to capture fine-grained distributional structures.
+   - **IQN/QR-DQN**: Approximates using finite quantiles → distribution information between quantiles is lost.
+   - **Difficulty in Variance Estimation**: Discretization methods struggle to precisely estimate return variance, which is crucial for uncertainty quantification.
+   - Modern generative models (Diffusion/Flow Matching) have succeeded in trajectory/policy modeling but have not yet been applied to return distribution modeling.
 
-**Key Challenge**: How can one learn a complete, continuous return distribution (rather than a discretized approximation), and efficiently extract expectations and variances from it to improve policy learning?
+**Key Challenge**: How to learn a full continuous return distribution (rather than a discretized approximation) and efficiently extract expectation and variance to improve policy learning?
 
-**Core Idea**: Flow matching is used to learn a vector field $v(z^t | t, s, a)$ over return distributions — a distributional conditional flow matching (DCFM) loss is constructed to satisfy the distributional Bellman equation, and the flow derivative ODE enables variance estimation without backpropagation through the ODE solver.
+**Core Idea**: Use flow matching to learn the vector field $v(z^t | t, s, a)$ of the return distribution. Construct a flow matching objective (DCFM loss) that satisfies the distributional Bellman equation, and estimate variance through a flow derivative ODE without backpropagation.
 
 ## Method
 
 ### Overall Architecture
-Standard Gaussian noise $\epsilon$ → vector field $v(z^t | t, s, a)$ generates a flow ODE → probability density path $p(z^t | t, s, a)$ → converges to the return distribution $p_{Z^\pi}(z | s, a)$ at $t=1$. Training objective: DCFM loss (distributional conditional flow matching, analogous to TD learning). Inference: samples from the return distribution are obtained at $t=1$.
+Value Flows addresses how to directly learn a **continuous return distribution** for a state-action pair without discretization, while simultaneously extracting expectation and variance. It assigns this task to flow matching: starting from standard Gaussian noise $\epsilon$, a conditional vector field $v(z^t | t, s, a)$ drives a flow ODE to transport noise into return samples along time $t$. This ODE induces a probability density path $p(z^t | t, s, a)$ that converges to the true return distribution $p_{Z^\pi}(z | s, a)$ at $t=1$. During training, instead of using ground truth distributions from sampled trajectories, a regression objective (DCFM loss) similar to TD learning is constructed to ensure vector field consistency.
+
+Once the vector field is learned, the same components are reused: a single forward pass at $t=0$ reads the expectation (Q-value) for the critic; solving the ODE at $t=1$ samples the entire return distribution; and a parallel flow derivative ODE estimates return variance. This variance is used to weight training samples, tilting the learning budget toward transitions with high uncertainty—this weighting flows back into the DCFM loss, forming a "variance estimation $\rightarrow$ re-training" loop.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Transition (s,a,r,s')<br/>+ Gaussian noise ε"] --> VF["Conditional Vector Field<br/>v(zᵗ, t, s, a)"]
+    TN["Target network v̄<br/>Provides bootstrap target"] --> D1
+    VF --> D1["Dist. Cond. Flow Matching DCFM/BCFM<br/>Incorporate Dist. Bellman into FM regression"]
+    VF --> D2["Q-value Estimation<br/>Forward pass at t=0 for expectation"]
+    VF --> D3["Variance Estimation<br/>flow derivative ODE for ∂φ/∂ε"]
+    VF --> SAMP["Solve ODE at t=1 for sampling<br/>→ Return distribution"]
+    D3 --> D4["Confidence Weighting<br/>Higher weight for higher variance"]
+    D4 -->|reweight| D1
+    D2 --> POL["Policy Extraction AWR / SAC"]
+```
 
 ### Key Designs
 
-1. **Distributional Conditional Flow Matching (DCFM) Loss**
+**1. Distributed Conditional Flow Matching (DCFM) Loss: Turning the Distributive Bellman Equation into a Regressible Flow Matching Objective**
 
-    - Function: Trains the vector field $v$ such that its induced density path satisfies the distributional Bellman equation.
-    - Mechanism: An update rule $v_{k+1}(z^t|t,s,a)$ is constructed so that the corresponding density $p_k$ is acted upon by the distributional Bellman operator $\mathcal{T}^\pi$. The DCFM loss is:
-      $\mathcal{L}_{DCFM}(v, v_k) = \mathbb{E}_{(s,a,r,s') \sim D} [(v(z^t|t,s,a) - v_k(\frac{z^t-r}{\gamma}|t,s',a'))^2]$
-    - Correspondence to TD learning: $v_k(\frac{z^t-r}{\gamma}|t,s',a')$ serves as the "bootstrap target" (analogous to $r + \gamma Q(s', a')$ in Q-learning).
-    - **Proposition 2**: DCFM and the theoretical DFM loss share the same gradient (analogous to the CFM vs. FM relationship).
-    - A target network $\bar{v}$ with a bootstrapped target (BCFM loss) is used to prevent collapse.
+The fundamental pain point is the lack of ground truth return distributions for supervision. Value Flows' solution is to incorporate the distributional Bellman operator $\mathcal{T}^\pi$ into the flow matching update: construct the next-round vector field $v_{k+1}(z^t|t,s,a)$ such that the density it generates equals the result of applying $\mathcal{T}^\pi$ to the current density $p_k$. The final loss is a least-squares regression:
 
-2. **Q-Value Estimation (Proposition 3)**
+$$\mathcal{L}_{DCFM}(v, v_k) = \mathbb{E}_{(s,a,r,s') \sim D}\Big[\big(v(z^t|t,s,a) - v_k(\tfrac{z^t-r}{\gamma}|t,s',a')\big)^2\Big].$$
 
-    - Function: Directly estimates the expected return from the vector field.
-    - Formula: $\hat{\mathbb{E}}[Z^\pi(s,a)] \approx \mathbb{E}_{\epsilon \sim \mathcal{N}} [v(\epsilon | 0, s, a)]$ — the expectation of the vector field at $t=0$.
-    - **A single forward pass** yields the Q-value, with no full ODE solve required.
-    - Design Motivation: This allows Value Flows to serve directly as a critic in actor-critic frameworks.
+The elegance lies in the regression target $v_k(\frac{z^t-r}{\gamma}|t,s',a')$ acting as the bootstrap target in TD learning—corresponding to $r + \gamma Q(s',a')$ in scalar Q-learning, but bootstrapping the entire distribution. The vector field of the next state, evaluated on scaled and shifted inputs, is used as the target for the current state. The paper proves via Proposition 2 that the gradient of this conditional DCFM loss is identical to the theoretical Distributed Flow Matching (DFM) loss, utilizing the "conditional expectation omission" trick of CFM. To prevent distribution collapse during bootstrapping, a target network $\bar v$ provides the target, resulting in the Bootstrapped BCFM loss.
 
-3. **Variance Estimation (Flow Derivative ODE)**
+**2. Q-value Estimation (Proposition 3): Critic usage via a single forward pass**
 
-    - Function: Estimates the variance of the return distribution for uncertainty quantification.
-    - Mechanism: A companion ODE $d(\partial\phi/\partial\epsilon)/dt = (\partial v/\partial z) \cdot (\partial\phi/\partial\epsilon)$ is defined, where $\partial\phi/\partial\epsilon$ is the derivative of the flow with respect to the initial noise. At $t=1$, $|\partial\phi/\partial\epsilon|$ reflects local density changes → variance information.
-    - **No backpropagation through the ODE solver is required** — forward-mode automatic differentiation or the companion ODE is used directly.
-    - Design Motivation: Variance estimation in methods such as C51/IQN requires additional computation or approximation; here, variance is a natural byproduct of the flow matching framework.
+If calculating a Q-value required integrating the ODE from $t=0$ to $t=1$ for every sample, it would be too slow for actor-critic frameworks. Proposition 3 provides a shortcut: the expected return can be directly read from the expectation of the vector field relative to the noise at $t=0$:
 
-4. **Confidence-Weighted Training**
+$$\hat{\mathbb{E}}[Z^\pi(s,a)] \approx \mathbb{E}_{\epsilon \sim \mathcal{N}}\big[v(\epsilon \mid 0, s, a)\big].$$
 
-    - Function: Uses variance estimates to prioritize learning on high-uncertainty transitions.
-    - Weight: $w = \sigma(-\tau / |\partial\phi/\partial\epsilon|) + 0.5$
-    - Large $|\partial\phi/\partial\epsilon|$ → rapid local density change → high variance → higher learning weight.
-    - Realizes principled prioritized experience replay based on aleatoric uncertainty rather than bootstrapped error.
+Consequently, expected returns do not require solving the ODE; they only require averaging a few noise samples passed through the network at the initial time step. This reduces the computational cost of the Value Flows critic to the same level as standard Q-networks. Full ODE solving is only used when the entire distribution (sampling, variance estimation) is needed, allowing it to integrate seamlessly into actor-critic frameworks like Advantage-Weighted Regression or SAC.
+
+**3. Variance Estimation (Flow Derivative ODE): Uncertainty as a free byproduct of Flow Matching**
+
+While expectations are easy to obtain, variance is what is truly desired for uncertainty quantification. Discretization methods (C51/IQN) usually require calculating second moments or using ensembles. Value Flows notes that variance information is hidden in the flow's sensitivity to initial noise: define a companion ODE parallel to the main ODE:
+
+$$\frac{d}{dt}\Big(\frac{\partial \phi}{\partial \epsilon}\Big) = \frac{\partial v}{\partial z}\cdot \frac{\partial \phi}{\partial \epsilon},$$
+
+where $\partial\phi/\partial\epsilon$ is the derivative of the generative mapping $\phi$ with respect to initial noise $\epsilon$. At $t=1$, $|\partial\phi/\partial\epsilon|$ reflects the degree of local density stretching/compression—more intense stretching indicates a wider distribution and higher variance. Crucially, this companion ODE can be integrated forward alongside the main ODE (or using forward-mode automatic differentiation) **without backpropagating through the ODE solver**, making variance estimation a highly efficient byproduct of the framework.
+
+**4. Confidence-Weighted Training: Tilting the learning budget to high-uncertainty transitions**
+
+With the per-sample variance proxy $|\partial\phi/\partial\epsilon|$, principled prioritized replay is possible. The training weight for each transition is:
+
+$$w = \sigma\!\big(-\tau / |\partial\phi/\partial\epsilon|\big) + 0.5,$$
+
+where higher $|\partial\phi/\partial\epsilon|$ indicates more drastic local density changes and higher return uncertainty, leading to higher weights. Unlike classic PER, priority here stems from the data's aleatoric uncertainty (return distribution width caused by environmental stochasticity) rather than bootstrapped TD error, making it more stable on data with non-uniform coverage.
 
 ### Loss & Training
-- Total loss: BCFM loss (bootstrapped DCFM, analogous to fitted Q-learning) + confidence weights.
-- Target network updated via EMA.
-- Policy extraction: advantage-weighted regression or SAC.
-- Supports both offline and offline-to-online settings.
+The total loss is the BCFM loss (bootstrapped DCFM, structurally similar to fitted Q-learning) combined with the confidence weights. The target network is updated slowly via EMA to provide stable targets. Policy extraction follows Advantage-Weighted Regression or SAC. The method supports both pure offline and offline-to-online settings.
 
 ## Key Experimental Results
 
-### OGBench (62 tasks: 37 state-based + 25 image-based)
+### Main Results: OGBench (62 tasks, 37 state-based + 25 image-based)
 
-| OGBench Domain | BC | IQL | ReBRAC | FQL | **Value Flows** |
+| OGBench Domain | BC | IQL | ReBRAC | FQL | **Ours (Value Flows)** |
 |---|---|---|---|---|---|
 | cube-double-play | 2 | 6 | 12 | 29 | **69±4** |
 | puzzle-3x3-play | 2 | 9 | 22 | 30 | **87±13** |
 | scene-play | 5 | 28 | 41 | 56 | **59±4** |
-| **Average Success Rate** | — | — | — | — | **1.3× improvement** |
+| **Avg. Success Rate** | — | — | — | — | **1.3× Gain** |
 
-### Return Distribution Estimation Accuracy
+### Distribution Accuracy
 
 | Method | 1-Wasserstein Distance ↓ |
 |------|---------------------|
 | C51 | ~0.09 |
 | CODAC | ~0.06 |
-| **Value Flows** | **~0.02** |
+| **Ours (Value Flows)** | **~0.02** |
 
-Value Flows achieves 4.5× better distribution estimation accuracy than C51 and 3× better than CODAC.
+Value Flows' distribution estimation is 4.5× more accurate than C51 and 3× more accurate than CODAC.
 
 ### Ablation Study
 
-| Configuration | Effect | Note |
+| Configuration | Effect | Description |
 |------|------|------|
-| Without confidence weighting | Performance drop | Demonstrates necessity of prioritizing high-uncertainty transitions |
-| Without bootstrapped target | Degradation / collapse | DCFM alone is insufficiently stable |
-| Q-value estimation vs. ensemble average | Value Flows more accurate | Single-network estimation is sufficient |
-| Offline-to-online fine-tuning | Further improvement | Variance estimation naturally supports online exploration |
+| W/o Confidence Weighting | Performance Drop | Necessity of prioritized learning for high-uncertainty transitions |
+| W/o Bootstrapped Target | Degradation/Collapse | DCFM alone is insufficient for stability |
+| Q Estimation vs. Ensemble | Ours is more accurate | Single network estimation is sufficient |
+| Offline-to-online fine-tune | Further improvement | Variance estimation naturally supports online exploration |
 
 ### Key Findings
-- Flow matching provides **significantly more accurate** return distribution estimation than discretization-based (C51) and quantile-based (IQN) methods.
-- Q-value estimation requires only a forward pass at $t=0$ — computational cost is comparable to a standard Q-network (no full ODE solve needed).
-- Confidence weighting consistently improves performance, especially on play datasets with uneven data coverage.
-- The method is effective on image-based tasks (all 25 image tasks improved), demonstrating compatibility with vision backbones.
-- In the offline-to-online setting, variance estimates naturally provide exploration signals without requiring additional exploration strategies.
+- Flow matching provides **significantly more precise** return distribution estimates than discretization (C51) or quantile (IQN) methods.
+- Q-value estimation only requires a forward pass at $t=0$—computational cost is comparable to standard Q-networks (full ODE solving not required).
+- Confidence weighting brings consistent performance gains, particularly on "play" datasets with non-uniform coverage.
+- Effectiveness on image-based tasks (improvement across 25 image tasks) indicates compatibility with vision backbones.
+- In offline-to-online settings, variance estimation naturally provides exploration signals without separate exploration policies.
 
 ## Highlights & Insights
-- **Elegant correspondence between flow matching and the distributional Bellman operator**: The DCFM loss is the continuous generative model counterpart of distributional TD learning — the vector field plays the role of the "critic" and the flow ODE corresponds to the "rollout." This theoretical connection is remarkably natural and elegant.
-- **Variance as a byproduct**: Traditional distributional RL methods require additional mechanisms for variance estimation (e.g., ensembles, second-moment networks). Value Flows obtains variance naturally via the flow derivative ODE — a distinctive advantage of the flow matching framework.
-- **Q-value from a single forward pass** (Proposition 3) is a key practical feature — inference is no slower than a standard Q-network, and ODE solving is only invoked when the full distribution is needed.
+- **Elegant correspondence between Flow Matching and Distributional Bellman**: DCFM loss is a continuous generative model version of distributional TD learning—the vector field is the "critic," and flow ODE is the "rollout."
+- **Variance as a Byproduct**: Traditional distributional RL variance estimation requires additional means (e.g., ensembles, second-moment networks). Value Flows obtains it naturally via the flow derivative ODE—a unique advantage of the flow matching framework.
+- **Q-value via Single Forward Pass** (Proposition 3) is a critical practical feature—inference is no slower than standard Q-networks, with ODE solving reserved for full distribution requirements.
 
 ## Limitations & Future Work
-- Epistemic uncertainty (from insufficient data) and aleatoric uncertainty (from environmental stochasticity) cannot be disentangled — the confidence weights reflect only aleatoric uncertainty.
-- ODE solving introduces additional computational overhead during training and full distribution sampling (though Q-value estimation is unaffected).
-- Evaluation is limited to continuous control (OGBench + D4RL); no discrete action space benchmarks such as Atari are included.
-- The 1D return scalar is a relatively simple target for a generative model — the advantages of flow matching may be approaching saturation in this setting.
-- Whether the method remains effective when scaled to larger action spaces and longer horizons requires further investigation.
+- Cannot distinguish between epistemic uncertainty (from insufficient data) and aleatoric uncertainty (from environmental stochasticity)—confidence weights only reflect aleatoric.
+- ODE solving adds computational overhead during training and distribution sampling (though not for Q-estimation).
+- Tested only on continuous control (OGBench + D4RL); no benchmarks for discrete action spaces like Atari.
+- Generative modeling of a 1D return scalar is relatively simple—flow matching's advantages might be near their ceiling here.
+- Scalability to larger action spaces and longer horizons requires further validation.
 
 ## Related Work & Insights
-- **vs. C51**: Discretizes the return distribution into 51 bins and optimizes via KL divergence; Value Flows uses continuous flow matching to model the density directly, achieving 4.5× higher accuracy.
-- **vs. IQN**: Approximates the distribution with a finite number of quantiles; Value Flows learns a complete continuous distribution.
-- **vs. CODAC**: Models the distribution with an ODE but outside the flow matching framework; Value Flows has a more principled theoretical foundation and achieves 3× higher accuracy.
-- **Implications for generative models + RL**: Following trajectory generation (Diffuser) and policy generation (DDPO), Value Flows demonstrates the application of generative models on the critic side (value functions), completing the "generative model" treatment of actor-critic methods.
+- **vs. C51**: Discretizes returns into 51 bins with KL divergence optimization; Value Flows uses continuous FM to model density directly, increasing accuracy by 4.5×.
+- **vs. IQN**: Approximates with finite quantiles; Value Flows learns the full continuous distribution.
+- **vs. CODAC**: Uses ODEs for distribution modeling but not based on flow matching; Value Flows is theoretically more natural and 3× more accurate.
+- **Insights for Generative Models in RL**: Following trajectory generation (Diffuser) and policy generation (DDPO), Value Flows demonstrates generative models' application on the critic side (Value Function)—completing the "generative modeling" of the actor-critic framework.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ A novel combination of flow matching and distributional RL with an elegant theoretical foundation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 62 tasks (state + image) × 8 seeds × multiple baselines × distribution estimation accuracy × ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations; the progressive simplification from DFM → DCFM → BCFM is clearly presented.
-- Value: ⭐⭐⭐⭐⭐ Opens a new generative model pathway for distributional RL; the variance-as-byproduct property has broad applicability.
+- Novelty: ⭐⭐⭐⭐⭐ Brand new combination of flow matching and distributional RL with elegant theoretical links.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 62 tasks (state + image) × 8 seeds × multiple baselines × distribution accuracy × ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous derivations; the step-by-step progression from DFM → DCFM → BCFM is clear.
+- Value: ⭐⭐⭐⭐⭐ Opens a new path for generative models in distributional RL; variance as a byproduct has broad application potential.
 
 <!-- RELATED:START -->
 
@@ -150,10 +164,10 @@ Value Flows achieves 4.5× better distribution estimation accuracy than C51 and 
 ## Related Papers
 
 - [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICLR 2026\] Transitive RL: Value Learning via Divide and Conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
-- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
-- [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
-- [\[ICML 2026\] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning](../../ICML2026/reinforcement_learning/unifying_value_alignment_and_assignment_in_cross-domain_offline_reinforcement_le.md)
+- [\[ICLR 2026\] From Ticks to Flows: Dynamics of Neural Reinforcement Learning in Continuous Environments](from_ticks_to_flows_dynamics_of_neural_reinforcement_learning_in_continuous_envi.md)
+- [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
+- [\[ICLR 2026\] Universal Value-Function Uncertainties](universal_value-function_uncertainties.md)
+- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
 
 </div>
 

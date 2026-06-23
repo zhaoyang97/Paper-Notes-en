@@ -2,134 +2,153 @@
 title: >-
   [Paper Note] Understanding and Improving Hyperbolic Deep Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][hyperbolic geometry] Through closed-form gradient analysis, this paper identifies the root causes of instability in hyperbolic deep RL—namely…
+  [ICLR 2026][Reinforcement Learning][hyperbolic geometry] Through closed-form gradient analysis, this work reveals the root causes of PPO trust region failure in hyperbolic deep RL: conformal factor explosion and large-norm embeddings. A four-component solution, Hyper++ (RMSNorm + learnable scaling + HL-Gauss + Hyperboloid), is proposed, comprehensively outperforming previous
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "hyperbolic geometry"
-  - "PPO"
-  - "gradient analysis"
-  - "RMSNorm"
-  - "categorical value loss"
+  - ICLR 2026
+  - Reinforcement Learning
+  - hyperbolic geometry
+  - PPO
+  - gradient analysis
+  - RMSNorm
+  - categorical value loss
 date: 2026-05-08
-content_hash: 17b68ad28ab69c56
+content_hash: 9c1cff5901a6e329
 ---
-
 # Understanding and Improving Hyperbolic Deep Reinforcement Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.14202](https://arxiv.org/abs/2512.14202)  
 **Code**: [GitHub](https://github.com/Probabilistic-and-Interactive-ML/hyper-rl)  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: hyperbolic geometry, PPO, gradient analysis, RMSNorm, categorical value loss
 
 ## TL;DR
-Through closed-form gradient analysis, this paper identifies the root causes of instability in hyperbolic deep RL—namely, conformal factor explosion in the Poincaré Ball and PPO trust-region breakdown induced by large-norm embeddings. It proposes Hyper++, a four-component solution comprising RMSNorm, learnable scaling, HL-Gauss categorical value loss, and the Hyperboloid model, achieving comprehensive improvements over prior baselines on ProcGen (16 environments) and Atari-5.
+Through closed-form gradient analysis, this work reveals the root causes of PPO trust region failure in hyperbolic deep RL: conformal factor explosion and large-norm embeddings. A four-component solution, Hyper++ (RMSNorm + learnable scaling + HL-Gauss + Hyperboloid), is proposed, comprehensively outperforming previous baselines across 16 ProcGen environments and Atari-5.
 
 ## Background & Motivation
 
-**Background**: Sequential decision-making naturally gives rise to hierarchical data—each state branches into exponentially many successors, forming a tree-like structure. Euclidean space grows only polynomially in volume ($V_d(r) \propto r^d$), creating a fundamental geometric mismatch with the exponential growth of hierarchical structures. Hyperbolic space, whose volume grows exponentially, has already demonstrated success in classification, metric learning, and image-text alignment.
+**Background**: Sequential decision-making processes naturally generate hierarchical data—each state branches into exponentially many subsequent states, forming a tree-like structure. The volume of Euclidean space grows only polynomially ($V_d(r) \propto r^d$), causing a fundamental geometric mismatch with the exponential growth of hierarchical structures. Hyperbolic space, characterized by exponential volume growth, has achieved success in classification, metric learning, and image-text alignment.
 
-**Limitations of Prior Work**: Hyperbolic deep RL suffers from severe optimization difficulties. Cetin et al. (2023) first introduced hyperbolic geometry into RL, but training remained unstable, requiring SpectralNorm combined with S-RYM ($\mathbf{x}_E \mapsto \mathbf{x}_E / \sqrt{d}$) to mitigate instability—at the cost of limiting the expressive capacity of the entire encoder.
+**Limitations of Prior Work**: Hyperbolic deep RL faces severe optimization difficulties. While Cetin et al. (2023) first introduced hyperbolic geometry to RL, training remains unstable, relying on SpectralNorm + S-RYM ($\mathbf{x}_E \mapsto \mathbf{x}_E / \sqrt{d}$) for mitigation, which restricts the expressive power of the entire encoder.
 
-**Key Challenge**: A fundamental conflict exists between the geometric advantages of hyperbolic space (low-distortion hierarchical embeddings) and training stability (conformal factor explosion and ill-conditioned gradients).
+**Key Challenge**: The fundamental conflict between the geometric advantages of hyperbolic space (low-distortion hierarchical embeddings) and training stability (conformal factor explosion and ill-conditioned gradients).
 
-**Goal**: (1) Formally analyze the sources of gradient ill-conditioning in hyperbolic PPO; (2) design a hyperbolic RL agent that achieves both training stability and expressive power.
+**Goal**: 1) Formally analyze the sources of gradient pathology in hyperbolic PPO; 2) Design a hyperbolic RL agent that ensures both stability and expressivity.
 
-**Key Insight**: Closed-form gradient derivations for both the Poincaré Ball and Hyperboloid models are used to precisely locate the sources of instability, after which corresponding components are designed to address each issue individually.
+**Key Insight**: Starting from closed-form gradient derivations of two hyperbolic models (Poincaré Ball and Hyperboloid), the sources of instability are located, followed by the design of corresponding components.
 
-**Core Idea**: Large-norm embeddings are the root cause of hyperbolic PPO collapse. The instability can be fundamentally resolved by constraining the norm via RMSNorm, avoiding the conformal factor via the Hyperboloid model, and aligning the loss function with the geometry via categorical losses.
+**Core Idea**: Large-norm embeddings are the root cause of hyperbolic PPO collapse. This can be resolved by using RMSNorm to constrain norms, adopting the Hyperboloid model to avoid conformal factors, and applying categorical loss to align with the geometry.
 
 ## Method
 
 ### Overall Architecture
-Hyper++ adopts a hybrid Euclidean-hyperbolic encoder architecture (Impala-ResNet) with a shared Euclidean encoder and separate hyperbolic actor/critic heads. The core improvements are concentrated at the interface between the final encoder layer and the hyperbolic layer: RMSNorm → TanH → learnable scaling → Hyperboloid exponential map → HL-Gauss categorical value loss.
+
+This paper addresses the long-standing problem where hyperbolic deep RL is "geometrically superior for hierarchical data yet unstable to train." Instead of stacking empirical stabilization tricks, the authors decompose hyperbolic PPO gradients using the chain rule. Equation (3) expresses the gradient of the value function with respect to the encoder embedding as a product of three terms, $\frac{\partial L}{\partial v} \cdot \frac{\partial v}{\partial \mathbf{x}_H} \cdot \frac{\partial \mathbf{x}_H}{\partial \mathbf{x}_E}$. Each term is analyzed for potential explosion, and **one specific component is designed for each term** to suppress it.
+
+Hyper++ utilizes a hybrid Euclidean-hyperbolic architecture (Impala-ResNet backbone): a shared Euclidean encoder at the bottom with hyperbolic actor/critic heads on top. Modifications are concentrated on the forward chain "last layer of Euclidean encoder → hyperbolic layer → value loss." Data sequentially passes through RMSNorm + learnable scaling (to suppress embedding norms) → Hyperboloid exponential map (to project into hyperbolic space) → Hyperbolic MLR actor/critic heads (hyperplane distance scoring) → HL-Gauss categorical value loss. The three key designs suppress the third, second, and first terms of the chain rule, respectively.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Observation Input<br/>(Impala-ResNet Euclidean Encoder)"] --> B["RMSNorm + Learnable Scaling ξ<br/>Suppress norm ‖x_E‖<br/>(Stabilize 3rd term ∂x_H/∂x_E)"]
+    B --> C["Hyperboloid Exponential Map<br/>Project to hyperbolic space x_H<br/>(Stabilize 2nd term ∂v/∂x_H, no conformal factor)"]
+    C --> D["Hyperbolic actor / critic heads<br/>(MLR Hyperplane distance scoring)"]
+    D --> E["HL-Gauss Categorical Value Loss<br/>51 bins aligned with geometry<br/>(Stabilize 1st term ∂L/∂v)"]
+    E --> F["PPO Trust Region Update<br/>Stable training with suppressed gradients"]
+```
 
 ### Key Designs
 
-1. **RMSNorm Regularization (replacing SpectralNorm)**
-    - Function: Constrains the Euclidean embedding norm at the encoder output, preventing gradient explosion through the hyperbolic exponential map.
-    - Mechanism: RMSNorm with $1/\sqrt{d}$ scaling is applied only to the pre-activation output of the final linear layer. Proposition 4.2 guarantees that for 1-Lipschitz activations (ReLU/TanH), $\|\hat{\mathbf{x}}\|_2 < 1$, which in turn bounds the conformal factor as $\lambda < 2\cosh^2(\sqrt{c})$.
-    - Design Motivation: Lemma 4.1 shows that SpectralNorm must be applied to all encoder layers to effectively constrain the norm, but doing so severely restricts the Lipschitz constant and expressive capacity. RMSNorm requires only the final layer, preserving the freedom of all preceding layers.
+**1. RMSNorm + Learnable Scaling: Constraining Euclidean embedding norms while recovering hyperbolic capacity**
 
-2. **Learned Euclidean Feature Scaling**
-    - Function: Expands the usable volume of hyperbolic space after RMSNorm constrains the embedding norm.
-    - Mechanism: A scalar $\xi_\theta$ is learned to rescale embeddings as $\hat{\mathbf{x}}_E^{\text{rescale}} = \rho_{\max} \cdot \sigma(\xi_\theta) \cdot \hat{\mathbf{x}}_E$, where $\rho_{\max} = \operatorname{atanh}(\alpha)/\sqrt{c}$ and $\alpha=0.95$.
-    - Design Motivation: RMSNorm restricts the usable Poincaré Ball radius to 0.76 (at $c=1$). Since usable volume scales as $\propto r^d$, at $d=32$ the volume gain from extending the radius to 0.95 is approximately $(0.95/0.76)^{32} \approx 1200\times$.
+The rightmost term of the chain rule, $\frac{\partial \mathbf{x}_H}{\partial \mathbf{x}_E}$, originates from the hyperbolic exponential map. When the Euclidean embedding norm $\|\mathbf{x}_E\|$ is too large, it amplifies gradients to the point of explosion. Prior work (Cetin et al.) used SpectralNorm to constrain the norm, but Lemma 4.1 indicates it must be applied to **all layers** of the encoder to effectively bound the output norm, which locks the Lipschitz constant and expressivity of the entire encoder. Instead, RMSNorm is applied only to the pre-activation output of the last linear layer with $1/\sqrt{d}$ scaling. Proposition 4.2 proves that if the subsequent activation is 1-Lipschitz (e.g., ReLU/TanH), $\|\hat{\mathbf{x}}\|_2 < 1$ holds, bounding the conformal factor below $\lambda < 2\cosh^2(\sqrt{c})$ while maintaining the degrees of freedom in previous layers.
 
-3. **Hyperboloid Model + HL-Gauss Categorical Value Loss**
-    - Function: Eliminates sources of instability at both the geometric and loss levels.
-    - Mechanism: The Hyperboloid MLR contains no conformal factor (the $v^{\text{HB}}$ formula lacks the $(1-c\|\mathbf{x}\|^2)^{-1}$ term), yielding more stable gradients. HL-Gauss reformulates value function learning as a classification problem over 51 discrete bins, geometrically aligned with the hyperplane distance outputs of hyperbolic MLR.
-    - Design Motivation: The Poincaré Ball MLR gradient scales as $\propto (1-c\|\mathbf{x}_H\|^2)^{-2}$, exploding near the boundary. MSE regression is geometrically mismatched with hyperbolic MLR, whereas categorical losses provide a more natural alignment.
+However, this constraint shrinks the usable radius of the Poincaré Ball (to 0.76 when $c=1$), causing embeddings to cluster near the origin and reducing usable volume. A learnable scalar $\xi_\theta$ is introduced to rescale the embeddings:
+
+$$\hat{\mathbf{x}}_E^{\text{rescale}} = \rho_{\max} \cdot \sigma(\xi_\theta) \cdot \hat{\mathbf{x}}_E, \quad \rho_{\max} = \operatorname{atanh}(\alpha)/\sqrt{c},\ \alpha=0.95$$
+
+$\sigma(\cdot)$ limits the scale within a safe upper bound $\rho_{\max}$, allowing the network to learn the required radius. Since hyperbolic volume grows exponentially with radius ($\propto r^d$), increasing the radius from 0.76 to 0.95 yields a $(0.95/0.76)^{32} \approx 1200\times$ volume gain at $d=32$. Normalization provides stability, while scaling provide capacity; both are essential.
+
+**2. Hyperboloid Model: Opting for a hyperbolic model without conformal factors**
+
+The instability in the middle term $\frac{\partial v}{\partial \mathbf{x}_H}$ stems from the hyperbolic model itself. In the Poincaré Ball, the Multinomial Logistic Regression (MLR) output gradient is proportional to $(1-c\|\mathbf{x}_H\|^2)^{-2}$. If embeddings approach the ball boundary, this term explodes—the "conformal factor explosion" observed in failing hyperbolic PPO runs. The authors switch to the Hyperboloid model, where the value output formula $v^{\text{HB}}$ does not contain $(1-c\|\mathbf{x}\|^2)^{-1}$ terms, making it naturally robust to large-norm embeddings. Corollary 4.3 uses the isometry between the Poincaré Ball and the Hyperboloid to transfer the norm constraints from design 1, ensuring the time component $x_0^{\max}$ remains bounded.
+
+**3. HL-Gauss Categorical Value Loss: Aligning classification with "distance scoring" geometry**
+
+The instability in the leftmost term $\frac{\partial L}{\partial v}$ arises from a mismatch between the loss function and the geometry. Euclidean linear layers naturally fit MSE regression, but hyperbolic MLR layers output scores based on "distance to hyperplanes," which is classification-oriented. Using MSE to fit continuous returns is geometrically misaligned, leading to noisy critic gradients under non-stationary actor-critic targets. The authors adopt HL-Gauss, discretizing continuous returns into 51 bins to treat value learning as a classification task. This aligns the target form with the hyperplane distance outputs. This synergy is unique to hyperbolic geometry: ablations show that Euclidean + HL-Gauss is actually inferior to Euclidean + MSE, proving categorical loss is effective specifically when paired with hyperbolic geometry.
 
 ### Loss & Training
 
-The PPO clipped surrogate objective is unchanged. The critic uses the HL-Gauss loss (51 bins, $[-10, 10]$), and TanH replaces ReLU as the final activation. Corollary 4.3 transfers the norm bounds established by RMSNorm and learnable scaling—via the Poincaré Ball–Hyperboloid isometry—to a bound on the Hyperboloid time component $x_0^{\max}$.
+The PPO clipped surrogate objective remains unchanged. The critic utilizes HL-Gauss loss (51 bins, range $[-10, 10]$). TanH is used instead of ReLU as the final activation to satisfy the 1-Lipschitz condition required by Proposition 4.2. The same RMSNorm + scaling regularization is applied to the Hyperboloid training following Corollary 4.3.
 
 ## Key Experimental Results
 
 ### Main Results — ProcGen (PPO, 16 environments, 25M steps, 6 seeds)
 
-| Metric | Hyper++ | Hyper+S-RYM | Euclidean | Hyper (no reg.) |
-|--------|---------|-------------|-----------|-----------------|
+| Metric | Hyper++ | Hyper+S-RYM | Euclidean | Hyper(Unregularized) |
+|------|---------|-------------|-----------|-------------|
 | Test IQM ↑ | **0.41** | 0.27 | 0.26 | 0.19 |
 | Train IQM ↑ | **0.55** | 0.46 | 0.45 | 0.37 |
-| Forward time | 14.7ms | 19.3ms | 14ms | — |
-| NameThisGame (full run) | 35h25m | 58h21m | 17h52m | — |
+| Forward Pass | 14.7ms | 19.3ms | 14ms | — |
+| NameThisGame Duration | 35h25m | 58h21m | 17h52m | — |
 
 ### Ablation Study (ProcGen Test IQM, 6 seeds + bootstrap CI)
 
-| Configuration | Test IQM | Note |
-|--------------|---------|------|
-| Hyper++ (full) | **0.40** | Baseline |
-| −RMSNorm | 0.00 | Complete learning failure; norm explosion |
+| Config | Test IQM | Description |
+|------|---------|------|
+| Hyper++ (Full) | **0.40** | Baseline |
+| −RMSNorm | 0.00 | Training failed, norm explosion |
 | −Scaling | 0.33 | Insufficient usable volume |
 | +MSE (replacing HL-Gauss) | 0.33 | Geometric mismatch |
 | +C51 | 0.27 | Distributional loss inferior to HL-Gauss |
-| +Poincaré (replacing Hyperboloid) | 0.34 | Mild conformal factor degradation |
-| +SN Full / +SN Penult. | 0.00 / 0.00 | SpectralNorm fails in both settings |
-| Euclidean + full regularization | 0.35 | Competitive but below hyperbolic |
+| +Poincaré (replacing Hyperboloid) | 0.34 | Slight conformal factor impact |
+| +SN Full / +SN Penult. | 0.00 / 0.00 | SpectralNorm failed in both cases |
+| Euclidean + full regularization | 0.35 | Competitive but inferior to Hyperbolic |
 
 ### Key Findings
-- Hyper++ remains effective under PPG (a stronger baseline): PPG IQM 0.52 vs. Hyper+S-RYM 0.34 vs. Euclidean 0.47.
-- On Atari-5 (DDQN, 10M steps), Hyper++ achieves the best IQM, median, mean, and optimality gap across all five games.
-- Euclidean + HL-Gauss underperforms Euclidean + MSE, indicating that categorical losses benefit from hyperbolic geometry to be effective.
-- Every ablated configuration underperforms the full Hyper++, demonstrating synergistic interactions among the components.
+- Hyper++ is equally effective on PPG (a stronger baseline): PPG IQM 0.52 vs Hyper+S-RYM 0.34 vs Euclidean 0.47.
+- Atari-5 (DDQN, 10M steps): Hyper++ is optimal across all 5 games in terms of IQM/median/mean/optimality gap.
+- Euclidean + HL-Gauss performs worse than Euclidean + MSE → categorical loss requires hyperbolic geometry to be effective.
+- Every ablation perform worse than the full Hyper++, demonstrating synergy between components.
 
 ## Highlights & Insights
-- **Gradient-analysis-driven design**: Rather than empirical trial-and-error, the paper first derives closed-form expressions for $\partial v / \partial \mathbf{x}_H$ and $\partial \mathbf{x}_H / \partial \mathbf{x}_E$, identifies $(1-c\|\mathbf{x}\|^2)^{-2}$ as the culprit, and then designs RMSNorm as a targeted remedy.
-- **One theoretical result addressing multiple problems**: Proposition 4.2 simultaneously guarantees bounded embedding norms, bounded conformal factors, and stable gradients—a single result with three-fold impact.
-- **Clear division of labor among components**: The categorical loss stabilizes $\partial L / \partial v$, the Hyperboloid stabilizes $\partial v / \partial \mathbf{x}_H$, and RMSNorm+scaling stabilizes $\partial \mathbf{x}_H / \partial \mathbf{x}_E$—each term in the chain rule of equation (3) has a dedicated component.
-- **Performance and efficiency gains simultaneously**: A 52% improvement in returns is achieved alongside an approximately 30% reduction in forward pass time by eliminating the power iteration required by SpectralNorm.
+- **Gradient-Driven Design**: Rather than empirical trials, the work derives closed-form expressions for $\partial v / \partial \mathbf{x}_H$ and $\partial \mathbf{x}_H / \partial \mathbf{x}_E$, identifies $(1-c\|\mathbf{x}\|^2)^{-2}$ as the culprit, and targets it with RMSNorm.
+- **Unified Theoretical Result**: Proposition 4.2 simultaneously ensures bounded embedding norms, bounded conformal factors, and gradient stability.
+- **Clear Component Roles**: Categorical loss stabilizes $\partial L / \partial v$, Hyperboloid stabilizes $\partial v / \partial \mathbf{x}_H$, and RMSNorm+scaling stabilizes $\partial \mathbf{x}_H / \partial \mathbf{x}_E$—addressing every term in the chain rule of Equation (3).
+- **Performance-Efficiency Win**: Achieves a 52% return improvement while reducing forward pass time by ~30% (by removing SpectralNorm power iterations).
 
 ## Limitations & Future Work
-- The analysis focuses on the optimization perspective and does not examine what hierarchical structures are actually learned by the hyperbolic representations.
-- It remains unexplored which environments are best suited for hyperbolic representations—i.e., which MDPs have more tree-like state spaces.
-- The interactions among geometric choices (curvature $c$, dimension $d$) and different RL algorithm designs are not investigated.
-- Hyper++ exhibits plasticity loss on ProcGen Phoenix, performing comparably to baselines in that setting.
+- Focuses on optimization perspective without analyzing the specific hierarchical structures learned by hyperbolic representations.
+- Does not investigate which environments are best suited for hyperbolic representation (i.e., which MDP state spaces are more "tree-like").
+- Interaction between geometric choices (curvature $c$, dimension $d$) and different RL algorithm designs remains unexplored.
+- On ProcGen Phoenix, Hyper++ experiences plasticity loss, performing similarly to baselines.
 
 ## Related Work & Insights
-- **vs. Cetin et al. (2023) Hyper+S-RYM**: Eliminates the stability–expressivity trade-off imposed by SpectralNorm, improving test IQM from 0.27 to 0.41.
-- **vs. Farebrother et al. (2024) HL-Gauss**: Their work found HL-Gauss to be inconsistently effective in Euclidean RL; this paper reveals a special synergy between HL-Gauss and hyperbolic geometry.
-- **vs. Mishne et al. (2023) hyperbolic numerical stability**: Their analysis addresses numerical stability of general hyperbolic networks; this paper extends the investigation to actor-critic training in RL.
+- **vs Cetin et al. (2023) Hyper+S-RYM**: Eliminates the stability-expressivity trade-off of SpectralNorm, improving test IQM from 0.27 → 0.41.
+- **vs Farebrother et al. (2024) HL-Gauss**: While they found HL-Gauss inconsistent in Euclidean RL, this work reveals its unique synergy with hyperbolic geometry.
+- **vs Mishne et al. (2023) Hyperbolic Numerical Stability**: While they analyzed general hyperbolic network stability, this work extends analysis to actor-critic training in RL.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ A gradient-analysis-driven remedy for hyperbolic RL with tight coupling between theory and practice.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ ProcGen (16 environments) + Atari-5 + three algorithms (PPO/PPG/DDQN) + extensive ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations with consistent three-way correspondence among equations, components, and experiments.
-- Value: ⭐⭐⭐⭐ Provides the first reliable practical solution for hyperbolic deep RL.
+- Novelty: ⭐⭐⭐⭐ Gradient-analysis driven fix for hyperbolic RL, tightly coupling theory and practice.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 16 ProcGen environments + Atari-5 + PPO/PPG/DDQN algorithms + extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivation with clear correspondence between equations, components, and experiments.
+- Value: ⭐⭐⭐⭐ Provides the first reliable practical recipe for hyperbolic deep RL.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
-- [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICLR 2026\] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning](cuda-l1_improving_cuda_optimization_via_contrastive_reinforcement_learning.md)
+- [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
+- [\[ICLR 2026\] Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning](mastering_sparse_cuda_generation_through_pretrained_models_and_deep_reinforcemen.md)
 - [\[ICLR 2026\] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation](robust_deep_reinforcement_learning_against_adversarial_behavior_manipulation.md)
-- [\[ICLR 2026\] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding](mergemix_a_unified_augmentation_paradigm_for_visual_and_multi-modal_understandin.md)
-- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](deep_spi_safe_policy_improvement_via_world_models.md)
+- [\[ICLR 2026\] XQC: Well-Conditioned Optimization Accelerates Deep Reinforcement Learning](xqc_well-conditioned_optimization_accelerates_deep_reinforcement_learning.md)
 
 </div>
 

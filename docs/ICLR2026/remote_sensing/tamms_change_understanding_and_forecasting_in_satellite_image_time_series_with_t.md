@@ -2,77 +2,95 @@
 title: >-
   [Paper Note] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models
 description: >-
-  [ICLR 2026][Remote Sensing][satellite image time series] TAMMs is proposed as the first unified framework that jointly performs Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) within a sin…
+  [ICLR 2026][Remote Sensing][Diffusion Model] The authors propose TAMMs—the first unified framework to jointly execute Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) in a single MLLM-Diffusion architecture. It awakens the temporal reasoning capabilities of a frozen MLLM through a Temporal-Aware Module (TAM) and translates change un
 tags:
-  - "ICLR 2026"
-  - "Remote Sensing"
-  - "satellite image time series"
-  - "temporal change description"
-  - "future prediction"
-  - "multimodal large language model"
-  - "diffusion model"
+  - ICLR 2026
+  - Remote Sensing
+  - Diffusion Model
 date: 2026-05-08
-content_hash: c11abd680b2ae952
+content_hash: 4ae4e1fa8a35489a
 ---
-
 # TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.18862](https://arxiv.org/abs/2506.18862)  
 **Code**: None  
-**Area**: Remote Sensing
-**Keywords**: satellite image time series, temporal change description, future prediction, multimodal large language model, diffusion model
+**Area**: Remote Sensing  
+**Keywords**: Satellite Image Time Series, Change Description, Future Forecasting, Multimodal Large Language Models (MLLM), Diffusion Models
 
 ## TL;DR
 
-TAMMs is proposed as the first unified framework that jointly performs Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) within a single MLLM-diffusion architecture. A Temporal Adaptation Module (TAM) awakens the temporal reasoning capability of a frozen MLLM, while a Semantic Fusion Control Injection (SFCI) mechanism converts change understanding into generative control signals.
+The authors propose TAMMs—the first unified framework to jointly execute Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) in a single MLLM-Diffusion architecture. It awakens the temporal reasoning capabilities of a frozen MLLM through a Temporal-Aware Module (TAM) and translates change understanding into generative control signals via a Semantic Fusion Control Injection (SFCI) mechanism.
 
 ## Background & Motivation
 
-1. TCD and FSIF over Satellite Image Time Series (SITS) are two core yet historically disconnected tasks, both constrained by insufficient long-range temporal dynamic modeling.
-2. Existing TCD methods (e.g., SITSCC) fuse multi-temporal information through simple interaction, limiting long-range temporal reasoning; existing FSIF methods (e.g., DiffusionSat) primarily rely on metadata-based conditioning and lack semantic change understanding.
-3. MLLMs excel at vision-language tasks, but their video understanding capabilities are optimized for densely sampled short-interval sequences and cannot directly accommodate the sparse, long-term intervals spanning multiple years in SITS.
-4. Control signals for diffusion models (e.g., edge maps or metadata) are typically low-level, lacking high-level semantic guidance over temporal evolution narratives.
-5. Conventional evaluation metrics (PSNR, SSIM) suffer from an "evaluation gap"—they cannot penalize temporally inconsistent predictions; a perceptually realistic prediction that contradicts historical trends still receives a high score.
-6. The paper's core hypothesis is that enabling MLLMs to deeply understand historical dynamics yields more consistent future predictions—a synergistic gain from joint understanding and generation.
+1. Temporal Change Description (TCD) and Future Satellite Image Forecasting (FSIF) of Satellite Image Time Series (SITS) are two core tasks that have historically been fragmented; both are limited by insufficient long-range temporal dynamic modeling.
+2. Existing TCD methods (e.g., SITSCC) fuse multi-temporal information through simple interactions, offering limited long-range reasoning. Existing FSIF methods (e.g., DiffusionSat) primarily rely on metadata conditioning and lack high-level semantic understanding of changes.
+3. While MLLMs excel in vision-language tasks, their video understanding capabilities are optimized for densely sampled, short-interval sequences and do not directly adapt to sparse SITS intervals spanning years.
+4. Control signals for diffusion models (e.g., edge maps or metadata) are typically low-level and lack guidance from high-level semantic narratives of temporal evolution.
+5. Existing evaluation metrics (PSNR, SSIM) exhibit an "evaluation gap"—they fail to penalize temporally implausible predictions; a perceptually realistic prediction inconsistent with historical trends can still receive high scores.
+6. Core Hypothesis: Empowering MLLMs with a deep understanding of historical dynamics can lead to more consistent future predictions—achieving a synergistic gain between understanding and generation.
 
 ## Method
 
 ### Overall Architecture
 
-TAMMs comprises two collaborative stages: (1) a temporal change understanding stage, in which the TAM module enhances the frozen MLLM's temporal reasoning to produce textual descriptions and a semantic feature vector $\mathbf{M}_t$; and (2) a future prediction stage, in which the SFCI mechanism translates the MLLM's semantic features into multi-scale control signals that guide the denoising process of a frozen diffusion U-Net. The MLLM backbone is the frozen DeepSeek-VL2; the generation component is based on DiffusionSat (Stable Diffusion 2-1).
+TAMMs aims to simultaneously address two historically separated tasks within a single framework: understanding "what has changed over the past years" in SITS (TCD) and drawing "what will happen next" based on that understanding (FSIF). It links these through two collaborative stages: first, the Temporal Change Understanding stage, where a Temporal-Aware Module (TAM) awakens the temporal reasoning of a frozen MLLM to output text descriptions and semantic feature vectors $\mathbf{M}_t$; second, the Future Forecasting stage, where a Semantic Fusion Control Injection (SFCI) mechanism translates $\mathbf{M}_t$ into multi-scale control signals to guide a frozen diffusion U-Net in denoising and generating future images. The interpreted "change narrative" is fed directly into generation, ensuring predictions are not only visually realistic but also consistent with historical trends. The backbone uses a frozen DeepSeek-VL2 for MLLM and a frozen DiffusionSat (Stable Diffusion 2.1) for generation, training only lightweight adapters.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Satellite Image Time Series<br/>(inc. Time Interval Δt)"] --> S1
+
+    subgraph S1["Temporal-Aware Module (TAM)"]
+        direction TB
+        PTE["Physical Time Encoder<br/>[TIME_DIFF] token + MLP<br/>Encoding Δt"] --> MLLM["Frozen MLLM<br/>(DeepSeek-VL2)"]
+        CTP["Contextual Temporal<br/>Prompting (Structured)"] --> MLLM
+    end
+
+    MLLM --> TXT["Temporal Change Description<br/>(TCD Text Output)"]
+    MLLM --> MT["Semantic Features M_t"]
+    MT --> S2
+
+    subgraph S2["Semantic Fusion Control Injection (SFCI)"]
+        direction TB
+        SEM["Semantic Path<br/>Layer-specific processors → s_l"] --> GATE
+        STRUCT["Structural Path<br/>3D Control Block → h_l(ctrl)"] --> GATE
+        GATE["Adaptive Gated Fusion<br/>Per-patch interpolation g_l"] --> TT["Temporal Transformer<br/>Long-range dependencies"]
+    end
+
+    S2 --> UNET["Frozen Diffusion U-Net<br/>Weighted residual injection"]
+    UNET --> OUT["Future Satellite Image Forecasting<br/>(FSIF)"]
+```
 
 ### Key Designs
 
-#### 1. Temporal Adaptation Module (TAM)
+**1. Temporal-Aware Module (TAM): Enabling Frozen MLLMs to Understand "Sparse" Trans-annual Intervals**
 
-- **Physical Time Encoder (PTE)**: Introduces a learnable temporal token `[TIME_DIFF]`, dynamically conditioned on the concrete time interval $\Delta t_i$ via an MLP, and inserted between adjacent image visual features. This allows the MLLM's attention mechanism to directly associate visual changes with corresponding time intervals.
-- **Contextual Temporal Prompting (CTP)**: Provides structured textual prompts with detailed scene descriptions to guide the MLLM in performing specific temporal reasoning tasks (describing changes in the observed sequence), focusing the MLLM's general reasoning capability on temporal dynamic recognition.
+MLLM video understanding is optimized for short, dense intervals. Feeding it satellite sequences spanning years causes the attention mechanism to fail in mapping visual changes to actual time spans. TAM addresses this with two lightweight components. First, the Physical Time Encoder (PTE) introduces a learnable `[TIME_DIFF]` token, where an MLP dynamically conditions it on specific time intervals $\Delta t_i$. This is inserted between visual features of adjacent frames—allowing the MLLM attention to bind "land change" directly with "a three-year gap" rather than treating frames as equidistant snapshots. Second, Contextual Temporal Prompting (CTP) provides detailed scene context via structured prompts, focusing the MLLM’s general reasoning onto the specific task of describing sequence dynamics. Together, these "awaken" latent temporal reasoning capabilities without fine-tuning the base MLLM.
 
-#### 2. Semantic Fusion Control Injection (SFCI)
+**2. Semantic Fusion Control Injection (SFCI): Translating "Understanding" into Fine-grained Generative Controls**
 
-An Enhanced Control Module (ECM) operates in parallel with the frozen diffusion U-Net, consisting of a four-step pipeline:
+Textual descriptions alone are insufficient—coarse-grained text control like standard ControlNet cannot transfer the MLLM’s multi-image temporal understanding to the generation side. SFCI operates in parallel with the frozen diffusion U-Net via an Enhanced Control Module (ECM), injecting semantics through four steps. The structural path uses frozen 3D Control Blocks to process U-Net encoder features, obtaining structural signals $\mathbf{h}_l^{(ctrl)}$ of visual dynamics. The semantic path projects MLLM outputs $\mathbf{M}_t$ through layer-specific processors into spatially-aware guidance $\mathbf{s}_l$. The critical step is Adaptive Gated Fusion, where a dynamic gate $\mathbf{g}_l$ interpolates between signals per position:
 
-- **Structural path**: A frozen 3D Control Block processes U-Net encoder features to yield structural control signals $\mathbf{h}_l^{(ctrl)}$ encoding visual dynamics.
-- **Semantic path**: MLLM semantic features $\mathbf{M}_t$ are projected by layer-specific processors and tiled into spatially-aware guidance signals $\mathbf{s}_l$.
-- **Adaptive gated fusion**: A dynamic gate $\mathbf{g}_l$ adaptively interpolates structural and semantic signals: $\mathbf{f}_l = (1-\mathbf{g}_l) \odot \mathbf{h}_l^{(ctrl)} + \mathbf{g}_l \odot \mathbf{s}_l$.
-- **Temporal refinement**: A temporal Transformer models long-range dependencies, with outputs integrated via a weighted residual connection.
+$$\mathbf{f}_l = (1-\mathbf{g}_l) \odot \mathbf{h}_l^{(ctrl)} + \mathbf{g}_l \odot \mathbf{s}_l$$
 
-#### 3. Temporal Consistency Score (TCS)
+This allows the model to decide whether to follow "structure" or "semantics" for each patch. Finally, a temporal Transformer models long-range dependencies, integrating results into the U-Net via weighted residual connections. This path translates high-level change understanding into patch-level control, bypassing the text bottleneck.
 
-A newly proposed evaluation metric that quantifies the consistency between predicted changes and historical dynamics:
+**3. Temporal Consistency Score (TCS): Closing the "Evaluation Gap" Unreachable by PSNR/SSIM**
+
+PSNR and SSIM focus on pixel and perceptual realism, often rewarding predictions that are visually sharp but contradict historical trends. TCS specifically quantifies "whether predicted changes align with historical dynamics," computed as the product of two sub-scores:
 
 $$\text{TCS} = \text{SPS} \cdot \text{ACS}$$
 
-- SPS (Spatial Proximity Score): quantifies location consistency of change centroids.
-- ACS (Area Consistency Score): assesses the agreement of change magnitudes.
+Where SPS (Spatial Proximity Score) measures if the centroid of change aligns, and ACS (Area Consistency Score) measures if the magnitude of change matches. Both are based on binary change detection; the product ensures that a mismatch in either location or magnitude results in a penalty. Higher scores indicate predictions that strictly follow the historical evolution trajectory.
 
 ### Loss & Training
 
-- Two-stage training: the structural path is trained first to learn basic spatio-temporal priors, then frozen while the semantic components are trained.
-- Understanding stage: composite loss $\mathcal{L} = \lambda_{\text{text}} \mathcal{L}_{\text{text}} + \lambda_{\text{temp}} \mathcal{L}_{\text{temp}}$, balancing text accuracy and temporal regularization.
-- Generation stage: standard diffusion loss.
-- Only lightweight adapter components are trained; both the MLLM and U-Net remain frozen.
+- Two-stage training: First train the structural path to learn basic spatiotemporal priors, then freeze it to train semantic components.
+- Understanding stage: Composite loss $\mathcal{L} = \lambda_{\text{text}} \mathcal{L}_{\text{text}} + \lambda_{\text{temp}} \mathcal{L}_{\text{temp}}$, balancing text accuracy with temporal regularization.
+- Generation stage: Standard diffusion loss.
+- Only lightweight adapter components are trained; the MLLM and U-Net remain frozen.
 
 ## Key Experimental Results
 
@@ -85,7 +103,7 @@ $$\text{TCS} = \text{SPS} \cdot \text{ACS}$$
 | RSICC-Former | 0.1285 | 0.1930 | 0.3489 | 0.5344 |
 | SITSCC | 0.2122 | 0.2961 | 0.4701 | 0.6244 |
 | TEOChat | 0.2398 | 0.3102 | 0.4735 | 0.8267 |
-| **TAMMs** | **0.2669** | **0.3312** | **0.4690** | **0.9030** |
+| **Ours (TAMMs)** | **0.2669** | **0.3312** | **0.4690** | **0.9030** |
 
 **Future Satellite Image Forecasting (FSIF)**:
 
@@ -93,12 +111,12 @@ $$\text{TCS} = \text{SPS} \cdot \text{ACS}$$
 |-------|-------|-------|--------|------|
 | DiffusionSat | 11.89 | 0.1520 | 0.5225 | 0.7624 |
 | MCVD | 9.22 | 0.2098 | 0.4970 | 0.1930 |
-| **TAMMs** | **12.07** | 0.1831 | **0.4931** | **0.9690** |
+| **Ours (TAMMs)** | **12.07** | 0.1831 | **0.4931** | **0.9690** |
 
 ### Ablation Study
 
-| Configuration | BLEU-4 | CIDEr-D | TCS |
-|---------------|--------|---------|-----|
+| Config | BLEU-4 | CIDEr-D | TCS |
+|--------|--------|---------|-----|
 | SFT only | 0.2134 | 0.7523 | 0.6842 |
 | w/o PTE | 0.2387 | 0.8234 | 0.7456 |
 | w/o CTP | 0.2445 | 0.8567 | 0.8234 |
@@ -109,38 +127,38 @@ $$\text{TCS} = \text{SPS} \cdot \text{ACS}$$
 
 ### Key Findings
 
-1. **TCS demonstrates a decisive advantage**: TAMMs achieves TCS of 0.9690, far exceeding DiffusionSat (0.7624) and GeoSynth-Canny (0.2170), confirming that the generated future images are more consistent with historical evolution trajectories.
-2. **Semantic fusion is critical**: Removing semantic feature fusion causes an 18% drop in TCS (0.9690→0.7911), validating the core hypothesis of injecting deep semantic reasoning from the MLLM directly into the generative control pathway.
-3. **PTE contributes most to temporal understanding**: Removing PTE leads to a 23% drop in TCS, indicating that explicit time-interval encoding is the key to awakening temporal reasoning in the MLLM.
+1. **Significant Advantage in TCS**: TAMMs achieves a TCS of 0.9690, far exceeding DiffusionSat (0.7624) and GeoSynth-Canny (0.2170), proving that its generated future images are more consistent with historical evolution tracks.
+2. **Semantic Fusion is Critical**: Removing semantic feature fusion results in an 18% drop in TCS (0.9690 → 0.7911), validating the hypothesis that injecting deep semantic reasoning directly into the generative control path is essential.
+3. **PTE Contributes Most to Temporal Understanding**: Removing PTE leads to a 23% drop in TCS, highlighting that explicit time interval encoding is the key to awakening temporal reasoning in MLLMs.
 
 ## Highlights & Insights
 
-1. This is the first work to unify temporal change understanding and future prediction in a single framework; the bidirectional co-design—where understanding guides generation and generation validates understanding—is a novel contribution.
-2. The TCS metric fills a gap in temporal prediction evaluation: standard quality metrics cannot measure temporal consistency, whereas TCS quantifies this through spatial proximity and area consistency.
-3. The TAM module design is elegant—it "awakens" the latent temporal reasoning capacity of a frozen MLLM in a parameter-efficient manner, avoiding costly full-model fine-tuning.
-4. SFCI bypasses the bottleneck of coarse-grained text control by directly converting the MLLM's multi-image temporal understanding features into patch-level fine-grained control signals.
+1. The framework represents the first attempt to unify temporal change understanding and future forecasting, featuring a novel bidirectional design where understanding guides generation and generation validates understanding.
+2. The TCS metric fills a significant gap in spatio-temporal forecasting evaluation—standard quality metrics cannot differentiate temporal consistency, whereas TCS quantifies it through spatial proximity and area consistency.
+3. The TAM design is elegant—it "awakens" the latent reasoning potential of a frozen MLLM in a parameter-efficient manner, avoiding the high costs of full-model fine-tuning.
+4. SFCI bypasses the coarse-grained text control bottleneck by directly converting MLLM's multi-image temporal understanding into patch-level control signals.
 
 ## Limitations & Future Work
 
-1. Training set annotations are automatically generated by Qwen2.5-VL (37K sequences), which may introduce systematic bias; the test set contains only 150 sequences.
-2. MCVD achieves a higher SSIM (0.2098) than TAMMs (0.1831), revealing a trade-off between standard quality metrics and temporal consistency metrics.
-3. The TCS metric relies on binary change detection and may have limited capacity to capture gradual changes (e.g., slow vegetation degradation).
-4. Very long-term (>10 years) prediction scenarios and sudden-event forecasting remain unexplored.
+1. Training labels were automatically generated by Qwen2.5-VL (37K sequences), which may introduce systematic biases; the test set is relatively small (150 sequences).
+2. Regarding SSIM, MCVD (0.2098) outperformed TAMMs (0.1831), indicating a possible trade-off between standard perceptual quality and temporal consistency.
+3. The TCS metric relies on binary change detection and may have a limited capacity to capture gradual changes, such as slow vegetation degradation.
+4. Forecasting scenarios for very long-term transitions (>10 years) or sudden catastrophic events have not yet been explored.
 
 ## Related Work & Insights
 
-- **DiffusionSat**: A foundational model for satellite image generation conditioned on metadata, lacking semantic understanding guidance.
-- **SITSCC**: A multi-temporal change description method, lacking the deep semantic reasoning of MLLMs.
-- **TEOChat**: A temporal MLLM for Earth observation, limited to description tasks with no generative capability.
-- **ControlNet**: Controls diffusion model generation primarily via text, providing insufficient patch-level signal guidance for temporal prediction.
-- Insight: Unifying understanding and generation is an important direction for remote sensing spatio-temporal analysis; the "awakening" paradigm of TAM is generalizable to other foundation models with insufficient temporal awareness.
+- **DiffusionSat**: Foundation model for satellite image generation based on metadata conditioning but lacks semantic guidance.
+- **SITSCC**: A multi-temporal change description method lacking the deep semantic reasoning of MLLMs.
+- **TEOChat**: A temporal MLLM for Earth Observation, but limited to description tasks without generative capabilities.
+- **ControlNet**: Uses only text/scaffold control for diffusion generation, providing insufficient patch-level guidance for temporal forecasting.
+- Insight: The unification of understanding and generation is a vital direction for remote sensing spatio-temporal analysis. The "awakening" strategy used in TAM can be generalized to other foundation models lacking temporal awareness.
 
 ## Rating
 
-- ⭐ Novelty: 4.5/5 — First unified TCD+FSIF framework; TCS metric, TAM, and SFCI each represent distinct innovations
-- ⭐ Experimental Thoroughness: 4/5 — Ablations are thorough and qualitative analysis is rich, but the test set is small (150 sequences)
-- ⭐ Writing Quality: 4/5 — Problem-driven narrative is clear; two "How" questions effectively guide the method design
-- ⭐ Value: 4/5 — Establishes a new paradigm of understanding-driven generation for remote sensing spatio-temporal analysis
+- ⭐ Novelty: 4.5/5 — First unified TCD+FSIF framework; innovations in TCS, TAM, and SFCI.
+- ⭐ Experimental Thoroughness: 4/5 — Comprehensive ablation and qualitative analysis, though the test set is small (150 sequences).
+- ⭐ Writing Quality: 4/5 — Problem-driven approach with clear "How" questions guiding the design.
+- ⭐ Value: 4/5 — Establishes a new paradigm of understanding-driven generation for remote sensing analysis.
 
 <!-- RELATED:START -->
 
@@ -148,11 +166,11 @@ $$\text{TCS} = \text{SPS} \cdot \text{ACS}$$
 
 ## Related Papers
 
-- [\[ICCV 2025\] WildSAT: Learning Satellite Image Representations from Wildlife Observations](../../ICCV2025/remote_sensing/wildsat_learning_satellite_image_representations_from_wildlife_observations.md)
+- [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](../../CVPR2026/remote_sensing/unichange_unifying_change_detection_with_multimodal_large_language_model.md)
+- [\[ICML 2025\] Resampling Augmentation for Time Series Contrastive Learning: Application to Remote Sensing](../../ICML2025/remote_sensing/resampling_augmentation_for_time_series_contrastive_learning_application_to_remo.md)
+- [\[CVPR 2026\] Sparsely Timing the Change: A Spiking Temporal Framework for Remote Sensing Interpretation](../../CVPR2026/remote_sensing/sparsely_timing_the_change_a_spiking_temporal_framework_for_remote_sensing_inter.md)
 - [\[NeurIPS 2025\] EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting](../../NeurIPS2025/remote_sensing/ecocast_a_spatio-temporal_model_for_continual_biodiversity_and_climate_risk_fore.md)
-- [\[AAAI 2026\] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD](../../AAAI2026/remote_sensing/spatio-temporal_context_learning_with_temporal_difference_convolution_for_moving.md)
-- [\[CVPR 2026\] GeoMMBench and GeoMMAgent: Toward Expert-Level Multimodal Intelligence in Geoscience and Remote Sensing](../../CVPR2026/remote_sensing/geommbench_and_geommagent_toward_expert_level_multimodal_intelligence_in_geoscience_and_remote_sensing.md)
-- [\[AAAI 2026\] Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments](../../AAAI2026/remote_sensing/consistency-based_abductive_reasoning_over_perceptual_errors_of_multiple_pre-tra.md)
+- [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Ready Dataset for Ionospheric Forecasting Models](../../NeurIPS2025/remote_sensing/connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
 
 </div>
 

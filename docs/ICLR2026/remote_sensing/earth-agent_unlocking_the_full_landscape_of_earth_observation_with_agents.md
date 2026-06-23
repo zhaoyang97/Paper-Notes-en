@@ -2,86 +2,74 @@
 title: >-
   [Paper Note] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents
 description: >-
-  [ICLR 2026][Remote Sensing][Earth Observation] Earth-Agent is the first Earth observation agent framework built upon an MCP-based tool ecosystem. It unifies RGB and spectral remote sensing data…
+  [ICLR 2026][Remote Sensing][benchmark] Earth-Agent is the first Earth Observation (EO) Agent framework based on the Model Context Protocol (MCP) tool ecosystem. it unifies RGB and spectral remote sensing data, achieving cross-modal, multi-step, and quantitative spatio-temporal reasoning by dynamically invoking 104 expert tools. The proposed Earth-Bench benc
 tags:
-  - "ICLR 2026"
-  - "Remote Sensing"
-  - "Earth Observation"
-  - "Agent Framework"
-  - "MCP Tool Ecosystem"
-  - "Multimodal Remote Sensing"
-  - "Benchmark"
+  - ICLR 2026
+  - Remote Sensing
+  - benchmark
 date: 2026-05-08
-content_hash: d7b661eb5649a8e2
+content_hash: af6069cab84ed15d
 ---
-
 # Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.23141](https://arxiv.org/abs/2509.23141)  
 **Code**: [opendatalab/Earth-Agent](https://github.com/opendatalab/Earth-Agent)  
-**Area**: Remote Sensing / LLM Agent
-**Keywords**: Earth Observation, Agent Framework, MCP Tool Ecosystem, Multimodal Remote Sensing, Benchmark
+**Area**: Remote Sensing / LLM Agent  
+**Keywords**: Earth Observation, Agent Framework, MCP Tool Ecosystem, Multimodal Remote Sensing, benchmark
 
 ## TL;DR
-Earth-Agent is the first Earth observation agent framework built upon an MCP-based tool ecosystem. It unifies RGB and spectral remote sensing data, dynamically invoking 104 expert tools to enable cross-modal, multi-step, and quantitative spatiotemporal reasoning. The accompanying Earth-Bench benchmark comprises 248 expert-curated tasks and 13,729 images. Experiments demonstrate that Earth-Agent substantially outperforms both general-purpose agents and remote sensing MLLMs.
+Earth-Agent is the first Earth Observation (EO) Agent framework based on the Model Context Protocol (MCP) tool ecosystem. it unifies RGB and spectral remote sensing data, achieving cross-modal, multi-step, and quantitative spatio-temporal reasoning by dynamically invoking 104 expert tools. The proposed Earth-Bench benchmark includes 248 expert tasks and 13,729 images. Experiments demonstrate that Earth-Agent significantly outperforms general-purpose Agents and remote sensing MLLMs.
 
 ## Background & Motivation
-Earth Observation (EO) is a critical task for understanding the evolving state of Earth systems. While multimodal large language models (MLLMs) have recently advanced remote sensing research, fundamental capability gaps remain:
+Earth Observation (EO) is a critical task for understanding the state of Earth system evolution. Recently, Multimodal Large Language Models (MLLMs) have advanced remote sensing research, yet fundamental capability gaps remain:
 
-Limitations of existing MLLMs in the EO domain:
-- **RGB-only perception**: Inability to process spectral data (multispectral, hyperspectral, SAR, etc.), which is central to scientific-grade remote sensing analysis.
-- **Shallow reasoning**: Inability to handle complex tasks requiring multi-step reasoning and domain-specific tool invocation.
-- **Lack of quantitative capability**: Cannot perform geophysical parameter retrieval or quantitative spatiotemporal analysis requiring precise computation.
-- **Absence of systematic evaluation**: No evaluation protocol covering all modalities and assessing both reasoning trajectories and final results.
+**Limitations of Prior Work** (MLLMs in EO):
+- **RGB-only Perception**: Inability to process spectral data (multispectral, hyperspectral, SAR, etc.), which is central to scientific-grade remote sensing analysis.
+- **Shallow Reasoning**: Incapability of performing complex tasks requiring multi-step reasoning and domain-specific tool calls.
+- **Lack of Quantitative Capabilities**: Failure to execute scientific tasks requiring precise calculations, such as geophysical parameter inversion and quantitative spatio-temporal analysis.
+- **Systemic Evaluation Deficiency**: Absence of evaluation protocols covering all modalities while considering both reasoning trajectories and final results.
 
-Limitations of existing agent approaches:
-- Restricted to RGB perception; spectral data not supported.
-- Insufficient reasoning depth and primitive tool-calling capability.
-- No systematic EO-oriented evaluation benchmark.
+**Limitations of Prior Work** (Existing Agent Methods):
+- Restricted to RGB perception and do not handle spectral data.
+- Insufficient reasoning depth with rudimentary tool-calling capabilities.
+- Lack of systematic evaluation benchmarks oriented towards EO.
 
-Starting Point: Earth-Agent models EO analysis as a ReAct-style POMDP process, with an LLM serving as the policy network that dynamically invokes domain expert tools via the MCP protocol, bridging RGB and spectral modalities.
+**Key Insight**: Modeling EO analysis as a ReAct-style POMDP process, where the LLM serves as a policy network to dynamically invoke domain expert tools via the MCP protocol, thereby bridging RGB and spectral modalities.
 
 ## Method
 
 ### Overall Architecture
-Earth-Agent adopts a ReAct-style agent architecture centered on a POMDP loop:
-- **Input**: Task objective + remote sensing images (RGB / spectral / product data) + interaction history.
-- The LLM acts as the policy, iteratively executing: tool invocation → memory update → reasoning → action.
-- **Output**: Quantitative analysis results, parameter retrieval values, spatial reasoning conclusions, etc.
+Earth-Agent is a ReAct-type Agent framework that models Earth Observation (EO) analysis as a Partially Observable Markov Decision Process (POMDP), described by the tuple $\langle g, S, A, O, T\rangle$: where $g$ is the task goal, $A$ is the action space composed of tool calls, and $O$ represents the observations returned by tools (text/numeric/image). The LLM acts as the policy network $\pi$. Given the task goal and three types of remote sensing data (RGB, spectral, products), it iteratively follows the "Think → Act → Observe → Update Memory" cycle to approach an answer. It outputs quantitative analysis, parameter inversion values, or spatio-temporal reasoning conclusions. Crucially, the actual computation is not performed implicitly by the LLM but delegated to an MCP tool ecosystem consisting of 104 domain expert tools—the LLM only decides what to call, in what order, and with which parameters. The following three designs support this pipeline: the MCP tool ecosystem providing atomic capabilities across modalities, the ReAct-POMDP loop linking multi-step tasks, and Earth-Bench with a dual-layer protocol for systematic evaluation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Task Goal + RS Images<br/>RGB / Spectral / Products"] --> THINK["Think + Action: LLM Policy<br/>Select and call tools based on memory + goal"]
+    THINK --> KIT["MCP Tool Ecosystem (104 Tools / 5 Kits)<br/>Index·Inversion·Perception<br/>Analysis·Statistics"]
+    KIT --> OBS["Observations<br/>Text / Numeric / Image"]
+    OBS --> MEM["Memory Update<br/>Push Action + Observation to stack"]
+    MEM -->|Stop condition not met| THINK
+    MEM -->|Stop condition met| OUT["Output: Quantitative findings /<br/>Parameter inversion / Spatio-temporal reasoning"]
+    OUT --> EVAL["Earth-Bench Dual-layer Evaluation<br/>End-to-End + Trajectory"]
+```
 
 ### Key Designs
 
-1. **MCP-Based Tool Ecosystem**:
-   Earth-Agent integrates 104 specialized tools across five functional suites:
-    - **Index Kit**: Spectral index computation (NDVI, NDWI, etc.)
-    - **Inversion Kit**: Geophysical parameter retrieval (leaf area index, land surface temperature, etc.)
-    - **Perception Kit**: RGB image perception (object detection, scene classification, semantic segmentation, etc.)
-    - **Analysis Kit**: Spatiotemporal analysis (change detection, trend analysis, etc.)
-    - **Statistics Kit**: Statistical operations (regional statistics, histogram analysis, etc.)
+**1. MCP Tool Ecosystem: Decoupling scientific computation from implicit knowledge and bridging RGB and spectral domains**
 
-   These tools are managed via the Model Context Protocol (MCP), enabling the LLM to dynamically compose and invoke them. This allows Earth-Agent to transcend the capability ceiling of pretrained MLLMs — for scientific-grade computational tasks (e.g., land surface temperature retrieval from Landsat data), the framework relies on precise physical models rather than the model's implicit knowledge.
+When pretrained MLLMs tackle remote sensing problems, tasks requiring precise physical models—like land surface temperature (LST) inversion or spectral index calculation—rely on "implicit knowledge," which is unreliable and non-quantitative. Furthermore, existing EO Agents often consume only RGB data, missing the spectral data core to scientific remote sensing. Earth-Agent externalizes computational power to 104 expert tools categorized into five kits: Index Kit for spectral indices (NDVI, NDWI, NBR, etc.), Inversion Kit for geophysical parameter inversion (LST, precipitable water, vegetation water content, sea ice concentration, etc.), Perception Kit for RGB perception (scene classification, object detection, segmentation), Analysis Kit for spatio-temporal analysis (trend detection, seasonal decomposition, change points, spatial autocorrelation), and Statistics Kit for large-scale preprocessing and statistics (variance, batch processing, cloud masking, etc.). These tools are registered via the Model Context Protocol (MCP), allowing the LLM to combine them dynamically. Consequently, LST inversion from Landsat uses real physical models rather than guessing, exceeding the base MLLM's capabilities. With both spectral and perception kits, a single Agent can automatically follow a spectral toolchain for LST or a perception toolchain for scene recognition, unifying quantitative spectral analysis and visual understanding.
 
-2. **Cross-Modal Unified Processing**:
-   Unlike existing EO agents restricted to RGB, Earth-Agent natively supports three categories of remote sensing data:
-    - **Spectral data**: Multispectral/hyperspectral satellite imagery (e.g., Landsat, Sentinel-2).
-    - **Product data**: Pre-processed remote sensing products (e.g., MODIS land surface temperature products).
-    - **RGB data**: Conventional visible-light remote sensing imagery.
+**2. ReAct-POMDP Multi-step Reasoning: Decomposing complex tasks into observable decision chains**
 
-   The LLM autonomously determines whether to invoke spectral or perception tools based on task requirements.
+Many EO tasks cannot be answered in one step—e.g., "Analyzing vegetation trends in a region from 2020–2025" requires extracting multi-temporal NDVI, performing time-series analysis, fitting trends, and synthesizing conclusions. Earth-Agent models this as a POMDP. Instead of providing a single answer, the LLM samples the next action $a_t \sim \pi(a_t\mid g,m_t)$ based on the current memory $m_t=(o_0,a_0,\dots,o_t)$ and goal $g$. It executes a four-step loop: ① Call tool to get observation, ② Push action + observation into memory, ③ LLM thinks about the next step based on updated memory, ④ Execute the selected tool call. This continues until a stop condition is met, outputting the final answer and a reproducible tool-call trajectory. All intermediate results enter memory for subsequent reasoning, enabling long-chain quantitative analysis and making the reasoning process observable.
 
-3. **ReAct-POMDP Decision Process**:
-   Complex EO tasks are modeled as Partially Observable Markov Decision Processes. Rather than producing answers in a single pass, the LLM reasons progressively through multi-round "think–act–observe" cycles. For example, analyzing vegetation change trends in a region from 2020 to 2025 requires: extracting multi-temporal NDVI → time-series analysis → trend fitting → generating conclusions.
+**3. Earth-Bench and Dual-Layer Evaluation Protocol: Assessing both final accuracy and process validity**
 
-4. **Earth-Bench Evaluation Benchmark**:
-   Earth-Bench contains 248 tasks manually curated by domain experts, covering 13,729 images:
-    - **Modality coverage**: Spectral (100 tasks) + Product (88 tasks) + RGB (60 tasks).
-    - **Two-tier evaluation protocol**:
-      - End-to-end evaluation: Accuracy (final answer correctness) + Efficiency (tool usage efficiency).
-      - Trajectory evaluation: Tool-Any-Order (whether all necessary tools were used), Tool-In-Order (whether tool order is correct), Tool-Exact-Match (step-by-step exact match), Parameter Accuracy (accuracy of tool parameters).
+Earth-Bench is constructed for systematic evaluation: 248 tasks curated by domain experts and approximately 13,729 images. It covers spectral, product, and RGB data across 14 representative tasks, annotated with 1,345 reference steps. Each task features two query modes: Auto-Planning (Agent must derive the trajectory) and Instruction-Following (trajectory guidance provided). Evaluation uses a dual-layer protocol: the End-to-End layer assesses the final output via Accuracy and Efficiency (ratio of actual to reference tool calls); the Trajectory layer evaluates the reasoning process via Tool-Any-Order (whether all necessary tools were used), Tool-In-Order (order correctness), Tool-Exact-Match (prefix-level match with expert trajectory), and Parameter Accuracy (correctness of tool identification and parameters).
 
 ### Loss & Training
-The core of Earth-Agent is zero-shot inference — no additional training on EO tasks is required. The LLM interprets tasks through prompt engineering and tool descriptions. The paper also explores a Training-Free Evolution approach (analogous to training-free GRPO), which attempts to optimize the agent's tool-calling strategy without fine-tuning model weights.
+Earth-Agent is a pure inference-time framework. No additional training is performed on EO tasks. The LLM understands tasks and completes calls solely based on prompts and tool descriptions. This allows for plug-and-play comparison of different LLM backends (DeepSeek-V3, GPT-4o, etc.).
 
 ## Key Experimental Results
 
@@ -89,49 +77,48 @@ The core of Earth-Agent is zero-shot inference — no additional training on EO 
 Performance of different LLM backends on Earth-Bench:
 
 | Model | Tool-Any-Order | Tool-In-Order | Tool-Exact-Match | Parameter | Accuracy | Efficiency |
-|-------|---------------|---------------|-------------------|-----------|----------|------------|
+|------|---------------|---------------|-------------------|-----------|----------|------------|
 | DeepSeek-V3 (IF) | 0.892 | 0.876 | 0.741 | 0.572 | — | — |
-| GPT-5 (AP) | 0.766 | 0.750 | 0.596 | 0.462 | 59.32% | 1.531 |
+| GPT-4o (AP) | 0.766 | 0.750 | 0.596 | 0.462 | 59.32% | 1.531 |
 | Kimi-K2 (IF) | 0.806 | 0.799 | 0.633 | 0.522 | 62.71% | 1.410 |
 
 ### Ablation Study
 
 | Comparison | Key Metric | Description |
-|------------|-----------|-------------|
-| Earth-Agent vs. general-purpose agent frameworks | Accuracy | Earth-Agent significantly outperforms general agents such as LangChain |
-| Earth-Agent vs. remote sensing MLLMs | RGB benchmark | Surpasses dedicated remote sensing MLLMs on remote sensing benchmarks |
-| Spectral tasks vs. RGB tasks | Tool-Exact-Match | Spectral tasks involve longer and more complex tool chains, making exact matching more difficult |
-| Different LLM backbones | Overall performance | Stronger LLMs yield better tool-calling and reasoning capability |
+|------|---------|------|
+| Earth-Agent vs. General Agent | Accuracy | Earth-Agent significantly outperforms general frameworks like LangChain |
+| Earth-Agent vs. RS-MLLM | RGB benchmark | Surpasses specialized remote sensing MLLMs on standard benchmarks |
+| Spectral vs. RGB Tasks | Tool-Exact-Match | Spectral tasks have longer, more complex toolchains, making exact matching harder |
+| Different LLM backbones | Comprehensive | Stronger LLMs lead to better tool invocation and reasoning |
 
 ### Key Findings
-- DeepSeek-V3 achieves the best tool-use accuracy (Tool-Any-Order: 0.892).
-- Kimi-K2 marginally outperforms GPT-5 on final answer accuracy (62.71% vs. 59.32%).
-- Efficiency scores are consistently above 1.0, indicating that models tend to invoke more tools than the ground truth requires.
-- Parameter Accuracy is the most significant bottleneck (maximum 0.572), revealing limited LLM understanding of domain-specific remote sensing parameters.
-- The gap between Tool-In-Order and Tool-Any-Order is small, suggesting models generally grasp the correct tool ordering.
+- DeepSeek-V3 performs best in tool usage accuracy (Tool-Any-Order: 0.892).
+- Kimi-K2 slightly outperforms GPT-4o in final answer accuracy (62.71% vs. 59.32%).
+- Tool Efficiency is generally > 1.0, suggesting models tend to use more tools than the ground truth.
+- Parameter Accuracy is the primary bottleneck (max 0.572), indicating limited LLM understanding of remote sensing parameters.
+- The gap between Tool-In-Order and Tool-Any-Order is small, showing models generally grasp the correct sequence.
 
 ## Highlights & Insights
-- **Paradigm shift**: Moving from direct MLLM-based question answering to agent-driven dynamic expert tool invocation — a significant transition in the EO-AI paradigm.
-- **Application of MCP protocol**: Using MCP to manage tools is sound engineering practice, enabling an extensible and replaceable toolset.
-- **Elegant two-tier evaluation design**: Assessing not only final outcomes but also the reasoning process (tool-calling trajectories), which is essential for understanding agent behavior.
-- **Scientific value**: Tasks such as geophysical parameter retrieval and quantitative spatiotemporal analysis go beyond conventional computer vision and carry genuine scientific application value.
-- **Construction of 104 tools**: This constitutes a major engineering contribution in its own right, covering the principal components of EO analysis.
+- **Paradigm Shift**: Transitioning from MLLMs directly answering questions to Agents dynamically calling expert tools marks a major shift in EO-AI.
+- **MCP Protocol Application**: Using MCP for tool management is a strong engineering practice, ensuring extensibility.
+- **Dual-Layer Evaluation**: Evaluating trajectories alongside final results is crucial for understanding Agent behavior quality.
+- **Scientific Value**: Tasks like geophysical parameter inversion and quantitative spatio-temporal analysis extend beyond traditional CV into real scientific application.
+- **Toolbox Construction**: The creation of 104 tools is a significant contribution covering major EO analysis stages.
 
 ## Limitations & Future Work
-- Strong dependence on the LLM's capability ceiling — errors in LLM reasoning cause the entire pipeline to fail.
-- Parameter Accuracy (maximum 0.572) reveals that LLMs still lack sufficient domain knowledge in remote sensing.
-- Efficiency scores above 1.0 indicate a tendency toward redundant tool calls, necessitating optimization of reasoning efficiency.
-- Only a limited number of LLM backbones are evaluated; applicability to open-source smaller models remains unknown.
-- The scale of Earth-Bench (248 tasks) remains relatively small compared to NLP/CV benchmarks.
-- Latency issues are not discussed — the delays incurred by multi-step tool invocation may be problematic in real-world remote sensing applications.
-- The effectiveness of Training-Free Evolution has yet to be systematically evaluated.
+- Strong dependence on the LLM's reasoning ceiling; errors in reasoning collapse the entire chain.
+- Parameter Accuracy (max 0.572) highlights a lack of domain-specific parameter knowledge.
+- Efficiency > 1 indicates redundant calls requiring inference optimization.
+- Evaluation is limited to a few LLM backbones; applicability to smaller open-source models is unknown.
+- Earth-Bench scale (248 tasks) remains small compared to general NLP/CV benchmarks.
+- Real-time performance was not discussed; latency in multi-step calls may hinder practical application.
 
 ## Related Work & Insights
-- **ReAct (Yao et al., 2023)**: The foundational work on the think–act paradigm; Earth-Agent represents its concrete instantiation in the EO domain.
-- **ToolFormer / Gorilla**: Pioneering works on LLM tool use; Earth-Agent extends this to 104 domain expert tools.
-- **GeoChat / RS-ChatGPT**: Existing remote sensing MLLMs, limited to RGB processing and lacking tool-calling support.
-- **Model Context Protocol (MCP)**: A tool management protocol proposed by Anthropic; Earth-Agent serves as an important application case of MCP in the scientific domain.
-- Insight: The agent + domain tools paradigm is equally applicable to other scientific fields such as astronomy, biology, and materials science.
+- **ReAct (Yao et al., 2023)**: Fundamental think-act paradigm; Earth-Agent is a domain-specific instantiation.
+- **ToolFormer / Gorilla**: Pioneers in LLM tool use; Earth-Agent extends this to 104 domain tools.
+- **GeoChat / RS-ChatGPT**: Existing RS-MLLMs that only handle RGB and lack tool calling support.
+- **Model Context Protocol (MCP)**: Tool management protocol by Anthropic; Earth-Agent is a key scientific application.
+- **Insight**: The Agent + domain tool paradigm is applicable to other scientific fields like astronomy or biology.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -145,11 +132,11 @@ Performance of different LLM backends on Earth-Bench:
 
 ## Related Papers
 
+- [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](../../CVPR2026/remote_sensing/ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
 - [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](measuring_the_intrinsic_dimension_of_earth_representations.md)
-- [\[ICCV 2025\] Towards a Unified Copernicus Foundation Model for Earth Vision](../../ICCV2025/remote_sensing/towards_a_unified_copernicus_foundation_model_for_earth_vision.md)
-- [\[ICLR 2026\] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind](spectral_gaps_and_spatial_priors_studying_hyperspectral_downstream_adaptation_us.md)
-- [\[ICLR 2026\] Task-free Adaptive Meta Black-box Optimization](task-free_adaptive_meta_black-box_optimization.md)
-- [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
+- [\[CVPR 2026\] OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation](../../CVPR2026/remote_sensing/olmoearth_stable_latent_image_modeling_for_multimodal_earth_observation.md)
+- [\[CVPR 2026\] NeighborMAE: Exploiting Spatial Dependencies between Neighboring Earth Observation Images in Masked Autoencoders Pretraining](../../CVPR2026/remote_sensing/neighbormae_exploiting_spatial_dependencies_between_neighboring_earth_observatio.md)
+- [\[CVPR 2026\] TESSERA: Temporal Embeddings of Surface Spectra for Earth Representation and Analysis](../../CVPR2026/remote_sensing/tessera_temporal_embeddings_of_surface_spectra_for_earth_representation_and_anal.md)
 
 </div>
 

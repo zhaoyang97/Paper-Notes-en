@@ -2,160 +2,144 @@
 title: >-
   [Paper Note] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Latent Reasoning] This paper proposes Latent Thought Policy Optimization (LTPO), a test-time reasoning enhancement framework that requires no model parameter updates. By treating inter…
+  [ICLR 2026][Reinforcement Learning][Chain-of-Thought] This paper proposes Latent Thought Policy Optimization (LTPO), a test-time reasoning enhancement framework that does not require updating model parameters. By treating intermediate latent "thought" vectors as optimizable dynamic parameters, it utilizes online policy gradient methods and intrinsic confidence reward sign
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Latent Reasoning"
-  - "Test-Time Optimization"
-  - "Policy Gradient"
-  - "Confidence Reward"
-  - "Chain-of-Thought"
+  - ICLR 2026
+  - Reinforcement Learning
+  - Chain-of-Thought
 date: 2026-05-08
-content_hash: 2bd47d599109ad74
+content_hash: fb233b86d0d661f9
 ---
-
 # Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization
 
 **Conference**: ICLR 2026  
 **arXiv**: [2510.04182](https://arxiv.org/abs/2510.04182)  
 **Code**: None  
 **Area**: Reinforcement Learning / LLM Reasoning  
-**Keywords**: Latent Reasoning, Test-Time Optimization, Policy Gradient, Confidence Reward, Chain-of-Thought
+**Keywords**: Latent Reasoning, Test-time Optimization, Policy Gradient, Confidence Reward, Chain-of-Thought
 
 ## TL;DR
 
-This paper proposes Latent Thought Policy Optimization (LTPO), a test-time reasoning enhancement framework that requires no model parameter updates. By treating intermediate latent "thought" vectors as dynamically optimizable variables, LTPO leverages online policy gradient methods and intrinsic confidence reward signals to enhance the reasoning capability of frozen LLMs.
+This paper proposes Latent Thought Policy Optimization (LTPO), a test-time reasoning enhancement framework that does not require updating model parameters. By treating intermediate latent "thought" vectors as optimizable dynamic parameters, it utilizes online policy gradient methods and intrinsic confidence reward signals to enhance the reasoning capabilities of frozen LLMs.
 
 ## Background & Motivation
 
-The reasoning capabilities of large language models (LLMs) have undergone a significant paradigm shift in recent years: from **explicit Chain-of-Thought (CoT) reasoning** toward more efficient **latent reasoning**. In explicit CoT, intermediate reasoning steps are generated as natural language text, incurring high computational cost and low efficiency. In latent reasoning, intermediate thoughts are represented as vectors rather than text, substantially improving efficiency.
+The reasoning capabilities of Large Language Models (LLMs) have recently undergone a significant shift: from **explicit Chain-of-Thought (CoT) reasoning** to more efficient **Latent Reasoning**. In explicit CoT, intermediate reasoning steps are generated as natural language text, which is computationally expensive and inefficient. In latent reasoning, intermediate thoughts are represented as vectors rather than text, significantly improving efficiency.
 
-However, latent reasoning has a critical weakness: **fragility on challenging out-of-distribution (OOD) tasks**. When faced with difficult problems requiring robust reasoning (e.g., high-difficulty math competition problems), existing latent reasoning baselines often collapse to near-zero accuracy.
+However, latent reasoning has a critical weakness: **fragile performance on challenging Out-of-Distribution (OOD) tasks**. When faced with difficult problems requiring robust reasoning (e.g., high-difficulty math competition problems), existing latent reasoning baselines often collapse to nearly zero accuracy.
 
-The root cause of this dilemma lies in:
+The fundamental reasons for this dilemma are:
 
-- **Latent thought vectors are fixed at training time**: Once trained, the model's latent representations are fixed and cannot be adaptively adjusted for specific problem instances.
-- **Lack of test-time introspection**: Unlike CoT, which can improve answers through multiple sampling and verification, latent reasoning lacks such self-correction capability.
-- **Difficulty in OOD generalization**: The generalization ability of latent representations is highly dependent on the training data distribution, leading to poor performance on unseen problem types.
+**Latent thought vectors are fixed at training time**: Once the model is trained, its latent representation method is fixed and cannot be adaptively adjusted for specific problem instances.
 
-The core motivation of LTPO is to preserve the efficiency advantages of latent reasoning while endowing it with CoT-level reasoning robustness through test-time optimization.
+**Lack of test-time introspection mechanisms**: Unlike CoT, which can improve answers through multiple sampling and verification, latent reasoning lacks such self-correction capabilities.
+
+**Difficult OOD generalization**: The generalization ability of latent representations is highly dependent on the training data distribution, leading to poor performance on unseen problem types.
+
+The core motivation of LTPO is to retain the efficiency advantages of latent reasoning while endowing it with CoT-level reasoning robustness through test-time optimization.
 
 ## Method
 
 ### Overall Architecture
 
-LTPO is a **parameter-free update framework** that operates entirely at test time. Given a frozen LLM and a new problem instance, LTPO executes the following pipeline:
+LTPO aims to solve the problem where latent reasoning is "fixed after training and collapses upon difficult problems" without touching the model weights—all actions occur at test time for a single problem. Given a frozen LLM and a new problem, it first appends $K$ placeholder "latent thought" tokens (e.g., `[THINK]`) to the original prompt. The vector sequence $H$ obtained by passing them through the embedding layer is treated as the only adjustable free variable. Then, it enters a test-time Reinforcement Learning (RL) loop: at each step, a Gaussian random perturbation is added to $H$ to obtain a candidate $A$. The frozen LLM performs a forward pass to read the output distribution and calculate a confidence reward. This reward is then used to estimate the gradient along the perturbation direction and update $H$. This process iterates for $T$ steps, and the set of vectors with the highest reward is recorded. Finally, the optimized $H^*$ is concatenated back to the prompt for a single forward decoding to generate the answer. Throughout this chain, the LLM parameters remain frozen; only these $K$ latent vectors are adjusted, effectively "searching" for a better reasoning path for each problem.
 
-1. Initialize latent thought vectors (intermediate hidden states).
-2. Iteratively optimize these vectors via online policy gradient methods.
-3. Generate the final answer using the optimized vectors.
-
-The entire process does not modify any LLM weight parameters; only the intermediate latent representations are optimized.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Problem Prompt"] --> H0["Append K placeholder thought tokens<br/>Pass through embedding layer to get initial latent vectors H(0)"]
+    H0 --> P
+    subgraph LOOP["Test-time RL Loop (Iterate T steps)"]
+        direction TB
+        P["Gaussian Perturbation Policy<br/>A = H + ε"] --> FWD["Frozen LLM Forward Pass<br/>Read output distribution (No text decoding)"]
+        FWD --> R["Confidence Reward R(A)<br/>Calculate certainty using top-k token probabilities"]
+        R --> UPD["Policy Gradient Update H<br/>Ascend along R·ε/σ² direction"]
+        UPD --> P
+    end
+    LOOP -->|Keep set with highest reward| HSTAR["Optimized Latent Vectors H*"]
+    HSTAR --> DEC["Concatenate to prompt for forward decoding<br/>Autoregressive answer generation"]
+```
 
 ### Key Designs
 
-#### 1. **Latent Thought Vectors as Optimization Variables**
+**1. Latent Thought Vectors: Turning reasoning representations into test-time optimizable free parameters**
 
-LTPO treats intermediate hidden states during LLM inference as "latent thought" vectors. Rather than keeping these vectors fixed as in conventional approaches, LTPO treats them as **dynamically optimizable variables**—for each new problem instance, these vectors are re-optimized from scratch.
+The root of latent reasoning's fragility is that intermediate representations are fixed after training. When encountering OOD difficulties, these fixed vectors cannot encode the information required for correct reasoning. Instead of modifying intermediate layers, LTPO appends $K$ placeholder tokens (e.g., `[THINK]`) to the original prompt. The vector sequence $H \in \mathbb{R}^{K\times d}$ obtained from the embedding layer is treated as the sole adjustable free variable, concatenated with the prompt embedding $E(x)$ as $E(x)\,\|\,H$, and fed into the frozen LLM. This way, each problem is optimized with its own set of $H$—transforming a fixed representation per problem into "on-the-fly searching for the most suitable latent thoughts for this problem." The key is that it neither updates model weights nor extracts hidden states from intermediate layers; it only tunes these few input-side vectors.
 
-Concretely, LTPO inserts additional "thought" tokens at certain intermediate layers of the LLM. The hidden states corresponding to these tokens are not determined by the model's forward pass but instead serve as free variables subject to optimization.
+**2. Confidence Reward: Using the model's own certainty as a signal without labels or text decoding**
 
-**Design Motivation**: The intuition is that good intermediate representations should encode information conducive to correct reasoning. By explicitly optimizing these representations, the model can be guided along better reasoning trajectories.
+Since there are no ground-truth answers at test time and external verifiers are expensive, LTPO builds the reward directly on the frozen LLM's own output distribution. The intuition is: a good set of latent thoughts should make the model "more certain" about subsequent predictions. Specifically, candidate vectors are fed into the model to obtain the token distribution at each position. For a single latent vector, a confidence $C(a_i)$ is calculated based on the probabilities of the top-$k$ most likely tokens. The total reward is the average confidence of the $K$ vectors: $R(A)=\frac{1}{K}\sum_{i=1}^{K} C(a_i)$. Crucially, this reward can be calculated with a single fixed-length forward pass of "prompt + latent tokens," completely skipping text generation—no external verifiers, no actual decoding of reasoning. The signal is nearly free (ablation shows "low entropy = high certainty" is most effective).
 
-#### 2. **Intrinsic Confidence Reward Signal**
+**3. Gaussian Perturbation Policy Gradient: Turning representation search into zeroth-order search in latent space**
 
-Rather than relying on external supervision or ground-truth labels, LTPO computes an **intrinsic confidence reward** from the frozen LLM's **own output distribution**.
+The reward $R(\cdot)$ is non-differentiable with respect to the input vectors, preventing direct backpropagation. Thus, LTPO treats $H$ as policy parameters and uses REINFORCE-style policy gradients for updates. Each step samples a candidate $A = H + \epsilon,\ \epsilon\sim\mathcal{N}(0,\sigma^2 I)$ from a Gaussian distribution centered at the current $H$ ($\sigma$ decays with iterations, favoring exploration followed by convergence). Then, a single-sample Monte Carlo estimate of the gradient is used for gradient ascent:
 
-**Core Idea**: A good latent thought vector should make the model more "confident" in its answer. Confidence is measured by the concentration of the model's output token distribution—if the model assigns highly concentrated probability to a particular answer (low entropy), the model is considered "confident" and receives a high reward; otherwise, the reward is low.
+$$H^{(t+1)} = H^{(t)} + \eta\,\frac{R(H^{(t)}+\epsilon^{(t)})\,\epsilon^{(t)}}{\sigma^2}$$
 
-This design eliminates the need for external verifiers or expensive text generation, enabling gradient signals to be obtained after each forward pass.
-
-#### 3. **Online Policy Gradient Optimization**
-
-LTPO employs an online policy gradient method (akin to REINFORCE) to optimize the latent thought vectors. The selection of latent thoughts is modeled as a policy, the confidence reward serves as the return, and gradients are computed via the policy gradient theorem to update the latent vectors.
-
-**Key Advantages**:
-- **No model parameter modification**: Only intermediate latent vectors are optimized, preserving model integrity.
-- **Per-instance optimization**: Each problem receives a customized reasoning trajectory.
-- **Computationally efficient**: No need to generate full textual reasoning chains.
+Intuitively, this means "move in whichever perturbation direction brings a higher reward." Compared to PPO/GRPO, which optimize billions of parameters, this only searches $K$ vectors: the model remains static, optimization is per-problem, and no text is generated, making it more efficient than CoT. During the $T$ iterations, it records the set of vectors with the highest reward and finally uses $H^*$ to decode the answer.
 
 ### Loss & Training
 
-The optimization objective of LTPO can be summarized as maximizing the expected confidence reward:
-
-$$\max_{\mathbf{z}} \mathbb{E}[R(\mathbf{z})]$$
-
-where $\mathbf{z}$ denotes the latent thought vectors and $R(\mathbf{z})$ is the confidence reward computed from the model's output distribution. Optimization is carried out through multi-step policy gradient updates, each requiring only one forward pass and one backward pass.
+Ours has no training phase. The "objective function" is the expected confidence reward to be maximized at test time: $J(H)=\mathbb{E}_{A\sim\pi(\cdot|H)}[R(A)]$. Optimization involves $T$ steps of gradient ascent on the $K$ latent vectors, with one forward pass per step and zero backward passes (gradients are estimated by perturbations), without modifying any weights. Key hyperparameters are perturbation variance $\sigma$ (decaying), learning rate $\eta$, number of latent tokens $K$, and optimization steps $T$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Performance across five reasoning benchmarks:
+Performance on five reasoning benchmarks:
 
 | Benchmark | Metric | LTPO | Standard Latent Reasoning | CoT Baseline |
-|-----------|--------|------|--------------------------|--------------|
-| GSM8K | Accuracy | Matches/Exceeds | Baseline | Strong |
-| MATH | Accuracy | Matches/Exceeds | Baseline | Strong |
-| AIME 2024 | Accuracy | **Large improvement** | ~0% (collapse) | Limited |
-| AIME (overall) | Accuracy | **Significant improvement** | ~0% (collapse) | Limited |
-| Other Reasoning | Accuracy | Matches/Exceeds | Baseline | Strong |
+|---------|------|------|-------------|---------|
+| GSM8K | Accuracy | Match/Exceed | Baseline | Strong Baseline |
+| MATH | Accuracy | Match/Exceed | Baseline | Strong Baseline |
+| AIME 2024 | Accuracy | **Significant Gain** | ~0% (Collapse) | Limited |
+| AIME (Overall) | Accuracy | **Significant Gain** | ~0% (Collapse) | Limited |
+| Other Reasoning | Accuracy | Match/Exceed | Baseline | Strong Baseline |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| No optimization (baseline) | Baseline | Standard latent reasoning |
-| Confidence reward only | Significant improvement | Core component is effective |
-| Varying optimization steps | Increases then plateaus | Optimal step count exists |
-| Different confidence measures | Entropy is optimal | Low entropy = high confidence most effective |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| No Optimization (Baseline) | Baseline | Standard Latent Reasoning |
+| Confidence Reward Only | Significant Gain | Core component effectiveness |
+| Different Optimization Steps | Rise then Plateau | Existence of optimal steps |
+| Different Confidence Measures | Entropy Optimal | Low entropy = High confidence works best |
 
 ### Key Findings
 
-1. **On-par or superior performance on standard tasks**: On GSM8K, MATH, and similar benchmarks, LTPO matches or slightly outperforms strong baselines, demonstrating that test-time optimization does not hurt normal performance.
-
-2. **Outstanding performance on hard tasks**: Most notably on the AIME benchmark—high-difficulty math competition problems cause existing latent reasoning baselines to completely collapse (near 0% accuracy), while LTPO achieves significant performance gains.
-
-3. **Exceptional robustness**: LTPO exhibits a distinctive ability to remain effective where other methods fail, suggesting that test-time optimization provides an additional form of "reasoning elasticity."
-
-4. **No external supervision required**: Optimization is guided solely by the model's own confidence signal, making LTPO applicable to new tasks without labels.
+1.  **Par/Superior Performance on Standard Tasks**: On conventional reasoning tasks like GSM8K and MATH, LTPO is on par with or slightly better than strong baselines, indicating test-time optimization does not hurt normal performance.
+2.  **Outstanding Performance on Difficult Tasks**: Most impressive is the performance on the AIME benchmark—these high-difficulty math competition problems cause existing latent reasoning baselines to collapse nearly completely (~0% accuracy), while LTPO achieves significant improvements.
+3.  **Strong Robustness**: LTPO demonstrates a unique ability to work effectively where other methods fail. This suggests test-time optimization provides additional "reasoning resilience."
+4.  **No External Supervision Required**: Guiding optimization solely through the model's own confidence signals allows LTPO to be applied to new tasks without labels.
 
 ## Highlights & Insights
 
-1. **Paradigm innovation**: LTPO introduces a fundamentally new reasoning enhancement paradigm—neither conventional fine-tuning (modifying model parameters) nor sampling (generating multiple outputs and selecting the best), but test-time optimization in latent space. This defines a new category between training-time learning and inference-time sampling.
-
-2. **Elegant self-supervision**: The use of the model's own confidence as a reward signal is highly elegant. It avoids dependence on external reward models or verifiers while remaining intuitively grounded—good reasoning should yield more decisive answers.
-
-3. **Balance between computational efficiency and performance**: Compared to CoT, which requires generating substantial intermediate text, LTPO optimizes only vector representations at lower computational cost. Compared to standard latent reasoning, LTPO adds a modest overhead through a small number of optimization steps while significantly improving robustness.
-
-4. **Bridging RL and LLM reasoning**: The work naturally introduces the policy optimization paradigm from reinforcement learning into LLM inference, offering a new perspective for cross-disciplinary research.
+1.  **Paradigm Innovation**: Proposes a new reasoning enhancement paradigm—neither traditional fine-tuning (modifying model parameters) nor sampling (multiple generation for the best), but rather optimization in the latent space at test time. This is a new category between training-time learning and inference-time sampling.
+2.  **Elegant Self-Supervision**: The design utilizing the model's own confidence as a reward signal is elegant, avoiding dependence on external reward models or verifiers, while aligning with the intuition that good reasoning should lead to more certain answers.
+3.  **Balance of Computational Efficiency and Performance**: Compared to CoT requiring massive intermediate text generation, LTPO only optimizes vector representations, making it more efficient. Compared to standard latent reasoning, LTPO adds a small computational overhead via optimization steps but significantly improves robustness.
+4.  **Connecting RL and LLM Reasoning**: Naturally introduces policy optimization ideas from RL into the LLM reasoning process, providing a new perspective for cross-disciplinary research.
 
 ## Limitations & Future Work
 
-1. **Test-time computational overhead**: Although more efficient than CoT, each problem requires multiple optimization steps, resulting in significantly higher latency than a standard single forward pass. This may be unsuitable for latency-sensitive applications.
-
-2. **Reliability of the confidence reward**: High model confidence does not necessarily imply correct answers—models may exhibit high confidence in incorrect outputs (e.g., hallucinations). When a model's calibration is poor, the confidence reward may misdirect the optimization.
-
-3. **Selection of optimization steps**: The optimal number of optimization steps may vary across tasks and problem instances; this must currently be set manually. Adaptive step-count control remains an open problem.
-
-4. **Validation limited to reasoning (math) tasks**: The effectiveness of LTPO has not yet been verified on other task types, such as commonsense reasoning, code generation, or creative writing.
-
-5. **Integration with explicit CoT**: Whether LTPO can be combined with CoT to simultaneously optimize in latent space while generating interpretable intermediate steps is an open research direction.
+1.  **Test-time Computational Overhead**: Although more efficient than CoT, each problem requires multi-step optimization, resulting in significantly higher latency than a standard single forward pass. It may not be suitable for latency-sensitive applications.
+2.  **Reliability of Confidence Rewards**: High confidence does not necessarily equal a correct answer—models can be highly confident in wrong answers (hallucinations). When model calibration is poor, confidence rewards might mislead the optimization.
+3.  **Selection of Optimization Steps**: The optimal number of steps may vary by task and problem; it currently requires manual setting. Adaptive step control remains an open problem.
+4.  **Validation Limited to Reasoning (Math) Tasks**: Effectiveness hasn't been verified on other task types like commonsense reasoning, code generation, or creative writing.
+5.  **Integration with Explicit CoT**: Can LTPO be combined with CoT to generate interpretable intermediate steps while optimizing in the latent space?
 
 ## Related Work & Insights
 
-- **Latent reasoning methods** (e.g., Coconut): LTPO extends this line of work by adding a test-time optimization dimension.
-- **Test-Time Compute Scaling**: LTPO complements approaches such as Best-of-N and Self-Consistency, achieving test-time performance gains through a distinct mechanism.
-- **Policy optimization for LLMs**: Methods such as PPO/GRPO optimize model parameters, whereas LTPO optimizes intermediate representations, offering a more lightweight alternative.
-- **Insight**: This work suggests that the reasoning capability of LLMs may depend not only on model parameters but also on the quality of intermediate representations during inference—and the latter can be dynamically optimized at test time.
+-   **Latent Reasoning Methods** (e.g., Coconut): LTPO adds a test-time optimization dimension on top of these.
+-   **Test-Time Compute Scaling**: Complementary to methods like Best-of-N and Self-Consistency, LTPO achieves performance enhancement through a different mechanism.
+-   **Policy Optimization in LLMs**: While methods like PPO/GRPO optimize model parameters, LTPO optimizes intermediate representations, serving as a more lightweight alternative.
+-   **Insight**: This work suggests that LLM reasoning ability may depend not only on model parameters but also on the quality of intermediate representations during the reasoning process, which can be dynamically optimized at test time.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (Paradigm innovation; introduces RL policy optimization into test-time reasoning)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Five benchmarks; robustness advantages on AIME clearly demonstrated)
-- Writing Quality: ⭐⭐⭐⭐ (Framework clearly described)
-- Value: ⭐⭐⭐⭐⭐ (Opens a new direction for test-time latent reasoning optimization)
+-   Novelty: ⭐⭐⭐⭐⭐ (Paradigm innovation, introducing RL policy optimization to test-time reasoning)
+-   Experimental Thoroughness: ⭐⭐⭐⭐ (Five benchmarks, highlighting robustness advantages on AIME)
+-   Writing Quality: ⭐⭐⭐⭐ (Clear framework description)
+-   Value: ⭐⭐⭐⭐⭐ (Opens a new direction for test-time latent reasoning optimization)
 
 <!-- RELATED:START -->
 
@@ -163,11 +147,11 @@ Performance across five reasoning benchmarks:
 
 ## Related Papers
 
-- [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
-- [\[AAAI 2026\] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](../../AAAI2026/reinforcement_learning/aligning_machiavellian_agents_behavior_steering_via_test-tim.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
+- [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
 - [\[ICLR 2026\] AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking](abstral_augmenting_llms_reasoning_by_reinforcing_abstract_thinking.md)
+- [\[AAAI 2026\] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping](../../AAAI2026/reinforcement_learning/aligning_machiavellian_agents_behavior_steering_via_test-tim.md)
 - [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
-- [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](../../ACL2026/reinforcement_learning/spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
 
 </div>
 

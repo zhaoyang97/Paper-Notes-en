@@ -2,13 +2,16 @@
 title: >-
   [Paper Note] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV
 description: >-
-  [Reinforcement Learning] This paper proposes Virne — a comprehensive benchmark framework for Network Function Virtualization Resource Allocation (NFV-RA) — integrating 30+ algorithms and a gym-style environment to suppor…
+  [ICLR 2026][Reinforcement Learning][NFV-RA] The authors propose Virne, a comprehensive benchmark framework for Network Function Virtualization Resource Allocation (NFV-RA), which integrates 30+ algorithms and gym-style environments to support systematic evaluation across multiple scenarios including cloud, edge, and 5G.
 tags:
-  - "Reinforcement Learning"
+  - ICLR 2026
+  - Reinforcement Learning
+  - NFV-RA
+  - GNN
+  - PPO
 date: 2026-05-08
-content_hash: 7255b24c7ab54a3d
+content_hash: b2a9286b7cf63799
 ---
-
 # Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV
 
 ## Paper Information
@@ -19,73 +22,71 @@ content_hash: 7255b24c7ab54a3d
 - **Keywords**: NFV-RA, Virtual Network Embedding, Benchmark Framework, GNN, PPO, Scalability
 
 ## TL;DR
-This paper proposes Virne — a comprehensive benchmark framework for Network Function Virtualization Resource Allocation (NFV-RA) — integrating 30+ algorithms and a gym-style environment to support systematic evaluation across cloud, edge, 5G, and other scenarios.
+The authors propose Virne, a comprehensive benchmark framework for Network Function Virtualization Resource Allocation (NFV-RA), which integrates 30+ algorithms and gym-style environments to support systematic evaluation across multiple scenarios including cloud, edge, and 5G.
 
 ## Background & Motivation
 
 ### Core Problem
-Resource allocation in Network Function Virtualization (NFV-RA) is an NP-hard combinatorial optimization problem that maps virtual network requests onto physical network infrastructure. Although deep RL has shown promise in this domain, a systematic benchmark for comprehensive simulation and rigorous evaluation is lacking.
+The Network Function Virtualization Resource Allocation (NFV-RA) problem is an NP-hard combinatorial optimization problem that involves mapping virtual network requests onto physical network infrastructure. Although deep RL has shown potential in this field, there is a lack of systematic benchmarks for comprehensive simulation and rigorous evaluation.
 
 ### Limitations of Prior Work
-1. Existing benchmarks cover only specific scenarios (e.g., cloud) and lack support for edge computing and 5G slicing.
-2. Only a small number of non-RL methods (3–5) are implemented, with no unified RL pipeline.
-3. Evaluation is limited to online effectiveness, neglecting practical dimensions such as feasibility, generalizability, and scalability.
-4. Fragmented problem definitions make fair comparison difficult.
+1. Existing benchmarks only cover specific scenarios (e.g., cloud) and lack support for edge computing and 5G slicing.
+2. Only a few non-RL methods (3-5 types) are implemented, without a unified RL pipeline.
+3. Evaluation is often limited to online effectiveness, missing practical dimensions such as feasibility, generalization, and scalability.
+4. Problem definitions are fragmented, making fair comparison difficult.
 
 ## Method
 
 ### Overall Architecture
 
-Virne consists of five core modules:
-1. **Simulation Configuration**: Customizable network topologies, resource types, and service demands.
-2. **Network System**: An event-driven simulator that processes online virtual network requests.
-3. **Algorithm Implementation**: A modular pipeline integrating 30+ methods.
-4. **Auxiliary Tools**: System controllers, solution monitors, and visualization utilities.
-5. **Evaluation Protocol**: A multi-dimensional assessment framework.
+Virne does not invent new algorithms; rather, it addresses the issue where "30+ NFV-RA methods are implemented disjointly, making fair comparison impossible." The core methodology is as follows: first, a **unified formalization** is used to consolidate fragmented problem definitions into a common "problem language." Then, the execution processes of all methods are integrated into a reproducible workflow. **Simulation configurations** generate network topologies and resource requirements according to cloud, edge, or 5G scenarios. The **network system** serves as an event-driven simulator that receives virtual network requests online. The **algorithm implementation** deconstructs each RL method into three pluggable components: "MDP Modeling + Policy Architecture + Training Method" to solve each request. Finally, **Evaluation Standards** score the methods across four dimensions: effectiveness, feasibility, generalization, and scalability. **Auxiliary tools** (system control, solution monitoring, visualization) support the entire simulation process. The three core contributions—unified formalization, MDP modeling, and the three-stage RL pipeline—provide the foundation for single-variable comparisons, such as "changing a GNN encoder" or "replacing PPO with A3C."
 
-### NFV-RA Problem Formulation
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Unified NFV-RA Formalization<br/>Physical Network + VN Requests<br/>Embedding Constraints + R2C Objective"] --> B["Simulation Configuration<br/>Cloud/Edge/5G Topologies & Requirements"]
+    B --> C["Network System<br/>Event-driven Simulator · Online Request Reception"]
+    C --> D
+    subgraph D["Three-stage Unified RL Pipeline (Algorithm Implementation)"]
+        direction TB
+        D1["MDP Modeling for NFV-RA<br/>Node Placement + Link Routing"] --> D2["Policy Architecture<br/>MLP/CNN/GCN/GAT/Heterogeneous Graphs"]
+        D2 --> D3["Training Methods<br/>PG / A3C / PPO / MCTS"]
+    end
+    D --> E["Evaluation Standards<br/>Effectiveness · Feasibility · Generalization · Scalability"]
+    F["Auxiliary Tools<br/>System Control / Monitoring / Visualization"] -.-> C
+```
 
-**System Model**: Physical network $\mathcal{G}_p = (\mathcal{N}_p, \mathcal{L}_p)$; virtual network $\mathcal{G}_v = (\mathcal{N}_v, \mathcal{L}_v, \omega, \varpi)$.
+### Key Designs
 
-**Embedding Constraints**:
-- Node mapping $f_\mathcal{N}$: one-to-one mapping satisfying resource constraints $C(n_v) \leq C(n_p)$.
-- Link mapping $f_\mathcal{L}$: physical paths connecting mapped node endpoints with bandwidth constraint $B(l_v) \leq B(l_p)$.
+**1. Unified NFV-RA Formalization: Ending Fragmented Problem Definitions**
 
-**Optimization Objective** (Revenue-to-Cost Ratio):
-$$\max \text{R2C}(S) = (\varkappa \cdot \text{REV}(S)) / \text{COST}(S)$$
+Previously, each work defined its own states, constraints, and objectives, making horizontal comparison impossible. This is the first obstacle Virne eliminates. Virne defines the physical network as $\mathcal{G}_p = (\mathcal{N}_p, \mathcal{L}_p)$ and virtual network requests as $\mathcal{G}_v = (\mathcal{N}_v, \mathcal{L}_v, \omega, \varpi)$, and fixes two types of embedding constraints: node mapping $f_\mathcal{N}$ requires virtual nodes to be mapped one-to-one to physical nodes satisfying resource capacity $C(n_v) \leq C(n_p)$, and link mapping $f_\mathcal{L}$ routes virtual links to physical paths where bandwidth satisfies $B(l_v) \leq B(l_p)$. The optimization objective is unified using the revenue-to-cost ratio $\max \text{R2C}(S) = \varkappa \cdot \text{REV}(S) / \text{COST}(S)$, which reflects the benefits of accepting requests while penalizing the physical resource consumption for routing. With this common "problem language," simulation configurations and the network system can generate reproducible instances, allowing 30+ algorithms to run on the same benchmark.
 
-### MDP Formulation
+**2. MDP Modeling for NFV-RA: Converting Combinatorial Optimization into Sequential Decision Making**
 
-NFV-RA is modeled as an MDP $(\mathcal{S}, \mathcal{A}, P, R, \lambda)$:
-- State space $\mathcal{S}$: embedding states of the VN and PN.
-- Action space $\mathcal{A}$: selecting a physical node to host a virtual node.
-- Reward $R$: a designed feedback signal to guide optimization.
-- Per-step decision: select a physical node → attempt placement → route virtual links → update resources.
+Solving the entire embedding at once is NP-hard. Virne instead models it as an MDP $(\mathcal{S}, \mathcal{A}, P, R, \lambda)$, allowing the agent to place nodes one by one on the instances provided by the network system. The state $\mathcal{S}$ encodes the embedding progress of the current virtual and physical networks, the action $\mathcal{A}$ selects a physical node for the pending virtual node, and the reward $R$ provides feedback to guide optimization. Each step follows a cycle: "select physical node $\rightarrow$ attempt placement $\rightarrow$ route virtual links using a shortest path algorithm $\rightarrow$ update remaining resources upon success," until the entire request is embedded or a constraint is violated. This preserves the temporal structure of online request processing while allowing deep RL's exploration capabilities to function within a vast combinatorial solution space. The framework is also compatible with Constraint MDPs and Multi-task MDPs to handle constraint processing and generalization.
 
-### Unified RL Pipeline
+**3. Three-stage Unified RL Pipeline: Making Any Method Modular and Swappable**
 
-RL-based NFV-RA algorithms are unified into three components:
-1. **MDP Modeling**: Reward design and feature engineering.
-2. **Policy Architecture**: MLP, CNN, GCN, GAT, BiGCN, BiGAT, HeteroGAT, etc.
-3. **Training Method**: PG, A3C, PPO, MCTS.
+To ensure 30+ algorithms are not disparate black boxes, Virne deconstructs each RL method into three orthogonal components: MDP Modeling (including reward design and feature engineering), Policy Architecture (MLP, CNN, GCN, GAT, Dual-GAT, Heterogeneous GAT, etc., covering the spectrum from non-graph to heterogeneous graphs), and Training Methods (PG, A3C, PPO, MCTS). These are assembled from customizable modules such as instance-level environments, feature constructors, neural policies, and experience replay. Any component can be independently replaced, enabling single-variable ablations like "changing a GNN encoder" or "replacing PPO with A3C." This pluggable design supports the systematic quantitative analysis of implementation details such as reward functions, feature engineering, and action masking.
 
-## Experiments
+## Key Experimental Results
 
-### Implementation Technique Analysis
+### Implementation Technique Exploration
 
-Key implementation choices are systematically evaluated on the WX100 topology:
+The authors systematically evaluated key implementation choices on the WX100 topology:
 
-| Technique | Best Configuration | Finding |
-|---|---|---|
-| Reward Function | fixed=0.1 | Moderate fixed intermediate rewards outperform adaptive rewards |
-| Feature Engineering | Status + Topological | Topological features provide valuable augmentation |
-| Action Masking | Enabled | RAC improves by up to 5.3% |
+| Technique | Best Configuration | Key Finding |
+|-----------|--------------------|-------------|
+| Reward Function | fixed=0.1 | Moderately fixed intermediate rewards outperform adaptive rewards |
+| Feature Engineering | Status + Topological | Topological features provide valuable enhancements |
+| Action Masking | Enabled | Improves RAC by up to 5.3% |
 | RL Algorithm | PPO | Fastest convergence and highest performance |
 
 ### Main Results
 
 | Method | WX100 RAC↑ | GEANT RAC↑ | BRAIN RAC↑ |
-|---|---|---|---|
+|--------|-----------|------------|------------|
 | PPO-MLP | 71.90 | 55.80 | 51.30 |
 | PPO-GCN | 66.80 | - | - |
 | PPO-DualGAT | **78.10** | - | - |
@@ -93,43 +94,43 @@ Key implementation choices are systematically evaluated on the WX100 topology:
 
 ### Evaluation Dimensions
 
-1. **Effectiveness**: Online acceptance rate and long-term revenue-to-cost ratio.
-2. **Feasibility**: Constraint satisfaction rate of generated solutions.
-3. **Generalizability**: Reliability under varying network conditions.
-4. **Scalability**: Performance variation with increasing problem size.
+1. **Effectiveness**: Online acceptance rate, long-term revenue-to-cost ratio.
+2. **Feasibility**: Constraint satisfaction rate of the solutions.
+3. **Generalization**: Reliability under different network conditions.
+4. **Scalability**: Performance changes as the problem scale grows.
 
 ### Key Findings
 
-1. PPO-DualGAT combined with optimal implementation techniques achieves the best performance in most settings.
-2. Moderate fixed reward (0.1) > adaptive reward > excessively large or small fixed rewards.
-3. Action masking is critical for handling the complex constraints in NFV-RA.
-4. The performance advantage of GNN-based architectures correlates with scenario complexity.
+1. PPO-DualGAT combined with optimal implementation techniques performs best in most settings.
+2. Moderate fixed rewards (0.1) > adaptive rewards > excessively large/small fixed rewards.
+3. Action masking is crucial for handling the complex constraints of NFV-RA.
+4. The performance of Graph Neural Network architectures depends on the scenario complexity.
 
 ## Highlights & Insights
 
-1. **Most comprehensive NFV-RA benchmark**: 30+ algorithms, gym-style environment, and multi-scenario support.
-2. **Systematic analysis of implementation techniques**: Quantitative impact of key choices including reward design, feature engineering, and action masking.
-3. **Multi-dimensional evaluation protocol**: Extends beyond online effectiveness to cover feasibility, generalizability, and scalability.
-4. **Modular design**: Facilitates community extension with new methods.
+1. **Most Comprehensive NFV-RA Benchmark**: 30+ algorithms, gym-style environment, and multi-scenario support.
+2. **Systematic Implementation Analysis**: Quantitative impact of key choices like rewards, features, and masks.
+3. **Multi-dimensional Evaluation Protocol**: Goes beyond online effectiveness to include feasibility, generalization, and scalability.
+4. **Modular Design**: Facilitates community expansion with new methods.
 
 ## Limitations & Future Work
 
-1. A gap remains between simulation and real network environments.
-2. Credit assignment challenges for RL methods at large scale are not fully resolved.
-3. Support for emerging scenarios (e.g., 6G network slicing) is still under development.
-4. Some RL methods may be sensitive to hyperparameter choices.
+1. A gap still exists between simulation and real-world network environments.
+2. The credit assignment problem for RL methods in large-scale problems is not fully resolved.
+3. Support for emerging scenarios (e.g., 6G network slicing) is under development.
+4. Some RL methods may be sensitive to hyperparameters.
 
 ## Related Work & Insights
 
-- **Traditional Benchmarks**: VNE-Sim (2014), ALEVIN (2016) — cloud-only scenarios with a limited set of heuristics.
-- **RL-based NFV-RA**: Various approaches employing neural network policies based on CNN, GCN, GAT, etc.
-- **RL for Combinatorial Optimization**: Methodological connections to RL approaches for problems such as TSP and VRP.
+- **Traditional Benchmarks**: VNE-Sim (2014), ALEVIN (2016) — Limited to cloud scenarios with few heuristics.
+- **RL-based NFV-RA**: Various variants using neural policy architectures like CNN, GCN, and GAT.
+- **Combinatorial Optimization RL**: Methodological connections with RL approaches for TSP, VRP, etc.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ — The primary contribution lies in systems engineering rather than algorithmic innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Highly comprehensive experiments and ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear and well-organized structure.
-- **Value**: ⭐⭐⭐⭐⭐ — An extremely valuable benchmark tool for the research community.
+- **Novelty**: ⭐⭐⭐ — The core contribution lies in systems engineering rather than algorithmic innovation.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Very comprehensive experiments and ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clearly structured organization.
+- **Value**: ⭐⭐⭐⭐⭐ — A highly valuable benchmark tool for the community.
 
 <!-- RELATED:START -->
 

@@ -2,136 +2,147 @@
 title: >-
   [Paper Note] TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis
 description: >-
-  [ICLR 2026][LLM Reasoning][Tumor Analysis] This paper proposes TumorChain, an interleaved multimodal chain-of-thought reasoning framework for tumor analysis across five major digestive organs. It integrates a knowledge g…
+  [ICLR 2026][LLM Reasoning][3D CT] The authors propose TumorChain, an interleaved multimodal Chain-of-Thought (CoT) reasoning framework for tumor analysis across five major digestive organs. By integrating a knowledge-graph-driven 1.5M CoT-VQA data engine, organ-guided Iterative Interleaved Reasoning (IIR), and collaborative optimization of segmentation
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Tumor Analysis"
-  - "Multimodal CoT Reasoning"
-  - "Interleaved Reasoning"
-  - "3D CT"
-  - "TNM Staging"
+  - ICLR 2026
+  - LLM Reasoning
+  - 3D CT
 date: 2026-05-08
-content_hash: b045d83b241e415c
+content_hash: 7607536d93ab5448
 ---
-
 # TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.05867](https://arxiv.org/abs/2603.05867)  
 **Code**: [GitHub](https://github.com/ZJU4HealthCare/TumorChain)  
-**Area**: LLM Reasoning
+**Area**: LLM Reasoning  
 **Keywords**: Tumor Analysis, Multimodal CoT Reasoning, Interleaved Reasoning, 3D CT, TNM Staging
 
 ## TL;DR
 
-This paper proposes TumorChain, an interleaved multimodal chain-of-thought reasoning framework for tumor analysis across five major digestive organs. It integrates a knowledge graph-driven 1.5M CoT-VQA data engine, organ-guided iterative interleaved reasoning (IIR), and joint optimization of segmentation, classification, and LLM models to realize a complete reasoning chain from imaging findings → clinical impressions → pathological predictions, achieving an average accuracy of 84.41% and substantially outperforming GPT-5-Mini (51.59%).
+The authors propose TumorChain, an interleaved multimodal Chain-of-Thought (CoT) reasoning framework for tumor analysis across five major digestive organs. By integrating a knowledge-graph-driven 1.5M CoT-VQA data engine, organ-guided Iterative Interleaved Reasoning (IIR), and collaborative optimization of segmentation, classification, and LLM modules, it achieves a complete reasoning chain from findings to impressions to pathological predictions, with a mean accuracy of 84.41%, significantly outperforming GPT-5-Mini (51.59%).
 
 ## Background & Motivation
 
-- **Background**: Medical VLMs have made progress in general report generation, but remain critically insufficient for the high-stakes domain of clinical oncology. Tumor analysis requires a complete reasoning chain connecting imaging findings, clinical impressions, and pathological endpoints (TNM staging).
-- **Three Key Limitations**: (1) Existing Med-VLMs lack tumor-specific capabilities and cannot reliably map radiological findings to pathology-level endpoints; (2) Large-scale, multi-granularity tumor-specific datasets are absent — existing benchmarks such as CT-RATE focus on multiple-choice or short-text QA and do not support CoT reasoning; (3) Most Med-VLMs are restricted to 2D images and single-step reasoning, whereas the structural complexity of 3D CT demands multi-step clinical reasoning.
-- **Key Challenge**: Clinical tumor diagnosis is an inherently multi-step reasoning process (detecting anomalies → synthesizing judgments → pathological staging), yet existing models cannot produce traceable reasoning chains, leaving the internal reasoning process opaque.
-- **Key Insight**: This work constructs a complete findings → impressions → pathology reasoning pipeline and introduces a dedicated CoT evaluation protocol (TumorChain-Eval) to assess the quality of each step in the reasoning chain.
+- **Background**: While medical VLMs have progressed in general report generation, they remain insufficient for high-stakes clinical oncology. Tumor analysis requires a complete reasoning chain connecting radiological findings, clinical impressions, and pathological endpoints (TNM staging).
+- **Limitations of Prior Work**: (1) Existing Med-VLMs lack tumor-specific capabilities and cannot reliably map radiological findings to pathological-grade endpoints. (2) There is a lack of large-scale, multi-granular tumor-specific datasets; existing datasets like CT-RATE provide short-text QA without supporting CoT reasoning. (3) Most Med-VLMs are limited to 2D images and single-step reasoning, whereas the structural complexity of 3D CT requires multi-step clinical reasoning.
+- **Key Challenge**: Clinical tumor diagnosis is a multi-step reasoning process (detecting abnormality $\rightarrow$ synthesized judgment $\rightarrow$ pathological staging), but current models fail to generate traceable reasoning chains, leaving internal processes opaque.
+- **Key Insight**: Construction of a complete findings $\rightarrow$ impressions $\rightarrow$ pathology reasoning pipeline, measured by a specifically designed CoT evaluation protocol (TumorChain-Eval) to assess the quality of each step in the reasoning chain.
 
 ## Method
 
 ### Overall Architecture
 
-TumorChain comprises five modules: a 3D visual encoder $\mathcal{E}_v$, an organ segmentation expert $\mathcal{S}eg$, an auxiliary classification model $\mathcal{C}ls$, an MLP projector $\mathcal{P}$, and an LLM $\mathcal{LLM}$. These modules collectively enable end-to-end tumor analysis through global-local visual alignment and interleaved multimodal reasoning.
+TumorChain transforms the clinical reasoning process "from image findings to pathological staging" into an end-to-end, traceable pipeline covering data, training, inference, and evaluation. For **data**, a multi-agent engine constrained by a diagnostic knowledge graph distills over 40,000 3D CT cases into 1.5 million step-by-step supervised CoT-VQA items (TumorCoT-1.5M). For the **model**, TumorChain consists of a 3D vision encoder $\mathcal{E}_v$, an organ segmentation expert $\mathcal{S}eg$, an abnormality classification model $\mathcal{C}ls$, and an $\mathcal{LLM}$. During **inference**, the model mimics radiologists by "scanning the global CT then focusing on suspicious organs for repeated confirmation," embedding this interleaved workflow into the forward pass. For **evaluation**, the reasoning chains are decomposed into triplets for step-by-step scoring to measure the credibility of each stage.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    RAW["40k+ 3D CT + Reports<br/>(Liver/Pancreas/Stomach/Colon/Esophagus)"]
+    subgraph ENG["KG-Driven CoT Data Engine (Design 1)"]
+        direction TB
+        A["Segment & Locate Organs → Structural Feature Extraction"] --> B["CoT Reasoner Generates Chain"]
+        B --> C["Logical Calibration + Summarization"]
+    end
+    RAW --> ENG
+    ENG --> DATA["TumorCoT-1.5M<br/>Step-wise CoT-VQA Data"]
+    DATA --> HCO["Hybrid Model Collaborative Optimization (Design 3)<br/>Seg + Cls Experts Strengthen Vision Encoder"]
+    CT["Test CT"] --> IIR
+    HCO --> IIR
+    subgraph IIR["Organ-Guided Iterative Interleaved Reasoning (Design 2)"]
+        direction TB
+        G["Global Tokens → LLM Initial Diagnosis"] --> H["Identify Target Organ → Segment ROI"]
+        H --> I["Inject Local Tokens → Re-reasoning"]
+        I -->|"Cycle if New Organ Identified"| G
+    end
+    IIR --> OUT["Traceable CoT + TNM Staging"]
+    OUT --> EVAL["TumorChain-Eval (Design 4)<br/>Triplet-based Step-wise Scoring"]
+```
 
 ### Key Designs
 
-**1. Knowledge Graph-Driven CoT Data Engine (TumorCoT-1.5M)**:
-- Raw data: 41,059 3D CT scans + 10,708 radiology reports + partial pathology reports, covering five major digestive organs: liver, pancreas, stomach, colon, and esophagus.
-- Six collaborative agents: a segmentation expert (TotalSegmentator), a structured feature extractor (Qwen3-235B), a CoT reasoner (GPT-4o-mini), a logic calibrator (Claude3.5-Haiku), and a summarizer (GPT-5-mini).
-- Diagnostic knowledge graph (KG) constraints: Five organ-specific KGs co-constructed with radiologists and pathologists to guide reasoning chains toward clinical standards.
-- Cross-validation mechanism: When the logic calibrator detects issues in a reasoning chain, two repair strategies are triggered (expanding the organ region / providing suspected causes) to guide re-reasoning.
-- Final output: 1,497,818 CoT-VQA pairs covering four task types: localization, lesion attributes, TNM staging, and CoT reports.
+**1. Knowledge Graph-Driven CoT Data Engine (TumorCoT-1.5M): Addressing the lack of specialized tumor CoT data.**
 
-**2. Organ-Guided Iterative Interleaved Reasoning (IIR)**:
-- Step I: The LLM receives global CT tokens and a task prompt to produce an initial diagnosis $\mathcal{R}^1_{cot}$.
-- Step II: The target organ is identified from the initial output → ROI is extracted via segmentation → an enhanced prompt ("more attention should be paid to [organ name]") is generated → local organ tokens are obtained.
-- Step III: Global tokens + task prompt + initial answer + local tokens are jointly fed into the LLM for iterative reasoning; if additional relevant organs are identified, the loop continues.
-- Effect: Simulates the clinical radiologist workflow — global overview first, then focused inspection of suspicious regions with repeated confirmation.
+The difficulty in training reasoning stems from existing datasets lacking supervised chains. TumorChain utilizes 41,059 3D CT scans to generate CoT via six agents: a segmentation expert to locate organs, a structural feature extractor (Qwen3-235B) to obtain lesion attributes, a CoT reasoner (GPT-4o-mini) for chains, a calibrator (Claude3.5-Haiku) for feasibility, and a summarizer (GPT-5-mini). A five-organ diagnostic knowledge graph (KG) ensures the chains follow clinical standards. This produced 1,497,818 CoT-VQA pairs across localization, lesion attributes, TNM staging, and reports.
 
-**3. Hybrid Collaborative Optimization (HCO)**:
-- Segmentation model: Continuously provides accurate ROI localization.
-- Classification model: Trained on local organ features for normal/abnormal binary classification, enhancing the visual encoder's discriminative power for subtle anomalies.
-- LLM: Integrates reasoning results and leverages the segmentation model for iterative decision-making.
-- Joint loss: $L_{total} = L_{LLM} + \lambda L_{cls}$
+**2. Organ-Guided Iterative Interleaved Reasoning (IIR): Mimicking radiologists focusing on suspicious regions.**
 
-**4. TumorChain-Eval Evaluation Protocol**:
-- Subject-predicate-object triplets are extracted from CoT reasoning chains (e.g., "pancreatic tail – finding – malignancy").
-- Three-level scoring: finding chain $S_{FC}$ (individual facts) → impression chain $S_{IC}$ (synthesis of multiple findings) → long reasoning chain $S_{LRC}$ (high-level inference).
-- GPT-4 is used to score against defined rubrics; $CoT_e$ is the weighted sum of all three levels.
+IIR breaks reasoning into a cyclic process: (1) The LLM processes global tokens for initial diagnosis $\mathcal{R}^1_{cot}$. (2) Target organs are identified, and the segmentation expert extracts the ROI while generating focus-enhancing prompts. (3) Global tokens, local tokens, and previous answers are combined for iterative reasoning. This mimics radiologists' actual reading habits and reduces hallucinations.
+
+**3. Hybrid Model Collaborative Optimization (HCO): Enhancing LLM discriminative power via specialists.**
+
+HCO integrates three modules during training: the segmentation model provides ROI localization, the classification model performs binary abnormal/normal detection on local features, and the LLM integrates these results. They are optimized via a joint loss: $L_{total} = L_{LLM} + \lambda L_{cls}$, where $\lambda$ balances language generation and discriminative signals.
+
+**4. TumorChain-Eval Protocol: Step-wise scoring via structured triplets.**
+
+To evaluate intermediate steps, triplets (Subject-Relation-Object) are extracted and scored across three levels: Finding Chain $S_{FC}$ (accuracy of facts), Impression Chain $S_{IC}$ (synthesized judgment), and Long Reasoning Chain $S_{LRC}$ (pathological inference). GPT-4 scores these triplets to quantify the credibility of every step.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Avg. Accuracy | TNM-T | TNM-N | TNM-M | CoTe Score |
-|--------|:------------:|:-----:|:-----:|:-----:|:----------:|
+| Method | Mean Accuracy | TNM-T | TNM-N | TNM-M | CoTe Score |
+|------|:-------:|:-----:|:-----:|:-----:|:----------:|
 | GPT-5-Mini | 51.59% | — | — | — | 61.23 |
 | Gemini2.0 | 41.29% | — | — | — | 54.28 |
-| **TumorChain-7B** | **84.41%** | **88.83%** | **61.63%** | **71.07%** | **58.33** |
+| **Ours (TumorChain-7B)** | **84.41%** | **88.83%** | **61.63%** | **71.07%** | **58.33** |
 
 ### Ablation Study
 
-| Configuration | Avg. Accuracy | Note |
-|---------------|:------------:|------|
+| Configuration | Mean Accuracy | Note |
+|------|:-------:|------|
 | Full TumorChain | **84.41%** | Complete framework |
-| w/o IIR | 80.34% (−4.07%) | IIR is the largest contributor |
-| w/o CoT | 82.45% (−1.96%) | CoT data also contributes significantly |
-| w/o Classification Model | 82.93% (−1.48%) | Auxiliary classification enhances discrimination |
+| w/o IIR | 80.34% (-4.07%) | Iterative reasoning is the primary contributor |
+| w/o CoT | 82.45% (-1.96%) | CoT data provides significant contribution |
+| w/o Classification | 82.93% (-1.48%) | Auxiliary classification enhances discrimination |
 
 ### Key Findings
 
-- Localization accuracy is near-perfect: organ-level 99.97%, position-level 97.57%, substantially surpassing all baselines.
-- IIR contributes the most (−4.07% when removed) — iterative refinement is the core mechanism, mirroring the "scan → focus → re-examine" radiologist workflow.
-- Zero-shot generalization on the public DeepTumorVQA benchmark: 73.30% vs. MedVLM-R1 56.41%, demonstrating strong domain transferability.
-- TNM-N (lymph node metastasis) yields the lowest accuracy (61.63%), consistent with its difficulty in clinical practice.
+- **Location Accuracy**: Reaches near-perfection (99.97% at organ-level, 97.57% at position-level), outperforming all baselines.
+- **IIR Impact**: Iterative refinement is the core mechanism, as removing IIR causes the largest performance drop (4.07%).
+- **Generalization**: On DeepTumorVQA, it achieves 73.30% vs MedVLM-R1's 56.41%, proving domain transfer capability.
+- **Clinical Difficulty**: TNM-N (lymph node metastasis) accuracy is lowest (61.63%), highlighting the persistent difficulty of this task in clinical oncology.
 
 ## Highlights & Insights
 
-- **Complete clinical reasoning pipeline**: The three-level reasoning chain design of findings → impressions → pathology ensures traceability and interpretability.
-- **Knowledge graph-driven data engine**: Automatic generation of 1.5M high-quality CoT samples addresses the scarcity of tumor-specific annotated data.
-- **Iterative Interleaved Reasoning (IIR)**: Elegantly fuses global context with local evidence through multi-round self-verification, reducing hallucination risk.
-- **Triplet-based evaluation protocol**: Extracts structured knowledge from CoT chains for scoring, providing finer granularity than end-to-end metrics.
+- **Traceable Clinical Pipeline**: The three-tier reasoning design (findings $\rightarrow$ impressions $\rightarrow$ pathology) ensures explainability.
+- **KG-Driven Data Engine**: Automating 1.5M high-quality CoT labels solves the scarcity of specialized tumor training data.
+- **Iterative Interleaved Reasoning (IIR)**: Effectively fuses global context and local evidence, reducing hallucination risks through verification.
+- **Triplet-Based Evaluation**: Extracting structured knowledge from CoT chains allows for more granular assessment than end-to-end accuracy.
 
 ## Limitations & Future Work
 
-- Iterative reasoning introduces a latency of 2.51 seconds per sample, requiring acceleration for real-time clinical deployment.
-- CoT evaluation relies on GPT-4 scoring, which may introduce systematic bias.
-- Coverage is currently limited to five digestive organs; generalizability to other domains (e.g., lung, breast) remains to be validated.
-- TNM-N staging accuracy of only 61.63% indicates that lymph node metastasis assessment remains a critical challenge.
-- Training data originate from multi-center Chinese hospitals; cross-regional and cross-device generalization requires further verification.
-- The absence of comparison experiments with specialist physicians limits conclusions regarding clinical deployment value.
+- Iterative reasoning adds 2.51s latency per sample, necessitating acceleration for real-time use.
+- CoT evaluation depends on GPT-4, which may introduce systematic biases.
+- Coverage is limited to five digestive organs; broader generalization (e.g., lungs, breast) is required.
+- TNM-N staging accuracy (61.63%) remains a clinical bottleneck.
+- Further validation across diverse cross-regional datasets and comparative experiments with specialists are needed to prove clinical deployment value.
 
 ## Related Work & Insights
 
-- Compared to general medical VLM datasets such as CT-RATE and 3D-RAD, TumorCoT-1.5M is the first large-scale dataset to provide tumor-specific CoT annotations.
-- Compared to medical reasoning models such as MedVLM-R1, TumorChain achieves deeper multi-step reasoning through iterative interleaved reasoning.
-- The IIR design philosophy — LLM → ROI identification → segmentation → local feature injection → re-reasoning — is generalizable to other medical imaging tasks requiring spatial refinement.
+- Compared to general medical VLM datasets like CT-RATE, TumorCoT-1.5M provides the first large-scale tumor-specific CoT annotations.
+- Unlike MedVLM-R1, TumorChain achieves deeper multi-step reasoning through organ-guided iteration.
+- The IIR design (LLM $\rightarrow$ ROI identification $\rightarrow$ Segmentation $\rightarrow$ Local tokens $\rightarrow$ Re-reasoning) can be generalized to other medical imaging tasks requiring spatial precision.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (First multimodal CoT reasoning framework specifically targeting oncology)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (1.5M data / multi-task evaluation / generalization / ablation)
-- Writing Quality: ⭐⭐⭐⭐ (Deep clinical motivation, complete technical details)
-- Value: ⭐⭐⭐⭐⭐ (Important tool for precision oncology with strong clinical translation potential)
+- **Novelty**: ⭐⭐⭐⭐⭐ (First multimodal CoT reasoning framework for tumors)
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ (1.5M data/multi-task/generalization/ablation)
+- **Writing Quality**: ⭐⭐⭐⭐ (Strong clinical motivation, detailed technical methodology)
+- **Value**: ⭐⭐⭐⭐⭐ (A significant tool for precision oncology with high clinical potential)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
-- [\[ICLR 2026\] AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aimcot_active_information-driven_multimodal_chain-of-thought_for_vision-language.md)
-- [\[AAAI 2026\] BLM-Guard: Explainable Multimodal Ad Moderation with Chain-of-Thought and Policy-Aligned Rewards](../../AAAI2026/llm_reasoning/blm-guard_explainable_multimodal_ad_moderation_with_chain-of.md)
-- [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](../../ACL2026/llm_reasoning/aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
+- [\[CVPR 2025\] Interleaved-Modal Chain-of-Thought](../../CVPR2025/llm_reasoning/interleaved-modal_chain-of-thought.md)
+- [\[ICLR 2026\] Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis](analytica_soft_propositional_reasoning_for_robust_and_scalable_llm-driven_analys.md)
+- [\[ICLR 2026\] Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning](compositional_generalization_from_learned_skills_via_cot_training_a_theoretical_.md)
+- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
 - [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
-- [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
 
 </div>
 

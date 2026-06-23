@@ -2,132 +2,132 @@
 title: >-
   [Paper Note] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention
 description: >-
-  [ICLR 2026][LLM Reasoning][Reasoning safety] This paper identifies a critical yet overlooked problem in large reasoning models (LRMs): their chain-of-thought reasoning frequently contains harmful content even when the fi…
+  [ICLR 2026][LLM Reasoning][Paper Note] This paper reveals that the chain-of-thought (CoT) reasoning of Large Reasoning Models (LRMs) often contains harmful content even when the final answer is safe. It proposes Intervened Preference Optimization (IPO), which corrects unsafe reasoning trajectories by replacing compliance cues with safety triggers to constru
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Reasoning safety"
-  - "large reasoning models"
-  - "preference optimization"
-  - "safety triggers"
-  - "compliance cues"
+  - ICLR 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 1a19905f9f9d7a84
+content_hash: e6d3d2a31bcfa518
 ---
-
 # Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.24393](https://arxiv.org/abs/2509.24393)  
 **Code**: To be confirmed  
-**Area**: LLM Reasoning
-**Keywords**: Reasoning safety, large reasoning models, preference optimization, safety triggers, compliance cues
+**Area**: LLM Reasoning  
+**Keywords**: Reasoning Safety, Large Reasoning Models (LRM), Preference Optimization, Safety Triggers, Compliance Cues
 
 ## TL;DR
-This paper identifies a critical yet overlooked problem in large reasoning models (LRMs): their chain-of-thought reasoning frequently contains harmful content even when the final response appears safe. The authors propose Intervened Preference Optimization (IPO), which corrects unsafe reasoning trajectories by replacing compliance cues with safety triggers, constructing preference pairs for alignment training. Across 3 LRMs, IPO reduces reasoning harmfulness by over 30% without compromising reasoning capability.
+This paper reveals that the chain-of-thought (CoT) reasoning of Large Reasoning Models (LRMs) often contains harmful content even when the final answer is safe. It proposes Intervened Preference Optimization (IPO), which corrects unsafe reasoning trajectories by replacing compliance cues with safety triggers to construct preference pairs for alignment. IPO reduces the reasoning harm rate by over 30% across three LRMs without compromising reasoning performance.
 
 ## Background & Motivation
-Large reasoning models (e.g., DeepSeek-R1, Qwen3) demonstrate strong performance on mathematics, coding, and agent tasks, but their CoT reasoning processes frequently contain harmful content (deception, illegal instructions, violence, etc.), even when the final responses appear safe. This issue is systematically overlooked by existing safety alignment methods.
+Large Reasoning Models (e.g., DeepSeek-R1, Qwen3) excel in math, coding, and agent tasks, but their CoT reasoning processes frequently contain harmful content (deception, illegal acts, violence, etc.), even if the final answers appear safe. This issue is systematically ignored by existing safety alignment methods:
 
-**Key Challenge**: Existing alignment approaches (e.g., SafeChain, RealSafe, STAR) primarily train LRMs via SFT on distilled safe CoT data. However, experiments demonstrate that: (1) although final responses are typically safe, harmful content in reasoning chains remains pervasive—RealSafe achieves a reasoning harm rate of 47.1% on WildJailbreak despite a response harm rate of only 2.0%; (2) unsafe reasoning can be exploited by malicious users (especially via open-source models) and makes models more susceptible to jailbreak attacks.
+**Key Challenge**: Current alignment methods (e.g., SafeChain, RealSafe, STAR) primarily train LRMs via SFT on distilled safe CoT data. However, experiments show: (1) While final answers are generally safe, harmful content in reasoning chains remains prevalent—RealSafe has a reasoning harm rate as high as 47.1% on WildJailbreak, despite a 2.0% answer harm rate; (2) Unsafe reasoning can be exploited by malicious users (especially in open-source models) and makes models more vulnerable to jailbreak attacks.
 
-**Why RL Is Insufficient**: Directly rewarding safe reasoning via GRPO is a natural approach, but suffers from severe rollout diversity deficiency—approximately 50% of harmful prompts yield virtually no safe reasoning trajectories, resulting in poor within-group advantage diversity and weak policy gradient update signals.
+**Why RL is Insufficient**: Directly rewarding safe reasoning using GRPO is a natural idea but suffers from severe rollout diversity issues—approximately 50% of harmful prompts generate almost no safe reasoning trajectories, leading to a lack of intra-group advantage diversity and weak policy gradient signals.
 
-**Key Observations**: Through analysis of safety dynamics during reasoning, the authors identify three critical patterns: (1) safe reasoning is typically consolidated by a small number of **safety triggers**—reasoning steps in which the model explicitly acknowledges risk or invokes safety guidelines, after which the probability of safe continuation approaches 100%; (2) **compliance cues** are strongly correlated with unsafe continuations—steps in which the model expresses compliant intent are followed by a sharp rise in harmful continuations; (3) replacing compliance cues with safety triggers effectively corrects reasoning trajectories.
+**Key Insight**: By analyzing the evolution of safety during reasoning, the authors discover three key patterns: (1) Safe reasoning is usually consolidated by a few **safety triggers**—reasoning steps where the model explicitly acknowledges risks or cites safety guidelines—after which the probability of safe continuation is nearly 100%; (2) **Compliance cues** are strongly correlated with unsafe continuations—harmful outputs surge once steps expressing compliant intent appear; (3) Replacing compliance cues with safety triggers effectively corrects reasoning trajectories.
 
 ## Method
 
 ### Overall Architecture
-IPO (Intervened Preference Optimization) is a process-supervised reasoning safety alignment method. The core pipeline: (1) detect the position of the first compliance cue in an unsafe reasoning trajectory; (2) replace it with a trigger sampled from a safety trigger pool; (3) allow the model to continue generation from the replacement point, producing a safe reasoning trajectory; (4) construct preference pairs from the original unsafe trajectory and the corrected safe trajectory, and apply DPO training from the point of divergence.
+IPO (Intervened Preference Optimization) treats reasoning safety as a **process-supervision** alignment problem. The pipeline is built on an empirical observation: reasoning safety is not uniformly distributed but is determined by a few key sentences. Thus, supervision should precisely target these sentences. Specifically, given an unsafe reasoning trajectory sampled from a harmful prompt, a safety metric is used to locate the first sentence that "misleads" the model (compliance cue). This cue is replaced with a corrective safety phrase (safety trigger) to let the model generate a safe continuation from the point of intervention. The original unsafe chain and the corrected safe chain form a preference pair, and DPO is applied **only after the divergence point**. Simultaneously, benign prompt preference data is used to mitigate over-refusal. The entire alignment takes about 40 minutes on 1,000 harmful prompts.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Unsafe Reasoning Trajectory z<br/>(Upsampled from harmful prompts)"]
+    D1["Safety Triggers & Compliance Cues<br/>Locating inflection points via CSR curve:<br/>Trigger pool 𝒯 + first compliance cue (index h)"]
+    D2["Corrective Intervention & Preference Pair Construction<br/>Replace compliance cue with trigger τ and complete sequence<br/>to get preference pair (x, z̃ ≻ z, h)"]
+    D3["Over-refusal Mitigation<br/>915 benign prompts<br/>Normal Answer ≻ Refusal"]
+    DPO["DPO only after divergence point h<br/>(+ Auxiliary SFT loss)"]
+    OUT["Safe Reasoning LRM"]
+    IN --> D1 --> D2 --> DPO
+    D3 --> DPO
+    DPO --> OUT
+```
 
 ### Key Designs
 
-1. **Safety Trigger Identification and Compliance Cue Detection**
+**1. Safety Triggers & Compliance Cues: Quantifying "Safety Inflection Points"**
 
-    - **Function**: Automatically identify key turning-point steps in safe reasoning (safety triggers) and in unsafe reasoning (compliance cues).
-    - **Design Motivation**: Safety is not uniformly distributed throughout the reasoning process but is concentrated in a small number of critical steps—safety triggers drive subsequent continuations to nearly 100% safe, while compliance cues cause continuations to sharply turn harmful.
-    - **Mechanism**: The Continuation Safety Ratio (CSR) is defined as $S_i(x, z_s) = \mathbb{E}[\mathbb{I}(z_s^{\leq i} \| z_c \text{ is safe})]$, estimating the safe continuation probability at each token position (32 samples). Safety triggers are defined as sentences where CSR rises sharply to $\geq 0.9$ and remains stable (window $K=15$); compliance cues are sentences where CSR drops sharply to $\leq 0.1$. Compliance cue detection uses GPT-4o with few-shot prompting, achieving >80% agreement with human annotation.
-    - **Key Statistics**: The Pearson correlation between the detected positions of compliance cues and CSR inflection points reaches 0.85.
+To apply supervision at critical steps, these steps must first be identified. The authors define the Continuation Safety Ratio (CSR) to measure the marginal contribution of each position in a reasoning chain to final safety: given a prefix $z_s^{\le i}$, the probability that a continuation remains safe is estimated as $S_i(x, z_s) = \mathbb{E}[\mathbb{I}(z_s^{\le i}\,\|\,z_c \text{ is safe})]$, implemented by sampling 32 continuations for each token position. In this CSR curve, **safety triggers** are defined as sentences that cause the CSR to soar above a threshold $\mu=0.9$ and remain stable within a window $K=15$—where the model acknowledges risks or cites guidelines. Conversely, **compliance cues** are sentences where the CSR drops below $\eta=0.1$ (also maintained within window $K=15$), indicating the model's intent to comply with malicious requests. Detection of compliance cues is performed using GPT-4o with few-shot prompting, achieving over 80% agreement with human labels. Furthermore, their position correlates with CSR inflection points (Pearson correlation of 0.85). Mapping token-level points back to sentences allows the automatic construction of a reusable **trigger pool $\mathcal{T}$**.
 
-2. **Corrective Intervention and Preference Pair Construction**
+**2. Corrective Intervention & Preference Pair Construction: Steering the Trajectory**
 
-    - **Function**: Replace compliance cues in unsafe trajectories with safety triggers, generate safe continuations, and form preference pairs with the original trajectories.
-    - **Design Motivation**: Intervention directly increases rollout diversity (compared to GRPO) while providing locally precise training signals at safety-critical steps (analogous to reward shaping).
-    - **Mechanism**: Given an unsafe trajectory $z$ with its first compliance cue at token index $h$, a safety trigger $\tau \sim \mathcal{T}$ is substituted, and the model generates an intervened continuation $\tilde{z}^{\geq h} \sim \pi_\theta(\cdot | x, z^{<h}, \tau)$. If the result remains unsafe, iterative intervention is applied. The resulting preference pair is $(x, \tilde{z} \succ z, h)$.
-    - **Theoretical Connection**: DPO training from the divergence point is equivalent to applying a shaped reward at safety-critical steps—CSR exhibits significant jumps at safety triggers and compliance cues, a structure that IPO explicitly exploits.
+Once the inflection point is found, IPO directly corrects the trajectory instead of re-distilling data. Suppose the first compliance cue in an unsafe trajectory $z$ is at token index $h$. A trigger $\tau$ from the pool $\mathcal{T}$ replaces that sentence, and the model generates an intervened trajectory $\tilde{z}^{\ge h} \sim \pi_\theta(\cdot \mid x, z^{<h}, \tau)$. If the continuation remains unsafe, the intervention is iterated. The original chain and the corrected chain form a preference pair $(x,\ \tilde{z} \succ z,\ h)$, where $h$ marks the true divergence. This solves two pain points: unlike GRPO where ~50% of harmful prompts fail to sample safe trajectories, proactive replacement ensures diversity. Moreover, since signals are applied only after the divergence, supervision is concentrated on safety-critical steps, equivalent to applying shaped rewards at CSR jump points, which is more efficient than global sparse rewards.
 
-3. **Over-Refusal Mitigation**
+**3. Over-refusal Mitigation: Balancing Safety and Utility**
 
-    - **Function**: An auxiliary preference dataset of 915 benign prompts is constructed, contrasting normal responses with refusals, followed by an additional DPO training stage.
-    - **Design Motivation**: Training on safety data alone causes over-refusal, necessitating a balance between safety and helpfulness.
-    - **Mechanism**: An auxiliary SFT loss (similar to RPO) is added on top of DPO to stabilize training.
+Training on pure safety data might lead to "over-refusal"—rejecting benign requests. The authors add a second phase: using 915 benign prompts from a preference dataset (STAR-benign-915), comparing "normal answers" to "refusal answers." This is mixed with harmful data for a second stage of DPO, with an auxiliary SFT loss (coefficient 0.2, similar to RPO) to stabilize training and preserve reasoning structures, restoring the balance between safety and helpfulness.
 
 ### Loss & Training
-The core training objective is DPO applied from the point of divergence:
+The core objective is a DPO loss calculated only after the divergence point $h$:
 
-$$-\mathbb{E}\!\left[\log \sigma\!\left(\beta \log \frac{\pi_\theta(\tilde{z}^{\geq h}|x,z^{<h})}{\pi_\text{ref}(\tilde{z}^{\geq h}|x,z^{<h})} - \beta \log \frac{\pi_\theta(z^{\geq h}|x,z^{<h})}{\pi_\text{ref}(z^{\geq h}|x,z^{<h})}\right)\right]$$
+$$-\,\mathbb{E}\left[\log \sigma\!\left(\beta \log \frac{\pi_\theta(\tilde{z}^{\ge h}\mid x, z^{<h})}{\pi_{\text{ref}}(\tilde{z}^{\ge h}\mid x, z^{<h})} - \beta \log \frac{\pi_\theta(z^{\ge h}\mid x, z^{<h})}{\pi_{\text{ref}}(z^{\ge h}\mid x, z^{<h})}\right)\right]$$
 
-Training uses 1,000 harmful prompts from STAR-1 and 6 representative safety triggers ($N=1$), yielding a dataset of approximately 500–1,400 samples. Training takes approximately 40 minutes (compared to >2 hours for GRPO, with inferior results).
+It rewards corrected safe continuations and penalizes original harmful ones, affecting only tokens after $h$ to avoid polluting consistent reasoning before the divergence. Training uses 1,000 harmful prompts from STAR-1 with 6 representative safety triggers ($N=1$), resulting in ~500–1,400 preference pairs. The process takes ~40 minutes, whereas GRPO takes >2 hours with inferior results.
 
 ## Key Experimental Results
 
 ### Main Results (DeepSeek-R1-Distill-Llama-8B)
 
-| Method | JBB Reas.↓ | JBB Resp.↓ | SR Reas.↓ | SR Resp.↓ | WJ Reas.↓ | WJ Resp.↓ | Reas. Avg.↓ | Resp. Avg.↓ | AIME↑ | MATH↑ | GPQA↑ | HEval↑ | Reas. Avg.↑ |
-|--------|-----------|-----------|----------|----------|----------|----------|------------|------------|-------|-------|-------|--------|------------|
+| Method | JBB Reason↓ | JBB Ans↓ | SR Reason↓ | SR Ans↓ | WJ Reason↓ | WJ Ans↓ | Reason Avg.↓ | Ans Avg.↓ | AIME↑ | MATH↑ | GPQA↑ | HEval↑ | Reason Avg.↑ |
+|------|----------|----------|---------|---------|---------|---------|-----------|-----------|-------|-------|-------|--------|-----------|
 | Base | 69.0% | 45.0% | 63.2% | 49.3% | 82.4% | 73.9% | 71.5% | 56.1% | 50.7 | 91.8 | 44.9 | 79.5 | 66.7 |
 | STAR | 8.0% | 0.3% | 21.9% | 14.6% | 37.8% | 22.7% | 22.6% | 12.5% | 46.0 | 89.4 | 47.0 | 77.1 | 64.9 |
 | GRPO | 0.3% | 0.0% | 19.0% | 19.7% | 36.3% | 33.6% | 18.5% | 17.8% | 50.0 | 92.8 | 50.5 | 79.9 | 68.3 |
 | **IPO** | **5.7%** | **0.3%** | **16.7%** | **10.9%** | **23.4%** | **9.6%** | **15.3%** | **6.9%** | 54.0 | 91.6 | 49.0 | 79.5 | **68.5** |
 
-IPO achieves the best overall performance on both reasoning safety average (15.3%) and response safety average (6.9%), while its reasoning capability (68.5%) surpasses all baselines including the base model.
+IPO achieves the best comprehensive performance in both reasoning safety (15.3% avg.) and answer safety (6.9% avg.), while its reasoning capability (68.5%) exceeds all baselines including the base model.
 
 ### Ablation Study
 
-| Ablation Variable | SR Reas.↓ | SR Resp.↓ | Avg.↓ |
-|-------------------|----------|----------|-------|
+| Ablation Variable | SR Reason↓ | SR Ans↓ | Avg.↓ |
+|---------|---------|---------|-------|
 | Detector: DS-8B | 21.8% | 17.1% | 19.4% |
 | Detector: DeepSeek-R1 | 16.4% | 11.0% | 13.6% |
 | Detector: GPT-4o | 16.2% | 11.3% | **13.7%** |
-| Training: SFT | 47.4% | 37.3% | 42.3% |
-| Training: DPO on Full | 25.8% | 12.3% | 19.0% |
-| Training: **DPO on Part** | **11.2%** | **10.6%** | **10.9%** |
+| Algorithm: SFT | 47.4% | 37.3% | 42.3% |
+| Algorithm: DPO on Full | 25.8% | 12.3% | 19.0% |
+| Algorithm: **DPO on Part** | **11.2%** | **10.6%** | **10.9%** |
 
-Applying DPO only from the divergence point (DPO on Part) substantially outperforms full-trajectory DPO and SFT, validating the effectiveness of locally precise supervision.
+Partial DPO (DPO on Part) significantly outperforms Full DPO and SFT, validating the effectiveness of precise local supervision.
 
 ### Key Findings
-- **Reasoning safety → response safety**: The probability of a safe response following safe reasoning is extremely high, indicating that alignment efforts should prioritize the reasoning process over the final response.
-- **Corrective effect of safety triggers**: A single replacement suffices to substantially reduce the harm rate of subsequent continuations, and iterative intervention yields cumulative benefits.
-- **IPO vs. GRPO efficiency**: IPO requires at most 14 generations per prompt (6 triggers × 2 + 2 for over-refusal mitigation), whereas GRPO requires at least 40; IPO trains in ~40 minutes vs. >2 hours for GRPO.
-- **Cross-model consistency**: IPO is effective across DS-8B, DS-7B, and Qwen3-8B; on Qwen3-8B, the reasoning harm rate drops from 51.3% to 13.9%.
-- **KL divergence analysis**: IPO exhibits higher KL divergence at token positions corresponding to compliance cues, confirming the targeted nature of the supervision signal.
+- **Reasoning Safety → Answer Safety**: The probability of a safe answer after safe reasoning is extremely high, suggesting alignment should prioritize reasoning processes over final answers.
+- **Corrective Effect of Safety Triggers**: A single replacement significantly reduces harmful continuation rates; iterative intervention shows cumulative effects.
+- **IPO vs GRPO Efficiency**: IPO requires at most 14 generations per prompt (6 triggers × 2 + 2 for over-refusal), whereas GRPO requires at least 40. Training: IPO ~40min vs GRPO >2h.
+- **Cross-model Consistency**: Effective on DS-8B, DS-7B, and Qwen3-8B. Qwen3-8B's reasoning harm rate dropped from 51.3% to 13.9%.
+- **KL Divergence Analysis**: IPO shows higher KL divergence at tokens corresponding to compliance cues, confirming the efficacy of targeted supervision.
 
 ## Highlights & Insights
-- The identification of "safety triggers" and "compliance cues" constitutes the paper's most important empirical contribution—reasoning safety is not uniformly distributed but is determined by a small number of critical steps.
-- The Continuation Safety Ratio (CSR) is an elegant measurement tool that quantifies the marginal safety contribution of each token in the reasoning process.
-- IPO brings the concept of reward shaping into safety alignment: applying local preference signals at CSR inflection points is substantially more efficient than global sparse rewards.
-- The method achieves the best current Pareto balance between safety and reasoning capability—safety improves significantly while reasoning performance does not degrade but improves.
-- The 0.85 Pearson correlation between compliance cues and CSR inflection points provides a solid empirical foundation for the intervention strategy.
+- The discovery of "safety triggers" and "compliance cues" is the most significant empirical contribution—reasoning safety is determined by critical steps rather than being uniform.
+- CSR (Continuation Safety Ratio) is an elegant tool for quantifying the marginal safety contribution of each token.
+- IPO introduces reward shaping to safety alignment: applying local preference signals at CSR inflection points is more efficient than global rewards.
+- Achieves the best Pareto balance between safety and reasoning capability—safety improves significantly while reasoning performance is maintained or enhanced.
+- The 0.85 correlation between compliance cues and CSR inflection points provides a solid empirical basis for intervention.
 
 ## Limitations & Future Work
-- Compliance cue detection relies on GPT-4o as an external judge, introducing additional dependency and potential bias.
-- Construction of the safety trigger pool still requires manual selection (6 representative triggers), limiting automation.
-- The XsTest compliance rate (DS-8B: 80%) falls below some weaker safety baselines, indicating residual over-refusal.
-- Validation is limited to models at ≤8B scale (except for 1.5B–14B results in the appendix); effectiveness on larger models remains to be confirmed.
-- Multi-turn dialogue and agent scenarios are not explored (mentioned only as future directions).
-- Training data comprises only ~1,000 harmful prompts; the effect of scaling the data is unknown.
+- Compliance cue detection relies on GPT-4o as an external judge, introducing potential bias and dependency.
+- The construction of the safety trigger pool still involves manual selection (6 representative triggers), limiting automation.
+- XsTest compliance (DS-8B: 80%) is lower than some weak safety baselines, indicating some over-refusal.
+- Verification is limited to scales ≤8B (except 1.5B–14B mentioned in the appendix); effects on larger models need confirmation.
+- Reasoning safety in multi-turn dialogues and agent scenarios is not explored (mentioned as future work).
+- Scaling effects of training data beyond ~1,000 harmful prompts are unknown.
 
 ## Related Work & Insights
-- Unlike SFT-based methods such as SafeChain, RealSafe, and STAR, IPO does not rely on distilled safe CoT data but instead directly intervenes in unsafe trajectories.
-- Compared to backtracking methods based on special tokens (e.g., BackTrack), IPO performs proactive correction at the reasoning level rather than passive detection.
-- The argument that reasoning safety should take precedence over response safety is compelling and well-supported quantitatively, and could shift the focus of safety alignment research.
-- The CSR metric and safety trigger analysis methodology are generalizable to other process supervision settings (e.g., factuality, logical consistency).
+- Compared to SFT methods like SafeChain/RealSafe/STAR, IPO does not rely on distilled safe CoT data but interventions in unsafe trajectories.
+- Unlike BackTrack, which uses special tokens for rollback, IPO performs forward correction at the reasoning level.
+- The argument that "reasoning safety should prioritize answer safety" is powerful and quantitatively supported, potentially shifting the focus of safety alignment research.
+- CSR and safety trigger analysis can be extended to other process-supervision tasks such as factuality and logical consistency.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — First work to systematically treat reasoning safety as an independent alignment objective; the identification and exploitation of safety triggers and compliance cues are original contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — 3 LRMs × 3 safety benchmarks + 4 reasoning benchmarks + ablations (detector / algorithm / efficiency), though model scale coverage is limited.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The motivation chain is tightly constructed; the observation → hypothesis → method → validation logic is exceptionally clear.
-- **Value**: ⭐⭐⭐⭐⭐ — Reveals an important and overlooked dimension of LRM safety alignment; the method is practical and efficient, with direct and far-reaching implications for safe AI research.
+- Novelty: ⭐⭐⭐⭐⭐ First to treat reasoning safety as an independent alignment goal; original contributions in triggers/cues.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covered 3 LRMs, 3 safety benchmarks, and 4 reasoning benchmarks with ablation, though model scale is limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain: observation → hypothesis → method → verification.
+- Value: ⭐⭐⭐⭐⭐ Reveals a neglected dimension in LRM alignment; method is practical and efficient, impacting safe AI research.
 
 <!-- RELATED:START -->
 
@@ -136,10 +136,10 @@ Applying DPO only from the divergence point (DPO on Part) substantially outperfo
 ## Related Papers
 
 - [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
+- [\[ICLR 2026\] Once-More: Continuous Self-Correction for Large Language Models via Perplexity-Guided Intervention](once-more_continuous_self-correction_for_large_language_models_via_perplexity-gu.md)
 - [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
+- [\[ICLR 2026\] Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems](exposing_weaknesses_of_large_reasoning_models_through_graph_algorithm_problems.md)
 - [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[AAAI 2026\] Text-to-Scene with Large Reasoning Models](../../AAAI2026/llm_reasoning/text-to-scene_with_large_reasoning_models.md)
 
 </div>
 

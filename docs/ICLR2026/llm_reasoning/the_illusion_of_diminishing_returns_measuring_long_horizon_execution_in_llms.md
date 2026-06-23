@@ -2,108 +2,106 @@
 title: >-
   [Paper Note] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][long-horizon execution] This paper reveals that short-task benchmarks create an illusion of diminishing returns — marginal gains in per-step accuracy are amplified exponentially in long-horizon…
+  [ICLR 2026][LLM Reasoning][Chain-of-Thought] The paper reveals that short-task benchmarks provide an illusion of "diminishing returns"—marginal gains in single-step accuracy are amplified exponentially in long-horizon tasks. It identifies the "self-conditioning effect" (where a model's own errors increase the probability of subsequent errors), which thinking mode
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "long-horizon execution"
-  - "self-conditioning"
-  - "chain-of-thought"
-  - "scaling"
-  - "diminishing returns"
+  - ICLR 2026
+  - LLM Reasoning
+  - Chain-of-Thought
+  - diminishing returns
 date: 2026-05-08
-content_hash: d6a903094fe757e8
+content_hash: 0b98843cb6368a69
 ---
-
 # The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.09677](https://arxiv.org/abs/2509.09677)  
-**Code**: Available  
-**Area**: LLM Reasoning
-**Keywords**: long-horizon execution, self-conditioning, chain-of-thought, scaling, diminishing returns
+**Code**: Yes  
+**Area**: LLM Reasoning  
+**Keywords**: Long-horizon execution, self-conditioning, Chain-of-Thought, scaling, diminishing returns  
 
 ## TL;DR
-This paper reveals that short-task benchmarks create an illusion of diminishing returns — marginal gains in per-step accuracy are amplified exponentially in long-horizon tasks. It identifies a "self-conditioning effect" in LLMs (whereby prior errors increase the probability of subsequent errors), shows that thinking models mitigate this effect, and demonstrates that GPT-5 thinking can execute tasks exceeding 2,100 steps.
+The paper reveals that short-task benchmarks provide an illusion of "diminishing returns"—marginal gains in single-step accuracy are amplified exponentially in long-horizon tasks. It identifies the "self-conditioning effect" (where a model's own errors increase the probability of subsequent errors), which thinking models can mitigate. Notably, GPT-5 thinking can execute tasks exceeding 2100 steps.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: LLMs continue to progress on complex reasoning benchmarks, yet they fail when simple tasks are extended in length. This has been interpreted as a "fundamental flaw in reasoning capability" or evidence that "thinking is merely an illusion."
 
-**Background**: LLMs continue to improve on complex reasoning benchmarks, yet consistently fail when simple tasks are extended over longer horizons. This has been interpreted as a "fundamental deficiency in reasoning ability" or evidence that "thinking is merely an illusion."
+**Limitations of Prior Work**: The causes of long-task failures are often conflated—is it a failure of planning or execution? Existing analyses do not isolate execution capability.
 
-**Limitations of Prior Work**: The causes of long-horizon failure are conflated — is the failure due to planning or execution? Existing analyses do not isolate execution capability.
+**Key Challenge**: Marginal improvements on short-task benchmarks appear to be diminishing. However, this may underestimate actual capability growth: an increase in single-step accuracy from 95% to 99% translates to a success rate jump from 0.6% to 36.6% in a 100-step task.
 
-**Key Challenge**: Marginal improvements on short-task benchmarks appear to be diminishing, yet this may systematically underestimate actual capability gains — a per-step accuracy improvement from 95% to 99% translates to a task success rate increase from 0.6% to 36.6% on a 100-step task.
+**Goal**: (a) Quantify the long-horizon execution capabilities of LLMs; (b) Identify the root causes of execution failure; (c) Analyze the impact of scale and inference-time compute on long-horizon execution.
 
-**Goal**: (a) Quantify the long-horizon execution capability of LLMs; (b) identify the root causes of execution failure; (c) analyze the effect of scale and inference-time computation on long-horizon execution.
+**Key Insight**: By explicitly providing knowledge and plans, the study isolates and measures "execution" capability itself.
 
-**Key Insight**: By explicitly providing knowledge and plans to models, the paper isolates and measures "execution" capability itself.
-
-**Core Idea**: Long-horizon task failures in LLMs are primarily attributable to execution errors rather than insufficient reasoning. Furthermore, a "self-conditioning" phenomenon exists, whereby errors in the context increase the probability of subsequent errors.
+**Core Idea**: Failures in long tasks for LLMs are primarily due to execution errors rather than insufficient reasoning. Furthermore, a "self-conditioning" effect exists where errors within the context increase the likelihood of subsequent mistakes.
 
 ## Method
 
 ### Overall Architecture
-A controlled experimental design explicitly provides the knowledge and execution plan required for each task (eliminating the need for planning and knowledge retrieval), varies task length (steps × rounds), and measures per-step accuracy and task completion rate.
+
+This is a purely evaluative study that does not train any models. The core is a controlled "long-horizon execution" measurement protocol. Conventional reasoning benchmarks typically mix planning (deciding what to search and in what order), knowledge, and execution (following the plan step-by-step). When a model fails a long task, it is unclear which component failed. This paper strips away the first two by directly feeding the required knowledge and a complete plan to the model, leaving "strict step-by-step execution" as the sole variable. The study then observes how step-wise accuracy and overall completion rates decay as the task length increases. The work revolves around three pillars: isolating execution capability, uncovering the "self-conditioning" failure mode through counterfactual experiments, and using a mathematical formula to explain why "diminishing returns" on short tasks are illusory.
 
 ### Key Designs
 
-1. **Execution Capability Isolation**: Models are given complete plans and knowledge, purely measuring the ability to "execute according to plan." This distinguishes the evaluation from reasoning benchmarks that simultaneously test planning, knowledge, and execution.
+**1. Execution Capability Isolation: Distinguishing Planning from Constant Execution**
 
-2. **Self-Conditioning Effect Detection**: The historical error rate in the context is controlled, and its causal influence on subsequent step accuracy is observed. Results show that as the error rate increases from 0% to 20%, subsequent accuracy drops sharply.
+Standard benchmarks conflate planning, knowledge, and execution. This paper fixates the former two using a "key-value dictionary" abstraction: knowledge is a fixed dictionary of "five-letter English words $\rightarrow$ integers (range $[-99, 99]$)" placed in the context. The plan tells the model exactly which keys to look up in each round. The model only needs to perform a mechanical "retrieve-then-compose" operation—looking up integers and adding them to a running sum $S_t = S_{t-1} + \sum_{i=1}^{K} \mathcal{D}[k_{t,i}]$. Task length is controlled by the product of rounds $T$ and per-round complexity $K$. This setup allows failures to be cleanly attributed to the accumulation of execution errors.
 
-3. **Horizon Length Formula**: $H_s(p) = \lceil \frac{\ln(s)}{\ln(p)} \rceil$, which illustrates the hyperbolic relationship between per-step accuracy $p$ and achievable task length $H$ — small improvements in the high-accuracy regime yield explosive increases in achievable task length.
+**2. Self-Conditioning Effect Detection: Observing the Impact of Prior Errors**
 
-### Loss & Training
-No model training is performed; this is a purely evaluative study.
+The authors discovered a counter-intuitive phenomenon: while humans often become more proficient at repetitive tasks, LLMs are more likely to fail if they see their own previous errors in the context. To disentangle this from the difficulty of long contexts, a counterfactual experiment was designed. The model's dialogue history is artificially manipulated to inject false outputs at a specified error rate, and the accuracy of the 100th round is measured. If accuracy drops even when the history is "cured" to a 0% error rate, the issue is the long context; if the accuracy drops as the historical error rate increases, the self-conditioning effect is confirmed. Results show both factors are present, with a "cascade of errors" occurring when the historical error rate reaches 20%. Notably, thinking models are less affected, suggesting RL training may bias models toward "getting the current step right" rather than just completing the context.
+
+**3. Horizon Length Metric: Explaining the Illusion of Diminishing Returns**
+
+To quantify the relationship between single-step capability and task length, the authors define the task horizon length $H_s(p) = \lceil \frac{\ln(s)}{\ln(p)} \rceil$ under the assumptions of independent, constant single-step accuracy $p$ and that any single error leads to task failure ($s$ is the target total success rate). Since $H(p) \propto 1/\ln(p)$ is a hyperbolic function, the curve steepens sharply as $p$ approaches 1. A single-step accuracy increase from 95% to 99% results in the success rate for a 100-step task jumping from 0.6% to 36.6%. Thus, the "diminishing returns" observed on short benchmarks are merely an artifact of the metric used.
 
 ## Key Experimental Results
 
-### Main Results (Maximum Single-Round Execution Steps for Frontier Thinking Models)
+### Main Results (Maximum Execution Steps for Frontier Thinking Models)
 
-| Model | Max Execution Steps | Notes |
-|-------|-------------------|-------|
+| Model | Max Execution Steps | Note |
+|-------|----------------------|------|
 | GPT-5 (Horizon) thinking | **>2100** | Far exceeds all competitors |
 | Claude-4 Sonnet thinking | 432 | Second place |
-| DeepSeek-R1 (thinking) | >100 | Thinking provides significant benefit |
-| DeepSeek-V3 (no thinking) | <4 | Almost no execution without thinking |
+| DeepSeek-R1 (thinking) | >100 | Thinking provides significant help |
+| DeepSeek-V3 (no thinking) | <4 | Nearly unable to execute without thinking |
 
 ### Self-Conditioning Effect
 
-| Historical Error Rate | Change in Subsequent Step Accuracy | Notes |
-|----------------------|-----------------------------------|-------|
+| History Error Rate | Subsequent Step Accuracy Change | Note |
+|--------------------|---------------------------------|------|
 | 0% | Baseline | Normal accuracy |
-| 5% | Significant drop | Self-conditioning begins |
-| 20% | Sharp drop | Error cascade |
+| 5% | Significant Decrease | Self-conditioning begins |
+| 20% | Sharp Decline | Error avalanche |
 
 ### Key Findings
-- **Diminishing per-step accuracy is an illusion**: Small improvements in the high-accuracy regime are amplified exponentially in long-horizon tasks.
-- **Self-conditioning effect**: Unlike humans who improve with practice, models become more error-prone upon encountering their own prior mistakes. Thinking models are immune to this effect.
-- **Scaling yields large gains in execution**: Even when small models achieve near-perfect per-step accuracy, large models perform significantly better on long-horizon tasks.
-- **Thinking fundamentally improves execution**: DeepSeek-V3 cannot execute 4 steps, whereas R1 can execute 100+.
-- GPT-5 thinking's 2,100+ step execution capability marks a qualitative leap in long-horizon execution for LLMs.
+- **Diminishing returns in single-step accuracy are an illusion**: Minor gains in high-accuracy regimes amplify exponentially in long-horizon tasks.
+- **Self-Conditioning Effect**: Unlike humans who improve with practice, LLMs are more prone to error after observing their own mistakes. Thinking models are largely immune to this.
+- **Scaling yields massive returns in execution**: Even if small models have near-perfect single-step accuracy, larger models perform significantly better on long tasks.
+- **Thinking fundamentally improves execution**: DeepSeek-V3 cannot execute 4 steps, while R1 can execute 100+ steps.
+- The 2100+ step execution capability of GPT-5 thinking marks a qualitative leap in LLM long-horizon execution.
 
 ## Highlights & Insights
-- The argument that **"diminishing returns is an illusion"** is highly illuminating: the hyperbolic growth of $H(p) \propto 1/\ln(p)$ implies that an improvement from 99% to 99.5% delivers far greater value than one from 90% to 95%. This fundamentally reframes the perceived return on investment in scaling.
-- The **self-conditioning effect** is a novel finding that cannot be resolved through simple scaling — only thinking can remedy it. This has significant implications for agent system design: error histories must be cleaned or isolated during execution.
-- Attributing long-horizon task failure to "execution" rather than "reasoning" is an important reframing that helps direct research efforts more accurately.
+- The argument that **"diminishing returns are an illusion"** is highly provocative: the hyperbolic growth of $H(p) \propto 1/\ln(p)$ implies that the value of moving from 99% to 99.5% is far greater than moving from 90% to 95%. This fundamentally changes the perception of ROI in scaling.
+- The **Self-Conditioning Effect** is a novel discovery that cannot be solved by simple scaling; it requires the "thinking" mechanism. This has major implications for Agent system design, suggesting a need to clean or isolate error histories during execution.
+- Attributing long-task failure to **"execution"** rather than **"reasoning"** is a crucial perspective that helps guide future research directions.
 
 ## Limitations & Future Work
-- Experimental tasks are relatively simple (controlled settings); real-world task execution failures likely involve additional factors.
-- The mechanism underlying self-conditioning is not analyzed (is it attributable to attention patterns, training data distribution, or other causes?).
-- Only closed-source thinking models are evaluated, precluding analysis of how thinking remedies self-conditioning.
+- The experimental tasks are relatively simple (controlled environment); real-world execution failures may involve more complex factors.
+- The mechanism behind self-conditioning (e.g., attention patterns, training data distribution) remains unanalyzed.
+- Evaluation of "thinking" is limited to closed-source models, preventing internal analysis of how thinking mitigates self-conditioning.
 
 ## Related Work & Insights
-- **vs. Shojaee et al. (Illusion of Thinking)**: That work claims that thinking model failures on long tasks indicate reasoning is an illusion; this paper refutes that interpretation, arguing such failures reflect execution failure rather than reasoning failure.
-- **vs. Mirzadeh et al.**: That work contends LLMs cannot truly reason; this paper distinguishes between reasoning and execution.
-- Implications for agent systems: agent frameworks need to be designed to manage execution history and avoid self-conditioning.
+- **vs Shojaee et al. (Illusion of Thinking)**: They claimed thinking models' failure on long tasks proves reasoning is an illusion; this paper counters that it is a failure of execution, not reasoning.
+- **vs Mirzadeh et al.**: They posited that LLMs cannot truly reason; this paper distinguishes between reasoning and execution.
+- **Implications for Agent Systems**: There is a need to design agent frameworks that manage execution history and avoid self-conditioning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The discovery of the self-conditioning effect and the illusion of diminishing returns is highly impactful.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Controlled experimental design is rigorous; frontier model evaluation is comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ Argumentation is logically clear; mathematical analysis is concise and compelling.
-- Value: ⭐⭐⭐⭐⭐ Has fundamental implications for LLM scaling investment decisions and agent system design.
+- Novelty: ⭐⭐⭐⭐⭐ The discovery of the self-conditioning effect and the diminishing returns illusion is highly impactful.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Rigorous controlled experiments and comprehensive evaluation of frontier models.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic and concise mathematical analysis.
+- Value: ⭐⭐⭐⭐⭐ Fundamentally influences scaling investment decisions and agent system design.
 
 <!-- RELATED:START -->
 
@@ -111,11 +109,11 @@ No model training is performed; this is a purely evaluative study.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort](is_it_thinking_or_cheating_detecting_implicit_reward_hacking_by_measuring_reason.md)
 - [\[ACL 2026\] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks](../../ACL2026/llm_reasoning/sppo_sequence-level_ppo_for_long-horizon_reasoning_tasks.md)
 - [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](../../ICML2026/llm_reasoning/toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
-- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](../../ICML2026/llm_reasoning/how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
-- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
+- [\[ICLR 2026\] R-HORIZON: How Far Can Your Large Reasoning Model Really Go in Breadth and Depth?](r-horizon_how_far_can_your_large_reasoning_model_really_go_in_breadth_and_depth.md)
+- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
 
 </div>
 

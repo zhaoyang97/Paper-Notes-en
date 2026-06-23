@@ -2,21 +2,16 @@
 title: >-
   [Paper Note] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models
 description: >-
-  [ICLR2026][LLM Reasoning][Model Compression] This paper systematically studies the effects of three compression methods—quantization, distillation…
+  [ICLR 2026][LLM Reasoning][Model Compression] Ours systematically investigates the impact of quantization, distillation, and pruning on Large Reasoning Models (LRM). Through performance benchmarking and mechanistic interpretability analysis, the study reveals core findings: the number of weights affects knowledge memory more than reasoning, the last-layer MLP up_p
 tags:
-  - "ICLR2026"
-  - "LLM Reasoning"
-  - "Model Compression"
-  - "Reasoning Models"
-  - "Quantization"
-  - "Distillation"
-  - "Pruning"
-  - "Interpretability"
-  - "DeepSeek-R1"
+  - ICLR 2026
+  - LLM Reasoning
+  - Model Compression
+  - Quantization
+  - Interpretability
 date: 2026-05-08
-content_hash: f3c216a48565a0b1
+content_hash: a0206aa5eeb0b086
 ---
-
 # When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models
 
 **Conference**: ICLR2026  
@@ -26,81 +21,92 @@ content_hash: f3c216a48565a0b1
 **Keywords**: Model Compression, Reasoning Models, Quantization, Distillation, Pruning, Interpretability, DeepSeek-R1
 
 ## TL;DR
-This paper systematically studies the effects of three compression methods—quantization, distillation, and pruning—on Large Reasoning Models (LRMs) through performance benchmarking and mechanistic interpretability analysis. Key findings include: parameter count affects knowledge memorization more than reasoning ability; the last-layer MLP `up_proj` is the most critical component; and current quantization methods over-compress the final layers.
+Ours systematically investigates the impact of quantization, distillation, and pruning on Large Reasoning Models (LRM). Through performance benchmarking and mechanistic interpretability analysis, the study reveals core findings: the number of weights affects knowledge memory more than reasoning, the last-layer MLP up_proj is the most critical component, and current quantization methods over-compress the final layers.
 
 ## Background & Motivation
-- Large reasoning models such as DeepSeek-R1 achieve strong performance on complex reasoning tasks but incur high deployment costs.
-- Prior compression research faces two bottlenecks:
-    - **Evaluation bottleneck**: Existing quantization/pruning evaluations primarily rely on perplexity and simple tasks, with insufficient testing on complex reasoning benchmarks.
-    - **Analysis bottleneck**: In-depth interpretability analysis of compression effects is lacking.
-- Core question: How is the reasoning capability of LRMs degraded during compression, and which weights are most critical for reasoning?
+- Large reasoning models like DeepSeek-R1 demonstrate superior performance on complex reasoning tasks but suffer from high deployment costs.
+- Existing compression research faces two bottlenecks:
+    - **Evaluation Bottleneck**: Prior quantization/pruning evaluations primarily use perplexity and simple tasks, failing to thoroughly test on complex reasoning benchmarks.
+    - **Analysis Bottleneck**: There is a lack of in-depth mechanistic interpretability analysis of compression effects.
+- **Core Problem**: How is the reasoning capability of LRMs damaged during compression? Which weights are most vital for reasoning?
 
 ## Method
 
-### 1. Evaluation Framework
-- **Model selection**: DeepSeek-R1 (671B) and its compressed variants:
-    - Quantization: Unsloth dynamic quantization (2.51/1.73/1.58-bit), AWQ, GPTQ, GPTAQ, ANY4/ANY3
-    - Distillation: R1-Distill-Llama (70B/8B), R1-Distill-Qwen (32B/7B)
-    - Pruning: SparseGPT, AlphaPruning (multiple sparsity levels)
-- **Evaluation datasets** (in increasing difficulty):
-    - AIME 2024 (mathematical reasoning)
-    - FOLIO (logical reasoning)
-    - Temporal Sequences (temporal reasoning, from BIG-Bench Hard)
-    - MuSiQue (multi-hop reasoning, closed-book setting to test knowledge + reasoning)
+### Overall Architecture
+Ours establishes a dual-layer analysis framework consisting of "Performance Benchmarking + Mechanistic Interpretability." First, compression damage from quantization, distillation, and pruning on DeepSeek-R1 series models is systematically measured across reasoning benchmarks of increasing difficulty. Then, activation direction vectors and attribution patching are employed to locate which linear modules are critical for reasoning and which are damaged by compression. Finally, interpretability conclusions are validated through selective quantization and protection experiments.
 
-### 2. Mechanistic Interpretability Analysis
-Targeting four core reasoning behaviors: backtracking, uncertainty estimation, example testing, and adding knowledge.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Large Reasoning Models (DeepSeek-R1 Series)<br/>+ Compression: Quantization / Distillation / Pruning"] --> B["Difficulty-scaling Reasoning Evaluation Framework<br/>AIME / FOLIO / Temporal / MuSiQue"]
+    B --> C["Mean Difference for Extracting Reasoning Behavior Direction Vectors<br/>Backtracking / Uncertainty / Example Testing / Adding Knowledge"]
+    C --> D["Attribution Patching to Quantify Module Importance<br/>Direction Vector Projection onto Loss Gradient yields I_mℓ"]
+    D --> E["Relative Importance Shift to Decode Compression Effects<br/>Pre- vs. Post-compression Module Rank Comparison"]
+    E --> F["Closed-loop Validation<br/>Selective Quantization / Protecting Last-layer MLP"]
+    F --> G["Three Key Findings<br/>+ Mixed-precision Protection Strategy"]
+```
 
-**Direction vector extraction via mean difference**:
-For each linear module $m$ at layer $\ell$, the direction vector for behavior $c$ is extracted as:
+### Key Designs
+
+**1. Difficulty-scaling Reasoning Evaluation Framework: Exposing Damage via Complex Tasks**
+
+Prior compression evaluations often stop at perplexity or simple tasks, masking the degradation of reasoning abilities. Ours covers three compression variants—Quantization (Unsloth dynamic 2.51/1.73/1.58-bit, AWQ, GPTQ, GPTAQ, ANY4/ANY3), Distillation (R1-Distill-Llama 70B/8B, R1-Distill-Qwen 32B/7B), and Pruning (SparseGPT, AlphaPruning with multiple sparsities)—testing them across four benchmarks of increasing difficulty: AIME 2024 (mathematical reasoning), FOLIO (logical reasoning), Temporal Sequences (time-series reasoning from BIG-Bench Hard), and MuSiQue (multihop reasoning, using a closed-book setup to simultaneously examine knowledge and reasoning). The introduction of MuSiQue is crucial, as it separates the degradation paths of "knowledge memory" and "pure reasoning," directly supporting the conclusion that "pruning damages knowledge, while quantization preserves parameters."
+
+**2. Mean Difference for Extracting Reasoning Behavior Direction Vectors: Mapping Abstract Reasoning to Activation Directions**
+
+To determine if a specific weight is critical for reasoning, reasoning behaviors must be characterized in activation space. Ours focuses on four core reasoning behaviors—backtracking, uncertainty estimation, example testing, and adding knowledge. Using a contrastive dataset $\mathcal{D}_+$ (containing the behavior) and $\mathcal{D}_-$ (not containing it), a direction vector for behavior $c$ is constructed for each linear module $m$ at layer $\ell$:
 
 $$\mathbf{u}_{m\ell}^c = \frac{1}{|\mathcal{D}_+|} \sum_{s_i^c \in \mathcal{D}_+} \bar{\mathbf{a}}_{m\ell}^c(s_i^c) - \frac{1}{|\mathcal{D}_-|} \sum_{s_j \in \mathcal{D}_-} \bar{\mathbf{a}}_{m\ell}(s_j)$$
 
-where $\bar{\mathbf{a}}_{m\ell}^c(s_i^c)$ is the mean activation over the behavior token sequence.
+Where $\bar{\mathbf{a}}_{m\ell}^c(s_i^c)$ is the average activation over the behavior token sequence. This direction vector provides an actionable representation of how much and in what direction a module participates in a specific reasoning behavior, serving as input for subsequent causal attribution.
 
-**Importance score computation via attribution patching**:
+**3. Attribution Patching to Quantify Module Importance: Translating Vectors to Causal Strength via Gradients**
+
+Having a direction vector is insufficient; its causal effect on model output is what matters. Ours uses attribution patching to project the direction vector $\tilde{\mathbf{u}}_{m\ell}^c$ onto the gradient of the loss with respect to activations, yielding an importance score for module $m$ regarding behavior $c$:
 
 $$\mathbf{I}_{m\ell}^c \approx \frac{1}{|\mathcal{D}_+|} \left| \sum_{s_i^c \in \mathcal{D}_+} (\tilde{\mathbf{u}}_{m\ell}^c)^\top \frac{\partial}{\partial \mathbf{a}_{m\ell}} \mathcal{L}(s_i^c) \right|$$
 
-A higher $\mathbf{I}_{m\ell}^c$ indicates a stronger causal relationship between the module and reasoning behavior $c$.
+A higher $\mathbf{I}_{m\ell}^c$ indicates that perturbing module activations along the direction of that behavior has a greater impact on loss, signifying a stronger causal relationship. Compared to layer-wise analysis, this module-specific score can precisely identify fine-grained critical components such as the "last-layer MLP up_proj."
 
-**Compression effect decoding**: The impact of compression is tracked by measuring changes in relative importance $\mathbf{RI}_{m\ell}^c$ (importance shift).
+**4. Relative Importance Shift to Decode Compression Effects: Aligning Changes as Readable Signals**
+
+To answer what exactly compression destroys, Ours compares the relative importance $\mathbf{RI}_{m\ell}^c$ (normalized ranking of module importance under the same behavior) before and after compression. Tracking shifts in these rankings reveals that if a critical module's importance is abnormally weakened after compression, it has been over-compressed. This signal directly led to validation experiments: quantizing only the last-layer up_proj (0.7% of total weights) dropped average accuracy by 16.3%, while conversely, keeping only ~2% of the last-layer MLP in full precision recovered 6.57% accuracy, turning interpretability findings into a deployable mixed-precision protection strategy.
 
 ## Key Experimental Results
 
-### Overall Performance Comparison
+### Main Results
 
 | Model | Params | Compression | AIME 2024 | FOLIO | Temporal | Avg | MuSiQue (EM, F1) |
 |------|--------|----------|-----------|-------|----------|-----|-------------------|
 | DeepSeek-R1 | 671B | None | 73.3 | 76.4 | 99.6 | 83.1 | (17.0, 27.51) |
 | DeepSeek-R1 | 671B | 2.51-bit | 76.7 | 77.8 | 100.0 | **84.8** | (17.0, 24.43) |
 | DeepSeek-R1 | 671B | 1.58-bit | 66.7 | 75.4 | 94.0 | 78.7 | (14.0, 22.34) |
-| R1-Distill-Llama | 70B | Distillation | 65.6 | 79.8 | 99.9 | 81.8 | (13.3, 21.57) |
-| R1-Distill-Qwen | 32B | Distillation | 64.4 | 82.3 | 99.9 | 82.2 | (2.7, 10.95) |
-| R1-Distill-Llama | 8B | Distillation | 42.2 | 71.9 | 81.5 | 65.2 | (0.0, 4.43) |
+| R1-Distill-Llama | 70B | Distill | 65.6 | 79.8 | 99.9 | 81.8 | (13.3, 21.57) |
+| R1-Distill-Qwen | 32B | Distill | 64.4 | 82.3 | 99.9 | 82.2 | (2.7, 10.95) |
+| R1-Distill-Llama | 8B | Distill | 42.2 | 71.9 | 81.5 | 65.2 | (0.0, 4.43) |
 | R1-Distill-Llama | 70B | 50% SparseGPT | 23.3 | 71.6 | 97.6 | 64.2 | (6.7, 13.49) |
 
-### Selective Quantization Validates Component Importance
+### Ablation Study: Validating Importance via Selective Quantization
 
 | Quantized Component | Rank | AIME 2024 | FOLIO | Temporal | Avg |
 |----------|------|-----------|-------|----------|-----|
-| 32_up (last-layer up_proj) | Global #1 | 20.0 | 63.1 | 63.6 | 48.9 |
-| 32_gate | #2 in column | 33.3 | 62.1 | 67.2 | 54.2 |
-| 32_v | Last in column | 43.3 | 68.0 | 79.6 | 63.6 |
-| Unquantized baseline | - | 42.2 | 71.9 | 81.5 | 65.2 |
+| 32_up (Last layer up_proj) | Global No.1 | 20.0 | 63.1 | 63.6 | 48.9 |
+| 32_gate | Column No.2 | 33.3 | 62.1 | 67.2 | 54.2 |
+| 32_v | Column last | 43.3 | 68.0 | 79.6 | 63.6 |
+| Unquantized Baseline | - | 42.2 | 71.9 | 81.5 | 65.2 |
 
-Quantizing only `32_up` (0.7% of total weights) causes an average accuracy drop of **16.3%**.
+Quantizing only 32_up (0.7% of total weights) resulted in a **16.3%** drop in average accuracy!
 
-### Effect of Protecting Critical Weights
+### Effects of Protecting Critical Weights
 
-| Compression | Protected | AIME 2024 | FOLIO | Temporal | Avg |
+| Compression | Protection | AIME 2024 | FOLIO | Temporal | Avg |
 |----------|---------|-----------|-------|----------|-----|
 | 3-bit AWQ | No | 10.0 | 59.6 | 68.4 | 46.0 |
-| 3-bit AWQ | Last-layer MLP protected | **16.7** | **67.0** | **74.0** | **52.57** |
+| 3-bit AWQ | Protect Last Layer MLP | **16.7** | **67.0** | **74.0** | **52.57** |
 
-Protecting only ~2% of weights at full precision yields an average accuracy gain of **6.57%**, surpassing the previous SOTA quantization method by up to **23.17%**.
+Protecting ~2% of weights in full precision improved average accuracy by **6.57%**, outperforming SOTA quantization methods by up to **23.17%**.
 
-### Collapse Point Analysis (SparseGPT at Various Sparsity Levels)
+### Collapse Point Analysis (SparseGPT Sparsity Levels)
 
 | Sparsity | R1-Distill-Llama-70B AIME | R1-Distill-Llama-70B FOLIO |
 |--------|---------------------------|---------------------------|
@@ -111,54 +117,50 @@ Protecting only ~2% of weights at full precision yields an average accuracy gain
 | 60% | 0.0 | 65.0 |
 | 70% | 0.0 | 49.8 |
 
-The collapse point is negatively correlated with task difficulty: AIME collapses at 40–50% sparsity, while FOLIO collapses at 60–70%.
+The collapse point is negatively correlated with task difficulty: AIME collapses at 40-50%, while FOLIO collapses at 60-70%.
 
-## Three Core Findings
+## Key Findings
 
-### Finding 1: Parameter Count Affects Knowledge Memorization More Than Reasoning
-- Qwen-based models demonstrate stronger reasoning than Llama-based ones, yet score substantially lower on MuSiQue (knowledge-intensive).
-- Pruning causes knowledge memorization to collapse earlier than reasoning (MuSiQue collapses at 30–40% sparsity).
-- Conclusion: For knowledge-intensive tasks, quantization (which preserves parameter count) is preferable over pruning or distillation.
+### Finding 1: Weight Quantity Impacts Knowledge Memory More Than Reasoning
+- While Qwen's reasoning is stronger than Llama's, its MuSiQue (knowledge-intensive) score is much lower than Llama-70B's.
+- Pruning causes knowledge memory to collapse earlier than reasoning (MuSiQue collapses at 30-40% sparsity).
+- **Conclusion**: Knowledge-intensive tasks should prioritize quantization (maintaining parameter count) over pruning or distillation.
 
-### Finding 2: The Last-Layer MLP `up_proj` Is the Most Critical Component
-- This pattern is consistently observed across both R1-Distill-Llama-8B and R1-Distill-Qwen-7B.
-- Distillation is identified as the cause of this component's heightened importance (the original Llama model does not exhibit this property).
-- This finding supplements prior work claiming `o_proj` is the most important component.
+### Finding 2: Last-layer MLP up_proj is the Most Critical Component
+- This pattern was observed in both R1-Distill-Llama-8B and R1-Distill-Qwen-7B.
+- Distillation is the primary cause for the prominence of this component (original Llama does not exhibit this feature).
+- This complements existing research claiming o_proj is most important.
 
-### Finding 3: Current Quantization Methods Over-Compress the Last Layer and `gate_proj`
-- Both AWQ and GPTQ excessively compress the last-layer modules and mid-layer `gate_proj`.
-- Protecting only the last-layer MLP modules yields significant performance improvements (+6.57% average).
-- This finding generalizes to pruning methods as well.
+### Finding 3: Current Quantization Methods Over-compress Last Layers and gate_proj
+- Both AWQ and GPTQ over-compress last-layer modules and gate_proj in intermediate layers.
+- Protecting the last-layer MLP module significantly improves performance (+6.57% on average).
+- This finding also applies to pruning methods.
 
 ## Highlights & Insights
-1. **First systematic comparison of three compression methods on LRMs**: fills a gap in the LRM compression literature.
-2. **Fine-grained interpretability analysis**: importance is analyzed at the level of individual linear modules, going beyond prior layer-level analyses.
-3. **High practical value**: protecting only 2% of weights yields substantial gains, providing clear guidance for future compression methods.
-4. **Generalizable findings**: core findings hold across both R1 and non-R1 model families.
-5. **Integration of theory and practice**: each finding is supported by validation experiments.
+1. **First systematic comparison of three compression methods on LRMs**: Fills the research gap in LRM compression.
+2. **Fine-grained Interpretability Analysis**: Module-level importance analysis surpasses existing layer-wise approaches.
+3. **High Practical Value**: Achieving significant gains by protecting only 2% of weights provides clear guidance for future compression.
+4. **Generalizability**: Core findings hold across both R1 and non-R1 model families.
+5. **Synergy of Theory and Practice**: Every finding is supported by validation experiments.
 
 ## Limitations & Future Work
-- Interpretability analysis uses only 120 instances, limiting statistical power.
-- Optimal strategies for mixed-precision quantization remain unexplored (only simple last-layer protection is validated).
-- Pruning analysis is less comprehensive than quantization and distillation due to the unavailability of high-sparsity models.
-- Distillation analysis is limited to SFT-based approaches; RL-stage distillation is not examined.
-- Inference latency and deployment efficiency metrics are not reported.
+- Interpretability analysis used only 120 instances, a relatively small sample size.
+- Optimal strategies for mixed-precision quantization were not fully explored (only verified simple last-layer protection).
+- Pruning analysis was less extensive than quantization/distillation due to the unavailability of high-sparsity models.
+- Distillation analysis was limited to SFT, omitting distillation during the RL phase.
+- Specific data on inference time and deployment efficiency were not discussed.
 
 ## Related Work & Insights
-- Compared to existing compression benchmarks (e.g., EleutherAI harness): this paper employs more challenging reasoning datasets.
-- Compared to Venhoff et al.'s layer-level analysis: this paper provides module-level fine-grained analysis.
-- Compared to Shao & Wu's claim that `o_proj` is most important: this paper finds `up_proj` to be more critical in distilled models.
-- Compared to surveys by Liu et al. and Feng et al.: this paper contributes a unique mechanistic interpretability perspective.
-- The finding on last-layer MLP `up_proj` importance can directly guide future quantization and pruning algorithm design.
-- The mixed-precision protection strategy is generalizable to broader compression scenarios.
-- The knowledge-vs-reasoning decomposition provides a theoretical basis for selecting appropriate compression methods.
-- The correlation between collapse points and task difficulty can be used to estimate post-compression capability bounds.
+- Compared to existing compression benchmarks (e.g., EleutherAI harness): Ours uses more challenging reasoning datasets.
+- Compared to layer-level analysis by Venhoff et al.: Ours provides module-level fine-grained analysis.
+- Compared to Shao & Wu's claim that o_proj is most important: Ours finds up_proj more critical in distilled models.
+- Compared to surveys by Liu et al. and Feng et al.: Ours provides a unique mechanistic interpretability perspective.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Novel combination of systematic study and interpretability analysis, though the underlying methods are not original)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Covers quantization/distillation/pruning across multiple models, benchmarks, and validation experiments)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure and concise presentation of findings, though the abundance of tables slightly burdens readability)
-- Value: ⭐⭐⭐⭐⭐ (Three core findings are directly actionable for improving compression methods; protecting 2% of weights for a 6.57% gain is highly practical)
+- Novelty: ⭐⭐⭐⭐ (Combination of systematic study and interpretability is novel, though basic methods are not original)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Covers quantization/distillation/pruning, multiple models, benchmarks, and validation tests)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, refined findings, though many tables make it slightly dense)
+- Value: ⭐⭐⭐⭐⭐ (Three core findings directly applicable to improving compression; protecting 2% weights for a 6.57% gain is highly practical)
 
 <!-- RELATED:START -->
 
@@ -166,11 +168,11 @@ The collapse point is negatively correlated with task difficulty: AIME collapses
 
 ## Related Papers
 
-- [\[ICML 2026\] Internalizing Safety Understanding in Large Reasoning Models via Verification](../../ICML2026/llm_reasoning/internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
 - [\[ACL 2026\] Can Reasoning Path still be Effective as Input? Bridging Post-Reasoning to Chain-of-Thought Compression](../../ACL2026/llm_reasoning/can_reasoning_path_still_be_effective_as_input_bridging_post-reasoning_to_chain-.md)
-- [\[AAAI 2026\] Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives](../../AAAI2026/llm_reasoning/understanding_syllogistic_reasoning_in_llms_from_formal_and_natural_language_per.md)
-- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](../../NeurIPS2025/llm_reasoning/topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
+- [\[ICML 2026\] Internalizing Safety Understanding in Large Reasoning Models via Verification](../../ICML2026/llm_reasoning/internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)
+- [\[ICLR 2026\] Characterizing and Mitigating Reasoning Drift in Large Language Models](characterizing_and_mitigating_reasoning_drift_in_large_language_models.md)
 
 </div>
 

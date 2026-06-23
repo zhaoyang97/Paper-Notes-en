@@ -2,136 +2,143 @@
 title: >-
   [Paper Note] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Policy Gradient] This paper proposes CAPO (Curvature-Aware Policy Optimization), which models second-order optimization geometry at the LM head's final layer to predict and filter token updates…
+  [ICLR 2026][LLM Reasoning][GRPO] This paper proposes CAPO (Curvature-Aware Policy Optimization), which stabilizes training under aggressive hyperparameters (5× learning rate, 1/12 batch size) by modeling second-order geometry in the final LM head layer to predict and filter token updates that lead to policy collapse. It achieves a 30× improvement in s
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Policy Gradient"
-  - "Curvature-Aware"
-  - "Sample Efficiency"
-  - "GRPO"
-  - "Second-Order Optimization"
+  - ICLR 2026
+  - LLM Reasoning
+  - GRPO
 date: 2026-05-08
-content_hash: 5bdb61839afab66c
+content_hash: 844866d8338cf84a
 ---
-
 # Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning
 
 **Conference**: ICLR 2026  
 **arXiv**: [2510.00819](https://arxiv.org/abs/2510.00819)  
 **Code**: [https://github.com/luckeciano/stable-pg-llm](https://github.com/luckeciano/stable-pg-llm)  
-**Area**: Video Understanding  
-**Keywords**: Policy Gradient, Curvature-Aware, Sample Efficiency, GRPO, Second-Order Optimization
+**Area**: LLM Reasoning  
+**Keywords**: Policy Gradient, Curvature-Aware, Sample Efficiency, GRPO, Second-order Optimization  
 
 ## TL;DR
-This paper proposes CAPO (Curvature-Aware Policy Optimization), which models second-order optimization geometry at the LM head's final layer to predict and filter token updates that would cause policy collapse. Under aggressive hyperparameters (5× learning rate, 1/12 batch size), CAPO maintains training stability and achieves a 30× sample efficiency improvement over standard GRPO on MATH.
+This paper proposes CAPO (Curvature-Aware Policy Optimization), which stabilizes training under aggressive hyperparameters (5× learning rate, 1/12 batch size) by modeling second-order geometry in the final LM head layer to predict and filter token updates that lead to policy collapse. It achieves a 30× improvement in sample efficiency on MATH compared to standard GRPO.
 
 ## Background & Motivation
 
-**Background**: Policy gradient methods such as GRPO and PPO are central to LLM reasoning post-training (e.g., DeepSeek-R1). Current practice requires highly conservative hyperparameters—learning rates as low as $3 \times 10^{-6}$ and batch sizes in the thousands—to ensure training stability.
+**Background**: Policy gradient methods such as GRPO and PPO are core technologies for LLM reasoning post-training (e.g., DeepSeek-R1). Current practices require extremely conservative hyperparameters—learning rates as low as $3 \times 10^{-6}$ and batch sizes in the thousands—to ensure training stability.
 
-**Limitations of Prior Work**: Conservative settings imply enormous sample requirements and computational cost. However, increasing the learning rate or reducing batch size causes the variance of policy gradient estimates to surge dramatically, leading to catastrophic parameter updates and policy collapse—model performance drops below baseline and fails to recover.
+**Limitations of Prior Work**: Conservative settings imply massive sample requirements and computational overhead. However, increasing the learning rate or reducing the batch size leads to a sharp increase in policy gradient estimation variance, causing catastrophic parameter updates and policy collapse—where model performance drops below the baseline and fails to recover.
 
-**Key Challenge**: Policy gradients rely solely on first-order information and cannot sense curvature on non-convex RL objectives, potentially taking a large step along an apparently improving direction only to fall into a performance cliff. Meanwhile, the Hessian matrix is infeasible to compute or approximate directly at LLM scale (billions of parameters).
+**Key Challenge**: Policy gradients utilize only first-order information and cannot perceive curvature in non-convex RL objectives. This may lead to large steps in directions that seemingly improve the objective but fall off a performance cliff. Furthermore, the Hessian matrix cannot be directly computed or approximated at the LLM scale (billions of parameters).
 
-**Key Insight**: The authors observe that LLM logit outputs are produced solely by a final linear transformation $W \in \mathbb{R}^{K \times d_i}$, and that top-k sampling renders gradients naturally sparse (only $k < 100$ tokens have non-zero probability). This enables efficient approximation of the Hessian and Fisher information matrix within the final layer.
+**Key Insight**: The authors observe that LLM logit outputs are generated solely by the final linear transformation layer $W \in \mathbb{R}^{K \times d_i}$, and top-k sampling makes the gradients naturally sparse (only $k < 100$ tokens have non-zero probabilities). Consequently, the Hessian and Fisher Information matrices can be efficiently approximated in this final layer.
 
-**Core Idea**: A last-layer curvature model is constructed to track the effect of each token update on the objective function and policy distribution, filtering out samples that violate trust-region constraints.
+**Core Idea**: Construct a last-layer curvature calculation model to track the impact of each token update on the objective function and policy distribution, filtering out samples that do not satisfy trust region constraints.
 
 ## Method
 
 ### Overall Architecture
-CAPO augments GRPO with a lightweight data-filtering layer: before each gradient update, the curvature model predicts whether the update is safe, and only safe tokens participate in the actual gradient computation. The pipeline is: sample trajectories → compute last-layer gradients/curvature → evaluate token-level constraints → filter unsafe tokens → compute LLM policy gradient on filtered subset → update model parameters.
+The goal of CAPO (Curvature-Aware Policy Optimization) is to prevent GRPO from collapsing under aggressive hyperparameters (high learning rate, small batch size). It inserts a lightweight gate between sampling and parameter updates: before each update, a curvature model computed only at the final layer (LM head) predicts whether a candidate token update will push the policy off a performance cliff or progress safely. Only safe tokens are allowed into the actual policy gradient. The pipeline is as follows: after obtaining GRPO trajectories, gradients and curvature are estimated in the last-layer subspace; two scalars, "objective shift" $m_H$ and "policy shift" $m_F$, are calculated for each token; tokens exceeding trust region thresholds are discarded; and the remaining subset is used for standard policy gradient updates. The objective function itself (clipped surrogate + KL) remains unchanged; the innovation lies entirely in the data filtering during the gradient estimation phase.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["GRPO Sample Trajectories<br/>Obtain candidate token updates"] --> B["Last-Layer Curvature Model<br/>Analytical Hessian/Fisher<br/>in LM head subspace"]
+    B --> C["Directional Curvature Diagnosis<br/>Calculate objective shift m_H & policy shift m_F<br/>along actual Adam update step"]
+    C --> D{"Token-level Trust Region<br/>δ_H ≤ m_H ≤ δ_H^high<br/>and m_F ≤ δ_F ?"}
+    D -->|Exceeds| E["Discard token"]
+    D -->|Passes| F["Retain in subset"]
+    F --> G["Update model using policy gradient<br/>calculated from passed token subset"]
+    G --> A
+```
 
 ### Key Designs
 
-1. **Last-Layer Curvature Model**:
+**1. Last-Layer Curvature Model: Making Second-Order Information Tractable at Billion-Parameter Scale**
 
-    - LLM parameters are partitioned as $\bm{\theta} = (\bar{\bm{\theta}}, \bm{\psi})$, where $\bm{\psi} = \text{vec}(W)$ denotes only the LM head.
-    - Closed-form expressions for the objective Hessian $\tilde{H}(\bm{\psi})$ and Fisher information matrix $\tilde{F}(\bm{\psi})$ are derived in this subspace.
-    - Exploiting the sparsity of top-k sampling (typically $k < 100$), memory complexity is reduced from $\mathcal{O}((Kd_i)^2)$ to $\mathcal{O}(\tilde{k} \cdot d_i)$.
+Policy gradients use only first-order information and cannot perceive curvature in non-convex RL objectives, potentially taking large steps toward performance cliffs. While the Hessian is uncomputable for billions of parameters, CAPO partitions parameters into $\bm{\theta} = (\bar{\bm{\theta}}, \bm{\psi})$, where $\bar{\bm{\theta}}$ is the backbone and $\bm{\psi} = \text{vec}(W)$ is the final LM head layer. Since logits are produced entirely by this layer, the authors derive analytical forms for the objective Hessian $\tilde{H}(\bm{\psi})$ and Fisher information matrix $\tilde{F}(\bm{\psi})$ in this subspace. Crucially, top-k sampling ensures gradient sparsity (typically $k < 100$), reducing memory complexity from $\mathcal{O}((Kd_i)^2)$ to $\mathcal{O}(\tilde{k} \cdot d_i)$, making curvature calculations feasible for every step.
 
-2. **Directional Curvature Computation**:
+**2. Directional Curvature Diagnosis: Compressing Update Impacts into Interpretable Scalars**
 
-    - Objective shift: $m_H(\Delta\bm{\psi}) = \tilde{g}(\bm{\psi})^\top \Delta\bm{\psi} + \frac{1}{2} \Delta\bm{\psi}^\top \tilde{H}(\bm{\psi}) \Delta\bm{\psi}$
-    - Policy shift: $m_F(\Delta\bm{\psi}) = \frac{1}{2} \Delta\bm{\psi}^\top \tilde{F}(\bm{\psi}) \Delta\bm{\psi}$
-    - No large tensors need to be constructed; only sparse vector dot products are required.
+With $\tilde{H}$ and $\tilde{F}$, CAPO performs two second-order expansions along the actual update direction $\Delta\bm{\psi}$ to obtain two diagnostic quantities. The objective shift predicts whether the update will increase or decrease the objective:
 
-3. **Token-Level Trust-Region Filtering**:
+$$m_H(\Delta\bm{\psi}) = \tilde{g}(\bm{\psi})^\top \Delta\bm{\psi} + \frac{1}{2} \Delta\bm{\psi}^\top \tilde{H}(\bm{\psi}) \Delta\bm{\psi}$$
 
-    - The batch is divided into token-level subsets; $m_H$ and $m_F$ are computed for each subset.
-    - Acceptance condition: $\delta_H \leq m_H(\Delta\psi_i) \leq \delta_H^{high}$ and $m_F(\Delta\psi_i) \leq \delta_F$.
-    - Rejected tokens do not participate in the actual policy gradient computation.
+The policy shift measures how far the policy distribution will be moved:
 
-4. **Optimizer Modeling**: Adam's first- and second-moment estimates are used to simulate the actual update step $\Delta\bm{\psi}$, rather than a simple SGD step.
+$$m_F(\Delta\bm{\psi}) = \frac{1}{2} \Delta\bm{\psi}^\top \tilde{F}(\bm{\psi}) \Delta\bm{\psi}$$
+
+Both require only sparse vector dot products, resulting in minimal overhead. Critically, $\Delta\bm{\psi}$ is modeled using Adam’s first and second moment estimates to match the actual optimizer step, ensuring the curvature prediction remains accurate for the landed update.
+
+**3. Token-Level Trust Region Filtering: Removing "Toxic" Tokens Without Modifying the Objective**
+
+CAPO decomposes a batch into token-level subsets, calculates $m_H$ and $m_F$ for each, and applies three thresholds: tokens are accepted only if $\delta_H \leq m_H(\Delta\psi_i) \leq \delta_H^{high}$ and $m_F(\Delta\psi_i) \leq \delta_F$. Out-of-bounds tokens are excluded from the current policy gradient. This step performs fine-grained cleaning at the sample level without modifying the surrogate objective, allowing it to be integrated with any policy gradient method (e.g., Dr.GRPO→Dr.CAPO, REINFORCE→ReinCAPO). Theoretically, the authors provide a monotonic improvement guarantee: by setting the trust region radius $\omega \geq C\sqrt{\delta_F}$, one can ensure $J(\pi_{\theta+\Delta\theta}) \geq J(\pi_\theta)$, aligning empirical "toxic token" filtering with the "no policy degradation" conclusion.
 
 ### Loss & Training
-The same clipped surrogate objective and KL regularization as GRPO are used. CAPO's contribution lies in the data-filtering stage of gradient estimation, leaving the objective function itself unchanged. A monotonic improvement guarantee is theoretically established: choosing $\omega \geq C\sqrt{\delta_F}$ is sufficient to ensure $J(\pi_{\theta+\Delta\theta}) \geq J(\pi_\theta)$.
+The objective function is identical to GRPO—using a clipped surrogate with KL regularization. CAPO introduces no new loss terms; its effect is limited to the selection of tokens during gradient calculation. In practice, the rejection rate is approximately 8% initially, dropping below 2% later, with an additional computational overhead of <5%.
 
 ## Key Experimental Results
 
-### Main Results (Qwen2.5-Math-7B, trained on MATH dataset)
+### Main Results (Qwen2.5-Math-7B, Trained on MATH Dataset)
 
-| Method | Setting | MATH Accuracy | TEST-8 Avg. | Completions to Reach 70% |
-|--------|---------|--------------|-------------|--------------------------|
-| GRPO (conservative) | lr=3e-6, large batch | ~72% | ~65% | ~150K |
-| GRPO (aggressive) | lr=1.5e-5, small batch | Collapse ❌ | Collapse ❌ | N/A |
-| Dr.GRPO (aggressive) | same | Collapse ❌ | Collapse ❌ | N/A |
-| REINFORCE (aggressive) | same | Collapse ❌ | Collapse ❌ | N/A |
-| **CAPO (aggressive)** | **lr=1.5e-5, small batch** | **~72%** | **~66%** | **~5K (30×)** |
+| Method | Settings | MATH Accuracy | TEST 8 Baseline Mean | Completions to reach 70% |
+|------|------|------------|----------------|-------------------------|
+| GRPO (Conservative) | lr=3e-6, batch=Large | ~72% | ~65% | ~150K |
+| GRPO (Aggressive) | lr=1.5e-5, batch=Small | Collapse ❌ | Collapse ❌ | N/A |
+| Dr.GRPO (Aggressive) | Same as above | Collapse ❌ | Collapse ❌ | N/A |
+| REINFORCE (Aggressive) | Same as above | Collapse ❌ | Collapse ❌ | N/A |
+| **CAPO (Aggressive)** | **lr=1.5e-5, batch=Small** | **~72%** | **~66%** | **~5K (30×)** |
 
 ### Ablation Study
 
-| Analysis Dimension | Result | Notes |
-|-------------------|--------|-------|
-| Token rejection rate | ~8% early, <2% thereafter | Minimal intervention suffices for stability |
-| Generalizability | Dr.CAPO and ReinCAPO both effective | Compatible with arbitrary PG methods |
-| Computational overhead | <5% additional time | Last-layer computation is extremely lightweight |
-| $m_F$ tracking | Global $m_F$ spikes sharply for collapsing methods | Curvature model effectively warns of instability |
-| $m_H$ tracking | $m_H$ curve is smooth for CAPO | Local constraints ensure global stability |
+| Analysis Dimension | Result | Description |
+|---------|------|------|
+| Token Rejection Rate | ~8% initially, <2% later | Minimal intervention suffices for stability |
+| Scalability | Dr.CAPO, ReinCAPO effective | Applicable to any PG method |
+| Computational Overhead | <5% extra time | Last-layer computation is lightweight |
+| $m_F$ Tracking | Global $m_F$ spikes for failed methods | Curvature model effectively warns of instability |
+| $m_H$ Tracking | CAPO $m_H$ curve is smooth | Local constraints ensure global stability |
 
 ### Key Findings
-- All baseline methods (GRPO, Dr.GRPO, REINFORCE) collapse under aggressive settings; only CAPO remains stable.
-- CAPO achieves a 30× sample efficiency improvement on MATH and a 9× improvement on TEST (8 evaluation benchmarks).
-- Policy shift $m_F$ is highly correlated with training instability—a spike in $m_F$ is a precursor to collapse.
-- Curvature-aware filtering generalizes to different policy gradient objectives (Dr.GRPO→Dr.CAPO, REINFORCE→ReinCAPO), consistently preventing collapse.
+- All baseline methods (GRPO, Dr.GRPO, REINFORCE) collapse under aggressive settings, while only CAPO remains stable.
+- CAPO achieves a 30× sample efficiency gain on MATH and a 9× gain across 8 evaluation baselines (TEST).
+- Policy shift $m_F$ is highly correlated with training instability—spikes in $m_F$ precede collapse.
+- Curvature-aware filtering generalizes to different policy gradient objectives, consistently preventing collapse.
 
 ## Highlights & Insights
-- **Minimal intervention, maximal gain**: Computing curvature only at the final layer and rejecting fewer than 8% of tokens yields a 30× sample efficiency improvement. This suggests that training instability is concentrated in a small number of "toxic" samples, while the update directions of the vast majority of tokens are safe.
-- **Diagnostic value of the curvature model**: Tracking $m_F$ and $m_H$ not only serves filtering purposes but also provides a window into understanding the optimization dynamics of RL-LLM training—spikes in $m_F$ precede collapse, a phenomenon that was previously nearly opaque.
-- **Strong generalizability**: CAPO's token-filtering mechanism can be stacked on top of any policy gradient method, and the theoretical guarantees do not depend on the specific form of the advantage function—as validated by the success of Dr.CAPO and ReinCAPO.
-- **Close correspondence between theory and practice**: The monotonic improvement guarantee of Theorem 5.1 is precisely verified experimentally—CAPO's $m_F$ remains consistently below the threshold.
+- **Minimal Intervention for Maximum Gain**: Calculating curvature only at the last layer and rejecting <8% of tokens leads to a 30× efficiency gain. This suggests that instability is concentrated in a few "toxic" samples.
+- **Diagnostic Value of Curvature**: Tracking $m_F$ and $m_H$ provides a window into RL-LLM optimization dynamics, making the previously black-box "collapse" predictable via $m_F$ spikes.
+- **High Generality**: The token-filtering mechanism is modular, serving as a drop-in enhancement for any policy gradient method.
+- **Alignment of Theory and Practice**: The monotonic improvement guarantee in Theorem 5.1 is empirically validated, as CAPO maintains $m_F$ within safe thresholds.
 
 ## Limitations & Future Work
-- Validation is limited to Qwen2.5-Math-7B (7B scale); larger models and longer training schedules remain to be tested.
+- Validated only on Qwen2.5-Math-7B; performance on larger models and longer training schedules requires testing.
 - Thresholds $\delta_H, \delta_F, \delta_H^{high}$ require tuning for specific MDPs and base policies.
-- The last-layer approximation may be informationally insufficient for deeper layers; extending to multi-layer curvature estimation is a natural direction.
-- Evaluation is restricted to mathematical reasoning tasks; performance on code generation, agent tasks, and other domains is unknown.
+- Last-layer approximation might lack information from deeper layers; extension to multi-layer curvature estimation is a natural progression.
+- Validated primarily on mathematical reasoning; effectiveness on code generation or Agent tasks remains unknown.
 
 ## Related Work & Insights
-- **vs. GRPO/PPO**: Their clipping mechanisms impose coarse-grained constraints in parameter space, whereas CAPO performs fine-grained filtering in sample space—the two approaches can be used in combination.
-- **vs. K-FAC (Castanyer et al.)**: K-FAC computes a Kronecker approximation of the Fisher matrix in general deep RL, incurring high memory overhead that does not scale to LLM sizes; CAPO leverages LLM top-k sparsity and a last-layer approximation to substantially reduce complexity.
-- **vs. Dr.GRPO**: Dr.GRPO reduces variance by modifying the advantage function but does not address curvature—it still collapses under aggressive settings; combined with CAPO (Dr.CAPO), it becomes stable.
-- **Insight**: Instability in RL-LLM training may not require modifying the objective function; it may suffice to identify and filter "toxic samples"—analogous to data cleaning in machine learning.
-- **Broader Insight**: The last-layer curvature modeling approach can be extended to other LLM optimization problems, such as detecting catastrophic forgetting in SFT.
+- **vs. GRPO/PPO**: Clipping mechanisms in standard methods provide coarse-grained constraints in parameter space, while CAPO offers fine-grained filtering in sample space. Both can be used together.
+- **vs. K-FAC**: K-FAC uses Kronecker approximations for Fisher matrices in general deep RL, but entails high memory overhead. CAPO leverages LLM top-k sparsity and last-layer approximations to scale.
+- **vs. Dr.GRPO**: Dr.GRPO reduces variance via objective modification but does not address curvature; it still collapses under aggressive settings, whereas Dr.CAPO remains stable.
+- **Insight**: Instability in RL-LLM training may not require changing the objective, but rather identifying and filtering "toxic samples"—analogous to data cleaning in supervised learning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Practical application of second-order methods in LLM RL; the last-layer + sparsity technique is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ The 30× improvement is substantial and evaluated across 8 benchmarks, though model scale is limited.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are rigorous, experimental presentation is clear, and the logical chain from motivation to method is complete.
-- Value: ⭐⭐⭐⭐⭐ Directly practical for LLM RL training efficiency, with potential to substantially reduce computational costs.
+- Novelty: ⭐⭐⭐⭐ Practical application of second-order methods in LLM RL via last-layer sparsity.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Significant 30× gain across 8 benchmarks, though limited in model scale.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous theoretical derivation and clear logical flow from motivation to method.
+- Value: ⭐⭐⭐⭐⭐ Direct practical implications for LLM RL efficiency, significantly reducing compute costs.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](on_the_design_of_kl-regularized_policy_gradient_algorithms_for_llm_reasoning.md)
-- [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](../../ICML2026/llm_reasoning/resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
+- [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 
 </div>
 

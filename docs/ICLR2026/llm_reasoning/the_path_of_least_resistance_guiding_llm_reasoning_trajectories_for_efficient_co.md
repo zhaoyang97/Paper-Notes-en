@@ -2,82 +2,81 @@
 title: >-
   [Paper Note] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency
 description: >-
-  [ICLR 2026][LLM Reasoning][self-consistency] This paper proposes PoLR (Path of Least Resistance), the first inference-time method that exploits reasoning prefix consistency. By clustering short prefixes and expanding onl…
+  [ICLR 2026][LLM Reasoning][self-consistency] Proposes PoLR (Path of Least Resistance), the first inference-time method leveraging reasoning prefix consistency. By clustering short prefixes and only extending the dominant cluster, it serves as an efficient alternative to Self-Consistency, reducing token usage by up to 60% and latency by 50%.
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "self-consistency"
-  - "inference efficiency"
-  - "prefix clustering"
-  - "reasoning"
-  - "token reduction"
+  - ICLR 2026
+  - LLM Reasoning
+  - self-consistency
+  - inference efficiency
+  - prefix clustering
+  - reasoning
+  - token reduction
 date: 2026-05-08
-content_hash: fc732d8690de0779
+content_hash: bb839a2538f45f14
 ---
-
 # The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.21494](https://arxiv.org/abs/2601.21494)  
 **Code**: None  
-**Area**: LLM/NLP
+**Area**: LLM/NLP  
 **Keywords**: self-consistency, inference efficiency, prefix clustering, reasoning, token reduction
 
 ## TL;DR
 
-This paper proposes PoLR (Path of Least Resistance), the first inference-time method that exploits reasoning prefix consistency. By clustering short prefixes and expanding only the dominant cluster, PoLR serves as an efficient alternative to Self-Consistency, reducing token usage by up to 60% and latency by up to 50%.
+Proposes PoLR (Path of Least Resistance), the first inference-time method leveraging reasoning prefix consistency. By clustering short prefixes and only extending the dominant cluster, it serves as an efficient alternative to Self-Consistency, reducing token usage by up to 60% and latency by 50%.
 
 ## Background & Motivation
 
-Self-Consistency (SC) decoding substantially improves LLM reasoning accuracy by sampling multiple reasoning trajectories and selecting the final answer via majority voting. However, it incurs significant computational overhead, as every reasoning trajectory must be fully unrolled. Existing improvements such as Adaptive Consistency (AC) and Early-Stopping SC (ESC) mitigate this by halting generation once answer-level agreement is reached, but they share a fundamental limitation: **answer-level consistency is only observable after complete reasoning trajectories have been generated**, precluding the use of rich structural information available in early reasoning stages.
+**Background**: Self-Consistency (SC) decoding significantly improves LLM reasoning accuracy by sampling multiple reasoning trajectories and selecting the final answer via majority voting. However, it incurs massive computational overhead—every trajectory must be fully expanded. Existing improvements like Adaptive Consistency (AC) and Early-Stopping SC (ESC) stop early when consensus is reached on the final answer, but share a fundamental limitation: **answer-level consistency is only observable after the full reasoning trajectory is generated**, failing to exploit the rich structural information available in the early stages of reasoning.
 
-The central observation motivating PoLR is that **the prefix of a reasoning trajectory (its first few steps) already encodes strong signals about the final answer**—a phenomenon termed "prefix consistency." Trajectories sharing the same prefix achieve nearly identical accuracy to full SC, implying that the substantial token overhead spent on additional trajectories rarely contributes to the final answer.
+**Key Insight**: The core observation of PoLR is that **reasoning trajectory prefixes (the first few steps) already contain strong signals regarding the final solution**, a phenomenon termed "prefix consistency." Reasoning trajectories sharing the same prefix reach nearly the same accuracy as full SC, implying that the massive token cost spent on extra trajectories rarely contributes to the final answer.
 
 ## Method
 
 ### Overall Architecture
 
-PoLR modifies the standard SC pipeline by introducing a prefix-based selection step:
+PoLR addresses a specific problem: SC expands all $N$ trajectories to the end, resulting in high accuracy but massive token waste, as most trajectories are eventually discarded by the majority vote. The Mechanism of PoLR is to insert an "early-branching" step into the SC pipeline: first sample a batch of **short reasoning prefixes**, cluster them by content, and only expand the dominant cluster (the one with the most members) into full trajectories for majority voting. This prunes most samples at the prefix stage, saving tail-end tokens. The process involves: sampling $N$ short prefixes → TF-IDF encoding and hierarchical clustering → selecting the dominant cluster $C^*$ → continuing only $K$ trajectories from $C^*$ → majority voting for the final answer.
 
-1. **Prefix Sampling**: Given input question $x$ and model $\mathcal{M}$, generate $N$ short reasoning prefixes $p_i = \text{Prefix}(\mathcal{M}(x, t_i), L_p)$ (implemented via `max_new_tokens = L_p`).
-2. **Embedding & Clustering**: Each prefix is encoded as a sparse TF-IDF bag-of-words vector and then clustered via hierarchical clustering (cosine similarity) into $\mathcal{C} = \{C_1, \dots, C_m\}$. The dominant cluster is selected as $C^* = \arg\max_{C_j}|C_j|$.
-3. **Expansion**: Only $K$ prefixes from the dominant cluster $C^*$ are expanded into full reasoning trajectories $r_k = \mathcal{M}(x | p_k)$.
-4. **Voting**: $\hat{a} = \arg\max_y \sum_{k=1}^K \mathbf{1}[a_k = y]$
+```mermaid
+graph TD
+    A["Input Question x"] --> B
+    subgraph PoLR["Prefix Sampling & Dominant Cluster Expansion"]
+        direction TB
+        B["Sample N short prefixes<br/>max_new_tokens = L_p (256)"] --> C["TF-IDF encoding<br/>+ Hierarchical clustering<br/>yields m clusters"]
+        C --> D["Select dominant cluster C*<br/>(cluster with most members)"]
+        D --> E["Extend only K prefixes from C*<br/>into full trajectories (K ≪ N)"]
+    end
+    E --> F["Majority vote on K trajectories<br/>Output answer â"]
+```
 
 ### Key Designs
 
-**Token Efficiency Formula**:
+**1. Prefix Sampling & Dominant Cluster Expansion: Moving trajectory selection to early reasoning**
+
+The waste in SC stems from expanding all $N$ trajectories before voting. PoLR shifts the decision of "which trajectories are worth completing" to the prefix stage. It first generates $N$ short prefixes $p_i = \text{Prefix}(\mathcal{M}(x, t_i), L_p)$ by limiting `max_new_tokens` to $L_p$. Each prefix is encoded into a sparse vector using TF-IDF bag-of-words and grouped via agglomerative hierarchical clustering into $\mathcal{C} = \{C_1,\dots,C_m\}$. The dominant cluster $C^* = \arg\max_{C_j}|C_j|$ is chosen, and only $K$ prefixes from it are continued into full trajectories $r_k = \mathcal{M}(x\,\vert\,p_k)$. The final answer is obtained via standard majority voting $\hat{a} = \arg\max_y \sum_{k=1}^K \mathbf{1}[a_k = y]$. The design choices prioritize lightness: TF-IDF is model-agnostic and runs on CPU in milliseconds, as neural encoders provide negligible accuracy gains relative to their clustering overhead. Hierarchical clustering suits scenarios where $N$ is small (11–51 in experiments) without pre-specifying the number of clusters. When $K=N$ and clustering is skipped, PoLR reverts to standard SC.
+
+**2. Token Efficiency: Quantifying the saved tokens**
+
+To quantify gains and facilitate theoretical analysis, PoLR defines token efficiency as the proportion of tokens saved relative to SC:
 
 $$\eta = 1 - \frac{T_{\text{PoLR}}}{T_{\text{SC}}} = 1 - \frac{N \cdot \ell_p + K \cdot (\ell_f - \ell_p)}{N \cdot \ell_f}$$
 
-where $\ell_p$ denotes average prefix length and $\ell_f$ denotes full reasoning length.
+where $\ell_p$ is the average prefix length, $\ell_f$ is the full trajectory length, $T_{\text{SC}} = N\cdot\ell_f$, and $T_{\text{PoLR}} = N\cdot\ell_p + K\cdot(\ell_f-\ell_p)$. The first term $N\cdot\ell_p$ is the fixed cost for $N$ prefixes, and the second term is the incremental cost of expanding only $K$ trajectories to completion. Since $K \ll N$, this second term eliminates the tail overhead of most trajectories, driving efficiency.
 
-**Justification of Design Choices**:
-- **TF-IDF over neural encoders**: Lightweight, model-agnostic, and CPU-friendly; neural encoders introduce clustering overhead far exceeding the marginal accuracy benefit over TF-IDF.
-- **Hierarchical clustering**: Well-suited for small $N$ (11–51); requires no pre-specified number of clusters and produces interpretable groupings.
-- **$L_p = 256$**: Empirically achieves a favorable balance between accuracy and token efficiency.
+**3. Mutual Information Alignment & Structural Skewness: Decoupling "why accuracy holds" and "why it saves"**
 
-### Theoretical Analysis
-
-The correctness and efficiency of PoLR are guaranteed by two complementary properties:
-
-**Correctness Alignment**: Let $Y \in \{0,1\}$ denote the correctness of the final reasoning trajectory and $Z$ denote the cluster assignment of the prefix. The key condition is $I(Z;Y) > 0$, i.e., the clustering at least weakly predicts correctness. When $H(Y|Z)$ is small, cluster identity reliably predicts correctness.
-
-**Structural Skew and Efficiency**: Efficiency is not driven by correctness alignment but by the structural skew of the prefix cluster distribution. Define the skew ratio $\kappa = |C^*|/N$.
-
-**Proposition**: The token efficiency gain of PoLR relative to SC satisfies $\eta \geq 1 - \frac{K}{M} \cdot \kappa^{-1}$, and efficiency increases monotonically with $\kappa$.
-
-Core insight: **Mutual information guarantees safety (no accuracy loss), while skew determines savings**. NMI remains low ($\leq 0.18$), yet efficiency saturates at 50–58%, as prefix clusters exhibit strong structural skew.
+PoLR explains its safety and efficiency using two independent properties. Safety depends on **correctness alignment**: let $Y\in\{0,1\}$ indicate trajectory correctness and $Z$ indicate the cluster assignment. If $I(Z;Y)>0$ (cluster assignment weakly predicts correctness), expanding the dominant cluster does not systematically discard the correct answer. Efficiency depends on **structural skewness**: defining the skewness rate $\kappa = |C^*|/N$, a lower bound for token efficiency is $\eta \geq 1 - \frac{K}{M}\cdot\kappa^{-1}$. This means the more prefixes concentrate in the dominant cluster (higher $\kappa$), the greater the savings. In practice, Normalized Mutual Information (NMI) remains low ($\leq 0.18$) while efficiency hits 50–58%, indicating that the primary gains come from strong structural skewness (trajectories converging early) rather than a strong correlation between clusters and correctness.
 
 ### Loss & Training
 
-PoLR is an inference-time method and involves no training or loss function. Its core optimization objective is to minimize token consumption while preserving SC-level accuracy.
+PoLR is a pure inference-time method involving no training or fine-tuning; its optimization goal is to minimize token consumption subject to maintaining SC accuracy.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated on GSM8K, Math500, AIME24/25, and GPQA-Diamond across multiple LLM families:
+Evaluated across multiple LLM families on GSM8K, Math500, AIME24/25, and GPQA-Diamond:
 
 | Model | Dataset | N | SC Acc | PoLR Δ | η (%) | Overhead kt (ms) |
 |------|--------|---|--------|--------|-------|-------------|
@@ -89,14 +88,14 @@ Evaluated on GSM8K, Math500, AIME24/25, and GPQA-Diamond across multiple LLM fam
 | QWQ32B | Math500 | 51 | 91.8% | +0.2 | 51.8 | 11.2 |
 
 **Key Findings**:
-- Token efficiency η typically ranges from 40–60%, effectively halving token consumption.
-- Clustering overhead kt amounts to only a few milliseconds, and savings translate directly to faster inference.
-- Accuracy is maintained or occasionally improved, as PoLR emphasizes the dominant consistent reasoning cluster and filters noisy trajectories.
-- The 10-point drop for QWQ32B on AIME25 is an outlier attributable to only 3 out of 30 samples.
+- Token efficiency η usually ranges from 40–60%, effectively halving token consumption.
+- Clustering overhead kt is only a few milliseconds, translating savings directly into faster inference.
+- Accuracy is maintained or occasionally improved, as PoLR emphasizes dominant consistent reasoning clusters, filtering out noisy trajectories.
+- The 10-point drop for QWQ32B on AIME25 was an outlier (3 cases out of only 30 samples).
 
 ### Ablation Study
 
-Preliminary analysis (Math500, GSM8K, DSQ7B, 40 samples) validates prefix consistency:
+Preliminary analysis (Math500, GSM8K, DSQ7B, 40 samples) validating prefix consistency:
 
 | Dataset | $L_p$ | Expansion Rate | Accuracy | Exact Prefix Match |
 |--------|-------|--------|--------|-------------|
@@ -110,39 +109,39 @@ Preliminary analysis (Math500, GSM8K, DSQ7B, 40 samples) validates prefix consis
 ### Key Findings
 
 1. PoLR is robust across different clustering methods, prefix lengths, and cluster selection strategies.
-2. PoLR is fully complementary to adaptive inference methods (AC, ESC) and can serve as an upstream filter.
-3. Consistent effectiveness across model families and scales (1.5B–32B).
-4. Consistent gains are also observed on non-mathematical tasks (StrategyQA).
+2. PoLR is fully complementary to adaptive inference methods (AC, ESC) and can serve as a front-end filter.
+3. Effectiveness is consistent across model families and scales (1.5B–32B).
+4. Demonstrates consistent gains on non-mathematical tasks (StrategyQA).
 
 ## Highlights & Insights
 
-1. **"Less is more" paradigm for reasoning efficiency**: Prefix clustering reveals that LLMs encode structural consistency early in reasoning, rendering the majority of subsequent computation redundant.
-2. **Elegant unification of theory and practice**: The separation between correctness alignment (mutual information guarantees safety) and structural skew (κ drives efficiency) is analytically clean and practically grounded.
-3. **Zero training overhead**: The lightweight combination of TF-IDF and hierarchical clustering makes PoLR a truly plug-and-play replacement.
-4. **Complementary by design**: Explicitly positioned as an upstream optimization for SC, PoLR is composable with AC, ESC, and related methods.
+1. **"Less is More" Efficiency Paradigm**: Prefix clustering reveals that LLMs encode structural consistency early in reasoning, making much of the subsequent computation redundant.
+2. **Elegant Theoretical Framework**: The decoupled analysis of correctness alignment (safety) and structural skewness (efficiency) provides clear insights.
+3. **Zero Training Overhead**: The lightweight combination of TF-IDF and hierarchical clustering makes the method a true plug-and-play replacement.
+4. **Complementary Design**: Positioned as a pre-filter for SC, it can be layered with other methods like AC or ESC.
 
 ## Limitations & Future Work
 
-1. **10-point drop for QWQ32B on AIME25**: Volatility risk exists on challenging benchmarks with very few samples.
-2. **Manual specification of prefix length $L_p$**: While 256 works well in most cases, adaptively determining the optimal prefix length remains an open problem.
-3. **Dependence on prefix structural skew**: When reasoning paths for a given problem are highly diverse ($\kappa \approx 1/m$), the efficiency gains of PoLR diminish.
-4. **Evaluated only on open-source models**: Validation on closed-source models such as GPT-4 is absent.
+1. **Fluctuation on Small Benchmarks**: Significant drops on AIME25 for QWQ32B highlight risks in low-sample, high-difficulty scenarios.
+2. **Manual Prefix Length $L_p$**: While 256 is generally effective, adaptively determining the optimal prefix length remains an open problem.
+3. **Reliance on Structural Skewness**: If reasoning paths for a problem are highly diverse ($\kappa \approx 1/m$), efficiency gains diminish.
+4. **Limited to Open-Source Models**: Validation on closed-source models like GPT-4 is pending.
 
 ## Related Work & Insights
 
-- **Self-Consistency** (Wang et al., 2023): The direct baseline for PoLR.
+- **Self-Consistency** (Wang et al., 2023): Direct baseline for PoLR.
 - **Adaptive Consistency** (Aggarwal et al., 2023): Stops generation on demand but still relies on full trajectories.
-- **Early-Stopping SC** (Li et al., 2024): Shares similar limitations.
-- **Prefix Consistency** (Ji et al., 2025): Exploits prefixes at training time and requires fine-tuning.
+- **Early-Stopping SC** (Li et al., 2024): Similar limitations.
+- **Prefix Consistency** (Ji et al., 2025): Utilizes prefixes during training, requiring fine-tuning.
 
-The core insight PoLR offers is: **the critical moment for reasoning efficiency optimization lies not at the end (when to stop) but at the beginning (when to branch)**. This insight may inspire further methods that leverage prefix signals during reasoning.
+The core insight of PoLR is that **the critical window for optimizing reasoning efficiency is not at the end (when to stop), but at the beginning (where to branch)**. This insight may inspire other methods to leverage reasoning prefix signals.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First inference-time method to exploit prefix consistency as a replacement for SC; conceptually novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across 5 benchmarks, 6 models, multiple configurations, and 10 repetitions.
-- Writing Quality: ⭐⭐⭐⭐ — Theory and experiments are tightly integrated with a clear overall structure.
-- Value: ⭐⭐⭐⭐ — Practically meaningful for efficient inference; a plug-and-play reasoning acceleration solution.
+- Novelty: ⭐⭐⭐⭐ — First inference-time method to replace SC using prefix consistency.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across 5 benchmarks, 6 models, and various configurations with 10 repetitions.
+- Writing Quality: ⭐⭐⭐⭐ — Tight integration of theory and experiments; clear structure.
+- Value: ⭐⭐⭐⭐ — Practical, plug-and-play acceleration for efficient reasoning.
 
 <!-- RELATED:START -->
 
@@ -151,10 +150,10 @@ The core insight PoLR offers is: **the critical moment for reasoning efficiency 
 ## Related Papers
 
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_with_prefix_cons.md)
-- [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](../../ACL2026/llm_reasoning/reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
-- [\[ICLR 2026\] Annotation-Efficient Universal Honesty Alignment](annotation-efficient_universal_honesty_alignment.md)
-- [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)
+- [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
 - [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?](off-trajectory_reasoning_can_llms_collaborate_on_reasoning_trajectories.md)
+- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 
 </div>
 

@@ -2,127 +2,140 @@
 title: >-
   [Paper Note] Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence
 description: >-
-  [ICLR 2026][Computational Biology][Harmful fine-tuning attack] This paper proposes Antibody, a two-stage defense framework that (1) during alignment…
+  [ICLR 2026][Computational Biology][Paper Note] The Antibody defense framework is proposed: during the alignment stage, flatness regularization forces the model into a flat region of harmful loss (small gradients $\rightarrow$ difficult to attack); during the fine-tuning stage, a sample weighting scheme based on the model's safety knowledge (likelihood ratio of targ
 tags:
-  - "ICLR 2026"
-  - "Computational Biology"
-  - "Harmful fine-tuning attack"
-  - "safety alignment"
-  - "loss flatness"
-  - "sample weighting"
-  - "FTaaS safety"
+  - ICLR 2026
+  - Computational Biology
 date: 2026-05-08
-content_hash: c6c76a8c81a70ce5
+content_hash: 70ba14ff31b75523
 ---
-
 # Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.00498](https://arxiv.org/abs/2603.00498)  
 **Code**: To be released  
-**Area**: LLM Alignment
-**Keywords**: Harmful fine-tuning attack, safety alignment, loss flatness, sample weighting, FTaaS safety
+**Area**: Computational Biology  
+**Keywords**: Harmful Fine-tuning Attack, Safety Alignment, Loss Flatness, Sample Weighting, FTaaS Safety  
 
 ## TL;DR
-This paper proposes Antibody, a two-stage defense framework that (1) during alignment, applies flatness regularization to place the model in a flat region of the harmful loss landscape (small gradients → harder to attack), and (2) during fine-tuning, suppresses learning from harmful samples via a likelihood-ratio-based sample weighting scheme (contrasting the likelihood of task completion vs. refusal). The average Harmful Score is reduced from 15.29% to 7.04%.
+The Antibody defense framework is proposed: during the alignment stage, flatness regularization forces the model into a flat region of harmful loss (small gradients $\rightarrow$ difficult to attack); during the fine-tuning stage, a sample weighting scheme based on the model's safety knowledge (likelihood ratio of target completion vs. refusal) is used to suppress the learning of harmful samples. The average Harmful Score is reduced from $15.29\%$ to $7.04\%$.
 
 ## Background & Motivation
 
-**Background**: FTaaS platforms (e.g., OpenAI/Mistral fine-tuning services) allow users to upload data to fine-tune LLMs; however, user-submitted data may contain harmful samples (intentionally or unintentionally), causing safety alignment to be compromised.
+**Background**: FTaaS (e.g., fine-tuning services from OpenAI/Mistral) allows users to upload data to fine-tune LLMs. However, user-submitted data may contain harmful samples (intentional or unintentional), leading to the compromise of safety alignment.
 
-**Limitations of Prior Work**: (a) Alignment-stage defenses (e.g., Vaccine/Booster) are static and cannot adapt to varying attack configurations (high step counts, large learning rates); (b) fine-tuning-stage defenses (e.g., Lisa/SafeInstr) either provide insufficient protection or degrade task performance; (c) most methods exhibit a severe trade-off between safety and task performance.
+**Limitations of Prior Work**: (a) Alignment-stage defenses (e.g., Vaccine/Booster) are static and cannot adapt to different attack configurations (high steps, large learning rates); (b) Fine-tuning stage defenses (e.g., Lisa/SafeInstr) either provide insufficient protection or impair task performance; (c) Most methods exhibit a severe tradeoff between safety and task performance.
 
-**Key Challenge**: Standard SFT does not distinguish between benign and harmful samples — all gradients are aggregated for updates, so even a small number of harmful sample gradients can poison the model.
+**Key Challenge**: Standard SFT does not distinguish between benign and harmful samples—all gradients are aggregated for updates, allowing even a small number of harmful samples to poison the model.
 
-**Goal**: Design a defense that operates cooperatively across both alignment and fine-tuning stages, thoroughly suppressing harmful gradient influence without degrading benign task learning.
+**Goal**: Design a defense that works synergistically across both alignment and fine-tuning stages to thoroughly suppress the influence of harmful gradients without harming benign task learning.
 
-**Key Insight**: From the perspective of gradient influence — if harmful sample gradients are already small after alignment (flat region) and are further down-weighted during fine-tuning, their influence can be effectively eliminated.
+**Key Insight**: Approaching from the perspective of gradient influence—if gradients of harmful samples are naturally small after alignment (flat region) and further down-weighted during fine-tuning, their influence can be effectively eliminated.
 
-**Core Idea**: Flatten the harmful loss during alignment (small gradients) + likelihood-ratio-based weighting during fine-tuning (low weight for harmful samples) → harmful gradients are doubly suppressed.
+**Core Idea**: Flat harmful loss during alignment (small gradients) + Likelihood ratio weighting during fine-tuning (low weights for harmful samples) $\rightarrow$ Dual suppression of harmful gradients.
 
 ## Method
 
 ### Overall Architecture
-Antibody operates in two stages: (1) **Alignment stage** — optimizes $\mathcal{L}_{\text{align}}(\theta) + \lambda_t \mathcal{L}_{\text{sharp}}(\theta) + \lambda_{\text{refusal}} \mathcal{L}_{\text{refusal}}(\theta_{\text{pert}})$, placing the model in a flat region of the harmful loss while maintaining alignment; (2) **Fine-tuning stage** — applies sample-weighted updates $\theta_{t+1} \leftarrow \theta_t - \eta \sum_i w_{\theta_t}(x_i,y_i) \nabla \ell_{\theta_t}(x_i,y_i)$, where harmful samples automatically receive lower weights.
+Antibody protects the FTaaS scenario: the model is first safety-aligned by the provider and then opened for fine-tuning with user data, which may contain harmful samples. Its mechanism performs dual suppression of "harmful gradients" in both **alignment** and **fine-tuning** stages. The alignment stage optimizes $\mathcal{L}_{\text{align}}(\theta) + \lambda_t \mathcal{L}_{\text{sharp}}(\theta) + \lambda_{\text{refusal}}(\theta_{\text{pert}})$, aligning while pushing the model into a flat basin of harmful loss and training the "attack-perturbed" model to maintain refusal, resulting in a flat and drift-resistant aligned model. In the fine-tuning stage, sample-weighted updates $\theta_{t+1} \leftarrow \theta_t - \eta \sum_i w_{\theta_t}(x_i,y_i) \nabla \ell_{\theta_t}(x_i,y_i)$ are used, automatically assigning small weights to harmful samples to further suppress their gradients.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A0["Alignment Data"]
+    H["Harmful Dataset<br/>D_harm"]
+    subgraph ALIGN["Alignment Stage (Provider)"]
+        direction TB
+        F["Flatness Regularized Alignment<br/>Moving into flat basin of harmful loss"]
+        R["Perturbed Model Refusal Training<br/>Simulate future attacks while maintaining refusal"]
+    end
+    M0["Flat + Drift-resistant<br/>Aligned Model"]
+    U["User-uploaded Data<br/>(Mixed with harmful samples)"]
+    subgraph FT["Fine-tuning Stage (FTaaS)"]
+        direction TB
+        W["Likelihood Ratio Sample-weighted Fine-tuning<br/>Harmful sample weights automatically suppressed"]
+    end
+    OUT["Safety Model<br/>Harmful gradients doubly suppressed"]
+
+    A0 --> ALIGN
+    H --> ALIGN
+    ALIGN --> M0
+    M0 --> FT
+    U --> FT
+    FT --> OUT
+```
 
 ### Key Designs
 
-1. **Robust Alignment via Flatness Regularization**
+**1. Flatness Regularized Alignment: Making aligned harmful loss inherently flat**
 
-    - **Function**: Places the model in a flat region of the harmful loss $\mathcal{L}_{\text{harm}}$.
-    - **Mechanism**: Sharpness is defined as $\mathcal{L}_{\text{sharp}}(\theta) = \mathcal{L}_{\text{harm}}(\theta) - \min_{\phi \in \mathcal{B}_\rho(\theta)} \mathcal{L}_{\text{harm}}(\phi)$, i.e., the drop in harmful loss within the $\rho$-neighborhood. Minimizing sharpness places the model in a flat region, so harmful sample gradients are naturally small during subsequent fine-tuning. The update direction $\delta_t^* = \nabla \mathcal{L}_{\text{align}} + \lambda_t \nabla \mathcal{L}_{\text{sharp}}$ is derived from a bi-objective optimization via KKT conditions (Theorem 4.1), with $\lambda_t$ adapted automatically.
-    - **Design Motivation**: A flat region implies that perturbations near $\theta$ (i.e., fine-tuning) will not significantly reduce the harmful loss — making safety alignment more robust.
+Standard safety alignment only lowers the current harmful loss but ignores the surrounding landscape—if the landscape is steep, an attacker can rapidly lower harmful loss with a few high-learning-rate fine-tuning steps, collapsing the alignment. Antibody optimizes the "flatness" of this landscape during alignment, defining sharpness as how much harmful loss can be decreased within a $\rho$-neighborhood: $\mathcal{L}_{\text{sharp}}(\theta) = \mathcal{L}_{\text{harm}}(\theta) - \min_{\phi \in \mathcal{B}_\rho(\theta)} \mathcal{L}_{\text{harm}}(\phi)$. Minimizing this forces the model into a flat basin of harmful loss. This term and the alignment objective form a dual-objective optimization. The update direction $\delta_t^* = \nabla \mathcal{L}_{\text{align}} + \lambda_t \nabla \mathcal{L}_{\text{sharp}}$ is solved using KKT conditions from Theorem 4.1, where weights $\lambda_t$ adapt during training. In a flat region, any perturbation near $\theta$ (i.e., subsequent fine-tuning) cannot significantly reduce harmful loss, making the gradients of harmful samples naturally small during fine-tuning—this is the first layer of suppression.
 
-2. **Safety Fine-Tuning with Likelihood-Ratio-Based Sample Weighting**
+**2. Likelihood Ratio Sample-weighted Fine-tuning: Using model safety knowledge as a detector**
 
-    - **Function**: Dynamically assigns weights to samples in each mini-batch during fine-tuning to suppress harmful samples.
-    - **Mechanism**: For each sample, the likelihood ratio $r_\theta(x_i,y_i) = \log \frac{\pi_\theta(y_i|x_i)}{\pi_\theta(y_r|x_i)}$ (task completion vs. refusal) is computed and softmax-normalized into weights. A safety-aligned model facing harmful prompts tends to prefer refusal → low likelihood ratio → low weight → harmful gradients are suppressed.
-    - **Design Motivation**: Leverages safety knowledge already embedded during alignment as an implicit harmful sample detector — no explicit annotation of harmful samples is required.
+Standard SFT aggregates gradients from all samples in a batch without distinction. Antibody dynamically weights each sample to block this path: for sample $(x_i, y_i)$, it calculates the log-likelihood ratio of "target completion" relative to "refusal" $r_\theta(x_i,y_i) = \log \frac{\pi_\theta(y_i|x_i)}{\pi_\theta(y_r|x_i)}$, then normalizes this into weight $w_{\theta_t}(x_i,y_i)$ via softmax. The parameter update is $\theta_{t+1} \leftarrow \theta_t - \eta \sum_i w_{\theta_t}(x_i,y_i) \nabla \ell_{\theta_t}(x_i,y_i)$. Crucially, a well-aligned model naturally prefers outputting refusal $y_r$ for harmful prompts, resulting in low likelihood ratios and small softmax weights for harmful samples, automatically suppressing their gradients. This repurposes safety knowledge embedded during alignment as an implicit detector without extra classifiers or labels—this is the second layer of suppression.
 
-3. **Perturbed-Model Refusal Training**
+**3. Perturbed Model Refusal Training: Preventing erosion of the weighting mechanism**
 
-    - **Function**: Ensures that even when model parameters drift due to harmful fine-tuning, the low-weight mechanism remains effective.
-    - **Mechanism**: During alignment, fine-tuning drift is simulated as $\theta_{\text{pert}} = \theta - \rho \frac{\nabla \mathcal{L}_{\text{harm}}}{\|\nabla \mathcal{L}_{\text{harm}}\|}$, and the perturbed model is trained to maintain high refusal probability on harmful prompts via $\mathcal{L}_{\text{refusal}}(\theta_{\text{pert}})$.
-    - **Design Motivation**: Prevents harmful samples from gradually inflating their own weights during fine-tuning, which would cause the weighting mechanism to degrade.
+Persistent fine-tuning might cause parameter drift, potentially allowing harmful samples to gradually increase their likelihood ratios and invalidate the weighting mechanism. Antibody simulates this drift during alignment by taking a step along the normalized gradient of harmful loss to get perturbed parameters $\theta_{\text{pert}} = \theta - \rho \frac{\nabla \mathcal{L}_{\text{harm}}}{\|\nabla \mathcal{L}_{\text{harm}}\|}$. It then trains this "attack-perturbed" model to maintain a high refusal probability for harmful prompts using a regularization term $\mathcal{L}_{\text{refusal}}(\theta_{\text{pert}})$. This ensures that even if fine-tuning pushes parameters away, the refusal tendency and low-likelihood ratio weights are maintained over time.
 
-### Theoretical Analysis
-Propositions 4.2 and 4.3 provide a decomposition of loss changes under mini-batch updates. Via eNTK analysis, it is shown that when batch gradients are contributed solely by benign samples, the loss on harmful test samples remains unchanged (safety preserved) while the loss on benign test samples decreases (task learning proceeds).
+Theoretical explanations using eNTK analysis (Propositions 4.2 and 4.3) prove that when a batch's effective gradient is dominated by benign samples, the loss for harmful test samples remains unchanged (safety preserved) while benign test loss decreases (task learned)—weighted updates naturally act selectively.
 
 ## Key Experimental Results
 
-### Main Results (Llama-2-7B, GSM8K + 20% harmful samples)
+### Main Results (Llama-2-7B, GSM8K+20% harmful samples)
 
-| Method | HS↓ | FA↑ | Notes |
-|--------|-----|-----|-------|
+| Method | HS↓ | FA↑ | Description |
+|------|-----|-----|------|
 | SFT | 23.94 | 10.90 | No defense |
-| Vaccine | 23.60 | 11.70 | Alignment-stage |
-| Lisa | 5.86 | 9.23 | Fine-tuning-stage, poor task performance |
-| Booster | 9.06 | 16.27 | Alignment-stage |
-| **Antibody** | **1.24** | **15.07** | Two-stage collaboration |
+| Vaccine | 23.60 | 11.70 | Alignment stage |
+| Lisa | 5.86 | 9.23 | Fine-tuning stage, poor task performance |
+| Booster | 9.06 | 16.27 | Alignment stage |
+| **Antibody** | **1.24** | **15.07** | Dual-stage synergy |
 
-### Cross-Dataset Average
+### Cross-dataset Average
 
-| Method | Avg. HS↓ | Avg. FA↑ |
-|--------|----------|----------|
+| Method | Average HS↓ | Average FA↑ |
+|------|---------|--------|
 | Lisa | 15.29 | 60.97 |
 | Booster | 19.04 | 65.20 |
 | **Antibody** | **7.04** | **Competitive** |
 
-Antibody's HS is more than 8 percentage points lower than the second-best method, Lisa.
+Antibody's HS is $8+$ percentage points lower than the runner-up, Lisa.
 
 ### Ablation Study
-- Removing flatness regularization → HS increases (harmful gradients are not sufficiently small during fine-tuning).
-- Removing sample weighting → HS increases (harmful sample contributions are not suppressed).
-- Removing perturbed refusal training → weighting mechanism degrades over extended fine-tuning.
+- Removing flatness regularization $\rightarrow$ HS increases (harmful gradients not small enough during fine-tuning)
+- Removing sample weighting $\rightarrow$ HS increases (harmful sample contributions not suppressed)
+- Removing perturbed refusal training $\rightarrow$ Weighting mechanism degrades after long fine-tuning
 
 ### Key Findings
-- The combination of flatness regularization and sample weighting is critical — each component alone is inferior to their combination.
-- Likelihood-ratio weights (Figure 2) naturally separate harmful and benign samples during training without requiring explicit annotation.
-- Antibody is especially effective at large data volumes (Figure 1) — while other methods suffer increased safety degradation as data grows, Antibody maintains low HS.
+- The combination of flatness regularization and sample weighting is critical; either alone is less effective than the combination.
+- Likelihood ratio weights (Figure 2) naturally separate harmful and benign samples during training without explicit labeling.
+- Antibody is particularly effective with large data volumes (Figure 1), whereas other methods see safety deteriorate as data increases.
 
 ## Highlights & Insights
-- The design logic of **dual gradient suppression** is exceptionally clear: the first layer (flat region) naturally reduces gradients → the second layer (weighting) further down-weights them → harmful influence is thoroughly eliminated.
-- **Using the model's own safety knowledge as an implicit harmful sample detector** (via likelihood ratio) is an elegant design — no additional classifier, annotation, or knowledge of which samples are harmful is required.
-- The eNTK-based theoretical analysis (Propositions 4.2–4.3) provides a rigorous account of how mini-batch weighted updates selectively affect different samples.
-- The connection to Booster (Antibody reduces to Booster when $\lambda_t$ is constant) demonstrates the generality of the proposed framework.
+- The **Dual Gradient Suppression** logic is clear: Layer 1 (flat region) makes gradients inherently small $\rightarrow$ Layer 2 (weighting) further reduces weight $\rightarrow$ Harmful influence is thoroughly suppressed.
+- **Utilizing implicit safety knowledge for detection** (likelihood ratio) is ingenious—no extra classifiers, labels, or prior knowledge of sample toxicity required.
+- **eNTK theoretical analysis** provides a rigorous explanation of how mini-batch weighted updates selectively influence different sample types.
+- The link to **Booster** (which defaults to Antibody when $\lambda_t$ is constant) demonstrates the framework's generalizability.
 
 ## Limitations & Future Work
-- Access to a harmful dataset $\mathcal{D}_{\text{harm}}$ during alignment is required — if the type of harmful content shifts, re-alignment may be necessary.
-- Validation is conducted under LoRA fine-tuning; behavior under full-parameter fine-tuning remains unknown.
-- The choice of refusal template $y_r$ may affect likelihood ratio computation — different refusal styles could lead to varying outcomes.
-- Only a 20% harmful sample ratio is tested; robustness under higher ratios (50%+) remains to be verified.
-- Computational overhead is higher than standard SFT due to additional likelihood ratio computation and inner-loop perturbation steps.
+- Requires access to a harmful dataset $\mathcal{D}_{\text{harm}}$ during alignment; changes in harmful types may require realignment.
+- Validated in LoRA fine-tuning; effects on full-parameter fine-tuning remain unknown.
+- Selection of the refusal template $y_r$ may influence likelihood ratio calculations—different styles might yield different results.
+- Robustness under higher ratios of harmful data ($50\%+$) requires verification.
+- Higher computational overhead compared to standard SFT due to likelihood ratio calculation and inner-loop perturbation steps.
 
 ## Related Work & Insights
-- **vs. Vaccine**: Vaccine enhances robustness via embedding perturbations, whereas Antibody uses loss flatness — the latter has clearer theoretical grounding.
-- **vs. Booster**: Booster is a special case of Antibody (fixed $\lambda_t$); Antibody's adaptive $\lambda_t$ and additional weighting mechanism yield substantial additional gains.
-- **vs. Lisa**: Lisa alternates between safety data and task data but cannot identify harmful samples within a batch; Antibody's weighting scheme enables sample-wise discrimination.
+- **vs. Vaccine**: Vaccine uses embedding perturbations for robustness, while Antibody uses loss flatness; the latter has clearer theoretical support.
+- **vs. Booster**: Booster is a special case of Antibody; Antibody's adaptive $\lambda_t$ and weighting mechanism provide significant additional gains.
+- **vs. Lisa**: Lisa alternates between safety and task data but cannot identify harmful samples within a batch; Antibody's weighting scheme achieves sample-wise discrimination.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of flatness regularization and likelihood-ratio weighting shows considerable engineering ingenuity, though each individual technique is relatively standard.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Four downstream datasets × three model scales + ablation studies + theoretical analysis — highly comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Theoretical derivations are rigorous; the weight distribution visualization in Figure 2 is highly intuitive.
-- **Value**: ⭐⭐⭐⭐⭐ Directly applicable to FTaaS security in practice; reducing HS from 15% to 7% represents a significant advancement.
+- Novelty: ⭐⭐⭐⭐ Combination of flatness regularization and likelihood ratio weighting is engineering-wise clever, though individual components are known.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive across 4 datasets × 3 models + ablation + theory.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivation and very intuitive visualization of weight distributions.
+- Value: ⭐⭐⭐⭐⭐ Direct practical significance for FTaaS safety; HS reduction from $15\% \rightarrow 7\%$ is a significant advancement.
 
 <!-- RELATED:START -->
 
@@ -131,10 +144,10 @@ Antibody's HS is more than 8 percentage points lower than the second-best method
 ## Related Papers
 
 - [\[ICLR 2026\] Fine-Tuning Diffusion Models via Intermediate Distribution Shaping](fine-tuning_diffusion_models_via_intermediate_distribution_shaping.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](thompson_sampling_via_fine-tuning_of_llms.md)
+- [\[ICLR 2026\] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design](iterative_distillation_for_reward-guided_fine-tuning_of_diffusion_models_in_biom.md)
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](towards_understanding_the_shape_of_representations_in_protein_language_models.md)
 - [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](../../ICML2026/computational_biology/constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
-- [\[ACL 2026\] BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models](../../ACL2026/computational_biology/biotool_a_comprehensive_tool-calling_dataset_for_enhancing_biomedical_capabiliti.md)
 
 </div>
 

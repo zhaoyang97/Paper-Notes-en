@@ -2,185 +2,180 @@
 title: >-
   [Paper Note] Controllable Sequence Editing for Biological and Clinical Trajectories
 description: >-
-  [ICLR 2026][Computational Biology][Counterfactual generation] This paper proposes Clef, a controllable sequence editing model based on *temporal concepts* that performs immediate and delayed editing of biological/clinica…
+  [ICLR 2026][Computational Biology][Paper Note] Clef is proposed, a controllable sequence editing model based on "temporal concepts" capable of immediate and delayed editing of biological/clinical multivariate trajectories under given conditions (e.g., drugs, surgery). On cellular reprogramming and patient lab data, it improves immediate editing MAE by 16.28%, delay
 tags:
-  - "ICLR 2026"
-  - "Computational Biology"
-  - "Counterfactual generation"
-  - "sequence editing"
-  - "temporal concepts"
-  - "patient trajectories"
-  - "cell reprogramming"
+  - ICLR 2026
+  - Computational Biology
 date: 2026-05-08
-content_hash: 66e8ccfff72fa203
+content_hash: 6209ad632e422496
 ---
-
 # Controllable Sequence Editing for Biological and Clinical Trajectories
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2502.03569](https://arxiv.org/abs/2502.03569)  
 **Code**: [https://github.com/mims-harvard/CLEF](https://github.com/mims-harvard/CLEF)  
-**Area**: Medical Imaging / Bioinformatics
-**Keywords**: Counterfactual generation, sequence editing, temporal concepts, patient trajectories, cell reprogramming
+**Area**: Computational Biology / Bioinformatics  
+**Keywords**: Counterfactual Generation, Sequence Editing, Temporal Concepts, Patient Trajectories, Cellular Reprogramming
 
 ## TL;DR
 
-This paper proposes Clef, a controllable sequence editing model based on *temporal concepts* that performs immediate and delayed editing of biological/clinical multivariate trajectories under given conditions (e.g., drugs, surgery). On cell reprogramming and patient laboratory test data, Clef achieves 16.28% MAE improvement for immediate editing, 26.73% for delayed editing, and up to 62.84% improvement for zero-shot counterfactual generation.
+Clef is proposed, a controllable sequence editing model based on "temporal concepts" capable of immediate and delayed editing of biological/clinical multivariate trajectories under given conditions (e.g., drugs, surgery). On cellular reprogramming and patient lab data, it improves immediate editing MAE by 16.28%, delayed editing by 26.73%, and zero-shot counterfactual generation by up to 62.84%.
 
 ## Background & Motivation
 
-Counterfactual reasoning ("What if the patient were switched to a different drug?" or "What if cell perturbation had been applied ten days earlier?") is a central problem in biology and medicine. Existing methods exhibit the following limitations:
+Counterfactual reasoning ("What if a patient were given a different drug?" "What if a cellular perturbation occurred ten days earlier?") is a core problem in biology and medicine. Existing methods suffer from the following:
 
-**Controllable text generation (CTG) methods** support only *immediate editing* (predicting the next token) and cannot perform *delayed editing* (jumping to a future time step to predict counterfactual trajectories). CTG models must advance step by step to fill temporal gaps and cannot guarantee that the final output satisfies the target condition.
+**Limitations of Prior Work**:
+- **Controllable Text Generation (CTG) methods** can only perform "immediate editing" (predicting the next token) and cannot handle "delayed editing" (jumping to a future time step to predict counterfactual trajectories). CTG models must progress step-by-step to fill temporal gaps, failing to guarantee fulfillment of target conditions.
+- **Time-series Diffusion Models** support conditional generation but are limited to univariate sequences and assume conditions affect the entire sequence, lacking precise local editing capabilities.
+- **Spatiotemporal Locality of Real Interventions**: In practical scenarios, interventions (e.g., drug administration, surgery) should only take effect after specific time points and affect only a subset of variables (e.g., certain lab tests), while other variables and historical data should remain unchanged to maintain temporal causal consistency.
 
-**Time-series diffusion models** support conditional generation but are restricted to univariate sequences and assume that the condition affects the entire sequence, precluding precise local edits.
+**Key Challenge**: How to perform precise, condition-guided local editing of multivariate sequences while maintaining global causal consistency?
 
-In practice, an intervention (e.g., drug administration, surgery) should take effect only after a specific time point and should affect only a subset of variables (e.g., certain lab results), while the remaining variables and historical data must remain unchanged to preserve temporal causal consistency.
-
-**Key Challenge**: How can precise, condition-guided local edits be performed on multivariate sequences while maintaining global causal consistency?
-
-**Key Insight**: Inspired by condition guidance in controllable text generation and spatial context in image inpainting, Clef introduces *temporal concepts*—vectors that encode the rate of change (trajectory) of a sequence—to capture how and when a condition affects the sequence, enabling precise, temporally localized controllable sequence editing.
+**Key Insight**: Inspired by "condition guidance" in controllable text generation and "spatial context" in image in-painting, Clef introduces "temporal concepts"—vectors encoding sequence trajectory change rates—to capture how and when conditions affect a sequence, enabling precise, temporally localized controllable sequence editing.
 
 ## Method
 
 ### Overall Architecture
 
-**Input**: Multivariate sequence $\mathbf{x}_{:,t_0:t_i}$ (with $V$ variables), condition $s$ (e.g., transcription factor or medical code), target prediction time $t_j > t_i$
-**Output**: Counterfactual sequence $\hat{\mathbf{x}}_{:,t_j}^s$
+Clef addresses the problem of "editing a multivariate historical trajectory $\mathbf{x}_{:,t_0:t_i}$ into a counterfactual future under condition $s$ (e.g., administration of a drug, knock-in of a transcription factor)." Its data flow converges from three paths for single-step generation: a **Sequence Encoder $F$ + Time Encoder** encode the historical trajectory and "how far the target time $t_j$ is from the current time" into sequence features $\mathbf{h}_x$ and a time difference $\Delta_{t_i,t_j}$; a **Condition Adapter $H$** maps intervention conditions to condition embeddings $\mathbf{h}_s$; a **Concept Encoder $E$** fuses these three paths into a "temporal concept" $\mathbf{c}$; and finally, a **Concept Decoder $G$** treats $\mathbf{c}$ as variable-wise change rates applied to the current state via element-wise multiplication to yield the counterfactual sequence $\hat{\mathbf{x}}_{:,t_j}^s$ in one step. Since the target time $t_j$ is explicitly encoded into the concept, Clef supports two types of editing: **Immediate Editing** (predicting the next step $\hat{\mathbf{x}}_{:,t_{i+1}}$) and **Delayed Editing** (directly jumping to predict $\hat{\mathbf{x}}_{:,t_j}$ for a condition occurring at $t_j \geq t_{i+1}$), which CTG methods cannot achieve.
 
-Clef comprises four core components: a sequence encoder $F$, a condition adapter $H$, a concept encoder $E$, and a concept decoder $G$.
-
-### Core Definitions
-
-**Sequence Editing (Definition 3.1)** is divided into two types:
-- **Immediate Editing**: Given $\mathbf{x}_{:,t_0:t_i}$ and condition $s$ occurring at $t_{i+1}$, predict $\hat{\mathbf{x}}_{:,t_{i+1}}$.
-- **Delayed Editing**: Given $\mathbf{x}_{:,t_0:t_i}$ and condition $s$ occurring at $t_j \geq t_{i+1}$, directly predict $\hat{\mathbf{x}}_{:,t_j}$ in a single step.
-
-**Temporal Concept (Definition 3.2)**: $\mathbf{c} = \mathbf{x}_{:,t_k} / \mathbf{x}_{:,t_j}$, i.e., the rate of change of the sequence between two time steps. This can be interpreted as the growth/decay factor for each variable between two time points.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    X["Historical Trajectory<br/>x(t0:ti)"] --> F["Sequence Encoding &<br/>Time Diff Embedding<br/>Encoder F + Time Encoder"]
+    T["Target Time tj"] --> F
+    S["Intervention Condition s<br/>TF / Medical Code"] --> H["Condition Adapter<br/>Frozen Pre-trained Embeddings<br/>→ Linear Projection"]
+    F -->|"Feat hx, Time Diff Δ"| E["Concept Encoder<br/>Elem-wise Prod + Optional FFN"]
+    H -->|"Cond Embedding hs"| E
+    E --> C
+    subgraph DEC["Temporal Concept & Decoding"]
+        direction TB
+        C["Temporal Concept c<br/>Variable Change Rates"] --> G["Concept Decoder<br/>c ⊙ x(ti) Elem-wise Prod"]
+    end
+    G --> O["Counterfactual Seq<br/>x̂(tj)"]
+```
 
 ### Key Designs
 
-1. **Sequence Encoder $F$**: Extracts temporal features $\mathbf{h}_x = F(\mathbf{x}_{:,t_0:t_i})$ from the historical sequence. Any encoder (Transformer, xLSTM, MOMENT, etc.) can be used. A temporal encoder generates positional encodings $\mathbf{h}_t$ via sinusoidal embeddings of year/month/day/hour, and computes a time-gap embedding $\Delta_{t_i,t_j} = \mathbf{h}_{t_j} - \mathbf{h}_{t_i}$.
+**1. Sequence Encoding & Time Diff Embedding: Explicitly Encoding "When to Intervene"**
 
-2. **Condition Adapter $H$**: Obtains condition embeddings $\mathbf{z}_s$ from a frozen pretrained embedding model (ESM-2 protein language model for cell experiments; clinical knowledge graph embeddings for patient data), then projects them to a hidden representation $\mathbf{h}_s = H(\mathbf{z}_s)$ via a linear layer.
+Delayed editing is possible because the model knows the distance to the target time point. The sequence encoder $F$ extracts temporal features $\mathbf{h}_x = F(\mathbf{x}_{:,t_0:t_i})$ from history. It is architecture-agnostic and can use Transformer, xLSTM, or pre-trained foundation models like MOMENT, making Clef a "controllable editing enhancement module" for any encoder. Simultaneously, the Time Encoder uses sinusoidal embeddings for year/month/day/hour to get positional encodings $\mathbf{h}_t$, representing the span explicitly as $\Delta_{t_i,t_j} = \mathbf{h}_{t_j} - \mathbf{h}_{t_i}$. This signal allows the model to jump to any future moment without step-by-step iteration.
 
-3. **Concept Encoder $E$**: This is the core innovation of Clef. The time-gap embedding and condition embedding are summed to form a joint embedding $\mathbf{h}_s^{t_j} = \Delta_{t_i,t_j} \oplus \mathbf{h}_s$, which then interacts with sequence features via element-wise multiplication. An optional FFN layer with GELU activation produces the temporal concept:
+**2. Condition Adapter: Reusing Frozen Domain Pre-trained Embeddings**
+
+Intervention conditions $s$ are discrete symbols mapped to vectors. Clef uses frozen pre-trained models—ESM-2 for cellular experiments and clinical knowledge graph embeddings for patient data—projected via a linear layer $H$ to $\mathbf{h}_s = H(\mathbf{z}_s)$. Utilizing existing domain semantics enables generalization to unseen conditions based on embedding space proximity, forming the basis for zero-shot counterfactual generation.
+
+**3. Concept Encoder: Fusing Three Signals to Generate Temporal Concept $\mathbf{c}$**
+
+The time difference and condition embeddings are concatenated into a joint embedding $\mathbf{h}_s^{t_j} = \Delta_{t_i,t_j} \oplus \mathbf{h}_s$, which then interacts with sequence features via element-wise multiplication. An optional FFN with GELU activation generates the temporal concept:
+
 $$\mathbf{c} = \text{GELU}(\text{FFN}(\mathbf{h}_x \odot \mathbf{h}_s^{t_j}))$$
-This design enables the temporal concept to jointly encode historical sequence information, condition information, and temporal span information.
 
-4. **Concept Decoder $G$**: Applies the learned temporal concept to the last time step of the input sequence via element-wise multiplication to generate predictions:
-$$\hat{\mathbf{x}}_{:,t_j}^s = \mathbf{c} \odot \mathbf{x}_{:,t_i}$$
-This design is remarkably concise—the temporal concept is essentially a "change-rate" vector that, when multiplied directly by the current state, yields the future state.
+Element-wise multiplication allows "how the state changes" to be gated by "condition + span." FFN usage depends on data complexity: cellular data uses linear concepts (no FFN) for optimal WOT performance, while complex patient data benefits from the non-linear capacity provided by the FFN.
+
+**4. Temporal Concept & Decoding: Change Rates Over Absolute Values**
+
+Clef defines the temporal concept as a change rate (growth/decay factor per variable) between time steps rather than regressing absolute values. The decoder applies the concept to the current state: $\hat{\mathbf{x}}_{:,t_j}^s = \mathbf{c} \odot \mathbf{x}_{:,t_i}$. This naturally ensures locality: interventions only need to shift the change rates of a few variables, while others remain near 1 (staying unchanged), satisfying the requirement that interventions affect only parts of the system. This provides rare concept-level controllability.
 
 ### Loss & Training
 
-Huber Loss is adopted as the objective, balancing the sensitivity of MSE to outliers with the robustness of MAE:
+A Huber Loss is used to balance MSE sensitivity to outliers and MAE robustness:
 
 $$\mathcal{L}(\mathbf{x}, \hat{\mathbf{x}}) = \begin{cases} 0.5\mathbf{a}^2, & \text{if } |\mathbf{a}| \leq \delta \\ \delta(|\mathbf{a}| - 0.5\delta), & \text{otherwise} \end{cases}$$
 
-where $\mathbf{a} = \mathbf{x}_{:,t_j}^s - \hat{\mathbf{x}}_{:,t_j}^s$.
-
-Training is conducted on a single NVIDIA A100 or H100 GPU. Hyperparameter search covers dropout rate $\in [0.3, 0.6]$, learning rate $\in [10^{-3}, 10^{-5}]$, and number of layers $\in [4, 8]$.
+where $\mathbf{a} = \mathbf{x}_{:,t_j}^s - \hat{\mathbf{x}}_{:,t_j}^s$. Training was conducted on NVIDIA A100/H100 GPUs with hyperparameter search: dropout $\in [0.3, 0.6]$, learning rate $\in [1e-3, 1e-5]$, and layers $\in [4, 8]$.
 
 ## Key Experimental Results
 
 ### Datasets
 
-Four core datasets are constructed (extended to eight in later versions):
-- **WOT**: Single-cell transcriptomic developmental trajectories simulated using the Waddington-OT model, with 1,479 highly variable genes.
+Four core datasets were utilized:
+- **WOT**: Simulated single-cell transcriptomic developmental trajectories (1479 highly variable genes).
 - **WOT-CF**: Paired counterfactual cell trajectories for zero-shot evaluation.
-- **eICU**: Patient routine laboratory test trajectories from the eICU database, covering 18 lab tests.
-- **MIMIC-IV**: Patient test trajectories from MIMIC-IV.
-
-Condition embeddings are sourced from ESM-2 (5,120-dimensional) for cell data and clinical knowledge graph embeddings (128-dimensional) for patient data.
+- **eICU**: Patient lab test trajectories (18 tests).
+- **MIMIC-IV**: Patient lab trajectories.
 
 ### Main Results
 
-Baselines include VAR (classical time series), Transformer, xLSTM, MOMENT (time-series foundation model), and their respective +Clef variants.
+Baselines included VAR, Transformer, xLSTM, MOMENT, and their respective +Clef variants.
 
 **Immediate Editing**:
-- Clef consistently outperforms all baselines across datasets, with an average MAE improvement of 16.28%.
-- Even the SimpleLinear ablation (concepts fixed to all ones, no learning) is competitive in some settings, but Clef is superior on datasets with complex short-term dynamics.
+- Clef consistently outperformed baselines across all datasets, with an average MAE reduction of 16.28%.
+- Clef performed better on datasets with complex short-term dynamics.
 
 **Delayed Editing**:
-- Clef outperforms or matches SimpleLinear and VAR on eICU and MIMIC-IV.
-- Clef-Transformer and Clef-xLSTM achieve the lowest MAE.
-- Average MAE improvement: 26.73%.
-- On WOT, linear models (SimpleLinear, VAR) perform best, as cell developmental trajectories exhibit small per-step changes and may be noisy.
+- Clef outperformed or matched SimpleLinear and VAR on eICU and MIMIC-IV.
+- Clef-transformer and Clef-xLSTM achieved the lowest MAE.
+- Average MAE improved by 26.73%.
+- On WOT, linear models performed best due to smaller, potentially noisy changes in developmental trajectories.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---|---|---|
-| SimpleLinear (concepts all ones) | Competitive in some settings | Linear approximation is effective when $x_{t_j} \approx x_{t_i}$ |
-| Clef-FFN=0 (no FFN) | Best on WOT | Cell data is relatively simple; additional nonlinearity is unnecessary |
-| Clef-FFN=1 (with FFN) | Best on eICU/MIMIC | Patient data requires greater expressive capacity |
-| Different sequence encoders | MOMENT performs worst | 1,024-dim embeddings from foundation models are less effective than training from scratch |
+| Configuration | Key Result | Description |
+|------|---------|------|
+| SimpleLinear (Concept = 1) | Competitive in some scenarios | Shows linear approximation is effective when $x_{t_j} \approx x_{t_i}$. |
+| Clef-FFN=0 | Optimal for WOT | Cellular data is simple and requires no extra non-linearity. |
+| Clef-FFN=1 | Optimal for eICU/MIMIC | Patient data requires more expressive capacity. |
+| Different Encoders | MOMENT performed worst | 1024-d embeddings from foundation models were less effective than training from scratch. |
 
-### Generalization Experiments
+### Generalization
 
-Using the SPECTRA method to create train/test splits with varying distributional similarity:
-- Clef models remain more stable as the train/test distribution gap increases.
-- Non-Clef models degrade substantially in performance.
-- Clef-xLSTM achieves similar performance to the xLSTM baseline on delayed editing but generalizes significantly better.
+Using the SPECTRA method for train/test similarity splits:
+- Clef models remained stable as train/test distribution shift increased.
+- Non-Clef models showed significant performance degradation.
 
 ### Zero-Shot Counterfactual Generation
 
-Evaluated on WOT-CF paired counterfactual trajectories:
-- Models are trained on "original" trajectories and evaluated zero-shot on "counterfactual" trajectories.
-- Clef models consistently outperform non-Clef models on both immediate and delayed editing.
-- Immediate editing improves by up to 14.45% MAE; delayed editing by up to 63.19% MAE.
-- After the divergence time point ($t=10$), Clef substantially outperforms baselines.
+Evaluated on WOT-CF paired trajectories:
+- Clef consistently outperformed non-Clef models in both immediate and delayed editing.
+- Immediate editing improved up to 14.45% MAE; delayed editing up to 63.19% MAE.
 
 ### Key Findings
 
-- The introduction of temporal concepts allows direct concept-level interventions (e.g., halving the glucose-related concept value) without requiring condition tokens.
-- In a T1D case study, reducing the glucose concept causes generated counterfactual trajectories to more closely resemble those of healthy individuals.
-- Intervening on the glucose concept also indirectly reduces white blood cell counts, consistent with clinical knowledge of T1D as an autoimmune disease.
-- Reverse experiment: intervening on the white blood cell concept also induces changes in glucose levels, validating intrinsic inter-variable associations.
-- Simultaneously intervening on multiple concepts (glucose + white blood cells) produces cumulative effects, generating trajectories that more closely approximate healthy individuals.
+- Temporal concepts allow direct intervention at the concept level (e.g., halving glucose-related concepts) without condition tokens.
+- In a T1D case study, lowering the glucose concept generated counterfactual trajectories more similar to healthy individuals.
+- Intervening on the glucose concept indirectly caused a decrease in white blood cell counts, aligning with clinical knowledge of T1D as an autoimmune disease.
+- Simultaneously intervening on multiple concepts (glucose + WBC) produced cumulative effects.
 
 ## Highlights & Insights
 
-- **Minimal yet effective design**: Temporal concepts are essentially "rate-of-change vectors," and the decoder reduces to simple element-wise multiplication. This simplicity yields strong interpretability—each concept dimension corresponds to the rate of change of one variable.
-- **Single-step delayed prediction**: Unlike CTG methods that require step-by-step advancement, Clef directly predicts counterfactual sequences at arbitrary future time points in a single step.
-- **Encoder-agnostic**: Clef can be combined with any sequence encoder (Transformer, xLSTM, MOMENT, etc.), functioning as a plug-in "controllable editing enhancement module."
-- **Concept interventions**: Users can directly edit specific dimensions of the temporal concept to generate counterfactual sequences, providing a unique interactive capability.
-- **Regularization effect**: Even in settings where linear models are superior (WOT), Clef significantly reduces the MAE of neural network models, acting as a regularizer.
+- **Minimalist yet Effective Mechanism**: Defining concepts as change rates with element-wise multiplication provides high interpretability.
+- **One-Step Delayed Prediction**: Unlike CTG, Clef predicts counterfactuals at any future time point in a single step.
+- **Encoder-Agnostic**: Clef serves as a plug-and-play enhancement module for various sequence encoders.
+- **Concept Intervenability**: Users can edit specific dimensions of the temporal concept to generate counterfactuals.
+- **Regularization Effect**: Clef reduces neural network MAE even in scenarios where linear models are traditionally stronger.
 
 ## Limitations & Future Work
 
-- Each element of the temporal concept corresponds to one variable, which does not capture higher-order inter-variable relationships. Hierarchical abstract concept learning could be explored.
-- The model is entirely data-driven and does not incorporate prior knowledge from domain causal models. Future work could refine causal relationships through user intervention feedback.
-- Condition embeddings depend on pretrained models (ESM-2, clinical knowledge graphs); embedding quality directly affects generation performance.
-- Validation is currently limited to biological and medical domains; extension to other sequence editing scenarios (e.g., finance, climate) remains unexplored.
-- MOMENT as a sequence encoder performs worst, suggesting that existing time-series foundation models may be ill-suited for fine-grained counterfactual generation tasks.
+- Currently lacks modeling of high-order relationships between variables; hierarchical concepts could be explored.
+- Relies on data-driven approaches without utilizing causal model priors.
+- Performance is tied to the quality of pre-trained condition embeddings (ESM-2, KG).
+- Foundation models like MOMENT performed poorly, suggesting they may not yet be suited for fine-grained counterfactual generation.
 
 ## Related Work & Insights
 
-- **Controllable text generation**: CTG methods guide sequence generation via condition tokens but support only immediate editing. Clef extends this paradigm to the temporal domain, enabling delayed editing.
-- **Concept Bottleneck Models**: Provide interpretability and interventionability through intermediate concept layers. Clef's temporal concepts are the first application of this idea to conditional generation.
-- **Optimal Transport**: The WOT model uses OT to infer cell trajectories; Clef performs conditional editing on top of this framework.
-- **Trajectories as inductive bias**: Interpreting temporal data as trajectory patterns is more natural than reasoning over individual values; Clef's temporal concepts embody this principle.
+- **Controllable Text Generation**: Clef extends the CTG paradigm to the temporal domain and supports delayed editing.
+- **Concept Bottleneck Models**: Clef adapts the idea of intermediate interpretable concept layers for conditional generation.
+- **Optimal Transport**: Clef builds upon OT-based developmental trajectories (WOT) to enable conditional editing.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The definition of temporal concepts and the design of interventionability are novel, though the core operation (element-wise multiplication) is relatively simple.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 4+ datasets, 9 baselines, generalization tests, zero-shot experiments, and real-world case studies; highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Problem formulation is clear, formalization is rigorous, and experimental design is well-motivated.
-- Value: ⭐⭐⭐⭐ — Significant application value in computational biology and clinical decision support.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation](../../NeurIPS2025/computational_biology/bidirectional_representations_augmented_autoregressive_biological_sequence_gener.md)
-- [\[ICLR 2026\] VCWorld: A Biological World Model for Virtual Cell Simulation](vcworld_a_biological_world_model_for_virtual_cell_simulation.md)
-- [\[ICLR 2026\] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)
-- [\[ICML 2026\] Active Timepoint Selection for Learning Measure-Valued Trajectories](../../ICML2026/computational_biology/active_timepoint_selection_for_learning_measure-valued_trajectories.md)
-- [\[AAAI 2026\] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale](../../AAAI2026/computational_biology/investigating_data_pruning_for_pretraining_biological_foundation_models_at_scale.md)
+- [\[ICLR 2026\] Controllable Diffusion-based Generation for Multi-channel Biological Data](controllable_diffusion-based_generation_for_multi-channel_biological_data.md)
+- [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
+- [\[ICLR 2026\] Multi-state Protein Sequence Design with DynamicMPNN](multi-state_protein_sequence_design_with_dynamicmpnn.md)
+- [\[ICML 2026\] scCBGM: Interpretable Single-Cell Counterfactual Editing](../../ICML2026/computational_biology/sccbgm_interpretable_single-cell_counterfactual_editing.md)
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
 
 </div>
 

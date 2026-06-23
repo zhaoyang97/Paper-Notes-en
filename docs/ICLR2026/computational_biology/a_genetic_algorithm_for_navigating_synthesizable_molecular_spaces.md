@@ -2,130 +2,138 @@
 title: >-
   [Paper Note] A Genetic Algorithm for Navigating Synthesizable Molecular Spaces
 description: >-
-  [ICLR 2026][Computational Biology][genetic algorithm] This paper proposes SynGA, a genetic algorithm that operates directly on synthesis routes (synthesis trees)…
+  [ICLR 2026][Computational Biology][Paper Note] SynGA is proposed as a genetic algorithm that operates directly on synthesis routes (synthesis trees). By using customized crossover and mutation operators, it strictly constrains the search to the synthesizable molecular space. Combined with ML-driven building block filtering, it achieves SOTA performance in synthesiz
 tags:
-  - "ICLR 2026"
-  - "Computational Biology"
-  - "genetic algorithm"
-  - "synthesizable molecular design"
-  - "synthesis routes"
-  - "Bayesian optimization"
-  - "building block filtering"
+  - ICLR 2026
+  - Computational Biology
 date: 2026-05-08
-content_hash: 4be109bda86127c1
+content_hash: 0d045c3c39a4c951
 ---
-
 # A Genetic Algorithm for Navigating Synthesizable Molecular Spaces
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.20719](https://arxiv.org/abs/2509.20719)  
 **Code**: [https://github.com/alstonlo/synga](https://github.com/alstonlo/synga)  
-**Area**: Molecular Design / Optimization
-**Keywords**: genetic algorithm, synthesizable molecular design, synthesis routes, Bayesian optimization, building block filtering
+**Area**: Molecular Design / Optimization  
+**Keywords**: Genetic Algorithm, Synthesizable Molecular Design, Synthesis Route, Bayesian Optimization, Building Block Filtering  
 
 ## TL;DR
-This paper proposes SynGA, a genetic algorithm that operates directly on synthesis routes (synthesis trees), constraining the search strictly within synthesizable molecular space via custom crossover and mutation operators. Combined with ML-guided building block filtering, SynGA achieves state-of-the-art performance on synthesizable analog search and property optimization.
+SynGA is proposed as a genetic algorithm that operates directly on synthesis routes (synthesis trees). By using customized crossover and mutation operators, it strictly constrains the search to the synthesizable molecular space. Combined with ML-driven building block filtering, it achieves SOTA performance in synthesizable analog search and property optimization.
 
 ## Background & Motivation
 
-**Background**: Generative models for molecular design (VAE, RL, GFlowNet, LLM) have advanced rapidly, yet classical genetic algorithms remain highly competitive due to their simplicity, sample efficiency, and exploration capability.
+**Background**: Generative models in molecular design (VAE, RL, GFlowNet, LLM) are advancing rapidly, yet classic genetic algorithms remain highly competitive due to their simplicity, sample efficiency, and exploration capabilities.
 
-**Limitations of Prior Work**: Most molecular generative models do not account for synthesizability, potentially proposing unstable or unsynthesizable designs—a critical barrier in practical applications. Post-hoc retrosynthesis models can partially mitigate this but incur substantial computational overhead (several minutes per evaluation). Existing synthesis-constrained GA methods require pre-training an ML projection model to map molecules back into synthesizable space, imposing upfront training costs and limiting performance to projection quality.
+**Limitations of Prior Work**: Most molecular generation models ignore synthesizability, potentially proposing unstable or unsynthesizable designs, which remains a primary hurdle in practical applications. Using post-hoc retrosynthesis models can mitigate this but entails high computational costs (minutes per evaluation). Existing synthesis-constrained GA methods require training ML projection models to map molecules back to the synthesis space, incurring pre-training costs and being limited by projection quality.
 
-**Key Challenge**: Efficient search must be conducted over a vast discrete combinatorial molecular space while ensuring that every generated molecule possesses a feasible synthesis route.
+**Key Challenge**: The need to search efficiently within a vast discrete combinatorial molecular space while ensuring that generated molecules possess feasible synthesis routes.
 
-**Goal**: Design a lightweight genetic algorithm that guarantees synthesizability by construction, serving as both a standalone baseline and a modular component.
+**Goal**: To design a lightweight genetic algorithm that guarantees synthesizability by construction, serving as both a standalone baseline and a modular component.
 
-**Key Insight**: Rather than generate-then-validate, the method defines genetic operators directly on synthesis trees, so the search space is confined to synthesizable molecules throughout.
+**Key Insight**: Rather than generating then verifying, genetic operators are defined directly on synthesis trees, effectively restricting the search space to synthesizable molecules from the outset.
 
-**Core Idea**: By defining crossover/mutation operators on synthesis trees, the GA search is naturally restricted to synthesizable space; ML-guided building block filtering further accelerates convergence toward promising regions.
+**Core Idea**: By defining crossover and mutation operators on synthesis trees, the GA search is naturally bounded by the synthesizable space. This is further accelerated by ML-guided building block filtering to focus the search on relevant regions.
 
 ## Method
 
 ### Overall Architecture
-The inputs are a building block set $\mathcal{B}$ (~200k purchasable molecules) and a reaction template set $\mathcal{R}$ (91 templates); the output is the optimal synthesizable molecule under a given objective along with its synthesis route. The core pipeline: GA iteratively evolves a population in the synthesis tree space $\mathcal{T}$, where each tree's leaf nodes are building blocks and internal nodes are reactions.
+SynGA aims to achieve "guaranteed synthesizability during search": given a set of ~200,000 purchasable building blocks $\mathcal{B}$ and a set of 91 reaction templates $\mathcal{R}$, it searches for the optimal molecule under a specific objective while simultaneously providing its synthesis route. Its key design shifts the search space from "molecules" to "synthesis trees"—a synthesis tree $T \in \mathcal{T}$ features building blocks as leaf nodes, reactions as internal nodes, and the final product at the root. The GA no longer performs crossover or mutation on molecular graphs but evolves synthesis trees directly: each generation applies operators to the population, scores the resulting molecules, and retains high-performing individuals via elitist selection. Since the operations act on valid synthesis trees, every candidate molecule is inherently accompanied by a feasible synthesis route. For sampling building blocks during mutation, SynGA employs a task-specific filter: an MLP classifier for analog search, or a block-additive model combined with Bayesian Optimization (SynGBO) for property optimization.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Building Blocks B (~200k) + Reaction Templates R (91)<br/>→ Initialize Synthesis Tree Population"] --> OP["Genetic Operators on Synthesis Trees<br/>Crossover + 5 Mutations<br/>(Grow/Shrink/Rerun/Change Internal/Change Leaf)"]
+    OP -->|"Task-based Building Block Filtering"| FILT
+    subgraph FILT["ML-Guided Building Block Filtering"]
+        direction TB
+        A1["Analog Search<br/>MLP Classifier + ε-Filtering"]
+        A2["Property Optimization SynGBO<br/>NAM Block-Additive Scoring + Bayesian Optimization"]
+    end
+    FILT --> SCORE["Score Product Molecules"]
+    SCORE --> SEL["Elitist Selection"]
+    SEL -->|"Iterative Evolution"| OP
+    SEL --> OUT["Optimal Molecule + Feasible Synthesis Route"]
+```
 
 ### Key Designs
 
-1. **Genetic Operators on Synthesis Trees**:
+**1. Genetic Operators on Synthesis Trees: Synthesizability as a Structural Constraint**
 
-    - **Function**: Define crossover and mutation operators that act directly on synthesis trees.
-    - **Mechanism**: *Crossover*—enumerate subtrees from two parent trees, identify compatible subtree pairs connectable via a bimolecular reaction, and join them at a new root node using a randomly selected compatible reaction. *Mutation*—five operations: Grow (extend via a new reaction), Shrink (select a subtree), Rerun (resample products while preserving structure), Change Internal (replace a reaction), Change Leaf (replace a building block).
-    - **Design Motivation**: Since every node in a synthesis tree satisfies the constraint that leaf nodes are building blocks and internal nodes are valid reactions, any offspring produced by genetic operators is automatically a valid synthesis route, requiring no post-hoc verification or projection.
+Traditional molecular GAs modify atoms and bonds, often producing unsynthesizable molecules that require expensive post-hoc retrosynthesis checks. SynGA embeds the constraint into the data structure: every node in the synthesis tree ensures that "leaves are building blocks and internals are valid reactions." **Crossover** involves enumerating subtrees from two parent trees and identifying compatible pairs that can be joined by a bimolecular reaction at a new root. **Mutation** provides five operations covering different perturbation granularities: Grow (extend via a new reaction), Shrink (revert to a subtree), Rerun (maintain tree structure but resample products), Change Internal (replace an internal reaction), and Change Leaf (replace a leaf building block). Notably, Rerun exploits synthesis route ambiguity—the same scaffold can produce different molecules—allowing for efficient exploration of variants within the same synthetic framework.
 
-2. **ML-Guided Building Block Filtering (Analog Search)**:
+**2. ML-Guided Building Block Filtering: Compressing the Search Space**
 
-    - **Function**: Train a lightweight MLP classifier to predict which building blocks are likely relevant for synthesizing analogs of a query molecule.
-    - **Mechanism**: Learn $\pi_\theta: \mathcal{M} \times \mathcal{B} \to (0,1)$ to filter the 200k building blocks down to a relevant subset. An $\varepsilon$-filtering strategy is applied: with probability $1-\varepsilon$, sample from the filtered set; with probability $\varepsilon$, sample from the full set.
-    - **Design Motivation**: The 200k building block search space is immense; ML filtering effectively focuses the search on relevant regions without sacrificing completeness.
+With 200,000 building blocks, the candidate space for mutation is immense. For analog search, a lightweight MLP classifier $\pi_\theta: \mathcal{M} \times \mathcal{B} \to (0,1)$ is trained to predict the probability that a building block is used to synthesize analogs of a target molecule. To balance exploitation and exploration, an $\varepsilon$-filtering strategy is used: sampling from the filtered subset with probability $1-\varepsilon$ and from the full set with probability $\varepsilon$.
 
-3. **Block-Additive Model + Bayesian Optimization (SynGBO)**:
+**3. Block-Additive Model + Bayesian Optimization (SynGBO): Ranking Building Blocks without Targets**
 
-    - **Function**: Use a Neural Additive Model (NAM) to score individual building blocks for filtering, embedded within a Bayesian optimization outer loop.
-    - **Mechanism**: The NAM models $\rho_\theta(\mathcal{B}_M) = (\alpha + (1-\alpha)|\mathcal{B}_M|^{-1})\sum_{B \in \mathcal{B}_M} s_\theta(B)$, trained with a ranking loss rather than a regression loss. The outer loop uses a GP surrogate to guide SynGA toward maximizing the acquisition function.
-    - **Design Motivation**: In property optimization, the target molecule is unknown, precluding classification-based filtering. However, the interpretability of NAMs allows direct scoring and ranking of building blocks for filtering purposes.
+In property optimization, where no target molecule exists, SynGBO utilizes a Neural Additive Model (NAM) to score building blocks individually. The overall tree score is calculated as:
+
+$$\rho_\theta(\mathcal{B}_M) = \left(\alpha + (1-\alpha)|\mathcal{B}_M|^{-1}\right)\sum_{B \in \mathcal{B}_M} s_\theta(B)$$
+
+where $\mathcal{B}_M$ is the set of building blocks in molecule $M$, and $s_\theta(B)$ is the score of a single block. The model is trained using a pairwise ranking loss. Because of the additive structure, building blocks can be ranked directly by $s_\theta(B)$ for filtering. SynGA is then embedded within a Bayesian Optimization loop, where a GP surrogate model guides the search to maximize an acquisition function.
 
 ### Loss & Training
-The analog search filter is trained with binary cross-entropy; the NAM for property optimization is trained with a pairwise ranking loss; the GP surrogate follows standard Gaussian process training. The GA employs an elitist selection strategy with a population size of 500 and an offspring size of 5.
+The analog search filter is trained using binary cross-entropy. The SynGBO NAM is trained with a pairwise ranking loss. The GP surrogate in the outer loop follows standard Gaussian Process training. The GA population size is set to 500 with an offspring size of 5.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Synthesizable Analog Search (ChEMBL, 100 molecules):**
+**Synthesizable Analog Search (ChEMBL, 100 Molecules):**
 
 | Method | Morgan Sim↑ | Scaffold Sim↑ | Gobbi Sim↑ | Subset Sim↑ |
-|--------|------------|--------------|-----------|-------------|
-| SynGA (no filter) | 0.313 | 0.372 | 0.536 | 0.397 |
+|------|------------|--------------|-----------|-------------|
+| SynGA (No Filter) | 0.313 | 0.372 | 0.536 | 0.397 |
 | SynGA + MLP | 0.380 | 0.452 | 0.607 | 0.465 |
 | SynGA + MLP+Mine | **0.393** | **0.465** | **0.617** | **0.475** |
 | SynNet | 0.325 | 0.383 | 0.549 | 0.427 |
 | Pasithea | 0.278 | 0.310 | 0.491 | 0.361 |
 
-**Property Optimization (PMO Benchmark, GuacaMol subset):**
+**Property Optimization (PMO Benchmark, GuacaMol Subset):**
 
 | Method | Top-10 AUC↑ | Synthesizability |
-|--------|-----------|-----------------|
+|------|-----------|---------|
 | SynGBO | SOTA | Guaranteed |
-| Graph GA | High, no synthesis guarantee | Not guaranteed |
-| REINVENT | Relatively high | Not guaranteed |
+| Graph GA | High | Not Guaranteed |
+| REINVENT | Moderate-High | Not Guaranteed |
 
 ### Ablation Study
 
-| Configuration | Morgan Sim↑ | Notes |
-|---------------|------------|-------|
-| SynGA no filter | 0.313 | Baseline |
-| + Sim heuristic filter | 0.336 | Simple heuristic yields modest gains |
-| + MLP filter | 0.380 | ML filtering provides significant improvement |
-| + MLP + Hard Negative Mining | 0.393 | Hard negative mining further boosts precision |
+| Configuration | Morgan Sim↑ | Description |
+|------|------------|------|
+| SynGA (No Filter) | 0.313 | Baseline |
+| + Sim Heuristic Filter | 0.336 | Simple heuristics provide some benefit |
+| + MLP Filter | 0.380 | ML filtering significantly improves performance |
+| + MLP + Hard Negative Mining | 0.393 | Mining further enhances precision |
 
 ### Key Findings
-- SynGA serves as a strong baseline without any ML components; adding building block filtering achieves SOTA.
-- The Rerun mutation is a distinctive design—it fixes the synthesis tree structure while resampling products, efficiently exploring variants within the same scaffold.
-- Filtering 200k building blocks can reduce the effective search space by orders of magnitude, which is critical for performance gains.
-- SynGBO performs strongly in property optimization; the ranking loss for NAM training is better suited for filtering purposes than regression loss.
+- SynGA serves as a strong baseline without ML components and achieves SOTA with building block filtering.
+- The Rerun mutation is a unique design that efficiently explores scaffold variants by keeping the synthesis tree structure fixed.
+- Filtering 200k building blocks reduces the searchable space by orders of magnitude, which is critical for performance.
+- SynGBO excels in property optimization, with ranking loss proving more effective than regression loss for filtering.
 
 ## Highlights & Insights
-- **Synthesizability by Construction**: Rather than following a generate-then-validate paradigm, the search space itself is the synthesizable space—a fundamental methodological advantage. Every molecule generated during search comes with an associated synthesis route.
-- **Modular Design Philosophy**: SynGA is a lightweight, ML-free core component that can be readily embedded into larger workflows (e.g., Bayesian optimization), exemplifying good engineering design: a simple core with optional enhancements.
-- **Elegance of the Rerun Mutation**: By exploring chemical space while preserving the synthetic scaffold, this operator exploits the inherent ambiguity in synthesis routes—the same route can yield different molecules.
+- **Constructive Synthesizability**: Moves away from the "generate-verify" paradigm to a search space that is synthesizable by construction. Every molecule generated during the search includes its own synthesis route.
+- **Modular Design**: SynGA is a lightweight, non-ML core component that can be easily integrated into broader workflows (like BO), representing a "simple core + optional enhancement" philosophy.
+- **Rerun Mutation**: Effectively leverages the ambiguity in synthesis routes to explore chemical space while keeping the synthetic scaffold constant.
 
 ## Limitations & Future Work
-- The method relies on a predefined reaction template library (91 templates), potentially missing synthesis routes beyond the template set.
-- The building block set is fixed to the Enamine commercial catalog, limiting coverage of chemical space.
-- The additive assumption of NAMs constrains modeling capacity for complex nonlinear properties.
-- Synthesis routes are limited to at most 5 steps, which may preclude complex molecules requiring longer synthetic sequences.
+- Dependent on a predefined library of 91 reaction templates, potentially missing routes outside this scope.
+- Building block set is constrained to the Enamine catalog, limiting chemical space coverage.
+- The additive assumption in NAM may struggle to model complex non-linear property interactions.
+- Synthesis routes are limited to a maximum of 5 steps, which might not cover complex molecules requiring longer paths.
 
 ## Related Work & Insights
-- **vs. Graph GA**: Traditional molecular graph GAs offer strong search capability but provide no synthesizability guarantee; SynGA automatically ensures synthesizability by operating on synthesis trees, achieving comparable performance.
-- **vs. SynNet/Pasithea**: These ML-based projection methods require training additional projection models; SynGA's core is ML-free, making it simpler and more reliable.
-- **vs. RetroGNN (Gao et al., 2024)**: Also performs synthesis-aware GA but uses a trained projection network for constraints; SynGA searches directly within synthesizable space, avoiding projection errors.
+- **vs Graph GA**: Traditional graph-based GAs have high search capacity but no synthesizability guarantee; SynGA matches performance while ensuring feasibility.
+- **vs SynNet/Pasithea**: These ML-based projection methods require training complex auxiliary models; SynGA's core is simpler and more reliable.
+- **vs RetroGNN (Gao et al., 2024)**: While both are synthesis-aware, RetroGNN uses projection networks; SynGA avoids projection errors by searching directly within the synthesis space.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Defining GA operators on synthesis trees is not entirely novel, but the implementation is refined; the ML/GA integration for building block filtering is a noteworthy contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers analog search, property optimization, and 2D/3D objectives—comprehensive coverage of molecular design tasks with detailed ablations.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Method descriptions are precise, formal definitions are rigorous, and code is open-sourced.
-- **Value**: ⭐⭐⭐⭐ Provides a practical synthesizable search tool for molecular design; the open-source code is directly usable.
+- Novelty: ⭐⭐⭐⭐ Defining GA operators on synthesis trees is well-executed, and the ML/GA fusion for filtering is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across analog search, property optimization, and 2D/3D targets with detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear, precise methodology with rigorous formal definitions and open-source code.
+- Value: ⭐⭐⭐⭐ Provides a practical tool for synthesizable molecular search with a ready-to-use codebase.
 
 <!-- RELATED:START -->
 
@@ -133,11 +141,11 @@ The analog search filter is trained with binary cross-entropy; the NAM for prope
 
 ## Related Papers
 
+- [\[ICLR 2026\] Exploring Synthesizable Chemical Space with Iterative Pathway Refinements](exploring_synthesizable_chemical_space_with_iterative_pathway_refinements.md)
 - [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
-- [\[ACL 2026\] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](../../ACL2026/computational_biology/aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)
-- [\[NeurIPS 2025\] DesignX: Human-Competitive Algorithm Designer for Black-Box Optimization](../../NeurIPS2025/computational_biology/designx_human-competitive_algorithm_designer_for_black-box_optimization.md)
-- [\[ICLR 2026\] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions](enhancing_molecular_property_predictions_by_learning_from_bond_modelling_and_int.md)
-- [\[ICLR 2026\] Learning Molecular Chirality via Chiral Determinant Kernels](learning_molecular_chirality_via_chiral_determinant_kernels.md)
+- [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
+- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
+- [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
 
 </div>
 

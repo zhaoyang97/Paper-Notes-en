@@ -2,107 +2,83 @@
 title: >-
   [Paper Note] CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints
 description: >-
-  [ICLR 2026][Computational Biology][cryo-EM] CryoNet.Refine is proposed as the first AI-based framework for cryo-EM atomic model refinement. It integrates a one-step diffusion model initialized from Boltz-2 weights…
+  [ICLR 2026][Computational Biology][cryo-EM] This work proposes CryoNet.Refine, the first AI-based cryo-EM atomic model refinement framework. It designs a one-step diffusion model (initialized with Boltz-2 weights) incorporated with an innovative differentiable density generator for physical simulation. By introducing density map correlation as a differentiable l
 tags:
-  - "ICLR 2026"
-  - "Computational Biology"
-  - "cryo-EM"
-  - "atomic model refinement"
-  - "one-step diffusion"
-  - "density loss"
-  - "geometric constraints"
-  - "protein structure"
+  - ICLR 2026
+  - Computational Biology
+  - cryo-EM
 date: 2026-05-08
-content_hash: c7e5d58829eeb5d3
+content_hash: 5a3f81fcf3df7429
 ---
-
 # CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.22263](https://arxiv.org/abs/2602.22263)  
 **Code**: [GitHub](https://github.com/kuixu/cryonet.refine)  
-**Area**: Structural Biology / Cryo-EM / Diffusion Models
+**Area**: Structural Biology/Cryo-EM/Diffusion Models  
 **Keywords**: cryo-EM, atomic model refinement, one-step diffusion, density loss, geometric constraints, protein structure
 
 ## TL;DR
-CryoNet.Refine is proposed as the first AI-based framework for cryo-EM atomic model refinement. It integrates a one-step diffusion model initialized from Boltz-2 weights, a novel differentiable density generator that physically simulates synthetic density maps, and the first use of density map correlation (cosine similarity) as a differentiable loss function, jointly optimized with geometric constraint losses including Ramachandran, rotamer, and bond angle terms. A test-time optimization strategy enables per-case customization. The method comprehensively outperforms Phenix.real_space_refine on 120 protein and DNA/RNA complex benchmarks (CC_mask: 0.59 vs. 0.54; Ramachandran favored: 98.92%).
+This work proposes CryoNet.Refine, the first AI-based cryo-EM atomic model refinement framework. It designs a one-step diffusion model (initialized with Boltz-2 weights) incorporated with an innovative differentiable density generator for physical simulation. By introducing density map correlation as a differentiable loss function (cosine similarity) combined with geometric constraints (Ramachandran, Rotamer, bond angles), it employs a test-time optimization strategy for case-specific refinement. It comprehensively outperforms Phenix.real_space_refine across 120 protein and DNA/RNA complexes (CC_mask 0.59 vs 0.54, Ramachandran favored 98.92%).
 
 ## Background & Motivation
 
-**Cryo-EM Refinement Bottleneck**: Cryo-EM has become a revolutionary technique in structural biology, yet refining accurate atomic models from density maps remains a central bottleneck. Traditional methods such as Phenix.real_space_refine and Rosetta are computationally expensive and require expert-driven, case-by-case parameter tuning.
+**Bottlenecks in Cryo-EM Refinement**: While cryo-EM has revolutionized structural biology, refining precise atomic models from density maps remains a core bottleneck. Traditional methods like Phenix.real_space_refine and Rosetta are computationally expensive and require expert manual parameter tuning.
 
-**Insufficient Initial Model Quality**: Even with high-resolution density maps, peripheral and flexible regions frequently exhibit low-resolution density. Model-building tools such as ModelAngelo may produce fragmented structures, incorrect residue types, or fail to complete modeling entirely, making the refinement step indispensable.
+**Inadequate Initial Model Quality**: Even with high-resolution density maps, peripheral and flexible regions often exhibit lower resolution. Modeling tools like ModelAngelo may generate fragmented structures or incorrect residue types, necessitating a refinement step.
 
-**Limitations of Traditional Methods**:
-   - (1) **High computational cost**: Simulated annealing combined with conformational space sampling leads to iterative optimization that is time-consuming.
-   - (2) **Expert parameter tuning required**: Weights and constraint parameters must be manually adjusted on a case-by-case basis, resulting in a steep learning curve.
-   - (3) **Manual refinement is prohibitively slow**: Interactive tools such as Coot offer flexibility but are extremely time-consuming, forming a bottleneck in high-throughput structure determination.
+**Limitations of Prior Work**:
+   - (1) **High Computational Cost**: Simulated annealing and conformational space sampling lead to time-consuming iterative optimization.
+   - (2) **Expert Dependency**: Weights and constraint parameters must be adjusted manually case-by-case, resulting in a steep learning curve.
+   - (3) **Time-consuming Manual Refinement**: Interactive tools like Coot are flexible but extremely slow, creating a bottleneck for high-throughput determination.
 
-**Gap in Existing AI Methods**: AI-based approaches such as DeepAccNet, GNNRefine, and AtomRefine learn geometric features from known structures but are not directly coupled with experimental cryo-EM density maps. The resulting structures are geometrically plausible yet fail to match experimental data. **No neural network method in the literature supports differentiable refinement under cryo-EM experimental data constraints.**
+**Gap in Existing AI Methods**: AI methods such as DeepAccNet, GNNRefine, and AtomRefine only learn geometric features from known structures without direct coupling to experimental cryo-EM density maps. Consequently, predicted structures may be geometrically reasonable but fail to match experimental data. **There is a lack of neural network methods in the literature that support differentiable refinement under experimental cryo-EM data constraints.**
 
-**Opportunity from Diffusion Models**: Diffusion models such as AlphaFold3 and RFDiffusion have demonstrated outstanding capabilities in protein generation and can learn geometric features (bond lengths, bond angles), but do not natively support refinement under experimental density map constraints. Combining the generative capacity of diffusion models with cryo-EM density map constraints represents a transformative direction.
+**Opportunity for Diffusion Models**: Diffusion models like AlphaFold3 and RFDiffusion have shown excellence in protein generation and geometric feature learning (bond lengths/angles) but do not natively support refinement under experimental density map constraints. Integrating the generative power of diffusion models with cryo-EM density constraints presents a transformative path.
 
-**Core Insight**: Unifying density map fitting and geometric constraints into differentiable loss functions enables end-to-end optimization of a diffusion model for refinement, eliminating manual parameter tuning and enabling automated, efficient, and high-quality refinement.
+**Key Insight**: Unifying density map fitting and geometric constraints into differentiable loss functions enables end-to-end driven diffusion model refinement, achieving automation, efficiency, and high quality without manual tuning.
 
 ## Method
 
-### Overall Architecture: CryoNet.Refine
+### Overall Architecture
 
-- **Input**: Experimental cryo-EM density map $d_0$ + initial atomic structure $x_0$ (e.g., from AlphaFold3 predictions)
-- **Encoding**: Atom encoder extracts pairwise features $z$; sequence embedder encodes atom types $s$
-- **Pairformer**: Cross-attention over atom and sequence embeddings following Boltz-2
-- **One-step diffusion module**: Generates the refined atomic structure $x_1$
-- **Density generator**: Produces a synthetic density map $d_i$ from the refined structure
-- **Loss computation**: $\mathcal{L} = \gamma_{\text{den}} \cdot \mathcal{L}_{\text{den}} + \mathcal{L}_{\text{geo}}$
-- **Test-time optimization**: Iterative training–optimization cycles per case for customized refinement (up to 300 recycles with early stopping)
-- Network parameters are initialized from Boltz-2; only the diffusion module is trainable.
+CryoNet.Refine receives an experimental cryo-EM density map $d_0$ and an initial atomic structure $x_0$. The goal is to refine atomic coordinates to fit experimental density while maintaining stereochemical validity. The network consists of five modules: an atom encoder extracts pairwise features $z$, a sequence embedder encodes atom types $s$, and a Pairformer (initialized from Boltz-2) performs cross-attention. A one-step diffusion module predicts the refined structure $x_i$ in a single pass. A differentiable density generator renders $x_i$ into a simulated density map to compute density loss against the experimental map, which is then combined with geometric constraint losses. The total loss $\mathcal{L} = \gamma_{\text{den}}\,\mathcal{L}_{\text{den}} + \mathcal{L}_{\text{geo}}$ is back-propagated. Notably, only the diffusion module remains trainable while encoders are frozen, and test-time optimization is applied to each case separately—iteratively updating diffusion weights for up to 300 cycles per structure.
 
-### Key Design 1: One-step Diffusion Module
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    D0["Experimental Density Map d0"] --> ENC
+    X0["Initial Structure x0<br/>(AlphaFold3 Prediction)"] --> ENC["Encoder + Pairformer<br/>(Frozen, from Boltz-2)"]
+    ENC --> DIFF["One-step Deterministic Diffusion<br/>Single-pass refined structure xi"]
+    D0 --> GEN
+    DIFF --> GEN["Differentiable Density Loss<br/>Generator renders simulated map<br/>→ Cosine Similarity"]
+    DIFF --> GEO["Differentiable Geometric Constraints<br/>Rama / Rotamer / Angle / Cβ / Clash"]
+    GEN --> LOSS["Total Loss L = γ_den·L_den + L_geo"]
+    GEO --> LOSS
+    LOSS -->|"Test-time Optimization: Update θ per case"| DIFF
+    LOSS -->|"300 iterations or Early Stopping"| OUT["Refined Atomic Model xn"]
+```
 
-Conventional diffusion models (e.g., AlphaFold3) require hundreds of sampling steps, incurring high computational cost. CryoNet.Refine adopts a one-step deterministic refinement formulation:
+### Key Designs
 
-$$\hat{\mathbf{x}} = c_{\text{skip}}(\sigma)\,\mathbf{x}_0 + c_{\text{out}}(\sigma)\,\mathcal{F}_\theta\!\left(c_{\text{in}}(\sigma)\mathbf{x}_0,\, c_{\text{noise}}(\sigma),\, \mathcal{C}\right)$$
+**1. One-step Deterministic Diffusion: Starting from Structure instead of Noise**
+Unlike AlphaFold3 which denoises from Gaussian noise over hundreds of steps, refinement benefits from an "almost correct" starting point. CryoNet.Refine formulates refinement as a preconditioned deterministic mapping $\hat{\mathbf{x}} = c_{\text{skip}}(\sigma)\,\mathbf{x}_0 + c_{\text{out}}(\sigma)\,\mathcal{F}_\theta\!\left(c_{\text{in}}(\sigma)\mathbf{x}_0,\, c_{\text{noise}}(\sigma),\, \mathcal{C}\right)$. It predicts the refined structure in one step from the initial input, removing MSA processing to rely entirely on physical density constraints. Experiments show that a one-step version achieves a CC_mask of 0.65 compared to 0.30 for standard 200-step diffusion.
 
-where $c_{\text{skip}}, c_{\text{out}}, c_{\text{in}}, c_{\text{noise}}$ are preconditioning coefficients and $\mathcal{F}_\theta$ is the parameterized neural network.
+**2. Differentiable Density Loss: Enabling Back-propagation for Density Correlation**
+The key is treating density matching as an end-to-end differentiable loss. The density generator acts as a physical simulator: it superimposes Gaussian spheres centered at each atom to create a synthetic density $\hat{\boldsymbol{\rho}}(\vec{\boldsymbol{m}}, \vec{\mathbf{x}}) = \sum_{i=1}^{N} w_i e^{-k|\vec{\boldsymbol{m}} - \vec{\mathbf{x}}_i|^2}$, where weight $w_i$ is the atomic number and $k$ is determined by resolution. The loss is defined as $\mathcal{L}_{\text{den}} = 1 - \frac{\hat{\boldsymbol{\rho}} \cdot \boldsymbol{\rho}}{\lVert\hat{\boldsymbol{\rho}}\rVert \cdot \lVert\boldsymbol{\rho}\rVert}$. This allows gradients to back-propagate directly to atomic coordinates, achieving an average correlation of 0.892.
 
-**Key Differences from AlphaFold3**:
-- Starts from an initial structure rather than Gaussian noise
-- Single-step deterministic prediction rather than multi-step stochastic denoising
-- Test-time optimization rather than fixed-weight inference
-- MSA processing and confidence heads are removed, with reliance placed on physical density constraints instead
+**3. Differentiable Geometric Constraints: Optimizable Stereochemical Rules**
+To prevent atoms from fitting into density noise and violating chemical common sense, several geometric losses are used: $\mathcal{L}_{\text{geo}} = \gamma_{\text{rama}} \mathcal{L}_{\text{rama}} + \gamma_{\text{rot}} \mathcal{L}_{\text{rot}} + \gamma_{\text{angle}} \mathcal{L}_{\text{angle}} + \gamma_{C_\beta} \mathcal{L}_{C_\beta} + \gamma_{\text{viol}} \mathcal{L}_{\text{viol}}$. These include Ramachandran penalties for backbone dihedrals, Rotamer constraints for side chains, $C_\beta$ deviation penalties, and bond angle RMSD. Removing the Ramachandran loss drops the favored percentage from 98.80% to 90.75%.
 
-### Key Design 2: Differentiable Density Loss
-
-A fully differentiable density map generation and density loss computation pipeline is introduced for the first time.
-
-**Density Generator** (a physics-based simulator, not a neural network): Constructs a Gaussian sphere centered at each atomic position:
-
-$$\hat{\boldsymbol{\rho}}(\vec{\boldsymbol{m}}, \vec{\mathbf{x}}) = \sum_{i=1}^{N} w_i e^{-k|\vec{\boldsymbol{m}} - \vec{\mathbf{x}}_i|^2}$$
-
-where $w_i$ is the atomic number and $k = 8 \cdot res / (\pi \cdot v)$ is determined by the resolution and voxel size.
-
-**Density Loss** (cosine similarity between synthetic and experimental maps):
-
-$$\mathcal{L}_{\text{den}} = 1 - \frac{\hat{\boldsymbol{\rho}} \cdot \boldsymbol{\rho}}{||\hat{\boldsymbol{\rho}}|| \cdot ||\boldsymbol{\rho}||}$$
-
-The entire pipeline is reimplemented in PyTorch to enable differentiability and backpropagation, marking the first use of density map correlation directly as a training loss. The average correlation coefficient achieved is 0.892, surpassing ChimeraX's 0.803.
-
-### Key Design 3: Differentiable Geometric Constraint Losses
-
-$$\mathcal{L}_{\text{geo}} = \gamma_{\text{rama}} \mathcal{L}_{\text{rama}} + \gamma_{\text{rot}} \mathcal{L}_{\text{rot}} + \gamma_{\text{angle}} \mathcal{L}_{\text{angle}} + \gamma_{C_\beta} \mathcal{L}_{C_\beta} + \gamma_{\text{viol}} \mathcal{L}_{\text{viol}}$$
-
-- **Ramachandran loss**: Evaluates whether backbone dihedral angles $\phi, \psi$ fall in outlier regions of the Ramachandran plot (based on the Top8000 dataset).
-- **Rotamer loss**: Side-chain rotamer constraints assessing whether the four $\chi$ angles are outliers.
-- **$C_\beta$ deviation loss**: Penalizes deviations of the $C_\beta$ atom from its idealized position exceeding 0.25 Å.
-- **Bond angle loss**: Bond angle RMSD, enforcing values close to ideal geometry.
-- **Clash loss**: Penalizes spatial conflicts between non-bonded atoms (Van der Waals radius constraints).
+**4. Test-time Optimization: Refining via Case-specific Over-fitting**
+As each cryo-EM map is unique, a universal static model is insufficient. CryoNet.Refine treats each case as a mini-training task: it fixes input $x_0$, performs a forward pass, calculates losses on the output, and updates only the diffusion module parameters $\theta$. This process repeats for up to 300 cycles. This approach resembles the scene-specific over-fitting used in NeRF, focusing all optimization capacity on fitting the current density map.
 
 ## Key Experimental Results
 
-### Protein Complex Refinement (110 cases)
+### Protein Complex Refinement (110 Cases)
 
 | Metric | AlphaFold3 | Phenix.real_space_refine | **CryoNet.Refine** |
-|--------|-----------|------------------------|-------------------|
+|------|-----------|------------------------|-------------------|
 | CC_mask ↑ | 0.38 | 0.54 | **0.59** |
 | CC_box ↑ | 0.41 | 0.53 | **0.57** |
 | CC_mc ↑ | 0.40 | 0.55 | **0.60** |
@@ -115,84 +91,84 @@ $$\mathcal{L}_{\text{geo}} = \gamma_{\text{rama}} \mathcal{L}_{\text{rama}} + \g
 | Rotamer favored (%) ↑ | 97.08 | 85.42 | **98.64** |
 | Rotamer outlier (%) ↓ | 1.08 | 1.15 | **0.49** |
 
-### DNA/RNA–Protein Complex Refinement (10 cases)
+### DNA/RNA-Protein Complex Refinement (10 Cases)
 
 | Metric | AlphaFold3 | Phenix.real_space_refine | **CryoNet.Refine** |
-|--------|-----------|------------------------|-------------------|
+|------|-----------|------------------------|-------------------|
 | CC_mask ↑ | 0.40 | 0.57 | **0.65** |
 | CC_box ↑ | 0.49 | 0.61 | **0.67** |
 | CC_sc ↑ | 0.42 | 0.58 | **0.67** |
 | CC_peaks ↑ | 0.35 | 0.51 | **0.60** |
 | CC_volume ↑ | 0.48 | 0.61 | **0.69** |
 
-### Ablation Study (27 protein complexes)
+### Ablation Study (27 Protein Complexes)
 
 | Configuration | CC_mask | Rama favored | Rot favored |
-|---------------|---------|-------------|-------------|
-| Without density loss $\gamma_{\mathrm{den}}=0$ | 0.41 (↓35%) | 99.09% | 98.67% |
-| Without Ramachandran $\gamma_{\mathrm{rama}}=0$ | 0.65 | 90.75% (↓) | 98.64% |
-| Without rotamer $\gamma_{\mathrm{rot}}=0$ | 0.64 | 99.22% | 94.48% (↓) |
-| **CryoNet.Refine (full)** | **0.65** | **98.80%** | **98.58%** |
+|------|---------|-------------|-------------|
+| W/o Density Loss $\gamma_{\mathrm{den}}=0$ | 0.41 (↓35%) | 99.09% | 98.67% |
+| W/o Ramachandran $\gamma_{\mathrm{rama}}=0$ | 0.65 | 90.75% (↓) | 98.64% |
+| W/o Rotamer $\gamma_{\mathrm{rot}}=0$ | 0.64 | 99.22% | 94.48% (↓) |
+| **CryoNet.Refine (Full)** | **0.65** | **98.80%** | **98.58%** |
 
-### vs. Classical Multi-step Diffusion (200 steps) vs. Direct Numerical Optimization
+### vs. Multi-step Diffusion vs. Direct Numerical Optimization
 
 | Method | CC_mask | Angle RMSD |
-|--------|---------|-----------|
-| Classical 200-step diffusion | 0.30 | 1.66° |
-| Direct SGD coordinate optimization | 0.46 | **0.27°** |
-| **CryoNet.Refine (one-step)** | **0.65** | 0.54° |
+|------|---------|-----------|
+| Standard 200-step Diffusion | 0.30 | 1.66° |
+| Direct SGD Coordinate Opt | 0.46 | **0.27°** |
+| **CryoNet.Refine (One-step)** | **0.65** | 0.54° |
 
 ## Key Findings
 
-1. **The density loss is the core driving force**: Removing the density loss causes CC_mask to drop sharply from 0.65 to 0.41 (>35% reduction), confirming that density constraints are necessary for accurate density map fitting.
+1. **Density Loss as the Core Driver**: Removing density loss causes CC_mask to plummet from 0.65 to 0.41 (>35% drop), indicating density constraints are essential for accurate fitting.
 
-2. **One-step diffusion substantially outperforms multi-step**: The classical 200-step diffusion achieves a CC_mask of only 0.30, with CC values decreasing monotonically as the number of steps increases. This is because the input is already a complete structure rather than noise—multi-step sampling progressively degrades the structure.
+2. **One-step Diffusion Outperforms Multi-step**: Standard 200-step diffusion yields a CC_mask of only 0.30. CC values decrease monotonically with more steps because multi-step sampling disrupts the already complete initial structure.
 
-3. **The generative capacity of diffusion models is irreplaceable**: Direct SGD coordinate optimization achieves excellent geometric metrics (Angle RMSD: 0.27°) but only a CC_mask of 0.46, as it becomes trapped in local minima and cannot explore conformational space to find global optima. The exploratory capacity of diffusion models is essential for balancing density fitting with geometric plausibility.
+3. **Indispensability of Diffusion Generative Power**: Direct SGD optimization on coordinates achieves superior geometric metrics (Angle RMSD 0.27°) but poor CC_mask (0.46). It gets trapped in local minima where the diffusion model's exploration capabilities help find global optima.
 
-4. **Geometric constraints are complementary and indispensable**: The Ramachandran constraint protects backbone conformation (removing it causes favored percentage to drop from 98.80% to 90.75%); the rotamer constraint protects side-chain packing (removing it causes favored percentage to drop from 98.58% to 94.48%). The three loss components act synergistically.
+4. **Synergy of Geometric Constraints**: Ramachandran constraints protect backbone conformation while Rotamer constraints preserve side-chain packing.
 
-5. **Convergence exhibits two phases**: CC values increase sharply during the first 100 recycles (high-sensitivity phase), then plateau beyond 100 recycles (robust convergence phase). The 300-iteration budget with early stopping provides an adequate safety margin.
+5. **Two-phase Convergence**: CC values rise sharply during the first 100 cycles (high-sensitivity phase) before plateauing (robust convergence phase). 300 iterations with early stopping provide a safe margin.
 
-6. **Runtime is competitive**: In 54.2% of the 120 complexes, CryoNet.Refine is faster than Phenix, with a particularly pronounced advantage on large complexes, as Phenix supports only CPU execution.
+6. **Competitive Efficiency**: CryoNet.Refine is faster than Phenix in 54.2% of the cases, especially for large complexes, leveraging GPU acceleration where Phenix is CPU-only.
 
 ## Highlights & Insights
 
-- **Three firsts**: First AI-based cryo-EM refinement method + first differentiable density generator + first use of density map correlation as a loss function → filling a critical gap between neural network refinement and experimental data.
-- **Test-time optimization paradigm**: Rather than learning a universal model for inference, the method performs iterative optimization per case — analogous to NeRF-style fitting — which is well-suited to the inherently case-specific nature of cryo-EM refinement.
-- **Fusion of physical simulation and neural networks**: The density generator is a physics-based simulator (Gaussian spheres) rather than a neural network, yet its PyTorch implementation renders it fully differentiable — an elegant integration of physical priors and learned representations.
-- **Unified framework**: The same framework handles both protein and DNA/RNA–protein complexes, whereas most existing AI refinement methods are limited to pure proteins.
+- **Triple "Firsts"**: First AI-based cryo-EM refinement method, first differentiable density generator, and first use of density correlation as a loss.
+- **Test-time Optimization Paradigm**: Instead of static inference, it treats each case as an iterative optimization, similar to the NeRF approach, suitable for the unique nature of each cryo-EM map.
+- **Hybrid Physical Simulation and Neural Network**: The density generator is a physical simulator (Gaussian spheres) implemented in PyTorch to be differentiable, elegantly blending physical priors with learning.
+- **Unified Framework**: Handles both protein and DNA/RNA-protein complexes within the same framework, whereas most AI refinement methods are limited to proteins.
 
-## Limitations & Future Work
+## Limitations
 
-1. **Per-case optimization cost**: The test-time optimization strategy requires independent training for each case. Although individual recycles are fast, the total number of iterations (up to hundreds) remains non-trivial. Future work should explore parallel refinement frameworks and faster convergence strategies.
-2. **Absence of nucleic acid geometric constraints**: DNA/RNA-specific stereochemical constraints are not yet implemented; nucleic acid refinement relies solely on the density loss, potentially yielding insufficient geometric quality.
-3. **Limitations of the simulated density map**: Gaussian sphere-based physical simulation cannot capture artifacts, noise, or secondary structure density features introduced by real experimental conditions. A deep learning-based density generator may be needed in future work.
-4. **Insufficient evaluation of clash loss**: Although a violation loss is included, the paper does not thoroughly evaluate its effectiveness in resolving steric clashes.
+1. **Test-time Optimization Cost**: Case-specific optimization implies independent training for every structure. While individual cycles are fast, the total iteration count is high.
+2. **Missing Nucleic Acid Geometric Constraints**: DNA/RNA-specific stereochemistry is not yet implemented, leaving nucleic acid refinement reliant solely on density loss.
+3. **Simulated Map Limitations**: Gaussian simulation doesn't capture experimental artifacts or secondary structure features; future work could use a learned density generator.
+4. **Insufficient Collision Evaluation**: While violation loss exists, its effect on steric clashes was not evaluated in detail.
 
 ## Related Work & Insights
 
 | Dimension | Phenix.real_space_refine | DeepAccNet/GNNRefine | CryoNet.Refine |
-|-----------|------------------------|---------------------|----------------|
-| Method type | Traditional optimization (simulated annealing + sampling) | AI prediction (GNN/3D CNN) | AI refinement (one-step diffusion + test-time optimization) |
-| Density map constraint | ✅ Used directly but non-differentiable | ❌ Does not use experimental density maps | ✅ First differentiable density loss |
-| Geometric constraints | ✅ Static constraint library | ✅ Learned from data | ✅ Differentiable geometric losses |
-| Degree of automation | Medium (requires parameter tuning) | High | High (fully automated) |
-| Applicable scope | Proteins + nucleic acids | Proteins only | Proteins + DNA/RNA complexes |
-| Computational efficiency | Slow (CPU-only) | Fast | Moderate (GPU; faster in 54% of cases) |
+|------|------------------------|---------------------|----------------|
+| Method Type | Traditional (Annealing) | AI Prediction (GNN/CNN) | AI Refinement (One-step + TTO) |
+| Density Constraint | ✅ Direct but non-diff. | ❌ Not used | ✅ First differentiable loss |
+| Geo. Constraint | ✅ Static libraries | ✅ Learned from data | ✅ Differentiable loss |
+| Automation | Medium | High | High (Fully automated) |
+| Scope | Protein + Nucleic acid | Protein only | Protein + DNA/RNA |
+| Efficiency | Slow (CPU-only) | Fast | Medium (54% faster than Phenix) |
 
 | Dimension | AlphaFold3/RFDiffusion | CryoNet.Refine |
-|-----------|----------------------|----------------|
-| Task | Structure prediction/design (generation from noise) | Structure refinement (optimization from initial model) |
-| Diffusion steps | Multi-step stochastic denoising (~200 steps) | One-step deterministic prediction |
-| Experimental data | ❌ Not used | ✅ Cryo-EM density map constraints |
-| Optimization strategy | Fixed-weight inference | Test-time optimization (per-case parameter updates) |
+|------|----------------------|----------------|
+| Task | Prediction/Design (from noise) | Refinement (from initial model) |
+| Diffusion Steps | Multi-step (~200) | One-step deterministic |
+| Exp. Data | ❌ Not used | ✅ cryo-EM density constraints |
+| Strategy | Static weight inference | TTO (Update weights per case) |
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — First AI cryo-EM refinement + differentiable density loss + one-step diffusion refinement; multiple genuine "firsts"
-- Experimental Thoroughness: ⭐⭐⭐⭐ — 120-case benchmark, multiple ablations, and comparisons against numerical optimization and multi-step diffusion; comparisons with additional AI methods are lacking
-- Writing Quality: ⭐⭐⭐⭐ — Methods are clearly described with well-motivated rationale
-- Value: ⭐⭐⭐⭐⭐ — Fills the gap in AI-based cryo-EM refinement with direct and substantial impact on the structural biology community
+- Novelty: ⭐⭐⭐⭐⭐ First AI cryo-EM refinement + Differentiable density loss + One-step diffusion.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 120-case benchmark + extensive ablation; lacks comparison with some recent AI methods.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodology and motivation.
+- Value: ⭐⭐⭐⭐⭐ High impact for the structural biology community.
 
 <!-- RELATED:START -->
 
@@ -200,11 +176,11 @@ $$\mathcal{L}_{\text{geo}} = \gamma_{\text{rama}} \mathcal{L}_{\text{rama}} + \g
 
 ## Related Papers
 
+- [\[ICLR 2026\] CryoLVM: Self-supervised Learning from Cryo-EM Density Maps with Large Vision Models](cryolvm_self-supervised_learning_from_cryo-em_density_maps_with_large_vision_mod.md)
+- [\[ICLR 2026\] CryoSplat: Gaussian Splatting for Cryo-EM Homogeneous Reconstruction](cryosplat_gaussian_splatting_for_cryo-em_homogeneous_reconstruction.md)
 - [\[CVPR 2026\] CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks](../../CVPR2026/computational_biology/cryohype_reconstructing_a_thousand_cryo-em_structures_with_transformer-based_hyp.md)
-- [\[NeurIPS 2025\] One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra](../../NeurIPS2025/computational_biology/one_small_step_with_fingerprints_one_giant_leap_for_de_novo_molecule_generation_.md)
-- [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](../../NeurIPS2025/computational_biology/multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
-- [\[ICCV 2025\] CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy](../../ICCV2025/computational_biology/cryofastar_fast_cryoem_ab_initio_reconstruction_made_easy.md)
-- [\[CVPR 2026\] cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold](../../CVPR2026/computational_biology/cryosense_compressive_sensing_enables_high-throughput_microscopy_with_sparse_and.md)
+- [\[ICLR 2026\] One Protein Is All You Need](one_protein_is_all_you_need.md)
+- [\[ICLR 2026\] Constrained Diffusion for Protein Design with Hard Structural Constraints](constrained_diffusion_for_protein_design_with_hard_structural_constraints.md)
 
 </div>
 

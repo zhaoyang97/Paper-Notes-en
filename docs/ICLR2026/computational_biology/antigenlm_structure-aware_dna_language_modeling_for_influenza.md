@@ -2,146 +2,146 @@
 title: >-
   [Paper Note] AntigenLM: Structure-Aware DNA Language Modeling for Influenza
 description: >-
-  [ICLR 2026][Computational Biology][DNA language model] AntigenLM is a GPT-2-style DNA language model that preserves the integrity of genomic functional units. Pretrained on complete influenza virus whole genomes and subs…
+  [ICLR 2026][Computational Biology][Paper Note] AntigenLM is a GPT-2 style DNA language model that preserves the integrity of genomic functional units. By pre-training and fine-tuning on whole genomes of influenza viruses, it autoregressively predicts antigen sequences of future dominant strains, significantly outperforming the evolutionary model beth-1 and general-
 tags:
-  - "ICLR 2026"
-  - "Computational Biology"
-  - "DNA language model"
-  - "influenza virus prediction"
-  - "functional unit encoding"
-  - "whole-genome modeling"
-  - "vaccine design"
+  - ICLR 2026
+  - Computational Biology
 date: 2026-05-08
-content_hash: c56ea60a7f74e610
+content_hash: 24ce46560c37054f
 ---
-
 # AntigenLM: Structure-Aware DNA Language Modeling for Influenza
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.09067](https://arxiv.org/abs/2602.09067)  
 **Code**: [https://github.com/peilab-cnic/AntigenLM](https://github.com/peilab-cnic/AntigenLM)  
-**Area**: Biological Sequence Generation / DNA Language Models
-**Keywords**: DNA language model, influenza virus prediction, functional unit encoding, whole-genome modeling, vaccine design
+**Area**: Biological Sequence Generation / DNA Language Models  
+**Keywords**: DNA Language Models, Influenza Virus Prediction, Functional Unit Encoding, Whole-Genome Modeling, Vaccine Design  
 
 ## TL;DR
-AntigenLM is a GPT-2-style DNA language model that preserves the integrity of genomic functional units. Pretrained on complete influenza virus whole genomes and subsequently fine-tuned, it autoregressively predicts antigenic sequences of future circulating strains, achieving significantly lower amino acid mismatch rates than the evolutionary model beth-1 and general-purpose genomic models.
+AntigenLM is a GPT-2 style DNA language model that preserves the integrity of genomic functional units. By pre-training and fine-tuning on whole genomes of influenza viruses, it autoregressively predicts antigen sequences of future dominant strains, significantly outperforming the evolutionary model beth-1 and general-purpose genomic models in amino acid mismatch rates.
 
 ## Background & Motivation
-**Background**: Influenza viruses evolve rapidly to escape host immunity, necessitating frequent vaccine strain updates. Current WHO vaccine recommendations rely on phylodynamic indicators (e.g., LBI) and site-level evolutionary prediction models (e.g., beth-1).
+**Background**: Influenza viruses evolve rapidly to escape host immunity, requiring frequent updates to vaccine strains. Current WHO vaccine recommendations rely on phylogenetic tree dynamics (e.g., LBI) and site-level evolution prediction models (e.g., beth-1).
 
 **Limitations of Prior Work**:
-   - Site-level models (beth-1) treat mutations as independent events and cannot capture co-evolution across genomic segments.
-   - General-purpose genomic foundation models (DNABERT, HyenaDNA) are trained on multi-species heterogeneous corpora, losing species-specific structural information.
-   - Protein-level models (ESM, ProtGPT2) entirely ignore nucleotide-level evolutionary mechanisms such as synonymous mutations, non-coding regulatory elements, and codon adaptation.
+   - Site-level models (beth-1) treat mutations as independent events, failing to capture co-evolution across segments.
+   - General genomic foundation models (DNABERT, HyenaDNA) are trained on heterogeneous multi-species corpora, losing species-specific structural information.
+   - Protein-level models (ESM, ProtGPT2) completely ignore nucleotide-level evolutionary mechanisms such as synonymous mutations, non-coding regulatory elements, and codon adaptability.
 
-**Key Challenge**: Viral evolution is driven by coordinated multi-segment genome-wide interactions (RNA–RNA interactions, segment reassortment constraints, polymerase–antigen co-adaptation); fragmented modeling discards critical signals.
+**Key Challenge**: Viral evolution is driven by coordinated interactions across multiple segments of the entire genome (RNA-RNA interactions, segment reassortment constraints, polymerase-antigen co-adaptation). Fragmented modeling loses critical signals.
 
-**Goal**: To construct a DNA language model that preserves functional unit integrity and captures whole-genome dependencies at the nucleotide level for accurate influenza antigen sequence prediction.
+**Goal**: To construct a DNA language model that preserves the integrity of functional units to capture whole-genome dependencies at the nucleotide level for accurate influenza antigen sequence prediction.
 
-**Key Insight**: The influenza genome is compact (~13k nucleotides), making it suitable for single-Transformer whole-genome modeling. By maintaining a fixed ordering and complete boundaries of the 8 gene segments, the model can learn cross-segment co-evolutionary patterns.
+**Key Insight**: The influenza genome is compact (~13k nucleotides), making it suitable for whole-genome modeling using a single Transformer. By maintaining a fixed order and intact boundaries for the 8 gene segments, the model learns cross-segment co-evolutionary patterns.
 
-**Core Idea**: Maintaining the integrity and correct arrangement of genomic functional units during pretraining enables the DNA language model to capture high-order evolutionary constraints across segments.
+**Core Idea**: Maintaining the integrity and correct arrangement of genomic functional units during pre-training allows the DNA language model to capture high-order evolutionary constraints across segments.
 
 ## Method
 
 ### Overall Architecture
-AntigenLM adopts a GPT-2-style decoder-only Transformer architecture. The input is the full-genome nucleotide sequence of influenza A virus (up to 13k tokens), and the output is the autoregressively generated next nucleotide. The pipeline consists of two stages: (1) unsupervised pretraining on 54,512 complete influenza genomes; and (2) fine-tuning separately for two downstream tasks—antigen sequence prediction and subtype classification.
+AntigenLM adopts a GPT-2 style decoder-only Transformer architecture. The input is the whole-genome nucleotide sequence of Influenza A virus (up to 13k tokens), and the output is the autoregressively generated next nucleotide. The pipeline consists of two stages: (1) **Functional unit-aware pre-training** on 54,512 complete influenza genomes (keeping 8 segments in a fixed order with intact boundaries to implicitly learn cross-segment co-evolution); (2) **Dual-head multi-task** fine-tuning for **time-series antigen prediction** and subtype classification, introducing explicit separator tokens.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Influenza Whole Genome<br/>8-segment Concatenation (~13k nt)"] --> B["Functional Unit-Aware Pre-training<br/>Fixed Segment Order + Intact Boundaries<br/>Causal LM Loss"]
+    B --> C["Two-stage Functional Unit Encoding<br/>Introducing &lt;HA&gt;/&lt;NA&gt;/&lt;sep&gt; Separators in Fine-tuning"]
+    C --> D["Time-series Prediction Fine-tuning<br/>3-month Blocks Predict the Next Month"]
+    C --> E["Dual-head Multi-task<br/>LM Head (Generation) + Classification Head (Subtype)"]
+    D --> F["Autoregressive Generation of Future Antigen Sequences"]
+    E --> F
+```
 
 ### Key Designs
 
-1. **Functional-Unit–Aware Pretraining**:
+**1. Functional Unit-Aware Pre-training: Feeding the entire genome to learn cross-segment co-evolution**
 
-    - Function: The 8 gene segments (PB2, PB1, PA, HA, NP, NA, MP, NS) are concatenated in a fixed descending-length order into a single whole-genome sequence.
-    - Mechanism: Each training sample retains the complete genome; positional encodings span the full 13k positions without truncation or segmentation. A standard causal language modeling loss $\mathcal{L}_{\text{CLM}} = -\sum_{t=1}^{T-1} \log p(x_{t+1} \mid x_{\leq t})$ is used for training.
-    - Design Motivation: Preserving segment ordering and boundary integrity allows the Transformer's attention mechanism to model cross-segment co-evolutionary dependencies (e.g., compensatory mutations between HA and NA), which is unachievable through fragmented training.
-    - Novelty: General DNA models trained on multi-species heterogeneous corpora lose species-specific structure; this work targets a single species (influenza) while preserving biological structure.
+General DNA models are trained on heterogeneous multi-species corpora and often truncate long sequences into fragments, losing influenza-specific structural information. AntigenLM concatenates the 8 gene segments (PB2, PB1, PA, HA, NP, NA, MP, NS) into a single whole-genome sequence in a fixed descending order by length. Each training sample maintains the complete genome, with a positional encoding range of 13k covering the full length without truncation. Training follows the standard causal language model loss:
 
-2. **Two-Stage Functional Unit Encoding Strategy**:
+$$\mathcal{L}_{\text{CLM}} = -\sum_{t=1}^{T-1} \log p(x_{t+1} \mid x_{\leq t})$$
 
-    - Function: Implicit positional alignment during pretraining; explicit sentinel tokens during fine-tuning.
-    - Mechanism: During pretraining, fixed segment ordering combined with positional encoding implicitly encodes segment boundaries. During fine-tuning, special tokens such as `<HA>`, `<NA>`, and `<sep>` are introduced to explicitly delimit functional regions, directing attention and constraining decoding to avoid cross-segment continuation.
-    - Design Motivation: Omitting explicit markers during pretraining allows the model to freely learn structural patterns, while adding markers during fine-tuning enables precise generation control—balancing generality with controllability.
+By preserving segment order and boundary integrity, the attention mechanism can model cross-segment co-evolutionary dependencies (e.g., compensatory mutations between HA and NA), which are signals unavailable in fragmented training.
 
-3. **Temporal Prediction Fine-Tuning Scheme**:
+**2. Two-stage Functional Unit Encoding: Implicit boundary learning and explicit generation control**
 
-    - Function: HA/NA sequences from three consecutive months are used to predict the antigen sequence of the following month.
-    - Mechanism: The input format is $\text{block}^{(1)}\text{block}^{(2)}\text{block}^{(3)}\text{block}^{(\star)}$, where each block = `<subtype><HA>HA<NA>NA<sep>`. Training optimizes the causal LM loss over the full sequence; at inference, three historical blocks are fed as context and the future block is generated autoregressively.
-    - Design Motivation: Concatenating antigen sequences from multiple time points implicitly encodes evolutionary trajectories, enabling the model to infer the next evolutionary direction from patterns of sequence change.
+No segment markers are added during pre-training; the model implicitly learns segment boundaries through fixed order and positional encodings. During fine-tuning, special tokens such as `<HA>`, `<NA>`, and `<sep>` are introduced to explicitly partition functional regions, guiding attention focus and constraining decoding to prevent cross-segment confusion. This retains the generality of pre-training while achieving precise controllable generation for downstream tasks.
 
-4. **Dual-Head Multi-Task Design**:
+**3. Time-series Prediction Fine-tuning: Sequencing multiple timestamps to capture evolutionary direction**
 
-    - Function: Shared Transformer backbone + LM head (next-nucleotide prediction) + Classification head (subtype classification).
-    - Mechanism: The LM head shares weights with the embedding matrix; the Classification head extracts hidden states at sentinel token positions and projects them to subtype logits, trained with cross-entropy loss.
-    - Design Motivation: The generative task captures global evolutionary dynamics, while the classification task provides supervisory signal to improve representation quality; both tasks share the backbone and mutually reinforce each other.
+Antigen prediction is framed as "predicting the HA/NA sequences of the next month using those from three consecutive months." The input format is $\text{block}^{(1)}\text{block}^{(2)}\text{block}^{(3)}\text{block}^{(\star)}$, where each block is defined as `<subtype><HA>HA<NA>NA<sep>`. The causal LM loss is optimized for the entire sequence during training. During inference, future blocks are generated autoregressively after feeding three historical blocks. Concatenating antigen sequences from multiple timestamps implicitly encodes the evolutionary trajectory into the context, allowing the model to infer the direction of evolution from sequence change patterns.
+
+**4. Dual-head Multi-task: Generation head for global dynamics, classification head for representation quality**
+
+A shared Transformer backbone is used with two heads: an LM head predicts the next nucleotide (weight-tied with the embedding matrix), and a classification head extracts the hidden state from the sentinel token to project subtype logits using cross-entropy. The generation task captures global evolutionary dynamics, while the classification task provides supervisory signals to improve representation quality.
 
 ### Loss & Training
-- Pretraining: Standard causal LM loss; AdamW optimizer (learning rate $1 \times 10^{-4}$, linear warmup for 5% of steps + cosine decay, dropout 0.1, gradient clipping 1.0).
-- Effective batch size = 32 genomes/step (8 GPUs × 1 sample × 4 gradient accumulation steps).
-- Compact model scale: 6-layer Transformer, 384 hidden dimensions, 6 attention heads, FFN inner dimension 1536.
+- Pre-training: Standard causal LM loss, AdamW optimizer (learning rate $1 \times 10^{-4}$, 5% linear warmup + cosine decay, dropout 0.1, gradient clipping 1.0).
+- Effective batch size = 32 genomes/step (8 GPUs × 1 sample × 4 gradient accumulations).
+- Model scale: Compact architecture with 6 Transformer layers, 384 hidden dimensions, 6 attention heads, and 1536 FFN internal dimensions.
 
 ## Key Experimental Results
 
 ### Main Results — Next-Season Antigen Sequence Prediction (Japan, post-2022)
 
 | Method | H1N1-HA AA Mismatch | H3N2-HA AA Mismatch | H1N1-NA AA Mismatch | H3N2-NA AA Mismatch |
-|--------|-------------------|-------------------|-------------------|-------------------|
-| WHO Current System | ~10+ | ~10+ | ~2 | ~5+ |
-| beth-1 | ~6–8 | ~6–8 | ~1–2 | ~3–4 |
+|------|--------------|--------------|--------------|--------------|
+| Current WHO System | ~10+ | ~10+ | ~2 | ~5+ |
+| beth-1 | ~6-8 | ~6-8 | ~1-2 | ~3-4 |
 | LBI | High | High | — | — |
-| **AntigenLM** | **~3–4** | **~3–4** | **<1** | **~1–2** |
+| **Ours (AntigenLM)** | **~3-4** | **~3-4** | **<1** | **~1-2** |
 
-- AntigenLM reduces mismatches by >70% relative to WHO recommendations and by ~50% relative to beth-1 on H1N1-HA and H3N2-NA.
-- Next-month prediction: average of 3–4 amino acid mismatches on HA (<1% of 566 AAs) and 1–2 on NA (<0.5% of 469 AAs).
+- AntigenLM reduces mismatches by >70% compared to WHO recommendations on H1N1-HA and H3N2-NA, and by ~50% compared to beth-1.
+- Next-month prediction: Average of 3-4 amino acid mismatches for HA (<1% of 566 AAs) and 1-2 for NA (<0.5% of 469 AAs).
 
-### Ablation Study — Pretraining Strategy Comparison
+### Ablation Study — Comparison of Pre-training Strategies
 
-| Pretraining Configuration | Next-Month Token Perplexity | Sequence Generation Validity | Subtype Classification F1 |
-|--------------------------|---------------------------|-----------------------------|--------------------------:|
-| Full-genome (full model) | **1.26** | High | **99.81%** |
-| Incomplete-genome (random cropping) | 3.55 | Low (frequently invalid sequences) | Lower; frequent subtype confusion |
-| Segment-wise (single segment) | 4.42 | Moderate | Lower |
-| Antigen-only (nuc) | 4.56 | Moderate | 100% (subtype determined by antigen) |
-| Antigen-only (protein) | — | Moderate | 100% |
+| Pre-training Config | Next-month Prediction Token Perplexity | Seq. Gen. Validity | Subtype Class. F1 |
+|-----------|-------------------|-------------|-----------|
+| Full-genome (Ours) | **1.26** | High | **99.81%** |
+| Incomplete-genome (Random Crop) | 3.55 | Low (Invalid sequences) | Lower, high confusion |
+| Segment-wise (Single Segment) | 4.42 | Medium | Lower |
+| Antigen-only (nuc) | 4.56 | Medium | 100% (Subtype determined by antigen) |
+| Antigen-only (protein) | — | Medium | 100% |
 
 ### Key Findings
-- **Whole-genome context is critical**: Removing non-HA/NA internal segments raises perplexity from 1.26 to 4.56, demonstrating that segments such as PB1/PB2/PA provide meaningful predictive signal.
-- **Functional unit integrity matters more than data volume**: Incomplete-genome uses the same amount of data but disrupts segment boundaries, yielding the worst performance.
-- **Cross-subtype generalization**: H7N9 constitutes only 4.68% of pretraining data and 0.3% (48 sequences) of fine-tuning data, yet AntigenLM still predicts accurately.
-- **Geographic generalization**: Trained exclusively on European and Asian data, AntigenLM still significantly outperforms beth-1 on completely unseen U.S. data.
+- **Whole-genome context is critical**: Removing non-HA/NA segments increased perplexity from 1.26 to 4.56, indicating that segments like PB1, PB2, and PA provide meaningful predictive signals.
+- **Functional unit integrity outweighs data volume**: Use of the same data volume with disrupted segment boundaries (Incomplete-genome) yielded the worst results.
+- **Cross-subtype generalization**: Despite H7N9 making up only 4.68% of pre-training and 0.3% (48 sequences) of fine-tuning data, AntigenLM predicted it accurately.
+- **Geographical generalization**: AntigenLM significantly outperformed beth-1 on unseen US data (training used only Europe and Asia).
 
 ## Highlights & Insights
-- **The functional unit preservation principle is broadly applicable**: This strategy is not limited to influenza; any genome with well-defined functional unit structures (e.g., segmented RNA viruses) can benefit from analogous structure-aware pretraining.
-- **Compact, domain-specialized models can outperform large generalist ones**: A 6-layer, 384-dimensional model specifically designed for influenza whole genomes surpasses general-purpose genomic models with far more parameters.
-- **Elegance of the two-stage encoding scheme**: Withholding explicit markers during pretraining lets the model freely learn structural patterns, while introducing them during fine-tuning enables precise generation control—successfully balancing generality with controllability.
+- **Generalizability of functional unit preservation**: This principle applies not only to influenza but to any genome with clear functional structures (e.g., segmented RNA viruses).
+- **Victory of compact models with domain specialization**: A small 6-layer model specifically designed for influenza whole genomes outperformed much larger general genomic models.
+- **Elegance of two-stage encoding**: Allowing the model to learn structure freely during pre-training while using markers for control during fine-tuning balances generality and controllability.
 
 ## Limitations & Future Work
-- Predictions are inherently probabilistic and should serve as a complement to expert decision-making rather than a replacement.
-- Validation is limited to influenza A; generalizability to other pathogens (e.g., SARS-CoV-2, HIV) remains unexplored.
-- The small model scale (6 layers) may need to be expanded for more complex genomes.
-- Training data depend on GISAID, introducing geographic sampling bias.
+- Predictions are inherently probabilistic and should supplement, not replace, expert decision-making.
+- Validation is limited to Influenza A; generalization to other pathogens (e.g., SARS-CoV-2, HIV) is unknown.
+- The model scale is small (6 layers); scaling may be required for more complex genomes.
+- Training data is subject to geographical sampling bias in GISAID.
 
 ## Related Work & Insights
-- **vs. beth-1**: beth-1 models site-level independent mutations, whereas AntigenLM models cross-segment co-evolution; AntigenLM outperforms beth-1 on all tasks.
-- **vs. HyenaDNA/DNABERT**: General-purpose DNA models trained on multi-species corpora lose species-specific structure and frequently generate invalid sequences (large length deviations, missing markers).
-- **vs. ProtGPT2**: Protein-level models cannot capture nucleotide-level evolutionary signals such as synonymous mutations.
+- **vs beth-1**: beth-1 models site-level independent mutations, whereas AntigenLM models cross-segment co-evolution; AntigenLM is superior across all tasks.
+- **vs HyenaDNA/DNABERT**: General DNA models lose species-specific structures during multi-species training, often generating invalid sequences (length bias, missing markers).
+- **vs ProtGPT2**: Protein-level models fail to capture nucleotide-level evolutionary signals such as synonymous mutations.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Functional-unit–aware pretraining is a novel design principle, though the overall architecture follows standard GPT-2.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five pretraining ablations, comparisons with three categories of methods, and cross-subtype/cross-geographic generalization evaluations—highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical structure with well-motivated reasoning.
-- Value: ⭐⭐⭐⭐ Directly applicable to vaccine design; the functional unit preservation principle has broad transferable significance.
+- Novelty: ⭐⭐⭐⭐ Functional unit-aware pre-training is a novel design principle, though the architecture is standard GPT-2.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation including 5 pre-training ablations, 3 baseline comparisons, and cross-subtype/cross-geography generalization.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow with complete motivational derivation.
+- Value: ⭐⭐⭐⭐ Direct application value for vaccine design and broad significance for structural preservation in genomic modeling.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
+- [\[ICLR 2026\] Automatic and Structure-Aware Sparsification of Hybrid Neural ODEs with Application to Glucose Prediction](automatic_and_structure-aware_sparsification_of_hybrid_neural_odes_with_applicat.md)
 - [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](../../ICML2026/computational_biology/dnachunker_learnable_tokenization_for_dna_language_models.md)
+- [\[ICLR 2026\] PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA](patchdna_a_flexible_and_biologically-informed_alternative_to_tokenization_for_dn.md)
 - [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
-- [\[AAAI 2026\] TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling](../../AAAI2026/computational_biology/trinitydna_a_bio-inspired_foundational_model_for_efficient_long-sequence_dna_mod.md)
-- [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](../../AAAI2026/computational_biology/mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
-- [\[ICLR 2026\] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology](fusing_pixels_and_genes_spatially-aware_learning_in_computational_pathology.md)
 
 </div>
 

@@ -2,106 +2,135 @@
 title: >-
   [Paper Note] HeurekaBench: A Benchmarking Framework for AI Co-scientist
 description: >-
-  [ICLR 2026][Computational Biology][AI co-scientist] This paper proposes HeurekaBench, a framework for constructing evaluation benchmarks grounded in real scientific workflows. It employs a multi-LLM pipeline to extract v…
+  [ICLR 2026][Computational Biology][AI co-scientist] Ours proposes HeurekaBench, a framework for building evaluation benchmarks based on real-world scientific workflows. It extracts verifiable scientific insights from papers through a multi-LLM pipeline and generates open-ended research questions to evaluate the end-to-end capabilities of AI co-scientists in data-driven
 tags:
-  - "ICLR 2026"
-  - "Computational Biology"
-  - "AI co-scientist"
-  - "benchmark"
-  - "scientific agents"
-  - "single-cell biology"
-  - "open-ended evaluation"
+  - ICLR 2026
+  - Computational Biology
+  - AI co-scientist
+  - benchmark
+  - scientific agents
+  - single-cell biology
+  - open-ended evaluation
 date: 2026-05-08
-content_hash: 588550410881c0c1
+content_hash: d845ca678787273a
 ---
-
 # HeurekaBench: A Benchmarking Framework for AI Co-scientist
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.01678](https://arxiv.org/abs/2601.01678)  
 **Code**: [brbiclab.epfl.ch/projects/heurekabench](https://brbiclab.epfl.ch/projects/heurekabench)  
-**Area**: LLM Reasoning
+**Area**: Computational Biology  
 **Keywords**: AI co-scientist, benchmark, scientific agents, single-cell biology, open-ended evaluation
 
 ## TL;DR
-This paper proposes HeurekaBench, a framework for constructing evaluation benchmarks grounded in real scientific workflows. It employs a multi-LLM pipeline to extract verifiable scientific insights from papers and generate open-ended research questions, enabling end-to-end assessment of AI co-scientists in data-driven scientific discovery.
+Ours proposes HeurekaBench, a framework for building evaluation benchmarks based on real-world scientific workflows. It extracts verifiable scientific insights from papers through a multi-LLM pipeline and generates open-ended research questions to evaluate the end-to-end capabilities of AI co-scientists in data-driven discovery.
 
 ## Background & Motivation
-Advances in LLM reasoning have given rise to a wide range of scientific agents (e.g., CellVoyager, Biomni) designed to autonomously analyze experimental data and generate scientific insights. However, existing benchmarks suffer from fundamental limitations: most evaluate only static knowledge retrieval or single-step computational tasks (e.g., "How many miRNAs are significant at p≤0.05?"). Such instruction-following tasks fall far short of the true co-scientist role, which requires autonomous planning of analytical workflows, dataset exploration, and novel discovery. While BaisBench attempts to generate research questions, it relies on a single LLM, leading to unreliable question quality. The root cause is that existing benchmarks cannot assess open-ended, data-driven scientific discovery capabilities. This paper's starting point is to ground benchmark construction in the scientific process itself — extracting validated insights from peer-reviewed papers as ground truth for evaluation.
+The advancement of LLM reasoning has led to numerous scientific agents (e.g., CellVoyager, Biomni) designed to autonomously analyze experimental data and generate scientific insights. However, existing benchmarks suffer from fundamental **Limitations of Prior Work**: most only test static knowledge retrieval or single-step computation (e.g., "How many miRNAs are significant after p ≤ 0.05?"). These "instruction-following" tasks differ significantly from the role of a true co-scientist, who should autonomously plan analysis workflows, explore datasets, and generate new discoveries. While BaisBench attempts to generate research questions, it relies on a single LLM, leading to unreliable quality. The **Key Challenge** is that current benchmarks cannot evaluate open-ended, data-driven scientific discovery. The **Key Insight** of this work is to root benchmark construction in the scientific process itself—extracting verified scientific insights from peer-reviewed papers as the ground truth for evaluation.
 
 ## Method
 
 ### Overall Architecture
-HeurekaBench consists of three stages: (a) Insight Generation — extracting candidate insights from papers and semi-automatically validating them; (b) Question Generation — converting validated insights into QA pairs; (c) Question Solving — agents autonomously design multi-step analyses and produce answers, which are scored by an LLM Judge against ground truth.
+The **Core Problem** HeurekaBench addresses is ensuring the benchmark is grounded in real scientific processes rather than synthetic tasks. The **Mechanism** decomposes benchmark construction into three consecutive stages: first, extracting candidate insights from peer-reviewed papers and verifying them with code (Insight Generation Pipeline); then, converting verified insights into Open-ended Questions (OEQ) and Multiple Choice Questions (MCQ) pairs (Question Generation); finally, allowing the agent under test to design multi-step analyses to answer, followed by an LLM Judge decomposing answers into atomic facts for scoring against ground truth (G-Eval Atomic Fact Evaluation). The **Core Idea** is to use "conclusions reproducible via code in papers" as the trusted gold standard. This pipeline yields triplets of $(D, Q, A)$ (dataset, research question, gold standard answer).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Peer-reviewed Papers<br/>+ Code Repos + Datasets"]
+    subgraph S1["Insight Generation Pipeline (Design 1)"]
+        direction TB
+        A["InsightExtractor<br/>Extracts Candidate Insights"] --> C["CodeMatcher<br/>Pairs Insight with Code"]
+        B["CodeDescriber<br/>Translates Scripts to Natural Language"] --> C
+        C --> D["CodeGenerator<br/>Composes Multi-step Workflow"]
+        D --> E{"Does Code<br/>Reproduce Result?"}
+    end
+    subgraph S2["Question Generation (Design 2)"]
+        direction TB
+        F["Few-shot Generation<br/>OEQ + MCQ"] --> G["Filters<br/>Auto-filtering + Human Review"]
+    end
+    subgraph S3["G-Eval Atomic Fact Evaluation (Design 3)"]
+        direction TB
+        H["Decompose Answer & GT<br/>into Atomic Facts"] --> I["Point-by-point Comparison<br/>Full/Partial/Missing"]
+    end
+    IN --> A
+    IN --> B
+    E -->|Pass| F
+    G --> VAL["Verified Insight<br/>→ (D,Q,A) Triplets"]
+    VAL --> AG["Agent under Test<br/>Autonomous Analysis"]
+    AG --> H
+    I --> OUT["1-5 Score<br/>→ sc-HeurekaBench Eval"]
+```
 
 ### Key Designs
 
-1. **Insight Generation Pipeline**:
+**1. Insight Generation Pipeline: Filtering via Code Reproducibility**
+Unlike prior work like BaisBench, which relies on single LLM generation without verification, HeurekaBench uses four LLM components: `InsightExtractor` (GPT-4o) extracts candidate insights with structured fields (summary, technique, evidence); `CodeDescriber` translates repository scripts into natural language; `CodeMatcher` pairs insights with relevant code; and `CodeGenerator` (Claude-3.5-Sonnet) assembles scripts into a runnable verification workflow. Insights are retained only if the code successfully reproduces the conclusion, ensuring ground truth credibility through execution rather than appearance.
 
-    - Function: Extract reproducible scientific insights from scientific papers and their code repositories.
-    - Mechanism: Four modular LLM components are designed — InsightExtractor extracts candidate insights from papers (with three structured components: abstract, experimental technique, and verbatim evidence); CodeDescriber converts code scripts into natural language descriptions; CodeMatcher pairs each insight with the most relevant code description; CodeGenerator combines scripts to produce multi-step verification workflows.
-    - Design Motivation: Filtering unreliable insights via code reproducibility is more robust than relying solely on LLM-generated questions (as in BaisBench). GPT-4o is used for InsightExtractor and Claude-4-Sonnet for code-related modules.
+**2. Question Generation: Converting Insights into OEQ and MCQ**
+For each verified insight, few-shot prompting generates two question types: Open-ended Questions (OEQ) that allow multiple analysis paths, reflecting real research openness, and Multiple Choice Questions (MCQ) with high-quality distractors for lightweight benchmarking. Post-generation filters remove simple questions solvable via LLM internal knowledge and human review eliminates hallucinations or duplicates.
 
-2. **Question Generation**:
+**3. G-Eval Atomic Fact Evaluation: Fact-based Decomposition**
+To address the lack of unique answers in open-ended tasks, HeurekaBench employs GPT-4o as a Judge to score answers (1-5). Before scoring, both the response and ground truth are decomposed into atomic facts (conditions, trends, conclusions). Full points are awarded only when all ground truth facts are present without contradiction; additional non-contradictory findings do not trigger penalties, rewarding data-driven discovery over rote memorization.
 
-    - Function: Convert validated insights into open-ended questions (OEQs) and multiple-choice questions (MCQs).
-    - Mechanism: For each insight, few-shot prompting is used to generate two QA pairs. OEQs allow multiple analytical paths to the correct answer; MCQs include high-quality distractors. Generated questions undergo two-stage filtering: (1) automatic filtering — removing questions answerable from LLM pretraining knowledge alone; (2) human review — eliminating hallucinations, duplicates, and questions based on unverified content.
-    - Design Motivation: OEQs reflect the open-ended nature of real research; MCQs serve as lightweight proxies for rapid agent prototyping.
-
-3. **Evaluation (G-Eval with Atomic Facts)**:
-
-    - Function: GPT-4o serves as an LLM Judge to evaluate open-ended responses on a 1–5 scale.
-    - Mechanism: The Judge is guided to decompose both the response and ground truth into atomic facts (conditions, trends, conclusions), then compare them item by item for completeness, partial matches, and omissions. Full marks are awarded only when all ground truth facts are present without contradiction; additional non-contradictory findings are not penalized.
-    - Design Motivation: Avoid surface-level matching; reward data-driven outputs rather than factual memorization.
-
-### Validation
-The framework is instantiated in single-cell biology as sc-HeurekaBench: 41 validated insights from 22 Nature/Cell papers across 13 papers, yielding 50 OEQs and 50 MCQs. InsightExtractor achieved strong relevance on FlyBase in 44/50 cases; CodeMatcher achieved an average file correct-match rate of 74.6%.
+In the single-cell biology domain, this is instantiated as **sc-HeurekaBench**: starting from 22 Nature/Cell papers, it yields 41 verified insights across 13 papers, producing 50 OEQs and 50 MCQs. The pipeline reliability is evidenced by `InsightExtractor` findings having 44/50 strong correlations on FlyBase and `CodeMatcher` achieving a 74.6% average file matching accuracy.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Agent | OEQ Correctness [1–5] | MCQ Accuracy (%) | MCQ Recall (%) | MCQ Precision (%) |
-|-------|----------------------|-----------------|---------------|------------------|
+| Agent | OEQ Correctness [1-5] | MCQ Accuracy (%) | MCQ Recall (%) | MCQ Precision (%) |
+| :--- | :--- | :--- | :--- | :--- |
 | BixBench-Agent | 2.34 | 44.44 | 80.56 | 62.96 |
 | CellVoyager | 2.03 | 27.78 | 38.89 | 32.41 |
 | Biomni | 2.31 | **50.00** | **88.24** | **76.96** |
 
-### Ablation Study on Planner (Biomni Agent)
+### Ablation Study (Planner Ablation for Biomni Agent)
 
-| Model | Open-source | OEQ Correctness | MCQ Accuracy (%) |
-|-------|-------------|----------------|-----------------|
+| Model | Open Source | OEQ Correctness | MCQ Accuracy (%) |
+| :--- | :--- | :--- | :--- |
 | MedGemma-27B | ✓ | 1.53 | 20.41 |
-| Qwen3-32B | ✓ | 1.47 | 40.00 |
-| Qwen3-235B-thinking | ✓ | 1.85 | 46.00 |
-| GPT-OSS-120B | ✓ | 2.08 | 42.00 |
-| Claude-4-Sonnet | ✗ | **2.58** | 44.00 |
+| Qwen2-32B | ✓ | 1.47 | 40.00 |
+| Qwen2.5-72B-instruct | ✓ | 1.85 | 46.00 |
+| Llama-3-70B | ✓ | 2.08 | 42.00 |
+| Claude-3.5-Sonnet | ✗ | **2.58** | 44.00 |
 
 ### Key Findings
-- Biomni and BixBench-Agent outperform CellVoyager, indicating that flexible agent loops are more effective at constructing robust workflows.
-- Claude-4-Sonnet as planner significantly outperforms other models (2.58 vs. 2.08), demonstrating that closed-source frontier models retain a clear advantage on co-scientist tasks.
-- An end-critic (a critic introduced at the end of the agent loop) substantially improves open-source LLM performance, raising scores in the low-scoring group (scores 1–2) from 1.32 to 1.91.
-- Model scale and reasoning capability (thinking mode) are critical to co-scientist performance.
+- Biomni and BixBench-Agent outperform CellVoyager, suggesting flexible agent loops are better for constructing robust workflows.
+- Claude-3.5-Sonnet as a Planner significantly outperforms other models (2.58 vs 2.08), showing frontier closed-source models still hold a lead in co-scientist tasks.
+- **End-critic** (adding a critic at the end of the agent loop) significantly improves open-source LLM performance, raising low-tier scores from 1.32 to 1.91.
+- Parameter scale and reasoning capabilities (e.g., thinking modes) are critical for co-scientist performance.
 
 ## Highlights & Insights
-- Grounding benchmark construction in the scientific process itself is a compelling approach — using reproducibility of paper results as the validation criterion for insights.
-- The modular multi-LLM pipeline design makes the framework transferable to other scientific domains.
-- The end-critic design can close the gap between open-source and closed-source models by up to 22%, serving as a lightweight yet effective improvement strategy.
+- The approach of "rooting the benchmark in the scientific process itself" by using reproducibility as a verification standard is highly effective.
+- The modular design of the multi-LLM pipeline allows the framework to be transferred to other scientific domains.
+- The End-critic strategy can bridge the gap between open-source and closed-source models by up to 22%, offering a lightweight but effective improvement.
 
 ## Limitations & Future Work
-- The framework is currently instantiated only in single-cell biology; generalization to chemistry, physics, and other domains requires additional validation.
-- sc-HeurekaBench is relatively small in scale (50 OEQs + 50 MCQs), which may be insufficient for fine-grained capability diagnostics.
-- The validation process still requires substantial human involvement (running code, verifying results), leaving room for improved automation.
+- Currently instantiated only in single-cell biology; generalization to chemistry or physics requires further validation.
+- The sc-HeurekaBench scale (50 OEQ + 50 MCQ) might be too small for fine-grained capability diagnostics.
+- The verification process still requires human involvement (running code, checking results), suggesting room for increased automation.
 
 ## Related Work & Insights
-- **vs. BaisBench**: BaisBench generates questions using a single LLM without verification; HeurekaBench ensures reliability through a multi-LLM pipeline with code-based validation.
-- **vs. BixBench**: BixBench primarily tests computational questions, whereas HeurekaBench evaluates open-ended scientific exploration.
+- **vs BaisBench**: While BaisBench uses a single LLM without verification, HeurekaBench ensures reliability via multi-LLM pipelines and code execution.
+- **vs BixBench**: BixBench focuses on computational questions; whereas HeurekaBench tests open-ended scientific exploration.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Novel framework concept, though primarily a benchmark/systems contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dimensional ablations are highly detailed, but dataset scale is limited.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure and polished figures.
-- Value: ⭐⭐⭐⭐ Provides an important evaluation framework for the AI for Science community.
+- **Novelty**: ⭐⭐⭐⭐ Innovative framework rooted in reproducibility.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Detailed multi-dimensional ablations, though dataset size is limited.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure and excellent visualizations.
+- **Value**: ⭐⭐⭐⭐ Provides a significant evaluation framework for AI for Science.
+
+## Related Papers
+
+- [\[ICLR 2026\] PoseX: AI Defeats Physics-based Methods on Protein Ligand Cross-Docking](posex_ai_defeats_physics-based_methods_on_protein_ligand_cross-docking.md)
+- [\[ICLR 2026\] Drugging the Undruggable: Benchmarking and Modeling Fragment-Based Screening](drugging_the_undruggable_benchmarking_and_modeling_fragment-based_screening.md)
+- [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](../../ICML2026/computational_biology/protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
+- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
+- [\[ICLR 2026\] SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention](save_a_generalizable_framework_for_multi-condition_single-cell_generation_with_g.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -109,11 +138,11 @@ The framework is instantiated in single-cell biology as sc-HeurekaBench: 41 vali
 
 ## Related Papers
 
+- [\[ICLR 2026\] PoseX: AI Defeats Physics-based Methods on Protein Ligand Cross-Docking](posex_ai_defeats_physics-based_methods_on_protein_ligand_cross-docking.md)
+- [\[ICLR 2026\] Drugging the Undruggable: Benchmarking and Modeling Fragment-Based Screening](drugging_the_undruggable_benchmarking_and_modeling_fragment-based_screening.md)
+- [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
+- [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
 - [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](../../ICML2026/computational_biology/protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
-- [\[ICML 2026\] Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling](../../ICML2026/computational_biology/demystifying_multimodal_biomolecular_co-design_with_intrinsic_geodesic_coupling.md)
-- [\[ICML 2026\] Site4Drug: Predicting Drug-Binding Target Sites with an AI Agent](../../ICML2026/computational_biology/site4drug_predicting_drug-binding_target_sites_with_an_ai_agent.md)
-- [\[ICML 2026\] SwitchCraft: A Programmatic Framework for Designing State-Switching Proteins](../../ICML2026/computational_biology/switchcraft_a_programmatic_framework_for_designing_state-switching_proteins.md)
-- [\[NeurIPS 2025\] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](../../NeurIPS2025/computational_biology/benchmarking_agentic_systems_in_automated_scientific_information_extraction_with.md)
 
 </div>
 

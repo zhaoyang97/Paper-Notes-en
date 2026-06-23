@@ -2,92 +2,79 @@
 title: >-
   [Paper Note] Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty
 description: >-
-  [ICLR 2026][Reinforcement Learning][Large Reasoning Models] This paper proposes ARLCP (Adaptive Reflection and Length Coordinated Penalty), an adaptive reinforcement learning method that dynamically adjusts the weights o…
+  [ICLR 2026][Reinforcement Learning][RLVR] Proposes ARLCP (Adaptive Reflection and Length Coordinated Penalty), an adaptive reinforcement learning method that dynamically adjusts the weights of reflection and length penalties based on problem complexity. It significantly reduces inference token consumption while maintaining or improving accuracy.
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Large Reasoning Models"
-  - "Over-reflection"
-  - "Adaptive Penalty"
-  - "Efficient Reasoning"
-  - "RLVR"
+  - ICLR 2026
+  - Reinforcement Learning
+  - RLVR
 date: 2026-05-08
-content_hash: 5581d27d7b07a397
+content_hash: 0d961f216f8d7832
 ---
-
 # Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.12113](https://arxiv.org/abs/2602.12113)  
 **Code**: [https://github.com/ZeweiYu1/ARLCP](https://github.com/ZeweiYu1/ARLCP)  
-**Area**: Reinforcement Learning
-**Keywords**: Large Reasoning Models, Over-reflection, Adaptive Penalty, Efficient Reasoning, RLVR
+**Area**: Reinforcement Learning  
+**Keywords**: Large Reasoning Models, Excessive Reflection, Adaptive Penalty, Efficient Reasoning, RLVR
 
 ## TL;DR
 
-This paper proposes ARLCP (Adaptive Reflection and Length Coordinated Penalty), an adaptive reinforcement learning method that dynamically adjusts the weights of reflection and length penalties according to problem complexity, substantially reducing token consumption while maintaining or improving accuracy.
+Proposes ARLCP (Adaptive Reflection and Length Coordinated Penalty), an adaptive reinforcement learning method that dynamically adjusts the weights of reflection and length penalties based on problem complexity. It significantly reduces inference token consumption while maintaining or improving accuracy.
 
 ## Background & Motivation
 
-- **Over-reasoning problem**: Large reasoning models (LRMs) such as DeepSeek-R1 generate excessive redundant reflections in their chain-of-thought (e.g., repeated "wait" and "hmm" tokens), incurring high token consumption and computational overhead without improving accuracy.
-- **Key observations**:
-  1. **Reflection correlates with complexity**: Harder problems elicit more reflection tokens.
-  2. **Over-reflection induces errors**: Incorrect responses contain on average far more reflection tokens than correct ones.
-  3. **Accuracy declines with excessive reflection**: Beyond a certain threshold, additional reflection actually degrades accuracy.
-- **Limitations of prior work**:
-    - Inference-stage methods (e.g., Early Exit) do not alter model capabilities, yielding limited efficiency gains.
-    - Training-stage methods (e.g., uniform length penalties) frequently sacrifice reasoning quality.
-    - No existing mechanism dynamically adjusts penalties based on problem complexity.
+- **Over-reasoning Issue**: Large Reasoning Models (LRMs) like DeepSeek-R1 generate extensive redundant reflections in the Chain-of-Thought (e.g., repeated "wait", "hmm"), leading to high token consumption and computational overhead without improving accuracy.
+- **Key Observations**:
+  1. **Reflection Correlates with Complexity**: Harder problems result in more reflection tokens.
+  2. **Over-reflection Leads to Errors**: The average reflection tokens in incorrect answers are significantly higher than in correct ones.
+  3. **Accuracy Declines with Increased Reflection**: Beyond a certain threshold, more reflection actually reduces the accuracy rate.
+- **Limitations of Prior Work**:
+    - Inference-stage methods (e.g., Early Exit) do not change model capabilities, offering limited efficiency gains.
+    - Training-stage methods (e.g., uniform length penalty) often sacrifice reasoning quality.
+    - Lack of mechanisms to dynamically adjust based on problem complexity.
 
 ## Method
 
 ### Overall Architecture
 
-ARLCP introduces two coordinated penalty mechanisms into reinforcement learning training — an adaptive reflection penalty and a length penalty — optimized via RLOO (REINFORCE Leave One Out).
+ARLCP (Adaptive Reflection and Length Coordinated Penalty) formulates "reducing reflection" as reward shaping within reinforcement learning. For each problem, it samples multiple candidate answers, counts the reflection tokens to estimate "how difficult this problem is for the current model," and then superimposes a **fixed-budget** penalty term on the 0/1 correctness reward. This budget is dynamically allocated between "reflection penalty" and "length penalty" based on difficulty—allowing more reflection for hard problems while strictly compressing redundancy for easy ones. Finally, it optimizes the policy using RLOO to reduce tokens while preserving accuracy.
 
-### 1. Complexity Estimation
-
-Problem complexity as perceived by the model is estimated through a Reflection Token Count (RTC), categorized into three levels:
-- **Easy**: $\text{RTC}(o_i^k) \leq n_1$, weight $\lambda_1$
-- **Medium**: $n_1 < \text{RTC}(o_i^k) \leq n_2$, weight $\lambda_2$
-- **Hard**: $\text{RTC}(o_i^k) > n_2$, weight $\lambda_3$
-
-### 2. Adaptive Reflection Penalty
-
-The reflection penalty coefficient $\alpha_1$ is dynamically adjusted according to complexity:
-
-$$\alpha_1 = \begin{cases} \lambda_1, & \text{if } \text{RTC}(o_i^k) \leq n_1 \\ \lambda_2, & \text{if } n_1 < \text{RTC}(o_i^k) \leq n_2 \\ \lambda_3, & \text{if } \text{RTC}(o_i^k) > n_2 \end{cases}$$
-
-The reflection penalty value is normalized via sigmoid:
-
-$$f(\text{RTC}(o_i^k)) = \sigma\left(\frac{\text{RTC}(o_i^k) - \text{mean}(\text{RTC}(o_i))_{\text{correct}}}{\text{std}(\text{RTC}(o_i))_{\text{correct}}}\right)$$
-
-### 3. Length Penalty
-
-A complementary penalty suppresses non-reflective redundancy:
-
-$$f(\text{LEN}(o_i^k)) = \sigma\left(\frac{\text{LEN}(o_i^k) - \text{mean}(\text{LEN}(o_i))_{\text{correct}}}{\text{std}(\text{LEN}(o_i))_{\text{correct}}}\right)$$
-
-The length penalty coefficient is set as $\alpha_2 = \alpha - \alpha_1$, ensuring that the total penalty budget $\alpha$ is flexibly allocated between reflection and length penalties.
-
-### 4. Composite Reward Function
-
-$$r(o_i^k) = \mathcal{C}(o_i^k) \cdot \left(1 - \alpha_1 f(\text{RTC}(o_i^k)) - \alpha_2 f(\text{LEN}(o_i^k))\right)$$
-
-where $\mathcal{C}(o_i^k) = \mathbf{1}\{\text{ANS}(o_i^k) = o^*(p_i)\}$ denotes the correctness reward.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["One problem → Sample m candidates"] --> B["Extract LEN, RTC, and Answer per sample"]
+    B --> C["Complexity Estimation: Tier results into Easy/Medium/Hard by RTC"]
+    C --> D["Adaptive Reflection Penalty: Coefficient α1 by tier + sigmoid normalization"]
+    D --> E["Budget-shared Length Penalty: Coefficient α2 = α − α1 to catch non-reflection redundancy"]
+    E --> F["Composite Reward & Stable Training: r = Correctness Gate × (1 − α1·Reflection − α2·Length), RLOO optimization"]
+    F --> G["Policy Update: Preserve reflection for hard tasks, compress redundancy for easy tasks"]
+```
 
 ### Key Designs
 
-- **RLOO** is adopted over GRPO, as GRPO is unstable under non-standard length penalty settings.
-- Statistical baselines (mean and std) are computed exclusively from **correct responses** to avoid noise.
-- Hyperparameters: $\lambda_1=0.05,\ \lambda_2=0.1,\ \lambda_3=0.15,\ n_1=40,\ n_2=80,\ \alpha=0.2$.
+**1. Complexity Estimation: Using the Model's Own Reflection Count as a Meter**
+
+To avoid the cost of training an external difficulty evaluator that might not align with the model, ARLCP counts the reflection tokens (RTC, identified by keywords like "wait", "hmm", "alternatively") within a response. It classifies problems into three tiers based on two thresholds: $\text{RTC}\le n_1$ (Easy), $n_1<\text{RTC}\le n_2$ (Medium), and $\text{RTC}>n_2$ (Hard), with $n_1=40, n_2=80$ in experiments. The model's own reflection behavior serves as a built-in "difficulty meter" naturally aligned with its current capability.
+
+**2. Adaptive Reflection Penalty: Lenient for Hard, Strict for Easy**
+
+Using a uniform penalty is ineffective—low pressure fails to cut redundancy in easy tasks, while high pressure prunes necessary reflection in hard ones. ARLCP sets the reflection penalty coefficient $\alpha_1$ based on the complexity tier: $\lambda_1=0.05, \lambda_2=0.1, \lambda_3=0.15$ for Easy/Medium/Hard respectively. A higher weight for harder problems ensures the penalty curve is steeper to suppress "excessive" reflection relative to the complexity. The penalty itself is normalized using a sigmoid function against the distribution of correct answers: $f(\text{RTC})=\sigma\!\big((\text{RTC}-\mu_R)/\sigma_R\big)$, where $\mu_R, \sigma_R$ are the mean and standard deviation of RTC in correct answers.
+
+**3. Budget-shared Length Penalty: Catching Non-reflection Redundancy**
+
+Since RTC only targets specific tokens, non-reflection redundancy like verbose descriptions is handled by a length penalty $f(\text{LEN})=\sigma\!\big((\text{LEN}-\mu_L)/\sigma_L\big)$. Crucially, its coefficient uses the **remaining** budget: $\alpha_2=\alpha-\alpha_1$ (total budget $\alpha=0.2$). This "Coordinated" design ensures that as the reflection penalty increases, the length penalty decreases, preventing the combined penalty from overwhelming the reward.
+
+**4. Composite Reward & Stable Training: Correctness First, Token Savings Second**
+
+To ensure efficiency does not come at the cost of accuracy, ARLCP combines terms into a final reward $r=\mathcal{C}\cdot\big(1-\alpha_1 f(\text{RTC})-\alpha_2 f(\text{LEN})\big)$, where $\mathcal{C}=\mathbf{1}\{\text{Correct Answer}\}$ is a 0/1 correctness gate. This multiplicative gate ensures that incorrect answers yield zero reward, preventing the model from sacrificing accuracy for length savings. The training uses RLOO (REINFORCE Leave-One-Out) for stability and calculates $\mu, \sigma$ statistics **only on correct answers** to prevent noisy, incorrect samples from distorting the penalty baseline.
 
 ## Key Experimental Results
 
 ### Main Results: DeepSeek-R1-Distill-Qwen-1.5B
 
 | Method | AMC2023 Acc | AIME2024 Acc | AIME2025 Acc | GSM8K Acc | MATH500 Acc | ΔAcc | ΔLength |
-|--------|------------|-------------|-------------|-----------|------------|------|---------|
+|------|------------|-------------|-------------|-----------|------------|------|---------|
 | Vanilla | 66.72 | 30.00 | 21.40 | 78.46 | 80.20 | - | - |
 | NoThinking | 49.22 | 14.38 | 9.79 | 69.98 | 69.20 | -12.84 | -81.04% |
 | TLMRE | 72.10 | 25.80 | 19.60 | 84.30 | 82.10 | +1.42 | -58.10% |
@@ -98,7 +85,7 @@ where $\mathcal{C}(o_i^k) = \mathbf{1}\{\text{ANS}(o_i^k) = o^*(p_i)\}$ denotes 
 ### DeepSeek-R1-Distill-Qwen-7B
 
 | Method | ΔAcc | ΔLength |
-|--------|------|---------|
+|------|------|---------|
 | Vanilla | - | - |
 | AdaptThink | +1.87 | -34.68% |
 | **ARLCP** | **+2.70** | **-35.00%** |
@@ -106,57 +93,58 @@ where $\mathcal{C}(o_i^k) = \mathbf{1}\{\text{ANS}(o_i^k) = o^*(p_i)\}$ denotes 
 ### Ablation Study
 
 | Setting | ΔAcc | ΔLength |
-|---------|------|---------|
-| ARLCP (full) | +5.81 | -53.05% |
-| Reflection penalty only (no length penalty) | +4.2 | -45.3% |
-| Length penalty only (no reflection penalty) | +2.1 | -48.7% |
-| Fixed penalty (non-adaptive) | +3.5 | -50.1% |
+|------|------|---------|
+| ARLCP (Full) | +5.81 | -53.05% |
+| Reflection Penalty Only | +4.2 | -45.3% |
+| Length Penalty Only | +2.1 | -48.7% |
+| Fixed Penalty (Non-adaptive) | +3.5 | -50.1% |
 
 ### Key Findings
 
-- On the 1.5B model: length reduced by **53.1%**, accuracy improved by **5.8%**.
-- On the 7B model: length reduced by **35.0%**, accuracy improved by **2.7%**.
-- The adaptive mechanism substantially outperforms fixed penalties.
+- **1.5B Model**: Length reduced by **53.1%**, accuracy improved by **5.8%**.
+- **7B Model**: Length reduced by **35.0%**, accuracy improved by **2.7%**.
+- The adaptive mechanism performs significantly better than a fixed penalty.
 - The two penalty components are complementary and both essential.
 
 ## Highlights & Insights
 
-1. **In-depth empirical analysis**: Systematically reveals the over-reflection phenomenon and its relationship to problem complexity.
-2. **Reflection tokens as a complexity proxy**: The model's own reflective behavior is leveraged to estimate problem difficulty, eliminating the need for external complexity assessment.
-3. **Dynamic penalty allocation**: The total budget $\alpha$ is automatically distributed between reflection and length penalties according to complexity.
-4. **Dual gains in efficiency and accuracy**: Token consumption is substantially reduced while accuracy simultaneously improves.
+1. **In-depth Empirical Analysis**: Systematically reveals the over-reflection phenomenon and its link to complexity.
+2. **Reflection Tokens as Complexity Metric**: Utilizes internal model behavior to estimate difficulty, avoiding external evaluators.
+3. **Dynamic Penalty Allocation**: Automatically distributes the total budget $\alpha$ between reflection and length based on complexity.
+4. **Efficiency-Accuracy Win-Win**: Improves accuracy while substantially reducing token consumption.
 
 ## Limitations & Future Work
 
-- The complexity classification thresholds $(n_1, n_2)$ require manual specification.
-- Reflection tokens are detected via keyword matching ("wait", "hmm", "alternatively"), which may lack precision.
-- Validation is limited to mathematical reasoning tasks; generalization to domains such as code reasoning remains unexplored.
-- The method relies on DeepSeek-R1 distilled models; its effectiveness on non-distilled models warrants further investigation.
+- Complexity thresholds $(n_1, n_2)$ require manual tuning.
+- Reflection detection via keyword matching ("wait", "hmm") may lack precision.
+- Validated only on mathematical reasoning; effectiveness in code reasoning or other scenarios is unknown.
+- Evaluation limited to DeepSeek-R1 distilled models; generalizability to non-distilled models needs exploration.
 
 ## Related Work & Insights
 
-- **Efficient reasoning**: Early Exit, Model Switch, NoThinking (skipping the thinking phase).
-- **Training-stage methods**: TLMRE (length-penalized RL), LASER (accuracy-based length constraint).
-- **SFT methods**: SFT-Shortest (fine-tuning on the shortest correct responses).
+- **Efficient Inference**: Early Exit, Model Switch, NoThinking (skipping thoughts).
+- **Training-stage Methods**: TLMRE (Length Penalty RL), LASER (Accuracy-based length constraints).
+- **SFT Methods**: SFT-Shortest (selecting the shortest correct answers for fine-tuning).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Adaptive reflection penalty constitutes a novel starting point.
-- **Technical Depth**: ⭐⭐⭐ — The method is relatively straightforward, yet well-motivated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multiple benchmarks and models with comprehensive comparisons.
-- **Value**: ⭐⭐⭐⭐⭐ — Directly addresses the efficiency bottleneck in LRM deployment.
+- **Novelty**: ⭐⭐⭐⭐ — Adaptive reflection penalty is a unique entry point.
+- **Technical Depth**: ⭐⭐⭐ — The method is straightforward but well-designed.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive across multiple benchmarks and models.
+- **Value**: ⭐⭐⭐⭐⭐ — Directly addresses deployment efficiency pain points for LRMs.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
-- [\[ICLR 2026\] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
+- [\[ICLR 2026\] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](learn_to_reason_efficiently_with_adaptive_length-based_reward_shaping.md)
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](prompt_curriculum_learning_for_efficient_llm_post-training.md)
 - [\[ICML 2026\] CAMEL: Confidence-Gated Reflection for Reward Modeling](../../ICML2026/reinforcement_learning/camel_confidence-gated_reflection_for_reward_modeling.md)
-- [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](rm-r1_reward_modeling_as_reasoning.md)
-- [\[ICLR 2026\] FAPO: Flawed-Aware Policy Optimization for Efficient and Reliable Reasoning](fapo_flawed-aware_policy_optimization_for_efficient_and_reliable_reasoning.md)
+- [\[ICLR 2026\] QuRL: Low-Precision Reinforcement Learning for Efficient Reasoning](qurl_low-precision_reinforcement_learning_for_efficient_reasoning.md)
 
 </div>
 

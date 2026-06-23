@@ -2,16 +2,22 @@
 title: >-
   [Paper Note] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning
 description: >-
-  [Reinforcement Learning] This paper proposes Feasibility-Guided Exploration (FGE), which simultaneously identifies the feasible parameter subset and learns a safe policy over that subset…
+  [ICLR 2026][Reinforcement Learning][safe RL] The authors propose Feasibility-Guided Exploration (FGE) to simultaneously identify feasible parameter subsets and learn safe policies within those subsets. It addresses parameter-robust avoidance problems where feasibility is unknown, achieving over 50% higher coverage than state-of-the-art methods in MuJoCo tasks.
 tags:
-  - "Reinforcement Learning"
+  - ICLR 2026
+  - Reinforcement Learning
+  - safe RL
+  - Hamilton-Jacobi
+  - robust optimization
+  - feasibility
+  - curriculum learning
+  - MuJoCo
 date: 2026-05-08
-content_hash: 18997f6deb068f7a
+content_hash: f48eb1785f043a14
 ---
-
 # Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning
 
-## Metadata
+## Meta-info
 - **Conference**: ICLR 2026
 - **arXiv**: [2602.15817](https://arxiv.org/abs/2602.15817)
 - **Code**: [https://oswinso.xyz/fge](https://oswinso.xyz/fge)
@@ -19,111 +25,99 @@ content_hash: 18997f6deb068f7a
 - **Keywords**: safe RL, Hamilton-Jacobi, robust optimization, feasibility, curriculum learning, MuJoCo
 
 ## TL;DR
-This paper proposes Feasibility-Guided Exploration (FGE), which simultaneously identifies the feasible parameter subset and learns a safe policy over that subset, addressing parameter-robust avoid problems with unknown feasibility. FGE covers more than 50% additional safe parameters compared to the best existing methods on MuJoCo tasks.
+The authors propose Feasibility-Guided Exploration (FGE) to simultaneously identify feasible parameter subsets and learn safe policies within those subsets. It addresses parameter-robust avoidance problems where feasibility is unknown, achieving over 50% higher coverage than state-of-the-art methods in MuJoCo tasks.
 
 ## Background & Motivation
-- **Hamilton-Jacobi (HJ) safety control** is a powerful tool for computing the maximal safe initial state set, but classical methods are limited by the curse of dimensionality.
-- **Deep RL for HJ approximation**: RL can be used to learn approximate optimal control policies, but a fundamental mismatch exists between RL's expected-return objective and worst-case safety requirements — performance may be poor on low-probability yet safety-critical states.
-- **Robust optimization** approaches (e.g., RARL) apply worst-case optimization over the set of initial conditions, but presuppose that this set is feasible (i.e., a safe policy exists). Including infeasible parameters causes all policies to perform equally poorly, leading to degenerate solutions.
-- **Core difficulty**: Determining the feasible parameter set is itself the goal of HJ analysis — it is unknown a priori.
-- Illustrative example: In autonomous driving, blizzard conditions combined with high speed may be inherently unsafe regardless of the policy; training on such impossible scenarios prevents the model from learning well under normal conditions.
+- **Hamilton-Jacobi (HJ) safety control** is a powerful tool for obtaining the maximal safe set of initial states, but classical methods suffer from the curse of dimensionality.
+- **Approximating HJ with Deep RL**: RL is used to learn nearly optimal control policies, but a fundamental mismatch exists between optimizing expected returns and worst-case safety—performance can be poor on low-probability states that must still remain safe.
+- **Robust optimization** schemes (such as RARL) optimize for the worst case over an initial condition set, but they assume the set is feasible (i.e., a safe policy exists). If infeasible parameters are included, all policies perform poorly, leading to training degradation.
+- **Key Challenge**: Identifying the feasible parameter set is itself the target of HJ analysis—it is unknown a priori!
+- **Example**: In autonomous driving, a blizzard combined with high speeds might be unsafe regardless of the controller; training on such impossible scenarios prevents the model from mastering clear-day scenarios.
 
 ## Method
 
 ### Overall Architecture
-FGE simultaneously accomplishes two objectives:
-1. Identifying the maximal feasible parameter subset $\Theta^* \subseteq \Theta$ (i.e., for which parameters a safe policy exists).
-2. Learning a robust policy that is safe over $\Theta^*$.
+FGE couples "which scenarios to train on" with "how to remain safe in those scenarios." It maintains an estimate of the maximal feasible parameter subset $\Theta^* \subseteq \Theta$ (parameters where a safe policy actually exists) while performing robust policy learning on this expanding subset. The core difficulty lies in the unknown nature of $\Theta^*$, which FGE addresses via a feasibility classifier that distinguishes "proven safe" parameters from "temporarily unlearned" ones. It uses saddle-point optimization to combat worst-case parameters within the feasible subset and a tripartite sampling distribution to push the boundaries of the safely identified region. Newly discovered safe parameters are fed back to expand the classifier's set of trusted positive labels, creating a closed loop of training and expansion.
 
-### Key Design 1: Feasibility Classifier
-The core challenge is label asymmetry: observing safety confirms feasibility; observing unsafety does not confirm infeasibility (it may simply reflect a poor policy).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Parameter Set Θ<br/>(Initial States / Dynamics /<br/>Safety Specs)"] --> B["Feasibility Classifier<br/>Mixture Distribution + Threshold<br/>Determine Feasible / TBD"]
+    B -->|Feasible Subset Θ*| C["Saddle-point Optimization<br/>FTRL + PPO on Θ*<br/>Against Worst-case Parameters"]
+    C --> D["Tripartite Sampling Distribution<br/>Base + Explore + Rehearse"]
+    D -->|"Explore: Boost unproven parameters"| E["Policy Rollout<br/>Observe new safe parameters"]
+    E -->|"Expand trusted positive labels 𝒟_𝔣"| B
+    C --> F["Robust Safe Policy π"]
+```
 
-A mixed distribution is constructed to train the classifier:
+### Key Designs
 
-$$p_{\text{mix}}(\mathfrak{f}, \theta) = \alpha \cdot p^*(\mathfrak{f}|\theta) p_{\mathcal{D}_\mathfrak{f}}(\theta) + (1-\alpha) \cdot p^\pi(\mathfrak{f}|\theta) \rho(\theta)$$
+**1. Feasibility Classifier: Distinguishing "Failures" from "Impossibilities"**
 
-- First term: parameters confirmed safe (reliable positive labels).
-- Second term: online samples under the current policy (may contain false negatives).
-- Variational inference is used to fit $q_\psi(\mathfrak{f}=1|\theta)$, which is thresholded to obtain the classifier.
+Robust optimization requires a predefined feasible parameter set, yet this set is precisely what HJ analysis aims to solve and is unknown a priori. The difficulty lies in the inherent asymmetry of feasibility labels: a single safe trajectory under parameter $\theta$ confirms it is feasible, but an unsafe trajectory does not prove it is infeasible—the current policy might simply be inadequate. Treating "failures" as "infeasible" would mistakenly exclude many recoverable scenarios. FGE avoids training the classifier on single online samples, instead constructing a mixture distribution $p_{\text{mix}}(\mathfrak{f}, \theta) = \alpha \cdot p^*(\mathfrak{f}|\theta) p_{\mathcal{D}_\mathfrak{f}}(\theta) + (1-\alpha) \cdot p^\pi(\mathfrak{f}|\theta) \rho(\theta)$. The first term comes from the set of trusted positive labels $\mathcal{D}_\mathfrak{f}$ (confirmed safe), while the second term consists of online samples under the current policy (which may contain false negatives). By fitting $q_\psi(\mathfrak{f}=1|\theta)$ and thresholding, the classifier achieves near-zero false positives, ensuring truly unsolvable scenarios do not contaminate the training set and that the subsequent saddle-point optimization always plays within the "solvable" domain.
 
-**Theoretical guarantees**:
-- Zero false positives: infeasible parameters are never labeled as feasible.
-- Controllable false negative rate: regulated via $\alpha$ and $\rho$.
+**2. Saddle-point Optimization: Stabilizing Robust Safety via Online Adversarial Learning**
 
-### Key Design 2: Saddle-Point Optimization
-Robust safety control is formulated as a maximin problem. An online-learning saddle-point approach is adopted in place of RARL's adversarial policy:
+Once the feasible subset $\Theta^*$ is identified, the goal is to find a policy that is safe even under the worst-case parameters, which is essentially a maximin problem. While RARL uses an adversarial policy to approximate the worst case—equivalent to Gradient Descent-Ascent (GDA), which is often unstable—FGE adopts an online learning saddle-point perspective. The policy side solves $\pi_{t+1} = \arg\max_\pi \mathbb{E}_{\theta \sim \mathcal{D}_{\theta,t}}[J(\pi, \theta)]$, while the parameter side solves $\theta_{t+1} = \arg\min_{\theta} J(\pi_t, \theta)$ exclusively within the feasible subset $\theta \in \Theta^*$. This distinction from RARL is fundamental: it does not assume the system is feasible under the worst possible disturbance but restricts the adversary to the proven feasible range. Specifically, Follow-the-Regularized-Leader (FTRL) with quadratic regularization is used alongside PPO to keep policies stable across rounds, while a rehearsal buffer stores historical worst-case parameters. FTRL's regularization allows the game to converge toward an average iterate near the saddle point, avoiding the degradation typical of GDA oscillations.
 
-$$\pi_{t+1} = \arg\max_\pi \mathbb{E}_{\theta \sim \mathcal{D}_{\theta,t}}[J(\pi, \theta)]$$
-$$\theta_{t+1} = \arg\min_{\theta} J(\pi_t, \theta), \quad \theta \sim p(\cdot | \theta \in \Theta^*)$$
+**3. Tripartite Sampling Distribution: Expanding the Safety Boundary without Regression**
 
-Follow-the-Regularized-Leader (FTRL) is combined with PPO for policy updates, and a rehearsal buffer stores historical worst-case parameters.
-
-### Key Design 3: Exploration Distribution Expansion
-FGE decomposes the sampling distribution into three components (Figure 1):
-- **Base distribution**: standard parameter sampling.
-- **Exploration distribution**: upweights parameters not yet observed to be safe.
-- **Rehearsal distribution**: samples previously solved parameters that may have regressed (approximate best response).
-
-The three components are combined to balance maximizing safety rate gains and minimizing safety rate losses.
+A classifier and saddle-point solver alone are insufficient; the classifier can only mitigate false negatives for observed safe parameters, while $\mathcal{D}_\mathfrak{f}$ only expands when the policy masters new parameters—creating a potential deadlock. FGE breaks this by splitting the sampling distribution into three components: a **base distribution** sampled from the original parameter distribution to maintain overall coverage; an **exploration distribution** using rejection sampling $\theta\sim p(\cdot\mid\phi(\theta)=0)$ to deliberately increase the sampling probability of parameters currently deemed infeasible, forcing the policy to discover new safe regions to refill $\mathcal{D}_\mathfrak{f}$; and a **rehearsal distribution** which performs revision sampling on previously solved parameters at risk of degradation. This combination maximizes safety rate gains while minimizing losses, ensuring the feasible set expands steadily.
 
 ### Loss & Training
-Policy training uses a standard RL objective (PPO) with a negative indicator reward:
-
-$$r_k = -\mathbb{1}\{h_\theta(\bm{s}_k) > 0\}$$
-
-Safety yields a reward of 0; entering an unsafe state yields a reward of −1; episodes terminate upon the first constraint violation.
+The policy training follows the standard PPO objective. The reward is designed as a negative indicator where the episode terminates upon the first violation: $r_k = -\mathbb{1}\{h_\theta(\bm{s}_k) > 0\}$. Remaining in a safe state yields a reward of 0, while entering an unsafe state yields $-1$ and ends the episode. This maps safety rate maximization directly to an optimizable RL objective.
 
 ## Key Experimental Results
 
 ### Main Results: MuJoCo Safety Coverage
 
 | Environment | Domain Rand. | RARL | FGE (Ours) | Gain |
-|---|---|---|---|---|
-| Ant (avoid) | ~40% | ~45% | **~70%** | +56% |
-| Humanoid (avoid) | ~35% | ~40% | **~65%** | +63% |
+|------|-------------|------|-----------|------|
+| Ant (Avoid) | ~40% | ~45% | **~70%** | +56% |
+| Humanoid (Avoid) | ~35% | ~40% | **~65%** | +63% |
 | HalfCheetah | ~50% | ~55% | **~78%** | +42% |
 
-> FGE covers more than 50% additional safe parameter sets compared to the best baseline across all challenging MuJoCo tasks.
+> FGE covers over 50% more safe parameter sets than the best baseline in all challenging MuJoCo tasks.
 
 ### Ablation Study: Component Contributions
 
-| Ablation Setting | Safety Coverage | Note |
-|---|---|---|
-| FGE (full) | ~70% | Reference |
-| w/o feasibility classifier | ~50% | Infeasible parameters interfere with training |
-| w/o exploration distribution | ~55% | Insufficient exploration |
-| w/o rehearsal distribution | ~60% | Learned skills regress |
-| Density model replacing classifier | ~58% | Inferior to mixed-distribution classifier |
+| Ablation Setting | Safety Coverage | Description |
+|---------|----------|------|
+| FGE (Full) | ~70% | Baseline |
+| W/o Feasibility Classifier | ~50% | Infeasible parameters interfere with training |
+| W/o Exploration Dist. | ~55% | Insufficient exploration |
+| W/o Rehearsal Dist. | ~60% | Regression in learned skills |
+| Density Model instead of Classifier | ~58% | Outperformed by mixture-distribution classifier |
 
 ### Key Findings
 1. Standard domain randomization and RARL are severely limited when parameter feasibility is unknown.
 2. The zero-false-positive guarantee of the feasibility classifier is critical for training stability.
-3. FTRL converges more stably than GDA (the method approximated by RARL) on saddle-point problems.
-4. Balancing the exploration and rehearsal distributions is indispensable for continuously expanding the safe set.
+3. FTRL provides more stable convergence for saddle-point problems compared to GDA (as approximated by RARL).
+4. Balancing exploration and rehearsal distributions is indispensable for the continuous expansion of the safe set.
 
 ## Highlights & Insights
-- **Novel problem formulation**: Parameter-robust avoidance with unknown feasibility fills an important gap between safe RL and HJ analysis.
-- **Positive-only label learning**: The asymmetric label problem (only positive labels are reliable) is handled elegantly with theoretical guarantees of zero false positives.
-- **Online learning perspective**: Replacing unstable adversarial RL with a saddle-point method yields stronger theoretical guarantees.
-- **Practical three-distribution sampling**: The base + explore + rehearse combination draws inspiration from curriculum learning and online learning.
+- **Core Problem Definition**: Robust avoidance with unknown feasibility fills a significant gap between safe RL and HJ analysis.
+- **Positive-Label Learning**: The approach cleverly handles the one-sided labeling problem (where only positive labels are reliable) with theoretical guarantees on zero false positives.
+- **Online Learning Perspective**: Replacing unstable adversarial RL with saddle-point methods provides stronger theoretical convergence foundations.
+- **Practical Tri-sampling Strategy**: The combination of base, explore, and rehearse components is inspired by curriculum and online learning.
 
 ## Limitations & Future Work
-- Theoretical convergence guarantees rely on assumptions such as convex-concavity and exact best responses, which are not fully satisfied in practice.
+- Theoretical convergence guarantees rely on assumptions such as convexity-concavity and exact best responses, which may not be fully met in practice.
 - The accuracy of the feasibility classifier in high-dimensional parameter spaces requires further validation.
-- Only deterministic dynamics are considered; extensions to stochastic systems are not discussed.
-- MuJoCo environments still exhibit a gap relative to real robotic systems.
+- The current work only considers deterministic dynamics; extensions to stochastic systems are not yet discussed.
+- There remains a gap between MuJoCo environments and real-world robotic deployment.
 
 ## Related Work & Insights
-- **HJ safety control**: DeepReach (Bansal et al., 2021), ISAACS (Hsu et al., 2023), So et al. (2024)
+- **HJ Safety Control**: DeepReach (Bansal et al., 2021), ISAACS (Hsu et al., 2023), So et al. (2024)
 - **Robust RL**: RARL (Pinto et al., 2017), WCSAC (Yang et al., 2021)
-- **Unsupervised environment design (UED)**: PAIRED (Dennis et al., 2020), PLR (Jiang et al., 2021)
+- **Unsupervised Environment Design (UED)**: PAIRED (Dennis et al., 2020), PLR (Jiang et al., 2021)
 - **Safe RL**: Constrained MDP (Altman, 1999), SauteRL (Sootla et al., 2022)
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — Novel problem formulation; robust safety control with unknown feasibility.
+- Novelty: ⭐⭐⭐⭐⭐ — Fresh problem definition focusing on robust control with unknown feasibility.
 - Theoretical Depth: ⭐⭐⭐⭐ — Classifier guarantees and saddle-point convergence analysis.
 - Experimental Thoroughness: ⭐⭐⭐⭐ — Multiple MuJoCo environments with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ — Direct relevance to safe robot deployment.
+- Value: ⭐⭐⭐⭐ — Directly relevant to the safe deployment of robotics.
 
 <!-- RELATED:START -->
 

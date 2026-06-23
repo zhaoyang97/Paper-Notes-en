@@ -2,138 +2,129 @@
 title: >-
   [Paper Note] Routing, Cascades, and User Choice for LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][LLM routing] This paper models LLM routing as a provider-user Stackelberg game, proves that the optimal routing policy is almost always a static, cascade-free threshold rule…
+  [ICLR 2026][Reinforcement Learning][LLM routing] LLM routing is modeled as a provider-user Stackelberg game. It is proved that optimal routing is almost always a static threshold rule without cascading. The study reveals systematic user-provider misalignment when quality/cost rankings are inconsistent, and shows that under low churn penalties, providers are incentivi
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "LLM routing"
-  - "cascading"
-  - "Stackelberg game"
-  - "user-provider misalignment"
-  - "throttling"
+  - ICLR 2026
+  - Reinforcement Learning
+  - LLM routing
+  - cascading
+  - Stackelberg game
+  - user-provider misalignment
+  - throttling
 date: 2026-05-08
-content_hash: 96c6a724b2a2367b
+content_hash: dbda224c698fa5d2
 ---
-
 # Routing, Cascades, and User Choice for LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.09902](https://arxiv.org/abs/2602.09902)  
 **Code**: None  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: LLM routing, cascading, Stackelberg game, user-provider misalignment, throttling
 
 ## TL;DR
 
-This paper models LLM routing as a provider-user Stackelberg game, proves that the optimal routing policy is almost always a static, cascade-free threshold rule, reveals user-provider misalignment when quality/cost rankings are inconsistent, and shows that under low churn penalties providers are incentivized to inflate latency via throttling to reduce cost at the expense of user utility.
+LLM routing is modeled as a provider-user Stackelberg game. It is proved that optimal routing is almost always a static threshold rule without cascading. The study reveals systematic user-provider misalignment when quality/cost rankings are inconsistent, and shows that under low churn penalties, providers are incentivized to reduce costs through throttling latency, which harms user utility.
 
 ## Background & Motivation
 
-**Background**: LLM providers allocate user tasks across heterogeneous models through routing and cascading strategies to balance quality, latency, and cost. GPT-5 explicitly adopts routing, switching between an "efficient model" and a "deep reasoning model."
+**Background**: LLM providers balance quality, latency, and cost by distributing user tasks among heterogeneous models using routing and cascading strategies. GPT-5 has explicitly adopted routing to switch between "efficient models" and "deep reasoning models."
 
-**Limitations of Prior Work**: Existing routing algorithms (Ding et al., 2024; Dekoninck et al., 2025) focus on estimating LLM performance and optimizing quality-latency-cost trade-offs, but treat user response behavior as exogenous. However, the prompt-based interface of LLMs means users may interact repeatedly after a model failure, incurring repeated inference costs.
+**Limitations of Prior Work**: Existing routing algorithms (Ding et al., 2024; Dekoninck et al., 2025) focus on estimating LLM performance and optimizing quality-latency-cost trade-offs, but treat user response behavior as an exogenous variable. However, the prompt-based interface of LLMs means users may repeatedly interact after a model failure, incurring repeated inference costs.
 
-**Key Challenge**: Optimizing single-pass cost may backfire at the level of user behavior. Users may abandon tasks or cancel subscriptions depending on the value of the task and model latency. Optimizing single-pass cost may be "penny-wise but welfare-foolish."
+**Key Challenge**: Optimizing for single-query costs may be counterproductive at the user behavior level. Users may abandon tasks or even cancel subscriptions depending on the value of the task and the model's latency. Optimizing single-query costs might be "penny-wise but welfare-foolish."
 
-**Goal**: The paper formalizes a two-level Stackelberg game—the provider selects a routing policy (initial model + cascade probability), and the user decides an abandonment probability based on the observed strategy. By fully characterizing the user's best response and simplifying the provider's problem, the paper derives concise threshold rules.
+**Goal**: To formalize a two-level Stackelberg game where the provider selects a routing strategy (initial model + cascading probability) and the user decides the abandonment probability based on the observed strategy. By fully characterizing the user's optimal response and simplifying the provider's problem, concise threshold rules are derived.
 
 ## Method
 
 ### Overall Architecture
 
-Consider a single provider with two models $M_1$ (standard) and $M_2$ (reasoning), satisfying $t_1 < t_2$, $c_1 < c_2$, $0 < p_1 < p_2 < 1$. The provider selects a routing policy $(i, s)$: initial model $i$ and cascade probability $s$. The user selects an abandonment probability $q$.
+The entire analysis revolves around a two-level Stackelberg game: the provider first announces a routing strategy $(i, s)$ (initial model $i$ plus cascading probability $s$), and the user chooses an abandonment probability $q$ after each failure to optimize their own objective. The scenario is simplified into a minimal analytical unit—a single provider holding a standard model $M_1$ and a reasoning model $M_2$, satisfying $t_1 < t_2$, $c_1 < c_2$, and $0 < p_1 < p_2 < 1$ (the reasoning model is slower and more expensive but has a higher success rate).
 
-Define the user's single-pass net value as $\xi_i := Vp_i - t_i$; when $\xi_i > 0$ the model is value-dominated, otherwise latency-dominated.
+The pivot of the analysis is the user's single-pass net value $\xi_i := Vp_i - t_i$: if $\xi_i > 0$, the model is called value-dominated (worth the wait); if $\xi_i < 0$, it is latency-dominated (not worth the wait). User utility is the value of success minus cumulative latency $U_i(s, q) = V \cdot S_i(s, q) - L_i(s, q)$, and provider cost is the service overhead plus the penalty for user abandonment $J_i(s, q) = C_i(s, q) + P(1 - S_i(s, q))$, where $P$ measures how much a single churn hurts the provider. Subsequent design points involve solving the user's optimal response, substituting it back to simplify the provider's problem, and discussing the resulting systemic risks.
 
-User utility is the success value minus cumulative latency:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    P["Provider announces routing strategy<br/>(Initial model i + Cascading probability s)"] --> U["User chooses abandonment probability q<br/>after observing strategy"]
+    U --> D1["Full characterization of user optimal response:<br/>q* collapses into threshold rules"]
+    D1 --> D2["Simplification of provider optimal routing:<br/>Cascading is almost never optimal"]
+    D2 --> D3["Provider-User Misalignment:<br/>Cost-optimal strategy harms user utility"]
+    D2 --> D4["Throttling Risk:<br/>Intentional slowdown under low churn penalty"]
+```
 
-$$U_i(s, q) = V \cdot S_i(s, q) - L_i(s, q)$$
+### Key Designs
 
-Provider cost is the service cost plus user abandonment penalty:
+**1. Characterization of User Optimal Response: Solving the Lower Game as Closed-Form Thresholds**
 
-$$J_i(s, q) = C_i(s, q) + P(1 - S_i(s, q))$$
+To analyze the provider's strategy, it is necessary to know how the user will react. The paper first fixes $(i, s)$ to solve for the optimal abandonment probability $q^*$ (Theorem 1–2). The conclusion is remarkably clean: as long as the task is routed to $M_2$, there is a pure threshold rule $q^* = \mathbb{1}\{\xi_2 < 0\}$. When routing to $M_1$, if $\xi_1$ and $\xi_2$ have the same sign, user behavior is completely static (always wait if both are value-dominated, always abandon if both are latency-dominated), and the routing strategy has no influence. The interesting case is when they have opposite signs: when $\xi_1 < 0 < \xi_2$, there exists a single threshold $s_0 = -\xi_1/(\xi_2/p_2 - \xi_1)$; if $s > s_0$, the user stays. When $\xi_1 > 0 > \xi_2$, two thresholds $s_L, s_H$ appear. This characterization is crucial because it collapses continuous behavior optimization into discrete threshold criteria.
 
-### Key Design 1: Full Characterization of the User's Best Response
+**2. Simplification of Provider Optimal Routing: Proving Cascading is Almost Never Optimal**
 
-**Function**: Derive the user's optimal abandonment strategy given the provider's policy.
+With $q^*(s)$, the provider's objective reduces from a two-dimensional $(i, s)$ problem to a single-variable problem with closed-form solutions (Theorem 3–5). In the same-sign scenario (Theorem 3), the optimal strategy is always to route to a single model without cascading: pick the model with the higher cost-efficiency based on cost-of-pass $c_i/p_i$. In the differentiated scenario (Theorem 4–5), the conclusion remains robust—the optimal solution for nearly all parameter regions falls into one of three static points $(i^*, s^*) \in \{(1,0), (1,1), (2,0)\}$, with cascading being optimal only in an extremely narrow parameter band. This suggests that "small model then upgrade" pipelines are mostly wasteful under equilibrium.
 
-**Mechanism** (Theorems 1–2):
-- If routed to $M_2$: $q^* = \mathbb{1}\{\xi_2 < 0\}$ (pure threshold rule)
-- If routed to $M_1$ and $\xi_1, \xi_2$ share the same sign: user behavior is static (if both value-dominated, $q^*=0$; if both latency-dominated, $q^*=1$)
-- If $\xi_1 < 0 < \xi_2$: there exists a threshold $s_0 = -\xi_1/(\xi_2/p_2 - \xi_1)$; the user stays when $s > s_0$ and abandons otherwise
-- If $\xi_1 > 0 > \xi_2$: there exist two thresholds $s_L, s_H$; the user stays when $s \leq s_L$, abandons when $s \geq s_H$, and plays a mixed strategy in between
+**3. Provider-User Misalignment: Cost-Optimal Often Harms Users**
 
-**Design Motivation**: User behavior is affected by the routing policy only when the two models are differentiated in value. When the two models are homogeneous, routing has no influence on user decisions.
+Comparing the optimal rankings of users and providers, the paper finds they often diverge (Proposition 1): when the provider selects a model based on cost-of-pass while the user prefers another based on utility, a strictly positive misalignment gap $\Delta_U > 0$ emerges. This indicates that misalignment is a structural product of equilibrium rather than an implementation bug.
 
-### Key Design 2: Simplification of the Provider's Optimal Routing
+**4. Throttling Risk: Intentional Slowdown Under Low Churn Penalties**
 
-**Function**: Reduce the provider's optimization problem to a single-variable problem and derive closed-form solutions.
-
-**Mechanism** (Theorems 3–5):
-- **Same-sign case** (Theorem 3): The optimal policy always routes to a single model with no cascading. When $\xi_1, \xi_2 > 0$, the choice is based on cost-of-pass $c_i/p_i$; when $\xi_1, \xi_2 < 0$, it depends on the comparison between penalty $P$ and the incremental cost-of-pass.
-- **Differentiated case** (Theorems 4–5): In almost all regimes the optimal policy remains static, $(i^*, s^*) \in \{(1,0), (1,1), (2,0)\}$; cascading is optimal only in a narrow region.
-
-**Design Motivation**: Cascading between undifferentiated models increases cost and variance without benefit. Cascading is valuable only when the two models have different net values and within specific parameter ranges.
-
-### Misalignment and Throttling Analysis
-
-**Provider-User Misalignment** (Proposition 1): When the provider's cost-of-pass ranking is inconsistent with the user's utility ranking, a misalignment gap $\Delta_U > 0$ arises—the provider's cost-optimal policy harms user utility.
-
-**Throttling Risk** (Proposition 2): When the user churn penalty satisfies $P \leq \min\{c_1/p_1, c_2/p_2\}$, the provider is incentivized to artificially inflate latency $\hat{t}_i > Vp_i$, making both models latency-dominated and encouraging users to abandon tasks in order to reduce service cost. Under this condition, user utility is maximally damaged.
+The provider may actively worsen service (Proposition 2): when the churn penalty is sufficiently low, i.e., $P \leq \min\{c_1/p_1, c_2/p_2\}$, the provider is motivated to artificially inflate latency to $\hat{t}_i > Vp_i$. This makes both models latency-dominated, inducing the user to abandon and thus saving service costs. This identifies that the only lever to resist throttling is to increase $P$, meaning users must have a high-cost "unsubscribe" option.
 
 ## Key Experimental Results
 
-### Main Results: Region Decomposition of the Provider's Optimal Policy
+### Main Results: Regional Partitioning of Provider Optimal Strategies
 
-| State of $\xi_1, \xi_2$ | User Behavior | Provider's Optimal Policy | Is Cascading Effective? |
-|--------------------------|---------------|--------------------------|------------------------|
-| Both value-dominated | Statically stays | Route by $c_i/p_i$, no cascading | Ineffective |
-| Both latency-dominated | Statically abandons | Depends on $P$ vs $(c_2-c_1)/(p_2-p_1)$ | Ineffective |
-| $\xi_1 < 0 < \xi_2$ | Depends on cascade probability | Almost always routes to $M_1$ unless cost-of-pass gap is large | Only under specific conditions |
-| $\xi_1 > 0 > \xi_2$ | Three-phase response | Primarily static; mixed strategy in a very narrow interval | Rarely |
+| $\xi_1, \xi_2$ State | User Behavior | Provider Optimal Strategy | Is Cascading Effective? |
+|-----------------------|---------------|---------------------------|-------------------------|
+| Both value-dominated | Static Stay | Route by $c_i/p_i$, no cascade | Ineffective |
+| Both latency-dominated| Static Abandon| Depends on $P$ vs $(c_2-c_1)/(p_2-p_1)$ | Ineffective |
+| $\xi_1 < 0 < \xi_2$   | Cascade-dependent | Usually route to $M_1$ unless cost-of-pass gap is large | Only under specific conditions |
+| $\xi_1 > 0 > \xi_2$   | Three-stage response | Mostly static, mixed in narrow interval | Extremely rare |
 
 ### Ablation Study: Throttling Gains
 
 | Configuration | Effect | Condition |
 |---------------|--------|-----------|
-| $P < \min\{c_1/p_1, c_2/p_2\}$ | Throttling benefits the provider | Low churn penalty |
-| $P > \min\{c_1/p_1, c_2/p_2\}$ | Throttling instead increases provider cost | High churn penalty |
-| Throttling gain region | Linear in $P$ | User unsubscription can prevent throttling |
+| $P < \min\{c_1/p_1, c_2/p_2\}$ | Throttling benefits provider | Low user churn penalty |
+| $P > \min\{c_1/p_1, c_2/p_2\}$ | Throttling increases provider cost | High user churn penalty |
+| Throttling gain area | Linear in $P$ | User unsubscribing prevents throttling |
 
 ### Key Findings
 
-- Optimal routing degenerates to a simple threshold rule across the vast majority of parameter regimes; the value of cascading is extremely limited.
-- User behavior is affected by the routing policy only when the two models are differentiated.
-- When user and provider model rankings are inconsistent, misalignment is inevitable.
-- The key to preventing throttling is ensuring that the cost of user abandonment (churn penalty) is sufficiently high—users should have the right to unsubscribe.
+- Optimal routing reduces to simple threshold rules in most parameter regions; the value of cascading is extremely limited.
+- User behavior is only influenced by routing strategies when the two models are differentiated in value signs.
+- Misalignment is unavoidable when the user’s and provider’s model rankings differ.
+- The key to preventing throttling is ensuring the cost of user abandonment (churn penalty) is high enough—users should have "unsubscription rights."
 
 ## Highlights & Insights
 
-- This is the first work to elevate LLM routing from a purely engineering optimization to a game-theoretic framework that accounts for user response behavior.
-- The theoretical results offer highly practical guidance: the finding that cascading is rarely optimal has direct implications for the design of routing systems such as GPT-5.
-- The throttling analysis reveals moral hazard on the part of providers in LLM subscription models, with implications for policy.
-- The paper itself was completed with LLM assistance (documented in detail in Appendix A), constituting a meta-level self-consistent validation.
+- Elevates the LLM routing problem from pure engineering optimization to a game-theoretic framework considering user reactions.
+- Theoretical results provide high practical guidance: the conclusion that cascading is rarely optimal has direct implications for systems like GPT-5.
+- Throttling analysis reveals the moral hazard of providers in LLM subscription models, carrying policy implications.
+- The paper itself was completed with LLM assistance (detailed in Appendix A), constituting a self-consistent validation at a meta-level.
 
 ## Limitations & Future Work
 
-- Only the two-model case is analyzed; real deployments may involve routing across a larger number of models.
-- Users are assumed to observe the provider's cascade strategy and to adopt stationary abandonment policies; in practice, routing strategies are opaque to users.
-- The per-pass success probability is assumed to be i.i.d., ignoring the effect of user feedback on subsequent attempts.
-- The analysis is confined to a fixed subscription pricing framework and does not consider per-call API pricing.
-- Empirical experiments to validate the theoretical predictions are absent.
+- Analyzes only two models; actual deployments may involve routing across many more models.
+- Assumes users can observe the provider’s cascading strategy and adopt a stationary abandonment strategy, whereas routing is often opaque.
+- Success probability per pass is assumed to be i.i.d., ignoring the impact of user feedback on subsequent attempts.
+- Focuses on subscription frameworks, not considering pay-per-call API pricing models.
+- Lacks empirical validation of the theoretical predictions.
 
 ## Related Work & Insights
 
-- **FrugalGPT** (Chen et al., 2023) and **RouteLLM** (Ong et al., 2025): These works focus on routing algorithm design; this paper complements them by incorporating the user behavior dimension from a game-theoretic perspective.
-- **Cost-of-Pass** (Mahmood 2024; Erol et al., 2025): This paper directly adopts the cost-of-pass concept as a central metric for routing decisions.
-- Implications for LLM subscription service design: allowing users to opt out of routing (opt-out routing) should be considered as a mechanism to prevent throttling.
+- **FrugalGPT** (Chen et al., 2023) and **RouteLLM** (Ong et al., 2025): Focus on routing algorithm design; this paper complements them with the user behavior dimension from a game-theoretic perspective.
+- **Cost-of-Pass** (Mahmood 2024; Erol et al., 2025): This paper directly uses the cost-of-pass concept as a core metric for routing decisions.
+- Insight for LLM subscription service design: Providers should allow users to opt-out of routing to prevent throttling.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Analyzing LLM routing from a game-theoretic perspective is highly novel and fills a gap in user behavior modeling.
-- Experimental Thoroughness: ⭐⭐⭐ A purely theoretical work; supported by theorem proofs and visualizations but lacking empirical experiments.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear; the guideline summary in Figure 1 is highly practical.
-- Value: ⭐⭐⭐⭐ Offers direct practical guidance for LLM service pricing and routing policy design; the throttling analysis carries policy significance.
+- Novelty: ⭐⭐⭐⭐ The game-theoretic perspective on LLM routing is highly novel and fills a gap in user behavior modeling.
+- Experimental Thoroughness: ⭐⭐⭐ Primarily a theoretical work; contains proofs and visualizations but lacks empirical experiments.
+- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear, and the summary guideline in Figure 1 is extremely practical.
+- Value: ⭐⭐⭐⭐ Provides direct practical guidance for LLM service pricing and routing strategy design; throttling analysis is policy-relevant.
 
 <!-- RELATED:START -->
 
@@ -141,11 +132,11 @@ $$J_i(s, q) = C_i(s, q) + P(1 - S_i(s, q))$$
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Choice of Divergence: A Neglected Key to Mitigating Diversity Collapse in Reinforcement Learning with Verifiable Reward](the_choice_of_divergence_a_neglected_key_to_mitigating_diversity_collapse_in_rei.md)
 - [\[NeurIPS 2025\] Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/router-r1_teaching_llms_multi-round_routing_and_aggregation_via_reinforcement_le.md)
-- [\[ICLR 2026\] ReMix: Reinforcement Routing for Mixtures of LoRAs in LLM Finetuning](remix_reinforcement_routing_lora.md)
+- [\[ICLR 2026\] GEM: A Gym for Agentic LLMs](gem_a_gym_for_generalist_llms.md)
 - [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
 - [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](reasoning_boosts_opinion_alignment_in_llms.md)
-- [\[ICLR 2026\] AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking](abstral_augmenting_llms_reasoning_by_reinforcing_abstract_thinking.md)
 
 </div>
 

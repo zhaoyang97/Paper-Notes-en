@@ -2,124 +2,145 @@
 title: >-
   [Paper Note] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][behavior-targeted attack] This paper studies a novel threat in RL—behavior-targeted attacks (where an adversary manipulates observations to steer the victim toward executing a specific…
+  [ICLR 2026][Reinforcement Learning][Paper Note] This paper investigates a new type of threat in RL—behavior-targeted attacks (where an adversary guides the victim to execute a specific target policy by tampering with observations). It proposes the BIA attack method, which does not require white-box access, and the TDRT defense method based on time discounting. TDRT
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "behavior-targeted attack"
-  - "adversarial robustness"
-  - "imitation learning attack"
-  - "temporal discounting defense"
-  - "policy smoothing"
+  - ICLR 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 07d263db999dc2a3
+content_hash: f0769ef3ee1e1825
 ---
-
 # Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2406.03862](https://arxiv.org/abs/2406.03862)  
 **Code**: None  
-**Area**: AI Safety / Reinforcement Learning
-**Keywords**: behavior-targeted attack, adversarial robustness, imitation learning attack, temporal discounting defense, policy smoothing
+**Area**: AI Safety / Reinforcement Learning  
+**Keywords**: Behavior-targeted attack, Adversarial robustness, Imitation learning attack, Time-discounted defense, Policy smoothing  
 
 ## TL;DR
-This paper studies a novel threat in RL—behavior-targeted attacks (where an adversary manipulates observations to steer the victim toward executing a specific target policy)—and proposes BIA, a black-box attack method, along with TDRT, a temporally discounted robust training defense. TDRT achieves robustness against such attacks while outperforming the existing defense SA-PPO on original task performance by 28.2%.
+This paper investigates a new type of threat in RL—behavior-targeted attacks (where an adversary guides the victim to execute a specific target policy by tampering with observations). It proposes the BIA attack method, which does not require white-box access, and the TDRT defense method based on time discounting. TDRT maintains robustness against attacks while achieving 28.2% higher original task performance than existing defenses (SA-PPO).
 
 ## Background & Motivation
 
-**Background**: Existing adversarial attack research in RL primarily focuses on reward-minimization attacks—making the victim perform as poorly as possible. Defense methods such as ATLA and SA-PPO are also designed with this threat model in mind.
+**Background**: Existing research on RL adversarial attacks mainly focuses on "reward minimization" attacks—making the victim perform as poorly as possible. Defense methods (such as ATLA, SA-PPO) are also designed primarily against these types of attacks.
 
-**Limitations of Prior Work**: A more dangerous attack paradigm exists—behavior-targeted attacks—where the adversary does not cause the victim to fail outright, but instead steers it toward executing specific behaviors (e.g., rerouting an autonomous vehicle to a particular store). Existing behavior-targeted attacks (PA-AD, Targeted PGD) require white-box access to the victim policy, which is impractical in realistic settings. Moreover, no defense method has been specifically designed against this attack class.
+**Limitations of Prior Work**: A more dangerous attack mode exists—behavior-targeted attacks. Here, the adversary does not intend to make the victim fail, but rather guides it to perform a specific behavior (e.g., diverting an autonomous vehicle to a specific store). Existing attacks of this type (PA-AD, Targeted PGD) require white-box access to the victim's policy, which is difficult to achieve in practice. Furthermore, no defense methods specifically target such attacks.
 
-**Key Challenge**: How can behavior-targeted attacks be carried out without accessing the internals of the victim policy? How can a defense be designed that resists behavior-targeted attacks without excessively sacrificing original task performance?
+**Key Challenge**: How can behavior-targeted attacks be implemented without white-box access to the victim's policy? How can a defense be designed that resists behavioral attacks without excessively sacrificing original task performance?
 
-**Key Insight**: Behavior-targeted attacks are reformulated as a cumulative reward maximization problem within an MDP (Theorem 5.1), such that the victim policy is naturally embedded in the environment dynamics, eliminating the need for white-box access.
+**Key Insight**: Behavior-targeted attacks are remodeled as a cumulative reward maximization problem in an MDP (Theorem 5.1), allowing the victim's policy to be naturally embedded into the environment dynamics without requiring white-box access.
 
-**Core Idea**: On the attack side, MDP reformulation converts white-box requirements into a black-box problem. On the defense side, temporally discounted robust training prioritizes the protection of early-step decisions.
+**Core Idea**: For the attack side—use MDP reconstruction to transform white-box requirements into black-box ones. For the defense side—use time-discounted weighted robust training to prioritize the protection of early decisions.
 
 ## Method
 
 ### Overall Architecture
-The framework consists of two components: the attack (BIA) and the defense (TDRT). The attacker constructs an auxiliary MDP and trains an observation-manipulation policy using standard imitation learning algorithms (GAIL/ILfO). The defender incorporates temporally discounted worst-case KL divergence regularization during training.
+This paper addresses two mirrored problems: how to "induce" a victim into performing a specific behavior without internal access to its policy, and conversely, how to train a policy that resists such induction without losing original task performance. On the attack side, Behavior Imitation Attack (BIA) constructs an auxiliary MDP, treats the victim as part of the environment, and uses standard imitation learning (GAIL/ILfO) to learn a tampering policy $\nu$ that makes the victim's actual behavior approximate the target behavior. On the defense side, Time-Discounted Robust Training (TDRT) adds a time-discounted weighted worst-case KL regularization to PPO training, prioritizing the stabilization of early decisions. Both sides are unified by the same theory: the attack feasibility analysis (Theorem 5.1) directly derives where the defense should be constrained (Theorem 6.1).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    D["Target Behavior Demonstrations<br/>(4–20 trajectories)"]
+    subgraph BIA["Behavior Imitation Attack (BIA)"]
+        direction TB
+        M["Reconstruct Auxiliary MDP M̂<br/>Victim policy π absorbed into transition dynamics"]
+        IL["Imitation Learning<br/>GAIL (Black-box) / ILfO (No-box)"]
+        NU["Tampering Policy ν<br/>True state → Fake state for victim"]
+        M --> IL --> NU
+    end
+    subgraph TDRT["Time-Discounted Robust Training (TDRT)"]
+        direction TB
+        REG["Time-discounted worst-case KL regularization<br/>Weighted by γ^t, prioritize early decisions"]
+        PPO["PPO Training"]
+        REG --> PPO
+    end
+    D --> M
+    NU -->|"Composite policy π∘ν approaches target policy π_tgt"| OUT["Attack Success<br/>Victim induced to execute specified behavior"]
+    NU -.->|"Thm 6.1 gives budget upper bound<br/>→ Where to constrain"| REG
+    PPO --> ROB["Robust Victim Policy<br/>Resist induction, preserve task performance"]
+```
 
 ### Key Designs
 
-1. **Behavior Imitation Attack (BIA)**:
+**1. Behavior Imitation Attack (BIA): Replacing "White-box Gradients" with "Standard RL in a New MDP"**
 
-    - **Function**: Executes behavior-targeted attacks without white-box access to the victim policy.
-    - **Mechanism**: The adversary learns a policy $\nu: s \mapsto \hat{s}$ (mapping true states to perturbed states) such that the composed policy $\pi \circ \nu(a|s) = \sum_{\hat{s}} \nu(\hat{s}|s)\pi(a|\hat{s})$ matches the target policy $\pi_{\text{tgt}}$. Theorem 5.1 establishes the key equivalence: $\arg\min_\nu \mathcal{D}(\pi \circ \nu, \pi_{\text{tgt}})$ can be reformulated as cumulative reward maximization in a constructed MDP $\hat{M}$, where the victim policy is embedded in $\hat{M}$'s transition dynamics—thus requiring no white-box access.
-    - **Design Motivation**: GAIL (black-box, requires demonstrations of target behavior) or ILfO (no-box, requires only observation trajectories of target states) can be directly applied to implement the attack. Effective attacks can be achieved with as few as 4–20 target behavior demonstrations.
-    - **Distinction from White-Box Attacks**: Methods such as PA-AD require computing gradients through the victim policy, whereas BIA performs standard RL/IL within the constructed MDP.
+Existing behavior-targeted attacks (PA-AD, Targeted PGD) require gradients of the victim policy, implying white-box access which is often unavailable. BIA learns a tampering policy $\nu: s \mapsto \hat{s}$ that maps the true state to a false state fed to the victim, so that the composite policy $\pi \circ \nu(a|s) = \sum_{\hat{s}} \nu(\hat{s}|s)\pi(a|\hat{s})$ matches the target policy $\pi_{\text{tgt}}$. The key step is Theorem 5.1: solving the distribution matching problem $\arg\min_\nu \mathcal{D}(\pi \circ \nu, \pi_{\text{tgt}})$ is equivalent to cumulative reward maximization in a specially constructed MDP $\hat{M}$, where the victim policy $\pi$ is absorbed into the transition dynamics of $\hat{M}$.
 
-2. **Temporally Discounted Robust Training (TDRT)**:
+This transformation enables the black-box nature: the adversary no longer needs gradients of $\pi$; they only need to run standard RL or imitation learning within $\hat{M}$. Two algorithms are implemented—GAIL (black-box, requiring a few demonstrations) and ILfO (no-box, requiring only state trajectories). Experiments show that 4–20 demonstrations can achieve performance close to white-box attacks, with only a ~7% gap compared to PA-AD.
 
-    - **Function**: Trains policies that are robust against behavior-targeted attacks while preserving original task performance.
-    - **Mechanism**: Theorem 6.1 establishes that the adversary's gain is upper-bounded by $\sum_{t=0}^{\infty} \frac{\gamma^t}{1-\gamma} \mathbb{E}_{s \sim d_\pi^t}[D_{\text{KL}}(\pi(\cdot|s) \| \pi \circ \nu(\cdot|s))]$. Two key insights follow: (a) reducing the policy's sensitivity to state perturbations improves robustness; (b) **earlier timesteps matter more than later ones** (due to the $\gamma^t$ weighting). The TDRT objective is: $J_{\text{def}}(\pi) = -J_{\text{RL}}(\pi) + \lambda \max_\nu \sum_{s_t \in B} \gamma^t D_{\text{KL}}(\pi(\cdot|s_t) \| \pi \circ \nu(\cdot|s_t))$.
-    - **Design Motivation**: SA-PPO (uniform policy smoothing) achieves comparable robustness but at a severe task performance cost (−28.2%). TDRT focuses the temporal discount on early decisions, preserving more task capability at equivalent robustness levels.
-    - **Distinction from Adversarial Training**: ATLA/PA-ATLA simulate reward-minimization attacks during training and are ineffective against behavior-targeted attacks due to the mismatched threat model.
+**2. Time-Discounted Robust Training (TDRT): Prioritizing Early Decisions instead of Uniform Smoothing**
+
+With the attack characterized, the defense must determine "where and how strongly to constrain." Theorem 6.1 provides an upper bound on the adversary's gain:
+
+$$\sum_{t=0}^{\infty} \frac{\gamma^t}{1-\gamma} \mathbb{E}_{s \sim d_\pi^t}\big[D_{\text{KL}}(\pi(\cdot|s) \,\|\, \pi \circ \nu(\cdot|s))\big]$$
+
+This bound reveals two things: first, reducing the policy's sensitivity to state perturbations (suppressing the KL shift of the tampered policy) directly improves robustness; second, the $\gamma^t$ weight implies that shifts in early timesteps are more fatal than later ones—in sequential decision-making, early errors propagate and amplify. Accordingly, the TDRT training objective is:
+
+$$J_{\text{def}}(\pi) = -J_{\text{RL}}(\pi) + \lambda \max_\nu \sum_{s_t \in B} \gamma^t D_{\text{KL}}(\pi(\cdot|s_t) \,\|\, \pi \circ \nu(\cdot|s_t))$$
+
+This adds a worst-case KL regularization discounted by $\gamma^t$ to the regular RL objective. The difference from SA-PPO lies in this discounting: SA-PPO applies uniform policy smoothing across all timesteps, which yields similar robustness but at a cost of a 28.2% drop in task performance. TDRT concentrates the "smoothing budget" on early states, preserving more task capability for the same level of robustness. It also differs from adversarial training (ATLA/PA-ATLA), which simulates reward minimization attacks during training—a threat model mismatch that makes them ineffective against behavior-targeted attacks.
 
 ### Loss & Training
-- **Attack training**: Standard GAIL/ILfO within the constructed MDP $\hat{M}$
-- **Defense training**: PPO objective combined with temporally discounted worst-case KL divergence regularization
+- **Attack Training**: Run standard GAIL (requires target behavior demonstrations) or ILfO (requires only state trajectories) in the constructed MDP $\hat{M}$.
+- **Defense Training**: Superimpose the time-discounted worst-case KL divergence regularization term on the PPO objective. The hyperparameter $\lambda$ controls the trade-off between robustness and task performance.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on 10 task pairs in Meta-World; attack reward ↑ indicates a more successful attack.
+Attack performance across 10 Meta-World task pairs (Attack Reward ↑ = More Successful):
 
-| Attack Method | Requirement | Typical Attack Reward | Notes |
-|--------------|-------------|----------------------|-------|
-| Random | None | 947 | Weak perturbation |
+| Attack Method | Requirement | Typical Attack Reward | Note |
+| :--- | :--- | :--- | :--- |
+| Random | None | 947 | Random perturbations are weak |
 | PA-AD | White-box | 4255 | Requires policy gradients |
-| BIA-ILfD | Black-box (20 demos) | 3962 | Near white-box performance |
-| BIA-ILfO | No-box | ~3900 | Approaches ILfD in deterministic environments |
+| BIA-ILfD | Black-box (20 demos) | 3962 | Close to white-box performance |
+| BIA-ILfO | No-box | ~3900 | Close to ILfD in deterministic envs |
 
-Defense results (best attack reward ↓ = more robust):
+Defense performance (Best Attack Reward ↓ = More Robust):
 
 | Defense Method | Typical Attack Reward ↓ | Original Task Performance |
-|---------------|------------------------|--------------------------|
-| No defense | 1556 | Baseline |
-| ATLA-PPO | 1158 | Moderate |
-| SA-PPO | 403 | Poor (−28.2%) |
-| **TDRT-PPO** | **378** | **Good (near baseline)** |
+| :--- | :--- | :--- |
+| No Defense | 1556 | Baseline |
+| ATLA-PPO | 1158 | Average |
+| SA-PPO | 403 | Poor (-28.2%) |
+| **TDRT-PPO** | **378** | **Good (Baseline level)** |
 
 ### Ablation Study
 
 | Configuration | Key Finding |
-|--------------|-------------|
-| Temporal discounting vs. uniform smoothing | TDRT achieves comparable robustness with 28.2% higher task performance |
-| Number of demonstrations | As few as 4 demonstrations suffice for effective attacks |
-| Adversarial training methods (ATLA) | Ineffective against behavior-targeted attacks due to mismatched threat model |
-| Attack difficulty | Attacks become harder when victim and target behavior distributions diverge significantly (e.g., window-open, door-lock) |
+| :--- | :--- |
+| Time Discounting vs. Uniform | TDRT has equivalent robustness but 28.2% higher task performance |
+| Number of Demos | Effective attacks possible with only 4 demonstrations |
+| Adversarial Training (ATLA) | Ineffective against behavior-targeted attacks (designed for different threat models) |
+| Difficulty | Attacks are harder when victim and target distributions differ significantly (e.g., window-open, door-lock) |
 
 ### Key Findings
-- BIA achieves near-white-box attack performance using only 20 demonstrations, demonstrating that behavior-targeted attacks constitute a practical and dangerous real-world threat.
-- Adversarial training (ATLA) is nearly ineffective against behavior-targeted attacks, as it simulates reward-minimization attacks rather than behavior manipulation during training.
-- The temporal discounting in TDRT is the critical differentiating factor: SA-PPO's uniform smoothing achieves similar robustness at the cost of 28.2% task performance degradation, whereas TDRT preserves task capability by focusing on early timesteps.
-- Attack effectiveness degrades when the behavioral distributions of the victim and target diverge substantially.
+- BIA achieves attack performance close to white-box methods with only 20 demonstrations, proving that behavior-targeted attacks are a feasible and dangerous real-world threat.
+- Adversarial training (ATLA) is nearly ineffective against behavior-targeted attacks because it simulates reward minimization rather than behavior manipulation during training.
+- The time discounting in TDRT is the key differentiator: SA-PPO's uniform smoothing achieves similar robustness at the cost of 28.2% task performance, whereas TDRT preserves task capability by focusing on early steps.
+- Behavior-targeted attacks decrease in effectiveness when the victim and target behaviors differ significantly.
 
 ## Highlights & Insights
-- **The MDP reformulation (Theorem 5.1)** is particularly elegant: the key to converting white-box requirements into a black-box setting is embedding the victim policy into the environment dynamics—the adversary no longer needs to differentiate through the policy and instead performs standard RL within the newly constructed MDP. This idea is transferable to other security scenarios requiring white-box-to-black-box conversion.
-- **The insight that "early decisions matter more than later ones"** has broad applicability: in sequential decision-making, early errors propagate and amplify over time. This motivates prioritizing the protection of decision quality at early states in any RL robust training framework.
-- The attack and defense are studied as a unified framework: the theoretical analysis of the attack (Theorem 5.1) directly informs the defense design (Theorem 6.1), forming a complete and coherent closed loop.
+- **MDP Reconstruction (Theorem 5.1)**: Elegantly transforms white-box requirements into black-box ones by embedding the victim policy into the environment dynamics. This concept can be transferred to other security scenarios requiring white-to-black-box conversion.
+- **"Early decisions are more important than later ones"**: This insight has broad applicability. In sequential decisions, early errors propagate. This inspires prioritizing the decision quality of early states in any robust RL training.
+- **Unified Framework**: Studying attacks and defenses together, where the theoretical analysis of attacks (Theorem 5.1) directly guides the defense design (Theorem 6.1), forms a comprehensive closed loop.
 
 ## Limitations & Future Work
-- Attack effectiveness is limited in high-dimensional observation spaces (e.g., image-based inputs).
+- Attack effectiveness is limited in high-dimensional observation spaces (e.g., image inputs).
 - TDRT provides empirical robustness rather than certified robustness (no certified guarantee).
-- Attacks become difficult when the behavioral distributions of the victim and target diverge substantially—suggesting that certain scenarios may not require defense.
-- The defense relies on the assumption that the adversary operates under a KL divergence constraint.
+- Attacks are difficult when behavior distributions differ significantly, suggesting some scenarios may not require defense.
+- Defense depends on the assumption of the adversary's KL divergence constraint.
 
 ## Related Work & Insights
-- **vs. PA-AD (Zhang et al.)**: PA-AD requires white-box access to the victim policy; BIA achieves black-box/no-box attacks via MDP reformulation, with only ~7% degradation in attack effectiveness.
-- **vs. SA-PPO**: SA-PPO applies uniform smoothing across all timesteps; TDRT uses temporal discounting to focus on early steps—achieving comparable robustness with 28.2% higher task performance.
-- **vs. ATLA / adversarial training**: Adversarial training assumes a reward-minimizing attacker and is ineffective against behavior manipulation attacks—exposing the critical problem of **defense–threat model mismatch**.
+- **vs. PA-AD (Zhang et al.)**: PA-AD requires white-box access; BIA achieves black-box/no-box attacks via MDP reconstruction with only a ~7% performance gap.
+- **vs. SA-PPO**: SA-PPO smooths all timesteps uniformly; TDRT uses time discounting to focus on early steps—similar robustness but 28.2% higher task performance.
+- **vs. ATLA/Adversarial Training**: Adversarial training assumes reward-minimizing attackers and is ineffective against behavior manipulation, exposing the "defense-threat model mismatch" problem.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Both the MDP reformulation for behavior-targeted attacks and the temporally discounted defense are entirely novel concepts.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 10 task pairs in Meta-World with diverse attack/defense comparisons, but lacks experiments on high-dimensional observations.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from attack → theory → defense is exceptionally clear.
-- Value: ⭐⭐⭐⭐⭐ Reveals a neglected yet dangerous attack paradigm in RL and provides an effective defense.
+- Novelty: ⭐⭐⭐⭐⭐ MDP reconstruction and time-discounted defense are novel concepts.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 10 Meta-World task pairs and multiple baseline comparisons, though missing high-dimensional experiments.
+- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from attack to theory to defense is very clear.
+- Value: ⭐⭐⭐⭐⭐ Reveals a neglected but dangerous RL attack mode and provides an efficient defense.
 
 <!-- RELATED:START -->
 
@@ -128,10 +149,10 @@ Defense results (best attack reward ↓ = more robust):
 ## Related Papers
 
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
+- [\[ICLR 2026\] Minimax Optimal Adversarial Reinforcement Learning](minimax_optimal_adversarial_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](../../NeurIPS2025/reinforcement_learning/robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
 - [\[ICLR 2026\] Learning to Generate Unit Test via Adversarial Reinforcement Learning](learning_to_generate_unit_test_via_adversarial_reinforcement_learning.md)
 - [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
-- [\[ICML 2026\] Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/interaction-breaking_adversarial_learning_framework_for_robust_multi-agent_reinf.md)
 
 </div>
 

@@ -2,76 +2,77 @@
 title: >-
   [Paper Note] Spotlight on Token Perception for Multimodal Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes VPPO (Visually-Perceptive Policy Optimization), which quantifies the visual dependency of each token and refines learning signals at both the trajectory level…
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes Visually-Perceptive Policy Optimization (VPPO), which quantifies the vision dependency of each token to refine learning signals at both the trajectory and token levels, significantly enhancing the multimodal reasoning capabilities of Large Vision-Language Models.
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "RLVR"
-  - "multimodal reasoning"
-  - "token perception"
-  - "visual dependency"
-  - "policy optimization"
+  - ICLR 2026
+  - Reinforcement Learning
+  - RLVR
 date: 2026-05-08
-content_hash: 487114b491f94c2f
+content_hash: 5080fd462e9cafef
 ---
-
 # Spotlight on Token Perception for Multimodal Reinforcement Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.09285](https://arxiv.org/abs/2510.09285)  
 **Code**: [https://github.com/huaixuheqing/VPPO-RL](https://github.com/huaixuheqing/VPPO-RL)  
-**Area**: Multimodal Reinforcement Learning / Vision-Language Models
-**Keywords**: RLVR, multimodal reasoning, token perception, visual dependency, policy optimization
+**Area**: Multimodal Reinforcement Learning / Vision-Language Models  
+**Keywords**: RLVR, Multimodal Reasoning, Token Perception, Vision Dependency, Policy Optimization
 
 ## TL;DR
 
-This paper proposes VPPO (Visually-Perceptive Policy Optimization), which quantifies the visual dependency of each token and refines learning signals at both the trajectory level and the token level, significantly enhancing the multimodal reasoning capabilities of large vision-language models.
+This paper proposes Visually-Perceptive Policy Optimization (VPPO), which quantifies the vision dependency of each token to refine learning signals at both the trajectory and token levels, significantly enhancing the multimodal reasoning capabilities of Large Vision-Language Models.
 
 ## Background & Motivation
 
-- **Limitations of RLVR in multimodal settings**: Existing RLVR methods (e.g., GRPO, DAPO) are primarily designed for text-based reasoning and neglect the critical role of visual perception in multimodal scenarios. They broadcast a uniform learning signal to all tokens, failing to distinguish which tokens genuinely depend on visual information.
-- **Coupling of perception and reasoning**: Effective multimodal reasoning requires accurate visual perception as the foundation for logical inference. For instance, in geometry problems, the model must first identify from the image that OA and OB are radii of a circle before concluding that the triangle is isosceles.
-- **Core findings**:
-    - **Insight 1**: The visual dependency of tokens within a trajectory follows a sparse distribution — only a small fraction of tokens exhibit high visual dependency.
-    - **Insight 2**: Different reasoning trajectories show significant heterogeneity in overall visual dependency — not all correct paths constitute genuinely vision-driven reasoning.
+- **Limitations of RLVR in Multimodal Scenarios**: Existing RLVR frameworks (e.g., GRPO, DAPO) are primarily designed for text-based reasoning and overlook the critical role of visual perception in multimodal contexts. They broadcast uniform learning signals to all tokens, failing to distinguish which tokens truly rely on visual information.
+- **Coupling of Perception and Reasoning**: Effective multimodal reasoning requires accurate visual perception as the foundation for logical inference. For instance, in a geometry problem, the model must recognize from the image that OA and OB are radii of a circle to conclude it is an isosceles triangle.
+- **Key Findings**:
+    - **Key Insight 1**: The vision dependency of tokens within a trajectory is sparsely distributed—only a few tokens exhibit high vision dependency.
+    - **Key Insight 2**: There is significant heterogeneity in overall vision dependency across different reasoning trajectories—not all correct paths are truly driven by visual reasoning.
 
 ## Method
 
 ### Overall Architecture
 
-VPPO introduces two modules on top of standard GRPO: **Trajectory-level Advantage Shaping (TAS)** and **Token-level Gradient Filtering (TGF)**, which hierarchically regulate learning signals via visual dependency scores.
+The premise of VPPO is that since vision-dependent tokens are sparse and visual engagement varies greatly across trajectories, broadcasting uniform learning signals via GRPO to all tokens and trajectories is wasteful or even detrimental to the gradient. VPPO first quantifies the dependency of each token on the image using a metric that requires no additional annotation. This score then serves as a unified basis to redistribute signals at two levels: the trajectory level (macro), which amplifies paths that are truly "visually grounded" based on average dependency, and the token level (micro), which allows only key tokens with high vision dependency to contribute to the gradient. Both modules are built upon GRPO without altering the sampling or reward processes, allowing them to be integrated into existing RLVR training in a plug-and-play manner.
 
-### 1. Quantifying Token Visual Dependency
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Image I + Question"] --> B["GRPO Sampling<br/>G Reasoning Trajectories"]
+    B --> C["Vision Dependency Quantification<br/>Masked Forward KL Divergence S(s_t, I)"]
+    C -->|"Token-level (Micro)"| D["Token-level Gradient Filtering (TGF)<br/>Select top-k% tokens<br/>Construct binary mask m"]
+    C -->|"Trajectory-level (Macro)"| E["Trajectory-level Advantage Shaping (TAS)<br/>Average Dependency → Shaping Factor α"]
+    D --> F["VPPO Clipped Objective<br/>m controls who speaks · α controls the volume"]
+    E --> F
+    F --> G["Policy Update"]
+```
 
-The visual dependency of a token at time step $t$ is defined as the KL divergence between the output distributions conditioned on the original image and on a masked image:
+### Key Designs
 
-$$\mathcal{S}(s_t, I) := D_{\text{KL}}\left(\pi_\theta(\cdot|s_t, I) \| \pi_\theta(\cdot|s_t, I')\right)$$
+**1. Vision Dependency Quantification: Scoring Every Token via Masked Forward Pass**
 
-where $I$ is the original image and $I'$ is a non-informative masked version. A high $\mathcal{S}$ value indicates that the prediction of this token is highly dependent on visual input.
+To regulate signals hierarchically, one must first identify which tokens depend on the image. The authors define the vision dependency of a token at time $t$ as the KL divergence between the output distributions under the original image and a masked image: $\mathcal{S}(s_t, I) := D_{\text{KL}}\left(\pi_\theta(\cdot|s_t, I) \,\|\, \pi_\theta(\cdot|s_t, I')\right)$, where $I'$ is a masked version of the image replaced with non-informative content. The intuition is clear: if the predictive distribution of a token remains nearly unchanged after masking the image, it is likely generated based on linguistic priors; conversely, a larger $\mathcal{S}$ indicates the token's prediction is highly anchored in visual evidence. This score requires only one additional masked forward pass without extra annotations or auxiliary models. Empirically, the distribution is highly right-skewed—only a few tokens like numbers, geometric concepts, and logical operators receive high scores, confirming the observation of "sparse vision dependency."
 
-### 2. Token-level Gradient Filtering (TGF, Micro-level)
+**2. Token-level Gradient Filtering (TGF): Combatting Signal Dilution**
 
-For each trajectory $\tau_i$, the top-$k\%$ tokens with the highest visual dependency scores are selected to construct a binary gradient mask:
+Most tokens in a reasoning trajectory are generic (e.g., conjunctions, formatting tokens). Treating them equally to tokens that carry the weight of visual reasoning dilutes effective signals with noise. TGF selects the top-$k\%$ tokens with the highest vision dependency $\mathcal{S}$ for each trajectory $\tau_i$ to form a set $\mathcal{K}_i$ and constructs a binary mask $m_{i,t} = \mathbb{I}(t \in \mathcal{K}_i)$. Policy gradients are only calculated for these tokens, while others are masked. Experiments show $k=0.4$ is the optimal filtering ratio. This concentrates gradients on the few perceptive tokens that determine the correctness of reasoning, preventing low-information tokens from biasing the update direction.
 
-$$m_{i,t} = \mathbb{I}(t \in \mathcal{K}_i)$$
+**3. Trajectory-level Advantage Shaping (TAS): Amplifying Truly Vision-Driven Paths**
 
-Policy gradients are computed only for these critical tokens, filtering out noise from generic tokens and combating signal dilution.
-
-### 3. Trajectory-level Advantage Shaping (TAS, Macro-level)
-
-The mean visual dependency $\bar{\mathcal{S}}(\tau_i)$ of each trajectory is computed, and a shaping factor is generated via normalization:
+In GRPO, any trajectory with a correct answer receives a positive advantage. However, some "correct" trajectories are merely guessed through linguistic shortcuts rather than genuine visual reasoning. TAS calculates the average vision dependency $\bar{\mathcal{S}}(\tau_i)$ for each trajectory and maps this value to a shaping factor:
 
 $$\alpha(\tau_i) = \beta_{\min} + (\beta_{\max} - \beta_{\min}) \frac{\bar{\mathcal{S}}(\tau_i) - \min_{\tau_j} \bar{\mathcal{S}}(\tau_j)}{\max_{\tau_j} \bar{\mathcal{S}}(\tau_j) - \min_{\tau_j} \bar{\mathcal{S}}(\tau_j)}$$
 
-The shaped advantage is $\hat{A}'(\tau_i) = \alpha(\tau_i) \cdot \hat{A}_{\text{GRPO}}(\tau_i)$, amplifying updates for trajectories with high visual engagement while suppressing those with low visual dependency.
+falling within the interval $[\beta_{\min}, \beta_{\max}]$. The shaped advantage $\hat{A}'(\tau_i) = \alpha(\tau_i) \cdot \hat{A}_{\text{GRPO}}(\tau_i)$ gives larger updates to trajectories with high visual engagement and suppresses low-dependency paths, directing learning preference toward grounded reasoning.
 
-### 4. VPPO Objective
+### Loss & Training
+
+Integrating both modules into the GRPO clipped objective, the token-level mask $m_{i,t}$ controls "who speaks," and the trajectory-level shaped advantage $\hat{A}'_i$ controls "the volume":
 
 $$\mathcal{L}^{\text{VPPO}}(\theta) = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\frac{1}{|o_i|}\sum_{t=1}^{|o_i|} m_{i,t} \cdot \min\left(r_{i,t}(\theta)\hat{A}'_i, \text{clip}(r_{i,t}(\theta), 1-\varepsilon, 1+\varepsilon)\hat{A}'_i\right)\right]$$
 
-### Theoretical Analysis
-
-A variance reduction theorem is established: $\text{Var}(\mathbf{g}_{\text{VPPO}}) \approx k \cdot \mathbb{E}[\alpha(\tau)^2] \cdot \text{Var}(\mathbf{g}_{\text{GRPO}})$, where $k \in (0,1)$ is the sparsity ratio and $\alpha(\tau)$ is scaled to a narrow band around 1, resulting in a significant reduction in gradient variance.
+The authors further provide a variance reduction theorem $\text{Var}(\mathbf{g}_{\text{VPPO}}) \approx k \cdot \mathbb{E}[\alpha(\tau)^2] \cdot \text{Var}(\mathbf{g}_{\text{GRPO}})$. Since the sparsity rate $k \in (0,1)$ and $\alpha(\tau)$ is constrained near 1, the product results in a gradient variance significantly lower than GRPO, explaining why VPPO maintains more stable training and faster convergence.
 
 ## Key Experimental Results
 
@@ -84,7 +85,7 @@ A variance reduction theorem is established: $\text{Var}(\mathbf{g}_{\text{VPPO}
 | + DAPO | 68.3 | 66.6 | 82.1 | 41.5 | 30.5 | 68.0 | 46.8 | 35.9 | 55.0 |
 | **+ VPPO** | **71.6** | **68.1** | **82.8** | **46.5** | **33.3** | **71.5** | **47.9** | **37.9** | **57.5** |
 
-### Scaling to 32B
+### 32B Model Scaling
 
 | Model | Avg. |
 |------|------|
@@ -94,47 +95,47 @@ A variance reduction theorem is established: $\text{Var}(\mathbf{g}_{\text{VPPO}
 
 ### Key Findings
 
-- On the 7B model, VPPO achieves an average improvement of **19.2%** over the baseline, outperforming all open-source RL methods.
-- On the 32B model, an average gain of **7.6%** is observed.
-- Training is more stable and convergence is faster.
+- On the 7B model, VPPO achieves an average gain of **19.2%** over the baseline, outperforming all open-source RL methods.
+- On the 32B model, it yields a **7.6%** average gain.
+- Training is more stable with faster convergence.
 
 ## Ablation Study
 
 | Setting | Avg. Acc |
 |------|----------|
-| VPPO (full) | 57.5 |
-| TAS only (trajectory-level advantage shaping) | 55.8 |
-| TGF only (token-level gradient filtering) | 56.2 |
+| VPPO (Full) | 57.5 |
+| TAS Only (Trajectory-level Advantage Shaping) | 55.8 |
+| TGF Only (Token-level Gradient Filtering) | 56.2 |
 | w/o TAS + w/o TGF (DAPO baseline) | 55.0 |
 
-- TAS and TGF are each independently effective; their combination yields the best performance.
-- A gradient filtering ratio of $k=0.4$ is found to be optimal.
+- Both TAS and TGF are independently effective, with their combination yielding the best performance.
+- A gradient filtering ratio of $k=0.4$ is the optimal choice.
 
 ## Highlights & Insights
 
-1. **First token-perception perspective on multimodal RLVR**: The work reveals two key insights — the sparse distribution of visual dependency and the heterogeneity across trajectories.
-2. **Dual-level signal regulation**: The hierarchical design combining trajectory-level and token-level control is both elegant and effective.
-3. **Plug-and-play compatibility**: The method integrates seamlessly into mainstream algorithms such as GRPO and DAPO.
-4. **Theoretical grounding**: A formal proof of variance reduction is provided.
+1. **First analysis of multimodal RLVR from a token perception perspective**: Revealing two key insights: sparse vision dependency distribution and trajectory heterogeneity.
+2. **Dual-level signal regulation**: The hierarchical design of trajectory-level and token-level regulation is both elegant and effective.
+3. **Plug-and-play**: Seamlessly integrates into mainstream algorithms like GRPO and DAPO.
+4. **Theoretical support**: Provides proof for the variance reduction effect.
 
 ## Limitations & Future Work
 
-- Computing visual dependency requires additional forward passes over masked images, incurring extra computational cost.
-- Validation is limited to the Qwen2.5-VL model family; generalizability to other architectures remains to be examined.
-- The choice of masking strategy (i.e., how to construct $I'$) may affect the quality of dependency estimation.
+- Computing vision dependency requires an additional masked image forward pass, increasing computational overhead.
+- Validated only on the Qwen2.5-VL series; generalization to other model architectures remains to be verified.
+- The choice of masking strategy (how to construct $I'$) may affect the quality of dependency estimation.
 
 ## Related Work & Insights
 
-- **RL for multimodal reasoning**: GRPO, DAPO, NoisyRollout, VL-Rethinker, etc., all of which overlook visual perception.
-- **Reward design**: Perception-aware reward approaches such as PAPO-D, which however do not introduce algorithmic-level improvements.
-- **Critical token identification**: Branching-point detection and low-confidence exploration in RLHF, which are not tailored to visual dependency in multimodal settings.
+- **Multimodal Reasoning RL**: GRPO, DAPO, NoisyRollout, VL-Rethinker, etc., but all overlook visual perception.
+- **Reward Design**: Perception-aware reward methods like PAPO-D, but they do not improve the algorithm itself.
+- **Key Token Identification**: Bifurcation point detection in RLHF, exploration of low-confidence points, etc., but not tailored for multimodal vision dependency.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — A fresh perspective on multimodal RL through token-level visual dependency analysis.
-- **Technical Depth**: ⭐⭐⭐⭐ — Solid theoretical analysis with a formal proof of variance reduction.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Eight benchmarks, two model scales, and comprehensive ablations.
-- **Value**: ⭐⭐⭐⭐ — Plug-and-play design with substantial empirical gains.
+- **Novelty**: ⭐⭐⭐⭐ — Innovative perspective on multimodal RL through token vision dependency.
+- **Technical Depth**: ⭐⭐⭐⭐ — Solid theoretical analysis with a proof of variance reduction.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive testing across 8 benchmarks, two scales, and rigorous ablation.
+- **Value**: ⭐⭐⭐⭐ — Plug-and-play with significant performance gains.
 
 <!-- RELATED:START -->
 
@@ -142,11 +143,11 @@ A variance reduction theorem is established: $\text{Var}(\mathbf{g}_{\text{VPPO}
 
 ## Related Papers
 
+- [\[ICLR 2026\] Masked Skill Token Training for Hierarchical Off-Dynamics Transfer](masked_skill_token_training_for_hierarchical_off-dynamics_transfer.md)
+- [\[ICLR 2026\] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs](sparse_but_critical_a_token-level_analysis_of_distributional_shifts_in_rlvr_fine.md)
+- [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
+- [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
 - [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
-- [\[ICLR 2026\] Metis-SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start](metis-specs_decoupling_multimodal_learning_via_self-distilled_preference-based_c.md)
-- [\[ICLR 2026\] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation](mars-sep_multimodal-aligned_reinforced_sound_separation.md)
-- [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](../../CVPR2026/reinforcement_learning/msrl_scaling_generative_multimodal_reward_modeling.md)
-- [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
 
 </div>
 

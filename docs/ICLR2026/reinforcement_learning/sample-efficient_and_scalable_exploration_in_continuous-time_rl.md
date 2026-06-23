@@ -2,16 +2,22 @@
 title: >-
   [Paper Note] Sample-efficient and Scalable Exploration in Continuous-Time RL
 description: >-
-  [Reinforcement Learning] This paper proposes COMBRL, an algorithm that achieves scalable and sample-efficient exploration in continuous-time model-based RL by maximizing a weighted sum of extrinsic reward and epistemic u…
+  [ICLR 2026][Reinforcement Learning][continuous-time RL] The authors propose the COMBRL algorithm, which achieves scalable and sample-efficient exploration in continuous-time model-based RL with sublinear regret guarantees by maximizing the weighted sum of extrinsic rewards and model epistemic uncertainty.
 tags:
-  - "Reinforcement Learning"
+  - ICLR 2026
+  - Reinforcement Learning
+  - continuous-time RL
+  - model-based RL
+  - optimistic exploration
+  - epistemic uncertainty
+  - Gaussian processes
+  - Bayesian neural networks
 date: 2026-05-08
-content_hash: 456fd1c29466dc58
+content_hash: cdfa3b088e004e79
 ---
-
 # Sample-efficient and Scalable Exploration in Continuous-Time RL
 
-## Metadata
+## Meta Info
 - **Conference**: ICLR 2026
 - **arXiv**: [2510.24482](https://arxiv.org/abs/2510.24482)
 - **Code**: [https://go.klem.nz/combrl](https://go.klem.nz/combrl)
@@ -19,103 +25,104 @@ content_hash: 456fd1c29466dc58
 - **Keywords**: continuous-time RL, model-based RL, optimistic exploration, epistemic uncertainty, Gaussian processes, Bayesian neural networks
 
 ## TL;DR
-This paper proposes COMBRL, an algorithm that achieves scalable and sample-efficient exploration in continuous-time model-based RL by maximizing a weighted sum of extrinsic reward and epistemic uncertainty, with theoretical guarantees of sublinear regret.
+The authors propose the COMBRL algorithm, which achieves scalable and sample-efficient exploration in continuous-time model-based RL with sublinear regret guarantees by maximizing the weighted sum of extrinsic rewards and model epistemic uncertainty.
 
 ## Background & Motivation
-- Most RL algorithms assume discrete-time dynamics, yet real-world control systems (robotics, biological processes) are naturally described by ODEs. Discretization may obscure critical temporal behaviors and limit control flexibility.
-- Prior continuous-time MBRL methods (e.g., OCORL) achieve optimistic exploration via joint optimization over plausible dynamics, but at prohibitive computational cost: coupling optimization over the plausible dynamics set expands the input dimension from $d_u$ to $d_u + d_x$, making the approach intractable for high-dimensional systems.
-- Prior methods rely on extrinsic reward signals and cannot handle unsupervised RL or system identification scenarios.
-- **Core Problem**: How to design an exploration mechanism that is simultaneously scalable, sample-efficient, and theoretically grounded within a continuous-time ODE framework?
+- Most RL algorithms assume discrete-time dynamics, but real-world control systems (robotics, biological processes) are naturally described by ODEs. Discretization may obscure critical temporal behaviors and limit control flexibility.
+- Prior continuous-time MBRL methods (e.g., OCORL) implement optimistic exploration by jointly optimizing policies and plausible dynamics, which is computationally expensive. It requires coupled optimization over the set of plausible dynamics, increasing the input dimension from $d_u$ to $d_u + d_x$, making it unscalable to high-dimensional systems.
+- Previous methods rely on extrinsic reward signals, failing to handle scenarios such as unsupervised RL or system identification.
+- **Core Problem**: How to design an exploration mechanism within the continuous-time ODE framework that is scalable, sample-efficient, and theoretically guaranteed?
 
 ## Method
 
 ### Overall Architecture
-COMBRL (Continuous-time Optimistic Model-Based RL) operates in an episodic continuous-time setting, alternating between two steps:
-1. **Model Learning**: A probabilistic model (GP or BNN) is trained to learn the ODE $\bm{f}^*$, yielding mean prediction $\bm{\mu}_n(\bm{z})$ and epistemic uncertainty $\bm{\sigma}_n(\bm{z})$.
-2. **Policy Selection**: The policy is selected by maximizing a reward-plus-uncertainty objective.
+COMBRL (Continuous-time Optimistic Model-Based RL) addresses exploration in continuous-time ODE systems to be both "scalable and sample-efficient." It divides the control process into episodes, with each repeating a closed-loop cycle: first, fitting the unknown dynamics $\bm{f}^*$ using a probabilistic model (GP or BNN) to obtain the mean prediction $\bm{\mu}_n(\bm{z})$ and point-wise epistemic uncertainty $\bm{\sigma}_n(\bm{z})$; then, planning the next policy by targeting the sum of "extrinsic reward + uncertainty" to collect new data for the model. The key lies in the fact that, while methods like OCORL require coupled optimization over an entire set of plausible dynamics for "optimism" (which is costly and causes dimension expansion), COMBRL collapses "optimism" into a scalar-weighted objective. This reduces planning to standard optimal control with a single reward function, allowing extension to high-dimensional systems using neural networks and covering both supervised and unsupervised exploration through a single hyperparameter.
 
-### Key Design: Optimistic Planning Objective
-At each episode $n$, policy $\bm{\pi}_n$ is selected by maximizing:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    D["Historical Data<br/>State-Action-Derivative Samples"] --> FIT["Fit Probabilistic Model GP / BNN<br/>Obtain mean μ_n + point-wise uncertainty σ_n"]
+    FIT --> OBJ["Optimistic Planning Objective<br/>Extrinsic reward r + λ_n·σ (Intrinsic reward)"]
+    LAM["Scalar λ_n<br/>Static / Annealing / Auto-tuning"] --> OBJ
+    OBJ --> PLAN["Plan using Mean Model μ_n only<br/>Obtain policy π_n (No joint optimization)"]
+    PLAN --> MSS["Measurement Selection Strategy MSS<br/>Decide when to observe, execute π_n"]
+    MSS -->|"Add to dataset, next episode"| D
+```
 
-$$\bm{\pi}_n = \arg\max_{\bm{\pi} \in \Pi} \int_0^T \frac{r(\bm{x}'(s), \bm{u}(s)) + \lambda_n \cdot \|\bm{\sigma}_{n-1}(\bm{x}'(s), \bm{u}(s))\|}{1 + \lambda_n} ds$$
+### Key Designs
 
-where $\lambda_n$ controls the trade-off between extrinsic reward and epistemic uncertainty:
-- $\lambda_n = 0$: greedy policy (pure exploitation)
-- $0 < \lambda_n < \infty$: balanced exploration and exploitation
-- $\lambda_n \to \infty$: purely unsupervised exploration
+**1. Optimistic Planning Objective: Integrating Exploration Motivation into Reward**
 
-### $\lambda_n$ Selection Strategies
-- **Static**: Fixed hyperparameter tuned via grid search.
-- **Annealing Schedule**: $\lambda_n = \lambda_0 \cdot (1 - n/N)$, encouraging more exploration early and exploitation late.
-- **Automatic Tuning**: Adaptive selection based on mutual information gain.
+In continuous time, it is not possible to encourage exploration by adding noise to state transitions step-by-step as in discrete MBRL. Instead, COMBRL selects the policy in each episode $n$ using a weighted integral objective:
 
-### Key Distinction from Prior Methods
-COMBRL does not require joint optimization over the set of plausible dynamics. In practice, it uses the mean model $\bm{\mu}_n$ selected from $\mathcal{M}_{n-1} \cap \mathcal{F}$, and realizes optimistic exploration via intrinsic reward. This avoids the reparameterization trick in OCORL that causes input-dimension inflation.
+$$\bm{\pi}_n = \arg\max_{\bm{\pi} \in \Pi} \int_0^T \frac{r(\bm{x}'(s), \bm{u}(s)) + \lambda_n \|\bm{\sigma}_{n-1}(\bm{x}'(s), \bm{u}(s))\|}{1 + \lambda_n}\, ds$$
 
-### Measurement Selection Strategy (MSS)
-In continuous-time RL, the agent must also decide when to observe and control the system. The MSS $S = (S_n)_{n \geq 1}$ specifies measurement time points within each episode, affecting data collection quality and the regret bound.
+The first part of the numerator is the extrinsic reward $r$, and the second part is the epistemic uncertainty $\|\bm{\sigma}_{n-1}\|$ at that state-action pair, acting as an intrinsic reward that pushes the policy toward regions where the model is uncertain. The scalar $\lambda_n$ adjusts the ratio between the two, while the denominator $1+\lambda_n$ normalizes the objective. Consequently, exploration no longer relies on a joint search over dynamic sets but becomes a standard optimal control problem for a **single, known** reward function, compatible with any off-the-shelf continuous-time planner.
 
-### Theoretical Guarantees
-**Theorem 1 (Regret Bound)**: Under assumptions of Lipschitz continuity, sub-Gaussian noise, and a well-calibrated model, the cumulative regret of COMBRL satisfies:
+**2. Single Scalar $\lambda_n$ Unifying Supervised and Unsupervised Exploration**
 
-$$R_N \leq \mathcal{O}\left(\sqrt{\mathcal{I}_N^3(\bm{f}^*, S) \cdot N}\right)$$
+The same $\lambda_n$ continuously toggles the agent's behavior: $\lambda_n = 0$ degenerates to greedy exploitation of extrinsic rewards; $0 < \lambda_n < \infty$ balances exploitation and exploration; and $\lambda_n \to \infty$ discards extrinsic rewards entirely for pure unsupervised system identification. Since the exploration motivation is integrated into the same objective, this spectrum can be traversed without changing the algorithm. The paper provides three scheduling methods for $\lambda_n$: static (grid search), annealing ($\lambda_n \propto \lambda_0 (1 - n/N)$, emphasizing exploration early on), and auto-tuning based on mutual information gain. Experiments show that auto-tuning approaches the performance of best-tuned hyperparameters, saving significant manual effort.
 
-where $\mathcal{I}_N$ denotes model complexity. For RBF kernels with equidistant MSS, $\mathcal{I}_N$ grows as $\text{polylog}(N)$, guaranteeing sublinear regret.
+**3. Mean Model instead of Joint Optimization: Scalability through No Dimension Expansion**
 
-**Theorem 2 (Unsupervised Sample Complexity)**: Under pure intrinsic exploration ($\lambda_n \to \infty$), the maximum epistemic uncertainty decays at rate $\mathcal{O}(\sqrt{\mathcal{I}_N^3 / N})$.
+To achieve optimism, OCORL requires joint optimization over the set of plausible dynamics $\mathcal{M}_{n-1} \cap \mathcal{F}$ and the policy, using reparameterization tricks that increase the planning input dimension from $d_u$ to $d_u + d_x$, which is computationally prohibitive in high-dimensional systems. COMBRL argues this step is unnecessary: since uncertainty is already included as an intrinsic reward, any model from $\mathcal{M}_{n-1} \cap \mathcal{F}$ can be used for planning. In practice, the mean model $\bm{\mu}_n$ is used directly. This eliminates dimension expansion, making the method agnostic to model types (GP, BNN) and planners, with computational costs roughly $1/3$ of OCORL.
+
+**4. Measurement Selection Strategy (MSS) and Dual Theoretical Guarantees**
+
+While discrete RL assumes observations at every step, continuous-time systems must decide **when** to sample and control within $[0,T]$. COMBRL adopts the Measurement Selection Strategy (MSS) $S = (S_n)_{n \geq 1}$ from Treven et al. (2023) to formalize this. The paper provides two guarantees. For the supervised case (Theorem 1): under assumptions of Lipschitz continuity, sub-Gaussian noise, and well-calibrated models, the cumulative regret $R_N \leq \mathcal{O}\big(\sqrt{\mathcal{I}_N^3(\bm{f}^*, S) \cdot N}\big)$, where $\mathcal{I}_N$ is the model complexity (information gain). For an RBF kernel with equidistant MSS, $\mathcal{I}_N$ grows at a rate of $\text{polylog}(N)$, resulting in sublinear $R_N$ and convergence to the optimal policy. For the unsupervised case (Theorem 2, $\lambda_n \to \infty$): the maximum epistemic uncertainty decays at a rate of $\mathcal{O}(\sqrt{\mathcal{I}_N^3 / N})$. Both bounds explicitly depend on MSS $S$, indicating that the timing of observations is as critical to learning efficiency as the policy itself.
 
 ## Key Experimental Results
 
-### Main Results: Learning Performance under GP Dynamics
+### Main Results: Learning performance under GP dynamics
 
-| Environment | Method | Asymptotic Performance | Compute Ratio |
+| Environment | Method | Asymptotic Performance | Computation Time Ratio |
 |------|------|----------|-----------|
 | Pendulum | Mean (λ=0) | Suboptimal | 1× |
-| Pendulum | PETS | Moderate | ~1× |
-| Pendulum | OCORL | Near-optimal | ~3× |
-| Pendulum | **COMBRL** | **Near-optimal** | **~1×** |
+| Pendulum | PETS | Medium | ~1× |
+| Pendulum | OCORL | Optimal Level | ~3× |
+| Pendulum | **Ours** | **Optimal Level** | **~1×** |
 | MountainCar | Mean (λ=0) | Suboptimal | 1× |
-| MountainCar | **COMBRL** | **Optimal** | ~1× |
+| MountainCar | **Ours** | **Optimal** | ~1× |
 
-> COMBRL matches or surpasses OCORL in performance while requiring only approximately one-third of its computational cost.
+> Ours (COMBRL) matches or exceeds OCORL performance while requiring only ~1/3 of the computational cost.
 
 ### Ablation Study: Effect of Intrinsic Reward
 
-| Environment | Mean (λ=0) | PETS | COMBRL (auto λ) | Performance Gain |
+| Environment | Mean (λ=0) | PETS | Ours (auto λ) | Gain |
 |------|-----------|------|-----------------|---------|
-| Reacher (easy) | ~Baseline | Moderate | Best | Significant |
-| Finger (spin) | ~Baseline | Moderate | Best | Significant |
-| Cartpole (balance) | ~Baseline | Near-best | Best | Moderate |
-| Hopper (stand) | ~Baseline | Moderate | Best | Significant |
+| Reacher (easy) | ~Baseline | Medium | Optimal | Significant |
+| Finger (spin) | ~Baseline | Medium | Optimal | Significant |
+| Cartpole (balance) | ~Baseline | Close | Optimal | Medium |
+| Hopper (stand) | ~Baseline | Medium | Optimal | Significant |
 
-> COMBRL achieves the largest performance gains in sparse-reward or underactuated tasks, with consistent improvements in higher-dimensional domains. Automatic tuning of $\lambda_n$ proves effective.
+> Ours achieves the largest gains in sparse-reward or under-actuated tasks, with consistent improvements in high-dimensional domains. Auto-tuning of $\lambda_n$ is effective.
 
 ### Key Findings
-1. COMBRL consistently outperforms the greedy baseline and PETS across all tested environments.
-2. COMBRL matches OCORL in performance while incurring approximately one-third of the computational overhead.
-3. Models learned via unsupervised exploration transfer to unseen downstream tasks.
-4. Automatic $\lambda_n$ tuning achieves performance close to the best manually tuned hyperparameter.
+1. Ours (COMBRL) consistently outperforms greedy baselines and PETS across all tested environments.
+2. Performance is comparable to OCORL, but with only ~1/3 of the computational overhead.
+3. Models learned unsupervised can transfer to unseen downstream tasks.
+4. Auto-tuned $\lambda_n$ performs close to the best manually-tuned hyperparameters.
 
 ## Highlights & Insights
 - **Unified Framework**: A single scalar $\lambda_n$ elegantly unifies supervised and unsupervised RL settings.
-- **Scalability**: By avoiding optimization over the plausible dynamics set, the method is compatible with neural network models such as BNNs.
-- **Theoretical Completeness**: Both supervised regret bounds and unsupervised sample complexity bounds are established.
-- **Explicit MSS Dependence**: This work is the first to explicitly characterize the impact of measurement strategy on continuous-time RL performance.
+- **Scalability**: By avoiding optimization over the plausible dynamics set, neural network models like BNNs can be utilized.
+- **Theoretical Completeness**: Provides both supervised regret bounds and unsupervised sample complexity bounds.
+- **Explicit Dependence on MSS**: For the first time, the impact of the measurement strategy on continuous-time RL performance is clarified.
 
 ## Limitations & Future Work
-- The theoretical analysis relies on RKHS smoothness assumptions and well-calibrated model assumptions, which BNNs may not fully satisfy in practice.
-- Experiments are validated only on moderate-dimensional tasks (up to DMC environments); performance on very high-dimensional settings (e.g., pixel-based inputs) remains to be verified.
-- Optimal selection of $\lambda_n$ requires further investigation, and the theoretical guarantees of the automatic tuning approach are limited.
+- Theoretical analysis relies on RKHS smoothness and well-calibrated model assumptions, which BNNs might not fully satisfy in practice.
+- Experiments are conducted in medium-dimensional tasks (up to DMC environments); performance in ultra-high dimensions (e.g., pixel inputs) needs verification.
+- The optimal selection strategy for $\lambda_n$ requires further exploration, as current auto-tuning methods have limited theoretical guarantees.
 
 ## Related Work & Insights
-- **Continuous-time MBRL**: OCORL (Treven et al., 2023) provides theoretical guarantees but does not scale; Yildiz et al. (2021) adopt a greedy approach without exploration.
-- **Intrinsic Motivation / Unsupervised RL**: Sekar et al. (2020), Pathak et al. (2019), Sukhija et al. (2023) all operate in discrete time.
-- **Discrete-time Counterpart**: Sukhija et al. (2025b) study a discrete-time variant; COMBRL addresses the distinct theoretical and experimental requirements of the continuous-time setting.
+- **Continuous-time MBRL**: OCORL (Treven et al., 2023) provides theoretical guarantees but is not scalable; Yildiz et al. (2021) uses a greedy approach without exploration.
+- **Intrinsic Motivation/Unsupervised RL**: Sekar et al. (2020), Pathak et al. (2019), and Sukhija et al. (2023) all focus on discrete time.
+- **Discrete-time Counterparts**: Sukhija et al. (2025b) study discrete-time versions, while COMBRL addresses the distinct theoretical and experimental requirements of continuous time.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Unifies reward-plus-uncertainty optimistic exploration in the continuous-time setting, handling both supervised and unsupervised scenarios.
-- Theoretical Depth: ⭐⭐⭐⭐ — Dual guarantees of sublinear regret and sample complexity.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-environment comparisons, ablations, and automatic tuning validation.
+- Novelty: ⭐⭐⭐⭐ — Unifies reward+uncertainty optimistic exploration in continuous time for both supervised/unsupervised scenarios.
+- Theoretical Depth: ⭐⭐⭐⭐ — Dual guarantees for sublinear regret and sample complexity.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive comparisons across environments, ablations, and auto-tuning validation.
 - Value: ⭐⭐⭐⭐ — Computationally efficient and applicable to continuous-time physical control systems.
 
 <!-- RELATED:START -->

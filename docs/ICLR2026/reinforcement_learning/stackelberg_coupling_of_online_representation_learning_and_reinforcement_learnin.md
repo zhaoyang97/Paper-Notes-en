@@ -2,80 +2,88 @@
 title: >-
   [Paper Note] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Stackelberg Game] This paper proposes SCORER, a framework that models representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-timescal…
+  [ICLR 2026][Reinforcement Learning][Deep Q-Learning] The SCORER framework is proposed to model representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-time-scale updates (slow update for the Q-network as the leader and fast update for the encoder as the follower), it achieves stable co-adaptation and enhances performance
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Stackelberg Game"
-  - "Representation Learning"
-  - "Deep Q-Learning"
-  - "Two-Timescale"
-  - "Variance Minimization"
+  - ICLR 2026
+  - Reinforcement Learning
+  - Deep Q-Learning
 date: 2026-05-08
-content_hash: c6df223b48514a2f
+content_hash: aa8e29c27c2b95fe
 ---
-
 # Stackelberg Coupling of Online Representation Learning and Reinforcement Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.07452](https://arxiv.org/abs/2508.07452)  
 **Code**: [https://github.com/fernando-ml/SCORER](https://github.com/fernando-ml/SCORER)  
-**Area**: Reinforcement Learning / Representation Learning
-**Keywords**: Stackelberg Game, Representation Learning, Deep Q-Learning, Two-Timescale, Variance Minimization
+**Area**: Reinforcement Learning / Representation Learning  
+**Keywords**: Stackelberg Game, Representation Learning, Deep Q-Learning, Two-Time-Scale, Variance Minimization
 
 ## TL;DR
 
-This paper proposes SCORER, a framework that models representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-timescale updates—where the Q-network acts as the slow-updating leader and the encoder as the fast-updating follower—SCORER achieves stable co-adaptation without modifying the network architecture.
+The SCORER framework is proposed to model representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-time-scale updates (slow update for the Q-network as the leader and fast update for the encoder as the follower), it achieves stable co-adaptation and enhances performance without altering the network architecture.
 
 ## Background & Motivation
 
-- **Deadly Triad**: In Deep Q-Learning, the combination of function approximation, bootstrapping, and off-policy learning induces instability, potentially leading to representation collapse and catastrophic learning failures.
-- **Limitations of Monolithic Networks**: Conventional approaches jointly learn representations and value functions within a single network, forcing representations to continuously adapt to non-stationary value targets while value estimates depend on a shifting representation, forming a vicious cycle.
-- **Gradient Conflicts from Auxiliary Losses**: Introducing auxiliary losses (e.g., self-supervised objectives) to stabilize representations may conflict with the primary value learning objective.
-- **Mechanism**: Rather than simply adding auxiliary losses, SCORER fundamentally restructures the optimization problem by modeling it as a hierarchical Stackelberg game.
+- **Deadly Triad Problem**: The combination of function approximation, bootstrapping, and off-policy learning in Deep Q-Learning leads to instability, potentially causing representation collapse and catastrophic learning failure.
+- **Limitations of Monolithic Networks**: Traditional methods learn representations and value functions simultaneously within a single network. This forces the representation to constantly adapt to non-stationary value targets, while value estimation depends on changing representations, creating a vicious cycle.
+- **Auxiliary Loss Conflicts**: Introducing extra auxiliary losses (e.g., self-supervised objectives) to stabilize representations may cause gradient conflicts with the primary value learning objective.
+- **Core Idea**: Instead of simply adding auxiliary losses, the optimization problem is fundamentally restructured by modeling it as a hierarchical Stackelberg game.
 
 ## Method
 
 ### Overall Architecture
 
-SCORER decomposes the agent into two strategic players:
-- **Leader (control network $Q_\theta$)**: Responsible for value estimation; updated slowly to provide stable targets.
-- **Follower (perception network $f_\phi$)**: Responsible for representation learning; updated rapidly to compute the best response to the leader's strategy.
+SCORER aims to resolve the vicious cycle where representation and value functions hinder each other: the representation tracks non-stationary value targets, while value estimation relies on ever-changing representations. It decomposes the agent from a single network into two players with a leader-follower relationship—the control network $Q_\theta$ acts as the leader (responsible for value estimation, moving on a slow time scale to provide stable targets), and the perception network $f_\phi$ acts as the follower (responsible for representation learning, moving on a fast time scale to learn an optimal response to the current leader). At each step, samples are drawn from the replay buffer, the perception network encodes representations, and the control network calculates Q-values and Bellman errors. Both players optimize different statistics of this error, and their updates are organized into an approximate Stackelberg equilibrium using the ratio of fast and slow learning rates. The method maintains the existing network architecture and only rearranges the optimization scheme.
 
-### 1. Leader Objective: Minimizing MSBE
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    S["State s<br/>(Sampled from replay buffer)"] --> F["Perception Network f_φ (follower)<br/>Fast timescale α_φ"]
+    F -->|"Representation f_φ(s)"| Q["Control Network Q_θ (leader)<br/>Slow timescale α_θ"]
+    Q -->|"Q-value + Target Y"| D["Bellman Error<br/>δ = Y − Q_θ(f_φ(s),a)"]
+    D --> FL["Follower Goal<br/>Minimize Variance Var(δ)"]
+    D --> LL["Leader Goal<br/>Minimize MSBE E[δ²]"]
+    FL -.->|"Update φ (Fast)"| F
+    LL -.->|"Update θ (Slow)"| Q
+```
+
+### Key Designs
+
+**1. Leader Goal: Minimizing MSBE given Optimal Representation**
+
+To address the dependency of value estimation on changing representations, the leader focuses solely on value accuracy. It assumes the follower has provided the optimal representation $f_{\phi^*(\theta)}$ and minimizes the Mean Squared Bellman Error (MSBE) accordingly:
 
 $$\min_\theta \mathcal{L}_{\text{leader}}(Q_\theta, f_{\phi^*(\theta)}) \triangleq \mathbb{E}_{(s,a,r,s') \sim \mathcal{B}} \left[(Y - Q_\theta(f_{\phi^*(\theta)}(s), a))^2\right]$$
 
-### 2. Follower Objective: Minimizing Bellman Error Variance
+This matches the standard Q-learning goal, but the representation no longer drifts passively with the value target; instead, it comes from an independent player providing an optimal response, decoupling the tracking issue.
+
+**2. Follower Goal: Minimizing Bellman Error Variance instead of MSBE**
+
+To address the representation tracking issue, the follower does not directly minimize the mean Bellman error. Instead, it minimizes the variance within a batch:
 
 $$\phi^*(\theta) \in \arg\min_\phi \mathcal{L}_{\text{follower}}(f_\phi, Q_\theta) \triangleq \text{Var}_{j \in B}[\delta_j(\phi, \theta)]$$
 
-where $\delta_j(\phi, \theta) = Y_j - Q_\theta(f_\phi(s_j), a_j)$ is the Bellman error. Variance minimization is preferred over MSBE because it encourages representations that produce more consistent Bellman errors, making them more robust to noisy TD targets and directly countering the root cause of the deadly triad.
+Where $\delta_j(\phi, \theta) = Y_j - Q_\theta(f_\phi(s_j), a_j)$. This is a core counter-intuitive step: minimizing variance forces the representation to produce consistent Bellman errors across different samples, making it robust against bootstrapped noise targets. This directly tackles the root of the Deadly Triad without causing the gradient conflicts associated with shared MSBE minimization.
 
-### 3. Two-Timescale Approximation of Bilevel Optimization
+**3. Two-Time-Scale Approximation for Stackelberg Equilibrium**
 
-The problem is formally cast as bilevel optimization:
+The targets form a bilevel optimization problem where the leader is outer and the follower's optimal response is the inner constraint:
 
 $$\min_\theta \mathcal{L}_{\text{leader}}(Q_\theta, f_{\phi^*(\theta)}) \quad \text{s.t.} \quad \phi^*(\theta) \in \arg\min_\phi \mathcal{L}_{\text{follower}}(f_\phi, Q_\theta)$$
 
-The Stackelberg equilibrium is approximated via two-timescale gradient descent:
-- Follower uses a larger learning rate $\alpha_{\phi,k}$ (fast timescale)
-- Leader uses a smaller learning rate $\alpha_{\theta,k}$ (slow timescale)
-- Satisfying $\lim_{k \to \infty} \alpha_{\theta,k} / \alpha_{\phi,k} = 0$
-
-Update rules (with stop-gradient to block gradient flow):
+Since computing exact inner responses is expensive, SCORER uses two-time-scale gradient descent: the follower uses a larger learning rate $\alpha_{\phi,k}$ (fast scale) and the leader uses a smaller learning rate $\alpha_{\theta,k}$ (slow scale), such that $\lim_{k \to \infty} \alpha_{\theta,k} / \alpha_{\phi,k} = 0$. In the leader's slow window, the follower sees a quasi-static $Q_\theta$ and converges to an optimal response. Updates use stop-gradients (denoted as $\bar{\theta_k}$, $\bar{\phi_{k+1}}$) to cut cross-player gradient flows:
 
 $$\phi_{k+1} \leftarrow \phi_k - \alpha_{\phi,k} \nabla_\phi \mathcal{L}_{\text{follower}}(\phi_k; B_{\text{follower}}, Y, \bar{\theta_k})$$
 
 $$\theta_{k+1} \leftarrow \theta_k - \alpha_{\theta,k} \nabla_\theta \mathcal{L}_{\text{leader}}(\theta_k; B_{\text{leader}}, Y, \bar{\phi_{k+1}})$$
 
-### 4. Implementation Simplicity
+**4. Plug-and-Play: Learning Rate Modification without Structural Changes**
 
-SCORER is straightforward to implement—it requires only separate decaying learning rates for the two components, with no modifications to the network architecture or additional modules.
+This game-theoretic restructuring is implemented simply by splitting existing networks into perception/control segments and assigning different decaying learning rates. SCORER can be integrated into DQN, DDQN, Dueling DQN, R2D2, PQN, etc., with negligible computational overhead (measured at 0.99–1.01x speed).
 
 ## Key Experimental Results
 
-### Main Results: MinAtar Environments (Final IQM Return, 30 seeds)
+### Main Results: MinAtar Environment (Final IQM Return, 30 seeds)
 
 | Algorithm | Method | Asterix | Breakout | Freeway | SpaceInvaders | Speed |
 |-----------|--------|---------|----------|---------|---------------|-------|
@@ -83,51 +91,51 @@ SCORER is straightforward to implement—it requires only separate decaying lear
 | DQN | **SCORER** | **54.78** | **65.69** | **63.03** | **148.71** | 0.99x |
 | DDQN | Baseline | 50.77 | 36.47 | 62.22 | 116.72 | 1.00x |
 | DDQN | **SCORER** | **52.59** | **64.44** | **62.68** | **146.67** | 1.00x |
-| DuelingDQN | Baseline | 39.22 | 27.81 | 61.89 | 121.21 | 1.00x |
-| DuelingDQN | **SCORER** | **52.28** | **60.04** | **62.27** | **139.08** | 1.01x |
+| DuelingDQN| Baseline | 39.22 | 27.81 | 61.89 | 121.21 | 1.00x |
+| DuelingDQN| **SCORER** | **52.28** | **60.04** | **62.27** | **139.08** | 1.01x |
 
 ### Key Findings
 
-- On Breakout, DQN+SCORER achieves **more than a 3× improvement** in final score (19.16 → 65.69).
-- SCORER enables replay-buffer-based methods to compete with advanced approaches such as PQN.
-- Computational overhead is negligible (0.99–1.01×).
+- DQN+SCORER improved the final score on Breakout by **over 3x** (19.16 → 65.69).
+- SCORER makes legacy replay-buffer methods competitive with advanced methods like PQN.
+- Computational overhead is near-zero (0.99-1.01x).
 
 ### Ablation Study
 
-| Follower Objective | Performance |
-|-------------------|-------------|
-| Bellman Error Variance | **Best** |
-| MSBE | Second |
-| No Follower | Baseline |
+| Follower Goal | Performance |
+|---------------|-------------|
+| Bellman Error Variance | **Optimal** |
+| MSBE | Suboptimal |
+| No follower | Baseline |
 
 - Variance minimization consistently outperforms direct MSBE minimization.
-- Using a separate batch for the follower yields better performance.
+- Independent batch sampling for the follower yields better results.
 
 ## Highlights & Insights
 
-1. **Game-Theoretic Novelty**: This is the first work to model the representation–control interaction in value-based RL as a Stackelberg game.
-2. **Minimal Implementation**: Only learning rate schedules need to be modified; no architectural changes are required.
-3. **Broad Applicability**: Effective across DQN, DDQN, Dueling DQN, R2D2, and PQN.
-4. **Theoretical Grounding**: Two-timescale convergence theory guarantees convergence to first-order stationary points.
+1.  **Novel Game-Theoretic Perspective**: First to model representation-control interaction in value-based RL as a Stackelberg game.
+2.  **Minimalist Implementation**: Only requires learning rate schedule modifications without changing architectures.
+3.  **Broad Applicability**: Effective across DQN, DDQN, Dueling DQN, R2D2, and PQN.
+4.  **Theoretical Foundation**: Two-time-scale convergence theory guarantees convergence to first-order stationary points.
 
 ## Limitations & Future Work
 
-- Requires tuning decay parameters for two separate learning rates.
-- Theoretical analysis relies on first-order approximations, omitting the effect of implicit gradient terms.
-- Validation is primarily conducted in discrete action spaces; effectiveness in continuous action settings remains unexplored.
+- Requires tuning of decay parameters for two different learning rates.
+- Theoretical analysis relies on first-order approximations, omitting implicit gradient effects.
+- Primarily validated in discrete action spaces; effectiveness in continuous action spaces remains unexplored.
 
 ## Related Work & Insights
 
 - **Representation Learning in RL**: Auxiliary tasks (SPR, CURL), contrastive learning, self-supervised methods.
-- **Two-Timescale Optimization**: TTSA theory (Borkar 1997; Hong et al. 2023).
-- **Value Decomposition Methods**: Architectures such as Dueling DQN separate value components structurally but lack game-theoretic coupling.
+- **Two-Time-Scale Optimization**: TTSA theory (Borkar 1997, Hong et al. 2023).
+- **Value Decomposition**: Architectural separation like Dueling DQN, but lacking game-theoretic coupling.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Introduces Stackelberg game formulation to representation–value function co-learning.
-- **Technical Depth**: ⭐⭐⭐⭐ — Formal bilevel optimization framework with convergence analysis.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers multiple algorithms and environments with comprehensive ablations.
-- **Value**: ⭐⭐⭐⭐⭐ — Simple to implement, plug-and-play, with no additional computational overhead.
+- **Novelty**: ⭐⭐⭐⭐ — Introduces Stackelberg games to representation-value co-learning.
+- **Technical Depth**: ⭐⭐⭐⭐ — Formal bilevel optimization framework and convergence analysis.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers multiple algorithms and environments with complete ablations.
+- **Value**: ⭐⭐⭐⭐⭐ — Simple to implement, plug-and-play, with zero additional computational cost.
 
 <!-- RELATED:START -->
 
@@ -135,11 +143,11 @@ SCORER is straightforward to implement—it requires only separate decaying lear
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
-- [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)
-- [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
+- [\[ICLR 2026\] 3D-aware Disentangled Representation for Compositional Reinforcement Learning](3d-aware_disentangled_representation_for_compositional_reinforcement_learning.md)
 - [\[ICLR 2026\] Learning to Play Multi-Follower Bayesian Stackelberg Games](learning_to_play_multi-follower_bayesian_stackelberg_games.md)
-- [\[ICLR 2026\] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](reasoning_as_representation_rethinking_visual_reinforcement_learning_in_image_qu.md)
+- [\[ICLR 2026\] What Matters for Batch Online Reinforcement Learning in Robotics?](what_matters_for_batch_online_reinforcement_learning_in_robotics.md)
+- [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
+- [\[ICLR 2026\] GRACE: Generative Representation Learning via Contrastive Policy Optimization](grace_generative_representation_learning_via_contrastive_policy_optimization.md)
 
 </div>
 

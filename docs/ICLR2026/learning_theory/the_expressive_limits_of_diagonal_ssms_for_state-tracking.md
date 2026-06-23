@@ -2,97 +2,77 @@
 title: >-
   [Paper Note] The Expressive Limits of Diagonal SSMs for State-Tracking
 description: >-
-  [ICLR 2026][Sequence Modeling / Theory][State Space Models] This paper provides a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single l…
+  [ICLR 2026][learning_theory][State Space Model] This work establishes a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single layer cannot track any non-abelian group, whereas $k$ layers can track a group $G$ if and only if $G$ admits a subnormal series of length $k$ with abelian fact
 tags:
-  - "ICLR 2026"
-  - "Sequence Modeling / Theory"
-  - "State Space Models"
-  - "Expressive Power"
-  - "Group State Tracking"
-  - "Diagonal SSM"
-  - "Solvable Groups"
-  - "Mamba"
+  - ICLR 2026
+  - learning_theory
+  - State Space Model
+  - Mamba
 date: 2026-05-08
-content_hash: 96a1afc2eaab8dbb
+content_hash: 727b72725682bb98
 ---
-
 # The Expressive Limits of Diagonal SSMs for State-Tracking
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01959](https://arxiv.org/abs/2603.01959)  
-**Area**: Sequence Modeling / Theory
-**Keywords**: State Space Models, Expressive Power, Group State Tracking, Diagonal SSM, Solvable Groups, Mamba
+**Area**: Sequence Modeling / Theory  
+**Keywords**: State Space Models, Expressivity, Group State-Tracking, Diagonal SSM, Solvable Groups, Mamba
 
 ## TL;DR
 
-This paper provides a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single layer cannot track any non-abelian group, and $k$ layers can track group $G$ if and only if $G$ admits a subnormal series of length $k$ with abelian factors — precisely defining the strict expressiveness gains conferred by depth. Experiments further reveal a significant gap between expressive capacity and learnability.
+This work establishes a complete characterization of the expressive power of input-dependent complex diagonal (DCD) SSMs on group state-tracking tasks: a single layer cannot track any non-abelian group, whereas $k$ layers can track a group $G$ if and only if $G$ admits a subnormal series of length $k$ with abelian factors—precisely defining the strict benefit of depth for expressivity. Furthermore, experiments reveal a significant gap between theoretical expressivity and learnability.
 
 ## Background & Motivation
 
-**Background**: State space models (SSMs), such as Mamba and S4D, have emerged as efficient alternatives to Transformers and demonstrated strong empirical performance on long-sequence modeling tasks. By employing linear recurrences with diagonalized state transition matrices, they achieve $O(\log T)$ parallelization. Nevertheless, the theoretical understanding of SSM expressive power remains limited, particularly on tasks such as state tracking.
+**Background**: State Space Models (SSMs), such as Mamba and S4D, have emerged as efficient alternatives to Transformers, achieving strong empirical performance on long-sequence modeling. They achieve $O(\log T)$ parallelization through linear recurrence and diagonalized state transition matrices. However, the theoretical understanding of SSM expressivity remains limited, particularly for tasks like state-tracking.
 
 **Limitations of Prior Work**:
-1. SSMs were initially expected to outperform Transformers on state tracking due to their explicit state representations, yet experiments show that SSMs similarly fail.
-2. Merrill et al. proved that SSMs belong to the $\mathsf{TC}^0$ complexity class and conjectured that they cannot track non-solvable groups (e.g., $S_5$), but this relies on unresolved conjectures in complexity theory.
-3. Sarrof et al. proved that Mamba (with non-negative diagonal matrices) cannot solve the parity problem (the simplest non-trivial group $C_2$), yet the precise capability boundary of diagonal SSMs remains unknown.
-4. The theoretical difference in expressive power between single-layer and multi-layer architectures is unclear — does depth yield strict benefits?
+1. SSMs were initially expected to outperform Transformers in state-tracking due to their explicit state representation, yet experiments show SSMs also fail in these tasks.
+2. Merrill et al. proved that SSMs belong to the $\mathsf{TC}^0$ complexity class and conjectured they cannot track non-solvable groups (e.g., $S_5$), but this relies on unsolved conjectures in complexity theory.
+3. Sarrof et al. demonstrated that Mamba (with non-negative diagonal matrices) cannot solve the parity problem (the simplest non-trivial group $C_2$), but the precise capacity boundaries of diagonal SSMs remain unknown.
+4. The difference in expressivity between single-layer and multi-layer architectures is theoretically unclear—does depth provide a strict advantage?
 
-**Key Challenge**: Diagonalization is the foundation of efficient parallelization in SSMs, but it simultaneously constrains the expressive power of the state transition matrices. Understanding the expressive limits while preserving efficiency is an open theoretical challenge.
+**Key Challenge**: Diagonalization is fundamental to the efficient parallelization of SSMs but restricts the expressivity of the state transition matrix. How can one understand these expressive limits while maintaining efficiency?
 
-**Goal**: Adopting an algebraic group-theoretic perspective, this paper precisely characterizes which groups can be tracked by $k$-layer DCD SSMs — providing necessary and sufficient conditions that rely on no unproven conjectures.
+**Goal**: From the perspective of algebraic group theory, provide a precise characterization of which groups a $k$-layer DCD SSM can track—offering necessary and sufficient conditions independent of any conjectures.
 
 ## Method
 
 ### Overall Architecture
 
-The object of study is the input-dependent complex diagonal (DCD) SSM, whose state recurrence is:
+This study does not propose a new model but rather rigorously analyzes exactly which groups can be tracked by Input-Dependent Complex Diagonal (DCD) SSMs. The recurrence studied is $h_t = A(x_t) h_{t-1} + b(x_t)$, where $A(x_t) \in \mathbb{C}^{d \times d}$ is a diagonal matrix and $b(x_t) \in \mathbb{C}^d$ is an input vector. The output is provided via a decoder $y_t = \text{dec}(h_t, x_t)$, assuming $A$, $b$, and $\text{dec}$ are universal function approximators. The task is group state-tracking: given a group $G$ and a sequence $x_1, \ldots, x_T \in G$, output the cumulative product $y_t = x_1 x_2 \cdots x_t$ at each step. The analysis first establishes the upper bound of single-layer capacity and then uses subnormal series to map the number of layers to trackable groups, finally relating these conclusions to existing variants like Mamba.
 
-$$h_t = A(x_t) h_{t-1} + b(x_t)$$
+### Key Designs
 
-where $A(x_t) \in \mathbb{C}^{d \times d}$ is a diagonal matrix and $b(x_t) \in \mathbb{C}^d$ is an input vector. The output is produced via a decoder $y_t = \text{dec}(h_t, x_t)$. The functions $A$, $b$, and $\text{dec}$ are assumed to be universal function approximators.
+**1. Single-layer Impossibility: Diagonal Commutativity Restricts Layers to Abelian Groups**
 
-The group state-tracking task is defined as follows: given a group $G$ and an input sequence $x_1, \ldots, x_T \in G$, output $y_t = x_1 \cdot x_2 \cdots x_t$, i.e., the cumulative group product.
+The first core conclusion (Theorem 1) is that a single-layer DCD SSM under finite precision can track $G$ if and only if $G$ is an abelian group—tracking non-abelian groups in a single layer is impossible. The proof hinges on the fact that diagonal matrices commute. Non-commutativity in group products cannot be recovered by commuting state updates. Three lemmas systematically close potential "escape routes." Lemma 1 eliminates useless coordinates: if a coordinate shrinks ($|\lambda(x)_j| < 1$), expands ($|\lambda(x)_j| > 1$), or drifts ($|\lambda(x)_j| = 1$ and $b(x)_j \neq 0$) under certain inputs, an equivalent SSM can be constructed to fix it without loss of tracking power, leaving only pure rotation coordinates. Lemma 2 points out that inconsistent rotation centers are problematic: a neutral rotation $h \mapsto \lambda(h - c_1) + c_1$ and a conjugate rotation $h \mapsto \lambda^*(h - c_2) + c_2$ with $c_1 \neq c_2$ produce a non-zero translation, causing state divergence and tracking failure under finite precision. Lemma 3 thus requires all coordinates to share a rotation center; combined with diagonal commutativity, state updates must commute, implying the group must be abelian.
 
-### Key Design 1: Impossibility Proof for Single-Layer DCD SSMs
+**2. Multi-layer Necessary and Sufficient Conditions: Depth = Subnormal Series Length**
 
-**Core Theorem (Theorem 1)**: A single-layer DCD SSM with finite precision can track group $G$ if and only if $G$ is abelian.
-
-The proof proceeds in three steps:
-
-1. **Eliminating useless coordinates (Lemma 1)**: If a state coordinate contracts ($|\lambda(x)_j| < 1$), expands ($|\lambda(x)_j| > 1$), or drifts ($|\lambda(x)_j| = 1$ with $b(x)_j \neq 0$) under some input, one can construct an alternative SSM that fixes that coordinate to a constant without affecting tracking capability.
-
-2. **Rotational center consistency (Lemma 2)**: The composition of a neutral rotation $h \mapsto \lambda(h - c_1) + c_1$ and a conjugate rotation $h \mapsto \lambda^*(h - c_2) + c_2$ (when $c_1 \neq c_2$) yields a non-zero translation — causing the state to diverge.
-
-3. **Convergence requirement (Lemma 3)**: For finite group tracking, all state coordinates must share the same center of rotation. Combined with the commutativity of diagonal matrices, the state updates are necessarily commutative, implying the group must be abelian.
-
-### Key Design 2: Necessary and Sufficient Conditions for Multi-Layer DCD SSMs
-
-**Core Theorem (Theorem 2)**: A $k$-layer DCD SSM with finite precision can track group $G$ if and only if $G$ admits a subnormal series of length $k$:
+The second core conclusion (Theorem 2) quantifies depth: a $k$-layer DCD SSM can track $G$ if and only if $G$ possesses a subnormal series of length $k$
 
 $$\{e\} = G_0 \trianglelefteq G_1 \trianglelefteq \cdots \trianglelefteq G_k = G$$
 
-with each factor $G_{i+1}/G_i$ abelian. This is precisely the standard definition of a solvable group — refined to require **exactly** $k$ layers.
+where each quotient factor $G_{i+1}/G_i$ is abelian. This matches the definition of solvable groups but is refined to show that **exactly** $k$ layers are required. Non-solvable groups (e.g., $A_5$) cannot be tracked at any depth, while solvable groups have a specific minimal layer requirement. The sufficiency is constructive: using $S_3 = C_3 \rtimes C_2$ as an example, the first layer tracks the $C_2$ parity bit ($\Lambda((0,\beta)) = 0$, $\Lambda((1,\beta)) = \pi$), and the second layer uses this parity state as a condition to set the $C_3$ rotation direction ($\Lambda^{(2)}((1,\alpha,\beta)) = \tfrac{2\pi}{3}\beta$, $\Lambda^{(2)}((-1,\alpha,\beta)) = -\tfrac{2\pi}{3}\beta$), successfully reconstructing the non-commutative product. Each layer handles one abelian quotient, and the depth benefit is thus measured by a strict group-theoretic scale.
 
-**Constructive proof (sufficiency)**: Taking $S_3$ as an example, it is decomposed as the semidirect product $C_3 \rtimes C_2$. The first layer tracks $C_2$ (parity), and the second layer tracks $C_3$ conditioned on the first-layer state (the direction of modular-3 rotation depends on parity):
+**3. Comparison with Existing Variants: Negative/Complex Eigenvalues as the Key to Tracking**
 
-- First-layer AUSSM: $\Lambda((0,\beta)) = 0$, $\Lambda((1,\beta)) = \pi$
-- Second-layer AUSSM: $\Lambda^{(2)}((1,\alpha,\beta)) = \frac{2\pi}{3}\beta$, $\Lambda^{(2)}((-1,\alpha,\beta)) = -\frac{2\pi}{3}\beta$
-
-### Key Design 3: Relationship to Existing SSM Variants
+Applying this characterization to mainstream SSMs reveals their bottlenecks based on the range of eigenvalues in the transition matrix. In Mamba, $A(x) = \exp(\Delta(x) \odot \Lambda)$ takes values in $(0,1]$, lacking negative values and thus failing to solve even $C_2$ (parity). Negative Mamba uses $2\exp(\Delta(x) \odot \Lambda) - I$ to extend the range to $(-1,1]$, which is sufficient for $C_2$ in a single layer. AUSSM uses $\exp(i\Delta(x) \odot \Lambda(x))$, allowing eigenvalues to cover the unit circle $|z|=1$, enabling a single layer to cover all abelian groups. This comparison provides a direct design guide: restricting eigenvalues to be non-negative is a fundamental bottleneck for Mamba’s expressivity; allowing complex eigenvalues on the unit circle is necessary to track non-trivial groups.
 
 | Model | Transition Matrix $A(x)$ | Eigenvalue Range | Trackable Groups |
-|-------|--------------------------|------------------|-----------------|
-| S4/S4D | $\Lambda$ (fixed diagonal) | $\mathbb{C}$ | None (time-invariant) |
-| Mamba | $\exp(\Delta(x) \odot \Lambda)$ | $(0, 1]$ (non-negative real) | No group |
-| Negative Mamba | $2\exp(\Delta(x) \odot \Lambda) - I$ | $(-1, 1]$ | $C_2$ only (single layer) |
-| AUSSM | $\exp(i\Delta(x) \odot \Lambda(x))$ | Unit circle $|z|=1$ | All abelian groups (single layer) |
+|------|-----------------|-----------|-----------|
+| S4/S4D | $\Lambda$ (Fixed Diagonal) | $\mathbb{C}$ | None (Time-invariant) |
+| Mamba | $\exp(\Delta(x) \odot \Lambda)$ | $(0, 1]$ (Non-negative Real) | No Groups (No negative values) |
+| Negative Mamba | $2\exp(\Delta(x) \odot \Lambda) - I$ | $(-1, 1]$ | $C_2$ only (Single layer) |
+| AUSSM | $\exp(i\Delta(x) \odot \Lambda(x))$ | Unit Circle $|z|=1$ | All Abelian Groups (Single layer) |
 
 ## Key Experimental Results
 
-### Main Results: State-Tracking Task (Longest Generalization Sequence Length; Training Length ≤ 60)
+### Main Results: State-Tracking Task (Max sequence length for generalization, training length $\leq 60$)
 
 | Group | Abelian | Solvable | Mamba | Neg Mamba | Simple AUSSM | AUSSM | RNN |
-|-------|---------|----------|-------|-----------|-------------|-------|-----|
+|----------|--------|------|-------|-----------|-------------|-------|------|
 | $C_2$ | ✓ | ✓ | ✘ | 1000 | 160 | 1000 | 1000 |
 | $C_6$ | ✓ | ✓ | ✘ | ✘ | 240 | 940 | 1000 |
 | $C_{24}$ | ✓ | ✓ | ✘ | ✘ | 240 | 260 | 1000 |
@@ -101,38 +81,38 @@ with each factor $G_{i+1}/G_i$ abelian. This is precisely the standard definitio
 | $A_4$ | ✗ | ✓ | ✘ | ✘ | ✘ | ✘ | 1000 |
 | $A_5$ | ✗ | ✗ | ✘ | ✘ | ✘ | ✘ | ✘ |
 
-> ✘ indicates that the model fails to generalize to sequences of length ≥ 100. Reported values are the longest sequence lengths achieving accuracy > 90%.
+> ✘ indicates the model cannot generalize to sequence lengths $\geq 100$. Reported values are the maximum sequence length with accuracy $>90\%$.
 
-### Ablation Study: Single-Layer vs. Two-Layer
+### Ablation Study: Single-layer vs. Two-layer
 
-| Group | Model | Single Layer | Two Layers | Theoretical Expectation |
-|-------|-------|-------------|-----------|------------------------|
-| $C_2$ | AUSSM | 1000 | 200 | Both capable |
-| $C_2 \times C_4$ | Neg Mamba | ✘ | 360 | Two layers capable |
-| $S_3$ | AUSSM | ✘ | ✘ | Two layers capable (gap!) |
-| $A_4$ | AUSSM | ✘ | ✘ | Two layers capable (gap!) |
+| Group | Model | 1 Layer | 2 Layers | Theoretical Expectation |
+|-----------------|---------------|-------|-------|----------|
+| $C_2$ | AUSSM | 1000 | 200 | Both Possible |
+| $C_2 \times C_4$| Neg Mamba | ✘ | 360 | 2 Layers Possible |
+| $S_3$ | AUSSM | ✘ | ✘ | 2 Layers Possible (Gap!) |
+| $A_4$ | AUSSM | ✘ | ✘ | 2 Layers Possible (Gap!) |
 
 ### Key Findings
 
-- **Abelian groups**: Single-layer AUSSM and Simple AUSSM theoretically subsume all abelian groups; gradient-based optimization successfully finds generalizing solutions in experiments.
-- **Non-abelian groups**: Two-layer AUSSM can theoretically track $S_3$ and $A_4$, but standard training **never succeeds** in practice — expressive capacity does not imply learnability.
-- **Initialization sensitivity**: When AUSSM is initialized near the analytically derived solution for $S_3$, training succeeds and generalizes to sequences four times the training length — the solution exists but is difficult to find in the loss landscape.
-- **RNN without theoretical constraints**: RNNs can track all solvable groups, but also encounter optimization difficulties on large groups (e.g., $C_{60}$).
+- **Abelian Groups**: Theories for single-layer AUSSM and Simple AUSSM cover all abelian groups, and gradient optimization successfully identifies generalizing solutions in experiments.
+- **Non-Abelian Groups**: While two-layer AUSSM can theoretically track $S_3$ and $A_4$, standard training **never succeeded** in experiments—demonstrating that expressivity $\neq$ learnability.
+- **Initialization Sensitivity**: When AUSSM is initialized near the analytical solution for $S_3$, training succeeds and generalizes to 4x the training length, suggesting that solutions exist but are difficult to find in the loss landscape.
+- **RNN Theoretical Capacity**: RNNs have no theoretical restrictions on solvable groups but encounter optimization difficulties on large groups like $C_{60}$.
 
 ## Highlights & Insights
 
-- **Precise algebraic characterization**: Necessary and sufficient conditions are established rather than approximate capability claims — $k$ layers correspond exactly to groups admitting subnormal series of length $k$.
-- **Strict depth benefit**: $k$ layers are strictly more expressive than $k-1$ layers — non-abelian groups require depth, and the required number of layers has a precise group-theoretic interpretation.
-- **Critical distinction between expressiveness and learnability**: Theoretical expressiveness does not imply learnability via SGD — the community is cautioned against relying solely on theoretical expressive power, as optimization bottlenecks are equally critical.
-- **Direct guidance for SSM design**: The non-negative eigenvalue constraint in Mamba is a fundamental limitation; allowing negative or complex eigenvalues is a necessary condition for unlocking stronger state-tracking capability.
+- **Precise Algebraic Characterization**: Provides necessary and sufficient conditions rather than vague possibilities—the number of layers $k$ strictly corresponds to the length of a group's subnormal series.
+- **Strict Benefit of Depth**: Proves $k$ layers are strictly more powerful than $k-1$ layers; non-abelian groups require depth, and the required number of layers has a precise group-theoretic meaning.
+- **Distinction Between Expression and Learning**: Theoretical expressibility does not guarantee that SGD can learn a solution, highlighting that optimization bottlenecks are as critical as theoretical limits.
+- **Direct Guidance for Mamba**: The non-negative eigenvalue constraint in Mamba is a fundamental limitation; allowing negative or complex eigenvalues is necessary for stronger state-tracking capabilities.
 
 ## Limitations & Future Work
 
-- Results are restricted to diagonal SSMs; block-diagonal variants (e.g., $2 \times 2$ blocks) may extend expressive power to $\mathsf{NC}^1$.
-- The root cause of the learnability gap remains unresolved — the geometric structure of the loss landscape (flat regions, saddle points, isolated minima) requires further investigation.
-- The analysis is currently limited to group state tracking, while practical sequence tasks are more complex — the predictive power of these theoretical results for real-world tasks remains to be validated.
-- Hybrid architectures (e.g., alternating AUSSM and Mamba layers) for non-abelian group learnability have not been explored.
-- The extension to semigroups and monoids is only preliminary; a complete theory has yet to be established.
+- Results are limited to diagonal SSMs; block-diagonal structures (e.g., $2 \times 2$) might extend expressivity to $\mathsf{NC}^1$.
+- The root cause of the learnability gap remains unsolved—the geometric structure of the loss landscape (flat regions, saddle points, or isolated minima) requires further study.
+- Current discussions are limited to group state-tracking; the predictive power of these theoretical conclusions for more complex real-world tasks remains to be verified.
+- Learnability of hybrid architectures (e.g., alternating AUSSM and Mamba layers) on non-abelian groups has not been explored.
+- The extension to semigroups and monoids is preliminary, and a complete theory is yet to be established.
 
 ## Rating
 
@@ -147,11 +127,11 @@ with each factor $G_{i+1}/G_i$ abelian. This is precisely the standard definitio
 
 ## Related Papers
 
-- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
-- [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](the_price_of_robustness_stable_classifiers_need_overparameterization.md)
-- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](lipschitz_bandits_with_stochastic_delayed_feedback.md)
-- [\[ICLR 2026\] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding](deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding.md)
+- [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
+- [\[ICLR 2026\] Characterizing Pattern Matching and Its Limits on Compositional Task Structures](characterizing_pattern_matching_and_its_limits_on_compositional_task_structures.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 
 </div>
 

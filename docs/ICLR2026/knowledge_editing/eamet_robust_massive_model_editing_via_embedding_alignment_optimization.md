@@ -2,77 +2,89 @@
 title: >-
   [Paper Note] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization
 description: >-
-  [ICLR 2026][Knowledge Editing][Massive model editing] This paper identifies the root cause of large-scale model editing failures as structural inconsistency (embedding misalignment) between key embeddings and residual em…
+  [ICLR 2026][Knowledge Editing][MEMIT] This paper reveals that the root cause of failure in massive model editing is the structural inconsistency between key embeddings and residual embeddings (embedding misalignment). It proposes EAMET, which progressively saves optimized residual embeddings and aligns their neighborhood structure to the key embedding spac
 tags:
-  - "ICLR 2026"
-  - "Knowledge Editing"
-  - "Massive model editing"
-  - "embedding alignment"
-  - "MEMIT"
-  - "structural inconsistency"
+  - ICLR 2026
+  - Knowledge Editing
+  - MEMIT
 date: 2026-05-08
-content_hash: 54b56715220d03fb
+content_hash: f645db59bd1acecc
 ---
-
 # EAMET: Robust Massive Model Editing via Embedding Alignment Optimization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.11876](https://arxiv.org/abs/2505.11876)  
 **Code**: [https://github.com/ybdai7/EAMET-massive-editing](https://github.com/ybdai7/EAMET-massive-editing)  
-**Area**: LLM NLP / Model Editing
-**Keywords**: Massive model editing, embedding alignment, MEMIT, knowledge editing, structural inconsistency
+**Area**: LLM NLP / Model Editing  
+**Keywords**: Massive Model Editing, Embedding Alignment, MEMIT, Knowledge Editing, Structural Inconsistency
 
 ## TL;DR
 
-This paper identifies the root cause of large-scale model editing failures as structural inconsistency (embedding misalignment) between key embeddings and residual embeddings, and proposes EAMET, which progressively saves optimized residual embeddings and aligns their neighborhood structure to the key embedding space via a dual KL divergence + MSE loss. EAMET outperforms MEMIT by an average of 14% (CounterFact) and 8% (ZsRE) when simultaneously editing 10k facts across 6 LLMs and 3 datasets, while remaining robust in two challenging scenarios: long-prefix inputs and multi-fact editing under the same subject.
+This paper reveals that the root cause of failure in massive model editing is the structural inconsistency between key embeddings and residual embeddings (embedding misalignment). It proposes EAMET, which progressively saves optimized residual embeddings and aligns their neighborhood structure to the key embedding space using a dual loss of KL divergence and MSE. Experimental results across 6 LLMs and 3 datasets show that EAMET outperforms MEMIT by an average of 14% (CounterFact) and 8% (ZsRE) when editing 10k facts simultaneously, while maintaining robustness in scenarios involving long prefixes and multiple facts per subject.
 
 ## Background & Motivation
 
-**Background**: As LLM knowledge becomes outdated post-deployment, model editing techniques aim to revise specific facts without full retraining. Locate-then-edit methods such as MEMIT and PMET modify FFN weights directly to support batch editing, claiming the ability to edit tens of thousands of facts simultaneously.
+**Background**: LLM knowledge becomes outdated after deployment. Model editing techniques aim to modify specific facts without full retraining. Locate-then-edit methods, such as MEMIT and PMET, achieve batch editing by directly modifying FFN weights, claiming the ability to edit tens of thousands of facts simultaneously.
 
-**Limitations of Prior Work**: Existing methods are overestimated by overly lenient evaluation metrics—these metrics only check whether the target token probability exceeds that of the original token, rather than whether the model actually generates the target entity. Under stricter "practical metrics" (requiring the model's output to precisely contain the target entity), performance degrades sharply for large-scale editing (>1000 edits). Two additional robustness issues arise in practical settings: (a) prepending a 50-token descriptive prefix to edited knowledge drops MEMIT accuracy on LLaMA2-7B from 98.5% to 77.4%; (b) simultaneously editing multiple facts sharing the same subject causes mutual interference and editing failures.
+**Limitations of Prior Work**: The effectiveness of existing methods is overestimated by overly lenient evaluation metrics—they typically check if the target token probability is higher than the original token, rather than whether the model actually generates the target object. Under stricter "practical metrics" (where the model output must precisely contain the target entity), performance drops sharply during massive editing (>1000 items). Furthermore, robustness issues exist in two practical scenarios: (a) accuracy on LLaMA2-7B using MEMIT drops from 98.5% to 77.4% when a 50-token descriptive prefix is added; (b) interference between facts leads to editing failure when multiple facts are edited under the same subject.
 
-**Key Challenge**: When a large number of facts are jointly edited, the "neighborhood structure" of each fact's residual embedding $r_i$ (the difference between the target memory and original weights) diverges from that of its key embedding $k_i$ (the FFN layer input representation)—i.e., the pairwise similarity ordering among $\{r_i\}$ becomes inconsistent with that among $\{k_i\}$. This misalignment causes information loss in per-fact reconstruction when solving the normal equations jointly.
+**Key Challenge**: The root problem is that when a large number of facts are edited jointly, the "neighborhood structure" between the residual embedding $r_i$ for each fact (the difference between target memory and original weights) and its key embedding $k_i$ (the input representation of the FFN layer) diverges. This misalignment causes information loss during reconstruction when solving the normal equations jointly.
 
-**Goal**: To maintain per-fact embedding space structural consistency during large-scale batch editing (10k+), thereby preserving high editing success rates and robustness under strict evaluation metrics.
+**Goal**: To maintain spatial structure consistency of embeddings during massive batch editing (10k+), thereby ensuring high edit success rates and robustness under strict evaluation metrics.
 
-**Key Insight**: The authors proceed from both theoretical and empirical directions. Theoretically, they derive an upper bound on the reconstruction error per fact: $\|e_i\| \leq C_i\sqrt{\frac{1}{2}\mathcal{A}(i)} + |\beta_{ii}|\|r_i\| + \|\varepsilon_i\|$, where $\mathcal{A}(i)$ is the misalignment score. Empirically, on LLaMA2-7B, increasing the number of edits from 200 to 1000 causes the total misalignment score to rise from 79 to 554, while accuracy drops from 98.5% to 86.8%—a strong correlation that validates the theory.
+**Key Insight**: The authors approach the problem from both theoretical and empirical directions. Theoretically, they derive a reconstruction error upper bound $\|e_i\| \leq C_i\sqrt{\frac{1}{2}\mathcal{A}(i)} + |\beta_{ii}|\|r_i\| + \|\varepsilon_i\|$, where $\mathcal{A}(i)$ represents the misalignment score. Empirically, increasing the number of edits from 200 to 1000 on LLaMA2-7B causes the total misalignment score to rise from 79 to 554, while accuracy drops from 98.5% to 86.8%, showing a strong correlation.
 
-**Core Idea**: During optimization of the target memory for each fact, progressively save the already-optimized residual embeddings and apply a KL divergence + MSE dual loss to constrain the neighborhood structure of each residual to be consistent with the key embedding space.
+**Core Idea**: While optimizing the target memory for each fact, optimized residual embeddings are saved progressively. A dual loss of KL divergence and MSE is employed to constrain their neighborhood structure to align with the key embedding space.
 
 ## Method
 
 ### Overall Architecture
 
-EAMET follows the locate-then-edit paradigm of MEMIT. The input is a batch of fact triples $(s_i, rel_i, o_i)$ to be edited, and the output is a parameter update $\Delta$ to the FFN layer $W_{out}^l$. Unlike MEMIT, which jointly optimizes all residuals at once, EAMET iteratively optimizes each fact's residual $r_i$ one at a time, incorporating embedding alignment constraints during optimization. The pipeline consists of three steps: (a) pre-extract key embeddings for all facts and compute pairwise cosine similarity distributions; (b) optimize residual embeddings sequentially—after each residual is optimized it is saved, and subsequent optimizations use previously saved residuals to compute the alignment loss; (c) substitute the aligned residuals into the normal equations to solve for $\Delta$.
+EAMET follows the locate-then-edit paradigm of MEMIT. The input is a batch of fact triplets $(s_i, rel_i, o_i)$, and the output is a parameter update $\Delta$ for the FFN layer $W_{out}^l$. Unlike MEMIT, which optimizes all residuals jointly at once, EAMET iteratively optimizes each fact's residual $r_i$ while incorporating embedding alignment constraints. The process consists of three steps: (a) pre-extracting key embeddings for all facts and calculating pairwise cosine similarity distributions to quantify misalignment as a score; (b) optimizing residual embeddings individually, saving each after optimization, and using these to calculate alignment loss for subsequent iterations while using prefix-augmented NLL loss to ensure target generation; (c) substituting the aligned residuals into the normal equation to solve for $\Delta$ in one step.
+
+```mermaid
+graph TD
+    IN["Batch of facts to edit<br/>(s, rel, o) ×N"] --> KEY["Extract key embeddings<br/>(Random prefix augmentation)"]
+    KEY --> PK["Pairwise cosine similarity<br/>→ Key neighborhood distribution P_k"]
+    PK --> MIS["1. Formalize Embedding Misalignment<br/>A(i)=KL(P_r‖P_k) Quantify structural inconsistency"]
+    MIS --> LOOP{"Iteratively optimize residue r_i"}
+    LOOP --> ALIGN["2. Progressive residue saving + KL+MSE dual loss alignment<br/>Anchor neighborhood structure to key space using saved r(j<i)"]
+    LOOP --> OPT["3. Prefix-augmented target memory optimization<br/>NLL loss forces model to output o_i under various prefixes"]
+    ALIGN --> SAVE["Save r_i to residue set R"]
+    OPT --> SAVE
+    SAVE -->|"i ← i+1"| LOOP
+    SAVE -->|"All optimized"| SOLVE["One-step solve for Δ via normal equation<br/>Update FFN weights W_out"]
+```
 
 ### Key Designs
 
-1. **Theoretical Formalization of Embedding Misalignment**:
+**1. Theoretical Formalization of Embedding Misalignment**
 
-    - Function: Define and quantify the root cause of performance degradation in large-scale editing.
-    - Mechanism: For each fact $i$, collect the cosine similarity distribution $P_r^{(i)}$ between its residual $r_i$ and all other residuals, and the distribution $P_k^{(i)}$ between its key $k_i$ and all other keys. The misalignment is quantified as $\mathcal{A}(i) = KL(P_r^{(i)} \| P_k^{(i)})$. Theorem 1 proves that the reconstruction error upper bound for each fact is proportional to $\sqrt{\mathcal{A}(i)}$. Intuitively, if the nearest neighbors of $r_i$ are $r_3, r_7$, but those of $k_i$ are $k_5, k_9$, then jointly solving $\Delta k_i = r_i$ forces $\Delta$ to combine $k_i$ in incorrect directions, causing reconstruction failure.
-    - Design Motivation: Prior work observed that "more edits leads to failure" but provided no quantitative explanation. This formalization identifies a concrete, measurable, and optimizable objective $\mathcal{A}(i)$—reducing it directly reduces the reconstruction error upper bound.
+Previous work only observed degradation during massive editing without providing a quantitative explanation. EAMET formalizes this phenomenon as a scalar. For each fact $i$, the cosine similarity distribution $P_r^{(i)}$ between its residual $r_i$ and all other residuals is collected, along with the distribution $P_k^{(i)}$ for its key $k_i$. The KL divergence $\mathcal{A}(i) = KL(P_r^{(i)} \| P_k^{(i)})$ measures the inconsistency between the two neighborhood structures. Theorem 1 in the paper proves that the reconstruction error upper bound is proportional to $\sqrt{\mathcal{A}(i)}$. Intuitively, if the nearest neighbors of $r_i$ are $r_3, r_7$ while the nearest neighbors of $k_i$ are $k_5, k_9$, the joint solution for $\Delta k_i = r_i$ will cause $\Delta$ to be composed in the wrong direction, leading to reconstruction failure. This formalization directly points to the optimization goal: reducing $\mathcal{A}(i)$ lowers the error bound.
 
-2. **Progressive Residual Saving with KL+MSE Dual-Loss Alignment**:
+**2. Progressive Residue Saving and KL+MSE Dual Loss Alignment**
 
-    - Function: Constrain the spatial structure of each fact's residual during optimization to be consistent with the key embedding space.
-    - Mechanism: When optimizing fact $i$ sequentially, the residuals $\{r_j \mid j < i\}$ from previous iterations are already saved. The cosine similarity distribution $P_r^{(i)}$ between $r_i$ and these saved residuals is compared against the corresponding key-side distribution $\bar{P}_k^{(i)}$. The alignment loss has two components: $L_{KL}(i) = KL(P_r^{(i)} \| \bar{P}_k^{(i)})$ for global distributional alignment, and $L_{MSE}(i) = \frac{1}{M} \sum_{j=1}^M \|P_r^{(i,j)} - P_k^{(i,j)}\|^2$ for precise matching of the top-$M$ nearest neighbors in key space. The two terms are complementary—KL governs the overall distributional shape while MSE enforces accurate alignment of the most critical neighbors.
-    - Design Motivation: KL alone focuses on distributional divergence and provides insufficient precision for a small number of critical neighbors; MSE alone addresses local structure but ignores the global distribution. Ablation studies confirm that combining both outperforms using either in isolation.
+To constrain $\mathcal{A}(i)$ during optimization, EAMET optimizes residuals sequentially rather than all at once. When optimizing the $i$-th fact, the previous $i-1$ optimized residuals are already saved. This allows calculating the similarity distribution $P_r^{(i)}$ between $r_i$ and $\{r_j \mid j < i\}$ to compare it against the key-side distribution $\bar{P}_k^{(i)}$. The alignment loss consists of two complementary terms:
 
-3. **Target Memory Optimization with Prefix Augmentation**:
+$$L_{KL}(i) = KL\big(P_r^{(i)} \,\|\, \bar{P}_k^{(i)}\big), \qquad L_{MSE}(i) = \frac{1}{M} \sum_{j=1}^M \big\|P_r^{(i,j)} - P_k^{(i,j)}\big\|^2$$
 
-    - Function: Optimize each fact's residual vector $r_i$ so that the model correctly generates the target entity under diverse prefixes.
-    - Mechanism: The total loss is $r_i = \arg\min_{r_i} \left( \frac{1}{N_{FP}} \sum_j -\log P_{G(h_i^L += r_i)}[o_i | f_j \oplus tp(s_i, rel_i)] + \lambda_{KL} L_{KL}(i) + \lambda_{MSE} L_{MSE}(i) \right)$. The first term is the standard NLL loss ensuring the model predicts the target object $o_i$, where $f_j$ are randomly sampled prefixes that encourage learning a more generalizable memory representation; the latter two terms are the alignment regularizers.
-    - Design Motivation: The original MEMIT also uses prefix sampling when optimizing $r_i$, but applies no alignment constraints, allowing the optimized residuals to drift freely in the embedding space. The alignment regularizers anchor residuals to positions that are structurally consistent with key space, reducing reconstruction error when substituted into the normal equations.
+$L_{KL}$ performs global distribution alignment to maintain the overall shape of the neighborhood structure, while $L_{MSE}$ focuses on the top-M nearest neighbors in the key space for precise matching.
+
+**3. Prefix-augmented Target Memory Optimization**
+
+The alignment constraints are embedded into the optimization objective for each fact's residual $r_i$. The full objective is:
+
+$$r_i = \arg\min_{r_i} \left( \frac{1}{N_{FP}} \sum_j -\log P_{G(h_i^L \,+=\, r_i)}\big[o_i \mid f_j \oplus tp(s_i, rel_i)\big] + \lambda_{KL} L_{KL}(i) + \lambda_{MSE} L_{MSE}(i) \right)$$
+
+The first term is a standard NLL loss ensuring the model predicts the target $o_i$ given a template, where $f_j$ are randomly sampled prefixes to force the model to learn a generalized memory representation. The latter two terms are the alignment regularizations. Unlike MEMIT, which uses prefix sampling without alignment constraints (leading to erratic residuals), EAMET anchors residuals in a position consistent with the key space structure, resulting in smaller reconstruction errors.
 
 ### Loss & Training
 
-Total loss = NLL editing loss (with prefix augmentation) + $\lambda_{KL} \cdot L_{KL}$ + $\lambda_{MSE} \cdot L_{MSE}$. Optimization proceeds iteratively: optimize fact $i$ → save $r_i$ → when optimizing fact $i+1$, use the first $i$ saved residuals to compute the alignment loss. Parameter updates are still solved in one step via MEMIT's normal equations $\Delta(C_p + K_t K_t^T) = R K_t^T$, with $R = [r_1 | r_2 | \ldots | r_N]$ replaced by the alignment-optimized residual matrix.
+Total Loss = NLL Edit Loss (Prefix-augmented) + $\lambda_{KL} \cdot L_{KL}$ + $\lambda_{MSE} \cdot L_{MSE}$. The optimization is performed iteratively: optimize $i$ → save $r_i$ → optimize $i+1$ using previous residuals for alignment loss. Parameters are updated via the MEMIT normal equation $\Delta(C_p + K_t K_t^T) = R K_t^T$ in one step, using the aligned residual matrix $R = [r_1 | r_2 | \ldots | r_N]$.
 
 ## Key Experimental Results
 
-### Main Results (10k fact editing, 6 LLMs, CounterFact dataset)
+### Main Results (10k Edits, 6 LLMs, CounterFact Dataset)
 
 | Model | Method | Eff.(%)↑ | Gen.(%)↑ | Spe.(%)↑ | Flu.↑ |
 |------|------|----------|----------|----------|-------|
@@ -90,7 +102,7 @@ Total loss = NLL editing loss (with prefix augmentation) + $\lambda_{KL} \cdot L
 | Qwen2.5-7B | MEMIT | 90.06 | 63.86 | 70.53 | 529.27 |
 | Qwen2.5-7B | **EAMET** | **90.49** | **64.37** | **72.18** | 536.67 |
 
-### Misalignment Score Comparison (10k edits)
+### Misalignment Score Comparison (10k Edits)
 
 | Model | EAMET (CF/ZS) | MEMIT (CF/ZS) | PMET (CF/ZS) |
 |------|---------------|---------------|--------------|
@@ -99,64 +111,52 @@ Total loss = NLL editing loss (with prefix augmentation) + $\lambda_{KL} \cdot L
 | Deepseek-7B | 520 / 161 | 12135 / 23241 | 12155 / 12046 |
 | Falcon-7B | 385 / 181 | 8564 / 17589 | 8602 / 8590 |
 
-### Prefix Robustness (200 edits, LLaMA2-7B)
+### Prefix Robustness (200 Edits, LLaMA2-7B)
 
 | Prefix Length | MEMIT Accuracy | EAMET Accuracy | Low $\mathcal{A}$ Group | High $\mathcal{A}$ Group |
 |----------|-------------|-------------|-------------------|-------------------|
 | 0 token | 98.50% | ~99% | - | - |
-| 5 token | 84.15% | ~95% | 94.00% | 46.00% |
-| 50 token | 77.40% | ~90% | 90.00% | 45.00% |
-| 200 token | 66.50% | ~92% | - | - |
+| 5 tokens | 84.15% | ~95% | 94.00% | 46.00% |
+| 50 tokens | 77.40% | ~90% | 90.00% | 45.00% |
+| 200 tokens | 66.50% | ~92% | - | - |
 
 ### Key Findings
 
-- **Misalignment is the core signal of editing failure**: EAMET reduces the total misalignment score for 10k edits from 11,506 (MEMIT) to 377 on LLaMA2-7B (CounterFact), a 96.7% reduction, directly validating the effectiveness of alignment optimization.
-- **LLaMA2-7B benefits most**: EAMET raises Eff. from 24.95% (MEMIT) to 89.09% on this model, a gain of 64 percentage points, attributable to the most severe original misalignment among all tested models.
-- **Insensitivity to editing order**: Randomly shuffling the editing sequence causes EAMET's Eff. to fluctuate by only ~1% on CounterFact and at most 2% on ZsRE.
-- **Robustness to multi-fact same-subject editing**: On ZsRE, as the number of facts associated with each subject increases, MEMIT and PMET performance degrades continuously while EAMET remains stable.
-- **Scalable to 15k edits**: On Qwen2.5-7B with 15k edits, EAMET achieves 83.66% vs. MEMIT's 77.46%, with the advantage growing at larger scales.
+- **Misalignment is the core signal of edit failure**: EAMET reduced the total misalignment score for 10k edits on LLaMA2-7B (CounterFact) from 11506 to 377, a 96.7% reduction, validating the effectiveness of alignment optimization.
+- **LLaMA2-7B benefits most**: Its Eff. jumped from 24.95% (MEMIT) to 89.09% (EAMET), as it initially suffered from the worst misalignment.
+- **Insensitivity to edit sequence**: EAMET's Eff. fluctuated by only ~1% when the edit order was randomized.
+- **Robustness to multiple facts per subject**: On ZsRE, while MEMIT/PMET performance declined as facts per subject increased, EAMET remained stable.
+- **Scalability to 15k edits**: On Qwen2.5-7B, EAMET achieved 83.66% vs MEMIT's 77.46%, with the advantage widening as scale increased.
 
 ## Highlights & Insights
 
-- **Formal diagnosis of embedding misalignment**: This is the first work to quantitatively explain why large-scale editing fails. The failure is not due to insufficient optimization or limited parameter capacity, but rather the destruction of neighborhood structure between residuals and keys during joint optimization. This insight is particularly elegant in that it transforms a vague "scalability issue" into a concrete, measurable, and optimizable target $\mathcal{A}(i)$.
-- **Elegant design of progressive alignment**: The strategy of sequentially optimizing and saving residuals avoids memory explosion from processing 10k residuals simultaneously, while naturally constructing a continuously growing "alignment reference set." This progressive strategy is itself a general large-scale optimization paradigm transferable to other settings requiring spatial structural consistency.
-- **Introduction of stricter evaluation metrics**: Replacing probability comparison with whether the actual generated output contains the target entity exposes the overestimation of MEMIT and related methods. The proposal of these "practical metrics" in itself advances evaluation standards across the model editing community.
+- **Formalized diagnosis of embedding misalignment**: This is the first work to quantitatively explain why massive editing fails. It is not due to insufficient optimization or parameter capacity, but the destruction of spatial structures.
+- **Progressive alignment design**: The iterative strategy avoids memory explosion for 10k residuals while building an expanding "alignment reference set." This serves as a general optimization paradigm for maintaining spatial consistency.
+- **Introduction of strict evaluation metrics**: By requiring the actual generation to contain the target entity rather than just checking probabilities, the authors exposed the overestimation of previous methods and improved the field's evaluation standards.
 
 ## Limitations & Future Work
 
-- **Computational overhead of iterative per-fact optimization**: Each fact requires an independent forward and backward pass to optimize $r_i$, resulting in linear time complexity growth for 10k edits. A batch-wise alignment optimization scheme (e.g., using a lightweight alignment network for one-step optimization) could substantially reduce runtime.
-- **Restricted to Transformer FFN layer editing**: The framework is tied to the locate-then-edit paradigm and cannot be applied to attention layer editing or adapter-based methods. While the misalignment concept theoretically extends to other parameter spaces, new formalization would be required.
-- **Absence of continual editing evaluation**: The paper only evaluates one-shot batch editing and does not test the scenario of continued editing on an already-edited model. Successive editing rounds may lead to accumulated alignment drift.
-- **Insufficient hyperparameter sensitivity analysis**: The values of $\lambda_{KL}$ and $\lambda_{MSE}$ may require tuning for different models, and the paper does not provide a systematic sensitivity analysis.
+- **Computational overhead of iterative optimization**: Training each fact requires forward/backward passes to optimize $r_i$, resulting in linear time complexity. A batch-wise alignment solution could accelerate this.
+- **Limited to Transformer FFN layers**: The framework is tied to the locate-then-edit paradigm and cannot be applied to attention layer editing or adapter-based methods.
+- **Lack of continuous editing evaluation**: The paper focuses on one-time batch editing and does not test sequential edits over time, which might lead to cumulative alignment drift.
+- **Hyperparameter sensitivity**: The optimal values for $\lambda_{KL}$ and $\lambda_{MSE}$ might vary across models, and a systematic sensitivity analysis is missing.
 
 ## Related Work & Insights
 
-- **vs. MEMIT**: MEMIT jointly solves the normal equations without alignment constraints, causing residual space structure to be destroyed as edit count grows. EAMET's alignment loss is essentially a regularization of MEMIT—it does not alter the mathematical form of the final parameter update, only improving the quality of the input residuals. This reveals that MEMIT's bottleneck lies in input quality rather than the solver.
-- **vs. AlphaEdit**: AlphaEdit addresses knowledge forgetting during sequential editing via null-space constraints to protect previously edited knowledge. EAMET addresses spatial structural consistency during batch editing. The two approaches are orthogonal and could theoretically be combined.
-- **vs. PMET**: PMET introduces attention layer parameter modifications beyond the FFN to increase editing capacity, yet still suffers from misalignment (with misalignment scores comparable to MEMIT). EAMET improves residual quality at the source without adding editing layers, and achieves superior results.
+- **vs MEMIT**: MEMIT solves the normal equation without alignment constraints, causing structural breakdown at scale. EAMET's loss acts as a regularization that improves residue quality without changing the mathematical form of the parameter update.
+- **vs AlphaEdit**: AlphaEdit focuses on forgetting during sequential editing using null-space constraints. EAMET focuses on spatial structure consistency in batch editing. The two are orthogonal and could potentially be combined.
+- **vs PMET**: PMET adds attention layer modifications to increase capacity but still suffers from misalignment. EAMET improves residue quality at the source, performing better without increasing the number of edited layers.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Formalizing embedding misalignment offers a genuinely new perspective, though the method itself (KL+MSE regularization) is relatively standard.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 6 LLMs, 3 datasets, edit scales from 200 to 15k, prefix robustness, same-subject robustness, and editing order sensitivity—comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐ The theory–empirics–solution narrative chain is clear, though heavy notation makes the method section moderately difficult to read.
-- Value: ⭐⭐⭐⭐ Provides important insights for the model editing community; the misalignment diagnostic tool has independent value in its own right.
-
-- Novelty: ⭐⭐⭐⭐ Original discovery and formalization of embedding misalignment.
-
-- Experimental Thoroughness: ⭐⭐⭐⭐ 6 LLMs × 3 datasets.
-
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear.
-
-- Value: ⭐⭐⭐⭐ Addresses a practical bottleneck in large-scale model editing.
+- **Novelty**: ⭐⭐⭐⭐ Formalizing embedding misalignment is a fresh perspective; however, the KL+MSE regularization is relatively standard.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive coverage across 6 LLMs, 3 datasets, scale up to 15k, and various robustness tests.
+- **Writing Quality**: ⭐⭐⭐⭐ The link between theory, empirical evidence, and solution is clear, though notation-heavy.
+- **Value**: ⭐⭐⭐⭐ High impact for the model editing community; the misalignment diagnostic tool has independent value.
 
 ## Summary
 
-This paper makes meaningful contributions in its research direction, with the proposed method demonstrating competitive performance across multiple experimental settings.
-
-The technical approach of the core contribution is clearly articulated, the experimental design is sound, and the work provides valuable reference points for subsequent research.
-
-Future work could further explore the applicability and scalability of the method in broader settings.
+This paper provides meaningful exploration in the field of model editing. The proposed method demonstrates competitiveness across various experimental settings. The technical roadmap is clear, the experimental design is sound, and it offers valuable references for future research. Future work can further explore the applicability and scalability of the method in broader scenarios.
 
 <!-- RELATED:START -->
 
@@ -167,8 +167,8 @@ Future work could further explore the applicability and scalability of the metho
 - [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
 - [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](fine-tuning_done_right_in_model_editing.md)
 - [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](energy-regularized_sequential_model_editing_on_hyperspheres.md)
-- [\[ICLR 2026\] Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing](bilinear_representation_mitigates_reversal_curse_and_enables_consistent_model_ed.md)
-- [\[ICLR 2026\] GOT-Edit: Geometry-Aware Generic Object Tracking via Online Model Editing](got-edit_geometry-aware_generic_object_tracking_via_online_model_editing.md)
+- [\[ACL 2025\] Context-Robust Knowledge Editing for Language Models](../../ACL2025/knowledge_editing/context-robust_knowledge_editing_for_language_models.md)
+- [\[ICLR 2026\] KnowledgeSmith: Uncovering Knowledge Updating in LLMs with Model Editing and Unlearning](knowledgesmith_uncovering_knowledge_updating_in_llms_with_model_editing_and_unle.md)
 
 </div>
 

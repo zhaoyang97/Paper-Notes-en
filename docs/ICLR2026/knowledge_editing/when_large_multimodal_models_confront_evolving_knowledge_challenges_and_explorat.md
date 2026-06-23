@@ -2,111 +2,92 @@
 title: >-
   [Paper Note] When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations
 description: >-
-  [ICLR 2026][Knowledge Editing][Large Multimodal Models] This paper proposes the EVOKE benchmark to systematically evaluate the ability of Large Multimodal Models (LMMs) to incorporate evolving knowledge…
+  [ICLR 2026][Knowledge Editing][Paper Note] This paper proposes the EVOKE benchmark to systematically evaluate the knowledge injection capabilities of Large Multimodal Models (LMMs) for evolving knowledge. It reveals two primary challenges: the poor performance of existing methods and catastrophic forgetting caused by fine-tuning. Furthermore, it explores two re
 tags:
-  - "ICLR 2026"
-  - "Knowledge Editing"
-  - "Large Multimodal Models"
-  - "Knowledge Injection"
-  - "Evolving Knowledge"
-  - "Catastrophic Forgetting"
-  - "Continual Learning"
+  - ICLR 2026
+  - Knowledge Editing
 date: 2026-05-08
-content_hash: 1539126a80e0aae9
+content_hash: 5f1d5337c16ec2cc
 ---
-
 # When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.24449](https://arxiv.org/abs/2505.24449)  
 **Code**: None  
-**Area**: Multimodal / VLM
+**Area**: Multimodal / VLM  
 **Keywords**: Large Multimodal Models, Knowledge Injection, Evolving Knowledge, Catastrophic Forgetting, Continual Learning
 
 ## TL;DR
 
-This paper proposes the EVOKE benchmark to systematically evaluate the ability of Large Multimodal Models (LMMs) to incorporate evolving knowledge, identifies two core challenges (poor performance of existing methods and catastrophic forgetting induced by fine-tuning), and explores two mitigation strategies: knowledge augmentation and continual learning.
+This paper proposes the EVOKE benchmark to systematically evaluate the knowledge injection capabilities of Large Multimodal Models (LMMs) for evolving knowledge. It reveals two primary challenges: the poor performance of existing methods and catastrophic forgetting caused by fine-tuning. Furthermore, it explores two response paths: knowledge augmentation and continual learning.
 
 ## Background & Motivation
 
-Large Language/Multimodal Models (LLMs/LMMs) accumulate extensive world knowledge through large-scale pretraining, yet face a fundamental problem: **knowledge staleness**. Global information updates rapidly, new entities emerge continuously, while trained models remain static. For instance, an LMM may fail to recognize the Xiaomi SU7 automobile and incorrectly identify it as a Porsche.
+Large Language/Multimodal Models (LLMs/LMMs) accumulate extensive world knowledge through large-scale pre-training. However, they face a fundamental problem: **knowledge obsolescence**. Global information updates rapidly, and new entities emerge continuously, while trained models remain static. For instance, an LMM might fail to recognize the Xiaomi SU7 car, incorrectly identifying it as a Porsche.
 
 Existing research on knowledge injection exhibits three critical gaps:
 
-**Lack of multimodal evolving knowledge datasets**: Existing knowledge injection datasets (e.g., CC-RECENTNEWS) contain only text and lack multimodal data reflecting real-world scenarios.
+**Lack of multimodal evolving knowledge datasets**: Current datasets (e.g., CC-RECENTNEWS) are text-only and lack multimodal data from real-world scenarios.
 
-**Insufficient systematic study of LMMs**: Most knowledge injection research focuses on LLMs, with notably limited systematic exploration of vision-language models.
+**Absence of systematic studies on LMMs**: Most knowledge injection research focuses on LLMs, leaving a significant gap in the systematic exploration of vision-language models.
 
-**Underestimation of injection side effects**: The impact of knowledge injection—particularly fine-tuning—on a model's pre-existing capabilities has not been comprehensively evaluated.
+**Insufficient understanding of injection side effects**: There is a lack of comprehensive evaluation regarding the impact of knowledge injection (specifically fine-tuning) on the model's original capabilities.
 
-This paper aims to construct the first multimodal evolving knowledge injection benchmark, systematically expose the associated challenges, and explore viable mitigation paths.
+This paper aims to construct the first multimodal evolving knowledge injection benchmark to systematically reveal challenges and explore viable pathways.
 
 ## Method
 
 ### Overall Architecture
 
-The contribution of this paper is a complete "benchmark + evaluation + path" framework:
+The authors do not propose a single specific injection algorithm but establish a research pipeline: "Benchmarking → Systematic Evaluation → Improvement Paths." The goal is to transform the ambiguous problem of "how LMMs should absorb evolving knowledge" into a quantifiable and comparable engineering problem. First, an automated pipeline constructs the EVOKE benchmark using real-world evolving knowledge from 2024, defining a dual-objective metric of "Learning New Knowledge" and "Retaining Old Capabilities" as a unified target. Second, this benchmark evaluates three mainstream injection routes: SFT, MM-RAG, and IAG, exposing two core challenges: generally poor injection effectiveness and catastrophic forgetting induced by fine-tuning. Finally, two paths are explored to address these challenges: knowledge augmentation to mitigate "poor injection" and continual learning to alleviate "forgetting," corresponding to the "Knowledge Adaptation" and "Knowledge Retention" objectives, respectively.
 
-1. **EVOKE Benchmark Construction**: An automated pipeline for collecting evolving knowledge and constructing evaluation data.
-2. **Systematic Evaluation**: Comprehensive experiments across three categories of knowledge injection methods: SFT, RAG, and IAG.
-3. **Challenge Identification**: Two core challenges are identified.
-4. **Path Exploration**: A corresponding mitigation direction is proposed for each challenge.
+```mermaid
+graph TD
+    A["2024 Evolving Knowledge<br/>(CNN News + Wikipedia)"] --> B["EVOKE Benchmark<br/>Automated Pipeline: Filter→GPT-4o Summary/QA<br/>→Image Retrieval→CLIP Denoising→Human Review"]
+    B --> C["Dual-Objective Definition<br/>Knowledge Adaptation + Knowledge Retention"]
+    C --> D["Evaluation of Three Injection Paradigms<br/>SFT / MM-RAG / IAG"]
+    D -->|Challenge: Poor Injection| E["Path 1: Knowledge Augmentation<br/>Text Paraphrasing Effective, Image Augmentation Ineffective"]
+    D -->|Challenge: Catastrophic Forgetting| F["Path 2: Continual Learning<br/>Replay / EWC / LwF / MoELoRA"]
+```
 
 ### Key Designs
 
-1. **EVOKE Benchmark Construction**: Automated multimodal evolving knowledge collection pipeline
+**1. EVOKE Benchmark: Constructing Evaluable Evolving Knowledge via Automated Pipelines**
 
-    - **Data Sources**: CNN news website (29 news categories) and offline Wikipedia (130 entity types), covering 159 fine-grained categories in total.
-    - **Data Scale**: 9,422 knowledge–image pairs.
-    - **Timeline**: Data from 2024, ensuring novelty for LMMs released in 2023.
-    - **Data Format**: Each knowledge entry consists of:
-        - Injection data $\mathcal{D}_\mathcal{K} = \{(i_k, x_k, y_k)\}$: knowledge image, heuristic query, knowledge summary.
-        - Evaluation data $\mathcal{D}_\mathcal{Q} = \{(i_q, x_q, y_q)\}$: query image, question, ground truth.
-    - **Quality Assurance**: Popularity filtering → GPT-4o summarization → GPT-4o QA generation → Google Image retrieval → CLIP clustering for denoising → human review.
+Existing datasets are either text-only or insufficiently "new," failing to test an LMM's ability to absorb real-world evolving knowledge. EVOKE collects data from CNN News (29 categories) and Wikipedia (130 entity types), covering 159 fine-grained types with 9,422 knowledge-image pairs, all sourced from 2024. This ensures the knowledge is entirely new for models like LLaVA and Qwen-VL released in 2023. Each entry is organized into two sets: the injection side $\mathcal{D}_\mathcal{K} = \{(i_k, x_k, y_k)\}$ provides knowledge images, heuristic queries, and summaries; the evaluation side $\mathcal{D}_\mathcal{Q} = \{(i_q, x_q, y_q)\}$ provides different query images, questions, and ground truth. Disparate images for injection and query prevent models from "cheating" through image memorization rather than knowledge acquisition.
 
-2. **Knowledge Injection Method Evaluation**: Comprehensive coverage across three major categories
+**2. Dual-objective Problem Definition: Balancing New Knowledge and Old Capabilities**
 
-    - **Supervised Fine-Tuning (SFT)**: Full Fine-Tuning and LoRA strategies.
-    - **Multimodal Retrieval-Augmented Generation (MM-RAG)**: Four retrieval strategies—Text-Only, Image-Only, UniIR (multimodal fusion retrieval), and Golden Context (ideal upper bound).
-    - **Internet-Augmented Generation (IAG)**: Gemini and Perplexity AI.
+Knowledge injection often focuses solely on acquisition while ignoring the destruction of prior capabilities. The authors formalize injection as a constrained optimization problem. Knowledge Adaptation aims to maximize accuracy on evolving knowledge evaluation data, while Knowledge Retention requires that performance on original tasks does not degrade post-injection:
 
-3. **Problem Formulation**: Dual objectives of knowledge injection
+$$\max_f \mathbb{E}[\mathbb{I}(\mathcal{M}^*(i_q, x_q) = y_q)] \text{ s.t. } \min_f \mathbb{E}[\mathbb{I}(\mathcal{M}(i_p, x_p) = y_p) - \mathbb{I}(\mathcal{M}^*(i_p, x_p) = y_p)]$$
 
-    - **Knowledge Adaptation**: Maximize accuracy on evolving knowledge evaluation data.
-    - **Knowledge Retention**: Minimize performance degradation on pre-existing tasks after injection.
-    - Formalized as a constrained optimization: $\max_f \mathbb{E}[\mathbb{I}(\mathcal{M}^*(i_q, x_q) = y_q)] \text{ s.t. } \min_f \mathbb{E}[\mathbb{I}(\mathcal{M}(i_p, x_p) = y_p) - \mathbb{I}(\mathcal{M}^*(i_p, x_p) = y_p)]$
+where $\mathcal{M}^*$ is the injected model and $\mathcal{M}$ is the original model. This definition maps "poor injection" to low adaptation and "catastrophic forgetting" to degradation in retention.
 
-4. **Path 1: Knowledge Augmentation**: Data augmentation during the training stage
+**3. Coverage of Three Injection Paradigms: Comparative Evaluation**
 
-    - **Text Augmentation**: GPT-4 is used to paraphrase knowledge summaries, generating semantically equivalent but differently expressed versions.
-    - **Image Augmentation**: Conventional augmentations (flipping, random shadow, color transformation).
-    - Core finding: Text augmentation significantly improves performance at training time (accuracy increases monotonically with the number of paraphrases), whereas image augmentation leads to performance degradation.
-    - Interpretation: Text augmentation helps the model learn the "correct logic" rather than rote memorization—e.g., learning that "the Xiaomi SU7 is an electric sedan from Xiaomi's automotive division" rather than memorizing a verbatim description.
+The study evaluates three technical routes: Supervised Fine-Tuning (SFT) using Full Fine-Tuning and LoRA to internalize knowledge; Multimodal Retrieval-Augmented Generation (MM-RAG) using Text-Only, Image-Only, UniIR, and Golden Context (the upper bound); and Internet-Augmented Generation (IAG) using real-time systems like Gemini and Perplexity AI. This benchmarks "Internalization," "External Retrieval," and "Live Search" under a unified standard.
 
-5. **Path 2: Continual Learning**: Alleviating catastrophic forgetting
+**4. Path 1: Knowledge Augmentation — Helping Models "Learn Logic" over Memorization**
 
-    - **When training data is available**: Replay—randomly sampling 10% of original training data and training jointly with new knowledge.
-    - **When training data is unavailable**:
-        - EWC (Elastic Weight Consolidation): parameter regularization.
-        - LwF (Learning without Forgetting): knowledge distillation.
-        - MoELoRA: mixture-of-experts LoRA leveraging multiple experts for diverse knowledge acquisition.
-    - Overall ranking: Replay+LoRA (Rank 1) > MoELoRA (Rank 2) > Replay+Full-FT (Rank 3).
+SFT performance is often poor because models may memorize summaries without being able to extract attributes. The authors perform data augmentation: textually, GPT-4 paraphrases summaries into multiple semantically equivalent versions; visually, traditional methods like flipping, random shadowing, and color jittering are used. Results show a counter-intuitive finding: more text paraphrasing correlates positively with accuracy, while traditional image augmentation actually reduces performance. The explanation is that text augmentation forces the model to learn flexible attribute associations (e.g., "Xiaomi SU7 is an EV by Xiaomi"), whereas simple geometric perturbations introduce noise without enhancing knowledge content.
+
+**5. Path 2: Continual Learning — Mitigating Catastrophic Forgetting**
+
+Forgetting is treated as a continual learning problem. When original data is available, Replay (mixing 10% old data) is used. When unavailable, the authors compare EWC (parameter regularization), LwF (distillation), and MoELoRA (multi-expert). The ranking is Replay+LoRA (Rank 1) > MoELoRA (Rank 2) > Replay+Full-FT (Rank 3), suggesting "sparse replay + low-rank adaptation" is the most stable compromise, though all methods sacrifice some injection accuracy.
 
 ### Loss & Training
 
-- SFT: Standard instruction fine-tuning loss (cross-entropy).
-- Continual learning losses:
-    - Replay: Standard loss computed on a subset of original data.
-    - EWC: $\mathcal{L}_{EWC} = \mathcal{L}_{task} + \lambda \sum_i F_i (\theta_i - \theta_i^*)^2$
-    - LwF: $\mathcal{L}_{LwF} = \mathcal{L}_{task} + \lambda \mathcal{L}_{KD}$
-    - MoELoRA: Multi-expert routing + contrastive learning.
+SFT utilizes standard cross-entropy loss. Continual learning methods add specific constraints: 
+EWC adds a regularization term: $\mathcal{L}_{EWC} = \mathcal{L}_{task} + \lambda \sum_i F_i (\theta_i - \theta_i^*)^2$, using the Fisher information $F_i$ to lock important parameters. 
+LwF adds a distillation term: $\mathcal{L}_{LwF} = \mathcal{L}_{task} + \lambda \mathcal{L}_{KD}$ to constrain the new model's output via the old model.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Overall Acc | Overall F1 | News Acc | Entity Acc |
-|--------|-------------|------------|----------|------------|
+|------|------------|------------|----------|------------|
 | LLaVA Vanilla | 4.89 | 9.34 | 7.37 | 2.18 |
 | LLaVA Full-FT | 18.02 | 15.17 | 21.35 | 14.37 |
 | LLaVA LoRA | 15.23 | 18.31 | 17.72 | 12.51 |
@@ -114,12 +95,12 @@ The contribution of this paper is a complete "benchmark + evaluation + path" fra
 | LLaVA MM-RAG (Golden) | **56.13** | **75.77** | 56.78 | 55.43 |
 | Perplexity AI† | 48.27 | 62.44 | 47.58 | 48.96 |
 
-The best-performing method achieves only 56.13% accuracy, far from satisfactory.
+All methods achieve a maximum of only 56.13% accuracy, significantly below ideal levels.
 
-### Catastrophic Forgetting Evaluation (12 benchmarks, 7 capability dimensions)
+### Catastrophic Forgetting Evaluation (12 benchmarks, 7 dimensions)
 
 | Method | MME | MMBench | MIA-Bench | MMDU | Ranking |
-|--------|-----|---------|-----------|------|---------|
+|------|-----|---------|-----------|------|---------|
 | Vanilla | 1865.56 | 64.60 | 66.33 | 26.37 | - |
 | Full-FT | 956.8 (-49%) | 52.92 (-18%) | 25.25 (-62%) | 13.03 (-51%) | 7 |
 | LoRA | 1233.54 (-34%) | 53.87 (-17%) | 29.66 (-55%) | 13.70 (-48%) | 6 |
@@ -128,63 +109,52 @@ The best-performing method achieves only 56.13% accuracy, far from satisfactory.
 
 ### Key Findings
 
-1. **Challenge 1: Extremely Poor Knowledge Injection Performance**
-    - The best method (Golden Context) achieves only 56.13% accuracy.
-    - SFT methods perform even worse (15–18%).
-    - MM-RAG generally outperforms SFT but requires retrieval infrastructure.
-    - IAG (Perplexity AI) achieves 48.27% without relying on any external injection data.
+1.  **Challenge 1: Poor Knowledge Injection Performance**
+    *   The best method (Golden Context) only reaches 56.13% accuracy.
+    *   SFT methods perform worse (15-18%).
+    *   IAG (Perplexity AI) reaches 48.27% without explicit injection data.
 
-2. **Challenge 2: Severe Catastrophic Forgetting**
-    - Full-FT and LoRA exhibit degradation across all 12 benchmarks.
-    - **Instruction-following capability suffers the most**: MIA-Bench drops by 62%/55%, as EVOKE data contains no instruction-following scenarios.
-    - Instruction-following is a prerequisite for other capabilities—its severe degradation causes disproportionate drops on MME (which relies on Yes/No instructions) compared to MMBench (multiple choice).
-    - Multi-turn dialogue ability (MMDU) also declines substantially.
+2.  **Challenge 2: Severe Catastrophic Forgetting**
+    *   Full-FT and LoRA cause degradation across all 12 benchmarks.
+    *   **Instruction following is most affected**: MIA-Bench drops by 62%/55%. This damage causes downstream collapses in benchmarks like MME that rely on specific output formats (Yes/No).
 
-3. **Text Augmentation Effective; Image Augmentation Ineffective**
-    - Paraphrasing during training (1→4 paraphrase variants) consistently improves performance.
-    - Conventional image augmentation leads to performance degradation, suggesting the need for dedicated image knowledge augmentation methods.
+3.  **Text Augmentation is Effective, Image Augmentation is Not**
+    *   Paraphrasing boosts performance, whereas traditional image perturbations reduce it, suggesting a need for specialized visual knowledge augmentation.
 
-4. **Continual Learning Methods Help but at a Cost**
-    - Replay and MoELoRA most effectively mitigate forgetting.
-    - However, all continual learning methods incur some loss in knowledge injection performance.
-    - MoELoRA suffers the largest drop in knowledge injection accuracy (Acc: 15.23→6.82).
+4.  **Trade-offs in Continual Learning**
+    *   Replay and MoELoRA effectively mitigate forgetting but at the cost of injection accuracy (especially MoELoRA, where Acc dropped from 15.23 to 6.82).
 
-5. **Sequential Fine-Tuning Degrades Over Time**
-    - Splitting data into 4/8/12 sequential batches and fine-tuning progressively results in declining performance.
-    - This indicates that sequential fine-tuning is unsuitable for continuously injecting evolving knowledge.
+5.  **Sequential Fine-tuning Hazards**
+    *   Performance decreases as data is split into more sequential batches, indicating SFT is unsuitable for continuous knowledge updates.
 
 ## Highlights & Insights
 
-1. **First Multimodal Evolving Knowledge Benchmark**: EVOKE fills the gap in multimodal knowledge injection evaluation; the data collection pipeline can continuously produce new evolving knowledge.
-2. **Comprehensive Systematic Evaluation**: Spanning SFT/RAG/IAG methods, 2 LMMs, and 12 forgetting evaluation benchmarks, the experimental scale leads comparable work.
-3. **Causal Chain: Instruction Following → Catastrophic Forgetting**: The paper reveals that knowledge injection causes the collapse of instruction-following capability, which in turn triggers large-scale degradation across other abilities. This causal mechanism offers important guidance for future research.
-4. **"Learning the Correct Logic" Interpretation of Text Augmentation**: Models need to learn flexible knowledge extraction rather than rote memorization; paraphrasing helps models store correct associations between entity attributes. This insight can guide data preparation strategies.
-5. **Knowledge-Type Adaptation Disparity**: News knowledge is easier to adapt to than entity knowledge, since news consists of new events involving existing entities, whereas new entities are entirely unfamiliar to LMMs.
+1.  **First Multimodal Evolving Knowledge Benchmark**: EVOKE fills the gap in evaluating LMM knowledge injection with a pipeline capable of continuous data generation.
+2.  **Systematic Evaluation**: Comparative study across SFT/RAG/IAG with 12 benchmarks provides a comprehensive view of the landscape.
+3.  **Instruction Following as a Forgetting Catalyst**: The observation that instruction-following collapse drives overall performance degradation provides a key focus for future mitigation strategies.
+4.  **Flexible Knowledge Extraction**: Validates that models need to learn attribute relationships rather than verbatim summaries, aligning with recent theoretical work on knowledge extraction in LLMs.
 
 ## Limitations & Future Work
 
-1. **Limited Data Scale**: While 9,422 samples is nontrivial, it remains small relative to LMM parameter counts; larger-scale data might alter the conclusions.
-2. **Outdated Model Selection**: Experiments are conducted only on LLaVA-v1.5 and Qwen-VL-Chat (both 2023 models); more recent models (e.g., GPT-4V, InternVL-2) may exhibit different behaviors.
-3. **Evaluation Restricted to Knowledge VQA**: EVOKE's evaluation is limited to the visual question answering format and does not cover more complex knowledge application scenarios (e.g., reasoning chains, multi-hop reasoning).
-4. **Insufficient Exploration of Image Augmentation**: Although conventional augmentation is found to be ineffective, more advanced strategies (e.g., diffusion-based style transfer) are not explored.
-5. **No Comparison with Knowledge Editing Methods**: Knowledge editing approaches (e.g., multimodal variants of ROME and MEMIT) are not included in the comparison.
+1.  **Data Scale**: 9,422 pairs is small relative to LMM parameters; larger scales might yield different conclusions.
+2.  **Model Selection**: Experiments used older models (LLaVA-v1.5, Qwen-VL); newer models (e.g., InternVL-2) should be tested.
+3.  **Scope of Evaluation**: Focused on VQA; complex applications like multi-hop reasoning were not explored.
+4.  **Knowledge Editing**: The study lacks a comparison with dedicated knowledge editing methods (e.g., MEMIT).
 
 ## Related Work & Insights
 
-- **Three Paradigms of Knowledge Injection**: SFT (parametric internalization), RAG (external retrieval), and IAG (internet search) each have distinct trade-offs; hybrid approaches may be necessary in the future.
-- **Continual Learning Applied to LMMs**: The effectiveness of Replay and MoELoRA demonstrates that integrating continual learning with large model fine-tuning is a promising direction.
-- **Insights from Knowledge Augmentation**: The theoretical finding of Allen-Zhu & Li (2024)—that memorizing training data does not guarantee knowledge extraction—is empirically validated in the multimodal setting.
-- **Implication**: The strong performance of IAG (e.g., Perplexity AI) suggests that, for evolving knowledge, enhancing a model's internet search capability may be preferable to injecting knowledge into model parameters.
+*   **Three Injection Paradigms**: SFT, RAG, and IAG each have distinct trade-offs; hybrid approaches may be the future.
+*   **Continual Learning**: Replay and MoELoRA show promise for maintaining model utility during updates.
+*   **IAG Potential**: The strong performance of internet-augmented systems suggests that for evolving knowledge, enhancing search capabilities might be more efficient than weight updates.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First multimodal evolving knowledge benchmark with a clearly defined problem formulation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Large-scale experiments with comprehensive coverage and in-depth analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Well-structured; the challenge–path framework is clearly articulated.
-- Value: ⭐⭐⭐⭐ — The benchmark and findings provide important reference value for the community, though the evaluated models are dated.
+*   Novelty: ⭐⭐⭐⭐
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐
+*   Writing Quality: ⭐⭐⭐⭐
+*   Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -193,7 +163,7 @@ The best-performing method achieves only 56.13% accuracy, far from satisfactory.
 - [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
 - [\[AAAI 2026\] Hybrid-DMKG: A Hybrid Reasoning Framework over Dynamic Multimodal Knowledge Graphs for Multimodal Multihop QA with Knowledge Editing](../../AAAI2026/knowledge_editing/hybrid-dmkg_a_hybrid_reasoning_framework_over_dynamic_multimodal_knowledge_graph.md)
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
-- [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](../../ICML2026/knowledge_editing/revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
+- [\[ICLR 2026\] Disentangling Knowledge Representations for Large Language Model Editing](disentangling_knowledge_representations_for_large_language_model_editing.md)
 
 </div>
 

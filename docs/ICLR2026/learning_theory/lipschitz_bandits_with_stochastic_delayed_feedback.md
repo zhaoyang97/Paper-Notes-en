@@ -2,128 +2,141 @@
 title: >-
   [Paper Note] Lipschitz Bandits with Stochastic Delayed Feedback
 description: >-
-  [ICLR 2026][Online Learning / Bandit Algorithms][Lipschitz bandit] This paper provides the first systematic study of Lipschitz bandits over continuous arm spaces under stochastic delayed feedback. For bounded delays…
+  [ICLR 2026][learning_theory][Lipschitz bandit] This paper presents the first systematic study of the learning problem for Lipschitz bandits in continuous arm spaces under stochastic delayed feedback. It proposes the Delayed Zooming algorithm for bounded delays (maintaining a sub-optimality gap bound of $\Delta(x) \leq 6r_t(x)$ via a lazy update mechanism) and the D
 tags:
-  - "ICLR 2026"
-  - "Online Learning / Bandit Algorithms"
-  - "Lipschitz bandit"
-  - "delayed feedback"
-  - "zooming algorithm"
-  - "phased elimination"
-  - "regret lower bound"
-  - "quantile"
+  - ICLR 2026
+  - learning_theory
+  - Lipschitz bandit
 date: 2026-05-08
-content_hash: 1d47a8f215cd6096
+content_hash: 23d3505bab22c6d9
 ---
-
 # Lipschitz Bandits with Stochastic Delayed Feedback
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.00309](https://arxiv.org/abs/2510.00309)  
 **Code**: None  
-**Area**: Online Learning / Bandit Algorithms
-**Keywords**: Lipschitz bandit, delayed feedback, zooming algorithm, phased elimination, regret lower bound, quantile
+**Area**: Online Learning / Bandit Algorithms  
+**Keywords**: Lipschitz bandit, delayed feedback, zooming algorithm, phased pruning, regret lower bounds, quantiles
 
 ## TL;DR
 
-This paper provides the first systematic study of Lipschitz bandits over continuous arm spaces under stochastic delayed feedback. For bounded delays, it proposes the Delayed Zooming algorithm, which employs a lazy update mechanism to maintain the suboptimality gap bound $\Delta(x) \leq 6r_t(x)$. For unbounded delays, it proposes DLPP, a phased pruning strategy whose regret is tied to the delay quantile $Q(p)$. Instance-dependent lower bounds are established to prove that DLPP is nearly optimal.
+This paper presents the first systematic study of the learning problem for Lipschitz bandits in continuous arm spaces under stochastic delayed feedback. It proposes the Delayed Zooming algorithm for bounded delays (maintaining a sub-optimality gap bound of $\Delta(x) \leq 6r_t(x)$ via a lazy update mechanism) and the DLPP phased pruning strategy for unbounded delays (where regret is linked to the delay quantile $Q(p)$). Furthermore, it establishes an instance-dependent lower bound proving that DLPP is near-optimal.
 
 ## Background & Motivation
 
-**Background**: Lipschitz bandits extend classical MAB to a continuous metric space $(\mathcal{A}, \mathcal{D})$, where the reward function $\mu$ satisfies a 1-Lipschitz condition. The classical Zooming algorithm achieves the optimal regret rate $\tilde{O}(T^{(d_z+1)/(d_z+2)})$ (with $d_z$ being the zooming dimension) via adaptive discretization in the delay-free setting. Delayed feedback has been extensively studied in MAB, linear bandits, and kernel bandits, yet the delayed feedback problem for Lipschitz bandits remains entirely unexplored.
+**Background**: Lipschitz bandits extend classical Multi-Armed Bandits (MAB) to continuous metric spaces $(\mathcal{A}, \mathcal{D})$, where the reward function $\mu$ satisfies the 1-Lipschitz condition. The classical Zooming algorithm achieves the optimal regret rate of $\tilde{O}(T^{(d_z+1)/(d_z+2)})$ in the delay-free setting through adaptive discretization, where $d_z$ is the zooming dimension. While delayed feedback has been extensively studied in MAB, linear bandits, and kernel bandits, the problem remains entirely unexplored for Lipschitz bandits.
 
-**Limitations of Prior Work**: (1) The combination of continuous arm spaces and delayed feedback introduces dual complexity — each sampled point represents a neighborhood region whose estimate depends on delayed observations. (2) The core analysis of the Zooming algorithm relies on the property that confidence radii shrink only upon pulling an arm; this property breaks under delay, since delayed rewards arriving between pulls also reduce confidence radii. (3) Delayed methods for finite-arm settings (e.g., Delayed-UCB1) do not involve covering arguments for continuous spaces and cannot be directly extended.
+**Limitations of Prior Work**: (1) The combination of continuous arm spaces and delayed feedback introduces dual complexity—each sampling point represents a neighborhood, and its estimation depends on delayed observations. (2) The core analysis of the Zooming algorithm relies on the property that "confidence radii change only when an arm is pulled"—this property is broken under delay because confidence radii of unpulled arms shrink when delayed rewards arrive. (3) Finite-arm delay methods (e.g., Delayed-UCB1) do not involve coverage arguments for continuous spaces and cannot be directly generalized.
 
-**Key Challenge**: How can efficient adaptive exploration over a continuous metric space be maintained when feedback is delayed and may be permanently absent?
+**Key Challenge**: How to maintain efficient adaptive exploration of a continuous metric space when feedback is delayed and potentially permanently missing?
 
-**Goal**: To design Lipschitz bandit algorithms that achieve near-optimal regret under both bounded and unbounded stochastic delays, and to prove their optimality.
+**Goal**: Design Lipschitz bandit algorithms that achieve near-optimal regret rates under both bounded and unbounded stochastic delays and prove their optimality.
 
-**Key Insight**: The problem is decomposed into two sub-problems based on the support of the delay distribution — bounded delay is handled via "zooming + lazy update," while unbounded delay is handled via "phased accumulation of reliable feedback + elimination."
+**Key Insight**: Categorize the problem into two sub-problems based on delay support—using "zooming + lazy update" for bounded delays, and a "phased accumulation of reliable feedback + elimination" strategy for unbounded delays.
 
-**Core Idea**: For bounded delays, lazy updates control the rate at which confidence radii shrink; for unbounded delays, phased round-robin sampling and the delay quantile $Q(p)$ are used to relate the number of pulls to the number of observations, thereby recovering the optimal delay-free regret rate.
+**Core Idea**: Control the rate of confidence radius shrinkage via lazy updates (for bounded delays), or relate the number of pulls to observations through phased round-robin sampling and the $Q(p)$ quantile (for unbounded delays) to recover the optimal delay-free regret rate.
 
 ## Method
 
 ### Overall Architecture
 
-The problem is formalized as a triple $(\mathcal{A}, \mathcal{D}, \mu)$: $\mathcal{A}$ is a compact doubling metric space, $\mathcal{D}$ is a metric, and $\mu: \mathcal{A} \to [0,1]$ is an unknown 1-Lipschitz reward function. At each round $t$, the learner selects arm $x_t$ and receives reward $y_t = \mu(x_t) + \epsilon_t$ (where $\epsilon_t$ is sub-Gaussian noise), but the reward is only observed after a random delay $\tau_t$. The delays $\tau_t \sim f_\tau$ are independent of arms and rewards. The cumulative regret is $R(T) = \sum_{t=1}^T (\mu^* - \mu(x_t))$. Two algorithms are proposed for bounded and unbounded delays respectively.
+The problem addressed in this paper is conducting Lipschitz bandit optimization on a continuous arm space where rewards are not returned immediately but after a stochastic delay, or may never arrive. The problem is formalized as a triplet $(\mathcal{A}, \mathcal{D}, \mu)$, where $\mathcal{A}$ is a compact doubling metric space, $\mathcal{D}$ is the metric, and $\mu: \mathcal{A} \to [0,1]$ is an unknown 1-Lipschitz reward function. At each round $t$, an arm $x_t$ is selected, generating a reward $y_t = \mu(x_t) + \epsilon_t$ (where $\epsilon_t$ is sub-Gaussian noise). However, this reward is observed only after a stochastic delay $\tau_t \sim f_\tau$ (independent of arms and rewards). The objective is to minimize cumulative regret $R(T) = \sum_{t=1}^T (\mu^* - \mu(x_t))$.
+
+The work bifurcates based on the severity of the delay into two algorithmic pipelines, complemented by a lower bound. For bounded delays ($\tau_t \leq \tau_{\max}$), the algorithm follows the adaptive discretization framework of classical Zooming but employs a **Delayed Zooming** lazy update mechanism to lock the speed of confidence radius shrinkage, recovering the optimal regret rate. For unbounded delays (including permanent feedback loss), where maintaining real-time confidence radii is infeasible, the **DLPP** strategy is used to "prune after accumulating sufficient reliable feedback," linking regret to the delay quantile $Q(p)$ rather than worst-case scenarios. Finally, a matching **instance-dependent lower bound** proves the near-optimality of DLPP.
 
 ### Key Designs
 
-1. **Delayed Zooming Algorithm (Bounded Delay $\tau_t \leq \tau_{\max}$)**:
-    - **Function**: Preserves the adaptive discretization advantage of the Zooming algorithm while handling information disorder caused by delays.
-    - **Mechanism**: The observation count $v_t(x)$ replaces the pull count $n_t(x)$ when computing the confidence radius $r_t(x) = \sqrt{\frac{4\log T + 2\log(2/\delta)}{1 + v_t(x)}}$. A **lazy update mechanism** is introduced: a buffer queue $Q[x]$ is maintained for each active arm, and arriving feedback is cached rather than immediately incorporated when $v_t(x)+1 > 4 v_s(x)$ (where $s$ is the time of the last pull). The buffered rewards are processed together at the next pull of that arm. This ensures $r_t(x) \geq \frac{1}{2} r_s(x)$, thereby recovering the suboptimality gap bound $\Delta(x) \leq 6r_t(x)$ (compared to $3r_t(x)$ in the classical delay-free case).
-    - **Design Motivation**: Under delay, $r_t(x)$ shrinks between pulls as delayed rewards arrive, breaking the core of classical zooming analysis. The lazy update resolves this by controlling the growth rate of the observation count. The resulting regret bound is $\tilde{O}\big(T^{\frac{d_z+1}{d_z+2}} + \tau_{\max} T^{\frac{d_z}{d_z+2}}\big)$.
+**1. Delayed Zooming: Locking the Confidence Radius Shrinkage Rate via Lazy Updates (Bounded Delay $\tau_t \leq \tau_{\max}$)**
 
-2. **DLPP Algorithm (Unbounded Delays, Including $\tau = \infty$)**:
-    - **Function**: Handles scenarios where delays may be unbounded or feedback may be permanently absent, providing a near-optimal regret guarantee.
-    - **Mechanism**: Learning proceeds in phases. In phase $m$, a covering set $\mathcal{B}_m$ of balls with radius $r_m = 2^{-m}$ is maintained. Uniform round-robin sampling is performed over each ball until $v_m = \frac{2\log T + \log(2/\delta)}{2r_m^2}$ observations have been accumulated, at which point sampling for that ball ceases. At the end of each phase, regions whose empirical mean falls far below the best ball are eliminated (pruning rule: $\hat\mu_m^* - \hat\mu_m(B) \geq 8r_m$), and surviving regions are further subdivided. The number of pulls is related to the number of delayed observations via a Chernoff bound: $\Pr(v_{t+Q(p)}(B) \leq \frac{p}{2} n_t(B)) \leq \exp(-\frac{p}{8} n_t(B))$, linking regret to the delay quantile $Q(p)$.
-    - **Design Motivation**: DLPP does not rely on real-time feedback updates; instead, it waits until sufficient statistics are accumulated before making decisions, and thus remains effective even when some feedback is missing. The regret bound is $R(T) \lesssim \min_{p \in (0,1]} \left\{ \frac{1}{p} T^{\frac{d_z+1}{d_z+2}} (c\log\frac{T}{\delta})^{\frac{1}{d_z+2}} + Q(p) \right\}$.
+The classical Zooming analysis has a critical vulnerability: confidence radii only change when an arm is "pulled," ensuring they are strictly synchronized with the pull count. Under delay, rewards from previously pulled arms may arrive later, causing the confidence radius of an arm **not currently being pulled** to shrink, which collapses the coverage-activation argument. Delayed Zooming addresses this in two steps. First, it calculates the confidence radius based on actual observation counts $v_t(x)$ rather than pull counts $n_t(x)$:
 
-3. **Instance-Dependent Regret Lower Bound**:
-    - **Function**: Proves that the regret rate of DLPP is nearly optimal (up to logarithmic factors).
-    - **Mechanism**: A specific delay distribution is constructed (delay equals a fixed value $\tau_0$ with probability $p$, and $\infty$ otherwise). Via a Bernoulli sampling coupling, the delayed Lipschitz bandit is reduced to its delay-free counterpart. The resulting lower bound is $R(T) \gtrsim \frac{T^{(d_z+1)/(d_z+2)}(c\log T)^{1/(d_z+2)}}{p\log T} - \frac{1}{p} + \bar\Delta \cdot Q(p)$, where $\bar\Delta = \int_\mathcal{A} \Delta(x) / \int_\mathcal{A} 1$ is the average suboptimality gap.
-    - **Design Motivation**: The final term $\bar\Delta \cdot Q(p)$ reflects the unavoidable regret incurred during the first $Q(p)$ rounds when no feedback is available, matching the form of the upper bound.
+$$r_t(x) = \sqrt{\frac{4\log T + 2\log(2/\delta)}{1 + v_t(x)}}$$
+
+Thus, the radius reflects only acquired information. Second, it introduces a **lazy update mechanism**: a buffer queue $Q[x]$ is maintained for each active arm. Let $s$ be the last time the arm was pulled. If accumulated observations lead to $v_t(x)+1 > 4 v_s(x)$, subsequent feedback is buffered and the radius is not updated until the arm is pulled again. By capping the observation growth rate at "no more than 4 times the previous count," the algorithm guarantees $r_t(x) \geq \tfrac{1}{2} r_s(x)$—ensuring the radius shrinks by at most half between pulls. The cost is the relaxation of the sub-optimality gap from $\Delta(x) \leq 3r_t(x)$ to $\Delta(x) \leq 6r_t(x)$, but the coverage argument is restored, resulting in a regret bound of $\tilde{O}\big(T^{\frac{d_z+1}{d_z+2}} + \tau_{\max} T^{\frac{d_z}{d_z+2}}\big)$, where delay contributes only an additive term.
+
+**2. DLPP: Pruning after Accumulating Sufficient Reliable Feedback (Unbounded/Missing Feedback $\tau = \infty$)**
+
+When delays are potentially unbounded or feedback is entirely lost, real-time radius updates become meaningless. DLPP abandons real-time updates for a phased elimination strategy. In phase $m$, the algorithm maintains a set of covering balls $\mathcal{B}_m$ with radius $r_m = 2^{-m}$, performing uniform round-robin sampling until each ball accumulates
+
+$$v_m = \frac{2\log T + \log(2/\delta)}{2r_m^2}$$
+
+observations. At the end of the phase, pruning occurs based on empirical means: any region where $\hat\mu_m^* - \hat\mu_m(B) \geq 8r_m$ is eliminated, and surviving regions are subdivided for the next phase. The challenge is that sampling follows pull counts, while decisions depend on observation counts, which are out of sync. DLPP uses Chernoff inequalities to relate their probabilities:
+
+$$\Pr\!\Big(v_{t+Q(p)}(B) \leq \tfrac{p}{2}\, n_t(B)\Big) \leq \exp\!\Big(-\tfrac{p}{8}\, n_t(B)\Big)$$
+
+Crucially, waiting $Q(p)$ rounds ensures that at least a $p/2$ proportion of pulled arms result in available observations. Consequently, regret is naturally linked to the **delay quantile** $Q(p)$ (where a $p$ proportion of feedback arrives within $Q(p)$ rounds). Even if some feedback is permanently missing, the algorithm functions with a regret bound of:
+
+$$R(T) \lesssim \min_{p \in (0,1]} \left\{ \frac{1}{p} T^{\frac{d_z+1}{d_z+2}} \Big(c\log\tfrac{T}{\delta}\Big)^{\frac{1}{d_z+2}} + Q(p) \right\}$$
+
+Optimizing over $p$ allows the bound to adapt to the "central mass" of the delay distribution rather than its worst case.
+
+**3. Instance-Dependent Lower Bound: Proving DLPP Near-Optimality**
+
+The paper provides a lower bound matching the upper bound's form, demonstrating that DLPP is near-optimal up to logarithmic factors. The construction uses a specific family of delay distributions: delay is a fixed $\tau_0$ with probability $p$, and $\infty$ otherwise. Using Bernoulli sampling coupling, the delayed Lipschitz bandit is reduced to a delay-free version—simulating an algorithm that sees instant feedback with probability $p$—thereby transferring the delay-free lower bound. The final result is:
+
+$$R(T) \gtrsim \frac{T^{(d_z+1)/(d_z+2)}(c\log T)^{1/(d_z+2)}}{p\log T} - \frac{1}{p} + \bar\Delta \cdot Q(p)$$
+
+where $\bar\Delta = \int_\mathcal{A} \Delta(x) \big/ \int_\mathcal{A} 1$ is the average sub-optimality gap. The term $\bar\Delta \cdot Q(p)$ represents the unavoidable regret during the initial "blind flight" period of $Q(p)$ rounds where no feedback is received, matching the $Q(p)$ term in the upper bound.
 
 ### Loss & Training
 
-Both algorithms are theoretical constructs and require no gradient-based training. All key parameters are determined analytically: the lazy update threshold $4v_s(x)$ in Delayed Zooming, and the required observation count $v_m$ and pruning threshold $8r_m$ per phase in DLPP. Optimal regret rates are obtained by setting $\rho = (\log T / T)^{1/(d_z+2)}$ (bounded delay) or $M = \frac{\log(T/(c\log T))}{d_z+2}$ (DLPP).
+Both algorithms are theoretical and do not require gradient-based training. Key parameters are derived theoretically: the lazy update threshold $4v_s(x)$ for Delayed Zooming, and the required observations $v_m$ and pruning threshold $8r_m$ per phase for DLPP. Regret rate optimization is achieved by choosing $\rho = (\log T / T)^{1/(d_z+2)}$ (bounded delay) or $M = \frac{\log(T/(c\log T))}{d_z+2}$ (DLPP).
 
 ## Key Experimental Results
 
-### Main Results (Three Reward Functions × Two Delay Distributions, $T=60000$, 30 Independent Trials)
+### Main Results (3 Reward Functions × 2 Delay Distributions, $T=60000$, 30 Trials)
 
 | Reward Function | Algorithm | No Delay | Uniform $\mathbb{E}[\tau]=20$ | Uniform $\mathbb{E}[\tau]=50$ | Geometric $\mathbb{E}[\tau]=20$ | Geometric $\mathbb{E}[\tau]=50$ |
-|-----------------|-----------|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Trigonometric (1D) | Delayed Zooming | 138.97 | 154.55 | 171.07 | 159.30 | 152.98 |
-| Trigonometric (1D) | DLPP | 304.60 | 314.87 | 326.71 | 312.44 | 325.74 |
-| Sinusoidal (1D) | Delayed Zooming | 130.64 | 137.31 | 148.69 | 132.88 | 144.08 |
-| Sinusoidal (1D) | DLPP | 178.05 | 195.35 | 209.97 | 186.28 | 208.80 |
-| Bimodal (2D) | Delayed Zooming | 1445.86 | 1843.05 | 1858.45 | 1463.38 | 1828.15 |
-| Bimodal (2D) | DLPP | **1120.64** | **1159.85** | **1136.46** | **1120.63** | **1142.55** |
+|-----------------|-----------|:--------:|:--------------------------:|:--------------------------:|:----------------------------:|:----------------------------:|
+| Trig (1D)       | Delayed Zooming | 138.97   | 154.55                     | 171.07                     | 159.30                       | 152.98                       |
+| Trig (1D)       | DLPP      | 304.60   | 314.87                     | 326.71                     | 312.44                       | 325.74                       |
+| Sine (1D)       | Delayed Zooming | 130.64   | 137.31                     | 148.69                     | 132.88                       | 144.08                       |
+| Sine (1D)       | DLPP      | 178.05   | 195.35                     | 209.97                     | 186.28                       | 208.80                       |
+| 2D Function     | Delayed Zooming | 1445.86  | 1843.05                    | 1858.45                    | 1463.38                      | 1828.15                      |
+| 2D Function     | DLPP      | **1120.64** | **1159.85** | **1136.46** | **1120.63** | **1142.55** |
 
 ### Theoretical Results Comparison
 
-| Setting | Algorithm | Regret Upper Bound | Degenerate Case |
-|---------|-----------|-------------------|-----------------|
-| Bounded delay $\tau_{\max}$ | Delayed Zooming | $\tilde{O}(T^{(d_z+1)/(d_z+2)} + \tau_{\max} T^{d_z/(d_z+2)})$ | Recovers classical Lipschitz bandit when $\tau_{\max}=0$ |
-| Bounded delay, $d_z=0$ | Delayed Zooming | $O(\sqrt{cT\log T} + c\tau_{\max})$ | Recovers finite-arm MAB with delay |
-| Unbounded delay | DLPP | $\min_p \{ \frac{1}{p} T^{(d_z+1)/(d_z+2)} (\cdot)^{1/(d_z+2)} + Q(p) \}$ | Depends on median $\tau_{\text{med}}$ when $p=0.5$ |
-| Lower bound | — | $\frac{R}{p\log T} - \frac{1}{p} + \bar\Delta \cdot Q(p)$ | Matches DLPP upper bound up to logarithmic factors |
+| Setting | Algorithm | Regret Upper Bound | Consistency Check |
+|---------|-----------|--------------------|-------------------|
+| Bounded Delay $\tau_{\max}$ | Delayed Zooming | $\tilde{O}(T^{(d_z+1)/(d_z+2)} + \tau_{\max} T^{d_z/(d_z+2)})$ | $\tau_{\max}=0$ recovers classical Lipschitz bandit |
+| Bounded Delay $d_z=0$ | Delayed Zooming | $O(\sqrt{cT\log T} + c\tau_{\max})$ | Recovers finite-arm MAB with delay |
+| Unbounded Delay | DLPP | $\min_p \{ \frac{1}{p} T^{(d_z+1)/(d_z+2)} (\cdot)^{1/(d_z+2)} + Q(p) \}$ | Depends on median $\tau_{\text{med}}$ when $p=0.5$ |
+| Lower Bound | — | $\frac{R}{p\log T} - \frac{1}{p} + \bar\Delta \cdot Q(p)$ | Matches DLPP upper bound up to log factors |
 
 ### Key Findings
 
-- Both algorithms maintain sublinear regret under bounded/unbounded delays; the additional regret due to delay appears only as an additive term.
-- Delayed Zooming achieves lower regret in 1D settings; DLPP's phased pruning and discretization strategy is superior in 2D settings (where DLPP already outperforms Zooming even without delay).
-- Delayed Zooming performs well empirically under geometric (unbounded) delay, but its theoretical guarantee is restricted to bounded delays — an open problem noted by the authors.
-- The regret curve of DLPP exhibits a piecewise-linear shape, stemming from the phased accumulation of regret during uniform within-phase sampling.
+- Both algorithms maintain sub-linear regret under bounded/unbounded delays, with delay-induced extra regret being merely an additive term.
+- Delayed Zooming yields lower regret in 1D scenarios, while DLPP's pruning and discretization strategy is superior in 2D (where DLPP even outperforms Zooming without delay).
+- Delayed Zooming performs well in geometric distribution (unbounded) experiments, though theoretical guarantees are currently limited to bounded delays—an open problem.
+- The DLPP regret curve is piecewise linear, stemming from the phase-based uniform sampling and periodic regret accumulation.
 
 ## Highlights & Insights
 
-- **Technical Contribution of Lazy Update**: Despite appearing straightforward — replacing $n_t$ with $v_t$ and buffering — the analysis is highly non-trivial. The analysis shows that the factor-of-two increase in the constant of $\Delta(x) \leq 6r_t(x)$ is tight: when $v_t(x)+1 > 4v_s(x)$, $r_t(x)$ may fall just below $r_s(x)/2$, necessitating the suspension of updates.
-- **Elegance of Quantile Characterization**: The DLPP regret bound is expressed as a $\min_{p \in (0,1]}$ optimization over quantiles, adapting to the "central mass" of the delay distribution rather than its worst case — taking $p=0.5$ yields median dependence, while smaller $p$ accommodates heavy tails.
-- **Matching Upper and Lower Bounds**: The lower bound construction employs a Bernoulli coupling technique — simulating a delay-free algorithm with probability $p$ — proving that the delayed regret is at least $\Omega(R/(p\log T))$, plus the $\bar\Delta \cdot Q(p)$ term reflecting the first $Q(p)$ rounds with no information, demonstrating that DLPP is nearly unimprovable.
+- **Technical Contribution of Lazy Update**: While "using $v_t$ instead of $n_t$ + buffering" seems simple, its analysis is non-trivial. It is proven that the doubling of the constant in $\Delta(x) \leq 6r_t(x)$ is precise—when $v_t(x)+1 > 4v_s(x)$, $r_t(x)$ could drop below $r_s(x)/2$, necessitating an update halt.
+- **Elegance of Quantile Characterization**: The DLPP regret bound adapts to the "central mass" of the delay distribution via $\min_{p \in (0,1]}$. Selecting $p=0.5$ yields median dependence, while smaller $p$ can handle heavy-tailed distributions.
+- **Lower Bound Matching**: The lower bound construction using Bernoulli coupling—simulating a delay-free algorithm with probability $p$—shows that delayed regret is at least $\Omega(R/(p\log T))$. Combined with the uninformative $\bar\Delta \cdot Q(p)$ term for the first $Q(p)$ rounds, it demonstrates that DLPP is nearly unimprovable.
 
 ## Limitations & Future Work
 
-- The theoretical guarantee of Delayed Zooming is restricted to bounded delays; extension to unbounded delays is an open problem explicitly identified by the authors.
-- DLPP requires a covering oracle, and computing coverings in high-dimensional spaces may be computationally expensive.
-- Experiments are conducted only on 1D and 2D synthetic functions (trigonometric, sinusoidal, and 2D bimodal), without more realistic application scenarios.
-- Both algorithms require knowledge of the time horizon $T$; anytime variants are not discussed.
-- The adversarial delay setting is not addressed.
+- Theoretical guarantees for Delayed Zooming are restricted to bounded delays; extending this to unbounded delays is an explicit open problem.
+- DLPP requires a coverage oracle; calculating covers in high-dimensional spaces can be computationally expensive.
+- Experiments are restricted to 1D and 2D synthetic functions (trig, sine, bimodal), lacking realistic application scenarios.
+- Both algorithms require knowledge of the time horizon $T$; anytime versions are not discussed.
+- Adversarial delay scenarios are not considered.
 
 ## Related Work & Insights
 
-- **vs Delayed-UCB1 (Joulani et al., 2013)**: This finite-arm delayed MAB approach does not involve covering-activation mechanisms, making direct generalization infeasible.
-- **vs BLiN (Feng et al., 2022)**: The first batched Lipschitz bandit, but it assumes instantaneous/batched feedback and is restricted to $[0,1]^d$ with axis-aligned cube partitions.
-- **vs Lancewicki et al. (2021)**: That work characterizes regret for unbounded-delay MAB via quantile functions; this paper extends the approach to continuous spaces and proves a matching lower bound for DLPP.
+- **vs. Delayed-UCB1 (Joulani et al., 2013)**: Finite-arm delayed MAB; their analysis lacks coverage-activation mechanisms, making direct generalization impossible.
+- **vs. BLiN (Feng et al., 2022)**: The first batched Lipschitz bandit, but limited to instant/batch feedback and axis-aligned cube partitioning in $[0,1]^d$.
+- **vs. Lancewicki et al. (2021)**: Characterized regret for unbounded delay MAB using quantile functions; this work generalizes that approach to continuous spaces and proves a matching lower bound for DLPP.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First to study the intersection of Lipschitz bandits and delayed feedback, though the core technical approach builds on extensions and combinations of existing methods.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Theoretically complete (upper bounds + matching lower bounds); experimental validation is adequate but limited to synthetic settings.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Problem formulation is clear, the two algorithms are presented in a well-organized hierarchy, and theorem statements are concise and elegant.
-- Value: ⭐⭐⭐⭐ — Makes a solid foundational contribution to bandit theory, filling an important theoretical gap.
+- Novelty: ⭐⭐⭐⭐ First to explore the intersection of Lipschitz bandits and delayed feedback, though the technical route builds on combinations of existing methods.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid theoretical foundations (upper + matching lower bounds), with sufficient but synthetic experimental validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definitions, well-structured algorithms, and elegant theorem statements.
+- Value: ⭐⭐⭐⭐ Significant theoretical contribution to bandit literature, filling an important gap.
 
 <!-- RELATED:START -->
 
@@ -131,11 +144,11 @@ Both algorithms are theoretical constructs and require no gradient-based trainin
 
 ## Related Papers
 
-- [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](../../ICML2026/learning_theory/a_perturbation_approach_to_unconstrained_linear_bandits.md)
-- [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](../../NeurIPS2025/learning_theory/infrequent_exploration_in_linear_bandits.md)
-- [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](../../NeurIPS2025/learning_theory/finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
-- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
+- [\[ICLR 2026\] Bi-Lipschitz Autoencoder With Injectivity Guarantee](bi-lipschitz_autoencoder_with_injectivity_guarantee.md)
+- [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](online_learning_and_equilibrium_computation_with_ranking_feedback.md)
+- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
+- [\[ICLR 2026\] Data-to-Energy Stochastic Dynamics](data-to-energy_stochastic_dynamics.md)
 
 </div>
 

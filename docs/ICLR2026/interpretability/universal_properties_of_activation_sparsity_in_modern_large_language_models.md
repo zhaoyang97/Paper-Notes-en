@@ -2,88 +2,78 @@
 title: >-
   [Paper Note] Universal Properties of Activation Sparsity in Modern Large Language Models
 description: >-
-  [ICLR 2026][Interpretability][activation sparsity] This paper presents a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU)…
+  [ICLR 2026][Interpretability][activation sparsity] This paper provides a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU). It proposes a universal top-p sparsification framework and a "critical sparsity" metric, finding that activation sparsity increases monotonically with model scale. Input sparsification is identified as the most
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "activation sparsity"
-  - "LLM acceleration"
-  - "GLU architecture"
-  - "critical sparsity"
-  - "top-p sparsification"
-  - "diffusion LLM"
+  - ICLR 2026
+  - Interpretability
+  - activation sparsity
+  - LLM acceleration
+  - GLU architecture
+  - critical sparsity
+  - top-p sparsification
+  - diffusion LLM
 date: 2026-05-08
-content_hash: 56e14a7708beffcf
+content_hash: 57d272cbcde07b1d
 ---
-
 # Universal Properties of Activation Sparsity in Modern Large Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2509.00454](https://arxiv.org/abs/2509.00454)  
 **Code**: [GitHub](https://github.com/fszatkowski/activation-sparsity-benchmarking)  
-**Area**: Interpretability
+**Area**: Interpretability  
 **Keywords**: activation sparsity, LLM acceleration, GLU architecture, critical sparsity, top-p sparsification, diffusion LLM
 
 ## TL;DR
-This paper presents a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU), proposes a universal top-p sparsification framework and a critical sparsity metric, demonstrates that activation sparsity increases monotonically with model scale, identifies input sparsification as the most practical training-free acceleration scheme, and provides the first empirical evidence that diffusion-based LLMs also exhibit significant activation sparsity.
+This paper provides a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU). It proposes a universal top-p sparsification framework and a "critical sparsity" metric, finding that activation sparsity increases monotonically with model scale. Input sparsification is identified as the most practical training-free acceleration scheme, and the authors demonstrate for the first time that diffusion-based LLMs also exhibit significant activation sparsity.
 
 ## Background & Motivation
 
-**Historical context of activation sparsity**: ReLU networks naturally produce exact zero activations, and a large body of work has exploited this property for efficiency optimization, robustness improvement, and interpretability analysis.
+**History of Activation Sparsity**: ReLU networks naturally produce exact zero activations. Extensive work has utilized this property for efficiency optimization, robustness enhancement, and interpretability analysis.
 
-**The problem with modern LLMs**: Mainstream LLMs (Gemma3, LLaMA3, Qwen2.5) adopt GLU architectures with SiLU/GELU activations, which do not produce strictly zero values—methods developed for the ReLU era cannot be directly transferred.
+**Modern LLM Challenges**: Mainstream LLMs (Gemma3, LLaMA3, Qwen2.5) use GLU architectures with SiLU/GELU activations, which do not produce strict zeros. Consequently, methods from the ReLU era cannot be directly migrated.
 
-**Fragmentation of existing approaches**:
-   - **Replacement approaches** (substituting SiLU with ReLU) require additional training and may degrade model quality.
-   - **Approximate sparsification approaches** lack the principled guarantees of ReLU's exact zeros, require threshold calibration, and may overfit to the calibration set.
-   - Different methods target the input, gate, or intermediate activations of FFN layers without unified design guidance.
+**Fragmentation of Existing Solutions**:
+   - **Modification Schemes**: Replacing SiLU with ReLU requires additional training and may degrade model quality.
+   - **Approximate Sparsity Schemes**: These lack the principled guarantees of ReLU's strict zeros and require threshold calibration, risking overfitting to calibration sets.
+   - Design choices for FFN input, gating, or intermediate activations lack unified guidance.
 
-**Goal**: To establish a universal, simple, training-free framework for systematically studying and exploiting activation sparsity in modern LLMs.
+**Goal**: To establish a universal, simple, and training-free framework to systematically study and exploit activation sparsity in modern LLMs.
 
 ## Method
 
-### Top-p Sparsification Rule
+### Overall Architecture
 
-For an arbitrary activation vector $v \in \mathbb{R}^n$, retain the entries with the largest absolute values such that their L1 norm accounts for a fraction $p$ of the total:
+The paper does not propose a new sparsification algorithm but establishes a unified, training-free measurement toolkit. It uses an architecture-agnostic top-p rule to sparsify any activation vector and employs "critical sparsity"—a metric linked to actual performance—to compare how much sparsity different models, FFN modules, and generation paradigms can tolerate. All conclusions are built upon the GLU architecture $$\mathcal{FFN}(x) = W_d\big((W_u x) \odot \sigma(W_g x)\big)$$, which is the shared structure of mainstream LLMs like Gemma3, LLaMA3, and Qwen2.5.
 
-$$\text{top-p}(v) = m_p \odot v; \quad m_p = \arg\min_m \|m\|_0 \quad \text{s.t.} \quad \|m \odot v\|_1 \geq p \cdot \|v\|_1, \quad m \in \{0,1\}^n$$
+### Key Designs
 
-The induced sparsity is: $S_p(v) = \frac{1}{n}\sum_{i=1}^n \mathbb{1}(m_p^{(i)} = 0)$
+**1. Top-p Sparsification Rule: Replacing Strict Zeros with Energy Ratios**
 
-**Advantages**:
-- Applicable to any FFN module without architectural assumptions or additional training.
-- No calibration overfitting—no auxiliary calibration dataset is required.
-- Simple and interpretable, enabling fair comparison across models and modules.
+Since SiLU/GELU do not produce exact zeros like ReLU, traditional zero-based sparsification fails. Top-p defines sparsity from an energy perspective: for any activation vector $v \in \mathbb{R}^n$, it retains only the items with the largest absolute values such that their L1 energy ratio reaches $p$. Formally, $\text{top-p}(v) = m_p \odot v$, where the mask $m_p = \arg\min_m \|m\|_0$ is the sparsest solution under the constraint $\|m \odot v\|_1 \geq p \cdot \|v\|_1$ and $m \in \{0,1\}^n$. This induces a sparsity $S_p(v) = \frac{1}{n}\sum_{i=1}^n \mathbb{1}(m_p^{(i)} = 0)$. This rule is effective because it makes no architectural assumptions and requires no training or calibration data, avoiding overfitting. Empirical evidence also shows it is more interpretable and degrades more smoothly with model scale than top-k.
 
-### Critical Sparsity
+**2. Critical Sparsity: Anchoring "How Much to Sparsify" to Performance Constraints**
 
-Defined as the maximum sparsity level at which a model retains ≥99% of its original performance. This provides a quantitative metric anchored to practical performance constraints, enabling direct comparison of sparsification tolerance across different models and modules.
+Sparsity at a fixed $p$ cannot determine how much computation a model can safely skip. This paper defines "critical sparsity" as the maximum sparsity a model can reach while maintaining $\geq 99\%$ of its original performance. By binding the metric to performance, it allows direct comparison of redundancy across different model families and scales. Core findings, such as "sparsity increases monotonically with scale," are measured using this indicator.
 
-### Four Activation Vector Types in GLU FFN
+**3. Four Activation Types and Three Acceleration Paths: Defining Action and Cost**
 
-For the GLU architecture $\mathcal{FFN}(x) = W_d((W_u x) \odot \sigma(W_g x))$, four activation types are defined:
+Within a GLU FFN, four types of activations can be sparsified, each with different benefits and costs:
 
 | Activation Type | Definition | Description |
-|-----------------|------------|-------------|
-| Input $x$ | FFN input vector | Can accelerate all three linear layers |
-| Up-projection $u$ | $W_u x$ | Linear projection without activation function |
-| Gate $g$ | $\sigma(W_g x)$ | Gate signal after activation function |
+|----------|------|------|
+| Input $x$ | FFN input vector | Sparsification accelerates all three linear layers simultaneously |
+| Up-projection $u$ | $W_u x$ | Linear projection without an activation function |
+| Gating $g$ | $\sigma(W_g x)$ | Gating signal after the activation function |
 | Intermediate $i$ | $(W_u x) \odot \sigma(W_g x)$ | Intermediate representation after element-wise product |
 
-### Comparison of Three Acceleration Strategies
-
-| Strategy | Target Activation | Advantages | Disadvantages |
-|----------|-------------------|------------|---------------|
-| Input sparsification | $x$ | No predictor needed; accelerates all FFN modules | No natural sparsity in inputs |
-| Gate sparsification | $g$ | Activation function naturally compresses values | Computing the gate itself costs ~1/3 of FFN computation |
-| Predictor-based | $i$ | Theoretically highest acceleration | Requires training a predictor; introduces approximation error |
+These correspond to three mutually exclusive acceleration paths. The paper systematically compares their trade-offs: **Input sparsification** acts on $x$ and accelerates three linear layers without a predictor, though $x$ itself lacks natural sparsity. **Gating sparsification** leverages the compression in $g$ post-activation, but calculating $g$ accounts for ~1/3 of FFN costs. **Predictor methods** directly predict the mask for $i$, offering high theoretical acceleration but requiring additional training and risking approximation errors. This mapping supports the argument that input sparsification is the most practical.
 
 ## Key Experimental Results
 
-### Model Scale and Critical Sparsity (Gemma3 Family)
+### Model Scale and Critical Sparsity (Gemma3 Series)
 
-| Model | Parameters | Intermediate Sparsity | Input Sparsity | Gate Sparsity |
-|-------|------------|-----------------------|----------------|---------------|
+| Model | Parameters | Intermediate Sparsity | Input Sparsity | Gating Sparsity |
+|------|--------|---------------|-----------|-----------|
 | Gemma3-1B | 1B | ~50% | ~35% | ~35% |
 | Gemma3-4B | 4B | ~55% | ~40% | ~40% |
 | Gemma3-12B | 12B | ~62% | ~48% | ~48% |
@@ -93,68 +83,68 @@ For the GLU architecture $\mathcal{FFN}(x) = W_d((W_u x) \odot \sigma(W_g x))$, 
 
 ### Effective Rank Analysis
 
-The effective rank of activations consistently decreases with model scale, indicating that larger models produce lower-rank, more redundant representations. However, the effective rank of gate activations is comparable to that of intermediate activations, even though gate activations tolerate sparsification less well empirically—demonstrating that effective rank alone is insufficient to fully characterize sparsification robustness.
+Effective rank consistently decreases as model scale increases, indicating that activations in larger models are more low-rank and redundant. However, while the effective rank of gating activations is similar to intermediate ones, their empirical sparsity tolerance is lower, suggesting effective rank does not fully characterize sparsification robustness.
 
-### Cross-Family Trends
+### Trends Across Model Families
 
 | Model Family | Scale Range | Critical Sparsity Trend |
-|--------------|-------------|-------------------------|
-| Gemma3 | 1B–27B | Most pronounced linear growth |
-| LLaMA3.1/3.2 | 1B–70B | Consistent growth; relatively balanced width/depth scaling |
-| Qwen2.5 | 0.5B–72B | Overall growth but more volatile; uneven dimension scaling |
+|---------|---------|---------------|
+| Gemma3 | 1B–27B | Most prominent linear growth |
+| LLaMA3.1/3.2 | 1B–70B | Consistent growth; uniform width/depth scaling |
+| Qwen2.5 | 0.5B–72B | Overall growth but more volatile; non-uniform dimension growth |
 
-### Effect of Training Paradigm
+### Impact of Training Method
 
 | Model Variant | Change in Critical Sparsity |
-|---------------|-----------------------------|
-| Pretraining → Instruction Tuning | IT models exhibit higher sparsity at larger scales |
-| Qwen3-4B Instruct vs. Thinking | Reasoning models are more robust on GSM8K but degrade faster on MMLU |
+|---------|--------------|
+| Pre-trained → Instruction Tuned | IT models show higher sparsity at larger scales |
+| Qwen3-4B Instruct vs Thinking | Thinking models are more robust on GSM8K but degrade faster on MMLU |
 
-### First Analysis of Diffusion LLMs (LLaDA-8B)
+### First Analysis of Diffusion LLM (LLaDA-8B)
 
 | Task | Intermediate Critical Sparsity | All-Inputs Critical Sparsity |
-|------|-------------------------------|------------------------------|
+|------|------------------|---------------------|
 | MMLU | 69.46% | 62.72% |
 | HumanEval | 81.25% | 77.89% |
 | HellaSwag | 71.21% | 67.92% |
 | MBPP | 66.67% | 59.18% |
 | **Average** | **68.13%** | **56.79%** |
 
-LLaDA-8B achieves substantially higher critical sparsity than the comparably sized autoregressive LLaMA3.1-8B—the denoising nature of diffusion models renders them more robust to the noise introduced by sparsification.
+LLaDA-8B's critical sparsity is significantly higher than the autoregressive LLaMA3.1-8B of the same scale. The denoising nature of diffusion models makes them more robust to noise introduced by sparsification.
 
-### Temporal Stability Across Diffusion Steps
+### Temporal Stability within Diffusion Steps
 
 - Jaccard similarity between consecutive diffusion steps is stable but not high (~0.6–0.7).
-- Drift similarity relative to the initial step decreases rapidly—sparse patterns evolve progressively during denoising.
-- Conclusion: Sparse masks in diffusion LLMs **cannot be reused across steps** (unlike autoregressive models, where masks can be reused after the prompt phase).
+- Drift similarity relative to the initial step drops rapidly—sparsity patterns change gradually during denoising.
+- Conclusion: Sparse masks in diffusion LLMs **cannot be reused across steps** (unlike autoregressive models where masks can be reused after the prompt).
 
 ### MoE Model Analysis (Qwen3-30B-A3B)
 
-The average per-layer critical sparsity is stable, but individual experts exhibit sparsity far above the mean. Among 128 experts, outlier experts surpass the sparsity of comparably sized dense models—MoE experts universally display activation sparsity.
+While average critical sparsity within a layer is stable, sparsity in individual experts varies significantly. Outliers among the 128 experts show higher sparsity than dense models of equivalent size, indicating that MoE experts also exhibit widespread activation sparsity.
 
 ## Highlights & Insights
-- **"Functional sparsity is a universal property of LLMs"**: This holds consistently across architectures (GLU/MoE), training paradigms (PT/IT/Thinking), and generation paradigms (autoregressive/diffusion).
-- **Input sparsification is the most practical approach**: It requires no predictor and no gate computation, yet accelerates all FFN modules—gate sparsification offers no advantage at the scales studied.
-- **Risks of calibration**: Critical sparsity varies substantially across tasks; threshold methods based on calibration datasets carry overfitting risk, motivating truly data-free sparsification approaches.
-- **Potential of diffusion LLMs**: This work provides the first empirical evidence that diffusion LLMs exhibit higher activation sparsity than autoregressive models, though dedicated methods tailored to diffusion-specific characteristics are required.
+- **"Functional sparsity is a universal property of LLMs"**: This holds true across architectures (GLU/MoE), training methods (PT/IT/Thinking), and generation paradigms (Autoregressive/Diffusion).
+- **Input Sparsification is the Most Practical**: It accelerates all FFN modules without predictors or gating calculations. Within the studied scales, gating offers no advantage.
+- **Risk of Calibration**: Critical sparsity varies greatly across tasks. Threshold methods based on calibration sets risk overfitting; researchers should pursue truly data-free sparsification.
+- **Potential of Diffusion LLMs**: First empirical evidence shows that diffusion-based LLMs have higher activation sparsity than autoregressive models, though methods must be designed specifically for diffusion properties.
 
 ## Limitations & Future Work
-- **FFN-only scope**: Activation sparsity in multi-head attention is not analyzed, though FFN layers dominate computation outside long-context settings.
-- **Limited acceleration ceiling**: Activation sparsity yields approximately 1.3–1.5× speedup, far below speculative decoding (~4×); it should be positioned as a complementary technique.
-- **Top-p as a lower bound**: More sophisticated layer-wise or module-specific methods may achieve higher sparsity.
-- **No concrete acceleration implementation**: The paper focuses on characterizing sparsity rather than deployment-level optimization.
+- **FFN Focus**: The study does not analyze activation sparsity in multi-head attention, though FFNs dominate computation outside of long-context scenarios.
+- **Limited Acceleration Ceiling**: Activation sparsity provides ~1.3–1.5x acceleration, which is lower than speculative decoding (~4x). It should be viewed as a complementary technology.
+- **Top-p as a Lower Bound**: More complex layer-specific or module-specific methods might achieve higher sparsity.
+- **Lack of Implementation**: The paper focuses on characterization rather than deployment optimization.
 
 ## Related Work & Insights
-- **vs. Mirzadeh et al. (2024)**: Prior ReLU replacement approaches require additional training; this paper demonstrates that training-free top-p sparsification already achieves practical performance levels.
-- **vs. Liu et al. (2025a/b)**: The empirical premises underlying input sparsification acceleration methods are systematically validated in this work.
-- **vs. Song et al. (2024a) / Lee et al. (2024)**: Gate sparsification does **not** outperform input sparsification at the scales studied—an important practical guideline.
-- **Implication**: As models continue to scale, activation sparsity continues to grow; frontier models may naturally possess ≥70% exploitable sparsity (Gemma3n has already begun integrating sparsity-aware layers into its architecture).
+- **vs. Mirzadeh et al. (2024)**: Previous ReLU modification schemes required extra training; this work proves training-free top-p is already practical.
+- **vs. Liu et al. (2025a/b)**: The empirical premise of input sparsification acceleration is systematically verified here.
+- **vs. Song et al. (2024a) / Lee et al. (2024)**: Within the studied scales, gating sparsification is **not superior** to input sparsification—a key practical guideline.
+- **Insight**: As models continue to grow, activation sparsity grows with them. Frontier models may naturally possess over 70% exploitable sparsity (Gemma3 series has already begun integrating sparsity-aware layers).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Unified framework + critical sparsity definition + first sparsity analysis of diffusion LLMs, though the core method (top-p) is simple.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers Gemma3/LLaMA3/Qwen2.5 at multiple scales + PT/IT/Thinking + MoE + diffusion models across 9 benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, informative figures, and well-defined conclusions.
-- Value: ⭐⭐⭐⭐ Provides a comprehensive foundational reference for LLM activation sparsity acceleration with strong practical guidance.
+- Novelty: ⭐⭐⭐⭐ Unified framework + critical sparsity definition + first diffusion LLM sparsity analysis, though the core method (top-p) is simple.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers Gemma3/LLaMA3/Qwen2.5 scales + PT/IT/Thinking + MoE + Diffusion models across 9 benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, informative charts, and explicit conclusions.
+- Value: ⭐⭐⭐⭐ Provides a comprehensive foundation for LLM activation sparsity acceleration with strong practical guidance.
 
 <!-- RELATED:START -->
 
@@ -162,11 +152,11 @@ The average per-layer critical sparsity is stable, but individual experts exhibi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Spilled Energy in Large Language Models](spilled_energy_in_large_language_models.md)
 - [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
-- [\[ICLR 2026\] ZeroTuning: Unlocking the Initial Token's Power to Enhance Large Language Models Without Training](zerotuning_unlocking_the_initial_tokens_power_to_enhance_large_language_models_w.md)
-- [\[ACL 2026\] Model Internal Sleuthing: Finding Lexical Identity and Inflectional Features in Modern Language Models](../../ACL2026/interpretability/model_internal_sleuthing_finding_lexical_identity_and_inflectional_features_in_m.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/interpretability/compositional_steering_of_large_language_models_with_steering_tokens.md)
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](../../ACL2026/interpretability/knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](medical_interpretability_and_knowledge_maps_of_large_language_models.md)
+- [\[ICLR 2026\] What Do Large Language Models Know About Opinions?](what_do_large_language_models_know_about_opinions.md)
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
 
 </div>
 

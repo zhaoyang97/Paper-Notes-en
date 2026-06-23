@@ -2,109 +2,133 @@
 title: >-
   [Paper Note] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding
 description: >-
-  [ICLR2026][LLM Evaluation][Quadratic Programming] This paper proposes FlexQP — an "always feasible" convex quadratic programming (QP) solver based on $\ell_1$ elastic relaxation — and combines it with deep unfolding to l…
+  [ICLR 2026][learning_theory][ADMM] FlexQP is proposed—an "always feasible" convex Quadratic Programming (QP) solver based on $\ell_1$ elastic relaxation. It is combined with deep unfolding to learn LSTM feedback policies for accelerated convergence, resulting in Deep FlexQP. When used as a sub-module in an SQP framework, it solves nonlinear trajectory o
 tags:
-  - "ICLR2026"
-  - "LLM Evaluation"
-  - "Quadratic Programming"
-  - "Deep Unfolding"
-  - "ADMM"
-  - "Sequential Quadratic Programming"
-  - "LSTM Policy"
-  - "PAC-Bayes"
+  - ICLR 2026
+  - learning_theory
+  - ADMM
+  - PAC-Bayes
 date: 2026-05-08
-content_hash: 45141a169ee43ce2
+content_hash: f65c1d04de70aa1f
 ---
-
 # Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2512.01565](https://arxiv.org/abs/2512.01565)  
-**Code**: To be confirmed  
-**Area**: LLM Evaluation
-**Keywords**: Quadratic Programming, Deep Unfolding, ADMM, Sequential Quadratic Programming, LSTM Policy, PAC-Bayes
+**Code**: TBD  
+**Area**: LLM Evaluation  
+**Keywords**: Quadratic Programming, Deep Unfolding, ADMM, Sequential Quadratic Programming, LSTM Policy, PAC-Bayes  
 
 ## TL;DR
-This paper proposes FlexQP — an "always feasible" convex quadratic programming (QP) solver based on $\ell_1$ elastic relaxation — and combines it with deep unfolding to learn an LSTM feedback policy that accelerates convergence, yielding Deep FlexQP. When embedded as a submodule within an SQP framework, it solves nonlinear trajectory optimization problems 4–16× faster than OSQP, reduces safety violations in predictive safety filters by over 70%, and improves task completion rates by 43%.
+FlexQP is proposed—an "always feasible" convex Quadratic Programming (QP) solver based on $\ell_1$ elastic relaxation. It is combined with deep unfolding to learn LSTM feedback policies for accelerated convergence, resulting in Deep FlexQP. When used as a sub-module in an SQP framework, it solves nonlinear trajectory optimization 4-16× faster than OSQP, while reducing safety violations in predictive safety filters by over 70% and increasing task completion rates by 43%.
 
 ## Background & Motivation
 
-**Background**: Quadratic programming (QP) is a foundational subproblem in optimal control, combinatorial optimization, and machine learning. Sequential quadratic programming (SQP) handles nonlinear non-convex constrained optimization by iteratively solving QP subproblems.
+**Background**: Quadratic Programming (QP) is a fundamental subproblem in optimal control, combinatorial optimization, and machine learning. Sequential Quadratic Programming (SQP) handles nonlinear non-convex constrained optimization by iteratively solving QP subproblems.
 
-**Limitations of Prior Work**: Constraint linearization in SQP frequently produces infeasible QP subproblems. Conventional solvers such as OSQP either terminate with an error or require dedicated infeasibility recovery routines (e.g., SNOPT's elastic mode), which do not scale well. Moreover, tuning ADMM hyperparameters ($\rho, \sigma, \alpha$) is notoriously difficult.
+**Limitations of Prior Work**: Constraint linearization in SQP often leads to infeasible QP subproblems. Traditional solvers (e.g., OSQP) either terminate with errors or require specialized infeasibility recovery procedures (such as SNOPT's elastic mode), which are non-scalable. Furthermore, tuning ADMM hyperparameters ($\rho, \sigma, \alpha$) is challenging.
 
-**Core Idea**: The paper recasts constrained QP as unconstrained optimization via $\ell_1$ exact relaxation — recovering the original solution when feasible (Theorem 3.1) and automatically identifying the sparsest constraint violation when infeasible. Deep unfolding combined with an LSTM then replaces manual hyperparameter tuning with a dimension-agnostic learned feedback policy.
+**Core Idea**: Convert constrained QP into unconstrained optimization via $\ell_1$ exact relaxation—recovering the original solution when feasible (Theorem 3.1) and automatically finding the sparse point of minimum violation when infeasible. Then, employ deep unfolding and LSTM to learn dimension-independent feedback policies to replace manual parameter tuning.
 
 ## Method
 
 ### Overall Architecture
-Primal QP: $\min_x \frac{1}{2}x^\top P x + q^\top x$, s.t. $Gx \leq h, Ax = b$ → introduce slack variables → $\ell_1$ elastic relaxation → ADMM splitting → two-block iteration (linear system solve + soft thresholding). Deep unfolding treats the $K$-step ADMM iteration as a $K$-layer network and learns per-layer parameters.
 
-### Key Design 1: Exact Relaxation in FlexQP
-- Hard constraints are replaced by the $\ell_1$ penalty $\mu_I \|Gx+s-h\|_1 + \mu_E \|Ax-b\|_1$
-- **Theorem 3.1**: When $\mu_I \geq \|y_I^*\|_\infty$ and $\mu_E \geq \|y_E^*\|_\infty$, the relaxed solution coincides exactly with the original solution
-- **Theorem 3.2**: Convergence is guaranteed under a weak coercivity assumption
-- In the infeasible case, $z_I^*, z_E^*$ automatically provide sparse certificates of constraint violation
+Deep FlexQP addresses recurring subproblems in nonlinear optimization: each SQP constraint linearization produces a QP subproblem. These QPs are frequently infeasible due to linearization distortion, causing traditional solvers to fail or require external repair. The paper decomposes the solution process into two layers. The bottom layer is **FlexQP**, which incorporates hard constraints $Gx \leq h, Ax = b$ into the objective via $\ell_1$ elastic relaxation, ensuring the subproblem is "always feasible" for any input. ADMM is then used to split it into "solving a linear system (primal update)" and "performing soft thresholding (relaxation update)" iterations. The top layer is **deep unfolding**: the $K$-step ADMM iteration is unfolded into a $K$-layer network, where a set of LSTM feedback policies calculates penalty parameters $\rho, \mu, \alpha$ at each layer based on current residuals. The trained structure is integrated into SQP, solving QP subproblems generated in each linearization step.
 
-### Key Design 2: LSTM Feedback Policy
-- Independent policies are learned for inequality constraints ($\pi_I$), equality constraints ($\pi_E$), and the relaxation parameter ($\pi_\alpha$)
-- Policy inputs consist of ADMM variables together with primal/dual residuals, applied in batch along the constraint dimension → **dimension-agnostic**, generalizing to large-scale problems
-- The LSTM captures long-range dependencies in the optimization history to adaptively adjust $\rho, \mu, \alpha$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["QP Subproblem<br/>(Generated by SQP linearization, potentially infeasible)"]
+    IN --> FLEX
 
-### Key Design 3: Normalized Training Loss and PAC-Bayes Bound
-- The training loss incorporates Lagrange multipliers: $\min_\theta \sum_k \|\xi^k(\theta) - \xi^*\|_2 / \|\xi^*\|_2$, $\xi = (x, y_I, y_E)$, implicitly enforcing $\mu \geq |y^*|$
-- A log-scale PAC-Bayes loss (Eq. 14) is proposed: in the regime of very small residuals, it carries orders of magnitude more information than the standard loss (Eq. 13), yielding tighter generalization guarantees
+    subgraph FLEX["FlexQP Elastic Relaxation"]
+        direction TB
+        F1["ℓ₁ penalty folds hard constraints into objective<br/>Subproblem is always feasible (exact relaxation)"]
+        F1 --> F2["ADMM Splitting:<br/>Linear system solution (primal update) + soft thresholding (relaxation update)"]
+    end
+
+    FLEX --> UNROLL
+
+    subgraph UNROLL["Dimension-independent LSTM Feedback Policies"]
+        direction TB
+        U1["Unfolded K ADMM steps = K-layer network"]
+        U2["πI / πE / πα calculate ρ, μ, α<br/>layer-by-layer per constraint"]
+        U2 -->|Feedback Tuning| U1
+    end
+
+    LOSS["Normalized Loss + Log-scale<br/>PAC-Bayes Bound (Supervising ξ=x,yI,yE)"] -.Training.-> UNROLL
+    UNROLL --> OUT["Output primal x* and dual y*<br/>Returned to SQP for next iteration"]
+```
+
+### Key Designs
+
+**1. FlexQP Elastic Relaxation: Making Infeasible Subproblems Solvable**
+
+This step addresses the primary pain point where SQP linearization often yields infeasible QPs. FlexQP incorporates inequality and equality constraints into the objective using $\ell_1$ penalty terms $\mu_I \|Gx+s-h\|_1 + \mu_E \|Ax-b\|_1$, ensuring the optimization problem is solvable for any input. Theorem 3.1 proves this relaxation is "exact": as long as penalty coefficients are sufficiently large—$\mu_I \geq \|y_I^*\|_\infty$ and $\mu_E \geq \|y_E^*\|_\infty$—the relaxation solution matches the original QP solution. If the problem is truly infeasible, the variables $z_I^*, z_E^*$ converge to sparse points, providing certificates of "which constraints are violated and by how much."
+
+**2. Dimension-independent LSTM Feedback Policies: Learning Feedback Control for Parameter Tuning**
+
+While FlexQP is always feasible, ADMM convergence speed depends heavily on parameters like $\rho, \sigma, \alpha$. Manual tuning is difficult and non-transferable. Here, each unfolded ADMM step is treated as a feedback control step. Three policies—$\pi_I, \pi_E, \pi_\alpha$—are trained for inequality constraints, equality constraints, and relaxation parameters. Each layer takes current ADMM variables and residuals as input to output the step-specific penalty parameters. Crucially, policies are applied per "individual constraint" rather than the whole vector, making the parameter count independent of problem size. This allows generalizing from 500-D training problems to 10k-D testing problems.
+
+**3. Normalized Training Loss and Log-scale PAC-Bayes Bound: Supervising Dual Variables with Generalization Guarantees**
+
+The training objective encourages the $k$-th layer solution to approach the ground truth using a relative error loss:
+
+$$\min_\theta \sum_k \frac{\|\xi^k(\theta) - \xi^*\|_2}{\|\xi^*\|_2},\quad \xi = (x, y_I, y_E)$$
+
+Supervising dual multipliers $y_I, y_E$ alongside the primal solution $x$ implicitly forces learned penalty coefficients to satisfy $\mu \geq |y^*|$, aligning learned parameters with the theoretical requirements for exact relaxation. To improve generalization guarantees, a log-scale PAC-Bayes loss is utilized, which remains informative even at small residual levels where standard losses plateau.
 
 ## Key Experimental Results
 
-### Small- and Medium-Scale QP (500 training / 1000 test problems)
+### Small/Medium QP (500 Training/1000 Testing Problems)
 
-| Solver | Convergence Speed (iterations) | Final Residual |
-|--------|-------------------------------|----------------|
-| OSQP (hand-tuned) | Baseline | Baseline |
+| Solver | Convergence Speed (Iterations) | Final Residual |
+|--------|-------------------|---------|
+| OSQP (Manually Tuned) | Baseline | Baseline |
 | Deep OSQP | Better than OSQP | Better than OSQP |
-| Deep OSQP-Improved | Further improvement | Further improvement |
-| **Deep FlexQP** | **Fastest among all methods** | **Lowest among all methods** |
+| Deep OSQP-Improved | Further improved | Further improved |
+| **Deep FlexQP** | **Fastest among all** | **Lowest among all** |
 
-### Large-Scale QP (10k variables / 10–20k constraints)
+### Large-scale QP (10k variables/10-20k constraints)
 
-| Problem Class | Advantage of Deep FlexQP |
-|---------------|--------------------------|
-| Portfolio Optimization (10k var, 10k con) | Fewest iterations; generalizes via fine-tuning a small model |
+| Problem Class | Deep FlexQP Advantage |
+|--------|-----------------|
+| Portfolio Optimization (10k var, 10k con) | Fewest iterations; generalizes via fine-tuning from small models |
 | SVM (10k var, 20k con) | Fewest CG iterations |
 
 ### SQP Nonlinear Optimization
 
-| Metric | Deep FlexQP + SQP vs. OSQP + SQP |
-|--------|----------------------------------|
-| Trajectory optimization speed | **4–16× faster** (average over 100 problems) |
-| Safety filter safety violations | **Reduced by >70%** |
-| Safety filter task completion rate | **Improved by 43%** |
+| Metric | Deep FlexQP + SQP vs OSQP + SQP |
+|------|-------------------------------|
+| Trajectory Optimization Speed | **4-16× Faster** (average over 100 problems) |
+| Safety Filter Violations | **Reduced >70%** |
+| Safety Filter Task Completion | **Increased 43%** |
 
 ### Key Findings
-- The FlexQP architecture itself (elastic relaxation + LSTM) is the primary driver of superiority — under the same loss function, Deep OSQP variants benefit far less from fine-tuning than Deep FlexQP
-- Training on small-scale problems followed by fine-tuning for 5 epochs on 100 large-scale problems suffices to generalize to 10k+ dimensional instances
-- The log-scale PAC-Bayes bound renders generalization guarantees practically meaningful, whereas the standard bound is uninformative in the small-residual regime
+- The FlexQP architecture (elastic relaxation + LSTM) is the primary driver of performance; Deep OSQP variants perform significantly worse under the same loss function.
+- Models trained on small problems generalize to 10k+ dimensions with only 5 rounds of fine-tuning on 100 large-scale instances.
+- The log-scale PAC-Bayes bound provides meaningful generalization guarantees where standard bounds become uninformative.
 
 ## Highlights & Insights
-- **Theoretical elegance**: The combination of $\ell_1$ exact relaxation, ADMM, and deep unfolding is organic, with each component backed by rigorous mathematical guarantees
-- **High practical value**: The approach resolves the core engineering bottleneck of infeasible subproblems in SQP without requiring additional recovery routines
-- The dimension-agnostic LSTM policy design enables a single trained model to generalize to problems of arbitrary scale
+- **Theoretical Elegance**: Combines $\ell_1$ exact relaxation, ADMM, and deep unfolding with rigorous mathematical guarantees.
+- **High Practical Value**: Directly addresses the core engineering bottleneck of infeasible subproblems in SQP without requiring external repair procedures.
+- **Dimension Independence**: The LSTM policy design allows a single trained model to generalize across problems of arbitrary scale.
 
 ## Limitations & Future Work
-- Training overhead on large-scale problems remains substantial (approximately 3 hours per epoch); full training would require 300+ days
-- Validation is limited to dense QP instances; sparse QP problems (e.g., power network optimization) may require different strategies
-- The interpretability of the LSTM policy is limited, making it difficult to understand the learned tuning rules
+- High training overhead for large-scale problems (approx. 3 hours per epoch; full training would take 300+ days).
+- Validation was restricted to dense QPs; sparse QPs (e.g., power grid optimization) might require different strategies.
+- Limited interpretability of LSTM policies makes it difficult to extract explicit parameter-tuning rules.
 
 ## Related Work & Insights
-- Compared with Deep OSQP by Saravanos et al. (2025), the key advantages of FlexQP lie in native infeasibility handling and vector-level (rather than scalar-level) penalty parameter policies
-- This work may inspire the application of deep unfolding to other optimization algorithms such as interior-point methods and Frank-Wolfe
+- Compared to Deep OSQP (Saravanos et al., 2025), the key advantages of FlexQP are native handling of infeasibility and vector-level (rather than scalar-level) penalty policies.
+- This work inspires the application of deep unfolding to other optimization algorithms like interior-point methods or Frank-Wolfe.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of elastic relaxation and deep unfolding is novel, though each individual component is not entirely new
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers small- to large-scale QP and nonlinear SQP across finance, ML, and control domains
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with rigorous theoretical derivations
-- Value: ⭐⭐⭐⭐⭐ Addresses a core engineering pain point in SQP with broad application prospects
+- Novelty: ⭐⭐⭐⭐ The combination of elastic relaxation and deep unfolding is novel, though individual components are established.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers small to large-scale QP and nonlinear SQP across finance, ML, and control.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with rigorous theoretical derivation.
+- Value: ⭐⭐⭐⭐⭐ High potential for impact by resolving a critical engineering pain point in SQP.
 
 <!-- RELATED:START -->
 
@@ -112,11 +136,11 @@ Primal QP: $\min_x \frac{1}{2}x^\top P x + q^\top x$, s.t. $Gx \leq h, Ax = b$ �
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](../../NeurIPS2025/learning_theory/conformal_online_learning_of_deep_koopman_linear_embeddings.md)
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
-- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](lipschitz_bandits_with_stochastic_delayed_feedback.md)
-- [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
-- [\[ICLR 2026\] The Expressive Limits of Diagonal SSMs for State-Tracking](the_expressive_limits_of_diagonal_ssms_for_state-tracking.md)
+- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
+- [\[ICLR 2026\] Deep Learning with Learnable Product-Structured Activations](deep_learning_with_learnable_product-structured_activations.md)
+- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
+- [\[ICLR 2026\] Diffusion Bridge Variational Inference for Deep Gaussian Processes](diffusion_bridge_variational_inference_for_deep_gaussian_processes.md)
+- [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
 
 </div>
 

@@ -2,139 +2,148 @@
 title: >-
   [Paper Note] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 description: >-
-  [ICLR 2026][LLM Agent][context engineering] This paper proposes ACE (Agentic Context Engineering), a framework that treats context as a continuously evolving playbook. Through a Generator–Reflector–Curator role decomposi…
+  [ICLR 2026][LLM Agent][context engineering] The ACE (Agentic Context Engineering) framework proposes treating context as a continuously evolving "playbook." By utilizing a division of labor among Generator-Reflector-Curator roles and incremental delta updates, it continuously accumulates and refines strategies. This addresses brevity bias and context collapse in
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "context engineering"
-  - "self-improving agent"
-  - "prompt optimization"
-  - "evolving memory"
-  - "playbook"
+  - ICLR 2026
+  - LLM Agent
+  - context engineering
+  - self-improving agent
+  - prompt optimization
+  - evolving memory
+  - playbook
 date: 2026-05-08
-content_hash: 47c2afc19cb7fc43
+content_hash: ec206a507aa34d7f
 ---
-
 # Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.04618](https://arxiv.org/abs/2510.04618)  
 **Code**: [https://github.com/ace-agent/ace](https://github.com/ace-agent/ace)  
-**Area**: Agent
-**Keywords**: context engineering, self-improving agent, prompt optimization, evolving memory, playbook
+**Area**: Agent  
+**Keywords**: context engineering, self-improving agent, prompt optimization, evolving memory, playbook  
 
 ## TL;DR
-This paper proposes ACE (Agentic Context Engineering), a framework that treats context as a continuously evolving playbook. Through a Generator–Reflector–Curator role decomposition and incremental delta updates, ACE accumulates and refines strategies over time, addressing brevity bias and context collapse in existing prompt optimization methods. ACE achieves an average improvement of 10.6% on agent benchmarks and 8.6% on financial tasks, while reducing adaptation latency by 86.9%.
+The ACE (Agentic Context Engineering) framework proposes treating context as a continuously evolving "playbook." By utilizing a division of labor among Generator-Reflector-Curator roles and incremental delta updates, it continuously accumulates and refines strategies. This addresses brevity bias and context collapse in existing prompt optimization methods, achieving an average improvement of 10.6% on agent tasks and 8.6% on financial tasks, while reducing adaptation latency by 86.9%.
 
 ## Background & Motivation
-**Background**: Context adaptation—improving model performance by modifying LLM inputs rather than weights—has become a core paradigm for building scalable AI systems. Existing approaches include prompt optimization methods (GEPA, MIPROv2) and test-time memory methods (Dynamic Cheatsheet).
+**Background**: Context adaptation (improving performance by modifying LLM inputs rather than weights) has become a core paradigm for building scalable AI systems. Existing methods include prompt optimization (GEPA, MIPROv2) and test-time memory (Dynamic Cheatsheet).
 
-**Limitations of Prior Work**: (1) **Brevity bias**: Most prompt optimizers favor concise, general instructions, discarding domain-specific strategies, tool-use guidelines, and common failure patterns. (2) **Context collapse**: Monolithic rewriting approaches progressively degrade into shorter, information-poorer summaries during iterative updates—experiments observed context shrinking abruptly from 18,282 tokens to 122 tokens, with a corresponding sharp drop in performance.
+**Limitations of Prior Work**: (1) **Brevity bias**: Most prompt optimizers pursue concise and general instructions, compressing away domain-specific strategies, tool-use guidelines, and common failure modes. (2) **Context collapse**: Monolithic rewriting approaches gradually degrade into shorter, less informative summaries during iterations—experiments observed context suddenly collapsing from 18,282 tokens to 122 tokens, leading to a sharp drop in performance.
 
-**Key Challenge**: Agent and knowledge-intensive applications require **comprehensive and detailed** domain knowledge, yet existing methods compress it. Unlike humans, who benefit from concise summaries, LLMs perform better under detailed context.
+**Key Challenge**: Agents and knowledge-intensive applications require **comprehensive and detailed** domain knowledge, yet existing methods tend to compress this information. Unlike humans, who benefit from concise summaries, LLMs often perform better with detailed context.
 
-**Goal**: How to design a context adaptation approach that continuously accumulates knowledge without collapsing or degrading?
+**Goal**: How can we build a context adaptation method that continuously accumulates knowledge without collapse or degradation?
 
-**Key Insight**: Treat context as an "evolving playbook" rather than an "optimized prompt," replacing monolithic rewrites with structured incremental updates.
+**Key Insight**: Treat context as an "evolving playbook" rather than an "optimized prompt," using structured incremental updates instead of holistic rewriting.
 
-**Core Idea**: Context should be a continuously growing and refined strategy playbook, not a compressed set of concise instructions.
+**Core Idea**: Context should be a continuously growing and refined strategy manual, not a compressed, concise instruction.
 
 ## Method
 
 ### Overall Architecture
-ACE consists of three roles: Generator (produces reasoning trajectories) → Reflector (extracts lessons and insights from trajectories) → Curator (integrates lessons into structured delta updates and merges them into the existing context). ACE supports both offline (system prompt optimization) and online (test-time memory) modes.
+ACE aims to solve the problem where context becomes shorter and knowledge is lost through repeated iterations. It treats context as an "evolving playbook" maintained by a pipeline of three specialized roles: the **Generator** uses the current context to solve new problems and leaves a full execution trajectory; the **Reflector** reviews these trajectories to distill successful practices and specific lessons from failures; and the **Curator** translates these lessons into structured local changes (**deltas**) to append to or modify the existing context. The updated playbook is fed back into the next round, forming a continuous self-improvement loop. This process can run offline (iterating over a training set to produce an optimized system prompt) or online (updating per sample during testing as test-time memory).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["New Question / Training Sample"] --> CTX["Playbook Context<br/>(Set of bullets with IDs and helpful/harmful counters)"]
+    subgraph ROLES["Three-Role Specialization"]
+        direction TB
+        G["Generator<br/>Solves problem with current context<br/>Leaves execution trajectory"] --> R["Reflector<br/>Reviews trajectory, distills success/failure lessons<br/>(Up to 5 refinement iterations)"]
+        R --> C["Curator<br/>Writes lessons as structured entries"]
+    end
+    CTX --> G
+    C --> DELTA["Incremental Delta Update<br/>Generates only local additions/edits<br/>Deterministic merge via non-LLM logic"]
+    DELTA --> GR["Grow-and-Refine<br/>Appends new bullets + Semantic de-duplication"]
+    GR -->|Feed updated context to next round| CTX
+```
 
 ### Key Designs
 
-1. **Three-Role Decomposition (Generator → Reflector → Curator)**:
+**1. Three-Role Specialization: Separating "Solving, Reflecting, and Archiving" to avoid single-model bottlenecks.**
 
-    - **Function**: Decouple distinct responsibilities of context construction into specialized roles.
-    - **Mechanism**: The Generator solves new problems using the current context, producing execution trajectories. The Reflector analyzes trajectories to extract concrete successful strategies and failure lessons (with optional multi-round iterative refinement). The Curator converts insights into structured bullets and merges them into the context.
-    - **Design Motivation**: Avoid bottlenecks caused by assigning all responsibilities to a single model. Ablation studies confirm that the dedicated Reflector role is the primary source of performance gains.
+Existing methods often collapse generation, evaluation, and rewriting into a single model call, leading to insufficient reflection and entangled responsibilities. ACE splits this into three specialized roles: the **Generator** is responsible for actual problem-solving to expose real success and failure trajectories; the **Reflector** focuses on "reviewing," extracting actionable strategies and lessons from trajectories through multiple refinement iterations (up to 5); and the **Curator** purely manages the integration of these insights into structured entries. This allows each stage to focus on a specific task, and ablation studies confirm that the Reflector role is a primary source of performance gains.
 
-2. **Incremental Delta Updates (replacing monolithic rewrites)**:
+**2. Incremental Delta Updates: Modifying only local bullets to fundamentally prevent context collapse.**
 
-    - **Function**: Replace full context rewrites with localized bullet-level additions, deletions, and modifications.
-    - **Mechanism**: The context is represented as a collection of bullets, each with a unique ID, helpfulness/harmfulness counters, and content. Each adaptation generates a small delta (new bullets or modifications to existing ones), which is deterministically merged via lightweight non-LLM logic and supports parallel processing.
-    - **Design Motivation**: Fundamentally eliminates context collapse—since full rewrites are never performed, knowledge can only be added or locally modified, never accidentally compressed away.
+This is the core design addressing the "monolithic rewriting leading to context collapse" pain point. Instead of representing context as a single block of text prone to full rewriting, ACE represents it as a set of structured bullets—each with a unique ID, a pair of "helpful/harmful" counters, and specific content. During each adaptation, the model generates only minor deltas (new bullets or local modifications to existing ones), which are deterministically merged by a lightweight non-LLM logic. Since the system never performs a full-text rewrite, knowledge can only be appended or tuned in place, preventing the accidental compression observed in other methods (e.g., from 18,282 tokens to 122 tokens). This also accounts for the 86.9% reduction in latency: local deltas are far cheaper than full-text rewriting.
 
-3. **Grow-and-Refine Mechanism**:
+**3. Grow-and-Refine: Balancing continuous growth and redundancy control.**
 
-    - **Function**: Balance continuous context growth with redundancy control.
-    - **Mechanism**: New bullets are appended to the context; existing bullets are updated in place (e.g., counter increments). Semantic embedding comparison is used for de-duplication, which can be applied eagerly after each delta or lazily when the context window is exceeded.
-    - **Design Motivation**: Keep context size manageable and prevent unbounded growth.
+Simply performing additions would eventually cause the context to exceed the window. **Grow-and-Refine** pairs growth with a cleaning mechanism: new bullets are appended, existing bullets are updated in place (e.g., incrementing counters), and semantic embeddings are used for pairwise comparison to remove duplicate entries (**de-duplication**). This de-duplication can be performed proactively after each delta or triggered lazily when the context approaches the window limit. Through this mechanism, the playbook grows without unbound expansion, maintaining a controllable scale.
 
 ### Loss & Training
-No model weight training is required. ACE is a purely context-adaptation method. In offline mode, context is iteratively built over multiple epochs on the training set; in online mode, the context is updated sample-by-sample at test time. Key hyperparameters: maximum Reflector refinement rounds = 5, maximum offline epochs = 5, batch size = 1. Notably, ACE can operate without annotations by leveraging execution feedback (e.g., code execution success/failure) as a natural learning signal.
+ACE does not train any model weights; it is a pure context adaptation method. In **offline mode**, it runs multiple epochs (up to 5) over a training set to iteratively build the context. In **online mode**, it updates per sample during testing with a batch size of 1, and the Reflector refines insights up to 5 times per sample. Notably, it can function without ground-truth labels—by utilizing execution feedback (e.g., whether code runs or returns an error) as a natural signal, the Reflector can distill lessons, enabling unsupervised self-improvement.
 
 ## Key Experimental Results
 
 ### Main Results (AppWorld Agent Benchmark)
 
 | Method | Requires Labels | Test-Normal TGC | Test-Challenge TGC | Average |
-|--------|----------------|----------------|-------------------|---------|
+|------|---------|----------------|-------------------|---------|
 | ReAct baseline | - | 63.7 | 41.5 | 42.4 |
 | + ICL | ✓ | 64.3 | 46.0 | 46.0 |
 | + GEPA | ✓ | 64.9 | 46.0 | 46.4 |
-| **+ ACE (w/ labels)** | ✓ | **76.2** | **57.3** | **59.4** |
-| + ACE (w/o labels) | ✗ | 75.0 | 54.4 | 57.2 |
+| **+ ACE (Labeled)** | ✓ | **76.2** | **57.3** | **59.4** |
+| + ACE (Unlabeled) | ✗ | 75.0 | 54.4 | 57.2 |
 | + DC (online) | ✗ | 65.5 | 52.3 | 51.9 |
 | **+ ACE (online)** | ✗ | **69.6** | **66.0** | **59.5** |
 
 ### Ablation Study (Financial Benchmark)
 
 | Method | FiNER Acc | Formula Acc | Average |
-|--------|-----------|-------------|---------|
+|------|-----------|-------------|---------|
 | Base LLM | 70.7 | 67.5 | 69.1 |
 | GEPA | 73.5 | 71.5 | 72.5 |
 | **ACE** | **78.3** | **85.5** | **81.9** |
 
 ### Key Findings
-- ACE achieves an average improvement of 17% on AppWorld (offline with labels). Using the open-source model DeepSeek-V3.1, ACE matches the average performance of IBM CUGA (the top-ranked system on the leaderboard, powered by GPT-4.1) and surpasses it on the harder test-challenge split.
-- **Strong without annotations**: ACE improves performance by 14.8% in the label-free setting, demonstrating effective self-improvement using only execution feedback.
-- On financial tasks, ACE outperforms GEPA by 9.4% (72.5→81.9), indicating that aggressively accumulating domain knowledge yields clear advantages on knowledge-intensive tasks.
-- Adaptation latency is reduced by 86.9%: incremental delta updates are substantially faster than monolithic rewrites.
-- Ablation studies confirm that both the Reflector role and multi-epoch refinement each contribute significant and independent performance gains.
+- ACE achieves a 17% average improvement on AppWorld (offline labeled). Using the open-source DeepSeek-V3.1, it reached the performance level of the GPT-4.o-driven IBM CUGA (ranked 1st) and surpassed it on the harder "test-challenge" split.
+- **Strong Unsupervised Performance**: Even without labels, ACE improves performance by 14.8% by utilizing execution feedback for self-improvement.
+- On financial tasks, ACE outperforms GEPA by 9.4% (72.5 → 81.9), demonstrating the advantage of accumulating domain knowledge for knowledge-intensive tasks.
+- Adaptation latency is reduced by 86.9% because incremental delta updates are much faster than full-text rewriting.
+- Ablations confirm that the Reflector role and multi-epoch refinement contribute significantly to the total gain.
 
 ## Highlights & Insights
-- **Paradigm shift from "prompt" to "playbook"**: Context should be continuously enriched rather than compressed. This aligns with trends in RAG and long-context modeling, offering a clear design philosophy for context engineering.
-- **Incremental delta updates as a key innovation**: This design completely eliminates context collapse and supports parallel merging—a simple yet highly effective engineering solution.
-- **Unsupervised self-improvement capability**: Effective context can be built from execution feedback alone, paving the way for truly self-improving agents.
-- **Reusable three-role pattern**: The Generator–Reflector–Curator paradigm is transferable to other LLM systems that need to learn from experience.
+- **Conceptual Shift to "Playbook, not Prompt"**: Context should not be compressed; it should be continuously enriched. This aligns with trends like RAG and long-context, providing a clear design philosophy for context engineering.
+- **Incremental Delta Updates as a Key Innovation**: This effectively eliminates context collapse and allows for parallel merging, serving as a simple yet highly effective engineering design.
+- **Unsupervised Self-Improvement**: The ability to build an effective context solely from execution feedback paves the way for true self-improving agents.
+- **Reusable Three-Role Pattern**: The Generator-Reflector-Curator pattern can be migrated to other LLM systems that need to learn from experience.
 
 ## Limitations & Future Work
-- As the number of bullets grows, the context may exceed the context window, necessitating more intelligent retrieval or compression strategies.
-- De-duplication relies on the quality of semantic embeddings; similar but non-identical bullets may accumulate over time.
-- The current design requires the Generator, Reflector, and Curator to use the same model, limiting the flexibility to exploit models of different sizes for cost optimization.
-- The effect of sequential dependency in online mode—where earlier samples influence the context seen by later ones—and whether this introduces systematic bias has not been thoroughly analyzed.
+- As the number of bullets grows, the context may exceed the window limit, requiring smarter retrieval or compression strategies.
+- De-duplication depends on the quality of semantic embeddings; bullets that are similar but not identical might still accumulate.
+- The requirement for Generator/Reflector/Curator to use the same model limits the flexibility of using different model sizes to optimize costs.
+- Order dependency in online mode (earlier samples affecting subsequent context) has not been analyzed for potential bias.
 
 ## Related Work & Insights
-- **vs. Dynamic Cheatsheet**: ACE builds upon Dynamic Cheatsheet but addresses its context collapse problem by introducing the Reflector role and delta update mechanism.
-- **vs. GEPA**: GEPA is a prompt optimizer (targeting concise prompts), whereas ACE is a context engineering framework (targeting comprehensive playbooks). The two embody fundamentally different philosophies, and ACE significantly outperforms GEPA on both agent and financial tasks.
-- **vs. TextGrad**: TextGrad optimizes prompts via gradient-style textual feedback, while ACE accumulates strategies as structured bullets, avoiding the information loss inherent in rewriting.
+- **vs. Dynamic Cheatsheet**: ACE builds upon DC but solves the context collapse issue by introducing the Reflector and delta update mechanisms.
+- **vs. GEPA**: GEPA is a prompt optimizer (pursuing concise prompts), while ACE is context engineering (pursuing comprehensive playbooks). ACE significantly outperforms GEPA in agentic and financial tasks.
+- **vs. TextGrad**: While TextGrad uses gradient-like textual feedback to optimize prompts, ACE uses structured bullets to accumulate strategies, avoiding information loss caused by rewriting.
 
 ## Supplementary Discussion
 
-### Why Is Context Engineering More Important Than Prompt Engineering?
-Prompt Engineering is static—once a system prompt is written, it remains fixed. Context Engineering is dynamic—the context evolves continuously based on the agent's runtime experience, better suiting real-world agents operating in complex environments. The playbook delta update mechanism is a concrete realization of this philosophy.
+### Why is Context Engineering More Important than Prompt Engineering?
+Prompt Engineering is static—the system prompt is fixed once written. Context Engineering is dynamic—the context evolves based on the agent's operational experience, better matching the needs of agents in complex environments. The playbook's delta update mechanism is the concrete implementation of this philosophy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The "evolving playbook" concept and delta update design represent genuine innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two benchmark categories, multiple baselines, comprehensive ablations, and leaderboard comparisons.
+- Novelty: ⭐⭐⭐⭐ The "evolving playbook" concept and delta update design are practically innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two categories of benchmarks, multiple baselines, thorough ablations, and leaderboard comparisons.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, persuasive concepts, and smooth narrative.
-- Value: ⭐⭐⭐⭐⭐ An important contribution to the context engineering direction with strong practical utility.
+- Value: ⭐⭐⭐⭐⭐ A significant work in the field of context engineering with high practical utility.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] InfiAgent: Self-Evolving Pyramid Agent Framework for Infinite Scenarios](infiagent_self-evolving_pyramid_agent_framework_for_infinite_scenarios.md)
-- [\[ACL 2026\] AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models](../../ACL2026/llm_agent/anchormem_anchored_facts_with_associative_contexts_for_building_memory_in_large_.md)
-- [\[ACL 2026\] TheraAgent: Self-Improving Therapeutic Agent for Precise and Comprehensive Treatment Planning](../../ACL2026/llm_agent/theraagent_self-improving_therapeutic_agent_for_precise_and_comprehensive_treatm.md)
+- [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
+- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
+- [\[CVPR 2026\] Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding](../../CVPR2026/llm_agent/resolving_evidence_sparsity_agentic_context_engineering_for_long-document_unders.md)
+- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
 - [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
-- [\[ICLR 2026\] CoMind: Towards Community-Driven Agents for Machine Learning Engineering](comind_towards_community-driven_agents_for_machine_learning_engineering.md)
 
 </div>
 

@@ -2,82 +2,89 @@
 title: >-
   [Paper Note] Energy-Regularized Sequential Model Editing on Hyperspheres
 description: >-
-  [ICLR 2026][Knowledge Editing][model editing] This paper interprets performance degradation in sequential model editing through the lens of hyperspherical uniformity (Hyperspherical Energy, HE)…
+  [ICLR 2026][Knowledge Editing][model editing] Performance degradation in sequential model editing is understood from the perspective of hyperspherical uniformity (Hyperspherical Energy, HE). The SPHERE method is proposed: by projecting editing perturbations onto the orthogonal complement of the primary hypersphere directions of pre-trained weights, stable large-sc
 tags:
-  - "ICLR 2026"
-  - "Knowledge Editing"
-  - "model editing"
-  - "hyperspherical energy"
-  - "sequential editing"
-  - "catastrophic forgetting"
-  - "knowledge preservation"
+  - ICLR 2026
+  - Knowledge Editing
+  - model editing
+  - hyperspherical energy
+  - sequential editing
+  - catastrophic forgetting
+  - knowledge preservation
 date: 2026-05-08
-content_hash: ee44ac1fb9006e4d
+content_hash: 8bb1fad5a20e36cd
 ---
-
 # Energy-Regularized Sequential Model Editing on Hyperspheres
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.01172](https://arxiv.org/abs/2510.01172)  
-**Code**: [GitHub](https://github.com/) (link provided in paper)  
-**Area**: Model Compression / Knowledge Editing / LLM Efficiency
+**Code**: [GitHub](https://github.com/) (Link provided in paper)  
+**Area**: Model Compression / Knowledge Editing / LLM Efficiency  
 **Keywords**: model editing, hyperspherical energy, sequential editing, catastrophic forgetting, knowledge preservation
 
 ## TL;DR
 
-This paper interprets performance degradation in sequential model editing through the lens of hyperspherical uniformity (Hyperspherical Energy, HE), and proposes SPHERE: by projecting editing perturbations onto the orthogonal complement of the principal hyperspherical directions of pre-trained weights, SPHERE enables stable large-scale sequential editing, outperforming the strongest baseline by an average of 16.41% on LLaMA3-8B.
+Performance degradation in sequential model editing is understood from the perspective of hyperspherical uniformity (Hyperspherical Energy, HE). The SPHERE method is proposed: by projecting editing perturbations onto the orthogonal complement of the primary hypersphere directions of pre-trained weights, stable large-scale sequential editing is achieved, outperforming the strongest baseline by an average of 16.41% on LLaMA3-8B.
 
 ## Background & Motivation
 
-1. Knowledge in LLMs inevitably becomes outdated and requires continuous updates, yet retraining is prohibitively expensive; model editing offers a lightweight alternative.
-2. Sequential model editing (multiple consecutive edits) represents the most practical scenario, but frequently leads to catastrophic forgetting and representational collapse.
-3. Existing editing methods (ROME, MEMIT, RECT, etc.) suffer severe performance degradation under large-scale sequential editing — most collapse before 3,000 edits.
-4. Key finding: treating weight matrices as collections of neurons on a hypersphere reveals that hyperspherical energy (HE) is highly correlated with editing performance.
-5. Sharp fluctuations in HE consistently accompany editing failures, and more advanced methods implicitly preserve HE more effectively.
-6. A theoretical proof establishes that HE variation provides a lower bound on the degradation of pre-trained knowledge, explaining the critical role of HE stability in knowledge preservation.
+1. LLM knowledge inevitably becomes outdated and requires continuous updates; however, retraining costs are prohibitive, making model editing a lightweight alternative.
+2. Sequential model editing (continuous multiple edits) is the most practical scenario but often leads to catastrophic forgetting and representation collapse.
+3. Existing editing methods (ROME, MEMIT, RECT, etc.) suffer sharp performance declines under large-scale sequential editing—most collapse before reaching 3,000 edits.
+4. Key Finding: Viewing the weight matrix as a set of neurons on a hypersphere reveals that hyperspherical energy (HE) is highly correlated with editing performance.
+5. Violent fluctuations in HE always accompany editing failures, while more advanced methods implicitly maintain HE better.
+6. Theoretical proof: HE changes establish a lower bound for pre-trained knowledge degradation, explaining the critical role of HE stability in knowledge preservation.
 
 ## Method
 
 ### Overall Architecture
 
-SPHERE (Sparse Projection for Hyperspherical Energy-Regularized Editing) proceeds in three steps:
-1. Estimate the principal hyperspherical directions of the pre-trained weight matrix.
-2. Define the orthogonal complement (sparse space) of those principal directions.
-3. Project editing perturbations onto the sparse space to mitigate interference with principal directions.
+The core Idea of SPHERE (Sparse Projection for Hyperspherical Energy-Regularized Editing) is to treat the weight matrix as a set of neurons on a hypersphere. Editing collapses because perturbations disrupt the uniform distribution of these neurons (i.e., HE). SPHERE first estimates the "primary hypersphere directions" carrying knowledge in the pre-trained weights, then projects the perturbation of each edit into the orthogonal complement of these primary directions. This allows the edit to rewrite target knowledge while minimizing disturbance to critical directions supporting the original geometric structure. This operation adds a single projection step after the closed-form solution of existing editing methods, making it plug-and-play. The pipeline is as follows: first, estimate the primary space $U$ from pre-trained weights to construct the projection matrix $P_\perp$; any existing editor calculates its perturbation $\Delta W$ normally, then $\Delta W$ is passed through the projection before being written back to the weights, resulting in an edited model with stable HE and preserved prior knowledge.
+
+```mermaid
+graph TD
+    W["Pre-trained Weights W"] --> A
+    subgraph MAIN["Primary Space Estimation (Design 1)"]
+        direction TB
+        A["Second-order Statistics WᵀW/n"] --> B["Eigen-decomposition"]
+        B --> C["Select top-r principal directions<br/>by energy ratio η → U"]
+    end
+    C --> P["Sparse Space Projection<br/>Construct P⊥ = I − αUUᵀ"]
+    E["Plug-and-play Enhancement<br/>MEMIT/RECT/AlphaEdit calculates ΔW"] -->|"Perturbation ΔW"| PROJ
+    P --> PROJ["Project and Write Back<br/>Ŵ = W + ΔW·P⊥"]
+    PROJ --> OUT["Edited Model<br/>stable HE, preserved knowledge"]
+```
 
 ### Key Designs
 
-**Design 1: Principal Space Estimation**
-- **Function**: Identify the principal hyperspherical directions of the pre-trained weight matrix.
-- **Mechanism**: Perform eigendecomposition of $\frac{1}{n} W^T W$ and select the eigenvectors corresponding to the $r$ largest eigenvalues to form the principal space matrix $U = [v_{d-r+1}, \ldots, v_d] \in \mathbb{R}^{d \times r}$.
-- **Design Motivation**: Principal directions encode the core geometric structure of pre-trained knowledge; $r$ is controlled by the cumulative ratio $\eta$: $\sum_{i=d-r+1}^{d} \lambda_i \geq \eta \sum_{i=1}^{d} \lambda_i$.
+**1. Primary Space Estimation: Identifying the Geometric Core Directions of Pre-trained Knowledge**
 
-**Design 2: Sparse Space Definition and Projection**
-- **Function**: Construct a projection matrix that maps editing perturbations onto the orthogonal complement of the principal directions.
-- **Mechanism**: $P_\perp = I - \alpha U U^T$, with the updated weight $\hat{W} = W + \Delta W \cdot P_\perp$.
-- **Design Motivation**: $\alpha = 1$ yields hard projection (completely removes principal-direction components); $0 < \alpha < 1$ yields soft projection (attenuates them), thereby avoiding disruption of hyperspherical uniformity.
+To protect something, its location must first be identified. SPHERE treats each row of the weight matrix $W \in \mathbb{R}^{d \times d}$ as a neuron on a hypersphere and performs eigen-decomposition on its second-order statistics $\frac{1}{n} W^T W$. Directions with larger eigenvalues imply more neurons clustered along that direction, carrying denser pre-trained information. Thus, the eigenvectors corresponding to the $r$ largest eigenvalues form the primary space matrix $U = [v_{d-r+1}, \ldots, v_d] \in \mathbb{R}^{d \times r}$. Rather than a fixed value, $r$ is determined by a cumulative energy ratio $\eta$—selecting the minimum number of directions such that the sum of their eigenvalues exceeds a threshold $\sum_{i=d-r+1}^{d} \lambda_i \geq \eta \sum_{i=1}^{d} \lambda_i$. This covers the main geometric structure of the knowledge without locking down the entire space.
 
-**Design 3: Plug-and-Play Enhancement**
-- **Function**: Insert the projection strategy into any existing editing method as a single line of code.
-- **Mechanism**: Any perturbation $\Delta W$ produced by an existing method is passed through $P_\perp$ before being applied.
-- **Design Motivation**: Universality — yields an average improvement of 38.71% over MEMIT, RECT, PRUNE, and other baselines.
+**2. Sparse Space Projection: Keeping Perturbations Away from Primary Directions**
+
+With the primary space obtained, SPHERE constructs a projection matrix $P_\perp = I - \alpha U U^T$ and passes any editing-generated perturbation through the projection before updating weights: $\hat{W} = W + \Delta W \cdot P_\perp$. Intuitively, $U U^T$ represents the component falling on primary directions; subtracting it pushes the perturbation into the orthogonal complement (the "sparse space"), thereby leaving directions critical for hyperspherical uniformity nearly untouched. The coefficient $\alpha$ controls protection intensity: $\alpha = 1$ is a hard projection where primary components are zeroed; $0 < \alpha < 1$ is a soft projection that attenuates without erasing, leaving room for target knowledge to avoid biased HE. This step is the direct source of HE stability during long sequence editing.
+
+**3. Plug-and-play Enhancement: One-line Projection Integrated into Any Editing Method**
+
+SPHERE does not replace existing editors but serves as post-processing within the solvers of methods like MEMIT, RECT, PRUNE, and AlphaEdit. These methods calculate $\Delta W$ normally, and SPHERE applies $\Delta W \cdot P_\perp$ just before application. Since the projection is decoupled from the specific localization/solving logic, it can be adopted with almost zero modification cost, yielding an average improvement of 38.71% across various baselines.
 
 ### Loss & Training
 
-The base objective for model editing is:
+SPHERE itself introduces no new training losses but directly operates on the closed-form solutions of editing methods. The basic goal of model editing is to write new knowledge $(K_1, V_1)$ while preserving old knowledge $(K_0, V_0)$:
+
 $$\Delta W = \arg\min_{\Delta \hat{W}} \left( \|{(W + \Delta \hat{W}) K_1 - V_1}\|^2 + \|{(W + \Delta \hat{W}) K_0 - V_0}\|^2 \right)$$
-SPHERE appends a projection operation to the closed-form solution: $\Delta W_{proj} = \Delta W \cdot P_\perp$. Theorem 1 provides the theoretical guarantee:
-$$|\Delta V| \geq \left(\frac{\Delta HE}{K}\right)^2$$
-This establishes a mathematical connection between HE variation and output perturbation.
+
+SPHERE appends the projection $\Delta W_{proj} = \Delta W \cdot P_\perp$ after obtaining $\Delta W$. The effectiveness of this step is theoretically guaranteed by Theorem 1: the magnitude of the output perturbation is lower-bounded by the change in HE, $|\Delta V| \geq \left(\frac{\Delta HE}{K}\right)^2$. This implies that by suppressing HE fluctuations, the degradation of pre-trained knowledge is simultaneously restricted—mathematically equating "maintaining hyperspherical uniformity" with "protecting original knowledge."
 
 ## Key Experimental Results
 
 ### Main Results
 
-Sequential editing with 15,000 edits on LLaMA3-8B (ZsRE / CounterFact):
+Sequential edits of 15,000 samples on LLaMA3-8B (ZsRE / CounterFact):
 
 | Method | ZsRE Eff.↑ | ZsRE Gen.↑ | ZsRE Spe.↑ | CF Eff.↑ | CF Gen.↑ |
-|--------|-----------|-----------|-----------|---------|---------|
+|------|-----------|-----------|-----------|---------|---------|
 | FT | 15.27 | 14.78 | 5.06 | 8.40 | 2.54 |
 | MEMIT | 0.00 | 0.00 | 0.06 | 0.00 | 0.00 |
 | RECT | 0.01 | 0.01 | 0.04 | 0.57 | 0.29 |
@@ -86,58 +93,58 @@ Sequential editing with 15,000 edits on LLaMA3-8B (ZsRE / CounterFact):
 
 ### Ablation Study
 
-Plug-and-play enhancement results (3,000 edits, LLaMA3-8B):
+Plug-and-play enhancement effects (3,000 edits, LLaMA3-8B):
 
-| Target | Efficacy Gain | Generalization Gain | Specificity Gain |
-|--------|-------------|-------------------|-----------------|
+| Target | Gain in Efficacy | Gain in Gen. | Gain in Spe. |
+|----------|-------------|-------------------|-----------------|
 | MEMIT + SPHERE | +49.05% | +42.64% | +24.44% |
-| Average over all baselines | +38.71% avg | — | — |
+| Overall Average | +38.71% avg | — | — |
 
-Computational overhead is negligible:
+Extremely low computational overhead:
 
 | Model | Edit Time | Projection Time | Ratio |
-|-------|---------|---------|------|
+|------|---------|---------|------|
 | LLaMA3-8B | 543.26s | 18.00s | 3.31% |
 | Qwen2.5-7B | 535.73s | 35.95s | 6.71% |
 | Qwen2.5-32B | 1656.58s | 99.60s | 6.01% |
 
 ### Key Findings
 
-1. SPHERE achieves 90.01% Efficacy on ZsRE, surpassing AlphaEdit (86.64%), with a 16.62-point gain in Specificity.
-2. Gains on CounterFact are substantial: Efficacy jumps from 4.37% to 52.89%.
-3. t-SNE visualizations confirm that weight distributions after SPHERE editing closely overlap with the original distribution, whereas other methods exhibit pronounced angular clustering.
-4. After 15,000 edits, SPHERE maintains original performance on four general-purpose tasks (GSM8K / RTE / NQ / BoolQ), while baseline methods collapse to near zero.
-5. The projection operation accounts for only 3–7% of total editing time and scales to 32B-parameter models.
+1. SPHERE achieves 90.01% Efficacy on ZsRE, surpassing AlphaEdit (86.64%), with Specificity improving by 16.62 percentage points.
+2. Improvements on CounterFact are significant: Efficacy jumps from 4.37% to 52.89%.
+3. t-SNE visualization confirms that weight distributions after SPHERE editing overlap highly with the original distribution, whereas other methods show obvious angular clustering.
+4. After 15,000 edits, SPHERE maintains original performance on four general tasks (GSM8K/RTE/NQ/BoolQ), while baseline performance drops to nearly zero.
+5. The projection operation accounts for only 3-7% of total editing time and scales to 32B-class models.
 
 ## Highlights & Insights
 
-1. **Hyperspherical uniformity perspective**: This work is the first to connect model editing with hyperspherical energy, revealing a strong correlation (significant Spearman correlation) between HE fluctuation and editing failure.
-2. **Dual theoretical and empirical support**: Theorem 1 proves that HE variation provides a lower bound on output perturbation, which is perfectly corroborated by the empirical analyses in Figures 2 and 3.
-3. **Exceptional plug-and-play usability**: A single line of projection code boosts existing methods by 38.71% on average, offering substantial practical engineering value.
-4. **Strong general capability retention**: General-purpose ability is preserved after 15,000 edits, addressing a long-standing pain point in sequential model editing.
-5. **Robustness to hyperparameters** ($\eta, \alpha$): SPHERE consistently improves upon the base method across all configurations, lowering the burden of hyperparameter tuning.
+1. **Hyperspherical Energy Perspective**: This work is the first to link model editing with hyperspherical energy, identifying that HE fluctuations are highly correlated with editing failures (strong Spearman correlation).
+2. **Dual Theoretical-Empirical Support**: Theorem 1 proves that HE changes provide a lower bound for output perturbations, corroborated by empirical analysis in Fig. 2/3.
+3. **Extreme Plug-and-Play Capability**: A single line of projection code improves existing methods by 38.71%, offering high engineering value.
+4. **Superior General Ability Preservation**: General capabilities are maintained even after 15,000 edits, addressing a long-standing pain point in sequential editing.
+5. Robust to hyperparameters ($\eta, \alpha$): SPHERE improves original methods under all configurations, lowering the threshold for parameter tuning.
 
 ## Limitations & Future Work
 
-1. On Qwen2.5-7B, severe degradation occurs after only 5,000 edits, indicating that scalability on smaller models remains to be improved.
-2. Although improved, Specificity remains relatively low (45.40% on LLaMA3), leaving room for more precise editing that avoids disturbing neighboring knowledge.
-3. Principal space estimation requires pre-computing an eigendecomposition, whose cost may increase as model scale grows.
-4. Experiments are conducted on only two models (LLaMA3-8B and Qwen2.5-7B); generalization to additional architectures remains to be confirmed.
-5. The current approach targets only FFN layers; applicability to attention-layer editing is unexplored.
+1. On Qwen2.5-7B, serious degradation occurs after only 5,000 edits; scalability on smaller models needs improvement.
+2. While Specificity is improved, it remains relatively low (45.40% on LLaMA3), suggesting limited ability for precise editing without affecting neighborhood knowledge.
+3. Primary space estimation requires pre-computing eigen-decomposition, which may increase computational costs as model size grows.
+4. Experiments were only validated on LLaMA3-8B and Qwen2.5-7B; generalization across more architectures requires confirmation.
+5. Currently, only FFN layer editing is considered; applicability to Attention layers remains unexplored.
 
 ## Related Work & Insights
 
-- **AlphaEdit** (Fang et al., 2025): Projects perturbations onto the null space of the prior knowledge set; serves as the foundational method for SPHERE.
-- **MEMIT** (Meng et al., 2023): A classical locate-then-edit approach that collapses under sequential editing.
-- **Hyperspherical learning** (Liu et al., 2018, 2021): Provides the theoretical basis for HE as a uniformity measure.
-- Inspiration: The hyperspherical perspective may generalize to other parameter modification scenarios, such as LoRA adaptation, continual learning, and model merging.
+- **AlphaEdit** (Fang et al., 2025): Projects perturbations into the null space of previous knowledge sets, serving as a basis for SPHERE.
+- **MEMIT** (Meng et al., 2023): A classic locate-then-edit method that collapses under sequential editing.
+- **Hyperspherical Learning** (Liu et al., 2018, 2021): Provides the theoretical foundation for HE as a uniformity metric.
+- Insight: The hyperspherical perspective may extend to other parameter modification scenarios such as LoRA adaptation, continual learning, and model merging.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The hyperspherical energy regularization perspective is entirely novel; Theorem 1's quantitative connection between HE variation and output perturbation is theoretically substantial.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Two models, two datasets, general capability evaluation, plug-and-play analysis, computational overhead, and hyperparameter sensitivity are all thoroughly covered.
-- **Writing Quality**: ⭐⭐⭐⭐ Logic is clear, though the dense mathematical notation slightly raises the reading barrier.
-- **Value**: ⭐⭐⭐⭐⭐ A single line of plug-and-play code yields a 38.71% improvement, making this highly practical for the model editing community, with solid theoretical contributions as well.
+- **Novelty**: ⭐⭐⭐⭐⭐ The hyperspherical energy regularization perspective is brand new, and the theoretical proof linking HE changes to output perturbations is profound.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluates two models, two datasets, general capabilities, plug-and-play performance, computational overhead, and hyperparameter sensitivity.
+- **Writing Quality**: ⭐⭐⭐⭐ Logic is clear, though heavy mathematical notation slightly raises the reading threshold.
+- **Value**: ⭐⭐⭐⭐⭐ A one-line code addition providing a 38.71% boost is highly practical for the model editing field, backed by solid theoretical contributions.
 
 <!-- RELATED:START -->
 
@@ -145,11 +152,11 @@ Computational overhead is negligible:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](../../AAAI2026/knowledge_editing/multiplicative_orthogonal_sequential_editing_for_language_models.md)
 - [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](fine-tuning_done_right_in_model_editing.md)
+- [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](../../AAAI2026/knowledge_editing/multiplicative_orthogonal_sequential_editing_for_language_models.md)
 - [\[ACL 2026\] Spectral Characterization and Mitigation of Sequential Knowledge Editing Collapse](../../ACL2026/knowledge_editing/spectral_characterization_and_mitigation_of_sequential_knowledge_editing_collaps.md)
 - [\[ICLR 2026\] Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing](bilinear_representation_mitigates_reversal_curse_and_enables_consistent_model_ed.md)
-- [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
+- [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
 
 </div>
 

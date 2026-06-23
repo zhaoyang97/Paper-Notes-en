@@ -2,190 +2,167 @@
 title: >-
   [Paper Note] LCA: Local Classifier Alignment for Continual Learning
 description: >-
-  [ICLR 2026][Optimization][Class-Incremental Learning] This paper proposes Local Classifier Alignment (LCA), a loss function that simultaneously minimizes classification loss and loss sensitivity within local regions of c…
+  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes the Local Classifier Alignment (LCA) loss function to resolve the classifier mismatch issue caused by incremental backbone merging in continual learning. By simultaneously minimizing classification loss and loss sensitivity within local regions of Gaussian class prototypes, combined with an incremen
 tags:
-  - "ICLR 2026"
-  - "Optimization"
-  - "Class-Incremental Learning"
-  - "Classifier Alignment"
-  - "Model Merging"
-  - "Robustness"
-  - "Pre-trained Models"
+  - ICLR 2026
+  - Optimization & Theory
 date: 2026-05-08
-content_hash: d14d04d8ed50d8e4
+content_hash: cca3495346b6dca9
 ---
-
 # LCA: Local Classifier Alignment for Continual Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.09888](https://arxiv.org/abs/2603.09888)  
 **Code**: [GitHub](https://github.com/tung-tran-kyushu/LCA)  
-**Area**: Continual Learning
+**Area**: Continual Learning  
 **Keywords**: Class-Incremental Learning, Classifier Alignment, Model Merging, Robustness, Pre-trained Models
 
 ## TL;DR
 
-This paper proposes Local Classifier Alignment (LCA), a loss function that simultaneously minimizes classification loss and loss sensitivity within local regions of class prototype Gaussian distributions. LCA addresses the classifier mismatch problem arising from incremental backbone merging in continual learning. Combined with an Incremental Merging (IM) strategy for PEFT modules, the method achieves an overall average accuracy of 85.6% across 7 benchmark datasets, substantially outperforming prior state-of-the-art methods.
+This paper proposes the Local Classifier Alignment (LCA) loss function to resolve the classifier mismatch issue caused by incremental backbone merging in continual learning. By simultaneously minimizing classification loss and loss sensitivity within local regions of Gaussian class prototypes, combined with an incremental PEFT merging strategy (IM), the method achieves an overall average accuracy of 85.6% across seven benchmarks, significantly outperforming the state-of-the-art.
 
 ## Background & Motivation
 
-**Background**: Pre-trained model (PTM)-based class-incremental learning (CIL) represents the dominant paradigm in continual learning. PTMs provide powerful feature extraction capabilities that require only lightweight fine-tuning to adapt to new tasks; however, naive sequential fine-tuning still leads to catastrophic forgetting.
+**Background**: Class-incremental learning (CIL) based on Pre-trained Models (PTMs) is a dominant paradigm. PTMs provide powerful feature extraction capabilities requiring only lightweight fine-tuning for new tasks; however, naive sequential fine-tuning still suffers from catastrophic forgetting.
 
-**Limitations of Prior Work**: (1) Fine-tuning only on the first task (e.g., APER) causes rapid performance degradation as the number of tasks grows and distribution shift accumulates; (2) per-task fine-tuning with backbone merging (e.g., EASE, MOS) yields strong aggregate performance but introduces a mismatch between the frozen task-specific classifiers and the merged backbone.
+**Limitations of Prior Work**: (1) Methods that only fine-tune on the first task (e.g., APER) experience rapid performance decay as tasks increase and distribution shifts grow. (2) Task-wise fine-tuning followed by backbone merging (e.g., EASE, MOS) offers strong comprehensive capabilities but suffers from a mismatch between frozen old classifiers and the merged backbone.
 
-**Key Challenge**: After multi-task merging, the backbone parameters shift, causing previously frozen task-specific classifiers to become misaligned with the new feature space, resulting in severe degradation of performance on old tasks. Since historical data cannot be revisited, directly retraining the classifiers is infeasible.
+**Key Challenge**: The backbone parameters change after multi-task merging, causing the feature space to no longer align with previously frozen task-specific classifiers, leading to a sharp drop in old task performance. Directly retraining classifiers is infeasible due to the lack of access to old data.
 
-**Key Insight**: The paper generates synthetic samples using Gaussian class prototypes and re-aligns all classifier heads on these synthetic samples. The key innovation is to not only minimize classification loss, but also regularize the sensitivity of the loss to input perturbations, thereby achieving local robustness and better generalization.
+**Key Insight**: Synthetic samples are generated using Gaussian prototypes of classes to realign all classifiers. A key innovation is not only minimizing classification loss but also regularizing the sensitivity of the loss to input perturbations, achieving local robustness and better generalization.
 
-**Related Work & Insights from Model Merging**: Works such as Task Arithmetic and TIES-Merge demonstrate that independently trained task-specific models can be combined via parameter merging to form a stronger unified model. This paper incorporates that insight into CIL by merging only the PEFT (LoRA) parameters, incurring minimal storage overhead.
+**Design Motivation**: Works like Task Arithmetic and TIES-Merge demonstrate that task-specific models trained independently can form a stronger unified model through parameter merging. Ours incorporates this into CIL by merging only PEFT (LoRA) parameters, maintaining extremely low storage overhead.
 
-**Theoretical Gap**: Existing CIL methods lack theoretical analysis to guide classifier alignment. This paper provides a decomposition theorem for test error, decomposing CIL performance into three controllable components: feature distribution shift, class loss, and robustness.
+**Theoretical Gap**: Existing CIL methods lack theoretical analysis to guide classifier alignment. This paper provides a decomposition theorem for test error, splitting CIL performance into three controllable parts: feature distribution shift, class loss, and robustness.
 
 ## Method
 
-### Key Design 1: Incremental Merging (IM)
+### Overall Architecture
 
-**Function**: Fine-tunes PEFT modules per task and then merges task vectors element-wise into a unified backbone.
+LCA decomposes class-incremental learning into three steps: "task-wise training — backbone merging — classifier re-alignment." For each new task, only a set of PEFT (LoRA) parameters is fine-tuned and merged element-wise into a unified backbone. An independent MLP classification head is added for each task. Since merging shifts the feature space and causes mismatch in frozen old heads, synthetic features are sampled from the Gaussian prototypes of each class. The LCA loss is then used to realign all classification heads to the new backbone. This design is governed by a test error decomposition theorem that splits CIL performance into "distribution shift + training error + local robustness," which are controlled by incremental merging and the two terms of the LCA loss, respectively.
 
-**Mechanism**: Each new task initializes training from the previous merged result, maintaining proximity in parameter space. After training, the task vector $\tau_{\text{curr}} = \theta_{\text{peft}_i} - \theta_{\text{peft}_0}$ is computed and compared element-wise with the accumulated vector $\tau$, retaining the entry with larger absolute value:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["New task t data"] --> B["PEFT (LoRA) Fine-tuning<br/>+ New independent MLP head"]
+    B --> C["Incremental Merging (IM)<br/>Element-wise max absolute value<br/>→ Unified backbone"]
+    C --> D["Gaussian prototype sampling<br/>Synthetic features (Store μ, Σ)"]
+    D --> E["LCA Loss Re-alignment<br/>All frozen heads"]
+    E --> F["Inference: Concatenate head outputs"]
+    C -->|"Next task initialization from merged result"| B
+```
 
-$$
-\tau^{(k)} \leftarrow \begin{cases} \tau_{\text{curr}}^{(k)} & \text{if } |\tau_{\text{curr}}^{(k)}| \geq |\tau^{(k)}| \\ \tau^{(k)} & \text{otherwise} \end{cases}
-$$
+### Key Designs
 
-The final merged result is $\theta_{\text{merged}} = \theta_{\text{peft}_0} + \alpha \cdot \tau$.
+**1. Independent Heads + Gaussian Prototypes: One head per task and one Gaussian per class to prevent overwriting and provide samples for alignment.**
 
-**Design Motivation**: (1) Retaining only the current accumulated vector and the new task vector avoids storing all historical parameters; (2) selecting the entry with the larger absolute value preserves the most salient task-specific updates; (3) initializing from the previous merged result maintains parameter-space continuity, which promotes stable merging (Li et al., 2025).
+To prevent overwriting old classifiers during new task training, an independent MLP classification head is added for each task, with output dimensions equal to the number of classes in that task. During inference, outputs are concatenated: $h(x) = \text{concat}(h(x;\theta_1^{\text{cls}}), \ldots, h(x;\theta_t^{\text{cls}}))$. Old heads remain frozen and are never modified. Correspondingly, each class is described in the feature space by a Gaussian distribution $\mathcal{N}_i$ (mean and covariance). Since features from pre-trained backbones are highly structured, a single Gaussian approximates the class distribution effectively. The key value of this design is that the alignment phase requires no original data; classification heads are retrained using synthetic features. Storage complexity is $\mathcal{O}(n)$, which is lower than keeping exemplars and avoids privacy concerns.
 
-### Key Design 2: LCA Loss Function
+**2. Incremental Merging (IM): Integrating multi-task knowledge without storing historical parameters.**
 
-**Function**: After backbone merging, LCA generates synthetic samples from class Gaussian prototypes and retrains all classifier heads using the LCA loss.
+If tasks are fine-tuned independently and then merged, historical PEFT parameters must be stored, and merging can be unstable due to distance in parameter space. IM initializes each new task from the previous merged result, keeping neighboring task parameters close (Li et al., 2025). After training, the task vector $\tau_{\text{curr}} = \theta_{\text{peft}_i} - \theta_{\text{peft}_0}$ is calculated and compared element-wise with the cumulative vector $\tau$. Only the dimension with the larger absolute value is kept: $\tau^{(k)} \leftarrow \tau_{\text{curr}}^{(k)}$ if $|\tau_{\text{curr}}^{(k)}| \geq |\tau^{(k)}|$, otherwise $\tau^{(k)}$ remains unchanged. The final backbone is $\theta_{\text{merged}} = \theta_{\text{peft}_0} + \alpha \cdot \tau$. This ensures only one cumulative vector and one current task vector are in memory. The paper also finds that merging only PEFT parameters makes the process significantly more stable, allowing the merging coefficient $\alpha$ to be fixed at 1.0.
 
-**Mechanism**: The LCA loss for each class $i$ is defined as:
+**3. LCA Loss: Minimizing classification error and loss sensitivity within prototype neighborhoods.**
 
-$$
-L_i = \underbrace{\mathbb{E}_{\boldsymbol{z} \sim \boldsymbol{D}_i}[\ell(h_t, \boldsymbol{z})]}_{\text{Classification Loss}} + \lambda \underbrace{\mathbb{E}_{\boldsymbol{z}, \boldsymbol{z}' \sim \boldsymbol{D}_i}[|\ell(h_t, \boldsymbol{z}) - \ell(h_t, \boldsymbol{z}')|]}_{\text{Loss Sensitivity Regularizer}}
-$$
-
-The total loss is the mean over all seen classes: $L(\boldsymbol{D}, h_t) = \frac{1}{C_t} \sum_{i=1}^{C_t} L_i$.
-
-**Design Motivation**:
-- The first term is the standard cross-entropy loss, ensuring correct classification of synthetic samples drawn near class prototypes.
-- The second term measures the loss discrepancy between two random samples from the same class distribution, penalizing the classifier's sensitivity to small input variations and thereby flattening the loss surface within the prototype neighborhood.
-- This local robustness is especially important because some Gaussian-sampled points may lie far from their own class prototype and close to others; the second term reduces the negative influence of such "harmful samples" during training.
-- $\lambda$ controls the strength of the robustness penalty; $\lambda = 0.1$ yields consistently stable performance across all datasets.
-
-### Key Design 3: Theoretical Error Decomposition
-
-**Function**: Provides a theoretical analysis of classifier generalization in CIL by decomposing test error into three controllable components.
-
-**Mechanism**:
-
-**Theorem 3.1 (Fixed Backbone)**: For a bounded loss $\ell$, the test error satisfies:
+After backbone merging, the feature space shifts and old heads mismatch. Since old data is inaccessible, retraining relies on synthetic features sampled from Gaussian prototypes $\mathcal{N}_i$. Simple cross-entropy minimization on synthetic samples is problematic because Gaussian sampling can produce "harmful samples" far from the prototype or near other classes; fitting these hurts generalization and increases inter-class overlap. LCA adds a loss sensitivity regularization term for each class $i$:
 
 $$
-L(P, h_t) \leq L(\boldsymbol{D}, h_t) + \sum_{i=1}^{C_t} \frac{n_i}{n} \bar{\epsilon}_i(h_t) + \ell_{\max} \sqrt{\frac{C_t \ln 4 + 2\ln(1/\delta)}{n}}
+L_i = \underbrace{\mathbb{E}_{\boldsymbol{z} \sim \boldsymbol{D}_i}[\ell(h_t, \boldsymbol{z})]}_{\text{Classification Loss}} + \lambda \underbrace{\mathbb{E}_{\boldsymbol{z}, \boldsymbol{z}' \sim \boldsymbol{D}_i}[|\ell(h_t, \boldsymbol{z}) - \ell(h_t, \boldsymbol{z}')|]}_{\text{Loss Sensitivity Regularization}}
 $$
 
-where $\bar{\epsilon}_i(h_t)$ is a loss robustness term within the local region of class $i$.
+The total loss is the average across all seen classes $L(\boldsymbol{D}, h_t) = \frac{1}{C_t} \sum_{i=1}^{C_t} L_i$. The second term measures the difference in loss between two random samples from the same class, penalizing sensitivity to input perturbations and "flattening" the loss surface near prototypes. This weakens the impact of harmful samples—a concept similar to Sharpness-Aware Minimization but applied to classifier alignment. The strength is controlled by $\lambda$; experiments show $\lambda = 0.1$ is stable across all datasets.
 
-**Theorem 3.2 (Changing Backbone)**: Accounting for feature distribution shift induced by backbone updates:
+**4. Theoretical Error Decomposition: Mapping components to IM and LCA terms.**
+
+To justify the alignment strategy, the paper proves an upper bound for test error. When the backbone is fixed (Theorem 3.1), for a bounded loss $\ell$: $L(P, h_t) \leq L(\boldsymbol{D}, h_t) + \sum_{i=1}^{C_t} \frac{n_i}{n} \bar{\epsilon}_i(h_t) + \ell_{\max} \sqrt{\frac{C_t \ln 4 + 2\ln(1/\delta)}{n}}$, where $\bar{\epsilon}_i(h_t)$ is the local loss robustness term. When considering feature distribution shifts from backbone updates (Theorem 3.2), a Total Variation distance term is added:
 
 $$
 L(P_t, h_t) \leq 2\ell_{\max} \text{TV}(P_t, \hat{P}_t) + L(\hat{\boldsymbol{D}}, h_t) + \sum_{i=1}^{C_t} \frac{n_i}{n} \bar{\epsilon}_i(h_t) + \ell_{\max} \sqrt{\frac{C_t \ln 4 + 2\ln(1/\delta)}{n}}
 $$
 
-**Design Motivation**: Each of the three components is controlled by a corresponding method: (1) $\text{TV}(P_t, \hat{P}_t)$, the feature distribution shift, is controlled by IM's incremental merging; (2) $L(\hat{\boldsymbol{D}}, h_t)$, the training loss, is controlled by the first term of LCA; (3) $\bar{\epsilon}_i$, robustness, is controlled by the second term of LCA. The theory directly validates the design rationale of IM+LCA.
-
-### Key Design 4: Classifier Architecture
-
-**Function**: A separate MLP classification head is added for each new task; at inference, the outputs of all heads are concatenated.
-
-**Mechanism**: Inference is performed as $h(x) = \text{concat}(h(x;\theta_1^{\text{cls}}), \ldots, h(x;\theta_t^{\text{cls}}))$. Each class is represented by a Gaussian distribution $\mathcal{N}_i$ in feature space, and LCA alignment samples synthetic features from each class Gaussian.
-
-**Design Motivation**: Independent classifier heads prevent old heads from being modified during new task training, reducing forgetting. The additional storage cost is only the per-class mean and covariance, $\mathcal{O}(n)$, which is far more efficient than storing raw samples.
+These three terms are controlled by different components: the distribution shift $\text{TV}(P_t, \hat{P}_t)$ is suppressed by IM, the training error $L(\hat{\boldsymbol{D}}, h_t)$ corresponds to the first LCA term, and the robustness term $\bar{\epsilon}_i$ corresponds to the second LCA term.
 
 ## Key Experimental Results
 
-### Table 1: Average Accuracy Comparison on 7 Benchmark Datasets (ViT-B/16-IN1K)
+### Table 1: Average Accuracy Comparison on 7 Benchmarks (ViT-B/16-IN1K)
 
 | Method | CIFAR100 | IN-R | IN-A | CUB | OB | VTAB | CARS | Overall |
-|--------|----------|------|------|-----|----|------|------|---------|
+|------|----------|------|------|-----|----|----|------|---------|
 | CODA-Prompt | 91.0 | 78.2 | 48.1 | 75.6 | 71.0 | 65.6 | 26.3 | 65.1 |
 | DualPrompt | 86.7 | 74.6 | 55.3 | 78.9 | 74.4 | 84.0 | 49.4 | 71.9 |
 | EASE | 91.7 | 82.4 | 67.8 | 89.5 | 80.8 | 93.3 | 48.1 | 79.1 |
 | MOS | 94.3 | 83.3 | 67.6 | 92.3 | 86.1 | 92.4 | 71.4 | 83.9 |
 | SLCA | 93.7 | 85.1 | 45.1 | 90.2 | 82.7 | 91.1 | 74.6 | 80.4 |
-| IM (merge only) | 92.8 | 84.3 | 66.5 | 86.7 | 81.1 | 84.6 | 70.1 | 80.9 |
-| **IM+LCA** | **94.8** | **85.8** | **75.0** | 90.8 | 81.4 | **95.2** | **76.2** | **85.6** |
+| IM (Only merged) | 92.8 | 84.3 | 66.5 | 86.7 | 81.1 | 84.6 | 70.1 | 80.9 |
+| **IM+LCA (Ours)** | **94.8** | **85.8** | **75.0** | 90.8 | 81.4 | **95.2** | **76.2** | **85.6** |
 
 ### Table 2: Robustness Comparison (CIFAR100-C / CIFAR100-P)
 
 | Metric | IM | IM+LCA | Gain |
-|--------|----|--------|------|
-| CIFAR100-C Average Accuracy | ~88% | ~90% | +2% |
-| CIFAR100-P Average Accuracy | ~86% | ~88.5% | +2.5% |
-| CIFAR100-C Severity 5 | Lower | Higher | Significant improvement |
-| Overall Robustness Score | Baseline | Superior | Consistent improvement |
+|------|-------|---------|------|
+| CIFAR100-C Avg. Acc | ~88% | ~90% | +2% |
+| CIFAR100-P Avg. Acc | ~86% | ~88.5% | +2.5% |
+| CIFAR100-C Severity 5 | Lower | Higher | Significant |
+| Overall Robustness Score | Base | Superior | Comprehensive |
 
-### LCA as a Plug-in Component for Other Methods
+### LCA as a Plugin for Other Methods
 
 | Method | Original | +LCA | Effect |
-|--------|----------|------|--------|
-| SLCA (base) | Baseline | SLCA-LCA | Improvements on IN-A, CUB, VTAB, CARS |
-| MOS (base) | Baseline | MOS-LCA | Improvements across multiple datasets; CIFAR100 reaches 93.1% |
+|------|------|------|------|
+| SLCA Base | Baseline | SLCA-LCA | Improvements in IN-A, CUB, VTAB, CARS |
+| MOS Base | Baseline | MOS-LCA | Multiple datasets improved; 93.1% on CIFAR100 |
 
 ## Key Findings
 
-1. **Classifier alignment is the critical bottleneck in CIL**: The performance gains from IM to IM+LCA are consistently significant across all 7 datasets, with a particularly notable improvement of 8.5% on ImageNet-A (66.5→75.0), confirming that classifier mismatch after backbone merging is a primary performance bottleneck.
+1. **Classifier Alignment is a Key Bottleneck**: The gain from IM to IM+LCA is significant across all 7 datasets, especially on ImageNet-A (+8.5%), indicating that classifier mismatch after backbone merging is a performance bottleneck.
 
-2. **Importance of the robustness regularizer**: The second term of LCA (loss sensitivity regularization) yields robustness improvements of +2% on CIFAR100-C and +2.5% on CIFAR100-P, with consistent gains across all 19 corruption types and multiple perturbation categories.
+2. **Importance of Robustness Regularization**: The second term of LCA provides +2% and +2.5% robustness gains on CIFAR100-C and CIFAR100-P, with consistent improvements across all 19 corruption types.
 
-3. **Composability of LCA**: LCA can be embedded as a plug-in into methods such as SLCA and MOS. Even without hyperparameter tuning (fixing $\lambda=0.1$), it consistently improves performance across multiple datasets.
+3. **Composability of LCA**: LCA can serve as a plug-in for methods like SLCA and MOS. Even without hyperparameter tuning (fixing $\lambda=0.1$), it brings stable improvements.
 
-4. **Effectiveness of merging only PEFT parameters**: Merging only LoRA parameters, without merging the full backbone, achieves efficient knowledge consolidation with minimal storage overhead.
+4. **Effectiveness of Merging Only PEFT Parameters**: Integrating knowledge by merging only LoRA parameters is efficient, requiring no full backbone merging and keeping storage overhead extremely low.
 
-5. **Robustness of $\lambda$ selection**: $\lambda=0.1$ delivers stable performance across all datasets. Excessively large $\lambda$ leads to performance degradation due to over-regularization, consistent with theoretical expectations.
+5. **Selection of $\lambda$**: $\lambda=0.1$ is stable across all datasets; excessive $\lambda$ leads to performance drops due to over-regularization, consistent with theoretical expectations.
 
 ## Highlights & Insights
 
-- **Loss sensitivity as a regularization target**: Unlike conventional weight regularization or feature alignment, LCA directly constrains the rate of change of the loss function over the input space. This "loss surface flattening" concept is conceptually related to Sharpness-Aware Minimization (SAM), but is applied specifically to the classifier alignment problem.
+- **Loss Sensitivity as a Regularization Objective**: Moving beyond traditional weight regularization or feature alignment, LCA directly constrains the rate of change of the loss function in the input space, "flattening" the loss surface.
 
-- **Theory-driven method design**: The three-component decomposition in Theorem 3.2 (distribution shift + training loss + robustness) directly motivates the dual-component design of IM+LCA, with each component responsible for controlling one theoretical error term. Such tight coupling between theory and method design is relatively uncommon in the CIL literature.
+- **Theory-Driven Design**: The error decomposition in Theorem 3.2 directly informs the dual-component design of IM+LCA, where each component targets a specific theoretical error term.
 
-- **Effective use of synthetic samples**: The method requires no exemplar memory or data replay; storing only the per-class mean and covariance and sampling from Gaussian distributions is sufficient for feature-space classifier alignment, thereby avoiding privacy concerns and storage overhead.
+- **Synergistic Use of Synthetic Samples**: By only storing means and covariances, the method avoids privacy issues and large storage costs associated with exemplar memory.
 
-- **Simplicity and efficiency**: The overall method requires neither backbone expansion (as in EASE), complex inference procedures (as in MOS), nor additional memory buffers. A single LCA alignment step after merging suffices, yielding a straightforward and effective solution.
+- **Concise and Efficient**: The method avoids backbone expansion (like EASE), complex inference (like MOS), or extra buffers. A single alignment step after merging suffices.
 
 ## Limitations & Future Work
 
-1. **LCA operates only at the classifier alignment stage**: The LCA loss is not integrated into the end-to-end backbone training pipeline. The authors acknowledge that incorporating LCA into backbone training could potentially further improve robustness.
+1. **Alignment-Only Phase**: LCA is currently applied only during alignment. Integrating it into the end-to-end backbone training process might further enhance robustness.
 
-2. **Limitations of the Gaussian assumption**: Representing each class with a single Gaussian distribution may fail to capture multimodal or asymmetric structures in the true feature distribution, particularly on complex fine-grained datasets.
+2. **Gaussian Assumption**: Using a single Gaussian per class may fail to capture multi-modal or asymmetric feature distributions in complex fine-grained datasets.
 
-3. **Theoretical analysis assumes a fixed backbone**: Theorem 3.1 holds under a fixed backbone; while Theorem 3.2 introduces a distribution shift term, it does not directly analyze the dynamics during backbone training.
+3. **Fixed Backbone Assumption**: Theorem 3.1 assumes a fixed backbone; although Theorem 3.2 introduces distribution shift, it does not fully analyze the dynamics during training.
 
-4. **Limited evaluation beyond CIL**: Although the LCA loss is general in nature, it is validated only in the CIL setting and has not been tested in other continual learning scenarios (e.g., domain-incremental, task-incremental learning) or general classification tasks.
+4. **Limited Context Exploration**: While LCA is general, it was only validated in CIL scenarios, excluding domain-incremental or general classification tasks.
 
-5. **Limited gains on the OB dataset**: IM+LCA improves OmniBenchmark accuracy by only 0.3% (81.1→81.4%), remaining below MOS's 86.1%, suggesting that the method may not be advantageous under certain distribution settings.
+5. **Limited Gain on OB Dataset**: The improvement on OmniBenchmark was marginal (0.3%) and lower than MOS, suggesting potential weaknesses in specific distribution scenarios.
 
 ## Related Work & Insights
 
 ### vs. EASE (Zhou et al., 2024)
-EASE integrates new tasks via an expandable subspace and reweights old classifiers using semantic similarity. In contrast, LCA requires no backbone architecture expansion, incurs lower storage overhead, and directly aligns classifiers through a theoretically grounded loss function. IM+LCA (85.6%) substantially outperforms EASE (79.1%) in overall accuracy, with especially large margins on IN-A (+7.2%), VTAB (+1.9%), and CARS (+28.1%).
+EASE integrates tasks via expandable subspaces and reweights old classifiers. LCA requires no architectural expansion, has lower storage overhead, and directly aligns classifiers using a theoretically grounded loss. IM+LCA significantly outperforms EASE overall (85.6% vs 79.1%).
 
 ### vs. MOS (Sun et al., 2025b)
-MOS dynamically selects an appropriate backbone adapter at inference time, emphasizing inference-phase adaptation. IM+LCA, by contrast, completes alignment in a single post-training step, resulting in simpler inference. Although MOS achieves higher accuracy on CUB (92.3 vs. 90.8) and OB (86.1 vs. 81.4), IM+LCA leads substantially on IN-A (+7.4%), VTAB (+2.8%), and CARS (+4.8%), and achieves higher overall accuracy (85.6% vs. 83.9%).
+MOS dynamically selects adapters at inference time. IM+LCA completes integration post-training, leading to simpler inference. While MOS performs better on CUB and OB, IM+LCA leads significantly on IN-A, VTAB, and CARS, with higher aggregate accuracy.
 
 ### vs. SLCA (Zhang et al., 2023)
-SLCA employs a small learning rate for backbone training to mitigate forgetting, but backbone drift still causes classifier misalignment. IM+LCA directly addresses this issue, improving IN-A accuracy from 45.1% to 75.0% (+29.9%) and achieving 85.6% vs. 80.4% overall. Furthermore, LCA can serve as a complementary component for SLCA (SLCA-LCA) to further improve performance.
+SLCA reduces forgetting via low learning rates, but backbone changes still cause mismatch. IM+LCA directly addresses this, particularly on IN-A (75.0% vs 45.1%), and can complement SLCA as a plug-in.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The design of the LCA loss is novel — using loss sensitivity as a regularization target with a theoretically grounded error decomposition. The incremental merging strategy is related to prior work, but merging only PEFT parameters without a pruning stage constitutes a new contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluation covers 7 benchmark datasets with 3-seed mean and standard deviation reporting, plug-in combination experiments with other methods, CIFAR100-C/P robustness evaluation, hyperparameter sensitivity analysis, and ablation studies over multiple merging strategies.
-- **Writing Quality**: ⭐⭐⭐⭐ The theoretical analysis is clear and complete; method descriptions are concise; algorithmic pseudocode is well-presented; overall paper structure is sound.
-- **Value**: ⭐⭐⭐⭐ LCA is simple to implement and can be embedded as a plug-in into existing CIL methods without additional storage or complex inference, making it well-suited for practical deployment.
+- **Novelty**: ⭐⭐⭐⭐ The design of LCA loss is novel—using loss sensitivity as regularization with a theoretical decomposition.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 7 benchmarks, robustness tests, and plug-in validation.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear theoretical analysis and concise method description.
+- **Value**: ⭐⭐⭐⭐ High practical value due to simplicity as a plug-in without additional storage.
 
 <!-- RELATED:START -->
 
@@ -193,11 +170,11 @@ SLCA employs a small learning rate for backbone training to mitigate forgetting,
 
 ## Related Papers
 
-- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
+- [\[ICLR 2026\] Activation Function Design Sustains Plasticity in Continual Learning](activation_function_design_sustains_plasticity_in_continual_learning.md)
+- [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
+- [\[CVPR 2026\] Learning to Learn Weight Generation via Local Consistency Diffusion](../../CVPR2026/optimization/learning_to_learn_weight_generation_via_local_consistency_diffusion.md)
 - [\[ICCV 2025\] Federated Continual Instruction Tuning](../../ICCV2025/optimization/federated_continual_instruction_tuning.md)
-- [\[NeurIPS 2025\] Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning](../../NeurIPS2025/optimization/train_with_perturbation_infer_after_merging_a_two-stage_framework_for_continual_.md)
-- [\[AAAI 2026\] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters](../../AAAI2026/optimization/fedpm_federated_learning_using_second-order_optimization_with_preconditioned_mix.md)
-- [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](../../ICML2026/optimization/dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
+- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
 
 </div>
 

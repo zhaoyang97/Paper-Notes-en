@@ -2,142 +2,119 @@
 title: >-
   [Paper Note] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization
 description: >-
-  [ICLR 2026][Optimization][Sharpness-Aware Minimization] This paper provides a rigorous theoretical analysis of the implicit bias of SAM when training linear diagonal networks…
+  [ICLR 2026][Optimization & Theory][Sharpness-Aware Minimization] This work provides an in-depth analysis of the implicit bias of SAM trained on linear diagonal networks, revealing a qualitative shift induced by depth from $L=1$ to $L=2$: the limit direction of $\ell_\infty$-SAM is highly sensitive to initialization, while $\ell_2$-SAM exhibits a "weak-to-strong" **sequential feature
 tags:
-  - "ICLR 2026"
-  - "Optimization"
-  - "Sharpness-Aware Minimization"
-  - "implicit bias"
-  - "linear diagonal networks"
-  - "feature amplification"
-  - "depth-induced"
+  - ICLR 2026
+  - Optimization & Theory
+  - Sharpness-Aware Minimization
 date: 2026-05-08
-content_hash: f08bf293bcb1ed4e
+content_hash: bfa62f62ead06b8c
 ---
-
 # Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.08290](https://arxiv.org/abs/2603.08290)  
 **Code**: None  
-**Area**: Optimization Theory
-**Keywords**: Sharpness-Aware Minimization, implicit bias, linear diagonal networks, feature amplification, depth-induced
+**Area**: Optimization Theory  
+**Keywords**: Sharpness-Aware Minimization, Implicit Bias, Linear Diagonal Networks, Feature Amplification, Depth-Induced
 
 ## TL;DR
 
-This paper provides a rigorous theoretical analysis of the implicit bias of SAM when training linear diagonal networks, revealing a qualitative phase transition induced by increasing depth from $L=1$ to $L=2$: the limiting direction of $\ell_\infty$-SAM is highly sensitive to initialization, while $\ell_2$-SAM exhibits a **sequential feature amplification** phenomenon — "minor first, major last" — demonstrating that analyses focused solely on the $t\to\infty$ limit are insufficient to characterize the full dynamics of SAM.
+This work provides an in-depth analysis of the implicit bias of SAM trained on linear diagonal networks, revealing a qualitative shift induced by depth from $L=1$ to $L=2$: the limit direction of $\ell_\infty$-SAM is highly sensitive to initialization, while $\ell_2$-SAM exhibits a "weak-to-strong" **sequential feature amplification** phenomenon. The results indicate that analyses focusing solely on the $t\to\infty$ limit are insufficient to reveal the complete dynamic behavior of SAM.
 
 ## Background & Motivation
 
-### State of the Field
-Sharpness-Aware Minimization (SAM) seeks flat minima by minimizing the worst-case loss within a neighborhood, achieving significant empirical generalization gains. Prior theoretical work has primarily analyzed the implicit bias of SAM in settings with finite minimizers (e.g., squared loss), while the regime in which the infimum of the loss is attained at infinity (e.g., logistic loss) remains poorly understood.
+### Background
+Sharpness-Aware Minimization (SAM) seeks flat minima by minimizing the worst-case loss within a neighborhood, significantly improving generalization in practice. Previous theoretical works primarily analyzed the implicit bias of SAM in settings with finite minima (e.g., squared loss), while the case where the loss infimum is at infinity (e.g., logistic loss) remains insufficiently understood.
 
-### Limitations of Prior Work & Root Cause
-The authors examine the implicit bias of SAM applied to linearly separable binary classification data (under logistic loss) using $L$-layer linear diagonal networks. The key observations are:
+### Motivation
+The authors examine the implicit bias of SAM when training on linearly separable binary classification data (logistic loss) using an $L$-layer linear diagonal network. Surprising findings include:
 
-- **Depth $L=1$ (linear model)**: Both $\ell_\infty$-SAM and $\ell_2$-SAM converge to the $\ell_2$ max-margin classifier, consistent with gradient descent (GD).
-- **Depth $L=2$**: A qualitative change emerges — even on the single-sample dataset $\{(\boldsymbol\mu, +1)\}$ with $\boldsymbol\mu=(1,2)$, the trajectory of SAM can deviate from the $\ell_1$ max-margin direction found by GD.
+- **Depth $L=1$ (Linear Model)**: Both $\ell_\infty$-SAM and $\ell_2$-SAM converge to the $\ell_2$ maximum margin classifier, consistent with Gradient Descent (GD).
+- **Depth $L=2$**: Behavior undergoes a qualitative change—even on a single-sample dataset $\{(\boldsymbol\mu, +1)\}$ where $\boldsymbol\mu=(1,2)$, the SAM trajectory can deviate from the $\ell_1$ maximum margin direction favored by GD.
 
-This observation reveals that adding a single layer can fundamentally alter the implicit bias of SAM.
+This observation reveals that adding just one layer fundamentally alters the implicit bias of SAM.
 
 ## Method
 
 ### Overall Architecture
 
-The paper adopts a **theoretical analysis + experimental validation** framework:
-- **Model**: $L$-layer linear diagonal network $f(\mathbf{x}) = \langle \boldsymbol\beta(\boldsymbol\theta), \mathbf{x}\rangle$, where $\boldsymbol\beta(\boldsymbol\theta) = \bigodot_{\ell=1}^L \mathbf{w}^{(\ell)}$
-- **Data**: Linearly separable datasets and the single-sample dataset $\mathcal{D}_{\boldsymbol\mu} = \{(\boldsymbol\mu, +1)\}$
-- **Loss**: Logistic loss $\ell(u) = \log(1+\exp(-u))$
-- **Analysis tools**: Continuous-time SAM flow (ODE) and rescaled SAM flow
+The paper does not propose a new algorithm but characterizes the continuous-time implicit bias of $\ell_\infty$-SAM and $\ell_2$-SAM on an $L$-layer linear diagonal network $f(\mathbf{x}) = \langle \boldsymbol\beta(\boldsymbol\theta), \mathbf{x}\rangle$, where the equivalent predictor $\boldsymbol\beta(\boldsymbol\theta) = \bigodot_{\ell=1}^L \mathbf{w}^{(\ell)}$ is the element-wise product of weights across layers. Training is conducted with logistic loss $\ell(u)=\log(1+\exp(-u))$ on linearly separable data. The analysis uses a single-sample dataset $\mathcal{D}_{\boldsymbol\mu}=\{(\boldsymbol\mu,+1)\}$ as the minimal solvable model. Using SAM flow ODEs and a rescaled flow for simplified analysis, limit directions and finite-time trajectories are derived based on depth $L$ and perturbation norm types.
 
-### Key Designs & Theoretical Results
+### Key Designs
 
-1. **Results for depth $L=1$**
+**1. Degenerate Conclusion for Depth 1: Establishing a Baseline for "Where SAM Becomes Special"**
 
-   **Theorem 3.1**: For almost all linearly separable datasets, any perturbation radius $\rho$, and any initialization, the direction of the $\ell_\infty$-SAM flow converges to the $\ell_2$ max-margin direction.
+To argue "depth-induced" changes, differences present in a single layer must first be excluded. Theorem 3.1 proves that for almost all linearly separable datasets, any perturbation radius $\rho$, and any initialization, the direction of $\ell_\infty$-SAM flow converges to the $\ell_2$ maximum margin direction, identical to GD. In the single-sample setting, the $\ell_\infty$-SAM trajectory even coincides pointwise with GD. This confirms that on linear models ($L=1$), the implicit biases of SAM and GD are indistinguishable, isolating the source of subsequent counter-intuitive phenomena to depth itself rather than the SAM perturbation form.
 
-   *Significance*: At depth 1, SAM does not alter the implicit bias of GD.
+**2. $\ell_\infty$-SAM for Depth $L\ge 2$: Perturbation Radius as a Coordinate-Level Gating Threshold**
 
-2. **$\ell_\infty$-SAM for depth $L\geq 2$**
+With an additional layer, $\ell_\infty$-SAM can select minor features. In single-sample datasets, Theorem 3.2 shows the evolution of each coordinate $\beta_j(t)$ is entirely determined by its initial value $\alpha_j$ relative to $\rho$: it is suppressed if $\alpha_j<\rho$ ($\beta_j(t)\to 0$ for even $L$, $\to\rho^L$ for odd $L$), stays constant if $\alpha_j=\rho$, and diverges for $\alpha_j>\rho$. Because coordinates are decoupled, the limit direction is determined by the unique winning coordinate $j^*=\arg\max_{j:\alpha_j>\rho}\mu_j(\alpha_j-\rho)^{L-2}$ (Corollary 3.5). This means by tuning initialization, $\ell_\infty$-SAM can converge to **any standard basis vector direction**, including minor directions with small feature weights $\mu_j$—a sharp contrast to GD, which always locks onto major features. Here, $\rho$ acts as a per-coordinate switch.
 
-   **Theorem 3.2**: On the single-sample dataset, the behavior of each coordinate $\beta_j(t)$ is entirely determined by the relationship between the initialization $\alpha_j$ and the perturbation radius $\rho$:
-   - $\alpha_j < \rho$: $\beta_j(t) \to 0$ (even $L$) or $\to \rho^L$ (odd $L$)
-   - $\alpha_j = \rho$: $\beta_j(t) = \rho^L$, remains constant
-   - $\alpha_j > \rho$: $\beta_j(t)$ diverges; grows exponentially when $L=2$
+**3. $\ell_2$-SAM for Depth 2: Same Limit as GD, but "Sequential Feature Amplification" in Finite Time**
 
-   **Corollary 3.5**: The limiting direction is determined by $j^* = \arg\max_{j: \alpha_j > \rho} \mu_j(\alpha_j - \rho)^{L-2}$. This implies that initialization can cause SAM to converge to **any standard basis direction** — including minor feature directions — in sharp contrast to GD, which consistently selects the dominant feature.
+This is the most core and counter-intuitive finding. Theorem 4.2 first shows that the limit direction of $\ell_2$-SAM flow is still the $\ell_1$ maximum margin solution, identical to GD—looking only at $t\to\infty$ would lead to the misinterpretation that "SAM makes no difference." However, finite-time dynamics are entirely different: across the time dimension (Theorem 4.4), the predictor $\boldsymbol\beta(t)$ **depends on minor coordinates early on** and only **gradually shifts to major coordinates** as training progresses. Increasing the initialization scale (Theorem 4.5) triggers the same "minor-to-major" transition. The root cause is the gradient normalization factor in the $\ell_2$-SAM perturbation, which relatively amplifies smaller coordinates in the gradient, giving $\beta_j$ higher early growth rates. As training continues, major coordinates with larger feature weights $\mu_j$ eventually catch up. This "minor first, major last" phenomenon is a concrete counter-example showing that limit analysis is insufficient to characterize SAM.
 
-3. **$\ell_2$-SAM at depth 2: Sequential Feature Amplification**
+**4. Rescaled Flow: Canceling Common Velocity Terms for Closed-Form Solutions**
 
-   **Theorem 4.2** (Limiting direction): The limiting direction of the $\ell_2$-SAM flow is the $\ell_1$ max-margin solution, identical to GD.
-
-   However, the **finite-time** dynamics differ substantially. The paper identifies the phenomenon of *Sequential Feature Amplification*:
-
-   - **Time dimension** (Theorem 4.4): The predictor $\boldsymbol\beta(t)$ initially **relies on minor coordinates** and gradually **shifts toward major coordinates** as training progresses.
-   - **Initialization dimension** (Theorem 4.5): As the initialization scale increases, a similar transition from minor to major features is observed.
-
-   **Key Challenge**: The gradient normalization factor in $\ell_2$-SAM amplifies small gradient coordinates during the perturbation step, causing the corresponding $\beta_j$ to grow faster in the early phase. As training continues, major coordinates eventually dominate due to their larger feature weights $\mu_j$, but this transition is gradual.
-
-### Rescaled Flow Technique
-
-For the single-sample dataset, a rescaled flow is obtained by removing the loss derivative factor $-\ell'(\langle\boldsymbol\beta(\hat{\boldsymbol\theta}(t)),\boldsymbol\mu\rangle) > 0$. This corresponds to a time reparameterization that preserves the spatial trajectory of the original SAM flow while substantially simplifying the analysis.
+Precise trajectory characterization relies on a technical tool. In the single-sample SAM flow, there is always a positive loss derivative term $-\ell'(\langle\boldsymbol\beta(\hat{\boldsymbol\theta}(t)),\boldsymbol\mu\rangle)>0$, which is a common scalar for all coordinates, affecting only the speed of evolution but not the direction. Canceling this term yields a rescaled flow, equivalent to a reparameterization of time. The spatial trajectory is preserved exactly, allowing for closed-form analysis of coordinate-level evolution equations. This is the premise for the precise trajectories in Theorems 3.2 and 4.4.
 
 ## Key Experimental Results
 
-### Synthetic Experiments
-- The 2D single-sample dataset $\boldsymbol\mu=(1,2)$ clearly illustrates the trajectory differences among GD, $\ell_\infty$-SAM, and $\ell_2$-SAM.
-- Multi-sample datasets validate the applicability of theoretical predictions in more realistic settings.
-- Experiments at depth $L=3$ confirm that $\ell_\infty$-SAM becomes even more sensitive to initialization in deeper networks.
+### Main Results
+- **Synthetic Experiments**: A 2D single-sample dataset $\boldsymbol\mu=(1,2)$ clearly demonstrates trajectory differences between GD vs. $\ell_\infty$-SAM vs. $\ell_2$-SAM.
+- Multi-sample datasets verify that theoretical predictions hold in practical settings.
+- Depth $L=3$ experiments confirm that $\ell_\infty$-SAM becomes even more sensitive to initialization in deeper networks.
 
-### Real Network Experiments (MNIST + CNN)
+### CNN Experiments (MNIST)
 
-| Method | Grad-CAM Observation | Notes |
-|--------|----------------------|-------|
+| Method | Grad-CAM Observation | Description |
+|------|-------------|------|
 | GD | Focuses on primary digit pixels | Conventional behavior |
-| $\ell_2$-SAM | Emphasizes background/weak pixel regions | Consistent with "minor first, major last" theory |
+| $\ell_2$-SAM | Emphasizes background/weak pixel regions | Consistent with "minor-to-major" theory |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| $L=1$, any $\rho$ | Consistent with GD | SAM does not alter the bias |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| $L=1$, any $\rho$ | Consistent with GD | SAM does not change bias |
 | $L=2$, $\ell_\infty$, $\alpha_j < \rho$ | $\beta_j \to 0$ | Coordinate suppressed |
-| $L=2$, $\ell_\infty$, $\alpha_j > \rho$ | Exponential growth | Can select minor features |
-| $L=2$, $\ell_2$ | Minor before major | Sequential feature amplification |
+| $L=2$, $\ell_\infty$, $\alpha_j > \rho$ | Exponential growth | Minor features can be selected |
+| $L=2$, $\ell_2$ | "Minor first, major last" | Sequential feature amplification |
 
 ### Key Findings
-- $\ell_\infty$-SAM is highly sensitive to initialization when $L\geq 2$; the perturbation radius $\rho$ acts as a coordinate-level gating threshold.
-- The finite-time behavior of $\ell_2$-SAM differs fundamentally from its infinite-time limit — limiting analysis alone is insufficient.
-- The behavior of discrete SAM updates closely matches the continuous-time SAM flow, validating the practical relevance of the theory.
+- For $L\geq 2$, $\ell_\infty$-SAM is extremely sensitive to initialization, where the perturbation radius $\rho$ serves as a coordinate-level "gating" threshold.
+- The finite-time behavior of $\ell_2$-SAM differs fundamentally from its infinite-time limit, suggesting limit analysis is insufficient.
+- Discrete SAM updates align closely with continuous-time SAM flow, validating the practical relevance of the theory.
 
 ## Highlights & Insights
 
-1. **"Minor first, major last" phenomenon**: Reveals a counterintuitive finite-time behavior of $\ell_2$-SAM — the optimizer attends to weak features before strong ones, driven by gradient normalization.
-2. **Finite-time vs. infinite-time**: Provides a concrete example demonstrating that implicit bias analyses focused solely on $t\to\infty$ may miss critical dynamical information, calling for greater attention to finite-time analysis.
-3. **Qualitative phase transition induced by depth**: Adding a single layer ($L=1\to L=2$) fundamentally alters the behavior of SAM, revealing deep interactions between depth and optimization algorithms.
-4. **Exact trajectory characterization**: The coordinate-wise independence of $\ell_\infty$-SAM dynamics enables precise trajectory characterization, yielding an elegant theoretical simplification.
+1. **"Minor first, major last" phenomenon**: Reveals a counter-intuitive finite-time behavior of $\ell_2$-SAM—the optimizer focuses on weak features before strong ones, driven by gradient normalization.
+2. **Finite Time vs. Infinite Time**: Provides a clear example showing that implicit bias analysis focusing only on $t\to\infty$ may miss critical dynamic information, advocating for more finite-time analysis.
+3. **Qualitative Effect of Depth**: Adding just one layer ($L=1\to L=2$) completely changes SAM's behavior, revealing a deep interaction between depth and optimization algorithms.
+4. **Precise Trajectory Characterization**: The independent coordinate evolution in $\ell_\infty$-SAM allows for exact trajectory representation, providing an elegant theoretical simplification.
 
 ## Limitations & Future Work
 
-- The theoretical analysis is restricted to **linear diagonal networks**, which are simplified proxies for practical deep nonlinear networks.
-- Analysis of multi-sample datasets faces additional technical challenges; results in this setting are currently limited to experimental validation.
-- The limiting direction theorem for $\ell_2$-SAM (Theorem 4.2) relies on an assumption of directional convergence.
-- The implications of sequential feature amplification for generalization in practical deep learning remain unclear.
-- SAM variants (e.g., ASAM, GSAM) are not analyzed.
+- Theoretical analysis is limited to the simplified **linear diagonal network** model, which differs from actual deep non-linear networks.
+- Multi-sample dataset analysis faces additional technical hurdles and is currently limited to experimental validation.
+- The limit direction theorem for $\ell_2$-SAM (Theorem 4.2) depends on the assumption of directional convergence.
+- The impact of sequential feature amplification on generalization in actual deep learning remains unclear.
+- Analysis does not cover SAM variants such as ASAM or GSAM.
 
 ## Related Work & Insights
 
-- **Soudry et al. (2018)**: The classical result that GD on linear models converges to the $\ell_2$ max-margin direction.
-- **Gunasekar et al. (2018)**: GD on linear diagonal networks is biased toward $\ell_1$ sparse solutions.
-- **Pesme & Flammarion (2023)**: Saddle-to-saddle dynamics of GD — a similar staged learning process, but with a different mechanism.
-- **Foret et al. (2020)**: The original SAM paper.
-- *Insight*: Finite-time analysis is essential for understanding optimizer behavior; future work should focus more on training dynamics rather than convergence outcomes alone.
+- **Soudry et al. (2018)**: Classical result of GD converging to $\ell_2$ max margin on linear models.
+- **Gunasekar et al. (2018)**: GD on linear diagonal networks biases towards $\ell_1$ sparse solutions.
+- **Pesme & Flammarion (2023)**: Saddle-to-saddle dynamics in GD—similar staged learning, but with a different mechanism.
+- **Foret et al. (2020)**: Original SAM paper.
+- **Insight**: Finite-time analysis is crucial for understanding optimizer behavior. Future work should focus more on dynamic changes during training rather than just convergence results.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — "Sequential feature amplification" is a genuinely novel and counterintuitive finding.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Synthetic experiments and MNIST/CNN validation are solid, but large-scale experiments are absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Rigorous theoretical derivations, clear figures, and a thought-provoking contrast between finite-time and infinite-time behavior.
-- Value: ⭐⭐⭐⭐ — A significant theoretical advance in understanding SAM, though practical guidance remains limited.
+- **Novelty**: ⭐⭐⭐⭐⭐ — "Sequential feature amplification" is a brand new and counter-intuitive discovery.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Validated with synthetic data and MNIST/CNN, though lacking large-scale experiments.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Rigorous theoretical derivation, clear illustrations, and thought-provoking comparison between finite and infinite time.
+- **Value**: ⭐⭐⭐⭐ — Significantly advances theoretical understanding of SAM, though guidance for practical applications is limited.
 
 <!-- RELATED:START -->
 
@@ -145,11 +122,11 @@ For the single-sample dataset, a rescaled flow is obtained by removing the loss 
 
 ## Related Papers
 
-- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](../../ICML2026/optimization/stability_analysis_of_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] Hyperbolic Aware Minimization: Implicit Bias for Sparsity](hyperbolic_aware_minimization_implicit_bias_for_sparsity.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
+- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
 - [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
-- [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](../../ICML2026/optimization/adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
-- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
-- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](../../NeurIPS2025/optimization/the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 
 </div>
 

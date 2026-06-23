@@ -2,106 +2,108 @@
 title: >-
   [Paper Note] Convergence of Muon with Newton-Schulz
 description: >-
-  [ICLR 2026][Optimization][Muon optimizer] This work provides the first convergence guarantees for the Muon optimizer as it is actually used in practice—with Newton-Schulz (NS) approximation rather than exact SVD-based po…
+  [ICLR 2026][Optimization & Theory][Muon optimizer] This paper provides the first non-convex convergence guarantee for the practical Muon optimizer (which uses Newton-Schulz approximation instead of exact SVD polar decomposition). It proves that the convergence rate matches the idealized SVD version up to a constant factor that decays doubly exponentially with the numbe
 tags:
-  - "ICLR 2026"
-  - "Optimization"
-  - "Muon optimizer"
-  - "Newton-Schulz"
-  - "polar decomposition"
-  - "matrix optimization"
-  - "convergence analysis"
+  - ICLR 2026
+  - Optimization & Theory
+  - Muon optimizer
+  - Newton-Schulz
+  - polar decomposition
+  - matrix optimization
+  - convergence analysis
 date: 2026-05-08
-content_hash: dc56b6998365d590
+content_hash: 679243bfcc134494
 ---
-
 # Convergence of Muon with Newton-Schulz
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2601.19156](https://arxiv.org/abs/2601.19156)  
 **Code**: To be confirmed  
-**Area**: Optimization / Theory
+**Area**: Optimization/Theory  
 **Keywords**: Muon optimizer, Newton-Schulz, polar decomposition, matrix optimization, convergence analysis
 
 ## TL;DR
-This work provides the first convergence guarantees for the Muon optimizer as it is actually used in practice—with Newton-Schulz (NS) approximation rather than exact SVD-based polar decomposition. It proves that the convergence rate matches the idealized SVD variant up to a constant factor $C_q$ that decays doubly exponentially in the number of NS iterations $q$, and that Muon enjoys a $\sqrt{r}$ advantage over its vector-space counterpart SGD-M due to reduced rank loss.
+This paper provides the first non-convex convergence guarantee for the practical Muon optimizer (which uses Newton-Schulz approximation instead of exact SVD polar decomposition). It proves that the convergence rate matches the idealized SVD version up to a constant factor that decays doubly exponentially with the number of Newton-Schulz steps $q$, and that Muon suffers $\sqrt{r}$ times less rank-dependent loss than its vector counterpart SGD-M.
 
 ## Background & Motivation
 
-**Background**: The Muon optimizer updates matrix parameters by orthogonalizing the momentum matrix—rather than vectorizing it as Adam does—and has demonstrated strong empirical performance in LLM training. In practice, it employs Newton-Schulz (NS) iterations to approximate the polar decomposition, avoiding the costly SVD.
+**Background**: The Muon optimizer updates matrix parameters by orthogonalizing the momentum matrix (rather than processing it vectorially like Adam), showing superior performance in LLM training. In practice, Newton-Schulz (NS) iterations are used to approximate polar decomposition, avoiding expensive SVD.
 
-**Limitations of Prior Work**: Existing theoretical analyses of Muon (Shen et al.; Li & Hong) replace NS with exact SVD—yet SVD is never used in practice. It remains unclear how the NS approximation error affects convergence, and how many NS steps suffice.
+**Limitations of Prior Work**: Existing theoretical analyses of Muon (Shen et al., Li & Hong) replace NS with exact SVD—yet SVD is never used in practice. How the NS approximation error affects convergence and why only a few NS steps are sufficient remain theoretically unexplored.
 
-**Key Challenge**: Muon with only a few NS steps achieves SVD-level performance empirically (with superior wall-clock time), yet no theoretical framework covers this regime—practice has far outpaced theory.
+**Key Challenge**: While Muon achieves SVD-level performance in practice with a few NS steps (leading to faster wall-clock time), a theoretical gap exists where practical performance far exceeds current theoretical understanding.
 
-**Key Insight**: Directly analyze the polar decomposition approximation error $\varepsilon_q$ induced by NS iterations, and prove that it decays doubly exponentially in the number of steps.
+**Key Insight**: The authors directly analyze the polar decomposition error $\varepsilon_q$ of the NS approximation and prove that it decays doubly exponentially with the number of steps.
 
-**Core Idea**: The NS approximation error $\varepsilon_q$ decays doubly exponentially → a few NS steps suffice to bring Muon's convergence rate to the SVD level → each step costs far less than SVD → superior wall-clock time.
+**Core Idea**: The doubly exponential decay of the NS approximation error $\varepsilon_q$ allows Muon to reach SVD-level convergence rates with very few NS steps. Since the per-step computation of NS is much lower than SVD, it results in faster wall-clock time.
 
 ## Method
 
 ### Overall Architecture
-At each step, Muon performs: (1) stochastic gradient computation $G_t$; (2) momentum update $M_t = \beta M_{t-1} + G_t$; (3) pre-scaling $X_{t,0} = M_t/\alpha_t$; (4) $q$ NS iterations $X_{t,j} = p_\kappa(X_{t,j-1}X_{t,j-1}^\top)X_{t,j-1}$ to approximate orthogonalization; (5) parameter update $W_t = W_{t-1} - \eta O_t$. The analysis targets $\frac{1}{T}\sum_t \mathbb{E}[\|\nabla f(W_{t-1})\|_*] \leq \epsilon$.
+The paper does not modify the Muon algorithm itself but rather incorporates the practical version (using Newton-Schulz iterations instead of exact SVD for orthogonalization) into a non-convex optimization analysis framework to quantify how much convergence is lost due to approximation errors. In each step of Muon, the stochastic gradient $G_t$ first undergoes momentum accumulation $M_t = \beta M_{t-1} + G_t$, is pre-scaled to $X_{t,0} = M_t/\alpha_t$, and then undergoes $q$ steps of NS iterations $X_{t,j} = p_\kappa(X_{t,j-1}X_{t,j-1}^\top)\,X_{t,j-1}$ to drive the momentum towards an orthogonal matrix. Finally, the weights are updated as $W_t = W_{t-1} - \eta O_t$ using the approximated orthogonal direction $O_t$. The goal is to derive a stationarity bound under the nuclear norm $\frac{1}{T}\sum_t \mathbb{E}\big[\|\nabla f(W_{t-1})\|_*\big] \leq \epsilon$.
 
-### Key Designs (Theoretical Contributions)
+### Key Designs
 
-1. **Theorem 1: Non-convex convergence of NS-Muon**:
-    - Number of iterations for Muon with $q$ NS steps to reach an $\epsilon$-stationary point: $T = O\left(\frac{C_q \cdot L D}{\epsilon^2}\right)$
-    - $C_q$ is the sole constant factor depending on the NS approximation quality.
+**1. Non-convex convergence bound for NS-Muon: Isolating approximation error into a constant factor**
 
-2. **Theorem 2: Doubly exponential decay of polar decomposition approximation error**:
-    - $\varepsilon_q \leq \varepsilon_0^{(2\kappa+1)^q}$ — doubly exponential decay in $q$ and decay in polynomial degree $\kappa$.
-    - Implication: $q = 3\text{–}5$ steps with $\kappa = 2\text{–}3$ suffices to achieve $C_q \approx 1$, matching the SVD variant.
-    - Wall-clock advantage: NS requires only matrix multiplications (GPU-efficient), whereas SVD costs $O(mn\min(m,n))$.
+Previous Muon theories analyzed orthogonalization as exact SVD. This paper directly analyzes Muon with $q$-step NS iterations, proving that under standard smoothness and bounded variance assumptions, the number of iterations required to reach an $\epsilon$-stationary point is:
 
-3. **Theorem 3: Rank advantage over SGD-M**:
-    - Muon converges $\sqrt{r}$ times faster than SGD-M, where $r = \min(m,n)$ is the matrix rank.
-    - Reason: Muon operates under the nuclear norm → exploits low-rank matrix structure → more efficient search directions.
+$$T = O\!\left(\frac{C_q\, L D}{\epsilon^2}\right),$$
+
+where $L$ is the smoothness constant and $D$ is the initial sub-optimality gap. The critical contribution is compressing all degradation caused by the NS approximation into a single constant factor $C_q$. When $C_q \to 1$, the bound reverts to the rate of the idealized SVD version, reducing the problem of "approximation quality" to how close $C_q$ is to 1.
+
+**2. Doubly exponential decay of polar approximation error: Explaining why a few NS steps suffice**
+
+To determine the closeness of $C_q$ to 1, the authors trace $C_q$ back to the NS approximation error $\varepsilon_q$ of the polar decomposition and prove that $\varepsilon_q \leq \varepsilon_0^{(2\kappa+1)^q}$. This error shrinks doubly exponentially with the number of steps $q$ and the polynomial order $\kappa$. For example, with $\kappa=2$ (where the base is $5$), the error after $q=3$ steps is already less than $\varepsilon_0^{125}$ (approximately $10^{-100}$), theoretically justifying why $q=3 \sim 5$ suffices in practice. This also explains the wall-clock advantage, as NS involves only matrix multiplications efficient on GPUs, whereas SVD is a costly $O(mn\min(m,n))$ dense decomposition.
+
+**3. $\sqrt{r}$ rank advantage over SGD-M: A matter of metric**
+
+After establishing that NS-Muon is nearly as fast as SVD-Muon, the paper addresses why Muon's "orthogonalized momentum" is superior to element-wise SGD-M. It proves that Muon's convergence rate is $\sqrt{r}$ times faster ($r=\min(m,n)$ being the rank dimension). This stems from the choice of metric: SGD-M is bounded under the Frobenius norm, while Muon’s orthogonalization naturally aligns with the nuclear norm. Analyzing in the nuclear norm exploits the low-rank structure of matrix parameters to provide more efficient search directions, particularly for large high-rank layers like attention.
 
 ## Key Experimental Results
 
 ### Main Results (Convergence Comparison)
 
-| Method | Metric | Convergence Rate | Rank Dependence |
-|--------|--------|-----------------|-----------------|
-| SGD-M | Frobenius gradient | $O(1/\sqrt{T})$ | $\sqrt{r}$ loss |
-| Muon (SVD) | Nuclear gradient | $O(1/\sqrt{T})$ | No $\sqrt{r}$ loss |
-| **Muon (NS, $q$ steps)** | Nuclear gradient | $O(C_q/\sqrt{T})$ | No $\sqrt{r}$ loss |
+| Method | Metric | Convergence Rate | Rank Dependency |
+|------|------|--------|--------|
+| SGD-M | Frobenius Gradient | $O(1/\sqrt{T})$ | $\sqrt{r}$ loss |
+| Muon (SVD) | Nuclear Gradient | $O(1/\sqrt{T})$ | No $\sqrt{r}$ loss |
+| **Muon (NS, $q$ steps)** | Nuclear Gradient | $O(C_q/\sqrt{T})$ | No $\sqrt{r}$ loss |
 
-### Ablation Study ($C_q$ vs. Number of NS Steps $q$)
+### Ablation Study ($C_q$ vs. steps $q$)
 
-| NS Steps $q$ | $C_q$ ($\kappa=2$) | $C_q$ ($\kappa=3$) |
-|--------------|--------------------|--------------------|
-| 1 | Large | Moderate |
+| NS steps $q$ | $C_q$ at $\kappa=2$ | $C_q$ at $\kappa=3$ |
+|-------------|---------------------|---------------------|
+| 1 | Large | Medium |
 | 3 | $\approx 1.01$ | $\approx 1.001$ |
 | 5 | $\approx 1.0$ | $\approx 1.0$ |
 
 ### Key Findings
-- **3–5 NS steps match SVD**: $C_q$ converges doubly exponentially to 1, providing rigorous theoretical justification for the choices made in practice.
-- **$\sqrt{r}$ advantage of Muon over SGD-M**: The benefit is pronounced for high-rank matrix parameters such as large attention layers.
-- **Wall-clock advantage explained**: NS iterations cost far less than SVD per step while achieving nearly identical iteration counts, yielding lower total runtime.
+- **3-5 NS steps match SVD**: $C_q$ converges to 1 doubly exponentially, providing a solid theoretical basis for empirical choices.
+- **$\sqrt{r}$ advantage of Muon over SGD-M**: The advantage is significant for high-rank matrix parameters (e.g., large attention layers).
+- **Wall-clock advantage explained**: Per-step costs of NS are much lower than SVD, and since iteration counts are nearly identical, total time is reduced.
 
 ## Highlights & Insights
-- **First convergence guarantees for practical Muon**: Closes the practice–theory gap; all prior theoretical work implicitly assumed exact SVD.
-- **Doubly exponential decay as the key insight**: $\varepsilon_q \leq \varepsilon_0^{5^q}$ (for $\kappa=2$) — after 3 steps, the error is below $10^{-100}$.
-- **Nuclear norm as the natural metric**: Working with the nuclear norm in matrix space naturally aligns with polar decomposition and reveals the rank advantage.
-- **Implications for future matrix optimizers**: The general analysis framework for NS approximation can be extended to other matrix-based optimizers.
+- **First theoretical guarantee for practical Muon**: Closes the practice-theory gap by moving beyond "pretend" SVD analysis.
+- **Doubly exponential decay insight**: Proving $\varepsilon_q \leq \varepsilon_0^{5^q}$ (for $\kappa=2$) reveals why 3 steps achieve near-perfect precision ($< 10^{-100}$).
+- **Nuclear norm metric**: Choosing the nuclear norm over the Frobenius norm in matrix space naturally aligns with polar decomposition and reveals the rank advantage.
+- **Inspiration for future matrix optimizers**: Provides a general analysis framework for NS-based approximations in other matrix optimizers.
 
 ## Limitations & Future Work
-- This is a purely theoretical contribution with no new experiments (though the paper's explicit goal is to provide theoretical grounding for existing practice).
-- The analysis assumes standard smoothness and bounded variance; adaptive methods in the style of Adam are not covered.
-- Comparison with second-order methods such as Shampoo/SOAP is not analyzed.
+- Purely theoretical contribution without new experiments (though the goal was to explain existing practice).
+- Assumes standard smoothness and bounded variance, not yet covering Adam-style adaptivity.
+- Lacks a direct comparison between Muon and second-order methods like Shampoo or SOAP.
 
 ## Related Work & Insights
-- **vs. Shen et al. / Li & Hong**: Prior work analyzes SVD-Muon. This paper is the first to analyze NS-Muon—the only theory that matches actual practice.
-- **vs. Shampoo/SOAP**: Second-order preconditioners that maintain curvature information. Muon is not a second-order method—it orthogonalizes momentum, a distinct mechanism that is potentially complementary.
-- **vs. Orthogonal-SGDM**: Orthogonalization is applied before momentum accumulation. Muon applies momentum first, then orthogonalizes, and replaces SVD with NS.
+- **vs. Shen et al. / Li & Hong**: These works analyze SVD-Muon. This paper is the first to analyze NS-Muon, matching actual practice.
+- **vs. Shampoo/SOAP**: These are second-order preconditioners that maintain curvature. Muon is not second-order but rather orthogonalizes momentum; the mechanisms are distinct and potentially complementary.
+- **vs. Orthogonal-SGDM**: Orthogonal-SGDM performs orthogonalization before momentum. Muon performs momentum before orthogonalization and replaces SVD with NS.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First convergence theory for NS-Muon as used in practice; the doubly exponential decay result is elegant.
-- Experimental Thoroughness: ⭐⭐⭐ Purely theoretical with no new experiments (justified, as the goal is to provide theoretical explanation for existing empirical practice).
-- Writing Quality: ⭐⭐⭐⭐⭐ The research question is clearly stated, theorems build progressively, and the exposition is rigorous and fluent.
-- Value: ⭐⭐⭐⭐⭐ Provides much-needed theoretical foundations for one of the most prominent matrix optimizers in current practice.
+- Novelty: ⭐⭐⭐⭐⭐ First convergence theory for practical NS-Muon with elegant doubly exponential results.
+- Experimental Thoroughness: ⭐⭐⭐ Purely theoretical, but appropriately so as it explains existing empirical successes.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear research questions, progressive theorems, and rigorous narrative.
+- Value: ⭐⭐⭐⭐⭐ Provides a much-needed theoretical foundation for a popular matrix optimizer.
 
 <!-- RELATED:START -->
 
@@ -109,11 +111,11 @@ At each step, Muon performs: (1) stochastic gradient computation $G_t$; (2) mome
 
 ## Related Papers
 
-- [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](../../ICML2026/optimization/limuon_light_and_fast_muon_optimizer_for_large_models.md)
-- [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](../../ICML2026/optimization/muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
-- [\[ICLR 2026\] When to Restart? Exploring Escalating Restarts on Convergence](when_to_restart_exploring_escalating_restarts_on_convergence.md)
-- [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](../../ICML2026/optimization/on_the_convergence_rate_of_lora_gradient_descent.md)
+- [\[ICLR 2026\] Newton Method Revisited: Global Convergence Rates up to $O(1/k^3)$ for Stepsize Schedules and Linesearch Procedures](newton_method_revisited_global_convergence_rates_up_to_o1k3_for_stepsize_schedul.md)
+- [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
+- [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
+- [\[ICLR 2026\] Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting](hinge_regression_tree_a_newton_method_for_oblique_regression_tree_splitting.md)
+- [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](muonbp_faster_muon_via_block-periodic_orthogonalization.md)
 
 </div>
 

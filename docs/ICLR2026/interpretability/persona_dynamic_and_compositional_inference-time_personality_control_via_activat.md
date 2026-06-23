@@ -2,93 +2,99 @@
 title: >-
   [Paper Note] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra
 description: >-
-  [ICLR 2026][Interpretability][personality control] This paper proposes the PERSONA framework, which extracts approximately orthogonal personality vectors from activation space and applies vector algebra operations (scali…
+  [ICLR 2026][Interpretability][personality control] The PERSONA framework is proposed to achieve training-free dynamic and compositional personality control by extracting approximately orthogonal personality vectors in the activation space and performing vector algebra operations (scaling, addition, subtraction). It achieves a score of 9.60 on PersonalityBench, nearly m
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "personality control"
-  - "activation steering"
-  - "vector algebra"
-  - "inference-time"
-  - "Big Five"
+  - ICLR 2026
+  - Interpretability
+  - personality control
+  - activation steering
+  - vector algebra
+  - inference-time
+  - Big Five
 date: 2026-05-08
-content_hash: 163a80ddc380637b
+content_hash: d0838d2bc30265aa
 ---
-
 # PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.15669](https://arxiv.org/abs/2602.15669)  
-**Code**: [GitHub](https://github.com/) (declared public by authors)  
-**Area**: Robotics
+**Code**: [GitHub](https://github.com/) (Publicly declared in the paper)  
+**Area**: Robotics  
 **Keywords**: personality control, activation steering, vector algebra, inference-time, Big Five
 
 ## TL;DR
 
-This paper proposes the PERSONA framework, which extracts approximately orthogonal personality vectors from activation space and applies vector algebra operations (scaling, addition, subtraction) to achieve training-free dynamic and compositional personality control. PERSONA attains a score of 9.60 on PersonalityBench, nearly matching the SFT upper bound of 9.61.
+The PERSONA framework is proposed to achieve training-free dynamic and compositional personality control by extracting approximately orthogonal personality vectors in the activation space and performing vector algebra operations (scaling, addition, subtraction). It achieves a score of 9.60 on PersonalityBench, nearly matching the SFT upper bound of 9.61.
 
 ## Background & Motivation
 
-1. Personality control in LLMs is critical for healthcare, education, and social simulation, yet existing methods exhibit significant limitations.
-
-**Prompting-based methods** (e.g., simple prompts, P² induction) are unstable and inconsistent, making precise personality expression difficult to achieve.
-
-**Fine-tuning methods** (SFT / LoRA) demand substantial computational resources and require independent training for each personality configuration.
-4. More fundamentally, existing methods treat personality as static and monolithic, failing to capture the dynamic and compositional nature of human behavioral traits.
-5. Core insight: personality traits manifest as extractable, approximately orthogonal directions in the model's representation space, supporting algebraic operations.
-6. This reframes personality control from text engineering or gradient optimization into vector arithmetic in high-dimensional space.
+1. LLM personality control is crucial in healthcare, education, and social simulation, yet existing methods possess significant drawbacks.
+2. **Prompting methods** (e.g., simple system prompts, P² induction) are unstable and inconsistent, making it difficult to precisely control personality expression.
+3. **Fine-tuning methods** (SFT / LoRA) require substantial computational resources, and each personality configuration must be trained independently.
+4. A more fundamental issue: existing methods treat personality as static and monolithic, failing to capture the dynamic and compositional nature of human behavioral traits.
+5. **Key Insight**: Personality traits manifest as extractable, approximately orthogonal directions in the model's representation space, supporting algebraic operations.
+6. This transforms the personality control problem from text engineering or gradient optimization into a problem of vector arithmetic in high-dimensional space.
 
 ## Method
 
 ### Overall Architecture
 
-PERSONA consists of four tightly integrated components:
-- **Persona-Base**: Extracts orthogonal vectors for the ten poles of the Big Five (OCEAN) personality dimensions.
-- **Persona-Algebra**: Enables compositional personality manipulation via vector arithmetic.
-- **Persona-Flow**: Dynamically adapts personality composition at inference time.
-- **Persona-Evolve**: An evaluation benchmark comprising 800 multi-turn dialogue scenarios.
+PERSONA reformulates personality control as vector arithmetic in a high-dimensional activation space. First, approximately orthogonal direction vectors for the ten poles of the Big Five (OCEAN) are extracted from the model's residual stream to serve as "atoms." These are then combined into desired personalities using algebraic operations such as scaling, addition, and subtraction. Finally, during inference, the coefficients for each dimension are dynamically determined based on the conversation context and injected into the residual stream. This entire process is completely training-free. Three core modules—Persona-Base, Persona-Algebra, and Persona-Flow—connect the stages of "atomic creation → composition → dynamic adjustment," addressing the questions of "how to obtain vectors," "how to compute vectors," and "how to use them contextually during inference." The accompanying Persona-Evolve benchmark provides 800 multi-turn dialogue scenarios to evaluate dynamic personality expression.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Contrastive System Prompts<br/>(Stimulating vs. Inhibiting the Same Pole)"] --> B["Persona-Base: Extract 10<br/>Approx. Orthogonal Personality Vectors"]
+    B --> C["Persona-Algebra: Vector Algebra<br/>Scaling / Addition / Subtraction"]
+    E["Dialogue Context"] --> D["Persona-Flow: Predict-then-Steer<br/>Predict Coefficients & Synthesize Composite Vector"]
+    C --> D
+    D --> F["Inject into Residual Stream<br/>Generate Context-Aware Personalized Response"]
+```
 
 ### Key Designs
 
-**Design 1: Persona-Base — Personality Vector Extraction**
-- **Function**: Extracts contrastive vectors for the ten poles of the five OCEAN dimensions from the model's activation space.
-- **Mechanism**: Employs Contrastive Activation Analysis: (1) generate contrastive system prompts (eliciting/suppressing traits); (2) collect residual stream activations under positive and negative conditions; (3) compute their mean difference to obtain direction vector $v_l$.
-- **Design Motivation**: Establishes the fundamental "atomic" operational units for personality control. Cosine similarity between vectors confirms approximate orthogonality, while opposing trait pairs exhibit strong negative correlations.
+**1. Persona-Base: Refining Abstract Personality into Actionable Directional Vectors**
 
-**Design 2: Persona-Algebra — Vector Algebraic Operations**
-- **Function**: Validates and leverages the mathematical operations supported by personality vectors.
-- **Mechanism**: Three operations — scalar multiplication ($\alpha \cdot v$) controls trait intensity; vector addition ($v_{outgoing} + v_{compassionate}$) enables multi-trait composition; vector subtraction ($v_{outgoing} - v_{solitary}$) suppresses specific traits.
-- **Design Motivation**: Adapts the BFI-44 questionnaire into a behavioral evaluation to demonstrate that vector operations produce predictable changes in personality scores. Pearson correlation coefficients exceed 0.9 for most traits.
+Personality itself is an abstract behavioral tendency and cannot be used directly as a control knob. Therefore, the first step is to find its geometric counterparts in the representation space. PERSONA utilizes contrastive activation analysis: for two poles of the same dimension (e.g., extroversion vs. introversion), multiple sets of contrastive system prompts are written to stimulate and inhibit the trait. Activations of the residual stream at a certain layer are collected under positive and negative conditions, and the mean difference between them is taken as the direction vector $v_l$ for that pole. The resulting ten vectors (OCEAN 5 dimensions × 2 poles) constitute the "atoms" of personality control. Cosine similarity heatmaps indicate that they are approximately orthogonal and that opposing poles exhibit strong negative correlation, suggesting each direction indeed encodes independent trait semantics, providing a clean, non-interfering basis for subsequent algebraic composition.
 
-**Design 3: Persona-Flow — Dynamic Inference-Time Control**
-- **Function**: Dynamically adjusts personality expression at inference time based on conversational context.
-- **Mechanism**: A two-stage predict-then-steer mechanism. Stage 1: analyzes dialogue context and predicts adjustment coefficients $\alpha_i \in [-2, +2]$ for each dimension. Stage 2: computes the composite vector $v_{composite} = \sum_{i \in OCEAN} \alpha_i \cdot v_i$ and injects it into the residual stream.
-- **Design Motivation**: Enables real-time personality modulation without pre-specified scripts, supporting context-aware adaptive control.
+**2. Persona-Algebra: Achieving Predictable Compositional Control via Vector Algebra**
+
+With orthogonal atomic vectors, composing personalities no longer requires retraining or rewriting prompts but instead involves direct arithmetic at the vector level. The paper defines and validates three types of operations: scalar multiplication $\alpha \cdot v$ to control the intensity of a single trait, vector addition (e.g., $v_{outgoing} + v_{compassionate}$) to overlay multiple traits into a composite personality, and vector subtraction (e.g., $v_{outgoing} - v_{solitary}$) to inhibit unwanted tendencies. To prove the precision of these operations, the authors adapted the BFI-44 personality questionnaire into a behavioral assessment. They found a high linear correlation between the steering coefficient and the corresponding dimension score, with Pearson coefficients exceeding 0.9 for most traits. This linear predictability ensures that increasing $\alpha$ yields a proportional change in behavior, providing the foundation for shifting control to algebra.
+
+**3. Persona-Flow: Dynamic Personality Modulation Based on Context during Inference**
+
+A static set of coefficients cannot handle the evolving situations in real dialogues. Persona-Flow addresses this round-by-round using a two-stage "predict-then-steer" mechanism. The first stage analyzes the current dialogue context to predict an adjustment coefficient $\alpha_i \in [-2, +2]$ for each OCEAN dimension. In the second stage, a composite vector is synthesized only for dimensions exceeding a threshold ($|\alpha_i| > 0.5$):
+
+$$v_{composite} = \sum_{i \in OCEAN} \alpha_i \cdot v_i$$
+
+This vector is injected into the residual stream at the optimal layer, enabling context-aware real-time personality regulation—enhancing situation-relevant traits and inhibiting conflicting ones—without relying on preset scripts. Since modulation only occurs on forward activations, it preserves the compositionality of Persona-Algebra while gaining dynamism, marking a key distinction from previous static, monolithic methods.
 
 ### Loss & Training
 
-This method is entirely training-free and involves no gradient updates. The core operation is residual addition in activation space:
+The entire method is completely training-free and does not involve any gradient updates. All control is reduced to a single addition at the residual stream during inference:
+
 $$h_l \leftarrow h_l + \alpha \cdot v_l$$
-where $\alpha$ is the steering coefficient and $v_l$ is the personality vector extracted from the optimal layer. Positive/negative $\alpha$ amplifies/suppresses the corresponding trait pole, respectively.
+
+where $v_l$ is the personality vector extracted from the optimal layer and $\alpha$ is the steering coefficient. The sign determines whether to amplify or inhibit the corresponding trait pole, while the absolute value determines the modulation intensity.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Mean Score↑ | Variance↓ | Training Required |
-|--------|------------|-----------|-------------------|
+| Method | Mean Score↑ | Variance↓ | Training Requirement |
+|------|------------|-----------|----------|
 | PERSONA-Base | **9.60** | 0.74 | Training-free |
 | NPTI | 9.43 | 0.49 | Training-free |
 | P² | 9.43 | 0.83 | Training-free |
 | Simple Prompt | 8.39 | 0.96 | Training-free |
 | PAS | 6.93 | 1.71 | Training-free |
 | ActAdd | 8.20 | 2.10 | Training-free |
-| SFT (upper bound) | 9.61 | 0.49 | Fine-tuning required |
+| SFT (Upper Bound) | 9.61 | 0.49 | Fine-tuning required |
 
 ### Ablation Study
 
 | Model | TA | RC | RA | IF | Overall |
-|-------|----|----|----|----|---------|
+|------|----|----|----|----|---------|
 | Qwen3-4B | 92.2 | 90.6 | 92.4 | 49.1 | **90.8** |
 | Qwen2.5-14B | 84.8 | 86.4 | 84.8 | 59.3 | 85.4 |
 | Llama-3.1-8B | 84.9 | 81.4 | 85.6 | 57.2 | 83.5 |
@@ -98,40 +104,40 @@ where $\alpha$ is the steering coefficient and $v_l$ is the personality vector e
 ### Key Findings
 
 1. The training-free method PERSONA-Base (9.60) nearly matches the SFT upper bound (9.61), with higher but acceptable variance.
-2. Scalar multiplication of vectors exhibits a strong linear relationship with BFI-44 dimension scores, confirming the linear editability of personality traits.
-3. Certain traits exhibit asymmetric steering effects: traits that conflict with the model's safety training (e.g., self-interested) are difficult to activate even under high steering coefficients.
-4. On MMLU/TruthfulQA, Persona-Flow maintains or slightly improves general model capability, producing no adverse side effects.
-5. Larger model capacity enhances personality controllability: across the Qwen2.5 series, overall win rate improves from 78.4% (3B) to 85.4% (14B).
+2. Scalar multiplication of vectors shows a strong linear relationship with BFI-44 dimension scores, confirming the linear editability of personality traits.
+3. Asymmetric steering effects exist for some traits: traits that conflict with model safety training (e.g., self-interested) are difficult to activate even with high coefficients.
+4. On MMLU and TruthfulQA, Persona-Flow maintains or slightly improves general model capabilities without side effects.
+5. Larger model capacity enhances personality control: for the Qwen2.5 series, the overall win rate increased from 78.4% to 85.4% as the size grew from 3B to 14B.
 
 ## Highlights & Insights
 
-1. **Extreme methodological simplicity**: Entirely training-free, achieving SFT-level personality control via vector addition and subtraction alone, with minimal computational overhead.
-2. **Geometric perspective as a breakthrough**: Reframes personality control from "text engineering" to "vector arithmetic," revealing interpretable structure in LLM representation space.
-3. **Compositionality + dynamism**: The predict-then-steer mechanism of Persona-Flow enables context-aware real-time personality modulation for the first time.
-4. **Rigorous orthogonality validation**: Vector independence is verified via cosine similarity heatmaps and causal intervention experiments.
-5. **Persona-Evolve benchmark**: Constructs 800 multi-turn dialogue scenarios, filling a gap in dynamic personality evaluation.
+1. **Extremely Simple Method**: Completely training-free, achieving SFT-level personality control through simple vector addition and subtraction with minimal computational overhead.
+2. **Breakthrough in Geometric Perspective**: Transforms personality control from "prompt engineering" to "vector arithmetic," revealing the interpretable structure of the LLM representation space.
+3. **Compositionality + Dynamics**: Achieves context-aware real-time personality modulation for the first time through the predict-then-steer mechanism of Persona-Flow.
+4. **Solid Orthogonality Validation**: Independence between vectors is verified through cosine similarity heatmaps and causal intervention experiments.
+5. **Persona-Evolve Benchmark**: Constructs 800 multi-turn dialogue scenarios, filling the gap in dynamic personality evaluation.
 
 ## Limitations & Future Work
 
-1. **Asymmetric steering effects**: Traits conflicting with safety alignment are difficult to activate (e.g., self-interested scores only 20.8), constraining fully unconstrained personality control.
-2. **Information Fidelity metrics remain low** (48–61%), indicating that maintaining factual accuracy while adjusting personality remains challenging.
-3. **Vector extraction is model-dependent**: Vectors are currently extracted using Qwen2.5-7B; cross-model transfer solutions remain underdeveloped.
-4. **Additional inference overhead from Persona-Flow**: The predict-then-steer process requires intermediate reasoning steps, introducing latency.
-5. Validation is currently limited to the Big Five framework; whether the approach generalizes to finer-grained personality dimensions warrants further exploration.
+1. **Asymmetric Steering Effect**: Traits conflicting with safety alignment are difficult to activate (e.g., self-interested score is only 20.8), limiting completely free personality control.
+2. **Lower Information Fidelity (IF)** (48-61%): Maintaining factual accuracy while adjusting personality remains a challenge.
+3. **Model-Dependent Vector Extraction**: Currently uses Qwen2.5-7B to extract vectors; cross-model transfer schemes are not yet mature.
+4. **Extra Inference Overhead in Persona-Flow**: The predict-then-steer mechanism requires additional intermediate reasoning, increasing latency.
+5. Validation has only been performed within the Big Five framework; whether this can extend to finer-grained personality dimensions remains to be explored.
 
 ## Related Work & Insights
 
 - **Representation Engineering** (Rimsky et al., 2024; Turner et al., 2023): Provides the methodological foundation for activation steering.
-- **NPTI** (Deng et al., 2025): A neuron-based personality control method that does not support compositional operations.
-- **ActAdd** (Turner et al., 2023): A pioneer in residual stream modification, but with insufficient precision for personality control (variance: 2.10).
-- Insight: This vector algebra perspective may generalize to other LLM behavioral control tasks, such as style transfer, knowledge injection, and safety alignment.
+- **NPTI** (Deng et al., 2025): A neuron-based personality control method, but lacks support for compositional operations.
+- **ActAdd** (Turner et al., 2023): A pioneer in residual stream modification, but personality control is less precise (variance of 2.10).
+- **Insight**: This vector algebra perspective could potentially be extended to other LLM behavior controls, such as style, knowledge injection, and safety alignment.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ Recasting personality control as vector algebraic operations is highly original; the Persona-Flow dynamic control mechanism is also a first.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-model, multi-benchmark evaluation is comprehensive, though certain metrics (IF) remain moderate.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The paper is clearly structured, with a smooth logical progression from extraction to algebra to dynamic control.
-- **Value**: ⭐⭐⭐⭐⭐ A training-free method matching the SFT upper bound represents a milestone in personality control with high practical significance.
+- **Novelty**: ⭐⭐⭐⭐⭐ The perspective of transforming personality control into vector algebra is highly original, and the Persona-Flow dynamic control mechanism is a first.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluation across various models and benchmarks is comprehensive, though some metrics (IF) show room for improvement.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear structure with a smooth logical progression from extraction to algebra to dynamic control.
+- **Value**: ⭐⭐⭐⭐⭐ Achieving results matching the SFT upper bound with a training-free method is a milestone in personality control with high practical utility.
 
 <!-- RELATED:START -->
 
@@ -139,11 +145,11 @@ where $\alpha$ is the steering coefficient and $v_l$ is the personality vector e
 
 ## Related Papers
 
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
-- [\[NeurIPS 2025\] Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference](../../NeurIPS2025/interpretability/dynamic_features_adaptation_in_networking_toward_flexible_training_and_explainab.md)
-- [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](../../ACL2026/interpretability/finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
+- [\[ICLR 2026\] Persona Features Control Emergent Misalignment](persona_features_control_emergent_misalignment.md)
+- [\[ICLR 2026\] Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability](small_transformers_dont_need_layernorm_at_inference_time_scaling_layernorm_remov.md)
 - [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](dynamic_reflections_probing_video_representations_with_text_alignment.md)
-- [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](gavel_towards_rule-based_safety_through_activation_monitoring.md)
+- [\[ICLR 2026\] Watch the Weights: Unsupervised Monitoring and Control of Fine-tuned LLMs](watch_the_weights_unsupervised_monitoring_and_control_of_fine-tuned_llms.md)
+- [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
 
 </div>
 

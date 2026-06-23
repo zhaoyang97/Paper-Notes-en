@@ -2,140 +2,146 @@
 title: >-
   [Paper Note] PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions
 description: >-
-  [ICLR 2026][Interpretability][detailed image description] This paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d)…
+  [ICLR 2026][Interpretability][detailed image description] The paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d), K(d) \rangle$ from both generated and reference descriptions to serve as structured rubrics. These rubrics guide an open-source 14B LLM (Qwen3-14B) in performing QA-style fine-grained error localization. PoSh outperform
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "detailed image description"
-  - "scene graph"
-  - "LLM-as-Judge"
-  - "fine-grained evaluation"
-  - "assistive text"
+  - ICLR 2026
+  - Interpretability
+  - detailed image description
+  - scene graph
+  - LLM-as-Judge
+  - fine-grained evaluation
+  - assistive text
 date: 2026-05-08
-content_hash: c28bab0e1cd27873
+content_hash: 8ce28712bcde7f90
 ---
-
 # PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.19060](https://arxiv.org/abs/2510.19060)  
 **Code**: [GitHub](https://github.com/amith-ananthram/posh)  
-**Area**: Interpretability
+**Area**: Interpretability  
 **Keywords**: detailed image description, scene graph, LLM-as-Judge, fine-grained evaluation, assistive text
 
 ## TL;DR
-This paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d), K(d) \rangle$ from both generated and reference descriptions as structured rubrics, guiding an open-source 14B LLM (Qwen3-14B) to perform QA-based fine-grained error localization. PoSh surpasses GPT-4o-as-Judge by +0.05 Spearman ρ on the DOCENT artwork benchmark and CapArena, while remaining fully reproducible.
+The paper proposes PoSh, an evaluation metric that extracts scene graphs $G(d) = \langle O(d), E(d), K(d) \rangle$ from both generated and reference descriptions to serve as structured rubrics. These rubrics guide an open-source 14B LLM (Qwen3-14B) in performing QA-style fine-grained error localization. PoSh outperforms GPT-4o-as-Judge by +0.05 Spearman $\rho$ on the DOCENT artwork benchmark and CapArena while remaining fully reproducible.
 
 ## Background & Motivation
 
-**Background**: VLMs are capable of generating detailed image descriptions (100–300 words), yet evaluation methods lag significantly behind. CIDEr/SPICE were designed for short texts; LLM-as-Judge approaches are non-reproducible and produce coarse-grained, uninterpretable scores.
+**Background**: VLMs can now generate detailed image descriptions (100-300 words), but evaluation methods lag behind. CIDEr and SPICE were designed for short texts, and contemporary LLM-as-Judge approaches are often irreproducible and produce coarse, uninterpretable scores.
 
 **Limitations of Prior Work**:
-- Attribute/relation misattachment in long descriptions is a core error type (e.g., "a man pouring water" described as "a man in the center"), yet existing metrics are insensitive to this
-- SPICE/CAPTURE use scene graphs but ignore object attachment, leading to inflated scores
-- Closed-source LLM evaluation (GPT-4o) is costly and non-reproducible; open-source LLM-as-Judge (LLaVA-Critic) does not provide interpretable fine-grained scores
-- Benchmarks with fine-grained human judgments are lacking — most detailed description benchmarks have no human annotations
+- Incorrect attachment of attributes/relations is a core error in long descriptions (e.g., "a man pouring water" described as "a man in the center"). Existing metrics are insensitive to this.
+- While SPICE and CAPTURE use scene graphs, they ignore object attachment, leading to false positives (high scores for wrong attachments).
+- Closed-source LLM evaluation (e.g., GPT-4o) is expensive and irreproducible, whereas open-source LLM-as-Judge (e.g., LLaVA-Critic) lacks interpretable fine-grained scoring.
+- Most detailed description benchmarks lack fine-grained human annotations.
 
-**Key Challenge**: There is a need for evaluation methods that are simultaneously cheap, reliable, and interpretable, yet these properties are typically in tension.
+**Key Challenge**: There is a need for cheap, reliable, and interpretable evaluation methods, but cost-efficiency typically conflicts with reliability and interpretability.
 
-**Goal**: To jointly achieve interpretability (fine-grained error localization to text spans), high correlation with human judgments, and full open-source reproducibility.
+**Goal**: To simultaneously achieve interpretability (fine-grained error localization at the text span level), high correlation with human judgment, and full open-source reproducibility.
 
-**Key Insight**: Scene graphs reduce the surface-form diversity of descriptions to visual components (entities + attributes + relations), serving as a structured checklist for an LLM-Judge, where each component is independently verified for presence and scores are aggregated into coarse-grained metrics.
+**Key Insight**: Scene graphs reduce the surface diversity of descriptions into visual components (entities + attributes + relations), serving as a structured checklist for an LLM-Judge. Each component can be independently verified for existence and then aggregated into coarse scores.
 
-**Core Idea**: Scene graphs structure *what* to evaluate (entities, attributes, relations), while LLM-QA flexibly handles *how* to compare (surface-form variation).
+**Core Idea**: Use scene graphs to structure "what to evaluate" (entities, attributes, relations) and use LLM-QA to flexibly handle "how to compare" (variations in surface form).
 
 ## Method
 
 ### Overall Architecture
 
-PoSh operates in three steps:
-1. **Scene Graph Extraction**: Sentence-level scene graphs are extracted from both generated and reference descriptions using dependency parsing (spaCy) and coreference resolution (Maverick), then merged into a complete scene graph.
-2. **Fine-Grained Scoring**: Each component in the scene graph is converted into a templated question, and Qwen3-14B performs QA to verify its presence in the counterpart text.
-3. **Coarse-Grained Aggregation**: Mistakes scores (generated → reference) and omissions scores (reference → generated) are each averaged separately.
+PoSh aims to provide interpretable and reproducible scores for detailed image descriptions without calling closed-source models. The workflow involves compressing descriptions into scene graphs and using them as checklists for an open-source LLM. The process consists of three steps: first, extracting sentence-level scene graphs using dependency parsing (spaCy) and coreference resolution (Maverick) from both generated and reference descriptions, then merging them; second, converting each component (entity, attribute, relation) into a templated question for Qwen3-14B to verify its existence in the counterpart text; finally, averaging these per-component scores to derive Mistakes (gen $\rightarrow$ ref, measuring hallucinations) and Omissions (ref $\rightarrow$ gen, measuring missing info).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Generated Description d_gen + Reference d_ref"]
+    SG["Attachment-Preserving Scene Graph Extraction<br/>Dep. Parsing + Coref. Resolution → G(d)=⟨O,E,K⟩"]
+    QA["UID-based Three-Round QA Verification<br/>Qwen3-14B Component-wise existence check"]
+    AGG["Interpretable Coarse Aggregation<br/>Average of per-component scores"]
+    OUT["Mistakes ρ / Omissions ρ<br/>Traceable to span-level errors"]
+    IN --> SG --> QA
+    QA -->|"gen→ref (Hallucinations)"| AGG
+    QA -->|"ref→gen (Omissions)"| AGG
+    AGG --> OUT
+```
 
 ### Key Designs
 
-1. **Attachment-Preserving Scene Graph Extraction**:
-    - Function: Extracts a structured representation $G(d) = \langle O(d), E(d), K(d) \rangle$ from descriptive text, where $O$ is the entity set, $E \subseteq O \times A$ is the attribute edge set, and $K \subseteq O \times R \times O$ is the relation edge set.
-    - Mechanism: Sentence-level dependency parsing → cross-sentence coreference resolution for entity merging → retention of attachment links from each attribute/relation to its host entity → localization of each component to the source text span.
-    - Design Motivation: SPICE's disregard for attachment links allows misattributed properties (e.g., assigning A's attribute to B) to go unpunished. PoSh preserves attachment chains to ensure the correct entity identifier is used when verifying attributes and relations.
+**1. Attachment-Preserving Scene Graph Extraction: Incorporating "Who has which attribute/relation"**
 
-2. **Three-Round QA Verification with Unique Identifiers**:
-    - Function: Generates templated questions for each scene graph component and uses an LLM to judge its presence in the counterpart text (scored 1–5).
-    - Mechanism: Collisions among entities of the same type (e.g., multiple "man" instances) require unique identifiers. Verification proceeds in three rounds: (1) top-level entity ("man" itself) → (2) part-of/subordinate entity ("face of the man") → (3) attributes/relations (using the simplest confirmed identifier). Identifier candidates include class names, surface forms, attribute modifiers, and relational modifiers, rewritten into natural expressions by the LLM.
-    - Design Motivation: Avoids forcing alignment between scene graph components from two descriptions — the counterpart text may refer to the same object using entirely different words (e.g., the reference uses "trio" while the generation mentions three individuals separately).
+The most subtle errors in detailed descriptions involve attribute/relation misattachment—e.g., "a man pouring water" vs. "a man in the center." While both mention a man and an action, the attachment is wrong. PoSh performs sentence-level dependency parsing and cross-sentence coreference resolution to extract a structured representation $G(d) = \langle O(d), E(d), K(d) \rangle$, where $O$ is the set of entities, $E \subseteq O \times A$ are attribute edges, and $K \subseteq O \times R \times O$ are relation edges. Crucially, each edge maintains a link to its host entity and maps back to a specific text span. Unlike SPICE, PoSh penalizes misattachments because verification uses specific entity identifiers.
 
-3. **Interpretable Coarse-Grained Aggregation**:
-    - Function: Aggregates per-component fine-grained scores into three dimensions: mistakes, omissions, and overall.
-    - Mechanism: $\text{Mistakes} = \text{mean}_{c \in O(\text{gen})}(\pi(c))$, $\text{Omissions} = \text{mean}_{c \in O(\text{ref})}(\rho(c))$, where $\pi(c) = \Psi(c_{\text{gen}}, \text{ref})$ and $\rho(c) = \Psi(c_{\text{ref}}, \text{gen})$.
-    - Design Motivation: Coarse-grained scores are derived directly from the mean of fine-grained scores — given a total score, one can trace back to which attributes of which entities caused errors, providing diagnostic capability.
+**2. Unique Identifier-based Three-Round QA Verification: Moving beyond hard matching**
+
+When converting scene graph components into questions for 1-5 scoring by an LLM, a major challenge is entity collision (e.g., multiple "men" in one image). PoSh uses Unique Identifiers (UIDs) in a three-round check: first, verifying the top-level entity ("man"); second, verifying sub-entities ("face of the man"); third, verifying attributes and relations using the simplest confirmed identifiers. This avoids "forced alignment" of scene graphs, making the system robust to varied phrasing (e.g., "trio" in reference vs. "three people" in generation).
+
+**3. Interpretable Coarse Aggregation: Traceable average scores**
+
+Coarse scores are calculated by averaging per-component fine-grained scores: $\text{Mistakes} = \text{mean}_{c \in O(\text{gen})}(\pi(c))$ and $\text{Omissions} = \text{mean}_{c \in O(\text{ref})}(\rho(c))$, where $\Psi$ is the QA scorer. Since the total score is a direct mean of fine-grained results, any low score can be traced back to the exact entity or attribute that failed, providing diagnostic capabilities that scalar-output models like GPT-4o-as-Judge lack.
 
 ### Loss & Training
 
-PoSh is an inference-time metric with no training process. The QA scorer Ψ uses Qwen3-14B; presence scores are extracted as weighted averages over token logits (1–5), with an entity presence threshold of 2 (tuned on a small validation set). Runtime efficiency: 400 samples in 15 minutes on a single H100 GPU (~2 seconds each), compared to over 2 hours for DCScore due to its GPT-4 dependency.
+PoSh is an inference-time metric with no training phase. The QA scorer $\Psi$ uses Qwen3-14B, and existence scores are extracted from weighted averages of token logits (mapped to 1-5). An existence threshold of 2 is used (tuned on a small validation set). In terms of efficiency, PoSh processes 400 samples in approximately 15 minutes on a single H100 (~2 seconds per sample), whereas DCScore (GPT-4 based) takes over 2 hours for the same scale.
 
 ## Key Experimental Results
 
-### DOCENT Benchmark — Coarse-Grained Metric Comparison
+### Main Results — DOCENT Benchmark (Coarse-grained)
 
-| Metric | Parameters | Mistakes ρ | Omissions ρ | Overall ρ | Reproducible |
-|--------|-----------|-----------|------------|----------|-------------|
+| Metric | Params | Mistakes $\rho$ | Omissions $\rho$ | Overall $\rho$ | Reproducible |
+|------|--------|-----------|------------|----------|--------|
 | SPICE | - | 0.308 | 0.464 | 0.458 | ✓ |
 | CAPTURE | - | 0.259 | 0.447 | 0.453 | ✓ |
 | LLaVA-Critic | 72B | 0.412 | 0.509 | 0.546 | ✓ |
 | DCScore | GPT-4o | **0.541** | 0.395 | 0.471 | ✗ |
 | GPT-4o (ref+img) | - | 0.484 | 0.380 | 0.510 | ✗ |
-| **PoSh** | **14B** | 0.519 | **0.581** | **0.599** | **✓** |
+| **PoSh (Ours)** | **14B** | 0.519 | **0.581** | **0.599** | **✓** |
 
-### Fine-Grained Metric Comparison (DOCENT)
+### Ablation Study (Fine-grained comparison on DOCENT)
 
 | Method | Mistakes F1 | Omissions F1 |
-|--------|------------|-------------|
+|------|------------|-------------|
 | Random | 0.503 | 0.499 |
 | 4GramEmbed | 0.483 | 0.641 |
 | SGEmbed | 0.514 | 0.658 |
-| **PoSh** | **0.580** | **0.680** |
+| **PoSh (Ours)** | **0.580** | **0.680** |
 
-### Key Findings
-- PoSh achieves an overall accuracy of 70.7% on DOCENT, surpassing GPT-4o (67.3%) and GPT-5 text-only (68.0%), while being fully open-source and reproducible.
-- On CapArena, PoSh's model ranking correlation with human judgments on complex scenes (≥3 persons) outperforms the 72B LLaVA-Critic (ρ=0.727 vs. 0.686).
-- Scene graph subcomponent validation: element extraction F1=0.892, element verification F1=0.852 — high-quality structured extraction is the foundation of PoSh's success.
-- Using PoSh as an RL reward function (DAPO) outperforms SFT: omission improvement +0.432, overall improvement +0.135.
-- The DOCENT leaderboard reveals that open-source models are competitive on mistakes but lag substantially behind closed-source models on omissions — coverage is the key gap.
+## Key Findings
+- **Superior Performance**: PoSh achieves an Overall accuracy of 70.7% on DOCENT, surpassing GPT-4o (67.3%) and GPT-5 text-only (68.0%) while being fully reproducible.
+- **Complexity Robustness**: On CapArena, PoSh’s correlation with human rankings for complex scenes ($\ge 3$ people) exceeds the 72B LLaVA-Critic ($\rho = 0.727$ vs 0.686).
+- **Extraction Quality**: Component extraction F1 is 0.892 and element verification F1 is 0.852, indicating that high-quality structured extraction is the foundation of PoSh’s success.
+- **RL Feedback**: Using PoSh as a reward function (DAPO) outperforms SFT: omission improvement +0.432, overall improvement +0.135.
+- **Model Gaps**: The DOCENT leaderboard shows that while open-source models are competitive in avoiding mistakes, they lag significantly behind closed-source models in avoiding omissions (coverage).
 
 ## Highlights & Insights
-- **Scene Graphs as Structured Rubrics**: The design leverages the structured dimensionality reduction of scene graphs (reducing surface-form diversity of evaluation targets) while maintaining flexibility through LLM-QA (avoiding forced alignment) — the two approaches are complementary.
-- **Interpretability from Fine- to Coarse-Grained**: Every coarse-grained score is grounded in corresponding fine-grained span-level error evidence, a capability absent from existing metrics including GPT-4o-as-Judge.
-- **Social Value of the DOCENT Benchmark**: Assistive text generation is critical for web accessibility for visually impaired users; the complex visual scenes in artworks (averaging 161 visual components) represent a genuine challenge for current VLMs.
+- **Scene Graph as Structured Rubric**: PoSh combines the structural dimensionality reduction of scene graphs with the flexibility of LLM-QA, avoiding the pitfalls of rigid hard matching.
+- **Fine-to-Coarse Interpretability**: Every coarse score is supported by span-level fine-grained evidence, a feature missing in existing scalar-based metrics like GPT-4o-as-Judge.
+- **Social Impact (DOCENT)**: Assistive text generation is vital for web accessibility for the visually impaired. Complex artistic scenes (averaging 161 visual components) represent a significant real-world challenge for current VLMs.
 
 ## Limitations & Future Work
-- Quality depends on the dependency parsing and coreference resolution pipeline — tool maturity for non-English languages may be insufficient.
-- All components (entities/attributes/relations) are currently weighted equally; task-specific weighting could be introduced in future work.
-- DOCENT covers only 100 images with generated judgments, limited in scale by the annotation cost of fine-grained labeling (~18 minutes per sample).
-- The reference-based design is sensitive to the quality and coverage of reference descriptions.
+- **NLP Tool Dependency**: Performance relies on the quality of dependency parsing and coreference resolution, which may be less mature for non-English languages.
+- **Component Weighting**: Currently, all components (entities/attributes/relations) are weighted equally. Future work could introduce task-specific weights.
+- **Benchmark Scale**: DOCENT contains only 100 images with human judgment, limited by the high cost of fine-grained annotation (18 minutes per sample).
+- **Reference Dependency**: Being a reference-based metric, its efficacy depends on the quality and coverage of the reference description.
 
 ## Related Work & Insights
-- **vs. SPICE**: SPICE also uses scene graphs but ignores object attachment, inflating scores for misattributed details; PoSh preserves attachment chains to ensure correct verification.
-- **vs. DCScore**: DCScore uses GPT-4 to extract and verify factoids, achieving the strongest mistakes correlation (ρ=0.541), but insufficient extraction coverage weakens its omissions performance (ρ=0.395); PoSh uses syntactic analysis to ensure full coverage.
-- **vs. LLaVA-Critic**: This 72B VLM-as-Judge performs best on CapArena overall, but provides no interpretable fine-grained scores; PoSh achieves comparable performance at 14B while remaining fully interpretable.
+- **vs SPICE**: SPICE uses scene graphs but ignores object attachment, leading to high scores for "misattached" details; PoSh preserves the attachment chain.
+- **vs DCScore**: DCScore uses GPT-4 to extract factoids. While strong on mistakes ($\rho=0.541$), it suffers from low recall on omissions ($\rho=0.395$); PoSh ensures full coverage via syntactic parsing.
+- **vs LLaVA-Critic**: While the 72B VLM-as-Judge performs well on CapArena, it lacks interpretable fine-grained scores. Ours achieves comparable performance with a 14B model while being fully interpretable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The combination of scene graphs and LLM-QA is elegantly designed; the DOCENT benchmark fills an important gap.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers DOCENT fine- and coarse-grained evaluation, cross-domain CapArena, RL reward function experiments, and subcomponent validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Motivation is clear, societal impact is compelling, and experiments are systematic and comprehensive.
-- Value: ⭐⭐⭐⭐ — Provides a deployable open-source tool for detailed image description evaluation, advancing progress in assistive text generation.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](../../CVPR2026/interpretability/on_the_possible_detectability_of_image-in-image_steganography.md)
 - [\[ICML 2026\] Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](../../ICML2026/interpretability/diagnosing_the_reliability_of_llm-as-a-judge_via_item_response_theory.md)
-- [\[ICLR 2026\] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs](radar_reasoning-ability_and_difficulty-aware_routing_for_reasoning_llms.md)
-- [\[CVPR 2026\] Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing](../../CVPR2026/interpretability/edit-as-act_goal-regressive_planning_for_open-vocabulary_3d_indoor_scene_editing.md)
-- [\[NeurIPS 2025\] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training](../../NeurIPS2025/interpretability/urls_help_topics_guide_understanding_metadata_utility_in_llm_training.md)
+- [\[ACL 2025\] Enhancing Automated Interpretability with Output-Centric Feature Descriptions](../../ACL2025/interpretability/output_centric_interpretability.md)
+- [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
+- [\[ICLR 2026\] Evidence for Limited Metacognition in LLMs](evidence_for_limited_metacognition_in_llms.md)
+- [\[CVPR 2025\] On the Possible Detectability of Image-in-Image Steganography](../../CVPR2025/interpretability/on_the_possible_detectability_of_image-in-image_steganography.md)
 
 </div>
 

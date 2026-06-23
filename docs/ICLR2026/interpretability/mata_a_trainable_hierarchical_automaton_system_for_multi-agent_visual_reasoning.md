@@ -2,171 +2,169 @@
 title: >-
   [Paper Note] MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning
 description: >-
-  [ICLR 2026][Interpretability][Multi-Agent Systems] This paper proposes MATA (Multi-Agent hierarchical Trainable Automaton), which formulates multi-agent visual reasoning as a hierarchical finite-state automaton. The top-…
+  [ICLR 2026][Interpretability][Paper Note] The paper proposes MATA (Multi-Agent hierarchical Trainable Automaton), which models multi-agent visual reasoning as a hierarchical finite state automaton. Top-level state transitions are learned by a trainable hyper agent (an LLM-based state controller), while each individual agent employs a rule-based sub-automaton.
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Multi-Agent Systems"
-  - "Hierarchical Finite-State Automaton"
-  - "Visual Reasoning"
-  - "Trainable State Controller"
-  - "Collaboration and Competition"
+  - ICLR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 85030ba2d1b80a4e
+content_hash: e690ad7394b7baf7
 ---
-
 # MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19204](https://arxiv.org/abs/2601.19204)  
 **Code**: [GitHub](https://github.com/ControlNet/MATA)  
-**Area**: Interpretability
-**Keywords**: Multi-Agent Systems, Hierarchical Finite-State Automaton, Visual Reasoning, Trainable State Controller, Collaboration and Competition
+**Area**: Interpretability  
+**Keywords**: Multi-Agent Systems, Hierarchical Finite State Automaton, Visual Reasoning, Trainable State Controller, Cooperation and Competition
 
 ## TL;DR
 
-This paper proposes MATA (Multi-Agent hierarchical Trainable Automaton), which formulates multi-agent visual reasoning as a hierarchical finite-state automaton. The top-level state transitions are learned by a trainable hyper agent (an LLM-based state controller), while each agent internally employs a rule-based sub-automaton. Collaboration and competition are realized through shared memory. MATA achieves state-of-the-art performance on multiple visual reasoning benchmarks.
+The paper proposes MATA (Multi-Agent hierarchical Trainable Automaton), which models multi-agent visual reasoning as a hierarchical finite state automaton. Top-level state transitions are learned by a trainable hyper agent (an LLM-based state controller), while each individual agent employs a rule-based sub-automaton. Through shared memory, the system enables cooperation and competition, achieving SOTA on multiple visual reasoning benchmarks.
 
 ## Background & Motivation
 
-Visual reasoning requires models to interpret relationships among entities in visual scenes. Existing approaches suffer from the following limitations:
+Visual reasoning requires models to interpret relationships between entities in a visual scene. Current methods face several issues:
 
-**End-to-end VLMs**: The implicit reasoning process is difficult to audit and prone to hallucinations on complex queries involving spatial relations or counting.
+**End-to-End VLMs**: Implicit reasoning processes are difficult to audit; these models often hallucinate during complex queries involving spatial relationships or counting.
 
-**Compositional methods** (e.g., ViperGPT, HYDRA): While improving interpretability, most rely on single-agent designs or manually engineered pipelines.
+**Compositional Methods** (e.g., ViperGPT, HYDRA): Although they improve interpretability, most utilize single-agent or hand-crafted pipelines.
 
-**Multi-agent methods**: Agents are assigned disjoint roles with hard-coded pipeline connections, unable to handle error propagation or support competition among functionally overlapping agents.
+**Multi-Agent Methods**: Agents are typically assigned disjoint roles with hard-coded pipeline connections, failing to handle error propagation or support competition between agents with overlapping functions.
 
-**Rigidity of rule-based transitions**: Manually written transition functions become increasingly intractable as the number of states grows.
+**Rigidity of Rule-Based Transitions**: Hand-written transition functions become increasingly difficult to define as the number of states grows.
 
-The core problem is: **how can a system learn when to invoke which agent?** The authors formulate this decision problem as learning the transition function of a finite-state automaton.
+**Core Problem**: How can a system learn when to invoke which agent? The authors model this decision-making process as learning the transition function of a finite state automaton.
 
 ## Method
 
 ### Overall Architecture
 
-MATA is a hierarchical Mealy machine $\mathcal{M}_\theta = (S, S_0, \Sigma, \Lambda, \delta_\theta, \Gamma)$ with two levels:
-- **Top level (Hyper Automaton)**: States correspond to individual agents; the transition function $\delta_\theta$ is learned by a trainable LLM controller.
-- **Bottom level (Sub-Automaton)**: Each agent internally operates as a rule-based finite-state machine, ensuring reliable micro-control.
+MATA addresses the scheduling problem: "When a visual reasoning query arrives, which agent should be dispatched, when to switch agents, and when to terminate and output." It organizes the reasoning process as a **hierarchical Mealy machine** $\mathcal{M}_\theta = (S, S_0, \Sigma, \Lambda, \delta_\theta, \Gamma)$. At the top level (hyper automaton), each agent is treated as a state, and a trainable hyper agent (LLM-based state controller) learns the transitions $\delta_\theta$ between states. At the bottom level, each agent operates using a rule-based sub-automaton responsible for reliable micro-execution. During runtime, the hyper agent reads a snapshot of shared memory at each step to decide the next state; the selected agent executes its sub-automaton, appends intermediate results to the shared memory, and returns control. This cycle continues until the Final state is reached to output the answer. The rationale for delegating "inter-agent transitions" to learning while keeping "intra-agent steps" rule-based is that the former involves ambiguous criteria that scale poorly with manual rules, while the latter consists of clear, easily definable steps.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Input: Image v + Query q<br/>Initial State + Init Shared Memory m₀"] --> HA
+    SFT["Transition Trajectory Data Generation<br/>Trajectory Tree → Bottom-up Scoring → MATA-SFT-90K"] -. SFT Training .-> HA
+    HA["Trainable Hyper Agent<br/>(LLM State Controller): Reads memory snapshot, selects next state δθ"]
+    HA -->|Routing| AG
+    subgraph AG["Hierarchical Automaton and State Definitions (Three Agents, each running rule-based sub-automata)"]
+        direction TB
+        ON["Oneshot Reasoner<br/>Generates and executes programs in one go"]
+        ST["Stepwise Reasoner<br/>Multi-step Python reasoning"]
+        SP["Specialized Agent<br/>Fast perception expert"]
+    end
+    AG -->|Append intermediate results and feedback| MEM["Shared Memory (append-only)"]
+    MEM -->|Failure: Temporarily remove the agent and re-select| HA
+    HA -->|Final Result Confirmed| OUT["Final: Output y"]
+```
 
 ### Key Designs
 
-#### 1. State Definition
+**1. Hierarchical Automaton and State Definitions: Turning "Agent Selection" into Automaton State Transitions**
 
-The state set $S = S_{\text{agent}} \cup S_{\text{life}}$, where:
+The system state set $S = S_{\text{agent}} \cup S_{\text{life}}$ is categorized into two types. $S_{\text{agent}} = \{\text{Oneshot}, \text{Stepwise}, \text{Specialized}\}$ consists of three agents, each representing a reasoning path that forms a spectrum from "perception" to "fast thinking" to "slow thinking": Specialized Agent is a System-1 style fast perception expert (object detection, simple QA); Oneshot Reasoner generates and executes programs in one go for direct queries; Stepwise Reasoner generates Python programs step-by-step for complex multi-step reasoning. $S_{\text{life}} = \{\text{Initial}, \text{Final}, \text{Failure}\}$ are lifecycle states for initialization, final output, and exception coordination, with $S_0 = \text{Initial}$. By mapping agents to states, "when to call which agent" naturally becomes a transition problem. Each agent's internal logic is handled by a rule-based sub-automaton (LLM/VLM prompts, validator checks, tool I/O) to manage micro-control before returning to the top level.
 
-**Agent states** (three agents representing distinct reasoning paths):
-- **Oneshot Reasoner**: Generates and executes a program in a single pass; suitable for directly solvable queries.
-- **Stepwise Reasoner**: Generates Python programs incrementally for multi-step reasoning; suitable for complex queries.
-- **Specialized Agent**: Fast perception experts (e.g., object detection, simple QA).
+These agents are designed for both **cooperation and competition**. Cooperation means that when control is transferred, the successor reads the full history and feedback from shared memory. Competition means agents with overlapping functions can vie for the same task. If an agent gets stuck or reports an unrecoverable error, the system **temporarily removes** it from the current candidates, forcing the hyper agent to re-select from the remainder. This "failure-as-rerouting" mechanism transforms single points of failure into recoverable path switching.
 
-**Lifecycle states**: Initial (entry point), Final (terminates and outputs), Failure (unrecoverable error).
+**2. Shared Memory: A Traceable Carrier for Collaboration and Auditing**
 
-The three agents are designed to be **both collaborative and competitive**: collaboration manifests in downstream agents reading intermediate results written to shared memory by upstream agents; competition manifests in functionally overlapping agents substituting for failed ones.
+All agents read and write to a single structured shared memory $m_t$, accumulating intermediate variables, perception results, program history, and feedback. It is **append-only**: an agent appends new content $\Delta m_t$ after its turn, resulting in $m_{t+1} = m_t \cup \Delta m_t$. This design ensures that subsequent agents have full context for collaboration and that the reasoning trajectory remains fully traceable and auditable. Crucially, this memory is the **sole** observation input for the hyper agent: at each step, it selects the next state $s_{t+1} = \delta_\theta(s_t, m_t)$ based on $m_t$.
 
-#### 2. Shared Memory
+**3. Trainable Hyper Agent: Learning Transition Functions with LLMs**
 
-All agents read from and write to a structured shared memory $m_t$, accumulating intermediate variables, perception results, program history, and verification feedback. Memory is **append-only**, ensuring the full reasoning trace is auditable. At each step, the hyper agent observes $m_t$ and selects the next state $s_{t+1} = \delta_\theta(s_t, m_t)$.
+The top-level transition function $\delta_\theta$ is no longer a set of hand-written if-else rules but a trainable LLM-based hyper agent $\mathcal{F}_\theta$ acting as a state transition controller. Since LLMs process text, $m_t$ is formatted into a prompt $x_t$ using a template. $\mathcal{F}_\theta$ then maps this to a distribution over **currently available candidate states**, and the next state $s_{t+1}$ is chosen via greedy decoding or sampling. This replaces manual rules, which are difficult to scale, with an automated scheduling policy that continues in the face of uncertainty and only transitions to Final when confident.
 
-#### 3. Trainable Hyper Agent
+**4. Transition Trajectory Data Generation (MATA-SFT-90K): Creating Supervision Signals**
 
-The transition function $\delta_\theta$ is implemented by an SFT fine-tuned LLM. A text prompt $x_t$ is constructed from shared memory, and the LLM maps it to a distribution over available states to select the next state.
+To train the hyper agent, labels identifying the optimal agent for a given memory state are required. The paper generates this data using a transition-trajectory tree. First, (image, query) pairs are sampled from GQA, OK-VQA, and RefCOCO datasets. The automaton runs by expanding all possible $s_{t+1} \in S$ at each decision node, executing their sub-automata, and saving memory checkpoints until reaching Final leaves, where $\Gamma$ gives the prediction $\hat{y}$. Second, a bottom-up scoring is applied: leaf nodes are scored based on metrics (Acc for VQA, IoU for VG), and non-leaf nodes propagate the maximum child value:
 
-#### 4. Transition Trajectory Data Generation (MATA-SFT-90K)
-
-**Step 1: Construct transition trajectory trees.** For each (image, query) pair, at every decision point the system branches into all available agent states, executes the corresponding sub-automaton, and saves memory checkpoints.
-
-**Step 2: Bottom-up scoring.** Leaf nodes are scored by task metrics (Accuracy for VQA, IoU for VG); non-leaf nodes propagate the maximum child value upward:
 $$V(s) = \begin{cases} \text{metric}(\hat{y}_s, y), & s \in \text{Leaves} \\ \max_{s' \in \text{Child}(s)} V(s'), & \text{otherwise} \end{cases}$$
 
-**Step 3: Generate SFT data.** Each decision-point text prompt is paired with the state label of the optimal child node to form a training sample. A total of 90,854 samples are collected.
+This identifies the optimal branch at each decision point. Third, prompts $x_t$ are paired with the optimal state labels to create $N = 90,854$ instruction-completion samples: MATA-SFT-90K.
 
-#### 5. Failure Handling Mechanism
+## Loss & Training
 
-When an agent reports an unrecoverable error, the failed agent is **temporarily removed** from the candidate state set, allowing the hyper agent to select an alternative agent and avoid infinite retries.
+A Qwen3 4B is trained as the LLM state controller using standard SFT loss. AdamW optimizer is used with cosine decay and 5% warmup, batch size 64, for 8 epochs. Max reasoning steps $T=15$.
 
-### Loss & Training
-
-A standard SFT loss is used to train Qwen3 4B as the LLM state controller. Optimization uses AdamW with cosine decay and 5% warmup, batch size 64, trained for 8 epochs. The maximum number of steps at inference is $T=15$.
-
-Three SFT configurations are evaluated: in-domain (trained on the target dataset's training split), domain-transfer (trained on non-target datasets), and general (trained jointly on all data).
+Three SFT configurations: In-domain (trained on target dataset), Domain-transfer (trained on non-target datasets), and General (joint training on all data).
 
 ## Key Experimental Results
 
 ### Main Results
 
-**GQA (Compositional Visual Question Answering)**:
+**GQA Dataset (Compositional VQA)**:
 
 | Type | Method | Accuracy |
-|------|--------|----------|
-| End-to-end | InternVL2.5 (8B) | 61.5 |
-| End-to-end | InternVL3.5 (8B) | 63.8 |
+|------|------|--------|
+| End-to-End | InternVL2.5 (8B) | 61.5 |
+| End-to-End | InternVL3.5 (8B) | 63.8 |
 | Compositional | HYDRA | 52.8 |
-| Compositional | **MATA (General)** | **64.9** |
+| Compositional | **Ours (General)** | **64.9** |
 
-**OK-VQA (Requires External Knowledge)**:
+**OK-VQA Dataset (Knowledge-based VQA)**:
 
 | Type | Method | Accuracy |
-|------|--------|----------|
-| End-to-end | InternVL3.5 (8B) | 75.7 |
+|------|------|--------|
+| End-to-End | InternVL3.5 (8B) | 75.7 |
 | Compositional | DWIM | 62.8 |
-| Compositional | **MATA (Domain-Specific)** | **76.5** |
+| Compositional | **Ours (Domain-Specific)** | **76.5** |
 
 **Referring Expression Comprehension (RefCOCO series)**:
 
 | Method | RefCOCO | RefCOCO+ | RefCOCOg | Ref-Adv |
-|--------|---------|----------|----------|---------|
+|------|---------|----------|----------|---------|
 | Florence2-L | 95.1 | 92.5 | 90.9 | 71.8 |
 | NAVER | 96.2 | 92.8 | 91.6 | 75.4 |
-| **MATA (General)** | **96.3** | **93.8** | **90.7** | **77.3** |
+| **Ours (General)** | **96.3** | **93.8** | **90.7** | **77.3** |
 
 ### Ablation Study
 
-**Hyper Agent Component Ablation**:
+**Hyper Agent Components Ablation**:
 
-| Hierarchical Automaton | Transition Strategy | SFT | GQA | OK-VQA | RefCOCO | Inference Time |
-|----------------------|-------------------|-----|-----|--------|---------|----------------|
+| Hierarchical Automaton | Transition Strategy | SFT | GQA | OK-VQA | RefCOCO | Inference Latency |
+|-----------|---------|-----|-----|--------|---------|----------|
 | ✗ | Exhaustive Ensemble | ✗ | 57.7 | 71.5 | 87.7 | 34.58s |
 | ✓ | Random | ✗ | 57.1 | 71.1 | 85.3 | 6.91s |
 | ✓ | LLM | ✗ | 58.5 | 75.1 | 95.8 | 8.07s |
 | ✓ | LLM | ✓ | **64.9** | **76.5** | **96.3** | **8.01s** |
 
-**Generalization Analysis**: The performance gap between cross-domain transfer and in-domain settings is less than 1%, indicating that the learned transition strategy is largely task-agnostic.
+**Generalization Analysis**: The performance gap between domain-transfer and in-domain is less than 1%, indicating that the learned transition strategy is highly task-agnostic.
 
 ### Key Findings
 
-1. **Compositional methods comprehensively surpass comparable-scale end-to-end VLMs for the first time**: MATA outperforms InternVL3.5 on GQA and OK-VQA.
-2. **SFT yields substantial performance gains**: With only 90K samples, GQA accuracy improves from 58.5% to 64.9% (+6.4%).
-3. **Small models are sufficient for scheduling**: A 0.6B model after SFT achieves in-domain performance approaching the 4B model.
-4. **Collaboration + Competition > Pure Collaboration**: The three-agent design allows competition on the same task, with one agent substituting for another upon failure.
-5. **Learned transitions >> Rule-based transitions**: MATA surpasses the hand-crafted NAVER by 1.9% on Ref-Adv.
+1. **Compositional methods surpass same-scale E2E VLMs for the first time**: MATA exceeds InternVL3.5 on GQA and OK-VQA.
+2. **Significant Gain from SFT**: SFT on only 90k samples improves GQA accuracy from 58.5% to 64.9% (+6.4%).
+3. **Small models excel at scheduling**: A 0.6B model via SFT achieves in-domain performance close to the 4B model.
+4. **Cooperation + Competition > Pure Cooperation**: The three-agent design allows competition; if one fails, another takes over.
+5. **Learning Transition >> Rule-based Transition**: MATA achieves a 1.9% Gain over the rule-based NAVER on Ref-Adv.
 
 ## Highlights & Insights
 
-- **Formal elegance**: Modeling multi-agent scheduling as Mealy machine transition function learning preserves interpretability while enabling flexibility.
-- **Hierarchical decomposition**: Cross-agent transitions are learned while intra-agent steps are rule-based, cleanly separating what to learn from what to formalize.
-- **Data generation pipeline**: Transition trajectory trees + bottom-up scoring + SFT data generation constitute a generalizable framework for multi-agent policy learning.
-- **System 1 + System 2**: The Specialized/Oneshot/Stepwise agent design echoes the fast-and-slow thinking dichotomy in cognitive science.
+- **Formal Elegance**: Modeling multi-agent scheduling as learning transition functions of a Mealy machine maintains interpretability while gaining flexibility.
+- **Hierarchical Division**: Clearly separates "what to learn" (inter-agent transitions) from "what to regularize" (intra-agent steps).
+- **Data Generation Pipeline**: The transition-trajectory tree + bottom-up scoring + SFT data generation provides a generalizable framework for multi-agent policy learning.
+- **System 1 + System 2**: The Specialized/Oneshot/Stepwise design echoes the fast/slow thinking systems in cognitive science.
 
 ## Limitations & Future Work
 
-1. Scalability of trajectory tree search: Exhaustive search is feasible with 3 agents, but search cost grows exponentially as the number of agents increases.
-2. Inference latency: An average of 8s/query remains high for real-time applications.
-3. Dependence on foundation models: Performance is bounded by the capabilities of the underlying VLMs and detectors.
-4. Simplicity of failure recovery: Only removing the failed agent is currently supported; more sophisticated recovery strategies may yield further improvements.
-5. Limited training data sources: Training relies solely on the training splits of 5 datasets.
+1. Scalability of Trajectory Tree Search: While feasible for 3 agents, search costs grow exponentially as agents increase.
+2. Inference Latency: Average of 8s/query is still high for real-time applications.
+3. Base Model Dependency: Performance ceiling is limited by the underlying VLM and detector.
+4. Simplicity of Failure Recovery: Current handling is limited to removing the failed agent; more complex recovery strategies could be investigated.
+5. Limited Data Sources: SFT data is derived from only five datasets.
 
 ## Related Work & Insights
 
-MATA follows the development trajectory of ViperGPT → HYDRA → NAVER, and is the first to introduce a learnable multi-agent transition policy. Compared to LLM-based multi-agent methods such as MetaGPT, MATA is more formally rigorous and supports competitive mechanisms. The transition trajectory tree generation approach is conceptually analogous to Monte Carlo Tree Search, but focuses specifically on agent selection.
+MATA follows the evolution from ViperGPT to HYDRA to NAVER, representing the first to implement a learnable multi-agent transition strategy. Compared to other LLM multi-agent methods like MetaGPT, it has higher formalization and supports competition. The trajectory tree generation resembles Monte Carlo Tree Search but focuses on agent selection.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The hierarchical automaton combined with learnable transition functions is a novel and formally complete framework design.
-- **Technical Quality**: ⭐⭐⭐⭐⭐ — The Mealy machine formalization, trajectory tree data generation, and SFT training pipeline are tightly integrated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Multi-benchmark comparisons, detailed ablations, generalization analysis, and model scale analysis are all provided.
-- **Practicality**: ⭐⭐⭐⭐ — The framework is general-purpose, but inference cost is relatively high.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Formalization is clear and exposition is rigorous.
+- **Novelty**: ⭐⭐⭐⭐⭐ — Hierarchical automaton with a trainable transition function is novel and formally sound.
+- **Technical Quality**: ⭐⭐⭐⭐⭐ — The Mealy machine formulation, trajectory tree generation, and SFT pipeline are well-integrated.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Strong comparisons across multiple benchmarks, detailed ablations, and generalization analysis.
+- **Value**: ⭐⭐⭐⭐ — Highly general framework, though inference costs remain an issue.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear formalization and rigorous presentation.
 - **Overall**: ⭐⭐⭐⭐⭐ (9.0/10)
 
 <!-- RELATED:START -->
@@ -176,10 +174,10 @@ MATA follows the development trajectory of ViperGPT → HYDRA → NAVER, and is 
 ## Related Papers
 
 - [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](../../AAAI2026/interpretability/toc_tree-of-claims_search_with_multi-agent_language_models.md)
-- [\[ICLR 2026\] Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data](behavior_learning_bl_learning_hierarchical_optimization_structures_from_data.md)
 - [\[NeurIPS 2025\] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation](../../NeurIPS2025/interpretability/agentiql_an_agent-inspired_multi-expert_framework_for_text-to-sql_generation.md)
-- [\[ICLR 2026\] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs](radar_reasoning-ability_and_difficulty-aware_routing_for_reasoning_llms.md)
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
+- [\[ICLR 2026\] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs](radar_reasoning-ability_and_difficulty-aware_routing_for_reasoning_llms.md)
+- [\[NeurIPS 2025\] Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex](../../NeurIPS2025/interpretability/time-evolving_dynamical_system_for_learning_latent_representations_of_mouse_visu.md)
 
 </div>
 

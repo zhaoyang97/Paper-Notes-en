@@ -2,94 +2,88 @@
 title: >-
   [Paper Note] Provably Explaining Neural Additive Models
 description: >-
-  [ICLR 2026][Interpretability][Neural Additive Models] This paper proposes a dedicated efficient explanation algorithm for Neural Additive Models (NAMs) that generates provably cardinally-minimal explanations using only a…
+  [ICLR 2026][Interpretability][Neural Additive Models] Specialized efficient explanation algorithms are designed for Neural Additive Models (NAMs). By requiring only logarithmic verification queries, these algorithms generate cardinally-minimal explanations that outperform existing general-purpose subset-minimal explanation algorithms in terms of both speed and explanation
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Neural Additive Models"
-  - "provable explanations"
-  - "cardinally-minimal explanations"
-  - "formal verification"
-  - "explainable AI"
+  - ICLR 2026
+  - Interpretability
+  - Neural Additive Models
 date: 2026-05-08
-content_hash: a0e4af6b00c5e245
+content_hash: 7de54f98d2d77cb3
 ---
-
 # Provably Explaining Neural Additive Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.17530](https://arxiv.org/abs/2602.17530)  
 **Code**: None  
-**Area**: Interpretability / Formal Verification
-**Keywords**: Neural Additive Models, provable explanations, cardinally-minimal explanations, formal verification, explainable AI
+**Area**: Interpretability / Formal Verification  
+**Keywords**: Neural Additive Models, Provable Explanations, Cardinally-minimal Explanations, Formal Verification, Explainable AI
 
 ## TL;DR
 
-This paper proposes a dedicated efficient explanation algorithm for Neural Additive Models (NAMs) that generates provably cardinally-minimal explanations using only a logarithmic number of verification queries, outperforming existing general-purpose subset-minimal explanation algorithms in both speed and explanation quality.
+Specialized efficient explanation algorithms are designed for Neural Additive Models (NAMs). By requiring only logarithmic verification queries, these algorithms generate cardinally-minimal explanations that outperform existing general-purpose subset-minimal explanation algorithms in terms of both speed and explanation quality.
 
 ## Background & Motivation
 
-The interpretability of neural networks is a central concern for AI safety and trustworthy deployment. Existing post-hoc explanation methods face the following challenges:
+The interpretability of neural networks is a core issue for AI safety and trustworthy deployment. Existing post-hoc explanation methods face several challenges:
 
-**Lack of provable guarantees**: Most explanation methods (e.g., SHAP, LIME, Grad-CAM) are inherently heuristic and cannot guarantee the correctness of their explanations. For instance, feature importance rankings produced by SHAP may not faithfully reflect the model's actual decision basis.
+**Background**: Most explanation methods (e.g., SHAP, LIME, Grad-CAM) are inherently heuristic and cannot guarantee the correctness of the explanations. For instance, the feature importance rankings provided by SHAP might not truly reflect the basis of the model's decision.
 
-**Computational bottleneck of provable explanations**: The key approach to obtaining explanations with provable guarantees is to find a "cardinally-minimal subset"—the smallest number of input features that alone sufficiently determine the model's prediction. For standard neural networks, this requires:
-   - An exponential number of verification queries in the number of input features
-   - Each query being NP-hard in itself
-   - Making the approach computationally infeasible in practice
+**Limitations of Prior Work**: The key to obtaining explanations with provable guarantees is finding a "cardinally-minimal subset"—the smallest number of input features sufficient to determine the model's prediction. For standard neural networks, this typically requires:
+   - Exponential verification queries relative to the number of input features.
+   - Each query itself being an NP-hard problem.
+   - Thus, it is generally computationally infeasible.
 
-**Opportunity with NAMs**: Neural Additive Models constitute a more interpretable family of neural networks. The core structure of a NAM is $f(\mathbf{x}) = h_1(x_1) + h_2(x_2) + \cdots + h_n(x_n)$, where each $h_i$ is an independent univariate neural network. This additive structure should facilitate explanation—yet existing work has not fully exploited this structural property.
+**Key Insight**: Neural Additive Models are a family of inherently more interpretable neural networks. The core structure of a NAM is $f(\mathbf{x}) = h_1(x_1) + h_2(x_2) + \cdots + h_n(x_n)$, where each $h_i$ is an independent univariate neural network. This additive structure suggests that explanations should be easier to obtain, yet existing work has not fully exploited this structural property.
 
-**Subset-minimal vs. cardinally-minimal**: Most existing algorithms can only find subset-minimal explanations (i.e., no feature can be further removed), without guaranteeing cardinally-minimal explanations (i.e., the subset with the fewest features). Cardinally-minimal explanations are more informative but harder to compute.
+**Key Challenge**: Most existing algorithms can only find "subset-minimal" explanations (where no further features can be removed) but cannot guarantee finding "cardinally-minimal" explanations (the subset containing the minimum number of features). Cardinally-minimal explanations are more informative but significantly harder to compute.
 
-The core problem addressed in this paper: **Can the additive structure of NAMs be exploited to efficiently generate provably cardinally-minimal explanations?**
+**Core Problem**: Can the additive structure of NAMs be leveraged to efficiently generate provable cardinally-minimal explanations?
 
 ## Method
 
 ### Overall Architecture
 
-The proposed algorithm consists of two phases:
-1. **Preprocessing phase**: Each univariate NAM component $h_i$ is analyzed to compute its output range and critical intervals.
-2. **Explanation generation phase**: The preprocessing results are leveraged to find cardinally-minimal explanations using a logarithmic number of verification queries.
+The problem addressed is to find the smallest subset of features $S$ for a trained NAM, a specific input $\mathbf{x}$, and a perturbation radius $\epsilon_p$, such that fixing the features in $S$ keeps the model's prediction unchanged regardless of the values other features take within the perturbation ball $B_{\epsilon_p}(x_i)$. This is defined as a "cardinally-minimal sufficient explanation." While this requires exponential search for general networks, this paper utilizes the additive structure $f(\mathbf{x}) = \beta_0 + \sum_i f_i(x_i)$ to decompose the process into two stages: parallelizable **offline preprocessing** (Stage 1), which performs verification on small univariate components $f_i$ to derive an importance order; and **online selection** (Stage 2), which uses binary search over the "top-$m$ most important features" based on this order. This reduces the exponential search to $O(\log n)$ full-model verification queries.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input: Trained NAM<br/>f = β₀ + Σ fᵢ(xᵢ), instance x, radius εₚ"]
+    D1["Additive Structure Decomposition<br/>Split into n univariate components fᵢ"]
+    S1["Stage 1: Parallel Interval Importance Sorting<br/>Binary verification for bounds [lᵢ, uᵢ] → Feature importance total order"]
+    S2["Stage 2: Binary Selection on Sorted Prefixes<br/>Binary search on top-m prefixes, O(log n) sufficiency queries"]
+    OUT["Output: Cardinally-minimal sufficient explanation S"]
+    V["Formal Sufficiency Verification<br/>suff(): Provable worst-case"]
+    IN --> D1 --> S1 --> S2 --> OUT
+    V -.-> S1
+    V -.-> S2
+```
 
 ### Key Designs
 
-1. **Exploiting NAM Structure**:
+**1. Mechanism: Decomposing the global sufficiency problem into univariate analysis**
 
-    - Function: Leverages the additive decomposability of NAMs to reduce the global verification problem to independent univariate analyses.
-    - Mechanism: Since $f(\mathbf{x}) = \sum_i h_i(x_i)$, the contribution $h_i(x_i)$ of each feature $x_i$ to the output is independent. Determining whether a feature subset is "sufficient" can therefore be accomplished by analyzing the output ranges of the individual $h_i$ functions.
-    - Specifically, for a fixed feature subset $S$, the range of variation in $f$'s output depends solely on the sum of the possible output ranges of $h_i$ for features outside $S$.
-    - **Design Motivation**: Additive decomposability is a structural advantage of NAMs over general neural networks and should be fully exploited.
+The difficulty in explaining general neural networks stems from feature entanglement; determining if a subset is sufficient requires treating the entire network as a black box. The structure of a NAM, $f(\mathbf{x}) = \beta_0 + \sum_i f_i(x_i)$, naturally breaks this entanglement—each feature $x_i$ contributes an independent term $f_i(x_i)$. Consequently, the impact of perturbing feature $i$ on the decision boundary can be analyzed independently for each component $f_i : \mathbb{R} \to \mathbb{R}$ and compared directly, without considering interactions. This is the root of the efficiency: reasoning occurs across $n$ one-dimensional functions instead of an $n$-dimensional joint space.
 
-2. **Parallelizable Preprocessing**:
+**2. Design Motivation: Stage 1 Parallel Interval Importance Sorting**
 
-    - Function: Performs interval analysis on each small univariate NAM component $h_i$.
-    - Mechanism: Computes the output range $[\underline{h}_i, \overline{h}_i]$ of each $h_i$ over its domain, along with finer interval partitions. Formal verification techniques (e.g., interval propagation, linear relaxation) are used to obtain tight upper and lower bounds. Preprocessing runtime is logarithmic in the required precision. The preprocessing of each $h_i$ is fully independent and can be parallelized.
-    - **Design Motivation**: The one-time preprocessing cost is traded for efficiency in subsequent explanation generation; verifying univariate networks is far easier than verifying multivariate ones.
+To determine which features to fix or discard, an importance ranking is required. Assuming a prediction $f(\mathbf{x}) = 1$ (i.e., $\beta_0 + \sum_i f_i(x_i) \ge 0$), the algorithm computes how much a perturbation pulls the prediction toward the decision boundary:
 
-3. **Logarithmic Verification Query Algorithm**:
+$$x_i^* = \arg\min_{\tilde{x}_i \in B_{\epsilon_p}(x_i)} f_i(\tilde{x}_i).$$
 
-    - Function: After preprocessing, generates cardinally-minimal explanations using $O(\log n)$ verification queries, where $n$ is the number of features.
-    - Mechanism: Uses the precomputed "influence" information of each feature and a binary search strategy to identify the minimal sufficient subset. The algorithm proceeds as follows:
-      a. Compute the "uncertainty contribution" of each feature $x_i$—i.e., the output variation range of $h_i$ when $x_i$ is not fixed.
-      b. Sort features by their uncertainty contribution.
-      c. Apply a greedy-plus-binary-search strategy to determine the minimal subset: iteratively remove features with the smallest contributions and verify whether the remaining subset remains sufficient.
-      d. Each verification step is completed efficiently via interval arithmetic.
-    - **Design Motivation**: Sorting combined with binary search reduces an exponential search problem to a logarithmic one.
+Instead of calculating exact values, the algorithm uses binary verification queries to refine interval bounds $[l_i, u_i]$ (where $l_i \le f_i(x_i^*) \le u_i$) until a total order is established based on relative deviations $\Delta l_i = f_i(x_i) - l_i$ and $\Delta u_i = f_i(x_i) - u_i$. This process is parallelizable and performed on small univariate networks, requiring only logarithmic queries relative to precision.
 
-4. **Formalization of Provable Guarantees**:
+**3. Novelty: Stage 2 Binary Selection on $O(\log n)$ Queries**
 
-    - Function: Ensures that generated explanations are mathematically correct—both cardinally-minimal and sufficient.
-    - Mechanism: "Sufficiency" is defined as follows: for a given input $\mathbf{x}$, fixing the features in the explanation set $S$ ensures that the model's predicted class remains unchanged regardless of the values taken by the remaining features. Under the additive NAM structure, sufficiency can be verified by checking whether $\sum_{i \notin S} (\overline{h}_i - \underline{h}_i)$ is smaller than the decision boundary margin.
-    - Provable guarantees mean that the returned explanation set is correct in the worst case—no adversarial example can invalidate the explanation.
-    - **Design Motivation**: Unlike the probabilistic guarantees of sampling-based methods, formal guarantees are necessary for safety-critical applications.
+Given the total order, the cardinally-minimal explanation must be a prefix of the "top-$m$ most important features" (Prop 1: replacing a feature in an explanation with a more important one remains sufficient). Thus, binary search is performed on the prefix length $m$: each step uses one sufficiency verification $\text{suff}(f, \mathbf{x}, \{F[1],\dots,F[m]\}, \epsilon_p)$ to check if the prefix is sufficient. This locates the shortest sufficient prefix in $O(\log n)$ queries, compared to $O(n)$ for naive greedy removal.
+
+**4. Function: Provable Worst-case Sufficiency Verification**
+
+"Sufficiency" is strictly defined here: once features in $S$ are fixed, **any values** taken by features outside $S$ within the perturbation ball will not change the prediction. This worst-case judgment is provided by neural network verifiers (using interval propagation or linear relaxation), yielding a provable yes/no answer. Unlike sampling methods like SHAP, this ensures no adversarial values can overturn the explanation.
 
 ### Loss & Training
 
-- This paper proposes an explanation method rather than a training method—no loss functions or training strategies are involved.
-- The algorithm operates on a pre-trained NAM model and constitutes post-hoc processing at inference time.
-- Preprocessing complexity: $O(n \cdot \text{poly}(\log(1/\epsilon)))$, where $\epsilon$ is the precision parameter.
-- Explanation generation complexity: $O(\log n)$ verification queries.
+Ours is a post-processing method and does not involve specific loss functions or training strategies. The complexity of Stage 1 is $O\!\big(\tfrac{n}{\rho}\log(\max_i \tfrac{\beta_i-\alpha_i}{\xi_i})\big)$ with $\rho$ processors, while Stage 2 requires $O(\log n)$ full-model verification queries.
 
 ## Key Experimental Results
 
@@ -98,57 +92,54 @@ The proposed algorithm consists of two phases:
 Comparison with existing subset-minimal explanation algorithms:
 
 | Method | Explanation Type | Verification Queries | Explanation Size | Computation Time |
-|--------|-----------------|---------------------|-----------------|-----------------|
-| Existing general-purpose algorithms | Subset-minimal | Exponential | Larger | Slower |
-| Proposed NAM-specific algorithm | Cardinally-minimal | Logarithmic | **Smallest** | **Fastest** |
+|------|---------|-----------|---------|---------|
+| Existing Universal Algorithms | Subset-minimal | Exponential | Larger | Slower |
+| **Ours (NAM-specific)** | Cardinally-minimal | Logarithmic | **Minimum** | **Fastest** |
 
-Key observation: The proposed algorithm solves a harder problem (cardinally-minimal vs. subset-minimal) while achieving superior performance in both speed and explanation quality.
+The results indicate that the proposed algorithm solves a harder task (cardinally-minimal vs. subset-minimal) while achieving better speed and explanation quality.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Remarks |
-|--------------|-----------|---------|
-| Direct search without preprocessing | Significantly more queries | Preprocessing contributes substantially |
-| Varying precision $\epsilon$ | Higher precision yields slower preprocessing but better explanation quality | Precision–efficiency trade-off exists |
-| Varying feature count $n$ | Query count grows logarithmically | Confirms theoretical logarithmic complexity |
-| Different NAM architectures | Consistent performance | Generality of the algorithm |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| No Preprocessing | Queries increase significantly | Significant contribution of preprocessing |
+| Different Precision $\epsilon$ | High precision is slower but improves quality | Trade-off between precision and efficiency |
+| Feature Count $n$ | Logarithmic growth in queries | Validates theoretical logarithmic complexity |
+| Different NAM Architectures | Consistent performance | Generalizability of the algorithm |
 
 ### Key Findings
 
-1. **Cardinally-minimal ≠ subset-minimal**: Cardinally-minimal explanations can be significantly smaller than subset-minimal ones, providing more refined information.
-2. **Formal vs. sampling-based explanations**: Sampling-based methods (e.g., permutation sampling in SHAP) yield substantially different—and incorrect—conclusions in certain cases.
-3. **NAM interpretability advantages extend beyond visualization**: Prior work on NAMs primarily relied on plotting the shape functions $h_i$; this paper demonstrates that NAMs also support efficient, formally provable explanations.
-4. **Practical implications**: In safety-critical domains (healthcare, finance), unreliable explanations can be more dangerous than no explanation at all.
+1. **Cardinal Minimality ≠ Subset Minimality**: Cardinally-minimal explanations can be significantly smaller than subset-minimal ones, providing more refined information.
+2. **Formal Explanations vs. Sampling Explanations**: Sampling methods (e.g., permutation sampling in SHAP) can yield different (and potentially incorrect) conclusions in certain cases.
+3. **NAM-specific Interpretability Advantage**: Beyond visualization, NAMs support efficient formally provable explanations.
+4. **Practical Significance**: In safety-critical sectors (medical, finance), unreliable explanations can be more dangerous than no explanations.
 
 ## Highlights & Insights
 
-1. **Qualitative change in computational complexity**: The reduction from exponential to logarithmic complexity represents not an incremental optimization but a fundamental breakthrough—enabled by deep exploitation of NAM structure.
-2. **"Solving a harder problem can be faster"**: Cardinally-minimal explanations are harder to find than subset-minimal ones, yet leveraging problem structure makes the former more efficient—an embodiment of the "structure implies efficiency" principle in algorithm design.
-3. **Productive intersection of theory and application**: Tools from the formal verification community (interval propagation, SMT solving, etc.) are productively integrated with machine learning explanation methods.
-4. **New understanding of NAM value**: NAMs are not only visually interpretable (via shape function plots) but also computationally interpretable in a formal sense.
-5. **Relevance to safety-critical deployment**: Provable explanations have important implications for AI regulatory compliance (e.g., the explainability requirements of the EU AI Act).
+1. **Qualitative Leap in Complexity**: Reducing complexity from exponential to logarithmic is a fundamental breakthrough made possible by the deep exploitation of NAM structures.
+2. **"Solving Harder Problems Faster"**: Cardinally-minimal tasks are harder, yet leveraging problem structure makes them more efficient—exemplifying "structure as efficiency."
+3. **Integration of Theory and Application**: Bridges formal verification tools (interval propagation, SMT solvers) with machine learning interpretability.
+4. **New Value of NAMs**: NAMs are not just visually interpretable; they are computationally more interpretable in a formal sense.
 
 ## Limitations & Future Work
 
-1. **Restricted to NAMs**: The algorithm relies critically on the additive structure and cannot be directly extended to general neural networks or models with feature interactions (e.g., Neural Additive Models with Interactions, NAM-I).
-2. **Expressiveness limitations of NAMs**: NAMs cannot model feature interactions, which limits model performance on certain tasks. Whether adopting a NAM is worthwhile depends on the trade-off between interpretability requirements and performance needs.
-3. **Selection of preprocessing precision**: The choice of $\epsilon$ affects both explanation quality and computational cost, yet the paper does not provide a method for automatically determining $\epsilon$.
-4. **High-dimensional settings**: When feature dimensionality is extremely large (e.g., image pixels), even logarithmic queries may be insufficient—though NAMs themselves are not suited for such high-dimensional inputs.
-5. **Extension to GA2M**: Extending the algorithm to GA2M models that incorporate pairwise feature interactions is a natural direction, but interaction terms would substantially increase complexity.
+1. **Scope Limitation**: The algorithm relies heavily on the additive structure and cannot be directly extended to general neural networks or models with feature interactions (e.g., NAM-I).
+2. **Expressivity Trade-off**: NAMs cannot model feature interactions, which may limit performance. The choice of NAM depends on the trade-offs between interpretability and performance.
+3. **Precision Selection**: The choice of $\epsilon$ for preprocessing affects quality and cost, but no automated method for determining $\epsilon$ is provided.
+4. **Extension to GA2M**: Extending the algorithm to Generalized Additive Models with interactions (GA2M) is a natural next step, though interactions will increase complexity.
 
 ## Related Work & Insights
 
-- **Explainable AI**: SHAP, LIME → reliability issues of post-hoc explanations → demand for provable explanations.
-- **Formal verification**: Neural network verification tools such as NNV, Marabou, and α-β-CROWN provide the technical foundation for this work.
-- **NAMs**: NAMs proposed by Agarwal et al. (2021), along with subsequent interpretable model families including NODE-GAM and EBM.
-- **Insights**: The idea of reducing explanation complexity by exploiting model structure is generalizable—for example, can dedicated provable explanation methods be designed for attention mechanisms?
+- **Interpretability**: SHAP/LIME face reliability issues; provable explanations provide a necessary alternative.
+- **Formal Verification**: NNV, Marabou, and $\alpha$-$\beta$-CROWN provide the technical foundation for this work.
+- **Heuristic vs. Provable**: This work encourages a shift from heuristic sampling toward worst-case guarantees in XAI.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — First algorithm achieving logarithmic complexity for cardinally-minimal explanations of NAMs; significant theoretical contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comparison with multiple baselines and demonstration of sampling method limitations, though dataset scale is limited.
-- **Writing Quality**: ⭐⭐⭐⭐ — Theoretical sections are rigorous, though notation density is high.
-- **Value**: ⭐⭐⭐⭐ — Important contributions to explainable AI and safety-critical applications, though scope is constrained by NAM applicability.
+- **Novelty**: ⭐⭐⭐⭐⭐ — First logarithmic complexity cardinally-minimal explanation algorithm for NAMs.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Compares well against baselines, though datasets are of limited scale.
+- **Writing Quality**: ⭐⭐⭐⭐ — Rigorous theory but high notation density.
+- **Value**: ⭐⭐⭐⭐ — Important for safety-critical AI despite being restricted to NAMs.
 
 <!-- RELATED:START -->
 
@@ -156,11 +147,11 @@ Key observation: The proposed algorithm solves a harder problem (cardinally-mini
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](../../NeurIPS2025/interpretability/fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
+- [\[CVPR 2026\] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition](../../CVPR2026/interpretability/hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition.md)
 - [\[NeurIPS 2025\] Additive Models Explained: A Computational Complexity Approach](../../NeurIPS2025/interpretability/additive_models_explained_a_computational_complexity_approach.md)
-- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](modal_logical_neural_networks_for_financial_ai.md)
-- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](../../ICML2026/interpretability/query_circuits_explaining_how_language_models_answer_user_prompts.md)
-- [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
+- [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](../../NeurIPS2025/interpretability/fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
+- [\[ICML 2026\] Beyond Additive Decompositions: Interpretability Through Separability](../../ICML2026/interpretability/beyond_additive_decompositions_interpretability_through_separability.md)
+- [\[ICLR 2026\] Estimating Dimensionality of Neural Representations from Finite Samples](estimating_dimensionality_of_neural_representations_from_finite_samples.md)
 
 </div>
 

@@ -2,95 +2,92 @@
 title: >-
   [Paper Note] NIMO: a Nonlinear Interpretable MOdel
 description: >-
-  [ICLR 2026][Interpretability][interpretable model] NIMO proposes a hybrid model $y = \sum_j x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$ that preserves the global interpretability of linear regression coefficient…
+  [ICLR 2026][Interpretability][interpretable model] NIMO proposes a hybrid model $y = \sum_j x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$. While maintaining the global interpretability of linear regression coefficients (via Mean Marginal Effects, MEM), it utilizes neural networks to provide instance-specific nonlinear corrections. The model uses a parameter elim
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "interpretable model"
-  - "marginal effects"
-  - "linear regression"
-  - "neural networks"
-  - "feature effects"
+  - ICLR 2026
+  - Interpretability
+  - interpretable model
+  - marginal effects
+  - linear regression
+  - neural networks
+  - feature effects
 date: 2026-05-08
-content_hash: be9a60ddbbae18cf
+content_hash: 091ba08d4916ae60
 ---
-
 # NIMO: a Nonlinear Interpretable MOdel
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.05059](https://arxiv.org/abs/2506.05059)  
-**Code**: N/A  
-**Area**: Interpretable Machine Learning
+**Code**: None  
+**Area**: Interpretable Machine Learning  
 **Keywords**: interpretable model, marginal effects, linear regression, neural networks, feature effects
 
 ## TL;DR
 
-NIMO proposes a hybrid model $y = \sum_j x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$ that preserves the global interpretability of linear regression coefficients (via mean marginal effects, MEM) while leveraging neural networks to provide instance-wise nonlinear corrections. Linear coefficients and network parameters are jointly optimized efficiently through parameter elimination.
+NIMO proposes a hybrid model $y = \sum_j x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$. While maintaining the global interpretability of linear regression coefficients (via Mean Marginal Effects, MEM), it utilizes neural networks to provide instance-specific nonlinear corrections. The model uses a parameter elimination method to efficiently optimize linear coefficients and network parameters jointly.
 
 ## Background & Motivation
 
-**Accuracy vs. Interpretability Dilemma**: Linear regression provides clear feature effect explanations through coefficients but has limited predictive power; neural networks are powerful predictors but lack intrinsic interpretability, being regarded as "black boxes."
+**Accuracy vs. Interpretability Dilemma**: Linear regression provides clear feature effect interpretations through coefficients but has limited predictive power; neural networks are powerful for prediction but lack inherent interpretability and are often viewed as "black boxes."
 
-**Unreliability of Post-hoc Explanations**: Post-hoc explanation methods such as SHAP and LIME depend on hyperparameter choices and do not guarantee fidelity.
+**Unreliability of Post-hoc Explanations**: Post-hoc methods like SHAP and LIME rely on hyperparameter choices and do not guarantee fidelity.
 
-**Limitations of Existing Hybrid Methods**: NAM cannot capture feature interactions; LassoNet has limited global interpretability; IMN predicts different coefficients for each instance, sacrificing global interpretability.
+**Limitations of Prior Work**: NAM cannot capture feature interactions; LassoNet has limited global interpretability; IMN predicts different coefficients for each instance, thereby losing global interpretability.
 
-**Importance of Feature Effects**: In high-stakes domains such as healthcare, it is necessary to answer both local questions ("how does an increase in age affect risk for this patient?") and global questions ("how does age affect risk overall?").
+**Importance of Feature Effects**: In high-risk fields such as healthcare, it is necessary to simultaneously address local questions ("How does increasing age affect the risk for this specific patient?") and global questions ("How does age overall affect risk?").
 
-**Optimization Challenges**: Jointly optimizing the linear coefficients $\boldsymbol{\beta}$ and neural network parameters $\mathbf{u}$ is non-trivial when the two are tightly coupled.
+**Key Challenge**: Joint optimization is non-trivial when linear coefficients $\boldsymbol{\beta}$ and neural network parameters $\mathbf{u}$ are tightly coupled.
 
 ## Method
 
 ### Overall Architecture
 
-NIMO extends linear regression by multiplying each feature's coefficient by a data-dependent nonlinear correction factor:
+NIMO starts from a standard linear regression but multiplies the coefficient of each feature by a nonlinear correction factor determined by "other features." This preserves the global interpretability of $\beta_j$ while gaining instance-wise flexibility. The complete model is formulated as $f(\mathbf{x}) = \beta_0 + \sum_{j=1}^d x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$. After standardizing input features, the linear term $x_j\beta_j$ is element-wise multiplied by the correction factor $1+g$ produced by the neural network for each feature, then summed to obtain the prediction $f(\mathbf{x})$. During training, instead of directly optimizing the coupled $\boldsymbol{\beta}$ and $\mathbf{u}$, it employs an outer loop using gradient descent to update $\mathbf{u}$ and an inner loop using a closed-form solution to refresh $\boldsymbol{\beta}$, iterating until convergence. The core goal of the design is to ensure $\beta_j$ strictly equals the Mean Marginal Effect ($\text{MEM}_j$), making "reading coefficients" equivalent to "reading global feature effects."
 
-$$f(\mathbf{x}) = \beta_0 + \sum_{j=1}^d x_j \beta_j (1 + g_{\mathbf{u}_j}(\mathbf{x}_{-j}))$$
-
-A key constraint is imposed: $g_{\mathbf{u}_j}(\mathbf{0}) = 0$ (data is standardized to zero mean), ensuring $\text{MEM}_j = \beta_j$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Standardized features x (mean = 0)"]
+    X --> GUARD["Coefficients as Global Explanations<br/>Correction only takes x_-j, constraint g(0)=0 → β_j=MEM_j"]
+    NET["Shared Network + Positional Encoding<br/>One set of parameters represents all d correction functions g_u"] --> GUARD
+    GUARD --> CORR["Feature-wise Correction Factor 1 + g_u(x_-j)"]
+    X --> LIN["Linear Term x_j · β_j"]
+    LIN --> SUM["Multiply and Sum: f(x)=β_0+Σ x_j β_j (1+g)"]
+    CORR --> SUM
+    SUM --> OPT["Parameter Elimination Optimization<br/>Outer GD updates u, Inner closed-form updates β + Adaptive Ridge"]
+    OPT -->|Iterative updates| NET
+    OPT --> GROUP["Group ℓ2 Regularization<br/>First layer column sparsity exposes interaction features"]
+```
 
 ### Key Designs
 
-1. **Excluding the Target Feature ($\mathbf{x}_{-j}$)**
+**1. Coefficients as Global Explanations: Fixing $\beta_j$ as MEM via Two Constraints**
 
-    - **Function**: The input to neural network $g_{\mathbf{u}_j}$ excludes the $j$-th feature.
-    - **Mechanism**: Feature $x_j$ contributes to predictions only through the linear term $\beta_j$, guaranteeing the interpretability of $\beta_j$.
-    - **Design Motivation**: If $g_j$ also depended on $x_j$, the marginal effect could not be expressed concisely in terms of $\beta_j$.
+This is the theoretical selling point of NIMO, guaranteed by two interlocking constraints. The first is **Excluding Self-Features**: If the correction network also took $x_j$ as input, the network would contribute additional sample-dependent terms when calculating the marginal effect of $x_j$, meaning $\beta_j$ could no longer independently represent the "effect of $x_j$ on $y$." NIMO forces each $g_{\mathbf{u}_j}$ to receive only $\mathbf{x}_{-j}$. Consequently, $x_j$ only enters through the linear term $x_j\beta_j$, while the nonlinearity only characterizes how interactions between features amplify or weaken the $j$-th coefficient. The second is the **Zero-Point Constraint** $g_{\mathbf{u}_j}(\mathbf{0})=0$: Excluding self-features is insufficient because the correction factor $1+g$ would still deviate from 1 at general points, causing marginal effects to drift with samples. NIMO standardizes data to zero mean and explicitly subtracts $g_{\mathbf{u}}(\mathbf{0})$ during forward propagation to force $g$ to be zero at the origin. Together, these constraints ensure that at the mean point $\mathbf{x}=\mathbf{0}$, the correction factor is exactly 1 and the model degrades to a pure linear form. Thus, the Mean Marginal Effect
 
-2. **Zero-point Constraint $g_{\mathbf{u}_j}(\mathbf{0}) = 0$**
+$$\text{MEM}_j = \frac{\partial f}{\partial x_j}\Big|_{\mathbf{x}=\mathbf{0}} = \beta_j$$
 
-    - **Function**: Enforced during the forward pass by subtracting $g_{\mathbf{u}}(\mathbf{0})$.
-    - **Mechanism**: Since data is standardized to zero mean, the constraint ensures the model reduces to a purely linear form at the mean.
-    - **Design Motivation**: $\text{MEM}_j = \frac{\partial f}{\partial x_j}\big|_{\mathbf{x}=\mathbf{0}} = \beta_j$.
+holds precisely. "Coefficients as global explanation" is no longer an approximation but an equality enforced by design.
 
-3. **Parameter Elimination**
+**2. Shared Network + Positional Encoding: Ensuring Scalability in High Dimensions**
 
-    - **Function**: Derives a closed-form solution $\hat{\boldsymbol{\beta}}(\mathbf{u}) = (B_\mathbf{u}^T B_\mathbf{u} + \lambda I)^{-1} B_\mathbf{u}^T \mathbf{y}$, which is substituted back so that only $\mathbf{u}$ needs to be optimized.
-    - **Mechanism**: A profile likelihood approach that eliminates $\boldsymbol{\beta}$ from the optimization.
-    - **Design Motivation**: Avoids the difficulty of jointly optimizing $\boldsymbol{\beta}$ and $\mathbf{u}$.
+A naive implementation would require an independent network $g_{\mathbf{u}_j}$ for each feature, which is infeasible as the number of parameters explodes when $d$ is large. NIMO uses a single shared network $g_\mathbf{u}$ and appends a positional encoding for each feature index as input. This reduces the model scale from growing linearly with $d$ to a constant level, which is critical for running in 50-dimensional settings while maintaining stability and ensuring interpretability constraints hold.
 
-4. **Adaptive Ridge Regression for Sparsity**
+**3. Parameter Elimination Optimization: Decoupling via Profile Likelihood with Closed-form Sparsity**
 
-    - **Function**: Replaces Lasso with adaptive ridge regression (Grandvalet, 1998).
-    - **Mechanism**: Each step admits a closed-form solution, and the method is equivalent to Lasso at the optimum.
-    - **Design Motivation**: Lasso lacks a closed-form solution and cannot be used with parameter elimination; adaptive ridge achieves sparsity while retaining a closed form.
+Directly optimizing $\boldsymbol{\beta}$ and network parameters $\mathbf{u}$ is unstable due to tight coupling. NIMO leverages the profile likelihood idea: When $\mathbf{u}$ is fixed, the sub-problem for $\boldsymbol{\beta}$ is a least squares problem with a ridge term, which has a closed-form solution:
 
-5. **Shared Network with Positional Encoding**
+$$\hat{\boldsymbol{\beta}}(\mathbf{u}) = (B_\mathbf{u}^T B_\mathbf{u} + \lambda I)^{-1} B_\mathbf{u}^T \mathbf{y}$$
 
-    - **Function**: A single shared $g_\mathbf{u}$ augmented with feature-index positional encodings replaces $d$ independent networks.
-    - **Design Motivation**: Maintaining $d$ independent networks is infeasible in high-dimensional settings.
+where $B_\mathbf{u}$ is the design matrix after absorbing the correction factors. Substituting this back, the objective function depends only on $\mathbf{u}$. The outer loop uses gradient descent to optimize $\mathbf{u}$, while the inner loop refreshes $\boldsymbol{\beta}$ at each step with the closed-form solution. The highly coupled joint optimization is thus decomposed into a clean nested structure. To achieve sparsity without breaking this structure (as Lasso/$\ell_1$ lacks a closed-form solution), NIMO uses Grandvalet (1998)'s adaptive ridge regression. It rewrites $\ell_1$ as a feature-wise reweighted $\ell_2$ penalty. Each step remains a ridge regression (preserving the closed-form), while it can be proven equivalent to Lasso at the optimum. It also supports sub-$\ell_1$ pseudo-norms to reduce over-shrinkage of large coefficients.
 
-6. **Group $\ell_2$ Regularization**
+**4. Group $\ell_2$ Regularization: Exposing Feature-level Interaction Sparsity**
 
-    - **Function**: Applies group $\ell_2$ regularization to each column of the first-layer weight matrix.
-    - **Design Motivation**: Encourages feature-level sparsity, providing an additional layer of interpretability.
+While linear coefficients indicate which features have linear effects, they do not show which features participate in interactions. NIMO applies a group $\ell_2$ penalty to each column (corresponding to an input feature) of the first weight matrix of the shared network. When a feature contributes nothing to any correction function, the entire column of weights is pressed to zero, effectively removing it from nonlinear interactions. This provides a second level of interpretability, allowing users to identify both linear effects and interaction structures.
 
 ### Loss & Training
 
-- Regression: $\|\mathbf{y} - B_\mathbf{u}\boldsymbol{\beta}\|^2 + \lambda \|\boldsymbol{\beta}\|_1$
-- Classification: Approximated as weighted least squares via IRLS.
-- Supports sub-$\ell_1$ pseudo-norms to mitigate Lasso's over-shrinkage.
-- Outer loop: gradient descent over $\mathbf{u}$; inner loop: closed-form update of $\boldsymbol{\beta}$.
+The objective for regression is least squares with a sparsity penalty $\|\mathbf{y} - B_\mathbf{u}\boldsymbol{\beta}\|^2 + \lambda \|\boldsymbol{\beta}\|_1$, where the $\ell_1$ term is approximated via adaptive ridge. For classification, IRLS (Iterative Reweighted Least Squares) approximates the log-likelihood as weighted least squares, allowing the same parameter elimination framework to be applied and naturally extending to GLMs like logistic regression.
 
 ## Key Experimental Results
 
@@ -98,72 +95,72 @@ A key constraint is imposed: $g_{\mathbf{u}_j}(\mathbf{0}) = 0$ (data is standar
 
 MSE on synthetic regression datasets:
 
-| Method | Setting 1 (5-dim) | Setting 2 (10-dim) | Setting 3 (50-dim) |
+| Method | Setting 1 (5D) | Setting 2 (10D) | Setting 3 (50D) |
 |------|---------|----------|----------|
 | Lasso | 3.164 | 3.340 | 13.122 |
 | NN | 1.109 | 1.482 | 13.718 |
 | NAM | 3.427 | 5.126 | 16.543 |
 | IMN | 0.137 | 1.188 | 6.308 |
 | LassoNet | 0.078 | 2.612 | 1.738 |
-| **NIMO** | **0.024** | **0.197** | **0.380** |
+| **Ours (NIMO)** | **0.024** | **0.197** | **0.380** |
 
-NIMO achieves substantial improvements across all settings, with a margin exceeding 4× in the 50-dimensional scenario.
+NIMO leads significantly across all settings, with an improvement of over 4x in the 50D scenario.
 
 ### Ablation Study
 
-| Component | Effect |
+| Component | Impact |
 |------|------|
-| Remove $g_j$ (pure linear) | Accurate coefficients but poor fit |
-| Allow $g_j$ to depend on $x_j$ | Coefficients become uninterpretable |
-| Remove zero-point constraint | MEM no longer equals $\beta_j$ |
-| Remove group $\ell_2$ | Unable to identify non-interacting features |
-| Remove sparsity | Zero coefficients not correctly recovered |
+| Removing $g_j$ (Pure Linear) | Accurate coefficients but poor fit |
+| Allowing $g_j$ to depend on $x_j$ | Coefficients become uninterpretable |
+| Removing zero-point constraint | MEM no longer equals $\beta_j$ |
+| Removing group $\ell_2$ | Failure to identify non-interacting features |
+| Removing sparsity | Failure to correctly recover zero coefficients |
 
-Toy example validation (3-dimensional):
+Toy example validation (3D):
 
-| Metric | NIMO | Lasso |
+| Metric | Ours (NIMO) | Lasso |
 |------|------|-------|
-| Recovery of $\beta_1=3, \beta_2=-3$ | Exact | Exact |
-| Identification of $\beta_3=0$ | Correctly zero | Non-zero |
-| Nonlinear interaction recovery | Matches ground truth | N/A |
+| $\beta_1=3, \beta_2=-3$ Recovery | Precise | Precise |
+| $\beta_3=0$ Identification | Correctly Zero | Non-zero |
+| Nonlinear Interaction Recovery | Matches Ground Truth | N/A |
 
 ### Key Findings
 
-- Remains robust under low data regimes (200 samples), owing to parameter elimination and regularization.
-- The network component does not interfere with the recovery of linear coefficients in purely linear settings.
-- MEM-based feature rankings are highly consistent with SHAP rankings, but NIMO's explanations are intrinsic rather than post-hoc approximations.
-- Predictive performance on the diabetes, Boston, and superconductivity datasets is comparable to or better than the best competing methods.
+- Robust under low data regimes (200 samples) thanks to parameter elimination and regularization.
+- In pure linear verification, the network component does not interfere with the recovery of linear coefficients.
+- MEM feature rankings are highly consistent with SHAP rankings, but NIMO is intrinsic rather than a post-hoc approximation.
+- Predictive performance on diabetes, Boston, and superconductivity datasets is comparable to or better than state-of-the-art methods.
 
 ## Highlights & Insights
 
-1. **Elegant Design**: Three carefully chosen constraints (excluding the target feature, the zero-point constraint, and standardization) guarantee MEM = $\beta$.
-2. **Ingenuity of Parameter Elimination**: The profile likelihood idea is applied effectively to mixed-model optimization.
-3. **Multi-level Interpretability**: Global interpretability via $\beta_j$, instance-level interpretability via $h_j(\mathbf{x})$, and interaction-level interpretability via sparsity patterns in the first-layer weights.
-4. **Natural Extension of GLMs**: Directly applicable to logistic regression and other GLMs via IRLS.
-5. **Adaptive Ridge as Lasso Equivalent**: A classical result is exploited to achieve sparsity while preserving closed-form solutions.
+1. **Elegant Design**: Three sophisticated constraints (excluding self-features, zero-point constraint, standardization) guarantee MEM = $\beta$.
+2. **Clever Parameter Elimination**: Application of profile likelihood ideas to hybrid model optimization.
+3. **Multi-level Interpretability**: Global via $\beta_j$, instance-wise via $h_j(\mathbf{x})$, and interaction-level via first-layer weight sparsity.
+4. **Natural Extension to GLMs**: Directly applicable to logistic regression and other GLMs via IRLS.
+5. **Adaptive Ridge Equivalency**: Utilizing classical results to achieve sparsity while maintaining closed-form solutions.
 
 ## Limitations & Future Work
 
-- Scalability to very high dimensions ($d > 1000$) has not been verified.
-- The model assumes nonlinear corrections arise from interactions among other features, neglecting intrinsic nonlinear effects of individual features.
-- Experiments are conducted on small-scale datasets (UCI); performance on large-scale data remains unknown.
-- Comparison with a broader range of interpretable methods, such as EBM and GAMI-Net, is lacking.
-- Currently limited to tabular data.
+- Scalability in extremely high dimensions ($d > 1000$) remains unverified.
+- Assumes nonlinear corrections come from interactions with other features, ignoring self-nonlinear effects.
+- Experimental dataset sizes are relatively small (UCI); performance on large-scale data is unknown.
+- Insufficient comparison with other interpretable methods like EBM or GAMI-Net.
+- Currently only supports tabular data.
 
 ## Related Work & Insights
 
-- **NAM (Agarwal et al., 2021)**: Additive model without interactions → NIMO supports interactions via $g_j(\mathbf{x}_{-j})$.
-- **LassoNet (Lemhadri et al., 2021)**: Achieves sparsity and nonlinearity but with limited global interpretability → NIMO achieves both.
-- **IMN (Kadra et al., 2024)**: Instance-wise coefficients sacrifice global interpretability → NIMO unifies global and local interpretability.
-- **Grandvalet (1998)**: Theoretical foundation for adaptive ridge as a Lasso equivalent → incorporated into NIMO's optimization.
-- **Inspiration**: The framework could be extended to time series (time-varying coefficients) and causal inference (heterogeneous treatment effect correction).
+- **NAM (Agarwal et al., 2021)**: Additive models without interactions → NIMO supports interactions via $g_j(\mathbf{x}_{-j})$.
+- **LassoNet (Lemhadri et al., 2021)**: Sparse + nonlinear but limited global interpretability → NIMO achieves both.
+- **IMN (Kadra et al., 2024)**: Instance-wise coefficients lose global meaning → NIMO unifies global and local.
+- **Grandvalet (1998)**: Theoretical basis for adaptive ridge equivalence to Lasso → integrated into NIMO optimization.
+- **Insight**: Can be extended to time series (time-varying coefficients) or causal inference (correction for heterogeneous treatment effects).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The model design is elegant; the theoretical guarantee MEM=$\beta$ is the core contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐ Synthetic and real-data experiments provide adequate validation, though dataset scales are small.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation is clear, toy examples are intuitive, and theory and experiments are tightly integrated.
-- **Value**: ⭐⭐⭐⭐ Provides a practical solution for "accurate and interpretable" modeling with strong application potential in high-stakes domains.
+- **Novelty**: ⭐⭐⭐⭐ The model design is clever; the theoretical guarantee of MEM=$\beta$ is the core innovation.
+- **Experimental Thoroughness**: ⭐⭐⭐ Synthetic and real-world experiments are well-validated, though data scale is small.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear motivation, intuitive toy examples, and strong integration of theory and experiments.
+- **Value**: ⭐⭐⭐⭐ Provides a practical solution for "accurate yet interpretable" modeling with high potential in high-risk domains.
 
 <!-- RELATED:START -->
 
@@ -171,11 +168,11 @@ Toy example validation (3-dimensional):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Nonlinear Causal Reductions to Explain Reinforcement Learning Policies](learning_nonlinear_causal_reductions_to_explain_reinforcement_learning_policies.md)
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](../../ICML2026/interpretability/prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
 - [\[ACL 2026\] AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations](../../ACL2026/interpretability/adaptivek_complexity-driven_sparse_autoencoders_for_interpretable_language_model.md)
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
-- [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)
-- [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
+- [\[ICLR 2026\] Patronus: Interpretable Diffusion Models with Prototypes](patronus_interpretable_diffusion_models_with_prototypes.md)
 
 </div>
 

@@ -2,120 +2,122 @@
 title: >-
   [Paper Note] PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression
 description: >-
-  [ICLR 2026][Interpretability][Shapley values] This paper proposes PolySHAP, which extends KernelSHAP's linear approximation to higher-order polynomial regression to capture nonlinear feature interactions…
+  [ICLR 2026][Interpretability][KernelSHAP] This paper proposes PolySHAP, which improves the estimation accuracy of Shapley values by extending the linear approximation of KernelSHAP to higher-order polynomial regression to capture non-linear feature interactions. It theoretically proves that paired sampling is equivalent to second-order PolySHAP, providing the
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Shapley values"
-  - "Explainable AI"
-  - "Polynomial regression"
-  - "Feature interactions"
-  - "KernelSHAP"
+  - ICLR 2026
+  - Interpretability
+  - KernelSHAP
 date: 2026-05-08
-content_hash: a845fe31b75d3254
+content_hash: 97c0504cf55f500a
 ---
-
 # PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.18608](https://arxiv.org/abs/2601.18608)  
 **Code**: [GitHub](https://github.com/FFmgll/PolySHAP)  
-**Area**: Interpretability
-**Keywords**: Shapley values, Explainable AI, Polynomial regression, Feature interactions, KernelSHAP
+**Area**: Explainability  
+**Keywords**: Shapley Values, Explainable AI, Polynomial Regression, Feature Interactions, KernelSHAP
 
 ## TL;DR
 
-This paper proposes PolySHAP, which extends KernelSHAP's linear approximation to higher-order polynomial regression to capture nonlinear feature interactions, thereby improving the estimation accuracy of Shapley values. The paper further provides a theoretical proof that paired sampling is equivalent to second-order PolySHAP, offering the first rigorous explanation for the superior performance of this widely used heuristic.
+This paper proposes PolySHAP, which improves the estimation accuracy of Shapley values by extending the linear approximation of KernelSHAP to higher-order polynomial regression to capture non-linear feature interactions. It theoretically proves that paired sampling is equivalent to second-order PolySHAP, providing the first explanation for the superior performance of the paired sampling heuristic.
 
 ## Background & Motivation
 
-Shapley values are among the most fundamental game-theoretic tools in explainable AI for quantifying individual feature contributions to model predictions. However, exact computation requires $2^d$ game evaluations for a model with $d$ features, making it computationally prohibitive. KernelSHAP circumvents this exponential cost by approximating the game function $\nu$ with a linear function, but such linear approximations are inherently unable to capture nonlinear interaction effects among features, limiting estimation accuracy.
+Shapley values are a central game-theoretical tool in explainable AI (XAI) for quantifying feature contributions to model predictions. However, for a model with $d$ features, exact calculation requires $2^d$ game evaluations, which is computationally prohibitive. KernelSHAP avoids exponential costs by approximating the game function $\nu$ as a linear function, but linear approximation inherently fails to capture non-linear interaction effects between features, limiting estimation accuracy.
 
-Furthermore, paired sampling — a widely adopted heuristic strategy that substantially improves KernelSHAP's estimation quality — has lacked a satisfactory theoretical explanation for its effectiveness. This paper provides a unified theoretical framework and practical solution to both problems through the lens of polynomial regression.
+Furthermore, paired sampling is a widely used heuristic that significantly improves KernelSHAP estimation quality, though the theoretical mechanism behind its performance has not been fully understood. This paper provides a unified theoretical framework and practical solution for these two issues from the perspective of polynomial regression.
 
 ## Method
 
 ### Overall Architecture
 
-The core idea of PolySHAP is to extend KernelSHAP's linear approximation to higher-order polynomials, incorporating interaction terms to capture nonlinear feature relationships. The procedure is as follows:
-1. Define an interaction frontier $\mathcal{I}$ specifying the set of interaction terms to be modeled.
-2. Fit the polynomial via weighted least squares.
-3. Convert the PolySHAP representation back to Shapley values using a theoretical formula.
+PolySHAP replaces the linear game approximation of KernelSHAP with a higher-order polynomial containing interaction terms. It first specifies an interaction frontier $\mathcal{I}$ (the set of feature combinations to be explicitly modeled), fits polynomial coefficients via weighted least squares, and then maps these coefficients back to efficiency-satisfying Shapley values using a closed-form formula. The method maintains the sampling-regression framework of KernelSHAP while extending the regression feature space from single features to interaction terms.
 
 ### Key Designs
 
-1. **PolySHAP Interaction Representation**: The game function is approximated by a polynomial containing interaction terms. The PolySHAP representation $\phi^{\mathcal{I}} \in \mathbb{R}^{d'}$ (where $d' = d + |\mathcal{I}|$) is obtained by solving a weighted least squares problem:
+**1. PolySHAP Interaction Representation: Replacing Linear with Polynomial Regression**
+
+The bottleneck of KernelSHAP is its use of a linear function to fit the game $\nu$, discarding all feature interactions and capturing only "independent" contributions. PolySHAP extends the regression target to a polynomial $\phi^{\mathcal{I}} \in \mathbb{R}^{d'}$ (where $d' = d + |\mathcal{I}|$). It retains $d$ single-feature terms and explicitly incorporates feature combination terms specified in the interaction frontier $\mathcal{I}$, performing a constrained weighted least squares fit:
+
 $$\phi^{\mathcal{I}}[\nu] := \arg\min_{\phi \in \mathbb{R}^{d'}: \langle\phi,\mathbf{1}\rangle = \nu(D)} \sum_{S \subseteq D} \mu(S)\left(\nu(S) - \sum_{T \in D \cup \mathcal{I}} \phi_T \prod_{j \in T} \mathbb{1}[j \in S]\right)^2$$
-The PolySHAP representation is then converted to Shapley values via Theorem 4.3: $\phi_i^{SV}[\nu] = \phi_i^{\mathcal{I}} + \sum_{S \in \mathcal{I}: i \in S} \frac{\phi_S^{\mathcal{I}}}{|S|}$. **Design Motivation**: A more expressive polynomial approximation of the game function yields more accurate Shapley value estimates.
 
-2. **Paired Sampling Equivalence Theorem (Theorem 5.1)**: The paper proves that under paired sampling (simultaneously sampling $S$ and $D \setminus S$), the output of KernelSHAP is **exactly equal** to that of second-order PolySHAP (2-PolySHAP), meaning that paired KernelSHAP implicitly captures all second-order interactions. This provides the first theoretical explanation for the substantial accuracy gains from paired sampling. **Design Motivation**: To supply a rigorous theoretical foundation for the paired sampling heuristic prevalent in practice.
+The fitted coefficients are not directly the Shapley values; the contribution of interaction terms $\phi_S^{\mathcal{I}}$ is blended. Following Theorem 4.3, these are distributed back to each participating feature: $\phi_i^{SV}[\nu] = \phi_i^{\mathcal{I}} + \sum_{S \in \mathcal{I}: i \in S} \frac{\phi_S^{\mathcal{I}}}{|S|}$. Since polynomials have higher expressive power than linear models and fit $\nu$ more accurately, the resulting Shapley estimates have lower error.
 
-3. **$k$-Additive Interaction Frontier**: The frontier $\mathcal{I}_{\leq k} = \{S \subseteq D : 2 \leq |S| \leq k\}$ is defined to progressively include higher-order interaction terms ($k$-PolySHAP). The case $k=1$ reduces to KernelSHAP, while $k=2$ incorporates all pairwise interactions. For high-dimensional settings, a **partial interaction frontier** $\mathcal{I}_\ell$ is introduced to selectively include a subset of higher-order terms when the computational budget does not support a full $k$-th order expansion.
+**2. Paired Sampling Equivalence Theorem: Explaining a Long-standing Heuristic**
 
-4. **Leverage Score Sampling**: A leverage score sampling strategy is adopted, drawing subsets according to leverage scores rather than Shapley weights. Under a budget of $m = O(d' \log(d'/\delta) + d'/({\epsilon\delta}))$, this guarantees approximation quality with probability $1-\delta$.
+Paired sampling (sampling a subset $S$ and its complement $D \setminus S$ simultaneously) has been an empirical trick for enhancing KernelSHAP. Theorem 5.1 provides the answer: under paired sampling, the output of KernelSHAP is **exactly equal** to 2-PolySHAP. This means "pairing" implicitly incorporates all second-order interactions into the estimate, equivalent to performing second-order polynomial regression. This theoretically identifies the source of paired sampling gains and implies that if paired sampling is already used, additional gains from PolySHAP only emerge starting from third-order interactions.
+
+**3. $k$-additive Interaction Frontier: Adding Terms by Budget**
+
+Interaction terms cannot be added without limit, as the number of $k$-th order interactions explodes as $\binom{d}{k}$. PolySHAP uses the interaction frontier $\mathcal{I}$ to define which combinations to model explicitly. It defines a $k$-additive frontier $\mathcal{I}_{\leq k} = \{S \subseteq D : 2 \leq |S| \leq k\}$, corresponding to $k$-PolySHAP. For $k=1$, it reduces to KernelSHAP; $k=2$ includes all second-order interactions. To handle high-dimensional cases, the paper introduces a **partial interaction frontier** $\mathcal{I}_\ell$, selectively including higher-order terms when the budget cannot support the full $k$-th order.
+
+**4. Leverage Score Sampling: Guaranteeing Approximations in Expanded Spaces**
+
+As the feature space grows from $d$ to $d'$, using standard Shapley weights for sampling can lead to poor condition numbers for the regression matrix. PolySHAP employs leverage score sampling, where sampling probabilities are determined by the influence of each subset on the least squares solution. It is proven that with a subset budget $m = O(d' \log(d'/\delta) + d'/({\epsilon\delta}))$, an $\epsilon$-level approximation quality can be guaranteed with probability $1-\delta$.
 
 ### Loss & Training
 
-PolySHAP solves a constrained weighted least squares problem, where the constraint enforces the efficiency property (Shapley values sum to $\nu(D)$). The constrained problem is reduced to an unconstrained one via the projection matrix $\mathbf{P}_{d'}$. A border trick is employed to enumerate small-cardinality subsets exhaustively rather than by sampling.
+A constrained weighted least squares problem is solved, where the constraint $\langle\phi,\mathbf{1}\rangle = \nu(D)$ corresponds to the efficiency property of Shapley values. Implementation uses a projection matrix $\mathbf{P}_{d'}$ to convert the constrained problem into an unconstrained closed-form solution. A "border trick" is used to enumerate very small/large subsets directly rather than sampling, reducing estimation variance on small subsets.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Experiments are conducted on 15 diverse explanation games spanning tabular, image, and language domains, with $d$ ranging from 8 to 101, comparing PolySHAP against multiple baselines.
+Evaluations across 15 different attribution games (tabular, image, language; $d$ from 8 to 101) compare PolySHAP against several baselines.
 
-| Dataset/Game | Metric | PolySHAP (3rd-order) | KernelSHAP | Gain |
-|---|---|---|---|---|
-| Housing ($d=8$) | MSE | Best | Baseline | Substantial reduction |
-| Adult ($d=14$) | MSE | Best | Baseline | Substantial reduction |
-| Estate ($d=15$) | MSE | Best | Baseline | Substantial reduction |
-| Cancer ($d=30$) | MSE | Best | Baseline | Substantial reduction |
-| CG60 ($d=60$) | MSE | Marginal improvement | Baseline | Limited gain (high-dim.) |
+| Dataset/Game | Metric | PolySHAP (3rd order) | KernelSHAP | Gain |
+|-------------|------|---------------|------------|------|
+| Housing ($d=8$) | MSE | Best | Baseline | Significant reduction in MSE |
+| Adult ($d=14$) | MSE | Best | Baseline | Significant reduction in MSE |
+| Estate ($d=15$) | MSE | Best | Baseline | Significant reduction in MSE |
+| Cancer ($d=30$) | MSE | Best | Baseline | Significant reduction in MSE |
+| CG60 ($d=60$) | MSE | Slight Improvement | Baseline | Small gain (High-dim limit) |
 
 ### Ablation Study
 
-| Configuration | Key Metric (MSE) | Notes |
-|---|---|---|
+| Configuration | Key Metric (MSE) | Description |
+|------|---------------|------|
 | 1-PolySHAP (= KernelSHAP) | Baseline | No interaction terms |
-| 2-PolySHAP | Significant improvement | All pairwise interactions included |
-| 2-PolySHAP (50%) | Moderate improvement | Only 50% of pairwise interactions |
-| 3-PolySHAP | Best | Third-order interactions; largest gains in low-dim. settings |
-| Paired KernelSHAP vs. Paired 2-PolySHAP | Identical | Empirically validates Theorem 5.1 |
-| Paired 3-PolySHAP vs. Paired 4-PolySHAP | Nearly identical | Suggests analogous equivalences at higher orders |
+| 2-PolySHAP | Significant Improvement | All 2nd-order interactions included |
+| 2-PolySHAP (50%) | Medium Improvement | 50% of 2nd-order interactions included |
+| 3-PolySHAP | Best | 3rd-order added; highest gain in low-dim |
+| Paired KernelSHAP vs Paired 2-PolySHAP | Identical | Empirical validation of Theorem 5.1 |
+| Paired 3-PolySHAP vs Paired 4-PolySHAP | Almost Identical | Suggests higher-order equivalence relations |
 
 ### Key Findings
 
-- Incorporating any number of interaction terms consistently improves Shapley value approximation quality.
-- Under paired sampling, KernelSHAP automatically attains 2-PolySHAP performance; thus, the practical gains of PolySHAP over paired KernelSHAP begin to manifest from third-order interactions onward.
-- In high-dimensional settings ($d \geq 60$), the number of feasible third-order interaction terms is limited, resulting in smaller gains.
-- RegressionMSR is the only baseline competitive with PolySHAP, but it relies on XGBoost tree models and exhibits instability on certain games.
+- Inclusion of any number of interaction terms improves Shapley value approximation quality.
+- Under paired sampling, KernelSHAP automatically achieves 2-PolySHAP performance; thus, gains from PolySHAP in practice begin with third-order interactions.
+- In high-dimensional scenarios ($d \geq 60$), the number of third-order terms is limited, leading to smaller gains.
+- RegressionMSR is the only baseline comparable to PolySHAP but relies on XGBoost and shows instability in certain games.
 
 ## Highlights & Insights
 
-- **Significant theoretical contribution**: The equivalence between paired sampling and 2-PolySHAP is an elegant theoretical result that resolves a long-standing practical puzzle.
-- **Naturally elegant methodology**: The extension from linear to polynomial approximation is conceptually clean and preserves consistency guarantees.
-- **Unified perspective**: KernelSHAP, Faith-SHAP, and $k_{ADD}$-SHAP are subsumed within a single framework.
-- **Projection lemma**: The technical projection lemma (Lemma A.1) plays a central role in the proofs of multiple theorems.
+- **Major Theoretical Contribution**: The discovery that paired sampling is equivalent to 2-PolySHAP is an elegant result that resolves long-standing practical confusion.
+- **Natural and Elegant Method**: The transition from linear to polynomial regression is intuitive and maintains consistency guarantees.
+- **Unified Perspective**: Incorporates methods like KernelSHAP, Faith-SHAP, and $k_{ADD}$-SHAP into a single framework.
+- **Projection Lemma**: The technical projection lemma (Lemma A.1) plays a critical role in proving multiple theorems.
 
 ## Limitations & Future Work
 
-- In high-dimensional settings, the number of third-order interaction combinations grows as $\binom{d}{3}$, severely limiting the number of feasible interaction terms.
-- The conjecture that paired $k$-PolySHAP is equivalent to $(k+1)$-PolySHAP (for odd $k$) remains unproven.
-- The interaction frontier selection is generic (adding all terms up to a given order) and does not exploit problem-specific interaction structure.
-- Runtime analysis remains largely theoretical; efficiency in large-scale practical applications warrants further investigation.
+- Combinatorial explosion ($\binom{d}{3}$) in high-dimensional settings limits the number of inclusion terms.
+- Conjecture that paired $k$-PolySHAP is equivalent to $(k+1)$-PolySHAP for odd $k$ remains unproven.
+- Selection of the interaction frontier is handled generally; it does not yet utilize problem-specific interaction structures.
+- Practical efficiency in large-scale applications requires further validation beyond theoretical time analysis.
 
 ## Related Work & Insights
 
-- Compared to RegressionMSR (Witter et al., 2025): PolySHAP maintains consistency without requiring an additional regression adjustment step.
-- Relationship to $k_{ADD}$-SHAP (Pelegrina et al., 2023): PolySHAP simplifies and generalizes its convergence proofs.
-- Future directions: Interaction detection methods (e.g., Tsang et al., 2020) or graph-structural information could be leveraged to construct more informed interaction frontiers.
+- Comparison with RegressionMSR (Witter et al., 2025): PolySHAP maintains consistency without extra regression adjustment steps.
+- Relationship with $k_{ADD}$-SHAP (Pelegrina et al., 2023): PolySHAP simplifies and generalizes its convergence proofs.
+- Insight: Future work could combine interaction detection methods (e.g., Tsang et al., 2020) or graph structures to build smarter interaction frontiers.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The polynomial extension is natural but not groundbreaking; the paired sampling equivalence theorem is the standout contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Fifteen games covering tabular, image, and language domains with comprehensive baseline comparisons.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Theoretical derivations are clear, figures are intuitive, and the narrative is well-structured.
-- **Value**: ⭐⭐⭐⭐ Represents a substantive advance in Shapley value estimation for XAI; the theoretical explanation of paired sampling carries broad implications.
+- Novelty: ⭐⭐⭐⭐ The polynomial extension is natural; the paired sampling equivalence theorem is the highlight.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 15 games across tabular/image/language with comprehensive baseline comparisons.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical derivations, intuitive charts, and smooth narrative.
+- Value: ⭐⭐⭐⭐ Substantially advances Shapley estimation in XAI; deep significance in explaining paired sampling.
 
 <!-- RELATED:START -->
 
@@ -123,11 +125,11 @@ Experiments are conducted on 15 diverse explanation games spanning tabular, imag
 
 ## Related Papers
 
+- [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
-- [\[ICML 2026\] A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments](../../ICML2026/interpretability/a_deep_learning_model_of_mental_rotation_informed_by_interactive_vr_experiments.md)
 - [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](../../NeurIPS2025/interpretability/towards_scaling_laws_for_symbolic_regression.md)
+- [\[ICML 2026\] A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments](../../ICML2026/interpretability/a_deep_learning_model_of_mental_rotation_informed_by_interactive_vr_experiments.md)
 - [\[ICML 2026\] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression](../../ICML2026/interpretability/breaking_the_simplification_bottleneck_in_amortized_neural_symbolic_regression.md)
-- [\[ICML 2026\] MAAT: Knowledge-Guided Kernel Regression for Heterogeneous Partially Observed State Reconstruction](../../ICML2026/interpretability/knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
 
 </div>
 

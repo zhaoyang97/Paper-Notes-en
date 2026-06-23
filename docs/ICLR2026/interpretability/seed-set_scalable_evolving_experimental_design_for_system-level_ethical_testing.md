@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing
 description: >-
-  [Interpretability] This paper proposes SEED-SET, a framework that formulates ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem…
+  [ICLR 2026][Interpretability][Ethical Testing] The SEED-SET framework is proposed to model the ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem. By integrating objective metrics and subjective value judgments, it efficiently generates test cases with high ethical alignment under a limited budget.
 tags:
-  - "Interpretability"
+  - ICLR 2026
+  - Interpretability
+  - Ethical Testing
+  - Bayesian Experimental Design
+  - Gaussian Process
+  - LLM Evaluator
+  - Autonomous Systems
 date: 2026-05-08
-content_hash: eb5a16dd6330ce2d
+content_hash: 62aee03779e0a17e
 ---
-
 # SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing
 
 ## Basic Information
@@ -16,157 +21,150 @@ content_hash: eb5a16dd6330ce2d
 - **Conference**: ICLR 2026
 - **arXiv**: [2603.01630](https://arxiv.org/abs/2603.01630)
 - **Code**: [Project Page](https://anjaliparashar.github.io/seed-site/)
-- **Area**: AI Safety / Autonomous System Evaluation
+- **Area**: AI Safety / Autonomous Systems Evaluation
 - **Keywords**: Ethical Testing, Bayesian Experimental Design, Gaussian Process, LLM Evaluator, Autonomous Systems
 
 ## TL;DR
 
-This paper proposes SEED-SET, a framework that formulates ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem, jointly integrating objective metrics and subjective value judgments to efficiently generate test cases with high ethical alignment under limited evaluation budgets.
+The SEED-SET framework is proposed to model the ethical evaluation of autonomous systems as a hierarchical Bayesian experimental design problem. By integrating objective metrics and subjective value judgments, it efficiently generates test cases with high ethical alignment under a limited budget.
 
 ## Background & Motivation
 
-### State of the Field
-Autonomous systems (e.g., drones, power grid distribution) are increasingly deployed in high-stakes domains, making ethical alignment evaluation critically important. Ethical assessment faces three major challenges:
+### Problem Background
+The increasing deployment of autonomous systems (UAVs, power grid allocation, etc.) in high-risk domains makes ethical alignment evaluation critical. However, ethical evaluation faces three major challenges:
 
-**Measurement difficulty**: Ethical behaviors (fairness, social acceptability) lack ground-truth labels;
+**Measurement Difficulty**: Ethical behaviors (fairness, social acceptance) lack ground-truth labels;
 
-**Subjectivity dependence**: Value alignment varies across stakeholders and evolves over time, requiring continuous revision of static benchmarks;
+**Subjective Dependence**: Value alignment varies by stakeholder and evolves over time; static benchmarks require constant revision;
 
-**Evaluation cost**: Real-system evaluation is budget-constrained, making large-scale human feedback collection infeasible.
+**Costly Evaluation**: Evaluation of real-world systems is budget-constrained, making large-scale human feedback collection infeasible.
 
 ### Limitations of Prior Work
-- Rule-based ethical benchmarks rely on predefined criteria and lack specificity;
-- RL/RLHF-based methods assume abundant simulation or expert annotations, requiring large sample sizes;
-- Preference-based methods and large-scale human studies focus on only a single dimension.
+- Rule-based ethical benchmarks rely on established guidelines and lack specificity;
+- Methods based on RL/RLHF assume sufficient simulation or expert annotation, requiring large sample sizes;
+- Preference-based methods and large-scale human studies focus only on a single dimension.
 
 ### Mechanism
-The framework jointly models **objective metrics** (e.g., fire damage, grid cost) and **subjective preferences** (stakeholder ethical judgments), efficiently generating test scenarios via hierarchical Gaussian processes and Bayesian experimental design.
+Objective metrics (e.g., fire loss, power grid costs) and subjective preferences (stakeholder ethical judgments) are modeled simultaneously. Test scenarios are efficiently generated using hierarchical Gaussian Processes and Bayesian experimental design.
 
 ## Method
 
 ### Overall Architecture
 
-SEED-SET (Scalable Evolving Experimental Design for System-level Ethical Testing) comprises three components:
+SEED-SET addresses the problem of "how to automatically generate test scenarios that best expose ethical alignment issues for an autonomous system (UAV, power grid scheduling, etc.) without ground-truth ethical labels under a finite budget." It decomposes this ambiguous problem into a closed loop: first, a Hierarchical Variational Gaussian Process (HVGP) splits the ethical compliance function into "objective metrics" and "subjective preferences" layers, fitting surrogate models for each. Then, a joint acquisition function, which balances exploration and exploitation in a single expression, selects the next most valuable scenario from the scenario space. An LLM acts as a stakeholder to provide pairwise preference judgments between the chosen scenario and the current best scenario. The resulting preference feedback is used to update the two-level Gaussian Processes. This loop iterates until the evaluation budget is exhausted, gradually evolving a set of test cases with high ethical alignment.
 
-1. **Hierarchical Variational Gaussian Process (HVGP)** as the surrogate model
-2. **Joint acquisition strategy** for adaptive test case generation
-3. **LLM agent** as a substitute for human preference evaluation
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    X["Scenario Space X<br/>(Autonomous System Test Parameters)"] --> OBJ
+    subgraph HVGP["Objective-Subjective Layer Decomposition → Hierarchical Variational Gaussian Process (HVGP)"]
+        direction TB
+        OBJ["Objective GP: x→y<br/>Fitting Objective Metrics"] --> SUBJ["Subjective GP: y→z<br/>Learning Ethical Utility via Pairwise Preferences"]
+    end
+    SUBJ --> ACQ["Joint Acquisition Strategy V(x)<br/>Objective Exploration + Subjective Understanding + Preference Exploitation"]
+    ACQ -->|"Budget not exhausted, select next scenario"| LLM["LLM Surrogate Evaluator<br/>GPT-4o provides pairwise preferences"]
+    LLM -->|"Preference feedback updates two-level GP"| OBJ
+    ACQ -->|"Budget exhausted"| OUT["High Ethical Alignment<br/>Test Case Set"]
+```
 
-### 1. Problem Formulation
+### Key Designs
 
-Given a black-box autonomous system $\mathcal{S}_\pi$ and scenario space $\mathcal{X}$, the ethical compliance function is decomposed into:
+**1. Objective-Subjective Two-Layer Decomposition: Anchoring Ground-Truth-Free Ethical Judgments to Observable Behaviors**
 
-- **Objective layer**: $f_{\text{obj}}: \mathcal{X} \to \mathcal{Y}$, mapping scenario parameters to measurable metrics (cost, resilience, etc.)
-- **Subjective layer**: $f_{\text{subj}}: \mathcal{Y} \to \mathbb{R}$, producing an ethical utility score from objective metrics
+Ethical behavior itself has no ground-truth; learning an end-to-end mapping $f(x)\to z$ directly is neither interpretable nor sample-efficient. SEED-SET decomposes the ethical compliance function of a black-box system $\mathcal{S}_\pi$ over scenario space $\mathcal{X}$ into two layers: the objective layer $f_{\text{obj}}:\mathcal{X}\to\mathcal{Y}$ maps scenario parameters to measurable metrics (fire loss, grid cost, resilience, etc.), and the subjective layer $f_{\text{subj}}:\mathcal{Y}\to\mathbb{R}$ derives ethical utility scores from these observable metrics. Consequently, ethical preferences are always grounded in "what the system actually did," achieving interpretability and compressing the required number of evaluations by leveraging the dependency of subjective utility on objective metrics.
 
-### 2. Hierarchical Variational Gaussian Process (HVGP)
+**2. Hierarchical Variational Gaussian Process (HVGP): Employing Two-Stage VGPs to Model Dual-Level Mappings**
 
-Ethical evaluation is modeled as a two-level VGP hierarchy:
+Corresponding to the above decomposition, HVGP links two Variational Gaussian Processes to implement the two-layer mapping as a learnable model. The Objective GP learns the surrogate model $g:x\to y$ to predict objective metrics, with a posterior of the form $p(f(x)\mid\mathcal{D})=\mathcal{N}(\mu(x),k(x,x'))$. The Subjective GP learns the preference model $h:y\to z$, mapping objective metrics to subjective scores. Since absolute ground-truth for subjective scores is unavailable, this stage is trained using pairwise preferences—an oracle $\mathcal{T}:(y,y')\to\{1,2\}$ only needs to compare which of two scenarios is better, converting "inability to score" into "ability to compare," thus making the Subjective GP learnable without explicit labels.
 
-**Objective GP**: Learns a surrogate model $g: x \to y$ predicting objective metrics for a given scenario
-$$
-p(f(x)|\mathcal{D}) = \mathcal{N}(\mu(x), k(x, x'))
-$$
+**3. Joint Acquisition Strategy: A Single Expression Driving Objective Exploration, Subjective Understanding, and Preference Exploitation**
 
-**Subjective GP**: Learns a preference model $h: y \to z$ mapping objective metrics to subjective ethical scores
-
-Since subjective evaluations lack ground-truth labels, **pairwise preference elicitation** is adopted: oracle $\mathcal{T}: (y, y') \to \{1, 2\}$ compares the ethical quality of two scenarios.
-
-The hierarchical structure offers **two key advantages**:
-- **Interpretability**: Ethical preferences are anchored to observable system behaviors
-- **Data efficiency**: Exploiting the dependence of subjective on objective layers reduces the number of required evaluations
-
-### 3. Joint Acquisition Strategy
-
-The core innovation—an acquisition function that simultaneously balances objective exploration and subjective exploitation:
+Given a limited testing budget, the most valuable scenarios must be selected at each step. The acquisition function designed for SEED-SET integrates three requirements into one formula:
 
 $$
-V(x) = \underbrace{I(g_x; y|\mathcal{D})}_{\text{Objective information gain}} + \mathbb{E}_{q_\phi(y|x)}\left[\underbrace{I(h_y; z|\mathcal{D})}_{\text{Subjective information gain}} + \underbrace{\mathbb{E}_{q_\psi(h_y)}[h_y]}_{\text{Preference exploitation}}\right]
+V(x) = \underbrace{I(g_x; y\mid\mathcal{D})}_{\text{Objective Information Gain}} + \mathbb{E}_{q_\phi(y\mid x)}\left[\underbrace{I(h_y; z\mid\mathcal{D})}_{\text{Subjective Information Gain}} + \underbrace{\mathbb{E}_{q_\psi(h_y)}[h_y]}_{\text{Preference Exploitation}}\right]
 $$
 
-Roles of the three terms:
-- **First term**: Reduces uncertainty in the objective metric space (scenario exploration)
-- **Second term**: Improves estimation of the subjective utility function (preference learning)
-- **Third term**: Directs search toward regions of high ethical utility (preference exploitation)
+The first term is the Objective Information Gain, reducing uncertainty in the objective metric space and encouraging the testing of unseen scenarios. The second term is the Subjective Information Gain, improving the estimation of the subjective utility function to help the model "understand" preferences. The third term is Preference Exploitation, pushing sampling toward regions with known high ethical utility to capitalize on learned preferences. All three are essential—exploration alone wastes budget on irrelevant regions, while exploitation alone leads to premature convergence. Integrating them allows for continuous approximation of optimal test cases while covering the design space.
 
-### 4. LLM Proxy Evaluator
+**4. LLM Surrogate Evaluator: Replacing Costly Human Preference Annotation with GPT-4o**
 
-GPT-4o is used as a stakeholder proxy for pairwise preference evaluation. The prompt includes:
+Collecting large-scale human feedback for real systems is expensive. SEED-SET uses GPT-4o as a stakeholder proxy to complete pairwise preference evaluations, closing the feedback loop. The prompt consists of three parts: a task description providing domain context, objective metrics showing measurable outcomes of the two scenarios being compared, and subjective criteria encoding the stakeholder's ethical preferences in natural language. By simply replacing the subjective criteria in the prompt, the system can quickly adapt to different ethical standards or stakeholders without retraining.
 
-1. **Task description**: Domain-specific context
-2. **Objective metrics**: Measurable outcomes for both scenarios
-3. **Subjective criteria**: Ethical preferences encoded in natural language
+### A Complete Example: One Iteration of Firefighting UAVs
 
-## Key Experimental Results
+Taking a firefighting rescue UAV as an example: data $\mathcal{D}$ from a small number of test scenarios is already available. The Objective GP can roughly predict objective metrics $y$ (e.g., fire loss, coverage) for each candidate scenario, and the Subjective GP provides the corresponding ethical utility $z$. In this iteration, the joint acquisition function $V(x)$ scores each candidate in the scenario space—biasing toward regions with high GP posterior variance that haven't been tested (exploration) and regions with high estimated ethical utility (exploitation)—to select the highest-scoring new scenario. This new scenario and the current best scenario are presented to GPT-4o, which judges which is more ethical based on the subjective criteria. This pairwise preference result is added to $\mathcal{D}$, updating both GP levels. $V(x)$ shifts in the next round, and the selected scenarios evolve. When the budget is exhausted, the evolved scenarios constitute the test case set with high ethical alignment; ablations show that the ratio of optimal tests generated is approximately 2x that of random sampling.
 
-### Case 1: Power Grid Resource Allocation (IEEE 5/30-Bus)
+## Main Results
+
+### Case Study 1: Power Grid Resource Allocation (IEEE 5/30-Bus)
 
 | Method | 5-Bus Preference Score (↑) | 30-Bus Preference Score (↑) |
-|--------|---------------------------|----------------------------|
+|------|-------------------|-------------------|
 | Random | Low | Low |
-| Single GP | Moderate | Fails |
-| VS-AL-1 | Fails | Fails |
-| VS-AL-2 | Fails | Fails |
-| **HVGP (SEED-SET)** | **Highest** | **Highest** |
+| Single GP | Medium | Failed |
+| VS-AL-1 | Failed | Failed |
+| VS-AL-2 | Failed | Failed |
+| **HVGP (Ours)** | **Highest** | **Highest** |
 
-### Case 2: Firefighting Rescue (Drone Navigation)
+### Case Study 2: Firefighting Rescue (UAV Navigation)
 
 | Method | Preference Score (↑) | Coverage (↑) |
-|--------|---------------------|-------------|
+|------|-------------|-----------|
 | Random | Low | Low |
-| Single GP | Moderate | Moderate |
-| HVGP (MI1+MI2 exploration only) | Moderate–High | Moderate–High |
-| HVGP (Pref exploitation only) | High | Moderate |
-| **HVGP (Full acquisition)** | **Highest** | **Highest** |
+| Single GP | Medium | Medium |
+| HVGP (MI1+MI2 Exploration only) | Medium-High | Medium-High |
+| HVGP (Pref Exploitation only) | High | Medium |
+| **HVGP (Full Acquisition)** | **Highest** | **Highest** |
 
 ### Ablation Study: Acquisition Strategy Components
 
-| Acquisition Strategy | Optimal Test Case Rate (↑) | Spatial Coverage (↑) |
-|---------------------|--------------------------|---------------------|
-| Random sampling | 1× | 1× |
-| MI1+MI2 only | 1.4× | 1.1× |
-| Pref only | 1.6× | 0.9× |
-| **Full $V(x)$** | **2×** | **1.25×** |
+| Acquisition Strategy | Optimal Test Generation Ratio (↑) | Space Coverage (↑) |
+|---------|-------------------|------------|
+| Random Sampling | 1× | 1× |
+| MI1+MI2 Only | 1.4× | 1.1× |
+| Pref Only | 1.6× | 0.9× |
+| **Full V(x)** | **2×** | **1.25×** |
 
 ### Key Findings
 
-1. **SEED-SET generates twice as many optimal test cases as baselines**, with a 1.25× improvement in search space coverage;
-2. **Significant advantage in high-dimensional scenarios**: Single GP fails entirely on the 30-Bus case (40-dimensional design space), while HVGP remains effective;
-3. **Hierarchical modeling is essential**: Decomposing $f$ into $f_{\text{obj}} + f_{\text{subj}}$ yields more accurate estimates than directly modeling $f(x) \to z$;
-4. **All three acquisition terms are necessary**: Removing any single term degrades performance;
-5. **LLM proxy is reliable**: TrueSkill ratings confirm that GPT-4o preference judgments align with trends from handcrafted preference functions;
-6. **Adaptable to different stakeholders**: Switching subjective criteria in the prompt enables rapid adaptation to different ethical standards.
+1. **SEED-SET generates twice as many optimal test cases as the baseline**, with search space coverage increased by 1.25x.
+2. **Significant advantage in high-dimensional scenarios**: In the 30-Bus case (40-dimensional design space), Single GP fails completely, while HVGP remains efficient.
+3. **Hierarchical modeling is critical**: Decomposing $f$ into $f_{\text{obj}} + f_{\text{subj}}$ is more accurate than direct modeling of $f(x) \to z$.
+4. **All three acquisition terms are necessary**: Removing any term leads to a performance drop.
+5. **LLM surrogates are reliable**: TrueSkill scores verify that GPT-4o's preference judgments align with manual preference function trends.
+6. **Adaptable to different stakeholders**: Changing the subjective criteria in the prompt allows rapid adaptation to different ethical standards.
 
 ## Highlights & Insights
 
-- First ethical testing framework for autonomous systems that jointly considers objective metrics and subjective value judgments
-- The hierarchical HVGP design anchors subjective preferences to observable behaviors, enhancing interpretability
-- The joint acquisition strategy elegantly balances exploration and exploitation, with each of the three terms serving a distinct purpose
-- Using an LLM as a proxy evaluator reduces dependence on human experts
-- The framework is domain-agnostic, applicable to power grids, firefighting, transportation, and other scenarios
+- First framework for ethical testing of autonomous systems to simultaneously consider objective metrics and subjective value judgments.
+- Hierarchical HVGP design anchors subjective preferences to observable behaviors, enhancing interpretability.
+- Joint acquisition strategy elegantly balances exploration and exploitation with clearly defined functions for each of its three components.
+- Utilizing an LLM as a surrogate evaluator reduces reliance on human experts.
+- The framework is domain-agnostic and applicable to various scenarios such as power grids, firefighting, and transportation.
 
 ## Limitations & Future Work
 
-- Assumes stakeholders report preferences truthfully (Assumption A2); strategic misreporting is not addressed
-- Assumes the set of objective metrics is fully known and fixed (Assumption A3); dynamic metric expansion is not considered
-- The LLM proxy may inherit GPT-4o's biases; preference consistency across different LLMs requires further validation
-- Scalability of VGP in extremely high-dimensional settings remains constrained by the number of inducing points
-- Handcrafted preference scoring functions rely on domain expertise
+- Assumes stakeholders report preferences honestly (Assumption A2); strategic misreporting is not addressed.
+- Assumes the set of objective metrics is fully known and fixed (Assumption A3); extensions for dynamic metrics are not explored.
+- LLM surrogates might inherit biases from GPT-4o; preference consistency across different LLMs requires further verification.
+- Scalability of VGP in extremely high-dimensional scenarios is still limited by the number of inducing points.
+- The design of manual preference scoring functions relies on domain expertise.
 
 ## Related Work & Insights
 
-- **AI ethics frameworks**: NIST AI RMF 1.0 (2023), IEEE standards
-- **Bayesian experimental design**: Rainforth et al. (2024), Chaloner & Verdinelli (1995)
-- **Preference learning**: RLHF (Christiano et al., 2017), pairwise comparison GP (Chu & Ghahramani, 2005)
-- **Active learning**: Preference elicitation (Keswani et al., 2024)
-- **LLM evaluators**: Huang et al. (2025) use LLMs for preference evaluation
+- **AI Ethical Frameworks**: NIST AI RMF 1.0 (2023), IEEE Standards
+- **Bayesian Experimental Design**: Rainforth et al. (2024), Chaloner & Verdinelli (1995)
+- **Preference Learning**: RLHF (Christiano et al., 2017), Pairwise Comparison GP (Chu & Ghahramani, 2005)
+- **Active Learning**: Preference Elicitation (Keswani et al., 2024)
+- **LLM Evaluator**: Huang et al. (2025) using LLMs for preference evaluation
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First application of hierarchical Bayesian experimental design to ethical testing
-- Technical depth: ⭐⭐⭐⭐ — HVGP + joint acquisition + LLM evaluator as an integrated system
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Three case studies + multi-dimensional ablation + stakeholder analysis
-- Value: ⭐⭐⭐⭐ — Domain-agnostic framework, though real-world deployment requires validation with actual stakeholders
+- Novelty: ⭐⭐⭐⭐⭐ — First application of hierarchical Bayesian experimental design to ethical testing.
+- Technical Depth: ⭐⭐⭐⭐ — Integration of HVGP, joint acquisition, and LLM evaluation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Three case studies, multi-dimensional ablation, and stakeholder analysis.
+- Value: ⭐⭐⭐⭐ — Domain-agnostic framework, though deployment requires validation with actual stakeholders.
 
 <!-- RELATED:START -->
 
@@ -175,10 +173,10 @@ GPT-4o is used as a stakeholder proxy for pairwise preference evaluation. The pr
 ## Related Papers
 
 - [\[ICLR 2026\] ZeroTuning: Unlocking the Initial Token's Power to Enhance Large Language Models Without Training](zerotuning_unlocking_the_initial_tokens_power_to_enhance_large_language_models_w.md)
-- [\[ICLR 2026\] Stress-Testing Alignment Audits with Prompt-Level Strategic Deception](stress-testing_alignment_audits_with_prompt-level_strategic_deception.md)
+- [\[ACL 2025\] A Dual-Perspective NLG Meta-Evaluation Framework with Automatic Benchmark and Better Interpretability](../../ACL2025/interpretability/a_dual-perspective_nlg_meta-evaluation_framework_with_automatic_benchmark_and_be.md)
+- [\[ACL 2025\] Enhancing Automated Interpretability with Output-Centric Feature Descriptions](../../ACL2025/interpretability/output_centric_interpretability.md)
+- [\[ICML 2025\] DeltaSHAP: Explaining Prediction Evolutions in Online Patient Monitoring with Shapley Values](../../ICML2025/interpretability/deltashap_explaining_prediction_evolutions_in_online_patient_monitoring_with_sha.md)
 - [\[ICML 2026\] ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation](../../ICML2026/interpretability/shapleig_bayesian_experimental_design_for_shapley_value_estimation.md)
-- [\[NeurIPS 2025\] Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex](../../NeurIPS2025/interpretability/time-evolving_dynamical_system_for_learning_latent_representations_of_mouse_visu.md)
-- [\[ICLR 2026\] MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning](mata_a_trainable_hierarchical_automaton_system_for_multi-agent_visual_reasoning.md)
 
 </div>
 

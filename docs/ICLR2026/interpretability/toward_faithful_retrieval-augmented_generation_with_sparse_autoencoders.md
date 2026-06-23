@@ -2,182 +2,152 @@
 title: >-
   [Paper Note] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders
 description: >-
-  [ICLR 2026][Interpretability][Retrieval-Augmented Generation] This paper proposes RAGLens, which leverages sparse autoencoders (SAEs) to disentangle RAG-hallucination-specific features from LLM internal activations…
+  [ICLR 2026][Interpretability][Paper Note] RAGLens is proposed, which utilizes Sparse Autoencoders (SAE) to decouple RAG hallucination-specific features from internal LLM activations. By employing mutual information feature selection and a Generalized Additive Model (GAM), a lightweight interpretable hallucination detector is constructed. It outperforms existin
 tags:
-  - "ICLR 2026"
-  - "Interpretability"
-  - "Retrieval-Augmented Generation"
-  - "Sparse Autoencoders"
-  - "Hallucination Detection"
-  - "Faithfulness"
+  - ICLR 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: b64ab8b915a0f4d9
+content_hash: eda8cbed6979356e
 ---
-
 # Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.08892](https://arxiv.org/abs/2512.08892)  
 **Code**: [GitHub](https://github.com/Teddy-XiongGZ/RAGLens)  
-**Area**: RAG / Interpretable AI
+**Area**: RAG/Explainable AI  
 **Keywords**: Retrieval-Augmented Generation, Sparse Autoencoders, Hallucination Detection, Interpretability, Faithfulness
 
 ## TL;DR
 
-This paper proposes RAGLens, which leverages sparse autoencoders (SAEs) to disentangle RAG-hallucination-specific features from LLM internal activations, and constructs a lightweight, interpretable hallucination detector via mutual information-based feature selection combined with a Generalized Additive Model (GAM). RAGLens surpasses existing methods across multiple benchmarks and supports token-level interpretable feedback and hallucination mitigation.
+RAGLens is proposed, which utilizes Sparse Autoencoders (SAE) to decouple RAG hallucination-specific features from internal LLM activations. By employing mutual information feature selection and a Generalized Additive Model (GAM), a lightweight interpretable hallucination detector is constructed. It outperforms existing methods across multiple benchmarks and supports token-level interpretable feedback and hallucination mitigation.
 
 ## Background & Motivation
 
-**Core Problem of RAG**: Retrieval-Augmented Generation (RAG) enhances LLM factuality through externally retrieved documents, yet models still produce hallucinated outputs that contradict retrieved content, fabricate details, or exceed the scope of evidence. Such unfaithful generation severely limits deployment in high-reliability domains such as medicine and law.
+**Core Problem of RAG**: Retrieval-Augmented Generation (RAG) enhances LLM factuality via external retrieved documents, yet models still produce hallucinated outputs that contradict retrieved content, fabricate details, or exceed the scope of evidence. Such unfaithful generation severely limits deployment in high-reliability domains like healthcare and law.
 
 **Limitations of Prior Work**:
-- **Training dedicated detectors**: Requires large-scale, high-quality annotated data with high adaptation costs.
-- **LLM-as-Judge**: Employs external LLMs to evaluate faithfulness, but incurs high computational overhead, struggles to detect hallucinations in self-generated content, and produces explanations that do not faithfully reflect internal decision processes.
-- **Internal representation probing**: Exploits hidden states or attention scores to capture hallucination signals, but the polysemanticity of neurons complicates signal extraction and limits detection accuracy.
+   - **Training Specialized Detectors**: Requires large-scale high-quality annotated data, leading to high adaptation costs.
+   - **LLM-as-Judge**: Uses external LLMs to judge faithfulness, but suffers from high computational overhead, difficulty in detecting self-generated hallucinations, and explanations that are unfaithful to internal decision processes.
+   - **Internal Representation Probing**: Utilizes hidden states or attention scores to capture hallucination signals, but the polysemanticity of neurons makes signal extraction difficult, resulting in insufficient detection accuracy.
 
-**Key Insight**: SAEs from the mechanistic interpretability literature can decompose LLM hidden states into monosemantic features—each feature corresponding to a specific semantic concept. This raises the question: do SAE features exist that activate specifically during RAG hallucinations? If so, can they be used to build detectors that are both accurate and interpretable?
+**Key Insight**: SAEs in the field of mechanistic interpretability can separate monosemantic features from LLM hidden states—where each feature corresponds to a specific semantic concept. Do specific SAE features activate exclusively during RAG hallucinations? If so, can they be used to build detectors that are both accurate and interpretable?
 
-**RAG Hallucination vs. General Hallucination**: Although prior work has applied SAEs to general LLM hallucination detection, the RAG setting involves complex interactions between retrieved evidence and generated content, yielding distinct hallucination patterns. Whether SAE features can capture this dynamic remains unclear.
+**Key Challenge (RAG Hallucination vs. General Hallucination)**: While prior work has used SAEs to detect general LLM hallucinations, the RAG scenario involves complex interactions between retrieved evidence and generated content. Hallucination patterns are more unique here, and it remains unclear whether SAE features can capture such dynamics.
 
 ## Method
 
-### Overall Architecture: The RAGLens Pipeline
+### Overall Architecture
 
-The core mechanism of RAGLens follows: **freeze the LLM → extract SAE features → mutual information selection → GAM classification → output interpretable detection results**.
+RAGLens decomposes hallucination detection into a two-stage "probe + classifier" pipeline: first, the target LLM is frozen, and a pre-trained Sparse Autoencoder (SAE) is used to translate hidden states of a specific intermediate layer into monosemantic features. Then, instance-level pooling and mutual information selection are performed on these features, which are finally fed into a Generalized Additive Model (GAM) to output hallucination probability. This workflow does not fine-tune the LLM or call external judge models. Because of the additive structure of GAM, the contribution of each feature can be directly read—enabling both instance-level judgment and alignment of contributions back to specific tokens to highlight suspicious segments, making detection results naturally interpretable and useful for mitigation.
 
-**Step 1: SAE Feature Extraction**
-For each token $y_t$ generated by the LLM, the hidden state at layer $L$ is obtained as $h_t = \Phi_L(y_{1:t}, q, \mathcal{C})$, which is then encoded by a pretrained SAE encoder to yield a sparse feature vector:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Freeze LLM: Extract Layer L<br/>token hidden states"] --> B["SAE Feature Extraction & Max Pooling<br/>Sparse monosemantic features + Channel-wise max pooling"]
+    B --> C["Mutual Information Feature Selection<br/>Select top-K' features from large dictionary"]
+    C --> D["GAM Classifier<br/>Additive shape functions → Instance-level hallucination probability"]
+    D --> E["Interpretable Feedback & Mitigation<br/>Align feature contributions back to tokens"]
+    E -->|"token-level highlight / instance-level warning"| F["Feed back to LLM for rewriting"]
+```
 
-$$z_t = \mathcal{E}(h_t), \quad z_t \in \mathbb{R}^K$$
+### Key Designs
 
-where $K$ is the dictionary size and only a small number of features are activated at each position.
+**1. SAE Feature Extraction and Max Pooling: Decomposing polysemantic neurons into monosemantic signals and amplifying sparse activations**
 
-**Step 2: Instance-Level Feature Aggregation**
-Since labels are instance-level, token-level activations are aggregated via channel-wise max pooling:
+The root cause of difficult hallucination signal extraction is the polysemanticity of neurons in hidden states—one dimension simultaneously encodes multiple unrelated concepts. For each token $y_t$ generated by the LLM, RAGLens takes the $L$-th layer hidden state $h_t = \Phi_L(y_{1:t}, q, \mathcal{C})$ and maps it to sparse features $z_t = \mathcal{E}(h_t),\ z_t \in \mathbb{R}^K$ via an SAE encoder. The dictionary dimension $K$ is much larger than the hidden dimension, and only a few features are activated at each position, decoupling entangled concepts into features with clear semantics. Since hallucination labels are instance-level, the authors perform channel-wise max pooling across the token dimension $\bar{z}_k = \max_{1 \leq t \leq T} z_{t,k}$. As stated in Theorem 1: under sparse activation conditions $Tp \ll 1$, the mutual information between the pooled feature and the label grows linearly with sequence length $T$, effectively aggregating weak hallucination signals scattered across long sequences while suppressing noise. The layer selection was determined via scanning—across Llama3.2-1B, Llama3-8B, Qwen3-0.6B, and Qwen3-4B, detection performance for Summary and QA tasks peaked at intermediate layers, indicating insufficient information in shallow layers and subsequent transformations overwriting information in deep layers. Pre-activation features were also found to consistently outperform post-activation features.
 
-$$\bar{z}_k = \max_{1 \leq t \leq T} z_{t,k}, \quad k = 1, \ldots, K$$
+**2. Mutual Information Feature Selection: Selecting the few features that truly distinguish hallucinations**
 
-The paper provides a theoretical justification for max pooling under sparse activation conditions (Theorem 1): when $Tp \ll 1$, the mutual information between pooled features and labels grows linearly with sequence length $T$, effectively amplifying signal while suppressing noise.
+SAE dictionaries often contain tens of thousands of dimensions, most of which are irrelevant to faithfulness. RAGLens estimates the mutual information $I(\bar{z}_k; \ell)$ between each pooled feature $\bar{z}_k$ and the hallucination label $\ell$ using a binning method. Only the top-$K'$ features ($K' \ll K$) are retained, resulting in a low-dimensional sub-vector $\tilde{\bar{z}} \in \mathbb{R}^K$. Mutual information does not rely on linearity assumptions and can select features with arbitrary non-linear relationships to the label. This step reduces dimensionality to an interpretable scale and filters out uninformative dimensions for the additive model.
 
-**Step 3: Mutual Information Feature Selection**
-The mutual information $I(\bar{z}_k; \ell)$ between each pooled feature $\bar{z}_k$ and the hallucination label $\ell$ is computed, and the top-$K'$ features ($K' \ll K$) are selected, yielding a sub-vector $\tilde{\bar{z}} \in \mathbb{R}^{K'}$. Mutual information is estimated in practice using a binning approach.
+**3. GAM Classifier: Balancing accuracy and transparency with additive structures**
 
-**Step 4: GAM Classification**
-A GAM models hallucination probability as:
+Hallucination detection requires both accuracy and interpretability, which usually involve a trade-off. RAGLens models the probability using a Generalized Additive Model: $g(\mathbb{E}[\ell \mid \tilde{\bar{z}}]) = \beta_0 + \sum_{j=1}^{K'} f_j(\tilde{\bar{z}}_j)$, where each univariate shape function $f_j$ is fitted using bagged gradient boosting. GAM is chosen over linear or fully connected models because the mapping from a single SAE feature to hallucination risk is non-linear (e.g., probability rising monotonically with activation strength), allowing GAM to outperform logistic regression. Since SAE features are approximately independent, GAM achieves performance comparable to or exceeding MLP and XGBoost without needing interaction terms. The additional benefit is interpretability—predictions are the sum of feature contributions, requiring no post-hoc attribution.
 
-$$g(\mathbb{E}[\ell | \tilde{\bar{z}}]) = \beta_0 + \sum_{j=1}^{K'} f_j(\tilde{\bar{z}}_j)$$
+**4. Interpretable Feedback & Hallucination Mitigation: Mapping detection signals to tokens**
 
-where each univariate shape function $f_j$ is learned via bagged gradient boosting. The additive structure of GAM guarantees interpretability—the contribution of each feature to the prediction can be directly visualized.
+Instance-level "hallucination vs. not" judgments offer limited help for correction. Leveraging the additive decomposition of GAM, RAGLens aligns the contribution of each feature back to token positions to generate token-level feedback, accurately flagging unreliable segments (fabricated numbers, dates, entities). Each SAE feature corresponds to stable semantics (e.g., Feature 22790 corresponds to "numerical/temporal details unsupported by context"; Feature 17721 corresponds to "high-salience tokens supported by evidence"). These results are fed back to the LLM as instance-level warnings or token-level highlights to guide rewriting; experiments show that token-level feedback is more effective at reducing hallucination rates than instance-level warnings.
 
-### Key Design 1: Middle-Layer SAE Features Are Most Informative
-
-Experiments across all layers on Llama3.2-1B, Llama3-8B, Qwen3-0.6B, and Qwen3-4B reveal that:
-- **Summarization and QA tasks**: Performance peaks at middle layers.
-- **Data2txt task**: Performance is relatively flat across layers.
-- Conclusion: Middle-layer SAE features encode the richest hallucination-related signals; shallow layers lack sufficient information, while deep layers may have signals overwritten by subsequent transformations.
-
-### Key Design 2: GAM Outperforms MLP, XGBoost, and Other Complex Models
-
-Comparing Logistic Regression (LR), GAM, MLP, and XGBoost as classifiers:
-- GAM consistently outperforms LR, as the mapping from individual features to outputs is nonlinear.
-- GAM also surpasses MLP and XGBoost, as SAE features are nearly independent and the additive assumption holds.
-- GAM additionally provides interpretability, representing the optimal balance between performance and transparency.
-
-### Key Design 3: Pre-Activation Features Outperform Post-Activation Features
-
-Comparing SAE and Transcoder as feature extractors, with signals taken before and after the activation function:
-- Pre-activation features consistently outperform post-activation features across all three datasets.
-- SAE and Transcoder yield comparable performance with no clear winner.
-- Conclusion: The position of the activation function is more critical than the choice of architecture.
-
-### Interpretability and Hallucination Mitigation
-
-**Local Explanation**: The additive structure of GAM allows each prediction to be decomposed into per-feature contributions. Aligning activations to token positions yields token-level feedback that precisely identifies unreliable text spans (e.g., fabricated numbers, dates, or entity names).
-
-**Global Explanation**: Each SAE feature corresponds to a semantically coherent concept (e.g., Feature 22790 = "unsupported numerical/temporal details"; Feature 17721 = "well-documented high-salience tokens"). The GAM shape functions reveal stable mappings from feature values to hallucination risk.
-
-**Mitigation Strategy**: Detection results are fed back to the LLM as instance-level warnings or token-level highlights to guide correction of hallucinated content. Token-level feedback proves more effective than instance-level feedback.
-
-## Experiments
+## Main Results
 
 ### Experimental Setup
 
-- **Datasets**: RAGTruth (multi-task: summarization / QA / data-to-text), Dolly (Accurate Context), AggreFact, TofuEval
+- **Datasets**: RAGTruth (Summarization/QA/Data-to-Text), Dolly (Accurate Context), AggreFact, TofuEval
 - **Models**: Llama2-7B/13B, Llama3.2-1B, Llama3.1-8B, Qwen3-0.6B/4B
 - **Metrics**: Balanced Accuracy (Acc), Macro F1, AUC
-- **Baselines**: 16 methods including Prompt, LLM-as-Judge (ChainPoll / RAGAS / TruLens / RefCheck), uncertainty-based methods (SelfCheckGPT / Perplexity / EigenScore), and internal representation methods (SEP / SAPLMA / ITI / Focus / ReDeEP)
+- **Baselines**: 16 methods including Prompt, LLM-as-Judge (ChainPoll/RAGAS/TruLens/RefCheck), uncertainty methods (SelfCheckGPT/Perplexity/EigenScore), and internal representation methods (SEP/SAPLMA/ITI/Focus/ReDeEP).
 
-### Table 1: Main Detection Performance Comparison (RAGTruth & Dolly)
+### Main Results: Detection Performance (RAGTruth & Dolly)
 
 | Method | RAGTruth-7B AUC | RAGTruth-7B F1 | Dolly-7B AUC | Dolly-7B F1 | RAGTruth-13B AUC | Dolly-13B AUC |
-|--------|----------------|----------------|-------------|-------------|-------------------|---------------|
+|------|----------------|----------------|-------------|-------------|-------------------|---------------|
 | ChainPoll | 0.6738 | 0.7006 | 0.6593 | 0.5581 | 0.7414 | 0.7070 |
 | RAGAS | 0.7290 | 0.6667 | 0.6648 | 0.6392 | 0.7541 | 0.6412 |
 | ReDeEP | 0.7458 | 0.7190 | 0.7949 | 0.7833 | 0.8244 | 0.8420 |
-| **RAGLens** | **0.8413** | **0.7636** | **0.8764** | **0.8070** | **0.8964** | **0.8568** |
+| **Ours (RAGLens)** | **0.8413** | **0.7636** | **0.8764** | **0.8070** | **0.8964** | **0.8568** |
 
-RAGLens comprehensively outperforms all baselines across all settings, achieving AUC ≥ 0.84 in every configuration.
+RAGLens outperforms all baselines across all settings, with AUC $\geq 0.84$ in all scenarios.
 
-### Table 2: Cross-Dataset / Cross-Task Generalization (AUC)
+### Cross-Dataset/Task Generalization (AUC)
 
-| Train → Test | RAGTruth | AggreFact | TofuEval |
-|-------------|----------|-----------|----------|
+| Training → Test | RAGTruth | AggreFact | TofuEval |
+|----------------|----------|-----------|----------|
 | None (CoT) | 0.4842 | 0.5741 | 0.5562 |
 | RAGTruth | **0.8806** | **0.8019** | **0.7637** |
 | AggreFact | 0.5330 | 0.8330 | 0.6123 |
 | TofuEval | 0.7747 | 0.6161 | 0.7846 |
 
-Detectors trained on the high-diversity RAGTruth dataset generalize substantially better across domains than those trained on single-task datasets.
+Detectors trained on high-diversity datasets (RAGTruth) exhibit significantly better generalization than those trained on single-task datasets.
 
-### Table 3: Hallucination Mitigation Results
+### Hallucination Mitigation Results
 
-| Evaluator | Original Hallucination Rate | + Instance-Level Feedback | + Token-Level Feedback |
-|-----------|----------------------------|--------------------------|------------------------|
+| Evaluator | Original Hallucination Rate | + Instance Feedback | + Token Feedback |
+|---------|-----------|-----------|------------|
 | Llama3.3-70B | 43.78% | 42.22% | 39.11% |
 | GPT-4o | 37.78% | 36.44% | 34.22% |
 | GPT-o3 | 64.44% | 60.44% | 58.88% |
-| Human Annotation | 71.11% | 62.22% | **55.56%** |
+| Human Label | 71.11% | 62.22% | **55.56%** |
 
-Token-level feedback (which highlights suspicious tokens via interpretability) is more effective than instance-level feedback under all evaluators, reducing hallucination rate from 71.11% to 55.56% in human evaluation.
+Token-level feedback (leveraging interpretable token highlights) is more effective than instance-level feedback across all evaluators, reducing the hallucination rate from 71.11% to 55.56% in human evaluations.
 
 ## Key Findings
 
-1. **LLMs "know more than they say"**: SAE features reveal latent faithfulness signals that CoT reasoning cannot consistently capture; cross-model experiments show that SAE-based detectors consistently outperform models' own CoT judgments.
-2. **Model scale affects internal knowledge quality**: Larger LLMs yield higher detection performance through SAE-based detectors; Qwen3-0.6B, despite reasonable CoT performance, lags behind larger models in SAE detection, indicating that internal knowledge correlates more strongly with model scale than training procedure.
-3. **Specific SAE features carry well-defined semantics**: Feature 22790 corresponds to "numerical/temporal details without contextual support," with hallucination probability monotonically increasing as activation strength rises; Feature 17721 corresponds to "well-documented high-salience tokens" and is negatively correlated with hallucination.
-4. **Cross-domain generalization depends on training data diversity**: Detectors trained on the multi-task RAGTruth dataset generalize best across domains; transfer from summarization to QA outperforms transfer from data-to-text to other tasks.
-5. **Max pooling has theoretical guarantees**: Under sparse activation conditions, mutual information after max pooling grows linearly with sequence length $T$, effectively amplifying weak hallucination signals.
+1. **LLMs "know more than they say"**: SAE features reveal latent faithfulness signals that CoT reasoning cannot consistently capture. Cross-model experiments show SAE detectors consistently outperform the model's own CoT judgments.
+2. **Model scale affects internal knowledge quality**: Larger LLMs achieve higher performance with SAE detectors. Although Qwen3-0.6B performs decently with CoT, its SAE detector lags behind larger models, suggesting internal knowledge correlates more strongly with model scale than training procedures.
+3. **Specific SAE features have clear semantics**: Feature 22790 corresponds to "unsupported numerical/temporal details," where hallucination probability increases monotonically with activation strength. Feature 17721 corresponds to "supported high-salience tokens" and is negatively correlated with hallucination.
+4. **Generalization depends on training diversity**: Detectors trained on RAGTruth (multi-task) generalize best. The transfer from Summary to QA is more effective than from Data2txt to other tasks.
+5. **Max pooling is theoretically grounded**: Under sparse activation, mutual information after max pooling grows linearly with sequence length $T$, effectively amplifying weak hallucination signals.
 
 ## Highlights & Insights
 
-- **First systematic study validating SAEs for RAG hallucination detection**: Fills the research gap of SAEs in RAG-specific hallucination scenarios and proposes a complete detect–explain–mitigate pipeline.
-- **Lightweight and interpretable**: Requires only a small number of SAE features and a simple GAM classifier—no LLM fine-tuning or external LLM calls—while providing token-level attribution and feature-level global explanations.
-- **Dual theoretical and empirical support**: The information-theoretic proof for max pooling (Theorem 1) and extensive ablation studies (layer selection, feature count, classifier comparison, extractor comparison) ground all design choices rigorously.
-- **Cross-model flexibility**: Although SAE features do not transfer across models, the RAGLens detector can be flexibly applied to text generated by other LLMs, making it broadly practical.
-- **Counterfactual validation**: Counterfactual perturbations of retrieved documents verify that the selected SAE features are genuinely sensitive to hallucination patterns specific to the RAG setting.
+- **First systematic verification of SAE for RAG hallucination detection**: Fills the research gap of SAE in RAG-specific hallucination scenarios and proposes a complete detection-explanation-mitigation pipeline.
+- **Lightweight and Interpretable**: Requires only a few SAE features and a simple GAM classifier without fine-tuning LLMs or external calls, providing token-level attribution and feature-level global explanation.
+- **Theoretical and Experimental Support**: Information-theoretic proof for max pooling (Theorem 1) combined with extensive ablation studies (layer choice, feature quantity, classifier/extractor comparisons) ensures grounded design choices.
+- **Flexible Cross-Model Application**: While SAE features do not transfer across models, the RAGLens detector can be flexibly applied to text generated by various LLMs.
+- **Counterfactual Validation**: Validated via counterfactual perturbations to retrieved documents, confirming that selected SAE features are specifically sensitive to RAG-specific hallucination patterns.
 
 ## Limitations & Future Work
 
-1. **Dependence on pretrained SAE availability**: The method requires open-source SAE weights for the target LLM (e.g., Gemma Scope, EleutherAI SAE) and is not applicable to closed-source models.
-2. **Instance-level hallucination labels**: The current approach cannot distinguish which specific claims within an instance are hallucinated; token-level attribution is approximate and relies on heuristic alignment.
-3. **Limited mitigation effectiveness**: Although token-level feedback outperforms instance-level feedback, hallucination rates remain relatively high (55.56% in human evaluation), indicating an upper bound on post-hoc mitigation using detection signals alone.
-4. **Generalization depends on training distribution**: Detectors trained on single-task datasets exhibit notable cross-domain performance degradation; diverse training data is required for practical deployment.
-5. **Computational overhead not systematically reported**: Despite claims of being lightweight, the end-to-end cost and latency of SAE encoding, MI computation, and GAM training have not been benchmarked systematically.
+1. **Dependency on pre-trained SAE availability**: Requires open-source SAE weights (e.g., Gemma Scope, EleutherAI SAE) for the target LLM, making it inapplicable to closed-source models.
+2. **Instance-level labels**: Current methods cannot finely distinguish which specific claim within an instance is a hallucination; token-level attribution is an approximation based on heuristic alignment.
+3. **Limited mitigation efficacy**: Although token-level feedback is superior, the hallucination rate remains relatively high (55.56% in human evaluation), suggesting limits to post-processing mitigation based solely on detection signals.
+4. **Generalization depends on training distribution**: Performance drops significantly when trained on single-task datasets, requiring diverse training data for practical deployment.
+5. **Computational overhead not detailed**: While claimed to be lightweight, end-to-end costs and latency for SAE encoding, MI calculation, and GAM training lack systematic benchmarking.
 
 ## Related Work & Insights
 
-- **RAG Hallucination Detection**: Manakul et al. 2023 (SelfCheckGPT), Bao et al. 2024 (HHEM), Sun et al. 2025 (ReDeEP), Li et al. 2024 (LLM-as-Judge series)
-- **SAEs and Interpretability**: Bricken et al. 2023 (dictionary learning + monosemanticity), Huben et al. 2023, Shu et al. 2025; applications to hallucination detection: Ferrando et al. 2025, Suresh et al. 2025
-- **Generalized Additive Models (GAM)**: Lou et al. 2012, Nori et al. 2019 (InterpretML / EBM)
+- **RAG Hallucination Detection**: Manakul et al. 2023 (SelfCheckGPT), Bao et al. 2024 (HHEM), Sun et al. 2025 (ReDeEP), Li et al. 2024 (LLM-as-Judge)
+- **SAE and Interpretability**: Bricken et al. 2023 (Dictionary Learning + Monosemanticity), Huben et al. 2023, Shu et al. 2025; Ferrando et al. 2025 and Suresh et al. 2025 for hallucination detection.
+- **Generalized Additive Models (GAM)**: Lou et al. 2012, Nori et al. 2019 (InterpretML/EBM)
 - **Internal Representation Probing**: Azaria & Mitchell 2023 (SAPLMA), Han et al. 2024, Zhou et al. 2025
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ First systematic application of SAEs to RAG hallucination detection with a complete pipeline
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 6 models × 4 datasets × 16 baselines + comprehensive ablations + cross-model/cross-domain experiments + interpretability case studies + mitigation experiments
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure and rigorous theoretical presentation, though some experimental details are deferred to the appendix
-- **Value**: ⭐⭐⭐⭐ A lightweight, interpretable hallucination detection solution with direct practical value for RAG system reliability
-- **Overall**: ⭐⭐⭐⭐ A solid contribution at the intersection of interpretable AI and RAG, with comprehensive experiments and a novel methodology
+- **Novelty**: ⭐⭐⭐⭐ First systematic application of SAE to RAG hallucination detection with a complete pipeline.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 6 models × 4 datasets × 16 baselines + comprehensive ablation + cross-model/domain experiments + interpretability cases + mitigation experiments.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear structure and rigorous theory, though some experimental details are relegated to the appendix.
+- **Value**: ⭐⭐⭐⭐ A lightweight, interpretable hallucination detection solution with direct value for RAG system reliability.
+- **Overall**: ⭐⭐⭐⭐ Solid cross-disciplinary work in Explainable AI and RAG with comprehensive evaluation.
 
 <!-- RELATED:START -->
 
@@ -185,11 +155,11 @@ Token-level feedback (which highlights suspicious tokens via interpretability) i
 
 ## Related Papers
 
-- [\[ICLR 2026\] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](temporal_sparse_autoencoders_leveraging_the_sequential_nature_of_language_for_in.md)
-- [\[ICML 2026\] Sparse Autoencoders are Topic Models](../../ICML2026/interpretability/sparse_autoencoders_are_topic_models.md)
-- [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](../../ICML2026/interpretability/on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
-- [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
-- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
+- [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
+- [\[ICLR 2026\] AbsTopK: Rethinking Sparse Autoencoders For Bidirectional Features](abstopk_rethinking_sparse_autoencoders_for_bidirectional_features.md)
+- [\[ICLR 2026\] On the Limits of Sparse Autoencoders: A Theoretical Framework and Reweighted Remedy](on_the_limits_of_sparse_autoencoders_a_theoretical_framework_and_reweighted_reme.md)
+- [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
+- [\[ICLR 2026\] Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders](learning_multimodal_dictionary_decompositions_with_group-sparse_autoencoders.md)
 
 </div>
 

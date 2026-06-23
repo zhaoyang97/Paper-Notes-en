@@ -2,20 +2,19 @@
 title: >-
   [Paper Note] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space
 description: >-
-  [ICLR 2026][LLM Reasoning][test-time scaling] This paper proposes ∇-Reasoner, which upgrades inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By applying Differentiable T…
+  [ICLR 2026][LLM Reasoning][test-time scaling] $\nabla$-Reasoner is proposed to upgrade inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By using Differentiable Text Optimization (DTO) on token logits, it iteratively improves decoding strategies by combining reward gradients with LLM likelihood. It achieves 10-40% a
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "test-time scaling"
-  - "gradient-based optimization"
-  - "differentiable optimization"
-  - "reward model"
-  - "inference-time reasoning"
+  - ICLR 2026
+  - LLM Reasoning
+  - test-time scaling
+  - gradient-based optimization
+  - differentiable optimization
+  - reward model
+  - inference-time reasoning
 date: 2026-05-08
-content_hash: c34ce170bb394aef
+content_hash: 1da9772a826643f5
 ---
-
-# ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space
+# $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space
 
 **Conference**: ICLR 2026  
 **arXiv**: [2603.04948](https://arxiv.org/abs/2603.04948)  
@@ -24,54 +23,64 @@ content_hash: c34ce170bb394aef
 **Keywords**: test-time scaling, gradient-based optimization, differentiable optimization, reward model, inference-time reasoning
 
 ## TL;DR
-This paper proposes ∇-Reasoner, which upgrades inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By applying Differentiable Textual Optimization (DTO) in the token logits space—jointly leveraging reward gradients and LLM likelihood—the framework iteratively refines the decoding strategy, achieving 10–40% accuracy gains on mathematical reasoning tasks while reducing model calls by 10–40%.
+$\nabla$-Reasoner is proposed to upgrade inference-time search from zeroth-order (sampling + evaluation) to first-order (gradient descent). By using Differentiable Text Optimization (DTO) on token logits, it iteratively improves decoding strategies by combining reward gradients with LLM likelihood. It achieves 10-40% accuracy improvements on mathematical reasoning tasks while reducing model calls by 10-40%.
 
 ## Background & Motivation
-**Background**: Inference-time compute scaling has emerged as a critical approach to enhancing LLM reasoning. Existing methods such as Best-of-N, Self-Consistency, Tree-of-Thought, and RAP improve answer quality through repeated sampling and evaluation.
+**Background**: Inference-time scaling has become a critical path for enhancing LLM reasoning. Existing methods like Best-of-N, Self-Consistency, Tree-of-Thought, and RAP search for high-quality answers through multiple samplings and evaluations.
 
-**Limitations of Prior Work**: These methods are fundamentally **zeroth-order searches**—they exploit only the scalar reward value to filter candidates, entirely ignoring gradient direction information. As the search space grows exponentially with sequence length, undirected search becomes inefficient, and performance saturates as the computational budget increases.
+**Limitations of Prior Work**: These methods are inherently **zeroth-order searches**—they use only scalar reward values to filter candidates without utilizing reward gradient direction. As the search space grows exponentially with sequence length, directionless search becomes inefficient, leading to performance saturation as computational budgets increase.
 
-**Key Challenge**: Reward models are inherently differentiable (transformer-based classifiers), making gradient information readily available yet completely unused. Zeroth-order methods fail to exploit the structural information embedded in the reward landscape.
+**Key Challenge**: Reward models (transformer-based classifiers) are inherently differentiable, yet their gradient information is entirely wasted. Zeroth-order methods cannot effectively exploit the structural information of the reward landscape.
 
-**Goal**: How can reward gradients be leveraged at inference time to efficiently guide LLM outputs toward high-reward regions while preserving generation fluency?
+**Goal**: How to utilize reward gradients during inference to efficiently guide LLM outputs towards high-reward regions while maintaining generation fluency?
 
-**Key Insight**: LLM reasoning is reformulated as a continuous optimization problem—performing gradient descent in the token logits space, with a straight-through estimator bridging the discrete and continuous domains.
+**Key Insight**: Reframe LLM reasoning as a continuous optimization problem—performing gradient descent in the token logits space and bridging the discrete-continuous gap via a straight-through estimator.
 
-**Core Idea**: Replace zeroth-order search with first-order gradient descent for test-time policy optimization, jointly maximizing reward and LLM likelihood in the logits space.
+**Core Idea**: Replace zeroth-order search with first-order gradient descent for inference-time policy optimization, simultaneously maximizing reward and LLM likelihood in the logits space.
 
 ## Method
 
 ### Overall Architecture
-∇-Reasoner is an iterative decoding framework. Given a prompt, the LLM first generates a complete rollout along with its logits. DTO then optimizes these logits, from which the first token is resampled. Rejection sampling determines whether the new token is accepted, after which generation proceeds to the next token. This process advances token by token, with each token potentially undergoing gradient-based optimization.
+$\nabla$-Reasoner is an iterative decoding framework: given a prompt, the base LLM generates an initial rollout and its per-token logits as the starting policy. Differentiable Text Optimization (DTO) then performs gradient descent on the logits to push the strategy toward higher rewards. The first token is resampled from the optimized logits, followed by rejection sampling to determine if the change improves the reward—the change is accepted only if the reward increases. The process then advances to the next token, repeating the cycle until a complete solution is generated. Three acceleration strategies are applied throughout to keep overhead close to a single forward pass.
+
+```mermaid
+graph TD
+    X["Problem prompt x"] --> ROLL["base LLM generates<br/>full rollout and per-token logits"]
+    ROLL --> DTO["Differentiable Text Optimization (DTO)<br/>Gradient descent on logits<br/>Joint Reward and LLM Likelihood loss"]
+    DTO --> SAMP["Resample first token<br/>from optimized logits"]
+    SAMP --> REJ["Iterative Decoding + Rejection Sampling<br/>Continue generation if first token changes;<br/>Accept only if reward is higher"]
+    REJ --> NEXT{"Full solution<br/>completed?"}
+    NEXT -->|No, advance to next token| ROLL
+    NEXT -->|Yes| OUT["High-reward final solution"]
+    ACC["Three Acceleration Strategies:<br/>Gradient caching / Rollout reuse<br/>Confidence and gradient-guided skipping"] -. Applied at every step .-> DTO
+```
 
 ### Key Designs
 
-1. **Differentiable Textual Optimization (DTO)**:
+**1. Differentiable Text Optimization (DTO): Replacing zeroth-order "sample-evaluate" with first-order gradient descent on logits**
 
-    - **Function**: Performs gradient descent in the token logits space, jointly optimizing reward and LLM likelihood.
-    - **Mechanism**: The optimization objective is $\mathcal{L}(\mathbf{y}) = -\lambda r(\mathbf{y}|\mathbf{x}) - \log \pi_{LLM}(\mathbf{y}|\mathbf{x})$, where the reward term provides directional guidance and the NLL term prevents deviation from the LLM distribution (mitigating reward hacking). Discrete tokens are parameterized as continuous logits via a Gumbel-softmax straight-through estimator, enabling gradient flow.
-    - **Design Motivation**: Gradients propagate **bidirectionally**—prefix tokens are regularized via NLL to maintain consistency with subsequent tokens, while later tokens back-propagate reward signals to earlier ones through attention, achieving a global look-ahead optimization effect.
+As the core mechanism, DTO addresses the waste of gradient directions in zeroth-order search. It directly performs gradient descent in the token logits space with an optimization objective combining reward and LLM likelihood:
 
-2. **Iterative Decoding + Rejection Sampling**:
+$$\mathcal{L}(\mathbf{y}) = -\lambda\, r(\mathbf{y}\mid\mathbf{x}) - \log \pi_{LLM}(\mathbf{y}\mid\mathbf{x})$$
 
-    - **Function**: Embeds DTO into the token-by-token decoding loop, accepting only token modifications that improve the reward.
-    - **Mechanism**: After DTO optimization, the first token $\tilde{y}_1$ is resampled from $\text{softmax}(\tilde{\mathbf{z}}_1/\tau)$. If $\tilde{y}_1 \neq y_1$, a new continuation is generated and its reward is compared: the new token is accepted only if the new continuation achieves a higher reward.
-    - **Design Motivation**: Rejection sampling ensures that every modification is beneficial, preventing noisy gradient updates from degrading generation quality. Experiments show that DTO reduces the rejection rate from ~66% to ~29–40%.
+The reward term $r$ provides guidance on "which direction to change," while the NLL term $-\log\pi_{LLM}$ acts as a constraint to keep the optimization within the LLM's distribution and prevent reward hacking. Since tokens are discrete, DTO uses a Gumbel-softmax straight-through estimator to parameterize discrete tokens into continuous logits, allowing reward gradients to backpropagate to each token. This also enables **bidirectional propagation**: prefix tokens are constrained by NLL for coherence, while subsequent tokens propagate reward signals back via attention, achieving look-ahead global optimization without explicit tree search.
 
-3. **Acceleration Strategies (three components)**:
+**2. Iterative Decoding + Rejection Sampling: Embedding DTO into per-token decoding to ensure reward gains**
 
-    - **Gradient Caching**: Since one-hot tokens change infrequently during optimization, $\partial\mathcal{L}/\partial\mathbf{y}$ is cached and reused, recomputed only when a token flip occurs.
-    - **Rollout Reuse**: When a token modification is rejected, its rollout trajectory is directly reused as the rollout for the next step.
-    - **Confidence- and Gradient-Guided Token Selection**: DTO is applied only to high-entropy, high-gradient tokens, skipping tokens with high confidence or low gradient magnitude.
+Gradient optimization alone is insufficient as gradient directions can be noisy. $\nabla$-Reasoner embeds DTO into a per-token decoding loop: after a token is generated, DTO optimizes the corresponding logits, and a new token $\tilde{y}_1$ is sampled from $\text{softmax}(\tilde{\mathbf{z}}_1/\tau)$. If $\tilde{y}_1$ differs from the original token $y_1$, a new completion is generated and compared against the original. **The modification is accepted only if the new completion yields a higher reward.** This rejection sampling layer ensures every applied change is beneficial and filters out gradient noise; experiments show it reduces the rejection rate from ~66% (without DTO) to 29–40%.
+
+**3. Three Acceleration Strategies: Reducing overhead to near a single forward pass**
+
+Per-token backpropagation is computationally expensive, so three complementary tricks are used. First, **gradient caching**: since softmax is relatively "hard," one-hot tokens do not flip frequently, allowing $\partial\mathcal{L}/\partial\mathbf{y}$ to be cached and reused until a token actually flips. Second, **rollout reuse**: if a step is rejected, its generated rollout trajectory can be used as the starting point for the next step. Third, **confidence + gradient-guided token selection**: DTO is only run for tokens with high entropy and high gradients, skipping those where the model is already confident (low entropy) or the gradient is small. Together, these allow the gradient computation overhead to approach that of a forward pass through parallel execution.
 
 ### Loss & Training
-No training is required (purely an inference-time method). The DTO optimization objective is: $\mathcal{L} = -\log \pi_{LLM}(\mathbf{y}|\mathbf{x}) - \lambda \cdot r(\mathbf{y}|\mathbf{x})$, where $\lambda$ balances the reward term and the NLL regularization. The paper theoretically demonstrates that DTO's sample-space gradient descent is equivalent to PPO's Wasserstein gradient flow (Theorem 4.1), unifying the theoretical frameworks of pretraining scaling and inference-time scaling.
+This is a training-free inference-time method. The DTO optimization target is $\mathcal{L} = -\log \pi_{LLM}(\mathbf{y}|\mathbf{x}) - \lambda \cdot r(\mathbf{y}|\mathbf{x})$, where $\lambda$ balances reward and NLL regularization. Theoretical analysis proves that DTO’s sample-space gradient descent is equivalent to PPO’s Wasserstein gradient flow (Theorem 4.1), unifying the theoretical frameworks of pre-training scaling and inference-time scaling.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model + Benchmark | Greedy | SC (N=8) | BoN (N=8) | RAP | GRPO | ∇-Reasoner |
+| Model + Benchmark | Greedy | SC (N=8) | BoN (N=8) | RAP | GRPO | $\nabla$-Reasoner |
 |---|---|---|---|---|---|---|
 | Qwen-2.5-7B MATH-500 | 43.8 | 69.8 | 70.2 | 68.6 | 70.8 | **71.0** |
 | Qwen-2.5-7B AMC | 33.0 | 49.4 | 50.1 | 50.1 | 52.8 | 51.5 |
@@ -82,40 +91,40 @@ No training is required (purely an inference-time method). The DTO optimization 
 
 ### Ablation Study
 
-| Configuration | Result | Note |
+| Configuration | Gain/Effect | Note |
 |------|------|------|
-| DTO rejection rate (Qwen-Inst) | 28.9% | Compared to 66.5% for the no-DTO baseline—substantial reduction |
-| DTO rejection rate (Llama-Inst) | 40.1% | Compared to baseline 66.9% |
-| Reward model 4B vs. 8B (MATH-500) | 80.4 vs. 80.8 | Larger reward model yields only +0.4% improvement |
-| Model call count | Reduced by 10–40% | Compared to BoN/SC |
+| DTO rejection rate (Qwen-Inst) | 28.9% | Significantly lower than the 66.5% of the no-DTO baseline |
+| DTO rejection rate (Llama-Inst) | 40.1% | Compared to 66.9% baseline |
+| Reward model 4B vs 8B (MATH-500) | 80.4 vs 80.8 | Larger reward model only improves by 0.4% |
+| Model Call Count | 10-40% Reduction | Compared to BoN/SC |
 
 ### Key Findings
-- DTO reduces the rejection rate from the theoretical baseline of 66% to approximately 30%, confirming that gradient optimization effectively improves the policy at each step.
-- Computational efficiency advantage: the parallel execution of transformers makes gradient computation comparable in cost to a single forward pass; confidence/gradient-guided selection skips a large fraction of tokens that do not require optimization.
-- Performance is insensitive to reward model scale (gap between 4B and 8B is <1%).
-- On test-time scaling curves, ∇-Reasoner's Pareto frontier consistently dominates both BoN and SC.
+- DTO reduces the rejection rate from a theoretical ~66% to approximately 30%, proving that gradient optimization effectively improves per-step policy.
+- Computational efficiency: Parallel execution in transformers makes gradient calculation costs comparable to forward passes; confidence/gradient-guided selection skips many tokens that do not need optimization.
+- Low sensitivity to reward model quality (difference between 4B and 8B is <1%).
+- On the test-time scaling curve, the Pareto frontier of $\nabla$-Reasoner consistently outperforms BoN and SC.
 
 ## Highlights & Insights
-- **Paradigm shift from zeroth-order to first-order**: A fundamental advancement in test-time scaling, providing the first demonstration that first-order gradients are applicable and more efficient at inference time.
-- **Theoretical elegance**: The equivalence between DTO's sample-space gradient descent and PPO's Wasserstein gradient flow is formally proven, unifying pretraining scaling (parameter-space optimization) and inference-time scaling (sample-space optimization).
-- **Transferable gradient caching trick**: The observation that one-hot tokens change infrequently—a consequence of softmax sharpening—can be generalized to other settings that require gradient-based optimization over discrete structures.
+- **Paradigm shift from zeroth-order to first-order**: A fundamental improvement in test-time scaling, proving for the first time that first-order gradients are viable and more efficient during inference.
+- **Theoretical elegance**: Proof that DTO’s sample-space gradient descent is equivalent to PPO’s Wasserstein gradient flow unifies optimization in parameter space (pre-training) and sample space (inference-time).
+- **Reusable gradient caching trick**: The observation that one-hot tokens do not change frequently due to softmax hardening can be generalized to other scenarios requiring gradient optimization of discrete structures.
 
 ## Limitations & Future Work
-- Performance is bounded by the joint capability ceiling of the base model and the reward model; the method cannot surpass this combined bottleneck.
-- The base model and reward model must share the same vocabulary to enable end-to-end logit optimization, restricting flexibility in model composition.
-- Validation is currently limited to mathematical reasoning tasks; performance on code generation, open-domain QA, and other settings remains unexplored.
-- Integration with serving engines (e.g., vLLM) requires additional engineering effort to insert backpropagation into the decoding loop.
+- Performance is capped by the upper bound of the base model and reward model capabilities.
+- The base model and reward model must share the same vocabulary for end-to-end logit optimization, limiting model combination flexibility.
+- Currently only validated on mathematical reasoning; performance in code generation or open QA remains unknown.
+- Integration with serving engines (e.g., vLLM) requires significant engineering to insert backpropagation into the decoding loop.
 
 ## Related Work & Insights
-- **vs. Best-of-N / SC**: These methods rely on pure zeroth-order sampling and filtering; ∇-Reasoner directly optimizes via first-order gradients, achieving superior results with fewer samples.
-- **vs. ToT / RAP**: While these methods also guide search, they depend on heuristic tree search and Q-value estimation; ∇-Reasoner employs differentiable optimization for a more direct and efficient solution.
-- **vs. GRPO (training-time method)**: ∇-Reasoner achieves performance comparable to GRPO without modifying model weights, and the mathematical equivalence between the two is formally established.
+- **vs Best-of-N / SC**: These are pure zeroth-order filtering methods; $\nabla$-Reasoner uses first-order gradients to optimize directly, achieving better results with fewer samples.
+- **vs ToT / RAP**: While these also guide search, they rely on heuristic tree search and Q-value estimation; $\nabla$-Reasoner is more efficient by using differentiable optimization.
+- **vs GRPO (Training-time method)**: Achieves performance close to GRPO without modifying model weights, with mathematical equivalence proven between the two.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Paradigm shift from zeroth-order to first-order; both theory and method are highly original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage of mathematical reasoning, but limited task diversity.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear, figures are intuitive, and the narrative is well-structured.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for test-time scaling and is poised to become an important baseline.
+- Novelty: ⭐⭐⭐⭐⭐ Paradigm shift from zeroth to first order; theoretically and methodologically novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive coverage of math reasoning, but task variety is limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical derivations, intuitive diagrams, and smooth narrative.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for test-time scaling, likely to become an important baseline.
 
 <!-- RELATED:START -->
 
@@ -124,10 +133,10 @@ No training is required (purely an inference-time method). The DTO optimization 
 ## Related Papers
 
 - [\[ICLR 2026\] On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning](on_the_design_of_kl-regularized_policy_gradient_algorithms_for_llm_reasoning.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
-- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](../../ACL2026/llm_reasoning/parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
-- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 
 </div>
 

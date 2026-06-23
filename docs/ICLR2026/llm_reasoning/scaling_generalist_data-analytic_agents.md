@@ -2,167 +2,150 @@
 title: >-
   [Paper Note] Scaling Generalist Data-Analytic Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][Data-Analytic Agent] This paper proposes DataMind — a complete training framework for data-analytic agents — achieving diverse query synthesis via fine-grained task taxonomy with recursive diff…
+  [ICLR 2026][LLM Reasoning][SFT+RL] Ours proposes DataMind—a comprehensive training scheme for data analysis Agents. Through fine-grained task classification combined with recursive difficulty synthesis for diverse query generation, knowledge-enhanced trajectory sampling with self-consistency filtering for quality assurance, an SFT+RL dynamic hybrid trai
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Data-Analytic Agent"
-  - "Agent Training"
-  - "Multi-turn Code Execution"
-  - "Data Synthesis"
-  - "SFT+RL"
+  - ICLR 2026
+  - LLM Reasoning
+  - SFT+RL
 date: 2026-05-08
-content_hash: c5a156f07cc058c0
+content_hash: 70cc30031387e541
 ---
-
 # Scaling Generalist Data-Analytic Agents
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25084](https://arxiv.org/abs/2509.25084)  
 **Code**: [GitHub](https://github.com/zjunlp/DataMind)  
-**Area**: LLM Reasoning
-**Keywords**: Data-Analytic Agent, Agent Training, Multi-turn Code Execution, Data Synthesis, SFT+RL
+**Area**: LLM Reasoning  
+**Keywords**: Data Analysis Agent, Agent Training, Multi-turn Code Execution, Data Synthesis, SFT+RL
 
 ## TL;DR
 
-This paper proposes DataMind — a complete training framework for data-analytic agents — achieving diverse query synthesis via fine-grained task taxonomy with recursive difficulty composition, ensuring data quality through knowledge-augmented trajectory sampling and self-consistency filtering, employing a dynamic SFT+RL mixed training strategy, and implementing a memory-efficient asynchronous rollout framework. The resulting DataMind-14B achieves a 71.16% average score across multiple benchmarks, establishing a new state of the art and surpassing GPT-5 and DeepSeek-V3.1.
+Ours proposes DataMind—a comprehensive training scheme for data analysis Agents. Through fine-grained task classification combined with recursive difficulty synthesis for diverse query generation, knowledge-enhanced trajectory sampling with self-consistency filtering for quality assurance, an SFT+RL dynamic hybrid training strategy, and a memory-friendly asynchronous rollout framework, the resulting DataMind-14B achieves SOTA with a 71.16% average score across multiple benchmarks, surpassing GPT-5 and DeepSeek-V3.1.
 
 ## Background & Motivation
 
-**Background**: Data-analytic agents discover actionable insights by generating code to process, model, and compute over data, serving as key catalysts for AI-driven scientific discovery and automated decision support. Existing data-analytic agents (DS-Agent, AutoKaggle, Data Interpreter, etc.) rely almost entirely on closed-source models through prompt engineering and multi-agent scaffolding.
+**Background**: Data analysis Agents discover useful information by generating code for processing, modeling, and computing data. They are key catalysts for AI-driven scientific discovery and automated decision support. Existing data analysis Agents (DS-Agent, AutoKaggle, Data Interpreter, etc.) rely almost entirely on closed-source models built via prompt engineering and multi-Agent scaffolding.
 
 **Limitations of Prior Work**:
-- **Insufficient training data**: Publicly available data analysis benchmarks provide only limited test sets without step-by-step trajectory annotations, making them unsuitable for direct training use.
-- **Unclear training strategy**: How to allocate steps and maintain stability under the conventional SFT-then-RL paradigm for long-horizon agent training remains an open question.
-- **Unstable multi-turn code execution**: Data files and code interpreters involve complex memory management; parallel agent rollout combined with multi-turn code generation frequently crashes under limited memory resources.
-- **Capability gap in open-source models**: The few existing open-source trained models (TableLLM, Table-R1) handle only simple table understanding tasks and fail when faced with large-scale data files in diverse formats and long-horizon multi-step reasoning.
+- **Insufficient training data**: Public data analysis benchmarks only provide limited test sets and lack step-by-step trajectory annotations, making them unsuitable for direct training.
+- **Unclear training strategies**: The traditional SFT-then-RL paradigm remains ambiguous regarding step allocation and stability maintenance in long-range Agent training.
+- **Unstable multi-turn code execution**: Managing data files and code interpreters involves complex memory management; parallel Agent rollout + multi-turn code generation often crash under limited memory resources.
+- **Capability gap in open-source models**: Few open-source trained models (TableLLM, Table-R1) can only handle simple table understanding tasks, failing when faced with large-scale data files in diverse formats and long-range multi-step reasoning.
 
-**Key Challenge**: High-quality training demands large-scale diverse trajectory data, a stable training strategy, and reliable environment interaction — yet all three present unique challenges in data analysis settings, where task formats are heterogeneous (csv/xlsx/sqlite), reasoning chains are long, and code execution carries side effects.
+**Key Challenge**: High-quality training requires massive diverse trajectory data, stable training strategies, and reliable environmental interaction. However, all three face unique challenges in data analysis scenarios—diverse task formats (csv/xlsx/sqlite), long reasoning chains, and side effects from code execution.
 
-**Goal**: The paper proposes DataMind, an end-to-end scalable data synthesis and agent training framework that systematically addresses the three challenges above.
+**Goal**: Ours proposes DataMind, an end-to-end scalable data synthesis and Agent training scheme to systematically address these three challenges.
 
 ## Method
 
 ### Overall Architecture
 
-The DataMind pipeline consists of four key modules:
-1. **Data Synthesis**: File collection → task taxonomy → query synthesis → trajectory sampling & filtering → DataMind-12K
-2. **Training Strategy**: Dynamically weighted joint optimization of SFT loss and DAPO (RL) loss
-3. **Rollout Engineering**: Asynchronous interaction + chunked code maintenance + secure sandbox
-4. **Reward Design**: Format reward + answer reward (model-as-judge) + length penalty
+DataMind aims to solve the problem of "training an open-source model from scratch into a generalist data analysis Agent." The bottlenecks lie in three areas: absence of training data with step-by-step trajectories, lack of clarity on how to mix SFT and RL for long-range Agents, and memory-related crashes during multi-turn code execution. DataMind maps these challenges to an end-to-end pipeline: first, **synthesizing diverse queries with difficulty gradients** through fine-grained task classification and recursive difficulty combinations; then, **sampling high-quality trajectories with dual filtering** to obtain the training set DataMind-12K; next, optimizing the model using a **dynamic hybrid objective** of SFT and RL; all while running on an **asynchronous rollout framework** specifically designed for multi-turn code execution. The trained Agent follows the ReAct paradigm, iterating in a Thought $\rightarrow$ Action (Python/SQL code) $\rightarrow$ Observation (execution feedback) loop for a maximum of $\mathcal{T}=10$ turns until a final answer is provided.
 
-Agents follow the ReAct paradigm: Thought → Action (Python/SQL code) → Observation (execution feedback), with a maximum of $\mathcal{T}=10$ turns.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    DATA["Raw Data Files<br/>csv / xlsx / sqlite"] --> SYN["Fine-grained Classification<br/>& Recursive Complexity<br/>(18 Categories + Chain stacking)"]
+    SYN --> SAMP["Knowledge-enhanced Sampling<br/>& Self-consistency Filtering<br/>(DeepSeek-V3.1 Sample N=3,<br/>GPT-4o-mini Consistency Check)"]
+    SAMP --> SET["Training Set DataMind-12K<br/>11,707 High-quality Trajectories"]
+    SET --> TRAIN["SFT+RL Dynamic Hybrid Training<br/>Weight γ Annealing from 0.9 to 0.05"]
+    subgraph ROLLOUT["Asynchronous multi-turn Rollout (Training Env)"]
+        direction TB
+        R1["Async Interaction"] --> R2["Chunked Code Maintenance"] --> R3["Security Isolation Control"]
+    end
+    ROLLOUT -.Supports.-> TRAIN
+    TRAIN --> AGENT["DataMind-7B / 14B<br/>ReAct Multi-turn Code Agent"]
+```
 
-### Key Design 1: Fine-Grained Task Taxonomy and Recursive Difficulty Composition
+### Key Designs
 
-- Data analysis tasks are categorized into **18 fine-grained classes** (data cleaning, descriptive statistics, correlation analysis, time-series analysis, anomaly detection, etc.), each accompanied by 4–6 exemplar queries as few-shot demonstrations.
-- **Recursive easy-to-hard composition**: The output of one task type is used as input to the next, iterated 2–5 times to progressively escalate difficulty and create multi-hop analytical challenges that far exceed the demands of any single task type.
-- Data files are sourced from Kaggle (3,400 csv + 560 xlsx) and BIRD/OmniSQL (1,954 sqlite).
+**1. Fine-grained Classification and Recursive Complexity: Making Synthetic Queries Diverse and Graded**
 
-### Key Design 2: Knowledge-Augmented Trajectory Sampling and Self-Consistency Filtering
+Data analysis benchmarks provide few test cases and no trainable trajectories. Mass-producing problems with expert models often leads to monotonous types and flat difficulty. DataMind first decomposes data analysis into **18 fine-grained categories** (e.g., data cleaning, descriptive statistics, correlation analysis, time-series analysis, anomaly detection), each equipped with few-shot examples to ensure broad horizontal coverage. Complexity is amplified vertically through **recursive composition**: treating the output of a previous task as the input for the next, stacking them in a chain to create multi-hop analysis challenges. The underlying data files cover three mainstream formats—3,400 csv and 560 xlsx files from Kaggle, and 1,954 sqlite databases from BIRD/OmniSQL—ensuring the Agent encounters diverse real-world files from the source.
 
-Trajectory sampling employs a two-level quality assurance scheme:
+**2. Knowledge-enhanced Sampling and Self-consistency Filtering: Ensuring Trajectory Correctness**
 
-**Level 1 — Knowledge-Augmented Sampling**:
-- High-level workflow knowledge $k$ is manually designed for each task category to guide an expert model (DeepSeek-V3.1) in generating trajectories.
-- $\mathcal{N}=3$ independent trajectories are sampled per query.
+Trajectories directly rolled out by expert models contain both correct and incorrect answers; training with SFT on these would result in learning faulty reasoning. DataMind implements two-stage quality assurance. During sampling, a high-level workflow knowledge $k$ is manually written for each task category and injected into prompts to guide DeepSeek-V3.1 in generating standardized trajectories, with $\mathcal{N}=3$ independent samples per query. During filtering, a judge model (GPT-4o-mini) checks the final answer consistency across these $\mathcal{N}$ samples. If consistent, the most concise and accurate trajectory is selected as a training instance; if inconsistent, the judge's CoT feedback is returned to the Agent for reflection and revision before another filtering round. After applying rules for format compliance, answers $< 1024$ tokens, and language completeness, **DataMind-12K** (11,707 trajectories) is obtained. Subsequent ablation proves this self-consistency stage is more critical than "best trajectory selection"—answer correctness is the root of trajectory quality.
 
-**Level 2 — Self-Consistency Filtering**:
-- A judge model (GPT-4o-mini) verifies whether the final answers across $\mathcal{N}$ trajectories are consistent.
-- Among consistent trajectories, the most concise and accurate one is selected as the training instance.
-- Inconsistent trajectories are returned to the agent along with the judge's chain-of-thought feedback for reflective revision, followed by re-filtering.
-- Rule-based filtering enforces format compliance, length constraints (answer < 1,024 tokens), and linguistic integrity.
+**3. SFT+RL Dynamic Hybrid Training: Balancing Expert Knowledge and Autonomous Exploration via Annealing**
 
-The final dataset is **DataMind-12K** (11,707 high-quality trajectories).
-
-### Key Design 3: Dynamic Mixed SFT+RL Training
-
-The conventional SFT-then-RL paradigm presents a dilemma: excessive SFT rigidifies reasoning patterns and suppresses RL exploration; premature RL leaves the model incapable of generating effective rollout groups.
-
-This work adopts joint optimization:
+Traditional SFT-then-RL often fails: long SFT phases stagnate thought patterns and stifle RL exploration, while early RL is ineffective as the model is too weak to roll out valid trajectories. DataMind optimizes both jointly by weighted summation of the losses:
 
 $$\mathcal{L}_{\text{Final}}(\theta) = \gamma \cdot \mathcal{L}_{\text{SFT}}(\theta) + (1-\gamma) \cdot \mathcal{L}_{\text{DAPO}}(\theta)$$
 
-- $\gamma$ is **dynamically scheduled**: initialized at a large value (0.9) to enable knowledge absorption from expert data, then gradually annealed to a small value (0.05) to encourage exploration.
-- The SFT loss is computed only on tokens generated by the agent, masking environment feedback tokens.
-- The DAPO algorithm is used for RL, employing decoupled clipping and dynamic sampling.
-- Training begins with a cold start on DataMind-12K.
+The weight $\gamma$ is dynamically scheduled: starting at 0.9 to let the model absorb knowledge from expert data, then annealing to 0.05 to give control to RL for exploration. SFT loss is calculated only on Agent-generated tokens (masking environment feedback), and RL uses the DAPO algorithm with decoupled clipping and dynamic sampling, cold-started with DataMind-12K. To prevent collapse, **Void Turns Filtering** is introduced: if a trajectory contains invalid turns (failing to produce valid code or answers), its loss is masked entirely to prevent distribution drift from misguiding the training.
 
-**Void Turns Filtering**: Loss is masked for entire trajectories containing invalid turns (i.e., turns that produce neither effective code nor an answer), preventing trajectory collapse caused by distributional drift.
+**4. Asynchronous Multi-turn Rollout: Stable Code Execution within Finite Memory**
 
-### Key Design 4: Asynchronous Multi-Turn Rollout Engineering
-
-- **Asynchronous interaction**: Model generation and code execution are decoupled across different samples, preventing simultaneous GPU and CPU memory spikes.
-- **Chunked code maintenance**: Following a notebook-style paradigm, each step generates only the current code snippet; prior snippets are concatenated at execution time, avoiding the memory overhead of maintaining a global variable pool.
-- **Safety controls**: Each trajectory runs in an isolated environment with CPU time and peak memory limits, and unsafe function calls are filtered.
+Data files and code interpreters require complex memory management. Parallel Agents generating and executing code simultaneously can easily exhaust memory. DataMind stabilizes environmental interaction through three techniques: **Asynchronous Interaction** decouples model generation and code execution across samples, staggering GPU and CPU memory peaks; **Chunked Code Maintenance** adopts a notebook style, generating only current snippets and concatenating history at execution, saving memory from overhead of global variable pools; **Security Control** isolates the execution environment for each trajectory, limiting CPU time and peak memory while filtering unsafe function calls. These ensure stable large-scale parallel rollouts on limited resources.
 
 ## Key Experimental Results
 
-### Main Results: Multi-Benchmark Performance Comparison
+### Main Results: Multi-benchmark Performance Comparison
 
 | Model Type | Method | DABench pass@1 | TableBench pass@1 | BIRD pass@1 | Avg pass@1 |
-|-----------|--------|---------------|-------------------|-------------|------------|
+|---------|------|---------------|-------------------|-------------|------------|
 | **Closed-source** | GPT-4o | 76.39 | 64.97 | 50.20 | 63.85 |
 | **Closed-source** | o4-mini | 79.12 | 71.03 | 57.04 | 69.06 |
 | **Closed-source** | DeepSeek-R1 | 78.73 | 68.96 | 55.80 | 67.83 |
 | **Closed-source** | DeepSeek-V3.1 | 81.32 | 72.52 | 57.89 | 70.58 |
 | **Closed-source** | GPT-5 | 78.21 | 69.93 | 60.17 | 69.44 |
-| Open-source-7B | ReAct (Qwen-Coder-7B) | 15.05 | 11.70 | 7.02 | 11.26 |
-| Open-source-7B | TableLLM | 36.71 | 41.01 | 11.99 | 29.90 |
-| Open-source-7B | Table-R1 | 42.54 | 56.36 | 10.69 | 36.53 |
-| Open-source-7B | **DataMind-7B** | **77.30** | **67.60** | **59.41** | **68.10** |
-| Open-source-14B | ReAct (Qwen-Coder-14B) | 71.21 | 56.96 | 41.76 | 56.64 |
-| Open-source-14B | TableLLM | 38.26 | 46.44 | 20.99 | 35.23 |
-| Open-source-14B | **DataMind-14B** | **80.29** | **70.95** | **62.23** | **71.16** |
+| Open-7B | ReAct (Qwen-Coder-7B) | 15.05 | 11.70 | 7.02 | 11.26 |
+| Open-7B | TableLLM | 36.71 | 41.01 | 11.99 | 29.90 |
+| Open-7B | Table-R1 | 42.54 | 56.36 | 10.69 | 36.53 |
+| Open-7B | **DataMind-7B** | **77.30** | **67.60** | **59.41** | **68.10** |
+| Open-14B | ReAct (Qwen-Coder-14B) | 71.21 | 56.96 | 41.76 | 56.64 |
+| Open-14B | TableLLM | 38.26 | 46.44 | 20.99 | 35.23 |
+| Open-14B | **DataMind-14B** | **80.29** | **70.95** | **62.23** | **71.16** |
 
-Key findings:
-- DataMind-14B achieves a 71.16% average score, **surpassing all closed-source models** (including GPT-5 at 69.44% and DeepSeek-V3.1 at 70.58%).
-- DataMind-7B achieves 68.10%, the best among all open-source models.
-- Specialized models (OmniSQL/SQL-R1) remain competitive on BIRD but exhibit sharp performance drops on other benchmarks.
-- DataMind is trained on only 12K samples, far fewer than baselines (TableLLM: 20K; OmniSQL: 2.5M).
+**Key Findings**:
+- DataMind-14B **surpasses all closed-source models** with a 71.16% average score (including GPT-5’s 69.44% and DeepSeek-V3.1’s 70.58%).
+- DataMind-7B outperforms all existing open-source models at 68.10%.
+- Specialized models (OmniSQL/SQL-R1) are competitive on BIRD but drop significantly on other benchmarks.
+- DataMind uses only 12K training samples, far fewer than baselines (TableLLM 20K, OmniSQL 2.5M).
 
 ### Ablation Study: Training Strategy Comparison
 
 | Training Strategy | Avg pass@1 | Avg pass@3 |
-|------------------|------------|------------|
+|---------|------------|------------|
 | SFT only | 62.54 | 73.74 |
-| zero-RL (no SFT) | 58.03 | 71.72 |
+| zero-RL (No SFT) | 58.03 | 71.72 |
 | SFT-then-RL | 63.42 | 75.46 |
-| **SFT-and-RL (dynamic $\gamma$)** | **68.10** | **79.07** |
+| **SFT-and-RL (Dynamic $\gamma$)** | **68.10** | **79.07** |
 
-Key insights:
-- SFT alone improves the baseline from 11.26% to 62.54% — **data quality accounts for the majority of the performance gain**.
-- zero-RL underperforms SFT alone — the 7B model's limited multi-step reasoning capacity prevents it from independently producing high-quality rollout trajectories.
-- SFT-then-RL yields only marginal improvement and is prone to training instability.
-- The dynamic mixed strategy yields an additional 5.56-point improvement by balancing knowledge absorption with exploration.
+**Key Findings**:
+- Pure SFT improves the baseline from 11.26% to 62.54%—**data quality contributes most of the performance gain**.
+- zero-RL performs worse than SFT—7B models lack the multi-turn reasoning strength to roll out high-quality trajectories independently.
+- SFT-then-RL provides only marginal gains and tends to be unstable.
+- Dynamic hybrid strategy adds another 5.56 percentage points—balancing knowledge absorption and exploration.
 
-### Data and Filtering Analysis
+### Data & Filtering Analysis
 
 | Filtering Strategy | Effect |
-|-------------------|--------|
-| Con-select (self-consistency + best selection) | Baseline setting |
-| Non-select (retain all consistent trajectories) | Superior on DABench — trajectory diversity is more beneficial |
-| Random-select (randomly choose a consistent trajectory) | Comparable to con-select — judge preference may reduce diversity |
-| Non-con (no consistency filtering) | **Significant degradation across all metrics** — answer quality is the critical guarantee for trajectory quality |
+|---------|------|
+| Con-select (Consistency + Best selection) | Baseline setting |
+| Non-select (Keep all consistent trajectories) | Better on DABench—trajectory diversity is more important |
+| Random-select (Randomly select consistent) | Similar to con-select—judge preference might reduce diversity |
+| Non-con (No consistency filtering) | **All metrics drop significantly**—answer quality is the core guarantee of trajectory quality |
 
-Core finding: **Self-consistency filtering is more critical than best-trajectory selection** — answer correctness ensures the intrinsic quality of trajectories, and diverse reasoning paths are more beneficial for model learning than a single "best" path.
+**Key Findings**: **Self-consistency filtering is more critical than best-trajectory selection**—answer correctness guarantees the intrinsic quality of a trajectory, and diverse reasoning paths are more beneficial for model learning than a single "best" path.
 
 ## Highlights & Insights
 
-### Strengths
-- **End-to-end engineering completeness**: The system encompasses data synthesis, training strategy, and rollout engineering, with independent innovations at each stage.
-- **Deep insights**: Findings such as the SFT loss serving simultaneously as a stabilizer and a potential source of collapse during RL training, and self-consistency filtering being more important than best-trajectory selection, carry strong practical guidance.
-- **Compelling results**: A 14B model trained on only 12K samples outperforms GPT-5 and specialized models trained on 2.5M samples.
-- **Training dynamics analysis**: The "raising a child" analogy provides an intuitive explanation of the dynamic weight scheduling from SFT to RL.
+### Value
+- **Engineering Thoroughness**: End-to-end system design covering data synthesis, training strategies, and rollout engineering, with independent innovations in each part.
+- **Deep Insights**: Findings such as SFT loss acting as a stabilizer for RL (yet potentially a cause of collapse) and the superiority of self-consistency over "best-track" selection offer strong practical guidance.
+- **Convincing Results**: A 14B model trained on only 12K samples surpasses GPT-5 and specialized models with 2.5M samples.
+- **Dynamic Training Analysis**: The "parenting" analogy intuitively explains the principles of the SFT$\rightarrow$RL dynamic weight scheduling.
 
-### Limitations & Future Work
-- Evaluation relies on GPT-4o-mini as the judge; using the same judge for both training and evaluation introduces potential bias (though cross-validation reports a Pearson correlation of 0.96).
-- The 18-category task taxonomy is manually designed; category boundaries and coverage may have omissions.
-- Experiments are conducted only at the 7B and 14B scales; behavior at larger or smaller model sizes remains unknown.
-- The chunked code maintenance strategy may become less efficient in scenarios with long dependency chains (e.g., cross-turn variable references).
+### Limitations
+- Evaluation uses GPT-4o-mini as a judge, which might introduce bias (though cross-validation shows a Pearson correlation of 0.96).
+- The 18-category task classification relies on manual design; classification boundaries and coverage may have omissions.
+- Performance has only been verified at 7B and 14B scales; behavior for larger or smaller models remains unknown.
+- Chunked code maintenance may lose efficiency in scenarios with long dependency chains (e.g., cross-turn variable references).
 
 ### Rating
-⭐⭐⭐⭐⭐ — An exemplary systematic engineering contribution: the problem is clearly defined, the solution is comprehensive, experiments are rigorous, and insights are deep. This work offers strong reference value to the agent training community.
+⭐⭐⭐⭐⭐ — A model of systematic engineering: clear problem definition, comprehensive solution, solid experimentation, and deep insights. High reference value for the Agent training community.
 
 <!-- RELATED:START -->
 
@@ -171,10 +154,10 @@ Core finding: **Self-consistency filtering is more critical than best-trajectory
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
-- [\[ICLR 2026\] Agentified Assessment of Logical Reasoning Agents](agentified_assessment_of_logical_reasoning_agents.md)
-- [\[ICLR 2026\] Estimating the Empowerment of Language Model Agents](estimating_the_empowerment_of_language_model_agents.md)
-- [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
+- [\[ICLR 2026\] USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning Capabilities of LLMs as Urban Agents](ustbench_benchmarking_and_dissecting_spatiotemporal_reasoning_capabilities_of_ll.md)
+- [\[ICLR 2026\] OpenThoughts: Data Recipes for Reasoning Models](openthoughts_data_recipes_for_reasoning_models.md)
+- [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
 
 </div>
 

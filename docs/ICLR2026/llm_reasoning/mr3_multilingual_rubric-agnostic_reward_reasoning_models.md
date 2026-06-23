@@ -2,105 +2,97 @@
 title: >-
   [Paper Note] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][multilingual reward models] This paper introduces mR3, a family of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B…
+  [ICLR 2026][LLM Reasoning][Knowledge Distillation] The authors propose mR3, a series of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B distillation + difficulty filtering) and curriculum learning, the 14B model outperforms the 120B teacher and all comparable baselines on multilingual benchm
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "multilingual reward models"
-  - "reasoning-based evaluation"
-  - "curriculum learning"
-  - "rubric-based assessment"
-  - "knowledge distillation"
+  - ICLR 2026
+  - LLM Reasoning
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 932786bc15055935
+content_hash: 9cacfaa4109fb53f
 ---
-
 # mR3: Multilingual Rubric-Agnostic Reward Reasoning Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.01146](https://arxiv.org/abs/2510.01146)  
 **Code**: [github.com/rubricreward/mr3](https://github.com/rubricreward/mr3)  
-**Area**: LLM Reasoning / Alignment & RLHF
-**Keywords**: multilingual reward models, reasoning-based evaluation, curriculum learning, rubric-based assessment, knowledge distillation
+**Area**: LLM Inference / Alignment RLHF  
+**Keywords**: Multilingual Reward Models, Reasoning Evaluation, Curriculum Learning, Rubric Evaluation, Knowledge Distillation
 
 ## TL;DR
-This paper introduces mR3, a family of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B distillation with difficulty filtering) and curriculum learning, the 14B model surpasses the 120B teacher model and all comparable baselines on multilingual evaluation benchmarks, while supporting point-wise, pair-wise, and binary evaluation paradigms.
+The authors propose mR3, a series of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B distillation + difficulty filtering) and curriculum learning, the 14B model outperforms the 120B teacher and all comparable baselines on multilingual benchmarks, supporting point-wise, pair-wise, and binary evaluation paradigms.
 
 ## Background & Motivation
 
-**Background**: The LLM-as-judge evaluation paradigm has been widely adopted in English settings, but support for non-English languages remains extremely limited. Existing reward models (e.g., ArmoRM, RM-R1) focus almost exclusively on English, while multilingual evaluation models (e.g., m-Prometheus) cover only 6 languages and lack systematic study of training strategies.
+**Background**: LLM-as-judge evaluation methods are widely adopted in English scenarios, but support for non-English languages remains extremely limited. Existing reward models (e.g., ArmoRM, RM-R1) focus almost exclusively on English. Multilingual evaluation models (e.g., m-Prometheus) cover only 6 languages and lack systematic research on training strategies.
 
 **Limitations of Prior Work**:
-   - Existing reward models exhibit significant accuracy degradation in non-English settings
-   - LLMs lack coherent reasoning capability in low-resource languages (LRLs)
-   - Multilingual evaluation lacks a standardized framework; existing work supports only pair-wise comparison, without point-wise or binary evaluation
-   - There is no systematic investigation into how to construct high-quality training data for multilingual reward models, including what languages to use for instructions, rubrics, and reasoning chains
+   - Existing reward models show significant accuracy drops in non-English settings.
+   - LLMs lack coherent reasoning capabilities in low-resource languages (LRL).
+   - Multilingual evaluation lacks a standardized framework; existing works often support only pair-wise comparisons, neglecting point-wise and binary evaluations.
+   - There is a lack of systematic study on building high-quality training data for multilingual reward models, specifically regarding the optimal choice of instruction language, rubric language, and reasoning language.
 
-**Key Challenge**: Multilingual evaluation requires both strong reasoning ability and cross-lingual knowledge transfer, yet existing models' reasoning capabilities degrade substantially in non-English languages. How to simultaneously improve both under limited multilingual data conditions remains an open challenge.
+**Key Challenge**: Multilingual evaluation requires both strong reasoning capabilities and cross-lingual knowledge transfer. However, reasoning in non-English languages is far inferior to English. The challenge lies in simultaneously improving both under limited multilingual data conditions.
 
 **Goal**:
-   - Design a multilingual reward reasoning model covering 72 languages
-   - Systematically study optimal combinations of instruction language, reasoning language, and target language
-   - Explore data selection and curriculum learning strategies
-   - Support point-wise, pair-wise, and binary evaluation paradigms
+   - Design multilingual reward reasoning models covering 72 languages.
+   - Systematically study the optimal combination of instruction language, reasoning language, and target language.
+   - Explore data selection and curriculum learning strategies.
+   - Support point-wise, pair-wise, and binary evaluation paradigms.
 
-**Key Insight**: Rather than training conventional scalar reward models, this work trains generative reward models that produce reasoning traces alongside scores, improving evaluation interpretability and cross-lingual robustness through explicit reasoning.
+**Key Insight**: Instead of training traditional scalar reward models, one should train generative reward models that produce a reasoning trace followed by a score. Explicit reasoning processes improve interpretability and cross-lingual robustness.
 
-**Core Idea**: Construct a 72-language alignment dataset (100K samples) via GPT-OSS-120B distillation combined with difficulty filtering and curriculum learning, training generative reward reasoning models that outperform the teacher model despite having far fewer parameters.
+**Core Idea**: Construct a 72-language aligned dataset (100K samples) via GPT-OSS-120B distillation, combined with difficulty filtering and curriculum learning to train generative reward models that surpass the teacher model despite having fewer parameters.
 
 ## Method
 
 ### Overall Architecture
-Input: task instruction $t$ + input instance $i$ + candidate response $a$ + evaluation rubric $r$
-Output: reasoning trace + brief explanation $e$ + score $s$
-Formally, $f(x) = y$, where $x = (t, i, a, r)$ and $y = (\text{trace}, e, s)$
 
-Three evaluation modes: point-wise (scoring a single response), pair-wise (comparing two responses), and binary (correct/incorrect judgment).
+mR3 aims to train a **generative** reward model capable of scoring responses based on "arbitrary languages and arbitrary rubrics," rather than a traditional scorer that outputs only a scalar. It formulates evaluation as $f(x)=y$, where the input $x=(t, i, a, r)$ includes the task instruction $t$, input instance $i$, candidate answer $a$, and evaluation rubric $r$. The output $y=(\text{trace}, e, s)$ consists of a reasoning trace, a brief explanation $e$, and a final score $s$. The model supports three evaluation modes: point-wise (scoring a single answer), pair-wise (comparing two answers), and binary (correctness judgment).
+
+The pipeline focuses on data quality and training strategy rather than model architecture (which utilizes Qwen3 with supervised fine-tuning). The workflow involves aggregating 6 public datasets into a 125-language pool, supplementing missing rubrics with English ones via GPT-4.o, distilling aligned outputs across three language strategies using GPT-OSS-120B, and filtering down to 100K high-quality samples. These samples are sorted from "easy-to-hard" for SFT using cross-entropy, resulting in 4B/8B/14B reward models.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["6 Public Datasets<br/>125 Languages, partial rubrics missing"]
+    subgraph PIPE["Multilingual Data Construction Pipeline"]
+        direction TB
+        B["GPT-4.1 supplements English rubrics"] --> C["GPT-OSS-120B Distillation<br/>Triple Language Strategy Aligned Outputs"]
+        C --> D["Quality Filtering: Retain only if teacher is correct on all 3 strategies"]
+        D --> E["Difficulty Filtering + Downsampling<br/>Remove too easy samples → 100K"]
+    end
+    A --> B
+    E --> G["Curriculum Learning: Easy → Hard<br/>Difficulty = Prediction Consistency + Token Length"]
+    G --> H["SFT Training (instead of RL)<br/>Qwen3-4B/8B/14B, Cross-Entropy"]
+    H --> I["mR3 Reward Models<br/>Point / Pair / Binary Paradigms"]
+```
 
 ### Key Designs
 
-1. **Multilingual Data Construction Pipeline**
+**1. Multilingual Data Construction Pipeline: Filtering 100K High-Quality Samples from 3M+**
+The pipeline is designed to address the scarcity of broad-coverage, high-quality aligned data. The initial pool covers 125 languages. GPT-OSS-120B generates outputs under three strategies (eng-eng / tgt-eng / tgt-tgt). **Quality filtering** retains samples where the teacher is correct across all strategies. **Difficulty filtering** removes samples that are too easy (measured by accuracy over 5 attempts), prioritizing "hard" samples where correctness $\leq 2$.
 
-    - **Function**: Filter and construct a 100K high-quality multilingual training set from over 3 million samples
-    - **Mechanism**:
-        - The initial data pool is drawn from 6 public datasets (Human Arena Preference, HelpSteer3, MMMLU, HumanEval-XL, MATH-500 Multilingual, PolyGuardMix), covering 125 languages
-        - For data lacking rubrics, English rubrics are automatically generated using GPT-4.1
-        - GPT-OSS-120B is used to distill outputs under three language strategies: eng-eng (English instruction + English reasoning), tgt-eng (target-language instruction + English reasoning), and tgt-tgt (target-language instruction + target-language reasoning)
-        - **Quality filtering**: Only samples correctly answered under all three strategies are retained
-        - **Difficulty filtering**: Samples that gpt-oss-20b answers correctly in 5 consecutive attempts are discarded as "easy"
-        - The dataset is downsampled to 100K, prioritizing harder samples
+**2. Triple Language Reasoning Strategy: Comparing eng-eng / tgt-eng / tgt-tgt Paths**
+The distillation provides three paths: eng-eng (English instruction + English reasoning), tgt-eng (Target language instruction + English reasoning), and tgt-tgt (Target language instruction + Target language reasoning). Results show a clear gradient: eng-eng is strongest due to mature reasoning in English; tgt-eng is close, showing robustness to non-English prompts; tgt-tgt is weakest before fine-tuning but shows the **largest gains after fine-tuning**, even surpassing the base model's eng-eng performance.
 
-2. **Curriculum Learning Strategy**
+**3. Curriculum Learning: Sorting Training Data from Easy to Hard**
+Authors compared six ordering schemes and found that **easy-to-hard** sorting yields the best results. Difficulty is first determined by accuracy (fewer correct teacher attempts means harder) and subsequently by token length (longer means harder). This allows the model to establish basic evaluation capabilities before tackling noisier/harder samples.
 
-    - **Function**: Optimize the ordering of training data
-    - **Mechanism**: Random shuffling, English-first, difficulty ordering, and mixed schemes are compared; ordering from **easy to hard** yields the best results (difficulty is measured by prediction consistency and token length)
-    - **Design Motivation**: Easy samples first establish foundational capabilities; hard samples fine-tune later, avoiding disruption by noisy samples in early training
+**4. SFT instead of RL Training**
+mR3 uses standard supervised fine-tuning (SFT) with cross-entropy loss rather than RL:
 
-3. **Multilingual Reasoning Strategy Study**
+$$\mathcal{L}_{\text{SFT}}(\theta) = -\frac{1}{N}\sum_{i=1}^{N}\sum_{t=1}^{T_i}\log \pi_\theta\big(y_t^{(i)} \mid y_{<t}^{(i)}, x^{(i)}\big)$$
 
-    - **Function**: Systematically compare the effectiveness of eng-eng, tgt-eng, and tgt-tgt reasoning paths
-    - **Key Findings**:
-        - eng-eng achieves the highest overall performance (most mature English reasoning capability)
-        - tgt-eng follows closely; larger models are more robust to non-English prompts
-        - tgt-tgt is weakest before fine-tuning but shows the **largest gains** after fine-tuning, even surpassing the base model's eng-eng performance
-    - **Design Motivation**: Target-language reasoning is critical for interpretability and accessibility in low-resource language settings
-
-4. **Training Objective: SFT over RL**
-
-    - **Function**: Standard cross-entropy training to maximize the log-likelihood of target tokens
-    - **Core Formula**: $\mathcal{L}_{\text{SFT}}(\theta) = -\frac{1}{N}\sum_{i=1}^{N}\sum_{t=1}^{T_i}\log \pi_\theta(y_t^{(i)} | y_{<t}^{(i)}, x^{(i)})$
-    - **Design Motivation**: Experiments show that RL-based methods (e.g., RLVR) are less effective than SFT in this setting
+Experiments comparing SFT with RLVR + GRPO showed that SFT is more stable and effective when data is strictly filtered. SFT is also significantly more computationally efficient.
 
 ### Loss & Training
-- SFT cross-entropy loss, based on the Qwen3 model family (4B/8B/14B)
-- Curriculum learning: training data ordered from easy to hard by difficulty
-- Multilingual alignment: each sample is aligned across all three language strategies
+The model is trained with the SFT cross-entropy loss using Qwen3 (4B/8B/14B). Data is fed via curriculum learning, with the same sample repeated across the three language strategies to ensure aligned cross-lingual reasoning.
 
 ## Key Experimental Results
 
-### Main Results (Pairwise Evaluation Benchmarks, eng-eng Setting)
+### Main Results (Pairwise Evaluation, eng-eng setting)
 
-| Model | m-RewardBench (23 lang) | RewardBench (1 lang) | MM-Eval (18 lang) | IndoPref (1 lang) |
+| Model | m-RewardBench (23lang) | RewardBench (1lang) | MM-Eval (18lang) | IndoPref (1lang) |
 |------|----------------------|--------------------|-----------------|-----------------| 
 | GPT-OSS-120B | 89.05 | 90.30 | 85.01 | 72.15 |
 | Nemotron-Multi-49B | 89.03 | 89.62 | 76.27 | 68.40 |
@@ -109,73 +101,58 @@ Three evaluation modes: point-wise (scoring a single response), pair-wise (compa
 | **mR3-Qwen3-8B** | 88.44 | 90.50 | 84.84 | 72.86 |
 | **mR3-Qwen3-4B** | 87.61 | 89.74 | 82.62 | 72.22 |
 
-mR3-Qwen3-14B surpasses the 120B teacher model with only 14B parameters (+0.13 on m-RB, +1.04 on MM-Eval, +1.99 on IndoPref), while being 3.5× faster than the 49B Nemotron model.
+mR3-Qwen3-14B outperforms the 120B teacher (+0.13 on m-RB, +1.04 on MM-Eval, +1.99 on IndoPref) and is 3.5x faster than Nemotron-49B.
 
 ### Ablation Study
 
 | Configuration | Key Finding |
 |------|---------|
-| Curriculum: easy→hard vs. random | Easy→hard achieves the best results on HelpSteer3 validation set |
-| Data scale: 50K vs. 100K vs. 200K | 100K is the sweet spot; 200K yields no significant improvement |
-| Language strategy: eng-eng vs. tgt-tgt | eng-eng achieves higher absolute scores, but tgt-tgt shows the largest gains after fine-tuning |
-| Difficulty filtering: with vs. without | Removing easy samples significantly improves model performance |
-| Training method: SFT vs. RLVR | SFT consistently outperforms RL-based methods on this task |
+| Curriculum: Easy→Hard vs Random | Easy→Hard is optimal on HelpSteer3. |
+| Data Size: 50K vs 100K vs 200K | 100K is the sweet spot; 200K shows no significant gain. |
+| Language Strategy: eng-eng vs tgt-tgt | eng-eng has higher absolute scores, but tgt-tgt shows the largest gain. |
+| Difficulty Filtering: Yes vs No | Removing easy samples significantly boosts performance. |
+| Training Method: SFT vs RLVR | SFT consistently outperforms RL for this task. |
 
 ### Key Findings
-- **Small model, large impact**: The 14B model systematically outperforms the 120B teacher and the 49B competitor, demonstrating that high-quality data and correct training strategies matter more than scale
-- **Step-change improvement of tgt-tgt**: The base model's target-language reasoning is the weakest, yet it shows the largest gains after fine-tuning, even surpassing the base model's eng-eng performance — indicating that multilingual training effectively "activates" cross-lingual reasoning capabilities
-- **Downstream DPO validation**: Using mR3-Qwen3-14B as the reward model for DPO on Qwen3-30B-A3B improves the English win rate on m-ArenaHard-v2.0 from 49.1% to 57.3%
-- **Human evaluation**: 20 native speakers evaluated across 12 languages; mR3's reasoning traces substantially outperform the Qwen3 baseline on factuality (2.78 vs. 2.06) and logical coherence (2.67 vs. 2.05)
+- **Small Models, Large Power**: The 14B model systematically outperforms the 120B teacher and 49B competitors, proving quality and strategy outweigh scale.
+- **Tgt-tgt Strategy Leap**: Fine-tuning effectively "activates" cross-lingual reasoning, significantly closing the gap between target language and English reasoning.
+- **DPO Verification**: Using mR3-Qwen3-14B for DPO on Qwen3-30B improved the English win rate on m-ArenaHard from 49.1% to 57.3%.
+- **Human Evaluation**: In evaluations by 20 native speakers across 12 languages, mR3's reasoning traces performed significantly better in factuality (2.78) and logic (2.67) compared to the Qwen3 baseline (2.06/2.05).
 
 ## Highlights & Insights
-- The **unified 72-language training framework** represents a major advance in multilingual reward modeling, far exceeding the prior best of 6 languages in m-Prometheus. The three-strategy alignment data design (eng-eng/tgt-eng/tgt-tgt) is particularly elegant, enabling controlled research while covering realistic usage scenarios
-- **Easy-to-hard curriculum learning is effective for reward model training**: This finding is directly transferable to the training of other generative evaluation models
-- **Data quality > data scale**: A 14B model trained on 100K curated samples outperforms models trained on 3M+ samples, underscoring the importance of multi-stage filtering (three-strategy consistency + difficulty filtering)
-- **Interpretability value of target-language reasoning**: Although English reasoning achieves higher accuracy, target-language reasoning is critical for accessibility and user trust in low-resource language settings, and fine-tuning effectively closes the gap
+- The **unified 72-language training framework** is a major breakthrough, far exceeding the 6-language coverage of prior work like m-Prometheus.
+- **Easy-to-hard curriculum learning** is effective for training Reward Models, a finding that can be transferred to other generative evaluation models.
+- **Quality > Scale**: 100K curated samples outperform 3M+ raw samples, emphasizing the importance of multi-stage filtering.
+- **Interpretability of Target Language Reasoning**: While English reasoning might be slightly more accurate, target language reasoning is crucial for trust among LRL users.
 
 ## Limitations & Future Work
-- The distillation outputs from GPT-OSS-120B carry inherent language bias (strongest in English), which propagates to mR3
-- Coverage of low-resource languages among the 72 languages may be uneven, as the source datasets are biased toward high- and medium-resource languages
-- Training relies solely on SFT; the potential of RL-based post-training (e.g., GRPO) is not fully explored
-- Human evaluation covers only 12 languages (already more than comparable work), falling short of all 72 training languages
-- **Future directions**: Specialized data augmentation for low-resource languages (e.g., high-resource → low-resource translation with back-translation), and exploring whether online RL fine-tuning can yield further improvements
+- Distilled outputs from GPT-OSS-120B carry inherent English bias.
+- Coverage of low-resource languages (LRL) may be uneven across the 72 languages.
+- Only SFT was explored; the full potential of post-SFT RL (e.g., GRPO) remains to be investigated.
+- Human evaluation only covered 12 of the 72 languages.
 
 ## Related Work & Insights
-- **vs. R3 (Anugraha et al., 2025)**: R3 is the English-only predecessor of mR3, trained exclusively on English data. mR3 inherits its rubric-agnostic framework and extends it to 72 languages, substantially outperforming R3 on multilingual benchmarks (m-RewardBench: 89.18 vs. 88.07), while R3 retains a slight edge on the English-only RewardBench (91.00 vs. 90.79)
-- **vs. m-Prometheus (Pombal et al., 2025)**: Covers only 6 languages with 480K training samples; m-RewardBench score of 79.51 vs. mR3's 89.18, a substantial margin
-- **vs. Nemotron-Multilingual-49B (Wang et al., 2025)**: With 49B parameters, it supports pair-wise evaluation in only 13 languages; mR3-14B comprehensively surpasses it with 1/3.5 the parameters and 7.2× the language coverage
+- **vs R3 (Anugraha et al., 2025)**: mR3 extends the English-only R3 framework to 72 languages, significantly outperforming it on multilingual benchmarks.
+- **vs m-Prometheus (Pombal et al., 2025)**: mR3 covers more languages (72 vs 6) and has much better performance (89.18 vs 79.51 on m-RewardBench).
+- **vs Nemotron-Multilingual-49B (Wang et al., 2025)**: mR3-14B uses 1/3.5 the parameters and covers 7.2x more languages with superior accuracy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The unified 72-language framework and three-strategy alignment data construction are novel, though the model architecture and training method (SFT) are relatively standard
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 7 benchmarks, multiple ablations, curriculum learning comparisons, DPO downstream validation, and a 20-annotator 12-language human evaluation — exceptionally comprehensive
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with rich tables and figures, though the paper is lengthy (extensive appendix) and core contributions require extraction from a large volume of experiments
-- Value: ⭐⭐⭐⭐⭐ Addresses a critical gap in multilingual reward modeling with direct practical impact on non-English LLM alignment
-
-## Key Experimental Results
-
-| Model | mR3-RewardBench | Size |
-|------|----------------|------|
-| GPT-OSS-120B | ~88% | 120B |
-| **mR3-Qwen-14B** | **88.46%** | **14B (9× smaller)** |
-
-Human evaluators (20 annotators, 12 languages) prefer the reasoning quality of mR3.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐ First large-scale multilingual reward reasoning model
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 72 languages + human evaluation
-- Value: ⭐⭐⭐⭐⭐ Foundational infrastructure for multilingual LLM alignment
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Pushing on Multilingual Reasoning Models with Language-Mixed Chain-of-Thought](pushing_on_multilingual_reasoning_models_with_language-mixed_chain-of-thought.md)
 - [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](../../ACL2026/llm_reasoning/c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
-- [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](../../ACL2026/llm_reasoning/large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
+- [\[ICLR 2026\] FlowRL: Matching Reward Distributions for LLM Reasoning](flowrl_matching_reward_distributions_for_llm_reasoning.md)
+- [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
-- [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
-- [\[ICLR 2026\] Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort](is_it_thinking_or_cheating_detecting_implicit_reward_hacking_by_measuring_reason.md)
 
 </div>
 

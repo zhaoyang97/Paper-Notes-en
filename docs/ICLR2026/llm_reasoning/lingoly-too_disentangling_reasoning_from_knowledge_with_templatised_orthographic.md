@@ -2,76 +2,81 @@
 title: >-
   [Paper Note] LingOly-TOO: Disentangling Reasoning from Knowledge with Templatised Orthographic Obfuscation
 description: >-
-  [ICLR 2026][LLM Reasoning][reasoning benchmark] This paper introduces LingOly-TOO, a benchmark that applies expert-designed grapheme-level permutations to linguistics olympiad problems…
+  [ICLR 2026][LLM Reasoning][reasoning benchmark] The LingOly-TOO benchmark is proposed to disentangle reasoning from knowledge by applying expert-designed grapheme-level permutations to Linguistics Olympiad problems. This obfuscation preserves reasoning logic while eliminating knowledge/memory shortcuts, reducing the top score of 15 frontier models from 0.59 to 0.48
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "reasoning benchmark"
-  - "orthographic obfuscation"
-  - "linguistics olympiad"
-  - "knowledge contamination"
-  - "LLM evaluation"
+  - ICLR 2026
+  - LLM Reasoning
+  - reasoning benchmark
+  - orthographic obfuscation
+  - linguistics olympiad
+  - knowledge contamination
+  - LLM evaluation
 date: 2026-05-08
-content_hash: 90894a67a5f73fec
+content_hash: e85c4286e37906b9
 ---
-
 # LingOly-TOO: Disentangling Reasoning from Knowledge with Templatised Orthographic Obfuscation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.02972](https://arxiv.org/abs/2503.02972)  
 **Code**: [GitHub](https://github.com/jkhouja/LingOly-TOO)  
-**Area**: LLM Reasoning / Evaluation Benchmarks
+**Area**: LLM Reasoning / Evaluation Benchmarks  
 **Keywords**: reasoning benchmark, orthographic obfuscation, linguistics olympiad, knowledge contamination, LLM evaluation
 
 ## TL;DR
 
-This paper introduces LingOly-TOO, a benchmark that applies expert-designed grapheme-level permutations to linguistics olympiad problems, preserving reasoning logic while eliminating knowledge and memorization shortcuts. The obfuscation reduces the top score across 15 frontier models from 0.59 to 0.48, systematically quantifying the extent to which LLM reasoning ability is overestimated due to knowledge effects.
+The LingOly-TOO benchmark is proposed to disentangle reasoning from knowledge by applying expert-designed grapheme-level permutations to Linguistics Olympiad problems. This obfuscation preserves reasoning logic while eliminating knowledge/memory shortcuts, reducing the top score of 15 frontier models from 0.59 to 0.48 and systematically quantifying the extent to which LLM reasoning capabilities are overestimated due to knowledge effects.
 
 ## Background & Motivation
 
-**Background**: LLM scores on reasoning benchmarks have risen rapidly, but growing evidence suggests that score inflation stems from training set contamination and knowledge memorization shortcuts rather than genuine improvements in reasoning ability. Benchmarks such as MATH and GSM8K are saturating quickly.
+**Background**: Performance scores of LLMs on various reasoning benchmarks are rising rapidly. however, increasing evidence suggests that score inflation stems from training set contamination and knowledge memory shortcuts rather than genuine improvements in reasoning. Benchmarks such as MATH and GSM8K are approaching saturation.
 
 **Limitations of Prior Work**:
 
-1. Increasing training data scale blurs the boundary between training and test sets, exacerbating evaluation bias.
+1. The expansion of training data scales blurs the boundary between training and testing sets, exacerbating evaluation bias.
 
-2. Existing countermeasures (synthetic data, symbolic template substitution) are limited in scale and scope—modified instances may still resemble training samples.
+2. Existing countermeasures (synthetic data, symbolic template replacement) are small in scale and lack sufficient modification depth—obfuscated samples may still remain similar to training data.
 
-3. Even linguistics problems in low-resource languages appear in pretraining corpora, allowing models to bypass reasoning through partial contamination.
+3. Even linguistics problems in low-resource languages are covered in pre-training data, allowing models to bypass reasoning through partial contamination.
 
-**Key Challenge**: How can the logical structure of problem-solving reasoning be preserved while completely eliminating the possibility of the model exploiting knowledge or memorization?
+**Key Challenge**: How can the possibility of models utilizing knowledge and memory be completely eliminated while keeping the underlying problem-solving reasoning logic intact?
 
-**Key Insight**: The paper applies grapheme-level orthographic permutations to the problem language (Problemese) of linguistics olympiad problems, producing character sequences that cannot exist in any training corpus while fully preserving the reasoning steps required to solve each problem.
+**Key Insight**: Apply grapheme-level orthographic obfuscation to the "Problemese" (problem language) of Linguistics Olympiad tasks. This ensures that the obfuscated character sequences do not exist in any training corpus while the original reasoning steps required for the problem are fully preserved.
 
 ## Method
 
 ### Overall Architecture
 
-82 UKLO problems → expert-annotated permutation rulesets → up to 6 orthographic obfuscation variants per problem → 1,203 problems / 6,995 sub-problem–answer pairs → Exact Match evaluation → comparison of $M_{og}$ (original score) and $M_{obf}$ (obfuscated score) to quantify the knowledge effect.
+LingOly-TOO does not train any models; instead, it provides a **contamination-resistant benchmark construction and evaluation pipeline**. The starting point consists of 82 seed problems from the UKLO (UK Linguistics Olympiad), which can be solved by high school students using only the provided context without specialized knowledge. Linguistics experts manually annotated a **ruleset** for each problem, from which up to 6 distinct grapheme-level permutations were sampled to rewrite the problem text. This expanded the 82 seeds into 1,203 problems containing 6,995 sub-question-answer pairs. Evaluation involves scoring both the **original version** and the **obfuscated version**, using the performance gap to quantify how much of the model's score relies on memory/knowledge shortcuts rather than true reasoning.
+
+```mermaid
+graph TD
+    A["82 UKLO Seed Problems<br/>(Original Linguistics Olympiad)"] --> B["Expert-annotated ruleset<br/>per problem"]
+    B --> C["Sample up to 6 valid<br/>grapheme permutations per rule"]
+    C --> D["Rewrite Problemese text + answers<br/>→ Obfuscated version"]
+    D --> E["LingOly-TOO Benchmark<br/>1,203 problems / 6,995 sub-QA pairs"]
+    A --> F["Original version scoring M_og"]
+    E --> G["Obfuscated scoring M_obf / Robustness M_rob"]
+    F --> H["Knowledge effect gap<br/>Δ = M_obf − M_og"]
+    G --> H
+```
 
 ### Key Designs
 
-1. **Reasoning-Equivariant Permutation**
+**1. Reasoning-equivariant Permutation: Changing Sequences without Altering Logic**
 
-    - Permutation operates at the grapheme level rather than the word level, as linguistics problems require sub-word symbolic reasoning.
-    - Each problem has a manually defined ruleset authored by a linguistics expert to preserve the linguistic mechanisms necessary for solving the problem. For example, in Turkish vowel harmony, vowel pairs (e,i)/(o,u)/(ö,ü)/(a,ı) must remain within their respective groups; otherwise suffixes cannot be correctly matched.
-    - Loanwords, English cognates, and proper nouns (names, place names) that are useful for solving the problem are retained.
-    - Metadata that may trigger knowledge retrieval—such as language names, language family, and geographic information—is removed.
+While seed problems involve low-resource languages, these languages are increasingly present in pre-training corpora, allowing models to succeed through memory. The challenge is that any modification must not break the linguistic mechanisms required for solving the problem. This work sets the minimum unit of permutation at the grapheme level (including combinations like `th` or `sh`) rather than full words. Linguistics Olympiad problems involve sub-word level symbolic reasoning; common synonym replacement or paraphrasing would destroy morphological/phonemic units. Grapheme-level permutation fundamentally alters character sequences while maintaining the reasoning structure. Each ruleset is customized by experts based on linguistic features—for example, in Turkish vowel harmony problems, vowel pairs like (e,i)/(o,u)/(ö,ü)/(a,ı) must be permuted as sets to maintain suffix patterns. Rules intentionally preserve useful clues like loanwords or cognates while removing metadata like language names or geographic locations that trigger knowledge retrieval. The resulting sequences are statistically impossible to find in training data.
 
-2. **Multi-Version Evaluation and Metric System**
+**2. Multi-version Metric System: Quantifying "Knowledge Effects"**
 
-    - $M_{obf} = \frac{1}{82}\sum_{i=1}^{82}\frac{1}{n_i}\sum_{j=1}^{n_i}M_{obf}^{i,j}$ denotes the average score on obfuscated variants; $M_{og}$ denotes the score on the original version.
-    - Robustness metric $M_{rob}$: the average of the worst-case score across all permutations of each problem, measuring reasoning ability under the worst-case scenario.
-    - Knowledge effect $\Delta_{obf}^{i} = M_{obf}^i - M_{og}^i$: a larger negative value indicates greater reliance on knowledge.
-    - Benchmark validation: two IOL medalists audited the solvability of obfuscated problems; a 172-participant RCT showed human performance declined by only 5.7%.
+Using multiple versions per problem allows analysis of reasoning stability beyond binary correctness. The obfuscated score is averaged across all versions of all problems:
 
-### Loss & Training
+$$M_{obf} = \frac{1}{82}\sum_{i=1}^{82}\frac{1}{n_i}\sum_{j=1}^{n_i}M_{obf}^{i,j}$$
 
-This paper presents an evaluation benchmark. Key evaluation design choices are as follows:
+This is compared against the original score $M_{og}$. Two additional metrics are introduced: the robustness score $M_{rob}$, which takes the **worst** performance across all permutations of each problem to characterize worst-case reasoning (e.g., GPT-5 drops from $M_{obf}=0.48$ to $M_{rob}=0.29$), and the knowledge effect $\Delta_{obf}^{i} = M_{obf}^i - M_{og}^i$, which measures the score drop per problem. A randomized controlled trial with 172 humans showed only a 5.7% drop on obfuscated versions, significantly lower than the 11%+ drop observed in models.
 
-- **Evaluation protocol**: Each prompt contains background context, the full problem context, all questions, and the specific sub-question, with output required in JSON format.
-- **Scoring**: Strict Exact Match (no partial credit, to prevent spurious scores obtained by repeating context words).
-- **Models evaluated**: 15 models including GPT-5, Claude 3.7, o3-mini, Gemini, and Llama, spanning both reasoning-specialized and general-purpose variants.
+### Evaluation Protocol
+
+The evaluation method ensures fairness by providing the background, context, and all sub-questions within the prompt, requiring JSON output for answers. Scoring uses strict Exact Match (EM) rather than partial credit to prevent cases where models gain points by merely repeating words from the context. Tests were conducted across 15 models including GPT-5, Claude 3.7, o3-mini, Gemini, and Llama.
 
 ## Key Experimental Results
 
@@ -79,72 +84,72 @@ This paper presents an evaluation benchmark. Key evaluation design choices are a
 
 Performance of 15 models on LingOly-TOO:
 
-| Model | $M_{og}$ (Original) | $M_{obf}$ (Obfuscated) | $M_{rob}$ (Robust) | Drop |
-|---|---|---|---|---|
+| Model | $M_{og}$ (Original) | $M_{obf}$ (Obfuscated) | $M_{rob}$ (Robustness) | Decrease |
+|------|-----------------|-------------------|------------------|---------|
 | GPT-5 | ~0.59 | **0.48** | 0.29 | -0.11 |
 | Claude 3.7 (thinking) | ~0.55 | 0.44 | - | -0.11 |
 | Claude 3.7 (no thinking) | ~0.40 | 0.30 | - | -0.10 |
 | o3-mini (high) | ~0.45 | 0.31 | - | -0.14 |
 | o3-mini (low) | ~0.25 | 0.13 | - | -0.12 |
 
-GPT-5 by difficulty ($M_{obf}$): Breakthrough = 0.81, Round 2 = 0.31.
+GPT-5 performance by difficulty ($M_{obf}$): Breakthrough = 0.81, Round 2 = 0.31.
 
 ### Ablation Study
 
 | Analysis Dimension | Result |
-|---|---|
-| No-context setting | $M_{obf}$ drops to 0.02–0.03, confirming that obfuscation effectively blocks knowledge shortcuts |
-| Tokenization impact | Altering the tokenization strategy does not improve performance, ruling out a tokenization-based explanation |
-| Language resource level effect | Japanese, Finnish, and Italian show the largest $\Delta_{obf}$ (−0.57 to −0.59) |
-| Expert-guided reasoning | Providing intermediate reasoning steps raises $M_{obf}$ from 0.66 to 0.76 |
-| Unreleased problem test | Performance drops are also observed on unpublished UKLO 2025 problems |
+|---------|------|
+| Zero-context setting | $M_{obf}$ drops to 0.02-0.03; obfuscation blocks knowledge shortcuts. |
+| Tokenization effect | Modifying tokenization strategies does not improve performance. |
+| Language resource effect | Japanese/Finnish/Italian show largest $\Delta_{obf}$ (-0.57 to -0.59). |
+| Expert-guided reasoning | Providing intermediate steps increases $M_{obf}$ from 0.66 to 0.76. |
+| Unseen new problems | Performance drop persists on unreleased UKLO 2025 problems. |
 
 ### Key Findings
 
-- Reasoning-specialized models consistently outperform their general-purpose counterparts (o3-mini high vs. low: 18% gap), indicating that reasoning training yields genuine benefits.
-- The knowledge effect is strongly negatively correlated with language resource level ($\beta < 0, p < 0.01$), with high-resource languages exhibiting the greatest score inflation.
-- The benchmark is far from saturated: GPT-5 achieves only 0.31 on Round 2, with $M_{rob}$ of only 0.29.
-- Reasoning traces frequently exhibit repetitive analysis and self-contradictory conclusions, indicating extremely poor reasoning consistency.
+- Reasoning-focused models consistently outperform general versions (o3-mini high vs low difference of 18%), validating the impact of reasoning training.
+- Knowledge effects are highly negatively correlated with language resource volume ($\beta < 0, p < 0.01$; high-resource languages exhibit the most inflation).
+- The benchmark is far from saturated: GPT-5 achieves only 0.31 on Round 2 problems, with $M_{rob}$ at 0.29.
+- Reasoning trajectories often exhibit repeated analysis and self-contradictory conclusions, indicating poor reasoning consistency.
 
 ## Highlights & Insights
 
-- The orthographic permutation methodology is conceptually elegant: grapheme-level permutation preserves the linguistic reasoning logic while producing character sequences that could not appear in any training corpus.
-- The knowledge effect metric $\Delta_{obf}$ provides, for the first time, an operational approach to isolating reasoning ability from knowledge.
-- The human RCT validates that obfuscation causes only a 5.7% drop for humans versus 11%+ for models, indicating that the performance gap is primarily attributable to knowledge dependence rather than cognitive penalty.
-- $M_{rob}$ reveals reasoning fragility: GPT-5 drops from 0.48 to 0.29.
+- Methodological elegance: Grapheme-level permutation preserves linguistic reasoning logic while generating sequences absent from training data.
+- The knowledge effect metric $\Delta_{obf}$ provides an actionable solution for isolating reasoning from knowledge.
+- Human RCTs confirm that the performance gap in models (11%+) vs. humans (5.7%) is due to knowledge dependence rather than cognitive penalty.
+- $M_{rob}$ reveals reasoning fragility: GPT-5 performance collapses from 0.48 to 0.29 in worst-case permutations.
 
 ## Limitations & Future Work
 
-- Strict Exact Match may underestimate partially correct reasoning—though partial credit would artificially inflate baselines.
-- Coverage is limited to inductive/deductive reasoning in the natural language modality; visual and mathematical reasoning are not addressed.
-- The benchmark comprises only 82 base problems, and permutation rules require manual expert design, limiting automation.
-- A broader range of linguistic phenomena and additional competition sources remain unexplored.
+- Strict Exact Match may underestimate partially correct reasoning, though partial credit risks inflating the baseline.
+- Primarily covers inductive/deductive reasoning in natural language, excluding vision or mathematics.
+- The scale of 82 seed problems is relatively limited, and rule design requires manual expert effort, limiting automation.
+- The exploration of wider linguistic phenomena or more diverse competition sources is yet to be conducted.
 
 ## Related Work & Insights
 
-- **vs. LingOly**: LingOly-TOO adds orthographic obfuscation to control for the knowledge variable.
-- **vs. GSM-Symbolic**: Numerical substitution produces relatively minor perturbations; LingOly-TOO's grapheme permutations generate entirely novel character sequences.
-- **vs. ARC / BIG-Bench Hard**: These benchmarks lack mechanisms to control for knowledge effects.
-- **Implications**: The methodology is generalizable to other domains requiring symbolic reasoning, such as music and cryptography.
+- **vs LingOly**: LingOly-TOO adds orthographic obfuscation to control for knowledge variables.
+- **vs GSM-Symbolic**: Numerical replacement offers minor perturbation; LingOly-TOO's grapheme permutation generates entirely novel strings.
+- **vs ARC/BIG-Bench Hard**: Lacks mechanisms to explicitly control for knowledge effects.
+- **Insight**: The methodology can be extended to other domains requiring symbolic reasoning, such as music theory or cryptography.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The combination of orthographic obfuscation and knowledge/reasoning disentanglement is elegantly designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 15 models, multi-dimensional ablations, a human RCT, and validation on unreleased problems.
+- Novelty: ⭐⭐⭐⭐ Sophisticated design for decoupling knowledge and reasoning via orthographic obfuscation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 15 models, multi-dimensional ablation, human RCTs, and validation on unreleased problems.
 - Writing Quality: ⭐⭐⭐⭐ Rigorous structure and comprehensive analysis.
-- Value: ⭐⭐⭐⭐⭐ Provides a landmark contamination-resistant methodology for evaluating LLM reasoning.
+- Value: ⭐⭐⭐⭐⭐ Provides a milestone methodology for contamination-resistant LLM reasoning evaluation.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](../../ACL2026/llm_reasoning/learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
-- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](../../ACL2026/llm_reasoning/does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
-- [\[AAAI 2026\] ActiShade: Activating Overshadowed Knowledge to Guide Multi-Hop Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/actishade_activating_overshadowed_knowledge_to_guide_multi-h.md)
-- [\[ACL 2026\] Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval](../../ACL2026/llm_reasoning/towards_effective_in-context_cross-domain_knowledge_transfer_via_domain-invarian.md)
-- [\[AAAI 2026\] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation](../../AAAI2026/llm_reasoning/rpm-mcts_knowledge-retrieval_as_process_reward_model_with_monte_carlo_tree_searc.md)
+- [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
+- [\[ICLR 2026\] Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation](explain_in_your_own_words_improving_reasoning_via_token-selective_dual_knowledge.md)
+- [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
+- [\[ICLR 2026\] Diagnosing and Remedying Knowledge Deficiencies in LLMs via Label-free Curricular Meaningful Learning](diagnosing_and_remedying_knowledge_deficiencies_in_llms_via_label-free_curricula.md)
+- [\[ACL 2025\] Commonsense Abductive Reasoning using Knowledge from Multiple Sources](../../ACL2025/llm_reasoning/commonsense_abductive_reasoning_using_knowledge_from_multiple_sources.md)
 
 </div>
 

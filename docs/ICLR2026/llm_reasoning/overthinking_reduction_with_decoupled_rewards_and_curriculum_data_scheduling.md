@@ -2,124 +2,122 @@
 title: >-
   [Paper Note] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling
 description: >-
-  [ICLR 2026][LLM Reasoning][overthinking] This paper theoretically identifies two fundamental flaws in existing length-penalty approaches—incorrectly penalizing high-entropy exploration tokens and erroneously rewarding re…
+  [ICLR 2026][LLM Reasoning][overthinking] Theoretically reveals two fundamental flaws of existing length penalty methods—incorrectly punishing high-entropy exploration tokens and incorrectly rewarding redundant tokens. Proposes the DeCS framework, which, through decoupled token-level rewards and curriculum batch scheduling, reduces inference tokens by more tha
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "overthinking"
-  - "decoupled rewards"
-  - "curriculum learning"
-  - "RLVR"
-  - "NRP"
+  - ICLR 2026
+  - LLM Reasoning
+  - overthinking
+  - RLVR
+  - NRP
 date: 2026-05-08
-content_hash: 898a600fc4fcaa63
+content_hash: 3e0ac21149952665
 ---
-
 # Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2509.25827](https://arxiv.org/abs/2509.25827)  
 **Code**: [github.com/pixas/DECS](https://github.com/pixas/DECS)  
-**Area**: Medical Imaging
+**Area**: LLM Reasoning  
 **Keywords**: overthinking, decoupled rewards, curriculum learning, RLVR, NRP
 
 ## TL;DR
 
-This paper theoretically identifies two fundamental flaws in existing length-penalty approaches—incorrectly penalizing high-entropy exploration tokens and erroneously rewarding redundant tokens—and proposes the DeCS framework. Through decoupled token-level rewards and curriculum batch scheduling, DeCS reduces reasoning tokens by over 50% across 7 benchmarks while maintaining or even improving model performance.
+Theoretically reveals two fundamental flaws of existing length penalty methods—incorrectly punishing high-entropy exploration tokens and incorrectly rewarding redundant tokens. Proposes the DeCS framework, which, through decoupled token-level rewards and curriculum batch scheduling, reduces inference tokens by more than 50% across 7 benchmarks while maintaining or even improving model performance.
 
 ## Background & Motivation
 
-**Background**: Large reasoning models (LRMs) demonstrate strong reasoning capabilities via RLVR, yet suffer from a severe "overthinking" problem—models continue generating redundant reasoning steps after reaching a correct answer, resulting in poor inference efficiency.
+**Background**: Large Reasoning Models (LRMs) demonstrate powerful reasoning capabilities through RLVR. However, they suffer from a severe "overthinking" problem—models continue to generate excessive redundant reasoning steps after obtaining the correct answer, leading to low inference efficiency.
 
-**Limitations of Prior Work**: Existing methods encourage concise reasoning by incorporating a length penalty into the correctness reward, $r'(\boldsymbol{o}_i) = r(\boldsymbol{o}_i) - \gamma |\boldsymbol{o}_i|$, but efficiency gains often come at the cost of performance degradation, failing to achieve an optimal efficiency–performance trade-off.
+**Limitations of Prior Work**: Existing methods encourage concise reasoning by adding a length penalty to the correctness reward, $r'(\boldsymbol{o}_i) = r(\boldsymbol{o}_i) - \gamma |\boldsymbol{o}_i|$. However, efficiency gains often come at the expense of performance, failing to achieve an optimal efficiency-performance trade-off.
 
-**Key Challenge**: A fundamental misalignment exists between trajectory-level length rewards and token-level policy optimization: (1) negative advantages are back-propagated to all tokens, incorrectly suppressing valid high-entropy exploration tokens (e.g., "wait", "however"); (2) redundant tokens following the NRP in shorter trajectories still receive positive advantages and are thus erroneously reinforced.
+**Key Challenge**: A fundamental misalignment exists between trajectory-level length rewards and token-level policy optimization—(1) negative advantage backpropagates to all tokens, incorrectly suppressing correct high-entropy exploration tokens (e.g., "wait", "however"); (2) redundant tokens following the Necessary Reasoning Prefix (NRP) in shorter trajectories still receive positive advantage and are incorrectly reinforced.
 
-**Goal**: To precisely identify and penalize redundant tokens while protecting tokens that genuinely contribute to reasoning, thereby achieving truly lossless reasoning compression.
+**Goal**: How to accurately distinguish and punish redundant tokens while protecting necessary tokens that contribute to reasoning, achieving truly lossless inference compression.
 
-**Key Insight**: The paper defines the "Necessary Reasoning Prefix" (NRP) as a criterion, decoupling rewards at the NRP boundary and applying differentiated reward signals to tokens before and after it.
+**Key Insight**: Define the "Necessary Reasoning Prefix" (NRP) as the judgment criterion and decouple the reward at the NRP boundary, applying different reward signals to tokens before and after the NRP.
 
-**Core Idea**: Train a lightweight discriminator to identify NRP boundaries; tokens within the NRP receive a maximum reward, while redundant tokens beyond the NRP receive a progressively decaying penalty. Curriculum scheduling controls the proportion of easy samples to preserve high-entropy exploration capacity.
+**Core Idea**: Train a lightweight discriminator to identify NRP boundaries, granting maximum rewards to tokens within the NRP and decreasing penalties to redundant tokens thereafter. This is combined with curriculum scheduling to control the proportion of simple samples to protect high-entropy exploration capabilities.
 
 ## Method
 
 ### Overall Architecture
 
-(1) Fine-tune a lightweight language model $\mathcal{M}_{\text{judge}}$ to detect the NRP boundary in each correct trajectory; (2) design decoupled token-level rewards, granting $r_+$ to tokens within the NRP and position-decaying low rewards to redundant tokens beyond it; (3) apply a curriculum scheduling strategy that adaptively adjusts the proportion of easy samples $\kappa_m$ based on the NRP ratio in the current batch.
+DeCS first utilizes a lightweight judgment model $\mathcal{M}_{\text{judge}}$ to identify the "shortest prefix sufficient to derive the correct answer" (NRP) boundary for each correct trajectory. It then decouples token-level rewards at this boundary—tokens within the prefix receive full rewards, while subsequent redundant tokens receive decreasing rewards inversely proportional to their position. This is integrated with a curriculum scheduler that dynamically adjusts the proportion of simple samples based on the NRP ratio of the current batch. The entire pipeline is built upon GRPO: sampled correct trajectories are processed by the discriminator to locate the NRP, decoupled rewards are issued based on the boundary, and token-level advantages are calculated to update the policy. The scheduler then adjusts the sample mix for the next round based on current redundancy levels. These three components combined precisely suppress redundancy without harming exploration capabilities.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Policy Sampling<br/>16 rollouts per prompt"] --> B["NRP Boundary Detection<br/>Chunking + Discriminator M_judge<br/>Locate the first prefix K* containing the correct answer"]
+    B --> C["Decoupled Token-level Rewards<br/>Full reward r+ for prefix tokens<br/>Decreasing rewards for redundant tokens"]
+    C --> D["Token-level Advantage Normalization<br/>GRPO Policy Update"]
+    D --> E["Curriculum Batch Scheduling<br/>Update simple sample ratio κ<br/>based on current batch NRP ratio R_m"]
+    E -->|"Feedback to next sampling round"| A
+```
 
 ### Key Designs
 
-1. **NRP Detection and Decoupled Reward**:
-    - **Function**: Precisely identify the boundary in each correct trajectory beyond which the correct answer can already be derived, and assign differentiated token-level rewards accordingly.
-    - **Mechanism**: A lightweight model $\mathcal{M}_{\text{judge}}$ segments the reasoning process into chunks $\{s_1, \ldots, s_{|S|}\}$ and judges whether each chunk already contains the correct answer: $j_{s_c} \sim \mathcal{M}_{\text{judge}}(\cdot | q, s_c, y^*)$. The NRP is defined as the first chunk containing the correct answer together with all preceding chunks. Token-level rewards are: $r_{i,j} = r_+ \cdot \mathbf{1}_{\text{correct}}$ (when $j \leq K_{o_i}^*$), or $r_{i,j} = (r_0 - (r_+ - r_0)L_i/L_{\max}) \cdot \mathbf{1}_{\text{correct}}$ (when $j > K_{o_i}^*$ and the token is a thinking token).
-    - **Design Motivation**: Theorem 2 proves that under sequence-level length rewards, the gradient signal for the first redundant token immediately following the NRP satisfies $\mathcal{J}(A; j=K^*+1) > 0$—i.e., the model is encouraged to continue generating rather than stopping. The decoupled reward ensures any leading redundant token beyond the NRP receives a negative advantage, thereby exploiting the autoregressive property to suppress the entire redundant segment.
+**1. NRP Boundary Detection: Transforming Vague "Overthinking" into Actionable Token Labels** The root cause of the difficulty in handling overthinking is the lack of a definition for "which tokens are redundant." This paper formalizes it as the "Necessary Reasoning Prefix (NRP)"—the shortest sequence of chunks required to reach the correct answer first. Specifically, it fine-tunes a lightweight language model $\mathcal{M}_{\text{judge}}$, segments the reasoning process into chunks $\{s_1, \ldots, s_{|S|}\}$ using delimiters, and judges whether each chunk already contains the correct answer given the question $q$, prefix $s_c$, and ground truth $y^*$: $j_{s_c} \sim \mathcal{M}_{\text{judge}}(\cdot \mid q, s_c, y^*)$. The first chunk judged as "Yes" and all preceding chunks constitute the NRP, with the boundary denoted as $K_{o_i}^*$. This step refines the training signal from coarse trajectory-level to fine-grained token-level, providing a pivot for subsequent differentiated rewards.
 
-2. **Curriculum Prompt Schedule**:
-    - **Function**: Adaptively control the proportion of easy samples (prompts for which all rollouts are correct) in training batches.
-    - **Mechanism**: $\kappa_m = \text{clip}(\kappa_{m-1} + \beta(\mathcal{R}_m - \mathcal{R}_{m-1}), 0, \kappa_m^0)$, where $\mathcal{R}_m$ is the NRP ratio among correct sequences in the current batch. When the NRP ratio increases (i.e., redundancy decreases), more easy samples are permitted in training. Theorem 1 provides the condition $\kappa \sigma_L < C$ for maintaining the generation probability of high-entropy tokens.
-    - **Design Motivation**: Easy samples are the primary source of efficiency gains (since length becomes the only discriminating signal when all rollouts are correct), but an excessive proportion of easy samples causes the logit decline of high-entropy tokens to dominate the batch gradient, leading to performance degradation. Curriculum scheduling achieves a dynamic balance between exploration and compression.
+**2. Decoupled Token-level Rewards: Rejecting Redundancy from the First Token** Existing length penalties harm performance because they apply rewards to the entire trajectory. Theorem 2 of this paper proves a more fatal issue: under sequence-level length rewards, the gradient signal for the first redundant token after the NRP is $\mathcal{J}(A; j=K^*+1) > 0$, meaning the model is actually encouraged to continue writing rather than stopping in time. DeCS splits the reward at the NRP boundary: tokens within the prefix ($j \leq K_{o_i}^*$) receive the maximum reward $r_{i,j} = r_+ \cdot \mathbf{1}_{\text{correct}}$; the "thinking" tokens after the prefix ($j > K_{o_i}^*$) receive a reward that decays with trajectory length $r_{i,j} = (r_0 - (r_+ - r_0)L_i/L_{\max}) \cdot \mathbf{1}_{\text{correct}}$. In this way, any leading redundant token after the NRP receives a negative advantage, and through the autoregressive property, the pressure to "stop early" is transmitted to the entire redundant segment, cutting off verbosity at its source.
 
-3. **Theoretical Analysis Framework**:
-    - **Function**: Provide theoretical grounding for the method design.
-    - **Mechanism**: Lemma 1 establishes a linear relationship between logit changes and advantages under policy gradient; Lemma 2 proves that length penalties cause the expected logit change of high-entropy tokens to be strictly negative; Theorem 1 gives a necessary and sufficient condition for maintaining high-entropy tokens during batch learning; Theorem 2 proves that sequence-level length rewards cannot halt generation at the NRP boundary.
-    - **Design Motivation**: The failure of existing methods is not an accidental empirical phenomenon but is theoretically grounded—this directly guides the precise design of decoupled rewards and curriculum scheduling.
+**3. Curriculum Batch Scheduling: Providing Simple Samples as Needed to Protect High-Entropy Exploration Tokens** Simple samples (prompts where all rollouts are correct) are the main drivers of efficiency optimization because length becomes the only distinguishable signal. However, if simple samples are too frequent, the logit decrease of high-entropy exploration tokens (e.g., "wait", "however") will dominate the batch gradient, crushing the model's exploration capability. This paper uses Lemma 2 to prove that length penalties cause the expected logit change of high-entropy tokens to be strictly negative and provides a necessary and sufficient condition $\kappa \sigma_L < C$ to maintain their generation probability via Theorem 1. Accordingly, the scheduler updates the simple sample ratio as $\kappa_m = \text{clip}(\kappa_{m-1} + \beta(\mathcal{R}_m - \mathcal{R}_{m-1}), 0, \kappa_m^0)$, where $\mathcal{R}_m$ is the NRP ratio of correct sequences in the current batch: if redundancy is lower (higher NRP ratio), more simple samples are included for further compression; otherwise, the ratio is tightened to protect exploration, achieving a dynamic balance between compression and exploration. The theoretical foundation of this entire design is provided by Lemma 1—it establishes a linear relationship between logit changes and advantages under policy gradient, enabling the derivation of the aforementioned two theorems.
 
 ### Loss & Training
 
-A GRPO-based PPO surrogate loss (Eq. 3) is used, with token-level advantage $A_{i,j}^{\text{DeCS}} = (r_{i,j} - \text{mean})/\text{std}$. Hyperparameters: $r_+=1.1$, $r_0=1.0$, $\beta=0.2$. The training set is DeepScaleR (40k math problems) with 16 rollouts per prompt. Base models are DS-1.5B and DS-7B, trained with the veRL framework.
+Training follows the GRPO-based PPO surrogate loss (Eq. 3), with token-level advantage normalization $A_{i,j}^{\text{DeCS}} = (r_{i,j} - \text{mean})/\text{std}$. Hyperparameters are set to $r_+=1.1$, $r_0=1.0$, and $\beta=0.2$. The training set is DeepScaleR (40k math problems), sampling 16 rollouts per prompt. Base models are DS-1.5B and DS-7B, using the veRL framework.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | DeCS (1.5B) | Base (1.5B) | Best Baseline | Note |
-|---------|--------|-------------|-------------|---------------|------|
-| 7-benchmark avg. | Pass@1 | 47.78 | 45.21 | 45.83 (ThinkPrune) | +2.57; both efficiency and performance improved |
-| 7-benchmark avg. | #Token | 4000 | 9340 | 3975 (ThinkPrune) | 57.17% reduction |
-| 7-benchmark avg. | AES | 0.74 | 0.00 | 0.62 (ThinkPrune) | Best AES |
-| AIME2024 (1.5B) | Pass@1 | 31.25 | 27.99 | 29.87 (TLMRE) | +3.26 gain |
-| AIME2024 (1.5B) | #Token | 5550 | 12202 | 5306 (ThinkPrune) | 54.5% reduction |
-| 7-benchmark avg. (7B) | Pass@1 | 62.48 | 61.57 | 62.17 (ThinkPrune) | +0.91 |
-| 7-benchmark avg. (7B) | #Token | 3968 | 7857 | 4940 (ThinkPrune) | 49.5% reduction |
+| Dataset | Metric | DeCS(1.5B) | Base(1.5B) | Best Baseline | Description |
+|--------|------|------|------|------|------|
+| 7 Bench Avg | Pass@1 | 47.78 | 45.21 | 45.83(ThinkPrune) | +2.57, gain in both efficiency and performance |
+| 7 Bench Avg | #Token | 4000 | 9340 | 3975(ThinkPrune) | 57.17% reduction |
+| 7 Bench Avg | AES | 0.74 | 0.00 | 0.62(ThinkPrune) | Optimal AES |
+| AIME2024(1.5B) | Pass@1 | 31.25 | 27.99 | 29.87(TLMRE) | +3.26 improvement |
+| AIME2024(1.5B) | #Token | 5550 | 12202 | 5306(ThinkPrune) | 54.5% reduction |
+| 7 Bench Avg(7B) | Pass@1 | 62.48 | 61.57 | 62.17(ThinkPrune) | +0.91 |
+| 7 Bench Avg(7B) | #Token | 3968 | 7857 | 4940(ThinkPrune) | 49.5% reduction |
 
 ### Ablation Study
 
-| Configuration | Pass@1 | #Token | Note |
-|---------------|--------|--------|------|
-| DR only (Decoupled Reward) | Improved but ~25% redundancy remains | Limited | Without scheduling, high-entropy tokens are over-suppressed |
-| CS only (Curriculum Schedule) | Performance degraded | Limited reduction | Without decoupled reward, redundancy cannot be precisely penalized |
-| DR+CS (Full DeCS) | Optimal | Maximum reduction | The two components are complementary |
-| Qwen3-4B backbone | 69.72 (+1.32) | 4115 (54.8% reduction) | AES 0.61; good generalizability across backbones |
+| Configuration | Pass@1 | #Token | Description |
+|------|------|------|------|
+| DR Only (Decoupled Rewards) | Improvement but ~25% redundancy remains | Limited | High-entropy tokens over-suppressed without scheduling |
+| CS Only (Curriculum Scheduling) | Performance drop | Limited reduction | Redundancy not accurately punished without decoupled rewards |
+| DR+CS (Full DeCS) | Optimal | Maximum reduction | Mutual complementarity |
+| Qwen3-4B Backbone | 69.72(+1.32) | 4115(54.8% reduction) | AES 0.61, good backbone generalization |
 
 ### Key Findings
 
-- DeCS reduces tokens by over 50% while maintaining or improving Pass@1; the Pass@K curve nearly overlaps with that of the base model, confirming that exploration capacity is preserved.
-- Although the NRP detector is trained on math corpora, it remains effective on out-of-domain tasks (GPQA-D: 56.33% reduction; LCB: 33.52% reduction).
-- Token-level analysis shows that DeCS primarily reduces "self-correction/verification" and "conclusion" tokens, while the frequency of "exploration/alternative" tokens remains almost unchanged.
+- DeCS reduces tokens by >50% while maintaining or even improving Pass@1, and the Pass@K curves almost completely overlap with the base model, proving that exploration capability is not impaired.
+- Although the NRP detector is trained on mathematical corpora, it remains effective on out-of-domain tasks (GPQA-D reduced by 56.33%, LCB reduced by 33.52%).
+- Token analysis shows that DeCS primarily reduces "Self-Correction/Verification" and "Conclusion" class tokens, while the frequency of "Exploration/Alternative" class tokens remains almost unchanged.
 
 ## Highlights & Insights
 
-- The theoretical analysis is the central contribution: two theorems precisely characterize two failure modes of sequence-level length rewards, not only explaining why existing methods are suboptimal but also directly guiding the design of decoupled rewards. This research paradigm—first proving failure theoretically, then designing targeted solutions—is worth emulating.
-- The concept of the NRP is both concise and profound: "the shortest prefix after which the correct answer can first be derived" operationalizes the vague notion of "overthinking" into actionable token-level labels.
+- Theoretical analysis is the core contribution: Two theorems precisely characterize two failure modes of sequence-level length rewards, not only explaining why existing methods are sub-optimal but also directly guiding the design of decoupled rewards. This research paradigm of "theoretical proof of failure followed by targeted solution design" is noteworthy.
+- The conceptual definition of NRP is simple yet profound—"the shortest prefix that first yields the correct answer"—precisely refining the vague concept of "overthinking" into operational token-level labels.
 
 ## Limitations & Future Work
 
-- The quality of the NRP detector directly affects the method's performance; detection errors may cause necessary reasoning steps to be penalized.
-- The current chunk segmentation relies on predefined delimiters (e.g., newlines); finer-grained semantic segmentation may yield further improvements.
-- Experiments cover only mathematics, programming, and scientific reasoning; generalization to soft tasks such as natural language reasoning has not been validated.
+- The quality of the NRP detector directly influences the method's effectiveness; detection errors might lead to the punishment of necessary reasoning.
+- Current chunk segmentation relies on predefined delimiters (like newlines); finer-grained semantic segmentation might bring further improvements.
+- Experiments only cover math, programming, and scientific reasoning; generalization to soft tasks such as natural language inference has not been verified.
 
 ## Related Work & Insights
 
-- **vs. ThinkPrune**: Although ThinkPrune reduces a comparable number of tokens, part of the reduction comes from necessary reasoning tokens (low PNRP score), leading to performance degradation; DeCS precisely reduces only the non-NRP portion.
-- **vs. LC-R1**: LC-R1 retains ~10% redundancy; DeCS achieves further compression through decoupled rewards.
-- **vs. GRPO + length penalty**: Lemma 2 theoretically proves that GRPO with a length penalty inevitably degrades high-entropy tokens; DeCS protects these tokens via the NRP.
+- **vs ThinkPrune**: Although ThinkPrune reduces a similar amount of tokens, some reduction comes from necessary reasoning tokens (low PNRP scores), leading to a performance drop; DeCS precisely reduces the non-NRP part.
+- **vs LC-R1**: LC-R1 leaves ~10% redundancy; DeCS further compresses it through decoupled rewards.
+- **vs GRPO + Length Penalty**: Theoretically proven that GRPO + length penalty inevitably leads to high-entropy token degradation (Lemma 2); DeCS protects these tokens via NRP.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The theoretical analysis is rigorous and directly informs method design; the NRP concept and decoupled reward scheme are strongly original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 7 benchmarks, 2 model scales, backbone generalization, and 5 research question analyses; extremely comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Theoretical derivations are rigorous, analysis is thorough, and visualizations are rich.
-- **Value**: ⭐⭐⭐⭐⭐ — Addresses the core efficiency challenge of reasoning LLMs; the practical value of achieving over 50% compression without performance loss is exceptionally high.
+- Novelty: ⭐⭐⭐⭐⭐ Decisive theoretical analysis guiding method design; the NRP concept and decoupled reward scheme are highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 7 benchmarks + 2 model scales + backbone generalization + 5 research questions analyzed; extremely comprehensive.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivation, thorough analysis, and rich visualization.
+- Value: ⭐⭐⭐⭐⭐ Solves the core efficiency problem of reasoning LLMs; high practical value in 50%+ compression without sacrificing performance.
 
 <!-- RELATED:START -->
 
@@ -129,9 +127,9 @@ A GRPO-based PPO surrogate loss (Eq. 3) is used, with token-level advantage $A_{
 
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 - [\[ICLR 2026\] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling](cyclicreflex_improving_reasoning_models_via_cyclical_reflection_token_scheduling.md)
-- [\[NeurIPS 2025\] Curriculum Abductive Learning](../../NeurIPS2025/llm_reasoning/curriculum_abductive_learning.md)
-- [\[ICLR 2026\] The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models](the_first_impression_problem_internal_bias_triggers_overthinking_in_reasoning_mo.md)
-- [\[ICLR 2026\] Scaling Generalist Data-Analytic Agents](scaling_generalist_data-analytic_agents.md)
+- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)
+- [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
 
 </div>
 

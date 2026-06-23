@@ -2,149 +2,132 @@
 title: >-
   [Paper Note] Is In-Context Learning Learning?
 description: >-
-  [ICLR 2026][LLM Reasoning][in-context learning] This paper systematically investigates whether ICL constitutes genuine "learning" through large-scale controlled experiments. It demonstrates that ICL satisfies the formal…
+  [ICLR 2026][LLM Reasoning][in-context learning] Through large-scale controlled experiments, this paper systematically analyzes whether ICL constitutes "learning". It finds that while ICL satisfies the mathematical definition of learning, empirical evidence shows limited generalization—models primarily rely on structural patterns in prompts for deduction rather than
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "in-context learning"
-  - "ICL"
-  - "memorisation"
-  - "distributional shift"
-  - "generalization"
-  - "autoregressive models"
+  - ICLR 2026
+  - LLM Reasoning
+  - in-context learning
+  - ICL
+  - memorisation
+  - distributional shift
+  - generalization
+  - autoregressive models
 date: 2026-05-08
-content_hash: af10d9e8362bd48b
+content_hash: bd3a319748375695
 ---
-
 # Is In-Context Learning Learning?
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2509.10414](https://arxiv.org/abs/2509.10414)  
-**Code**: Not open-sourced  
-**Area**: LLM Reasoning
-**Keywords**: in-context learning, ICL, memorisation, distributional shift, generalization, autoregressive models
+**Code**: Not open sourced  
+**Area**: LLM Reasoning  
+**Keywords**: in-context learning, ICL, memorisation, distributional shift, generalization, autoregressive models  
 
 ## TL;DR
 
-This paper systematically investigates whether ICL constitutes genuine "learning" through large-scale controlled experiments. It demonstrates that ICL satisfies the formal mathematical definition of learning, yet empirical evidence reveals its generalization capacity to be limited — models primarily exploit structural regularities within the prompt via deduction rather than acquiring new capabilities from the provided demonstrations.
+Through large-scale controlled experiments, this paper systematically analyzes whether ICL constitutes "learning". It finds that while ICL satisfies the mathematical definition of learning, empirical evidence shows limited generalization—models primarily rely on structural patterns in prompts for deduction rather than truly acquiring new capabilities from examples.
 
 ## Background & Motivation
 
-**Background**: In-context learning (ICL) enables autoregressive language models to solve downstream tasks via next-token prediction without parameter updates, requiring only a small number of exemplars in the prompt. This capability has sparked extensive debate on whether LLMs can "learn" unseen tasks from a handful of demonstrations.
+**Background**: In-context learning (ICL) enables autoregressive language models to solve downstream tasks via next-token prediction without parameter updates, requiring only a few exemplars in the prompt. This capability has sparked extensive debate over whether LLMs truly "learn" unseen tasks from a few examples.
 
 **Limitations of Prior Work**:
 
-- Existing research conflates "deduction" with "learning" — the two are not equivalent
-- ICL does not explicitly encode the provided observations, but instead relies on the model's prior knowledge and the prompt exemplars
-- Prior studies lack systematic control over confounding factors such as memorisation, pretraining data leakage, and distributional shift
-- It remains unclear whether strong ICL performance stems from genuinely learning from demonstrations or from prior knowledge retrieval combined with pattern matching
+- Research on ICL often blurs the boundary between "deduction" and "learning"; deduction does not equate to learning.
+- ICL does not explicitly encode given observational data but depends on the model's prior knowledge and the exemplars in the prompt.
+- Existing studies lack systematic control over confounding factors such as memorisation effects, pre-training data leakage, and distributional shifts.
+- It is difficult to determine whether the superior performance of ICL stems from "truly learning from examples" or "prior knowledge retrieval + pattern matching."
 
-**Key Challenge**: Although ICL formally resembles learning (inferring task rules from in-prompt exemplars), it is uncertain whether the autoregressive encoding mechanism provides sufficient inductive bias to support robust generalization and genuine knowledge acquisition — a question with direct implications for how LLMs should be understood and deployed.
+**Key Challenge**: ICL is formally similar to learning (inferring task rules from exemplars in the prompt), but does its autoregressive encoding mechanism provide sufficient inductive bias to support robust generalization and genuine knowledge acquisition? The answer directly affects how LLM capabilities are perceived and utilized.
 
-**Goal**: The paper addresses the question "Is ICL learning?" at both theoretical and empirical levels. It first formally proves that ICL satisfies the mathematical definition of learning, then conducts large-scale controlled ablation studies to characterize the practical boundaries of ICL's learning capacity, systematically eliminating confounds including memorisation, pretraining leakage, distributional shift, and prompt style.
+**Goal**: To answer "is ICL learning" from both theoretical and empirical perspectives—first by arguing mathematically that ICL meets the formal definition of learning, and then by evaluating the actual boundaries of ICL learning through large-scale ablation studies to systematically eliminate confounding factors like memorisation, pre-training leakage, distributional shifts, and prompt styles.
 
 ## Method
 
 ### Overall Architecture
 
-The paper adopts a dual-track strategy combining theoretical analysis and large-scale empirical investigation. The theoretical component argues that ICL meets the formal criteria for learning (analogous to the PAC learning framework); the empirical component systematically ablates or controls multiple confounding factors to reveal the true boundaries of ICL's learning capacity. Experiments span diverse model architectures, prompt styles, task types, and data distribution settings, constituting one of the largest controlled studies of ICL behavior to date.
+This paper answers "is ICL learning" through a dual-track approach of theory and empiricism. It first demonstrates mathematically that ICL satisfies the criteria of "learning" at the formal definition level (similar to the PAC learning framework). Then, it uses a large-scale controlled variable experiment covering various model architectures, prompt styles, task types, and data distributions to test the limits of this "formal learning." The mechanism is to decompose ICL performance into several confounding sources—pre-training memorisation, exemplar distribution, and prompt format—eliminating or perturbing them one by one to see how much of the "genuine learning from examples" remains.
 
-### Key Design 1: Disentangling Memorisation from Pretraining Effects
+### Key Designs
 
-The central goal is to separate the contribution of pretraining memorisation from genuine learning attributable to the prompt exemplars. Specific approaches include:
+**1. Separating "Prior Retrieval" from "Learning from Examples"**
 
-- **Benchmark Contamination Detection**: Multiple methods are applied to assess whether pretraining data already encodes test task information, quantifying the contribution of memorisation to ICL performance
-- **Zero-shot vs. Few-shot Delta Analysis**: Zero-shot performance reflects pure prior knowledge; only the increment over zero-shot can potentially be attributed to "learning from demonstrations"
-- **Counterfactual Label Experiments**: Random or inverted labels are used to test whether the model genuinely exploits the input–output mapping within the demonstrations
-
-Formally, let $f$ denote the target function and $\hat{f}_{\text{ICL}}$ the ICL prediction function. The learning gain of ICL is defined as:
+The high accuracy of ICL stems from two mixed sources: first, encountering similar tasks during pre-training (memorisation/leakage), and second, truly learning input-output mappings from prompt exemplars. Failing to separate these leads to an overestimation of ICL's learning ability. This paper isolates them using three approaches: first, quantifying pre-training data coverage of test tasks using various contamination detections and re-testing with contamination-free benchmarks; second, using zero-shot performance to measure pure prior levels, treating only the few-shot Gain over zero-shot as possible "learning," defined as the learning gain:
 
 $$\Delta_{\text{learn}} = \mathbb{E}[\mathcal{L}(\hat{f}_{\text{zero-shot}})] - \mathbb{E}[\mathcal{L}(\hat{f}_{\text{few-shot}})]$$
 
-where $\mathcal{L}$ is the task loss. After adequately controlling for memorisation, $\Delta_{\text{learn}}$ is found to decrease substantially, indicating that a large portion of ICL performance derives from prior knowledge rather than learning from exemplars.
+where $\mathcal{L}$ is the task loss; finally, using random labels and counterfactual (label reversal) prompts to detect whether the model truly utilizes the mappings in the examples. Results show that $\Delta_{\text{learn}}$ significantly shrinks once memorisation is controlled, and random/counterfactual labels cause only minor decreases, indicating much of the ICL performance comes from prior knowledge retrieval.
 
-### Key Design 2: Distributional Shift and Exemplar Scaling Behavior Analysis
+**2. Observing Continuous Improvement with Increasing Exemplars**
 
-The core experimental methodology involves systematically varying the following factors and observing the resulting scaling behavior of ICL accuracy:
-
-- **Number of exemplars $k$**: from $k=0$ (zero-shot) to many-shot, tracking accuracy as a function of $k$
-- **Exemplar distribution**: varying class balance, sample difficulty, selection strategy, and presentation order
-- **Prompt style**: standard few-shot, chain-of-thought (CoT), and diverse template formats and phrasings
-- **Model selection**: autoregressive models of multiple scales and architectures
-
-A key finding is that as $k$ increases, accuracy converges to a limit that is largely independent of the specific configuration. Formally:
+Genuine learning should show continuous improvement with more and better data. Thus, the paper systematically scans the number of exemplars $k$ (from $k=0$ zero-shot to many-shot), exemplar distribution (class balance, sample difficulty, selection strategy, and order), prompt styles (standard few-shot, CoT, various templates), and models of different scales and architectures. The key finding is that as $k$ increases, accuracy tends toward a limit almost independent of the configuration:
 
 $$\lim_{k \to \infty} \text{Acc}(k; \mathcal{D}, \mathcal{M}, \mathcal{S}) \approx C_{\text{task}}$$
 
-where $\mathcal{D}$ denotes the exemplar distribution, $\mathcal{M}$ the model, and $\mathcal{S}$ the prompt style. This finding contrasts with the expectation under genuine learning, whereby performance should continue to improve with more or better data.
+where $\mathcal{D}$ is the exemplar distribution, $\mathcal{M}$ is the model, and $\mathcal{S}$ is the prompt style. Accuracy saturates rapidly (Gain is negligible after $k>16$) rather than rising continuously with data—this saturation curve is the core evidence for the negative conclusion regarding "genuine learning."
 
-### Key Design 3: Distributional Sensitivity of Chain-of-Thought
+**3. CoT Gain comes from Structural Patterns rather than Deeper Learning**
 
-The paper specifically analyzes ICL behavior under CoT prompting. Although CoT substantially improves accuracy on certain tasks, it exhibits greater sensitivity to the distributional properties and format of the prompt. This suggests that CoT improvements do not arise from deeper task learning, but rather from exploiting the structural regularity of reasoning chains to perform pattern deduction more efficiently. Key observations include:
-
-- Standard few-shot performance is relatively stable but subject to a low accuracy ceiling
-- CoT performance is more variable and highly dependent on the format and structure of the reasoning chain
-- On tasks that are formally similar yet semantically distinct, CoT accuracy diverges substantially
-- ICL essentially extracts patterns from the statistical regularity of the prompt rather than encoding new knowledge
+While Chain-of-Thought (CoT) significantly boosts accuracy on certain tasks—often interpreted as "improved reasoning"—this paper finds it highly sensitive to the distributional features and format of the prompt. Standard few-shot performance is relatively stable but has a lower ceiling, whereas CoT shows higher variance and depends heavily on the format and structure of the reasoning chain. In tasks with similar forms but different semantics, accuracy varies significantly. This high variance suggests CoT gains do not come from deeper task learning but from utilizing structural regularities in the reasoning chain for more efficient pattern deduction—ICL essentially extracts patterns from the statistical regularities of the prompt rather than encoding new knowledge.
 
 ## Key Experimental Results
 
-### Main Results: Systematic Evaluation of ICL Learning Capacity
+### Main Results: Systematic Evaluation of ICL Learning Ability
 
-| Controlled Variable | Core Finding | Key Evidence |
-|:--------------------|:-------------|:-------------|
-| Memorisation | Pretraining memorisation substantially contributes to ICL performance | Performance drops markedly on contamination-free benchmarks |
-| Number of exemplars | Accuracy saturates rapidly | Gains become negligible beyond $k > 16$; logarithmic saturation curve |
-| Exemplar distribution | Distribution-insensitive at the limit | Convergence values are similar across different class/difficulty distributions |
-| Model selection | Inter-model differences diminish at the limit | Comparison across multiple architectures and scales |
-| Prompt style | Standard few-shot is insensitive; CoT is sensitive | Format variation experiments show larger CoT fluctuations |
-| Input linguistic features | Surface features have limited impact on asymptotic performance | Paraphrasing and format changes produce minimal accuracy differences |
+| Control Variable | Core Conclusion | Key Evidence |
+|:---------|:---------|:---------|
+| Memorisation | Pre-training memory significantly contributes to ICL | Performance drops significantly on contamination-free benchmarks |
+| Exemplar Count | Accuracy saturates rapidly | Gain is negligible for $k > 16$; logarithmic saturation curve |
+| Exemplar Distribution | Insensitive to distribution in the limit | Convergence values are similar across different class/difficulty distributions |
+| Model Selection | Differences across models narrow in the limit | Comparison across various architectures and scales |
+| Prompt Style | Sensitive for CoT, insensitive for standard few-shot | Format variation experiments show higher fluctuations for CoT |
+| Linguistic Features | Surface features have limited impact on limit performance | Paraphrasing/formatting changes have weak effects on accuracy |
 
 ### Ablation Study: Analysis of ICL Information Utilization Mechanisms
 
-| Experimental Condition | Accuracy | Core Implication |
-|:-----------------------|:---------|:-----------------|
-| Correct labels | Baseline (highest) | Standard ICL performance |
-| Random labels | Marginal drop | Model does not fully rely on the input–output mapping in demonstrations |
-| Counterfactual labels | Moderate drop | Model partially uses label information but it is not the primary cue |
-| No labels (input format only) | Approaches few-shot | Structural features of the prompt matter more than label content |
-| Shuffled exemplar order | Negligible change | Model is insensitive to exemplar presentation order |
+| Experimental Condition | Accuracy Performance | Core Meaning |
+|:---------|:----------|:---------|
+| Correct Labels | Baseline (Highest) | Standard ICL performance |
+| Random Labels | Minor decrease | Model does not fully rely on exemplar mappings |
+| Counterfactual Labels | Moderate decrease | Model partially uses label info but not as the core basis |
+| No Labels (Input only) | Near few-shot | Structural features of the prompt are more important than label content |
+| Shuffled Exemplars | Nearly unchanged | Model is insensitive to the order of exemplars |
 
 ## Rating
 
 **Rating**: ⭐⭐⭐⭐
 
-**Strengths**:
+**Highlights & Insights**:
 
-- Raises an important question about the nature of ICL, with both theoretical depth and empirical breadth
-- Rigorous experimental design: systematically eliminates memorisation, distributional shift, prompt style, and other confounds
-- The core finding — that accuracy saturates with more exemplars and is insensitive to hyperparameter choices — carries significant theoretical and practical implications
-- The distributional sensitivity analysis of CoT offers a novel perspective for understanding CoT mechanisms
+- Addresses a fundamental question regarding the nature of ICL with both theoretical depth and empirical breadth.
+- Highly rigorous experimental design: systematically eliminates confounding factors like memory, distributional shift, and style.
+- The core finding—that accuracy saturates as exemplars increase and is insensitive to hyperparameters—holds significant theoretical and practical value.
+- The analysis of CoT's distributional sensitivity provides a new perspective on CoT mechanisms.
 
-**Weaknesses**:
+**Limitations & Future Work**:
 
-- The paper arrives primarily at negative conclusions (limited ICL learning capacity) without offering constructive improvements or solutions
-- Some experiments may be subject to selection bias in the benchmark task set; generalizability to more complex reasoning and generation tasks requires further validation
-- "Learning" admits multiple formulations (PAC learning, Bayesian learning, generalization-theoretic learning), and the robustness of the conclusions across these definitions is not fully discussed
-- A systematic scaling law analysis of how ICL behavior varies across model sizes is absent
+- Primarily yields negative conclusions (limited ICL learning ability) without providing many constructive directions or solutions.
+- Some experiments might be limited by selection bias in specific benchmark task sets; generalization to complex reasoning and generation tasks needs verification.
+- The definition of "learning" itself has multiple interpretations (PAC vs. Bayesian vs. generalization); the robustness of conclusions under different definitions is not fully discussed.
+- Lacks a systematic scaling law analysis of ICL behavior differences across different model sizes.
 
-**Key Distinctions from Related Work**:
+**Related Work & Insights**:
 
-- Unlike work that explains ICL through Bayesian inference (Xie et al., 2021), this paper systematically challenges the hypothesis that ICL constitutes a robust learning mechanism from an empirical learning-theoretic perspective
-- Unlike single-factor analyses, this paper simultaneously controls for memorisation, distribution, model, and prompt style, yielding more comprehensive and reliable negative conclusions
-- Unlike purely theoretical analyses, this paper combines mathematical argumentation with large-scale experiments, substantially strengthening the persuasiveness of its conclusions
+- Unlike works interpreting ICL from a Bayesian inference perspective (Xie et al., 2021), this paper systematically questions the hypothesis of ICL as a robust learning mechanism from an empirical learning theory standpoint.
+- Unlike single-factor analyses, this paper simultaneously controls memory, distribution, model, and style, reaching more comprehensive and reliable negative conclusions.
+- Unlike purely theoretical analyses, this paper combines mathematical proof with large-scale experiments, enhancing the persuasiveness of its conclusions.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers](../../NeurIPS2025/llm_reasoning/unlabeled_data_can_provably_enhance_in-context_learning_of_transformers.md)
-- [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](../../ICML2026/llm_reasoning/many-shot_cot-icl_making_in-context_learning_truly_learn.md)
-- [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
-- [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
-- [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
+- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
+- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
+- [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](agentic_reinforcement_learning_with_implicit_step_rewards.md)
 
 </div>
 

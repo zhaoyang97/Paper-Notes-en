@@ -2,77 +2,76 @@
 title: >-
   [Paper Note] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data
 description: >-
-  [ICLR2026][LLM Reasoning][Reasoning training] This paper proposes NRT (Native Reasoning Training), a framework that treats reasoning chains as latent variables and uses the model's own predictive confidence over referenc…
+  [ICLR 2026][LLM Reasoning][GRPO] The NRT (Native Reasoning Training) framework is proposed, treating reasoning chains as latent variables. It trains LLM reasoning capabilities using the model's own prediction confidence for reference answers as an intrinsic reward signal, without requiring external verifiers or expert reasoning demonstrations. On Llam
 tags:
-  - "ICLR2026"
-  - "LLM Reasoning"
-  - "Reasoning training"
-  - "verifier-free RL"
-  - "latent variable reasoning"
-  - "GRPO"
-  - "reward design"
+  - ICLR 2026
+  - LLM Reasoning
+  - GRPO
 date: 2026-05-08
-content_hash: 16b8bab2c61ba4fc
+content_hash: b20fa86d29877366
 ---
-
 # Native Reasoning Models: Training Language Models to Reason on Unverifiable Data
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2602.11549](https://arxiv.org/abs/2602.11549)  
 **Code**: To be confirmed  
-**Area**: LLM Reasoning
-**Keywords**: Reasoning training, verifier-free RL, latent variable reasoning, GRPO, reward design
+**Area**: LLM Reasoning  
+**Keywords**: Reasoning Training, Verifier-free RL, Latent Variable Reasoning, GRPO, Reward Design
 
 ## TL;DR
-This paper proposes NRT (Native Reasoning Training), a framework that treats reasoning chains as latent variables and uses the model's own predictive confidence over reference answers as an intrinsic reward signal to train LLM reasoning—without external verifiers or expert reasoning demonstrations. On Llama-3.1-8B, NRT achieves an average improvement of 10.2 points across 9 benchmarks (46.0→56.2), surpassing the verifier-dependent RLPR by +5.4 points.
+The NRT (Native Reasoning Training) framework is proposed, treating reasoning chains as latent variables. It trains LLM reasoning capabilities using the model's own prediction confidence for reference answers as an intrinsic reward signal, without requiring external verifiers or expert reasoning demonstrations. On Llama-3.1-8B, it achieves an average improvement of 10.2 points across 9 benchmarks (46.0 $\rightarrow$ 56.2), outperforming RLPR, which requires a verifier, by +5.4 points.
 
 ## Background & Motivation
 
-**Background**: Current approaches to improving LLM reasoning follow two main paths—(a) SFT on human- or GPT-4-annotated reasoning chains (e.g., o1 reproductions), and (b) RL with external verifiers (RLVR), such as using final answer correctness as a reward for math problems. Both perform well in verifiable domains such as mathematics and code.
+**Background**: Current improvements in LLM reasoning primarily follow two paths: (a) SFT using human or GPT-4 labeled reasoning chains (e.g., o1 replication), and (b) RL with external verifiers (RLVR), such as using final answer correctness as a reward for math problems. Both perform excellently in verifiable domains like mathematics and programming.
 
-**Limitations of Prior Work**: Many subject-area tasks (history, commonsense, open-domain QA, multi-hop reasoning) have answers that **cannot be programmatically verified**—no deterministic verifier can assess whether the reasoning process is correct. Such "unverifiable data" constitutes the majority of real-world applications, yet existing RLVR methods are inapplicable.
+**Limitations of Prior Work**: Answers for a vast number of academic tasks (history, common sense, open QA, multi-hop reasoning) are **not programmatically verifiable**—there is no deterministic verifier to judge whether a reasoning process is correct. This type of "unverifiable data" constitutes the majority of practical applications, yet existing RLVR methods cannot handle it.
 
-**Key Challenge**: Reasoning ability requires RL training; RL requires reward signals; traditional rewards come from external verifiers—but no such verifiers exist in unverifiable domains. The core question is how to train reasoning without external rewards.
+**Key Challenge**: Reasoning capabilities require RL training, and RL requires reward signals. Traditional rewards come from external verifiers—but such verifiers do not exist in unverifiable domains. How can reasoning be trained without external rewards?
 
-**Goal**: Given only (question, answer) pairs—without reasoning demonstrations or external verifiers—how can one train an LLM to generate effective reasoning chains?
+**Goal**: How to train LLMs to generate effective reasoning chains when only (question, answer) pairs are available, without reasoning demonstrations and without external verifiers?
 
-**Key Insight**: Treating reasoning chains $z$ as **latent variables**—a good reasoning chain should increase the model's predicted probability of the correct answer $y^*$. The reward is defined as the token-level probability of the answer predicted by the model after reading the reasoning chain.
+**Key Insight**: Treat the reasoning chain $z$ as a **latent variable**—a good reasoning chain should lead the model to a higher prediction probability for the correct answer $y^*$. Reward = the model's own token-level probability of predicting the answer after reading the reasoning.
 
-**Core Idea**: Using "whether a reasoning chain helps the model better predict the answer" as an intrinsic reward, without relying on any external verification—the model acts simultaneously as reasoner and evaluator.
+**Core Idea**: Use "whether the reasoning chain helps the model itself better predict the answer" as an intrinsic reward, independent of any external verification—the model acts as both the reasoner and its own judge.
 
 ## Method
 
 ### Overall Architecture
-Input (question $x$, answer $y^*$) → model samples reasoning chain $z \sim \pi_\theta(z|x)$ → compute token-level probability $c_i = \pi_\theta(y^*_i|x,z,y^*_{<i})$ of predicting $y^*$ conditioned on $z$ → aggregate probabilities into a trace-level reward $R(z,\theta)$ → update $\theta$ via GRPO policy gradient.
+NRT addresses the scenario where only (question $x$, answer $y^*$) pairs exist without reasoning demonstrations or external verifiers. For each question, the model samples a set of reasoning chains $z \sim \pi_\theta(z|x)$. After reading the reasoning, the model predicts the reference answer token-by-token, obtaining token-level probabilities $c_i = \pi_\theta(y^*_i \mid x, z, y^*_{<i})$. These probabilities are compressed into a trace-level reward $R(z,\theta)$ via a **weighted aggregation function**. Reasoning chains that elevate the prediction probability of difficult tokens receive higher rewards. This is further stabilized via **baseline subtraction and group-wise normalization** to obtain the advantage $A_k$, which is then used to update $\theta$ via GRPO. A lightweight format supervision loss is also applied during training to force the model to write reasoning inside `<think>` tags instead of skipping to the answer. No external signals are used; rewards come entirely from the model's own prediction confidence.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["QA Pairs (x, y*) <br/>No demo, No verifier"] --> B["Latent Reasoning Paradigm<br/>Sample reasoning chains z ~ π(z|x)"]
+    B --> C["Token-by-token prediction of y* after z<br/>Obtain token probabilities c_i"]
+    C --> D["Weighted Sum Reward<br/>Weight difficult tokens by -log p<br/>Aggregate to trace reward R(z,θ)"]
+    D --> E["Reward Stabilization<br/>Baseline subtraction + Group-wise Norm<br/>Obtain Advantage A_k"]
+    E --> F["GRPO Update θ<br/>Trace Policy Gradient + Token Prediction Gradient"]
+    G["Format Supervision Loss<br/>Force reasoning into think tags"] --> F
+    F -->|Next Sampling Round| B
+```
 
 ### Key Designs
 
-1. **Latent Variable Reasoning Paradigm**:
+**1. Latent Reasoning Paradigm: Evaluating via self-prediction**
 
-    - Function: Reasoning chains $z$ are neither externally annotated nor externally evaluated; the model generates and assesses them itself.
-    - Mechanism: A good reasoning chain $z$ should increase $\pi_\theta(y^*|x,z)$—i.e., the model should be more "confident" in the correct answer after reading the reasoning.
-    - Design Motivation: This is the only self-consistent approach that does not depend on external verification—the model serves as both student and teacher.
+The fundamental dilemma in unverifiable domains is the lack of a verifier to judge the correctness of a reasoning chain. NRT bypasses this: since $z$ cannot be labeled, it is treated as a latent variable that the model generates and evaluates itself. The criterion is a simple yet self-consistent hypothesis—a good reasoning chain $z$ should increase the model's prediction probability for the correct answer $\pi_\theta(y^*\mid x,z)$. In this setup, the model acts as both the student (generating reasoning) and the teacher (scoring with prediction confidence), providing a self-consistent reward source.
 
-2. **Weighted Sum Reward (WS)**:
+**2. Weighted Sum Reward: Focusing on critical tokens via inverse difficulty weighting**
 
-    - Function: Uses a weighted sum of token-level probabilities as the reward, with weights inversely proportional to the baseline difficulty of each token.
-    - Mechanism: Inverse-probability weighting $w_i \propto 1/c_{i,base}$ drives weights for simple tokens (e.g., "the") toward zero while amplifying weights for difficult tokens (e.g., key factual words).
-    - Design Motivation: Standard logP rewards are dominated by simple tokens, preventing the model from learning to improve difficult predictions. The $-\log p$ weighting scheme outperforms logP by 3.3 points on Llama-3.1-8B.
-    - Theoretical Connection: The $-\log p$ weighting is equivalent to cross-entropy $-\sum c_j \log c_{j,base}$, directly optimizing the reduction of KL divergence on difficult tokens.
+If the sum of logarithms of token probabilities (standard logP) is used as a reward, the signal is dominated by high-frequency simple tokens like "the" or "of," which already have probabilities near 1. NRT adopts a weighted sum where weights are inversely proportional to basic token difficulty $w_i \propto 1/c_{i,base}$: simple tokens get weights near 0, while difficult tokens like key factual words are amplified. The most effective scheme, $-\log p$ weighting, outperformed logP by 3.3 points on Llama-3.1-8B. This is theoretically equivalent to minimizing the KL divergence on difficult tokens, naturally concentrating optimization pressure where the model is most uncertain.
 
-3. **Reward Stabilization**:
+**3. Reward Stabilization: Baseline subtraction and group-wise normalization**
 
-    - Function: Clipped reward $R' = \max(0, R - R_{base})$ + group-wise normalization.
-    - Mechanism: Subtracting the baseline (reward without a reasoning chain) differentiates reward signals; group-wise normalization stabilizes GRPO gradients.
-    - Design Motivation: Methods such as RLPR suffer from severe policy collapse (reasoning chain entropy→0, quality→0); NRT maintains high entropy and high quality throughout training.
+Methods like RLPR suffer from a fatal issue: after a few training steps, the entropy of the reasoning chain collapses to 0, and reasoning quality drops to zero. NRT stabilizes training with two steps. First, it uses a clipped reward $R' = \max(0,\, R - R_{base})$, subtracting the "no reasoning" baseline reward to ensure only helpful reasoning receives positive rewards. Second, group-wise normalization is used to stabilize the gradient scale for GRPO within a sampling group. These ensure NRT maintains high entropy and high-quality reasoning without the collapse seen in RLPR.
 
-4. **Format Supervision Loss**:
+**4. Format Supervision Loss: Preventing shortcuts**
 
-    - Function: An auxiliary loss ensures the model output contains reasoning wrapped in `<think>...</think>` tags.
-    - Weight of 0.3 prevents the model from skipping reasoning and directly outputting answers.
+With only intrinsic rewards, the model might take a shortcut by skipping reasoning and outputting the answer directly. NRT adds a format supervision loss with a weight of 0.3, requiring outputs to be enclosed in `<think>...</think>` tags to ensure the reasoning chain physically exists and the reward signal is targeted correctly.
 
 ### Loss & Training
-$J(\theta) = \mathbb{E}_{z \sim \pi_\theta}[R(z,\theta)]$, optimized via GRPO with importance sampling. The gradient decomposes into a trace policy gradient (reinforcing the entire reasoning chain) and a token prediction gradient (token-level weighted prediction updates). Training data comprises 200K samples from tulu-3-sft-mixture, with an average response length of 415 tokens.
+The objective is to maximize the expected reward $J(\theta) = \mathbb{E}_{z \sim \pi_\theta}[R(z,\theta)]$, optimized via GRPO with importance sampling. The gradient decomposes into two parts: a trace policy gradient that strengthens the entire reasoning chain, and a token prediction gradient that updates token-level predictions according to the difficulty weights. Training utilized 200K samples from the tulu-3-sft-mixture, with an average response length of 415 tokens.
 
 ## Key Experimental Results
 
@@ -80,8 +79,8 @@ $J(\theta) = \mathbb{E}_{z \sim \pi_\theta}[R(z,\theta)]$, optimized via GRPO wi
 
 **Llama-3.1-8B across 9 benchmarks**:
 
-| Method | BBH | MMLU | DROP | GSM8K | MATH | HumanEval | IFEval | Overall Avg. |
-|--------|-----|------|------|-------|------|-----------|--------|-------------|
+| Method | BBH | MMLU | DROP | GSM8K | MATH | HumanEval | IFEval | Overall Mean |
+|------|-----|------|------|-------|------|-----------|--------|---------|
 | SFT | 38.0 | 59.2 | 36.7 | 29.0 | 17.8 | 74.7 | 58.3 | 46.0 |
 | RLPR* | 41.2 | 58.7 | 32.5 | 65.0 | 27.8 | 77.8 | 61.3 | 50.8 |
 | Verifree* | 35.7 | 58.3 | 33.5 | 54.3 | 19.4 | 76.3 | 59.3 | 48.1 |
@@ -90,49 +89,49 @@ $J(\theta) = \mathbb{E}_{z \sim \pi_\theta}[R(z,\theta)]$, optimized via GRPO wi
 
 **Llama-3.2-3B**:
 
-| Method | Overall Avg. |
-|--------|-------------|
+| Method | Overall Mean |
+|------|---------|
 | SFT | 36.4 |
 | NRT-WS(-logp) | **39.9** (+3.5) |
 
 ### Ablation Study
 
 | Reward Aggregation | Llama-3.1-8B Overall |
-|-------------------|---------------------|
-| logP (log probability) | 52.9 |
-| P (probability product) | 51.4 |
-| GM (geometric mean) | 54.9 |
-| AM (arithmetic mean) | 53.3 |
-| WS-1/p (inverse-probability weighting) | 53.3 |
+|-------------|------------------|
+| logP | 52.9 |
+| P (Product) | 51.4 |
+| GM (Geometric Mean) | 54.9 |
+| AM (Arithmetic Mean) | 53.3 |
+| WS-1/p (Inverse Prob) | 53.3 |
 | **WS-(-logp)** | **56.2** |
 
 ### Key Findings
-- **Policy Collapse Resolved**: Under RLPR, reasoning chain entropy rapidly collapses to 0 during training; NRT maintains high entropy and high-quality reasoning throughout.
-- **Targeted Improvement on Difficult Tokens**: The WS weighting scheme yields probability improvements of up to 15% on high-entropy tokens, while RLPR shows virtually no improvement on the same tokens.
-- **No Verifiable Data Required**: Large gains on both GSM8K (math, verifiable) and BBH (reasoning, unverifiable) demonstrate that the method is not domain-restricted.
-- **Decoupling of Reasoning and Answer**: Lexical analysis reveals that the model autonomously learns to use meta-cognitive vocabulary (e.g., "premise," "reasoning") in reasoning chains while suppressing answer-format tokens.
+- **Resolution of Policy Collapse**: In RLPR, reasoning entropy drops to 0 quickly, whereas NRT maintains high entropy and high-quality reasoning.
+- **Targeted Improvement on Hard Tokens**: The WS weighting scheme increases model probability on high-entropy tokens by up to 15%, while RLPR shows almost no improvement.
+- **No Requirement for Verifiable Data**: Substantial gains were observed in both GSM8K (verifiable) and BBH (unverifiable), proving the method is not limited to specific domains.
+- **Decoupling of Reasoning and Answers**: Vocabulary analysis shows the model automatically learns to use meta-cognitive terms ("premise", "reasoning") in the reasoning chain while suppressing answer-formatting tokens.
 
 ## Highlights & Insights
-- **Paradigm Innovation: Latent Variable Reasoning**: Treating reasoning chains as latent variables and using the model's own predictive confidence as a reward is an elegant design—it requires no external annotation or verifier and extends RL-based reasoning training to all domains.
-- **Theoretical Intuition Behind Difficult-Token Weighting**: The $-\log p$ weighting concentrates the reward on tokens where the model is most uncertain, which is consistent with the spirit of curriculum learning and hard example mining. This simple modification yields a significant gain of 3.3 points.
-- **Diagnosis and Resolution of Policy Collapse**: The paper clearly demonstrates the collapse phenomenon in RLPR (reasoning entropy→0) and naturally avoids it through intrinsic reward design—collapsed reasoning cannot help predict the answer.
+- **Paradigm Innovation: Latent Reasoning**: The idea of treating reasoning as a latent variable and using self-prediction confidence as a reward is elegant—it removes the need for external labels or verifiers, extending RL reasoning training to all domains.
+- **Theoretical Intuition of Hard Token Weighting**: The $-\log p$ weighting focuses rewards on the most uncertain key tokens, aligning with the spirit of curriculum learning and hard example mining. This simple modification yielded a significant 3.3-point gain.
+- **Diagnosis of Policy Collapse**: The study clearly demonstrates the collapse phenomenon in RLPR (reasoning entropy $\rightarrow$ 0) and shows how NRT naturally avoids this through intrinsic reward design, as collapsed reasoning fails to assist in answer prediction.
 
 ## Limitations & Future Work
-- **Hand-crafted Reward Functions**: All five aggregation methods and weighting schemes are manually specified; automatic reward function learning is a promising direction.
-- **Limited Sampling Efficiency**: RL training requires extensive sampling (GRPO requires multiple reasoning chains per group), incurring high computational cost.
-- **Restricted to Fine-Tuning**: Validation at the pre-training stage is absent; incorporating reasoning training during pre-training may yield further gains.
-- **Hallucination Risk**: Case studies show the model may generate non-existent program names in open-domain tasks—intrinsic rewards cannot prevent factual errors.
+- **Manual Reward Design**: The 5 aggregation methods and weighting schemes are manually defined; automated reward function learning could be explored.
+- **Sampling Efficiency**: RL training requires extensive sampling (GRPO requires multiple chains per group), leading to high computational costs.
+- **Limited to Fine-tuning**: It has not been verified in the pre-training stage, where incorporating reasoning training might yield even better results.
+- **Hallucination Risk**: Case studies indicate the model may generate non-existent program names in open tasks—intrinsic rewards do not necessarily prevent factual errors.
 
 ## Related Work & Insights
-- **vs. RLPR (Reasoning via Planning with RL)**: RLPR uses external answer-matching rewards and collapses on unverifiable tasks. NRT uses intrinsic predictive confidence as a reward and is applicable across all settings.
-- **vs. Verifree**: Prior verifier-free methods employ simpler reward designs; NRT's token-level weighting scheme achieves substantially better performance (+8.1 on Llama-8B).
-- **vs. STaR/Self-Improvement**: STaR relies on filtering reasoning chains by correctness for SFT; NRT directly optimizes reasoning quality via RL, avoiding the distribution-matching issues of SFT.
+- **vs RLPR (Reasoning via Planning with RL)**: RLPR uses external answer-matching rewards and collapses on unverifiable tasks. NRT uses intrinsic prediction confidence and is applicable to all scenarios.
+- **vs Verifree**: Prior verifier-free methods used simpler reward designs; NRT's token-level weighting scheme is more effective (+8.1 on Llama-8B).
+- **vs STaR/Self-Improvement**: STaR relies on filtering reasoning chains with correct answers for SFT, whereas NRT uses RL to directly optimize reasoning quality, avoiding the distribution matching issues of SFT.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The latent variable reasoning paradigm and intrinsic reward design represent a fundamentally new perspective, resolving the reasoning training problem in verifier-free domains.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three models × 9 benchmarks × 5 reward variants, with full coverage of training dynamics analysis, token-level analysis, and case studies.
-- Writing Quality: ⭐⭐⭐⭐⭐ The paper progresses systematically from problem formulation to theoretical derivation to experimental analysis, with clear mathematical exposition.
-- Value: ⭐⭐⭐⭐⭐ Addresses the most critical bottleneck in current reasoning training—extending RL-based reasoning from verifiable domains to arbitrary domains.
+- Novelty: ⭐⭐⭐⭐⭐ The latent reasoning paradigm and intrinsic reward design are fresh perspectives that fundamentally solve reasoning training in unverifiable domains.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 3 models, 9 benchmarks, 5 reward variants, alongside training dynamics, token-level analysis, and case studies.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical progression from problem definition to theoretical derivation and experimental analysis with clear formulas.
+- Value: ⭐⭐⭐⭐⭐ Addresses a core bottleneck in current reasoning training—extending RL training from verifiable domains to arbitrary domains.
 
 <!-- RELATED:START -->
 
@@ -140,11 +139,11 @@ $J(\theta) = \mathbb{E}_{z \sim \pi_\theta}[R(z,\theta)]$, optimized via GRPO wi
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Stitch in Time Saves Nine: Proactive Self-Refinement for Language Models](a_stitch_in_time_saves_nine_proactive_self-refinement_for_language_models.md)
+- [\[ICLR 2026\] OpenThoughts: Data Recipes for Reasoning Models](openthoughts_data_recipes_for_reasoning_models.md)
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
-- [\[ICLR 2026\] Training Large Reasoning Models Efficiently via Progressive Thought Encoding](training_large_reasoning_models_efficiently_via_progressive_thought_encoding.md)
-- [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](../../ACL2026/llm_reasoning/efficient_prm_training_data_synthesis_via_formal_verification.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
+- [\[ICLR 2026\] ProofOptimizer: Training Language Models to Simplify Proofs without Human Demonstrations](proofoptimizer_training_language_models_to_simplify_proofs_without_human_demonst.md)
+- [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
 
 </div>
 

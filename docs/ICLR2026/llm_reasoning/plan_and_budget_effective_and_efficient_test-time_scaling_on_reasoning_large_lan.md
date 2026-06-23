@@ -2,166 +2,156 @@
 title: >-
   [Paper Note] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Test-time scaling] This paper proposes the Plan-and-Budget framework, which decomposes complex queries into sub-problems and adaptively allocates token budgets based on estimated complexity…
+  [ICLR 2026][LLM Reasoning][Paper Note] The Plan-and-Budget framework is proposed to achieve efficient test-time scaling for reasoning LLMs by decomposing complex queries into sub-problems and adaptively allocating token budgets based on estimated complexity—achieving up to 70% higher accuracy, 39% fewer tokens, and a 193.8% improvement in the E3 metric.
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "Test-time scaling"
-  - "reasoning efficiency"
-  - "overthinking"
-  - "token budget allocation"
-  - "reasoning LLM"
+  - ICLR 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 3cd04c1e62b871bc
+content_hash: 45f335ee1b6362d3
 ---
-
 # Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.16122](https://arxiv.org/abs/2505.16122)  
 **Code**: [github.com/junhongmit/P-and-B](https://github.com/junhongmit/P-and-B)  
-**Area**: LLM Reasoning
-**Keywords**: Test-time scaling, reasoning efficiency, overthinking, token budget allocation, reasoning LLM
+**Area**: LLM Reasoning  
+**Keywords**: Test-time scaling, Reasoning Efficiency, Overthinking, Token Budget Allocation, Reasoning LLMs
 
 ## TL;DR
 
-This paper proposes the Plan-and-Budget framework, which decomposes complex queries into sub-problems and adaptively allocates token budgets based on estimated complexity, achieving efficient test-time scaling for reasoning LLMs — with up to 70% accuracy improvement, 39% token reduction, and 193.8% gain on the E3 metric.
+The Plan-and-Budget framework is proposed to achieve efficient test-time scaling for reasoning LLMs by decomposing complex queries into sub-problems and adaptively allocating token budgets based on estimated complexity—achieving up to 70% higher accuracy, 39% fewer tokens, and a 193.8% improvement in the E3 metric.
 
 ## Background & Motivation
 
-Reasoning-oriented large language models (e.g., DeepSeek-R1, QwQ) have achieved remarkable success on complex tasks such as mathematical reasoning and code generation, yet computational efficiency during inference has become an increasingly pressing concern:
+Reasoning-heavy Large Language Models (e.g., DeepSeek-R1, QwQ) have achieved significant success in complex tasks like mathematical reasoning and code generation. however, computational efficiency during the inference phase has become increasingly problematic:
 
-**Overthinking**: Many mainstream LLMs generate verbose and off-topic reasoning chains even for simple queries. Models "think too much," producing unnecessary intermediate steps that waste computational resources.
+**Overthinking**: Many mainstream LLMs generate long, digressive reasoning chains even for simple queries. The models "think too much," producing many unnecessary intermediate steps and wasting computational resources.
 
-**Fixed-budget limitations**: Recent work attempts to mitigate overthinking by enforcing a fixed token budget, but this one-size-fits-all strategy leads to **underthinking** — for difficult problems, a fixed budget may be insufficient, resulting in incomplete reasoning.
+**Limitations of Prior Work (Fixed Budget)**: Recent works attempt to mitigate overthinking by imposing a fixed token budget. However, this "one-size-fits-all" strategy leads to **Underthinking**—for difficult problems, a fixed budget may be insufficient, resulting in incomplete reasoning.
 
-**Query difficulty heterogeneity**: Real-world queries vary greatly in complexity. A simple arithmetic problem and a complex multi-step reasoning problem require vastly different computational resources, yet existing methods lack principled resource allocation mechanisms.
+**Key Challenge (Heterogeneity)**: Real-world query complexity varies significantly. A simple arithmetic problem and a complex multi-step reasoning task require vastly different computational resources, yet existing methods lack a rational resource allocation mechanism.
 
-**Lack of theoretical foundation**: There is no formal theoretical framework for optimally allocating reasoning computation.
+**Goal**: There is a lack of a formalized theoretical framework for optimally allocating reasoning computation resources.
 
-Through empirical analysis, the authors find that **inefficient reasoning typically stems from unclear problem-solving strategies** — models begin reasoning without an explicit plan, making them prone to drifting off course.
+**Key Insight**: The authors' empirical analysis reveals that **reasoning inefficiency often stems from unclear problem-solving strategies**—models begin reasoning without a clear plan, making them prone to drifting off track.
 
 ## Method
 
 ### Overall Architecture
 
-Plan-and-Budget is a model-agnostic test-time framework consisting of three core steps:
-1. **Plan**: Decompose the complex query into a series of sub-problems
-2. **Estimate**: Assess the complexity of each sub-problem
-3. **Budget**: Adaptively allocate token budgets to each sub-problem based on the complexity estimates
+This paper addresses the issue of "disorganized thinking" in reasoning LLMs: without a plan, models drift during reasoning, overthinking simple problems and underthinking difficult ones due to rigid budgets—the authors term this "reasoning miscalibration." The Plan-and-Budget approach first decomposes problems into structured sub-problems and then allocates tokens where they are most needed based on the difficulty of each sub-problem.
+
+The framework is a **model-agnostic, pure test-time method** that relies only on prompts without retraining. It consists of two stages: **Plan**, where a lightweight planner decomposes the query into ordered sub-problems and assigns complexity scores; and **Budget**, which uses a decay-based schedule to distribute the total token budget (heavier at the start for high uncertainty, lighter towards the end for convergence). The optimality of this scheduling is backed by the **BAM** theoretical model, and performance is measured by the new **E3** metric.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Input Query x<br/>(Math/Instruction/Agent Planning)"] --> PLAN["Sub-problem Decomposition (Plan Stage)<br/>Lightweight planner splits into ordered sub-problems<br/>and assigns complexity scores d_ij"]
+    PLAN --> W["Normalized Complexity Weights<br/>w_ij = d_ij / Σ d_ik"]
+    W --> BUDGET["Decay-based Budget Scheduling (Budget Stage)<br/>Polynomial/Cosine decay (front-heavy)<br/>Allocates total budget B to sub-problems b_ij"]
+    BUDGET --> SOLVE["Solve Sub-problems under Budget Constraints<br/>a_ij = f_LLM(s_ij, b_ij)"]
+    SOLVE --> SYN["Synthesize Sub-answers<br/>y = S(a_i1, ..., a_im)"]
+    BAM["BAM Theoretical Model<br/>(Optimal Allocation Eq.6)"] -. Provides allocation basis .-> BUDGET
+    SYN -.Effectiveness measured by E3.-> E3["E3 = A²/T"]
+```
 
 ### Key Designs
 
-1. **BAM: Budget Allocation Model**:
+**1. BAM Theoretical Model (Budget Allocation Model): Optimal allocation for "thinking more on hard problems and less on easy ones"**
 
-    - Function: Establishes a formal mathematical model of the reasoning process
-    - Mechanism: Models the reasoning process as a sequence of sub-problems with varying uncertainty. Each sub-problem $q_i$ has an uncertainty parameter $u_i$, and the number of tokens required to resolve it is proportional to $u_i$
-    - Under this model, the optimality of different budget allocation strategies is analyzed
-    - Provides a theoretical result proving that **adaptive allocation is superior to uniform allocation**: sub-problems of greater difficulty should receive larger budgets
-    - **Design Motivation**: Provides rigorous mathematical grounding for the intuitive principle of "think more on hard problems, less on easy ones"
+While intuition suggests allocating more computation to harder problems, a rigorous proof was missing. BAM formalizes reasoning as a sequence of sub-problems with uncertainty, following the classic decomposition $U = U_{epistemic} + U_{aleatoric}$. It assumes epistemic uncertainty reduces per inverse power law as tokens increase $U_{epistemic}(s_{ij}\mid b_{ij}) = c_{ij} / b_{ij}^{\alpha_{ij}}$, where $c_{ij}$ is the initial uncertainty and $\alpha_{ij}$ characterizes the rate of reduction. Solving with Lagrange multipliers under a total budget $B_i$ yields the closed-form optimal allocation:
 
-2. **E3: Effective and Efficient Evaluation Metric**:
+$$b_{ij} = B_i \cdot \frac{(c_{ij}\,\alpha_{ij})^{1/(\alpha_{ij}+1)}}{\sum_k (c_{ik}\,\alpha_{ik})^{1/(\alpha_{ik}+1)}}$$
 
-    - Function: Defines a composite metric that simultaneously measures correctness and computational efficiency
-    - Mechanism: Captures the trade-off between accuracy and token consumption
-    - $$E3 = \frac{\text{Accuracy}}{\text{Normalized Token Cost}}$$
-    - A model that produces shorter and more precise reasoning chains achieves a higher E3 score
-    - **Design Motivation**: Existing evaluations focus solely on accuracy or token count, lacking a unified measure
+This reveals a **unimodal** relationship: medium-difficulty sub-problems should receive more budget to avoid underthinking, while extremely difficult ones receive less as marginal returns diminish (avoiding overthinking).
 
-3. **Sub-problem Decomposition (Plan Stage)**:
+**2. Sub-problem Decomposition (Plan Phase): Providing a "soft scaffold" for reasoning**
 
-    - Function: Uses the LLM itself or a lightweight auxiliary model to decompose the original query into multiple sub-problems
-    - Mechanism: Prompts the model to "formulate a plan" before beginning reasoning, explicitly identifying which sub-tasks need to be resolved
-    - Decomposition granularity is adaptively adjusted according to the structure of the original problem
-    - Each sub-problem constitutes an independently solvable unit
-    - **Design Motivation**: A clear plan prevents the reasoning process from drifting off course, effectively avoiding overthinking
+To address the root cause of models drifting off track, the Plan phase avoids immediate answering. A lightweight planner $P$ decomposes the query $x_i$ into sub-problems $\Gamma_i = \langle s_{i1}, \dots, s_{im}\rangle$ and assigns complexity scores $d_{ij}$ based on heuristics like confidence or structure. This plan acts as a "soft scaffold"—it doesn't guarantee optimality but provides a high-level reasoning path, significantly suppressing divergence.
 
-4. **Adaptive Budget Scheduling (Budget Stage)**:
+**3. Decay-based Budget Scheduling (Budget Phase): Implementing optimal allocation via lightweight scheduling**
 
-    - Function: Dynamically allocates token budgets based on the estimated complexity of each sub-problem
-    - Mechanism: Employs an adaptive scheduling strategy; complexity estimates are derived from sub-problem features (length, keywords, problem type, etc.)
-    - Simpler sub-problems receive smaller budgets; more complex ones receive larger budgets
-    - A total budget cap can be set or determined automatically
-    - In practice, the model is informed of the token limit for the current sub-problem during generation
-    - **Design Motivation**: BAM theory demonstrates that adaptive allocation is optimal; in practice, this approach simultaneously avoids both overthinking and underthinking
+Since estimating $c_{ij}$ and $\alpha_{ij}$ for black-box LLMs is expensive, the paper uses **decay scheduling functions** as lightweight proxies. Observing that early stages of multi-step reasoning (understanding, strategy formulation) have the highest epistemic uncertainty, the budget is "front-loaded." The framework supports various shapes (linear, polynomial, exponential, cosine annealing), with polynomial and cosine decay most closely matching BAM's predictions.
+
+**4. E3 Evaluation Metric (Efficiency-Aware Effectiveness Evaluation): Measuring correctness and economy simultaneously**
+
+Existing metrics often fail to capture the trade-off between accuracy and tokens. The paper defines E3 to weight accuracy against token usage:
+
+$$E3 = A \cdot \frac{A}{T} = \frac{A^2}{T}$$
+
+where $A$ is average accuracy and $T$ is average decoded tokens per query. The squared $A$ term prioritizes "getting it right" while rewarding token reduction.
 
 ### Loss & Training
 
-- Plan-and-Budget is a **purely test-time** method and **requires no training or fine-tuning**
-- The framework guides the LLM through carefully designed prompts for sub-problem decomposition and budget control
-- It is model-architecture-agnostic and can be directly applied to any reasoning-oriented LLM
-- Compatible with models of varying scales
+Plan-and-Budget is a pure test-time method requiring no training or fine-tuning. It relies on prompts to guide the planner and the main LLM. It is model-agnostic and can be applied to any reasoning LLM.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task Type | Model | Method | Accuracy Change | Token Change | E3 Change |
-|-----------|-------|--------|----------------|-------------|-----------|
-| Math Reasoning | DS-Qwen-32B | Plan-and-Budget | +70% ↑ | −39% ↓ | +193.8% ↑ |
-| Math Reasoning | DS-LLaMA-70B | Plan-and-Budget | Improved | Reduced | Significantly improved |
-| Complex Reasoning | Multiple models | Plan-and-Budget | Consistent improvement | Consistent reduction | Comprehensive improvement |
+Evaluated across four reasoning LLMs (DS-Qwen-32B, QwQ-32B, DS-LLaMA-70B, OpenAI o4-mini) and three task types, the best improvements relative to strong baselines were:
 
-**Key Finding Across Model Scales**: Plan-and-Budget enables a smaller model (DS-Qwen-32B) to reach the efficiency level of a larger model (DS-LLaMA-70B), demonstrating the ability to bridge performance gaps without retraining.
+| Metric | Max Improvement | Description |
+|------|---------|------|
+| Accuracy | Up to +70% | Best case across models/tasks |
+| Token Consumption | Up to -39% | Improved correctness with fewer tokens |
+| E3 | Up to +193.8% | Most significant in agent planning tasks |
+
+**Key Insight**: On agent planning tasks, the smaller DS-Qwen-32B with Plan-and-Budget improved its E3 from 0.16 to 0.47, approaching the much larger DS-LLaMA-70B (E3 = 0.50), acting as a "test-time equalizer."
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|--------------|-----------|-------|
-| Plan only (no budget control) | Accuracy improves; efficiency gain limited | Decomposition alone is beneficial |
-| Budget only (no decomposition) | Efficiency improves; accuracy may decrease | Lacks structured guidance |
-| Plan + uniform budget | Moderate improvement | Inferior to adaptive allocation |
-| Plan + adaptive budget | Optimal | Full framework achieves best results |
-| Different decomposition granularities | Medium granularity is optimal | Too fine increases overhead; too coarse loses structure |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| Plan Only (No budget ctrl) | Accuracy Gain, Limited Efficiency | Decomposition alone is helpful |
+| Budget Only (No decomposition) | Efficiency Gain, Accuracy may drop | Lacks structured guidance |
+| Plan + Uniform Budget | Moderate Improvement | Inferior to adaptive allocation |
+| Plan + Adaptive Budget | **Optimal** | Best overall performance |
 
 ### Key Findings
 
-1. **Plan and Budget are both indispensable**: Decomposition addresses the direction of reasoning; budget allocation addresses resource efficiency; their combination yields the best outcome
-2. **Small model + Plan-and-Budget ≈ Large model**: The framework can effectively compensate for differences in model scale
-3. **Adaptive outperforms fixed**: Neither a large fixed budget nor a small fixed budget matches adaptive allocation
-4. **Model-agnostic generalization**: The framework is effective across different reasoning LLMs
+1.  **Synergy**: Plan and Budget are both necessary; planning solves direction, while budgeting solves resource efficiency.
+2.  **Ours (Small) ≈ Prev. SOTA (Large)**: The framework effectively bridges the gap caused by model scale.
+3.  **Adaptive > Fixed**: Adaptive allocation consistently outperforms both large and small fixed budgets.
+4.  **Generality**: The framework is effective across different reasoning LLM architectures.
 
 ## Highlights & Insights
 
-1. **Elegant integration of theory and practice**: The BAM theoretical model is established first; the optimality of adaptive allocation is derived theoretically before the Plan-and-Budget framework is designed — the approach is not purely heuristic
-2. **Introduction of the E3 metric**: Fills the gap in reasoning efficiency evaluation and provides the community with a unified measurement standard
-3. **Precise diagnosis of overthinking**: Empirical analysis identifies "lack of strategy" — rather than insufficient model capability — as the root cause of overthinking
-4. **Efficiency pathway for smaller models**: Improves performance through computational efficiency rather than model scale, which is highly practical in resource-constrained scenarios
-5. **Zero training cost**: A purely test-time method that is ready to use out of the box
+1.  **Theoretical-Practical Linkage**: The BAM theoretical model provides a non-heuristic foundation for adaptive allocation.
+2.  **E3 Metric**: Provides a unified standard for evaluating reasoning efficiency.
+3.  **Diagnosis of Overthinking**: Identifies "lack of strategy" rather than "lack of capability" as the root of overthinking.
+4.  **Zero Training Cost**: A plug-and-play test-time method.
 
 ## Limitations & Future Work
 
-1. **Decomposition quality depends on LLM capability**: If the LLM's own decomposition ability is limited, the Plan stage may produce ill-formed sub-problems, degrading overall performance
-2. **Accuracy of complexity estimation**: The effectiveness of adaptive budget allocation depends on the accuracy of complexity estimation, which is itself a difficult problem
-3. **Additional prompt overhead**: Sub-problem decomposition in the Plan stage and guidance in the Budget stage require extra prompt tokens, which may not be worthwhile for very short, simple queries
-4. **Inter-sub-problem dependencies**: The assumption of linear decomposition into independent sub-problems may be overly simplistic — in practice, sub-problems may exhibit complex interdependencies
-5. **Integration with RL-based methods**: Plan-and-Budget could be combined with reinforcement learning-based reasoning optimization, but this direction is not explored in the paper
+1.  **Dependency on Decomposition**: If the planner's decomposition is poor, the subsequent stages suffer.
+2.  **Complexity Estimation**: The accuracy of adaptive budgeting depends on the complexity scores, which is a non-trivial estimation task.
+3.  **Prompt Overhead**: Additional prompt tokens for the Plan/Budget phases may be inefficient for extremely simple queries.
+4.  **Integration with RL**: Future work could explore combining this with reinforcement learning-based reasoning optimization.
 
 ## Related Work & Insights
 
-- **Test-time scaling**: Complementary to existing test-time methods such as Self-Consistency, Tree-of-Thought, and Best-of-N
-- **Overthinking research**: Builds on pioneering work addressing reasoning redundancy, such as STILL and S1
-- **Budget-aware reasoning**: Related techniques including token budget constraints and early stopping
-- **Insights**: The BAM theoretical modeling approach can be generalized to other resource allocation scenarios (e.g., multimodal reasoning, multi-tool invocation)
+-   **Test-time Scaling**: Complements methods like Tree-of-Thought and Best-of-N.
+-   **Overthinking Research**: Builds on work like STILL and S1 concerning reasoning redundancy.
+-   **Insight**: The BAM logic can be extended to other resource-allocation scenarios like multi-modal reasoning or tool use.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The theoretical model makes a genuine contribution, though the engineering implementation of Plan-and-Budget is relatively straightforward
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across multiple models and tasks, thorough ablations, and convincing results
-- **Writing Quality**: ⭐⭐⭐⭐ — Theory and experiments are well integrated
-- **Value**: ⭐⭐⭐⭐⭐ — Addresses a practical efficiency bottleneck in reasoning LLMs; plug-and-play
+-   **Novelty**: ⭐⭐⭐⭐
+-   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐
+-   **Writing Quality**: ⭐⭐⭐⭐
+-   **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](../../ACL2026/llm_reasoning/efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 - [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
-- [\[NeurIPS 2025\] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling](../../NeurIPS2025/llm_reasoning/limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
 
 </div>
 

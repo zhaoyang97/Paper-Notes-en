@@ -2,71 +2,87 @@
 title: >-
   [Paper Note] Predicting LLM Reasoning Performance with Small Proxy Model
 description: >-
-  [ICLR 2026][LLM Reasoning][scaling law] This paper proposes rBridge, which uses reasoning traces from frontier models as gold labels and applies token-level task-aligned weighted NLL…
+  [ICLR 2026][LLM Reasoning][scaling law] The paper proposes rBridge, which utilizes reasoning traces from frontier models as gold labels and performs token-level task-aligned weighted NLL. This enables small models ($\le$1B) to effectively predict the reasoning performance of large models (13B-32B), achieving over 100$\times$ computational savings in dataset
 tags:
-  - "ICLR 2026"
-  - "LLM Reasoning"
-  - "scaling law"
-  - "proxy model"
-  - "reasoning"
-  - "pre-training data selection"
-  - "negative log-likelihood"
+  - ICLR 2026
+  - LLM Reasoning
+  - scaling law
+  - proxy model
+  - reasoning
+  - pre-training data selection
+  - negative log-likelihood
 date: 2026-05-08
-content_hash: 030540fe70345350
+content_hash: 4ccfc9ec1ceeb071
 ---
-
 # Predicting LLM Reasoning Performance with Small Proxy Model
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.21013](https://arxiv.org/abs/2509.21013)  
-**Code**: Available (dataset and code planned for open release)  
-**Area**: LLM Evaluation
+**Code**: Yes (Planned open source for datasets and code)  
+**Area**: LLM Evaluation  
 **Keywords**: scaling law, proxy model, reasoning, pre-training data selection, negative log-likelihood
 
 ## TL;DR
-This paper proposes rBridge, which uses reasoning traces from frontier models as gold labels and applies token-level task-aligned weighted NLL, enabling small models (≤1B) to effectively predict the reasoning performance of 13B–32B models, achieving over 100× computational savings on dataset ranking tasks.
+The paper proposes rBridge, which utilizes reasoning traces from frontier models as gold labels and performs token-level task-aligned weighted NLL. This enables small models ($\le$1B) to effectively predict the reasoning performance of large models (13B-32B), achieving over 100$\times$ computational savings in dataset ranking tasks.
 
 ## Background & Motivation
-Pre-training large language models is extremely costly, so the field commonly employs small proxy models to evaluate pre-training design choices. Research on scaling laws and dataset ranking invariance has demonstrated the viability of this strategy for general tasks.
+The cost of pre-training large language models is extremely high; thus, the industry frequently uses small proxy models to evaluate pre-training design choices. Research on scaling laws and dataset ranking invariance has demonstrated the feasibility of this strategy for general tasks.
 
-**Key Challenge**: Reasoning ability exhibits **emergent behavior**, appearing reliably only in sufficiently large models (typically >7B). Small models (≤1B) produce highly noisy results on reasoning benchmarks, or even exhibit reversed trends (e.g., a 1B model's accuracy on MATH500 decreases as training progresses). This means:
-- Directly using small-model accuracy to predict large-model performance → fails
-- Practitioners are forced to use 7B–15B "proxy models," which still incur enormous costs (a single 7B/500B-token training run exceeds $50K USD)
+**Key Challenge**: Reasoning ability exhibits **emergent behavior**, appearing reliably only in sufficiently large models (typically >7B). Small models ($\le$1B) are extremely noisy on reasoning benchmarks or even show reverse slopes (e.g., a 1B model's accuracy on MATH500 may decrease as training progresses). This implies:
+- Direct prediction of large model performance using small model accuracy $\rightarrow$ Fails.
+- Practitioners are forced to use 7B-15B "proxy models," which remains prohibitively expensive (training a 7B model on 500B tokens can cost >$50K USD).
 
-**The authors' analysis identifies two fundamental problems**:
+**The authors' analysis reveals two fundamental problems**:
 
-**Evaluation Objective Misalignment**: Small models are trained with a next-token prediction (NTP) objective, yet they are evaluated using Acc./Pass@K — discrete metrics entirely different from the training objective.
+**Evaluation Target Mismatch**: The training objective for small models is NTP (next-token prediction), but evaluation uses Acc./Pass@K—discrete metrics that are entirely disconnected from the training objective.
 
-**Task Alignment Deficiency**: Even when NLL is used, the choice of gold label is critical: if the gold label is out-of-distribution (OOD), the NLL signal remains noisy. Moreover, standard NLL treats all tokens with equal weight, without distinguishing task-critical tokens from formatting tokens.
+**Task Alignment Gap**: Even when using NLL, the choice of gold labels is critical. If gold labels are out-of-distribution (OOD), the NLL signal becomes noisy. Furthermore, standard NLL treats all tokens with equal weight, failing to distinguish between task-critical tokens and formatting tokens.
 
 ## Method
 
 ### Overall Architecture
-The core idea of rBridge is to design a proxy evaluation metric $\text{metric}^p$ that maximizes $\text{corr}(\text{metric}^p(\pi^p), \text{metric}^t(\pi^t))$. That is, to find a metric computed on small models that is highly correlated with the target metric (Acc./Pass@K) of large models.
+rBridge aims to solve a specific problem: reliably predicting and ranking the reasoning performance of 13B–32B large models using a small proxy model ($\le$1B) without actually training the large models. The core idea returns to the fundamentals of pre-training: since the training objective of small models is next-token prediction, evaluation should also utilize NLL rather than discrete accuracy metrics (Acc./Pass@K) that are decoupled from the training objective. However, directly calculating NLL using benchmark standard answers is noisy. Therefore, rBridge calibrates NLL into a predictive measure aligned with reasoning ability through two steps: first, it uses a frontier large model to generate a reasoning trace for each question and treats this trace (rather than the standard answer) as the gold label for NLL calculation, bringing the target text back into the pre-training distribution; second, it re-weights the NLL using the frontier model's confidence for each token, amplifying critical reasoning steps and suppressing formatting noise.
+
+By calculating this "weighted NLL" (rBridge NLL) on intermediate checkpoints of small models saved during pre-training, a proxy metric significantly more stable than accuracy is obtained. Finally, a mapping curve from rBridge NLL to target Acc/Pass@K is fitted using a small number of reference "proxy-target" model pairs, allowing for the zero-cost prediction of large model performance and ranking of candidate datasets. The reasoning traces and token probabilities from the frontier model are annotated offline once (costing less than $10 per benchmark), and the entire process adds almost no additional training overhead.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    F["Frontier Large Model<br/>Generates reasoning processes per question"]
+    G["Reasoning Trace as Gold Label<br/>Use trace R^φ as NLL target"]
+    W["Token-level Task-aligned Weighting<br/>Weight each token by frontier confidence"]
+    P["Small Proxy Model Checkpoints<br/>≤1B pre-training intermediate snapshots"]
+    R["Calculate rBridge NLL on R^φ<br/>Weighted proxy NLL"]
+    FIT["Fit rBridge NLL → Target Acc<br/>Small reference pairs + 5-fold CV"]
+    OUT["Predict / Rank Large Model Reasoning Performance<br/>13B-32B, dataset quality"]
+    F --> G
+    F --> W
+    G --> R
+    W --> R
+    P --> R
+    R --> FIT --> OUT
+```
 
 ### Key Designs
-1. **Reasoning Traces as Gold Labels**:
 
-    - The **reasoning trace** $R^\phi$ generated by a frontier model $\pi^\phi$ (excluding the final answer formatting) is used as the gold label.
-    - **Why this works**: (a) $R^\phi$ is closer to the pre-training data distribution (continuous long-form text), reducing NLL by 74.7%; (b) $R^\phi$ represents the reasoning process leading to the correct answer, naturally aligning with the target task.
-    - Comparison with ScalingBench: ScB uses $R^\phi + A^\phi$ (trace + answer), but the answer contains formatting artifacts such as `\\n`, `"Final Answer:"`, and `"I hope it is correct."`, which are severely OOD.
+**1. Reasoning Trace as Gold Label: Bringing NLL Back to Training Distribution**
 
-2. **Token-Level Task-Aligned Weighting**:
-    $$\text{rBridge NLL}(\text{token}_i) = -\log(p^p(\text{token}_i)) \cdot \frac{1}{|\text{token}_i|} \sum_{\text{letter} \in \text{token}_i} p^\phi(\text{letter})$$
+The first step of the pipeline is determining the text for NLL calculation. The standard approach uses benchmark ground truth answers, but small models yield noisy signals on such labels because answer text often deviates significantly from the pre-training data distribution. The paper uses $-\log p(Y^*)$ to measure how in-distribution a gold label $Y^*$ is; more OOD labels result in worse signals. rBridge instead uses the **reasoning trace** $R^\phi$ (extracting only the reasoning process and stripping the final answer and its format) generated by a frontier model $\pi^\phi$ as the gold label. This offers two advantages: first, $R^\phi$ is continuous long text, closer to the long-form nature of pre-training corpora (average NLL on 5 benchmarks decreased by 74.7% compared to standard answers, significantly reducing noise); second, the trace itself is the reasoning chain leading to the correct answer, naturally aligning with the goal of "solving the problem." Conversely, ScalingBench uses $R^\phi + A^\phi$ (trace plus answer), where the answer part contains formatting artifacts like "\n", "Final Answer:", or "I hope it is correct." which rarely appear in pre-training data and are heavily OOD, polluting the NLL signal (Tab. 1 shows its NLL and fitting quality are inferior to using $R^\phi$ alone).
 
-    - Each token's NLL is multiplied by the frontier model's confidence (probability) for that token.
-    - **Intuition**: Tokens to which the frontier model assigns high confidence (e.g., "sum modulo 9") represent critical reasoning steps and should receive higher weight; low-confidence tokens (e.g., newlines, numbering) constitute formatting noise and are downweighted.
-    - **Tokenizer-agnostic**: Letter-level probability averaging handles tokenization differences across different tokenizers.
-    - MinMax normalization is applied to the weight factors to amplify the effect.
+**2. Token-level Task-aligned Weighting: Separating Critical Reasoning Steps from Formatting Noise**
 
-3. **One-Time Upfront Cost**: Generating reasoning traces with the frontier model costs less than \$10 per benchmark; computing the weights requires only a few seconds of CPU time.
+Changing the gold label addresses "where to calculate," but not "how much weight each token carries." Standard NLL treats all tokens in $R^\phi$ equally, yet a reasoning trace contains both critical steps (e.g., "sum modulo 9") and layout tokens (e.g., line breaks, numbering), which contribute differently to demonstrating reasoning ability. rBridge uses the frontier model's own confidence for each token as an automatic task-alignment weight, defined as:
+
+$$\text{rBridge NLL}(\text{token}_i) = \underbrace{-\log p^p(\text{token}_i)}_{\text{Standard NLL}} \cdot \underbrace{\frac{1}{|\text{token}_i|} \sum_{\text{letter} \in \text{token}_i} p^\phi(\text{letter})}_{\text{Automatic Task-alignment Weight}}$$
+
+The intuition is straightforward: tokens where the frontier model has high confidence are often key reasoning nodes and should receive higher weight; tokens with low confidence (e.g., newlines, numbers) are mostly formatting noise and should be suppressed. To address cross-tokenizer issues—where the proxy and frontier models use different tokenization—rBridge does not take token probabilities directly. Instead, it distributes weights to the **letter-level** $p^\phi(\text{letter})$ and averages them within the token, eliminating tokenization variance. Finally, a MinMax normalization is applied to the weight factors to amplify the contrast between critical and noise tokens. This weighting scheme is a one-time pre-processing cost for the frontier model; subsequent evaluations on the proxy model take only seconds of CPU time.
 
 ### Loss & Training
-This paper does **not** train new models. Instead, intermediate checkpoints from pre-training are used as proxy models, and rBridge NLL is computed to predict target model performance.
+rBridge does not train new models. It directly uses intermediate checkpoints of small models saved during pre-training as proxy models to calculate rBridge NLL. The reasoning traces and token probabilities from the frontier model are pre-calculated as offline annotations. To transform the proxy metric into a prediction for large models, curve fitting is performed on a small set of known "proxy-target" data points. The candidate function space (linear/quadratic/exponential/logarithmic) is fixed to prevent overfitting, and 5-fold cross-validation is used to select the optimal function based on training $R^2$, reporting the test MAE. This fitted curve can also be transferred zero-shot to another pre-training dataset for prediction and ranking.
 
 ## Key Experimental Results
 
-### Main Results (1B→13B Proxy-Target Relationship)
+### Main Results (1B $\rightarrow$ 13B Proxy-Target Relationship)
 
 | Method | Avg. Train R² ↑ | Avg. Test MAE ↓ |
 |------|:---:|:---:|
@@ -75,53 +91,53 @@ This paper does **not** train new models. Instead, intermediate checkpoints from
 | TED | 0.375 | 3.377 |
 | MPCA | 0.194 | 302.642 |
 | NLL | 0.485 | 5.173 |
-| $R^\phi$ (trace NLL only) | 0.867 | 1.455 |
+| $R^\phi$ (Trace NLL only) | 0.867 | 1.455 |
 | **rBridge** | **0.874** | **1.384** |
 
-- rBridge achieves the best results in 10 out of 12 settings (6 benchmarks × R²/MAE).
-- 1B→32B: R²=0.826, MAE=1.481, also best overall.
-- 1B→13B+SFT: R²=0.846, MAE=1.304, best overall.
+- rBridge achieved the best results in 10 out of 12 settings (6 benchmarks $\times$ R²/MAE).
+- 1B $\rightarrow$ 32B: R²=0.826, MAE=1.481, also optimal.
+- 1B $\rightarrow$ 13B+SFT: R²=0.846, MAE=1.304, optimal.
 
-### Ablation Study (Dataset Ranking, <100M→1.2B)
+### Ablation Study (Dataset Ranking <100M $\rightarrow$ 1.2B)
 
-| Proxy Scale | rBridge DAcc | Best Baseline DAcc | Computational Savings |
+| Proxy Scale | rBridge DAcc | Best Baseline DAcc | Compute Saving |
 |:---:|:---:|:---:|:---:|
-| 3.7M (87.3M tokens) | ~70% | ~50% (random level) | 733.4× |
-| 6M (81.6M tokens) | ~75% | ~55% | 100.2× |
+| 3.7M (87.3M tokens) | ~70% | ~50% (Random level) | 733.4$\times$ |
+| 6M (81.6M tokens) | ~75% | ~55% | 100.2$\times$ |
 | 97.9M | ~80% | ~75% | - |
 
-- At the smallest proxy scale (3.7M), rBridge outperforms baselines by **27% DAcc**.
-- To achieve equivalent ranking accuracy, rBridge saves **100.2× to 733.4×** FLOPs.
+- With the smallest proxy (3.7M), rBridge outperforms baselines by **27% DAcc**.
+- To achieve the same ranking accuracy, rBridge saves **100.2$\times$ to 733.4$\times$** FLOPs.
 
 ### Key Findings
-1. **rBridge outperforms models 7–13× larger**: A 1B model using rBridge surpasses the predictive capability of 7B/13B models evaluated directly via accuracy.
-2. **Zero-shot cross-dataset transfer**: The rBridge→Acc function fitted on OLMo-Mix-1124 transfers zero-shot to another dataset, achieving perfect ranking on 5 out of 5 benchmarks with MAE of only 0.043–1.417 (one outlier at 9.716).
-3. **Ablations confirm each component's contribution**: Each step from standard NLL → using $R^\phi$ → adding weighting → MinMax normalization yields consistent improvements.
+1. **rBridge outranks models 7-13$\times$ larger**: The predictive capability of a 1B model using rBridge exceeds that of 7B/13B models evaluated directly via accuracy.
+2. **Zero-shot cross-dataset transfer**: The rBridge $\rightarrow$ Acc function fitted on OLMo-Mix-1124 transfers zero-shot to another dataset, achieving perfect ranking (5/5) across 5 benchmarks with MAE between 0.043-1.417 (excluding one outlier at 9.716).
+3. **Ablation confirms component effectiveness**: Iterating from standard NLL $\rightarrow$ using $R^\phi$ $\rightarrow$ adding weighting $\rightarrow$ MinMax normalization yields consistent improvements at each step.
 
 ## Highlights & Insights
-- **Deep insight**: Small models do not "fail" on reasoning benchmarks due to a lack of information, but because the evaluation method (Acc.) is mismatched with the capabilities of small models.
-- **NLL returns to its roots**: The pre-training objective is NTP, and evaluation should likewise return to NLL — but the key lies in what is used as the gold label.
-- **Frontier model probabilities as automatic annotators**: Token probabilities naturally encode "which steps are critical reasoning steps," eliminating the need for manual annotation.
-- **Highly practical**: The two-stage dataset optimization framework (<100M initial screening → 1B fine-grained ranking) has direct industrial application value.
+- **Deep Insight**: The "failure" of small models on reasoning benchmarks is not due to a lack of information, but because the evaluation method (Acc.) is mismatched with small model capabilities.
+- **NLL Back to Basics**: Since the objective of pre-training is NTP, evaluation should return to NLL—the key determines what to use as the gold label.
+- **Frontier Model Probabilities as Automatic Annotators**: Token probabilities naturally encode "which steps are critical reasoning," eliminating the need for manual annotation.
+- **High Practicality**: The two-stage dataset optimization framework (<100M initial screening $\rightarrow$ 1B fine-ranking) has direct industrial application value.
 
 ## Limitations & Future Work
-- Frontier models are not 100% accurate; a small number of incorrect reasoning traces may introduce noise (though filtering out incorrect traces shows only marginal improvement in experiments).
-- Frontier models occasionally fail to generate outputs in the required format (currently retried only once before being discarded).
-- Zero-shot transfer has only been validated on one dataset pair at the 1B→7B scale, limited by computational budget.
-- Effectiveness on non-reasoning tasks has not been verified (although mature solutions already exist for such tasks).
-- The two-stage optimization framework is proposed as a discussion point only and has not been fully validated experimentally.
+- Frontier models are not 100% accurate; a small number of incorrect reasoning traces might introduce noise (though experiments show filtering incorrect traces provides marginal improvement).
+- Frontier models occasionally fail to generate in the requested format (currently discarded after one retry).
+- Zero-shot transfer was only validated on one dataset pair for 1B $\rightarrow$ 7B due to compute budgets.
+- Effectiveness on non-reasoning tasks has not been verified (though mature solutions already exist for those).
+- The two-stage optimization framework is proposed as a discussion and has not undergone full experimental validation.
 
 ## Related Work & Insights
-- Complements the scaling law literature (Kaplan et al., Hoffmann et al.): rBridge specifically addresses the proxy difficulties introduced by reasoning emergence.
-- Directly compared with the DataDecide benchmark: rBridge achieves optimal ranking on its tasks at very low cost.
-- Implications for pre-training data mixture optimization (Xie et al., Liu et al.): NLL/perplexity is a suboptimal metric; rBridge is better suited for reasoning-oriented data selection.
-- Broad applicability: Any scenario requiring "using small models to predict large-model behavior" can consider the rBridge paradigm.
+- Complementary to Scaling Law literature (Kaplan et al., Hoffmann et al.): rBridge specifically addresses proxy difficulties caused by emergent reasoning.
+- Direct comparison with the DataDecide benchmark: Achieved optimal ranking at extremely low cost on its tasks.
+- Insights for pre-training data mixture optimization (Xie et al., Liu et al.): NLL/perplexity is a sub-optimal metric; rBridge is better suited for reasoning-oriented data selection.
+- Broad inspiration: The rBridge paradigm can be considered for any scenario requiring "using small models to predict large models."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The core insight (NLL + frontier trace + token weighting) is not entirely new, but the combination is elegant and yields significant gains.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three-stage experimental design is rigorous: 6 benchmarks × multiple model scales × ablations × cross-dataset transfer.
-- Writing Quality: ⭐⭐⭐⭐ Structure is clear and problem analysis is progressive, though notation and tables are dense.
-- Value: ⭐⭐⭐⭐⭐ Directly reduces pre-training exploration costs by 100×+, with extremely high industrial deployment value.
+- Novelty: ⭐⭐⭐⭐ The core insights (NLL + frontier trace + token weighting) are not entirely new, but the combination is clever and highly effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Rigorous three-stage experimental design across 6 benchmarks, multiple model scales, ablations, and cross-dataset transfer.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with progressive problem analysis, though notation and tables are somewhat dense.
+- Value: ⭐⭐⭐⭐⭐ Extremely high industrial value, directly reducing pre-training exploration costs by 100$\times$+.
 
 <!-- RELATED:START -->
 
@@ -129,11 +145,11 @@ This paper does **not** train new models. Instead, intermediate checkpoints from
 
 ## Related Papers
 
-- [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Models](predicting_llm_reasoning_performance_with_small_proxy_models.md)
-- [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
-- [\[ICLR 2026\] No Answer Needed: Predicting LLM Answer Accuracy from Question-Only Linear Probes](no_answer_needed_predicting_llm_answer_accuracy_from_question-only_linear_probes.md)
+- [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
+- [\[ICLR 2026\] Following the Navigation: Enhancing Small Language Models Contextual Reasoning with LLM Guidance](following_the_navigation_enhancing_small_language_models_contextual_reasoning_wi.md)
+- [\[ICLR 2026\] SLM-MUX: Orchestrating Small Language Models for Reasoning](slm-mux_orchestrating_small_language_models_for_reasoning.md)
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
+- [\[ICML 2026\] The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning](../../ICML2026/llm_reasoning/the_quality-utility_paradox_why_high-reward_data_impairs_small_model_mathematica.md)
 
 </div>
 

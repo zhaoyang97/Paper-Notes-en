@@ -2,124 +2,134 @@
 title: >-
   [Paper Note] Learning to Reason without External Rewards
 description: >-
-  [ICLR 2026][Code Intelligence][RLIF] This paper proposes Intuitor, an RLIF method that replaces external verifiable rewards with the model's own self-certainty (the KL divergence between the output distribution and a uni…
+  [ICLR 2026][Code Intelligence][RLIF] Proposes Intuitor, an RLIF method that replaces external verifiable rewards with the model's own self-certainty (KL divergence between the output distribution and a uniform distribution). It matches GRPO performance in mathematical reasoning while demonstrating better generalization in out-of-distribution tasks such as
 tags:
-  - "ICLR 2026"
-  - "Code Intelligence"
-  - "RLIF"
-  - "Self-Certainty"
-  - "Intrinsic Reward"
-  - "GRPO"
-  - "Unsupervised Reinforcement Learning"
+  - ICLR 2026
+  - Code Intelligence
+  - RLIF
+  - Self-Certainty
+  - GRPO
 date: 2026-05-08
-content_hash: 3468a60a12703792
+content_hash: 30c7ec2e713b5017
 ---
-
 # Learning to Reason without External Rewards
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.19590](https://arxiv.org/abs/2505.19590)  
 **Code**: [https://github.com/sunblaze-ucb/Intuitor](https://github.com/sunblaze-ucb/Intuitor)  
-**Area**: Code Intelligence
-**Keywords**: RLIF, Self-Certainty, Intrinsic Reward, GRPO, Unsupervised Reinforcement Learning
+**Area**: Code Intelligence  
+**Keywords**: RLIF, Self-Certainty, Intrinsic Rewards, GRPO, Unsupervised Reinforcement Learning
 
 ## TL;DR
-This paper proposes Intuitor, an RLIF method that replaces external verifiable rewards with the model's own self-certainty (the KL divergence between the output distribution and a uniform distribution). Intuitor matches GRPO performance on mathematical reasoning while exhibiting superior generalization to out-of-domain tasks such as code generation.
+Proposes Intuitor, an RLIF method that replaces external verifiable rewards with the model's own self-certainty (KL divergence between the output distribution and a uniform distribution). It matches GRPO performance in mathematical reasoning while demonstrating better generalization in out-of-distribution tasks such as code generation.
 
 ## Background & Motivation
 
-**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the dominant paradigm for enhancing LLM reasoning, as exemplified by DeepSeek-R1, which employs GRPO with exact answer matching as the reward signal.
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the mainstream method for enhancing LLM reasoning capabilities. For instance, DeepSeek-R1 utilizes GRPO combined with exact answer matching as a reward signal.
 
-**Limitations of Prior Work**: (a) RLHF requires extensive human annotation, which is costly and prone to bias; (b) RLVR depends on domain-specific verifiers and ground-truth answers—mathematics requires expert annotation, while code requires test suites and execution environments—limiting its applicability in open-ended settings; (c) outcome-based verifiable rewards are difficult to transfer across domains.
+**Limitations of Prior Work**: (a) RLHF requires extensive manual annotation, which is costly and biased; (b) RLVR depends on domain-specific verifiers and ground truth—mathematics requires expert labeling, while code necessitates test suites and execution environments, limiting applicability in open-ended scenarios; (c) outcome-based verifiable rewards are difficult to transfer across different domains.
 
-**Key Challenge**: Improving reasoning capabilities requires RL training, yet the cost of acquiring high-quality reward signals constrains the applicable scope of RL.
+**Key Challenge**: Enhancing reasoning capabilities requires RL training, yet the cost of acquiring high-quality reward signals significantly limits the scope of RL applications.
 
-**Goal**: Can an LLM improve its reasoning ability relying solely on intrinsic signals, without any external verifier or ground-truth answer?
+**Goal**: Can LLMs improve their reasoning capabilities by relying solely on internal intrinsic signals without external verifiers or ground truth?
 
-**Key Insight**: LLMs exhibit lower confidence on difficult problems and higher confidence when answering correctly—this intrinsic signal can serve as a training reward.
+**Key Insight**: LLMs exhibit lower certainty on difficult questions and higher certainty when providing correct answers—this intrinsic signal can serve as a training reward.
 
-**Core Idea**: Replace the external reward in GRPO with the model's own self-certainty (mean $\text{KL}(\text{Uniform} \| p_{\text{model}})$) to achieve fully unsupervised improvement of reasoning capabilities.
+**Core Idea**: Replace external rewards in GRPO with the model's own self-certainty (average KL(Uniform || p_model)) to achieve fully unsupervised enhancement of reasoning capabilities.
 
 ## Method
 
 ### Overall Architecture
-Intuitor is remarkably simple to implement: within the standard GRPO training pipeline, the external reward (e.g., answer matching) is replaced by a self-certainty score. Given a question $q$, the model generates $G$ candidate responses; self-certainty is computed for each response, normalized to serve as the advantage estimate, and the model is updated via policy gradient. The entire pipeline requires no ground-truth answers, test cases, or any external verification.
+The implementation of Intuitor is highly concise: in the standard GRPO training pipeline, external rewards (such as answer matching) are entirely replaced by the model's own self-certainty scores. In a training iteration, given an input question $q$, the policy model samples $G$ candidate responses. For each response, the self-certainty is calculated based on the **currently training** policy (a critical factor for stability, see Key Design 3). Within-group normalization is then applied to obtain advantage estimates, followed by policy gradient updates. The updated policy is subsequently reused to recalculate the certainty for the next set of responses, creating a closed loop where rewards evolve alongside the policy. The entire process requires no ground truth, test cases, or any external verification.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Question q"] --> GEN["Policy Model π_θ<br/>Sample G candidate responses"]
+    GEN --> SC["Self-Certainty Intrinsic Reward<br/>KL(Uniform || Model Distribution)<br/>Averaged across response"]
+    SC --> ADV["GRPO Advantage Estimation<br/>Within-group normalized certainty"]
+    ADV --> UPD["Policy Gradient Update π_θ"]
+    UPD -->|"Recalculate certainty with updated policy"| SC
+    UPD --> OUT["Enhanced Reasoning<br/>Matches GRPO In-domain, Stronger Out-of-domain"]
+```
 
 ### Key Designs
 
-1. **Self-Certainty as an Intrinsic Reward**:
+**1. Self-Certainty as Intrinsic Reward: Replacing "Correctness" with "Confidence"**
 
-    - **Function**: Measures the degree to which the model is "certain" about its own output.
-    - **Mechanism**: $\text{Self-certainty}(o|q) = \frac{1}{|o|}\sum_{i=1}^{|o|} \text{KL}(U \| p_{\pi_\theta}(\cdot|q, o_{<i}))$, i.e., the average KL divergence from the uniform distribution to the model's output distribution. Higher values indicate greater model confidence.
-    - **Design Motivation**: Unlike entropy, self-certainty is mode-seeking (the model distribution appears as the second argument of KL), and does not exhibit the length bias associated with perplexity or entropy. Kang et al. (2025) have demonstrated that it effectively distinguishes high- from low-quality responses.
+RLVR is constrained by external verifiers. To bypass this, Intuitor asks the model itself: how certain are you about this answer? This certainty is quantified as self-certainty: for each token in a response, calculate the KL divergence between the uniform distribution $U$ and the model's predicted distribution, then average this over the entire response:
 
-2. **GRPO-based Advantage Estimation**:
+$$\text{Self-certainty}(o|q) = \frac{1}{|o|}\sum_{i=1}^{|o|} \text{KL}\big(U \,\|\, p_{\pi_\theta}(\cdot|q, o_{<i})\big)$$
 
-    - **Function**: Embeds self-certainty scores into GRPO's group-relative advantage computation.
-    - **Mechanism**: $\hat{A}_{i,t} = \frac{u_i - \text{mean}(\{u_1,...,u_G\})}{\text{std}(\{u_1,...,u_G\})}$, where $u_i = \text{Self-certainty}(o_i|q)$.
-    - **Design Motivation**: GRPO's group-relative normalization is naturally suited to continuous-valued rewards, converting confidence differences into policy update directions.
+A sharper model distribution (diverging more from uniform) results in a larger KL, indicating higher "certainty" about the next token. Crucially, since the second parameter is the model distribution, this is a mode-seeking measure rather than a mass-covering measure like entropy—it rewards distribution concentration and does not systematically favor longer texts like perplexity or entropy. Kang et al. (2025) previously demonstrated that self-certainty effectively distinguishes high-quality from low-quality responses; Intuitor adopts this evaluation signal directly as a training reward.
 
-3. **Online Self-Certainty**:
+**2. GRPO-based Advantage Estimation: Converting Certainty into Update Directions**
 
-    - **Function**: Computes self-certainty using the current policy model rather than a fixed reference model.
-    - **Mechanism**: The reward signal co-evolves with the policy, preventing reward hacking.
-    - **Design Motivation**: Experiments show that offline (fixed-model) self-certainty is exploited by the policy—the model learns to append previously solved problems after its response to inflate confidence scores, causing training collapse. Online computation avoids this over-optimization issue inherent to static reward models.
+With self-certainty providing a continuous reward, the GRPO framework handles the remaining logic. For a single question $q$, $G$ responses are sampled, each with a calculated certainty $u_i = \text{Self-certainty}(o_i|q)$. Within-group normalization yields the advantage:
+
+$$\hat{A}_{i,t} = \frac{u_i - \text{mean}(\{u_1,\dots,u_G\})}{\text{std}(\{u_1,\dots,u_G\})}$$
+
+Consequently, as long as a response is more "certain" than others in its group, it receives a positive advantage and its probability is increased by the policy gradient. While GRPO's group-relative normalization was designed for discrete correctness rewards, it works effectively for continuous certainty, mapping absolute certainty values to relative rankings and avoiding issues where certainty scales differ across questions.
+
+**3. Online Self-Certainty: Evolving Rewards with Policy to Prevent Reward Hacking**
+
+A critical and somewhat counter-intuitive point: self-certainty must be calculated using the current policy model being trained, rather than a fixed base model. If a fixed model serves as the reward source (offline), it acts as a static reward model that the policy can exploit—experiments observed the model learning to append solved sub-problems to the end of answers to inflate scores. This "reward hacking" leads to training collapse after approximately 100 steps. By switching to online calculation, the reward signal evolves with the policy, preventing the model from over-optimizing against a static target and maintaining stability. This serves as a clean controlled experiment on the fragility of static reward models in RLHF: co-evolving the evaluator and the evaluated closes this cheating path.
 
 ### Loss & Training
-The standard GRPO objective is used; the only modification is the reward source:
+Standard GRPO objective function, with the reward source modified:
 $$\mathcal{J}(\theta) = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\frac{1}{|o_i|}\sum_{t=1}^{|o_i|}\left(\min[c_{i,t}\hat{A}_{i,t}, \text{clip}_\epsilon(c_{i,t})\hat{A}_{i,t}] - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})\right)\right]$$
-Training data: 7,500 problems from the MATH dataset, with 7 responses sampled per problem and $\beta=0.005$.
+Training data: 7,500 questions from the MATH dataset, sampling 7 responses per question, with $\beta=0.005$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Qwen2.5-3B (trained on MATH)**:
+**Qwen2.5-3B (MATH Training)**:
 
 | Method | GSM8K | MATH500 | LiveCodeBench | CRUXEval-O | AlpacaEval |
-|--------|-------|---------|---------------|------------|------------|
+|------|-------|---------|---------------|------------|------------|
 | Base | 0.673 | 0.544 | 0.093 | 0.236 | 3.72 |
 | GRPO | 0.826 | 0.636 | 0.085 | 0.341 | 6.91 |
-| **Intuitor** | 0.792 | 0.612 | **0.153** | **0.416** | **7.10** |
+| **Ours (Intuitor)** | 0.792 | 0.612 | **0.153** | **0.416** | **7.10** |
 
-Intuitor performs slightly below GRPO on in-domain (math) tasks but significantly outperforms GRPO on out-of-domain tasks (code generation and instruction following).
+Performance in-domain (Math) is slightly lower than GRPO, but significantly superior to GRPO in out-of-domain tasks (Code/Instruction Following).
 
 ### Ablation Study
 
-| Configuration | GSM8K | MATH | Notes |
-|---------------|-------|------|-------|
-| Intuitor (online) | 0.792 | 0.612 | Stable training |
+| Configuration | GSM8K | MATH | Description |
+|------|-------|------|------|
+| Ours (Online) | 0.792 | 0.612 | Stable training |
 | Offline self-certainty | Collapse | Collapse | Reward hacking after ~100 steps |
 | Entropy minimization | Collapse | Collapse | Catastrophic collapse |
 | Random rewards | Collapse | Collapse | Catastrophic collapse |
 
 ### Key Findings
-- **Early-Stage Learning Advantage**: After only 10 training steps, Intuitor already outperforms GRPO on GSM8K/MATH, as continuous process-aware rewards provide a richer learning signal than binary outcome rewards.
-- **Emergent Reasoning Capability**: A 1.5B base model that originally produced incoherent outputs (scoring ~0 on all benchmarks) learns structured reasoning and code generation after Intuitor training (9.9% on LiveCodeBench).
-- **Cross-Domain Generalization**: Training on MATH yields a 65% improvement on LiveCodeBench (versus no improvement with GRPO) and a 76% improvement on CRUXEval (versus 44% with GRPO), indicating that self-certainty rewards encourage general reasoning capabilities rather than domain-specific pattern matching.
-- **Spontaneous R1-Style Reasoning**: The model spontaneously generates natural language reasoning chains prior to code, despite no such instruction in the prompt.
+- **Early Learning Advantage**: Intuitor outperforms GRPO on GSM8K/MATH within only 10 training steps, as continuous process-aware rewards provide richer learning signals than binary outcome rewards.
+- **Emergent Reasoning**: A 1.5B base model that originally produced gibberish (scoring ~0 on all benchmarks) learned structured reasoning and code generation (9.9% on LiveCodeBench) after Intuitor training.
+- **Cross-Domain Generalization**: Training on MATH led to a 65% improvement on LiveCodeBench (where GRPO showed no gain) and a 76% improvement on CRUXEval (compared to 44% for GRPO), suggesting that self-certainty rewards encourage general reasoning rather than domain-specific pattern matching.
+- **Spontaneous R1-style Reasoning**: Models spontaneously generated natural language chains of thought before outputting code, even though the prompt did not request it.
 
 ## Highlights & Insights
-- **Minimalist yet Effective Design**: Replacing only the reward function in GRPO achieves unsupervised reasoning training, embodying the insight that a well-designed intrinsic signal may be more important than high-quality external labels.
-- **Online vs. Offline Reward Comparison**: The ablation clearly illustrates the mechanism by which reward hacking occurs and how it can be mitigated. The fragility of static reward models is a classical problem in RLHF, which Intuitor addresses elegantly through a co-evolving reward.
-- **Self-Certainty Is More Reliable Than Entropy**: The mode-seeking property of $\text{KL}(U\|p)$ prevents length bias, a design choice worth replicating in other settings requiring intrinsic rewards.
+- **Minimalist yet Effective Design**: Simply replacing the reward function in GRPO enables unsupervised reasoning training, reflecting the profound insight that a "good intrinsic signal" may be more important than "expert external labels."
+- **Contrastive Experiments on Online vs. Offline Rewards**: Clearly demonstrates the mechanism of reward hacking and how to defend against it. The fragility of static reward models is a classic RLHF issue, which Intuitor addresses elegantly via co-evolving rewards.
+- **Self-certainty vs. Entropy**: The mode-seeking nature of KL(U||p) ensures it does not bias toward long texts, a design choice worthy of reuse in other scenarios involving intrinsic rewards.
 
 ## Limitations & Future Work
-- In-domain math performance is slightly below GRPO (−3–4%), indicating that self-certainty is not a perfect proxy for correctness.
-- Validation is limited to models with ≤14B parameters, which is far from the envisioned goal of superhuman reasoning via RLIF.
-- Self-certainty may be biased toward the model's existing knowledge, potentially limiting learning of genuinely novel knowledge.
-- Hybrid reward schemes combining RLVR and RLIF (e.g., using RLVR when ground-truth answers are available and RLIF otherwise) are worth exploring.
+- In-domain math performance is slightly lower than GRPO (-3~4%), indicating that self-certainty is not a perfect proxy for correctness.
+- Validated only on models $\leq 14$B; the vision of "superhuman reasoning" via RLIF remains a distant goal.
+- Self-certainty may bias toward knowledge already known to the model, potentially limiting the learning of entirely new knowledge.
+- Future work could explore hybrid reward schemes (e.g., using RLVR when ground truth is available and RLIF when it is not).
 
 ## Related Work & Insights
-- **vs. GRPO/DeepSeek-R1**: Intuitor replaces ground-truth answers with self-certainty, broadening applicability at the cost of slightly lower in-domain performance.
-- **vs. TTRL**: TTRL approximates ground-truth answers via plurality voting and remains outcome-oriented; Intuitor is process-aware.
-- **vs. Entropy Minimization (EM-RL)**: EM-RL directly minimizes token-level entropy and leads to training collapse; the mode-seeking property of self-certainty yields greater stability.
+- **vs. GRPO/DeepSeek-R1**: Intuitor replaces ground truth with self-certainty, offering broader applicability but slightly lower in-domain performance.
+- **vs. TTRL**: TTRL uses plurality voting to approximate ground truth, which remains outcome-oriented; Intuitor is process-aware.
+- **vs. Entropy Minimization (EM-RL)**: EM-RL directly minimizes token-level entropy, which often leads to training collapse; self-certainty's mode-seeking property is more stable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The RLIF paradigm is forward-looking, and the idea of using self-certainty as an unsupervised training signal is compelling.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model, multi-task evaluation with comprehensive ablations, though model scale remains limited.
-- Writing Quality: ⭐⭐⭐⭐⭐ The exposition is clear, the experimental design is rigorous, and the visualizations are excellent.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for unsupervised/weakly supervised LLM training with strong inspirational value.
+- Novelty: ⭐⭐⭐⭐⭐ The proposal of the RLIF paradigm is forward-looking, and the idea of using self-certainty as an unsupervised training signal is compelling.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive across multiple models, tasks, and ablations, though model scales remain small.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear argumentation, rigorous experimental design, and excellent visualization.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for unsupervised/weakly supervised LLM training with high heuristic value.
 
 <!-- RELATED:START -->
 
@@ -127,11 +137,11 @@ Intuitor performs slightly below GRPO on in-domain (math) tasks but significantl
 
 ## Related Papers
 
-- [\[ICLR 2026\] Training Large Language Models To Reason In Parallel With Global Forking Tokens](training_large_language_models_to_reason_in_parallel_with_global_forking_tokens.md)
 - [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](../../ACL2026/code_intelligence/recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
-- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
-- [\[ICLR 2026\] ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code](shieldedcode_learning_robust_representations_for_virtual_machine_protected_code.md)
-- [\[ICLR 2026\] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](paper2code_automating_code_generation_from_scientific_papers_in_machine_learning.md)
+- [\[ICLR 2026\] Training Large Language Models To Reason In Parallel With Global Forking Tokens](training_large_language_models_to_reason_in_parallel_with_global_forking_tokens.md)
+- [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
+- [\[ICLR 2026\] ATGen: Adversarial Reinforcement Learning for Test Case Generation](atgen_adversarial_reinforcement_learning_for_test_case_generation.md)
+- [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 
 </div>
 

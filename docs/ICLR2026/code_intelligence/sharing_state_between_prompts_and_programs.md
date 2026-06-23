@@ -2,122 +2,129 @@
 title: >-
   [Paper Note] Sharing State Between Prompts and Programs
 description: >-
-  [ICLR 2026][Code Intelligence][shared program state] This paper proposes the *shared program state* abstraction, enabling prompts to directly read and write program variables, manipulate heap objects…
+  [ICLR 2026][Code Intelligence][Nightjar] The authors propose the abstraction of shared program state, allowing prompts to directly read/write program variables, manipulate heap objects, and control program flow. This is implemented as the Nightjar system (Python + prompt mixed programming), which reduces code volume by 39.6% while maintaining or improving acc
 tags:
-  - "ICLR 2026"
-  - "Code Intelligence"
-  - "shared program state"
-  - "natural language programming"
-  - "prompt-program interoperability"
-  - "Nightjar"
-  - "programming abstractions"
+  - ICLR 2026
+  - Code Intelligence
+  - Nightjar
 date: 2026-05-08
-content_hash: 0993f4381e41dd61
+content_hash: e84b237673534afa
 ---
-
 # Sharing State Between Prompts and Programs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.14805](https://arxiv.org/abs/2512.14805)  
 **Code**: [https://github.com/psg-mit/nightjarpy](https://github.com/psg-mit/nightjarpy)  
-**Area**: Programming Languages / LLM Programming
-**Keywords**: shared program state, natural language programming, prompt-program interoperability, Nightjar, programming abstractions
+**Area**: Programming Languages / LLM Programming  
+**Keywords**: Shared program state, Natural language programming, prompt-program interoperability, Nightjar, Programming abstractions  
 
 ## TL;DR
-This paper proposes the *shared program state* abstraction, enabling prompts to directly read and write program variables, manipulate heap objects, and control program flow. The abstraction is realized in the Nightjar system (Python + prompt hybrid programming), achieving a 39.6% reduction in code size while maintaining or improving accuracy (+4–19%).
+The authors propose the abstraction of shared program state, allowing prompts to directly read/write program variables, manipulate heap objects, and control program flow. This is implemented as the Nightjar system (Python + prompt mixed programming), which reduces code volume by 39.6% while maintaining or improving accuracy (+4-19%).
 
 ## Background & Motivation
 
-**Background**: LLMs have given rise to natural language programming, in which prompts instruct models to perform tasks. Existing systems (LangChain, DSPy, SGLang, etc.) support prompt-program interoperability but adopt an *isolated program state* design: prompts execute in a separate environment, requiring developers to manually serialize and deserialize data to transfer program state.
+**Background**: LLMs have catalyzed natural language programming—using prompts to instruct models to execute tasks. Existing systems (LangChain, DSPy, SGLang, etc.) support interoperability between prompts and programs but adopt an isolated program state design: prompts execute in an independent environment, requiring developers to manually serialize/deserialize data to pass program state.
 
-**Limitations of Prior Work**: The isolated state design leads to substantial boilerplate code—developers must define schema classes, serialization functions, and deserialization functions to pass data between prompts and programs, increasing development complexity and introducing potential errors.
+**Limitations of Prior Work**: The isolated state design results in significant boilerplate code—developers must define schema classes, serialization functions, and deserialization functions to transfer data between prompts and programs. This increases development complexity and is prone to introducing errors.
 
-**Key Challenge**: Prompts inherently need access to program context to make sound decisions (reading variable values, modifying object state, controlling branches/loops), yet existing systems strictly isolate prompt execution from program state, forcing developers to write bridging code by hand.
+**Key Challenge**: Prompts fundamentally need access to the program context to make reasonable decisions (reading variable values, modifying object states, controlling branches/loops), yet existing systems strictly isolate prompt execution from program state, forcing developers to write bridge code manually.
 
-**Goal**: (a) Define a programming abstraction for shared program state; (b) formalize a schema for the natural function interface; (c) implement the Nightjar system to validate feasibility and benefits.
+**Goal**: (a) Define a programming abstraction for shared program state; (b) Design a formal schema for a natural function interface; (c) Implement the Nightjar system to verify its feasibility and benefits.
 
-**Key Insight**: Drawing on the *effects & handlers* paradigm from programming language theory, the paper formalizes prompt operations on program state as effects, with handlers implemented by the host language.
+**Key Insight**: Borrowing from the effects & handlers paradigm in programming languages, the operations of a prompt on program state are formalized as effects, which are implemented by handlers in the host language.
 
-**Core Idea**: Allow prompts to directly access the program variable scope, heap, and control flow—as functions do—eliminating the development overhead of manual state transfer.
+**Core Idea**: Allow prompts to behave like functions that directly access program variable scopes, the heap, and control flow, eliminating the development burden of manual state transfer.
 
 ## Method
 
 ### Overall Architecture
-Nightjar treats prompts as first-class code within Python programs. Developers annotate functions with `@nightjar.fn` and write prompts as triple-quoted strings inside the function body. Within a prompt, `<variable>` reads a local variable, `<:variable>` writes to a variable, Python objects can be manipulated directly, and control-flow operations such as `break`/`continue` are supported.
+This paper aims to resolve the "isolation wall" between prompts and programs in existing natural language programming systems. In such systems, prompts execute in independent environments, forcing developers to write extensive schemas and serialization/deserialization code to pass data in and out. Nightjar treats prompts as first-class code within a Python program: developers use the `@nightjar.fn` decorator on a function and write prompts directly using triple-quoted strings in the function body. The prompt can use `<variable>` to read local variables in the current scope, use `<:variable>` to bind LLM output back to variables, manipulate Python heap objects in-place, and even trigger `break`/`continue` control flows. The entire pipeline is formalized as effects & handlers: every category of operation the prompt intends is an "effect," which is actualized by a "handler" implemented in the host Python environment. Consequently, the prompt and the program share the same state. The following diagram illustrates the main pipeline from "Prompt issuing effects" to "Handlers actualizing to shared states," unified under a single interface specification.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["Prompt within @nightjar.fn body<br/>(contains &lt;var&gt; / &lt;:var&gt; / labels)"]
+    P --> E["LLM Inference<br/>Produces a sequence of effects"]
+    subgraph IF["Natural Function Interface Schema (Design 4, Language-independent)"]
+        direction TB
+        E --> H["Host Python Handlers"]
+    end
+    H -->|Read/Write Variable Effect| S["Shared Scope<br/>Snapshot + Variable Binding"]
+    H -->|Ref/Deref Effect| HP["Shared Heap<br/>In-place Object Modification"]
+    H -->|break/continue Effect| C["Shared Control Flow<br/>Host Execution Jump"]
+    S --> O["Returns: variables updated,<br/>objects modified in-place,<br/>loops jumped semantically"]
+    HP --> O
+    C --> O
+```
 
 ### Key Designs
 
-1. **Shared Scopes**:
+**1. Shared Scopes: Allowing prompts to read/write variables directly, eliminating parameter boilerplate**
 
-    - Function: Prompts can read from and write to Python variables.
-    - Mechanism: `<graph>` in a prompt references the `graph` variable in the current scope; `<:response>` in the LLM output binds the value to the `response` variable. The system captures a scope snapshot before prompt execution and updates variables afterward.
-    - Design Motivation: Eliminates schema definitions and serialization code required for manually passing data in and out, making prompts a true part of the program.
+The most direct burden of isolated state design is the need to manually feed variables into the prompt and extract results. Nightjar allows `<graph>` in a prompt to directly reference the `graph` variable in the current scope, while `<:response>` in the LLM output binds the value back to the `response` variable. Mechanistically, the system snapshots the scope before prompt execution and updates variables using write effects generated by the LLM post-execution. This eliminates the need for developers to define schema classes or write serialization functions for "inputs/outputs," making the prompt a true part of the program rather than an external black box requiring a bridge.
 
-2. **Shared Heap**:
+**2. Shared Heap: Allowing prompts to modify complex objects in-place instead of returning new copies**
 
-    - Function: Prompts can manipulate Python objects (modifying attributes, calling methods, in-place updates of mutable objects).
-    - Mechanism: The LLM does not operate on the heap directly; instead, it interacts indirectly via reference/dereference effects. The system maintains an object reference table and translates the LLM's operation instructions into actual operations on Python objects.
-    - Design Motivation: Enables prompts to modify complex program data structures (e.g., graphs, lists) rather than merely returning serialized new versions.
+Reading and writing variables is insufficient—many tasks require modifying mutable objects like graphs or lists. The difficulty lies in the fact that LLMs cannot and should not directly touch the Python heap. Nightjar introduces reference/dereference effects: the system maintains an object reference table, and the LLM merely issues instructions like "perform an operation on some reference." The handler then translates these into attribute modifications, method calls, or in-place updates on the actual Python objects. This allows a prompt to modify a graph or append to a list in-place, rather than serializing the entire structure and returning a new version—saving tokens and avoiding information loss during the movement of large objects.
 
-3. **Shared Control State**:
+**3. Shared Control State: Letting prompts semantically decide loop termination or jumps**
 
-    - Function: Prompts can trigger control-flow operations such as `break` and `continue`.
-    - Mechanism: Prompts reference control-flow constructs in the program via labels. When the LLM emits a break effect, Nightjar's handler executes the corresponding `break` in the host Python program.
-    - Design Motivation: Allows prompts to determine when to terminate a loop or skip an iteration based on conversational semantics, avoiding additional conditional code.
+Some branching decisions are essentially semantic (e.g., "should this dialogue round end?"), which are difficult to write cleanly with traditional conditional code. Nightjar allows prompts to reference control flow structures via labels: when the LLM outputs a `break` effect, the corresponding handler executes that `break` in the host Python program, and similarly for `continue`. This enables the prompt to decide whether to terminate a loop or skip an iteration based on dialogue semantics, consolidating what would have been multiple `if` statements into the prompt's natural language intent.
 
-4. **Natural Function Interface Schema**:
+**4. Natural Function Interface Schema: Unifying the three shared types into a language-independent specification**
 
-    - Function: Formalizes the interaction interface between prompts and programs.
-    - Mechanism: Based on the effects & handlers paradigm. Effects define the operation types a prompt may perform (read variable, write variable, reference object, break, etc.); handlers define the implementation of these operations in the host language.
-    - Design Motivation: Provides a language-agnostic specification so that shared program state can be implemented on any programming language.
+While the first three points are specific capabilities, the fourth abstracts them into a formal interface, ensuring "shared program state" is not limited to Python. It is built on the effects & handlers paradigm: the "effects" side defines what operations a prompt can initiate (reading/writing variables, referencing/dereferencing objects, breaking loops, etc.), and the "handlers" side defines how these are implemented in the host language. Read, write, heap, and control flow operations are all unified into the same "effect-handler" pairing. Because the interface only specifies operational semantics and is not bound to a specific language, any programming system can theoretically implement its own shared state following this schema.
+
+### A Complete Example: Prompt Modifying a Graph
+Consider a function receiving a graph variable `graph`, with a prompt: `"Find isolated nodes in <graph> and connect them to the center node, use <:response> to provide a description of the changes."` During execution, `<graph>` triggers a read effect, and the handler retrieves the actual `graph` object reference from the scope snapshot. After the LLM decides which edges to add, it issues several heap operation effects, which the handler uses to call edge-addition methods in-place on the Python `graph` via the reference table. Finally, the LLM generates a write effect to bind the description text to `<:response>`. Upon function return, the `graph` has been modified in-place and `response` is available in the scope. The developer writes no schema, serialization, or parameter-bridging code.
 
 ### Loss & Training
-Nightjar involves no model training; its contribution is at the programming-systems level. The core technical challenge lies in mapping the LLM's natural language output to correct program operations.
+Nightjar does not involve model training; its contribution is at the programming system level. The core technical challenge is reliably mapping the LLM's natural language output to the correct program operations—specifically the step where handlers actualize effects in the host language.
 
 ## Key Experimental Results
 
 ### Main Results (Nightjar vs. Manual Implementation)
 
-| Task | Nightjar Accuracy | Manual Accuracy | Code Reduction | Runtime Overhead |
-|------|------------------|----------------|---------------|-----------------|
-| Graph manipulation | +4–19% | Baseline | ~40% | 0.4–4.3× |
-| Data processing | On par or higher | Baseline | ~40% | Moderate |
-| Control-flow tasks | Higher | Baseline | Significant | Slightly higher |
+| Task | Nightjar Accuracy | Manual Acc. | Code Reduction | Runtime Overhead |
+|------|---------------|-------------|----------|-----------|
+| Graph Ops | +4-19% | Baseline | ~40% | 0.4-4.3x |
+| Data Processing | Equal or Higher | Baseline | ~40% | Moderate |
+| Control Flow | Higher | Baseline | Significant | Slightly Higher |
 
 ### Ablation Study
 
-| Configuration | Performance | Notes |
-|--------------|-------------|-------|
-| Full shared state | Best | Scope + heap + control flow |
-| Shared scope only | Usable but limited | Cannot modify mutable objects |
-| Isolated state (baseline) | Requires extensive boilerplate | Conventional approach |
+| Configuration | Effect | Description |
+|------|------|------|
+| Full Shared State | Optimal | Scope + Heap + Control Flow |
+| Shared Scope Only | Usable but limited | Cannot modify mutable objects |
+| Isolated State (Baseline) | High boilerplate | Traditional approach |
 
 ### Key Findings
-- Average code size reduction of **39.6%**, primarily from eliminating schema definitions and serialization/deserialization code.
-- Accuracy improvement of **+4–19%**: shared state avoids information loss and formatting errors introduced by manual serialization.
-- Runtime overhead of 0.4–4.3×, mainly attributable to reference resolution and the additional communication required for effect handling.
+- Average code reduction of **39.6%**, primarily from eliminating schema definitions and serialization/deserialization code.
+- Accuracy gain of **+4-19%**: Shared state avoids information loss and formatting errors introduced by manual serialization.
+- Runtime overhead of 0.4-4.3x: Mainly due to additional communication for reference resolution and effect processing.
 
 ## Highlights & Insights
-- **The contribution at the programming-abstraction level** is more significant than the concrete system: shared program state is a new programming paradigm not limited to Python. The natural function interface schema is language-agnostic and can be implemented in any programming system.
-- **The application of effects & handlers to LLM programming** is particularly elegant: abstracting prompt operations on program state as effects, with handlers implemented by the host language, represents a refined synthesis of PL theory and practical LLM systems.
-- The work reveals a broader trend: computation is increasingly being planned and executed dynamically and adaptively, and LLMs make "runtime programming" a reality.
+- **The contribution to programming abstractions** is more significant than the specific system: shared program state is a new paradigm not limited to Python. The natural function interface schema is language-independent.
+- **The application of Effects & Handlers in LLM programming** is ingenious: abstracting prompt operations on program state as effects implemented by host handlers is an elegant combination of PL theory and practical LLM systems.
+- It reveals a trend: computation is increasingly being planned and executed dynamically and adaptively, with LLMs making "runtime programming" a reality.
 
 ## Limitations & Future Work
-- Runtime overhead (0.4–4.3×) may be unacceptable in latency-sensitive settings.
-- LLM operations on complex program objects are susceptible to errors (hallucinated writes with incorrect values).
-- Only a Python implementation is currently available; portability to other languages remains to be validated.
-- Security concerns: direct prompt manipulation of program state may introduce unintended side effects.
+- Runtime overhead (0.4-4.3x) may be unacceptable in latency-sensitive scenarios.
+- LLM operations on complex program objects may fail (hallucinating write values).
+- Currently only implemented in Python; portability to other languages needs verification.
+- Security concerns: Allowing prompts to directly manipulate program state may cause unintended side effects.
 
 ## Related Work & Insights
-- **vs. LangChain/DSPy**: These systems adopt isolated state, requiring manual schema definitions and serialization. Nightjar eliminates this burden.
-- **vs. AskIt/ANPL**: These systems use LLM-generated functions to replace prompts, partially sharing state but without support for variable writes or control flow.
+- **vs. LangChain/DSPy**: These systems use isolated state and require manual schema/serialization. Nightjar eliminates this burden.
+- **vs. AskIt/ANPL**: These systems use LLMs to generate functions to replace prompts, partially sharing state but lacking support for write variables and control flows.
 - **vs. tool use**: Tool use requires developers to define custom functions; Nightjar's shared state requires no additional function definitions from the developer.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Shared program state is a novel programming abstraction; the application of effects & handlers is innovative.
-- Experimental Thoroughness: ⭐⭐⭐ — Limited number of tasks; large-scale application validation is lacking.
-- Writing Quality: ⭐⭐⭐⭐ — PL formal specification and practical system are well integrated.
-- Value: ⭐⭐⭐⭐ — Provides meaningful guidance for the design of LLM programming systems.
+- Novelty: ⭐⭐⭐⭐ Shared program state is a new programming abstraction; innovative use of effects & handlers.
+- Experimental Thoroughness: ⭐⭐⭐ Limited number of tasks; lacks large-scale application verification.
+- Writing Quality: ⭐⭐⭐⭐ Good integration of PL formal specifications with practical systems.
+- Value: ⭐⭐⭐⭐ Highly insightful for the design of LLM programming systems.
 
 <!-- RELATED:START -->
 
@@ -125,11 +132,11 @@ Nightjar involves no model training; its contribution is at the programming-syst
 
 ## Related Papers
 
+- [\[ICLR 2026\] Evolving Graph Structured Programs for Circuit Generation with Large Language Models](evolving_graph_structured_programs_for_circuit_generation_with_large_language_mo.md)
+- [\[ICLR 2026\] Behavioral Embeddings of Programs: A Quasi-Dynamic Approach for Optimization Prediction](behavioral_embeddings_of_programs_a_quasi-dynamic_approach_for_optimization_pred.md)
 - [\[NeurIPS 2025\] Learning From Design Procedure To Generate CAD Programs for Data Augmentation](../../NeurIPS2025/code_intelligence/learning_from_design_procedure_to_generate_cad_programs_for_data_augmentation.md)
+- [\[ICLR 2026\] From Assistant to Independent Developer — Are GPTs Ready for Software Development?](from_assistant_to_independent_developer_are_gpts_ready_for_software_development.md)
 - [\[ICLR 2026\] ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code](shieldedcode_learning_robust_representations_for_virtual_machine_protected_code.md)
-- [\[ICLR 2026\] Inference-Time Safety for Code LLMs via Retrieval-Augmented Revision](inference-time_safety_for_code_llms_via_retrieval-augmented_revision.md)
-- [\[ICLR 2026\] The Limits of Long-Context Reasoning in Automated Bug Fixing](the_limits_of_long-context_reasoning_in_automated_bug_fixing.md)
-- [\[ICLR 2026\] A Problem-Oriented Perspective and Anchor Verification for Code Optimization](a_problem-oriented_perspective_and_anchor_verification_for_code_optimization.md)
 
 </div>
 

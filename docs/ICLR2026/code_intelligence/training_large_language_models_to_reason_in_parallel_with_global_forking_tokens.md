@@ -2,150 +2,137 @@
 title: >-
   [Paper Note] Training Large Language Models To Reason In Parallel With Global Forking Tokens
 description: >-
-  [ICLR 2026][Code Intelligence][parallel reasoning] This paper proposes Set Supervised Fine-Tuning (SSFT), which aligns global forking tokens with diverse reasoning trajectories via bipartite matching…
+  [ICLR 2026][Code Intelligence][parallel reasoning] This paper proposes Set Supervised Fine-Tuning (SSFT), which aligns global forking tokens with diverse reasoning trajectories through bipartite matching. This enables LLMs to globally steer different reasoning patterns from a single control token, significantly outperforming standard SFT and GRPO on mathematical reason
 tags:
-  - "ICLR 2026"
-  - "Code Intelligence"
-  - "parallel reasoning"
-  - "global forking tokens"
-  - "set supervised fine-tuning"
-  - "bipartite matching"
-  - "test-time compute"
+  - ICLR 2026
+  - Code Intelligence
+  - parallel reasoning
+  - global forking tokens
+  - set supervised fine-tuning
+  - bipartite matching
+  - test-time compute
 date: 2026-05-08
-content_hash: c1f80cc84cca0a6b
+content_hash: b34ec8b5e5d9586b
 ---
-
 # Training Large Language Models To Reason In Parallel With Global Forking Tokens
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2510.05132](https://arxiv.org/abs/2510.05132)  
 **Code**: [Sheng-J/SSFT](https://github.com/Sheng-J/SSFT)  
-**Area**: Code Intelligence
+**Area**: Code Intelligence  
 **Keywords**: parallel reasoning, global forking tokens, set supervised fine-tuning, bipartite matching, test-time compute
 
 ## TL;DR
 
-This paper proposes Set Supervised Fine-Tuning (SSFT), which aligns global forking tokens with diverse reasoning trajectories via bipartite matching, enabling LLMs to globally steer distinct reasoning modes from a single control token. SSFT substantially outperforms standard SFT and GRPO on mathematical reasoning and code generation tasks.
+This paper proposes Set Supervised Fine-Tuning (SSFT), which aligns global forking tokens with diverse reasoning trajectories through bipartite matching. This enables LLMs to globally steer different reasoning patterns from a single control token, significantly outperforming standard SFT and GRPO on mathematical reasoning and code generation tasks.
 
 ## Background & Motivation
 
-- LLMs improve reasoning by scaling test-time compute (generating more tokens), but **sequential scaling** suffers from "overthinking"—performance degrades beyond a certain sequence length.
-- **Parallel sampling** (e.g., self-consistency, Best-of-N) offers an orthogonal scaling dimension, but relies on the model generating **diverse and correct** solutions.
-- Research shows that only a few **forking tokens** in Chain-of-Thought reasoning lead to divergent reasoning paths; as problems become harder and generations longer, the probability of sampling these critical tokens drops significantly.
-- Common diversity-enhancing techniques (e.g., temperature scaling) face a **diversity–accuracy trade-off**: theoretical work shows that simply raising temperature cannot guarantee greater diversity unless the model is explicitly trained for coverage.
+- LLMs improve reasoning capabilities by scaling test-time compute (generating more tokens), but **sequential scaling** suffers from "overthinking" issues—performance actually declines after exceeding a certain sequence length.
+- **Parallel sampling** (e.g., self-consistency, Best-of-N) is another scaling dimension, but it relies on the model generating **diverse and correct** solutions.
+- Research indicates that in Chain-of-Thought reasoning, only a few **forking tokens** lead to different reasoning paths. As problems become harder and generations longer, the probability of sampling these critical tokens decreases significantly.
+- Common methods for increasing diversity (e.g., temperature scaling) face a **diversity-accuracy trade-off**: theoretical work shows that merely increasing temperature does not guarantee greater diversity unless the model is explicitly trained for coverage.
 
 ## Core Problem
 
-How can LLMs be trained on diverse reasoning trajectories such that a set of **global control tokens** placed at the beginning of generation steer the model into distinct reasoning modes—achieving high diversity and high accuracy in parallel reasoning without relying on sampling intermediate forking tokens?
+How can diverse reasoning trajectories be utilized to train LLMs so they fork into different reasoning modes via a set of **global control tokens** at the start of generation, achieving high diversity and high accuracy in parallel reasoning without relying on sampling intermediate forking tokens?
 
 ## Method
 
-### 1. Problem Formulation: Parallel Reasoning as Set Prediction
+### Overall Architecture
 
-- A set of **global forking tokens** $\boldsymbol{g} = \{g^{(i)}\}_{i=1}^{N}$ is defined, instantiated as `<think 1>`, `<think 2>`, ..., `<think N>` tags.
-- Given a problem $\mathbf{x}$ and $M$ distinct correct reasoning trajectories $\mathbf{R} = \{\mathbf{r}^{(j)}\}_{j=1}^{M}$, the goal is for each $g^{(i)}$ to uniquely trigger a distinct reasoning trajectory.
-- Parallel reasoning is framed as a **set-of-next-token-prediction** problem satisfying two requirements:
-    - **Permutation invariance**: the loss is independent of the ordering of $\mathbf{R}$ and $\boldsymbol{g}$.
-    - **Non-shared forking tokens**: distinct reasoning trajectories must not be conditioned on the same $g^{(i)}$.
+The method reformulates "teaching an LLM multiple reasoning styles simultaneously" as a set prediction problem: a set of global forking tokens $\langle \text{think 1} \rangle \dots \langle \text{think N} \rangle$ is placed at the beginning of the sequence, allowing each token to uniquely "claim" a reasoning trajectory. Training occurs in two stages: first, SSFT aligns tokens and trajectories through bipartite matching; then, GFPO, a lightweight RL step, fine-tunes the distribution at the token positions. During inference, the model can fork into different reasoning modes from the start simply by initiating with different $\langle \text{think i} \rangle$ tokens.
 
-### 2. SSFT: Set SFT via Optimal Bipartite Matching
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Problem x + M correct trajectories<br/>+ N global forking tokens"] --> B["Global forking tokens<br/>set prediction modeling"]
+    B --> C["SSFT<br/>Optimal bipartite matching<br/>Dynamic token-trajectory alignment"]
+    C --> D["GFPO<br/>Lightweight policy gradient<br/>only on forking tokens"]
+    D --> E["Inference protocols<br/>Use token set by scenario"]
+    E -->|Diversity aggregation Cons@k| F["N think i starts<br/>→ Majority voting"]
+    E -->|Single best output Pass@1| G["Sample/select optimal think i"]
+```
 
-Each training step proceeds in two stages:
+### Key Designs
 
-**Stage 1: Optimal Matching.** A cost matrix is constructed where each entry is the NTP loss of trajectory $\mathbf{r}^{(j)}$ conditioned on $g^{(i)}$ (length-normalized, stop-gradient). The **Hungarian algorithm** is applied to find the minimum-cost bipartite matching $\hat{\boldsymbol{\sigma}}$.
+**1. Global Forking Tokens and Set Prediction Modeling: Making diversity globally determined by a starting control token**
 
-**Stage 2: Optimization.** Backpropagation is performed only over the $M$ matched sequences, minimizing the Hungarian loss:
+Past parallel reasoning relied on sampling rare intermediate forking tokens within a Chain-of-Thought to produce different paths. This paper changes the approach: it defines a set of global forking tokens $\boldsymbol{g} = \{g^{(i)}\}_{i=1}^{N}$ (instantiated as $\langle \text{think 1} \rangle, \dots, \langle \text{think N} \rangle$), fixed at the start of the generation sequence. This ensures different reasoning modes are globally steered from the beginning. Given problem $\mathbf{x}$ and $M$ diverse correct trajectories $\mathbf{R} = \{\mathbf{r}^{(j)}\}_{j=1}^{M}$, the goal is for each $g^{(i)}$ to uniquely trigger one trajectory. This requires formulating the training objective as set-of-next-token-prediction: the loss must be **permutation-invariant** regarding the order of $\mathbf{R}$ and $\boldsymbol{g}$, and **different trajectories cannot share the same $g^{(i)}$** to prevent mode collapse.
 
-$$\mathcal{L}_{\text{Hungarian}}(\boldsymbol{\theta}) = -\mathbb{E}_{\mathbf{x}, \mathbf{R}}[\sum_{j=1}^{M}\sum_{t=1}^{T_\mathbf{r}} \log \pi_\theta(r_t^{(j)} | \mathbf{x}, g^{(\hat{\sigma}(j))}, \mathbf{r}_{<t}^{(j)})]$$
+**2. SSFT: Aligning tokens and trajectories via optimal bipartite matching to avoid mode collapse**
 
-**Computational optimization**: matching cost computation uses only the first $L$ tokens ($L \approx \lfloor \text{max\_seq\_len} / (MN) \rfloor$), allowing all matching costs to be computed in a single forward pass with negligible additional training overhead.
+Hard-assigning the $j$-th trajectory to the $j$-th token introduces artificial order bias. SSFT borrows the set loss concept from DETR, allowing the token-trajectory assignment to be decided dynamically at each training step. First, **optimal matching** is performed: a cost matrix is constructed where elements are the length-normalized, stop-gradient NTP loss of trajectory $\mathbf{r}^{(j)}$ conditioned on $g^{(i)}$. The Hungarian algorithm finds the minimum cost matching $\hat{\boldsymbol{\sigma}}$. Then, **optimization** is performed by backpropagating only on the matched $M$ sequences to minimize the Hungarian loss:
 
-### 3. GFPO: Global Forking Policy Optimization
+$$\mathcal{L}_{\text{Hungarian}}(\boldsymbol{\theta}) = -\mathbb{E}_{\mathbf{x}, \mathbf{R}}\Big[\sum_{j=1}^{M}\sum_{t=1}^{T_\mathbf{r}} \log \pi_\theta\big(r_t^{(j)} \mid \mathbf{x}, g^{(\hat{\sigma}(j))}, \mathbf{r}_{<t}^{(j)}\big)\Big]$$
 
-- Following SSFT, a small number of RL steps apply policy gradients exclusively to the output distribution of the global forking tokens.
-- Since global forking tokens always appear at a fixed position in the generated sequence, the implementation requires only a few lines of Python slicing on top of existing GRPO code.
-- Full generations are used solely to compute the advantage function for $g^{(i)}$ and do not participate in backpropagation.
+Since matching is solved independently for each problem, a teacher trajectory may be assigned to different forking tokens across different problems. Consequently, the model learns the association between tokens and "reasoning styles" rather than specific samples, allowing positive transfer between different trajectories. Implementation maintains $N > M$ (the paper uses $N=6, M=4$), providing space for similar trajectories to differentiate. A key computational trick: matching costs use only the first $L$ tokens of each trajectory ($L \approx \lfloor \text{max\_seq\_len}/(MN) \rfloor$), allowing all $M \times N$ costs to be calculated in a single forward pass with negligible training overhead.
 
-### 4. Inference Protocol
+**3. GFPO: Lightweight RL applying policy gradients only on forking tokens**
 
-- **Cons@k**: each of the $N$ distinct `<think i>` tags is used to prompt a separate generation, followed by majority voting.
-- **Pass@1**: the GFPO model automatically samples the optimal $g^{(i)}$; alternatively, the $g^{(i^*)}$ that covers the most distinct trajectories during training is selected (based on a graph heuristic from Equation 4).
+Following SSFT, a small number of RL steps further differentiate the tokens, but gradients are only applied to the output distribution of the global forking tokens. Since these tokens are always at fixed positions, this only requires a few lines of Python slicing in standard GRPO code: full generations are rolled out to estimate the advantage of each $g^{(i)}$, but backpropagation only updates the distribution at token positions, making the cost much lower than full-sequence RL.
 
-### Key Design Choices
+**4. Inference Protocols: Selecting token usage by scenario**
 
-- $N > M$ global forking tokens are retained (e.g., $N=6, M=4$); the extra tokens maximize discrimination between similar trajectories.
-- The matching assignment $\hat{\sigma}$ varies dynamically per problem—the same teacher model may be matched to different forking tokens across different problems.
-- Unlike training independent sub-models, SSFT allows positive transfer across different trajectories.
+When measuring diversity aggregation (Cons@k), $N$ different $\langle \text{think i} \rangle$ tokens are used to initiate separate generations followed by majority voting, converting learned diversity directly into coverage. For single best output (Pass@1), the GFPO model can automatically sample the optimal $g^{(i)}$, or select the $g^{(i^*)}$ that covered the most diverse trajectories during training (per the graph heuristic in the paper's Equation 4).
 
 ## Key Experimental Results
 
 ### Experimental Setup
 
-- **Base model**: Qwen2.5-32B-Instruct
-- **Training data**: 1,000 problems from s1k, each with 4 reasoning trajectories distilled from R1, Gemini Flash, Claude Opus 4.0/4.1, and GPT-OSS-120B
-- **Evaluation**: AIME24/25, MATH-500, GPQA-Diamond, LiveCodeBench (OOD)
+- **Base Model**: Qwen2.5-32B-Instruct
+- **Training Data**: 1,000 problems from s1k, with 4 reasoning trajectories distilled for each from R1, Gemini Flash, Claude Opus 4.0/4.1, and GPT-OSS-120B.
+- **Evaluation**: AIME24/25, MATH-500, GPQA-Diamond, LiveCodeBench (OOD).
 
 ### Main Results (Pass@1)
 
-| Model | AIME24 | AIME25 | MATH-500 | LCB (OOD) |
+| Model | AIME24 | AIME25 | MATH-500 | LCB(OOD) |
 |---|---|---|---|---|
 | SFT-mixed-distill-32B | 58.23 | 51.96 | 88.49 | 32.34 |
 | SSFT-32B (random σ) | 61.77 | 55.10 | 89.95 | 35.33 |
 | **SSFT-32B** | **64.06** | **58.13** | **90.02** | **38.92** |
 | **SSFT-32B-GFPO** | **64.22** | **58.80** | 89.90 | **42.10** |
 
-- SSFT improves over SFT trained on the same data by **+5.83 / +6.17** on AIME24/25, respectively.
-- Cons@32 reaches **86.67%** on AIME25, a 10-point gain over SFT's 76.67%.
-- On OOD code generation (LCB), SSFT-GFPO achieves 42.10%, a gain of +9.76.
+- SSFT improves over SFT on the same data by **+5.83 / +6.17** on AIME24/25, respectively.
+- Cons@32 reaches **86.67%** on AIME25, a 10-percentage-point increase over SFT's 76.67%.
+- On OOD code generation (LCB), SSFT-GFPO reaches 42.10%, a gain of +9.76.
 
-### Diversity Analysis
+### Key Findings
 
-- Different `<think i>` tags trigger **clearly distinct distributions of reasoning length and accuracy** (Figure 4).
-- In models trained with random matching, different `<think i>` tags show no discernible differences (Figure 5).
-- During training, only a small subset of matching assignments consistently receives weight, indicating that the model learns stable associations between forking tokens and reasoning modes.
-
-### Robustness
-
-- Results are consistent on code generation data (code1k): SSFT-32B-code achieves 52.07% on LCB vs. 47.13% for SFT.
-- Consistent gains are observed on public datasets (OpenR1-93k) and smaller models (Qwen2.5-Math-7B).
-- Gains are also observed on Qwen3-4B-Base and Llama3.1-8B-Instruct.
+- Different $\langle \text{think i} \rangle$ tokens trigger **distinctly different reasoning length distributions and accuracies** (Figure 4).
+- In models trained with random matching, no discernible differences are found between different $\langle \text{think i} \rangle$ tokens (Figure 5).
+- Only a few matching configurations consistently receive weight during training, indicating the model learns stable associations between forking tokens and reasoning patterns.
 
 ## Highlights & Insights
 
-- **Elegant problem formulation**: Casting parallel reasoning as set prediction and applying bipartite matching—inspired by DETR—to language modeling for the first time yields a theoretically principled framework.
-- **High practicality**: Global forking tokens are placed at fixed positions at the sequence start, enabling diverse reasoning guidance at inference without complex search. GFPO requires only a few lines of code.
-- **Interpretable matching visualization**: The evolution of matching assignments during training clearly demonstrates the automatic learning of associations between forking tokens and reasoning modes.
-- **Minimal computational overhead**: Using stop-gradient and only the first $L$ tokens for matching cost computation introduces almost no additional training cost.
+- **Elegant Problem Modeling**: Formulates parallel reasoning as a set prediction problem, applying bipartite matching ideas from DETR to language modeling for the first time with clear theoretical grounding.
+- **High Practicality**: Global forking tokens are at fixed positions, allowing diversity to be steered without complex search; GFPO is implemented with minimal code changes.
+- **Interpretable Visualization**: The evolution of matching configurations during training clearly demonstrates the automated learning of associations between forking tokens and reasoning modes.
+- **Extremely Low Computational Overhead**: Matching cost calculation utilizes stop-gradient and only the first $L$ tokens, adding almost no training time.
 
 ## Limitations & Future Work
 
-- The current setting of $N=6, M=4$ is relatively small in scale; the effectiveness and computational cost of larger bipartite graphs remain unexplored.
-- Diverse reasoning trajectories are obtained via multi-teacher distillation, creating a dependency on the quality and diversity of teacher models.
-- GFPO applies policy gradients only to forking tokens; whether this approach can be extended to additional controllable positions is not discussed.
-- Evaluation focuses primarily on mathematics and code; performance on open-domain reasoning tasks (e.g., commonsense reasoning, multi-hop QA) is unknown.
+- The current $N=6, M=4$ setting is small-scale; the effects and computational burden of larger-scale bipartite matching remain to be explored.
+- Diverse reasoning trajectories rely on multi-teacher distillation, implying dependence on teacher quality and diversity.
+- GFPO only applies policy gradients to forking tokens; whether this can be extended to more controllable positions is not discussed.
+- Evaluation focuses on math and code; effectiveness on open-domain reasoning tasks (e.g., commonsense reasoning, multi-hop QA) is unknown.
 
 ## Related Work & Insights
 
-| Method | Characteristics | Advantage of Ours |
+| Method | Features | Ours Advantage |
 |---|---|---|
-| Temperature scaling | Increases diversity by adjusting temperature | Cannot guarantee coverage; high temperature degrades accuracy |
-| Self-consistency / Best-of-N | Aggregates parallel samples | Does not explicitly train for diversity; relies on intermediate forking tokens |
-| Multiverse (Yang et al., 2025b) | Converts sequential CoT to parallel CoT | No set loss; cannot prevent mode collapse |
-| Concurrent work (Wen et al., 2025) | Multi-trajectory distillation with random tag assignment | Random assignment cannot learn stable associations between forking tokens and trajectories |
-| DETR (Carion et al., 2020) | Global set loss for object detection | This work is the first to extend it to autoregressive language modeling |
-
-### Broader Connections
-
-- The paradigm of combining **set prediction with language modeling** has broad generalization potential: applications include multi-answer generation, multi-style writing, and multi-strategy search.
-- The global forking token concept can be combined with **Mixture of Experts**—routing distinct reasoning modes to different experts.
-- The trick of computing matching costs using only the first $L$ tokens suggests that the early tokens of a reasoning trajectory are sufficient to distinguish different reasoning strategies, an observation applicable to trajectory pruning and rapid evaluation.
+| Temperature scaling | Increases diversity via temperature | Cannot guarantee coverage; high temp reduces accuracy |
+| Self-consistency / Best-of-N | Aggregation after parallel sampling | No explicit diversity training, relies on intermediate forks |
+| Multiverse (Yang et al., 2025b) | Converts sequential CoT to parallel | Lacks set loss; cannot avoid mode collapse |
+| Concurrent work (Wen et al., 2025) | Multi-trajectory distillation + random tags | Random assignment fails to learn token-trajectory associations |
+| DETR (Carion et al., 2020) | Global set loss in object detection | First extension to autoregressive language modeling |
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (introduces set prediction to language modeling; global forking token concept is original)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (multiple benchmarks, model scales, data sources, and extensive ablations)
-- Writing Quality: ⭐⭐⭐⭐⭐ (clear formulations, rich visualizations, rigorous experimental logic)
-- Value: ⭐⭐⭐⭐⭐ (practically useful and theoretically elegant; offers important guidance for parallel reasoning training)
+- Novelty: ⭐⭐⭐⭐⭐ (Introduces set prediction to LM; global forking tokens are a novel concept)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Multiple benchmarks, model scales, data sources, and rich ablation studies)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear formulas, rich visualizations, rigorous experimental logic)
+- Value: ⭐⭐⭐⭐⭐ (Practical and theoretically elegant; provides important guidance for parallel reasoning training)
 
 <!-- RELATED:START -->
 
@@ -153,11 +140,11 @@ $$\mathcal{L}_{\text{Hungarian}}(\boldsymbol{\theta}) = -\mathbb{E}_{\mathbf{x},
 
 ## Related Papers
 
-- [\[ICLR 2026\] DRO-InstructZero: Distributionally Robust Prompt Optimization for Large Language Models](dro-instructzero_distributionally_robust_prompt_optimization_for_large_language_.md)
 - [\[ICML 2026\] Locally Coherent Parallel Decoding in Diffusion Language Models](../../ICML2026/code_intelligence/locally_coherent_parallel_decoding_in_diffusion_language_models.md)
+- [\[ICLR 2026\] Evolving Graph Structured Programs for Circuit Generation with Large Language Models](evolving_graph_structured_programs_for_circuit_generation_with_large_language_mo.md)
+- [\[ICLR 2026\] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation](crosspl_systematic_evaluation_of_large_language_models_for_cross_programming_lan.md)
+- [\[ICLR 2026\] LearNAT: Learning NL2SQL with AST-guided Task Decomposition for Large Language Models](learnat_learning_nl2sql_with_ast-guided_task_decomposition_for_large_language_mo.md)
 - [\[ICLR 2026\] Learning to Reason without External Rewards](learning_to_reason_without_external_rewards.md)
-- [\[ICML 2026\] Poison with Style: A Practical Poisoning Attack on Code Large Language Models](../../ICML2026/code_intelligence/poison_with_style_a_practical_poisoning_attack_on_code_large_language_models.md)
-- [\[AAAI 2026\] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models](../../AAAI2026/code_intelligence/span_benchmarking_and_improving_cross-calendar_temporal_reasoning_of_large_langu.md)
 
 </div>
 

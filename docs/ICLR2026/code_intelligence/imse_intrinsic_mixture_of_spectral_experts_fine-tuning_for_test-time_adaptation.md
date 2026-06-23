@@ -2,137 +2,150 @@
 title: >-
   [Paper Note] IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation
 description: >-
-  [ICLR 2026][Code Intelligence][test-time adaptation] This paper proposes IMSE, which decomposes the linear layers of a pretrained ViT via SVD into "spectral experts" and adapts only the singular values for extremely para…
+  [ICLR 2026][Code Intelligence][test-time adaptation] Ours proposes IMSE, which reinterprets pre-trained ViT linear layers as "spectral experts" via SVD. By fine-tuning only the singular values, it achieves extreme parameter efficiency for Test-Time Adaptation. Combining a diversity maximization loss and a domain-aware spectral code retrieval mechanism, it reaches SOTA pe
 tags:
-  - "ICLR 2026"
-  - "Code Intelligence"
-  - "test-time adaptation"
-  - "singular value decomposition"
-  - "mixture of experts"
-  - "continual adaptation"
-  - "distribution shift"
+  - ICLR 2026
+  - Code Intelligence
+  - test-time adaptation
+  - singular value decomposition
+  - mixture of experts
+  - continual adaptation
+  - distribution shift
 date: 2026-05-08
-content_hash: f648f8a5a8d99c16
+content_hash: c50e8d052f76e63c
 ---
-
 # IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.07926](https://arxiv.org/abs/2603.07926)  
 **Code**: [github](https://github.com/baek85/IMSE)  
-**Area**: Code Intelligence
+**Area**: Code Intelligence  
 **Keywords**: test-time adaptation, singular value decomposition, mixture of experts, continual adaptation, distribution shift
 
 ## TL;DR
 
-This paper proposes IMSE, which decomposes the linear layers of a pretrained ViT via SVD into "spectral experts" and adapts only the singular values for extremely parameter-efficient test-time adaptation. Combined with a diversity maximization loss and a domain-aware spectral code retrieval mechanism, IMSE achieves state-of-the-art performance across three settings: TTA, CTTA, and progressive CTTA.
+Ours proposes IMSE, which reinterprets pre-trained ViT linear layers as "spectral experts" via SVD. By fine-tuning only the singular values, it achieves extreme parameter efficiency for Test-Time Adaptation. Combining a diversity maximization loss and a domain-aware spectral code retrieval mechanism, it reaches SOTA performance across TTA, CTTA, and progressive CTTA scenarios.
 
 ## Background & Motivation
 
-Test-time adaptation (TTA) aims to adapt source-domain pretrained models online to unknown target domains without access to source data. Existing methods face three key challenges:
+Test-Time Adaptation (TTA) aims to adapt source-domain pre-trained models online to unknown target domains without accessing source data. Existing methods face three key challenges:
 
-**Underutilization of pretrained features**: Large pretrained models contain rich representational capacity, yet how to fully exploit such representations with minimal parameter updates remains underexplored. Existing approaches either tune only batch normalization parameters (limited adaptability) or introduce additional modules (increased inference overhead).
+**Background**: Underutilization of pre-trained features. Large pre-trained models possess rich representation capabilities. However, how to fully exploit these representations with minimal parameter updates remains insufficiently explored. Existing methods either tune only BN parameters (limited adaptation capacity) or introduce extra modules (increasing inference overhead).
 
-**Feature collapse from entropy minimization**: In unlabeled TTA settings, entropy minimization tends to drive the model to exploit domain-specific rather than class-discriminative features, which can further degrade performance.
+**Limitations of Prior Work**: Feature collapse caused by entropy minimization. In label-free TTA scenarios, entropy minimization often drives the model to exploit domain-specific features rather than class-discriminative ones, which can exacerbate performance degradation.
 
-**Forgetting of domain knowledge in continual TTA**: Under the CTTA setting, the model must not only preserve pretrained knowledge but also retain and reuse knowledge from previously encountered domains. Existing methods lack efficient mechanisms for domain knowledge preservation and reuse.
+**Key Challenge**: Forgetting domain knowledge in continual TTA. In CTTA settings, the model must not only maintain pre-trained knowledge but also preserve and reuse previously encountered domain knowledge. Existing methods lack efficient mechanisms for preservation and reuse.
 
 ## Method
 
 ### Overall Architecture
 
-IMSE comprises three core components organized around the idea of treating linear layers as an intrinsic mixture of spectral experts:
+IMSE addresses TTA by online adapting a pre-trained ViT to unknown target domains without source data or labels while minimizing parameter changes. The core perspective is reinterpreting every linear layer of a pre-trained ViT as a mixture of **intrinsic spectral experts**. By performing SVD on weights, each rank-1 component is treated as an expert; during adaptation, **only the singular values are fine-tuned** while singular vectors remain frozen. Around this core, the paper introduces two components: a **diversity maximization loss** to counteract the feature collapse caused by entropy minimization, and a **domain-aware spectral code retrieval** mechanism for CTTA to store and reuse adapted singular values (spectral codes). Single-domain TTA uses the first two components, while CTTA further incorporates the retrieval mechanism. The data flow is as follows:
 
-- **Intrinsic Mixture of Spectral Experts**: Each linear layer is decomposed via SVD, with each rank-1 component treated as an independent spectral expert.
-- **Diversity Maximization Loss**: Encourages diverse utilization of spectral experts to counteract feature collapse induced by entropy minimization.
-- **Domain-Aware Spectral Code Retrieval (IMSE-Retrieval)**: Stores and retrieves adapted singular values in the CTTA setting to enable rapid adaptation upon domain switching.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Pre-trained ViT + Test Sample Stream<br/>(No source data, no labels)"] --> B["Spectral Experts & Spectral Codes<br/>SVD per layer, freeze U/V<br/>Only singular values σ tunable"]
+    B --> C
+    subgraph C["Expert Alignment Statistics + Diversity Loss"]
+        direction TB
+        C1["Calculate Expert Alignment Std"] --> C2["Entropy Min + Diversity Loss<br/>Update Spectral Code S"]
+    end
+    C --> F["Output: Target Domain Prediction"]
+    subgraph D["Domain-Aware Spectral Code Retrieval (CTTA only)"]
+        direction TB
+        D1["Domain Descriptor EMA<br/>patch token mean/variance"] --> D2["Symmetric KL > τ<br/>Determine Domain Shift"]
+        D2 --> D3["Domain Bank: Store / Retrieve Spectral Codes"]
+    end
+    A -.Monitor Input Distribution.-> D1
+    D3 -.Retrieve Spectral Code for Init.-> B
+    C2 -.Post-adaptation Spectral Code Storage.-> D3
+```
 
 ### Key Designs
 
-#### Spectral Experts and Spectral Codes
+**1. Spectral Experts and Spectral Codes: Splitting each linear layer into orthogonal rank-1 experts, tuning only singular values**
 
-The SVD decomposition of the linear transformation at layer $l$ is: $W = U\Sigma V^T = \sum_i \sigma_i u_i v_i^T$. Each rank-1 component is treated as the $i$-th **spectral expert**. Since the singular vectors are mutually orthogonal, the outputs of different experts are also orthogonal. The **spectral code** is defined as the collection of singular values across all layers.
+A major pain point in TTA is that the representation power of pre-trained weights is not fully utilized. IMSE reinterprets the linear transformation of the $l$-th layer via SVD: $\mathbf{W}^{(l)} = \mathbf{U}^{(l)}\mathbf{\Sigma}\mathbf{V}^{(l)\top} = \sum_{i=1}^{r^{(l)}} \sigma_i^{(l)} \mathbf{u}_i^{(l)} \mathbf{v}_i^{(l)\top}$. Each rank-1 component $\mathbf{u}_i \mathbf{v}_i^\top$ is treated as an independent **spectral expert**. Since singular vectors are inherently orthogonal, outputs from different experts for the same input are mutually orthogonal ($(\mathbf{u}_i\mathbf{v}_i^\top \mathbf{x})^\top(\mathbf{u}_j\mathbf{v}_j^\top \mathbf{x}) = 0,\ i\neq j$). When adapting, only singular values $\sigma_i$ are tuned while orthogonal bases $\mathbf{U}$ and $\mathbf{V}$ are frozen. This preserves the pre-trained feature extractor's subspace while reweighting expert contributions. The set of all singular values is defined as the **spectral code** $\bm{S} = \{\bm{\sigma}^{(l)}\}_{l=1}^{L}$.
 
-During adaptation, **only the singular values are updated** (the orthogonal bases are frozen), thereby preserving the subspace of the pretrained feature extractor while adjusting the contribution weights of each expert to accommodate the new domain.
+**2. Expert-Input Alignment Statistics and Diversity Maximization Loss: Quantifying feature collapse via standard deviation**
 
-#### Expert–Input Alignment Statistics
+In TTA, entropy minimization often collapses the model toward domain-specific features. IMSE quantifies this by defining the normalized alignment of the $i$-th expert for the $n$-th input as $a_{n,i}^{(l)} = \mathbf{v}_i^{(l)\top}\mathbf{x}_n^{(l)} / \lVert \mathbf{x}_n^{(l)} \rVert_2$. Calculating the standard deviation $\mathrm{Std}_i^{(l)}$ over a batch of tokens reveals collapse: a low standard deviation indicates the expert responds similarly to all tokens, signaling it is capturing domain-specific patterns rather than class-discriminative ones. The diversity maximization loss is defined as:
 
-To quantify feature collapse, the normalized alignment between the $i$-th expert and the input is defined as $a = v_i^T x / \|x\|$, with its mean and standard deviation $\text{Std}_i$ computed accordingly. A low standard deviation indicates that the expert captures domain-specific patterns rather than class-discriminative features.
+$$\mathcal{L}_{\text{dm}} = -\sum_{l\in\Lambda_{\text{dm}}}\frac{1}{r^{(l)}}\sum_{i=1}^{r^{(l)}}\mathrm{Std}_i^{(l)}$$
 
-#### Domain-Aware Spectral Code Retrieval (CTTA-specific)
+By maximizing this, the model is forced to maintain diverse responses across experts.
 
-A **domain bank** is maintained to store [domain descriptor, spectral code] pairs. Domain descriptors are accumulated via EMA of the channel-wise mean and variance of patch tokens. Domain-shift detection employs symmetric KL divergence; when the divergence exceeds a threshold, the current spectral code is stored and the spectral code of the most similar historical domain is retrieved for initialization.
+**3. Domain-Aware Spectral Code Retrieval: Preserving and reusing adapted domain knowledge in CTTA**
+
+Ours maintains a **domain bank** and stores pairs of $[\phi^k, \bm{S}^k]$ (domain descriptor, spectral code). Descriptors $\phi = \{\text{mean}, \text{variance}\}$ are calculated from patch token channel statistics via EMA. During inference, symmetric KL divergence $D(\phi_1,\phi_2)$ monitors descriptor drift. If $D$ exceeds a threshold $\tau$, a domain shift is detected. The current spectral code is stored, and the most similar code from the bank is retrieved to initialize adaptation for the new domain: $k^* = \arg\min_k D(\phi_t', \phi_k)$.
 
 ### Loss & Training
 
-**Diversity Maximization Loss**: $\mathcal{L}_{\text{dm}} = -\sum_l \frac{1}{r} \sum_i \text{Std}_i^{(l)}$, which maximizes the alignment standard deviation.
-
-Total loss: $\mathcal{L}_{\text{IMSE}} = \mathcal{L}_{\text{entmin}} + \lambda_{\text{dm}} \cdot \mathcal{L}_{\text{dm}}$
-
-Sharpness-Aware Minimization (SAM) is additionally applied for improved stability. The diversity constraint is applied to the later layers closest to the classification head.
+The total loss combines entropy minimization and diversity maximization: $\mathcal{L}_{\text{IMSE}} = \mathcal{L}_{\text{entmin}} + \lambda_{\text{dm}}\cdot\mathcal{L}_{\text{dm}}$. $\mathcal{L}_{\text{entmin}}$ follows SAR with sample filtering. Sharpness-Aware Minimization (SAM) is used for stability, and diversity constraints are restricted to layers near the classification head.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**ImageNet-C (50k) Single-Domain TTA** (ViT-Base, severity 5):
+**ImageNet-C (50k) Single-domain TTA** (ViT-Base, severity 5):
 
-| Pretraining | Method | Mean Accuracy (%) |
+| Pre-training Strategy | Method | Avg. Accuracy (%) |
 |:---:|:---:|:---:|
 | Supervised | DPAL | 67.0 |
-| Supervised | **IMSE** | **69.0** |
+| Supervised | **Ours** | **69.0** |
 | MAE | DPAL | 65.9 |
-| MAE | **IMSE** | **68.3** |
+| MAE | **Ours** | **68.3** |
 | CLIP | DPAL | 62.3 |
-| CLIP | **IMSE** | **65.5** |
+| CLIP | **Ours** | **65.5** |
 
-IMSE surpasses the previous SOTA DPAL under all three pretraining strategies, with gains of 2.4 and 3.2 percentage points on MAE and CLIP, respectively.
+Ours outperforms the previous SOTA (DPAL) across three strategies, with a Gain of 2.4-3.2pp on MAE/CLIP.
 
 **ImageNet-R / ImageNet-A**:
 
 | Method | ImageNet-R | ImageNet-A |
 |:---:|:---:|:---:|
 | DPAL | 64.8 | 49.9 |
-| **IMSE** | **69.8** | **54.8** |
+| **Ours** | **69.8** | **54.8** |
 
-Improvements of 5.0 pp and 4.9 pp, respectively.
+Performance Gain of 5.0pp and 4.9pp respectively.
 
 ### Ablation Study
 
-**CTTA Setting** (ImageNet-C, 15 continual domains): IMSE-Retrieval outperforms ViDA by 3.4 pp, with only **1/385** of ViDA's trainable parameters. Under progressive CTTA (135 domains), the improvement is 2.4 pp.
+**CTTA Setting** (ImageNet-C, 15 domains): IMSE-Retrieval achieves a 3.4pp Gain over ViDA while using **1/385** of the trainable parameters. Progressive CTTA (135 domains) shows a 2.4pp Gain.
 
-### Key Findings
+## Key Findings
 
-1. **Extreme parameter efficiency**: Tuning singular values alone achieves SOTA across multiple pretraining strategies.
-2. **Diversity loss effectively prevents collapse**: Adding $\mathcal{L}_{\text{dm}}$ leads to more balanced utilization of spectral experts.
-3. **Domain bank mechanism is practical**: Spectral codes are compact, incurring minimal storage overhead.
-4. **Generalizes across pretraining strategies**: Effective under Supervised, MAE, and CLIP pretraining alike.
+1. **Extreme Parameter Efficiency**: Tuning only singular values reaches SOTA across various pre-training strategies.
+2. **Diversity Loss Effectiveness**: $\mathcal{L}_{\text{dm}}$ effectively resists collapse and balances expert utilization.
+3. **Practical Domain Bank**: Spectral codes are compact, making storage and retrieval costs minimal.
+4. **Generalization**: Effective for Supervised, MAE, and CLIP pre-training.
 
 ## Highlights & Insights
 
-- 🔍 **Novel spectral expert perspective**: SVD rank-1 components are reinterpreted as "experts" without any additional architecture, leveraging the intrinsic structure of pretrained weights.
-- 💡 **Quantification and mitigation of feature collapse**: The first work to quantify feature collapse in TTA via spectral expert alignment statistics.
-- 🔄 **Compactness of spectral codes naturally suits retrieval**: Storage and retrieval costs are extremely low.
-- ⚡ **Minimal parameter count**: 385× fewer trainable parameters than ViDA.
+- 🔍 **Novel Spectral Expert Perspective**: Reinterpreting SVD rank-1 components as "experts" utilizes intrinsic structure without architectural changes.
+- 💡 **Quantifying Feature Collapse**: Provides a metric for feature collapse based on spectral expert alignment statistics.
+- 🔄 **Compact Retrieval**: Spectral codes are naturally suited for low-cost storage and retrieval.
+- ⚡ **Minimal Parameters**: Requires 385x fewer trainable parameters than ViDA.
 
 ## Limitations & Future Work
 
-1. **One-time SVD decomposition cost**: The initial SVD decomposition incurs non-trivial computational overhead.
-2. **Robustness of domain descriptors**: May be insufficiently robust under extreme domain drift or with small batch sizes.
-3. **Limited to classification**: Extension to detection and segmentation requires additional design effort.
-4. **Backbone compatibility**: Primarily validated on ViT; applicability to CNNs remains to be verified.
+1. **One-time SVD Overhead**: The initial SVD decomposition involves a certain computational cost.
+2. **Descriptor Robustness**: Descriptors might be less robust under extreme drift or small batch sizes.
+3. **Task Specificity**: Extension beyond classification (e.g., detection/segmentation) requires further design.
+4. **Backbone Compatibility**: Primarily validated on ViT; CNN adaptation remains to be explored.
 
 ## Related Work & Insights
 
-| Method | Strategy | Difference from IMSE |
+| Method | Strategy | Comparison with IMSE |
 |:---:|:---:|:---:|
-| TENT | BN affine + entropy minimization | Tunes only BN; limited adaptability |
-| SAR | Sharpness-aware + sample filtering | IMSE additionally incorporates spectral experts and diversity loss |
-| DPAL | Domain prompts + adapters | Introduces extra modules; IMSE requires no additional structure |
-| ViDA | Visual domain adapter | IMSE uses 1/385 of ViDA's parameters |
-| SVFT/SVDiff | Singular-value-only tuning | Focused on LLMs/Diffusion; IMSE is the first to apply this to TTA |
+| TENT | BN affine + EntMin | Tuning only BN offers limited capacity |
+| SAR | Sharpness-aware + Filter | Ours adds spectral experts and diversity loss |
+| DPAL | Domain Prompts + Adapter | Introduces extra modules; Ours uses no extra structure |
+| ViDA | Visual Domain Adapter | Ours has 385x fewer parameters |
+| SVFT/SVDiff | Singular Value Tuning | Focused on LLM/Diffusion; Ours is first for TTA |
 
-Core insight: The weight matrices of large pretrained models contain an intrinsic "expert" structure with functional differentiation, which can be revealed and exploited directly through SVD.
+Core Insight: Weights of pre-trained models contain functional "intrinsic experts" that can be revealed and utilized through SVD.
 
 ## Rating
 
@@ -143,9 +156,9 @@ Core insight: The weight matrices of large pretrained models contain an intrinsi
 | Experimental Thoroughness | ⭐⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
 | Value | ⭐⭐⭐⭐ |
-| Overall | ⭐⭐⭐⭐ |
+| Overall Verdict | ⭐⭐⭐⭐ |
 
-> A solid TTA contribution with a novel and insightful spectral expert perspective. The experiments comprehensively cover TTA, CTTA, and progressive CTTA settings across multiple pretraining strategies, with remarkable parameter efficiency. The primary limitation is that the method is restricted to classification tasks.
+> A solid TTA contribution. The spectral expert perspective is novel and insightful. The experiments cover TTA, CTTA, and Progressive CTTA across various pre-training strategies with impressive parameter efficiency. The primary limitation is the task scope being restricted to classification.
 
 <!-- RELATED:START -->
 
@@ -153,11 +166,11 @@ Core insight: The weight matrices of large pretrained models contain an intrinsi
 
 ## Related Papers
 
-- [\[AAAI 2026\] Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation](../../AAAI2026/code_intelligence/unintended_misalignment_from_agentic_fine-tuning_risks_and_m.md)
 - [\[NeurIPS 2025\] Program Synthesis via Test-Time Transduction](../../NeurIPS2025/code_intelligence/program_synthesis_via_test-time_transduction.md)
-- [\[ICML 2026\] Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning](../../ICML2026/code_intelligence/probability-entropy_calibration_an_elastic_indicator_for_adaptive_fine-tuning.md)
 - [\[ACL 2026\] PaT: Planning-after-Trial for Efficient Test-Time Code Generation](../../ACL2026/code_intelligence/pat_planning-after-trial_for_efficient_test-time_code_generation.md)
-- [\[ICLR 2026\] Inference-Time Safety for Code LLMs via Retrieval-Augmented Revision](inference-time_safety_for_code_llms_via_retrieval-augmented_revision.md)
+- [\[AAAI 2026\] Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation](../../AAAI2026/code_intelligence/unintended_misalignment_from_agentic_fine-tuning_risks_and_m.md)
+- [\[ICML 2026\] Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning](../../ICML2026/code_intelligence/probability-entropy_calibration_an_elastic_indicator_for_adaptive_fine-tuning.md)
+- [\[ACL 2025\] GiFT: Gibbs Fine-Tuning for Code Generation](../../ACL2025/code_intelligence/gift_gibbs_fine_tuning_code_gen.md)
 
 </div>
 

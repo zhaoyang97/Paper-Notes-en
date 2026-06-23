@@ -2,124 +2,129 @@
 title: >-
   [Paper Note] Self-Supervised Learning from Structural Invariance
 description: >-
-  [ICLR 2026][Causal Inference][self-supervised learning] This paper proposes AdaSSL, which introduces latent variables to model conditional uncertainty between positive pairs…
+  [ICLR 2026][Causal Inference][Self-Supervised Learning] AdaSSL is proposed to model conditional uncertainty between positive pairs by introducing latent variables and deriving a variational lower bound of mutual information. This enables SSL to handle complex (multimodal, heteroscedastic) conditional distributions in naturally paired data, outperforming baselines in causal
 tags:
-  - "ICLR 2026"
-  - "Causal Inference"
-  - "self-supervised learning"
-  - "latent variable model"
-  - "structural invariance"
-  - "heteroscedasticity"
-  - "causal representation"
+  - ICLR 2026
+  - Causal Inference
+  - Self-Supervised Learning
 date: 2026-05-08
-content_hash: 5ebd45e2d855ee92
+content_hash: f0d3c1d472497028
 ---
-
 # Self-Supervised Learning from Structural Invariance
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.02381](https://arxiv.org/abs/2602.02381)  
 **Code**: [https://github.com/SkrighYZ/AdaSSL](https://github.com/SkrighYZ/AdaSSL)  
-**Area**: Self-Supervised Learning / Causal Representation Learning
-**Keywords**: self-supervised learning, latent variable model, structural invariance, heteroscedasticity, causal representation
+**Area**: Self-Supervised Learning / Causal Representation Learning  
+**Keywords**: Self-Supervised Learning, Latent Variable Models, Structural Invariance, Heteroscedasticity, Causal Representation
 
 ## TL;DR
-This paper proposes AdaSSL, which introduces latent variables to model conditional uncertainty between positive pairs, derives a variational lower bound on mutual information, and enables SSL to handle complex (multimodal, heteroscedastic) conditional distributions in naturally paired data. AdaSSL outperforms baselines on causal representation learning, fine-grained image understanding, and video world models.
+AdaSSL is proposed to model conditional uncertainty between positive pairs by introducing latent variables and deriving a variational lower bound of mutual information. This enables SSL to handle complex (multimodal, heteroscedastic) conditional distributions in naturally paired data, outperforming baselines in causal representation learning, fine-grained image understanding, and video world models.
 
 ## Background & Motivation
 
-**Background**: Joint-embedding SSL methods (e.g., SimCLR, BYOL) learn representations by encouraging similarity between positive pair embeddings, typically relying on hand-crafted data augmentations to construct semantically related pairs.
+**Background**: Joint-embedding SSL (e.g., SimCLR, BYOL) learns representations by encouraging similarity between positive pairs, typically relying on manual data augmentations to construct semantically related pairs.
 
-**Limitations of Prior Work**: Hand-crafted augmentations (cropping, color jitter) cannot precisely simulate real-world variation factors, may discard fine-grained information, require modality-specific heuristics, and differ from natural distribution shifts. Naturally paired data (e.g., adjacent video frames, image-text pairs) better reflects real-world variation, but introduces complex conditional distributions $p(\mathbf{z}^+|\mathbf{z})$—heteroscedastic and multimodal—which existing SSL methods cannot model.
+**Limitations of Prior Work**: Manual augmentations (cropping, color jittering) fail to precisely simulate real-world variation factors and may discard fine-grained information. They often require modality-specific heuristics and differ from natural distribution shifts. While natural pairs (e.g., adjacent video frames, image-text pairs) better reflect real-world changes, they introduce complex conditional distributions $p(\mathbf{z}^+|\mathbf{z})$—specifically heteroscedasticity and multimodality—which existing SSL methods fail to model.
 
-**Key Challenge**: InfoNCE's dot-product similarity implicitly assumes a vMF distribution (isotropic noise), and AnInfoNCE extends this to anisotropic but still constant noise. However, Proposition 2.1 theoretically establishes that even when noise in the latent space is isotropic, mapping to the normalized embedding space inevitably induces heteroscedasticity—a necessary consequence of geometric mismatch.
+**Key Challenge**: The dot-product similarity in InfoNCE implicitly assumes a vMF distribution (isotropic noise), while AnInfoNCE extends this to anisotropic but constant noise. However, Proposition 2.1 theoretically proves that even if noise is isotropic in the latent space, mapping it to a normalized embedding space inevitably results in heteroscedasticity—a necessary consequence of geometric mismatch.
 
-**Goal**: Enable SSL to flexibly model arbitrarily complex conditional distributions $p(\mathbf{z}^+|\mathbf{z})$ while keeping the similarity function simple.
+**Goal**: To enable SSL to flexibly model arbitrarily complex conditional distributions $p(\mathbf{z}^+|\mathbf{z})$ while maintaining a simple similarity function.
 
-**Key Insight**: Inspired by JEPA, a latent variable $\mathbf{r}$ is introduced to capture predictive uncertainty, decomposing the complex conditional distribution into two steps: first sampling $\mathbf{r}$ (e.g., camera motion, actions), then predicting $\mathbf{z}^+$ with a simple model.
+**Key Insight**: Inspired by JEPA, latent variables $\mathbf{r}$ are introduced to capture predictive uncertainty. The complex conditional distribution is decomposed into two steps: first sampling $\mathbf{r}$ (representing factors like camera motion or actions), and then predicting $\mathbf{z}^+$ using a simple model.
 
-**Core Idea**: Via the chain rule of mutual information $I(f(\mathbf{x}); f(\mathbf{x}^+)) = I(f(\mathbf{x}), \mathbf{r}; f(\mathbf{x}^+)) - I(\mathbf{r}; f(\mathbf{x}^+)|f(\mathbf{x}))$, the first term is optimized with an extended InfoNCE (simple similarity + latent variable), and the second term is regularized with KL divergence to prevent $\mathbf{r}$ from encoding shortcuts.
+**Core Idea**: Utilizing the mutual information chain rule $I(f(\mathbf{x}); f(\mathbf{x}^+)) = I(f(\mathbf{x}), \mathbf{r}; f(\mathbf{x}^+)) - I(\mathbf{r}; f(\mathbf{x}^+)|f(\mathbf{x}))$. The first term is optimized using an extended InfoNCE (simple similarity + latent variables), while the second term uses KL regularization to prevent $\mathbf{r}$ from encoding shortcuts.
 
 ## Method
 
 ### Overall Architecture
 
-An encoder $f$ extracts embeddings, and a latent variable $\mathbf{r}$ captures uncertainty between positive pairs. An editing function $t(f(\mathbf{x}), \mathbf{r})$ modifies embeddings to bring them closer to $f(\mathbf{x}^+)$. The objective combines an SSL loss (InfoNCE or BYOL) with a regularization term that limits the information content of $\mathbf{r}$.
+AdaSSL adds a latent variable branch to the standard joint-embedding framework. A shared encoder $f$ maps the positive pair $(\mathbf{x}, \mathbf{x}^+)$ into embeddings. The latent variable $\mathbf{r}$ specifically captures the uncertainty of changes that cannot be inferred from $\mathbf{x}$ alone. An editing function $t(f(\mathbf{x}), \mathbf{r})$ then transitions $f(\mathbf{x})$ toward $f(\mathbf{x}^+)$, followed by alignment using a simple dot-product similarity $\psi_1^\top\psi_2$. The training objective comprises the "Main SSL Loss (InfoNCE or BYOL) + Information Regularization for $\mathbf{r}$." The former ensures embedding alignment, while the latter forces $\mathbf{r}$ to carry only necessary information, together forming a tractable lower bound for the mutual information $I(f(\mathbf{x}); f(\mathbf{x}^+))$. There are two implementations for the $\mathbf{r}$ branch: **AdaSSL-V** (variational posterior sampling + KL regularization) and **AdaSSL-S** (deterministic sparse prediction + L0 regularization).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    PAIR["Natural Positive Pair (x, x+)"] --> ENC["Shared Encoder f<br/>Encoding f(x) and f(x+)"]
+    ENC --> RINF{"Latent Variable r<br/>Derivation Method"}
+    RINF -->|AdaSSL-V Variational| RV["Variational Posterior<br/>q(r|x,x+) sampling r"]
+    RINF -->|AdaSSL-S Sparse| RS["Sparse Prediction<br/>r=m(f(x),f(x+))"]
+    RV --> EDIT["Editing Function<br/>t(f(x), r) → psi_1"]
+    RS --> EDIT
+    ENC --> PSI2["Normalized Embedding<br/>psi_2 = f(x+)"]
+    EDIT --> SIM["Simple Similarity<br/>s = psi_1 · psi_2"]
+    PSI2 --> SIM
+    RV -.->|KL Reg. β| REG["Limit r information<br/>(prevent shortcut)"]
+    RS -.->|L0 Sparsity β| REG
+    SIM --> OUT["Lower Bound of MI<br/>I(f(x); f(x+))"]
+    REG --> OUT
+```
 
 ### Key Designs
 
-1. **AdaSSL-V (Variational Version)**:
+**1. AdaSSL-V (Variational Version): Decomposing Complex Conditional Distributions**
 
-    - **Function**: Models the latent variable using a variational distribution $q_\phi(\mathbf{r}|\mathbf{x}, \mathbf{x}^+)$
-    - **Mechanism**: $\mathcal{L} = \mathcal{L}_{SSL}(\mathbb{E}_{q_\phi} \psi_1(\mathbf{x}, \mathbf{r}), \psi_2(\mathbf{x}^+)) + \beta D_{KL}(q_\phi(\mathbf{r}|\mathbf{x}, \mathbf{x}^+) \| p_\theta(\mathbf{r}|\mathbf{x}))$, where KL regularization prevents $\mathbf{r}$ from directly encoding $f(\mathbf{x}^+)$
-    - **Design Motivation**: Derives a tractable lower bound on $I(f(\mathbf{x}); f(\mathbf{x}^+))$ with theoretical rigor
+Conditional distributions $p(\mathbf{z}^+|\mathbf{z})$ in natural pairs are multimodal and heteroscedastic. AdaSSL-V uses the MI chain rule $I(f(\mathbf{x}); f(\mathbf{x}^+)) = I(f(\mathbf{x}), \mathbf{r}; f(\mathbf{x}^+)) - I(\mathbf{r}; f(\mathbf{x}^+)|f(\mathbf{x}))$ to split the objective. The first term lets "embedding + latent variable" predict $f(\mathbf{x}^+)$, while the second term penalizes $\mathbf{r}$ for "cheating" by observing $\mathbf{x}^+$. The optimizable bound is $\mathcal{L} = \mathcal{L}_{SSL}(\mathbb{E}_{q_\phi} \psi_1(\mathbf{x}, \mathbf{r}), \psi_2(\mathbf{x}^+)) + \beta D_{KL}(q_\phi(\mathbf{r}|\mathbf{x}, \mathbf{x}^+) \| p_\theta(\mathbf{r}|\mathbf{x}))$. The variational distribution $q_\phi(\mathbf{r}|\mathbf{x}, \mathbf{x}^+)$ infers the change between pairs, while the prior $p_\theta(\mathbf{r}|\mathbf{x})$ observes only $\mathbf{x}$. The KL term forces $\mathbf{r}$ to carry only necessary extra information, preserving a simple similarity function while delegating complex distribution modeling to latent variables.
 
-2. **AdaSSL-S (Sparse Version)**:
+**2. AdaSSL-S (Sparse Version): Aligning with Causal Latent Factors**
 
-    - **Function**: Deterministically predicts $\mathbf{r}$ and regularizes its sparsity
-    - **Mechanism**: $\mathbf{r} = m(f(\mathbf{x}), f(\mathbf{x}^+))$, with differentiable L0 penalty via Gumbel-Sigmoid. The editing function adopts a modular low-rank design: $t(f(\mathbf{x}), \mathbf{r}) = f(\mathbf{x}) + \sum_i r_i (\mathbf{B}_i \mathbf{A}_i f(\mathbf{x}) + b_i)$
-    - **Design Motivation**: Natural variations typically correspond to sparse changes in latent factors; the sparsity inductive bias better aligns with causal representation learning
+Variational sampling is less effective for distillation-based SSL, and causal representation learning favors interpretable factors. AdaSSL-S utilizes deterministic prediction $\mathbf{r} = m(f(\mathbf{x}), f(\mathbf{x}^+))$ with a sparsity constraint—implemented via a differentiable L0 penalty using Gumbel-Sigmoid. The editing function uses a modular low-rank design $t(f(\mathbf{x}), \mathbf{r}) = f(\mathbf{x}) + \sum_i r_i (\mathbf{B}_i \mathbf{A}_i f(\mathbf{x}) + b_i)$, where each $r_i$ acts as a switch for a LoRA-style module. This inductive bias assumes natural changes typically affect only a few latent factors, allowing $\mathbf{r}$ to align with true factors of variation.
 
-3. **Necessity of Heteroscedasticity (Proposition 2.1)**:
+**3. Heteroscedasticity Necessity (Proposition 2.1)**
 
-    - **Function**: Theoretically proves that the conditional distribution of pairs in embedding space is necessarily heteroscedastic
-    - **Mechanism**: When the latent space $\mathbb{R}^{d_z}$ is mapped to a curved manifold (e.g., unit sphere $\mathbb{S}^{d_f}$), local neighborhood distortions are position-dependent, producing location-dependent variance even when the original noise is isotropic
-    - **Design Motivation**: Provides a fundamental proof of the inadequacy of standard SSL similarity functions
+This proposition provides the theoretical foundation for the design. Standard InfoNCE dot-product similarity assumes vMF (isotropic noise). Proposition 2.1 proves that when isotropic noise in a latent space $\mathbb{R}^{d_z}$ is mapped to a curved manifold (e.g., the unit sphere $\mathbb{S}^{d_f}$ of normalized embeddings), the local geometric distortion is position-dependent. Consequently, the conditional variance of pairs in the embedding space must vary across the manifold. Heteroscedasticity is a mathematical necessity of geometric mismatch rather than just an empirical noise phenomenon. This justifies incorporating latent variables $\mathbf{r}$ to absorb position-dependent uncertainty.
 
 ### Loss & Training
 
-- AdaSSL-V: InfoNCE + KL regularization ($\beta$ controls strength)
-- AdaSSL-S: InfoNCE + L0 sparsity regularization (Gumbel-Sigmoid)
-- Compatible with non-contrastive methods such as BYOL
+Both variants share the "Main SSL Loss + Information Regularization" structure. AdaSSL-V uses InfoNCE with KL regularization (controlled by $\beta$), while AdaSSL-S uses InfoNCE with an L0 sparsity penalty via Gumbel-Sigmoid. Both are compatible with non-contrastive distillation methods like BYOL.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task / Dataset | Metric | AdaSSL | InfoNCE | AnInfoNCE | H-InfoNCE |
-|----------------|--------|--------|---------|-----------|-----------|
-| Numerical Heteroscedastic (OOD) | R² | 0.92+ | <0.27 | <0.40 | 0.76 |
+| Task/Dataset | Metric | AdaSSL | InfoNCE | AnInfoNCE | H-InfoNCE |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Numerical Heteroscedastic (OOD) | $R^2$ | 0.92+ | <0.27 | <0.40 | 0.76 |
 | 3DIdent (CRL) | DCI | 0.85+ | 0.72 | 0.74 | 0.78 |
-| CelebA Fine-Grained | 40-attr Acc | Best | Lower | Lower | Moderate |
-| Moving-MNIST Acceleration | R² | 0.55 (BYOL baseline 0.15) | — | — | — |
+| CelebA Fine-grained | 40-attr Acc | Best | Low | Low | Medium |
+| Moving-MNIST Accel. | $R^2$ | 0.55 (BYOL baseline 0.15) | - | - | - |
 
 ### Ablation Study
 
-| Configuration | Numerical OOD R² | Notes |
-|---------------|------------------|-------|
+| Configuration | Numerical OOD $R^2$ | Description |
+| :--- | :--- | :--- |
 | AdaSSL-V | 0.92+ | Full variational version |
-| AdaSSL-S | 0.90+ | Sparse version, slightly lower but sparser |
-| H-InfoNCE | 0.76 | Heteroscedastic but no latent variable |
-| InfoNCE | <0.27 | Baseline completely fails |
-| AnInfoNCE | <0.40 | Anisotropy insufficient |
+| AdaSSL-S | 0.90+ | Sparse version, slightly lower but more sparse |
+| H-InfoNCE | 0.76 | Heteroscedastic but without latent variables |
+| InfoNCE | <0.27 | Baseline fails completely |
+| AnInfoNCE | <0.40 | Anisotropic weighting is insufficient |
 
 ### Key Findings
-- Under complex conditional distributions (multimodal + heteroscedastic), InfoNCE and AnInfoNCE completely fail (OOD R² < 0.4), while AdaSSL maintains 0.9+
-- Naturally paired data (vs. standard augmentations) significantly improves downstream performance when modeled correctly
-- The sparse $\mathbf{r}$ learned by AdaSSL-S aligns with ground-truth variation factors
-- In video world models, AdaSSL captures stochastic acceleration, which BYOL discards
+- Under complex conditional distributions (multimodal + heteroscedastic), InfoNCE and AnInfoNCE fail significantly ($OOD R^2 < 0.4$), whereas AdaSSL maintains $0.9+$.
+- Natural pairs (vs. standard augmentations) significantly improve downstream performance when modeled correctly.
+- The sparse $\mathbf{r}$ learned by AdaSSL-S aligns with ground-truth factors of variation.
+- In video world models, AdaSSL captures stochastic acceleration that BYOL typically discards.
 
 ## Highlights & Insights
-- The **heteroscedasticity theorem** reveals a fundamental limitation of standard SSL—not an empirical observation but a mathematical inevitability
-- **Generality of latent variable modeling**: the same framework is compatible with both contrastive and distillation-based SSL, and applies across numerical, image, and video domains
-- The **sparse modular editing** design ($\mathbf{r}$ controlling low-rank editing modules) is conceptually analogous to LoRA-style ideas
+- The **Heteroscedasticity Theorem** reveals a fundamental limitation of standard SSL as a mathematical necessity rather than an empirical observation.
+- **Generality of Latent Modeling**: The framework is compatible with both contrastive and distillation-based SSL and applicable across numerical, image, and video data.
+- The **Sparse Modular Editing** design (where $\mathbf{r}$ controls low-rank modules) shares conceptual similarities with LoRA-style adaptation.
 
 ## Limitations & Future Work
-- AdaSSL-S requires additional treatment when applied to distillation methods (e.g., BYOL)
-- The latent variable dimension $d_r$ must be preset; automatic determination would be preferable
-- Large-scale validation is lacking (no ImageNet-scale experiments)
-- When the number of modes in multimodal conditional distributions is unknown, the choice of variational prior warrants further investigation
+- AdaSSL-S requires additional handling for distillation methods like BYOL.
+- The latent variable dimension $d_r$ must be pre-defined; automatic determination would be preferable.
+- Lack of large-scale validation (e.g., ImageNet-level experiments).
+- Selection of variational priors for multimodal conditional distributions remains an open problem when the number of modes is unknown.
 
 ## Related Work & Insights
-- **vs. AnInfoNCE**: The anisotropic weight $\Lambda$ is global and does not vary with data. AdaSSL achieves data-adaptive modeling through latent variables
-- **vs. JEPA/V-JEPA**: JEPA assumes $\mathbf{r}$ is known (e.g., actions); AdaSSL infers $\mathbf{r}$ from data pairs
-- **vs. LieSSL**: Lie group transformations assume invertible and structured changes; AdaSSL is more flexible
+- **vs. AnInfoNCE**: Anisotropic weights $\Lambda$ are global and do not adapt to individual samples. AdaSSL achieves data-adaptive weighting via latent variables.
+- **vs. JEPA/V-JEPA**: JEPA assumes $\mathbf{r}$ is known (e.g., actions), whereas AdaSSL infers $\mathbf{r}$ from data pairs.
+- **vs. LieSSL**: LieSSL assumes reversible and highly structured group transformations; AdaSSL offers greater flexibility.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Heteroscedasticity theorem + MI lower bound + dual-variant design; theoretically and methodologically deep
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-task validation (numerical/CRL/image/video), but lacking large-scale comparisons
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical motivation is clear; the logic from theory to method to experiments flows smoothly
-- Value: ⭐⭐⭐⭐ Addresses a fundamental theoretical problem in SSL with strong methodological generality
+- Novelty: ⭐⭐⭐⭐⭐ Heteroscedasticity theorem + MI lower bound + dual-variant design; deep theoretical and methodological contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple tasks (Numerical/CRL/Image/Video), though lacks large-scale benchmarks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theoretical motivation and seamless transition from theory to experiments.
+- Value: ⭐⭐⭐⭐ Addresses a fundamental theoretical problem in SSL with high generality.
 
 <!-- RELATED:START -->
 
@@ -127,11 +132,11 @@ An encoder $f$ extracts embeddings, and a latent variable $\mathbf{r}$ captures 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Counterfactual Structural Causal Bandits](counterfactual_structural_causal_bandits.md)
 - [\[NeurIPS 2025\] Root Cause Analysis of Outliers with Missing Structural Knowledge](../../NeurIPS2025/causal_inference/root_cause_analysis_of_outliers_with_missing_structural_knowledge.md)
 - [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](learning_robust_intervention_representations_with_delta_embeddings.md)
-- [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
-- [\[ICML 2026\] ECSEL: Explainable Classification via Signomial Equation Learning](../../ICML2026/causal_inference/ecsel_explainable_classification_via_signomial_equation_learning.md)
-- [\[CVPR 2026\] Retrieving Counterfactuals Improves Visual In-Context Learning](../../CVPR2026/causal_inference/retrieving_counterfactuals_improves_visual_in-context_learning.md)
+- [\[ICLR 2026\] Efficient and Sharp Off-Policy Learning under Unobserved Confounding](efficient_and_sharp_off-policy_learning_under_unobserved_confounding.md)
+- [\[ICLR 2026\] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes](gdr-learners_orthogonal_learning_of_generative_models_for_potential_outcomes.md)
 
 </div>
 

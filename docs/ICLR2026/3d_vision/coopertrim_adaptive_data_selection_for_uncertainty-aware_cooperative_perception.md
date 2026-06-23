@@ -2,133 +2,138 @@
 title: >-
   [Paper Note] COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception
 description: >-
-  [ICLR 2026][3D Vision][cooperative perception] CooperTrim is an adaptive feature selection framework that evaluates feature relevance via conformal temporal uncertainty estimation and dynamically determines the sharing v…
+  [ICLR 2026][3D Vision][Paper Note] The CooperTrim adaptive feature selection framework is proposed, which assesses feature relevance via conformal temporal uncertainty metrics and utilizes a data-driven mechanism to dynamically determine sharing quantities. It achieves an 80.28% bandwidth reduction with comparable performance in cooperative semantic seg
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "cooperative perception"
-  - "bandwidth optimization"
-  - "temporal uncertainty"
-  - "feature selection"
-  - "conformal prediction"
+  - ICLR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: da53b49a88b4426c
+content_hash: 5515f8dcc3addbe0
 ---
-
 # COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.13287](https://arxiv.org/abs/2602.13287)  
 **Code**: [https://cisl.ucr.edu/CooperTrim](https://cisl.ucr.edu/CooperTrim)  
-**Area**: 3D Vision
-**Keywords**: cooperative perception, bandwidth optimization, temporal uncertainty, feature selection, conformal prediction
+**Area**: 3D Vision  
+**Keywords**: Cooperative Perception, Bandwidth Optimization, Temporal Uncertainty, Feature Selection, Conformal Prediction
 
 ## TL;DR
-CooperTrim is an adaptive feature selection framework that evaluates feature relevance via conformal temporal uncertainty estimation and dynamically determines the sharing volume through a data-driven mechanism. It achieves 80.28% bandwidth reduction with comparable performance on cooperative semantic segmentation, and is the first to apply selective sharing to cooperative segmentation tasks.
+The CooperTrim adaptive feature selection framework is proposed, which assesses feature relevance via conformal temporal uncertainty metrics and utilizes a data-driven mechanism to dynamically determine sharing quantities. It achieves an 80.28% bandwidth reduction with comparable performance in cooperative semantic segmentation, marking the first application of selective sharing to segmentation tasks.
 
 ## Background & Motivation
 
-**Background**: Cooperative perception enables autonomous vehicles to share encoded representations for enhanced situational awareness. Intermediate fusion is the dominant paradigm, yet the volume of transmitted features still strains wireless bandwidth (typically ~40 Mbps). Existing bandwidth optimization strategies include compression (lossy), selection (fixed threshold), and hybrid approaches.
+**Background**: Cooperative perception allows autonomous vehicles to share encoded representations to enhance situational awareness. While intermediate fusion is the mainstream, the volume of transmitted features still pressures wireless bandwidth (typically ~40 Mbps). Existing bandwidth optimization methods include compression (lossy), selection (fixed thresholds), and hybrid strategies.
 
-**Limitations of Prior Work**: (a) Where2Comm employs confidence maps with fixed thresholds for feature selection, ignoring temporal context, resulting in persistently high bandwidth (~39.6 Mbps); (b) SwissCheese applies fixed-threshold channel/spatial selection without environmental adaptability; (c) all existing methods make per-frame decisions independently, repeatedly transmitting static information.
+**Limitations of Prior Work**: (a) Where2Comm selects features using confidence maps with fixed thresholds, ignoring temporal context and maintaining high bandwidth (39.6 Mbps); (b) SwissCheese employs fixed thresholds for channel/spatial selection, lacking environmental adaptability; (c) All existing methods make per-frame independent decisions, repeatedly transmitting static information.
 
-**Key Challenge**: The fundamental tension between limited bandwidth and rich sensory data — existing methods merely transmit less per frame rather than leveraging temporal continuity for demand-driven sharing.
+**Key Challenge**: The fundamental contradiction between limited bandwidth and abundant sensor information—existing methods only "transmit less per frame" rather than "transmit as needed" by leveraging temporal continuity.
 
-**Goal**: (a) Utilize temporal context to identify dynamic features that genuinely require updating; (b) adaptively adjust the sharing volume according to scene complexity.
+**Goal**: (a) Utilize temporal context to identify dynamic features that truly require updates; (b) Adaptively adjust sharing volume according to environmental complexity.
 
-**Key Insight**: The ego vehicle can leverage its own temporal memory to determine which features carry "new information" (high temporal uncertainty) and request only those that have changed — transmitting less in simple scenes and more in complex ones.
+**Key Insight**: The receiver (ego vehicle) can use its own temporal memory to determine which features constitute "new information" (high temporal uncertainty) and only request those that have changed. Less is transmitted in simple scenarios, while more is transmitted in complex ones.
 
-**Core Idea**: Measure feature relevance through temporal uncertainty rather than static confidence scores, enabling environment-adaptive, demand-driven sharing.
+**Core Idea**: Measure feature relevance using temporal uncertainty instead of static confidence to achieve environment-adaptive, on-demand sharing.
 
 ## Method
 
 ### Overall Architecture
-The ego vehicle computes conformal temporal uncertainty from the current-frame features $F_t$ and the previously fused features $F_{t-1}^{\text{fused}}$. A learnable quantile threshold $q$ and an attention mask threshold $\tau$ determine the subset of features to request. A request vector is broadcast, and the selected features received from collaborative vehicles are then fused.
+CooperTrim addresses the waste of "transmitting all features every frame" in cooperative perception. Since static scenes change little between frames, repeated transmission is redundant. It delegates decision-making to the receiver (ego vehicle)—the ego vehicle encodes its sensor input to obtain current features $F_t$, compares them with the fused features of the previous frame $F_{t-1}^{\text{fused}}$ to identify "new information" relative to temporal memory (**Conformal Temporal Uncertainty**), assigns relevance scores to these uncertain features using cross-attention, and determines **sharing quantity** through a mask threshold. Only features exceeding the threshold are broadcast in a request vector. Collaborating vehicles perform spatial alignment and return only the requested feature subset, which the ego vehicle fuses and feeds into task heads. The sharing volume is not fixed but scales automatically with scene complexity; the training side utilizes an $\epsilon$-greedy strategy to stabilize optimization under sparse features.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Sensor Input X_t"] --> B["Feature Encoding<br/>Get current features F_t"]
+    B --> C["Conformal Temporal Uncertainty<br/>L1 distance comparison with prev. fused features<br/>Quantile threshold q filters changed features"]
+    C --> D["Adaptive Quantity Determination<br/>Cross-attention relevance score R_t<br/>Mask threshold τ truncates sharing volume"]
+    D --> E["Ego Broadcasts Request Vector<br/>Requests only high-relevance features"]
+    E --> F["Collaborators Send Back<br/>Spatial alignment of requested features"]
+    F --> G["Feature Fusion"]
+    G --> H["Task Head<br/>Segmentation / Detection output"]
+    G -. Prev. Fused Feature F_{t-1} .-> C
+```
 
 ### Key Designs
 
-1. **Conformal Temporal Uncertainty**:
+**1. Conformal Temporal Uncertainty: Using "inter-frame change" instead of static confidence to judge feature value**
 
-    - **Function**: Quantifies the degree of change in each feature channel relative to its temporal context.
-    - **Mechanism**: Computes the L1 distance between the current frame and the previous fused frame, $S_t = |F_t - F_{t-1}^{\text{fused}}|$, and applies gating via a learnable quantile threshold $q$ (inspired by conformal prediction), retaining only features whose change exceeds $q$ as "uncertain."
-    - **Design Motivation**: In static scenes, most features remain unchanged across frames and need not be retransmitted.
+Existing methods (e.g., Where2Comm) select features per-frame using confidence maps, ignoring what was sent previously, leading to redundant transmission of static backgrounds. CooperTrim adopts a different metric: the L1 distance $S_t = |F_t - F_{t-1}^{\text{fused}}|$ is calculated as temporal uncertainty. Only channels with significant changes are considered "uncertain and needing update." The gating threshold is not a manually tuned fixed value but a learnable quantile threshold $q$ inspired by conformal prediction—retaining only features where $S_t$ exceeds $q$. Thus, static features are naturally filtered, saving bandwidth for dynamic regions.
 
-2. **Adaptive Volume Determination**:
+**2. Adaptive Quantity Determination: Scaling sharing volume with environmental complexity instead of a fixed threshold**
 
-    - **Function**: Dynamically adjusts the number of shared features according to scene complexity.
-    - **Mechanism**: Cross-attention weighting is applied to uncertain features, followed by truncation via a learnable mask threshold $\tau$ — complex scenes (e.g., multiple intersections) yield high relevance scores, causing more features to exceed the threshold and thus more transmission.
-    - **Design Motivation**: Realizes adaptive behavior of transmitting less in simple scenes and more in complex ones.
+Fixed threshold methods (e.g., SwissCheese) treat simple and complex scenes identically, risking missing critical info at intersections or wasting bandwidth on empty roads. CooperTrim applies cross-attention weighting to the filtered uncertain features to obtain relevance scores, truncated by a learnable mask threshold $\tau$. This mechanism yields emergent adaptability: complex scenarios like multi-way intersections generate higher relevance scores, allowing more features to exceed $\tau$; open straight roads generate low scores, resulting in minimal transmission. "Less for simple, more for complex" emerges from data-driven logic.
 
-3. **$\epsilon$-Greedy Training Strategy**:
+**3. $\epsilon$-Greedy Training Strategy: Avoiding instability from training only on selected features**
 
-    - **Function**: Balances training with full features versus selected features.
-    - **Mechanism**: With probability $\epsilon$, all features are used (exploration); with probability $(1-\epsilon)$, only selected features are used (exploitation). It is theoretically shown that this reduces both bias and variance of the gradient estimator.
-    - **Design Motivation**: Training exclusively on partial features can introduce large gradient noise and unstable convergence.
+Training exclusively on selected features can result in noisy gradients and unstable convergence due to input sparsity. CooperTrim adopts an exploration-exploitation approach from reinforcement learning: training with all features (exploration) with probability $\epsilon$, and with selected features (exploitation) with probability $1-\epsilon$. Theoretical analysis in the paper demonstrates that this hybrid sampling reduces both bias and variance of the gradient estimator, stabilizing training under sparse feature conditions.
 
 ### Loss & Training
 
-Lagrangian-constrained optimization: $\theta^* = \arg\min_\theta L(C(\theta)) + \lambda \cdot (P(C(\theta)) - C_{1.6})$, which maximizes task performance subject to a bandwidth constraint of 1.6 Mbps. $\lambda$ is adjusted dynamically.
+The overall objective is formulated as a constrained optimization with a Lagrangian multiplier:
+
+$$\theta^* = \arg\min_\theta L(C(\theta)) + \lambda \cdot (P(C(\theta)) - C_{1.6})$$
+
+Where $L$ is the task loss, $P(C(\theta))$ is the bandwidth cost of the current strategy, and $C_{1.6}$ is a bandwidth budget of 1.6 Mbps. $\lambda$ is dynamically adjusted during training. Intuitively: maximize segmentation/detection performance while staying within bandwidth constraints; $\lambda$ increases penalties if transmission exceeds the budget.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Cooperative semantic segmentation (OPV2V dataset, applied to CoBEVT / AttFuse / DiscoNet):
+Cooperative Semantic Segmentation (OPV2V dataset, applied to CoBEVT/AttFuse/DiscoNet):
 
 | Configuration | Dynamic IoU | Bandwidth Usage | Bandwidth Reduction |
-|---|---|---|---|
-| CoBEVT (original) | Baseline | 100% (40 Mbps) | — |
+|------|---------|----------|---------|
+| Original CoBEVT | Baseline | 100% (40Mbps) | — |
 | CooperTrim-CoBEVT | **Comparable** | **27.9%** | **72.1%** |
 | CooperTrim-AttFuse | Comparable | 21.07% | 78.93% |
 | CooperTrim-DiscoNet | Comparable | 10.18% | 89.82% |
 
-Comparison with other selection strategies:
+vs. other selection strategies:
 
 | Method | Dynamic IoU | Bandwidth (Mbps) |
-|---|---|---|
+|------|---------|------------|
 | Where2Comm | 8.62 | 39.6 |
 | SwissCheese | 35.71 | 10.0 |
 | **CooperTrim** | **54.03** | **11.16** |
 
 ### Ablation Study
 
-| Analysis | Key Finding |
-|---|---|
-| + Compression (32×) | Bandwidth reduced to 1.46% with no IoU degradation |
-| Localization error robustness | Performance degrades gracefully under positional noise |
-| Communication latency robustness | Remains stable under transmission delays |
-| Frame-level analysis | Dynamic scenes automatically allocated more bandwidth; static scenes exhibit very low bandwidth usage |
+| Analysis | Key Findings |
+|------|---------|
+| +Compression (32x)| Bandwidth drops to 1.46% with no IoU loss |
+| Pose Error Robustness | Performance degrades gracefully under positional noise |
+| Latency Robustness | Remains stable against communication delays |
+| Frame-level Analysis | Automatically allocates more bandwidth to dynamic scenes and minimal for static scenes |
 
 ### Key Findings
-- Average bandwidth reduction of 80.28% (segmentation) and 72.52% (detection) with comparable performance.
-- CooperTrim outperforms Where2Comm by 45.41% in IoU while using 72% less bandwidth.
-- Orthogonal to compression methods — combining both reduces bandwidth to 1.46%.
-- Qualitative analysis confirms adaptive behavior: bandwidth usage increases when vehicles traverse intersections and decreases during straight-road travel.
+- Achieves average bandwidth reduction of 80.28% (segmentation) and 72.52% (detection) with comparable performance.
+- CooperTrim achieves 45.41% higher IoU and 72% lower bandwidth than Where2Comm.
+- Orthogonal to compression—bandwidth drops to 1.46% when combined.
+- Qualitative analysis confirms adaptive behavior: bandwidth usage increases at intersections and decreases on straightaways.
 
 ## Highlights & Insights
-- **Elegant exploitation of temporal information**: Using inter-frame variation directly as an uncertainty measure is simple yet effective, avoiding complex uncertainty modeling.
-- **First selective perception for cooperative segmentation**: Segmentation demands pixel-level precision, posing greater bandwidth challenges than detection — achieving 80%+ reduction is highly impressive.
-- **Orthogonality to compression**: Combining selection with compression achieves 1.46% bandwidth usage, demonstrating the complementarity of the two strategies.
-- **Theoretical guarantees for $\epsilon$-Greedy training**: A rigorous scaling analysis of gradient bias for sparse feature training is provided.
+- **Clever use of temporal information**: Treating "inter-frame change" directly as an uncertainty metric is simple yet efficient, avoiding complex uncertainty modeling.
+- **First selective perception for cooperative segmentation**: Segmentation requires pixel-level precision and is more bandwidth-intensive than detection—achieving 80%+ reduction is impressive.
+- **Orthogonality with compression**: The combination of selection and compression reaching 1.46% bandwidth demonstrates that the strategies are complementary.
+- **Theoretical guarantee for $\epsilon$-Greedy training**: Provides rigorous scaling analysis of gradient bias for training on sparse features.
 
 ## Limitations & Future Work
-- Assumes accurate pose estimation — in practice, GPS/localization errors may affect spatial transformation.
-- Validated on only two datasets (OPV2V and V2V4Real), limiting scene diversity.
-- The conformal temporal uncertainty relies solely on L1 distance, without modeling semantic-level changes.
-- Learnable thresholds $q$ and $\tau$ may require re-tuning under domain shift.
-- Multi-hop communication and heterogeneous sensor configurations are not addressed.
+- Assumes precise pose—real-world GPS/localization errors may impact spatial transformation.
+- Validated only on two datasets (OPV2V + V2V4Real); scene diversity is limited.
+- Conformal temporal uncertainty uses only L1 distance, ignoring semantic-level changes.
+- Learnable thresholds $q$ and $\tau$ may require recalibration for domain transfer.
+- Does not consider multi-hop communication or heterogeneous sensor configurations.
 
 ## Related Work & Insights
-- **vs. Where2Comm**: Where2Comm uses static confidence maps with fixed thresholds, ignoring temporal context. CooperTrim uses temporal uncertainty with adaptive thresholds, achieving 45%+ higher IoU and 72% lower bandwidth.
-- **vs. SwissCheese**: SwissCheese applies fixed-threshold channel/spatial selection. CooperTrim's adaptive mechanism achieves 18%+ higher IoU at comparable bandwidth.
-- **vs. UniSense**: UniSense employs uncertainty-driven selection but makes per-frame independent decisions. CooperTrim uses temporal contrast to reduce redundant transmission.
-- **Implications for edge AI**: The paradigm of demand-driven transmission guided by temporal differences is transferable to any bandwidth-constrained distributed perception scenario.
+- **vs. Where2Comm**: Where2Comm uses static confidence maps + fixed thresholds, ignoring time. CooperTrim uses temporal uncertainty + adaptive thresholds, resulting in 45%+ higher IoU and 72% lower bandwidth.
+- **vs. SwissCheese**: SwissCheese uses fixed thresholds for channel/spatial selection. CooperTrim's adaptive mechanism achieves 18%+ higher IoU at similar bandwidth.
+- **vs. UniSense**: UniSense uses uncertainty-driven selection but is frame-independent; CooperTrim uses temporal comparison to reduce redundant transmission.
+- **Insights for Edge AI**: The logic of on-demand transmission driven by temporal differences is transferable to any bandwidth-constrained distributed sensing scenario.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of temporal uncertainty and adaptive volume is novel, though individual components are not entirely new.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multi-model / multi-task / multi-strategy comparisons, compression compatibility, and robustness analyses.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear, though some equations could be more concise.
-- Value: ⭐⭐⭐⭐ Substantially advances the practical deployment of cooperative perception systems.
+- Novelty: ⭐⭐⭐⭐ The combination of temporal uncertainty and adaptive quantity is novel, though individual components exist.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive multi-model/multi-task comparisons, compression compatibility, and robustness analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition, though some formulas could be further simplified.
+- Value: ⭐⭐⭐⭐ Significant push toward practical deployment of cooperative perception.
 
 <!-- RELATED:START -->
 
@@ -138,9 +143,9 @@ Comparison with other selection strategies:
 
 - [\[ICLR 2026\] Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction](peering_into_the_unknown_active_view_selection_with_neural_uncertainty_maps_for_.md)
 - [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](../../CVPR2026/3d_vision/long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
+- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
+- [\[CVPR 2026\] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](../../CVPR2026/3d_vision/gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)
 - [\[AAAI 2026\] Domain Generalized Stereo Matching with Uncertainty-guided Data Augmentation](../../AAAI2026/3d_vision/domain_generalized_stereo_matching_with_uncertainty-guided_data_augmentation.md)
-- [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](../../NeurIPS2025/3d_vision/enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
-- [\[CVPR 2026\] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning](../../CVPR2026/3d_vision/adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo.md)
 
 </div>
 

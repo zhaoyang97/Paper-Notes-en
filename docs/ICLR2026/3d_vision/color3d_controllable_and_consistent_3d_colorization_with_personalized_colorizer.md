@@ -2,134 +2,143 @@
 title: >-
   [Paper Note] Color3D: Controllable and Consistent 3D Colorization with Personalized Colorizer
 description: >-
-  [ICLR 2026][3D Vision][3D colorization] Color3D introduces a paradigm of "colorize one key view → fine-tune a personalized colorizer → propagate colors to all views and timesteps…
+  [ICLR 2026][3D Vision][Paper Note] Color3D proposes a paradigm of "colorize one key view → fine-tune personalized colorizer → propagate color to all views and timesteps." By converting the complex 3D colorization problem into a single-image colorization and color propagation task, it achieves a unification of rich colorization, cross-view consistency, a
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "3D colorization"
-  - "Gaussian splatting"
-  - "personalized fine-tuning"
-  - "Lab color space"
-  - "visual consistency"
+  - ICLR 2026
+  - 3D Vision
 date: 2026-05-08
-content_hash: 46171f3b81aef6c7
+content_hash: eb8fc0b3d5fc2dbf
 ---
-
 # Color3D: Controllable and Consistent 3D Colorization with Personalized Colorizer
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.10152](https://arxiv.org/abs/2510.10152)  
 **Code**: [https://yecongwan.github.io/Color3D/](https://yecongwan.github.io/Color3D/) (Project Page)  
-**Area**: 3D Vision / Image Generation
-**Keywords**: 3D colorization, Gaussian splatting, personalized fine-tuning, Lab color space, visual consistency
+**Area**: 3D Vision / Image Generation  
+**Keywords**: 3D Colorization, Gaussian Splatting, Personalized Fine-tuning, Lab Color Space, Visual Consistency
 
 ## TL;DR
-Color3D introduces a paradigm of "colorize one key view → fine-tune a personalized colorizer → propagate colors to all views and timesteps," reducing the complex 3D colorization problem to single-image colorization plus color propagation. It achieves rich colorization, cross-view consistency, and user controllability simultaneously on both static and dynamic 3D scenes.
+Color3D proposes a paradigm of "colorize one key view → fine-tune personalized colorizer → propagate color to all views and timesteps." By converting the complex 3D colorization problem into a single-image colorization and color propagation task, it achieves a unification of rich colorization, cross-view consistency, and user controllability across both static and dynamic 3D scenes.
 
 ## Background & Motivation
 
-**Background**: 3DGS/NeRF enables high-quality novel view synthesis, yet reconstructing colorful 3D scenes from grayscale inputs remains challenging. 2D image colorization is mature (supporting language-guided, reference-guided, and automatic modes), but directly colorizing multiple views leads to severe cross-view color inconsistency.
+**Background**: 3DGS/NeRF have achieved high-quality novel view synthesis, but reconstructing colored 3D scenes from grayscale inputs remains a challenge. While 2D image colorization is mature (supporting language guidance, reference images, and automatic modes), direct multi-view colorization leads to severe cross-view inconsistencies.
 
 **Limitations of Prior Work**:
-   - Existing 3D colorization methods (ChromaDistill, ColorNeRF) enforce consistency by averaging cross-view color variations, which dilutes palette richness and produces desaturated, tonally flat results.
+   - Existing 3D colorization methods (e.g., ChromaDistill, ColorNeRF) enforce consistency by averaging color variations across multiple views, which dilutes palette richness and results in desaturated, flat tones.
    - Smoothing color variations makes results unpredictable, sacrificing user controllability.
-   - Existing methods handle only static scenes; controllable colorization of dynamic scenes remains entirely unexplored.
+   - Current methods primarily handle static scenes; controllable colorization for dynamic scenes remains unexplored.
 
-**Key Challenge**: A fundamental trade-off among cross-view consistency, color richness, and controllability — averaging strategies guarantee consistency at the cost of the latter two.
+**Key Challenge**: The trade-off between multi-view consistency, color richness, and controllability—averaging strategies ensure consistency at the expense of the latter two.
 
-**Goal**:
-   - Unify controllable colorization of static and dynamic 3D scenes.
-   - Maintain color richness while ensuring cross-view and cross-temporal consistency.
-   - Support plug-and-play integration of arbitrary 2D colorization models.
+**Goal**
+   - Unifying controllable colorization for both static and dynamic 3D scenes.
+   - Maintaining color richness while ensuring consistency across views and time.
+   - Supporting plug-and-play integration of arbitrary 2D colorization models.
 
-**Key Insight**: The core insight is that only one key view needs to be colorized; a scene-specific colorizer is then fine-tuned to learn a deterministic color mapping for that view. Through the inductive bias of the colorizer, identical content across different viewpoints is mapped to identical colors.
+**Key Insight**: One only needs to colorize a single key view and then fine-tune a scene-specific colorizer to learn a deterministic color mapping for that view. Through the inherent inductive bias of the colorizer, the same content across different views will be mapped to the same color.
 
-**Core Idea**: Reduce 3D colorization to "single-image colorization + personalized colorizer color propagation," naturally guaranteeing cross-view and cross-temporal consistency by learning a scene-specific one-to-one color mapping.
+**Core Idea**: Simplify 3D colorization into "single-image colorization + personalized colorizer propagation," naturally ensuring cross-view and cross-temporal consistency by learning a scene-specific one-to-one color mapping.
 
 ## Method
 
 ### Overall Architecture
-A two-stage pipeline. **Stage 1** (personalized colorizer training): select a key view → colorize it with any 2D colorization model → apply single-view data augmentation → fine-tune the colorizer to learn a deterministic color mapping. **Stage 2** (3D scene colorization): use the personalized colorizer to infer colors for all other views/frames → reconstruct the colorful 3D scene using Lab-space 3DGS/4DGS.
+Color3D addresses the problem of reconstructing a vibrant, consistent, and controllable 3D scene from grayscale multi-view (or multi-frame) images. The approach decomposes the 3D problem into two stages. In the first stage (Personalized Colorizer Training), a single high-entropy key view is selected and colorized using an off-the-shelf 2D model. Single-view data augmentation is then applied to fine-tune a "scene-exclusive" personalized colorizer, learning a deterministic mapping. In the second stage (3D Scene Colorization), this colorizer infers colors for all other views and frames, which are then used to reconstruct the final 3D scene using a Lab Gaussian representation. Consistency is inherently maintained because identical content processed by the same deterministic colorizer yields identical colors.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Grayscale Multi-view / Multi-frame Images"]
+    subgraph S1["Stage 1: Personalized Colorizer Training"]
+        direction TB
+        A["Key View Selection<br/>CLIP Features + Entropy"]
+        B["Off-the-shelf 2D Colorizer<br/>Colorize Key View"]
+        C["Single-view Augmentation<br/>Generative + Traditional"]
+        D["Personalized Colorizer Fine-tuning<br/>Frozen DDColor Encoder + Scratch CNN Decoder"]
+        A --> B --> C --> D
+    end
+    subgraph S2["Stage 2: 3D Scene Colorization"]
+        direction TB
+        E["Infer Chrominance for All Views/Frames"]
+        F["Lab Gaussian Reconstruction<br/>Decoupled L & ab + Warm-up"]
+        E --> F
+    end
+    IN --> A
+    D --> E
+    F --> OUT["Consistent & Controllable<br/>3D / 4D Colored Scene"]
+```
 
 ### Key Designs
 
-1. **Key View Selection**:
+**1. Key View Selection: Maximizing Scene Coverage**
 
-    - Function: Select the most informative view among all grayscale inputs as the sole colorization target.
-    - Mechanism: CLIP features are extracted for each view; a pairwise cosine similarity matrix is computed; the information entropy $H(I_i) = -\sum_j P_{ij} \log P_{ij}$ is computed per view. The view with maximum entropy is selected: $I^* = \arg\max H(I_i)$ — higher entropy indicates more uniform association with all other views, implying broader and more diverse visual coverage.
-    - Design Motivation: If the selected key view covers only a small portion of the scene, the personalized colorizer cannot generalize to unseen content.
+Since only one image is manually colorized, its selection is critical for generalization. Color3D uses CLIP to extract features for each view, calculates a cosine similarity matrix, and computes an information entropy $H(I_i) = -\sum_j P_{ij} \log P_{ij}$ for each view. The view with the maximum entropy $I^* = \arg\max H(I_i)$ is selected, as high entropy indicates the image has uniform correlation with other views, containing the most diverse visual information to serve as the "seed."
 
-2. **Single-View Data Augmentation**:
+**2. Single-view Data Augmentation: Expanding the Sample Space**
 
-    - Function: Generate diverse training samples from a single colorized key view.
-    - Mechanism: Combines generative and traditional augmentation — (1) Outpainting: a 2×2 grid partition followed by SD-based region extension; (2) Image-to-Video: SVD generates continuous video frames simulating motion and object appearance; (3) Novel View: Stable Virtual Camera generates orbital viewpoints. Traditional augmentation includes rotation, flipping, grid shuffling, and elastic transformation.
-    - Design Motivation: Training a colorizer on a single image causes severe overfitting; generative augmentation expands the sample space without requiring generated content to perfectly match the scene — only a consistent color style is needed.
+Fine-tuning on a single image leads to overfitting. Color3D combines generative and traditional augmentations: generative methods include Outpainting (expanding segments via SD), Image-to-Video (generating frames via SVD to simulate motion), and Novel View synthesis (using Stable Virtual Camera); traditional methods include rotations, flips, and elastic transforms. The key assumption is that augmented content doesn't need to be geometrically perfect, only color-consistent, as the colorizer learns "what color to use" rather than pixel-perfect reconstruction.
 
-3. **Personalized Colorizer Architecture & Training**:
+**3. Personalized Colorizer Architecture: Removing Inconsistent Priors**
 
-    - Function: Learn a scene-specific deterministic color mapping.
-    - Mechanism: The DDColor encoder is frozen (preserving high-level semantic color feature extraction), with trainable adapters added for scene adaptation, and a lightweight CNN decoder initialized from scratch (to avoid the built-in color priors of a pretrained decoder causing cross-view inconsistency). Trained with a simple L1 loss: $\mathcal{L} = \|P^{ab} - G^{ab}\|_1$.
-    - Design Motivation: The pretrained decoder is the primary source of cross-view color inconsistency; a from-scratch decoder is a "clean slate" that learns only the color mapping of the current scene.
+Color3D freezes the DDColor encoder to retain high-level semantic feature extraction and adds a trainable adapter. Crucially, the light CNN decoder is initialized from scratch. Pre-trained decoders carry general color priors that cause the same content to be colored differently across views; a "clean slate" decoder learns only the mapping specific to the current scene. The objective is a simple L1 loss between predicted and ground truth chrominance: $\mathcal{L} = \|P^{ab} - G^{ab}\|_1$.
 
-4. **Lab Gaussian Representation**:
+**4. Lab Gaussian Representation: Decoupling Lightness and Chrominance**
 
-    - Function: Perform 3DGS rendering and optimization in the CIE Lab color space.
-    - Mechanism: The three groups of SH coefficients in 3DGS are replaced from RGB with $\{SH_L, SH_a, SH_b\}$; the L and ab channels are optimized separately. An edge loss $\mathcal{L}_{edge}$ is applied to the L channel to preserve structural details, while the ab channel uses only L1+D-SSIM. During the first half of training, all three SH coefficient groups represent the L channel for warm-up (learning geometry first); during the second half, two groups are allocated to the ab channel for color learning.
-    - Design Motivation: Lab space decouples luminance from chrominance; the known L channel provides a stable structural constraint signal, reducing the impact of chrominance prediction noise on optimization.
+Instead of RGB, the 3DGS Spherical Harmonic (SH) coefficients are transformed into the CIE Lab space as $\{SH_L, SH_a, SH_b\}$. Since lightness ($L$) is known from the grayscale input, it provides a stable structural constraint. The L channel is optimized with an additional edge loss $\mathcal{L}_{edge}$ to preserve detail, while the ab channels use L1+D-SSIM. A two-stage training strategy is used: the first 50% of iterations optimize only the L channel (warm-up) to stabilize geometry, followed by ab optimization.
 
 ### Loss & Training
 - **Colorizer**: $\mathcal{L}_{colorizer} = \|P^{ab} - G^{ab}\|_1$
-- **L channel**: $\mathcal{L}_l = (1-\beta)\mathcal{L}_1 + \beta\mathcal{L}_{D-SSIM} + \mathcal{L}_{edge}$
-- **ab channel**: $\mathcal{L}_{ab} = (1-\beta)\mathcal{L}_1 + \beta\mathcal{L}_{D-SSIM}$, $\beta=0.2$
-- **Warm-up**: The first 50% of iterations optimize only the L channel for structural learning; the ab channel is introduced in the latter 50% for color learning.
+- **L Channel**: $\mathcal{L}_l = (1-\beta)\mathcal{L}_1 + \beta\mathcal{L}_{D-SSIM} + \mathcal{L}_{edge}$
+- **ab Channels**: $\mathcal{L}_{ab} = (1-\beta)\mathcal{L}_1 + \beta\mathcal{L}_{D-SSIM}$, where $\beta=0.2$
+- **Warm-up**: First 50% of iterations optimize L for structure; final 50% include ab for color.
 
 ## Key Experimental Results
 
-### Main Results (DL3DV-140 Static Scenes, Automatic Colorization)
+### Main Results (DL3DV-140 Static Scenes, Auto-colorization)
 
 | Method | FID↓ | Colorful↑ | ME↓ | TC↓ |
-|--------|------|-----------|-----|-----|
+|------|------|----------|-----|-----|
 | 3DGS+ImageColorizer | 63.56 | 28.15 | 0.146 | 0.038 |
 | 3DGS+VideoColorizer | 77.89 | 22.38 | 0.128 | 0.031 |
 | **Color3D (Ours)** | **37.48** | **32.65** | **0.084** | **0.017** |
 
-### Ablation Study (Contribution of Key Components)
+### Ablation Study
 
 | Configuration | FID↓ | Colorful↑ | ME↓ | TC↓ |
-|---------------|------|-----------|-----|-----|
+|------|------|----------|-----|-----|
 | Full Color3D | 37.48 | 32.65 | 0.084 | 0.017 |
-| w/o personalized fine-tuning | ~63 | ~28 | ~0.15 | ~0.04 |
-| w/o data augmentation | ~45 | ~30 | ~0.10 | ~0.02 |
+| w/o Personalized FT | ~63 | ~28 | ~0.15 | ~0.04 |
+| w/o Augmentation | ~45 | ~30 | ~0.10 | ~0.02 |
 | w/o Lab Gaussian | ~42 | ~31 | ~0.09 | ~0.02 |
 
 ### Key Findings
-- **Substantial FID reduction**: Color3D achieves an FID of 37.48 on DL3DV-140, more than 40% lower than direct image colorization (63.56).
-- **Higher color richness**: Colorful score of 32.65 vs. 28.15/22.38, demonstrating that the personalized colorizer does not dilute colors.
-- **Significantly improved consistency**: ME (multi-view error) and TC (temporal consistency) substantially outperform all baselines.
-- **Multiple control modes supported**: Language-guided, automatic, and reference-guided colorization all function effectively.
+- **Significant FID Drop**: Color3D achieves an FID of 37.48 on DL3DV-140, over 40% lower than the per-frame image colorizer (63.56).
+- **Higher Color Richness**: A Colorful score of 32.65 vs 28.15/22.38 proves the personalized colorizer does not dilute colors.
+- **Improved Consistency**: Multi-view error (ME) and temporal consistency (TC) significantly outperform all baselines.
+- **Versatile Control**: Works effectively with language guidance, automatic inference, and reference images.
 
 ## Highlights & Insights
-- **The paradigm shift of reducing 3D colorization to a single-image problem is highly elegant**: It avoids the complexity of handling color consistency directly in 3D space. As long as one image is correctly colorized, the personalized colorizer naturally propagates colors to all viewpoints — enabling any 2D colorization method to be used for 3D colorization in a plug-and-play manner.
-- **The "frozen encoder + from-scratch decoder" design philosophy is worth adopting broadly**: The pretrained encoder provides semantic understanding, while the from-scratch decoder avoids introducing inconsistent color priors. This "preserve capability, remove bias" strategy is applicable across many transfer learning scenarios.
-- **Lab space decoupling + warm-up strategy is practically effective**: Learning structure before color prevents chrominance noise from interfering with geometry optimization.
+- **Paradigm Shift**: Simplifying 3D colorization into a single-image problem elegantly bypasses the complexity of maintaining 3D color consistency. If one image is correct, the colorizer propagates that correctness.
+- **"Frozen Encoder + Scratch Decoder" Philosophy**: Retaining semantic understanding while removing biased priors is a strategy applicable to many transfer learning tasks.
+- **Lab Space Decoupling**: Learning structure before color prevents chrominance noise from interfering with geometric optimization.
 
 ## Limitations & Future Work
-- Each scene requires fine-tuning a colorizer (~30 min), precluding zero-shot generalization to new scenes.
-- Key view selection relies on a CLIP-feature entropy heuristic, which may not be globally optimal.
-- Colors introduced by generative augmentation (outpainting, SVD) may not fully align with the scene.
-- For extreme viewpoint variation (e.g., 360° panoramic scenes), a single key view may provide insufficient coverage.
-- Motion blur caused by fast motion in dynamic scenes may degrade colorization quality.
+- Requires fine-tuning a colorizer per scene (~30 mins), preventing zero-shot generalization.
+- Key view selection relies on a CLIP-based heuristic which may not be optimal for all scenes.
+- Generative augmentations (Outpainting, SVD) might introduce colors slightly inconsistent with the ground truth scene.
+- A single key view may have insufficient coverage for extreme 360° panoramic scenes.
+- Motion blur in fast-moving dynamic scenes can degrade colorization quality.
 
 ## Related Work & Insights
-- **vs. ColorNeRF**: ColorNeRF injects color into NeRF and enforces consistency through averaging → color fades; Color3D maintains vibrancy by learning a deterministic mapping.
-- **vs. ChromaDistill**: The distillation strategy similarly dilutes color diversity; Color3D relies solely on the color information of a single view.
-- **vs. 3DGS+ImageColorizer (naive baseline)**: Direct per-frame colorization leads to severe inconsistency; Color3D's personalized propagation reduces FID by 40%+.
+- **vs ColorNeRF**: ColorNeRF injects color into NeRF but uses averaging for consistency, leading to desaturation; Color3D maintains vibrancy via deterministic mapping.
+- **vs ChromaDistill**: Distillation also suffers from diluted color diversity; Color3D relies solely on the primary view's color information.
+- **vs 3DGS+ImageColorizer**: Naive per-frame colorization results in severe flickering; Color3D's personalized propagation reduces FID by over 40%.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Paradigm shift — reducing 3D colorization to single-image colorization plus color propagation is an exceptionally elegant formulation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 140 static scenes plus dynamic scenes, three control modes, extensive ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, well-designed method figures, complete logical chain.
-- Value: ⭐⭐⭐⭐ Strong practicality; unifies controllable colorization of static and dynamic scenes with broad application prospects including cultural heritage preservation.
+- Novelty: ⭐⭐⭐⭐⭐ Elegant paradigm shift from 3D consistency to single-view propagation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale benchmarks (140 scenes), dynamic scene support, and extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, well-designed figures, and strong logical flow.
+- Value: ⭐⭐⭐⭐ Highly practical for applications like cultural heritage restoration.
 
 <!-- RELATED:START -->
 
@@ -137,11 +146,11 @@ A two-stage pipeline. **Stage 1** (personalized colorizer training): select a ke
 
 ## Related Papers
 
-- [\[ICLR 2026\] RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering](radiogs_radiometric_gaussian_surfels.md)
+- [\[CVPR 2025\] Ctrl-D: Controllable Dynamic 3D Scene Editing with Personalized 2D Diffusion](../../CVPR2025/3d_vision/ctrl-d_controllable_dynamic_3d_scene_editing_with_personalized_2d_diffusion.md)
 - [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)
+- [\[ICLR 2026\] CHROMA: Consistent Harmonization of Multi-View Appearance via Bilateral Grid Prediction](chroma_consistent_harmonization_of_multi-view_appearance_via_bilateral_grid_pred.md)
 - [\[AAAI 2026\] FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting](../../AAAI2026/3d_vision/fantasystyle_controllable_stylized_distillation_for_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds](../../CVPR2026/3d_vision/s2am3d_scale-controllable_part_segmentation_of_3d_point_cloud.md)
-- [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](../../CVPR2026/3d_vision/depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
 
 </div>
 

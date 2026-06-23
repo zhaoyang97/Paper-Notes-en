@@ -2,183 +2,131 @@
 title: >-
   [Paper Note] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer
 description: >-
-  [ICLR 2026][LLM/NLP][3D generation] This paper proposes AssetFormer, an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequenc…
+  [ICLR 2026][3D Vision][3D generation] AssetFormer is an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequences. By utilizing DFS/BFS graph traversal reordering and joint vocabulary decoding, it generates modular 3D assets directly compatible with game engines fr
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "3D generation"
-  - "autoregressive transformer"
-  - "modular assets"
-  - "UGC"
-  - "Llama"
-  - "text-to-3D"
+  - ICLR 2026
+  - 3D Vision
+  - 3D generation
+  - autoregressive transformer
+  - modular assets
+  - UGC
+  - Llama
+  - text-to-3D
 date: 2026-05-08
-content_hash: 6ea6531454600baa
+content_hash: d39a727540502354
 ---
-
 # AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.12100](https://arxiv.org/abs/2602.12100)  
 **Code**: [https://github.com/Advocate99/AssetFormer](https://github.com/Advocate99/AssetFormer)  
-**Area**: LLM/NLP
-**Keywords**: 3D generation, autoregressive transformer, modular assets, UGC, Llama, text-to-3D
+**Area**: LLM/NLP  
+**Keywords**: 3D generation, autoregressive transformer, modular assets, UGC, Llama, text-to-3D  
 
 ## TL;DR
 
-This paper proposes AssetFormer, an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequences. Through DFS/BFS graph traversal reordering and joint vocabulary decoding, it enables the generation of modular 3D assets directly usable in game engines from text descriptions.
+AssetFormer is an autoregressive Transformer based on the Llama architecture that models modular 3D assets (composed of primitive sequences) as discrete token sequences. By utilizing DFS/BFS graph traversal reordering and joint vocabulary decoding, it generates modular 3D assets directly compatible with game engines from text descriptions.
 
 ## Background & Motivation
 
-3D asset generation is a core requirement in UGC (user-generated content) and game development. While mainstream 3D generation methods (e.g., NeRF, 3D Gaussian Splatting, or direct mesh generation) have achieved significant progress in visual quality, several critical issues remain:
+3D asset generation is a core requirement for UGC (User Generated Content) and the gaming industry. While mainstream 3D generation methods (e.g., NeRF, 3D Gaussian Splatting, or direct mesh generation) have improved visual quality, several critical issues remain:
 
-1. **Incompatibility with existing workflows**: Generated 3D content is typically a monolithic mesh or implicit representation that is difficult to import into game engines for editing, decomposition, or recombination, requiring extensive post-processing.
-2. **Lack of modular structure**: Real-world game development relies on standardized modular components (akin to building blocks) assembled into scenes and objects—a structure that existing methods struggle to produce.
-3. **Difficulty modeling discrete attributes**: Each primitive in a modular asset carries mixed attributes such as class, rotation, and position, which are discrete and structurally constrained—properties that continuous generation methods handle poorly.
+1.  **Incompatibility with existing workflows**: Generated 3D content is often holistic meshes or implicit representations, making it difficult to edit, split, or reorganize in game engines without significant post-processing.
+2.  **Lack of modular structure**: In real-world game development, 3D scenes and objects are typically assembled from standardized modular components (blocks). Current methods struggle to produce such structured assets.
+3.  **Difficulty in discrete attribute modeling**: Each primitive in a modular asset has mixed attributes like class, rotation, and position, which are discrete and subject to structural constraints—properties that traditional continuous generation methods handle poorly.
 
-The motivating insight of AssetFormer is: **since modular 3D assets are fundamentally sequences of primitives with discrete attributes, why not model them directly with the mature autoregressive Transformer paradigm from the NLP domain?**
+The core insight of AssetFormer is: **Since modular 3D assets are essentially sequences of primitives with discrete attributes, why not directly model them using the mature autoregressive Transformers from the NLP field?**
 
 ## Core Problem
 
-How to reformulate modular 3D asset generation as a sequence-to-sequence modeling problem, enabling an autoregressive Transformer to effectively generate valid 3D assets composed of discrete primitives from text descriptions.
+How to transform the modular 3D asset generation problem into a sequence-to-sequence modeling task, enabling an autoregressive Transformer to efficiently generate valid 3D assets composed of discrete primitives from text descriptions?
 
 ## Method
 
-### Modular 3D Asset Representation
+### Overall Architecture
 
-A modular 3D asset consists of a set of **primitives**, each with three attributes:
-- **Class**: selected from a predefined primitive library (e.g., building blocks of various shapes), with $K$ types in total
-- **Rotation**: discretized into a finite set of rotation angles, with the valid count varying per primitive based on its symmetry
-- **Position**: coordinates $(x, y, z)$ on a 3D grid, discretized as integers
+AssetFormer treats modular 3D assets as sequences of primitives (blocks) with discrete attributes, generating them token-by-token using a Llama-based decoder-only Transformer. An asset consists of $N$ primitives, where the $j$-th primitive is denoted as $P_j=(c_j, r_j, \bm{x}_j)$: class $c_j$ (selected from 25 predefined blocks), rotation $r_j$ around the vertical axis (4 discrete angles), and position $\bm{x}_j=(x_0,x_1,x_2)$ (integer coordinates on a 3D grid). Each primitive occupies 5 tokens, flattening the asset into a discrete sequence of length $5N$ (plus an `<EOS>`).
 
-A complete 3D asset is represented as:
-$$
-A = \{(c_i, r_i, p_i)\}_{i=1}^{N}
-$$
-where $N$ is the number of primitives, and $c_i, r_i, p_i$ denote the class, rotation, and position of the $i$-th primitive, respectively.
+The pipeline consists of three stages: First, a semi-automatic data pipeline collects "modular asset-text" pairs. Second, each asset undergoes lossless tokenization and reordering via spatial adjacency graph traversal. Finally, text prompts encoded by FLAN-T5 serve as prefix conditions for the Llama backbone (using 1D RoPE and standard next-token cross-entropy). During inference, validity is maintained via filtered decoding, consistency is improved via CFG, and speed is enhanced via SlowFast decoding. The resulting sequence is bijectively mapped back into assets ready for game engines.
 
-### Lossless Discrete Tokenization
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    subgraph DATA["Semi-automatic Data Pipeline"]
+        direction TB
+        A["Real UGC Assets<br/>+ PCG Synthesis"] --> B["Multi-view Rendering → GPT-4o<br/>Textual Descriptions"]
+    end
+    DATA --> TOK["Lossless Discrete Tokenization<br/>Joint Vocabulary |V|=214"]
+    TOK --> REORD["Graph Traversal Reordering<br/>DFS / BFS"]
+    REORD --> SEQ["Primitive Token Sequence<br/>(c,r,x0,x1,x2)×N + EOS"]
+    T["Text prompt"] --> ENC["FLAN-T5 Encoder<br/>→ Prefix tokens"]
+    ENC --> AR["Llama decoder-only<br/>Autoregressive next-token"]
+    SEQ --> AR
+    AR --> DEC["Enhanced Decoding<br/>Filtered Decoding + CFG + SlowFast"]
+    DEC --> OUT["Bijective Restoration<br/>→ Direct Engine Import"]
+```
 
-Unlike many methods that require training a VQ-VAE codebook, AssetFormer adopts **lossless tokenization**:
+### Key Designs
 
-- Each primitive's attributes are directly mapped to discrete tokens without an additional encoder-decoder
-- Class, rotation, and position each occupy a fixed number of tokens
-- This guarantees lossless tokenization—decoded tokens can unambiguously reconstruct the exact 3D asset
+**1. Semi-automatic data pipeline: Bridging the text-annotation gap**
 
-This design avoids the information loss and training instability associated with codebook learning.
+Most modular 3D asset libraries are private, resulting in a lack of public "asset-text" pairs. The authors collected real player-built home assets from a UGC platform and mapped them to 25 base primitives. These were supplemented with Procedural Content Generation (PCG) data, resulting in a dataset of 16,000 real and 4,000 synthetic assets. For text annotation, each asset was rendered from fixed views and processed by GPT-4o to generate descriptive phrase bags (e.g., "apartment, multi-story, flat roof"). Ablation shows these data sources are complementary: using only synthetic data yielded an FID of 113.560, while the mixed dataset reduced it to 55.186.
 
-### Token Reordering Strategy
+**2. Lossless Discrete Tokenization & Joint Vocabulary Filtered Decoding**
 
-When flattening a 3D asset into a 1D token sequence, the ordering of primitives is critical for autoregressive modeling. The authors observe that primitives share spatial adjacency relations, which can be captured by an **adjacency graph**:
+Instead of training a VQ-VAE codebook, AssetFormer leverages the inherent discrete nature of modular assets. Each attribute (class, rotation, and three coordinates $\mathcal{X}_0,\mathcal{X}_1,\mathcal{X}_2$) is bijectively mapped to a token. The joint vocabulary is formed by combining these: $\mathcal{V}=\mathcal{C}\vee\mathcal{R}\vee\mathcal{X}_0\vee\mathcal{X}_1\vee\mathcal{X}_2\vee\{\texttt{<EOS>}\}$, with $|\mathcal{V}|=214$. During inference, **filtered decoding** dynamically masks tokens that do not belong to the current attribute type (e.g., masking position tokens when the model should generate rotation), ensuring every generated sequence is valid and reconstructible.
 
-- **Nodes**: individual primitives
-- **Edges**: spatially adjacent primitive pairs (sharing a face or edge)
+**3. Graph Traversal Token Reordering: Spatial-to-Sequence Adjacency**
 
-Two traversal strategies are compared on this graph:
-- **BFS (Breadth-First Search)**: expands level by level, producing sequences where adjacent tokens tend to occupy the same spatial layer
-- **DFS (Depth-First Search)**: follows a single path deeply, producing sequences where adjacent tokens tend to belong to the same branch
+Unlike text or images, 3D assets lack a natural sequence order. The authors construct an adjacency graph based on primitive connections and use DFS or BFS traversal from a base corner to determine the order $\mathcal{A}=\{\tau_0,\dots,\tau_{n-1}\}$. This ensures that spatially adjacent primitives are also close in the sequence. Experiments show DFS (FID 55.186) slightly outperforms BFS (61.620), while raw ordering (65.215) or image-centric randomization (RAR, 83.561) perform significantly worse, highlighting the importance of spatial locality for 3D structure.
 
-Experiments show **DFS slightly outperforms BFS**, as DFS yields sequences with more localized spatial relationships between adjacent tokens, facilitating the autoregressive model's capture of short-range dependencies. DFS sequences also exhibit smoother variation in attribute values (especially coordinates), which benefits normalization during training.
+**4. CFG and SlowFast Decoding: Improving Consistency and Speed**
 
-### Token Set Modeling
-
-A key challenge is that each primitive's three attributes (class, rotation, position) have distinct valid value ranges. Naively placing all possible tokens into a single vocabulary leads to a large number of illegal combinations.
-
-AssetFormer proposes **Token Set Modeling**:
-- A **joint vocabulary** is constructed containing all possible values across all attribute types
-- During decoding, **filtered decoding** is applied: tokens not belonging to the current attribute type are dynamically masked, ensuring only legal values are generated at each step
-- This constitutes **structured constrained decoding**, enforcing output validity without modifying the model architecture
-
-### Model Architecture
-
-AssetFormer is built on the **Llama architecture**:
-- A standard decoder-only Transformer
-- Text prompts are encoded by a pretrained text encoder and provided as prefix conditioning
-- The 3D asset token sequence is generated autoregressively as the target
-- RoPE positional encoding is adopted
-- The model operates at a moderate scale, demonstrating effectiveness without requiring extreme parameter counts
-
-### Classifier-Free Guidance (CFG)
-
-Drawing on the success of Classifier-Free Guidance in diffusion models, AssetFormer adapts CFG to the autoregressive framework:
-
-- During training, text conditions are randomly dropped (replaced with empty prompts) with a fixed probability
-- At inference, both conditional and unconditional logits are computed, and text guidance is amplified via linear extrapolation:
-$$
-\text{logits}_{\text{guided}} = \text{logits}_{\text{uncond}} + \lambda \cdot (\text{logits}_{\text{cond}} - \text{logits}_{\text{uncond}})
-$$
-where $\lambda > 1$ is the guidance scale. This effectively improves alignment between generated assets and text descriptions.
-
-### Dataset Construction
-
-Dataset construction is a notable contribution of this work:
-- **Real user data**: Modular 3D assets created by real users are collected from an online UGC platform (similar to Roblox)
-- **PCG synthetic data**: Procedural Content Generation is used to augment the dataset
-- **Text annotation**: 3D assets are rendered into 2D images from multiple viewpoints, and **GPT-4o** is used to generate corresponding text descriptions
-- This semi-automatic data construction pipeline effectively addresses the scarcity of text-annotated modular 3D assets
+AssetFormer adapts Classifier-Free Guidance (CFG) for autoregressive generation, calculating:
+$$l_{cfg}=l'+s\cdot(l-l')$$
+where $s=2.0$ balances text alignment and diversity. Additionally, **SlowFast decoding** (speculative decoding) is introduced: a small draft model (AssetFormer-S, 87M) predicts simple, regular tokens rapidly, while the larger model (AssetFormer-B, 312M) verifies them and handles complex spatial reasoning.
 
 ## Key Experimental Results
 
-### Generation Quality
+### Main Results (vs. PCG Baseline)
 
-- AssetFormer significantly outperforms simple baselines in visual quality and text-3D alignment
-- Compared to end-to-end 3D mesh generation methods, AssetFormer's key advantage is that generated assets are **natively editable and directly usable in game engines**
-- Quantitative metrics include FID and CLIP Score
+- Metrics: FID (500 fixed-view renders vs. training set) and CLIP score.
+- Top-k sampling (FID **55.186**) outperformed greedy (63.351) and beam search (63.333). The PCG baseline only achieved 108.476, as it failed to cover complex asset distributions.
+- Compared to general 3D methods (SF3D, Trellis, etc.) that output dense meshes with texture artifacts, AssetFormer produces editable structures with clean, mapped textures.
 
-### DFS vs. BFS
+### Ablation Study
 
-- DFS ordering outperforms BFS across multiple metrics
-- The authors attribute this to smoother coordinate transitions in DFS sequences, which help the model learn local spatial patterns
-- This finding has reference value for sequence modeling of spatially structured data such as modular assets
-
-### CFG Effectiveness
-
-- Incorporating CFG substantially improves text-to-3D alignment
-- The guidance scale $\lambda$ has an optimal range; excessively large values reduce diversity
-
-### Comparison with Other 3D Generation Methods
-
-- Comparisons are conducted against diffusion-based and other autoregressive 3D generators
-- AssetFormer demonstrates a clear structural advantage on the modular asset generation task
-- Competing methods cannot directly produce editable modular structures
+- **Token Order**: DFS (**55.186**) > BFS (61.620) > Raw Order (65.215). RAR (Randomization) performed worst (83.561), indicating that 3D structural learning relies on consistent spatial orientation.
+- **Data Source**: Real-only FID was 63.381, Synthetic-only was 113.560, while mixed data achieved **55.186**. Synthetic data provides structural "scaffolding," while real data adds diversity.
+- **CFG**: Significantly improves text-3D consistency with an optimal guidance scale $s=2.0$.
 
 ## Highlights & Insights
 
-1. **Elegant problem formulation**: Reformulating modular 3D asset generation as discrete token sequence modeling fully leverages the maturity of the large language model technology stack.
-2. **Lossless tokenization**: Avoids the information compression loss of VQ-VAE-based methods, with a one-to-one correspondence between tokens and raw attributes.
-3. **Graph traversal reordering**: Constructing an adjacency graph from spatial topology and using DFS/BFS traversal to identify sequences more amenable to autoregressive modeling is a concise and effective design.
-4. **Token Set Modeling + Filtered Decoding**: The combination of a joint vocabulary and dynamic masked decoding elegantly enforces validity constraints across multiple attribute types.
-5. **Practical orientation**: Generated assets can be directly imported into game engines, offering genuine application value for UGC platforms and game development.
-6. **Reproducible data pipeline**: The GPT-4o annotation combined with PCG augmentation approach has broad transferability.
+1.  **Effective Formalization**: Transforming modular 3D generation into discrete sequence modeling leverages mature LLM technology.
+2.  **Lossless Representation**: Avoids compression losses inherent in VQ-VAE by using a bijective mapping between attributes and tokens.
+3.  **Graph Traversal Reordering**: A simple yet effective design that integrates spatial topology (adjacency) into 1D autoregressive modeling.
+4.  **Filtered Decoding**: Elegantly handles structural constraints of multi-attribute data through dynamic vocabulary masking.
+5.  **Practical Utility**: High engineering value as generated assets are immediately editable and deployable in industrial pipelines.
 
 ## Limitations & Future Work
 
-1. **Fixed primitive library**: The method relies on a predefined set of primitives and cannot generate entirely new types of basic components, limiting generative diversity.
-2. **Texture and material**: The paper focuses primarily on geometric structure generation, leaving texture, material, and lighting attributes unaddressed.
-3. **Scalability**: Since token sequence length grows proportionally with the number of primitives, very large-scale 3D scenes may produce prohibitively long sequences.
-4. **Limited evaluation metrics**: Standards for evaluating modular 3D assets remain immature; the quantitative metrics reported may not fully reflect real-world usability.
-5. **Single data source**: Training data predominantly originates from a specific UGC platform, potentially introducing stylistic bias.
-6. **Small DFS vs. BFS gap**: Although DFS is slightly superior, the margin is narrow, suggesting that sequence ordering may not be the primary performance bottleneck.
-
-## Related Work & Insights
-
-- **Another instance of "everything is a sequence"**: Following code generation and molecular generation, modular 3D assets have been successfully serialized and modeled with autoregressive models, demonstrating the broad applicability of the autoregressive Transformer paradigm to structured discrete data.
-- **Integrating domain knowledge**: Graph traversal reordering and filtered decoding incorporate structural priors of 3D assets (spatial adjacency, attribute type constraints) elegantly into a general-purpose Transformer framework, rather than requiring specialized architectures.
-- **Connection to CAD generation**: The methodology shares conceptual similarities with CAD model generation approaches (e.g., DeepCAD), both employing sequence models to capture sequences of discrete geometric operations; the key difference is that primitives in this work are more standardized.
-- **Generality of Classifier-Free Guidance**: The successful transfer of CFG from image diffusion models to 3D autoregressive generation reinforces its paradigm-level universality in conditional generation tasks.
-- **Real industry demand**: The collaboration with LIGHTSPEED Studios grounds this work in engineering applicability and reflects genuine industry demand for AI-assisted content creation.
+1.  **Fixed Primitive Library**: Limited to a predefined set of components; cannot generate entirely new base primitives.
+2.  **Texture and Material**: Focuses on geometry; visual attributes like lighting and PBR maps are not yet integrated.
+3.  **Scale Constraints**: Token sequence length scales linearly with primitive count, potentially limiting the generation of massive 3D scenes.
+4.  **Evaluation Metrics**: Conventional 2D/3D metrics (FID/CLIP) may not fully capture the quality of modular, structured assets.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
-- [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](../../CVPR2026/3d_vision/majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
-- [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](../../ICCV2025/3d_vision/reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
-- [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
-- [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
+- [\[CVPR 2026\] Repurposing 3D Generative Model for Autoregressive Layout Generation](../../CVPR2026/3d_vision/repurposing_3d_generative_model_for_autoregressive_layout_generation.md)
+- [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](spiking_discrepancy_transformer_for_point_cloud_analysis.md)
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](../../CVPR2026/3d_vision/meshripple_structured_autoregressive_generation_of_artist-meshes.md)
+- [\[CVPR 2026\] ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](../../CVPR2026/3d_vision/armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)
 
 </div>
 

@@ -2,119 +2,114 @@
 title: >-
   [Paper Note] SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Diffusion model watermarking] SERUM is a watermarking method that injects unique watermark noise into the initial noise of diffusion models and trains a lightweight detector to identify wate…
+  [ICLR 2026][Image Generation][Paper Note] The SERUM watermarking method is proposed, adding unique watermark noise to the initial noise of diffusion models and training a lightweight detector to identify watermarks directly from generated images (bypassing expensive DDIM inversion). It achieves the highest detection rates under various attacks with extremely f
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Diffusion model watermarking"
-  - "lightweight detector"
-  - "noise injection"
-  - "robustness"
-  - "multi-user"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: e1e17b4d49f3158e
+content_hash: 7fa35b6e808135fb
 ---
-
 # SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.13396](https://arxiv.org/abs/2603.13396)  
 **Code**: [GitHub](https://github.com/Hubizon/SERUM)  
-**Area**: Image Generation
+**Area**: Image Generation  
 **Keywords**: Diffusion model watermarking, lightweight detector, noise injection, robustness, multi-user
 
 ## TL;DR
-SERUM is a watermarking method that injects unique watermark noise into the initial noise of diffusion models and trains a lightweight detector to identify watermarks directly from generated images — without costly DDIM inversion — achieving state-of-the-art detection rates under diverse attacks with extremely fast injection and detection, while supporting multi-user scenarios.
+The SERUM watermarking method is proposed, adding unique watermark noise to the initial noise of diffusion models and training a lightweight detector to identify watermarks directly from generated images (bypassing expensive DDIM inversion). It achieves the highest detection rates under various attacks with extremely fast injection and detection, supporting multi-user scenarios.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: Diffusion models can generate highly realistic images, necessitating watermarking to distinguish generated content from real content. Existing methods fall into two categories: tuning-based (e.g., Stable Signature, which fine-tunes the decoder) and tuning-free (e.g., Tree-Ring, GaussMarker, which add watermarks to the initial noise).
 
-**Background**: Diffusion models generate highly realistic images, necessitating watermarking to distinguish generated from real content. Existing approaches fall into two categories: fine-tuning-based methods (e.g., Stable Signature, which fine-tunes the decoder) and training-free methods (e.g., Tree-Ring/GaussMarker, which embed watermarks in the initial noise).
+**Limitations of Prior Work**: Stable Signature requires intensive training and is not robust against advanced attacks. Tuning-free methods like Tree-Ring and GaussMarker are robust, but their detection relies on expensive DDIM inversion ($O(T)$ steps). There is a trade-off—methods are either fast but weak, or strong but slow.
 
-**Limitations of Prior Work**: (1) Stable Signature requires extensive training and lacks robustness against advanced attacks; (2) training-free methods such as Tree-Ring/GaussMarker are robust but rely on expensive DDIM inversion ($O(T)$ steps) for detection; (3) the two desiderata appear mutually exclusive — methods are either fast but weak, or strong but slow.
+**Key Challenge**: Watermark detection requires DDIM inversion to recover initial noise, which is computationally expensive and unsuitable for large-scale deployment.
 
-**Key Challenge**: Watermark detection requires DDIM inversion to recover the initial noise, which is computationally prohibitive and unsuitable for large-scale deployment.
-
-**Key Insight**: Bypass DDIM inversion by training a lightweight external detector that directly identifies the signature of watermark noise from generated images, thereby combining the robustness of noise injection with near-instant detection.
-
-### Mechanism
-
-**Goal**: ### Overall Architecture
-Watermark injection: $\eta' = \sqrt{1-\alpha}\eta + \sqrt{\alpha}A'$ (weighted mixture of random noise and watermark noise) → standard diffusion generation.
+**Key Insight**: Instead of performing DDIM inversion, a lightweight external detector is trained to recognize the signature of the watermark noise directly from the generated images. This combines the robustness of noise injection with near-instant detection, unifying the "strength" of tuning-free methods with the "speed" of tuning-based methods.
 
 ## Method
 
 ### Overall Architecture
-Watermark injection: $\eta' = \sqrt{1-\alpha}\eta + \sqrt{\alpha}A'$ (weighted mixture of random noise and watermark noise) → standard diffusion generation. Watermark detection: a lightweight CNN trained in the LDM latent space to classify watermarked vs. clean images.
+
+SERUM aims to solve the problem where "robust watermark detection requires expensive DDIM inversion." The pipeline consists of three stages. The first stage is **offline detector training**: a lightweight CNN binary classifier is trained using watermarked latents (clean, augmented, or precomputed) and clean latents. The second stage is **injection and generation**: before diffusion starts, a fixed watermark noise is mixed into the random initial noise according to a specific weight; sampling and decoding then proceed normally. The third stage is **online detection**: the image to be tested is mapped back to the latent space using an LDM encoder and fed directly into the trained detector to output a 0–1 score, completely bypassing DDIM inversion. This ensures both generation and detection require only one forward pass, maintaining the robustness of noise injection while compressing detection time from $O(T)$ steps to real-time. For multi-user scenarios, the same detector can be reused by assigning each user a specific combination of noise patterns.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph TRAIN["Detector Training (Prioritized Experience Replay PER)"]
+        direction TB
+        P["Watermarked Latents<br/>Clean/Augmented/Precomputed"] --> L["Loss<br/>L = L_w + L_n"]
+        Q["Clean Latents<br/>Clean/Augmented/Precomputed"] --> L
+    end
+    A["Random Initial Noise<br/>η ~ N(0, I)"] --> INJ["Watermark Injection<br/>η' = √(1-α)·η + √α·A'"]
+    W["Watermark Noise A<br/>Normalized to A'"] --> INJ
+    INJ --> GEN["LDM Sampling + Decoder<br/>Generate Watermarked Image"]
+    GEN --> ENC["LDM Encoder<br/>Map to Latent Space x"]
+    ENC --> DET["Lightweight Detector f<br/>Latent Space Binary CNN"]
+    L -.Training.-> DET
+    MU["Multi-user Support<br/>Subset S_i of k patterns per user"] -.Extension.-> DET
+    DET --> OUT{"f(x) > τ ?"}
+    OUT -->|High Score| Y["Identified as Watermarked"]
+    OUT -->|Low Score| N["Identified as Clean"]
+```
 
 ### Key Designs
 
-1. **Watermark Injection**:
+**1. Watermark Injection: Mixing normalized watermark noise into initial noise to leave a fingerprint without damaging image quality**
 
-    - Function: Injects normalized watermark noise into the initial diffusion noise.
-    - Mechanism: $A' = (A - \text{mean}(A))/\text{std}(A)$ normalization guarantees low KL divergence → high image quality.
-    - Design Motivation: After normalization, $\eta'$ remains close to a standard normal distribution — provably achieving lower KL divergence than GaussMarker.
+Tuning-free methods often increase the deviation from the standard normal distribution when injecting watermarks into initial noise, thereby harming image quality. The injection formula for SERUM is $\eta' = \sqrt{1-\alpha}\,\eta + \sqrt{\alpha}\,A'$, which weights the random noise $\eta$ and watermark noise $A'$, where $\alpha$ controls the watermark strength. Crucially, the watermark noise is first normalized as $A' = (A - \text{mean}(A))/\text{std}(A)$, ensuring $\eta'$ remains close to a standard normal distribution. The authors prove that SERUM achieves a lower KL divergence than GaussMarker, meaning the deviation from the real noise distribution is smaller, resulting in minimal image quality loss.
 
-2. **Lightweight Detector**:
+**2. Lightweight Detector: Training a binary CNN in the latent space with Prioritized Experience Replay for difficult samples**
 
-    - Function: Trains a binary classification CNN in the LDM latent space.
-    - Mechanism: Training set consists of watermarked and clean latents, sampled via augmented prioritized experience replay to focus on hard perturbations.
-    - Loss: $\mathcal{L} = \mathcal{L}_w + \mathcal{L}_n$, each comprising clean, augmented, and pre-computed terms.
-    - Design Motivation: Operating in the latent space reduces input dimensionality, accelerating both training and inference.
+This is the core design for bypassing DDIM inversion. The detector is a binary classification CNN that operates in the LDM latent space rather than the pixel space, significantly reducing dimensions and accelerating both training and inference. The training set consists of watermarked latents and clean latents. The loss is defined as $\mathcal{L} = \mathcal{L}_w + \mathcal{L}_n$, where each term includes clean, augmented, and precomputed parts. To ensure robustness against various attacks, the authors adopt Prioritized Experience Replay (PER) from reinforcement learning to prioritize sampling the most difficult perturbed samples, forcing the detector to focus on its weaknesses without manual selection of augmentation strategies.
 
-3. **Multi-User Support**:
+**3. Multi-user Support: Assigning a subset of noise patterns to each user and calculating detection scores via subset products**
 
-    - Function: Assigns each user a unique subset of noise patterns.
-    - Mechanism: User $i$ employs a combination of $k$ noise patterns; the user detection score is $D_i(x) = \prod_{p \in S_i} d_p(x)$.
-    - Training scale: $O(n^{1/k})$ rather than $O(n)$.
+Training a separate detector for every user is impractical for large-scale applications. SERUM assigns each user $i$ a combination $S_i$ consisting of $k$ noise patterns. The detection score for a single user is defined as the product of the detection scores of each pattern: $D_i(x) = \prod_{p \in S_i} d_p(x)$. This allows the system to train only basic noise pattern detectors and support a massive number of users through combinations, reducing training scale from $O(n)$ to $O(n^{1/k})$ while keeping inter-user interference negligible.
 
 ## Key Experimental Results
 
-### Detection Robustness (SDv1.4/2.0/2.1)
-
-
 ### Main Results
 
-| Method | TPR@1%FPR (Standard Attacks) | TPR@1%FPR (Watermark Removal) | Injection Speed | Detection Speed |
-|--------|-------------------------------|-------------------------------|-----------------|-----------------|
-| Stable Signature | Moderate | Poor | Fast | Fast |
-| Tree-Ring | Good | Good | Fast | **Very Slow** (DDIM) |
-| GaussMarker | Good | Good | Fast | **Very Slow** (DDIM) |
-| **SERUM** | **Best** | **Best** | **Very Fast** | **Very Fast** |
-
-### Image Quality
-
+| Method | TPR@1%FPR (Std Attack) | TPR@1%FPR (Removal) | Injection Speed | Detection Speed |
+|------|------------------|------------------|---------|---------|
+| Stable Signature | Medium | Poor | Fast | Fast |
+| Tree-Ring | Good | Good | Fast | **Extremely Slow** (DDIM) |
+| GaussMarker | Good | Good | Fast | **Extremely Slow** (DDIM) |
+| **Ours (SERUM)** | **Best** | **Best** | **Extremely Fast** | **Extremely Fast** |
 
 ### Ablation Study
 
-| Method | FID↓ | CLIP Score↑ | Notes |
-|--------|------|-------------|-------|
+| Method | FID↓ | CLIP Score↑ | Description |
+|------|------|-------------|------|
 | No Watermark | Baseline | Baseline | Reference |
-| **SERUM** | **Near Baseline** | **Near Baseline** | Negligible quality degradation |
+| **Ours (SERUM)** | **Near Baseline** | **Near Baseline** | Almost no quality loss |
 
 ### Key Findings
-- SERUM achieves the highest TPR in nearly all cases across 8 perturbation types and 7 watermark removal attacks.
-- Detection requires no DDIM inversion, making it orders of magnitude faster than Tree-Ring/GaussMarker.
-- The watermark exhibits "radioactivity" — outputs remain detectable even when the model is fine-tuned on watermarked images.
-- Cross-user watermark interference is negligible in multi-user settings.
+- SERUM achieves the highest TPR across almost all 8 types of perturbations and 7 types of removal attacks.
+- Detection requires no DDIM inversion, making it dozens of times faster than Tree-Ring or GaussMarker.
+- The watermark is "radioactive"—it remains detectable even if the model is fine-tuned on watermarked images.
+- In multi-user scenarios, the interference between users is negligible.
 
 ## Highlights & Insights
-- **Elegant Unification of Two Paradigms**: Noise injection (robustness of training-free methods) + external detector (speed of fine-tuning-based methods) = optimal combination. The idea is intuitively straightforward yet had not been previously explored.
-- **KL Divergence Guarantee**: Normalized watermark noise achieves theoretically lower KL divergence than GaussMarker, providing a mathematical foundation for superior image quality.
-- **Prioritized Experience Replay Training**: Borrowing PER from reinforcement learning to sample "hard" augmentations enables the detector to automatically focus on its weaknesses, eliminating the need for manual augmentation strategy selection.
+- **Unified Paradigms**: Noise injection (robustness of tuning-free methods) + external detector (speed of tuning-based methods) = an optimal combination. This intuitive idea was previously unexplored.
+- **KL Divergence Guarantee**: Theoretical proof that normalized watermark noise provides lower KL divergence than GaussMarker, establishing a mathematical foundation for better image quality.
+- **Prioritized Experience Replay Training**: Borrowing PER from RL to sample "difficult" augmentations allows the detector to focus on weaknesses automatically, eliminating the need for manual augmentation strategy selection.
 
 ## Limitations & Future Work
-- Detection requires access to the LDM encoder; purely pixel-level detection remains unexplored.
-- The choice of $\alpha$ requires balancing detection rate against image diversity.
-- In multi-user settings, the combinatorial structure limits the maximum number of supported users.
-- Evaluation is limited to the Stable Diffusion family; generalization to other diffusion models (e.g., DALL-E/Imagen) is unknown.
+- Requires access to the LDM encoder for detection—pure pixel-level detection remains unexplored.
+- The choice of $\alpha$ must balance detection rate and image diversity.
+- Combinatorial limits in multi-user scenarios may cap the maximum number of users.
+- Validated only on the SD series; effectiveness on other diffusion models (e.g., DALL-E, Imagen) is unknown.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The combination of noise injection and an external detector is simple yet effective and previously unattempted.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 8 perturbation types + 7 attacks + 3 SD versions + multi-user + radioactivity analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Clear methodology with solid theoretical guarantees.
-- Value: ⭐⭐⭐⭐⭐ — Directly applicable to real-world deployment for AI-generated content detection.
+- Novelty: ⭐⭐⭐⭐ The combination of noise injection and an external detector is simple yet effective and previously untried.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 perturbations + 7 attacks + 3 SD versions + multi-user + radioactivity analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodology with solid theoretical guarantees.
+- Value: ⭐⭐⭐⭐⭐ Directly applicable value for real-world deployment of AIGC detection.
 
 <!-- RELATED:START -->
 
@@ -122,11 +117,11 @@ Watermark injection: $\eta' = \sqrt{1-\alpha}\eta + \sqrt{\alpha}A'$ (weighted m
 
 ## Related Papers
 
+- [\[ICLR 2026\] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models](fari_robust_one-step_inversion_for_watermarking_in_diffusion_models.md)
+- [\[ICLR 2026\] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation](scalable_energy-based_models_via_adversarial_training_unifying_discrimination_an.md)
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](../../ICCV2025/image_generation/lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
-- [\[ICLR 2026\] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation](locality-aware_parallel_decoding_for_efficient_autoregressive_image_generation.md)
-- [\[NeurIPS 2025\] More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/more_than_generation_unifying_generation_and_depth_estimation_via_text-to-image_.md)
-- [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
-- [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
+- [\[ICLR 2026\] Diffusion Negative Preference Optimization Made Simple](diffusion_negative_preference_optimization_made_simple.md)
+- [\[CVPR 2026\] SimplePoster: A Simple Baseline for Product Poster Generation](../../CVPR2026/image_generation/simpleposter_a_simple_baseline_for_product_poster_generation.md)
 
 </div>
 

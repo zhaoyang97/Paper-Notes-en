@@ -2,82 +2,64 @@
 title: >-
   [Paper Note] QVGen: Pushing the Limit of Quantized Video Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Video Diffusion Models] This paper proposes QVGen, a quantization-aware training (QAT) framework for video diffusion models. It introduces auxiliary modules to reduce gradient norms and impr…
+  [ICLR 2026][Image Generation][Paper Note] Propose QVGen, a Quantization-Aware Training (QAT) framework for video diffusion models, which introduces an auxiliary module to reduce gradient norms for improved convergence and designs a rank decay strategy to gradually eliminate the inference overhead of the auxiliary module during training, achieving near full-pre
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Video Diffusion Models"
-  - "Quantization-Aware Training"
-  - "Low-Bit Quantization"
-  - "Rank Decay Strategy"
-  - "Auxiliary Modules"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: f14755a4de181634
+content_hash: de9c577c0ee8d466
 ---
-
 # QVGen: Pushing the Limit of Quantized Video Generative Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.11497](https://arxiv.org/abs/2505.11497)  
 **Code**: [https://github.com/ModelTC/QVGen](https://github.com/ModelTC/QVGen)  
-**Area**: Image Generation
-**Keywords**: Video Diffusion Models, Quantization-Aware Training, Low-Bit Quantization, Rank Decay Strategy, Auxiliary Modules
+**Area**: Image Generation  
+**Keywords**: Video Diffusion Models, Quantization-Aware Training, Low-bit Quantization, Rank Decay Strategy, Auxiliary Module
 
 ## TL;DR
 
-This paper proposes QVGen, a quantization-aware training (QAT) framework for video diffusion models. It introduces auxiliary modules to reduce gradient norms and improve convergence, and designs a rank decay strategy to progressively eliminate the inference overhead of auxiliary modules during training. QVGen is the first method to achieve near full-precision video generation quality under 4-bit quantization.
+Propose QVGen, a Quantization-Aware Training (QAT) framework for video diffusion models, which introduces an auxiliary module to reduce gradient norms for improved convergence and designs a rank decay strategy to gradually eliminate the inference overhead of the auxiliary module during training, achieving near full-precision video generation quality under 4-bit quantization for the first time.
 
 ## Background & Motivation
 
-- **Background**: Video diffusion models (e.g., CogVideoX, Wan) can generate high-quality videos but demand enormous computation and memory — Wan 14B requires over 30 minutes and 50 GB of VRAM on a single H100 to generate a 10-second 720p video. Model quantization is an effective compression approach: 4-bit quantization can achieve approximately 3× speedup and 4× model size reduction.
-- **Limitations of Prior Work**: Directly transferring quantization methods from image diffusion models to video diffusion models yields poor results. Existing QAT methods (e.g., Q-DM, EfficientDM, LSQ) suffer severe quality degradation under 4-bit video quantization.
-- **Key Challenge**: Quantized video models exhibit significant **convergence difficulties**.
+Video diffusion models (e.g., CogVideoX, Wan) can generate high-quality videos but have extreme computational and memory demands—generating a 10-second 720p video with Wan 14B on a single H100 takes over 30 minutes and 50GB VRAM. Model quantization is an effective compression solution, where 4-bit quantization can achieve approximately $3\times$ speedup and $4\times$ model size reduction.
+
+However, directly transferring quantization methods from image diffusion models to video diffusion models yields poor results. Existing QAT methods (e.g., Q-DM, EfficientDM, LSQ) suffer severe quality degradation under 4-bit video quantization, primarily due to the **convergence difficulties** of quantized video models.
 
 ## Method
 
 ### Overall Architecture
 
-QVGen consists of two core components:
-1. **Auxiliary Module $\Phi$**: Attached to quantized linear layers to compensate for quantization error and reduce gradient norms to improve convergence.
-2. **Rank Decay Strategy**: Progressively eliminates $\Phi$ via SVD decomposition and rank regularization, ensuring no additional inference overhead at deployment.
+QVGen aims to solve the "lack of convergence" challenge for video diffusion models under 4-bit quantization. The framework follows a single training timeline: first, linear layers are quantized to 4-bit, and a full-precision **auxiliary module $\Phi$** is connected in parallel to absorb quantization errors and lower gradient norms to ensure convergence. Throughout the training, a full-precision teacher model is used for distillation to keep the quantized student on the correct denoising trajectory. Simultaneously, a **rank decay strategy** reduces the rank of $\Phi$ batch-by-batch. By the end of training, $\Phi$ is "trained away," leaving only pure low-bit computation and zero extra overhead during inference. The former ensures "good training" while the latter ensures "fast execution," and their coordination is key to approximating full-precision performance at extremely low bits.
 
-### Key Design 1: Auxiliary Modules for Improved Convergence
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Video Diffusion Model<br/>Quantize Linear Layers to 4-bit"] --> B["Auxiliary Module Φ<br/>Parallel path to absorb errors;<br/>Lower gradient norm for convergence"]
+    B --> C["Rank Decay Strategy<br/>Low-rank reparam + Gating γ<br/>Cosine annealing for batch truncation"]
+    T["Full-precision Teacher Distillation"] -.Supervision.-> B
+    T -.Supervision.-> C
+    C -->|"End of training r=0<br/>Φ is eliminated"| D["Zero Inference Overhead<br/>Pure low-bit video generation"]
+```
 
-**Theoretical Analysis**: Based on regret analysis, the upper bound on average regret is:
+### Key Designs
 
-$$\frac{R(T)}{T} \leq \frac{dD_\infty^2}{2T\eta_T^m} + \frac{1}{T}\sum_{t=1}^{T}\frac{\eta_t^M}{2}\|\mathbf{g}_t\|_2^2$$
+**1. Auxiliary Module: Feeding Quantization Errors to Gradients for Low-bit Convergence**
 
-When the number of training steps $T$ is sufficiently large, the first term becomes negligible. Thus, **minimizing the gradient norm $\|\mathbf{g}_t\|_2$** is key to improving QAT convergence.
+The failure of 4-bit QAT for video diffusion models originates from convergence difficulties. The authors utilize regret analysis to provide an upper bound for average regret: $\frac{R(T)}{T} \leq \frac{dD_\infty^2}{2T\eta_T^m} + \frac{1}{T}\sum_{t=1}^{T}\frac{\eta_t^M}{2}\|\mathbf{g}_t\|_2^2$. When the number of training steps $T$ is large enough, the first term is negligible, making the reduction of the gradient norm $\|\mathbf{g}_t\|_2$ the primary lever for improving convergence. Accordingly, they parallelize an auxiliary module next to each quantized linear layer. The forward pass becomes $\hat{\mathbf{Y}} = \mathcal{Q}_b(\mathbf{W})\mathcal{Q}_b(\mathbf{X}) + \Phi(\mathcal{Q}_b(\mathbf{X}))$, where $\Phi(\mathcal{Q}_b(\mathbf{X})) = \mathbf{W}_\Phi \mathcal{Q}_b(\mathbf{X})$. $\mathbf{W}_\Phi$ is initialized as the weight quantization error $\mathbf{W} - \mathcal{Q}_b(\mathbf{W})$. Thus, $\Phi$ immediately undertakes the bias introduced by quantization and continues to absorb residuals that are difficult to express in low-bit form. Empirically, the gradient norm remains lower than pure QAT throughout training, leading to stable convergence.
 
-With the auxiliary module $\Phi$, the forward computation of the quantized linear layer becomes:
+**2. Rank Decay Strategy: Making the Auxiliary Module Disappear for Zero Inference Overhead**
 
-$$\hat{\mathbf{Y}} = \mathcal{Q}_b(\mathbf{W})\mathcal{Q}_b(\mathbf{X}) + \Phi(\mathcal{Q}_b(\mathbf{X}))$$
-
-where $\Phi(\mathcal{Q}_b(\mathbf{X})) = \mathbf{W}_\Phi \mathcal{Q}_b(\mathbf{X})$, and $\mathbf{W}_\Phi$ is initialized as the weight quantization error $\mathbf{W} - \mathcal{Q}_b(\mathbf{W})$.
-
-### Key Design 2: Rank Decay Strategy
-
-$\Phi$ introduces additional full-precision matrix multiplication overhead at inference and must be progressively removed during training.
-
-**Key Observation**: SVD analysis of $\mathbf{W}_\Phi$ reveals that the proportion of small singular values grows from 73% (step 0) to 99% (step 2K) as training progresses, indicating that an increasing fraction of components contribute minimally.
-
-Procedure:
-1. Perform SVD decomposition on $\mathbf{W}_\Phi$: $\mathbf{W}_\Phi = \sum_{s=1}^d \sigma_s \mathbf{u}_s \mathbf{v}_s^\top$
-2. Rewrite in low-rank form: $\Phi(\mathcal{Q}_b(\mathbf{X})) = \mathbf{L}\mathbf{R}\mathcal{Q}_b(\mathbf{X})$
-3. Apply rank regularization $\boldsymbol{\gamma}$:
-
-$$\hat{\mathbf{Y}} = \mathcal{Q}_b(\mathbf{W})\mathcal{Q}_b(\mathbf{X}) + (\boldsymbol{\gamma} \odot \mathbf{L})\mathbf{R}\mathcal{Q}_b(\mathbf{X})$$
-
-where $\boldsymbol{\gamma} = \text{concat}([1]_{n \times (1-\lambda)r}, [u]_{n \times \lambda r})$, and $u$ decays from 1 to 0 via cosine annealing.
-
-4. Once $u$ reaches 0, truncate low-contribution components, reducing the rank from $r$ to $(1-\lambda)r$.
-5. Repeat until $r=0$, fully eliminating $\Phi$.
+The auxiliary module $\Phi$ represents an additional full-precision matrix multiplication during inference, which contradicts the goal of quantization. It must be completely removed before training ends without losing the accumulated convergence benefits. The authors observed through SVD of $\mathbf{W}_\Phi$ that the proportion of small singular values naturally increases during training (from 73% at step 0 to 99% at step 2K), indicating that most components become increasingly weak. Consequently, $\mathbf{W}_\Phi = \sum_{s=1}^d \sigma_s \mathbf{u}_s \mathbf{v}_s^\top$ is rewritten in low-rank form as $\Phi(\mathcal{Q}_b(\mathbf{X})) = \mathbf{L}\mathbf{R}\mathcal{Q}_b(\mathbf{X})$. A rank regularization gate $\boldsymbol{\gamma}$ is applied, making the forward pass $\hat{\mathbf{Y}} = \mathcal{Q}_b(\mathbf{W})\mathcal{Q}_b(\mathbf{X}) + (\boldsymbol{\gamma} \odot \mathbf{L})\mathbf{R}\mathcal{Q}_b(\mathbf{X})$, where $\boldsymbol{\gamma} = \text{concat}([1]_{n \times (1-\lambda)r}, [u]_{n \times \lambda r})$. A portion of the rank is fixed at 1, while others decay from 1 to 0 via cosine annealing controlled by $u$. When $u$ reaches zero, these low-contribution components are truncated, reducing the rank from $r$ to $(1-\lambda)r$. Repeating this in batches until $r=0$ smoothly "trains away" $\Phi$, leaving only pure low-bit operations for inference.
 
 ### Loss & Training
 
-A knowledge distillation (KD) objective is adopted with the full-precision model as teacher:
+Training utilizes knowledge distillation from a full-precision teacher model to align the quantized student in the output space:
 
 $$\mathcal{L} = \mathbb{E}_{\mathbf{x}_0, \mathcal{C}, \tau}\left[\|\hat{\boldsymbol{\epsilon}}_\theta(\mathbf{x}_\tau, \mathcal{C}, \tau) - \boldsymbol{\epsilon}_\theta(\mathbf{x}_\tau, \mathcal{C}, \tau)\|_F^2\right]$$
+
+The introduction of the auxiliary module and rank decay are both performed under this distillation objective, ensuring the student is consistently pulled back to the correct denoising trajectory while $\Phi$ is gradually removed.
 
 ## Key Experimental Results
 
@@ -85,55 +67,55 @@ $$\mathcal{L} = \mathbb{E}_{\mathbf{x}_0, \mathcal{C}, \tau}\left[\|\hat{\boldsy
 
 Results on VBench:
 
-| Method | Bits (W/A) | Imaging Quality↑ | Dynamic Degree↑ | Scene Consistency↑ |
-|--------|-----------|-----------------|-----------------|-------------------|
-| CogVideoX-2B Full Precision | 16/16 | 59.15 | 67.78 | 36.24 |
+| Method | Bits (W/A) | Quality↑ | Dynamic Degree↑ | Scene Consistency↑ |
+|------|-----------|----------|----------|-----------|
+| CogVideoX-2B Full-prec | 16/16 | 59.15 | 67.78 | 36.24 |
 | SVDQuant (PTQ) | 4/6 | 58.27 | 40.83 | 27.69 |
 | Q-DM (QAT) | 4/4 | 54.96 | 48.61 | 28.02 |
 | **QVGen (Ours)** | **4/4** | **60.16** | **67.22** | **31.42** |
 | **QVGen (Ours)** | **3/3** | **58.36** | **53.89** | **23.85** |
 
-3-bit QVGen surpasses Q-DM by +25.28 on Dynamic Degree and +8.43 on Scene Consistency.
+3-bit QVGen achieves a $+25.28$ Gain in Dynamic Degree and $+8.43$ Gain in Scene Consistency compared to Q-DM.
 
 ### Ablation Study
 
 | Component | FID↓ |
-|-----------|------|
-| No auxiliary module (plain QAT) | Poor baseline |
-| Auxiliary module + decay all parameters directly | Suboptimal |
-| Auxiliary module + rank decay ($\lambda=1/2$) | **Best** |
+|------|------|
+| Without Auxiliary Module (Pure QAT) | Poor Baseline |
+| With Auxiliary Module + Direct Decay All Parameters | Suboptimal |
+| With Auxiliary Module + Rank Decay ($\lambda=1/2$) | **Best** |
 
 ### Key Findings
 
-- QVGen is the first video QAT method to achieve full-precision-comparable quality under 4-bit quantization.
-- The framework generalizes across both CogVideoX and Wan video model families.
-- When applied to Wan 14B (one of the largest open-source video models), negligible performance loss is observed on VBench-2.0.
-- Gradient norm analysis confirms that $\|\mathbf{g}_t\|_2$ in QVGen consistently remains lower than in Q-DM.
+- QVGen is the first video QAT method to reach quality comparable to full-precision at 4-bit.
+- The framework is general and effective across two major video model series: CogVideoX and Wan.
+- When applied to Wan 14B (one of the largest open-source models), performance loss on VBench-2.0 is negligible.
+- Gradient norm analysis confirms that $\|\mathbf{g}_t\|_2$ for QVGen is consistently lower than for Q-DM.
 
 ## Highlights & Insights
 
-- First work to theoretically analyze convergence in video QAT, establishing the relationship between gradient norms and convergence behavior.
-- The rank decay strategy is elegantly designed, exploiting the natural shrinkage of singular values observed during training.
-- Significantly outperforms all baselines at the extreme low-bit regimes of 3-bit and 4-bit quantization.
+- First theoretical analysis of convergence in video QAT, revealing the relationship between gradient norms and convergence.
+- The rank decay strategy is elegantly designed, leveraging the natural contraction of singular values during training.
+- Significant superiority over all baselines at extremely low bits (3-bit and 4-bit).
 
 ## Limitations & Future Work
 
-- Training cost is high (Wan 14B requires 32×H100 GPUs for 16 epochs).
-- A full-precision teacher model is required for knowledge distillation.
-- Current validation is limited to linear layer quantization; other components such as attention mechanisms are not yet addressed.
+- High training cost (Wan 14B requires 32×H100 GPUs for 16 epochs).
+- Requires a full-precision teacher model for knowledge distillation.
+- Currently only validates quantization of linear layers, excluding other components like attention mechanisms.
 
 ## Related Work & Insights
 
-- **PTQ Methods**: Post-training quantization approaches such as ViDiT-Q and SVDQuant show limited effectiveness at very low bit-widths.
-- **QAT Methods**: Quantization-aware training methods including Q-DM, EfficientDM, and LSQ face convergence difficulties on video models.
-- **Model Compression**: Alternative compression techniques such as low-rank decomposition and pruning.
+- **PTQ Methods**: Post-training quantization methods like ViDiT-Q and SVDQuant show limited effectiveness at extremely low bits.
+- **QAT Methods**: Standard quantization-aware training like Q-DM, EfficientDM, and LSQ face convergence challenges on video models.
+- **Model Compression**: Alternative compression means including low-rank decomposition and pruning.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The combination of auxiliary modules and rank decay strategy is novel.
-- **Theory**: ⭐⭐⭐⭐ — Convergence analysis is rigorous and well-grounded.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 4 state-of-the-art video models ranging from 1.3B to 14B parameters.
-- **Value**: ⭐⭐⭐⭐⭐ — Directly addresses a critical bottleneck in deploying video generative models.
+- Novelty: ⭐⭐⭐⭐ — Novel combination of auxiliary modules and rank decay.
+- Theory: ⭐⭐⭐⭐ — Solid theoretical analysis of convergence.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers 4 SOTA video models ranging from 1.3B to 14B.
+- Value: ⭐⭐⭐⭐⭐ — Directly addresses the critical bottleneck of video model deployment.
 
 <!-- RELATED:START -->
 
@@ -141,11 +123,11 @@ Results on VBench:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
 - [\[NeurIPS 2025\] EditInfinity: Image Editing with Binary-Quantized Generative Models](../../NeurIPS2025/image_generation/editinfinity_image_editing_with_binary-quantized_generative_models.md)
+- [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
+- [\[ICLR 2026\] Scalable Training for Vector-Quantized Networks with 100% Codebook Utilization](scalable_training_for_vector-quantized_networks_with_100_codebook_utilization.md)
 - [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
-- [\[ICLR 2026\] Beyond Confidence: The Rhythms of Reasoning in Generative Models](beyond_confidence_the_rhythms_of_reasoning_in_generative_models.md)
-- [\[ICLR 2026\] NeuralOS: Towards Simulating Operating Systems via Neural Generative Models](neuralos_towards_simulating_operating_systems_via_neural_generative_models.md)
+- [\[CVPR 2025\] MirrorVerse: Pushing Diffusion Models to Realistically Reflect the World](../../CVPR2025/image_generation/mirrorverse_pushing_diffusion_models_to_realistically_reflect_the_world.md)
 
 </div>
 

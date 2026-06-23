@@ -2,88 +2,91 @@
 title: >-
   [Paper Note] Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance
 description: >-
-  [ICLR 2026][Image Generation][Mixture-of-Experts] This paper proposes ProMoE, an MoE framework for Diffusion Transformers that introduces a two-stage router (conditional routing + prototype routing) and a routing contras…
+  [ICLR 2026][Image Generation][Mixture-of-Experts] ProMoE is proposed as a Mixture-of-Experts framework for Diffusion Transformers. By employing a two-step router (conditional routing + prototype routing) and a routing contrastive loss, it providing explicit semantic guidance to promote expert specialization. It significantly outperforms existing MoE and dense models o
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Mixture-of-Experts"
-  - "DiT"
-  - "Explicit Routing Guidance"
-  - "Prototype Routing"
-  - "Routing Contrastive Loss"
+  - ICLR 2026
+  - Image Generation
+  - Mixture-of-Experts
+  - DiT
 date: 2026-05-08
-content_hash: 5617eb04f4236c61
+content_hash: 49d34a18b9ffafed
 ---
-
 # Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.24711](https://arxiv.org/abs/2510.24711)  
 **Code**: [https://github.com/ali-vilab/ProMoE](https://github.com/ali-vilab/ProMoE)  
-**Area**: Diffusion Models / Mixture of Experts
+**Area**: Diffusion Models / Mixture-of-Experts  
 **Keywords**: Mixture-of-Experts, DiT, Explicit Routing Guidance, Prototype Routing, Routing Contrastive Loss
 
 ## TL;DR
 
-This paper proposes ProMoE, an MoE framework for Diffusion Transformers that introduces a two-stage router (conditional routing + prototype routing) and a routing contrastive loss to provide explicit semantic guidance, promoting expert specialization and significantly outperforming existing MoE and dense models on ImageNet.
+ProMoE is proposed as a Mixture-of-Experts framework for Diffusion Transformers. By employing a two-step router (conditional routing + prototype routing) and a routing contrastive loss, it providing explicit semantic guidance to promote expert specialization. It significantly outperforms existing MoE and dense models on ImageNet.
 
 ## Background & Motivation
 
-While MoE has achieved remarkable success in LLMs, its performance in DiTs has been disappointing:
-- DiT-MoE (token-choice routing) performs even worse than dense models
-- EC-DiT (expert-choice routing) yields only marginal improvements
-- DiffMoE (global token distribution routing) also offers limited gains
+While MoE has achieved significant success in LLMs, its performance in DiT has been underwhelming:
+- DiT-MoE (token-choice routing) performance is even inferior to dense models.
+- EC-DiT (expert-choice routing) yields only marginal gains.
+- DiffMoE (global token distribution routing) shows limited improvement.
 
-**Root Cause Analysis**: Visual tokens differ fundamentally from language tokens:
+**Analysis of Root Causes**: Fundamental differences exist between linguistic and visual tokens:
 
-**High Spatial Redundancy**: Visual tokens are continuous, spatially coupled, and highly redundant (inter/intra-class distance ratio of only 0.748 vs. 19.283 for LLMs), causing experts to learn homogeneous features.
+**High Spatial Redundancy**: Visual tokens are continuous, spatially coupled, and highly redundant (the inter/intra-class distance ratio is only 0.748 vs. 19.283 in LLMs), leading experts to learn homogeneous features.
 
-**Functional Heterogeneity**: CFG introduces two functionally distinct input types — conditional and unconditional — which naive MoE fails to differentiate.
+**Functional Heterogeneity**: CFG introduces two types of inputs with distinct functional roles—conditional and unconditional. Naive MoE fails to treat them separately.
 
 ## Method
 
 ### Overall Architecture
 
-ProMoE comprises a two-stage router combined with routing contrastive learning, aiming to promote:
-- **Intra-expert consistency**: each expert consistently processes similar patterns
-- **Inter-expert diversity**: different experts specialize in distinct tasks
+ProMoE introduces a two-step router before each MoE layer in DiT. It first splits tokens into unconditional and conditional branches based on their functional roles. Learnable prototypes are then used to select experts for conditional tokens. Finally, a routing contrastive loss constrains the prototypes externally, forcing the same expert to focus on similar patterns while pushing different experts apart. This design simultaneously achieves intra-expert consistency (the same expert consistently processes similar patterns) and inter-expert diversity (different experts specialize in different tasks).
 
-### Key Design 1: Conditional Routing
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["DiT Image Tokens"] --> COND["Conditional Routing<br/>Hard Partition by Function"]
+    COND -->|"Unconditional Tokens"| UEXP["Fixed Nu<br/>Unconditional Experts"]
+    COND -->|"Conditional Tokens"| PROTO["Prototype Routing<br/>Token↔Learnable Prototype<br/>Cosine Similarity Selection"]
+    PROTO --> REXP["NE Routing Experts"]
+    UEXP --> OUT["MoE Layer Output<br/>(+ Shared Experts)"]
+    REXP --> OUT
+    RCL["Routing Contrastive Loss (RCL)<br/>InfoNCE Centroid Alignment"] -.Constraints.-> PROTO
+```
 
-Hard routing partitioning based on the functional role of tokens:
-- **Unconditional tokens** (image patches under empty labels/text) → $N_u$ unconditional experts
-- **Conditional tokens** (image patches under specific conditions) → routing experts (determined in the second stage)
+### Key Designs
 
-Forward pass:
+**1. Conditional Routing: Separating tokens by functional role**  
+CFG training results in batches containing both conditional inputs and unconditional inputs (via empty labels/text). Their functions differ drastically; naive MoE mixing them in the same softmax router causes signal contamination. ProMoE performs a hard partition in the first step: unconditional tokens $\mathbf{X}_u$ are sent to fixed $N_u$ unconditional experts, while only conditional tokens $\mathbf{X}_c$ proceed to prototype routing. The forward pass is defined as:
 
 $$\text{MoE}(\mathbf{x}) = \underbrace{\sum_{i=1}^{N_s} E_i^S(\mathbf{x})}_{\text{Shared}} + \begin{cases}\sum_{j=1}^{N_E}\mathbf{G}_j E_j(\mathbf{x}) & \mathbf{x} \in \mathbf{X}_c \\ \sum_{k=1}^{N_u}E_k^U(\mathbf{x}) & \mathbf{x} \in \mathbf{X}_u\end{cases}$$
 
-### Key Design 2: Prototype Routing
+$N_s$ shared experts participate in both paths to handle common features. This prevents unconditional tokens from competing for routing expert capacity, allowing routing experts to focus on distinct conditional semantics.
 
-Learnable prototypes $\mathbf{P} \in \mathbb{R}^{N_E \times D}$ are introduced, with each prototype corresponding to one expert. Tokens are assigned via cosine similarity:
+**2. Prototype Routing: Using learnable prototypes as semantic anchors**  
+Visual tokens are highly redundant, with an inter/intra-class distance ratio of only 0.748, making it difficult for linear routers to learn discriminative subspaces. ProMoE assigns a learnable prototype $\mathbf{p}_j \in \mathbb{R}^D$ to each expert. Matching is calculated via cosine similarity: $\mathbf{Z}_{i,j} = \alpha \frac{\mathbf{x}_i \mathbf{p}_j^\top}{\|\mathbf{x}_i\| \|\mathbf{p}_j\|}$. An identity mapping $\mathcal{A}(\mathbf{Z}) = \mathbf{Z}$ is intentionally chosen as the activation function over softmax or sigmoid to prevent similarity compression. Prototypes explicitly parameterize "what semantics the expert represents," providing a supervised target for routing.
 
-$$\mathbf{Z}_{i,j} = \alpha \frac{\mathbf{x}_i \mathbf{p}_j^\top}{\|\mathbf{x}_i\| \|\mathbf{p}_j\|}$$
-
-The identity function $\mathcal{A}(\mathbf{Z}) = \mathbf{Z}$ is used as the activation (outperforming softmax and sigmoid).
-
-### Key Design 3: Routing Contrastive Loss
-
-Explicitly enhances the semantic guidance of prototype routing by pulling each prototype toward the centroid of its positive set and pushing it away from negative centroids:
+**3. Routing Contrastive Loss (RCL): Enforcing semantic separation and load balancing**  
+To prevent prototypes from collapsing into similar directions, RCL calculates a centroid $\mathbf{m}_i$ for all tokens assigned to expert $E_i$. It uses an InfoNCE-style loss to pull each prototype toward its own centroid while pushing it away from others:
 
 $$\mathcal{L}_{\text{RCL}} = -\frac{1}{N_a}\sum_{i=1}^{N_a}\log\frac{\exp(\text{sim}(\mathbf{p}_i, \mathbf{m}_i)/\tau)}{\sum_{j=1}^{N_a}\exp(\text{sim}(\mathbf{p}_i, \mathbf{m}_j)/\tau)}$$
 
-where $\mathbf{m}_i$ is the centroid of tokens assigned to expert $E_i$. The repulsion term in RCL also serves as an implicit load balancing mechanism.
+The temperature $\tau$ controls the sharpness of separation. This method is more flexible than classification-based guidance and more robust than offline K-Means. The repulsion term naturally distributes tokens across experts, eliminating the need for traditional load balancing losses.
 
 ### Loss & Training
 
+The total objective adds the weighted RCL to the diffusion loss:
+
 $$\mathcal{L} = \mathcal{L}_{\text{diffusion}} + \lambda_{\text{RCL}} \mathcal{L}_{\text{RCL}}$$
+
+The framework is compatible with both DDPM and Rectified Flow training paradigms.
 
 ## Key Experimental Results
 
-### Main Results: Comparison with Dense Models (Rectified Flow, 500K steps)
+### Main Results (Rectified Flow, 500K steps)
 
 | Model | Active Params | Total Params | FID↓ (cfg=1.0) | FID↓ (cfg=1.5) |
-|-------|--------------|-------------|---------------|---------------|
+|------|---------|-------|---------------|---------------|
 | Dense-DiT-B | 130M | 130M | 30.61 | 9.02 |
 | ProMoE-B | 130M | 300M | 24.44 | 6.39 |
 | Dense-DiT-L | 458M | 458M | 15.44 | 3.56 |
@@ -91,57 +94,57 @@ $$\mathcal{L} = \mathcal{L}_{\text{diffusion}} + \lambda_{\text{RCL}} \mathcal{L
 | Dense-DiT-XL | 675M | 675M | 13.38 | 3.23 |
 | ProMoE-XL | 675M | 1.568B | 9.44 | 2.59 |
 
-ProMoE-L surpasses Dense-DiT-XL (675M) while using fewer active parameters (458M).
+ProMoE-L outperforms Dense-DiT-XL while using fewer active parameters (458M vs 675M).
 
-### Ablation Study: Semantic Guidance Verification
+### Semantic Guidance Verification
 
 | Method | FID↓ (cfg=1.5) | IS↑ |
-|--------|---------------|-----|
+|------|---------------|-----|
 | Dense-DiT-B | 9.02 | 131.13 |
 | DiT-MoE-B | 8.94 | 131.66 |
 | DiffMoE-B | 8.22 | 137.46 |
-| Classification Routing Guidance | **5.91** | **165.45** |
+| Class-based Routing Guidance | **5.91** | **165.45** |
 | K-Means Routing Guidance | 6.24 | 159.77 |
 
-Both explicit and implicit semantic guidance yield significant improvements, confirming that visual MoE requires semantic guidance.
+Both explicit and implicit semantic guidance lead to significant improvements, confirming that visual MoE requires semantic guidance.
 
 ### Comparison with MoE Baselines
 
-ProMoE outperforms DiT-MoE, EC-DiT, and DiffMoE across all scales and training paradigms (DDPM/RF).
+Ours outperforms DiT-MoE, EC-DiT, and DiffMoE across all scales and training paradigms (DDPM/RF).
 
 ### Key Findings
 
-- The core bottleneck of visual MoE is expert homogenization (expert subspaces are highly similar without guidance)
-- Conditional routing effectively eliminates routing interference caused by functional heterogeneity
-- RCL requires no manual labels, is more flexible than classification loss, and more robust than K-Means
-- The repulsion term in RCL naturally replaces conventional load balancing losses
+- The core bottleneck for visual MoE is expert homogenization (subspaces are highly similar without guidance).
+- Conditional routing effectively eliminates functional heterogeneity interference.
+- RCL is flexible, requiring no human labels, and is more robust than K-Means.
+- The repulsion mechanism in RCL naturally replaces traditional load balancing losses.
 
 ## Highlights & Insights
 
-- Provides an in-depth analysis of the root causes behind the performance gap between visual and language MoE
-- The two-stage routing + contrastive loss design is concise and effective, and generalizable to other visual MoE frameworks
-- Strong parameter efficiency: fewer active parameters surpass larger dense models
-- Validated under both DDPM and Rectified Flow paradigms
+- Deep analysis of the root causes behind the MoE performance gap between vision and language.
+- The two-step routing + contrastive loss design is simple, effective, and generalizable to other visual MoE applications.
+- Exceptional parameter efficiency: fewer active parameters outperform larger dense models.
+- Validated effectiveness across both DDPM and Rectified Flow paradigms.
 
 ## Limitations & Future Work
 
-- Evaluation is limited to class-conditional ImageNet; more complex scenarios such as text-to-image generation are not explored
-- Conditional routing requires CFG inference and is not applicable to settings without CFG
-- Computational overhead of clustering/contrastive learning is not analyzed in detail
-- Total parameter count is approximately 2.3× that of the dense counterpart
+- Evaluation is limited to class-conditioned ImageNet; performance on complex scenarios like text-to-image is not yet verified.
+- Conditional routing requires CFG during inference, making it inapplicable to non-CFG scenarios.
+- Computational overhead of clustering and contrastive learning is not analyzed in detail.
+- Total parameter count is approximately 2.3x that of dense models.
 
 ## Related Work & Insights
 
-- **DiT MoE**: Prior attempts at visual MoE, including DiT-MoE, EC-DiT, and DiffMoE
-- **LLM MoE**: Successful applications in the language domain, such as DeepSeek-MoE and Mixtral
-- **Diffusion Models**: Transformer-based diffusion models including DiT and SiT
+- **DiT MoE**: DiT-MoE, EC-DiT, and DiffMoE represent prior attempts at visual MoE.
+- **LLM MoE**: Successful applications in language, such as DeepSeek-MoE and Mixtral.
+- **Diffusion Models**: DiT, SiT, and other Transformer-based diffusion architectures.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — In-depth analysis; two-stage routing + RCL combination is novel
-- **Technical Rigor**: ⭐⭐⭐⭐ — Rigorous experimental design with thorough ablations
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-scale, multi-paradigm validation
-- **Impact**: ⭐⭐⭐⭐⭐ — Charts a clear direction for visual MoE research
+- Novelty: ⭐⭐⭐⭐⭐ — Deep analysis combined with a novel two-step routing and RCL approach.
+- Technicality: ⭐⭐⭐⭐ — Rigorous experimental design with thorough ablation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-scale and multi-paradigm validation.
+- Value: ⭐⭐⭐⭐⭐ — Provides a clear direction for scaling visual MoE.
 
 <!-- RELATED:START -->
 
@@ -149,11 +152,11 @@ ProMoE outperforms DiT-MoE, EC-DiT, and DiffMoE across all scales and training p
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](../../CVPR2026/image_generation/care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
-- [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](../../NeurIPS2025/image_generation/scaling_diffusion_transformers_efficiently_via_μp.md)
-- [\[CVPR 2026\] Mixture of States: Routing Token-Level Dynamics for Multimodal Generation](../../CVPR2026/image_generation/mixture_of_states_routing_token-level_dynamics_for_multimodal_generation.md)
-- [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
-- [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](../../AAAI2026/image_generation/mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
+- [\[ICLR 2026\] LazyDrag: Enabling Stable Drag-Based Editing on Multi-Modal Diffusion Transformers via Explicit Correspondence](lazydrag_enabling_stable_drag-based_editing_on_multi-modal_diffusion_transformer.md)
+- [\[ICLR 2026\] Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation](guidance_matters_rethinking_the_evaluation_pitfall_for_text-to-image_generation.md)
+- [\[CVPR 2026\] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper](../../CVPR2026/image_generation/maproute_semantic_routing_concept_erasure.md)
 
 </div>
 

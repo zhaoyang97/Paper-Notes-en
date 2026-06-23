@@ -2,83 +2,88 @@
 title: >-
   [Paper Note] Neon: Negative Extrapolation From Self-Training Improves Image Generation
 description: >-
-  [ICLR 2026 Oral][Image Generation][self-training] Neon is proposed as a post-processing method requiring <1% additional training compute: the model is first fine-tuned on its own synthetic data (causing degradation)…
+  [ICLR 2026][Image Generation][self-training] Neon is proposed as a post-processing method requiring <1% additional training computation. It involves fine-tuning the model on its own synthetic data to induce degradation, followed by negative extrapolation away from the degraded weights. The study proves that mode-seeking samplers cause anti-alignment between synth
 tags:
-  - "ICLR 2026 Oral"
-  - "Image Generation"
-  - "self-training"
-  - "model collapse"
-  - "weight merging"
-  - "negative extrapolation"
-  - "FID"
+  - ICLR 2026
+  - Image Generation
+  - self-training
+  - model collapse
+  - weight merging
+  - negative extrapolation
+  - FID
 date: 2026-05-08
-content_hash: 5599fefa7a8b147f
+content_hash: db90c3d555ec19a1
 ---
-
 # Neon: Negative Extrapolation From Self-Training Improves Image Generation
 
-**Conference**: ICLR 2026 Oral
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2510.03597](https://arxiv.org/abs/2510.03597)  
 **Code**: [github.com/VITA-Group/Neon](https://github.com/VITA-Group/Neon)  
-**Area**: Image Generation / Self-Training
+**Area**: Image Generation / Self-Training  
 **Keywords**: self-training, model collapse, weight merging, negative extrapolation, FID
 
 ## TL;DR
-Neon is proposed as a post-processing method requiring <1% additional training compute: the model is first fine-tuned on its own synthetic data (causing degradation), then negatively extrapolated away from the degraded weights. The paper proves that mode-seeking samplers cause anti-alignment between synthetic and real data gradients, so negative extrapolation is equivalent to optimizing toward the real data distribution. On ImageNet 256×256, xAR-L achieves SOTA FID of 1.02.
+Neon is proposed as a post-processing method requiring <1% additional training computation. It involves fine-tuning the model on its own synthetic data to induce degradation, followed by negative extrapolation away from the degraded weights. The study proves that mode-seeking samplers cause anti-alignment between synthetic and real data gradients, making negative extrapolation equivalent to optimizing toward the real data distribution. It improves xAR-L to a SOTA FID of 1.02 on ImageNet 256×256.
 
 ## Background & Motivation
 
-**Background**: Scaling generative models is constrained by the scarcity of high-quality training data. Self-training with synthetically generated data is an intuitive solution, but leads to **Model Autophagy Disorder (MAD) / Model Collapse**—rapid degradation in sample quality and diversity.
+**Background**: The scaling of generative models is constrained by the scarcity of high-quality training data. Self-training using synthetic data is an intuitive solution but leads to **Model Autophagy Disorder (MAD / Model Collapse)**, characterized by rapid degradation in sample quality and diversity.
 
-**Limitations of Prior Work**: (a) SIMS requires 2× inference NFE and large numbers of synthetic samples (100K) with significant additional training compute (20%); (b) DDO requires multiple rounds of iteration (16 rounds × 50K samples); (c) existing methods lack a unified theoretical explanation for why self-training degrades and how degradation can be exploited.
+**Limitations of Prior Work**: (a) Self-improvement methods like SIMS require 2× inference NFE, large synthetic datasets (100K), and significant extra training computation (20%); (b) DDO requires multiple iterations (16 rounds × 50K samples); (c) Existing approaches lack a unified theoretical explanation for why self-training degrades and how to exploit it.
 
-**Key Challenge**: Self-training degradation appears wasteful, yet the degradation direction itself carries information—if the direction of degradation can be understood, it can be exploited in reverse.
+**Key Challenge**: While self-training degradation appears wasteful, the direction of degradation itself contains information. If this direction is understood, it can be utilized in reverse.
 
-**Goal**: Can the degradation signal from self-training be transformed into a self-improvement signal, with theoretical guarantees?
+**Goal**: Can the degradation signals from self-training be converted into self-improvement signals? Can this be supported with theoretical guarantees?
 
-**Key Insight**: The authors observe that mode-seeking samplers (temperature <1, top-k, finite-step ODE solvers) bias synthetic data toward high-probability regions of the model distribution, causing the population gradients of synthetic and real data to be **anti-aligned** ($\cos\varphi < 0$). Consequently, reversing the self-training gradient is equivalent to optimizing toward the real data distribution.
+**Key Insight**: The authors observe that mode-seeking samplers (temperature <1, top-k, finite-step ODE solvers) bias synthetic data toward high-probability regions of the model distribution, causing the population gradients of synthetic and real data to be **anti-aligned** ($\cos\varphi < 0$). Consequently, reversing the self-training gradient is approximately equivalent to optimizing toward the real data distribution.
 
-**Core Idea**: Self-training degrades the model, but the direction of degradation is precisely the opposite of the direction of improvement; therefore, negative extrapolation along that direction improves the model.
+**Core Idea**: Self-training makes a model worse, but the "direction of worsening" is precisely the opposite of the "direction of improvement." Therefore, negative extrapolation can improve the model.
 
 ## Method
 
 ### Overall Architecture
-Neon is a minimalist three-step post-processing pipeline: (1) generate a small set of synthetic data $S$ (~1K–6K samples) using the base model $\theta_r$; (2) briefly fine-tune on $S$ to obtain a degraded model $\theta_s$; (3) perform weight negative extrapolation: $\theta_{\text{neon}} = (1+w)\theta_r - w\theta_s$, where $w > 0$.
+Neon converts the degradation direction of self-training into an improvement signal. The pipeline adds three steps after the initial training: first, sample a small batch of synthetic data $S$ (approx. 1K–6K) using the base model $\theta_r$; second, briefly fine-tune on $S$ to obtain a "deliberately worsened" degraded model $\theta_s$; finally, perform negative extrapolation in parameter space $\theta_{\text{neon}} = (1+w)\theta_r - w\theta_s$ ($w>0$). This process requires no changes to inference and no new real data, with extra computation under 1% of the original training. Two theories (Anti-alignment Theorem and Risk-reduction Theorem) ensure the reverse direction yields improvement, while a U-shaped budget curve determines the optimal degree of degradation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Train on Real Data<br/>to get Base Model θ_r"] --> B["Sample Synthetic Data S<br/>(1K–6K images,<br/>mode-seeking sampler)"]
+    B --> C["Brief Fine-tuning on S<br/>to get Degraded Model θ_s<br/>(Budget 1–2%, U-shaped curve)"]
+    C --> D["Negative Extrapolation Weight Merging<br/>θ_neon = (1+w)θ_r − wθ_s"]
+    A -->|"Base Weights θ_r"| D
+    D --> E["Final Model θ_neon<br/>Zero Inference Overhead"]
+```
 
 ### Key Designs
 
-1. **Negative Extrapolation Weight Merging**
+**1. Negative Extrapolation Weight Merging: Moving away from degradation**
 
-    - **Function**: Obtain an improved model via reverse extrapolation in parameter space.
-    - **Mechanism**: $\theta_{\text{neon}} = \theta_r + w(\theta_r - \theta_s)$, i.e., moving in the direction opposite to "base model → degraded model." In practice, this reduces to a single line of code: `merged[k] = base[k] - w * (aux[k] - base[k])`
-    - **Design Motivation**: No inference overhead (unlike SIMS which requires 2× NFE), no new real data required, and only a minimal number of synthetic samples needed.
+Self-training pushes the model toward a worse position $\theta_s$. Neon reverses this by pushing weights in the opposite direction: $\theta_{\text{neon}} = \theta_r + w(\theta_r - \theta_s)$. Here, $(\theta_r - \theta_s)$ acts as the "anti-degradation" direction vector. Implementation is a single line of merging code: `merged[k] = base[k] - w * (aux[k] - base[k])`. Unlike methods like SIMS that require running two models during inference (doubling NFE), Neon produces standard weights with zero additional inference overhead.
 
-2. **Anti-Alignment Theory (Theorem 1)**
+**2. Anti-alignment Theory (Theorem 1): Why the reverse is the right direction**
 
-    - **Function**: Proves that under mode-seeking samplers, synthetic data gradients are anti-aligned with real data gradients.
-    - **Mechanism**: Defines $r_d = \nabla_\theta \mathcal{L}_{\text{real}}(\theta_r)$ (real data gradient) and $r_s = \nabla_\theta \mathcal{L}_{\text{synth}}(\theta_r)$ (synthetic data gradient), and proves that when the sampler satisfies the monotone reweighting condition and model error $|\varepsilon|$ is sufficiently small, $\cos\varphi = \frac{\langle r_d, r_s \rangle}{\|r_d\| \|r_s\|} < 0$.
-    - **Design Motivation**: This explains why self-training causes degradation (updating along $r_s$ effectively increases real data loss) and why negative extrapolation works (reversing $r_s$ approximates an update along $r_d$).
+Negative extrapolation relies on gradient directionality. Let the population gradient of the base model on real data be $r_d = \nabla_\theta \mathcal{L}_{\text{real}}(\theta_r)$ and on synthetic data be $r_s = \nabla_\theta \mathcal{L}_{\text{synth}}(\theta_r)$. The paper proves that if the sampler is mode-seeking (monotone reweighting, e.g., temperature $<1$) and the model error $|\varepsilon|$ is sufficiently small, these gradients are anti-aligned:
 
-3. **Neon Reduces Population Risk (Theorem 2)**
+$$\cos\varphi = \frac{\langle r_d, r_s \rangle}{\|r_d\| \|r_s\|} < 0.$$
 
-    - **Function**: Proves that an appropriate $w > 0$ guarantees improvement.
-    - **Mechanism**: $\mathcal{L}_{\text{real}}(\theta_{\text{neon}}) < \mathcal{L}_{\text{real}}(\theta_r)$; the optimal $w$ can be predicted from the gradient alignment perspective.
-    - **Design Motivation**: Provides rigorous theoretical guarantees rather than a purely empirical approach.
+This explains why self-training (updating along $r_s$) increases real data loss, and why reversing $r_s$ approximates an update along $r_d$.
 
-4. **U-Shaped Training Budget Curve**
+**3. Neon reduces population risk (Theorem 2): Guaranteed improvement**
 
-    - **Function**: Explains the non-monotonic effect of training budget $B$ on performance.
-    - **Mechanism**: When $B$ is too small, high variance causes inaccurate estimation of the degradation direction; when $B$ is too large, the Taylor expansion fails as higher-order terms dominate. The optimal range is 1–2% of the base training budget.
-    - **Design Motivation**: Guides hyperparameter selection.
+The paper provides an existence guarantee: there exists a suitable $w>0$ such that $\mathcal{L}_{\text{real}}(\theta_{\text{neon}}) < \mathcal{L}_{\text{real}}(\theta_r)$. The optimal $w$ can be predicted from the degree of gradient alignment, making Neon a theoretically grounded correction rather than a purely empirical trick.
+
+**4. U-shaped Training Budget Curve: Optimal degradation**
+
+The duration of fine-tuning for $\theta_s$ (budget $B$) determines the accuracy of the extrapolation direction. If $B$ is too small, $\theta_s$ lacks a clear degradation trend, leading to high noise. If $B$ is too large, the displacement exceeds the validity of the first-order Taylor approximation. Performance follows a U-shaped curve with respect to $B$, with the optimum typically at 1-2% of the base training effort.
 
 ### Loss & Training
-The fine-tuning stage uses the standard training loss of each respective architecture without modification. $w$ is typically chosen in $[0.5, 1.5]$, with $w \approx 0.8\text{–}1.0$ recommended. For class-conditional models, joint tuning with the CFG scale $\gamma$ is required.
+The fine-tuning stage uses the original standard training loss for each respective architecture. The parameter $w$ is typically chosen in the range $[0.5, 1.5]$, with $w \approx 0.8\text{-}1.0$ recommended. For class-conditional models, $w$ should be tuned jointly with the CFG scale $\gamma$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Type | Dataset | Baseline FID | Neon FID | Gain |
+| Model | Type | Dataset | Base FID | Neon FID | Gain |
 |------|------|--------|----------|----------|------|
 | xAR-L | Flow matching | ImageNet-256 | 1.28 | **1.02** | -20.3% |
 | xAR-B | Flow matching | ImageNet-256 | 1.72 | **1.31** | -23.8% |
@@ -90,48 +95,48 @@ The fine-tuning stage uses the standard training loss of each respective archite
 
 ### Ablation Study
 
-| Ablation Dimension | Key Findings |
+| Dimension | Key Findings |
 |---------|---------|
-| Training budget $B$ | U-shaped curve: optimum at 1–2% of base training budget |
-| Merging weight $w$ | $w=-1$ (direct self-training) degrades; $w \in [0.5, 1.5]$ yields consistent improvement |
-| Number of synthetic samples | Effective with as few as 1K; diminishing returns beyond 6K |
-| Cross-architecture synthesis | Synthetic data generated by one architecture can improve another |
+| Training Budget $B$ | U-shaped curve: optimal at 1-2% of base training. |
+| Merging Weight $w$ | $w=-1$ (standard self-training) degrades; $w \in [0.5, 1.5]$ provides consistent improvement. |
+| Synthetic Samples | 1K is effective; returns diminish after 6K. |
+| Cross-architecture | Synthetic data from one architecture can improve another. |
 
 ### Efficiency Comparison
 
-| Method | FID (EDM, cond. CIFAR-10) | Extra Compute | Synthetic Samples | Inference Overhead |
+| Method | FID (EDM, cond. CIFAR-10) | Extra Computation | Synthetic Samples | Inference Overhead |
 |------|--------------------------|---------|----------|---------|
-| **Neon** | 1.38 | 1.75% | 6K | None |
+| **Ours** | 1.38 | 1.75% | 6K | None |
 | SIMS | 1.33 | 20% | 100K | 2× NFE |
 | DDO | 1.30 | 12% | 800K | None |
 
 ### Key Findings
-- **Cross-Architecture Generality**: The same method applies without modification to four architecture types: diffusion, flow matching, autoregressive, and moment matching.
-- **Precision–Recall Trade-off**: Neon primarily improves recall (diversity) at a slight cost to precision, with a net reduction in FID.
-- **Mode-Seeking vs. Diversity-Seeking**: When the sampler is diversity-seeking ($\tau > 1$), the gradient alignment flips and negative extrapolation fails—a boundary condition predicted by theory.
-- **SOTA**: xAR-L + Neon achieves FID 1.02 on ImageNet 256×256 with only 0.36% additional compute.
+- **Cross-Architecture Generality**: Applicable without modification to diffusion, flow matching, autoregressive, and moment matching models.
+- **Precision-Recall Tradeoff**: Neon primarily improves recall (diversity) while slightly decreasing precision, resulting in a net FID reduction.
+- **Mode-seeking vs Diversity-seeking**: If the sampler is diversity-seeking ($\tau > 1$), gradient alignment flips, and negative extrapolation fails, confirming theoretical boundary conditions.
+- **SOTA**: xAR-L + Neon achieves FID 1.02 on ImageNet 256×256 with only 0.36% extra computation.
 
 ## Highlights & Insights
-- **The core insight of "degradation as signal" is remarkably elegant**: model collapse is transformed from a problem into a tool, exploiting the information encoded in the degradation direction. The philosophical implication is profound—"knowing the wrong direction is equivalent to knowing the right direction."
-- **Minimal implementation**: The entire method reduces to a single line of weight merging code, requiring no modifications to the inference pipeline, no additional data, and no extra inference overhead—methodologically parsimonious to an extreme.
-- **Theory and practice in precise correspondence**: The anti-alignment theorem accurately predicts the U-shaped curve and the mode-seeking condition observed empirically, representing a rare example of a theoretically grounded practical method.
+- **Elegant "Degradation as Signal" Insight**: Converting model collapse into a tool by leveraging the information in the degradation direction is a profound conceptual shift.
+- **Minimal Implementation**: The method requires only a single line of weight merging code, with no changes to the inference pipeline or extra overhead.
+- **Theoretical Alignment**: The anti-alignment theorem accurately predicts the observed U-shaped curve and the requirement for mode-seeking samplers, making it a rare theoretically driven practical method.
 
 ## Limitations & Future Work
-- **Hyperparameter tuning**: $w$ and $B$ require some tuning (though the effective range is broad), and no automatic selection mechanism is provided.
-- **Validated on image generation only**: The approach has not been evaluated on NLP (where language models also use temperature/top-k) or video generation.
-- **One-shot correction**: Neon relies on a local first-order approximation and cannot be applied iteratively (repeated negative extrapolation invalidates the Taylor expansion).
-- **Precision–diversity trade-off**: The method does not improve peak generation quality, only the proportion of samples exceeding a quality threshold.
+- **Hyperparameter Tuning**: $w$ and $B$ require some tuning, and there is currently no automatic selection mechanism.
+- **Domain Scope**: Only verified for image generation; not yet tested on NLP (where temperature/top-k are also used) or video generation.
+- **One-time Correction**: As a local first-order approximation, it cannot be applied iteratively (multiple extrapolations would invalidate the Taylor expansion).
+- **Quality vs. Diversity**: It improves the proportion of samples above a quality threshold rather than increasing the peak generation quality.
 
 ## Related Work & Insights
-- **vs. SIMS**: SIMS corrects at inference time using the score difference between the base and self-trained models, requiring 2× NFE. Neon performs a one-shot weight merge after training, incurring no inference overhead.
-- **vs. DDO (Distillation from Degraded Output)**: DDO requires 16 iterative rounds × 50K samples, with substantially higher compute than Neon.
-- **Connection to "Why DPO is Misspecified"**: Both works exploit information encoded in misspecification or degradation directions—DPO's misspecified projection and Neon's degradation gradient both embody the principle of "leveraging bias signals."
+- **vs SIMS**: SIMS uses the difference between base and self-trained model scores during inference (2× NFE). Neon performs a one-time merge after training with zero inference cost.
+- **vs DDO**: DDO requires 16 iterations and 800K samples, involving far more computation than Neon.
+- **Connection to "Why DPO is Misspecified"**: Both exploit information from misspecified or degraded directions—repurposing "bias signals" for model refinement.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The idea of "reversing degradation" is highly original; both theory and method are novel contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four architectures, three datasets, extensive ablations, and thorough efficiency comparisons.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theory is clearly presented, figures are intuitive, and the method is implementable in a single line of code.
-- Value: ⭐⭐⭐⭐⭐ High generality, minimal cost, and theoretical guarantees—a strong candidate to become a standard post-training step for generative models.
+- Novelty: ⭐⭐⭐⭐⭐ "Negative exploitation of degradation" is highly original conceptually and theoretically.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 4 architectures and 3 datasets.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear theory, intuitive diagrams, and simple implementation.
+- Value: ⭐⭐⭐⭐⭐ High potential to become a standard post-training step due to generality and low cost.
 
 <!-- RELATED:START -->
 
@@ -140,10 +145,10 @@ The fine-tuning stage uses the standard training loss of each respective archite
 ## Related Papers
 
 - [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
+- [\[ICLR 2026\] Diffusion Negative Preference Optimization Made Simple](diffusion_negative_preference_optimization_made_simple.md)
 - [\[AAAI 2026\] RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation](../../AAAI2026/image_generation/retrysql_text-to-sql_training_with_retry_data_for_self-correcting_query_generati.md)
 - [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](../../NeurIPS2025/image_generation/understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
-- [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](../../CVPR2026/image_generation/self-corrected_image_generation_with_explainable_latent_rewards.md)
-- [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](../../CVPR2026/image_generation/solace_self_confidence_rewards_t2i.md)
+- [\[ECCV 2024\] Removing Distributional Discrepancies in Captions Improves Image-Text Alignment](../../ECCV2024/image_generation/removing_distributional_discrepancies_in_captions_improves_image-text_alignment.md)
 
 </div>
 

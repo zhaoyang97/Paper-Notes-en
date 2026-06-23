@@ -2,201 +2,169 @@
 title: >-
   [Paper Note] Purrception: Variational Flow Matching for Vector-Quantized Image Generation
 description: >-
-  [ICLR 2026][Image Generation][variational flow matching] This paper proposes Purrception, an image generation method that adapts Variational Flow Matching (VFM) to vector-quantized (VQ) latent spaces. By simultaneously c…
+  [ICLR 2026][Image Generation][Paper Note] Ours proposes Purrception, an image generation method that adapts Variational Flow Matching (VFM) to the Vector-Quantized (VQ) latent space. By learning a categorical posterior distribution over codebook indices while calculating the velocity field in continuous embedding space, it bridges continuous transport dynamics
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "variational flow matching"
-  - "vector quantization"
-  - "discrete diffusion"
-  - "categorical posterior"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 8fe67aec25c8ccfe
+content_hash: 7f1b7ca6e5e6af03
 ---
-
 # Purrception: Variational Flow Matching for Vector-Quantized Image Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.01478](https://arxiv.org/abs/2510.01478)  
 **Code**: None  
-**Area**: Image Generation
-**Keywords**: variational flow matching, vector quantization, discrete diffusion, categorical posterior, image generation
+**Area**: Image Generation  
+**Keywords**: Variational Flow Matching, Vector Quantization, Discrete Diffusion, Categorical Posterior, Image Generation
 
 ## TL;DR
 
-This paper proposes Purrception, an image generation method that adapts Variational Flow Matching (VFM) to vector-quantized (VQ) latent spaces. By simultaneously computing a velocity field in the continuous embedding space and learning a categorical posterior distribution over codebook indices, Purrception bridges continuous transport dynamics with discrete supervision, achieving faster training convergence and FID scores competitive with state-of-the-art methods on ImageNet-1k 256×256.
+Ours proposes Purrception, an image generation method that adapts Variational Flow Matching (VFM) to the Vector-Quantized (VQ) latent space. By learning a categorical posterior distribution over codebook indices while calculating the velocity field in continuous embedding space, it bridges continuous transport dynamics and discrete supervision, achieving faster training convergence and comparable FID scores to SOTA on ImageNet-1k 256×256.
 
 ## Background & Motivation
 
-The field of image generation is undergoing a fundamental paradigm shift. Performing generation within a latent space has become the dominant approach, and **how to model the generative process within that latent space** is a central design choice. Two major technical paradigms currently exist, each with distinct trade-offs:
+The core paradigm of image generation is undergoing a profound transformation. Generating in latent space has become the mainstream approach, and **how to model the generation process in latent space** is a central design choice. Two main technical paths currently exist, each with advantages and disadvantages:
 
 ### Continuous Methods
 
-Exemplified by Flow Matching and diffusion models, these methods define transport paths from noise to data in a continuous space.
+Represented by Flow Matching and diffusion models, these define a transport path from noise to data in continuous space.
 
-- **Advantages**: Geometric awareness; transport paths exhibit favorable mathematical properties in continuous space; gradient estimates are smooth.
-- **Disadvantages**: Cannot provide explicit supervision signals over discrete codebook indices; a fundamental mismatch arises when the underlying latent space is discrete (e.g., the codebook of a VQ-VAE).
+- **Advantages**: Geometric awareness; transport paths have favorable mathematical properties in continuous space; smooth gradient estimation.
+- **Limitations of Prior Work**: Incapable of providing explicit supervision signals for discrete codebook indices; a natural mismatch exists when the underlying latent space is discrete (e.g., VQ-VAE codebooks).
 
 ### Discrete Methods
 
-Exemplified by Discrete Flow Matching and masked language models, these methods directly model generation in discrete token space.
+Represented by Discrete Flow Matching and masked language models, these model directly in the discrete token space.
 
-- **Advantages**: Provide explicit categorical supervision over codebook indices, naturally compatible with VQ latent spaces.
-- **Disadvantages**: Lack geometric structural information from continuous space, potentially leading to less efficient training.
+- **Advantages**: Provides explicit categorical supervision over codebook indices; naturally matches the VQ latent space.
+- **Limitations of Prior Work**: Lacks geometric structural information in continuous space; training can be inefficient.
 
-The core motivation of this paper is: **can the advantages of both approaches be combined?** Specifically, can one maintain continuous transport dynamics while simultaneously providing explicit categorical supervision over discrete codebook indices?
+The **Goal** of this paper is: **Can the advantages of both methods be combined?** Specifically, can continuous transport dynamics be maintained while providing explicit categorical supervision on discrete codebook indices?
 
-Variational Flow Matching (VFM) offers a natural framework for this bridging — it extends continuous flow matching with variational inference, enabling the definition of posterior distributions over discrete variables. Purrception represents the first attempt to adapt VFM for VQ-based image generation.
+Variational Flow Matching (VFM) provides a natural framework for this bridge—it introduces variational inference on top of continuous flow matching, allowing the definition of posterior distributions over discrete variables. Purrception is the first attempt to adapt VFM for VQ image generation.
 
 ## Method
 
 ### Overall Architecture
 
-Purrception's generative pipeline operates over the latent space of a **vector-quantized autoencoder (VQ-VAE/VQ-GAN)**. Unlike existing approaches, Purrception operates simultaneously at two levels:
+Purrception aims to resolve the inherent "dual identity" contradiction of the VQ latent space: each latent variable is both a discrete index in a codebook and a continuous embedding vector carrying geometric relationships (distance, direction). Continuous Flow Matching treats it only as a vector, losing discrete supervision, while pure discrete flow matching only predicts indices, losing geometric structure. The **Mechanism** is: within the VQ-VAE latent space, a Diffusion Transformer (DiT) predicts a **categorical posterior over the codebook** $\pi$ for each patch based on the interpolated intermediate state $z_t$. The **velocity field for transport is then analytically derived from this posterior** (posterior-weighted endpoint expectation). Training thus simplifies to a **pure cross-entropy** loss against the ground truth codewords. During sampling, diversity is adjusted via softmax temperature, and the generated quantized latents are passed to the decoder to reconstruct the pixel image. The entire pipeline uses a single network and a single loss, yet achieves both discrete supervision and continuous geometry.
 
-- **Continuous level**: A velocity field is defined and learned in the continuous vector space of codebook embeddings, transporting samples from a noise distribution to the data distribution.
-- **Discrete level**: A categorical posterior distribution is learned over codebook indices, providing a discrete supervision signal.
-
-These two levels are **jointly modeled** within the variational flow matching framework, sharing underlying parameters and the optimization process.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Input Image x"] --> ENC["Pre-trained Encoder E + Quantization<br/>Yields Target Latent z₁ and Index c"]
+    ENC --> INT["Linear Interpolation zₜ=t·z₁+(1-t)·z₀<br/>z₀~Noise, t~U(0,1)"]
+    INT --> DIT["Categorical Variational Posterior<br/>DiT predicts codebook distribution π(zₜ) for each patch"]
+    DIT -->|Cross-Entropy vs Ground Truth c| LOSS["Goal: Pure Cross-Entropy L_Purr"]
+    DIT -->|Posterior Weighted Expectation| VEL["Velocity Field = Posterior Expectation<br/>vθ=Σπ(eₖ-zₜ)/(1-t)<br/>Uncertainty mapped to smooth transport"]
+    VEL --> SAMP["Sampling: Softmax Temp τ adjusts diversity<br/>Integration yields quantized latent"]
+    SAMP --> DEC["Decoder G → Pixel Image"]
+```
 
 ### Key Designs
 
-1. **Learning the Categorical Posterior**:
+**1. Categorical Variational Posterior: Expressing "which codeword the endpoint should be" via distributions**
 
-    - *Function*: Learn a probability distribution over codebook indices at each spatial location, rather than making a deterministic selection.
-    - *Mechanism*: Given the current intermediate state (a point along the noise-to-data transport path), the model predicts the most probable distribution over codebook indices at each location, parameterized as a categorical distribution.
-    - *Design Motivation*:
-        - Multiple semantically similar codebook entries may exist in a VQ codebook; deterministic selection can introduce unnecessary hard-decision noise.
-        - The categorical posterior provides **uncertainty quantification** — the model can express ambiguity such as "this position is likely code 42 or code 87."
-        - This probabilistic treatment yields smoother training signals, facilitating faster convergence.
+Pure continuous methods never receive class-based learning signals, while pure discrete methods treat semantically similar codewords as unrelated tokens, causing prediction to degenerate into "teleportation" between indices. Purrception adopts the **Key Insight** of Variational Flow Matching (VFM)—the velocity at time $t$ can be written as the expectation over the endpoint posterior $u_t(z_t)=\mathbb{E}_{p_t(z_1|z_t)}[u_t(z_t|z_1)]$. It refines this using a key fact: in VQ latent space, the endpoint $z_1$ must be some embedding $e_k$ from a finite codebook. Thus, the endpoint posterior is naturally a **categorical distribution** $q^\theta_t(c|z_t)=\mathrm{Cat}(c|\pi^\theta_t(z_t))$. Consequently, the model (a DiT) only needs to output the probability $\pi^\theta_t(z_t)$ for each patch over the codebook given the intermediate state $z_t$. This expresses "hesitation" between candidates (e.g., codeword 42 or 87), providing built-in uncertainty quantification while retaining logits for temperature control.
 
-2. **Velocity Field in Continuous Space**:
+**2. Velocity Field = Posterior Weighted Expectation: Analytically deriving continuous transport from categorical posterior**
 
-    - *Function*: Define and learn a velocity field from noise to data in the continuous vector space of codebook embeddings.
-    - *Mechanism*: The core mathematical framework of Flow Matching is applied to the VQ embedding space. The velocity field describes the "flow direction" along which samples are transported from the noise distribution toward the data distribution.
-    - *Design Motivation*:
-        - A continuous velocity field preserves the geometric advantages of Flow Matching — smooth transport paths and stable training.
-        - Operating in the embedding space rather than the index space avoids the difficulty of gradient estimation in discrete token spaces.
-        - Complements the discrete supervision from the categorical posterior, forming a dual learning signal.
+This is the key step to stitching discrete supervision and continuous geometry together, correcting the misconception of simply "combining two losses." Purrception does **not** train an additional velocity regression head. Instead, it substitutes the categorical posterior back into the VFM expectation formula to analytically obtain the velocity field:
 
-3. **Temperature-Controlled Generation**:
+$$v^\theta_t(z_t)=\sum_{k=1}^{K}\pi^{\theta,k}_t(z_t)\,\frac{e_k-z_t}{1-t}=\frac{\mu_t(z_t)-z_t}{1-t},\qquad \mu_t(z_t)=\sum_{k=1}^{K}\pi^{\theta,k}_t(z_t)\,e_k$$
 
-    - *Function*: Control the diversity–quality trade-off in generation by adjusting the temperature parameter of the categorical posterior.
-    - *Mechanism*:
-        - Low temperature ($T \to 0$): The categorical posterior approaches a deterministic selection, producing more certain outputs with reduced diversity.
-        - High temperature ($T > 1$): The posterior becomes more uniform, exploring more codebook combinations and increasing diversity at a potential quality cost.
-        - Intermediate temperature: Achieves a balance between quality and diversity.
-    - *Design Motivation*: This is a natural advantage of probabilistic models — the temperature parameter provides an interpretable and controllable generation mechanism without requiring additional post-processing steps (e.g., a classifier-free guidance scale).
+The velocity points toward the "posterior-weighted codebook centroid" $\mu_t$. Thus, uncertainty among similar codewords is translated into **smooth, geometrically aware motion** rather than discrete jumps. Since velocity is determined entirely by the posterior, the training target reduces to a single cross-entropy loss between the predicted posterior and the ground truth codeword: $\mathcal{L}_{\text{Purr}}(\theta)=-\mathbb{E}_{t,x,z_t}[\log q^\theta(c|z_t)]$.
 
-4. **Adapting Variational Flow Matching**:
+**3. Temperature Control: Using softmax temperature τ as an inference-time knob**
 
-    - *Function*: Adapt the original VFM framework to the specific structure of vector-quantized latent spaces.
-    - *Key Adaptations*:
-        - **Exploiting codebook structure**: VFM is originally defined over general continuous/discrete mixed spaces; Purrception leverages the finite discrete structure of the codebook to efficiently parameterize the categorical posterior.
-        - **Exploiting embedding geometry**: Geometric relationships among codebook embedding vectors (e.g., Euclidean distances) are used to define targets for the continuous transport path.
-        - **Joint optimization**: Parameters for the categorical posterior and the velocity field are learned jointly within a single model, sharing underlying visual feature representations.
+Since $\pi^\theta_t$ is obtained from logits via softmax with temperature $\tau$, $\pi^{\theta,k}_t(z_t)=\exp(\tilde\pi^{\theta,k}_t/\tau)\big/\sum_i\exp(\tilde\pi^{\theta,i}_t/\tau)$, the framework naturally introduces an inference-time degree of freedom. A low $\tau$ causes the posterior to collapse to the most likely codeword, resulting in sharper, high-fidelity generation but potentially oversimplifying. A high $\tau$ flattens the distribution, assigning weight to neighboring codewords and injecting more detail and diversity, though fidelity may drop. This reflects the standard bias-variance tradeoff in generation. Such controllability is absent in pure continuous FM (no categorical logits) and meaningless in pure discrete FM (indices collapse immediately).
 
 ### Loss & Training
 
-The training objective comprises two complementary components:
+The training objective is a **singular cross-entropy loss**, derived from the VFM objective specialized for VQ:
 
-1. **Continuous Flow Matching Loss**: A standard velocity field regression loss that drives the model to learn the correct transport direction:
-$$\mathcal{L}_{FM} = \mathbb{E}\left[\|v_\theta(x_t, t) - u(x_t | x_1)\|^2\right]$$
+$$\mathcal{L}_{\text{Purr}}(\theta)=-\mathbb{E}_{t,x,z_t}\big[\log q^\theta(c\mid z_t)\big]$$
 
-2. **Categorical Posterior Loss**: A cross-entropy loss that drives the model to correctly predict the distribution over codebook indices at each spatial location:
-$$\mathcal{L}_{cat} = -\mathbb{E}\left[\sum_k q(k|x_t) \log p_\theta(k|x_t, t)\right]$$
-
-Both losses are naturally unified within the variational flow matching framework and optimized jointly.
+where $x\sim\mathcal{D}$, $z_1$ and $c$ are the corresponding quantized latent and codeword index, and the interpolated state is $z_t:=t z_1+(1-t)z_0$ ($z_0\sim p_0$, $t\sim U(0,1)$). The velocity field is not regressed separately, so no second loss or weighting is needed. Implementation uses DiT-L/2 and DiT-XL/2 backbones with Stable Diffusion's vq-f8 and LlamaGen's vq-ds8-c2i tokenizers.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluation on unconditional/class-conditional image generation on ImageNet-1k 256×256:
+Evaluation on ImageNet-1k 256×256 unconditional and class-conditional image generation:
 
 | Method | FID↓ | Training Convergence | Type |
-|--------|------|----------------------|------|
-| Continuous Flow Matching | Baseline | Slow | Pure continuous |
-| Discrete Flow Matching | Baseline | Slow | Pure discrete |
-| **Purrception** | **Competitive with SOTA** | **Faster** | Continuous + discrete bridge |
-| Other SOTA models | Reference | — | Various |
+|------|------|------------|------|
+| Continuous Flow Matching | Baseline | Slow | Pure Continuous |
+| Discrete Flow Matching | Baseline | Slow | Pure Discrete |
+| **Purrception** | **Comparable SOTA** | **Faster** | Continuous + Discrete Bridge |
+| Other SOTA Models | Reference | - | Various |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Note |
-|---------------|-----------|------|
-| Continuous FM only | Worse FID, slow convergence | No discrete supervision |
-| Discrete supervision only | Worse FID | No continuous geometric information |
-| Purrception (full) | Best FID + fastest convergence | Dual signals complement each other |
-| Temperature = 0.5 | High quality, low diversity | Low-temperature deterministic selection |
-| Temperature = 1.0 | Quality–diversity balance | Standard setting |
-| Temperature = 1.5 | High diversity, slight quality drop | High-temperature softened posterior |
-| Without categorical posterior | Slower convergence | Validates the acceleration effect of discrete supervision |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| Continuous FM Only | Poor FID, slow convergence | Lacks discrete supervision |
+| Discrete Supervision Only | Poor FID | Lacks continuous geometric info |
+| Purrception (Full) | Best FID + Fastest Convergence | Dual signals are complementary |
+| Temperature = 0.5 | High quality, low diversity | Deterministic selection via low temp |
+| Temperature = 1.0 | Quality-diversity balance | Standard setting |
+| Temperature = 1.5 | High diversity, slight quality drop | Softened posterior via high temp |
+| No Categorical Posterior | Slower convergence | Validates acceleration from discrete supervision |
 
 ### Key Findings
 
-1. **Accelerated Training Convergence**: Purrception converges faster than both the pure continuous flow matching and pure discrete flow matching baselines. The discrete supervision signal from the categorical posterior provides a sharper learning target, improving the directionality of parameter updates.
-
-2. **Quality Competitive with SOTA**: FID scores are competitive with current state-of-the-art methods, demonstrating that bridging continuous and discrete approaches does not sacrifice generation quality.
-
-3. **Temperature Controllability**: A single temperature parameter smoothly controls the diversity–quality trade-off, providing an intuitive generation adjustment mechanism.
-
-4. **Uncertainty Quantification**: The categorical posterior naturally provides uncertainty estimates over possible codebook assignments at each spatial location, a capability generally unavailable in alternative methods.
+1. **Training Convergence Acceleration**: Purrception converges faster than both pure continuous and pure discrete flow matching baselines. The discrete supervision from the categorical posterior provides a "sharper" learning target.
+2. **Quality Comparable to SOTA**: FID scores are comparable to state-of-the-art methods, proving that bridging continuous and discrete approaches does not sacrifice generation quality.
+3. **Temperature Controllability**: A single temperature parameter allows for smooth control of the diversity-quality tradeoff.
+4. **Uncertainty Quantification**: The categorical posterior naturally provides an uncertainty estimate for encoding at each spatial location.
 
 ## Highlights & Insights
 
-1. **Elegant Theoretical Bridging**: Purrception elegantly bridges continuous and discrete generative paradigms through the variational flow matching framework. Rather than naively combining two losses, it achieves a natural fusion within a unified variational inference framework.
-
-2. **Practical Speed Improvements**: The accelerated training convergence is a highly practical contribution — at the scale of ImageNet training, gains in training efficiency directly translate to savings in GPU hours and associated costs.
-
-3. **Probabilistic Codebook Selection**: Replacing the deterministic nearest-codebook-entry lookup (argmin distance) with a probabilistic categorical posterior not only improves training efficiency but also introduces uncertainty quantification. This "soft quantization" paradigm has broader potential within the VQ research community.
-
-4. **Interpretability of Temperature Control**: Compared to the guidance scale in classifier-free guidance, the temperature parameter carries a more intuitive physical meaning — it directly controls the "sharpness" of the posterior distribution — and is therefore more readily interpretable.
-
-5. **Naming Ingenuity**: "Purrception" (Purr, the sound of a cat, + Perception) is a clever name, suggesting that the model's "perception" of the codebook is gentle (a purr) rather than a hard decision.
+1. **Elegant Theoretical Bridge**: Purrception elegantly bridges continuous and discrete generative paradigms via the VFM framework. It is not a simple concatenation of losses but a natural fusion within a unified variational inference framework.
+2. **Practical Speed Gain**: Faster training convergence is a highly practical contribution, directly translating to savings in GPU hours and costs during large-scale ImageNet training.
+3. **Probabilistic Codeword Selection**: Replacing deterministic codeword lookup (argmin distance) with a probabilistic categorical posterior introduces uncertainty quantification and acts as a "soft quantization."
+4. **Interpretable Temperature Control**: Compared to the scale parameter in classifier-free guidance, the temperature parameter has a more intuitive physical meaning by directly controlling the "sharpness" of the posterior distribution.
+5. **Creative Naming**: "Purrception" (Purr + Perception) suggests that the model's "perception" of the codebook is soft/smooth (purr) rather than a hard decision.
 
 ## Limitations & Future Work
 
-1. **Validation Limited to ImageNet 256×256**: The current experimental scope is relatively narrow. Performance at higher resolutions (e.g., 512×512 or 1024×1024) and on larger-scale datasets has not been verified.
-
-2. **Gap with the Latest SOTA**: Although FID is described as "competitive with SOTA," a gap may still exist. More detailed quantitative comparisons are needed for accurate positioning.
-
-3. **Sensitivity to Codebook Size**: The computational complexity of the categorical posterior scales linearly with codebook size. For very large codebooks (e.g., 16,384 entries), efficiency may become a concern.
-
-4. **Text-Conditional Generation**: The method is primarily validated on class-conditional generation; its effectiveness for text-to-image generation remains unexplored.
-
-5. **Compatibility with Modern Encoder Architectures**: How Purrception integrates with the latest VQ encoders (e.g., improved VQGAN, FSQ) and continuous latent VAEs (e.g., the KL-VAE used in Stable Diffusion) warrants further investigation.
-
-6. **Extension to Video Generation**: Extending the Purrception framework to video VQ latent spaces may yield additional benefits for temporal consistency.
+1. **Validation Scale**: Currently limited to ImageNet 256×256. Performance on higher resolutions (512+ or 1024+) or larger datasets remains unverified.
+2. **Gap with Latest SOTA**: While FID is "comparable," more detailed quantitative comparisons are needed to determine the exact standing against the very best models.
+3. **Codebook Size Sensitivity**: The computational complexity of the categorical posterior scales linearly with codebook size. Large codebooks (e.g., 16384) may face efficiency challenges.
+4. **Text-Conditioned Generation**: Evaluation has focused on class-conditional generation; text-to-image performance is not yet clear.
+5. **Architectural Compatibility**: Exploring integration with newer VAEs (e.g., FSQ or KL-VAE) is a promising direction.
+6. **Video Extension**: Extending the framework to video VQ latent spaces might offer advantages in temporal consistency.
 
 ## Related Work & Insights
 
-- **Flow Matching**: Lipman et al.'s Flow Matching framework, which provides the theoretical foundation for continuous transport paths.
-- **Variational Flow Matching**: The framework that introduces variational inference into Flow Matching, serving as the theoretical cornerstone of Purrception.
-- **Discrete Flow Matching / Discrete Diffusion**: Generative modeling directly in discrete token space.
-- **VQ-VAE / VQ-GAN**: Methods for constructing vector-quantized latent spaces, providing the underlying space in which Purrception operates.
-- **Masked Image Modeling (MIM)**: Methods such as MaskGIT that employ masked prediction over VQ tokens.
-- **Autoregressive VQ Generation**: Methods such as VQVAE + Transformer that generate VQ tokens sequentially.
-- Broader Inspiration: **Variational inference as a unifying framework** enables a single model to simultaneously handle continuous and discrete structures. This paradigm may prove valuable in other generative tasks involving mixed continuous-discrete spaces, such as molecular generation and program synthesis.
+- **Flow Matching**: The theoretical foundation for continuous transport paths (Lipman et al.).
+- **Variational Flow Matching**: The framework introducing variational inference to Flow Matching; the theoretical cornerstone for Purrception.
+- **Discrete Flow Matching / Discrete Diffusion**: Generative modeling in discrete token spaces.
+- **VQ-VAE / VQ-GAN**: Methods for constructing vector-quantized latent spaces.
+- **Masked Image Modeling (MIM)**: Such as MaskGIT, using mask prediction on VQ tokens.
+- **Autoregressive VQ Generation**: Using Transformers to generate VQ tokens as sequences.
+- **Insight**: Variational inference as a unified framework allows for handling continuous and discrete structures in a single model, a paradigm likely valuable for other mixed-space generative tasks (e.g., molecules, programs).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Adapting variational flow matching to VQ spaces is a natural yet non-trivial contribution with a clear bridging rationale.)
-- Experimental Thoroughness: ⭐⭐⭐ (Validation is limited to ImageNet-1k 256×256; broader benchmarks and comparisons are needed.)
-- Writing Quality: ⭐⭐⭐⭐ (Theoretical derivations are clear and motivations are well-articulated.)
-- Value: ⭐⭐⭐⭐ (The training efficiency gains are practically meaningful, and the method introduces a new paradigm for VQ-based generation; broader impact depends on the continued development of VQ approaches.)
+- Novelty: ⭐⭐⭐⭐ (Adapting VFM to VQ space is a natural yet non-trivial contribution with a clear bridging strategy)
+- Experimental Thoroughness: ⭐⭐⭐ (Validated on ImageNet-1k 256×256; limited in scale and requires broader baseline comparisons)
+- Writing Quality: ⭐⭐⭐⭐ (Clear theoretical derivation and motivation)
+- Value: ⭐⭐⭐⭐ (Practical significance in training efficiency and provides a new paradigm for VQ generation)
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation](senseflow_scaling_distribution_matching_for_flow-based_text-to-image_distillatio.md)
-- [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
-- [\[ICLR 2026\] QVGen: Pushing the Limit of Quantized Video Generative Models](qvgen_pushing_the_limit_of_quantized_video_generative_models.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](../../CVPR2026/image_generation/freqflow_frequency_aware_flow_matching.md)
-- [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](../../CVPR2026/image_generation/unified_vector_floorplan_generation_via_markup_representation.md)
+- [\[ICLR 2026\] Scalable Training for Vector-Quantized Networks with 100% Codebook Utilization](scalable_training_for_vector-quantized_networks_with_100_codebook_utilization.md)
+- [\[ICLR 2026\] Flow Map Learning via Non-Gradient Vector Flow](flow_map_learning_via_non-gradient_vector_flow.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](../../CVPR2026/image_generation/learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
+- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling](variational_autoencoding_discrete_diffusion_with_enhanced_dimensional_correlatio.md)
 
 </div>
 

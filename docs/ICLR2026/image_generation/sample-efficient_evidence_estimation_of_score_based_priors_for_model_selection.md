@@ -2,86 +2,83 @@
 title: >-
   [Paper Note] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection
 description: >-
-  [ICLR 2026][Image Generation][Model Evidence] This paper proposes DiME, a model evidence estimator that integrates along the temporal marginals of the diffusion posterior. DiME requires neither prior scores nor density e…
+  [ICLR 2026][Image Generation][Paper Note] Proposes DiME, a model evidence estimator integrated along the time marginals of the diffusion posterior. It requires no prior scores or density evaluations and accurately estimates model evidence under diffusion priors using only a small number of posterior samples (e.g., 20) for prior selection and model validation.
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Model Evidence"
-  - "Diffusion Priors"
-  - "Posterior Sampling"
-  - "Model Selection"
-  - "Black Hole Imaging"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 5e22248997106a3d
+content_hash: f7e67736377db41b
 ---
-
 # Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.20549](https://arxiv.org/abs/2602.20549)  
 **Code**: —  
-**Area**: Bayesian Inference / Diffusion Models
-**Keywords**: Model Evidence, Diffusion Priors, Posterior Sampling, Model Selection, Black Hole Imaging
+**Area**: Bayesian Inference / Diffusion Models  
+**Keywords**: Model Evidence, Diffusion Prior, Posterior Sampling, Model Selection, Black Hole Imaging
 
 ## TL;DR
 
-This paper proposes DiME, a model evidence estimator that integrates along the temporal marginals of the diffusion posterior. DiME requires neither prior scores nor density evaluations, and accurately estimates model evidence under diffusion model priors using as few as 20 posterior samples, enabling prior selection and model validation.
+Proposes DiME, a model evidence estimator integrated along the time marginals of the diffusion posterior. It requires no prior scores or density evaluations and accurately estimates model evidence under diffusion priors using only a small number of posterior samples (e.g., 20) for prior selection and model validation.
 
 ## Background & Motivation
 
-In Bayesian inverse problems, the prior distribution $p(\boldsymbol{x})$ fundamentally determines the posterior $p(\boldsymbol{x}|\boldsymbol{y})$. An ill-chosen prior can severely bias reconstruction results. The principled approach is to evaluate competing prior models via the model evidence $p(\boldsymbol{y}|M)$.
+In Bayesian inverse problems, the prior distribution $p(\boldsymbol{x})$ has a decisive influence on the posterior $p(\boldsymbol{x}|\boldsymbol{y})$. Selecting an inappropriate prior leads to severe bias in reconstruction results. Ideally, different prior models should be evaluated through the model evidence $p(\boldsymbol{y}|M)$.
 
-However, computing model evidence directly for diffusion model priors is intractable:
-- It requires integrating over the full prior: $\log p(\boldsymbol{y}|M) = \log \int p(\boldsymbol{y}|\boldsymbol{x}) p(\boldsymbol{x}|M) d\boldsymbol{x}$
-- Existing methods (SMC, AIS, nested sampling) require the clean prior score $\nabla_{\boldsymbol{x}} \log p(\boldsymbol{x})$ or an unnormalized density
-- Diffusion models learn scores of intermediate noisy priors, making clean prior scores inaccurate
-- Density estimation methods suffer from high variance, requiring thousands of posterior samples
+However, directly computing model evidence for diffusion model priors is infeasible:
+- It requires integrating over the full prior $\log p(\boldsymbol{y}|M) = \log \int p(\boldsymbol{y}|\boldsymbol{x}) p(\boldsymbol{x}|M) d\boldsymbol{x}$.
+- Existing methods (SMC, AIS, nested sampling) require clean prior scores $\nabla_{\boldsymbol{x}} \log p(\boldsymbol{x})$ or unnormalized densities.
+- Diffusion models learn scores of intermediate noisy priors; the clean prior score is inaccurate.
+- Density estimation methods exhibit high variance, requiring thousands of posterior samples.
 
 ## Method
 
-### Core Formula
+### Overall Architecture
 
-**DiME Estimator** (integrating along the standard marginals):
+DiME addresses the challenge of using model evidence $p(\boldsymbol{y}|M)$ to compare different diffusion priors in Bayesian inverse problems, where $\log p(\boldsymbol{y}) = \log \int p(\boldsymbol{y}|\boldsymbol{x})p(\boldsymbol{x})d\boldsymbol{x}$ is not directly computable. Traditional estimators (SMC, AIS, nested sampling) require "clean prior scores or densities," but diffusion models only learn intermediate scores at various noise levels, making clean prior scores inaccurate and ill-posed. DiME's breakthrough lies in bypassing prior scores: it decomposes the log-evidence into two terms—the average log-likelihood under the posterior and the KL divergence from posterior to prior. The KL term is then integrated along the time marginals of reverse diffusion and rewritten as an integral of "time-step-wise squared likelihood scores." Consequently, evidence estimation only requires posterior samples, which are naturally generated by the DAPS posterior sampler during inference. By reusing these trajectories, DiME adds almost no extra computation, and approximately 20 sample paths are sufficient.
 
-$$\log p(\boldsymbol{y}) = \mathbb{E}_{\boldsymbol{x}_0 \sim p(\boldsymbol{x}_0|\boldsymbol{y})}[\log p(\boldsymbol{y}|\boldsymbol{x}_0)] - D_{\text{KL}}(p(\boldsymbol{x}_0|\boldsymbol{y}) \| p(\boldsymbol{x}_0))$$
+The workflow is: given a measurement $\boldsymbol{y}$ and a candidate diffusion prior, DAPS is first used to generate posterior sample paths $\{\boldsymbol{x}_{t_i}\}$ and clean samples $\tilde{\boldsymbol{x}}_0$ at each noise level. Then, the two terms of the evidence decomposition are estimated (the average likelihood term via direct averaging and the KL term via time-marginal integration). Finally, these are combined to obtain $\log p(\boldsymbol{y})$ for prior selection or model validation across multiple candidates.
 
-The KL divergence is estimated by integrating over temporal marginals of the reverse diffusion:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Measurement y + Candidate Diffusion Prior M"] --> B["DAPS Posterior Sampling<br/>Generate sample paths and clean samples per layer"]
+    B --> C["1. Evidence Decomposition along Time Marginals<br/>log p(y) = Avg Log-Likelihood − KL"]
+    C -->|Likelihood Term| D["Average Log-Likelihood<br/>Direct average of posterior samples"]
+    C -->|"KL Term = Time Marginal Integral"| E["2. Unbiased Estimation of Squared Likelihood Scores<br/>High/Low noise dual estimators + Two-sample debiasing"]
+    E --> F["3. Improved Posterior Covariance<br/>Prior info corrects high-noise variance overestimation"]
+    D --> G["Combine → log p(y)"]
+    F --> G
+    G --> H["Model Evidence → Prior Selection / Model Verification"]
+```
 
-$$D_{\text{KL}} \approx \sum_{i=1}^N c_{t_i} \Delta t_i \mathbb{E}_{\boldsymbol{x}_{t_i} \sim p(\boldsymbol{x}_{t_i}|\boldsymbol{y})} \|\nabla_{\boldsymbol{x}_{t_i}} \log p(\boldsymbol{y}|\boldsymbol{x}_{t_i})\|^2$$
+### Key Designs
 
-where $c_{t_i} = \sigma_{t_i}' \sigma_{t_i} - \sigma_{t_i}^2 \frac{a_{t_i}'}{a_{t_i}}$.
+**1. Evidence Decomposition along Time Marginals: Decomposing evidence into terms dependent only on posterior samples**
 
-### Key Design 1: Unbiased Likelihood Score Estimation
+$\log p(\boldsymbol{y})$ is difficult to compute because it involves integration over the entire prior, where diffusion model densities/scores are unreliable. DiME provides an identity decomposition: $\log p(\boldsymbol{y}) = \mathbb{E}_{\boldsymbol{x}_0 \sim p(\boldsymbol{x}_0|\boldsymbol{y})}[\log p(\boldsymbol{y}|\boldsymbol{x}_0)] - D_{\text{KL}}(p(\boldsymbol{x}_0|\boldsymbol{y}) \| p(\boldsymbol{x}_0))$. The first term is the average log-likelihood under the posterior, easily obtained by averaging posterior samples. The second is the KL divergence from posterior to prior. The key observation is that this KL term can be integrated along time marginals of reverse diffusion and rewritten as a form containing only **likelihood scores**:
 
-Direct computation of $\nabla_{\boldsymbol{x}_t} \log p(\boldsymbol{y}|\boldsymbol{x}_t)$ is intractable. Leveraging DAPS posterior samples $\tilde{\boldsymbol{x}}_0 \sim p(\boldsymbol{x}_0|\boldsymbol{x}_t, \boldsymbol{y})$, two unbiased estimators are designed:
+$$D_{\text{KL}}(p(\boldsymbol{x}_0|\boldsymbol{y}) \| p(\boldsymbol{x}_0)) \approx \sum_{i=1}^N c_{t_i} \Delta t_i\, \mathbb{E}_{\boldsymbol{x}_{t_i} \sim p(\boldsymbol{x}_{t_i}|\boldsymbol{y})} \|\nabla_{\boldsymbol{x}_{t_i}} \log p(\boldsymbol{y}|\boldsymbol{x}_{t_i})\|^2$$
 
-**High-noise estimator** (low variance at high noise levels):
+where the coefficient $c_{t_i} = \sigma_{t_i}' \sigma_{t_i} - \sigma_{t_i}^2 \frac{a_{t_i}'}{a_{t_i}}$ depends only on the diffusion schedule and $\Delta t_i = t_i - t_{i-1}$. This replaces the "integration over prior" with an "integration of squared likelihood scores along time steps," requiring only the known forward model $p(\boldsymbol{y}|\boldsymbol{x}_t)$. Intuitively, this term measures how far the posterior samples $\boldsymbol{x}_0$ are from the prior—out-of-distribution measurements result in larger KL and lower evidence.
 
-$$\Theta_{\text{high}}(\tilde{\boldsymbol{x}}_0) = \frac{a_t}{\sigma_t^2}(\tilde{\boldsymbol{x}}_0 - \mathbb{E}[\boldsymbol{x}_0|\boldsymbol{x}_t])$$
+**2. Unbiased Estimation of Squared Likelihood Scores: Dual high/low noise estimators with two-sample debiasing**
 
-**Low-noise estimator** (low variance at low noise levels):
+$\nabla_{\boldsymbol{x}_t} \log p(\boldsymbol{y}|\boldsymbol{x}_t)$ still cannot be directly evaluated, but only its **unbiased estimate** is needed for the integral. Using unconditional samples for $\boldsymbol{x}_0|\boldsymbol{x}_t$ results in unstable scores and exploding variance. DiME instead uses clean posterior samples $\tilde{\boldsymbol{x}}_0 \sim p(\boldsymbol{x}_0|\boldsymbol{x}_t, \boldsymbol{y})$ naturally sampled by DAPS at each noise level to construct two complementary unbiased estimators: $\Theta_{\text{high}}(\tilde{\boldsymbol{x}}_0) = \frac{a_t}{\sigma_t^2}(\tilde{\boldsymbol{x}}_0 - \mathbb{E}[\boldsymbol{x}_0|\boldsymbol{x}_t])$ (based on distance to the posterior mean) for high-noise regimes, and $\Theta_{\text{low}}(\tilde{\boldsymbol{x}}_0) = \frac{a_t}{\sigma_t^2}\boldsymbol{\Sigma}_{\boldsymbol{x}_0|\boldsymbol{x}_t} \nabla_{\tilde{\boldsymbol{x}}_0} \log p(\boldsymbol{y}|\tilde{\boldsymbol{x}}_0)$ (based on the likelihood score at $\tilde{\boldsymbol{x}}_0$) for low-noise regimes. The estimator with lower variance is selected at each step. To address the bias introduced by the **square** in the integral ($\mathbb{E}\|\Theta\|^2 = \|\mathbb{E}\Theta\|^2 + \text{Tr}(\text{Cov}(\Theta))$), DiME independently samples two instances $\tilde{\boldsymbol{x}}_0^{(1)}, \tilde{\boldsymbol{x}}_0^{(2)}$ for each $\boldsymbol{x}_t$ and uses the inner product $\Theta(\tilde{\boldsymbol{x}}_0^{(1)})^T\Theta(\tilde{\boldsymbol{x}}_0^{(2)})$ to achieve an unbiased estimate of the squared score.
 
-$$\Theta_{\text{low}}(\tilde{\boldsymbol{x}}_0) = \frac{a_t}{\sigma_t^2}(\boldsymbol{\Sigma}_{\boldsymbol{x}_0|\boldsymbol{x}_t} \nabla_{\tilde{\boldsymbol{x}}_0} \log p(\boldsymbol{y}|\tilde{\boldsymbol{x}}_0))$$
+**3. Improved Posterior Covariance: Using prior information to correct high-noise variance overestimation**
 
-Two independent samples $\tilde{\boldsymbol{x}}_0^{(1)}, \tilde{\boldsymbol{x}}_0^{(2)}$ are drawn for each $\boldsymbol{x}_t$ to obtain an unbiased estimate of the squared score.
-
-### Key Design 2: Improved Posterior Covariance
-
-The DAPS covariance heuristic $\sigma_t^2$ overestimates variance at high noise levels. DiME introduces a prior-informed approximation:
+The low-noise estimator and DAPS's Gaussian approximation both rely on the conditional covariance $\boldsymbol{\Sigma}_{\boldsymbol{x}_0|\boldsymbol{x}_t}$. DAPS originally used a heuristic $\sigma_t^2$, which only considers $p(\boldsymbol{x}_t|\boldsymbol{x}_0)$ and ignores the prior $p(\boldsymbol{x}_0)$. This significantly overestimates variance at high noise—where at $t=T$, $\text{Cov}(\boldsymbol{x}_0|\boldsymbol{x}_T)\approx\text{Cov}(\boldsymbol{x}_0)$, yet the heuristic gives $\sigma_T^2 \gg \text{Cov}(\boldsymbol{x}_0)$, pushing samples toward incorrect modes. DiME approximates the prior as a Gaussian $\mathcal{N}(\boldsymbol{\mu}_0, \boldsymbol{\Sigma}_0)$ (with $\boldsymbol{\Sigma}_0$ estimated empirically from training data) to obtain a tightened covariance:
 
 $$\boldsymbol{\Sigma}_{\boldsymbol{x}_0|\boldsymbol{x}_t} = \left[\boldsymbol{\Sigma}_0^{-1} + \frac{a_t^2}{\sigma_t^2}\mathbf{I}\right]^{-1}$$
 
-where $\boldsymbol{\Sigma}_0$ is estimated empirically from training data.
-
-### Implementation
-
-DiME operates in concert with the DAPS posterior sampling method, reusing intermediate samples naturally produced during sampling without incurring additional computational cost.
+This pulls the overly wide covariance back to the prior scale at high noise, significantly reducing bias without requiring additional samples. Since DAPS resamples at each annealing step, these Gaussian approximation errors do not accumulate.
 
 ## Key Experimental Results
 
 ### Gaussian Mixture Prior Benchmark
 
-| Method | In-distribution $\boldsymbol{x}^*$ Rel. Error↓ | OOD Rel. Error↓ | Saddle Point Rel. Error↓ |
+| Method | In-distribution $\boldsymbol{x}^*$ Rel. Error↓ | Out-of-distribution Rel. Error↓ | Saddle point Rel. Error↓ |
 |------|------|------|------|
 | Naive MC (1000) | 2451% | 2357% | 2299% |
 | Original DAPS Heuristic | 146% | 3.3% | 7.3% |
@@ -89,50 +86,50 @@ DiME operates in concert with the DAPS posterior sampling method, reusing interm
 | SMC | 2.6% | 1.2% | **0.7%** |
 | **DiME** | **1.5%** | **0.6%** | 0.8% |
 
-DiME achieves accuracy comparable to SMC without requiring prior scores.
+DiME achieves accuracy comparable to SMC without using prior scores.
 
 ### MNIST Model Selection
 
-Given a single noisy measurement, DiME selects the correct prior from 10 diffusion models corresponding to different digit classes, while baseline methods fail.
+Given a single noisy measurement, the correct prior is selected from 10 diffusion models. DiME consistently selects the correct digit class, while baseline methods fail.
 
 ### M87* Black Hole Imaging
 
-- DiME identifies the GRMHD prior as having higher likelihood than RIAF, spatial image, face, and MNIST priors.
-- Prior predictive checks confirm that M87* observations are statistically consistent with the GRMHD prior.
+- DiME demonstrates that the GRMHD prior has higher likelihood than RIAF, spatial images, human faces, and MNIST priors.
+- Prior predictive checks indicate that M87* observations are statistically compatible with the GRMHD prior.
 
 ### Key Findings
 
-- Accurate estimates are achievable with as few as 20 posterior samples.
-- The automatic switching strategy between high- and low-noise estimators effectively reduces variance.
-- The improved covariance approximation substantially reduces bias at high noise levels.
-- DiME generalizes to model evidence estimation under arbitrary annealing schedules.
+- Accurate estimates are obtained with only 20 posterior samples.
+- The automatic switching strategy between high/low noise estimators effectively reduces variance.
+- Improved covariance approximation significantly reduces bias at high noise.
+- DiME generalizes to model evidence estimation under any annealing path.
 
 ## Highlights & Insights
 
-- The first diffusion model evidence estimator that does not rely on prior scores or densities.
-- Exceptionally sample-efficient (20 samples vs. thousands required by baseline methods).
-- Theoretically elegant derivation that exploits intermediate samples naturally arising during diffusion sampling.
-- Validated on a real scientific application (black hole imaging), demonstrating practical utility.
+- First evidence estimator for diffusion models that does not rely on prior scores or densities.
+- Extremely high sample efficiency (20 samples vs. thousands for baselines).
+- Elegant theoretical derivation leveraging intermediate samples naturally produced during diffusion sampling.
+- Practical utility validated in real scientific applications (black hole imaging).
 
 ## Limitations & Future Work
 
-- Relies on the Gaussian approximation $p(\boldsymbol{x}_0|\boldsymbol{x}_t) \approx \mathcal{N}$, which may be inaccurate for multimodal priors.
-- Coupled to a specific posterior sampling method (DAPS); generalization to other samplers requires additional derivation.
-- The diagonal covariance approximation may limit accuracy in complex high-dimensional settings.
+- Reliance on Gaussian approximation $p(\boldsymbol{x}_0|\boldsymbol{x}_t) \approx \mathcal{N}$ may be inaccurate for highly multimodal priors.
+- Coupled with a specific posterior sampling method (DAPS); generalization to other methods requires further derivation.
+- Diagonal covariance approximation may have limited precision in complex high-dimensional problems.
 - Estimator variance may increase with problem dimensionality.
 
 ## Related Work & Insights
 
-- **Evidence Estimation**: SMC, AIS, nested sampling, harmonic mean estimator, etc.
-- **Diffusion Posterior Sampling**: DAPS, DPS, PnP-DM, and related methods.
-- **Model Selection**: Bayes factors, cross-validation, and alternative frameworks.
+- **Evidence Estimation**: SMC, AIS, Nested Sampling, Harmonic Mean Estimators, etc.
+- **Diffusion Posterior Sampling**: DAPS, DPS, PnP-DM, etc.
+- **Model Selection**: Bayesian factors, cross-validation, and alternative frameworks.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — Introduces a fundamentally new paradigm for diffusion evidence estimation.
-- Theory: ⭐⭐⭐⭐⭐ — Rigorous derivations supported by multiple lemmas.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive validation from toy to real scientific applications.
-- Value: ⭐⭐⭐⭐ — Direct practical value for scientific imaging and model selection.
+- Novelty: ⭐⭐⭐⭐⭐ — Completely new paradigm for diffusion evidence estimation.
+- Theory: ⭐⭐⭐⭐⭐ — Rigorous derivation supported by multiple lemmas.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive validation from toy problems to real scientific applications.
+- Value: ⭐⭐⭐⭐ — Immediate value for scientific imaging and model selection.
 
 <!-- RELATED:START -->
 
@@ -140,11 +137,11 @@ Given a single noisy measurement, DiME selects the correct prior from 10 diffusi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Measurement Score-based Diffusion Model (MSM)](measurement_score-based_diffusion_model.md)
 - [\[AAAI 2026\] Diffusion Reconstruction-Based Data Likelihood Estimation for Core-Set Selection](../../AAAI2026/image_generation/diffusion_reconstruction-based_data_likelihood_estimation_for_core-set_selection.md)
 - [\[ICML 2026\] DiScoFormer: Plug-In Density and Score Estimation with Transformers](../../ICML2026/image_generation/discoformer_plug-in_density_and_score_estimation_with_transformers.md)
 - [\[ICLR 2026\] Monocular Normal Estimation via Shading Sequence Estimation](monocular_normal_estimation_via_shading_sequence_estimation.md)
-- [\[ICLR 2026\] Learning a Distance Measure from the Information-Estimation Geometry of Data](learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md)
-- [\[NeurIPS 2025\] HollowFlow: Efficient Sample Likelihood Evaluation using Hollow Message Passing](../../NeurIPS2025/image_generation/hollowflow_efficient_sample_likelihood_evaluation_using_hollow_message_passing.md)
+- [\[CVPR 2026\] Efficient Weighted Sampling via Score-based Generative Models](../../CVPR2026/image_generation/efficient_weighted_sampling_via_score-based_generative_models.md)
 
 </div>
 

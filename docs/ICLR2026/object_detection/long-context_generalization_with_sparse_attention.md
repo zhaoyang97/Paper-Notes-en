@@ -2,92 +2,77 @@
 title: >-
   [Paper Note] Long-Context Generalization with Sparse Attention
 description: >-
-  [ICLR 2026][Object Detection][Sparse Attention] This paper proposes ASEntmax (Adaptive-Scalable Entmax), which replaces softmax attention with α-entmax equipped with a learnable temperature. Through both theoretical anal…
+  [ICLR 2026][Object Detection][α-entmax] ASEntmax (Adaptive-Scalable Entmax) is proposed, replacing softmax attention with $\alpha$-entmax using learnable temperature. The work theoretically and experimentally proves that sparse attention achieves $1000\times$ length extrapolation, resolving the attention dispersion problem of softmax under long contexts.
 tags:
-  - "ICLR 2026"
-  - "Object Detection"
-  - "Sparse Attention"
-  - "Long-Context Generalization"
-  - "α-entmax"
-  - "Length Extrapolation"
-  - "Transformer"
+  - ICLR 2026
+  - Object Detection
+  - α-entmax
+  - Transformer
 date: 2026-05-08
-content_hash: 4d32cd6652989c2e
+content_hash: 5af89245bb30870c
 ---
-
 # Long-Context Generalization with Sparse Attention
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.16640](https://arxiv.org/abs/2506.16640)  
 **Code**: [deep-spin/asentmax](https://github.com/deep-spin/asentmax)  
-**Area**: Object Detection
-**Keywords**: Sparse Attention, Long-Context Generalization, α-entmax, Length Extrapolation, Transformer
+**Area**: Object Detection  
+**Keywords**: Sparse Attention, Long-context Generalization, $\alpha$-entmax, Length Extrapolation, Transformer
 
 ## TL;DR
 
-This paper proposes ASEntmax (Adaptive-Scalable Entmax), which replaces softmax attention with α-entmax equipped with a learnable temperature. Through both theoretical analysis and empirical evaluation, it demonstrates that sparse attention enables up to 1000× length extrapolation, addressing the attention dispersion problem of softmax under long-context settings.
+ASEntmax (Adaptive-Scalable Entmax) is proposed, replacing softmax attention with $\alpha$-entmax using learnable temperature. The work theoretically and experimentally proves that sparse attention achieves $1000\times$ length extrapolation, resolving the attention dispersion problem of softmax under long contexts.
 
 ## Background & Motivation
 
-**Attention Dispersion in Softmax**: As context length $n$ grows, softmax distributes probability mass across all tokens, causing the attention weights of relevant tokens to approach zero. Theoretically, as $n \to \infty$, the normalized entropy of softmax tends to 1 (uniform distribution), a phenomenon termed **complete dispersion**.
+**Softmax Attention Dispersion Problem**: As context length $n$ increases, softmax distributes probability mass across all tokens, causing the attention weights of relevant tokens to approach zero. Theoretically, as $n \to \infty$, the normalized entropy of softmax approaches 1 (a perfectly uniform distribution), defined as **complete dispersion**.
 
-**Root Cause of Length Extrapolation Failure**: Attention patterns learned on short sequences fail to transfer to longer ones — the weight distribution of softmax differs drastically between short and long sequences, leading to the collapse of retrieval and reasoning capabilities.
+**Root Cause of Extrapolation Failure**: Attention patterns learned by models on short sequences cannot transfer to long sequences—the weight distribution of softmax in long sequences differs fundamentally from short sequences, leading to a collapse in retrieval and reasoning capabilities.
 
-**Limitations of Prior Work on Long-Context Modeling**: Positional encoding methods such as RoPE extrapolation and ALiBi address only positional information and do not resolve the intrinsic dispersion of attention distributions. Scalable Softmax (SSMax) mitigates dispersion via a scaling factor but lacks theoretical guarantees.
+**Limitations of Prior Work**: Position encoding methods such as RoPE extrapolation and ALiBi only handle positional information and do not resolve the dispersion of the attention distribution itself. Scalable Softmax (SSMax) mitigates this via scaling factors but lacks theoretical guarantees.
 
-**Theoretical Advantages of Sparse Attention**: Sparse transformations such as α-entmax can set the attention weights of irrelevant tokens to exactly zero, naturally avoiding dispersion. However, a rigorous theoretical explanation for why sparse attention facilitates length extrapolation has been lacking.
+**Theoretical Advantages of Sparse Attention**: Sparse transformations like $\alpha$-entmax can precisely zero out irrelevant tokens, naturally avoiding dispersion. However, rigorous theoretical analysis explaining why sparse attention facilitates length extrapolation has been missing.
 
-**Absence of Three Key Theoretical Properties**: Formal proofs are needed to establish the superiority of sparse attention over softmax with respect to: (1) non-vanishing attention; (2) concentration resilience; and (3) representational preservation.
+**Absence of Three Major Theoretical Properties**: Formal proof is required to demonstrate that sparse attention outperforms softmax in: (1) non-vanishing attention; (2) concentration resilience; and (3) representational preservation.
 
-**Need for Adaptive Sparsity**: Different attention heads across different layers may require varying degrees of sparsity; a fixed $\alpha$ is overly rigid, motivating a learnable adaptive mechanism.
+**Requirement for Adaptive Sparsity**: Different attention heads across various layers may require different degrees of sparsity. A fixed $\alpha$ is too rigid, necessitating a learnable adaptive mechanism.
 
 ## Method
 
 ### Overall Architecture
 
-ASEntmax replaces the softmax operation in standard Transformer attention with α-entmax using a learnable temperature $\theta$. Specifically, the attention weight computation changes from $\text{softmax}(QK^T/\sqrt{d})$ to $\alpha\text{-entmax}(QK^T/(\sqrt{d} \cdot \theta))$, where $\alpha > 1$ controls the degree of sparsity and $\theta$ is a temperature parameter learned independently for each attention head.
+ASEntmax maintains the overall Transformer architecture, merely replacing the softmax in each attention head with a sparse $\alpha$-entmax, equipped with a temperature that adapts to the context length. The paper proceeds in two steps: first, it theoretically establishes why sparse attention inherently resists length extrapolation failure—$\alpha$-entmax can precisely zero out weights of irrelevant tokens, from which three formal properties (non-vanishing, non-dispersive, and representational preservation) are derived. Second, to address the side effect where fixed sparsity becomes overly sharp on extremely long sequences, Adaptive-Scalable Entmax (ASEntmax) is introduced. This allows the inverse temperature of each head to vary learnably with sequence length $n$ in the form of $\delta + \beta(\log n)^\gamma$, smoothly interpolating between sparse (focusing on fixed patterns) and dense (approaching softmax) states. Consequently, when trained on short sequences and tested on sequences far exceeding the training length, the attention distribution pattern does not qualitatively change, enabling up to $1000\times$ length extrapolation.
 
 ### Key Designs
 
-**1. α-entmax Sparse Transformation**
+**1. $\alpha$-entmax Sparse Transformation: Precisely Zeroing Irrelevant Token Weights**
 
-- A generalization of softmax: reduces to softmax when $\alpha = 1$, and to sparsemax when $\alpha = 2$.
-- Core property: produces exact zeros in the output, automatically zeroing out attention weights for irrelevant tokens.
-- Differentiable and supports end-to-end training.
+The fundamental issue with softmax is that its output is always a strictly positive dense distribution, where every token receives some probability, causing relevant token weights to be diluted by irrelevant ones in long sequences. $\alpha$-entmax is a continuous generalization of softmax; it reduces to softmax when $\alpha = 1$ and becomes sparsemax when $\alpha = 2$. When $\alpha > 1$, its output contains exact zeros, automatically excluding irrelevant tokens with scores below a threshold from the attention support set. This transformation remains differentiable and end-to-end trainable, blocking the leakage of probability mass to irrelevant tokens at the source by simply replacing the softmax operator.
 
-**2. Three Theoretical Properties**
+**2. Three Theoretical Properties: Mathematically Proving Why Sparse Attention Extrapolates**
 
-- **Non-vanishing Attention**: For $\alpha > 1$, adding irrelevant tokens to the sequence does not reduce the attention weights of relevant tokens. Formally, if the score of a newly added token falls below a threshold, the attention weights of existing tokens remain entirely unchanged. In contrast, softmax always reduces the weights of all existing tokens regardless of the relevance of added tokens.
-- **Concentration Resilience**: The entropy of α-entmax attention is upper-bounded by $O(\log s)$, where $s$ is the support size, rather than $O(\log n)$ as in softmax, where $n$ is the sequence length. This means that even when sequence length increases by 1000×, attention concentration remains stable as long as the number of relevant tokens $s$ stays constant.
-- **Representational Preservation**: In an $L$-layer Transformer, the number of gradient paths under softmax is $O(n^L)$, causing representational collapse in deep networks; α-entmax reduces this to $O(s^L)$, effectively preserving the distinguishability of different inputs.
+The core theoretical contribution is the formal proof that sparse attention facilitates length extrapolation, summarized as three properties. First, **Non-vanishing Attention**: When $\alpha > 1$, adding irrelevant tokens with scores below the threshold to a sequence leaves the weights of relevant tokens completely unchanged; in contrast, softmax reduces all existing weights proportionally regardless of relevance. Second, **Concentration Resilience (Non-dispersion)**: Using normalized entropy $H(z)/\log n$ to measure dispersion—softmax approaches 1 (complete dispersion to uniform distribution) as $n \to \infty$, while the entropy upper bound for $\alpha$-entmax is $O(\log s)$ (where $s$ is the support size, $s \ll n$), independent of $n$. This keeps normalized entropy below 1 as length increases. Thus, even if a sequence is scaled by $1000\times$, the attention concentration remains stable as long as the number of relevant tokens $s$ is constant. Third, **Representational Preservation**: In an $L$-layer network, the number of gradient paths for softmax is $O(n^L)$, leading to representation collapse and exacerbated over-squashing in deep layers due to path explosion. $\alpha$-entmax restricts this to $O(s^L)$, strengthening the gradient flow for long-range dependencies and maintaining discriminative power in long sequences.
 
-**3. Learnable Temperature θ (ASEntmax)**
+**3. ASEntmax Adaptive-Scalable Temperature: Adjusting Sparsity with Length to Avoid Over-Sharpness**
 
-- Each attention head learns an independent temperature parameter $\theta$.
-- Large $\theta$ → greater sparsity; small $\theta$ → closer to dense attention.
-- Allows the model to adaptively interpolate between sparse and dense attention, with different heads adopting different strategies.
+Fixed $\alpha$ or fixed temperature poses a risk: when many tokens are truly relevant, fixed sparsity may "ignore" too much, making attention overly peaky on long sequences. ASEntmax formulates the scaling factor as a function of sequence length $n$, learnable for each head independently:
 
-**4. Non-dispersion Property**
+$$\text{ASEntmax}(z) = \alpha\text{-entmax}\big((\delta + \beta(\log n)^\gamma)\,z\big)$$
 
-- Complete dispersion of softmax: normalized entropy $H(\text{softmax}(z))/\log n \to 1$ as $n \to \infty$.
-- α-entmax maintains concentration: normalized entropy is bounded and does not approach 1 as $n$ grows.
-- This serves as the theoretical cornerstone of length extrapolation capability.
+Here, $\delta, \beta, \gamma$ are learnable scalars (inverse temperature coefficients) for each head. $\gamma > 0$ allows the temperature to rise slowly with length, while $\gamma < 0$ causes it to decay, allowing the model to learn a schedule for how sparsity evolves. When $\beta = 0$, it reverts to standard $\alpha$-entmax, enabling a smooth transition between scaling and non-scaling. Using $\log n$ instead of $n$ avoids interference with position encodings. Experimental results show that different heads learn different scheduling coefficients, validating the necessity of this per-head, per-length adaptive mechanism.
 
 ### Loss & Training
 
-- Standard language modeling objective (next-token prediction with cross-entropy loss).
-- Temperature $\theta$ is jointly optimized with model parameters via backpropagation.
-- $\alpha$ is typically fixed at 1.5 (empirically validated as optimal) but can also be made learnable.
-- Models are trained on short sequences (e.g., length 64) and directly evaluated on long sequences (e.g., 65K).
+Training follows the standard language modeling objective using cross-entropy loss for next-token prediction. The inverse temperature coefficients $\delta, \beta, \gamma$ for each head are optimized jointly with model parameters via backpropagation. $\alpha$ is typically fixed at an experimentally verified optimal value of 1.5 (making $\alpha$ learnable is possible but may introduce instability). The key evaluation setting involves training on short sequences (e.g., length 64) and testing directly on sequences far exceeding that length (e.g., 65K) to assess pure extrapolation capability.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Length extrapolation accuracy on the Associative Recall task (training length 64):
+Length extrapolation accuracy on the Associative Recall task (Training length 64):
 
 | Method | 64 | 256 | 1K | 4K | 16K | 65K |
-|---|---|---|---|---|---|---|
+|------|-----|------|------|------|------|------|
 | Softmax | 99.8% | 52.1% | 12.3% | 3.1% | 0.8% | 0.2% |
 | SSMax | 99.7% | 89.4% | 71.2% | 45.6% | 28.3% | 15.1% |
 | Adaptive Temp | 99.6% | 91.2% | 78.5% | 52.3% | 34.7% | 21.4% |
@@ -95,52 +80,52 @@ Length extrapolation accuracy on the Associative Recall task (training length 64
 
 ### Ablation Study
 
-Effect of $\alpha$ and temperature learnability (Associative Recall, test length 16K):
+Impact of $\alpha$ and temperature learnability (Associative Recall, test length 16K):
 
-| Configuration | Accuracy | Note |
-|---|---|---|
-| ASEntmax (α=1.5, learnable θ) | **96.8%** | Optimal configuration |
-| α-entmax (α=1.5, fixed temp) | 88.4% | Lacks adaptive capacity |
-| α-entmax (α=2.0, fixed temp) | 82.1% | Over-sparsity leads to information loss |
-| ASEntmax (learnable α, learnable θ) | 95.2% | Unstable α learning causes slight degradation |
-| Softmax + Adaptive Temp | 34.7% | Temperature cannot resolve the fundamental dispersion of softmax |
+| Configuration | Accuracy | Description |
+|------|--------|------|
+| ASEntmax (α=1.5, θ learnable) | **96.8%** | Optimal configuration |
+| α-entmax (α=1.5, fixed temp) | 88.4% | Lacks adaptive capability |
+| α-entmax (α=2.0, fixed temp) | 82.1% | Over-sparsity leads to info loss |
+| ASEntmax (α learnable, θ learnable) | 95.2% | Unstable α learning, slight drop |
+| Softmax + Adaptive Temp | 34.7% | Temp cannot solve fundamental softmax dispersion |
 
 ### Key Findings
 
-1. **1000× Extrapolation**: Trained at length 64 and tested at length 65K, ASEntmax maintains 95.3% accuracy while softmax drops to 0.2%.
-2. **Language Modeling Advantage**: In long-context LM evaluation, ASEntmax shows significantly better perplexity trends at 8× training length compared to softmax and SSMax.
-3. **Retrieval Capability Preservation**: In needle-in-a-haystack tests far exceeding training length, ASEntmax maintains high retrieval success rates.
-4. **Adaptive Sparsity**: Different layers and heads learn distinct temperature values, validating the necessity of the adaptive mechanism — lower layers tend toward denser attention while higher layers tend toward sparser attention.
+1. **1000× Extrapolation**: From training length 64 to test length 65K, ASEntmax maintains 95.3% accuracy, whereas softmax drops to 0.2%.
+2. **Language Modeling Advantage**: In long-context LM evaluation, ASEntmax shows significantly better perplexity trends than softmax and SSMax at 8× the training length.
+3. **Retrieval Capability Maintenance**: In "needle-in-a-haystack" tests far exceeding training length, ASEntmax maintains high retrieval success rates.
+4. **Sparsity Adaptation**: Different layers and heads learn distinct temperature scheduling coefficients, confirming the necessity of the per-head, per-length adaptive mechanism.
 
 ## Highlights & Insights
 
-- **Theoretical Rigor**: The formal proofs of three properties — non-vanishing attention, concentration resilience, and representational preservation — represent the paper's primary contribution, providing a rigorous mathematical foundation for the length extrapolation advantages of sparse attention.
-- **The Dispersion Concept**: Attributing long-context failures of softmax to "dispersion" and quantifying it via normalized entropy is conceptually clear and compelling.
-- **$O(s^L)$ vs. $O(n^L)$ Insight**: This reveals the fundamental advantage of sparse attention in deep networks — the combinatorial explosion of gradient paths is effectively suppressed by sparsity.
-- **Simplicity of Implementation**: Only softmax is replaced with α-entmax plus a learnable temperature, requiring no additional architectural modifications, making engineering adoption straightforward.
+- **Solid Theoretical Depth**: The formal proofs of the three properties (non-vanishing, concentration resilience, representational preservation) are the paper's greatest contributions, providing a rigorous mathematical foundation for the extrapolation advantages of sparse attention.
+- **Introduction of the Dispersion Concept**: Long-context failure in softmax is unified under the concept of "dispersion" and quantified via normalized entropy, providing a clear and convincing conceptual framework.
+- **Insight into $O(s^L)$ vs $O(n^L)$**: Revealed the intrinsic advantage of sparse attention in deep networks—the combinatorial explosion of gradient paths is effectively suppressed by sparsity.
+- **Simple Implementation**: Replacing softmax with $\alpha$-entmax + learnable temperature is straightforward, requires no architectural modifications, and is engineering-friendly.
 
 ## Limitations & Future Work
 
-1. **Computational Efficiency**: The forward and backward passes of α-entmax involve sorting operations with complexity $O(n \log n)$, higher than the $O(n)$ of softmax; although sparse outputs can accelerate downstream computation, the attention computation itself is slower.
-2. **Pretraining Cost**: The method requires training from scratch or full fine-tuning and cannot be straightforwardly applied as a drop-in replacement for existing pretrained models.
-3. **Insufficient Large-Scale Validation**: Experiments are conducted primarily on medium-scale models; validation on models with 7B+ parameters has not been performed.
-4. **Compatibility with FlashAttention**: The irregular memory access patterns of sparse attention may conflict with hardware-optimized methods such as FlashAttention.
-5. **Selection of α**: Although experiments suggest 1.5 is preferable, theoretical guidance for determining the optimal $\alpha$ is lacking.
+1. **Computational Efficiency**: Forward/backward passes for $\alpha$-entmax involve sorting operations with $O(n \log n)$ complexity, higher than the $O(n)$ of softmax. While sparse outputs can accelerate subsequent steps, the attention computation itself is slower.
+2. **Pre-training Cost**: Requires pre-training from scratch or full fine-tuning; it cannot be applied as a simple drop-in replacement for existing pre-trained models.
+3. **Lack of Large-scale Validation**: Experiments were primarily conducted on medium-scale models and have not yet been validated on LLMs with 7B+ parameters.
+4. **Compatibility with FlashAttention**: The irregular memory access patterns of sparse attention may conflict with hardware optimization methods like FlashAttention.
+5. **Selection of α**: While experiments suggest 1.5 is optimal, there is a lack of theoretical guidance for determining the best $\alpha$.
 
 ## Related Work & Insights
 
-- **Scalable Softmax (SSMax)**: Mitigates dispersion by scaling softmax logits with a $\log n$ bias term but does not resolve it fundamentally — the theoretical analysis in this paper explains why SSMax has limited effectiveness.
-- **RoPE / ALiBi / YaRN**: Length extrapolation methods at the positional encoding level; orthogonal to ASEntmax and can be combined with it.
-- **Entmax (Peters et al., 2019)**: The original α-entmax work, primarily applied to NLP classification and translation tasks; this paper is the first to connect it to long-context extrapolation.
-- **Sparse Transformer (Child et al., 2019)**: Structured sparse attention, distinct from the data-driven sparsity of α-entmax.
-- **Gated Attention / Linear Attention**: Alternative approaches to replacing softmax, but without the theoretical guarantees of α-entmax.
+- **Scalable Softmax (SSMax)**: Scales softmax logits via $\log n$ bias terms to mitigate dispersion but does not cure it—the theoretical analysis in this paper explains SSMax's limited effectiveness.
+- **RoPE / ALiBi / YaRN**: Length extrapolation methods at the positional encoding level. These are orthogonal to ASEntmax and can be combined.
+- **Entmax (Peters et al., 2019)**: The original work on $\alpha$-entmax, mainly used for NLP classification and translation. This paper is the first to link it to long-context extrapolation.
+- **Sparse Transformer (Child et al., 2019)**: Structured sparse attention, which differs from the data-driven sparsity of $\alpha$-entmax.
+- **Gated Attention / Linear Attention**: Alternative schemes to replace softmax, but they lack the theoretical guarantees of $\alpha$-entmax.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The formal proofs of three theoretical properties are pioneering, establishing a rigorous mathematical connection between sparse attention and length extrapolation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Coverage of both synthetic tasks and language modeling is solid, and the 1000× extrapolation results are impressive, though large-scale model validation is absent.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Theoretical derivations are clear, conceptual hierarchy is well-structured, and the definition and visualization of dispersion are highly intuitive.
-- **Value**: ⭐⭐⭐⭐ — Offers a theoretically grounded new direction for long-context LLMs, though engineering deployment still requires addressing efficiency and compatibility challenges.
+- **Novelty**: ⭐⭐⭐⭐⭐ — The formal proof of three theoretical properties is pioneering, establishing a rigorous mathematical link between sparse attention and length extrapolation.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Both synthetic tasks and language modeling are covered with impressive $1000\times$ extrapolation results, though large-scale model validation is missing.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Theoretical derivations are clear, conceptual hierarchy is well-defined, and the dispersion definition and visualization are intuitive.
+- **Value**: ⭐⭐⭐⭐ — Provides a theoretically grounded new direction for long-context LLMs, though engineering adoption requires addressing efficiency and compatibility.
 
 <!-- RELATED:START -->
 
@@ -148,11 +133,11 @@ Effect of $\alpha$ and temperature learnability (Associative Recall, test length
 
 ## Related Papers
 
+- [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
 - [\[ICLR 2026\] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection](spwood_sparse_partial_weakly-supervised_oriented_object_detection.md)
-- [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](../../AAAI2026/object_detection/countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
-- [\[ICML 2026\] FOCUS: Forcing In-Context Object Localization through Visual Support Constraints and Policy Optimization](../../ICML2026/object_detection/focus_forcing_in-context_object_localization_through_visual_support_constraints_.md)
+- [\[CVPR 2026\] Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization](../../CVPR2026/object_detection/bridge_basis-driven_causal_inference_marries_vfms_for_domain_generalization.md)
 - [\[ICCV 2025\] Adversarial Attention Perturbations for Large Object Detection Transformers](../../ICCV2025/object_detection/adversarial_attention_perturbations_for_large_object_detection_transformers.md)
-- [\[CVPR 2026\] AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos](../../CVPR2026/object_detection/ar2-4fv_anchored_referring_and_re-identification_for_long-term_grounding_in_fixe.md)
+- [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](../../AAAI2026/object_detection/countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
 
 </div>
 

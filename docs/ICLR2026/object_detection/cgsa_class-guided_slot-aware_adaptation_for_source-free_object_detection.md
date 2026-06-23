@@ -2,77 +2,93 @@
 title: >-
   [Paper Note] CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection
 description: >-
-  [ICLR 2026][Object Detection][source-free domain adaptation] This paper is the first to introduce Object-Centric Learning (Slot Attention) into Source-Free Domain-Adaptive Object Detection (SF-DAOD). It extracts domain-i…
+  [ICLR 2026][Object Detection][source-free domain adaptation] This work introduces Object-Centric Learning (Slot Attention) to Source-Free Domain Adaptive Object Detection (SF-DAOD) for the first time. By extracting domain-invariant object-level structural priors through a Hierarchical Slot Awareness module and driving domain-invariant representations with class-guided contrastiv
 tags:
-  - "ICLR 2026"
-  - "Object Detection"
-  - "source-free domain adaptation"
-  - "object-centric learning"
-  - "slot attention"
-  - "DETR"
-  - "contrastive learning"
+  - ICLR 2026
+  - Object Detection
+  - source-free domain adaptation
+  - object-centric learning
+  - slot attention
+  - DETR
+  - contrastive learning
 date: 2026-05-08
-content_hash: f074c05e9457801b
+content_hash: 740661e352755521
 ---
-
 # CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.22621](https://arxiv.org/abs/2602.22621)  
 **Code**: [GitHub](https://github.com/Michael-McQueen/CGSA)  
-**Area**: Object Detection
+**Area**: Object Detection  
 **Keywords**: source-free domain adaptation, object-centric learning, slot attention, DETR, contrastive learning
 
 ## TL;DR
 
-This paper is the first to introduce Object-Centric Learning (Slot Attention) into Source-Free Domain-Adaptive Object Detection (SF-DAOD). It extracts domain-invariant object-level structural priors via a hierarchical slot-aware module and drives domain-invariant representations through class-guided contrastive learning, achieving substantial improvements over existing methods across multiple cross-domain benchmarks.
+This work introduces Object-Centric Learning (Slot Attention) to Source-Free Domain Adaptive Object Detection (SF-DAOD) for the first time. By extracting domain-invariant object-level structural priors through a Hierarchical Slot Awareness module and driving domain-invariant representations with class-guided contrastive learning, the method significantly outperforms existing approaches across multiple cross-domain benchmarks.
 
 ## Background & Motivation
 
-**Domain shift problem**: Object detectors suffer significant performance degradation when deployed under domain shifts caused by weather, camera, or scene variations.
+**Domain Shift Problem**: Object detectors suffer substantial performance degradation when deployed across domain shifts such as weather, camera, or scene changes.
 
-**SF-DAOD constraints**: Only a source-domain pretrained model and unlabeled target-domain data are available; source data cannot be accessed due to privacy or copyright restrictions.
+**Limitations of SF-DAOD**: SF-DAOD constraints mandate that only source-pre-trained models and unlabeled target domain data are available, with no access to source data due to privacy or copyright restrictions.
 
-**Limitations of prior work**: Mainstream SF-DAOD methods (SFOD/PETS/A2SFOD) focus on pseudo-label threshold tuning or teacher-student framework improvements, neglecting the shared object-level structural information across cross-domain data.
+**Limitations of Prior Work**: Mainstream SF-DAOD methods (SFOD, PETS, A2SFOD) focus on pseudo-label threshold tuning or Teacher-Student framework improvements, neglecting the commonality of object-level structural information across domains.
 
-**Potential of Slot Attention**: Object-Centric Learning (OCL) decomposes a scene into discrete "slot" representations, each binding to one object, naturally isolating foreground from background. It has demonstrated strong transferability in segmentation, video prediction, and robotics, but has never been applied to SF-DAOD.
+**Potential of Slot Attention**: Object-Centric Learning (OCL) decomposes scenes into discrete "slot" representations where each slot binds to an object, naturally isolating foreground from background. While demonstrating strong transferability in segmentation, video prediction, and robotics, it has remained unexplored in SF-DAOD.
 
-**Natural fit**: DETR-based detectors already employ object queries, making the embedding of slot priors into query space a natural yet unexplored direction.
+**Natural Fit**: DETR-based detectors already utilize object queries. Embedding slot priors into the query space is a natural yet unexplored direction.
 
 ## Method
 
 ### Overall Architecture
 
-A two-stage pipeline: source-domain pretraining (standard detection loss + HSA reconstruction loss) → target-domain adaptation (Teacher-Student + HSA + CGSC).
+CGSA addresses SF-DAOD by utilizing "object-level structure" as a cross-domain bridge. Built upon RT-DETR, the framework operates in two stages.
 
-### HSA (Hierarchical Slot Awareness) Module
+In the source pre-training stage, images pass through a backbone and query encoder to produce object queries, while simultaneously entering the Hierarchical Slot Awareness (HSA) module to be decomposed into coarse-to-fine slots. These slots are projected and fused with object queries to form slot-aware queries before entering the decoder. During training, a HSA reconstruction loss is added to the standard detection loss, forcing the model to learn scene decomposition into object-level slots. In the target domain adaptation stage, a Teacher-Student self-training mechanism is used. Both are initialized with the source model. The student utilizes HSA and generates weighted slots via attention masks, which are then fed into the Class-Guided Slot Contrast (CGSC) module for comparison with dynamic class prototypes. The teacher generates pseudo-labels for the same image to supervise the student and updates itself via Exponential Moving Average (EMA). HSA handles "extracting domain-invariant object-level structures," while CGSC "aligns these structures into a unified class semantic space."
 
-1. **Two-stage decomposition**: Stage one applies iterative Slot Attention to extract $n=5$ coarse-grained slots → spatial broadcast MLP decodes and reconstructs → softmax competition ensures each slot binds to a distinct region. Stage two takes the reconstructed features as input and applies Slot Attention again to obtain $n^2=25$ fine-grained slots.
-2. **Reconstruction loss**: $\mathcal{L}_{rec} = \|\hat{h}^{(1)} - h\|_2^2 + \|\hat{h}^{(2)} - h\|_2^2$, supervising both stages.
-3. **Slot-Aware Queries**: Projected slots are added to object queries: $Q_{aware} = Q_{obj} + f_{map}(z^{(2)})$, providing object-level structural priors to the decoder.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IMG["Input Image"] --> BB["Backbone +<br/>Query Encoder"]
+    BB --> Q["Object Queries"]
+    subgraph HSA["Hierarchical Slot Awareness (HSA)"]
+        direction TB
+        S1["Coarse-grained (5 slots)<br/>Slot Attention + Reconstruction"] --> S2["Fine-grained (25 slots)<br/>Re-decomposition + Reconstruction"]
+    end
+    IMG --> HSA
+    HSA --> FUSE["Slot Projection added to Query<br/>= Slot-aware Query"]
+    Q --> FUSE
+    FUSE --> DEC["DETR Decoder"]
+    DEC -->|Source Pre-training| DET["Detection Loss + Reconstruction Loss"]
+    DEC -->|Target Adaptation<br/>Teacher-Student| CGSC["Class-Guided Slot Contrast (CGSC)<br/>Prototypes + Hungarian Pseudo-labels + InfoNCE"]
+    CGSC --> OUT["Domain-invariant Detector"]
+```
 
-### CGSC (Class-Guided Slot Contrast) Module
+### Key Designs
 
-1. **Class prototype memory**: Maintains global class prototypes $P_c$ updated via EMA, aggregated from decoder queries by averaging over predicted class assignments.
-2. **Weighted slot construction**: Applies attention masks $m_k^{(2)}$ to weight-aggregate raw features, suppressing background slots.
-3. **Hungarian matching**: A cosine similarity matrix combined with the Hungarian algorithm establishes one-to-one correspondences between weighted slots and queries, yielding pseudo class labels.
-4. **InfoNCE contrastive loss**: Pulls the per-class slot prototype $\bar{z}_c$ closer to the class prototype $P_c$ while pushing apart prototypes of different classes.
+**1. Hierarchical Slot Awareness (HSA): Extracting Object-level Structural Priors**
 
-### Total Loss
+SF-DAOD is challenging due to noisy pseudo-labels and fragmented low-level features across domains. HSA utilizes OCL to extract object-level structures—where one slot binds to one object—ensuring robustness against domain shifts like weather or style. It employs two-stage coarse-to-fine decomposition: in the first stage, iterative Slot Attention is applied to backbone features $h$ to extract $n=5$ coarse slots, followed by reconstruction via a spatial broadcast MLP. In the second stage, the reconstruction results are further decomposed into $n^2=25$ fine-grained slots. Both stages are supervised by the reconstruction loss: $\mathcal{L}_{rec} = \|\hat{h}^{(1)} - h\|_2^2 + \|\hat{h}^{(2)} - h\|_2^2$. Fine-grained slots are projected and added to object queries: $Q_{aware} = Q_{obj} + f_{map}(z^{(2)})$, providing the decoder with domain-invariant structural priors. While traditional OCL often limits slots to $\leq 10$ to prevent collapse, HSA's hierarchical design (inspired by human vision) allows stable convergence for 25 slots.
+
+**2. Class-Guided Slot Contrast (CGSC): Aligning Structural Priors to Semantic Space**
+
+To resolve feature distribution misalignment across domains, CGSC uses contrastive learning. The module maintains global class prototypes $P_c$ updated via EMA, serving as stable semantic anchors. For a target image, weighted slots are generated using the attention mask $m_k^{(2)}$ to suppress background slots. These are then matched with decoder queries using a Hungarian algorithm over a cosine similarity matrix to assign pseudo-labels. The InfoNCE loss pulls the slot prototype $\bar{z}_c$ toward the corresponding class prototype $P_c$ while pushing away different classes, forcing cross-domain shared semantic representations.
+
+### Loss & Training
+
+The total loss for target adaptation combines self-training, contrastive, and reconstruction terms:
 
 $$\mathcal{L}_{total} = \mathcal{L}_{unsup} + \lambda_{con} \mathcal{L}_{con} + \lambda_{rec} \mathcal{L}_{rec}$$
 
-### Theoretical Guarantee
-
-A target-domain risk reduction bound is proven: $\mathbb{E}[\mathcal{R}_T(\theta_{t+1})] \le \mathbb{E}[\mathcal{R}_T(\theta_t)] - c_1 \Delta_t + c_2(\epsilon_{rec} + \sigma^2)$
+The work provides a theoretical bound proof showing that the target domain risk decreases after each adaptation step: $\mathbb{E}[\mathcal{R}_T(\theta_{t+1})] \le \mathbb{E}[\mathcal{R}_T(\theta_t)] - c_1 \Delta_t + c_2(\epsilon_{rec} + \sigma^2)$. This suggests that as long as reconstruction error $\epsilon_{rec}$ and noise $\sigma^2$ are minimized, the slot-aware design guarantees risk reduction.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Cross-Domain Setting | SF | Method | mAP |
-|---|---|---|---|
-| Cityscapes→BDD100K | ✗ | DATR (Source-based DAOD) | 43.3 |
+| Cross-domain Setting | SF | Method | mAP |
+|---------|-----|------|-----|
+| Cityscapes→BDD100K | ✗ | DATR (Source-driven DAOD) | 43.3 |
 | Cityscapes→BDD100K | ✓ | TITAN (SF-DAOD) | 38.3 |
 | Cityscapes→BDD100K | ✓ | **CGSA** | **53.0** |
 | Cityscapes→Foggy | ✓ | A2SFOD | 41.2 |
@@ -80,45 +96,45 @@ A target-domain risk reduction bound is proven: $\mathbb{E}[\mathcal{R}_T(\theta
 
 ### Ablation Study
 
-| Configuration | Cityscapes→BDD100K mAP | Note |
-|---|---|---|
-| Teacher-Student only | 35.4 | No structural prior |
-| +HSA | 45.2 | Slot structural prior is effective |
-| +CGSC | 41.8 | Class-guided contrast is effective |
-| **+HSA+CGSC (CGSA)** | **53.0** | Both modules are complementary; best overall |
+| Configuration | Cityscapes→BDD100K mAP | Description |
+|------|------------------------|------|
+| Teacher-Student only | 35.4 | No structural priors |
+| +HSA | 45.2 | Effective slot structural prior |
+| +CGSC | 41.8 | Effective class-guided contrast |
+| **+HSA+CGSC (CGSA)** | **53.0** | Complementary, best performance |
 
 ### Key Findings
 
-- CGSA in the source-free setting even surpasses several source-based DAOD methods that require access to source data.
-- Training is conducted on 4×A100 GPUs using the RT-DETR detector.
-- CGSA consistently leads across multiple cross-domain scenarios (clear→foggy, real→cartoon/watercolor, etc.).
-- The 25-slot configuration exceeds the conventional OCL limit of ≤10 slots, while the hierarchical design ensures stable convergence.
+- CGSA outperforms several source-driven DAOD methods (which require source data) under SF settings.
+- Based on RT-DETR, trained using 4×A100 GPUs.
+- Leading performance across various scenarios: normal to foggy, real to artistic/watercolor.
+- The hierarchical design enables stable training with 25 slots, exceeding the traditional $\leq 10$ limit in OCL.
 
 ## Highlights & Insights
 
-- **First combination of OCL and SF-DAOD**: Opens a new paradigm of leveraging object-level structural priors for domain adaptation.
-- The hierarchical slot design elegantly overcomes the traditional slot count limitation (5→25) while maintaining training stability.
-- Theoretical generalization analysis is provided — the slot-aware design is not only empirically effective but also theoretically grounded.
-- **Surpassing source-based methods under a source-free setting** constitutes compelling experimental evidence.
+- **Pioneering combination of OCL and SF-DAOD**: Establishes a new paradigm using object-level structural priors for domain adaptation.
+- Hierarchical slot design successfully breaks traditional slot quantity limits (5 to 25) while maintaining stability.
+- Theoretical generalization analysis provides mathematical grounding for the slot-aware design's effectiveness.
+- Surpassing source-driven methods in a source-free setting provides strong empirical evidence.
 
 ## Limitations & Future Work
 
-- Validation is limited to driving-scene datasets; generalization to medical, aerial, and industrial domains remains untested.
-- The slot count $n=5$ is manually set; an adaptive mechanism may be preferable.
-- Hungarian matching depends on detector prediction quality; instability in early training stages may introduce erroneous class labels.
-- The two-stage Slot Attention and reconstruction objectives in HSA increase training time and memory overhead.
+- Verification is limited to driving datasets; generalization in medical, aerial, or industrial domains is untested.
+- The number of slots $n=5$ is manually defined; an adaptive mechanism could be superior.
+- Hungarian matching depends on detector prediction quality; early-stage instability may lead to incorrect class labels.
+- HSA's two-stage Slot Attention and reconstruction objective increase training time and memory overhead.
 
 ## Related Work & Insights
 
-- **SFOD/PETS/A2SFOD**: Focus on pseudo-label filtering while ignoring object-level structure.
-- **DATR/MRT** (source-based DAOD): Require source data, yet CGSA outperforms them without it.
-- **Slot Attention/SAVi**: Originally designed for segmentation and video prediction; introduced to domain-adaptive detection for the first time here.
+- **SFOD/PETS/A2SFOD**: Focus on pseudo-label filtering, ignoring object-level structure.
+- **DATR/MRT** (Source-driven DAOD): Requires source data; CGSA outperforms these in source-free settings.
+- **Slot Attention/SAVi**: Originally for segmentation/video prediction, now introduced to domain adaptive detection.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First combination of OCL and SF-DAOD, opening a new research direction.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five datasets/cross-domain settings, complete ablation, and theoretical analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, supported by both theory and experiments.
+- Novelty: ⭐⭐⭐⭐⭐ First to combine OCL and SF-DAOD.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 datasets/settings + full ablation + theory.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation with theoretical and empirical support.
 - Value: ⭐⭐⭐⭐ Provides a new methodological foundation for SF-DAOD.
 
 <!-- RELATED:START -->
@@ -129,9 +145,9 @@ A target-domain risk reduction bound is proven: $\mathbb{E}[\mathcal{R}_T(\theta
 
 - [\[ICCV 2025\] SFUOD: Source-Free Unknown Object Detection](../../ICCV2025/object_detection/sfuod_source-free_unknown_object_detection.md)
 - [\[AAAI 2026\] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection](../../AAAI2026/object_detection/beyond_boundaries_leveraging_vision_foundation_models_for_so.md)
+- [\[ICLR 2026\] OD3: Optimization-Free Dataset Distillation for Object Detection](od3_optimization-free_dataset_distillation_for_object_detection.md)
 - [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](../../CVPR2026/object_detection/foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
-- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting (WS-COC)](bootstrapping_mllm_for_weakly-supervised_class-agnostic_object_counting.md)
-- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](../../CVPR2026/object_detection/paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
+- [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
 
 </div>
 

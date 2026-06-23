@@ -2,103 +2,113 @@
 title: >-
   [Paper Note] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition
 description: >-
-  [ICLR 2026][Multimodal VLM][HOI detection] This paper proposes DA-HOI, a zero-shot HOI detection framework that fully decouples object detection from interaction recognition. It replaces conventional CLIP-based features…
+  [ICLR 2026][Multimodal VLM][HOI detection] Ours proposes DA-HOI, a zero-shot HOI detection framework that completely decouples object detection from interaction recognition. It leverages the VQA capabilities of MLLMs to replace traditional CLIP features for interaction recognition. The core contributions include Deterministic Generation (reaching 31.50 mAP trai
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "HOI detection"
-  - "zero-shot"
-  - "MLLM"
-  - "interaction recognition"
-  - "detector-agnostic"
+  - ICLR 2026
+  - Multimodal VLM
+  - HOI detection
+  - zero-shot
+  - MLLM
+  - interaction recognition
+  - detector-agnostic
 date: 2026-05-08
-content_hash: 4922acfe10c285b2
+content_hash: 5f32557f224dadbe
 ---
-
 # Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.15124](https://arxiv.org/abs/2602.15124)  
 **Code**: [https://github.com/SY-Xuan/DA-HOI](https://github.com/SY-Xuan/DA-HOI)  
-**Authors**: Shiyu Xuan, Dongkai Wang, Zechao Li, Jinhui Tang
-**Area**: Multimodal VLM
+**Authors**: Shiyu Xuan, Dongkai Wang, Zechao Li, Jinhui Tang  
+**Area**: Multimodal VLM  
 **Keywords**: HOI detection, zero-shot, MLLM, interaction recognition, detector-agnostic
 
 ## TL;DR
 
-This paper proposes DA-HOI, a zero-shot HOI detection framework that fully decouples object detection from interaction recognition. It replaces conventional CLIP-based features with MLLM VQA capabilities for interaction recognition. The core contributions are deterministic generation (achieving 31.50 mAP training-free), spatial-aware pooling (incorporating spatial priors and cross-attention), and one-pass deterministic matching (reducing $M$ forward passes to one). DA-HOI comprehensively surpasses the state of the art across all four zero-shot settings on HICO-DET and supports plug-and-play detector substitution after training.
+Ours proposes DA-HOI, a zero-shot HOI detection framework that completely decouples object detection from interaction recognition. It leverages the VQA capabilities of MLLMs to replace traditional CLIP features for interaction recognition. The core contributions include Deterministic Generation (reaching 31.50 mAP training-free), Spatial-Aware Pooling (SAP, introducing spatial priors and cross-attention), and single-pass Deterministic Matching (DM, reducing $M$ forward passes to one). It outperforms state-of-the-art (SOTA) methods across four zero-shot settings on HICO-DET and allows for plug-and-play switching of any detector after training.
 
 ## Background & Motivation
 
-**Background**: HOI detection requires simultaneously localizing humans and objects and recognizing their interactions. Recent CLIP-based zero-shot methods (GEN-VLKT, HOICLIP, ADA-CM, LAIN, etc.) have constructed interaction classifiers via text embeddings and achieved preliminary progress, yet performance remains substantially limited.
+**Background**: HOI detection requires the simultaneous localization of humans and objects and the recognition of their interaction relationships. Recent CLIP-based zero-shot methods (such as GEN-VLKT, HOICLIP, ADA-CM, LAIN) have made initial progress by constructing interaction classifiers via text embeddings, but performance bottlenecks remain significant.
 
 **Limitations of Prior Work**:
 
-**Insufficient discriminative power of CLIP features**: CLIP excels at category-level alignment but lacks fine-grained discrimination for visually similar interactions such as "holding a cup" vs. "lifting a cup," requiring additional detector features for compensation.
+- **Insufficient Discriminative Power of CLIP Features**: CLIP excels at category-level alignment but lacks fine-grained distinction for visually similar interactions like "holding a cup" and "lifting a cup," necessitating additional detector features for compensation.
+- **Severe Coupling Between Detector and Interaction Recognition**: In two-stage methods like ADA-CM and BCOM, interaction recognition modules rely on specific detector features or relationship modeling (e.g., UPT). Changing the detector requires retraining—BCOM's Full mAP plummeted from 33.74 to 20.31 when switching to Grounding-DINO.
+- **Low Generalization Ceiling**: CLIP-based methods essentially align visual and text features only on trained categories, struggling to generalize to unseen verb/object categories.
 
-**Tight coupling between detector and interaction recognition**: Two-stage methods including ADA-CM and BCOM couple their interaction recognition modules to specific detector features or inter-object relational modeling (e.g., UPT), necessitating retraining whenever the detector is changed—BCOM's Full mAP drops from 33.74 to 20.31 when switching to Grounding-DINO.
+**Key Challenge**: Open-vocabulary detectors can already localize unseen objects effectively; the real bottleneck lies in interaction recognition—which happens to be tied to specific detectors.
 
-**Low generalization ceiling**: CLIP-based methods inherently align visual and textual features only on training categories, making generalization to unseen verb/object categories difficult.
+**Key Insight**: MLLMs are trained on massive image-text pairs and instruction-following tasks, possessing cross-modal generalization and fine-grained understanding far exceeding CLIP. By splitting HOI detection into two independent processes—where the detector handles localization and the MLLM handles interaction recognition—one can utilize the strongest models for each task, while decoupling enables plug-and-play flexibility.
 
-**Key Challenge**: Open-vocabulary detectors can already localize unseen objects reasonably well; the true bottleneck lies in interaction recognition—which is precisely entangled with a specific detector.
-
-**Key Insight**: MLLMs, trained on large-scale image-text pairs and instruction-following tasks, possess cross-modal generalization and fine-grained understanding capabilities far superior to CLIP. By decomposing HOI detection into two independent pipelines—detection for localization and MLLM for interaction recognition—each component can leverage the strongest available model, and the decoupled architecture enables plug-and-play flexibility.
-
-**Core Idea**: Interaction recognition is formulated as a VQA task posed to an MLLM, with deterministic generation for multi-label confidence scoring, spatial-aware pooling to inject spatial priors, and one-pass matching to eliminate redundant inference overhead.
+**Core Idea**: Interaction recognition is modeled as a VQA task posed to an MLLM, using Deterministic Generation to obtain multi-label confidence, Spatial-Aware Pooling to inject spatial priors, and Deterministic Matching to eliminate redundant inference overhead.
 
 ## Method
 
 ### Overall Architecture
 
-DA-HOI decouples HOI detection into two fully independent stages:
+DA-HOI decouples HOI detection into two completely independent stages:
 
-1. **Object detection stage**: Any detector (DETR / Grounding-DINO / Yolo-World) produces detection results $\{C^i, B^i\}_{i=1}^{N_{\text{det}}}$.
-2. **Interaction recognition stage**: All human-object pairs are enumerated; for each pair $(B_h, B_o, C_o)$, a VQA prompt is constructed and fed to the MLLM (Qwen2.5-VL) to predict interaction confidence scores.
+1. **Object Detection Stage**: Any detector (DETR / Grounding-DINO / Yolo-World) is used to obtain detection results $\{C^i, B^i\}_{i=1}^{N_{\text{det}}}$.
+2. **Interaction Recognition Stage**: All human and object instances are paired. For each human-object pair $(B_h, B_o, C_o)$, a VQA prompt is constructed for the MLLM (Qwen2.5-VL) to predict interaction confidence.
 
-The only interface between the two stages is bounding box coordinates and category labels; no features are shared. Consequently, the detector can be freely replaced after training without retraining the recognition module.
+The only interface between the two stages is the bounding box coordinates and category labels; no features are shared, allowing for detector replacement without retraining. The pipeline is: after the detector enumerates human-object pairs, SAP compresses the appearance and spatial relationships into interaction features, MLLM scores candidate interactions via Deterministic Generation, and final HOI triplets are output through confidence fusion.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IMG["Input Image"] --> DET["Object Detector (Any)<br/>DETR / Grounding-DINO<br/>/ Yolo-World"]
+    DET --> PAIR["Human-Object Pairing<br/>Enumerate (B_h, B_o, C_o)"]
+    PAIR --> SAP["Spatial-Aware Pooling SAP<br/>Extra-box Context + 7D Spatial Vector<br/>→ Interaction Feature f_inter"]
+    SAP -->|Interactiveness Classifier<br/>Filter non-interactive pairs| SCORE
+    subgraph SCORE["MLLM Interaction Scoring"]
+        direction TB
+        DG["Deterministic Generation<br/>Multi-label discrimination via likelihoods<br/>(training-free ready)"]
+        DM["Deterministic Matching DM<br/>Single forward pass + Cosine matching"]
+        DG -. Implemented efficiently via DM after training .-> DM
+    end
+    SCORE --> FUSE["Confidence Fusion<br/>S_v · S_inter · S_h · S_o"]
+    FUSE --> OUT["HOI Triplet Output"]
+```
 
 ### Key Designs
 
-#### 1. Deterministic Generation
+**1. Deterministic Generation: Transforming MLLM Free-text Answers into Scored Multi-label Discrimination**
 
-- **Function**: Converts the MLLM's open-ended text generation into deterministic multi-label classification, eliminating format errors and single-output bias.
-- **Mechanism**: Rather than allowing the MLLM to freely generate text answers, for each candidate interaction $T_k$ in the candidate set $\Theta(C_o) = \{T_1, T_2, \dots, T_M\}$, the conditional likelihood of the MLLM generating $T_k$ given the prompt is computed as the confidence score:
-  $$S_v[k] = p(T_k | I, Q) = \prod_{j=1}^{N} p(t[j] | T_k[<j], I, Q)$$
-- **Design Motivation**: Directly querying the MLLM suffers three critical failures: (a) format error rate as high as 36.78%; (b) severe single-output bias, with 80.91% of responses containing only one interaction (despite IR being a multi-label problem); (c) inability to obtain confidence scores required for mAP evaluation. Deterministic generation eliminates all three issues, reducing both format error rate and single-output rate to 0%.
-- **Novelty**: Unlike CLIP-based methods such as ADA-CM, which compute visual-text similarity for classification, this work leverages the MLLM's stronger cross-modal understanding via conditional generation probability. Even without any training, the approach achieves 31.50 mAP, surpassing ADA-CM's 25.19.
+Directly asking an MLLM "What is this person doing with this cup?" faces three issues: a format error rate as high as 36.78% (outputting non-standard terms), severe single-output bias (80.91% of answers provide only one interaction despite the multi-label nature), and the lack of confidence scores for mAP evaluation. Deterministic Generation bypasses "letting the model talk": for each candidate $T_k$ in the interaction list $\Theta(C_o) = \{T_1, T_2, \dots, T_M\}$, it calculates the conditional likelihood of generated tokens given the image and query, using it as the confidence score:
 
-#### 2. Spatial-Aware Pooling (SAP)
+$$S_v[k] = p(T_k | I, Q) = \prod_{j=1}^{N} p(t[j] | T_k[<j], I, Q)$$
 
-- **Function**: Integrates appearance features with pairwise spatial priors to enhance interaction representations, while filtering non-interactive pairs to reduce computation.
-- **Mechanism**: Interaction features are constructed in three steps:
-    - (a) Human and object features $f_h, f_o$ extracted via ROIAlign are fused through an MLP to produce an initial interaction feature $f_{\text{inter}}$.
-    - (b) A cross-attention layer aggregates contextual information from global image features outside the bounding boxes, mitigating information loss from imprecise detections.
-    - (c) A 7-dimensional pairwise spatial vector is encoded:
-  $$U = [w_h h_h, w_o h_o, \frac{w_h}{h_h}, \frac{w_o}{h_o}, \text{IoU}(B_h, B_o), \frac{x_h - x_o}{w_h}, \frac{y_h - y_o}{h_h}]$$
-  capturing area (distinguishing object sizes), aspect ratio (distinguishing shapes), IoU (measuring human-object overlap), and human-to-object direction (distinguishing left/right/up/down relationships). This vector is projected via MLP and additively fused with the interaction feature.
-- **Design Motivation**: ROIAlign features are confined to the bounding box and are sensitive to imprecise detections (partial occlusion, background interference); they also ignore the relative spatial relationship between the human-object pair, which is critical for distinguishing "sit on chair" from "stand next to chair." Ablations show that removing spatial encoding reduces UO Full by 1.62, and removing cross-attention reduces it by 2.23.
-- **Additional Function**: A linear classifier $S_{\text{interactiveness}} = \sigma(\text{Linear}(f_{\text{inter}}))$ trained on interaction features filters non-interactive pairs at inference, reducing inference time from 569 ms to 217 ms.
+This eliminates format errors and single-output bias. Compared to CLIP-based similarity in ADA-CM, this uses conditional generation probability; even without training, the training-free performance reaches 31.50 mAP, exceeding ADA-CM's 25.19.
 
-#### 3. One-Pass Deterministic Matching (DM)
+**2. Spatial-Aware Pooling (SAP): Incorporating Extra-box Context and Relative Spatial Relations**
 
-- **Function**: Compresses interaction score computation from $M$ forward passes into a single forward pass.
-- **Mechanism**: A special token `<|hoi|>` is appended after each candidate in the candidate list, and all candidates are concatenated into a single prompt fed to the LLM. The output feature $\hat{f}_{\text{hoi}}[k]$ at each special token and the interaction feature $\hat{f}_{\text{inter}}$ are extracted; cosine similarity replaces the conditional generation probability:
-  $$S_v[k] = \text{cosine}(\hat{f}_{\text{hoi}}[k], \hat{f}_{\text{inter}})$$
-- **Design Motivation**: Although deterministic generation is effective, its computation scales linearly with the number of candidates $M$. On HICO-DET, each object category has ~15 candidate interactions on average, requiring 15 LLM forward passes per human-object pair. DM reformulates generation as feature matching, obtaining scores for all candidates in a single forward pass.
-- **Efficiency Gain**: SAP + DM jointly reduce inference time from the baseline 569 ms to 91 ms (6.3× speedup).
+ROIAlign features are limited to the bounding box, making them vulnerable to occlusions or background noise. Crucially, they lack relative positioning, which is vital for distinguishing "sit on chair" from "stand next to chair." SAP enhances interaction features in three steps: human/object features $f_h, f_o$ from ROIAlign are fused into an initial $f_{\text{inter}}$ via MLP; a cross-attention layer aggregates context from outside the boxes; and a 7D pairwise spatial vector is encoded:
+
+$$U = [w_h h_h, w_o h_o, \frac{w_h}{h_h}, \frac{w_o}{h_o}, \text{IoU}(B_h, B_o), \frac{x_h - x_o}{w_h}, \frac{y_h - y_o}{h_h}]$$
+
+It explicitly includes area (size differentiation), aspect ratio (shape), IoU (overlap), and direction. SAP also trains a linear classifier $S_{\text{interactiveness}} = \sigma(\text{Linear}(f_{\text{inter}}))$ to filter non-interactive pairs, reducing inference time from 569ms to 217ms.
+
+**3. Deterministic Matching (DM): Condensing M Forward Passes into One**
+
+While effective, Deterministic Generation's cost scales with the number of candidates $M$. DM replaces per-candidate likelihood calculation with a single-pass feature matching: a special token `<|hoi|>` is inserted after each candidate in a single prompt. The output features $\hat{f}_{\text{hoi}}[k]$ of these tokens and the interaction feature $\hat{f}_{\text{inter}}$ are used for scoring via cosine similarity:
+
+$$S_v[k] = \text{cosine}(\hat{f}_{\text{hoi}}[k], \hat{f}_{\text{inter}})$$
+
+This reduces inference time from the 569ms baseline to 91ms, achieving a 6.3x speedup.
 
 ### Loss & Training
 
-Two-stage training with the visual encoder frozen throughout:
+Two-stage training with visual encoders frozen:
 
-1. **Stage 1**: Train SAP only (30 epochs, lr=1e-4, batch=16) using Binary Focal Loss for interactiveness prediction and spatial encoding.
-2. **Stage 2**: Freeze SAP; fine-tune the LLM only with LoRA (16 epochs, lr=1e-4, batch=16) using Focal BCE for deterministic matching.
+1. **First Stage**: Only SAP is trained (30 epochs, lr=1e-4) using Binary Focal Loss for interactiveness and spatial encoding.
+2. **Second Stage**: SAP is frozen; MLLM is fine-tuned using LoRA (16 epochs, lr=1e-4) with Focal BCE for Deterministic Matching.
 
-The final inference confidence score is: $\hat{S}^i_v[k] = S^i_v[k] \cdot S^i_{\text{interactiveness}} \cdot S^i_h \cdot S^i_o$, integrating the interaction score, interactiveness score, and detector confidence. All experiments are conducted on 4 RTX 3090 GPUs.
+Final confidence: $\hat{S}^i_v[k] = S^i_v[k] \cdot S^i_{\text{interactiveness}} \cdot S^i_h \cdot S^i_o$. Experiments were conducted on 4x RTX 3090 GPUs.
 
 ## Key Experimental Results
 
-### Main Results: Zero-shot Performance on HICO-DET
+### Main Results: HICO-DET Zero-shot Performance
 
 | Method | RF-UC Full | NF-UC Full | UO Full | UV Full | Avg Full |
 |------|-----------|-----------|---------|---------|----------|
@@ -114,7 +124,7 @@ The final inference confidence score is: $\hat{S}^i_v[k] = S^i_v[k] \cdot S^i_{\
 | ADA-CM (training-free) | - | - | 25.19 | 25.19 | 25.19 |
 | **Ours (training-free)** | - | - | **31.50** | **31.50** | **31.50** |
 
-### Ablation Study: Component Contributions & Inference Efficiency
+### Ablation Study: Component Contribution & Efficiency
 
 | Configuration | UO Full | UV Full | Inference Time (ms/img) |
 |------|---------|---------|-----------------|
@@ -128,41 +138,39 @@ The final inference confidence score is: $\hat{S}^i_v[k] = S^i_v[k] \cdot S^i_{\
 
 ### Key Findings
 
-- **Deterministic generation is the most critical design**: In the training-free setting, it improves performance from 14.23 mAP (naive QA) to 31.50 mAP (+17.27), exceeding the cumulative gain of all fine-tuning components. Even after SFT, omitting deterministic generation yields only 31.61; adding it raises performance to 39.87 (+8.26).
-- **SAP is the strongest fine-tuning component**: UO Full +3.07, UV Full +4.11, with simultaneous 2.6× inference speedup (569→217 ms).
-- **DM is an efficient accelerator**: SAP+DM jointly reduce inference from 217 ms to 91 ms while further improving performance.
-- **MLLM scale effect is pronounced**: LLaVA-0.5B (42.00) → Qwen-3B (43.60) → Qwen-7B (45.99), demonstrating that the method directly benefits from stronger MLLMs.
-- **Cross-dataset generalization is outstanding**: HICO-DET→V-COCO achieves 59.91%, surpassing the second-best BCOM (48.87) by 11.04 points and CMMP by 12.26 points.
-- **Robustness to candidate ordering**: Full mAP fluctuates by only ±0.02 across 5 different candidate orderings.
-- **LoRA outperforms full fine-tuning**: LoRA-only LLM tuning matches or exceeds full tuning, confirming that preserving pretrained MLLM knowledge is beneficial.
+- **Deterministic Generation is the most critical design**: In a training-free setting, it improves mAP from 14.23 to 31.50 (+17.27). With SFT, it adds +8.26 over standard generation.
+- **SAP is the strongest fine-tuning component**: Improving UO Full by +3.07 while speeding up inference by 2.6x.
+- **DM is an efficient accelerator**: Combining SAP and DM reduces inference from 217ms to 91ms while continuing to improve performance.
+- **Significant MLLM Scale Effect**: LLaVA-0.5B (42.00) → Qwen-3B (43.60) → Qwen-7B (45.99), proving performance gains from stronger base models.
+- **Superior Cross-Dataset Generalization**: Achieves 59.91% on V-COCO (HICO-DET pretrained), 11.04% higher than BCOM.
+- **Robustness to Candidate Order**: Fluctuation is only ±0.02 mAP across different permutations.
+- **LoRA vs. Full Tuning**: LoRA on the LLM reaches or exceeds full tuning performance, preserving pre-trained knowledge.
 
 ## Highlights & Insights
 
-- **Decoupled design is a paradigm-level innovation**: This is the first work to decompose HOI detection into fully independent detection and recognition modules, enabling free detector substitution after training. This allows HOI detection to benefit "for free" from advances in object detection (switching to Grounding-DINO directly improves performance by 1.41) and is transferable to compositional visual understanding tasks such as scene graph generation.
-- **Deterministic generation elegantly bridges the gap between generative MLLMs and discriminative tasks**: Using conditional likelihood in place of text generation converts a generative model into a discriminator without any architectural modification. This technique is directly transferable to any scenario requiring multi-label classification or ranking with MLLMs (e.g., attribute recognition, action classification).
-- **SAP outperforms the widely adopted UPT**: UPT models relationships across different detections, creating implicit coupling to the detector. SAP focuses solely on the spatial relationship of the current human-object pair and global image features, maintaining decoupling while achieving superior performance.
+- **Decoupled Design as a Paradigm Shift**: Ours is the first to split HOI detection into completely independent modules. This allows HOI detection to benefit "for free" from developments in detectors (e.g., +1.41 Gain by switching to Grounding-DINO).
+- **Deterministic Generation Bridges the Gap**: It converts generation models into discriminators without architectural changes, a trick applicable to any multi-label classification or ranking task using MLLMs.
+- **Superiority of SAP over UPT**: While UPT couples with specific detectors by modeling relations between all boxes, SAP maintains decoupling by focusing on context and relative spatial relations of the target pair.
 
 ## Limitations & Future Work
 
-- **Inference efficiency remains improvable**: 91 ms/image ≈ 11 FPS is insufficient for real-time scenarios (autonomous driving, robotics). MLLM knowledge distillation into lightweight models, or batched inference over multiple human-object pairs, warrants investigation.
-- **Exhaustive pairing is suboptimal**: The number of human-object pairs scales as $O(N^2)$, leading to substantial redundancy in dense scenes. Learning pairing priors or applying spatial heuristics for pre-filtering could help.
-- **Candidate interaction lists must be predefined**: Deterministic generation and matching rely on predefined candidate lists, limiting applicability to fully open-vocabulary interaction discovery.
-- **MLLM deployment cost is high**: Even the smallest Qwen2.5-VL 3B model has 3B parameters; mobile deployment requires quantization or distillation.
-- **Limited training data diversity**: Training is conducted solely on HICO-DET (600 HOI categories, 80 object categories); validation in more open real-world scenarios remains insufficient.
+- **Inference Efficiency**: 91ms/img (≈11 FPS) is still insufficient for real-time applications like autonomous driving.
+- **Pairing Strategy**: The $O(N^2)$ brute-force pairing is redundant in dense scenes; learned pairing priors could be explored.
+- **Predefined Candidate Lists**: Dependency on fixed lists limits applicability for completely open-vocabulary interaction discovery.
+- **Deployment Costs**: Even a 3B parameter MLLM has high memory requirements for edge deployment.
 
 ## Related Work & Insights
 
-- **vs. EZ-HOI**: EZ-HOI also enhances zero-shot capability but remains grounded in CLIP feature alignment; this work replaces CLIP with MLLM for IR, achieving an Avg Full gain of 6.39 (42.59 vs. 36.20), demonstrating the superiority of MLLM cross-modal understanding over CLIP visual-language alignment.
-- **vs. BC-HOI**: BC-HOI employs an MLLM (BLIP2) for auxiliary caption supervision but remains coupled to a specific detector; this work uses the MLLM directly for interaction discrimination with full decoupling, achieving a UO Full advantage of 9.42 (43.60 vs. 34.18), confirming that MLLMs should directly participate in discrimination rather than merely providing auxiliary signals.
-- **vs. ADA-CM / BCOM**: These methods claim detector-agnosticism, yet their performance collapses upon detector substitution (BCOM: 33.74→17.69) due to implicit reliance on inter-object relationships modeled during training. This work achieves genuine decoupling, with performance improving rather than degrading upon detector substitution.
-- **Inspiration**: The deterministic generation approach is transferable to any task requiring structured discriminative output from MLLMs, including scene graph generation, action recognition, and visual grounding.
+- **vs. EZ-HOI**: While EZ-HOI enhances zero-shot capabilities, it relies on CLIP alignment. Ours uses MLLM for recognition, achieving a 6.39 Avg Full gain, proving MLLM's superior cross-modal understanding.
+- **vs. BC-HOI**: BC-HOI uses MLLM for auxiliary captioning but remains coupled to the detector. Ours uses MLLM for direct discrimination, exceeding its UO Full by 9.42 points.
+- **vs. ADA-CM / BCOM**: These methods suffer performance drops when changing detectors because they implicitly rely on the original detector's relational modeling. Ours truly achieves detector-agnosticism.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The decoupled framework and deterministic generation represent substantive innovations, though individual sub-components (ROIAlign, cross-attention, LoRA) are established techniques.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers four zero-shot settings, cross-detector and cross-dataset transfer, training-free and fully supervised baselines, multi-MLLM ablations, and training strategy ablations—highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, well-motivated, rigorous formulations; some sections are slightly redundant.
-- Value: ⭐⭐⭐⭐⭐ Proposes a new paradigm for HOI detection in the MLLM era; the decoupled design carries strong practical engineering value and academic impact.
+- Novelty: ⭐⭐⭐⭐ The decoupled framework and Deterministic Generation are substantial innovations.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage of zero-shot settings, detectors, datasets, and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and motivation, though some sections are slightly redundant.
+- Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for HOI detection in the MLLM era with high engineering value.
 
 <!-- RELATED:START -->
 
@@ -170,11 +178,11 @@ The final inference confidence score is: $\hat{S}^i_v[k] = S^i_v[k] \cdot S^i_{\
 
 ## Related Papers
 
-- [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](../../ICCV2025/multimodal_vlm/negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
-- [\[CVPR 2026\] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition](../../CVPR2026/multimodal_vlm/beyond_heuristic_prompting_a_concept-guided_bayesian_framework_for_zero-shot_ima.md)
-- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](../../CVPR2026/multimodal_vlm/crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](../../CVPR2026/multimodal_vlm/flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
+- [\[CVPR 2025\] Locality-Aware Zero-Shot Human-Object Interaction Detection](../../CVPR2025/multimodal_vlm/locality-aware_zero-shot_human-object_interaction_detection.md)
+- [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
+- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](../../CVPR2026/multimodal_vlm/from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
+- [\[CVPR 2026\] Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision](../../CVPR2026/multimodal_vlm/pixels_dont_lie_but_your_detector_might_bootstrapping_mllm-as-a-judge_for_trustw.md)
+- [\[ICLR 2026\] SpatialViz-Bench：一个认知科学驱动、用于诊断 MLLM 空间可视化能力的基准](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 
 </div>
 

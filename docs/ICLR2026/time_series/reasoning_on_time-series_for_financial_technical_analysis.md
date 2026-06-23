@@ -2,49 +2,44 @@
 title: >-
   [Paper Note] Reasoning on Time-Series for Financial Technical Analysis
 description: >-
-  [ICLR2026][Time Series][Time series reasoning] This paper proposes the Verbal Technical Analysis (VTA) framework, which combines the linguistic reasoning capabilities of LLMs with the pattern-capturing capacity of time-s…
+  [ICLR 2026][Time Series][Reinforcement Learning] This paper proposes the Verbal Technical Analysis (VTA) framework, which combines the linguistic reasoning capabilities of LLMs with the pattern-capturing abilities of time-series models. By optimizing the reasoning chain through Time-GRPO reinforcement learning and conditioning time-series forecasting on reasoning att
 tags:
-  - "ICLR2026"
-  - "Time Series"
-  - "Time series reasoning"
-  - "financial technical analysis"
-  - "reinforcement learning"
-  - "LLM fine-tuning"
-  - "interpretable forecasting"
+  - ICLR 2026
+  - Time Series
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: 8f58b8cc468a3c75
+content_hash: 22c5fcbcec82508a
 ---
-
 # Reasoning on Time-Series for Financial Technical Analysis
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2511.08616](https://arxiv.org/abs/2511.08616)  
 **Code**: [chen-jan/VTA](https://github.com/chen-jan/VTA)  
-**Area**: Time Series
-**Keywords**: Time series reasoning, financial technical analysis, reinforcement learning, LLM fine-tuning, interpretable forecasting
+**Area**: Time Series  
+**Keywords**: Time-series reasoning, financial technical analysis, Reinforcement Learning, LLM fine-tuning, interpretable forecasting  
 **Authors**: Kelvin J.L. Koa, Jan Chen, Yunshan Ma, Huanhuan Zheng, Tat-Seng Chua (NUS, TUM, SMU, CityU HK)
 
 ---
 
 ## TL;DR
 
-This paper proposes the Verbal Technical Analysis (VTA) framework, which combines the linguistic reasoning capabilities of LLMs with the pattern-capturing capacity of time-series models. Time-GRPO reinforcement learning is employed to optimize reasoning chains, and inferred attributes are used to condition time-series forecasting, achieving financial time-series prediction that is both accurate and interpretable.
+This paper proposes the Verbal Technical Analysis (VTA) framework, which combines the linguistic reasoning capabilities of LLMs with the pattern-capturing abilities of time-series models. By optimizing the reasoning chain through Time-GRPO reinforcement learning and conditioning time-series forecasting on reasoning attributes, the framework achieves financial time-series prediction that is both accurate and interpretable.
 
 ---
 
 ## Background & Motivation
 
-**Limitations of LLMs in finance**: Existing financial LLMs primarily analyze textual reports (earnings Q&A, sentiment analysis) while neglecting interpretable analysis of historical price data — i.e., Technical Analysis (TA) — which is critically important for trading practitioners.
+**LLM Limitations in Finance**: Existing financial LLMs primarily analyze textual reports (earnings Q&A, sentiment analysis) but neglect interpretable analysis of historical price data, namely Technical Analysis, which is crucial for trading practitioners.
 
-**LLMs are poor at time-series reasoning**: Prior work (Merrill et al., 2024) has shown that LLMs perform "remarkably bad" at zero-shot time-series reasoning, and feeding raw time-series data directly yields poor results.
+**LLM Deficiency in Time-Series Reasoning**: Prior research (Merrill et al., 2024) indicates that LLMs are "remarkably bad" at zero-shot time-series reasoning, performing poorly when raw time-series data is directly input.
 
-**Time-series LLMs sacrifice interpretability**: Methods such as Time-LLM and CALF modify the embedding space to produce time-series forecasts, but in doing so LLMs lose their natural language reasoning capability and cannot provide interpretable analysis.
+**Sacrifice of Interpretability in Time-Series LLMs**: Methods like Time-LLM and CALF output time-series forecasts by modifying the embedding space, causing the LLM to lose its natural language reasoning capabilities and fail to provide interpretable analysis.
 
-**Inadequacy of existing interpretable approaches**: The most closely related work, TimeCAP, produces only classification label predictions rather than full time-series trajectories, and its reasoning relies on external auxiliary data rather than endogenous signals.
+**Inadequacy of Existing Interpretable Solutions**: The most closely related work, TimeCAP, only produces classification label predictions rather than full time-series trajectories, and its reasoning relies on external auxiliary data rather than endogenous signals.
 
-**Cross-domain challenge**: The task requires switching between two domains — the time-series domain (stock prices) for inputs and outputs, and the natural language domain for the reasoning process — which increases modeling difficulty.
+**Cross-Domain Challenges**: The task requires switching between two domains—the input/output are in the time-series domain (stock prices), while the reasoning process is in the natural language domain, increasing modeling difficulty.
 
-**Inherently interpretable signals in financial time series**: Unlike general time series, financial data contains a wealth of expert-studied technical indicators (MACD, RSI, Bollinger Bands, etc.), which provide a natural anchor for language-based reasoning.
+**Intrinsic Interpretable Signals in Financial Time-Series**: Unlike general time-series, financial data contains numerous expert-researched technical indicators (MACD, RSI, Bollinger Bands, etc.), providing natural anchors for verbalized reasoning.
 
 ---
 
@@ -52,66 +47,41 @@ This paper proposes the Verbal Technical Analysis (VTA) framework, which combine
 
 ### Overall Architecture
 
-The VTA framework consists of three core components:
+VTA (Verbal Technical Analysis) decomposes financial time-series forecasting into three steps: verbal reasoning, time-series backbone forecasting, and conditioning the forecast on the reasoning. This corresponds to three components: using an LLM for linguistic reasoning on text-annotated time-series (Time-Series Reasoning), using a GPT-2 backbone to capture underlying price patterns (Time-Series Forecasting), and joint conditional training that injects attributes extracted from reasoning into the backbone (Joint Conditional Training). Formally, given an input of $T$ historical trading days $\mathbf{X} = \{\mathbf{x}_{t-T+1}, \ldots, \mathbf{x}_t\}$ (where $\mathbf{x}_t = [o_t, h_t, l_t, v_t, c_t, p_t]$ represents OHLCV and adjusted closing price), the model simultaneously produces a linguistic reasoning trajectory $\mathbf{v}$ and future $T'$ days of prices $\mathbf{y} = \{p_{t+1}, \ldots, p_{t+T'}\}$. Experiments focus on a short-term scenario where $T = T' = 10$. The pipeline flow is as follows: historical prices are first transcribed by a text annotator into technical indicator language for the LLM; the same historical prices enter a GPT-2 backbone; finally, attributes distilled from reasoning are fused with backbone features during joint conditional training to output future prices.
 
-- **Time-Series Reasoning**: Teaches the LLM to perform linguistic reasoning over time-series inputs.
-- **Time-Series Forecasting**: Uses a backbone time-series model to capture underlying complex patterns.
-- **Joint Conditional Training**: Injects reasoning attributes as conditions into the time-series forecasting process.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    X["Historical Price Sequence X<br/>OHLCV + Adjusted Close"] --> ANN["Text Annotator<br/>Transcribes MA / Momentum / MACD / RSI / Bollinger"]
+    subgraph REASON["Time-Series Reasoning LLM"]
+        direction TB
+        G["Time-GRPO + Inverse MSE Reward<br/>Higher reward for higher accuracy"] --> P["Multi-stage Training Pipeline<br/>Cold-Start → Rejection Sampling SFT → RL"]
+    end
+    ANN --> REASON
+    REASON --> C["Reasoning Attributes c<br/>Prediction Intervals max / min / mean"]
+    X --> BB["Cross-modal Backbone<br/>GPT-2 + PCA Word Embedding + Cross-Attention"]
+    C --> JOINT["Joint Conditional Training<br/>CFG Fusion of Conditional / Unconditional"]
+    BB --> JOINT
+    JOINT --> Y["Future T'=10 Days Price ŷ"]
+```
 
-### Problem Formulation
+### Key Designs
 
-Given a historical input of $T$ trading days $\mathbf{X} = \{\mathbf{x}_{t-T+1}, \ldots, \mathbf{x}_t\}$, where $\mathbf{x}_t = [o_t, h_t, l_t, v_t, c_t, p_t]$ (open, high, low, volume, close, and adjusted close price), the goal is to generate:
+**1. Time-GRPO and Inverse MSE Reward: Driving Reasoning Optimization via Prediction Accuracy**
 
-- A linguistic reasoning trace $\mathbf{v}$
-- Price forecasts $\mathbf{y} = \{p_{t+1}, \ldots, p_{t+T'}\}$ for the next $T'$ trading days
+LLMs perform poorly when reasoning directly on raw numbers. Thus, a text annotator first converts the sequence into textual annotations $\mathbf{X'} = \mathbf{f}(\mathbf{X})$, describing statistics (mean, extrema) and technical indicators (Moving Averages, Momentum, MACD, RSI, Bollinger Bands) in natural language to provide semantic anchors. Since no "gold standard reasoning" exists for supervision, VTA modifies GRPO (Group Relative Policy Optimization) into Time-GRPO with the objective $\mathcal{L}_{\text{time-grpo}}(\theta) = \mathbb{E}_{\mathbf{q} \sim \mathcal{Q}} \frac{1}{G} \sum_{i=1}^{G} \left( \min\left(\frac{\pi_\theta(\mathbf{o_i}|\mathbf{q})}{\pi_{\theta_{\text{old}}}(\mathbf{o_i}|\mathbf{q})} A_i, \text{clip}(\cdot, 1{-}\epsilon, 1{+}\epsilon) A_i \right) - \beta \mathbb{D}_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}}) \right)$. The key modification is that the reward does not rely on manual reasoning labels but uses an inverse MSE: $r_{\text{MSE}}(\theta) = \frac{1}{\lambda \cdot \|\hat{\mathbf{y}}_\theta - \mathbf{y}\|_2^2}$. As RL maximizes the reward, and smaller MSE implies better accuracy, "accuracy" becomes equivalent to "high reward." This compels the reasoning chain to evolve in a direction that improves forecasting precision without human-labeled ground truth reasoning.
 
-Experiments use $T = T' = 10$ (short-term forecasting).
+**2. Multi-stage Training Pipeline: Stabilizing Incremental Reasoning Capabilities**
 
-### Time-Series Reasoning (Time-GRPO)
+Running RL directly on a base model yields minimal gains (~1.6%) because the base model lacks initial reasoning structure. VTA stabilizes training via three stages: First, a Cold-Start stage runs one round of Time-GRPO to generate initial reasoning samples despite stagnant performance. Second, Rejection Sampling + SFT is performed, where samples are bucketed by stock and period, retaining only those in the top 10% (lowest decile) of MSE as high-quality trajectories for supervised fine-tuning. This teaches the model "what good reasoning looks like." Finally, another round of Time-GRPO is conducted on the SFT model to search for optimal strategies. The total improvement reaches 20.3% with this pipeline, significantly higher than pure Cold-Start RL.
 
-**Textual annotation**: Raw time-series data is converted into a textual annotation $\mathbf{X'} = \mathbf{f}(\mathbf{X})$, including statistical summaries (mean/min/max) and financial technical indicators (moving averages, momentum, MACD, RSI, Bollinger Bands, etc.).
+**3. Cross-modal Backbone: Aligning Time-Series to Language Space via GPT-2**
 
-**Time-GRPO objective**: Adapted from GRPO (Shao et al., 2024), with the core formulation:
+The forecasting branch performs cross-modal fine-tuning on GPT-2 to leverage the representation power of pre-trained language models for time-series. Input sequences are projected into time tokens $\mathbf{X}_{\text{time}}$ via Embedding and Multi-head Attention. To conserve computation, VTA performs PCA on the LLM word embeddings to obtain the principal components $\hat{\mathbf{D}}$. Multi-head Cross-Attention $\mathbf{X}_{\text{text}} = \text{Softmax}\left(\frac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{C}}\right)\mathbf{V}$ aligns time tokens to the word embedding space. To prevent representation drift, layer-wise feature regularization is applied: $\mathcal{L}_{\text{feature}} = \sum_{n=1}^{N} \gamma^{(N-n)} \text{sim}\left(\phi_{\text{text}}^n(\mathbf{F}_{\text{text}}^n), \phi_{\text{time}}^n(\mathbf{F}_{\text{time}}^n)\right)$, where the exponential decay of $\gamma$ assigns higher weights to deeper layer alignment.
 
-$$\mathcal{L}_{\text{time-grpo}}(\theta) = \mathbb{E}_{\mathbf{q} \sim \mathcal{Q}} \frac{1}{G} \sum_{i=1}^{G} \left( \min\left(\frac{\pi_\theta(\mathbf{o_i}|\mathbf{q})}{\pi_{\theta_{\text{old}}}(\mathbf{o_i}|\mathbf{q})} A_i, \text{clip}(\cdot, 1{-}\epsilon, 1{+}\epsilon) A_i \right) - \beta \mathbb{D}_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}}) \right)$$
+**4. Joint Conditional Training: Injecting Reasoning via Classifier-Free Guidance**
 
-**Inverse MSE reward**: Encourages reasoning chains to maximize prediction accuracy:
-
-$$r_{\text{MSE}}(\theta) = \frac{1}{\lambda \cdot \|\hat{\mathbf{y}}_\theta - \mathbf{y}\|_2^2}$$
-
-The inverse MSE formulation is used because the reward must be maximized (smaller MSE yields a larger reward).
-
-**Multi-stage training pipeline**:
-
-1. **Cold-Start stage**: Time-GRPO is applied to generate initial training samples; performance gains are limited at this stage but the generated data serves as the foundation for subsequent stages.
-2. **Rejection Sampling + SFT stage**: Reasoning chains in the top 10% MSE within each bucket are retained for supervised fine-tuning.
-3. **RL Optimization stage**: Time-GRPO is applied again on the model that has already learned to reason, to search for the optimal reasoning strategy.
-
-### Time-Series Forecasting Backbone
-
-Based on GPT-2, adapted via cross-modal fine-tuning:
-
-- Time-series inputs are processed through Embedding + Multi-head Attention to produce projected time tokens $\mathbf{X}_{\text{time}}$.
-- PCA is applied to LLM word embeddings to obtain principal component word embeddings $\hat{\mathbf{D}}$.
-- Multi-head Cross-Attention aligns time tokens with word embeddings:
-
-$$\mathbf{X}_{\text{text}} = \text{Softmax}\left(\frac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{C}}\right)\mathbf{V}$$
-
-- Layer-wise feature regularization aligns the temporal and text branches:
-
-$$\mathcal{L}_{\text{feature}} = \sum_{n=1}^{N} \gamma^{(N-n)} \text{sim}\left(\phi_{\text{text}}^n(\mathbf{F}_{\text{text}}^n), \phi_{\text{time}}^n(\mathbf{F}_{\text{time}}^n)\right)$$
-
-### Joint Conditional Training
-
-Descriptive attribute classes $\mathbf{c}$ (maximum/minimum/mean values) are extracted from the reasoning output and used to condition the time-series forecasting:
-
-$$\mathcal{L}_{\text{forecast}}(\phi) = \mathbb{E}_{\mathbf{X}, \mathbf{y}, \mathbf{c}} \left[\|\hat{\mathbf{y}}_\psi(\mathbf{X}, \tilde{\mathbf{c}}) - \mathbf{y}\|^2\right]$$
-
-With probability $p_{\text{uncond}}=0.3$, $\mathbf{c}$ is randomly set to null (analogous to Classifier-Free Guidance), jointly training both conditional and unconditional paths. At inference:
-
-$$\hat{\mathbf{y}} = s \cdot \hat{\mathbf{y}}_\psi(\mathbf{X}, \mathbf{c}) + (1-s) \cdot \hat{\mathbf{y}}_\theta(\mathbf{X})$$
-
-where the guidance scale $s=0.1$.
+After generating reasoning and time-series features separately, descriptive attributes $\mathbf{c}$ (e.g., max, min, mean of the predicted interval) are extracted from the reasoning output. The forecasting objective is $\mathcal{L}_{\text{forecast}}(\phi) = \mathbb{E}_{\mathbf{X}, \mathbf{y}, \mathbf{c}} \left[\|\hat{\mathbf{y}}_\psi(\mathbf{X}, \tilde{\mathbf{c}}) - \mathbf{y}\|^2\right]$. Adopting the Classifier-Free Guidance (CFG) approach from diffusion models, the model parameterizes both conditional and unconditional paths using the same network. During training, $\mathbf{c}$ is randomly nullified with probability $p_{\text{uncond}}=0.3$. During inference, outputs are fused as $\hat{\mathbf{y}} = s \cdot \hat{\mathbf{y}}_\psi(\mathbf{X}, \mathbf{c}) + (1-s) \cdot \hat{\mathbf{y}}_\theta(\mathbf{X})$ with a guidance scale $s=0.1$. This ensures that even if reasoning is unreliable, the model can fall back on the time-series backbone.
 
 ---
 
@@ -119,20 +89,20 @@ where the guidance scale $s=0.1$.
 
 ### Main Results: Forecasting Performance Comparison
 
-**Datasets**: ACL18 StockNet (88 US stocks, 2012–2017) + Dow Jones / China A50 / EURO STOXX 50 (2024)
+**Datasets**: ACL18 StockNet (88 US stocks, 2012-2017) + Dow Jones/China A50/EURO STOXX 50 (2024)
 
 | Model | StockNet MSE | StockNet MAE | All MSE | All MAE |
 |------|-------------|-------------|---------|---------|
-| GPT-4.1 mini | 0.0846 | 0.1827 | 0.2014 | 0.2376 |
+| GPT-4o mini | 0.0846 | 0.1827 | 0.2014 | 0.2376 |
 | DeepSeek-R1 | 0.0788 | 0.1853 | 0.1428 | 0.2323 |
 | TimesNet | 0.0708 | 0.1789 | 0.1286 | 0.2229 |
 | TimeLLM | 0.0704 | 0.1780 | 0.1262 | 0.2210 |
 | CALF | 0.0674 | 0.1738 | 0.1235 | 0.2180 |
 | **VTA (Ours)** | **0.0659** | **0.1701** | **0.1178** | **0.2122** |
 
-VTA achieves the best MSE and MAE across all four datasets, with an overall MSE improvement of 4.6% and MAE improvement of 2.7%.
+VTA achieves the best MSE and MAE across all 4 datasets, with an overall MSE improvement of 4.6% and MAE improvement of 2.7%.
 
-### Ablation Study: Contribution of the Multi-Stage Pipeline
+### Ablation Study: Contribution of Multi-stage Training
 
 | Stage | Llama-3.1-8B MSE | Qwen-2.5-3B MSE | Qwen-2.5-7B MSE |
 |------|-----------------|-----------------|-----------------|
@@ -143,19 +113,19 @@ VTA achieves the best MSE and MAE across all four datasets, with an overall MSE 
 | + Conditioning (VTA) | 0.0667 | 0.0672 | **0.0659** |
 
 **Key Findings**:
-- Cold-Start RL yields only a 1.6% average improvement but generates the data essential for subsequent stages.
-- Rejection sampling + SFT followed by RL achieves a 20.3% improvement, validating the effectiveness of the multi-stage pipeline.
-- Conditioning the backbone model further reduces error, demonstrating the complementary benefit of combining external reasoning with internal pattern modeling.
-- Qwen-2.5-7B performs best as the reasoning model, but with conditioning training the 3B model achieves comparable performance.
+- Cold-Start RL only yields a 1.6% (average) gain but provides the foundation for subsequent data.
+- Applying RL after Rejection Sampling + SFT results in a 20.3% gain, validating the multi-stage pipeline.
+- Conditioning the backbone model further reduces error, suggesting "external reasoning + internal patterns" are complementary.
+- Qwen-2.5-7B performs best as a reasoning model, though the 3B model achieves near-parity after conditional training.
 
-### Reasoning Quality Evaluation
+### Key Findings: Reasoning Quality
 
-25 financial industry experts from JPMorgan, UBS, Evercore, Allianz, and other institutions conducted blind evaluations (1–5 scale) of reasoning chains from VTA, GPT-4.1 mini, and DeepSeek-R1:
+25 financial experts (from JPMorgan, UBS, Evercore, Allianz, etc.) performed blind evaluations of reasoning chains from VTA, GPT-4o mini, and DeepSeek-R1 on a 1-5 scale:
 
-- **Depth, Accuracy, Relevance**: VTA leads significantly, reflecting its effective use of technical indicators and reasoning capacity.
-- **Coherence, Clarity**: Gaps are smaller, as general-purpose LLMs retain inherent advantages in text fluency.
+- **Depth, Accuracy, Relevance**: VTA leads significantly, reflecting its proficiency in technical indicators and reasoning.
+- **Coherence, Clarity**: The gap is smaller, as general LLMs naturally possess high textual fluency.
 
-### Portfolio Evaluation
+### Key Findings: Portfolio Evaluation
 
 | Model | Returns | Volatility | Max Drawdown | Sharpe Ratio |
 |------|---------|-----------|-------------|-------------|
@@ -163,54 +133,48 @@ VTA achieves the best MSE and MAE across all four datasets, with an overall MSE 
 | CALF | 0.2019 | 0.1247 | -0.0981 | 1.4566 |
 | **VTA (Ours)** | **0.2409** | **0.1185** | **-0.0883** | **1.7190** |
 
-VTA substantially outperforms baselines on Sharpe Ratio (1.7190 vs. the second-best 1.5230), confirming its practical value in real investment scenarios.
-
-### Reasoning Perturbation Experiments
-
-- Removing technical indicators leads to a noticeable drop in forecasting performance, indicating that the reasoning chain provides genuinely useful guidance signals.
-- Adding adversarial noise degrades performance but with inconsistent trends, possibly because the model learns during joint training to rely more heavily on the time-series backbone when reasoning is unreliable.
+VTA leads significantly in Sharpe Ratio (1.7190 vs. 1.5230), proving its practical utility in real investment scenarios.
 
 ---
 
 ## Highlights & Insights
 
-1. **Elegant cross-domain bridging**: Financial technical indicators serve as a natural bridge between the time-series and language domains, addressing the known weakness of LLMs in processing raw time-series data directly.
-2. **Time-GRPO design**: Using inverse MSE as the RL reward directly drives reasoning chain optimization toward prediction accuracy, requiring no manual annotation of reasoning data.
-3. **Multi-stage training pipeline**: The progressive design of Cold-Start → Rejection Sampling SFT → RL yields more stable and efficient training.
-4. **Transfer of Classifier-Free Guidance**: The conditional guidance technique from diffusion models is adapted for time-series forecasting, jointly training conditional and unconditional paths.
-5. **Comprehensive evaluation**: Evaluation covers not only prediction accuracy but also expert reasoning quality scores and Markowitz portfolio validation.
+1. **Elegant Cross-Domain Bridge**: Uses financial technical indicators as a bridge between time-series and language domains, overcoming LLMs' inability to handle raw time-series directly.
+2. **Time-GRPO Design**: Employs inverse MSE as an RL reward to drive reasoning chain optimization via forecasting accuracy without manual reasoning labels.
+3. **Multi-stage Pipeline**: Cold-Start → Rejection Sampling SFT → RL design ensures stable and efficient training.
+4. **CFG Knowledge Transfer**: Adapts Classifier-Free Guidance from diffusion models for time-series conditioning, training conditional and unconditional paths simultaneously.
+5. **Comprehensive Evaluation**: Includes prediction accuracy, expert qualitative scores, and Markowitz portfolio validation.
 
 ---
 
 ## Limitations & Future Work
 
-1. **Restricted to financial time series**: Cross-domain experiments (medical/energy) indicate that VTA's reasoning advantage relies on the inherently interpretable signals of financial technical indicators; on general time-series data, the approach degrades to simple trend extrapolation.
-2. **Short-horizon forecasting**: $T=T'=10$ covers only short-term trading scenarios; the effectiveness of long-horizon forecasting remains unvalidated.
-3. **Alignment between reasoning and forecasting**: Conditioning uses only simple attributes (max/min/mean); richer information within the reasoning chain (trend direction, indicator signals) is not fully exploited.
-4. **Fixed guidance scale**: $s=0.1$ indicates that the model relies primarily on the backbone in practice, and the actual contribution of reasoning guidance is relatively small.
-5. **Computational cost**: The multi-stage RL + LLM reasoning + time-series backbone joint training pipeline entails considerable resource consumption.
-6. **Base model selection**: Only three LLM bases are tested (Llama-3.1-8B, Qwen-2.5-3B/7B); larger-scale models remain unexplored.
+1. **Financial Domain Specificity**: Cross-domain experiments (medical/energy) show VTA's superiority depends on technical indicators; it degrades to simple trend extrapolation for general data.
+2. **Short-term Forecasting**: $T=T'=10$ covers only short-term trading; long-term effectiveness remains unverified.
+3. **Alignment of Reasoning and Prediction**: Conditioning uses only simple attributes (max/min/mean); richer reasoning information (trend direction, indicator signals) is underutilized.
+4. **Fixed Guidance Scale**: The $s=0.1$ scale suggests the model primarily relies on the backbone, with reasoning contributing a relatively low proportion.
+5. **Computational Cost**: Multi-stage RL + LLM reasoning + backbone training is resource-intensive.
 
 ---
 
 ## Related Work & Insights
 
-| Direction | Representative Work | Distinction from VTA |
+| Direction | Representative Work | Difference from VTA |
 |------|---------|-------------|
-| Financial LLMs | Fin-R1, FinMem, SEP | Analyze textual reports/news; do not process price time series |
-| Time-series LLMs | Time-LLM, CALF | Modify embedding space; lose language reasoning capability |
-| Time-series reasoning | TimeCAP | Relies on external auxiliary data; produces only classification labels |
-| LLM time-series reasoning | Merrill et al. | Identifies poor zero-shot TS reasoning in LLMs; VTA addresses this via RL fine-tuning |
-| Reasoning optimization | DeepSeek-R1, GRPO | VTA adapts GRPO into Time-GRPO with an inverse MSE reward |
+| Financial LLMs | Fin-R1, FinMem, SEP | Analyze textual reports/news; do not process price time-series |
+| Time-Series LLMs | Time-LLM, CALF | Modify embedding space; lose linguistic reasoning ability |
+| Time-Series Reasoning | TimeCAP | Relies on external auxiliary data; produces only classification labels |
+| LLM T-S Reasoning | Merrill et al. | Found poor zero-shot performance; VTA solves this via RL fine-tuning |
+| Reasoning Optimization | DeepSeek-R1, GRPO | VTA adapts GRPO into Time-GRPO using inverse MSE rewards |
 
 ---
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Combining RL-based reasoning optimization (GRPO) with time-series forecasting, and transferring Classifier-Free Guidance to time-series conditioning, are genuinely novel contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Four datasets, 14+ baselines, ablation studies, expert evaluations, portfolio validation, and cross-domain generalization analysis constitute an exceptionally comprehensive evaluation.
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured, with well-motivated problem formulation and rich figures and tables.
-- **Value**: ⭐⭐⭐⭐ — Interpretable financial forecasting offers direct practical value to practitioners; Sharpe Ratio validation confirms real investment potential.
+- **Novelty**: ⭐⭐⭐⭐ — Novel combination of RL reasoning optimization (GRPO) with time-series and CFG-based conditioning.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Very comprehensive: 4 datasets, 14+ baselines, expert evaluation, and portfolio validation.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, strong motivation, and rich visualizations.
+- **Value**: ⭐⭐⭐⭐ — Interpretable financial forecasting has direct value for practitioners; Sharpe Ratio validates investment potential.
 
 <!-- RELATED:START -->
 
@@ -219,10 +183,10 @@ VTA substantially outperforms baselines on Sharpe Ratio (1.7190 vs. the second-b
 ## Related Papers
 
 - [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
+- [\[ICLR 2026\] TimeSeriesExamAgent: Creating Time Series Reasoning Benchmarks at Scale](timeseriesexamagent_creating_time_series_reasoning_benchmarks_at_scale.md)
+- [\[ICLR 2026\] Characteristic Root Analysis and Regularization for Linear Time Series Forecasting](characteristic_root_analysis_and_regularization_for_linear_time_series_forecasti.md)
 - [\[ICLR 2026\] EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements](edinet-bench_evaluating_llms_on_complex_financial_tasks_using_japanese_financial.md)
 - [\[ICML 2026\] Adaptive Time Series Reasoning via Segment Selection](../../ICML2026/time_series/adaptive_time_series_reasoning_via_segment_selection.md)
-- [\[AAAI 2026\] A Theoretical Analysis of Detecting Large Model-Generated Time Series](../../AAAI2026/time_series/a_theoretical_analysis_of_detecting_large_model-generated_time_series.md)
-- [\[ACL 2026\] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback](../../ACL2026/time_series/time-ra_towards_time_series_reasoning_for_anomaly_diagnosis_with_llm_feedback.md)
 
 </div>
 

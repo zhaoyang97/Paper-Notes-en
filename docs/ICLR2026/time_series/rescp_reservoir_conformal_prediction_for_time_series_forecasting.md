@@ -2,95 +2,104 @@
 title: >-
   [Paper Note] ResCP: Reservoir Conformal Prediction for Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][conformal prediction] This work is the first to integrate Reservoir Computing (Echo State Network) into conformal prediction. By using randomly initialized ESNs to encode the temporal dynamics of…
+  [ICLR 2026][Time Series][conformal prediction] This paper introduces Reservoir Computing (Echo State Network) into Conformal Prediction for the first time. By encoding temporal dynamics of residual sequences using a randomly initialized ESN and utilizing state similarity to adaptively reweight historical residuals, it constructs local prediction intervals. Without
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "conformal prediction"
-  - "reservoir computing"
-  - "echo state network"
-  - "prediction interval"
-  - "training-free"
+  - ICLR 2026
+  - Time Series
+  - conformal prediction
+  - reservoir computing
+  - echo state network
+  - prediction interval
+  - training-free
 date: 2026-05-08
-content_hash: b64985ca31572ac6
+content_hash: dc0f468d0a6e9933
 ---
-
 # ResCP: Reservoir Conformal Prediction for Time Series Forecasting
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.05060](https://arxiv.org/abs/2510.05060)  
 **Code**: None  
-**Area**: Time Series / Uncertainty Quantification
+**Area**: Time Series/Uncertainty Quantification  
 **Keywords**: conformal prediction, reservoir computing, echo state network, prediction interval, training-free
 
 ## TL;DR
-This work is the first to integrate Reservoir Computing (Echo State Network) into conformal prediction. By using randomly initialized ESNs to encode the temporal dynamics of residual sequences, the method leverages state similarity to adaptively reweight historical residuals for constructing local prediction intervals—requiring no training—and achieves state-of-the-art Winkler scores on 4 real-world datasets while running 20–80× faster than HopCPT.
+This paper introduces Reservoir Computing (Echo State Network) into Conformal Prediction for the first time. By encoding temporal dynamics of residual sequences using a randomly initialized ESN and utilizing state similarity to adaptively reweight historical residuals, it constructs local prediction intervals. Without any training, it achieves SOTA Winkler scores on four real-world datasets and is 20-80× faster than HopCPT.
 
 ## Background & Motivation
 
-**Background**: Conformal Prediction (CP) is a powerful framework for constructing distribution-free prediction intervals, but it requires data exchangeability—a property that is inherently violated by the temporal dependencies in time series.
+**Background**: Conformal Prediction (CP) is a robust framework for constructing distribution-free prediction intervals. however, it requires data exchangeability, which is naturally violated by the temporal dependence of time series.
 
 **Limitations of Prior Work**:
-- Fixed-decay methods such as NexCP cannot adapt to local dynamics, resulting in overly conservative (wide) intervals.
-- HopCPT uses Hopfield/Transformer attention for data-dependent reweighting, but training is expensive (4,574 seconds on the Solar dataset vs. 53 seconds for ResCP), and the model must be retrained under distribution shift.
-- SPCI fits a quantile random forest at each step, limiting practical scalability.
-- Training-based methods (CP-QRNN, ResCQR) suffer from severe undercoverage (>10%) on small datasets such as ACEA and Exchange.
+- Fixed decay methods like NexCP cannot adapt to local dynamics, resulting in overly conservative (large width) intervals.
+- HopCPT uses Hopfield/Transformer attention for data-dependent reweighting, but training is expensive (4574s on Solar vs. 53s for ResCP) and requires retraining when distributions shift.
+- SPCI fits a quantile random forest at every step, with computational demands limiting its practicality.
+- Training-based methods (CP-QRNN, ResCQR) suffer from severe under-coverage (>10%) on small datasets like ACEA/Exchange.
 
-**Key Challenge**: Data-dependent adaptive reweighting is needed to capture local dynamics, yet training a model for this purpose is costly and fragile under distribution shift.
+**Key Challenge**: The need for data-dependent adaptive reweighting to capture local dynamics conflicts with high training costs and vulnerability to distribution shifts.
 
-**Goal**: Achieve local adaptivity in time series conformal prediction without introducing any training.
+**Goal**: Achieve local adaptivity for time series conformal prediction without introducing any training process.
 
-**Key Insight**: Reservoir Computing (RC) with Echo State Networks (ESNs)—randomly initialized RNNs that require no training yet map input sequences into a high-dimensional state space, producing meaningful dynamic representations.
+**Key Insight**: Echo State Networks (ESN) in Reservoir Computing—randomly initialized RNNs that map input sequences to high-dimensional state spaces without training—produce meaningful dynamic representations.
 
-**Core Idea**: Use similarity between ESN states as data-dependent weights for residual reweighting, effectively realizing locally adaptive conformal prediction via a "free" dynamic encoder.
+**Core Idea**: Use the similarity between ESN states as data-dependent weights for residual reweighting, effectively implementing local conformal prediction using a "free dynamic encoder."
 
 ## Method
 
 ### Overall Architecture
 
-Given the residual sequence $\{r_t\}$ of a point forecasting model, ResCP constructs prediction intervals through the following pipeline: (1) encode the residual sequence into a state sequence $\{h_t\}$ via an ESN; (2) compute the similarity between the current state $h_T$ and each state in the calibration set as weights; (3) construct the prediction interval from the quantiles of the weighted empirical distribution.
+ResCP addresses the issue that time series residuals do not satisfy the exchangeability required by CP, without training a model. The approach treats the residual sequence $\{r_t\}$ from a point prediction model as input, encodes it into a state sequence $\{\boldsymbol{h}_t\}$ via a **randomly initialized, never-trained** Echo State Network (ESN), and uses the similarity between the current state and historical states to reweight historical residuals. Finally, quantiles are taken from the reweighted empirical distribution to build prediction intervals that adaptively scale with local dynamics. The entire pipeline contains no learnable parameters.
+
+```mermaid
+graph TD
+    A["Point prediction residual sequence {r_t}"] --> B["ESN state encoding<br/>Random reservoir recurses to states {h_t}"]
+    B --> C["Similarity-driven adaptive reweighting<br/>Current state h_T vs historical states<br/>Cosine similarity + Temperature SoftMax"]
+    C --> D["Temporal weights & distribution shift handling<br/>Linear time decay 1/Δ + FIFO sliding window"]
+    D --> E["Quantiles from weighted empirical distribution<br/>Monte Carlo sampling + β* width optimization"]
+    E --> F["Local adaptive prediction interval"]
+```
 
 ### Key Designs
 
-1. **ESN State Encoding (Reservoir Embedding)**:
-    - Function: Map the residual sequence to a high-dimensional state space to capture local temporal dynamics.
-    - Mechanism: ESN state update $\boldsymbol{h}_t = (1 - l)\boldsymbol{h}_{t-1} + l\,\sigma(\boldsymbol{W}_x \boldsymbol{x}_t + \boldsymbol{W}_h \boldsymbol{h}_{t-1} + \boldsymbol{b})$, where $\boldsymbol{W}_x, \boldsymbol{W}_h$ are randomly initialized and fixed, $l$ is the leak rate, and $\sigma = \tanh$.
-    - Design Motivation: When the Echo State Property holds ($\rho(\boldsymbol{W}_h) < 1$), the ESN state asymptotically forgets initial conditions, produces similar states for similar input sequences, and constitutes a Lipschitz-continuous mapping—providing the foundation for theoretical guarantees.
+**1. ESN State Encoding: Using random reservoirs to transform residual sequences into comparable dynamic fingerprints**
 
-2. **Similarity-Based Reweighting**:
-    - Function: Assign weights to historical residuals based on reservoir state similarity, so that residuals from dynamically similar time steps receive higher weights.
-    - Mechanism: Weights are computed via softmax-normalized similarity scores: $w_s(\boldsymbol{h}_t) = \text{SoftMax}\left(\frac{\text{Sim}(\boldsymbol{h}_t, \boldsymbol{h}_s)}{\tau}\right)$, where $\text{Sim}$ denotes cosine similarity and $\tau$ is a temperature hyperparameter. The weighted empirical CDF approximates the conditional distribution: $\hat{F}(r \mid \boldsymbol{h}_t) = \sum_{s} w_s(\boldsymbol{h}_t)\mathbb{1}(r_{s+H} \leq r)$.
-    - Design Motivation: Temperature $\tau$ controls the bias–variance trade-off—low temperature concentrates mass on the most similar states (low bias), while high temperature approaches uniform weights, recovering vanilla SCP (low variance). The effective sample size $m_n = (\sum_i w_i^2)^{-1}$ must diverge as $n \to \infty$.
+Instead of training an encoder to judge dynamic similarity, ResCP uses a randomly initialized, non-updated Echo State Network. Residuals $x_t$ are fed into the ESN, with states updated as $\boldsymbol{h}_t = (1 - l)\boldsymbol{h}_{t-1} + l\,\sigma(\boldsymbol{W}_x \boldsymbol{x}_t + \boldsymbol{W}_h \boldsymbol{h}_{t-1} + \boldsymbol{b})$, where the input matrix $\boldsymbol{W}_x$ and recurrent matrix $\boldsymbol{W}_h$ are fixed after random generation. The "free encoder" is reliable because as long as the Echo State Property ($\rho(\boldsymbol{W}_h)<1$) is satisfied, the ESN asymptotically forgets initial conditions, produces similar states for similar input subsequences, and maintains a Lipschitz continuous mapping.
 
-3. **Time-Dependent Weights and Distribution Shift Handling**:
-    - Function: Superimpose temporal decay on similarity weights to handle non-stationary data.
-    - Mechanism: $w_i(\boldsymbol{h}_t, t) = \gamma(\Delta(t,i)) \cdot w_i(\boldsymbol{h}_t)$, using linear decay $\gamma(\Delta) = 1/\Delta$ combined with a FIFO sliding window to update the calibration set.
-    - Design Motivation: Linear decay is milder than exponential decay, preserving a sufficient effective sample size. The sliding window enables the calibration set to track distribution shifts, allowing ResCP to adapt without retraining.
+**2. Similarity-driven Adaptive Reweighting: Greater weights for history with similar dynamics**
+
+ResCP quantifies which historical residuals are most relevant by calculating the cosine similarity between the current state $\boldsymbol{h}_t$ and every state $\boldsymbol{h}_s$ in the calibration set. These are normalized via temperature softmax into weights $w_s(\boldsymbol{h}_t) = \text{SoftMax}\left(\frac{\text{Sim}(\boldsymbol{h}_t, \boldsymbol{h}_s)}{\tau}\right)$. Applying these weights to the empirical distribution of residuals yields an approximation of the conditional distribution:
+
+$$\hat{F}(r \mid \boldsymbol{h}_t) = \sum_{s} w_s(\boldsymbol{h}_t)\,\mathbb{1}(r_{s+H} \leq r)$$
+
+The temperature $\tau$ acts as a bias-variance knob: low $\tau$ concentrates weights on a few similar states (low bias, high variance), while high $\tau$ leads to uniform weights (low variance, high bias).
+
+**3. Temporal Dependence and Distribution Shift: Layering gentle time decay over similarity**
+
+To handle non-stationary sequences, ResCP multiplies similarity weights by a temporal decay factor $w_i(\boldsymbol{h}_t, t) = \gamma(\Delta(t,i)) \cdot w_i(\boldsymbol{h}_t)$. It specifically chooses linear decay $\gamma(\Delta) = 1/\Delta$ rather than exponential decay to avoid prematurely discarding distant samples. Combined with a FIFO sliding window for the calibration set, the reference set stays current with the distribution. Since the mechanism is training-free, ResCP adapts to shifts automatically without retraining.
 
 ### Loss & Training
 
-ResCP **requires no training whatsoever**—ESN weights are randomly initialized and kept fixed. Hyperparameters (spectral radius, leak rate, input scaling, temperature, window size) are selected via grid search on a validation set by minimizing the Winkler score; because no training is involved, the search is extremely fast.
+ResCP is **completely training-free**—ESN weights are fixed after random initialization. Hyperparameters (spectral radius, leak rate, input scaling, temperature, window size) are determined via grid search to minimize the Winkler score on a validation set. 
 
-Prediction intervals are approximated via Monte Carlo sampling of weighted quantiles, with the interval width optimized using the optimal $\beta^*$: $\beta^* = \arg\min_{\beta \in [0,\alpha]} [\hat{Q}_{1-\alpha+\beta}(\boldsymbol{h}_t) - \hat{Q}_\beta(\boldsymbol{h}_t)]$.
+Prediction intervals are approximated via Monte Carlo sampling and optimized using the best $\beta^*$: $\beta^* = \arg\min_{\beta \in [0,\alpha]} [\hat{Q}_{1-\alpha+\beta}(\boldsymbol{h}_t) - \hat{Q}_\beta(\boldsymbol{h}_t)]$.
 
 ## Key Experimental Results
 
-### Main Results ($\alpha=0.1$, RNN base model)
+### Main Results ($\alpha=0.1$, RNN Baseline Model)
 
 | Dataset | Method | ΔCov(%) | PI Width↓ | Winkler↓ |
 |--------|------|---------|---------|----------|
 | Solar | HopCPT | -1.64 | 60.49 | 112.46 |
 | Solar | CP-QRNN | -0.26 | 55.74 | **78.42** |
-| Solar | **ResCP** | **0.74** | **62.25** | 104.24 |
+| Solar | **Ours** | **0.74** | **62.25** | 104.24 |
 | Exchange | HopCPT | 2.75 | 0.0404 | 0.0482 |
-| Exchange | **ResCP** | **1.13** | **0.0210** | **0.0264** |
+| Exchange | **Ours** | **1.13** | **0.0210** | **0.0264** |
 | ACEA | HopCPT | -2.18 | 18.90 | 27.56 |
 | ACEA | CP-QRNN | -12.37 | 15.86 | 32.61 |
-| ACEA | **ResCP** | **1.56** | **9.61** | **12.91** |
+| ACEA | **Ours** | **1.56** | **9.61** | **12.91** |
 
-### Runtime Comparison (seconds, RNN base model)
+### Runtime Comparison (Seconds, RNN Baseline)
 
-| Dataset | SPCI | HopCPT | CP-QRNN | **ResCP** | SCP |
+| Dataset | SPCI | HopCPT | CP-QRNN | **Ours** | SCP |
 |--------|------|--------|---------|-----------|-----|
 | Solar | 1040 | 4575 | 172 | **53** | 18 |
 | Beijing | 351 | 1839 | 82 | **35** | 9 |
@@ -99,40 +108,40 @@ Prediction intervals are approximated via Monte Carlo sampling of weighted quant
 
 ### Ablation Study
 
-| Configuration | Exchange Winkler↓ | ACEA Winkler↓ | Note |
+| Configuration | Exchange Winkler↓ | ACEA Winkler↓ | Description |
 |------|-------------------|---------------|------|
-| ResCP (full) | **0.0264** | **12.91** | Temporal decay + sliding window |
-| No decay | 0.0269 | 13.41 | Removing temporal decay worsens undercoverage |
-| No window | 0.0284 | 14.80 | Uses all history instead of sliding window |
+| ResCP (Full) | **0.0264** | **12.91** | Time decay + Sliding window |
+| No decay | 0.0269 | 13.41 | Without time decay, under-coverage worsens |
+| No window | 0.0284 | 14.80 | Using all history instead of sliding window |
 | No window, no decay | 0.0291 | 15.25 | Degenerates to global similarity |
 
 ### Key Findings
-- ResCP substantially outperforms all methods (including training-based ones) on ACEA and Exchange in terms of Winkler score, and is competitive with training-based methods on Solar and Beijing.
-- Training-based methods (CP-QRNN, ResCQR) suffer from severe undercoverage (−12% to −27%) on the small-data ACEA dataset, while ResCP consistently maintains valid coverage.
-- Calibration curves show that ResCP provides accurate estimates across all coverage levels; NexCP is well-calibrated but produces intervals 1.5–2× wider.
-- ResCP runs 20–80× faster than HopCPT and requires no GPU-intensive training.
+- ResCP leads all methods (including training-based ones) significantly in Winkler score on ACEA and Exchange, and is competitive on Solar and Beijing.
+- Training-based methods (CP-QRNN, ResCQR) suffer from severe under-coverage (-12% to -27%) on the small ACEA dataset, whereas ResCP maintains valid coverage.
+- ResCP provides accurate estimates across all coverage levels, whereas NexCP, despite good calibration, yields much wider intervals.
+- The runtime is 20-80× faster than HopCPT and does not require intensive GPU training.
 
 ## Highlights & Insights
-- **Elegant use of reservoir computing**: The ESN serves as a free "temporal dynamic encoder"—no training is needed, yet it produces representations sufficiently discriminative for local dynamics. This is the paper's central insight.
-- **Complete theoretical guarantees**: Under reasonable assumptions (α-mixing, Echo State Property, continuity of the conditional CDF), the paper proves consistency of the weighted empirical CDF (Theorem 3.6) and asymptotic conditional coverage (Corollary 3.7).
-- **Natural robustness to distribution shift**: ResCP has no learnable parameters, so model updates are unnecessary under distribution shift; adaptation is handled automatically via the sliding window and temporal decay.
+- **Ingenious use of Reservoir Computing**: ESN serves as a free "temporal dynamics encoder"—generating representations sufficient for distinguishing local dynamics without training.
+- **Robust Theoretical Guarantees**: Under reasonable assumptions ($\alpha$-mixing, ESP, and conditional CDF continuity), the paper proves the consistency (Theorem 3.6) and asymptotic conditional coverage (Corollary 3.7) of the weighted empirical CDF.
+- **Naturally Robust to Distribution Shifts**: Because ResCP lacks learnable parameters, it adapts to shifts automatically through sliding windows and time decay without model updates.
 
 ## Limitations & Future Work
-- ESN hyperparameters (spectral radius, leak rate, temperature, etc.) require grid search tuning, which, though fast, adds user burden.
-- Theoretical guarantees are asymptotic; coverage deviation under finite samples is not quantified.
-- The method addresses only univariate time series with single-step prediction; multi-step joint prediction and extension to spatiotemporal data are promising future directions.
-- In settings with large datasets and highly informative exogenous variables (e.g., Solar), training-based methods such as CP-QRNN may still be preferable.
+- ESN hyperparameters (spectral radius, leak rate, temperature, etc.) require grid search tuning, which adds some burden to the user.
+- Theoretical guarantees are asymptotic; coverage bias in finite samples is not yet quantified.
+- Currently limited to single-step univariate forecasting; extensions to multi-step joint prediction and spatio-temporal data are future directions.
+- In scenarios with massive data and informative exogenous variables (e.g., Solar), training-based methods like CP-QRNN may still perform better.
 
 ## Related Work & Insights
-- **vs. HopCPT**: Both use data-dependent attention-style weights, but HopCPT requires end-to-end Transformer training, whereas ResCP is entirely training-free and achieves superior performance.
-- **vs. NexCP**: NexCP applies data-independent exponential decay; coverage is reliable but interval widths are 1.5–2× those of ResCP.
-- **vs. SPCI**: SPCI fits a quantile random forest at each step, which is computationally expensive and difficult to scale; ResCP achieves comparable local adaptivity using a fixed ESN.
+- **vs HopCPT**: Both use data-dependent attention weights, but HopCPT requires end-to-end Transformer training, whereas ResCP is training-free and more effective.
+- **vs NexCP**: NexCP uses data-independent exponential decay; while its coverage is reliable, its interval widths are 1.5-2× those of ResCP.
+- **vs SPCI**: SPCI fits a quantile random forest at every step, which is computationally expensive; ResCP achieves similar local adaptivity with a fixed ESN.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First combination of reservoir computing and conformal prediction; conceptually simple yet effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 datasets × 3 base models × 3 coverage levels + full ablation + runtime analysis.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear; experimental design is systematic.
-- Value: ⭐⭐⭐⭐ Provides a simple, fast, and theoretically grounded practical tool for uncertainty quantification in time series.
+- Novelty: ⭐⭐⭐⭐ First combination of Reservoir Computing and Conformal Prediction; concise yet effective concept.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 datasets × 3 baseline models × 3 coverage levels + full ablation + runtime analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical derivations and systematic experimental design.
+- Value: ⭐⭐⭐⭐ Provides a simple, fast, and theoretically grounded practical tool for time series uncertainty quantification.
 
 <!-- RELATED:START -->
 
@@ -141,10 +150,10 @@ Prediction intervals are approximated via Monte Carlo sampling of weighted quant
 ## Related Papers
 
 - [\[AAAI 2026\] HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction](../../AAAI2026/time_series/hydrodcm_hydrological_domain-conditioned_modulation_for_cross-reservoir_inflow_p.md)
+- [\[ICML 2026\] Simulation-Augmented Multi-Step Split Conformal Prediction for Aggregated Forecasts](../../ICML2026/time_series/simulation-augmented_multi-step_split_conformal_prediction_for_aggregated_foreca.md)
 - [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](online_time_series_prediction_using_feature_adjustment.md)
+- [\[ICLR 2026\] JAPAN: Joint Adaptive Prediction Areas with Normalising-Flows](japan_joint_adaptive_prediction_areas_with_normalising_flow.md)
 - [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
-- [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](../../ICML2026/time_series/distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
-- [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
 
 </div>
 

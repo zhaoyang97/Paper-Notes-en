@@ -2,64 +2,77 @@
 title: >-
   [Paper Note] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting
 description: >-
-  [ICLR 2026][Time Series][probabilistic forecasting] This paper proposes the Probabilistic Scenarios paradigm, in which a model directly outputs a finite set of {scenario, probability} pairs in place of sampling…
+  [ICLR 2026][Time Series][probabilistic forecasting] The authors propose the Probabilistic Scenarios paradigm, which replaces sampling by directly outputting a finite set of {scenario, probability} pairs. Using TimePrism—a model consisting of only three parallel linear layers—they achieve 9/10 SOTA results across 5 benchmark datasets.
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "probabilistic forecasting"
-  - "scenario generation"
-  - "discrete probability"
-  - "linear model"
+  - ICLR 2026
+  - Time Series
+  - probabilistic forecasting
+  - scenario generation
+  - discrete probability
+  - linear model
 date: 2026-05-08
-content_hash: 88a7f02a3929b141
+content_hash: b7db04f1ca7ca788
 ---
-
 # From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.19975](https://arxiv.org/abs/2509.19975)  
 **Code**: [GitHub](https://github.com/Fifthky/TimePrism)  
-**Area**: Time Series
+**Area**: Time Series  
 **Keywords**: probabilistic forecasting, time series, scenario generation, discrete probability, linear model
 
 ## TL;DR
-This paper proposes the Probabilistic Scenarios paradigm, in which a model directly outputs a finite set of {scenario, probability} pairs in place of sampling, and introduces TimePrism — a model consisting of only three parallel linear layers — that achieves 9/10 SOTA results across 5 benchmark datasets.
+The authors propose the Probabilistic Scenarios paradigm, which replaces sampling by directly outputting a finite set of {scenario, probability} pairs. Using TimePrism—a model consisting of only three parallel linear layers—they achieve 9/10 SOTA results across 5 benchmark datasets.
 
 ## Background & Motivation
-**Background**: Probabilistic time series forecasting is fundamental to decision-making under uncertainty. Mainstream approaches include parametric distribution models, generative models (e.g., diffusion), and structured probabilistic models (flows/copulas), all of which rely on sampling to represent the predictive distribution.
+**Background**: Probabilistic time series forecasting is the foundation for decision-making under uncertainty. Mainstream methods are divided into parametric distribution models, generative models (diffusion), and structured probabilistic models (flow/copula), all of which rely on sampling to represent the predictive distribution.
 
-**Limitations of Prior Work**: The sampling paradigm suffers from three inherent drawbacks: (i) **absence of probabilities** — generated trajectories carry no associated probability values; (ii) **insufficient coverage** — a limited number of samples fails to capture low-probability, high-impact tail events; (iii) **inference overhead** — the computational cost of generating multiple samples grows linearly with sample count.
+**Limitations of Prior Work**: The sampling paradigm suffers from three inherent flaws: (i) **Lack of Probabilities**: Generated trajectories do not have associated probability values; (ii) **Insufficient Coverage**: Finite samples struggle to capture low-probability, high-impact tail events; (iii) **Inference Overhead**: The computational cost of generating multiple samples grows linearly with the number of samples.
 
-**Key Challenge**: High-quality probabilistic forecasting requires a large number of samples to adequately approximate the distribution, yet large-scale sampling is computationally prohibitive and does not provide explicit probabilities.
+**Key Challenge**: High-quality probabilistic forecasting requires a large number of samples to adequately approximate the distribution, but heavy sampling results in prohibitive computational costs, and sampling itself does not provide explicit probabilities.
 
 **Goal**: To design a probabilistic forecasting paradigm that does not rely on sampling and can output a complete discrete probability distribution in a single forward pass.
 
-**Key Insight**: Reformulate the learning objective from "approximating a continuous probability space" to "learning a probability distribution over a finite set of scenarios" — conceptually analogous to VQ-VAE but applied directly to the output trajectory space.
+**Key Insight**: Simplify the learning objective from "approximating a continuous probability space" to "learning a probability distribution over a finite set of scenarios," similar to the concept of VQ-VAE but applied directly to the output trajectory space.
 
-**Core Idea**: A simple linear model directly generates $N$ future scenarios together with their associated probabilities, entirely bypassing sampling.
+**Core Idea**: Use a simple linear model to directly generate $N$ future scenarios and their corresponding probabilities, completely bypassing the need for sampling.
 
 ## Method
 
 ### Overall Architecture
-The Probabilistic Scenarios paradigm defines the model as:
-$$f(\mathbf{x}) = (\mathcal{Y}_{\text{pred}}, \mathbf{p})$$
-where $\mathcal{Y}_{\text{pred}} = \{\mathbf{y}_n\}_{n=1}^N$ is a set of $N$ predicted scenarios and $\mathbf{p} = (p_1, \dots, p_N)$ is the corresponding probability vector satisfying $\sum p_n = 1$.
+This paper addresses the "three sins" of the sampling paradigm—trajectories without probabilities, failure to cover tail events with finite samples, and escalating computational costs as sample size increases. The solution redefines probabilistic forecasting as a one-step output function $f(\mathbf{x}) = (\mathcal{Y}_{\text{pred}}, \mathbf{p})$: given the history $\mathbf{x}$, it directly outputs $N$ complete future scenarios $\mathcal{Y}_{\text{pred}} = \{\mathbf{y}_n\}_{n=1}^N$ and a probability vector $\mathbf{p}$ satisfying $\sum p_n = 1$. This provides a discrete probability distribution in a single forward pass without any sampling.
+
+TimePrism, which implements this paradigm, uses only three parallel linear layers to complete the pipeline through three streams: first, the history is decomposed into trend and seasonal components using moving averages; the trend linear layer and seasonal linear layer each generate a set of candidate components, which are then combined via a Cartesian product to produce all $N$ scenarios; in parallel, a third linear layer processes the raw undecomposed history to output the probability for each scenario. These three streams merge at the end into {scenario, probability} pairs.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Historical Sequence x (L×D)"] --> DEC["Sequence Decomposition<br/>Moving Average → Trend/Seasonal"]
+    DEC --> T["Trend Linear Layer<br/>Generate M candidate trends"]
+    DEC --> S["Seasonal Linear Layer<br/>Generate K candidate seasons"]
+    T --> COMB["Trend × Seasonal Combinatorial Generation<br/>Pairwise Addition → N=M×K scenarios"]
+    S --> COMB
+    X --> PROB["Probability Layer<br/>Raw History → N-dim logits → Softmax"]
+    COMB --> OUT["{Scenario, Probability} Pairs<br/>Discrete Probability Distribution"]
+    PROB --> OUT
+```
 
 ### Key Designs
-1. **Time Series Decomposition**: The input history $\mathbf{x} \in \mathbb{R}^{L \times D}$ is decomposed via moving average into a trend component $\mathbf{x}_{\text{trend}}$ and a seasonal component $\mathbf{x}_{\text{season}}$.
-2. **Trend + Seasonal Linear Layers**: The trend layer produces $M$ trend predictions and the seasonal layer produces $K$ seasonal predictions; these are combined to yield $N = M \times K$ scenarios:
-    $\mathcal{Y}_{\text{pred}} = \{\mathbf{y}_{t,m} + \mathbf{y}_{s,k} \mid m \in [M], k \in [K]\}$
-   This compositional design reduces parameter complexity to $\mathcal{O}(\sqrt{N})$, far more efficient than directly generating $N$ scenarios.
-3. **Probability Layer**: A third linear layer takes the original (non-decomposed) history as input and outputs an $N$-dimensional logit vector $\boldsymbol{\pi}$, which is converted to a probability vector via Softmax.
+
+**1. Sequence Decomposition: Breaking scenario generation into low-dimensional sub-problems**
+
+Directly outputting $N$ scenarios of length $H$ via a linear layer would cause parameters to expand linearly with $N$ and force the model to memorize diversity in a high-dimensional output space. TimePrism first uses a moving average to decompose the input history $\mathbf{x} \in \mathbb{R}^{L \times D}$ into a trend component $\mathbf{x}_{\text{trend}}$ and a seasonal component $\mathbf{x}_{\text{season}}$. This allows the trend and periodic fluctuations to be modeled in smoother, more easily fitted subspaces, laying the groundwork for combinatorial generation.
+
+**2. Trend × Seasonal Combinatorial Generation: Sustaining $N$ scenarios with $\mathcal{O}(\sqrt{N})$ parameters**
+
+The trend linear layer generates $M$ candidate trend predictions from $\mathbf{x}_{\text{trend}}$, and the seasonal linear layer generates $K$ candidate seasonal predictions from $\mathbf{x}_{\text{season}}$. These are combined via pairwise addition to obtain all scenarios $\mathcal{Y}_{\text{pred}} = \{\mathbf{y}_{t,m} + \mathbf{y}_{s,k} \mid m \in [M], k \in [K]\}$, where $N = M \times K$. The key benefit is that parameters only need to support $M+K$ components to produce $M\times K$ scenarios via Cartesian product. When $M\approx K$, the complexity is $\mathcal{O}(\sqrt{N})$, significantly lower than the $\mathcal{O}(N)$ required for direct generation. Furthermore, this structure naturally decouples "trend direction" and "periodic patterns," allowing for more economical coverage of uncertainty.
+
+**3. Probability Layer: Assigning a learnable weight to each scenario**
+
+Scenario generation alone is insufficient; the other half of the paradigm is explicit probability. The third linear layer does not use the decomposed components but instead takes the original undecomposed history as input to output $N$-dimensional logits $\boldsymbol{\pi}$, which are normalized into a probability vector $\mathbf{p}$ via Softmax. Using the raw history ensures that the probability distribution depends on the complete historical pattern rather than a single trend or seasonal signal, allowing the probability assignment to complement scenario fidelity as a true discrete distribution.
 
 ### Loss & Training
-The total loss consists of two components:
-$$\mathcal{L}_{\text{Prism}} = \mathcal{L}_{\text{recon}} + \lambda \cdot \mathcal{L}_{\text{prob}}$$
-
-- **Scenario Reconstruction Loss** (WTA): The "winner" scenario closest to the ground truth is identified as $n^* = \arg\min_n \|\mathbf{y}_{gt} - \mathbf{y}_n\|_2^2$, and MSE is computed only for that scenario.
-- **Probability Loss**: Cross-entropy is used to train the probability layer to assign the highest probability to the winner:
-  $$\mathcal{L}_{\text{prob}} = -\log \frac{\exp(\pi_{n^*})}{\sum_j \exp(\pi_j)}$$
-- In practice, a relaxed WTA is employed for training stability, with $\lambda=1$.
+The training jointly optimizes scenario accuracy and probability assignment with a total loss $\mathcal{L}_{\text{Prism}} = \mathcal{L}_{\text{recon}} + \lambda \cdot \mathcal{L}_{\text{prob}}$ (with $\lambda=1$). The reconstruction term uses a Winner-Take-All (WTA) strategy: it identifies the winner scenario $n^* = \arg\min_n \|\mathbf{y}_{gt} - \mathbf{y}_n\|_2^2$ closest to the ground truth and calculates MSE only for that scenario. This encourages different scenario heads to specialize in specific future patterns rather than collapsing to the mean. The probability term uses cross-entropy $\mathcal{L}_{\text{prob}} = -\log \frac{\exp(\pi_{n^*})}{\sum_j \exp(\pi_j)}$ to assign the highest probability to the winner, teaching the probability layer to identify which scenarios occur more frequently. To prevent gradient starvation of non-winner heads, a relaxed WTA is used during training to maintain convergence stability.
 
 ## Key Experimental Results
 
@@ -73,7 +86,7 @@ Weighted CRPS on 5 benchmark datasets (Electricity, Exchange, Solar, Traffic, Wi
 | TimeMCL | 0.370 | 1.12 | 0.290 | 0.262 | 0.640 |
 | **TimePrism** | **0.133** | **0.468** | **0.085** | **0.111** | **0.506** |
 
-On the Distortion metric, TimePrism achieves SOTA on all 5 datasets.
+TimePrism also achieved SOTA on the Distortion metric across all 5 datasets.
 
 ### Ablation Study
 Effect of scenario count $N$ (Solar dataset):
@@ -86,41 +99,41 @@ Effect of scenario count $N$ (Solar dataset):
 | 625 | 0.085 | 0.101 | 34.8x |
 | 1024 | 0.082 | 0.092 | 48.3x |
 
-Performance gains saturate around $N=625$.
+Performance gains tend to saturate at $N=625$.
 
 ### Key Findings
-- TimePrism has constant inference FLOPs ($5.1 \times 10^5$) regardless of the number of scenarios, whereas TimeGrad requires $1.9 \times 10^{10}$ FLOPs for 100 samples.
-- Visualizations show that TimePrism assigns high probability to common peak scenarios while assigning low probability to rare low-peak scenarios — a distinction that sampling-based models cannot make.
-- The compositional architecture ($N = M \times K$) keeps parameter growth between $\mathcal{O}(\sqrt{N})$ and $\mathcal{O}(N)$.
+- TimePrism's inference FLOPs are constant ($5.1 \times 10^5$) and do not grow with the number of samples, whereas TimeGrad requires $1.9 \times 10^{10}$ FLOPs for 100 samples.
+- Visualizations show that TimePrism captures common peak scenarios with high probability while identifying rare low-peak scenarios with low probability, a distinction sampling models cannot make.
+- The combinatorial architecture ($N = M \times K$) ensures that parameter growth remains between $\mathcal{O}(\sqrt{N})$ and $\mathcal{O}(N)$.
 
 ## Highlights & Insights
-- **Paradigm Innovation**: A fundamental shift from "sampling to approximate a continuous distribution" to "directly generating discrete scenarios with explicit probabilities" — conceptually simple yet highly effective.
-- **Minimal Architecture as Proof of Concept**: Achieving SOTA with only three parallel linear layers (no nonlinear activations) demonstrates the remarkable potential of the paradigm itself.
-- **Unified Evaluation Framework**: The paper proposes two complementary metrics — Weighted CRPS and Distortion — and derives fair, comparable computation formulas for both paradigms.
-- **Efficiency Advantage**: A single forward pass suffices at inference; computational cost is 1–5 orders of magnitude lower than the strongest baselines.
+- **Paradigm Innovation**: A fundamental shift from "approximating continuous distributions via sampling" to "directly generating discrete scenarios + probabilities," which is conceptually simple yet effective.
+- **Minimalist Architecture Validation**: Achieving SOTA using only three parallel linear layers (without non-linear activations) demonstrates the powerful potential of the paradigm itself.
+- **Unified Evaluation Framework**: The authors propose Weighted CRPS and Distortion as complementary metrics and provide fair calculation formulas for both paradigms.
+- **Efficiency Advantage**: Single forward pass architecture reduces inference costs by 1-5 orders of magnitude compared to strong baselines.
 
 ## Limitations & Future Work
-- The linear model may be ill-suited for very high-dimensional sequences or series without clear trend/seasonal patterns.
-- The model assumes fixed input/output lengths, lacking flexibility for variable-length sequences.
-- Multivariate modeling employs a weight-sharing strategy, resulting in relatively simple cross-variable dependency modeling.
-- The optimal scenario count $N$ depends on data complexity and currently requires manual tuning.
-- The WTA loss may cause some scenario heads to be neglected during early training (winner-takes-all effect); relaxed WTA only partially mitigates this.
-- The approach has not been validated on larger-scale benchmarks such as GIFT-Eval.
-- Sensitivity analysis across different forecasting horizons is absent.
+- Linear models may not be suitable for extremely high-dimensional series or those without clear trend/seasonal patterns.
+- The model uses fixed input/output lengths, lacking flexibility for variable-length sequences.
+- Multivariate modeling uses a weight-sharing strategy, making cross-variable relationship modeling relatively simple.
+- The optimal scenario number $N$ depends on data complexity and currently requires manual setting.
+- The WTA loss may cause some scenario heads to be ignored in early training (the "winner-take-all" effect), which relaxed WTA only partially mitigates.
+- The method has not been validated on larger-scale benchmarks like GIFT-Eval.
+- Lack of sensitivity analysis regarding different prediction horizons.
 
 ## Related Work & Insights
-- **vs. TimeMCL**: TimeMCL also outputs discrete scenarios but does not directly model probabilities, resulting in suboptimal CRPS; this work unifies scenario fidelity and probability matching via the probability layer.
-- **Conceptual analogy to VQ-VAE**: Discretization is applied directly to the output trajectory space rather than the latent space.
-- **vs. TACTiS-2**: TACTiS-2 can compute probability densities but still requires sampling to obtain trajectories; this work directly outputs discrete scenarios.
-- **vs. TimeGrad**: Diffusion models require iterative sampling; 100-sample inference costs $10^4\times$ more FLOPs than TimePrism.
-- Future work may integrate this paradigm with powerful backbones such as Transformers or Diffusion models to unlock stronger multivariate modeling capabilities.
-- An adaptive mechanism for selecting the scenario count $N$ is also a valuable direction for future research.
+- Comparison with TimeMCL: TimeMCL also outputs discrete scenarios but does not directly model probability, leading to inferior CRPS results; this work unifies scenario fidelity and probability matching via the probability layer.
+- Conceptual analogy with VQ-VAE: Applying discretization directly to the output trajectory space rather than the latent space.
+- Comparison with TACTiS-2: TACTiS-2 can compute probability density but still requires sampling to obtain trajectories, whereas this work directly outputs discrete scenarios.
+- Comparison with TimeGrad: Diffusion models require iterative sampling; the FLOPs for 100 samples are $10^4$ times higher than those of TimePrism.
+- Future work could integrate this paradigm into powerful backbones like Transformers or Diffusion to unlock stronger multivariate modeling capabilities.
+- Adaptive mechanisms for the number of scenarios are also a valuable future direction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ A fundamental innovation in the probabilistic forecasting paradigm, shifting from sampling to discrete scenario probabilities.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Five datasets, multiple baselines, ablations, and visualizations — though limited to the time series domain.
-- Writing Quality: ⭐⭐⭐⭐⭐ Motivation is clear and the logical chain from problem formulation to proposed solution is complete.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for probabilistic forecasting; the fact that a minimal model achieves SOTA is highly convincing.
+- Novelty: ⭐⭐⭐⭐⭐ Fundamental innovation in the probabilistic forecasting paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive datasets, baselines, and ablations, though limited to the time series domain.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation with a complete logical chain from problem to solution.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for probabilistic forecasting; the minimalist model reaching SOTA is highly persuasive.
 
 <!-- RELATED:START -->
 
@@ -130,9 +143,9 @@ Performance gains saturate around $N=625$.
 
 - [\[ICML 2026\] Beyond Extrapolation: Knowledge Utilization Paradigm with Bidirectional Inspiration for Time Series Forecasting](../../ICML2026/time_series/beyond_extrapolation_knowledge_utilization_paradigm_with_bidirectional_inspirati.md)
 - [\[AAAI 2026\] Scaling LLM Speculative Decoding: Non-Autoregressive Forecasting in Large-Batch Scenarios](../../AAAI2026/time_series/scaling_llm_speculative_decoding_non-autoregressive_forecasting_in_large-batch_s.md)
-- [\[NeurIPS 2025\] AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting](../../NeurIPS2025/time_series/aero_a_redirection-based_optimization_framework_inspired_by_judo_for_robust_prob.md)
-- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
-- [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](../../ICML2026/time_series/parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
+- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
+- [\[ICLR 2026\] Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](perturbed_dynamic_time_warping_a_probabilistic_framework_and_generalized_variant.md)
 
 </div>
 

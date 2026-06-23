@@ -2,103 +2,78 @@
 title: >-
   [Paper Note] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Irregular time series] This paper proposes ReIMTS, a plug-and-play framework that preserves the original sampling patterns of irregular multivariate time series (IMTS) via time-period-based recur…
+  [ICLR 2026][Time Series][Paper Note] The authors propose ReIMTS, which preserves the original sampling patterns of irregular multivariate time series (IMTS) through period-based recursive splitting (rather than resampling). Combined with an irregularity-aware representation fusion mechanism for multi-scale modeling, it achieves an average improvement of 2
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "Irregular time series"
-  - "multi-scale modeling"
-  - "recursive partitioning"
-  - "sampling pattern preservation"
-  - "forecasting"
+  - ICLR 2026
+  - Time Series
 date: 2026-05-08
-content_hash: caa3856b70976f7f
+content_hash: 33cc0a93719b565b
 ---
-
 # Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.21498](https://arxiv.org/abs/2602.21498)  
 **Code**: [Available](https://github.com/Ladbaby/PyOmniTS)  
-**Area**: Time Series
-**Keywords**: Irregular time series, multi-scale modeling, recursive partitioning, sampling pattern preservation, forecasting
+**Area**: Time Series  
+**Keywords**: Irregular Time Series, Multi-scale Modeling, Recursive Splitting, Sampling Pattern Preservation, Forecasting
 
 ## TL;DR
 
-This paper proposes ReIMTS, a plug-and-play framework that preserves the original sampling patterns of irregular multivariate time series (IMTS) via time-period-based recursive partitioning (rather than resampling), combined with an irregularity-aware representation fusion mechanism for multi-scale modeling. ReIMTS achieves an average improvement of 27.1% across six IMTS backbones.
+The authors propose ReIMTS, which preserves the original sampling patterns of irregular multivariate time series (IMTS) through period-based recursive splitting (rather than resampling). Combined with an irregularity-aware representation fusion mechanism for multi-scale modeling, it achieves an average improvement of 27.1% across six IMTS backbones as a plug-in.
 
 ## Background & Motivation
 
-Irregular multivariate time series (IMTS) are prevalent in domains such as healthcare and meteorology, where observation intervals are non-uniform and different variables may be observed at misaligned timestamps. The sampling pattern itself carries important information — for instance, in ICU settings, a transition from dense to sparse monitoring reflects a patient's improvement from critical to stable condition.
+**Background**: Irregular multivariate time series (IMTS) are ubiquitous in scenarios such as healthcare and meteorology, characterized by non-uniform observation intervals and misaligned observation timestamps across different variables. 
 
-Core limitations of existing multi-scale methods:
+**Limitations of Prior Work**: The sampling pattern itself contains crucial information; for example, in an ICU, the transition from intensive monitoring to sparse monitoring reflects a patient recovering from a critical to a stable condition. Existing multi-scale approaches face two core issues:
+- **Methods for regular time series** (e.g., Scaleformer, TimeMixer, Pathformer) assume uniform sampling, making them inapplicable to IMTS.
+- **IMTS-specific multi-scale methods** (e.g., Warpformer, Hi-Patch, HD-TTS) rely on **resampling** to obtain coarse-grained sequences, which destroys original sampling patterns. For instance, in PhysioNet'12, the "dense-to-sparse" sampling pattern of Bilirubin is disrupted after downsampling.
 
-- **Regular time series methods** (Scaleformer, TimeMixer, Pathformer) assume uniform sampling and are not applicable to IMTS.
-- **IMTS multi-scale methods** (Warpformer, Hi-Patch, HD-TTS) rely on **resampling** to obtain coarser-grained sequences, which destroys original sampling patterns — e.g., the dense-to-sparse sampling pattern of Bilirubin in PhysioNet'12 is disrupted after downsampling.
-- Sampling pattern information (e.g., emergency-to-routine monitoring transitions) is clinically critical and should not be discarded.
+**Key Insight**: Sampling pattern information (e.g., the shift between urgent and routine monitoring) is vital for clinical decisions and should be preserved.
 
 ## Method
 
 ### Overall Architecture
 
-ReIMTS is a plug-and-play multi-scale framework compatible with most encoder-decoder IMTS models. The core idea is to recursively partition samples into sub-samples of shorter time periods at each scale level based on time periods, while keeping the original timestamps of all observations unchanged.
+ReIMTS is a plug-and-play multi-scale framework compatible with most encoder-decoder IMTS models. At each scale level, it recursively splits samples into sub-samples with shorter periods based on time intervals while keeping the original timestamps of all observations intact. Global and local representations are injected layer-by-layer from top to bottom using level-specific backbone encoders and an irregularity-aware fusion module, providing a multi-scale perspective without destroying sampling patterns. The data flow follows a top-down chain: "Recursive Splitting → Layer-wise Encoding and Shape Alignment → IARF Fusion (Recursive Injection) → Concatenated Decoding."
 
-The framework consists of three components: (1) a recursive partitioning module, (2) a backbone encoder at each scale level, and (3) an irregularity-aware representation fusion module.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Irregular Multivariate Time Series<br/>(Original Timestamps)"] --> SPLIT["Period-based Recursive Splitting<br/>Split into P^n sub-samples by T^n<br/>Zero-padding alignment, timestamps unchanged"]
+    SPLIT --> ENC["Multi-scale Representation Learning<br/>Independent backbone encoding per layer + Shape alignment<br/>(Time/Obs splitting, Variable replication)"]
+    ENC --> IARF["Irregularity-Aware Representation Fusion (IARF)<br/>Masking padding + Adaptive weight α<br/>G = E + α·H"]
+    IARF -->|"Top-down layer-wise injection<br/>Recursive into next scale"| ENC
+    IARF --> DEC["Concatenate G^n from all layers<br/>One-shot decoding"]
+    DEC --> OUT["Multi-scale forecasting results"]
+```
 
 ### Key Designs
 
-**1. Time-Period-Based Recursive Partitioning**
+**1. Period-based Recursive Splitting: Preserving Sampling Patterns vs. Resampling**
 
-At scale level $n$, samples are partitioned into $P^n = T^1/T^n$ sub-samples according to time period $T^n$. The key distinction is:
+**Design Motivation**: Existing IMTS multi-scale methods use resampling (downsampling) to obtain coarse-grained sequences, which erases semantically meaningful sampling patterns. ReIMTS adopts splitting based on time periods: at scale level $n$, samples are divided into $P^n = T^1/T^n$ sub-samples according to a time period $T^n$. The key is that splitting is based on **real-world time durations** (e.g., 12 hours, 24 hours) rather than the number of observations. Splitting by observation count would cause sub-samples to correspond to inconsistent real-time spans, disrupting temporal semantics. By splitting by time periods, original timestamps are fully preserved, using only zero-padding for alignment. For example, in PhysioNet'12, Level 1 covers the full 48 hours, Level 2 splits it into two 24-hour sub-samples, and Level 3 into four 12-hour sub-samples, forming a global-to-local multi-scale perspective while keeping the sampling time of each observation constant.
 
-- Partitioning is based on **time periods** (e.g., 12 hours, 24 hours), not the number of observations.
-- Original timestamps are fully preserved; zero-padding is used for alignment.
-- This avoids the issue in observation-count-based partitioning where sub-samples correspond to different real-world time spans.
+**2. Multi-scale Representation Learning: Independent Encoding and Downward Shape Alignment**
 
-For example, in PhysioNet'12: level 1 covers the full 48 hours; level 2 partitions by 24-hour periods (2 sub-samples); level 3 partitions by 12-hour periods (4 sub-samples), forming a global-to-local hierarchy.
+**Mechanism**: Each scale level utilizes an independent backbone encoder $\mathcal{F}^n_{\text{enc}}$ to encode its sub-samples, resulting in $\mathbf{E}^n = \mathcal{F}^n_{\text{enc}}(\mathbf{S}^n)$. Encoded latent representations are categorized into three types: temporal representations $\mathbf{E}^n_{\text{time}} \in \mathbb{R}^{P^n \times L^n \times D}$, variable representations $\mathbf{E}^n_{\text{var}} \in \mathbb{R}^{P^n \times V \times D}$, and observation representations $\mathbf{E}^n_{\text{obs}} \in \mathbb{R}^{P^n \times L^n \times V \times D}$. To inject the global representation $\mathbf{H}^n$ from the previous layer into the next, shape matching is required: splitting operations are applied to temporal/observation representations, and replication is used for variable representations. This transforms $\mathbf{H}^n$ into a shape aligned with the local representation $\mathbf{E}^{n+1}$ of the subsequent layer.
 
-**2. Multi-Scale Representation Learning**
+**3. Irregularity-Aware Representation Fusion (IARF): Distinguishing Observations from Padding**
 
-Each scale level $n$ employs an independent backbone encoder $\mathcal{F}^n_{\text{enc}}$:
-
-$$\mathbf{E}^n = \mathcal{F}^n_{\text{enc}}(\mathbf{S}^n)$$
-
-Latent representations are categorized into three types: temporal representations $\mathbf{E}^n_{\text{time}} \in \mathbb{R}^{P^n \times L^n \times D}$, variable representations $\mathbf{E}^n_{\text{var}} \in \mathbb{R}^{P^n \times V \times D}$, and observation representations $\mathbf{E}^n_{\text{obs}} \in \mathbb{R}^{P^n \times L^n \times V \times D}$.
-
-The upper-level global representation $\mathbf{H}^n$ is transformed via splitting (for temporal/observation representations) or replication (for variable representations) to match the shape of the lower-level local representation $\mathbf{E}^{n+1}$.
-
-**3. Irregularity-Aware Representation Fusion (IARF)**
-
-At the lower scale $n+1$, a binary mask $\mathbf{M}^{n+1}$ distinguishes actual observations from padded values:
-
-$$\mathbf{H}^n_{\text{IMTS}} = \begin{cases} \mathbf{H}^n \cdot \mathbf{M}^{n+1}, & \text{temporal/observation representations} \\ \mathbf{H}^n, & \text{variable representations} \end{cases}$$
-
-A lightweight scoring layer computes fusion weights $\alpha = \text{ReLU}(\text{FF}(\mathbf{H}^n_{\text{IMTS}}))$, and the local and global representations are fused as:
-
-$$\mathbf{G}^{n+1} = \mathbf{E}^{n+1} + \alpha \mathbf{H}^n_{\text{IMTS}}$$
-
-Irregularity information in variable representations is already encoded by the IMTS backbone, whereas temporal/observation representations may still contain padded values and therefore require masking.
+**Function**: After shape alignment, temporal/observation representations still contain zero-padded positions. Direct addition would treat padding noise as signal. IARF utilizes a binary mask $\mathbf{M}^{n+1}$ to identify real observations versus padding in the lower scale. For temporal/observation representations, padding is masked via $\mathbf{H}^n_{\text{IMTS}} = \mathbf{H}^n \cdot \mathbf{M}^{n+1}$. For variable representations, since irregularity information is already encoded by the IMTS backbone, $\mathbf{H}^n_{\text{IMTS}} = \mathbf{H}^n$ is used directly. An adaptive weight $\alpha = \text{ReLU}(\text{FF}(\mathbf{H}^n_{\text{IMTS}}))$ is calculated via a lightweight scoring layer to fuse global information: $\mathbf{G}^{n+1} = \mathbf{E}^{n+1} + \alpha \mathbf{H}^n_{\text{IMTS}}$. This ensures global context only affects real observations, preventing padding values from contaminating lower-level representations.
 
 ### Loss & Training
 
-At the lowest scale level $N$, the decoder concatenates representations from all levels and decodes:
-
-$$\hat{\mathbf{Z}} = \mathcal{F}_{\text{dec}}(\text{Concat}(\{\mathbf{G}^n\}_{n=1}^N))$$
-
-Training uses MSE loss, computed only over prediction queries within the forecast window:
-
-$$\mathcal{L} = \frac{1}{Y_Q} \sum_{j=1}^{Y_Q} (\hat{z_j} - z_j)^2$$
-
-Models are trained for up to 300 epochs with an early stopping patience of 10.
+At the lowest scale level $N$, the decoder concatenates all fused representations for one-shot decoding, $\hat{\mathbf{Z}} = \mathcal{F}_{\text{dec}}(\text{Concat}(\{\mathbf{G}^n\}_{n=1}^N))$. This allows final predictions to leverage information from global to local scales. The model is trained using MSE loss, calculated only for the $Y_Q$ prediction queries within the prediction window: $\mathcal{L} = \frac{1}{Y_Q} \sum_{j=1}^{Y_Q} (\hat{z_j} - z_j)^2$. Optimization runs for a maximum of 300 epochs with an early stopping patience of 10.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluation is conducted on 5 IMTS datasets (MIMIC-III/IV, PhysioNet'12, Human Activity, USHCN) and 26 baseline methods.
+Evaluated across 5 IMTS datasets (MIMIC-III/IV, PhysioNet'12, Human Activity, USHCN) and 26 baseline methods.
 
-| Backbone | Original MSE(×10⁻¹) | +ReIMTS MSE(×10⁻¹) | Avg. Gain |
-|---------|-----------------|-------------------|---------|
+| Backbone Model | Original MSE (×10⁻¹) | +ReIMTS MSE (×10⁻¹) | Avg. Gain |
+| :--- | :--- | :--- | :--- |
 | PrimeNet | 9.04/6.25/7.93/26.84/4.57 | 4.76/3.58/3.01/0.82/1.71 | **↑62.3%** |
 | mTAN | 8.51/5.09/3.75/0.89/5.65 | 6.37/4.04/3.51/0.89/1.70 | ↑24.3% |
 | TimeCHEAT | 4.41/2.50/3.27/0.68/1.73 | 4.40/2.02/2.90/0.52/1.62 | ↑12.1% |
@@ -108,54 +83,54 @@ Evaluation is conducted on 5 IMTS datasets (MIMIC-III/IV, PhysioNet'12, Human Ac
 Comparison with other multi-scale IMTS methods (using GraFITi as backbone):
 
 | Method | MIMIC-III | MIMIC-IV | PhysioNet'12 | Human Activity | USHCN |
-|-----|----------|---------|-------------|---------------|-------|
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Warpformer | 4.09 | 2.42 | 2.88 | 0.54 | 1.77 |
 | HD-TTS | 4.17 | 2.36 | 2.83 | 0.50 | 1.66 |
 | Hi-Patch | 4.35 | 2.36 | 3.11 | 0.48 | 2.34 |
-| **ReIMTS** | **4.07** | **1.79** | **2.83** | **0.42** | **1.66** |
+| **Ours (ReIMTS)** | **4.07** | **1.79** | **2.83** | **0.42** | **1.66** |
 
 ### Ablation Study
 
 | Variant | MIMIC-III | MIMIC-IV | PhysioNet'12 | Human Activity | USHCN |
-|-----|----------|---------|-------------|---------------|-------|
-| ReIMTS (full) | **4.07** | **1.79** | **2.83** | **0.42** | **1.66** |
-| rp sample (no partitioning) | 4.99 | 1.92 | 2.83 | 0.45 | 1.69 |
-| rp split (obs-count partitioning) | 5.02 | 2.36 | 3.20 | 0.61 | 2.31 |
-| rp IARF (fusion→addition) | 4.20 | 1.84 | 2.79 | 0.47 | 1.89 |
-| w/o IARF (no fusion) | 4.77 | 2.07 | 3.06 | 0.54 | 1.69 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| ReIMTS (Full) | **4.07** | **1.79** | **2.83** | **0.42** | **1.66** |
+| rp sample (No splitting) | 4.99 | 1.92 | 2.83 | 0.45 | 1.69 |
+| rp split (Split by obs count) | 5.02 | 2.36 | 3.20 | 0.61 | 2.31 |
+| rp IARF (Fusion -> Addition) | 4.20 | 1.84 | 2.79 | 0.47 | 1.89 |
+| w/o IARF (No fusion) | 4.77 | 2.07 | 3.06 | 0.54 | 1.69 |
 
 ### Key Findings
 
-- Time-period-based partitioning (ReIMTS) substantially outperforms observation-count-based partitioning (rp split), with a gap of up to 0.65 on USHCN.
-- Older models (mTAN, GRU-D) augmented with ReIMTS can surpass more recent models.
-- Efficiency analysis: ReIMTS with the GraFITi backbone achieves the fastest training speed and lowest GPU memory usage among Warpformer, HD-TTS, and Hi-Patch.
+- **Period-based splitting** (ReIMTS) significantly outperforms splitting by observation count (rp split), with a gap as high as 0.65 on USHCN.
+- Classic models (e.g., mTAN, GRU-D) can outperform more recent models when augmented with ReIMTS.
+- **Efficiency**: When using the GraFITi backbone, ReIMTS achieves the fastest training speed and lowest GPU memory consumption, outperforming Warpformer, HD-TTS, and Hi-Patch.
 
 ## Highlights & Insights
 
-1. **Sampling-pattern-preserving multi-scale design**: Recursive partitioning by time period — rather than resampling — is both simple and effective.
-2. **Plug-and-play compatibility**: Applicable to most encoder-decoder IMTS models, offering strong generality.
-3. **Revitalizing older methods**: PrimeNet gains 62.3% and GRU-D gains 25.8%, demonstrating that multi-scale augmentation addresses a critical missing component.
-4. **Efficiency advantage**: Combining ReIMTS with a lightweight backbone (e.g., GraFITi) simultaneously achieves state-of-the-art accuracy and efficiency.
+1. **Pattern-Preserving Multi-Scale Design**: Instead of resampling, it uses period-based recursive splitting, which is simple yet effective.
+2. **Plug-and-Play Compatibility**: Highly versatile, adapting to most encoder-decoder IMTS models.
+3. **Revitalizing Older Methods**: Improvements of 62.3% for PrimeNet and 25.8% for GRU-D suggest that multi-scale modeling was a critical missing piece for these architectures.
+4. **Efficiency Advantage**: By leveraging lightweight backbones like GraFITi, it achieves both optimal accuracy and efficiency.
 
 ## Limitations & Future Work
 
-- The combination of ODE-based models with ReIMTS lacks theoretical justification.
-- The noise-based latent representations of diffusion models are not directly compatible with ReIMTS's fusion mechanism.
-- Time period lengths must be manually specified (dataset-specific settings are provided in the appendix); adaptive selection remains an open research direction.
-- Only forecasting tasks are evaluated; other downstream tasks such as classification remain unexplored.
+- Lack of theoretical explanation when combining ODE-based models with ReIMTS.
+- The fusion mechanism is not directly compatible with the noisy latent representations of diffusion models.
+- Choice of period lengths requires manual specification (dataset settings are provided in the appendix); adaptive selection is a potential direction.
+- Only forecasting tasks were validated; other downstream tasks like classification remain unexplored.
 
 ## Related Work & Insights
 
-- Relationship to tPatchGNN and PrimeNet: these can be viewed as single-scale special cases of ReIMTS.
-- Regular time series multi-scale methods such as Scaleformer destroy sampling pattern information through resampling.
-- Insight: For other tasks involving irregular data (e.g., event sequences, point processes), multi-scale methods that preserve original temporal information may similarly prove beneficial.
+- **Relation to tPatchGNN and PrimeNet**: These can be viewed as single-scale special cases of ReIMTS.
+- Multi-scale methods for regular time series like Scaleformer destroy sampling information due to resampling.
+- **Insight**: For other tasks involving irregular data (e.g., event sequences, point processes), multi-scale approaches that preserve original temporal information may be equally beneficial.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Time-period-based partitioning is a concise and effective idea; the IARF fusion mechanism is well-motivated.)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (5 datasets, 26 baselines, 6 backbones, complete ablation and efficiency analysis.)
-- Writing Quality: ⭐⭐⭐⭐ (Clear motivation, intuitive illustrations, thorough comparison with existing methods.)
-- Value: ⭐⭐⭐⭐ (Strong practical utility due to plug-and-play design; open-sourced as part of PyOmniTS.)
+- **Novelty**: ⭐⭐⭐⭐ (The period-based splitting concept is simple and effective; IARF fusion is well-designed.)
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ (5 datasets, 26 baselines, 6 backbones, complete ablation and efficiency analysis.)
+- **Writing Quality**: ⭐⭐⭐⭐ (Motivation is clear, diagrams are intuitive, and comparisons are detailed.)
+- **Value**: ⭐⭐⭐⭐ (Plug-and-play design is highly practical; open-sourced in PyOmniTS.)
 
 <!-- RELATED:START -->
 
@@ -163,11 +138,11 @@ Comparison with other multi-scale IMTS methods (using GraFITi as backbone):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
-- [\[ICML 2026\] Generalizing Multi-scale Time-Series Modeling with a Single Operator](../../ICML2026/time_series/generalizing_multi-scale_time-series_modeling_with_a_single_operator.md)
-- [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](../../AAAI2026/time_series/revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
-- [\[NeurIPS 2025\] Learning Time-Scale Invariant Population-Level Neural Representations](../../NeurIPS2025/time_series/learning_time-scale_invariant_population-level_neural_representations.md)
-- [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](../../AAAI2026/time_series/freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
+- [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
+- [\[ICLR 2026\] Learning Koopman Representations with Controllability Guarantees](learning_koopman_representations_with_controllability_guarantees.md)
+- [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
 
 </div>
 

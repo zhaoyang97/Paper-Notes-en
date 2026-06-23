@@ -2,103 +2,96 @@
 title: >-
   [Paper Note] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning
 description: >-
-  [ICLR 2026][Time Series][Pre-trained model selection] SwiftTS is proposed as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed patch-lev…
+  [ICLR 2026][Time Series][Paper Note] SwiftTS is introduced as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed dataset patch-level temporal features and model meta-information (architecture, topology, and functionality). Compatibility scores are computed via patch-level c
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "Pre-trained model selection"
-  - "dual encoder"
-  - "meta-learning"
-  - "time series forecasting"
-  - "horizon adaptation"
+  - ICLR 2026
+  - Time Series
 date: 2026-05-08
-content_hash: 3f6300f5b2630b20
+content_hash: f9b08344a9208560
 ---
-
 # SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning
 
 **Conference**: ICLR 2026  
 **arXiv**: [2510.23051](https://arxiv.org/abs/2510.23051)  
 **Code**: [GitHub](https://github.com/decisionintelligence/SwiftTS)  
-**Area**: Time Series / Model Selection  
-**Keywords**: Pre-trained model selection, dual encoder, meta-learning, time series forecasting, horizon adaptation
+**Area**: Time Series/Model Selection  
+**Keywords**: Pre-trained Model Selection, Dual-encoder, Meta-learning, Time Series Forecasting, Horizon-adaptive
 
 ## TL;DR
 
-SwiftTS is proposed as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed patch-level temporal features of datasets and model meta-information (architecture / topology / function), computes compatibility scores via patch-level cross-attention, and incorporates horizon-adaptive mixture-of-experts together with cross-domain/cross-horizon meta-learning. On 14 datasets × 8 models, it achieves an average weighted Kendall $\tau_\omega = 0.442$, substantially outperforming all baselines.
+SwiftTS is introduced as the first model selection framework for time series pre-trained models. It employs a dual-encoder architecture to independently embed dataset patch-level temporal features and model meta-information (architecture, topology, and functionality). Compatibility scores are computed via patch-level cross-attention, combined with a horizon-adaptive Mixture-of-Experts (MoE) and cross-domain/cross-horizon meta-learning. Across 14 datasets and 8 models, it significantly outperforms all baselines with a mean weighted Kendall $\tau_\omega = 0.442$.
 
 ## Background & Motivation
 
-**Background**: Time series foundation models (TimesFM, MOIRAI, Chronos, etc.) have proliferated rapidly, spanning encoder-only, decoder-only, and encoder-decoder paradigms. No single model is optimal across all tasks — given a new dataset, which model should be selected? Fine-tuning each candidate is prohibitively expensive (reaching $3.46 \times 10^6$ seconds on the Traffic dataset).
+**Background**: Time series foundation models (e.g., TimesFM, MOIRAI, Chronos) have emerged in large numbers, categorized into encoder-only, decoder-only, and encoder-decoder architectures. However, no single model is optimal for all tasks. Given a new dataset, selecting the best model is challenging, and fine-tuning every candidate is computationally expensive (e.g., $3.46 \times 10^6$ seconds on the Traffic dataset).
 
 **Limitations of Prior Work**:
-- Existing model selection methods (RankME, LogME, LEEP, etc.) are primarily designed for CV → they do not account for temporal dependencies or sequential patterns.
-- Feature analysis methods require a forward pass through each candidate model to extract features → computational cost scales linearly with the model pool size.
-- Time series pre-trained models are highly heterogeneous in architecture and training paradigm → no unified feature extractor is applicable.
-- The performance of a single model can vary significantly across different forecasting horizons → existing methods neglect the horizon dimension.
+- Existing model selection methods (e.g., RankME, LogME, LEEP) are primarily designed for CV and do not account for temporal dependencies or sequential patterns.
+- Feature-based analytic methods require a forward pass for every candidate model to extract features, resulting in computational costs that grow linearly with the model pool.
+- Time series pre-trained models exhibit highly heterogeneous architectures and training paradigms, precluding the use of a unified feature extractor.
+- The performance of a single model can vary significantly across different forecasting horizons, a dimension ignored by prior methods.
 
-**Key Challenge**: Model selection requires understanding "whether a given dataset and model are compatible," yet (1) different models lack comparable feature representations, and (2) the compatibility relationship varies with the forecasting horizon.
+**Key Challenge**: Model selection requires understanding the compatibility between a dataset and a model. However, (1) different models lack comparable feature representations, and (2) matching relationships shift according to the forecasting horizon.
 
-**Goal**: How can the optimal pre-trained model be efficiently selected for a new dataset × new horizon without executing any candidate model?
+**Goal**: How to efficiently select the optimal pre-trained model for a new dataset and a specific horizon without executing any candidate models?
 
-**Key Insight**: Learn matching patterns from historical (dataset × model × horizon) performance triplets → learn-to-rank rather than feature analysis → use independent encoders to represent data and models separately → match via attention mechanisms.
+**Key Insight**: Learn matching patterns from historical (dataset, model, horizon) performance triplets. This shifts the focus from feature analysis to learning-oriented matching, using independent encoders to represent data and models respectively, followed by an attention mechanism for matching.
 
-**Core Idea**: Cast the model selection problem as "learning to find matches between data and model embeddings" via meta-learning.
+**Core Idea**: Utilize meta-learning to transform the model selection problem into "learning to find matches between data and model embeddings."
 
 ## Method
 
-### Overall Architecture: Dual Encoder + Cross-Attention + Meta-Learning
+### Overall Architecture
 
-The framework is trained on a meta-dataset $\mathcal{D}_{\text{meta}} = \{D^i, Z, H^i, \boldsymbol{r}^i\}_{i=1}^N$, where each sample consists of a downstream dataset $D^i$, a shared model pool $Z$, a horizon $H^i$, and ranking scores $\boldsymbol{r}^i$. The model learns a scoring function $\hat{r}_k = f(\phi_k, D, H)$ to predict the performance of model $\phi_k$ on dataset $D$ under horizon $H$.
+SwiftTS reformulates model selection as a supervised matching problem based on historical performance. It trains a score function $\hat{r}_k = f(\phi_k, D, H)$ on a meta-dataset $\mathcal{D}_{\text{meta}} = \{D^i, Z, H^i, \boldsymbol{r}^i\}_{i=1}^N$. Given a downstream dataset $D$, a model pool $Z$ containing candidate $\phi_k$, and a target horizon $H$, the function outputs an expected ranking score. The pipeline consists of four stages: first, a **Data Encoder** and a **Model Encoder** project data and candidates into a shared space independently (crucially, candidates never run a forward pass on target data). Second, a **Patch-level Cross-attention** layer calculates fine-grained compatibility. Third, a **Horizon-adaptive MoE Head** outputs ranking scores weighted by the target horizon. The entire training is wrapped in **Cross-task Meta-learning** to ensure generalization to new datasets and horizons. During inference, the optimal model is selected by score without running any candidates.
 
-### Key Design 1: Temporal-Aware Data Encoder + Knowledge-Injected Model Encoder
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Downstream Dataset D + Model Pool Z<br/>+ Target Horizon H"]
+    subgraph DUAL["Dual-encoder (Independent Embeddings)"]
+        direction TB
+        DATA["Data Encoder: Patching + Self-attention<br/>→ Data Embedding E_d"]
+        MODEL["Model Encoder: Meta-info + Topology + Functionality<br/>→ Model Embedding E_m"]
+    end
+    CA["Patch-level Cross-attention<br/>E_m queries E_d → Compatibility Feature E_ca"]
+    EXP["Horizon-adaptive MoE Head<br/>Router weights G experts by H → Ranking Score"]
+    OUT["Select Optimal Pre-trained Model by Score"]
+    IN --> DUAL
+    DATA --> CA
+    MODEL --> CA
+    CA --> EXP
+    EXP --> OUT
+    EXP -. Wrapped in Cross-task Meta-learning .-> DUAL
+```
 
-**Data Encoder**: The time series $X \in \mathbb{R}^{L \times C}$ is divided into $P = \lfloor L/S \rfloor$ patches, linearly projected into $d$-dimensional embeddings, and fed through self-attention with positional encoding to capture long-range dependencies:
+### Key Designs
 
-$$E_{\text{sa}} = \text{softmax}\left(\frac{E_{\text{inp}} W_Q^{sa} (E_{\text{inp}} W_K^{sa})^T}{\sqrt{d_k}}\right) E_{\text{inp}} W_V^{sa}$$
+**1. Dual-encoder: Decoupling Data and Model Embeddings to Avoid Forward Pass Overhead**
 
-For large datasets, $B$ time series are repeatedly sampled and aggregated → yielding a compact data embedding $E_d \in \mathbb{R}^{P \times d}$.
+The bottleneck of analytic methods is the requirement to run a forward pass for every candidate on the target data. SwiftTS decouples this by encoding data and models independently. On the data side, the time series $X \in \mathbb{R}^{L \times C}$ is divided into $P = \lfloor L/S \rfloor$ patches, linearly projected to $d$ dimensions with positional encoding, and processed by self-attention to capture long-range dependencies:
 
-**Model Encoder**: Three knowledge representations are fused to encode candidate model $\phi_k$:
-- **Meta-information embedding** $\boldsymbol{v}_a^k$: architecture type (encoder/decoder/enc-dec), parameter count, GMACs complexity, hidden dimension, pre-training domain.
-- **Topology embedding** $\boldsymbol{v}_t^k$: the model architecture is represented as a DAG → unsupervised graph embedding obtained via graph2vec.
-- **Functional embedding** $\boldsymbol{v}_c^k$: fixed Gaussian noise $\epsilon \sim \mathcal{N}(0, I)$ is fed as input and the output is recorded → different models implement different functions → outputs are distinguishable.
+$$E_{\text{sa}} = \text{softmax}\!\left(\frac{E_{\text{inp}} W_Q^{sa} (E_{\text{inp}} W_K^{sa})^T}{\sqrt{d_k}}\right) E_{\text{inp}} W_V^{sa}$$
 
-The three embeddings are concatenated and projected: $\boldsymbol{E}_m = \sigma([\boldsymbol{v}_a, \boldsymbol{v}_t, \boldsymbol{v}_c] W_m^T)$
+Compact data embeddings $E_d \in \mathbb{R}^{P \times d}$ are obtained by aggregating $B$ sampled sequences. On the model side, three types of knowledge characterize candidate $\phi_k$: meta-information embeddings $\boldsymbol{v}_a^k$ encode architecture type, parameter count, GMACs, and pre-training domain; topological embeddings $\boldsymbol{v}_t^k$ represent the model as a Directed Acyclic Graph (DAG) for graph2vec encoding; and functional embeddings $\boldsymbol{v}_c^k$ perform "black-box probing" by recording outputs $\boldsymbol{v}_c^k = \phi_k(\epsilon)$ from fixed Gaussian noise $\epsilon \sim \mathcal{N}(0, I)$. These are concatenated and projected into the model embedding $\boldsymbol{E}_m = \sigma([\boldsymbol{v}_a, \boldsymbol{v}_t, \boldsymbol{v}_c] W_m^T)$. Consequently, expensive per-model forward passes are replaced by one-time offline embeddings.
 
-**Design Motivation**: Independent encoding of data and model avoids requiring each candidate model to process the target dataset → eliminates the fundamental cost of feature analysis. The functional embedding captures input–output behavior via "black-box probing" → models can be distinguished even without access to their internal structure.
+**2. Patch-level Cross-attention: Fine-grained Compatibility Mapping**
 
-### Key Design 2: Patchwise Cross-Attention Compatibility Scoring
+While the embeddings are in the same space, simple dot-products lose information about which temporal patterns a model favors. SwiftTS uses the model embedding $E_m$ as query and data embedding $E_d$ as key/value for cross-attention:
 
-The model embedding $E_m$ serves as the query, while the data embedding $E_d$ serves as keys and values in cross-attention:
+$$E_{\text{ca}} = \text{softmax}\!\left(\frac{E_m W_Q^{ca} (E_d W_K^{ca})^T}{\sqrt{d_k}}\right) E_d W_V^{ca}$$
 
-$$E_{\text{ca}} = \text{softmax}\left(\frac{E_m W_Q^{ca} (E_d W_K^{ca})^T}{\sqrt{d_k}}\right) E_d W_V^{ca}$$
+This allows the framework to focus on patch regions that best match specific model features. The training objective balances ranking and precision: $\mathcal{L}_{\text{total}} = -\sum_{k=1}^K p_k(\hat{\boldsymbol{r}}) \log q_k(\boldsymbol{r}) + \lambda \cdot \sum_{k=1}^K \|\boldsymbol{r}_k - \hat{\boldsymbol{r}}_k\|_2^2$, combining a ranking loss for distribution alignment and a prediction loss for score regression.
 
-This allows each model to attend to the temporal regions of the data that best align with its characteristics → fine-grained matching rather than global similarity.
+**3. Horizon-adaptive MoE + Cross-task Meta-learning: Addressing Horizon Variance and OOD Generalization**
 
-The training objective combines ranking regularization and prediction accuracy:
-
-$$\mathcal{L}_{\text{total}} = \underbrace{-\sum_{k=1}^K p_k(\hat{\boldsymbol{r}}) \log q_k(\boldsymbol{r})}_{\text{ranking loss}} + \lambda \cdot \underbrace{\sum_{k=1}^K \|\boldsymbol{r}_k - \hat{\boldsymbol{r}}_k\|_2^2}_{\text{prediction loss}}$$
-
-### Key Design 3: Horizon-Adaptive Experts + Cross-Task Meta-Learning
-
-**Horizon-Adaptive Mixture of Experts**: A lightweight router dynamically assigns weights to $G$ experts based on the target horizon $H$:
-
-$$\boldsymbol{w} = \text{softmax}(\text{Router}(H; \theta_s)), \quad \hat{\boldsymbol{r}} = \sum_{g=1}^G w_g \cdot \text{MLP}_g(E_{\text{ca}})$$
-
-Different horizons activate different experts → the same framework handles multiple horizons without retraining.
-
-**Transferable Cross-Task Learning**: A meta-learning paradigm is adopted to enhance OOD generalization:
-- **Inner loop**: rapid adaptation on the support set $\theta_i' = \theta - \alpha \nabla_\theta \mathcal{L}_{\text{supp}}(\mathcal{T}_i; \theta)$
-- **Outer loop**: update of meta-parameters on the query set $\theta \leftarrow \theta - \gamma \nabla_\theta \sum_{\mathcal{T}_i} \mathcal{L}_{\text{query}}(\mathcal{T}_i; \theta_i')$
-
-Two sampling strategies are employed: (1) cross-dataset sampling — support and query sets are drawn from different datasets → promotes cross-domain generalization; (2) cross-horizon sampling — support and query sets use different horizons → enhances horizon-level adaptability.
+A model's relative performance can invert between $H=96$ and $H=720$. SwiftTS employs a router to dynamically weight $G$ experts based on the target horizon: $\boldsymbol{w} = \text{softmax}(\text{Router}(H; \theta_s))$, $\hat{\boldsymbol{r}} = \sum_{g=1}^G w_g \cdot \text{MLP}_g(E_{\text{ca}})$. This allows the framework to cover multiple horizons without retraining. MAML-style meta-learning is applied to enhance generalization: the inner loop adapts to a support set $\theta_i' = \theta - \alpha \nabla_\theta \mathcal{L}_{\text{supp}}(\mathcal{T}_i; \theta)$, while the outer loop updates meta-parameters $\theta \leftarrow \theta - \gamma \nabla_\theta \sum_{\mathcal{T}_i} \mathcal{L}_{\text{query}}(\mathcal{T}_i; \theta_i')$. Task sampling involves cross-dataset (support/query from different domains) and cross-horizon (support/query use different $H$) strategies to force the learning of universal matching patterns.
 
 ## Key Experimental Results
 
-### Main Results: Average Weighted Kendall $\tau_\omega$ across 14 Datasets × 4 Horizons
+### Main Results: Average weighted Kendall $\tau_\omega$ (14 datasets × 4 horizons)
 
-| Method | H=96 | H=192 | H=336 | H=720 | Avg. | #Top-1 |
+| Method | H=96 | H=192 | H=336 | H=720 | Mean | Top-1 Count |
 |------|:---:|:---:|:---:|:---:|:---:|:---:|
 | RankME | 0.008 | -0.046 | -0.201 | -0.238 | -0.119 | 0 |
 | LogME | 0.020 | -0.027 | -0.066 | -0.090 | -0.041 | 3 |
@@ -106,19 +99,19 @@ Two sampling strategies are employed: (1) cross-dataset sampling — support and
 | DISCO | 0.003 | 0.023 | 0.066 | 0.040 | 0.033 | 4 |
 | Model Spider | 0.319 | 0.301 | 0.294 | 0.271 | 0.296 | 6 |
 | zero-shot | 0.031 | 0.104 | 0.114 | 0.251 | 0.125 | 5 |
-| **SwiftTS** | **0.470** | **0.453** | **0.411** | **0.432** | **0.442** | **28** |
+| **Ours** | **0.470** | **0.453** | **0.411** | **0.432** | **0.442** | **28** |
 
-### Top-k Selection Probability and Overall Ranking Correlation
+### Top-k Selection Probability and Overall Correlation
 
 | Method | Pr(top-1) | Pr(top-2) | Pr(top-3) | $\tau_\omega$ |
 |------|:---:|:---:|:---:|:---:|
 | RankME | 0.000 | 0.000 | 0.196 | -0.119 |
 | Model Spider | 0.304 | 0.482 | 0.571 | 0.296 |
-| **SwiftTS** | **0.339** | **0.500** | **0.607** | **0.442** |
+| **Ours** | **0.339** | **0.500** | **0.607** | **0.442** |
 
-### Ablation Study on Model Embeddings
+### Ablation Study: Model Embeddings
 
-| $\boldsymbol{v}_a$ | $\boldsymbol{v}_t$ | $\boldsymbol{v}_c$ | H=96 | H=192 | H=336 | H=720 | Avg. |
+| $\boldsymbol{v}_a$ | $\boldsymbol{v}_t$ | $\boldsymbol{v}_c$ | H=96 | H=192 | H=336 | H=720 | Mean |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ✓ | | | 0.341 | 0.283 | 0.331 | 0.401 | 0.339 |
 | | | ✓ | 0.365 | 0.401 | 0.317 | 0.397 | 0.370 |
@@ -127,39 +120,39 @@ Two sampling strategies are employed: (1) cross-dataset sampling — support and
 
 ### Key Findings
 
-- SwiftTS achieves an average $\tau_\omega = 0.442$ → 49% higher than the second-best method Model Spider (0.296) → markedly superior cross-dataset and cross-horizon generalization.
-- SwiftTS wins 28/56 Top-1 rankings → the remaining methods each win at most 6–8 → comprehensively leading in selection accuracy.
-- Efficiency: model selection on ETTh1 requires only ~1,000–4,000 seconds vs. $4.97 \times 10^4$ seconds for full fine-tuning of all candidates → 10–50× speedup.
-- The functional embedding $\boldsymbol{v}_c$ ($\tau_\omega = 0.370$) contributes most, followed by meta-information $\boldsymbol{v}_a$ ($0.339$) → a model's "behavior" is more informative than its "description."
-- Cross-task meta-learning uniformly improves $\tau_\omega$ across all horizons → the source of OOD robustness.
-- Feature analysis methods (RankME/LogME) frequently yield negative correlation on TS models → these CV-oriented methods are unsuitable for heterogeneous TS models.
+- SwiftTS achieves a mean $\tau_\omega = 0.442$—49% higher than Model Spider (0.296), demonstrating significantly stronger generalization across datasets and horizons.
+- SwiftTS wins 28/56 Top-1 placements, while other methods achieve at most 6-8.
+- Efficiency: Model selection on ETTh1 takes ~1000-4000s compared to $4.97 \times 10^4$s for full fine-tuning, reflecting a 10-50x speedup.
+- Functional embeddings $\boldsymbol{v}_c$ ($\tau_\omega = 0.370$) contribute the most, followed by meta-info $\boldsymbol{v}_a$ ($0.339$), suggesting model "behavior" is more informative than "description."
+- Cross-task meta-learning uniformly improves $\tau_\omega$ across all horizons, serving as the source of OOD robustness.
+- Feature analytic methods (RankME/LogME) often produce negative correlations on time series models, proving these CV-based methods are unsuitable for heterogeneous TS models.
 
 ## Highlights & Insights
 
-- **"First TS model selection method"**: Model selection for CV has been studied for years, yet the TS domain has remained unexplored → SwiftTS fills this gap, with problem formulation itself constituting a contribution.
-- **Aesthetic symmetry of the dual encoder**: Data and model are each independently embedded → matched via attention → candidate models are not required to process the target data → the fundamental overhead of feature analysis is avoided.
-- **"Black-box probing" for functional embeddings**: Feeding Gaussian noise to a model and observing its output → different models produce different outputs → models can be distinguished without knowledge of their internal structure → elegant in its simplicity.
-- **Natural fit of meta-learning**: Model selection is inherently a "learning-to-learn" problem → cross-dataset/cross-horizon sampling under the MAML paradigm naturally promotes generalization.
+- **"First TS Model Selection Method"**: While model selection is mature in CV, SwiftTS fills a critical gap in the TS domain; the problem definition itself is a contribution.
+- **Symmetry of Dual-encoders**: Independent embedding of data and models followed by attention-based matching avoids the fundamental overhead of analytic methods by not requiring model execution on target data.
+- **"Black-box Probing" via Functional Embeddings**: Probing with Gaussian noise to observe output patterns allows the framework to distinguish models without knowing internal architectures—a simple yet elegant design.
+- **Natural Fit for Meta-learning**: Since model selection is intrinsically a "learning-to-learn" problem, the MAML paradigm with cross-domain sampling naturally enhances generalization.
 
 ## Limitations & Future Work
 
-- The model pool comprises only 8 pre-trained models → scalability remains to be verified as TS foundation models continue to proliferate.
-- Functional embeddings require one forward pass per candidate model (albeit with only Gaussian noise as input) → the approach is not entirely zero-cost.
-- The framework is limited to time series forecasting → other TS tasks such as classification and anomaly detection are not addressed.
-- Constructing the meta-training dataset requires pre-collecting fine-tuned performance of all models on all datasets → the cold-start cost is substantial.
+- The model pool is limited to 8 pre-trained models; scalability remains to be verified as TS foundation models proliferate.
+- Functional embedding still requires a single forward pass per candidate (albeit using Gaussian noise), so it is not strictly "zero-cost."
+- The scope is currently limited to forecasting; classification and anomaly detection tasks are not yet addressed.
+- Constructing the meta-dataset requires pre-collecting fine-tuning performance across all models and datasets, which involves a high cold-start cost.
 
 ## Related Work & Insights
 
-- **vs. Model Spider (Zhang et al., 2023)**: Also a learning-to-rank approach → but does not account for temporal characteristics or the horizon dimension → achieves only $\tau_\omega = 0.296$ on TS vs. SwiftTS's 0.442.
-- **vs. LogME/RankME (feature analysis)**: Produce negative correlation on heterogeneous TS models → identified by SwiftTS as methods inapplicable to the TS domain.
-- **vs. TSFM-Bench (Li et al., 2025)**: Provides ground-truth fine-tuned performance → SwiftTS leverages this data for training → the two are complementary.
-- **Insight**: Can SwiftTS be extended into a "TS model recommendation system" → integrating automatic data augmentation and online learning → continuously updating selection strategies during deployment?
+- **vs Model Spider (Zhang et al., 2023)**: Both are learning-oriented, but Model Spider ignores temporal characteristics and the horizon dimension, resulting in a lower $\tau_\omega$ of 0.296 compared to SwiftTS's 0.442.
+- **vs LogME/RankME (Feature Analysis)**: These produce negative correlations on heterogeneous TS models and are identified as inappropriate for the TS domain by SwiftTS.
+- **vs TSFM-Bench (Li et al., 2025)**: Provides the ground-truth fine-tuning performance utilized by SwiftTS for training; the two works are complementary.
+- **Insight**: SwiftTS could be extended into a "TS Model Recommendation System" combining automated data augmentation and online learning to continuously update selection strategies during deployment.
 
 ## Rating
 
 ⭐⭐⭐⭐ (4/5)
 
-Overall assessment: SwiftTS is the first model selection framework for TS pre-trained models, featuring a well-designed combination of dual encoder, patch-level cross-attention, horizon-adaptive experts, and meta-learning. The extensive experiments across 14 datasets × 8 models are thorough. However, the model pool is relatively small and the approach is not entirely zero-cost. While the technical design is solid, the primary innovation is methodological rather than theoretical.
+Overall Evaluation: This is the first comprehensive model selection framework for TS pre-trained models. The combination of dual-encoders, patch cross-attention, horizon-specific experts, and meta-learning is well-designed. Extensive experiments across 14 datasets and 8 models are sufficient, though the model pool size is modest and the method is not completely zero-cost. The technical design is solid, but the breakthrough is methodological rather than theoretical.
 
 <!-- RELATED:START -->
 
@@ -168,10 +161,10 @@ Overall assessment: SwiftTS is the first model selection framework for TS pre-tr
 ## Related Papers
 
 - [\[ICLR 2026\] TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series](tspulse_tiny_pre-trained_models_with_disentangled_representations_for_rapid_time.md)
-- [\[ICLR 2026\] TSRating: Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](tsrating_time_series_quality_llm.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
-- [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
+- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
 
 </div>
 

@@ -2,77 +2,88 @@
 title: >-
   [Paper Note] FeDaL: Federated Dataset Learning for General Time Series Foundation Models
 description: >-
-  [ICLR 2026][Time Series][Time Series Foundation Model] This paper proposes FeDaL, a federated framework that trains a general time series foundation model from scratch via client-side Domain Bias Elimination (DBE) and se…
+  [ICLR 2026][Time Series][Time Series Foundation Model] Ours proposes the FeDaL federated framework, which trains a general time series foundation model from scratch through client-side Domain Bias Elimination (DBE) and server-side Global Bias Elimination (GBE). It achieves competitive or superior performance on 8 types of downstream tasks with significantly fewer parameter
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "Time Series Foundation Model"
-  - "Federated Learning"
-  - "Dataset Heterogeneity"
-  - "Domain Bias Elimination"
-  - "Cross-domain Generalization"
+  - ICLR 2026
+  - Time Series
+  - Time Series Foundation Model
+  - Federated Learning
+  - Dataset Heterogeneity
+  - Domain Bias Elimination
+  - Cross-domain Generalization
 date: 2026-05-08
-content_hash: a0d689c5c4766e21
+content_hash: a22bf941dfc2fa1d
 ---
-
 # FeDaL: Federated Dataset Learning for General Time Series Foundation Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.04045](https://arxiv.org/abs/2508.04045)  
 **Code**: [GitHub](https://github.com/shengchaochen82/FeDaL)  
-**Area**: Time Series / Federated Learning
+**Area**: Time Series / Federated Learning  
 **Keywords**: Time Series Foundation Model, Federated Learning, Dataset Heterogeneity, Domain Bias Elimination, Cross-domain Generalization
 
 ## TL;DR
 
-This paper proposes FeDaL, a federated framework that trains a general time series foundation model from scratch via client-side Domain Bias Elimination (DBE) and server-side Global Bias Elimination (GBE), achieving competitive or superior performance across 8 downstream task types with significantly fewer parameters than centralized TSFMs.
+Ours proposes the FeDaL federated framework, which trains a general time series foundation model from scratch through client-side Domain Bias Elimination (DBE) and server-side Global Bias Elimination (GBE). It achieves competitive or superior performance on 8 types of downstream tasks with significantly fewer parameters than centralized TSFMs.
 
 ## Background & Motivation
 
-**Background**: Time series foundation models (TSFMs) such as Moirai, Chronos, and Time-MoE acquire transferable representations through large-scale multi-domain pretraining, yet still rely on centralized data access and are typically tailored to specific tasks (e.g., forecasting). Time Series Pattern Machines (TSPMs) pursue architecture-level generality but are trained per dataset, limiting zero-shot generalization.
-
-**Limitations of Prior Work**: FFTS, a pioneer in the federated foundation model (FFM) direction, addresses only coarse-grained domain-level heterogeneity (e.g., climate vs. healthcare), ignores intra-dataset structural biases, and does not support zero-shot inference—and thus cannot be considered a true foundation model.
-
-**Key Challenge**: Time series data are inherently siloed and heterogeneous, yet federated aggregation assumes client updates are unbiased estimates of the global gradient. This assumption breaks down under severe dataset heterogeneity, causing the aggregated global model to be dominated by bias. The paper systematically identifies three dataset-level biases: *temporal resolution bias* (different sampling rates under identical window lengths lead to unequal information density), *physical constraint bias* (differing physical laws reduce cross-domain transferability), and *pattern shift bias* (exogenous events cause initially similar trends to diverge, which is amplified during aggregation).
-
-**Goal**: To train a general TSFM from scratch under federated constraints that supports zero-shot inference across multiple downstream tasks while handling dataset-level heterogeneity.
-
-**Key Insight**: The distributed architecture of federated learning is itself a natural mechanism for decomposing heterogeneity—local biases are eliminated via DBE at the client side, and global representations are aligned via GBE at the server side.
-
-**Core Idea**: Reframe federated learning from a "privacy-preservation tool" to a "heterogeneity decomposition paradigm," producing domain-invariant time series representations through a dual DBE+GBE mechanism.
+**Background**: Time Series Foundation Models (TSFMs) such as Moirai, Chronos, and Time-MoE obtain transferable representations through large-scale multi-domain pre-training, but still rely on centralized data access and are typically applicable only to specific tasks (e.g., forecasting). Time Series Pattern Machines (TSPMs) pursue architectural generality but are trained dataset-by-dataset, limiting their zero-shot generalization capabilities. **Limitations of Prior Work**: FFTS, a pioneer in the Federated Foundation Model (FFM) direction, only addresses coarse-grained domain-level heterogeneity (e.g., climate vs. healthcare), ignores structural biases within datasets, and does not support zero-shot inference, preventing it from being a true foundation model. **Key Challenge**: Time series data are naturally siloed and heterogeneous, yet the federated aggregation assumes that client updates are unbiased estimates of the global gradient—this assumption fails when dataset heterogeneity is severe, leading to a global model dominated by bias. This paper systematically identifies three types of dataset-level biases: time resolution bias (different information densities due to different sampling rates in the same window), physical constraint bias (different physical laws reducing cross-domain transferability), and pattern shift bias (exogenous events causing divergence in initially similar trends, which are amplified during aggregation). **Goal**: Train a general TSFM from scratch under federated learning constraints that can support zero-shot inference for multiple downstream tasks and handle dataset-level heterogeneity. **Key Insight**: The distributed architecture of federated learning is a natural solution for decomposing heterogeneity—using DBE on the client to eliminate local biases and GBE on the server to align global representations. **Core Idea**: Reposition federated learning from a "privacy protection tool" to a "heterogeneity decomposition paradigm," producing domain-invariant time-series representations through the dual DBE+GBE mechanism.
 
 ## Method
 
 ### Overall Architecture
 
-FeDaL follows the standard federated "client-training / server-aggregation" paradigm. Each client holds one time series dataset and performs unsupervised pretraining via patch-wise masked reconstruction. Input sequences are split into patches and randomly masked (75%), encoded by a backbone, passed through a DBE module to separate dataset-specific biases, and then reconstructed via a reconstruction head. Upon receiving client model updates, the server executes two GBE steps—gradient-level dynamic correction and core-set fine-tuning—to produce the corrected global model. After each communication round, the server broadcasts both the updated global model $\theta^g$ and the global bias reference $\mathbf{b}^g$.
+FeDaL adopts the standard "client training - server aggregation" federated learning paradigm, with each communication round involving three stages. On the **client** side, each client holds a time-series dataset, performs patching and random masking (75%) on input sequences, encodes them through a backbone, uses the Domain Bias Elimination (DBE) module to separate dataset-specific biases from representations, and performs reconstruction with bias regularization while constructing a core-set to concentrate local knowledge. On the **server** side, upon receiving model updates and core-sets from clients, it performs Global Bias Elimination (GBE) using three steps: FedAvg aggregation, gradient-level dynamic correction, and core-set fine-tuning, resulting in a corrected global model. After each round, the server broadcasts the updated global model $\theta^g$ and the global bias reference $\mathbf{b}^g$ to enter the next round, with DBE and GBE collaborating to gradually eliminate dataset-level biases.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    S0["Server Broadcasts<br/>Global Model θᵍ + Global Bias bᵍ"] --> M["Client: Patching<br/>+ 75% Random Masking"]
+    M --> E["Backbone Encoding<br/>to Latent Representation"]
+    subgraph DBE["Domain Bias Elimination DBE (Client)"]
+        direction TB
+        E --> D1["Trend-Seasonal Decomposition<br/>Extract Bias Vector b"]
+        D1 --> D2["Re-inject Bias into Feature<br/>Reconstruction + Bias Reg."]
+    end
+    DBE --> CS["Construct Core-set<br/>Gradient Matching + Fourier Mag. Noise"]
+    CS --> UP["Upload Model Updates + Core-set"]
+    subgraph GBE["Global Bias Elimination GBE (Server)"]
+        direction TB
+        UP --> G1["FedAvg Aggregation"]
+        G1 --> G2["Gradient-level Dynamic Correction<br/>Compensate Client Drift"]
+        G2 --> G3["Core-set Fine-tuning<br/>+ Convex Fusion"]
+    end
+    GBE --> OUT["Updated Global TSFM"]
+    OUT -.Next Round Broadcast.-> S0
+```
 
 ### Key Designs
 
-1. **Domain Bias Elimination (DBE)**
+**1. Domain Bias Elimination (DBE): Removing dataset-specific non-transferable bias from representations at the client.**
 
-    - **Function**: Separates dataset-specific non-transferable biases from client-side latent representations.
-    - **Mechanism**: Applies trend–seasonality decomposition to the latent representation of the masked input: $\mathbf{h}_t, \mathbf{h}_s = \text{TimeDecomp}(f_{\theta^b}(\tilde{X}), \tau)$. Each component is averaged and scaled by learnable factors to obtain a bias vector $\mathbf{b} = \text{Mean}(\mathbf{h}_t) \odot \gamma_t + \text{Mean}(\mathbf{h}_s) \odot \gamma_s$. During reconstruction, the bias is injected into the latent features: $\mathcal{L} = \mathbb{E}[\|f_{\theta_h}(f_{\theta_b}(\tilde{X}) + \mathbf{b}) - X\|^2] + \lambda\|\mathbf{b} - \mathbf{b}^g\|^2$, where $\mathbf{b}^g$ is the server-aggregated global bias reference. EMA is used to stabilize bias estimation across mini-batches.
-    - **Design Motivation**: Compared to simple averaging, trend–seasonality decomposition introduces inductive bias—$\mathbf{b}_t$ captures low-frequency drift and $\mathbf{b}_s$ captures high-frequency periodicity. Once the bias vector absorbs dataset-specific shifts, the backbone is forced to focus on transferable temporal structure. The regularization term prevents client-side bias from drifting excessively.
+Each dataset has its own time resolution, physical constraints, and pattern shift characteristics. If these biases remain in the backbone, they contaminate the global model during aggregation. DBE explicitly separates them: latent representations of masked inputs undergo trend-seasonal decomposition $\mathbf{h}_t, \mathbf{h}_s = \text{TimeDecomp}(f_{\theta^b}(\tilde{X}), \tau)$, where components are averaged and multiplied by learnable scaling factors to form a bias vector $\mathbf{b} = \text{Mean}(\mathbf{h}_t) \odot \gamma_t + \text{Mean}(\mathbf{h}_s) \odot \gamma_s$. During reconstruction, this bias is re-injected into the latent features to restore the sequence. The objective function is:
 
-2. **Global Bias Elimination (GBE)**
+$$\mathcal{L} = \mathbb{E}[\|f_{\theta_h}(f_{\theta_b}(\tilde{X}) + \mathbf{b}) - X\|^2] + \lambda\|\mathbf{b} - \mathbf{b}^g\|_2^2$$
 
-    - **Function**: Eliminates residual cross-client biases during server-side aggregation.
-    - **Mechanism**: Comprises two sub-components. (a) **Gradient-level dynamic correction**: maintains a server state vector $\mathbf{s}^r = \mathbf{s}^{r-1} - \beta\sum_i(\theta_i^r - \theta_g^{r-1})$ that records accumulated client–server drift, and corrects the FedAvg result as $\hat{\theta}_g^r = \tilde{\theta}_g^r - (1/\beta)\cdot\mathbf{s}^r$. (b) **Core-set fine-tuning**: each client samples a small batch from local data and optimizes learnable core-set vectors via gradient matching $\mathcal{L}_{\text{match}} = \sum_{x}\|\nabla_\theta f_\theta(\mathcal{C}) - \nabla_\theta f_\theta(x)\|_2^2$; privacy is protected by adding noise to the amplitude in the Fourier domain (only amplitude is perturbed; phase is preserved since it encodes semantic information such as periodicity). The server fine-tunes the corrected model with the aggregated core-sets, followed by convex combination: $\theta^{g,r} = \alpha\hat{\theta}^{g,r} + (1-\alpha)\theta^{gt,r}$.
-    - **Design Motivation**: Because DBE debiases clients inconsistently, residual bias persists after aggregation. Gradient correction compensates for client drift, while core-set fine-tuning further aligns global representations using privacy-protected knowledge summaries.
+where $\mathbf{b}^g$ is the global bias reference aggregated by the server. The regularization term pulls client biases toward the global reference to prevent excessive drift; bias estimation under mini-batch is stabilized using EMA. Trend-seasonal decomposition is used instead of simple averaging to introduce inductive bias—$\mathbf{b}_t$ absorbs low-frequency drift while $\mathbf{b}_s$ absorbs high-frequency periodicity. Once dataset shifts are absorbed by this bias vector, the backbone is forced to learn only transferable temporal structures. DBE is a plug-and-play module that does not change the main architecture and can be attached to any Transformer-based time series model.
+
+**2. Global Bias Elimination (GBE): Cleaning residual cross-client biases remaining after DBE at the server.**
+
+The intensity of de-biasing varies across clients, and FedAvg aggregation still leaves residual biases. GBE eliminates these through two sub-steps. First is **gradient-level dynamic correction**: the server maintains a state vector $\mathbf{s}^r = \mathbf{s}^{r-1} - \beta\sum_i(\theta_i^r - \theta_g^{r-1})$ to record cumulative client-server drift, then uses it to correct the FedAvg result $\hat{\theta}_g^r = \tilde{\theta}_g^r - (1/\beta)\cdot\mathbf{s}^r$, compensating for the parts where clients drifted individually. Second is **core-set tuning**: each client samples mini-batches from local data and learns a set of core-set vectors concentrated with local knowledge via gradient matching $\mathcal{L}_{\text{match}} = \sum_{x}\|\nabla_\theta f_\theta(\mathcal{C}) - \nabla_\theta f_\theta(x)\|_2^2$; before uploading, noise is added only to the magnitude in the Fourier domain while preserving the phase (phase encodes semantic information like periodicity; perturbing it destroys knowledge), protecting privacy while retaining useful signals. The server performs fine-tuning on the corrected model using the aggregated core-set, followed by convex fusion of the two paths $\theta^{g,r} = \alpha\hat{\theta}^{g,r} + (1-\alpha)\theta^{gt,r}$. In short, gradient correction compensates for drift, and core-set tuning further aligns global representations using privacy-safe knowledge abstracts.
 
 ### Loss & Training
 
-The client loss consists of masked patch reconstruction and bias regularization. The server performs three sequential steps: weighted-average aggregation, gradient correction, and core-set fine-tuning followed by convex combination. Pretraining is conducted on the LOTSA dataset (231B time points, 174 datasets treated as 174 clients). For non-zero-shot downstream tasks, a single epoch of fine-tuning suffices for adaptation.
+The client loss consists of masked patch reconstruction and bias regularization. The server executes three steps: weighted average aggregation, gradient correction, and core-set tuning plus convex fusion. Pre-training is conducted on the LOTSA dataset (231B time points, 174 datasets treated as 174 clients). Non-zero-shot downstream tasks require only one epoch of fine-tuning for adaptation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Federated Representation Learning** (Table 1; average Reconstruction MSE across 5 masking ratios; lower is better):
+**Federated Representation Learning** (Table 1, average Reconstruction MSE across 5 masking rates, lower is better):
 
 | Method | UTSD-H1 | UTSD-H2 | CTSD | Comm. Params |
-|--------|---------|---------|------|--------------|
+|------|---------|---------|------|-----------|
 | FedAvg | 0.586 | 0.592 | 0.455 | 108.41 MB |
 | FedProx | 0.583 | 0.586 | 0.444 | 108.41 MB |
 | FFTS | 0.562 | 0.531 | 0.416 | 118.94 MB |
@@ -81,10 +92,10 @@ The client loss consists of masked patch reconstruction and bias regularization.
 
 Compared to FFTS, FeDaL reduces MSE by 4.16% on UTSD and 8.86% on CTSD.
 
-**Zero-shot Forecasting** (Table 4; average over ETT series + Weather):
+**Zero-shot Forecasting** (Table 4, average of ETT series + Weather):
 
 | Method | Type | Avg MSE | Avg MAE | # 1st Place |
-|--------|------|---------|---------|-------------|
+|------|------|---------|---------|-----------|
 | **FeDaL** | FL | **0.335** | **0.365** | 3 |
 | FFTS | FL | 0.348 | 0.379 | 1 |
 | Moirai-base | Centralized | 0.357 | 0.361 | 4 |
@@ -94,46 +105,45 @@ Compared to FFTS, FeDaL reduces MSE by 4.16% on UTSD and 8.86% on CTSD.
 ### Ablation Study
 
 | Configuration | UTSD MSE | CTSD MSE | Avg. Change |
-|---------------|----------|----------|-------------|
-| FeDaL (full) | 0.573 | 0.405 | — |
-| w/o bias alignment | 0.602 | 0.434 | ↓6.11% |
+|------|----------|----------|---------|
+| FeDaL (Full) | 0.573 | 0.405 | — |
+| w/o Bias Alignment | 0.602 | 0.434 | ↓6.11% |
 | w/o DBE | 0.637 | 0.452 | ↓9.17% |
-| w/o core-set tuning | 0.590 | 0.430 | ↓4.57% |
-| w/o gradient correction | 0.600 | 0.431 | ↓5.57% |
+| w/o Core-set Tuning | 0.590 | 0.430 | ↓4.57% |
+| w/o Gradient Correction | 0.600 | 0.431 | ↓5.57% |
 | w/o GBE | 0.610 | 0.444 | ↓8.05% |
 
 ### Key Findings
 
-- DBE contributes most (removing it causes an average drop of 9.17%), indicating that local bias is the primary challenge.
-- Both gradient correction and core-set fine-tuning within GBE contribute independently; removing the entire GBE causes an 8.05% drop.
+- DBE contributes the most (9.17% average drop when removed), indicating that local bias is the primary issue.
+- Gradient correction and core-set tuning in GBE both have independent contributions; removing the entire GBE leads to an 8.05% drop.
 - In full-shot long-term forecasting (Table 3), FeDaL achieves the best MSE on ETTh1/ETTm1/Weather/ILI, ranking first in 9 out of 12 metrics.
-- The first systematic analysis of federated scaling behavior for TSFMs shows that more clients with moderate participation rates yields the best results, and performance improves steadily with increasing data volume.
+- Federated scaling behavior analysis (first of its kind): More clients plus a moderate participation rate yield the best results, with data volume increases bringing stable improvements.
 
 ## Highlights & Insights
 
-- Federated learning is not merely a privacy-preservation mechanism but a natural computational paradigm for handling heterogeneity—turning the disadvantage of "data silos" into the advantage of "bias decomposition."
-- DBE is a plug-and-play module compatible with any Transformer-based time series model without modifying the main architecture.
-- The Fourier-domain amplitude perturbation strategy for core-sets is elegant—only the amplitude is perturbed while phase is preserved, since phase encodes semantic information such as periodicity.
-- This work presents the first systematic study of TSFM scaling behavior in a federated setting, providing empirical guidance for decentralized large model training.
+- Federated learning is not just a privacy-preserving tool but also a natural computing paradigm for handling heterogeneity—turning the disadvantage of "scattered data" into the advantage of "bias decomposition."
+- DBE is a plug-and-play module that can be added to any Transformer-based time series model without changing the main architecture.
+- The Fourier domain noise strategy for the core-set is clever—perturbing only the magnitude while preserving the phase, as the phase encodes semantic information such as periodicity.
+- This work provides the first systematic study of the scaling behavior of TSFM in a federated setting, offering empirical guidance for training decentralized foundation models.
 
 ## Limitations & Future Work
 
-- Core-set fine-tuning adds approximately 2 MB of communication overhead per round, which may accumulate in large-scale deployments.
-- Validation is limited to Transformer-based architectures; newer time series architectures such as SSMs (e.g., Mamba) have not been tested.
-- Hyperparameters ($\lambda$, $\alpha$, $\beta$, core-set size $K$) require careful tuning; sensitivity analysis shows that extreme values significantly degrade performance.
-- In-depth comparison with personalized federated methods (e.g., Per-FedAvg) is lacking.
+- Core-set tuning increases communication overhead by approximately 2MB per round, which may accumulate in large-scale scenarios.
+- Validated only based on the Transformer architecture; newer time-series architectures like SSM (e.g., Mamba) have not been tested.
+- Hyperparameters ($\lambda$, $\alpha$, $\beta$, core-set size $K$) require careful tuning; sensitivity analysis shows extreme values significantly reduce performance.
+- Lack of in-depth comparison with personalized federated learning methods (e.g., Per-FedAvg).
 
 ## Related Work & Insights
 
-- **vs. FFTS**: FFTS handles only coarse-grained domain-level heterogeneity and does not support zero-shot inference. FeDaL addresses dataset-level biases and supports 8 task types via zero-shot inference or single-epoch adaptation.
-- **vs. Moirai/Chronos/Time-MoE**: These centralized TSFMs require full data aggregation and have larger parameter counts. FeDaL achieves competitive performance under privacy constraints with fewer parameters (zero-shot Avg MSE: 0.335 vs. Time-MoE-ultra's 0.337).
+- **vs FFTS**: FFTS only handles coarse-grained domain-level heterogeneity and does not support zero-shot inference. FeDaL handles dataset-level bias and supports zero-shot/single-epoch adaptation for 8 types of tasks.
+- **vs Moirai/Chronos/Time-MoE**: These centralized TSFMs require pooling all data and have larger parameter counts. FeDaL achieves competitive performance under privacy-preserving constraints with fewer parameters (Zero-shot Avg MSE 0.335 vs Time-MoE-ultra 0.337).
 
 ## Rating
-
-- **Novelty**: ⭐⭐⭐⭐ — The intersection of federated learning and time series foundation models is novel; the DBE/GBE designs are original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 8 task types, 54 baselines, and federated scaling behavior analysis comprehensively.
-- **Writing Quality**: ⭐⭐⭐⭐ — The illustrations of the three bias types are clear; the overall structure is well-organized.
-- **Value**: ⭐⭐⭐⭐ — Provides a practical solution for general time series modeling under privacy-preserving constraints.
+- Novelty: ⭐⭐⭐⭐ The intersection of FL and TSFM is novel; DBE/GBE designs are original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 types of tasks, 54 baselines, and federated scaling behavior analysis provide comprehensive coverage.
+- Writing Quality: ⭐⭐⭐⭐ Clear illustrations of the three types of biases and a logical structure.
+- Value: ⭐⭐⭐⭐ Provides a practical solution for general time-series modeling in privacy-protected scenarios.
 
 <!-- RELATED:START -->
 
@@ -143,9 +153,9 @@ Compared to FFTS, FeDaL reduces MSE by 4.16% on UTSD and 8.86% on CTSD.
 
 - [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
 - [\[ICML 2026\] FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models](../../ICML2026/time_series/factorynet_a_large-scale_dataset_toward_industrial_time-series_foundation_models.md)
+- [\[ICLR 2026\] A Unified Federated Framework for Trajectory Data Preparation via LLMs](a_unified_federated_framework_for_trajectory_data_preparation_via_llms.md)
 - [\[AAAI 2026\] Optimal Look-back Horizon for Time Series Forecasting in Federated Learning](../../AAAI2026/time_series/optimal_look-back_horizon_for_time_series_forecasting_in_federated_learning.md)
-- [\[ICLR 2026\] Dissecting Chronos: Sparse Autoencoders Reveal Causal Feature Hierarchies in Time Series Foundation Models](dissecting_chronos_sparse_autoencoders_reveal_causal_feature_hierarchies_in_time.md)
-- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
+- [\[ICLR 2026\] Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated?](beyond_accuracy_are_time_series_foundation_models_well-calibrated.md)
 
 </div>
 

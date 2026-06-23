@@ -2,85 +2,97 @@
 title: >-
   [Paper Note] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation
 description: >-
-  [ICLR 2026][Time Series][time series imputation] This paper proposes T1, a CNN-Transformer hybrid architecture whose core innovation is Channel-Head Binding (CHead Attention): a shared depthwise convolution extracts $C$…
+  [ICLR 2026][Time Series][Paper Note] T1 is proposed as a CNN-Transformer hybrid architecture. Its core innovation is Channel-Head Binding (CHead Attention): a shared Depthwise Conv extracts $C$ types of temporal features (trend, periodicity, abrupt changes, etc.) for each variable, followed by a one-to-one binding of each CNN channel with an attention hea
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "time series imputation"
-  - "CNN-Transformer hybrid"
-  - "channel-head binding"
-  - "selective information transfer"
-  - "missing pattern generalization"
+  - ICLR 2026
+  - Time Series
 date: 2026-05-08
-content_hash: ac5c882beab5c5b3
+content_hash: 5ec979cec9d52275
 ---
-
 # T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.21043](https://arxiv.org/abs/2602.21043)  
 **Code**: [GitHub](https://github.com/Oppenheimerdinger/T1)  
-**Area**: Time Series / Missing Value Imputation
-**Keywords**: time series imputation, CNN-Transformer hybrid, channel-head binding, selective information transfer, missing pattern generalization
+**Area**: Time Series / Imputation  
+**Keywords**: Time-series Imputation, CNN-Transformer Hybrid, Channel-Head Binding, Selective Information Passing, Missing Pattern Generalization
 
 ## TL;DR
 
-This paper proposes T1, a CNN-Transformer hybrid architecture whose core innovation is Channel-Head Binding (CHead Attention): a shared depthwise convolution extracts $C$ types of temporal features (trend, periodicity, abrupt changes, etc.) for each variable, and each CNN channel is then bound one-to-one to a single attention head, enabling cross-variable information transfer to proceed independently at the feature level. When missing data prevents a channel from extracting a valid pattern, the corresponding attention head automatically down-weights, achieving adaptive missing-data handling without explicit design. On 11 benchmark datasets, the average MSE is reduced by 46%, with even larger gains under 70% extreme missingness.
+T1 is proposed as a CNN-Transformer hybrid architecture. Its core innovation is Channel-Head Binding (CHead Attention): a shared Depthwise Conv extracts $C$ types of temporal features (trend, periodicity, abrupt changes, etc.) for each variable, followed by a one-to-one binding of each CNN channel with an attention head. This ensures that cross-variable information transfer occurs independently at the feature level. When missing data prevents a channel from extracting valid patterns, the corresponding attention head is automatically down-weighted, achieving adaptive missing value processing without explicit design. On 11 benchmark datasets, the MSE is reduced by an average of 46%, with even greater advantages under 70% extreme missingness.
 
 ## Background & Motivation
 
-**Background**: Multivariate time-series imputation must simultaneously accomplish two tasks — (1) extracting temporal patterns from sparse observations, and (2) transferring complementary information across variables to aid reconstruction. These tasks are tightly coupled: once temporal features are corrupted by missingness, cross-variable transfer amplifies errors, while naïve cross-variable transfer cannot distinguish which variables are reliable under a given missing pattern.
+**Background**: Multivariate time-series imputation requires the simultaneous completion of two tasks: (1) extracting temporal patterns from sparse observations; and (2) transferring complementary information across variables to assist reconstruction. These tasks are highly coupled: temporal features contaminated by missing values will amplify errors during cross-variable transfer, while naive cross-variable transfer cannot distinguish which variables are reliable under the current missing pattern.
 
-**Four Architectural Paradigms and Their Limitations**:
+**Limitations of Prior Work (Four Architectural Paradigms)**:
 
-| Paradigm | Representative Methods | Temporal Modeling | Cross-Variable Modeling | Core Deficiency |
+| Architectural Paradigm | Representative Methods | Temporal Modeling | Cross-Variable Modeling | Key Challenge |
 |---------|---------|---------|----------|---------|
-| Time-axis tokenization | SAITS, PatchTST | ✓ Attention models long-range dependency | ✗ All variables mixed in the same token | Missing values directly corrupt token representations → pollution propagates to all computations |
-| Variable-axis tokenization | iTransformer | △ Entire sequence compressed into a single token | ✓ Pure inter-variable attention | Loses feature-level selectivity; all temporal patterns are forcibly fused |
-| Dual-axis tokenization | ImputeFormer, CSDI | ✓ Time-axis attention | ✓ Variable-axis attention | Missingness creates "broken paths" across both axes, making intermediate representations unreliable |
-| Temporal CNN | ModernTCN, TimesNet | ✓ Multi-scale convolution for efficient extraction | △ Static pointwise mixing only | Limited cross-variable transfer capacity with no adaptability to missing patterns |
+| Time-axis tokenization | SAITS, PatchTST | ✓ Attention models long-range dependencies | ✗ All variables mixed in same token | Missing values directly contaminate token representations → pollution propagates through all calculations |
+| Variable-axis tokenization | iTransformer | △ Whole sequence compressed to single token | ✓ Pure inter-variable attention | Loss of feature-level selectivity; all temporal patterns are forced to fuse |
+| Dual-axis tokenization | ImputeFormer, CSDI | ✓ Time-axis attention | ✓ Variable-axis attention | Missing values create "broken paths" between axes; intermediate representations become unreliable |
+| Temporal CNN | ModernTCN, TimesNet | ✓ Efficient multi-scale extraction | △ Only static pointwise mixing | Limited cross-variable transfer capability and unable to adapt to missing patterns |
 
-**Core Observation**: CNNs excel at extracting temporal features from sparse observations (convolutions are inherently robust to local missingness), while Transformers excel at dynamically modeling inter-variable relationships. The key question is how to "correctly interface" the two — naïve concatenation causes multi-channel CNN features to be mixed at the attention layer, allowing corruption-affected channels to contaminate reliable ones.
+**Key Insight**: CNNs excel at extracting temporal features from sparse observations (convolutions are naturally robust to local missingness), while Transformers are adept at dynamically modeling inter-variable relationships. The key problem is how to "connect" them correctly—naive concatenation causes multi-channel features extracted by the CNN to be mixed in the attention layer, allowing channels contaminated by missing values to compromise reliable ones.
 
-**Core Idea**: Establish a one-to-one binding between CNN channels and attention heads, so that each attention head handles cross-variable transfer for only one type of feature, realizing a selective information pathway at the feature level.
+**Core Idea**: Establish a one-to-one binding between CNN channels and attention heads, allowing each attention head to handle the cross-variable transfer of only one feature type, thereby achieving selective information channels at the feature level.
 
 ## Method
 
 ### Overall Architecture
 
-T1 consists of three modules: Mask-Aware Embedding → $N$ T1 Blocks → Reconstruction Upsampler.
+T1 addresses the difficulty in multivariate time-series imputation where "temporal feature extraction" and "cross-variable information transfer" interfere with each other: missing values contaminate temporal features, which then amplify errors when transferred across variables. The proposed solution is a division of labor—letting the CNN robustly extract temporal features from sparse observations and the Transformer perform dynamic cross-variable information transfer, then using "Channel-Head Binding" to precisely interface the two at the **feature level**, isolating channels contaminated by missingness.
 
-**Mask-Aware Embedding**: For each variable $x^{(m)}$, instance normalization is applied using only observed values (mean and variance computed only at positions where $\Omega_{m,t}=1$). The normalized sequence and the observation mask are then concatenated into a 2-channel input $[x_{\text{norm}}^{(m)}; \Omega^{(m)}] \in \mathbb{R}^{2 \times T}$, which is downsampled to $z^{(m)} \in \mathbb{R}^{C \times L}$ via a strided 1D convolution with $C$ filters, followed by addition of a learnable variable encoding $E_{\text{var}}^{(m)}$. This ensures the model is aware of missing positions from the outset.
+The pipeline consists of three stages. The input multivariate sequence first undergoes **Mask-aware Embedding**: each variable is normalized using only observed positions, concatenated with the observation mask into 2 channels, and downsampled via strided convolution into $C$-channel latent representations. These latent representations are iteratively processed by $N$ stacked **T1 Blocks**, each performing "Shared Depthwise Conv for multi-scale temporal feature extraction → CHead Attention for channel-wise cross-variable transfer → Convolutional FFN for channel-wise mixing." Finally, the **Implicit Missing Handling + PixelShuffle** reconstruction stage uses a parameter-free 1D PixelShuffle to restore temporal resolution and outputs the complete sequence via inverse normalization.
 
-**T1 Block**: Each block contains three components:
-
-1. **Temporal Convolutional QKV Projection**: A depthwise convolution with **weights shared across all variables** independently extracts temporal features for each channel of each variable. Two kernel sizes are applied in parallel for multi-scale analysis, generating Q/K/V:
-
-$$Q_{m,c} = \text{DWConv}_{\text{large},Q}(Z_{m,c}) + \text{DWConv}_{\text{small},Q}(Z_{m,c})$$
-
-Critically, shared weights ensure that the $c$-th channel extracts the **same type** of temporal pattern (e.g., the 3rd channel always captures periodicity) across all variables, providing semantic alignment as the prerequisite for meaningful cross-variable attention per channel.
-
-2. **CHead Attention (Core Innovation)**: Setting the number of attention heads $n_h = C$ (equal to the number of CNN channels), the $c$-th head processes only the $c$-th channel of all variables:
-
-$$O_c = \text{Softmax}\left(\frac{Q_c K_c^T}{\sqrt{L}}\right) V_c, \quad Q_c, K_c, V_c \in \mathbb{R}^{M \times L}$$
-
-Outputs are concatenated, followed by pointwise conv + LayerNorm + residual connection. Each information-transfer pathway thus carries only a single feature type. When the $c$-th channel of a variable fails to extract a valid pattern due to missingness, that channel produces weak features → the corresponding head naturally assigns low weight to that variable → other channels' transfer remains unaffected.
-
-3. **Convolutional FFN**: An inverted bottleneck implemented with pointwise convolutions (rather than linear layers), enabling nonlinear inter-channel interaction while maintaining position-independent processing along the time axis. Across stacked T1 Blocks, the FFN-mixed features form new channel representations for the next layer.
-
-**Reconstruction Upsampler**: A 1D PixelShuffle (parameter-free, rearranging from $\mathbb{R}^{M \times C \times L}$ to $\mathbb{R}^{M \times (C/r) \times (L \cdot r)}$, $r=T/L$) restores the original temporal resolution, avoiding the checkerboard artifacts of transposed convolutions. A final pointwise convolution projects to the target dimension, followed by de-normalization.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Multivariate Time-Series (with missingness)<br/>+ Observation Mask"]
+    EMB["Mask-aware Embedding<br/>Observed-only Norm → Concat 2-channel mask<br/>→ Strided Conv downsampling to C channels"]
+    subgraph BLK["T1 Block ×N"]
+        direction TB
+        DW["Shared Depthwise Conv<br/>Large/Small kernel multi-scale → Q/K/V"]
+        CH["CHead Attention<br/>n_h=C, head c only processes channel c"]
+        FFN["Convolutional FFN<br/>Per-channel mixing"]
+        DW --> CH --> FFN
+    end
+    REC["Implicit Missing Handling + PixelShuffle<br/>Param-free reshuffling for resolution → Inverse Norm"]
+    OUT["Imputed Complete Sequence"]
+    IN --> EMB --> BLK
+    BLK -->|Residual Iteration| REC --> OUT
+```
 
 ### Key Designs
 
-1. **One-to-One Channel-Head Binding**: In conventional multi-head attention, each head processes a subspace of mixed features. T1 enforces $n_h = C$ with the $k$-th head strictly corresponding to the $k$-th CNN channel. This provides feature-level isolation — corruption-affected channels cannot contaminate others, realizing "selective information transfer."
+**1. Shared Depthwise Conv: Providing Semantic Alignment for Per-channel Cross-Variable Attention**
 
-2. **Semantic Alignment via Shared Depthwise Conv**: All variables share the same convolutional kernels, ensuring semantically consistent feature extraction within the same channel across different variables. This is the prerequisite for CHead Attention to function — only semantically aligned features make meaningful cross-variable attention possible.
+Naively concatenating multi-channel features into attention heads causes different channels to mix, leading to semantic misalignment and rendering per-channel transfer meaningless. The first step of each T1 Block uses Depthwise Conv with **weights shared across all variables** to independently extract temporal features for each channel of each variable. Multi-scale analysis with large and small kernels generates Q/K/V:
 
-3. **Mask-Aware Embedding with No Explicit Missing-Data Handling**: The model receives explicit mask information at the embedding layer, but no explicit missing-data handling (e.g., masked attention) is applied in subsequent processing — the model relies entirely on CHead Attention's adaptive down-weighting mechanism. This "implicit handling" is more robust because it makes no prior assumptions about the missing pattern.
+$$Q_{m,c} = \text{DWConv}_{\text{large},Q}(Z_{m,c}) + \text{DWConv}_{\text{small},Q}(Z_{m,c})$$
+
+Weight sharing ensures that the $c$-th channel extracts the **same type** of temporal pattern across all variables (e.g., the 3rd channel always captures periodicity), naturally aligning the semantics of the $c$-th channel across different variables—a prerequisite for effective per-channel cross-variable attention.
+
+**2. CHead Attention: One-to-One Channel-Head Binding for Selective Information Transfer**
+
+This is the core innovation of T1, answering how to prevent missing-polluted channels from affecting reliable ones. While traditional multi-head attention handles mixed feature subspaces in each head, T1 sets the number of attention heads $n_h = C$ (equal to the number of CNN channels) and makes the $c$-th head process **only** the $c$-th channel of all variables:
+
+$$O_c = \text{Softmax}\!\left(\frac{Q_c K_c^T}{\sqrt{L}}\right) V_c, \quad Q_c, K_c, V_c \in \mathbb{R}^{M \times L}$$
+
+The outputs of each head are concatenated and passed through pointwise conv, LayerNorm, and residual connections. Since each information channel transfers only one feature type, if a variable's $c$-th channel fails to extract valid patterns due to missingness, the feature naturally becomes weak, and the corresponding attention head assigns it a low weight. Pollution is locked within a single channel and does not propagate. This feature-level isolation allows "selective information transfer" to occur automatically without explicit design.
+
+**3. Mask-aware Embedding + Implicit Missing Handling: Structural Response to Missingness**
+
+Explicit mask attention or missing-rate conditioning depends on prior assumptions about missing patterns, which may fail if patterns change. T1 provides necessary information at the embedding layer: for each variable $x^{(m)}$, it first performs instance normalization using **only observed positions** ($\Omega_{m,t}=1$), then concatenates the normalized sequence with the mask into a 2-channel input $[x_{\text{norm}}^{(m)}; \Omega^{(m)}] \in \mathbb{R}^{2 \times T}$. This is downsampled via strided 1D Conv with $C$ filters to $z^{(m)} \in \mathbb{R}^{C \times L}$, with learnable variable encodings $E_{\text{var}}^{(m)}$ added. Thereafter, the network performs no special processing for missing values, relying on CHead Attention's adaptive weighting. The reconstruction uses 1D PixelShuffle (parameter-free, reshuffling from $\mathbb{R}^{M \times C \times L}$ to $\mathbb{R}^{M \times (C/r) \times (L \cdot r)}$, where $r=T/L$) to restore resolution, avoiding checkerboard artifacts of transposed convolutions. This "structural" approach generalizes across point, block, and natural missingness.
+
+### Loss & Training
+
+T1 is trained using self-supervised learning with random masking: during training, a 40% random mask is applied to the input, and the model regresses to reconstruct the masked positions. Due to its structure-independent design, the model trained at 40% missingness generalizes to rates from 10%–70% without retraining. All 11 datasets share a single set of hyperparameters.
 
 ## Key Experimental Results
 
-### Point Missingness Scenario: 9 Benchmark Datasets (Average over 4 Missing Rates)
+### Point Missing Scenario: 9 Benchmark Datasets (Average of 4 Missing Rates)
 
 | Dataset | T1 (MSE) | PatchTST | ModernTCN | iTransformer | TimeMixer++ | ImputeFormer | SAITS |
 |-------|----------|----------|-----------|-------------|------------|-------------|-------|
@@ -95,79 +107,72 @@ Outputs are concatenated, followed by pointwise conv + LayerNorm + residual conn
 | Electricity | **0.043** | 0.089 | 0.121 | 0.090 | 0.071 | 0.076 | 0.152 |
 | **Average** | **0.027** | 0.050 | 0.070 | 0.079 | 0.075 | 0.210 | 0.176 |
 
-T1 achieves an average MSE of 0.027, a **46%** reduction over the second-best PatchTST (0.050) and a **56%** reduction over the dedicated imputer PSW-I (0.062).
+T1 achieves an average MSE of 0.027, a **46%** reduction compared to the runner-up PatchTST (0.050) and **56%** lower than the specialized imputer PSW-I (0.062).
 
-### Robustness across Missing Rates (Average over 9 Datasets)
+### Robustness across Missing Rates (Average of 9 Datasets)
 
-| Test Missing Rate | T1 | PatchTST | ModernTCN | iTransformer | PSW-I |
+| Test Rate | T1 | PatchTST | ModernTCN | iTransformer | PSW-I |
 |-----------|-----|----------|-----------|-------------|-------|
 | 10% | **0.017** | 0.040 | 0.063 | 0.057 | 0.048 |
 | 30% | **0.021** | 0.038 | 0.048 | 0.061 | 0.058 |
 | 50% | **0.027** | 0.048 | 0.059 | 0.076 | 0.068 |
 | 70% | **0.049** | 0.092 | 0.135 | 0.128 | 0.093 |
 
-Under 70% extreme missingness, T1's MSE (0.049) is half that of PatchTST (0.092), demonstrating that CHead Attention's selective mechanism provides the greatest benefit at high missing rates. The model is trained with a 40% missing rate and generalizes directly to other rates without retraining.
+Under 70% extreme missingness, T1's MSE (0.049) is nearly half that of PatchTST (0.092), indicating that the CHead Attention's selectivity is most valuable at high missing rates.
 
-### Block Missingness Scenario (Simulating Sensor Failure)
+### Block Missing Scenario (Sensor Failure Simulation)
 
-Testing combines 5% point missingness with 0.15%-probability contiguous block missing of 24–96 steps. T1 achieves an average MSE of 0.026, a **48%** reduction over PatchTST (0.050). The advantage is largest on the Illness dataset: T1=0.037 vs. PatchTST=0.125.
+Tested with a combination of 5% point missing + continuous blocks of 24–96 steps (0.15% probability). T1's average MSE is 0.026, **48%** lower than PatchTST (0.050). On the Illness dataset, T1 (0.037) significantly outperforms PatchTST (0.125).
 
-### Naturally Missing Datasets
+### Natural Missing Datasets
 
-- **PhysioNet2012** (ICU data, ~80% inherent missingness + additional artificial missingness): T1 average MSE 0.075, a **23%** reduction over the second-best DLinear (0.097). Reasonable performance (MSE=0.106) is maintained even at a total missing rate of 94%.
-- **AQI36** (air quality, 15–30% natural missingness): T1 MSE 0.226, a **13%** reduction over PatchTST (0.262).
+- **PhysioNet2012** (ICU data, ~80% inherent missing + artificial): T1 achieves an average MSE of 0.075, **23%** lower than the second best DLinear (0.097). It maintains reasonable performance (MSE=0.106) even at 94% total missingness.
+- **AQI36** (Air quality, 15-30% natural): T1 MSE 0.226, **13%** lower than PatchTST (0.262).
 
 ### Ablation Study
 
-| Component | Alternative | Avg. MSE | Performance Drop |
+| Component | Alternative | Avg MSE | Gain |
 |------|---------|--------|---------|
-| **T1 (full model)** | — | **0.033** | — |
-| Cross-variable mechanism | Pointwise Conv replacing attention | 0.037 | +12.91% |
-| Cross-variable mechanism | Fully removed | 0.051 | +56.16% |
-| Channel-head binding | 8 channels/head | 0.035 | +7.45% |
-| Channel-head binding | 16 channels/head | 0.038 | +16.86% |
-| Channel-head binding | 32 channels/head | 0.037 | +14.57% |
-| Embedding | Mask channel removed | 0.034 | +3.64% |
-| Reconstruction | Linear upsampling replacing PixelShuffle | 0.034 | +3.19% |
+| **T1 Full Model** | — | **0.033** | — |
+| Cross-variable | Replace Attention with Ptwise Conv | 0.037 | +12.91% |
+| Cross-variable | Completely Remove | 0.051 | +56.16% |
+| Binding Granularity | 8 Channels/Head | 0.035 | +7.45% |
+| Binding Granularity | 16 Channels/Head | 0.038 | +16.86% |
+| Binding Granularity | 32 Channels/Head | 0.037 | +14.57% |
+| Embedding | Remove Mask Channel | 0.034 | +3.64% |
+| Reconstruction | Linear Up-sample vs PixelShuffle | 0.034 | +3.19% |
 
-Key findings: (1) Removing cross-variable modeling entirely causes a 56% performance drop → cross-variable information is critical for imputation; (2) Replacing attention with static convolution still incurs a 13% drop → dynamic selectivity matters more than fixed patterns; (3) One-to-one binding (128 channels/head) substantially outperforms 8/16/32-channel groupings → feature-level granularity of isolation is the key; (4) Notably, 16 channels/head performs worse than 32 channels/head, revealing a non-monotonic relationship — overly coarse grouping introduces harmful feature mixing.
-
-### Representation Analysis
-
-**Layer-wise Missing Response**: On ETTh1, with all other variables fixed at 40% missingness, the target variable's missing rate is varied from 10% to 70%. First-layer attention weights decrease by 46% (0.195→0.105), while the last layer decreases by only 6% (0.165→0.155). This indicates that shallow layers perform "coarse reconstruction," enabling deeper layers to access more complete information.
-
-**Channel-level Pattern Dependence**: For a target variable, peak vs. non-peak regions and high-variance vs. low-variance regions are separately masked (each at 30%). Different masking patterns produce markedly different attention responses — masking high-variance regions reduces attention by 10.4%, while masking low-variance regions reduces it by 7.5%. This confirms that CHead Attention's modulation depends on **which temporal patterns remain observable**, rather than on the simple missing ratio.
+Key Findings: (1) Removing cross-variable modeling causes a 56% performance drop, highlighting its criticality; (2) Dynamic selectivity via attention is 13% better than static Conv; (3) One-to-one binding (128 heads for 128 channels) is significantly better than coarser groupings, as grouping introduces harmful feature mixing.
 
 ## Highlights & Insights
 
-- **"Channel-head binding" is an elegant interface connecting CNN and Transformer**: Conventional approaches extract CNN features → concatenate/add → feed into Transformer, where features are mixed at the attention layer. By enforcing $n_h=C$, T1 turns each attention head into a "clean information conduit" transmitting only one type of feature. This design adds virtually no overhead yet delivers a qualitative improvement.
+- **Channel-Head Binding as an Elegant Interface**: Unlike traditional methods that mix features in the attention layer, T1's $n_h=C$ constraint makes each attention head a "pure information pipe" for one feature. This design carries almost zero additional overhead while providing fundamental improvements.
 
-- **The philosophy of "no explicit missing-data handling"**: No masked attention, no special treatment of missing positions, no conditioning on missing rate. The architecture itself naturally handles missingness — CNN channels produce weak features for missing regions, and attention down-weights accordingly. This "structural solution" is more elegant and more robust than explicit handling.
+- **Philosophy of "Implicit Missing Handling"**: Instead of mask attention or explicit conditioning, T1's architecture naturally handles missingness—CNN channels extract weak features from missing regions, and attention heads automatically down-weight them. This "structural solution" is more elegant and robust.
 
-- **A 46% MSE reduction is exceptionally rare on a mature problem**. Time-series imputation has attracted many methods; such a large improvement suggests that prior methods harbored fundamental architectural compromises — either strong temporal modeling but weak cross-variable capacity (CNN), or strong cross-variable modeling but temporally corrupted representations (Transformer). T1 identifies the correct division of labor.
+- **Breakthrough Margin**: A 46% reduction in MSE is rare for the well-studied problem of time-series imputation. This indicates previous architectures made fundamental compromises—either good temporal modeling with poor cross-variable transfer (CNN) or good cross-variable transfer with contaminated temporal features (Transformer).
 
-- **Practical value of unified hyperparameters**: The same configuration is used across all 11 datasets with no per-dataset tuning, dramatically reducing deployment overhead and suggesting that the architecture's inductive biases are sufficiently well-calibrated.
+- **Practicality of Unified Hyperparameters**: Using identical configurations for all 11 datasets lowers the deployment threshold and suggests a strong inductive bias in the architecture.
 
 ## Limitations & Future Work
 
-- The sequence length is fixed at 96; scalability to long sequences (e.g., 1000+ steps) is not validated, and PixelShuffle's upsampling ratio $r=T/L$ may require adjustment for very long sequences.
-- Training employs simple random-mask self-supervision; more advanced masking strategies (e.g., curriculum learning with progressively increasing missing rates) are unexplored.
-- CHead Attention's attention matrix has size $M \times M$ (variables × variables); sparsification may be needed when the number of variables is very large (e.g., thousands of sensors).
-- No in-depth comparison with diffusion-based models (CSDI/SSSD) on generation quality and diversity — diffusion models can produce multiple plausible imputations, whereas T1 provides only a point estimate.
+- Sequence length is fixed at 96; scalability for long sequences (e.g., 1000+) remains unverified.
+- Training uses simple random masking; more advanced strategies like curriculum learning could be explored.
+- CHead Attention complexity scales at $M \times M$ (variable count); sparsification might be needed for thousands of variables.
+- No deep comparison with diffusion models (e.g., CSDI) regarding generation diversity; T1 provides point estimates.
 
 ## Related Work & Insights
 
-- **vs. ModernTCN**: T1 directly adopts ModernTCN's DWConv design for temporal feature extraction but replaces its static pointwise mixing with dynamic CHead Attention → this substitution accounts for the majority of the 56% performance gain.
-- **vs. iTransformer**: Both use variable-axis attention, but iTransformer compresses the entire sequence into a single token, losing feature-level selectivity. T1 maintains $C$ independent information channels through CHead Attention.
-- **vs. ImputeFormer**: Dual-axis attention is theoretically comprehensive, but missingness creates "information breaks" across both axes. T1 avoids this by having CNN first perform robust feature extraction along the time axis.
-- **Broader Inspiration**: The channel-head binding idea may generalize to other scenarios requiring "reliability-aware cross-dimensional information transfer," such as multi-sensor fusion or multimodal learning with modality dropout.
+- **vs ModernTCN**: T1 utilizes the DWConv design from ModernTCN but replaces its static pointwise mixing with dynamic CHead Attention, contributing significantly to the performance gain.
+- **vs iTransformer**: While both use variable-axis attention, iTransformer compresses the sequence to a single token, losing feature-level selectivity. T1 maintains $C$ independent information channels.
+- **vs ImputeFormer**: Dual-axis attention creates "information fractures" when values are missing across both axes; T1 avoids this by performing robust temporal extraction via CNN first.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ CHead Attention is conceptually elegant; the one-to-one binding constraint is simple yet qualitatively impactful.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 11 datasets × 3 missing scenarios × 4 missing rates + natural missingness + ablations + representation analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ The motivational chain is complete, the four-paradigm comparison is intuitive, and the ablation design is insightful.
-- Value: ⭐⭐⭐⭐⭐ The 46% MSE reduction is a breakthrough contribution to time-series imputation; unified hyperparameters offer strong practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ CHead Attention is a精巧 (exquisite) concept; the one-to-one constraint is simple but essential.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 11 datasets across 3 missing scenarios and 4 missing rates, plus ablation and representation analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, intuitive paradigm comparisons, and insightful ablation design.
+- Value: ⭐⭐⭐⭐⭐ The 46% MSE reduction is a breakthrough in time-series imputation.
 
 <!-- RELATED:START -->
 
@@ -175,11 +180,11 @@ Key findings: (1) Removing cross-variable modeling entirely causes a 56% perform
 
 ## Related Papers
 
+- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
 - [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
+- [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
 - [\[NeurIPS 2025\] Channel Matters: Estimating Channel Influence for Multivariate Time Series](../../NeurIPS2025/time_series/channel_matters_estimating_channel_influence_for_multivariate_time_series.md)
 - [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
-- [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
-- [\[ICML 2026\] HELIX: Hybrid Encoding with Learnable Identity and Cross-dimensional Synthesis for Time Series Imputation](../../ICML2026/time_series/helix_hybrid_encoding_with_learnable_identity_and_cross-dimensional_synthesis_fo.md)
 
 </div>
 

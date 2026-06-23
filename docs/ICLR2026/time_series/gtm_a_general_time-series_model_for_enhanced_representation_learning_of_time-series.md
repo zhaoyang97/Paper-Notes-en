@@ -2,123 +2,122 @@
 title: >-
   [Paper Note] GTM: A General Time-series Model for Enhanced Representation Learning
 description: >-
-  [ICLR 2026][Time Series][Time series foundation model] GTM is a general time-series foundation model that captures temporal granularity-aware features via a Fourier attention mechanism and unifies reconstruction and auto…
+  [ICLR 2026][Time Series][Paper Note] GTM is proposed as a general time-series foundation model that captures time-granularity-aware features through a frequency-domain attention mechanism and unifies reconstruction and autoregressive pre-training objectives via hybrid masking. It achieves SOTA performance across multiple tasks, including forecasting, impu
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "Time series foundation model"
-  - "frequency-domain attention"
-  - "hybrid mask pre-training"
-  - "multi-task"
-  - "temporal granularity awareness"
+  - ICLR 2026
+  - Time Series
 date: 2026-05-08
-content_hash: 7aced6b83910bd1d
+content_hash: a0d6744797a1ac76
 ---
-
 # GTM: A General Time-series Model for Enhanced Representation Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2502.03264](https://arxiv.org/abs/2502.03264)  
 **Code**: [https://github.com/MMTS4All/GTM](https://github.com/MMTS4All/GTM)  
-**Area**: Time Series
-**Keywords**: Time series foundation model, frequency-domain attention, hybrid mask pre-training, multi-task, temporal granularity awareness
+**Area**: Time Series  
+**Keywords**: Time-series foundation model, frequency-domain attention, hybrid masking pre-training, multi-task, time-granularity-aware
 
 ## TL;DR
-GTM is a general time-series foundation model that captures temporal granularity-aware features via a Fourier attention mechanism and unifies reconstruction and autoregressive pre-training objectives through hybrid masking, achieving state-of-the-art performance across forecasting, imputation, anomaly detection, and classification tasks.
+GTM is proposed as a general time-series foundation model that captures time-granularity-aware features through a frequency-domain attention mechanism and unifies reconstruction and autoregressive pre-training objectives via hybrid masking. It achieves SOTA performance across multiple tasks, including forecasting, imputation, anomaly detection, and classification.
 
 ## Background & Motivation
 
-1. **Background**: Time series foundation models (TSFMs) fall into two categories — forecasting-specialized models (e.g., TimesFM, Lag-Llama) and multi-task models (e.g., Timer, UniTS). The former are optimized for forecasting, while the latter aim to cover diverse downstream tasks.
-2. **Limitations of Prior Work**: (a) Existing models primarily extract features in the time domain, neglecting frequency-domain distributional differences associated with temporal granularity; (b) multi-task TSFMs typically require task-specific modifications to tokenization, pre-training strategies, or projection heads, making them insufficiently task-agnostic.
-3. **Key Challenge**: How can a unified architecture and pre-training framework simultaneously learn rich time-series representations (including frequency-domain information) while seamlessly adapting to all generative downstream tasks?
-4. **Goal**: (a) Design a frequency-domain attention mechanism to capture distributional differences across temporal granularities (second/minute/hour/day); (b) unify reconstruction and autoregressive pre-training objectives so that the model requires no task-specific modifications across generative tasks.
-5. **Key Insight**: Through FFT analysis and 2D kernel density estimation on large-scale time-series data, the authors identify significant differences in the joint amplitude-frequency and phase-frequency distributions across temporal granularities — a critical but previously overlooked dimension that directly motivates the model design.
-6. **Core Idea**: Employ Fourier attention to capture temporal granularity-aware frequency features, and apply hybrid masking (random + tail-continuous) to unify reconstruction and autoregressive objectives, yielding the first generative task-agnostic time-series foundation model.
+1. **Background**: Time-series foundation models (TSFMs) are categorized into two types: forecasting-specific models (e.g., TimesFM, Lag-Llama) and multi-task models (e.g., Timer, UniTS). The former optimizes for forecasting, while the latter attempts to cover various downstream tasks.
+2. **Limitations of Prior Work**: (a) Existing models primarily extract features in the time domain, neglecting distribution differences related to time granularity in the frequency domain; (b) Multi-task TSFMs typically require modifications to tokenization, pre-training strategies, or projection heads for different tasks, failing to be truly "task-agnostic."
+3. **Key Challenge**: How to learn rich time-series representations (including frequency-domain information) within a unified architecture and pre-training framework that seamlessly adapts to all generative downstream tasks?
+4. **Goal**: (a) Design a frequency-domain attention mechanism to capture frequency distribution differences across different time granularities (second/minute/hour/day); (b) Unify reconstruction and autoregressive pre-training objectives so the model fits various generative tasks without task-specific modifications.
+5. **Key Insight**: Through FFT and 2D kernel density estimation (KDE) analysis of large-scale time-series data, the authors found significant differences in the joint distribution of amplitude-frequency and phase-frequency across different time granularities. This critical but overlooked dimension directly guides the model design.
+6. **Core Idea**: Utilize Fourier attention to capture time-granularity-aware frequency features and hybrid masking (random + tail-continuous) to unify reconstruction and autoregressive objectives, achieving the first generative-task-agnostic time-series foundation model.
 
 ## Method
 
 ### Overall Architecture
-GTM adopts a decoder-only Transformer architecture. The input is a univariate token sequence processed through RevIN normalization, channel-independent (CI) patching, and masking. The sequence passes through $N$ stacked decoder blocks — each comprising temporal self-attention followed by Fourier attention — and is then projected by a unified linear head to autoregressively generate outputs. Pre-training is conducted on the UTSD-12G large-scale dataset.
+GTM is a decoder-only Transformer. The pipeline ensures a single set of weights learns rich representations containing frequency-domain information while adapting to all generative downstream tasks with zero modification. Univariate sequences are normalized via RevIN, split by channel independence (CI), and patched into patch tokens. Then, hybrid masking is applied: each sample follows either "tail-continuous masking + autoregression" or "random span masking + reconstruction" based on a probability switch. Masked spans are randomly shuffled. The shuffled tokens, superimposed with 1D/2D position encodings, are fed into $N$ layers of stacked decoding blocks. Each block first passes through a temporal self-attention layer, followed by a Fourier attention layer to inject frequency-domain information. Finally, a unified linear projection layer autoregressively generates the masked positions. The entire model is pre-trained on the large-scale unlabeled UTSD-12G dataset, and the same weights and generation process are reused for downstream forecasting, imputation, and anomaly detection.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Univariate Sequence<br/>RevIN + CI + Patching"] --> B
+    B["Hybrid Masking<br/>Prob p: Tail-continuous (Autoregressive)<br/>Prob 1-p: Random span (Reconstruction)"] --> C
+    C["Input Embedding + 2D Pos Encoding + Span Shuffling"] --> D
+    subgraph D["N-layer Decoding Blocks"]
+        direction TB
+        D1["Temporal Self-Attention"] --> D2["Fourier Attention<br/>FFT → 5 Granularity Low-rank Ops<br/>+ Global Op (Weight α) → iFFT"]
+    end
+    D --> E["Unified Linear Projection<br/>Autoregressive Generation"]
+    E --> F["Downstream Tasks: Forecasting / Imputation / Anomaly Detection / Classification"]
+```
 
 ### Key Designs
 
-1. **Fourier Attention Module**:
-    - **Function**: Transforms temporal features in the frequency domain with temporal granularity awareness, capturing distributional differences across sampling rates.
-    - **Mechanism**: Column-wise FFT is first applied to the output of temporal self-attention: $\mathbf{H}_{\text{FFT}} = \text{FFT}(\mathbf{H}_{\text{TemAttOut}})$. Five low-rank frequency-domain learning matrices $\{(\mathbf{A}_i, \mathbf{B}_i)\}_{i=1}^5$ are designed to correspond to five temporal granularities (day/hour/minute/second/millisecond), supplemented by one fully connected global module. Temporal granularity is encoded as a five-tuple query; attention weights $\alpha$ are computed via softmax over five learnable keys and used for weighted aggregation: $\mathbf{H}_{\text{FourierAtt}} = \sum_{i=1}^{5} \alpha_i (\mathbf{A}_i \mathbf{B}_i) \mathbf{H}_{\text{FFT}} + \mathbf{W}_{\text{full}} \mathbf{H}_{\text{FFT}}$. An inverse FFT then maps the result back to the time domain.
-    - **Design Motivation**: Empirical observation reveals significant frequency distribution differences across granularities. Low-rank decomposition controls parameter count, while the global module captures granularity-agnostic universal frequency patterns.
+**1. Hybrid Masking Pre-training: Unifying Reconstruction and Autoregression via a Probability Switch**
+Purely reconstructive pre-training learns rich representations but lacks extrapolation capability, while purely autoregressive pre-training excels at forecasting but yields limited representation quality. Previous multi-task TSFMs often switched tokenization or strategies for different tasks. GTM uses a hyperparameter $pred\_ratio$ (probability $p$) as a switch: each sample applies a tail-continuous mask for autoregressive objectives with probability $p$, and random span masking for reconstruction with probability $1-p$. The reconstruction branch uses full attention to see the entire context, while the autoregressive branch uses causal attention to prevent leakage. Thus, the same pre-trained weights possess both representation and forecasting capabilities, allowing zero-modification reuse for downstream imputation (reconstruction) and forecasting (autoregression).
 
-2. **Hybrid Mask Pre-training Strategy**:
-    - **Function**: Simultaneously learns reconstruction and autoregressive capabilities under a single unified objective.
-    - **Mechanism**: A hyperparameter $pred\_ratio$ controls the probability of applying tail-continuous masking. Each training sample undergoes tail-continuous masking (autoregressive prediction) with probability $p$, or random span masking (reconstruction) with probability $1-p$. Masked spans are randomly permuted and concatenated with [START]/[END] tokens. Full attention is used for reconstruction and causal attention for autoregression to prevent information leakage.
-    - **Design Motivation**: Pure reconstruction pre-training excels at representation learning but underperforms in forecasting; pure autoregressive pre-training favors forecasting but yields limited representation quality. The hybrid strategy endows the model with both capabilities, enabling it to be truly task-agnostic.
+**2. 2D Position Encoding + Span Shuffling: Length Awareness for Masked Spans**
+Hybrid masking randomly rearranges masked spans and appends [START]/[END] tokens. The model must know the length of the segment to be filled to align outputs correctly. Borrowing from GLM, GTM superimposes 1D and 2D position encodings on input embeddings: $\mathbf{H}_{in} = \mathbf{W}_{emb} \mathbf{X}_{in} + \mathbf{W}_{1D\_pos} + \mathbf{W}_{2D\_pos}$. The 1D encoding captures the global position of the patch in the original sequence, while the 2D encoding captures the relative position within the span and the span length. Combined with span shuffling, this ensures length-controllable generation and increases pre-training robustness.
 
-3. **2D Positional Encoding + Span Shuffling**:
-    - **Function**: Incorporates 1D and 2D positional encodings into the input embedding and applies random permutation to masked spans.
-    - **Mechanism**: $\mathbf{H}_{in} = \mathbf{W}_{emb} \mathbf{X}_{in} + \mathbf{W}_{1D\_pos} + \mathbf{W}_{2D\_pos}$. The 2D positional encoding enables the model to perceive the length of masked spans, and span shuffling improves pre-training robustness.
-    - **Design Motivation**: Inspired by GLM, this design ensures the model is aware of the span length to be filled during generation.
+**3. Fourier Attention: Injecting "Sampling Granularity" as a Prior into Frequency Modeling**
+Empirical analysis of massive sequences shows systematic differences in amplitude/phase distributions across second, minute, hour, and day scales—a dimension usually ignored by TSFMs modeled purely in the time domain. GTM adds a frequency-domain branch after temporal self-attention in each block: the temporal output undergoes FFT along columns $\mathbf{H}_{\text{FFT}} = \text{FFT}(\mathbf{H}_{\text{TemAttOut}})$. Five low-rank matrix pairs $\{(\mathbf{A}_i, \mathbf{B}_i)\}_{i=1}^5$ correspond to day/hour/minute/second/millisecond granularities, plus a fully connected global branch $\mathbf{W}_{\text{full}}$ for granularity-agnostic patterns. The time granularity of the current sequence is encoded as a 5-tuple query (e.g., ETTm as $[0,0,15,0,0]$), which yields weights $\alpha$ via softmax with learnable keys. Transformations are aggregated: $\mathbf{H}_{\text{FourierAtt}} = \sum_{i=1}^{5} \alpha_i (\mathbf{A}_i \mathbf{B}_i) \mathbf{H}_{\text{FFT}} + \mathbf{W}_{\text{full}} \mathbf{H}_{\text{FFT}}$, followed by iFFT. Low-rank decomposition minimizes parameters, while attention allows adaptive selection of frequency operators.
 
 ### Loss & Training
-- MSE loss: $\text{Loss} = \frac{1}{|\mathbf{Y}|} \sum_i \|\mathbf{X}_{out_i} - \mathbf{y}_i\|^2$
-- Autoregressive generation: $\mathbb{P}(\mathbf{X}_{out}) = \prod_i \mathbb{P}(\mathbf{X}_{out_i} | \mathbf{X}_{P_{crpt}}, \mathbf{S}_{\sigma(j \leq i)})$
-- Pre-training data: UTSD-12G, with no downstream data leakage
-- Downstream tasks require only fine-tuning; forecasting, imputation, and anomaly detection involve no architectural modification, while classification replaces only the projection head.
+The model uses MSE to supervise the reconstruction/prediction of masked positions: $\text{Loss} = \frac{1}{|\mathbf{Y}|} \sum_i \|\mathbf{X}_{out_i} - \mathbf{y}_i\|^2$. The autoregressive branch generates tokens sequentially: $\mathbb{P}(\mathbf{X}_{out}) = \prod_i \mathbb{P}(\mathbf{X}_{out_i} \mid \mathbf{X}_{P_{crpt}}, \mathbf{S}_{\sigma(j \leq i)})$. Pre-training is conducted only on UTSD-12G with strict isolation from evaluation data. Downstream forecasting, imputation, and anomaly detection use the exact same architecture, whereas classification requires a replaced projection head.
 
 ## Key Experimental Results
 
 ### Main Results — Long-term Forecasting
-Average MSE/MAE over prediction horizons $T \in \{96, 192, 336, 720\}$:
+Average MSE/MAE, prediction length $T \in \{96, 192, 336, 720\}$:
 
 | Dataset | GTM MSE | PatchTST MSE | TimesNet MSE | GPT4TS MSE | Gain |
-|---------|---------|-------------|-------------|-----------|------|
-| ETTh1 | **0.404** | 0.413 | 0.458 | 0.427 | vs PatchTST: −2.2% |
-| ETTm1 | **0.339** | 0.352 | 0.400 | 0.352 | vs PatchTST: −3.7% |
-| Weather | **0.225** | 0.225 | 0.259 | 0.237 | On par with PatchTST |
-| Traffic | **0.385** | 0.390 | 0.620 | 0.414 | vs PatchTST: −1.3% |
-| Electricity | **0.161** | 0.159 | 0.192 | 0.167 | Slightly below PatchTST |
+|--------|---------|-------------|-------------|-----------|------|
+| ETWh1 | **0.404** | 0.413 | 0.458 | 0.427 | vs PatchTST: -2.2% |
+| ETTm1 | **0.339** | 0.352 | 0.400 | 0.352 | vs PatchTST: -3.7% |
+| Weather | **0.225** | 0.225 | 0.259 | 0.237 | Par with PatchTST |
+| Traffic | **0.385** | 0.390 | 0.620 | 0.414 | vs PatchTST: -1.3% |
+| Electricity | **0.161** | 0.159 | 0.192 | 0.167 | PatchTST slight lead |
 
 ### Ablation Study
 
-| Configuration | ETTh1 MSE | ETTm1 MSE | Weather MSE | Note |
-|--------------|-----------|-----------|------------|------|
-| GTM (full) | 0.404 | 0.339 | 0.225 | Full model |
-| w/o frequency module | ~0.415+ | ~0.345+ | ~0.230+ | Baseline variant |
-| w/o granularity-aware module | ~0.410+ | ~0.342+ | ~0.228+ | Advanced variant without granularity |
-| w/o pre-training | 0.435 | 0.351 | 0.244 | MSE increases by 0.5%–7.8% |
+| Config | ETTh1 MSE | ETTm1 MSE | Weather MSE | Description |
+|------|-----------|-----------|------------|------|
+| GTM Full | 0.404 | 0.339 | 0.225 | Complete model |
+| w/o Freq Module | ~0.415+ | ~0.345+ | ~0.230+ | Baseline version |
+| w/o Granularity | ~0.410+ | ~0.342+ | ~0.228+ | Freq module w/o granularity |
+| w/o Pre-train | 0.435 | 0.351 | 0.244 | MSE increases 0.5%-7.8% |
 
-### Other Task Performance
-- **Imputation**: ETTh1 MSE 0.053 (vs GPT4TS 0.069, +23.1%); ETTm1 MSE 0.021 (vs TimesNet 0.027, +25.0%)
-- **Anomaly Detection**: Average F1 87.01% (vs GPT4TS 86.72%)
-- **Classification**: Best on 5 and second-best on 4 out of 10 datasets
-- **Zero-shot Forecasting**: Average MSE 0.380 (vs Timer-1B 0.392, MOIRAI-S 0.405)
+### Other Tasks
+- **Imputation**: ETTh1 MSE 0.053 (vs GPT4TS 0.069, +23.1% gain); ETTm1 MSE 0.021 (vs TimesNet 0.027, +25.0% gain).
+- **Anomaly Detection**: Avg F1 87.01% (vs GPT4TS 86.72%).
+- **Classification**: Best on 5/10 datasets, second best on 4/10.
+- **Zero-shot Forecasting**: Avg MSE 0.380 (vs Timer-1B 0.392, MOIRAI-S 0.405).
 
 ### Key Findings
-- The **temporal granularity-aware module** within Fourier attention contributes most significantly — removing it degrades performance across all datasets.
-- Pre-training yields consistent improvements: forecasting MSE decreases by 0.5%–7.8%, imputation MSE by 1.2%–11.7%, and anomaly detection F1 increases by 1.2%.
-- The model follows a scaling law: increasing layer depth, model dimension, and pre-training data volume all lead to sustained performance gains.
-- Fine-tuning on only 10% of data surpasses the few-shot performance of TimesFM.
+- The **time-granularity-aware module** in Fourier attention contributes most; removing it degrades performance across all datasets.
+- Pre-training yields consistent gains: Forecasting MSE drops by 0.5%-7.8%, Imputation MSE drops by 1.2%-11.7%, and Anomaly Detection F1 increases by 1.2%.
+- The model follows the scaling law: performance improves with increased layers, dimensions, and pre-training data.
+- Fine-tuning with only 10% of data outperforms the few-shot performance of TimesFM.
 
 ## Highlights & Insights
-- **Temporal granularity-aware modeling in the frequency domain** is a particularly novel contribution: empirical analysis first identifies distributional differences across granularities, which are then incorporated into the model through low-rank matrices and adaptive attention weighting — an elegant way to embed domain priors. This technique is transferable to any scenario involving multi-scale temporal data (e.g., multi-resolution remote sensing, audio processing).
-- **Hybrid mask pre-training** addresses a long-standing tension between two pre-training paradigms: reconstruction and autoregression. GTM unifies both via a probabilistic switch, enabling the same pre-trained model to seamlessly handle both imputation (reconstruction) and forecasting (autoregression).
-- **Truly generative task-agnostic design**: forecasting, imputation, and anomaly detection all share an identical architecture without modification — a first in the TSFM literature.
+- **Novelty in granularity-aware frequency modeling**: The empirical analysis of frequency distribution differences across granularities and their adaptive integration via low-rank matrices elegantly incorporates prior knowledge. This trick is transferable to any multi-time-scale scenario (e.g., remote sensing, audio).
+- **Unified Pre-training via Hybrid Masking**: Addresses the long-standing divide between reconstruction and autoregressive paradigms. A simple probability switch allows the model to be natively compatible with both imputation and forecasting.
+- **True Generative-Task Independence**: Zero architecture changes for forecasting, imputation, and anomaly detection is a significant milestone in the TSFM field.
 
 ## Limitations & Future Work
-- The channel-independent (CI) strategy completely ignores cross-channel dependencies in multivariate settings — spatial modules (e.g., CPiRi-style methods) could be incorporated.
-- Temporal granularity encoding relies on a manually defined five-tuple, which requires domain prior knowledge — automatic learning of granularity representations from data would be preferable.
-- Classification still requires replacing the projection head (not fully task-agnostic) — prompt-based or in-context learning approaches could address this.
-- The domain coverage of the UTSD-12G pre-training dataset may limit zero-shot generalization — on some datasets (e.g., Traffic), zero-shot performance falls short of Timer-1B.
+- Uses Channel Independence (CI), ignoring cross-channel relationships—could incorporate spatial modules like CPiRi.
+- Time granularity encoding is manual (5-tuple); could granularity representations be learned automatically?
+- Classification still requires a modified projection head (not entirely task-agnostic)—could prompt or in-context learning be used?
+- UTSD-12G domain coverage might affect zero-shot generalization; some datasets (e.g., Traffic) lag behind Timer-1B.
 
 ## Related Work & Insights
-- **vs Timer**: Timer employs pure autoregressive pre-training and requires strategy switching across tasks; GTM unifies objectives via hybrid masking.
-- **vs PatchTST**: PatchTST pioneered CI + patch modeling but operates exclusively in the time domain; GTM extends this with frequency-domain analysis.
-- **vs MOIRAI**: MOIRAI also addresses cross-frequency learning but uses a masked Transformer architecture; GTM's Fourier attention more explicitly models granularity differences.
-- **vs UniTS**: UniTS supports multi-task learning via task tokenization, requiring task-specific tokens; GTM requires none.
+- **vs Timer**: Timer uses pure autoregressive pre-training and requires task-specific strategy switching; GTM unifies objectives via hybrid masking.
+- **vs PatchTST**: PatchTST pioneered CI + patching but focuses on the time domain; GTM adds frequency-domain analysis.
+- **vs MOIRAI**: MOIRAI targets cross-frequency learning but uses a masked Transformer; GTM explicitly models granularity differences via Fourier attention.
+- **vs UniTS**: UniTS uses task tokenization/tokens; GTM achieves multi-tasking without task-specific tokens.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Fourier attention and hybrid mask pre-training represent meaningful innovations, though the overall framework builds on existing components.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers forecasting, imputation, anomaly detection, classification, zero-shot, few-shot, ablation, and scaling law experiments comprehensively.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured, though certain details (e.g., computational complexity analysis of Fourier attention) could be elaborated further.
-- Value: ⭐⭐⭐⭐ The first generative task-agnostic TSFM; highly practical and suitable for industrial deployment.
+- Novelty: ⭐⭐⭐⭐ (Fourier attention and hybrid masking are meaningful innovations)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Forecasting, imputation, anomaly detection, classification, zero-shot, few-shot, ablation, scaling law)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, though complexity analysis of Fourier attention could be deeper)
+- Value: ⭐⭐⭐⭐ (First generative-task-agnostic TSFM with high industrial deployment potential)
 
 <!-- RELATED:START -->
 
@@ -126,10 +125,10 @@ Average MSE/MAE over prediction horizons $T \in \{96, 192, 336, 720\}$:
 
 ## Related Papers
 
-- [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
-- [\[AAAI 2026\] Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering](../../AAAI2026/time_series/mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti.md)
-- [\[AAAI 2026\] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning](../../AAAI2026/time_series/beyond_observations_reconstruction_error-guided_irregularly_sampled_time_series_.md)
+- [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
+- [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
 - [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
 
 </div>

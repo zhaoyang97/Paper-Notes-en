@@ -2,152 +2,163 @@
 title: >-
   [Paper Note] Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments
 description: >-
-  [ICLR 2026][Robotics][Partial equivariance] This paper proposes the Partially Invariant MDP (PI-MDP) framework, which employs a learnable gating function $\lambda(s…
+  [ICLR 2026][Robotics & Embodied AI][Paper Note] A Partially Group Invariant MDP (PI-MDP) framework is proposed, utilizing a learnable gating function $\lambda(s,a)$ to point-wise switch between equivariant and standard Bellman updates in the state-action space. It is theoretically proven that local symmetry breaking is amplified $1/(1-\gamma)$ times through discount
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "Partial equivariance"
-  - "symmetry breaking"
-  - "group-invariant MDP"
-  - "gated policy"
-  - "Bellman error propagation"
+  - ICLR 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: ffba62141d07f822
+content_hash: 284a3bbfda9c1b63
 ---
-
 # Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.00915](https://arxiv.org/abs/2512.00915)  
 **Code**: [Project Page](https://pranaboy72.github.io/perl_page/)  
-**Area**: Reinforcement Learning / Equivariance
-**Keywords**: Partial equivariance, symmetry breaking, group-invariant MDP, gated policy, Bellman error propagation
+**Area**: Reinforcement Learning/Equivariance  
+**Keywords**: Partial Equivariance, Symmetry Breaking, Group Invariant MDP, Gating Strategy, Bellman Error Propagation
 
 ## TL;DR
 
-This paper proposes the Partially Invariant MDP (PI-MDP) framework, which employs a learnable gating function $\lambda(s,a)$ to pointwise switch between equivariant and standard Bellman updates across the state-action space. The paper theoretically proves that local symmetry breaking propagates through discounted backup and amplifies global value function error by a factor of $1/(1-\gamma)$, while PI-MDP provably confines the error strictly within the breaking region. The framework is instantiated as PE-DQN and PE-SAC, achieving comprehensive improvements over strictly equivariant and approximately equivariant baselines on Grid-World, MuJoCo locomotion, and robotic manipulation tasks.
+A Partially Group Invariant MDP (PI-MDP) framework is proposed, utilizing a learnable gating function $\lambda(s,a)$ to point-wise switch between equivariant and standard Bellman updates in the state-action space. It is theoretically proven that local symmetry breaking is amplified $1/(1-\gamma)$ times through discounted backup to produce global value function errors, whereas PI-MDP strictly confines errors within the symmetry-breaking regions. Instantiated as PE-DQN and PE-SAC algorithms, the method outperforms strict and approximate equivariant baselines across Grid-World, MuJoCo locomotion, and robotic arm manipulation tasks.
 
 ## Background & Motivation
 
-**Background**: Group equivariance provides a powerful inductive bias for reinforcement learning. By constructing group-invariant MDPs — requiring that reward function $R(s,a)=R(gs,ga)$ and transition kernel $P(s'|s,a)=P(gs'|gs,ga)$ hold for all group elements $g \in G$ — equivariant networks enable zero-shot generalization across symmetric states, substantially improving sample efficiency. Existing equivariant RL works (e.g., EMLP-based RPP, equivariant DQN) are built on the premise that the environment fully satisfies the group-invariant assumption.
+**Background**: Group equivariance provides a powerful inductive bias for reinforcement learning. By constructing Group Invariant MDPs (requiring reward $R(s,a)=R(gs,ga)$ and transition kernel $P(s'|s,a)=P(gs'|gs,ga)$ to hold for all elements $g \in G$), equivariant networks achieve zero-shot generalization between symmetric states, significantly improving sample efficiency. Existing equivariant RL works (e.g., EMLP-based RPP, Equivariant DQN) rely on the assumption that the environment fully satisfies group invariance.
 
-**Limitations of Prior Work**: Real-world control tasks can almost never fully satisfy group-invariant conditions. In robotic control, ground contact forces break vertical symmetry, actuator torque limits break joint symmetry, and the presence of obstacles breaks spatial rotational symmetry. The critical issue is that even when symmetry is broken only in a local region of the state-action space, conventional equivariant RL produces incorrect value estimates in that region, and this local error propagates and amplifies throughout the entire space via Bellman backup, ultimately causing global policy degradation or training failure.
+**Limitations of Prior Work**: Real-world control tasks rarely satisfy group invariance perfectly. In robotic control, ground contact forces break vertical symmetry, actuator torque limits break joint symmetry, and obstacles break spatial rotation symmetry. The critical issue is that even if symmetry is broken only in a local region of the state-action space, traditional equivariant RL produces incorrect value estimates in that region. This local error propagates and amplifies through Bellman backup across the entire space, leading to global policy degradation or training failure.
 
-**Key Challenge**: Strictly equivariant methods introduce uncontrollable errors in breaking regions; existing approximately equivariant methods (e.g., RPP, which globally relaxes equivariance constraints via residual pathways) provide some robustness, but their "globally uniform relaxation" strategy either sacrifices sample efficiency in fully symmetric regions or remains unstable under severe breaking — because such methods cannot distinguish "where symmetry holds and where it does not."
+**Key Challenge**: Strict equivariant methods introduce uncontrollable errors in broken regions. Existing approximate equivariant methods (e.g., RPP via global relaxation of constraints through residual paths) provide some robustness but employ a "global uniform relaxation" strategy. This either loses sample efficiency in fully symmetric regions or remains unstable when breaking is severe, as it cannot distinguish between "where it is symmetric" and "where it is not."
 
-**Goal**: (1) Quantify how local symmetry breaking propagates through the Bellman operator into global value function error; (2) Design a framework that can pointwise select between equivariant and standard updates across the state-action space; (3) Automatically detect symmetry-breaking regions in a data-driven manner without prior knowledge.
+**Goal**: (1) Quantify how local symmetry breaking propagates as global value function error through the Bellman operator; (2) Design a framework capable of point-wise selection between equivariant and standard updates in the state-action space; (3) Automatically detect symmetry-breaking regions in a data-driven manner without prior knowledge.
 
-**Key Insight**: The authors observe that the deviation between the group-invariant MDP $\mathcal{M}_E$ and the true MDP $\mathcal{M}_N$ can be precisely described by pointwise reward deviation $\epsilon_R(s,a)$ and transition deviation $\epsilon_P(s,a)$. If one can revert to standard updates in regions where $\epsilon > 0$, error propagation can be blocked at the source.
+**Key Insight**: The authors observe that the discrepancy between a Group Invariant MDP $\mathcal{M}_E$ and a real MDP $\mathcal{M}_N$ can be precisely described by point-wise reward deviation $\epsilon_R(s,a)$ and transition deviation $\epsilon_P(s,a)$. Reverting to standard updates in regions where $\epsilon>0$ can block error propagation at the source.
 
-**Core Idea**: A learnable binary gating function $\lambda(s,a)$ automatically selects between equivariant and standard Bellman updates at each state-action pair, preserving sample efficiency in symmetric regions while preventing errors in breaking regions from propagating outward.
+**Core Idea**: Use a learnable binary gating function $\lambda(s,a)$ to automatically select either equivariant or standard Bellman updates for each state-action pair. This maintains sample efficiency in symmetric regions while preventing errors in broken regions from propagating outward.
 
 ## Method
 
 ### Overall Architecture
 
-PERL (Partially Equivariant RL) maintains two parallel sets of value function/policy networks — one satisfying group equivariance constraints $(Q_E, \pi_E)$ and one unconstrained standard network $(Q_N, \pi_N)$ — along with a gating function $\lambda_\omega(s,a) \in \{0,1\}$ that determines whether each state-action pair lies in a symmetry-breaking region. The final Q-value and policy perform hard switching between the two networks via $\lambda$: equivariant networks are used in symmetric regions, and standard networks in breaking regions. Training is conducted in the true environment $\mathcal{M}_N$, and the gating function receives supervision from the disagreement between two one-step predictors.
+The PERL (Partially Equivariant RL) workflow maintains two parallel value function/policy networks: a group-equivariant $(Q_E, \pi_E)$ and an unconstrained standard network $(Q_N, \pi_N)$. Simultaneously, a gating function $\lambda_\omega(s,a) \in \{0,1\}$ is trained to determine if a state-action pair lies in a symmetry-breaking region. Final Q-values and policies are determined by a hard switch via $\lambda$: equivariant networks for symmetric regions and standard networks for broken regions. Training occurs in the real environment $\mathcal{M}_N$, with supervision for the gating function provided by the divergence of two one-step predictors. The runtime data flow is: gating $\lambda_\omega$ is trained via predictor divergence (symmetry-breaking detection), then $\lambda_\omega$ point-wise blends the equivariant and standard networks (PI-MDP), followed by TD/Actor updates in the real environment. The error propagation analysis supports this "point-wise switching" routing theoretically rather than acting as a runtime module.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    ENV["Real Env M_N<br/>Collect transitions (s,a,r,s')"] --> DET
+    subgraph DET["Symmetry-breaking detection via predictor divergence"]
+        direction TB
+        PE["Equivariant one-step predictor<br/>Constrained by G, P_E"] --> DIS["Divergence Score<br/>d(s,a)=D(P_E, P_N)"]
+        PN["Standard one-step predictor<br/>Unconstrained P_N"] --> DIS
+        DIS --> GATE["Gating Net λ_ω(s,a)<br/>Upper tail anomaly→Pseudo-label→BCE"]
+    end
+    GATE -->|"Point-wise hard switch λ∈{0,1}"| PIMDP
+    subgraph PIMDP["Partially Group Invariant MDP (PI-MDP)"]
+        direction TB
+        QE["Equivariant Net Q_E, π_E"] -->|"λ=0 Symmetric"| BLEND["Blended Value/Policy<br/>(1-λ)·Equi + λ·Std"]
+        QN["Standard Net Q_N, π_N"] -->|"λ=1 Broken"| BLEND
+    end
+    BLEND --> UPD["TD / PoE Actor Update in M_N"]
+```
 
 ### Key Designs
 
-1. **Theoretical Analysis of Local-to-Global Error Propagation**:
+**1. Local-to-Global Error Propagation Analysis: Quantifying the Impact of Breaking**
 
-    - **Function**: Provides the theoretical foundation for why selective equivariance is necessary.
-    - **Mechanism**: Defines pointwise deviations between the true MDP and the group-invariant MDP: $\epsilon_R(s,a) = |R_N(s,a) - R_E(s,a)|$ and $\epsilon_P(s,a) = \frac{1}{2}\int|P_N(s'|s,a) - P_E(s'|s,a)|ds'$. Lemma 1 proves that the single-step Bellman error is $\leq \epsilon_R(s,a) + 2\gamma V_{\max}\epsilon_P(s,a)$. Proposition 1 further proves that the global error of the optimal value function satisfies $\|Q_N^* - Q_E^*\|_\infty \leq \frac{1}{1-\gamma}\|\delta\|_\infty$, i.e., local error is amplified by $(1-\gamma)^{-1}$ through backup to affect the global value function.
-    - **Design Motivation**: This theoretical result clearly identifies the root cause of strictly equivariant RL's failure in breaking environments — not that equivariance itself is harmful, but that local MDP mismatch is amplified into a global problem via Bellman backup.
+To justify the necessity of point-wise processing over global relaxation, the authors quantify the global consequences of local breaking. The gap between the real MDP $\mathcal{M}_N$ and the Group Invariant MDP $\mathcal{M}_E$ is characterized by point-wise deviations: reward deviation $\epsilon_R(s,a) = |R_N(s,a) - R_E(s,a)|$ and transition deviation $\epsilon_P(s,a) = \frac{1}{2}\int|P_N(s'|s,a) - P_E(s'|s,a)|ds'$. Lemma 1 provides a single-step upper bound: the Bellman error at $(s,a)$ does not exceed $\epsilon_R(s,a) + 2\gamma V_{\max}\epsilon_P(s,a)$. Critically, Proposition 1 shows that after accumulating these single-step errors through Bellman backup, the global error of the optimal value function is amplified:
 
-2. **Partially Invariant MDP (PI-MDP) Framework**:
+$$\|Q_N^* - Q_E^*\|_\infty \leq \frac{1}{1-\gamma}\|\delta\|_\infty$$
 
-    - **Function**: Formally defines the concept of "selective equivariance" at the MDP level.
-    - **Mechanism**: Introduces gating function $\lambda: \mathcal{S}\times\mathcal{A} \to [0,1]$ and defines mixed reward $R_H = (1-\lambda)R_E + \lambda R_N$ and transition kernel $P_H = (1-\lambda)P_E + \lambda P_N$. Theorem 1 proves that the PI-MDP Bellman operator $\mathcal{T}_H$ satisfies an affine decomposition (a convex combination of equivariant and standard operators) and remains a $\gamma$-contraction, guaranteeing a unique fixed point. Corollary 1 gives the key bound: $\|Q_H^* - Q_N^*\|_\infty \leq \frac{1}{1-\gamma}\|(1-\lambda)\delta\|_\infty$, which reduces to zero when $\lambda = 1$ in breaking regions.
-    - **Design Motivation**: Elevates the intuition of "use equivariance where it holds, standard otherwise" into an MDP framework with rigorous theoretical guarantees. The convex combination preserves MDP validity, $\gamma$-contraction ensures convergence, and the error bound prescribes how $\lambda$ should be designed.
+This implies that even if breaking occurs in one local region, discounted backup amplifies it by $(1-\gamma)^{-1}$, contaminating the entire value function. This explains why strict equivariant RL fails in real environments: the issue isn't the equivariance prior, but the local MDP mismatch being transported and amplified globally.
 
-3. **Symmetry-Breaking Detection via Predictor Disagreement**:
+**2. Partially Group Invariant MDP (PI-MDP): Embedding "Where to be Equivariant" into the MDP**
 
-    - **Function**: Automatically identifies whether each $(s,a)$ lies in a symmetry-breaking region without prior knowledge.
-    - **Mechanism**: Two one-step predictors are trained — an equivariant predictor $\hat{P}_E$ subject to group constraints and an unconstrained standard predictor $\hat{P}_N$. In symmetric regions both predictors agree (low disagreement); in breaking regions, $\hat{P}_E$ can only represent a group-averaged surrogate dynamics while $\hat{P}_N$ approximates the true dynamics, resulting in high disagreement. A disagreement score $d(s,a) = D(\hat{P}_E, \hat{P}_N)$ is computed, high-disagreement samples are treated as anomalies (upper-tail distribution), pseudo-labels $y \in \{0,1\}$ are generated, and the gating network $\lambda_\omega$ is trained with binary cross-entropy loss. The gating network is frozen during RL updates and receives no RL gradients.
-    - **Design Motivation**: Directly measuring $\epsilon_R, \epsilon_P$ requires knowledge of the group-invariant MDP (typically unavailable), while predictor disagreement provides an indirect but practical surrogate signal. Anomaly detection avoids the need to set hard thresholds.
+The error bound suggests reverting to standard updates in broken regions where $\delta>0$ to nullify that term. The authors formalize this as the PI-MDP framework, introducing a gating function $\lambda: \mathcal{S}\times\mathcal{A} \to [0,1]$ to define hybrid reward and transition kernels via convex combinations:
+
+$$R_H = (1-\lambda)R_E + \lambda R_N, \qquad P_H = (1-\lambda)P_E + \lambda P_N$$
+
+This ensures $P_H$ remains a valid transition kernel. Theorem 1 proves the corresponding Bellman operator $\mathcal{T}_H$ can be affinely decomposed and remains a $\gamma$-contraction mapping, ensuring convergence to a unique fixed point. Corollary 1 provides the key error bound $\|Q_H^* - Q_N^*\|_\infty \leq \frac{1}{1-\gamma}\|(1-\lambda)\delta\|_\infty$. By setting $\lambda=1$ in broken regions, $(1-\lambda)\delta$ becomes zero, theoretically reducing the PI-MDP optimal value function error to zero.
+
+**3. Symmetry-Breaking Detection via Predictor Divergence: Unsupervised Identification**
+
+Since $\epsilon_R, \epsilon_P$ are not directly measurable without knowing the true underlying group-invariant MDP, the authors use a proxy signal. They train two one-step predictors: an equivariant predictor $\hat{P}_E$ (constrained by the group) and a standard predictor $\hat{P}_N$ (unconstrained). In symmetric regions, both fit the dynamics consistently; in broken regions, $\hat{P}_E$ can only represent the "group-averaged" dynamics, while $\hat{P}_N$ approximates the true dynamics, leading to divergence. The divergence score $d(s,a) = D(\hat{P}_E, \hat{P}_N)$ identifies high-discrepancy samples from the upper tail as anomalies for generating pseudo-labels $y \in \{0,1\}$, which are used to train the gating network $\lambda_\omega$ via binary cross-entropy.
 
 ### Loss & Training
 
-**Critic Loss**: Gated mixed Q-value $Q_\theta(s,a) = (1-\lambda_\omega)Q_{E,\theta}(s,a) + \lambda_\omega Q_{N,\theta}(s,a)$, trained with standard TD targets (hard max for DQN, soft max for SAC). $\lambda_\omega$ is treated with stop-gradient when computing TD targets.
+**Critic Loss**: The blended Q-value $Q_\theta(s,a) = (1-\lambda_\omega)Q_{E,\theta}(s,a) + \lambda_\omega Q_{N,\theta}(s,a)$ is trained with standard TD targets. During TD calculation, $\lambda_\omega$ is treated with stop-gradient.
 
-**Actor Loss (SAC variant)**: Introduces a state-level gate $\lambda_\zeta(s)$; the policy takes a Product of Experts (PoE) form $\pi_\phi \propto \pi_E^{1-\lambda_\zeta} \cdot \pi_N^{\lambda_\zeta}$. $\lambda_\zeta$ is aggregated from $\lambda_\omega(s,a)$ via expectile regression — using expectile loss with $\tau \to 1$ to approximate $\max_a \lambda_\omega(s,a)$, ensuring that as long as any action triggers a breaking signal at a given state, the entire policy switches to standard mode (conservative policy).
+**Actor Loss (SAC variant)**: A state-level gate $\lambda_\zeta(s)$ is introduced, and the policy uses a Product of Experts (PoE) form $\pi_\phi \propto \pi_E^{1-\lambda_\zeta} \cdot \pi_N^{\lambda_\zeta}$. $\lambda_\zeta$ is aggregated from $\lambda_\omega(s,a)$ via expectile regression (with $\tau \to 1$) to approximate $\max_a \lambda_\omega(s,a)$, ensuring the policy switches to standard mode if any action at that state triggers a breaking signal.
 
-**Predictor Loss**: $\hat{P}_E$ and $\hat{P}_N$ fit one-step transitions using equivariant and standard networks respectively, optionally augmented with reward prediction heads $\hat{R}_i(s,a)$ for detecting reward-level symmetry breaking.
+**Predictor Loss**: $\hat{P}_E$ and $\hat{P}_N$ are trained to fit one-step transitions using equivariant and standard networks, respectively. An optional reward prediction head $\hat{R}_i(s,a)$ is used to detect reward-level symmetry breaking.
 
-**Overall Training Loop**: Each step proceeds as: collect data → update predictors → compute disagreement → update gate → update critic → update actor → soft update target networks. Each component (critic, actor, predictors, gate) uses independent trunks to ensure training stability.
+**Overall Training Loop**: Each step involves: data collection → updating predictors → calculating divergence → updating gating → updating critic → updating actor → soft updating target networks. Components use independent trunks for stability.
 
 ## Key Experimental Results
 
-### Main Results: Grid-World Discrete Control ($C_4$ Rotational Symmetry + Obstacle Breaking)
+### Main Results: Grid-World Discrete Control ($C_4$ Rotation + Obstacle Breaking)
 
 | Method | 0 Obstacles | 10 Obstacles | 20 Obstacles | 30 Obstacles | 40 Obstacles |
-|--------|-------------|--------------|--------------|--------------|--------------|
-| Vanilla DQN | Moderate | Moderate | Moderate | Moderate | Moderate |
-| Equivariant DQN | **Highest** | Rapid decline | Large degradation | Severe degradation | Near failure |
-| RPP-DQN (approx. equivariant) | High | Slightly above Vanilla | Slightly above Vanilla | Slightly above Vanilla | Slightly above Vanilla |
-| Approx. Equivariant DQN | High | Slightly above Vanilla | Slightly above Vanilla | Moderate | Moderate |
-| **PE-DQN** | **Highest** | **Highest** | **Highest** | **Highest** | **Highest** |
+|------|---------|---------|---------|---------|---------|
+| Vanilla DQN | Medium | Medium | Medium | Medium | Medium |
+| Equivariant DQN | **Highest** | Fast Decline | Large Degradation | Severe Degradation | Near Failure |
+| RPP-DQN (Approx.) | High | Slightly > Vanilla | Slightly > Vanilla | Slightly > Vanilla | Slightly > Vanilla |
+| Approx. Equi DQN | High | Slightly > Vanilla | Slightly > Vanilla | Medium | Medium |
+| **PE-DQN (Ours)** | **Highest** | **Highest** | **Highest** | **Highest** | **Highest** |
 
-As the number of obstacles increases, the gap between PE-DQN and the second-best method continues to widen, validating the theoretical prediction that "more severe breaking → greater importance of selective equivariance."
+As obstacles increase, the gap between PE-DQN and baselines widens, validating the theoretical prediction that selective equivariance is more important as breaking increases.
 
-### Main Results: Continuous Control (MuJoCo + Robotic Arm)
+### Main Results: Continuous Control (MuJoCo + Robot Arm)
 
-| Environment | SAC | Equi-SAC | RPP-SAC | Approx-SAC | **PE-SAC** | Source of Symmetry Breaking |
-|-------------|-----|----------|---------|------------|-----------|---------------------------|
-| Hopper | Moderate | Moderate | Moderate | Moderate | **Highest learning speed** | Ground contact |
-| Ant | Moderate | Moderate | Moderate | Moderate | **Highest (efficiency + final performance)** | Asymmetric leg torques |
-| Swimmer | Moderate | **Highest** | High | High | Near highest | Nearly no breaking |
-| Fetch Reach | Moderate | High | High | High | **Highest** | Ground constraint |
-| UR5e Reach | Moderate | Unstable/collapse | Unstable | Unstable | **Highest and stable** | Dynamics + free orientation |
+| Environment | SAC | Equi-SAC | RPP-SAC | Approx-SAC | **PE-SAC (Ours)** | Symmetry Breaking Source |
+|------|-----|----------|---------|------------|-----------|-------------|
+| Hopper | Medium | Medium | Medium | Medium | **Highest Speed** | Ground contact |
+| Ant | Medium | Medium | Medium | Medium | **Highest (Efficiency+Final)** | Asymmetric torques |
+| Swimmer | Medium | **Highest** | High | High | Near Highest | Minimal breaking |
+| Fetch Reach | Medium | High | High | High | **Highest** | Ground constraints |
+| UR5e Reach | Medium | Unstable/Crash | Unstable | Unstable | **Highest & Stable** | Dynamics + Orientation |
 
-The effect is most pronounced on the UR5e Reach task: strictly equivariant and approximately equivariant SAC variants become unstable or collapse due to extensive symmetry breaking from real robot arm dynamics, while PE-SAC is the only method that maintains stable high performance.
+In the UR5e Reach task, PE-SAC is the only method to maintain stable high performance, whereas strict and approximate variants suffer instability due to complex dynamics breaking.
 
 ### Ablation Study
 
-| Configuration | Grid-World (30 obs.) | Notes |
-|---------------|----------------------|-------|
-| PE-DQN (full) | **Highest** | Hard gate + predictor disagreement |
-| Soft gate ($\lambda \in [0,1]$) | Decrease | Less stable than hard gate |
-| Shared trunk (critic) | Slight decrease | Occasionally affects stability |
-| Shared trunk (actor) | Decrease | Equivariant/standard networks interfere |
-| Remove reward head (transition disagreement only) | Decrease in reward-breaking scenarios | Cannot detect purely reward-level breaking |
-| Sampled max ($K=4$) replacing $\lambda_\zeta$ | Near full | Lightweight alternative, slightly weaker under sparse breaking |
-| Sampled max ($K=8$) replacing $\lambda_\zeta$ | Near full | Comparable to learned state gate |
+| Configuration | Grid-World (30 obs) | Description |
+|------|-------------------|------|
+| PE-DQN (Full) | **Highest** | Hard gate + Predictor divergence |
+| Soft Gating ($\lambda \in [0,1]$) | Lower | Less stable training than hard gating |
+| Shared trunk (Critic) | Slightly Lower | Occasionally impacts stability |
+| Shared trunk (Actor) | Lower | Interference between equivariant/standard paths |
+| No Reward Head | Lower in R-breaking | Cannot detect pure reward-level breaking |
 
 ### Key Findings
 
-- **Breaking severity vs. performance curve**: In Grid-World, systematically increasing the number of obstacles (0→40) shows that PE-DQN's relative advantage increases monotonically with the degree of breaking. In fully symmetric environments, $\lambda$ rapidly converges to approximately 0 (pure equivariant mode), matching the performance of strictly equivariant DQN with no additional overhead.
-- **Gate visualization**: The learned $\lambda$ in Grid-World closely aligns with obstacle positions — $\lambda \approx 0$ (equivariant) in open regions far from obstacles and $\lambda = 1$ (standard) near obstacles, validating the effectiveness of the detection mechanism.
-- **Hard gate outperforms soft gate**: Experiments show that hard switching with $\lambda \in \{0,1\}$ is more stable than soft interpolation with $\lambda \in [0,1]$, likely because soft gating introduces gradient coupling that causes mutual interference between the two networks.
-- **Robustness to complex dynamics**: In the Grid-World variant with 40 obstacles and stochastic transitions, PE-DQN still achieves optimal performance, demonstrating that predictor-disagreement detection remains effective under noisy dynamics.
-- **Reward-level breaking**: In the variant where some obstacles are passable but incur negative rewards, PE-DQN with a reward prediction head remains optimal, showing the ability to simultaneously handle symmetry breaking at both the transition and reward levels.
+- **Breaking-to-Performance Curve**: PE-DQN's relative advantage grows monotonically with the degree of symmetry breaking. In perfectly symmetric environments, $\lambda$ converges to $\approx 0$, yielding performance identical to strict equivariant DQN.
+- **Gating Visualization**: The learned $\lambda$ aligns closely with obstacle locations in Grid-World—$\lambda \approx 0$ (equivariant) in open spaces and $\lambda = 1$ (standard) near obstacles.
+- **Hard Gate > Soft Gate**: Binary switching $\lambda \in \{0,1\}$ is more stable than soft interpolation $\lambda \in [0,1]$, likely due to the decoupling of training signals preventing mutual interference.
+- **Robustness to Complex Dynamics**: In variant tasks with 40 obstacles and stochastic transitions, PE-DQN remains optimal, proving divergence detection is robust to noisy dynamics.
 
 ## Highlights & Insights
 
-- **Error propagation theory fills a conceptual gap**: Prior work only empirically observed that equivariant RL is unstable in real environments. This paper is the first to rigorously prove the propagation mechanism — "local symmetry breaking → amplified by $(1-\gamma)^{-1}$ through Bellman backup → global value function bias." This theory not only explains the phenomenon but precisely identifies the solution direction: errors must be blocked at the local level.
-- **Gate design bridges theory and practice**: The convex-combination form of PI-MDP guarantees MDP validity and contractivity, while Corollary 1's error bound directly prescribes that $\lambda$ should be set to 1 in breaking regions — the correspondence between theory and algorithm design is exceptionally tight. In practice, the true $\epsilon_R, \epsilon_P$ need not be known; predictor disagreement provides a viable surrogate signal.
-- **Transferable "selective inductive bias" paradigm**: The paradigm of "apply the prior when needed, relax it when not" is not limited to equivariance. Any method exploiting structural priors (e.g., sparsity, smoothness, causal structure) in settings where the prior partially fails can draw inspiration from this gated switching approach.
+- **Error Propagation Theory**: This work fills a cognitive gap by strictly proving the "local breaking → $1/(1-\gamma)$ amplification → global bias" mechanism. This not only explains the failure of equivariant RL in real settings but also indicates that mitigation must happen locally.
+- **Gating Design**: The PI-MDP formulation ensures MDP validity and convergence, while Corollary 1 provides a clear design guideline for $\lambda$. Using predictor divergence as a proxy makes the theory implementable without knowing the ground-truth MDP.
+- **Transferable "Selective Inductive Bias" Paradigm**: The concept of applying priors only where needed is not limited to equivariance. This gating approach can be generalized to other structural priors like sparsity, smoothness, or causal structures.
 
 ## Limitations & Future Work
 
-- **Computational overhead**: Maintaining dual networks (equivariant + standard) alongside additional predictor and gating networks results in training times approximately 2–3× that of standard RL. This overhead may be prohibitive for tasks with already large parameter counts (e.g., high-dimensional visual inputs).
-- **Degradation under pervasive breaking**: When symmetry is severely broken throughout the entire state space (e.g., omnidirectional motion under strong gravity), $\lambda$ is nearly everywhere 1, and the framework degrades to standard RL — the benefits of equivariance disappear while the additional architectural overhead remains.
-- **Limited to state-based inputs**: The current equivariant networks (EMLP-based) operate on state vectors and have not yet been extended to visual observations (images/point clouds). Extending PI-MDP to visual RL is identified by the authors as the primary direction for future work.
-- **Gate accuracy depends on predictor quality**: The accuracy of disagreement-based detection depends on the quality of both predictors. In high-dimensional, complex dynamics settings, predictors may be insufficiently accurate, leading to noisy gating signals. Ensembling multiple predictors or leveraging stronger world models could improve detection reliability.
+- **Computational Overhead**: Maintaining dual networks and predictors increases training time by approximately 2-3x compared to standard RL. This may be costly for high-dimensional visual inputs.
+- **Universal Breaking**: If symmetry is severely broken throughout the entire space, $\lambda$ becomes 1 everywhere, and the framework degrades into standard RL with redundant architectural overhead.
+- **State-level Input**: Current implementation relies on state vectors; extending PI-MDP to visual observations (pixels/point clouds) remains a primary future direction.
+- **Detector Sensitivity**: Accuracy depends on predictor quality. In high-dimensional environments, ensemble predictors or stronger world models may be required to improve reliability.
 
 ## Related Work & Insights
 
-- **vs. RPP (Finzi et al., 2021)**: RPP globally relaxes equivariance constraints by adding a residual pathway alongside equivariant layers, essentially allowing each parameter to independently determine its degree of equivariance. PE-RL instead makes pointwise decisions in the state-action space about whether to apply equivariance. RPP's relaxation is continuous and uniformly applied across the entire network, whereas PE-RL's gating is binary and spatially adaptive. Experiments show that PE-RL substantially outperforms RPP in scenarios with severe breaking (e.g., 25+ obstacles, UR5e).
-- **vs. Approx. Equivariant RL (Park et al., 2025)**: Similarly attempts to handle approximate symmetry but does so via global architectural modifications. Performance is comparable to PE-RL under mild breaking, but significantly inferior under severe breaking (e.g., Grid-World with 30+ obstacles), as global relaxation cannot distinguish "good regions" from "bad regions."
-- **Inspiration**: The error propagation analysis framework can be directly applied to analyze other RL methods exploiting structural priors (e.g., causal RL, options frameworks in hierarchical RL), enabling quantitative understanding of how partial violation of prior assumptions affects performance.
+- **vs RPP (Finzi et al., 2021)**: RPP uses global residual paths to relax constraints, essentially letting each parameter decide its equivariance. PE-RL point-wise decides equivariance in the state-action space. PE-RL significantly outperforms RPP in severe breaking scenarios.
+- **vs Approx. Equivariant RL (Park et al., 2025)**: While similar in goal, these use global architectural modifications. They perform well with slight breaking but fail compared to PE-RL when breaking is severe because global relaxation cannot isolate "good" from "bad" regions.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The PI-MDP framework, error propagation theory, and gated detection mechanism form a coherent trinity with a complete theory–algorithm–experiment chain.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Broad coverage across discrete/continuous/manipulation task categories; the systematic analysis of breaking severity is persuasive. Lacks visual-input and real-robot experiments.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The derivation logic from theory to algorithm is clear; the hierarchical structure of theorems, corollaries, and algorithms is well organized.
-- **Value**: ⭐⭐⭐⭐⭐ Represents a fundamental advance toward deploying equivariant RL in real-world settings; the "selective inductive bias" paradigm has broad transfer potential.
+- Novelty: ⭐⭐⭐⭐⭐ Integration of PI-MDP, error theory, and gating detection is highly cohesive.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Wide coverage of tasks with systematic breaking analysis, though visual RL and real-robot experiments are missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear derivation from theory to algorithm; well-organized structure.
+- Value: ⭐⭐⭐⭐⭐ Significant push towards the deployment of equivariant RL in real-world scenarios.
 
 <!-- RELATED:START -->
 
@@ -156,10 +167,10 @@ The effect is most pronounced on the UR5e Reach task: strictly equivariant and a
 ## Related Papers
 
 - [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
+- [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
+- [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
 - [\[ICLR 2026\] MVR: Multi-view Video Reward Shaping for Reinforcement Learning](mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)
-- [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
-- [\[ICLR 2026\] APPLE: Toward General Active Perception via Reinforcement Learning](apple_toward_general_active_perception_via_reinforcement_learning.md)
-- [\[ICLR 2026\] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)
+- [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
 
 </div>
 

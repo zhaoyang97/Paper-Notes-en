@@ -2,157 +2,147 @@
 title: >-
   [Paper Note] Statistical Guarantees for Offline Domain Randomization
 description: >-
-  [ICLR 2026][Robotics][domain randomization] This paper formalizes offline domain randomization (ODR) as a maximum likelihood estimation problem over a parameterized family of simulators. Under mild regularity and identif…
+  [ICLR 2026][Robotics & Embodied AI][Paper Note] This work formalizes Offline Domain Randomization (ODR) as a Maximum Likelihood Estimation (MLE) problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it proves weak consistency (convergence in probability) and, by adding a uniform Lipschitz continuity assumption, est
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "domain randomization"
-  - "sim-to-real transfer"
-  - "maximum likelihood estimation"
-  - "consistency"
-  - "offline RL"
+  - ICLR 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 74f53854581635f6
+content_hash: a505680540957352
 ---
-
 # Statistical Guarantees for Offline Domain Randomization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.10133](https://arxiv.org/abs/2506.10133)  
 **Code**: None  
-**Area**: Audio & Speech
-**Keywords**: domain randomization, sim-to-real transfer, maximum likelihood estimation, consistency, offline RL
+**Area**: Robotics  
+**Keywords**: Domain Randomization, sim-to-real transfer, maximum likelihood estimation, consistency, offline RL
 
 ## TL;DR
 
-This paper formalizes offline domain randomization (ODR) as a maximum likelihood estimation problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it establishes weak consistency (convergence in probability); with an additional uniform Lipschitz continuity assumption, strong consistency (almost sure convergence) is further proved. These results provide the first theoretical foundation for the empirical success of ODR in sim-to-real transfer.
+This work formalizes Offline Domain Randomization (ODR) as a Maximum Likelihood Estimation (MLE) problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it proves weak consistency (convergence in probability) and, by adding a uniform Lipschitz continuity assumption, establishes strong consistency (almost sure convergence), providing the first theoretical foundation for the empirical success of ODR in sim-to-real transfer.
 
 ## Background & Motivation
 
-**Background**: Reinforcement learning agents frequently suffer performance degradation when deployed from simulation to the real world—the so-called "sim-to-real gap." Domain Randomization (DR) is the dominant approach to address this issue: physical parameters (mass, friction coefficients, sensor noise, etc.) are randomly sampled during training to construct a diverse family of simulators, endowing the policy with robustness to environmental variation. DR has enabled zero-shot transfer in quadrotor flight, dexterous manipulation, legged locomotion, and other tasks.
+**Background**: Reinforcement learning agents often suffer from performance degradation when deployed from simulation to the real world, a phenomenon known as the "sim-to-real gap." Domain Randomization (DR) is a mainstream solution—randomly sampling physical parameters (mass, friction, sensor noise, etc.) during training to construct a diverse family of simulators, making the policy robust to environmental variations. DR has achieved zero-shot transfer in tasks such as quadrotor flight, dexterous manipulation, and legged robotics.
 
 **Limitations of Prior Work**:
-   - **Inefficiency of Uniform DR (UDR)**: The standard practice applies broad uniform priors over physical parameters, but the theoretical analysis of Chen et al. (2022) shows that the sim-to-real gap of UDR scales as $O(M^3 \log(MH))$ with respect to the number of candidate simulators $M$—performance guarantees deteriorate rapidly as the simulator count grows.
-   - **Neglect of available real-world data**: UDR makes no use of offline data already collected from the real system to guide the choice of parameter distribution.
-   - **Lack of theoretical foundation**: Although ODR methods (e.g., DROPO, DROID, BayesSim) demonstrate substantial empirical advantages, it remains theoretically unknown (i) whether the fitted distribution converges to the true dynamics as data grows, and (ii) how much improvement is achieved relative to UDR.
+   - **Inefficiency of Uniform DR (UDR)**: The standard practice applies a broad uniform prior to physical parameters, but theoretical analysis by Chen et al. (2022) shows that the sim-to-real gap of UDR scales with $O(M^3 \log(MH))$—performance guarantees deteriorate rapidly as the number of candidate simulators $M$ increases.
+   - **Neglect of Available Real-World Data**: UDR fails to utilize offline data collected from the real system to guide the selection of parameter distributions.
+   - **Lack of Theoretical Foundation**: While ODR methods (e.g., DROPO, DROID, BayesSim) show significant empirical advantages, it remains theoretically unknown (i) if the fitted distribution converges to the true dynamics as data grows and (ii) the magnitude of improvement over UDR.
 
-**Key Challenge**: ODR performs well empirically, yet lacks statistical guarantees—it is unclear under what conditions offline data can reliably guide the selection of the domain randomization distribution.
+**Key Challenge**: Empirical performance of ODR is superior, but statistical guarantees are lacking—it is unclear under what conditions offline data reliably guides the choice of domain randomization distributions.
 
 **Goal**:
-   - Prove weak consistency of the ODR estimator (convergence in probability to the true parameter).
+   - Prove weak consistency of the ODR estimator (convergence in probability to the true parameters).
    - Prove strong consistency of the ODR estimator (almost sure convergence).
-   - Analyze the practicality of each assumption and provide relaxed variants.
+   - Analyze the practicality of various assumptions and provide relaxation conditions.
 
-**Key Insight**: ODR is treated as maximum likelihood estimation (MLE) over a parameterized simulator family, and classical statistical tools—uniform laws of large numbers in the Glivenko–Cantelli sense, the Borel–Cantelli lemma, etc.—are employed to establish rigorous convergence proofs.
+**Key Insight**: Treat ODR as a Maximum Likelihood Estimation (MLE) over a family of parameterized simulators and establish rigorous convergence proofs using classical statistical tools (Uniform Laws of Large Numbers for Glivenko-Cantelli classes, Borel-Cantelli lemma, etc.).
 
-**Core Idea**: ODR is essentially a parameterized MLE problem that admits provable statistical consistency under mild assumptions, providing a solid theoretical explanation for its empirical success.
+**Core Idea**: ODR is essentially a parameterized MLE problem that possesses provable statistical consistency under mild assumptions, providing a solid theoretical basis for its empirical success.
 
 ## Method
 
 ### Overall Architecture
 
-The central contribution of this paper is not a new algorithm but a theoretical framework for the existing ODR paradigm, organized in three layers:
+This paper does not propose a new algorithm but provides a proof for "why it converges" for the existing ODR paradigm. The objective is fundamental: given a set of offline transition triplets $\mathcal{D} = \{(s_i, a_i, s_i')\}_{i=1}^N$ (assumed i.i.d.) collected from a real environment $\mathcal{M}^*$, and a family of simulators $\mathcal{U} = \{\mathcal{M}_\xi : \xi \in \Xi \subset \mathbb{R}^d\}$ sharing the same state/action space but with transition probabilities controlled by physical parameters $\xi$. The goal is to fit a parameter distribution $p_\phi(\xi) = \mathcal{N}(\mu, \Sigma)$ such that the simulator family closely matches the real dynamics.
 
-- **Input**: An offline dataset $\mathcal{D} = \{(s_i, a_i, s_i')\}_{i=1}^N$ of i.i.d. transition tuples collected from the real environment $\mathcal{M}^*$.
-- **Parameterization**: A simulator family $\mathcal{U} = \{\mathcal{M}_\xi : \xi \in \Xi \subset \mathbb{R}^d\}$ sharing state/action spaces but with transition probabilities governed by physical parameter $\xi$; the parameter distribution is $p_\phi(\xi) = \mathcal{N}(\mu, \Sigma)$.
-- **Objective**: Maximize the mixture likelihood $\phi^* = \arg\max_\phi \sum_{i} \log \mathbb{E}_{\xi \sim p_\phi}[P_\xi(s_i' | s_i, a_i)]$.
-- **Output**: The learned distribution $p^*(\xi)$ is used for downstream policy training $\pi_{\text{ODR}}^* = \arg\max_\pi \mathbb{E}_{\xi \sim p^*}[V_{\mathcal{M}_\xi}^\pi(s_1)]$.
+Fitting is performed by maximizing the mixture likelihood $\phi^* = \arg\max_\phi \sum_i \log \mathbb{E}_{\xi \sim p_\phi}[P_\xi(s_i' \mid s_i, a_i)]$, and the learned distribution $p^*(\xi)$ is used for downstream policy training $\pi_{\text{ODR}}^* = \arg\max_\pi \mathbb{E}_{\xi \sim p^*}[V_{\mathcal{M}_\xi}^\pi(s_1)]$. The theory answers whether $\phi^*$ converges to the true parameters as $N$ grows through a chain of "Formalization → Weak Consistency → Strong Consistency → Informativeness Metric."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Offline Transition Data D<br/>{(s,a,s′)} + Simulator Family U_ξ"] --> B["MLE Formalization of ODR<br/>Empirical Log-likelihood L_N(φ)"]
+    B --> C["KL Divergence Decomposition<br/>Unique Maximum φ*=(ξ*,0)"]
+    C -->|"A1–A4 + ULLN(L2)<br/>+ Unique Identification(L3)"| D["Weak Consistency Thm 1<br/>Convergence in Prob φ̂_N →P φ*"]
+    D -->|"Add Uniform Lipschitz A5<br/>Hoeffding + Borel-Cantelli"| E["Strong Consistency Thm 2<br/>Almost Sure Convergence φ̂_N →a.s. φ*"]
+    E --> F["α-Informativeness<br/>Model-Agnostic Density Metric"]
+    F --> G["Fitted Distribution p*(ξ)<br/>→ Downstream ODR Training"]
+```
 
 ### Key Designs
 
-1. **MLE Formalization of ODR**:
+**1. MLE Formalization of ODR: Translating "Distribution Fitting" into Standard MLE**
 
-    - Function: Reframes ODR as a structured maximum likelihood estimation problem.
-    - Mechanism: The empirical log-likelihood is defined as $L_N(\phi) = \frac{1}{N}\sum_{i=1}^N \log q_\phi(s_i' | s_i, a_i)$, where $q_\phi(s'|s,a) = \int p_\xi(s'|s,a) p_\phi(\xi) d\xi$ is the mixture transition kernel. Via a KL divergence decomposition, it is shown that the unique maximizer of the population log-likelihood $L(\phi)$ is $\phi^* = (\xi^*, 0)$ (i.e., the distribution degenerates to the true parameter).
-    - Design Motivation: Embedding ODR within the classical MLE framework enables direct application of established consistency tools from statistics.
+While ODR works empirically, the theoretical objective of "fitting the distribution" was unclear. This paper formulates it as empirical log-likelihood $L_N(\phi) = \frac{1}{N}\sum_{i=1}^N \log q_\phi(s_i' \mid s_i, a_i)$, where $q_\phi(s'\mid s,a) = \int p_\xi(s'\mid s,a)\, p_\phi(\xi)\, d\xi$ is the transition kernel after mixing the simulator family according to $p_\phi$. A key step is the KL divergence decomposition of the population log-likelihood $L(\phi)$, proving its unique maximizer is $\phi^* = (\xi^*, 0)$—where the distribution collapses to the true parameter $\xi^*$ with zero variance. This allows the use of established statistical MLE tools.
 
-2. **Weak Consistency (Theorem 1)**:
+**2. Weak Consistency (Theorem 1): Convergence in Probability**
 
-    - Function: Proves that any measurable maximizer $\hat{\phi}_N$ converges in probability to $\phi^*$.
-    - Mechanism: The proof proceeds in three steps: (a) a uniform law of large numbers (ULLN) in the Glivenko–Cantelli class establishes $\sup_\phi |L_N(\phi) - L(\phi)| \to 0$ (Lemma 2); (b) the separation property of the unique maximizer yields a uniform likelihood-loss lower bound $\eta(\epsilon)$ for parameters deviating from $\phi^*$ (Lemma 3); (c) combining these, the probability that $\hat{\phi}_N$ falls outside the $\epsilon$-neighborhood of $\phi^*$ is controlled by $P(\sup |L_N - L| \geq \eta/3)$.
-    - Required Assumptions: Assumption 1 (simulator regularity: bounded and continuous density), Assumption 2 (compact parameter space), Assumption 3 (mixture positivity: $q_\phi \geq c > 0$), Assumption 4 (identifiability).
+The goal is to prove any measurable maximizer $\hat{\phi}_N$ converges in probability to $\phi^*$. The proof involves: using a Uniform Law of Large Numbers (ULLN) to show empirical likelihood uniformly approaches population likelihood $\sup_\phi |L_N(\phi) - L(\phi)| \to 0$ (Lemma 2); utilizing the unique maximizer property to show any parameter deviating from $\phi^*$ by more than $\epsilon$ incurs a uniform likelihood loss bound $\eta(\epsilon)$ (Lemma 3); and combining these to show the probability of $\hat{\phi}_N$ falling outside the $\epsilon$-neighborhood of $\phi^*$ vanishes as $N \to \infty$. This relies on four assumptions: Assumption 1 (Regularity), Assumption 2 (Compactness), Assumption 3 (Mixture Positivity $q_\phi \geq c > 0$), and Assumption 4 (Identifiability).
 
-3. **Strong Consistency (Theorem 2)**:
+**3. Strong Consistency (Theorem 2): Almost Sure Convergence via Lipschitz Continuity**
 
-    - Function: Upgrades weak consistency to almost sure convergence.
-    - Mechanism: An additional uniform Lipschitz assumption is introduced (Assumption 5): $|a(x,\phi) - a(x,\psi)| \leq L\|\phi - \psi\|$. Compactness of the parameter space is used to construct an $\epsilon/L$-net cover; Hoeffding's inequality yields an exponential probability bound at each grid point $P(|L_N(\phi_i) - L(\phi_i)| > \epsilon) \leq 2\exp(-N\epsilon^2 / 2\tilde{M}^2)$; the Borel–Cantelli lemma then gives $\sum_N P(\sup|L_N - L| > 2\epsilon) < \infty$, establishing almost sure convergence.
-    - Distinction from Weak Consistency: Weak consistency requires only the ULLN (probability of convergence $\to 1$); strong consistency requires summability of probabilities (Borel–Cantelli), which the Lipschitz condition provides as a quantitative bridge from pointwise to uniform control.
+Weak consistency only ensures convergence probability approaches 1, but deployment often requires almost sure convergence for a single trajectory. This requires summability of error probabilities. Thus, Uniform Lipschitz continuity (Assumption 5) is introduced: $|a(x,\phi) - a(x,\psi)| \leq L\|\phi - \psi\|$. By constructing an $\epsilon/L$-net over a compact parameter space and applying Hoeffding’s inequality at each net point, an exponential deviation bound $P(|L_N(\phi_i) - L(\phi_i)| > \epsilon) \leq 2\exp(-N\epsilon^2 / 2\tilde{M}^2)$ is obtained. The Borel-Cantelli lemma then implies $\sum_N P(\sup|L_N - L| > 2\epsilon) < \infty$, yielding $\hat{\phi}_N \xrightarrow{a.s.} \phi^*$.
 
-4. **Definition of $\alpha$-Informativeness**:
+**4. $\alpha$-Informativeness: A Model-Agnostic Metric for Concentration**
 
-    - Function: Defines the ability of an ODR algorithm to "concentrate" the distribution.
-    - Mechanism: An algorithm $\mathcal{A}$ is called $(\alpha, \epsilon)$-informative if there exists $N_0$ such that for all $N \geq N_0$, the learned distribution $\hat{\phi}_N$ assigns at least probability mass $\alpha$ within the $\epsilon$-ball around the true parameter $\xi^*$. By strong consistency, Gaussian ODR is $\alpha$-informative for any $\alpha < 1$.
-    - Significance: Provides a model-agnostic metric for evaluating and comparing different ODR algorithms.
+To measure the ability of an ODR algorithm to "concentrate information near the truth," the paper defines: an algorithm $\mathcal{A}$ is $(\alpha, \epsilon)$-informative if for $N \geq N_0$, the learned distribution $\hat{\phi}_N$ assigns at least $\alpha$ probability mass within an $\epsilon$-ball of $\xi^*$. Strong consistency implies Gaussian ODR satisfies this for any $\alpha < 1$. This definition is independent of the specific parameter distribution choice, allowing comparison of different ODR variants.
 
-### Assumption Analysis and Relaxation
-
-The paper analyzes the practicality of each of the five theoretical assumptions and provides relaxations:
+Practicality of assumptions:
 
 | Assumption | Original Form | Relaxation | Applicability |
-|---|---|---|---|
-| A1 Simulator regularity | Bounded and continuous density | No relaxation needed | Satisfied by finite state spaces and Gaussian transitions |
-| A2 Compact parameter space | $\Phi$ compact | No relaxation needed | Physical parameters always have prior bounds |
-| A3 Mixture positivity | $q_\phi \geq c > 0$ | Replaced by log-tail condition $P(\inf_\phi q_\phi(X) \leq \epsilon) \leq 1/\log(1/\epsilon)^2$ | Covers Gaussian and other light-tailed families |
-| A4 Identifiability | Unique recovery of $\xi^*$ | Relaxed to convergence to identification set $\mathcal{Q}_\mu^*$ | Natural degradation under partial coverage |
-| A5 Uniform Lipschitz | $\|a(x,\phi)-a(x,\psi)\| \leq L\|\phi-\psi\|$ | Sufficient if transition kernel is twice differentiable in $\xi$ with bounded gradient (Lemma 7) | Satisfied by smooth physics simulators |
+|------|----------|----------|--------|
+| A1 Regularity | Bounded & Continuous density | None needed | Finite discrete and Gaussian transitions |
+| A2 Compactness | Compact $\Phi$ | None needed | Physical parameters always have prior bounds |
+| A3 Positivity | $q_\phi \geq c > 0$ | Log-tail condition $P(\inf_\phi q_\phi(X) \leq \epsilon) \leq 1/\log(1/\epsilon)^2$ | Covers light-tailed families like Gaussian |
+| A4 Identifiability | Unique recovery of $\xi^*$ | Relax to convergence to identification set $\mathcal{Q}_\mu^*$ | Covers partial identification |
+| A5 Uniform Lipschitz | $|a(x,\phi)-a(x,\psi)| \leq L\|\phi-\psi\|$ | $C^2$ kernel with bounded gradient (Lemma 7) | Smooth physical simulators |
 
 ## Key Experimental Results
 
-### Comparison of Theoretical Results
+### Theoretical Results Comparison
 
-This paper is a purely theoretical contribution; the core results are statistical guarantees rather than empirical performance. The following compares ODR theoretical results with existing UDR theory:
+As a theoretical work, the core contribution is statistical guarantees.
 
-| Method | Convergence Type | Sim-to-real Gap | Data Requirement | Dependence on $M$ |
-|---|---|---|---|---|
+| Method | Convergence Type | Sim-to-real gap | Data Requirement | Dependency on $M$ |
+|------|----------|-----------------|----------|-----------------|
 | UDR (Chen et al., 2022) | Non-adaptive | $O(M^3 \log(MH))$ | No offline data | Cubic growth |
-| UDR (improved bound, this paper) | Non-adaptive | $O(M^3 \log(MH))$ (improved log factor) | No offline data | Cubic growth |
-| ODR Weak Consistency (Thm 1) | In probability $\to \phi^*$ | Converges to 0 as $N$ grows | i.i.d. or ergodic | Related to identifiability of $\xi^*$ |
-| ODR Strong Consistency (Thm 2) | Almost surely $\to \phi^*$ | Converges to 0 as $N$ grows | i.i.d. + Lipschitz | Additional Lipschitz control |
+| UDR (Ours, improved) | Non-adaptive | $O(M^3 \log(MH))$ | No offline data | Cubic growth |
+| ODR Weak Consistency | Prob. $\to \phi^*$ | Converges to 0 | i.i.d. or ergodic | Related to identifiability |
+| ODR Strong Consistency | a.s. $\to \phi^*$ | Converges to 0 | i.i.d. + Lipschitz | Lipschitz control |
 
-### Hierarchy of Assumptions and Guarantees
+### Hierarchical Guarantees
 
-| Assumption Set | Guarantee Level | Convergence Mode | Key Tools |
-|---|---|---|---|
-| A1+A2+A3+A4 | Weak consistency | $\hat{\phi}_N \xrightarrow{P} \phi^*$ | ULLN (Glivenko–Cantelli) |
-| A1+A2+A3+A4+A5 | Strong consistency | $\hat{\phi}_N \xrightarrow{a.s.} \phi^*$ | Hoeffding + Borel–Cantelli |
-| A1+A2+A3 (no A4) | Set consistency | $\text{dist}(\hat{\phi}_N, \mathcal{Q}_\mu^*) \xrightarrow{P} 0$ | Berge's maximum theorem |
-| A1+A2+relaxed A3 | Weak consistency | $\hat{\phi}_N \xrightarrow{P} \phi^*$ | Integrable envelope condition |
+| Assumption Set | Guarantee Level | Convergence Mode | Key Tool |
+|----------|----------|----------|----------|
+| A1+A2+A3+A4 | Weak Consistency | $\hat{\phi}_N \xrightarrow{P} \phi^*$ | ULLN (Glivenko-Cantelli) |
+| A1+A2+A3+A4+A5 | Strong Consistency | $\hat{\phi}_N \xrightarrow{a.s.} \phi^*$ | Hoeffding + Borel-Cantelli |
+| A1+A2+A3 (No A4) | Set Consistency | $\text{dist}(\hat{\phi}_N, \mathcal{Q}_\mu^*) \xrightarrow{P} 0$ | Berge's Maximum Theorem |
 
 ### Key Findings
 
-- **Improved UDR gap bound**: Appendix A tightens Chen et al.'s $O(M^3 \log^3(MH))$ to $O(M^3 \log(MH))$ (reducing the logarithmic exponent from three to one) through more refined parameter selection.
-- **Adaptive advantage of ODR**: By leveraging offline data to concentrate the distribution near the true parameter, ODR avoids the $M^3$ amplification effect arising from UDR's uniform coverage of the entire simulator family.
-- **Sufficient condition for Lipschitz**: It suffices for the transition kernel $p_\xi$ to be twice differentiable in $\xi$ with bounded gradients ($|\nabla_\xi p_\xi| \leq G_1$, $|\nabla_\xi^2 p_\xi| \leq G_2$) to guarantee Assumption 5, with constant $L = (G_1 + G_2/2)/c$.
+- **UDR gap bound improvement**: Refined the $O(M^3 \log^3(MH))$ bound from Chen et al. to $O(M^3 \log(MH))$ in Appendix A by tighter parameter selection.
+- **Adaptive Advantage of ODR**: ODR avoids the $M^3$ amplification effect of UDR by concentrating distributions around the true parameters.
+- **Sufficiency for Lipschitz**: Assumption 5 is satisfied if the transition kernel $p_\xi$ is $C^2$ in $\xi$ with bounded gradients ($|\nabla_\xi p_\xi| \leq G_1$, $|\nabla_\xi^2 p_\xi| \leq G_2$).
 
 ## Highlights & Insights
 
-- **Elegant use of KL divergence decomposition**: By decomposing the population log-likelihood $L(\phi)$ as $-D_{KL}(p_{\xi^*} \| q_\phi) + H(\xi^*)$, the non-negativity and equality condition of KL divergence directly establishes $\phi^* = (\xi^*, 0)$ as the unique maximizer—an elegant and natural argument that seamlessly connects MLE with information theory.
-- **Incremental upgrade strategy from weak to strong**: Weak consistency is established first (requiring only ULLN), then a single Lipschitz assumption upgrades it to strong consistency (requiring Borel–Cantelli), followed by an analysis of the relaxability of each assumption. This layered theoretical construction is transferable to other statistical estimation problems.
-- **Model-agnostic definition of $\alpha$-informativeness**: A quality metric for ODR algorithms is proposed that is independent of the choice of parameter distribution (Gaussian being just one instance), enabling comparison across different ODR variants.
-- **Concept of identification set**: When data coverage is incomplete, point convergence is not pursued; instead, set convergence $\text{dist}(\hat{\phi}_N, \mathcal{Q}_\mu^*) \to 0$ is established—this is information-theoretically optimal, as no method can distinguish parameters that are observationally equivalent under the data distribution.
+- **Elegant use of KL Decomposition**: Proving $\phi^* = (\xi^*, 0)$ is the unique maximizer via KL divergence properties naturally connects MLE with information theory.
+- **Progressive Proof Strategy**: Developing guarantees from weak to strong consistency and then analyzing assumption relaxations provides a template for other statistical estimation problems in RL.
+- **$\alpha$-Informativeness**: Provides a standard metric for ODR quality independent of Gaussian assumptions.
+- **Identification Set**: Recognizes that under incomplete data coverage, point convergence generalizes to set convergence $\text{dist}(\hat{\phi}_N, \mathcal{Q}_\mu^*) \to 0$, which is information-theoretically optimal.
 
 ## Limitations & Future Work
 
-- **No finite-sample bounds**: The paper establishes only asymptotic consistency ($N \to \infty$) without providing concrete convergence rates or finite-sample error bounds—the practically important question of "how much data is needed" remains unanswered.
-- **No experimental validation**: As a purely theoretical work, there is no empirical verification of the correspondence between theoretical predictions and actual performance on any simulation or robotics platform.
-- **Restriction to Gaussian parameterization**: Although the authors claim that other parametric families can substitute, all proofs rely on properties specific to Gaussian $\mathcal{N}(\mu, \Sigma)$ (e.g., Lévy's continuity theorem for weak convergence); other families require independent verification.
-- **Difficulty of verifying the identifiability assumption**: Assumption 4 requires unique recovery of $\xi^*$ from observations, yet it is difficult in practice to verify a priori whether a given simulator family satisfies this condition.
-- **Optimization landscape not analyzed**: Consistency of the global maximizer is proved, but in practice MLE is solved via gradient optimization and may converge to local optima—the non-convexity of the objective function is not analyzed.
-- **i.i.d. assumption remains strong**: Although relaxation to ergodic sequences is discussed, the concrete convergence proofs still rely on i.i.d. data.
+- **Lack of Finite Sample Bounds**: The work proves asymptotic consistency ($N \to \infty$) but does not specify "how much data" is needed for a specific error tolerance.
+- **No Experimental Validation**: Lacks verification on robotic platforms to correlate theoretical predictions with empirical performance.
+- **Gaussian Parameterization**: While adaptable, the current proofs heavily leverage properties of Gaussian families (e.g., Lévy Continuity Theorem).
+- **Hard-to-verify Identifiability**: Assumption 4 is difficult to verify a priori for complex simulator families.
+- **Optimization Landscape**: Assumes global maximizers are found, ignoring the non-convexity of the MLE objective in practice.
 
 ## Related Work & Insights
 
-- **vs. UDR (Chen et al., 2022)**: UDR trains under a uniform prior with a gap of $O(M^3 \log(MH))$; ODR uses offline data to fit a concentrated distribution, asymptotically eliminating the gap—ODR is strictly superior to UDR given sufficient data.
-- **vs. DROPO (Tiboni et al., 2023)**: DROPO is a concrete algorithmic instantiation of ODR (Gaussian MLE + gradient-free optimizer); this paper provides statistical guarantees for the MLE-ODR paradigm that encompasses DROPO—serving as a bridge between theory and practice.
-- **vs. BayesSim (Ramos et al., 2019)**: BayesSim employs a conditional density estimator to predict the parameter posterior, representing a Bayesian approach; the frequentist MLE analysis of this paper is complementary and may inspire Bayesian consistency studies for ODR.
-- **vs. DROID (Tsai et al., 2021)**: DROID uses CMA-ES to optimize an $L_2$ distance for system identification; the MLE objective in this paper is theoretically better justified, as it directly optimizes data likelihood.
+- **vs UDR (Chen et al., 2022)**: ODR asymptotically eliminates the gap that scales with $M^3$ in UDR by leveraging data.
+- **vs DROPO (Tiboni et al., 2023)**: Provides the theoretical bridge for empirical algorithms like DROPO.
+- **vs BayesSim (Ramos et al., 2019)**: This frequentist MLE analysis complements Bayesian ODR approaches.
+- **vs DROID (Tsai et al., 2021)**: MLE objectives used in this theory are arguably more grounded than L2 distance-based system identification.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The first theoretical work to provide statistical consistency guarantees for ODR, filling an important gap.
-- Experimental Thoroughness: ⭐⭐ — A purely theoretical contribution with no experimental validation, finite-sample bounds, or practical benchmarks.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Proof structure is clear, each assumption is analyzed individually with relaxations provided; an exemplary theoretical paper.
-- Value: ⭐⭐⭐⭐ — Provides a theoretical foundation for ODR methods in the sim-to-real literature, though the absence of experiments and finite-sample analysis limits direct practical guidance.
+- Novelty: ⭐⭐⭐⭐ First statistical consistency guarantee for ODR.
+- Experimental Thoroughness: ⭐⭐ Purely theoretical, lacks benchmarks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear structure and rigorous analysis of assumptions.
+- Value: ⭐⭐⭐⭐ Strong theoretical foundation, though lacks finite sample analysis for direct practical guidance.
 
 <!-- RELATED:START -->
 
@@ -162,9 +152,9 @@ This paper is a purely theoretical contribution; the core results are statistica
 
 - [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
 - [\[ICML 2026\] Dual Quaternion SE(3) Synchronization with Recovery Guarantees](../../ICML2026/robotics/dual_quaternion_se3_synchronization_with_recovery_guarantees.md)
-- [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](../../ICML2026/robotics/towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
+- [\[ICLR 2026\] Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control](hierarchical_value-decomposed_offline_reinforcement_learning_for_whole-body_cont.md)
 - [\[ICLR 2026\] One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration](one_demo_is_all_it_takes_planning_domain_derivation_with_llms_from_a_single_demo.md)
-- [\[ICCV 2025\] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations](../../ICCV2025/robotics/bridging_domain_generalization_to_multimodal_domain_generalization_via_unified_r.md)
+- [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](../../ICML2026/robotics/towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
 
 </div>
 

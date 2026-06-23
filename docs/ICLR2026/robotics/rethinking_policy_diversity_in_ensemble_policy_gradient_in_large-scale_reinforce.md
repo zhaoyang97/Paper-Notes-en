@@ -2,110 +2,127 @@
 title: >-
   [Paper Note] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics][Policy Ensemble] This paper theoretically analyzes how inter-policy diversity affects learning efficiency in ensemble policy gradient methods, and proposes Coupled Policy Optimization (CPO)…
+  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper theoretically analyzes the impact of inter-policy diversity on learning efficiency in ensemble policy gradient methods and proposes Coupled Policy Optimization (CPO). By regulating diversity through KL divergence constraints, CPO achieves efficient and stable exploration in large-scale parallel environments.
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "Policy Ensemble"
-  - "Large-Scale Parallel RL"
-  - "Policy Diversity"
-  - "KL Constraint"
-  - "Dexterous Manipulation"
+  - ICLR 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 7115446b2b43581b
+content_hash: 70d4d842a7198e84
 ---
-
 # Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01741](https://arxiv.org/abs/2603.01741)  
 **Code**: [Project Page](https://naoki04.github.io/paper-cpo/)  
-**Area**: Reinforcement Learning
-**Keywords**: Policy Ensemble, Large-Scale Parallel RL, Policy Diversity, KL Constraint, Dexterous Manipulation
+**Area**: Reinforcement Learning  
+**Keywords**: Policy Ensemble, Large-scale Parallel RL, Policy Diversity, KL Constraint, Dexterous Manipulation
 
 ## TL;DR
 
-This paper theoretically analyzes how inter-policy diversity affects learning efficiency in ensemble policy gradient methods, and proposes Coupled Policy Optimization (CPO), which regulates diversity via KL divergence constraints to achieve efficient and stable exploration in large-scale parallel environments.
+This paper theoretically analyzes the impact of inter-policy diversity on learning efficiency in ensemble policy gradient methods and proposes Coupled Policy Optimization (CPO). By regulating diversity through KL divergence constraints, CPO achieves efficient and stable exploration in large-scale parallel environments.
 
 ## Background & Motivation
 
-GPU-based parallel physics simulators (e.g., Isaac Gym, Genesis) enable data collection across tens of thousands of environments simultaneously. However, **simply increasing the number of parallel environments does not improve learning efficiency** (Singla et al., 2024) — a single policy generates highly similar trajectories across many parallel environments, leading to insufficient exploration diversity.
+GPU-based parallel physical simulators (e.g., Isaac Gym, Genesis) enable data collection across tens of thousands of environments simultaneously. However, **simply increasing the number of parallel environments does not improve learning efficiency** (Singla et al., 2024)—a single policy generates highly similar trajectories across mass parallels, leading to insufficient exploration diversity.
 
-To address this, SAPG introduced a leader-follower framework: one leader policy and multiple follower policies collect data in separate environment blocks, and the leader aggregates all follower data via importance sampling (IS). Nevertheless, **excessive policy diversity is detrimental**: when follower policies deviate too far from the leader, IS ratios diverge from 1, causing the effective sample size (ESS) to drop and PPO clipping bias to increase, undermining training stability and sample efficiency.
+To address this, the SAPG method proposed a leader-follower framework: one leader policy and multiple follower policies collect data in different environment blocks, with the leader aggregating all follower data via importance sampling (IS). However, **excessive policy diversity is harmful**: when follower policies deviate too far from the leader, IS ratios stray from 1, leading to a decrease in Effective Sample Size (ESS) and increased PPO clipping bias, which damages training stability and sample efficiency.
 
-The root cause is a fundamental tension: exploration diversity requires policy divergence, yet excessive divergence reduces the utilization efficiency of off-policy data. This paper proposes a method to regulate this "moderate diversity."
+The **Key Challenge** lies in the conflict: exploration diversity requires policy differences, but excessive differences reduce the efficiency of utilizing off-policy data. This paper proposes a method to regulate this "moderate diversity."
 
 ## Method
 
 ### Overall Architecture
 
-CPO builds upon SAPG's leader-follower architecture and introduces two key mechanisms: (1) a KL divergence constraint on follower updates relative to the leader, maintaining a moderate distance; and (2) adversarial rewards that encourage dispersion among followers to prevent policy collapse.
+The problem CPO addresses is that in the SAPG leader-follower ensemble, wider exploration by followers leads to higher bias when the leader recovers this off-policy data via weight sampling, whereby diversity actually hinders sample efficiency. CPO follows the SAPG architecture—one leader policy $\pi_L$ and several follower policies $\pi_{F_i}$ each collecting data in distinct environment blocks, with the leader aggregating all follower trajectories for its update. However, CPO introduces two mechanisms on the follower side to regulate "moderate diversity": one pulls followers toward the leader (KL-constrained follower updates to control the upper bound of IS bias), while the other pushes followers apart (adversarial rewards to promote policy dispersion and prevent collapse). These two forces ensure that followers do not deviate too far from the leader while remaining dispersed, forming structured exploration around the leader.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Large-scale Parallel Environments<br/>Divided into M blocks"] --> B["1 Leader Policy π_L<br/>+ (M-1) Follower Policies π_Fi<br/>collecting trajectories in blocks"]
+    B --> C["KL-constrained Follower Updates<br/>D_KL(π_Fi ‖ π_L) ≤ ε"]
+    B --> D["Adversarial Rewards for Diversity<br/>Discriminator D_ξ identifies followers"]
+    C -->|"Pull toward leader<br/>Bound IS bias upper bound"| E["Followers in structured<br/>distribution around leader"]
+    D -->|"Push apart<br/>Prevent policy collapse"| E
+    E --> F["Leader aggregates all<br/>follower off-policy data via IS"]
+    F --> G["Leader Update<br/>Using environment rewards only"]
+```
 
 ### Key Designs
 
-1. **KL-Constrained Follower Policy Update**:
+**1. KL-constrained follower update: Boxing "diversity" into a controllable range**
 
-    - Function: Models follower policy updates as a constrained optimization problem with a KL divergence bound.
-    - Mechanism: $\pi_{F_i}^* = \arg\max_{\pi_{F_i}} A_{F_i}(\mathbf{s},\mathbf{a}) \quad \text{s.t.} \quad D_{KL}(\pi_{F_i}(\cdot|\mathbf{s}) \| \pi_L(\cdot|\mathbf{s})) \leq \varepsilon_{KL}$
-    - An AWAC-style closed-form approximation yields the parameterized objective: $L_{\text{CPO},F_i}(\theta) = -\mathbb{E}_{\mathbf{a},\mathbf{s} \sim \pi_L}[\log \pi_{F_i,\theta}(\mathbf{a}|\mathbf{s}) \exp(\frac{1}{\lambda_f} A^{F_i})] + L_{\text{SAPG},F_i}$
-    - Design Motivation: By Pinsker's inequality, the KL constraint directly controls the upper bound on IS ratio deviation $\mathbb{E}[|1-\frac{\pi_L}{\pi_F}|] \leq \sqrt{2D_{KL}}$, thereby guaranteeing ESS and training stability.
+This specifically addresses the pain point where "followers deviate too far from the leader → distorted IS ratios." CPO formulates the follower update as a constrained optimization problem: while maximizing its own advantage $A_{F_i}(\mathbf{s},\mathbf{a})$, it requires the KL divergence from the leader to not exceed a threshold $\varepsilon_{KL}$:
 
-2. **Adversarial Reward for Policy Dispersion**:
+$$\pi_{F_i}^* = \arg\max_{\pi_{F_i}} A_{F_i}(\mathbf{s},\mathbf{a}) \quad \text{s.t.} \quad D_{KL}(\pi_{F_i}(\cdot|\mathbf{s}) \| \pi_L(\cdot|\mathbf{s})) \leq \varepsilon_{KL}$$
 
-    - Function: Trains a discriminator $D_\xi(y|\mathbf{s}_t,\mathbf{a}_t)$ to predict policy identity.
-    - Mechanism: $r_t^{adv} = \lambda_{adv} \log D_\xi(y|\mathbf{s}_t,\mathbf{a}_t)$, rewarding each follower for exploring distinctly identifiable regions.
-    - Design Motivation: The KL constraint implicitly pulls followers closer together; the adversarial reward provides a counterforce to prevent policy collapse.
+This constrained optimization is approximated using an AWAC-style closed-form solution, resulting in a trainable parameterized objective consisting of a weighted log-likelihood plus the original SAPG loss:
+
+$$L_{\text{CPO},F_i}(\theta) = -\mathbb{E}_{\mathbf{a},\mathbf{s} \sim \pi_L}\Big[\log \pi_{F_i,\theta}(\mathbf{a}|\mathbf{s}) \exp\big(\tfrac{1}{\lambda_f} A^{F_i}\big)\Big] + L_{\text{SAPG},F_i}$$
+
+The effectiveness of this approach is backed by theoretical guarantees from Pinsker’s inequality: the KL constraint directly bounds the upper limit of the IS ratio bias $\mathbb{E}[|1-\frac{\pi_L}{\pi_F}|] \leq \sqrt{2D_{KL}}$. In other words, as long as KL is controlled, the Effective Sample Size (ESS) will not collapse and PPO clipping bias will not explode when the leader recovers follower data—diversity is constrained within a box of quantifiable bias.
+
+**2. Adversarial rewards to promote policy dispersion: A counter-force to the pull**
+
+The KL constraint has a side effect: while pulling each follower toward the leader, it implicitly pulls followers closer to each other, risking collapse into identical policies and losing diversity. Adversarial rewards counteract this. CPO trains a discriminator $D_\xi(y|\mathbf{s}_t,\mathbf{a}_t)$ to predict which follower (identity $y$) a trajectory originated from based on state-action pairs, and provides the log-confidence of the discriminator as an additional reward to the corresponding follower:
+
+$$r_t^{adv} = \lambda_{adv} \log D_\xi(y|\mathbf{s}_t,\mathbf{a}_t)$$
+
+Consequently, each follower is incentivized to explore unique regions that make it "identifiable." The KL constraint handles the pulling and the adversarial reward handles the pushing; together, they maintain followers in a structured distribution around the leader rather than crowding them together or allowing them to spiral out of control.
 
 ### Loss & Training
 
-The overall objective is: $L_{\text{CPO}}(\theta) = L_{\text{SAPG}}(\theta,j) + \beta \sum_{i} L_{\text{CPO},F_i,f}(\theta,\lambda_f)$, where $\beta$ balances the scale between the PPO objective and the KL regularization term. Adversarial rewards are provided only to followers; the leader is updated solely using true environment rewards.
+The total objective combines the SAPG loss with CPO regularization terms for all followers:
+
+$$L_{\text{CPO}}(\theta) = L_{\text{SAPG}}(\theta,j) + \beta \sum_{i} L_{\text{CPO},F_i,f}(\theta,\lambda_f)$$
+
+Here, $\beta$ balances the scale between the PPO objective and the KL regularization term, while $\lambda_f$ controls the strength of the KL constraint. Adversarial rewards are only given to followers; the leader is updated using only real environment rewards without discriminator signals to avoid polluting the final policy intended for deployment.
 
 ## Key Experimental Results
 
-### Main Results (Dexterous Manipulation Tasks, after $2\times10^{10}$ environment steps)
+### Main Results (Dexterous Manipulation, after $2\times10^{10}$ environment steps)
 
-| Task | PPO | PBT | SAPG | **CPO** |
+| Task | PPO | PBT | SAPG | **Ours (CPO)** |
 |------|-----|-----|------|---------|
 | ShadowHand | 10661±1050 | 10294±1728 | 12882±343 | **13762±414** |
 | AllegroHand | 10439±1282 | 13239±239 | 11989±817 | **14421±885** |
 | Reorientation | 1.04±0.98 | 2.92±4.27 | 38.79±1.66 | **43.75±0.65** |
 | Two-Arms | 1.41±0.80 | 26.43±11.12 | 5.11±3.41 | **35.30±2.77** |
 
-### Ablation Study (IS Ratio Deviation and ESS at $5\times10^9$ steps)
+### Ablation Study (IS Bias and ESS, at $5\times10^9$ steps)
 
-| Method | Avg. IS Ratio Deviation↓ | ESS Rate↑ |
-|--------|--------------------------|-----------|
+| Method | Avg IS Bias ↓ | ESS Rate ↑ |
+|------|----------------|--------|
 | SAPG | 0.889 | 0.0223 |
-| CPO($\lambda_f$=0.5) | Lower | Higher |
+| CPO ($\lambda_f$=0.5) | Lower | Higher |
 
 ### Key Findings
-- CPO reaches SAPG's final performance in approximately half the environment steps on most tasks.
-- SAPG completely fails on the Two-Arms Reorientation task (5.11), whereas CPO successfully learns it (35.30).
-- KL constraints bring IS ratios closer to 1, validating the theoretical analysis.
+- CPO reaches the final performance of SAPG in approximately half the environment steps in most tasks.
+- SAPG fails completely in the Two-Arms Reorientation task (5.11), while CPO learns successfully (35.30).
+- The KL constraint keeps IS ratios closer to 1, validating the theoretical analysis.
 - Follower policies naturally form a structured distribution around the leader, exhibiting "emergent exploration behavior."
 
 ## Highlights & Insights
 
-- **Strong theoretical grounding**: The harms of excessive diversity are demonstrated from two perspectives — IS ratio deviation and PPO clipping bias.
-- **Simple and practical method**: Significant improvements are achieved by adding only KL constraints and adversarial rewards on top of SAPG.
-- **In-depth comparative analysis**: Reveals SAPG's policy misalignment issue, where some follower policies deviate substantially from the leader.
+- **Strong Theoretical Analysis**: Demonstrates the harm of excessive diversity from the perspectives of IS ratio bias and PPO clipping bias.
+- **Simple and Practical**: Achieves significant improvements by adding only KL constraints and adversarial rewards on top of SAPG.
+- **In-depth Comparative Analysis**: Reveals the policy misalignment problem in SAPG—where some follower policies deviate severely from the leader.
 
 ## Limitations & Future Work
 
-- The KL constraint strength $\lambda_f$ is robust but still requires manual specification; adaptive adjustment schemes are worth exploring.
-- Performance gains are limited on simpler tasks (e.g., Locomotion).
-- The current approach uses a one-dimensional conditioning vector to distinguish policies; richer conditioning schemes may further enhance diversity.
+- Although robust, the KL constraint strength $\lambda_f$ still requires manual setting; adaptive adjustment schemes are worth exploring.
+- Improvement margins are limited in simple tasks (e.g., Locomotion).
+- Current implementation uses a 1D condition vector to distinguish policies; richer conditioning schemes might further enhance diversity.
 
 ## Related Work & Insights
 
-- SAPG (Singla et al., 2024) is the direct predecessor; CPO addresses its policy misalignment problem.
-- The discriminator idea from DIAYN (Eysenbach et al., 2018) is cleverly repurposed to promote inter-policy dispersion.
-- Takeaway: In large-scale distributed RL, "structured diversity" is more effective than "unconstrained diversity."
+- SAPG (Singla et al., 2024) is the direct predecessor; CPO solves the policy misalignment issue on its foundation.
+- The discriminator approach from DIAYN (Eysenbach et al., 2018) is cleverly applied to promote inter-policy dispersion.
+- **Insight**: In large-scale distributed RL, "organized diversity" is more effective than "unconstrained diversity."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Theory-driven design, though individual components (KL constraints, discriminators) have prior precedents.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10 tasks, detailed ablations, ISS/KL analysis, 5 random seeds.
-- Writing Quality: ⭐⭐⭐⭐ Coherent logic from problem identification to theoretical analysis to method design.
+- Novelty: ⭐⭐⭐⭐ Theory-driven design, though individual components (KL constraint, discriminator) have precedents.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10 tasks, detailed ablations, IS/KL analysis, 5 random seeds.
+- Writing Quality: ⭐⭐⭐⭐ Coherent logic from problem identification to theoretical analysis and method design.
 - Value: ⭐⭐⭐⭐ Provides practical guidance for exploration strategies in large-scale parallel RL.
 
 <!-- RELATED:START -->
@@ -114,11 +131,11 @@ The overall objective is: $L_{\text{CPO}}(\theta) = L_{\text{SAPG}}(\theta,j) + 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Emergent Dexterity via Diverse Resets and Large-Scale Reinforcement Learning](emergent_dexterity_via_diverse_resets_and_large-scale_reinforcement_learning.md)
+- [\[ICLR 2026\] H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning](h3dp_triplyhierarchical_diffusion_policy_for_visuomotor_learning.md)
 - [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
-- [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
+- [\[ICLR 2026\] Geometry-Aware Policy Imitation](geometry-aware_policy_imitation.md)
 - [\[ICLR 2026\] Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control](towards_bridging_the_gap_between_large-scale_pretraining_and_efficient_finetunin.md)
-- [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](../../AAAI2026/robotics/scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
-- [\[NeurIPS 2025\] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning](../../NeurIPS2025/robotics/opinion_towards_unified_expressive_policy_optimization_for_robust_robot_learning.md)
 
 </div>
 

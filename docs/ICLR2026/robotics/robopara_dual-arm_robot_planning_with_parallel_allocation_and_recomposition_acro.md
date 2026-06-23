@@ -2,78 +2,90 @@
 title: >-
   [Paper Note] RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks
 description: >-
-  [ICLR 2026][Robotics][dual-arm robot] This paper proposes RoboPARA, a two-stage framework that optimizes task parallelism for dual-arm robots via dependency graph construction and graph re-traversal scheduling…
+  [ICLR 2026][Robotics & Embodied AI][Paper Note] The RoboPARA framework is proposed to optimize task parallelism for dual-arm robots through a two-stage process of dependency graph construction and graph re-traversal. It achieves a 30-50% reduction in execution time and a 34% improvement in success rate across multi-scenario benchmarks compared to existing methods.
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "dual-arm robot"
-  - "parallel task planning"
-  - "DAG dependency graph"
-  - "LLM planning"
-  - "multi-task scheduling"
+  - ICLR 2026
+  - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: 61589d97930e1191
+content_hash: 3b25deb2d29e85b0
 ---
-
 # RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.06683](https://arxiv.org/abs/2506.06683)  
 **Code**: [https://github.com/AiDuanshiying/RoboPARA](https://github.com/AiDuanshiying/RoboPARA)  
-**Area**: Robotics / Task Planning
-**Keywords**: dual-arm robot, parallel task planning, DAG dependency graph, LLM planning, multi-task scheduling
+**Area**: Robotics / Task Planning  
+**Keywords**: Dual-arm Robots, Parallel Task Planning, DAG Dependency Graph, LLM Planning, Multi-task Scheduling
 
 ## TL;DR
-This paper proposes RoboPARA, a two-stage framework that optimizes task parallelism for dual-arm robots via dependency graph construction and graph re-traversal scheduling, achieving 30–50% reduction in execution time and a 34% improvement in success rate over existing methods across multi-scenario benchmarks.
+The RoboPARA framework is proposed to optimize task parallelism for dual-arm robots through a two-stage process of dependency graph construction and graph re-traversal. It achieves a 30-50% reduction in execution time and a 34% improvement in success rate across multi-scenario benchmarks compared to existing methods.
 
 ## Background & Motivation
 
-**Background**: LLM-driven dual-arm robot task planning approaches (e.g., RoCo, FLTRNN) have made notable progress, yet these methods primarily optimize task success rate and completion time, mostly producing plans that execute sequentially on a single arm.
+**Background**: LLM-driven task planning for dual-arm robots (e.g., RoCo, FLTRNN) has made progress. However, these methods primarily optimize task success rates and completion times, often producing plans that execute sequentially with a single arm.
 
-**Limitations of Prior Work**: Existing methods overlook inter-arm parallelism — when a task requires only one arm, the other remains completely idle. This leaves the collaborative potential of dual-arm systems underutilized and leads to low execution efficiency.
+**Limitations of Prior Work**: Existing methods neglect the potential for parallelism between the two arms—when one task requires only one arm, the other remains idle. This leads to underutilized collaborative potential and low execution efficiency.
 
-**Key Challenge**: Dual-arm parallel planning must simultaneously handle task dependencies (certain steps must execute in order) and parallelization opportunities (independent steps can be assigned concurrently to both arms), constituting a combinatorial optimization problem.
+**Key Challenge**: Parallel planning for dual arms requires simultaneously managing inter-task dependencies (where certain steps must be ordered) and identifying parallel opportunities (where independent steps can be assigned to both arms). This represents a complex combinatorial optimization problem.
 
-**Goal**: Maximize parallel utilization of both arms while preserving task correctness, thereby reducing overall execution time.
+**Goal**: Maximize parallel utilization of both arms and minimize execution time while ensuring task correctness.
 
-**Key Insight**: Drawing inspiration from everyday human behavior — boiling water while brushing teeth — the paper models task dependencies via a DAG (Directed Acyclic Graph) and then applies a graph-traversal scheduling algorithm to maximize parallelism.
+**Key Insight**: Drawing inspiration from human daily activities—such as brushing teeth while boiling water—task dependencies are modeled using Directed Acyclic Graphs (DAGs). A graph traversal scheduling algorithm is then employed to maximize concurrency.
 
-**Core Idea**: Decouple dual-arm task planning into two stages — "LLM generates dependency graph → scheduling algorithm maximizes parallelism" — allowing the LLM to focus on understanding task semantics rather than directly planning parallel execution.
+**Core Idea**: Decouple dual-arm task planning into two stages: "LLM-generated dependency graph → Scheduling algorithm to maximize parallelism." This allows the LLM to focus on understanding task semantics rather than directly planning parallel execution.
 
 ## Method
 
 ### Overall Architecture
-RoboPARA adopts a two-stage architecture. The first stage employs an LLM augmented with RAG to generate a task dependency graph (DAG). The second stage applies a graph re-traversal algorithm to assign parallel tasks to both arms. The input is a set of multi-task instructions from the user; the output is a parallel execution plan for the dual-arm system.
+**Mechanism**: RoboPARA formalizes dual-arm parallel planning as a "dual-arm collaborative scheduling problem" and divides it into two steps. First, the LLM translates multi-task instructions into a Directed Acyclic Graph (DAG) that characterizes dependencies and performs self-correction. Second, a deterministic graph re-traversal algorithm allocates parallelizable steps to the left and right arms based on the graph. This allows the LLM to focus on "which steps must follow which," while leaving the combinatorial optimization of "how to arrange steps to minimize total execution time" to the graph algorithm. This pipeline requires no parameter training. To measure this parallelism, the authors also constructed the X-DAPT dataset as an evaluation foundation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Multi-task Instructions"] --> S1
+    subgraph S1["Dependency Graph Generation & Correction (Design 1)"]
+        direction TB
+        A["RAG Retrieval of<br/>Program Knowledge"] --> B["LLM Generates<br/>Dependency Graph DAG"]
+        B --> C{"Structural Validation:<br/>Illegal Edges?"}
+        C -->|"Yes"| D["Locate Error &<br/>Re-prompt Correction"]
+        D --> B
+    end
+    C -->|"No, Valid DAG"| S2
+    subgraph S2["Graph Re-traversal Parallel Scheduling (Design 2)"]
+        direction TB
+        E["Select Ready Nodes<br/>with Satisfied Dependencies"] --> F["Allocate Arms by<br/>Idleness/Object Locks"]
+        F --> G{"Dual-arm Task<br/>Deadlock?"}
+        G -->|"Yes"| H["Rollback Later Pick &<br/>Re-queue Subtree"]
+        H --> E
+        G -->|"No"| I["Update Successor Dependencies"]
+        I --> E
+    end
+    S2 --> OUT["Time-synchronized Execution Plan<br/>Minimize Makespan"]
+```
 
 ### Key Designs
 
-1. **Dependency Graph Generation with Error Correction (Dependency Graph-based Planning)**:
+**1. Dependency Graph Generation & Correction: Structuring Task Semantics for Scheduling**
 
-    - **Function**: Transforms multi-task instructions into a DAG, where nodes represent atomic operation steps and edges represent dependencies.
-    - **Mechanism**: RAG retrieves detailed procedural knowledge for each task from a local memory module and integrates it into structured prompts, enabling the LLM to generate the DAG. Each edge $(u, v)$ indicates that step $v$ cannot begin until step $u$ is complete. A DAG validation and error-correction step is included to detect cyclic dependencies and redundant edges.
-    - **Design Motivation**: The DAG structure naturally models task dependencies — nodes with no incoming edges can execute immediately, and when multiple dependency-free nodes exist simultaneously, they can be assigned to both arms in parallel.
+A primary challenge in parallel planning is ensuring LLM-generated plans are both correct and parallelizable. RoboPARA uses RAG (Retrieval-Augmented Generation) to retrieve task-related knowledge from a hybrid memory system—containing both short-term observations (object states) and long-term execution history (task package knowledge base). Environment constraints, dependency rules, parallel guidelines, and format examples are combined into structured prompts. This guides the LLM to encode multi-task instructions into a DAG: nodes represent atomic operations (pick / use / place / open-close / complete), and edges $(u \rightarrow v)$ indicate step $v$ must wait for $u$. This structure inherently favors parallel scheduling; nodes with satisfied dependencies can execute immediately. To address illegal dependencies often generated by LLMs, a structural validation routine detects three typical errors: (1) a `use/place` incorrectly depending on another object's `place`; (2) a `place` in a `pick-use-place` sequence depending directly on `pick` instead of the intermediate `use`; and (3) a node depending on an irrelevant object's `use`. Errors trigger iterative re-generation until a valid DAG is produced.
 
-2. **Graph Re-Traversal Dual-Arm Parallel Scheduling**:
+**2. Graph Re-traversal Parallel Scheduling: Maximizing Parallelism on Valid Graphs**
 
-    - **Function**: Optimizes the DAG traversal order to maximize the number of parallel execution steps across both arms.
-    - **Mechanism**: Two arm queues $Q_L, Q_R$ are maintained. At each time step, the set of all nodes with in-degree zero, $S_t$, is identified, and a heuristic rule assigns these nodes to idle arms. Tasks requiring bimanual coordination are simultaneously assigned to both arms. Key heuristics include prioritizing tasks on the critical path and balancing workload between the two arms.
-    - **Design Motivation**: The graph generation stage only ensures semantic correctness; a dedicated scheduling algorithm is required to optimize parallelism, approximating an NP-hard combinatorial problem.
+With a correct dependency graph, the next step is determining arm actions at each timestamp. Optimal parallel arrangement is NP-hard; thus, RoboPARA employs a deterministic graph re-traversal algorithm for an approximate solution. The goal is to minimize the makespan $C_{\max} = \max_{v}\big(\sigma(v) + t_v\big)$, where $\sigma(v)$ is the start time and $t_v$ is the duration of step $v$. The algorithm maintains a dynamic ready queue $\mathcal{Q}$ containing nodes $\texttt{Ready}(v)$ whose predecessors are scheduled. Nodes are allocated based on arm availability, task type (single-arm $\delta_v{=}1$ or dual-arm $\delta_v{=}2$), and object lock consistency. Single-arm tasks are assigned to idle arms, while dual-arm collaborative tasks require both arms to be idle and synchronized. Correctness is ensured by four categories of constraints: dependency constraints ($\sigma(v) \ge \max_{u \in \text{pred}(v)}(\sigma(u)+t_u)$), non-overlapping arm occupancy, arm locks (ensuring `pick-use-place` for one object is handled by the same arm), and deadlock prevention. Deadlocks—where a dual-arm task is ready but arms are locked by different objects—are resolved by rolling back the later `pick` in the conflicting chains, allowing the earlier chain to finish.
 
-3. **X-DAPT Benchmark Dataset**:
+**3. X-DAPT Benchmark: Quantifying Parallelism as an Evaluation Dimension**
 
-    - **Function**: Constructs the first evaluation dataset specifically focused on dual-arm task parallelism.
-    - **Mechanism**: Covers 10 representative scenarios (kitchen, office, agricultural greenhouse, factory, etc.), each at three difficulty levels, comprising 1,000+ task bundles. Evaluation metrics include TEI (Time Efficiency Index), TFR (Task Failure Rate), PPR (Parallel Step Proportion), and APR (Average Parallelism Rate).
-    - **Design Motivation**: Existing benchmarks do not assess parallelism and therefore cannot measure dual-arm collaborative efficiency.
+Existing dual-arm benchmarks focus on success rates and completion times but fail to measure the extent of arm collaboration. RoboPARA introduces X-DAPT (Cross-Scenario Dual-Arm Parallel Task), the first dataset specifically for evaluating dual-arm parallelism. It spans 10 scenarios (e.g., kitchen, hospital, disaster relief) with three difficulty levels, totaling 1,000+ task packages. Four metrics are introduced: TEI (Time Efficiency Index), TFR (Task Failure Rate), PPR (Parallel Position Ratio—ratio of parallel steps to total steps), and APR (Average Parallelism Ratio). PPR and APR directly characterize the degree of simultaneous arm operation, serving as the core dimensions to measure efficiency gains.
 
 ### Loss & Training
-No training is required. The framework relies entirely on zero-shot/few-shot inference of LLMs combined with deterministic scheduling algorithms.
+No training required—the entire framework is built upon zero-shot/few-shot prompting of LLMs (GPT-4o / DeepSeek V3) and deterministic scheduling algorithms, involving no parameter updates.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | TEI ↑ | TFR ↓ | PPR ↑ | APR ↑ | Scenario |
-|---|---|---|---|---|---|
+|------|-------|-------|-------|-------|------|
 | RoboPARA | 0.953 | 0.033 | 0.543 | 0.283 | Kitchen |
 | Embodied TaPA | 0.859 | 0.200 | 0.000 | 0.080 | Kitchen |
 | RoCo | 0.836 | 0.067 | 0.008 | 0.041 | Kitchen |
@@ -82,37 +94,37 @@ No training is required. The framework relies entirely on zero-shot/few-shot inf
 
 ### Ablation Study
 
-| Configuration | PPR | APR | Notes |
-|---|---|---|---|
-| RoboPARA (Full) | 0.543 | 0.283 | Complete framework |
-| w/o graph error correction | ~0.35 | ~0.18 | DAG generation may contain cycles/redundancies |
-| w/o RAG retrieval | ~0.40 | ~0.20 | Task decomposition quality degrades |
+| Configuration | PPR | APR | Description |
+|------|-----|-----|------|
+| RoboPARA (Full) | 0.543 | 0.283 | Full Framework |
+| w/o Graph Correction | ~0.35 | ~0.18 | DAG generation may contain cycles/redundancies |
+| w/o RAG Retrieval | ~0.40 | ~0.20 | Decrease in task decomposition quality |
 
 ### Key Findings
-- RoboPARA achieves on average more than 4.5× parallel and collaborative steps, reducing execution time by 30–50%.
-- On the most complex task combinations, RoboPARA outperforms all baselines by an average of 34% in success rate.
-- All baseline methods exhibit near-zero parallel step ratios (PPR ≈ 0), confirming that existing approaches entirely neglect parallelism.
-- Real-world deployment on a humanoid robot demonstrates behavior patterns closely resembling human activity.
+- RoboPARA achieves more than 4.5× the parallel and collaborative steps of baselines, reducing execution time by 30-50%.
+- In the most complex task combinations, RoboPARA's success rate is on average 34% higher than other methods.
+- Parallel steps for all baseline methods are near zero (PPR ≈ 0), confirming that existing methods almost entirely ignore parallelism.
+- Deployment on real humanoid robots demonstrates behaviors closely mimicking human activity patterns.
 
 ## Highlights & Insights
-- **Planning–Scheduling Decoupling**: Delegating task semantic understanding and dependency modeling to the LLM, while assigning the NP-hard scheduling problem to a deterministic algorithm, represents a principled division of responsibilities.
-- **Parallelism as an Evaluation Dimension**: This work is the first to establish parallel degree as a core evaluation metric for dual-arm robots; the PPR/APR metrics are generalizable to multi-robot collaborative scenarios.
+- **Decoupled Planning-Scheduling Design**: Assigning task semantic understanding and dependency modeling to the LLM, while leaving the NP-hard scheduling problem to a deterministic algorithm, represents an effective division of labor.
+- **Parallelism as an Evaluation Dimension**: By establishing parallelism as a core metric for dual-arm robots, the PPR/APR metrics can be extended to multi-robot collaboration scenarios.
 
 ## Limitations & Future Work
-- DAG generation still relies on the LLM's reasoning capability and may produce errors for complex cross-task dependencies.
-- The scheduling algorithm uses heuristics rather than optimal solvers, potentially missing the globally optimal parallel plan.
-- The framework assumes that execution time for each atomic operation is known or estimable in advance, which may not hold in practice.
-- Dynamic replanning during execution (e.g., recovery strategies upon step failure) is not addressed.
+- DAG generation still relies on the reasoning capabilities of the LLM, which may fail in cases of complex cross-task dependencies.
+- The scheduling algorithm uses heuristics rather than global optimization, potentially missing the absolute optimal parallel solution.
+- The framework assumes that the execution time of each atomic operation is known or estimable, which may not hold in practice.
+- Dynamic re-planning during execution (e.g., recovery strategies after a step fails) is not yet considered.
 
 ## Related Work & Insights
-- **vs. RoCo**: RoCo employs agent dialogue negotiation to decompose and assign tasks, but the resulting plans remain predominantly sequential; RoboPARA explicitly optimizes parallelism.
-- **vs. FLTRNN**: FLTRNN uses an RNN architecture for long-horizon planning, focusing on task decomposition and memory management, without addressing dual-arm parallelism.
+- **vs RoCo**: RoCo uses agents to decompose and assign tasks through dialogue negotiation, but the resulting plans are still largely sequential. RoboPARA explicitly optimizes parallelism.
+- **vs FLTRNN**: FLTRNN employs an RNN structure for long-term planning, focusing on task decomposition and memory management rather than dual-arm parallelism.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First LLM planning framework to systematically address dual-arm parallelism
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive baseline comparisons and multi-scenario evaluations
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation and thorough method description
-- Value: ⭐⭐⭐⭐ Practically instructive for multi-arm and multi-robot task scheduling
+- Novelty: ⭐⭐⭐⭐ The first system to focus on dual-arm parallelism within an LLM planning framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive baseline comparisons and multi-scenario evaluations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and comprehensive methodological description.
+- Value: ⭐⭐⭐⭐ Practical significance for multi-arm and multi-robot task scheduling.
 
 <!-- RELATED:START -->
 
@@ -120,11 +132,11 @@ No training is required. The framework relies entirely on zero-shot/few-shot inf
 
 ## Related Papers
 
+- [\[CVPR 2025\] RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins](../../CVPR2025/robotics/robotwin_dual-arm_robot_benchmark_with_generative_digital_twins.md)
 - [\[ICLR 2026\] ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning](exopredicator_learning_abstract_models_of_dynamic_worlds_for_robot_planning.md)
-- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](../../ICML2026/robotics/hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
-- [\[ICLR 2026\] Experience-based Knowledge Correction for Robust Planning in Minecraft](experience-based_knowledge_correction_for_robust_planning_in_minecraft.md)
-- [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
 - [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
+- [\[ICLR 2026\] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning](memory_benchmark_robots_a_benchmark_for_solving_complex_tasks_with_reinforcement.md)
+- [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
 
 </div>
 

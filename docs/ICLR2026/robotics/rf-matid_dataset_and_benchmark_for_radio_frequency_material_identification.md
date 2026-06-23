@@ -2,127 +2,129 @@
 title: >-
   [Paper Note] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification
 description: >-
-  [ICLR 2026][Robotics][RF sensing] This paper introduces RF-MatID, the first open-source large-scale RF material identification dataset with wide frequency coverage (4–43.5 GHz) and diverse geometric perturbations…
+  [ICLR 2026][Robotics & Embodied AI][RF sensing] Constructs the first open-source, large-scale, wideband (4-43.5 GHz), and geometrically diverse RF material identification dataset, RF-MatID, containing 16 fine-grained material categories (5 superclasses) and 142K samples. A systematic benchmark is established covering 9 deep learning models, 5 frequency protocols, an
 tags:
-  - "ICLR 2026"
-  - "Robotics"
-  - "RF sensing"
-  - "material identification"
-  - "UWB-mmWave"
-  - "dataset benchmark"
-  - "embodied AI"
+  - ICLR 2026
+  - Robotics & Embodied AI
+  - RF sensing
+  - material identification
+  - UWB-mmWave
+  - dataset benchmark
+  - embodied AI
 date: 2026-05-08
-content_hash: feee710cd527fc94
+content_hash: ce8ed3791d1ceed7
 ---
-
 # RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.20377](https://arxiv.org/abs/2601.20377)  
-**Code**: Available (project page)  
-**Area**: AI Safety / Embodied AI / RF Sensing
+**Code**: Yes (provided on project page)  
+**Area**: AI Safety / Embodied AI / RF Sensing  
 **Keywords**: RF sensing, material identification, UWB-mmWave, dataset benchmark, embodied AI
 
 ## TL;DR
-This paper introduces RF-MatID, the first open-source large-scale RF material identification dataset with wide frequency coverage (4–43.5 GHz) and diverse geometric perturbations, comprising 16 fine-grained material categories (5 superclasses) and 142K samples. A comprehensive benchmark is established across 9 deep learning models, 5 frequency protocols, and 7 data split settings.
+Constructs the first open-source, large-scale, wideband (4-43.5 GHz), and geometrically diverse RF material identification dataset, RF-MatID, containing 16 fine-grained material categories (5 superclasses) and 142K samples. A systematic benchmark is established covering 9 deep learning models, 5 frequency protocols, and 7 data splits.
 
 ## Background & Motivation
 
-**Background**: Material identification is a fundamental capability for embodied AI, currently dominated by optical sensors (cameras, hyperspectral imaging). RF-based methods exploit electromagnetic wave–material interactions to reveal intrinsic material properties (permittivity, conductivity, etc.), operating independently of illumination conditions and visual appearance.
+**Background**: Material identification is a fundamental capability for embodied AI. Currently, it primarily relies on optical sensors (cameras, hyperspectral). RF (Radio Frequency) methods reveal intrinsic material properties (permittivity, conductivity, etc.) through physical interaction between electromagnetic waves and materials, remaining unaffected by lighting conditions or visual similarity.
 
-**Limitations of Prior Work**: (1) All existing RF material datasets are proprietary, hindering fair algorithmic comparison; (2) COTS sensor frequency bands are narrow and fragmented (e.g., 77–81 GHz only), precluding systematic cross-band evaluation; (3) systematic evaluation of geometric perturbations (angle and distance variation) is absent, leaving real-world deployment robustness uncertain.
+**Limitations of Prior Work**: (1) Existing RF material datasets are generally not public, hindering fair comparisons; (2) COTS sensors have narrow and fragmented frequency bands (e.g., only 77-81 GHz), preventing cross-band systematic evaluations; (3) There is a lack of systematic assessment regarding geometric perturbations (changes in angle and distance), leaving the robustness of practical deployment in question.
 
-**Key Challenge**: Despite theoretical advantages of RF methods (strong penetration, illumination independence), the lack of research infrastructure (datasets and benchmarks) severely impedes the development and evaluation of learning-based approaches.
+**Key Challenge**: While RF methods offer theoretical advantages (strong penetration, immunity to lighting), the absence of research infrastructure (datasets + benchmarks) severely constrains the development and evaluation of learning-based methods.
 
-**Goal**: Construct the first open-source, wide-band, geometrically diverse RF material identification dataset and establish a complete benchmarking framework.
+**Goal**: To construct the first open-source, wideband, and geometrically diverse RF material identification dataset and establish a complete benchmarking framework.
 
-**Key Insight**: A custom UWB-mmWave sensing platform with continuous frequency coverage from 4 to 43.5 GHz is developed to systematically collect RF responses of 16 materials across varying distances (200–2000 mm) and angles (0–10°).
+**Key Insight**: Utilizing a self-built UWB-mmWave sensing platform (continuous 4-43.5 GHz coverage) to systematically collect RF responses of 16 materials at various distances (200-2000mm) and angles (0-10°).
 
-**Core Idea**: Enable standardized learning-based research in RF material identification through the first open-source wide-band RF dataset and systematic benchmark.
+**Core Idea**: Promote the standardization of learning-based RF material identification research through the first open-source wideband RF dataset and a systematic benchmark.
 
 ## Method
 
 ### Overall Architecture
-RF-MatID is constructed at three levels: (1) **Data collection** — a custom UWB-mmWave sensing platform systematically acquires frequency-domain responses from 16 material classes over a distance–angle grid; (2) **Data processing** — dual-domain representation (frequency and time domains) with complex whitening normalization; (3) **Benchmark evaluation** — 5 frequency protocols × 7 data splits × 9 models.
+RF-MatID does not propose a new model but rather builds the infrastructure to allow "learning-based RF material identification" to be evaluated fairly. The pipeline consists of three steps: first, using a custom UWB-mmWave platform to grid-scan frequency-domain electromagnetic responses of 16 materials across distances and angles; second, organizing each sampled complex spectrum into paired frequency-domain and time-domain representations for network input; finally, performing cross-evaluations across "Frequency Protocol × Data Split × Model" to form a systematic evaluation matrix. The design emphasizes "open-source" accessibility and "reproducible horizontal comparison."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    M["16 Material Classes<br/>(5 Superclasses)"] --> ACQ["Wideband Platform + Grid Acquisition<br/>4-43.5 GHz Complex Spectrum<br/>Dist. × Angle → 142K Samples"]
+    ACQ --> REP["Freq / Time Dual Representation<br/>Real-Imag Whitening / IFFT Series"]
+    REP --> EVAL["Evaluation Matrix"]
+    EVAL --> P["5 Frequency Protocols<br/>Full / mmWave / cmWave / Regulatory"]
+    EVAL --> S["7 Data Splits<br/>IID + Cross-Dist / Cross-Angle OOD"]
+    EVAL --> DM["9 Deep Learning Models"]
+    P --> R["Systematic Benchmark Results<br/>IID Saturation · OOD Performance Gap"]
+    S --> R
+    DM --> R
+```
 
 ### Key Designs
 
-1. **Sensing Platform and Data Acquisition**:
+**1. Wideband Sensing Platform and Grid Acquisition: Full 4-43.5 GHz Scanning**
 
-    - **Function**: Wide-band RF signal acquisition covering 4–43.5 GHz.
-    - **Mechanism**: A DRH40 double-ridge horn antenna paired with an MS46131A vector network analyzer collects complex responses $H(f_i) = I(f_i) + jQ(f_i)$ at 2048 frequency bins per sample. Each material is measured on a distance grid of 200–2000 mm (50 mm steps) × angle grid of 0–10° (1° steps), yielding 142K samples in total.
-    - **Design Motivation**: The 39.5 GHz bandwidth far exceeds the previous maximum of 4 GHz, simultaneously capturing centimeter-wave (3–30 GHz) penetration information and millimeter-wave Q-band (30–50 GHz) surface sensitivity.
+This directly addresses the limitation of narrow and fragmented bands in COTS sensors. The platform uses DRH40 dual-ridged horn antennas connected to an MS46131A Vector Network Analyzer (VNA) to measure complex responses $H(f_i) = I(f_i) + jQ(f_i)$ across 2048 frequency bins. Acquisition is conducted systematically on a grid of distances 200-2000mm (50mm steps) × angles 0-10° (1° steps), resulting in 142K samples. The 39.5 GHz bandwidth captures both penetrating information from the centimeter-wave (3-30 GHz) range and surface-sensitive information from the millimeter-wave Q-band (30-50 GHz). Materials cover 5 superclasses and 16 fine-grained categories: Brick, Glass, Synthetic, Wood, and Stone.
 
-2. **Dual-Domain Data Representation**:
+**2. Frequency/Time Domain Dual Representation: Capturing Attenuation and Delay**
 
-    - **Function**: Generate paired time-domain representations for each frequency-domain sample.
-    - **Mechanism**: Frequency-domain data is represented as two-channel real tensors (real and imaginary parts); time-domain data is obtained via IFFT to produce signals of length 10240. Complex whitening is applied in the frequency domain to preserve phase relationships; standard normalization is used in the time domain.
-    - **Design Motivation**: Experiments confirm that two-channel real representation outperforms complex-valued networks; frequency-domain captures frequency-selective attenuation while time-domain captures propagation delay.
+To feed complex spectra into networks, two paired representations are generated: the frequency domain splits complex numbers into real and imaginary channels with complex whitening; the time domain applies an IFFT to the spectrum to obtain a normalized 10240-length sequence. The frequency domain emphasizes frequency-selective attenuation (absorption/reflection), while the time domain emphasizes propagation delay. Experiments indicate that dual-channel real representations consistently outperform direct complex-valued network processing.
 
-3. **Frequency Protocols**:
+**3. Five Frequency Protocols: Incorporating Regulatory Constraints**
 
-    - **Function**: Define 5 frequency allocation schemes to evaluate recognition capability across different bands.
-    - **Mechanism**: P1 full band 4–43.5 GHz; P2 millimeter-wave 30–43.5 GHz; P3 centimeter-wave 4–30 GHz; P4 legally permitted commercial bands in the United States; P5 legally permitted bands in China.
-    - **Design Motivation**: This is the first benchmark to incorporate regulatory constraints on frequency usage, enabling results to directly inform compliant system design.
+Since spectrum use is regulated in real-world deployments, five protocols are defined: P1 (Full 4-43.5 GHz), P2 (mmWave 30-43.5 GHz only), P3 (cmWave 4-30 GHz only), P4 (US legal commercial bands), and P5 (China legal bands). This marks the first inclusion of regulatory constraints in a material identification benchmark.
 
-4. **Seven Data Split Settings**:
+**4. Seven Data Splits: Testing Geometric Robustness**
 
-    - **Function**: Systematically evaluate model generalization across diverse deployment scenarios.
-    - **Mechanism**: S1 standard random split (IID); S2 cross-distance OOD (mod1–3 covering different distance subsets); S3 cross-angle OOD.
-    - **Design Motivation**: S1 assesses basic capability; S2/S3 assess robustness to distribution shift caused by sensor position variation in real-world deployment.
-
-### Material Taxonomy
-5 superclasses → 16 fine-grained categories: **Brick** (over-fired clay brick, lightweight porous brick, volcanic brick); **Glass** (transparent acrylic, tempered glass, white opaque acrylic); **Synthetic** (melamine-faced board, mineral fiber board, PVC board); **Wood** (cedar sleeper, lauan plywood, red oak plywood); **Stone** (permeable paving stone, engineered stone, granite, concrete).
+Splits are divided into two types: S1 is a standard random split (IID) to measure the basic upper bound. S2 and S3 are Out-of-Distribution (OOD) splits for distance (mod 1-3) and angle, respectively. These test the distribution shifts caused by sensor distance or angle drift during actual deployment.
 
 ## Key Experimental Results
 
-### Main Results (Protocol 1, Full Band 4–43.5 GHz)
+### Main Results (Protocol 1, Full Band 4-43.5 GHz)
 
-| Model | S1 (IID) | S2-mod1 (Cross-distance) | S3-mod1 (Cross-angle) | Notes |
-|---|---|---|---|---|
-| Baseline (proposed) | 99.57 | 86.62 | 98.89 | Simple CNN |
+| Model | S1 (IID) | S2-mod1 (Cross-Dist) | S3-mod1 (Cross-Angle) | Description |
+|------|----------|----------------------|-----------------------|-------------|
+| Baseline (Ours) | 99.57 | 86.62 | 98.89 | Simple CNN |
 | LSTM-ResNet | 99.84 | 97.12 | 99.69 | Best IID |
-| ConvNeXt | 99.51 | 79.10 | 98.85 | CV model |
-| AirTac | 96.81 | 91.36 | 98.12 | RF-specific |
-| Material-ID | 99.28 | 95.67 | 97.63 | RF-specific |
+| ConvNeXt | 99.51 | 79.10 | 98.85 | CV Model |
+| AirTac | 96.81 | 91.36 | 98.12 | RF-Specific |
+| Material-ID | 99.28 | 95.67 | 97.63 | RF-Specific |
 
-### Cross-Domain Robustness (S2 OOD, Protocol 1)
+### OOD Robustness (S2 OOD, Protocol 1)
 
-| Model | S2-mod1 | S2-mod2 | S2-mod3 | Notes |
-|---|---|---|---|---|
-| LSTM-ResNet | 97.12 | 49.95 | 71.00 | Large drop at mod2 |
-| AirTac | 91.36 | 86.95 | 65.41 | Most robust across distances |
-| ConvNeXt | 79.10 | 64.19 | 63.52 | Poor cross-domain generalization |
+| Model | S2-mod1 | S2-mod2 | S2-mod3 | Description |
+|------|---------|---------|---------|-------------|
+| LSTM-ResNet | 97.12 | 49.95 | 71.00 | Massive drop in mod2 |
+| AirTac | 91.36 | 86.95 | 65.41 | Most robust cross-dist |
+| ConvNeXt | 79.10 | 64.19 | 63.52 | CV Model poor OOD |
 
 ### Key Findings
-- **IID performance is near-saturated**: Most models exceed 99% under S1, offering little discriminability; with sufficient data, RF material identification is not inherently difficult.
-- **Cross-distance domain shift is the primary challenge**: Accuracy under S2-mod2 drops sharply to 50–87% across models, indicating that distance-induced signal attenuation poses the greatest deployment challenge.
-- **AirTac is most robust under OOD settings**: Although not the top IID performer, it exhibits the smallest OOD degradation, suggesting that RF-specific architectural design benefits robustness.
-- **Frequency domain vs. time domain**: Frequency-domain two-channel representation outperforms time-domain representation and complex-valued network processing.
-- **Compliant frequency bands remain viable**: Performance under P4/P5 (legally permitted bands) is lower than the full band but remains practically usable, validating real-world deployment feasibility.
+- **IID scenarios are nearly saturated**: Most models achieve >99% on S1, suggesting RF material identification is straightforward given sufficient data.
+- **Cross-distance domain shift is the primary challenge**: Accuracy drops sharply to 50-87% in S2-mod2, indicating that signal attenuation from distance changes significantly impacts models.
+- **AirTac exhibits stable cross-domain performance**: While not the highest in IID, it shows the smallest OOD decline, suggesting RF-specific architecture designs benefit robustness.
+- **Freq vs. Time Domain**: Dual-channel frequency representation outperforms time-domain and pure complex-valued processing.
+- **Regulatory bands are viable**: Performance under P4/P5 remains usable despite being lower than the full band, validating feasibility for real deployment.
 
 ## Highlights & Insights
-- **Landmark significance as the first open-source RF material dataset**: Analogous to ImageNet's impact on visual recognition research, RF-MatID has the potential to standardize RF sensing research. The open-source policy constitutes the most significant contribution.
-- **Frequency protocol design incorporates regulatory constraints**: This is the first benchmark to integrate legal compliance into its design, directly facilitating the transition from research to deployment.
-- **Systematic geometric perturbation**: The grid-based distance and angle acquisition methodology can be adopted by other sensing modalities (e.g., LiDAR, ultrasound).
+- **First Open-Source RF Material Dataset**: Much like ImageNet propelled vision research, RF-MatID aims to standardize RF sensing research. The open-source policy is a major contribution.
+- **Regulatory-Aware Design**: Incorporating legal compliance into the benchmark design directly aids the transition from research to deployment.
+- **Systematic Geometric Perturbations**: The grid-based acquisition for distance and angle provides a methodology applicable to other sensing modalities (e.g., LiDAR, ultrasonic).
 
 ## Limitations & Future Work
-- **Limited material variety**: 16 categories remain insufficient; real-world environments encompass far more materials, including liquids, textiles, and metals.
-- **Single sensing platform**: All data originate from one hardware setup; cross-device generalization is unknown.
-- **Controlled indoor environment**: Multipath interference, occlusion, and other real-world factors are not considered.
-- **Narrow angle range**: Only 0–10° is covered, whereas robotic manipulation may require 0–90°.
-- **Absence of multimodal benchmark**: As an embodied AI dataset, no paired visual or tactile data are provided for multimodal fusion research.
+- **Limited Material Variety**: 16 categories are relatively few compared to real environments containing liquids, fabrics, metals, etc.
+- **Single Sensing Platform**: Data from a single hardware set limits knowledge of cross-device generalization.
+- **Controlled Indoor Environment**: Multi-path interference and occlusion in real-world settings are not yet considered.
+- **Narrow Angle Range**: Only 0-10°; robotic operations may involve 0-90° variations.
+- **Lack of Multi-modal Benchmarks**: No corresponding visual or tactile data is provided for multi-modal fusion research.
 
 ## Related Work & Insights
-- **vs. VNA-based datasets (he2022accurate, shanbhag2023contactless)**: Broader frequency coverage (39.5 GHz vs. 4 GHz) and openly available.
-- **vs. Wi-Fi/RFID datasets**: Higher signal quality (coherent transceiver) but requires dedicated hardware.
-- Provides foundational data resources for material perception research in embodied AI, and can serve as an RF-branch baseline.
+- **vs. VNA-based datasets (he2022accurate, shanbhag2023contactless)**: Offers wider bandwidth (39.5 GHz vs. 4 GHz) and is open-source.
+- **vs. Wi-Fi/RFID datasets**: Higher signal quality via coherent transceivers but requires specialized hardware.
+- Provides a foundational resource for material perception in embodied AI as an RF branch baseline.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First open-source wide-band RF material identification dataset, filling a critical gap.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ 9 models × 5 protocols × 7 splits, comprehensive coverage.
-- **Writing Quality**: ⭐⭐⭐⭐ Well-structured with thorough background exposition.
-- **Value**: ⭐⭐⭐⭐ Dataset contribution provides lasting impact to the field.
+- Novelty: ⭐⭐⭐⭐ First open-source wideband RF material dataset, filling a critical gap.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 9 models × 5 protocols × 7 splits; comprehensive coverage.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured with detailed background.
+- Value: ⭐⭐⭐⭐ Dataset contribution provides lasting utility for the field.
 
 <!-- RELATED:START -->
 
@@ -130,11 +132,11 @@ RF-MatID is constructed at three levels: (1) **Data collection** — a custom UW
 
 ## Related Papers
 
+- [\[ICLR 2026\] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning](memory_benchmark_robots_a_benchmark_for_solving_complex_tasks_with_reinforcement.md)
 - [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](../../AAAI2026/robotics/touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
+- [\[ICLR 2026\] TaCo: A Benchmark for Lossless and Lossy Codecs of Heterogeneous Tactile Data](taco_a_benchmark_for_lossless_and_lossy_codecs_of_heterogeneous_tactile_data.md)
+- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 - [\[ICLR 2026\] MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation](mollangbench_a_comprehensive_benchmark_for_language-prompted_molecular_structure.md)
-- [\[AAAI 2026\] Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search](../../AAAI2026/robotics/human-centric_open-future_task_discovery_formulation_benchmark_and_scalable_tree.md)
-- [\[ICCV 2025\] GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices](../../ICCV2025/robotics/guiodyssey_a_comprehensive_dataset_for_cross-app_gui_navigation_on_mobile_device.md)
-- [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](../../NeurIPS2025/robotics/suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
 
 </div>
 

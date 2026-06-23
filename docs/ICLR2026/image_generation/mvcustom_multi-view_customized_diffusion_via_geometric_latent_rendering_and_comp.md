@@ -2,143 +2,152 @@
 title: >-
   [Paper Note] MVCustom: Multi-View Customized Diffusion via Geometric Latent Rendering and Completion
 description: >-
-  [ICLR 2026][Image Generation][Multi-view customized generation] This paper introduces a new task termed multi-view customization and proposes the MVCustom framework…
+  [ICLR 2026][Image Generation][Paper Note] Ours proposes a new task called multi-view customization and designs the MVCustom framework. By utilizing a video diffusion backbone combined with dense spatio-temporal attention to achieve overall frame consistency, and introducing two inference-stage techniques—depth-aware feature rendering and consistency-aware late
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Multi-view customized generation"
-  - "camera pose control"
-  - "feature field rendering"
-  - "video diffusion"
-  - "geometric consistency"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 077164ddc39a2815
+content_hash: 3789fba708edcc34
 ---
-
 # MVCustom: Multi-View Customized Diffusion via Geometric Latent Rendering and Completion
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.13702](https://arxiv.org/abs/2510.13702)  
 **Code**: [Project Page](https://minjung-s.github.io/mvcustom/)  
-**Area**: Diffusion Models / Personalized Generation
-**Keywords**: Multi-view customized generation, camera pose control, feature field rendering, video diffusion, geometric consistency
+**Area**: Diffusion Models / Personalized Generation  
+**Keywords**: Multi-view customized generation, camera pose control, feature field rendering, video diffusion, geometric consistency  
 
 ## TL;DR
 
-This paper introduces a new task termed multi-view customization and proposes the MVCustom framework, which leverages a video diffusion backbone with dense spatio-temporal attention for holistic frame consistency. At inference time, two novel techniques are introduced—depth-aware feature rendering and consistency-aware latent completion—achieving for the first time the simultaneous satisfaction of camera pose control, subject identity preservation, and cross-view geometric consistency.
+Ours proposes a new task called multi-view customization and designs the MVCustom framework. By utilizing a video diffusion backbone combined with dense spatio-temporal attention to achieve overall frame consistency, and introducing two inference-stage techniques—depth-aware feature rendering and consistency-aware latent completion—it is the first to simultaneously achieve camera pose control, subject identity preservation, and cross-view geometric consistency.
 
 ## Background & Motivation
 
-**Background**: Controllable image generation has two key dimensions—camera control (multi-view generation) and customization (preserving subject identity from reference images). Each dimension has been extensively studied, yet methods that **jointly** address both remain virtually absent.
+**Background**: Controllable image generation has two key dimensions: camera control (multi-view generation) and customization (maintaining subject identity based on reference images). While extensive work exists for each, methods that **jointly** achieve both are virtually non-existent.
 
 **Limitations of Prior Work**:
-- Traditional customization methods (DreamBooth, Custom Diffusion) do not support camera pose control.
-- Multi-view generation methods (CameraCtrl, SEVA) do not support personalized customization.
-- Customization methods with viewpoint control (CustomDiffusion360, CustomNet) focus solely on the subject, neglecting cross-view consistency of the background.
-- Directly applying customization methods (e.g., DreamBooth-LoRA) to multi-view generation backbones leads to loss of subject identity and degraded camera control.
+   - Traditional customization methods (DreamBooth, Custom Diffusion) do not support camera pose control.
+   - Multi-view generation methods (CameraCtrl, SEVA) do not support personalized customization.
+   - Customized methods with pose control (CustomDiffusion360, CustomNet) focus only on the subject and ignore cross-view consistency of the background.
+   - Directly applying customization methods (e.g., DreamBooth-LoRA) to multi-view generation backbones leads to loss of subject identity and weakened camera control.
 
-**Key Challenge**: Multi-view generation relies on large-scale data to learn 3D geometry, whereas customization scenarios provide only a handful of reference images—a fundamental tension between data scarcity and the demand for geometric consistency.
+**Key Challenge**: Multi-view generation relies on large-scale data to learn 3D geometry, whereas customization scenarios provide only a few reference images. There is a fundamental conflict between data scarcity and the requirement for geometric consistency.
 
-**Goal**: Define and address the "multi-view customization" task: (i) generate images matching specified camera poses; (ii) preserve subject identity from reference images; (iii) maintain cross-view consistency for both subject and background.
+**Goal**: Define and solve the "multi-view customization" task: (i) generate images matching specified camera poses; (ii) maintain the subject identity from reference images; (iii) ensure consistency for both subject and background across views.
 
-**Key Insight**: Decouple the training and inference stages—use limited data during training to learn subject identity and geometry, and apply explicit geometric constraints (depth rendering) at inference to enforce consistency.
+**Key Insight**: Decouple the training and inference stages. The training stage learns subject identity and geometry from limited data, while the inference stage ensures consistency through explicit geometric constraints (depth rendering).
 
-**Core Idea**: Leverage a video diffusion backbone to learn temporal consistency, employ feature field modeling for geometry, and use depth-guided rendering at inference to ensure cross-view geometric consistency.
+**Core Idea**: Utilize a video diffusion backbone to learn temporal consistency, model geometry with feature fields, and ensure cross-view geometric consistency during inference via depth-guided rendering.
 
 ## Method
 
 ### Overall Architecture
 
-MVCustom consists of two stages:
-- **Training Stage**: A video diffusion backbone based on AnimateDiff with dense spatio-temporal attention (replacing the original 1D temporal attention), a pose-conditioned Transformer block (incorporating FeatureNeRF), and textual inversion to learn the subject embedding.
-- **Inference Stage**: Depth-aware feature rendering explicitly enforces geometric consistency across views; consistency-aware latent completion fills newly visible regions.
+MVCustom addresses "multi-view customization": given a few reference images and a sequence of target camera poses, it generates a set of images that maintain subject identity and exhibit geometric consistency across views. It splits the process into training and inference phases. The training phase uses an AnimateDiff video diffusion model as the backbone, replacing the original 1D temporal attention with dense spatio-temporal attention. It inserts pose-conditioned Transformer blocks with FeatureNeRF to inject camera geometry and uses textual inversion to learn a subject embedding for identity and coarse geometry from sparse references. The inference phase no longer relies on implicit geometric memory but applies explicit constraints: first, using depth-aware feature rendering to project anchor frame content to other views via geometry, then using consistency-aware latent completion to fill regions newly exposed by camera movement.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    REF["Sparse Ref Images + Camera Poses<br/>(Textual Inversion for Subject Embedding)"] --> TRAIN
+    subgraph TRAIN["Training Stage: Learning Identity and Geometry from Sparse Refs"]
+        direction TB
+        POSE["1. Pose-Conditioned Transformer Block (FeatureNeRF)<br/>Main Branch + Multi-view Branch<br/>Epipolar Geometry + Volume Rendering → Pose-aligned Features"]
+        POSE --> STT["2. Dense Spatio-Temporal Attention<br/>Remove 1D restriction + Progressive spatial expansion"]
+    end
+    TRAIN --> CKPT["Customized Video Diffusion Model"]
+    POSES["Target Camera Pose Sequence"] --> CKPT
+    CKPT --> GEN["DDIM Sampling per View Frame"]
+    GEN --> INFER
+    subgraph INFER["Inference Stage: Explicit Geometric Constraints"]
+        direction TB
+        DFR["3. Depth-Aware Feature Rendering (DFR)<br/>Select Anchor → ZoeDepth Estimation → Build Feature Mesh<br/>Render and Replace Visible Regions"]
+        DFR --> LCC["4. Consistency-Aware Latent Completion (LCC)<br/>Latent Perturbation to Fill Disoccluded Regions"]
+    end
+    INFER --> OUT["Multi-view Consistent Customized Images"]
+```
 
 ### Key Designs
 
-1. **Pose-Conditioned Transformer Block (FeatureNeRF)**:
+**1. Pose-Conditioned Transformer Block (FeatureNeRF): Learning 3D Geometry from Sparse References**
 
-    - **Function**: Injects camera pose information into the diffusion model and learns the geometric structure of the subject.
-    - **Mechanism**: A dual-branch architecture is designed—the main branch generates target-view feature maps, while the multi-view branch aggregates reference-view features via FeatureNeRF. FeatureNeRF exploits epipolar geometry and volume rendering to synthesize pose-aligned feature maps $\bm{X}_y$ from reference image features $\{(\bm{X}_i, \pi_i)\}$.
-    - **Design Motivation**: Enables the diffusion model to learn 3D geometric information from a small number of reference images.
+In customization scenarios with few reference images, the model must learn both subject identity and its 3D structure. A dual-branch structure is designed: the main branch generates feature maps for the target view, while the multi-view branch aggregates features from reference views via FeatureNeRF. FeatureNeRF utilizes epipolar geometry and volume rendering to synthesize a pose-aligned feature map $\bm{X}_y$ from a set of posed reference features $\{(\bm{X}_i, \pi_i)\}$. This explicitly injects camera pose information into the diffusion process, allowing the model to recover pose-aligned subject representations from sparse references.
 
-2. **Dense Spatio-Temporal Attention**:
+**2. Dense Spatio-Temporal Attention: Enabling Correct Spatial Flow Propagation**
 
-    - **Function**: Replaces AnimateDiff's 1D temporal attention to enable information exchange across frames and spatial positions.
-    - **Mechanism**: The original 1D temporal attention only interacts between frames at identical spatial positions, failing to model spatial displacements caused by viewpoint changes. Dense 3D spatio-temporal attention allows cross-frame interaction at arbitrary spatial positions. A progressively expanding spatial attention scope strategy is adopted to maintain training stability and preserve pre-trained knowledge.
-    - **Design Motivation**: Ablation studies confirm that when performing feature replacement, 1D temporal attention fails to propagate spatial flow correctly; dense spatio-temporal attention is essential.
+The original 1D temporal attention in AnimateDiff only interacts between frames at the same spatial position. When the viewpoint changes and spatial displacement occurs, objects move to different pixel positions, which this attention cannot model. Dense 3D spatio-temporal attention removes this restriction, allowing cross-frame interaction between any spatial locations. To maintain pre-trained knowledge and training stability, the spatial attention domain is expanded progressively. Ablation studies show this is critical: during feature replacement, 1D temporal attention fails to propagate spatial flow correctly, whereas dense spatio-temporal attention enables correct cross-frame spatial consistency propagation.
 
-3. **Depth-Aware Feature Rendering**:
+**3. Depth-Aware Feature Rendering (DFR): Explicit Geometric Constraints for Data Scarcity**
 
-    - **Function**: Explicitly enforces cross-view geometric consistency at inference time.
-    - **Mechanism**: An anchor frame is selected, its depth is estimated via ZoeDepth, and an anchor feature grid $\mathcal{M}_a = (\bm{P}_a, \bm{F}_a, \mathcal{T}_a)$ is constructed. A differentiable mesh renderer projects the anchor frame features onto other camera poses. During the first 35 DDIM sampling steps, visible regions are replaced with rendered features: $\hat{\bm{F}}_n = \bm{M}_n^a \odot \bm{F}_n^a + (1-\bm{M}_n^a) \odot \bm{F}_n$.
-    - **Design Motivation**: Data scarcity during training precludes implicit learning of geometric consistency as in large-scale multi-view methods; explicit geometric constraints are therefore necessary.
+Since training data is insufficient for implicit geometric consistency (unlike large-scale multi-view methods), explicit constraints are applied during inference. An anchor frame is selected, its depth is estimated using ZoeDepth, and a feature mesh $\mathcal{M}_a = (\bm{P}_a, \bm{F}_a, \mathcal{T}_a)$ is constructed. This mesh is rendered into other camera poses using a differentiable renderer. In the first 35 steps of DDIM sampling, the visible regions of the target frames are directly replaced by the rendered features:
 
-4. **Consistency-Aware Latent Completion**:
+$$\hat{\bm{F}}_n = \bm{M}_n^a \odot \bm{F}_n^a + (1-\bm{M}_n^a) \odot \bm{F}_n$$
 
-    - **Function**: Generates plausible content for newly visible (disoccluded) regions arising from viewpoint changes.
-    - **Mechanism**: During denoising, $x_0$ is predicted from the intermediate latent $x_t$, then re-noised to timestep $t$ to obtain perturbed latents $x_t'$. Newly visible regions in the original latents are replaced with their perturbed counterparts. This process iterates from timestep $T$ down to an early timestep $\tau$ near $T$.
-    - **Design Motivation**: Feature rendering can only handle regions visible in the anchor frame; newly visible regions require the generative model's prior knowledge for coherent completion.
+where $\bm{M}_n^a$ denotes the visibility mask of the anchor frame in the $n$-th view. This ensures geometry-aligned consistency for anchor-visible content across all views, causing the background to translate correctly with camera movement instead of remaining static.
+
+**4. Consistency-Aware Latent Completion (LCC): Handling Disoccluded Regions**
+
+Feature rendering only transfers parts visible in the anchor frame. Viewpoint changes inevitably reveal disoccluded regions that rendering cannot fill; these must be completed using generative priors. During denoising, $x_0$ is predicted from the intermediate latent $x_t$, then re-noised to $t$ to obtain a perturbed latent $x_t'$. The disoccluded regions in the original latent are then replaced with the perturbed version, iterating from timestep $T$ to an early timestep $\tau$. This forces the model to "imagine" coherent content for new regions while maintaining existing geometry, avoiding repetitive textures caused by simple copying.
 
 ### Loss & Training
 
-Standard denoising loss combined with the FeatureNeRF loss. The video backbone is trained on a subset of WebVid10M (430K samples); CO3Dv2 is used for customization experiments (3 concepts each for car, chair, and motorcycle categories).
+Standard denoising loss + FeatureNeRF loss. The video backbone is trained on a WebVid10M subset (430K samples), and the CO3Dv2 dataset is used for customization experiments (3 concepts each for cars, chairs, and motorcycles).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Camera Pose Accuracy↑ | Multi-View Consistency↓ | Identity Preservation↓ | Text Alignment↑ |
-|---|---|---|---|---|
+| Method | Pose Accuracy↑ | MV Consistency↓ | ID Preservation↓ | Text Alignment↑ |
+|------|-------------|-------------|----------|----------|
 | Custom Img + Img-MV gen | 0.675 | 0.214 | 0.504 | 0.676 |
 | Txt-MV gen with DB | 0.283 | **0.116** | 0.557 | 0.723 |
 | CustomDiffusion360 | 0.000 | 0.190 | **0.417** | **0.806** |
 | **MVCustom (ours)** | **0.735** | 0.121 | 0.448 | 0.744 |
 
-MVCustom is the only method achieving high scores simultaneously on camera pose accuracy and multi-view consistency.
+MVCustom is the only method to achieve high scores in both camera pose accuracy and multi-view consistency simultaneously.
 
 ### Ablation Study
 
-| Configuration | Outcome |
-|---|---|
-| Customization fine-tuning only (no DFR/LCC) | Background remains static across viewpoints |
-| + Depth-Aware Feature Rendering (DFR) | Background shifts correctly with camera motion, but disoccluded regions exhibit repeated content |
-| + Consistency-Aware Latent Completion (LCC) | Disoccluded regions completed naturally; full geometric consistency achieved |
-| 1D temporal attention + feature replacement | Spatial flow propagation fails |
-| Dense spatio-temporal attention + feature replacement | Spatial consistency propagated correctly |
+| Configuration | Effect |
+|------|------|
+| Customization Fine-tuning only (No DFR/LCC) | Background remains static across views |
+| + Depth-Aware Feature Rendering (DFR) | Background translates correctly, but repeats in disoccluded areas |
+| + Consistency-Aware Latent Completion (LCC) | Natural completion of disoccluded regions, full geometric consistency |
+| 1D Temporal Attention + Feature Replacement | Spatial flow propagation fails |
+| Dense Spatio-Temporal Attention + Feature Replacement | Correct spatial consistency propagation |
 
 ### Key Findings
 
-- COLMAP reconstruction fails entirely for CustomDiffusion360 (pose accuracy = 0), demonstrating that focusing solely on the subject while ignoring background consistency is infeasible.
-- Depth-aware feature rendering and latent completion are complementary: the former ensures geometric consistency in visible regions, while the latter handles generation in invisible regions.
-- Dense spatio-temporal attention is a prerequisite for the feature replacement strategy to function correctly.
-- MVCustom incurs notable computational overhead (130.92s, 19.29GB), primarily due to the depth estimator and feature replacement operations.
+- CustomDiffusion360 completely fails COLMAP reconstruction (Pose Accuracy=0), indicating that focusing solely on the subject while ignoring background consistency is non-viable.
+- DFR and LCC are complementary: the former ensures geometric consistency for visible regions, while the latter handles generation for invisible regions.
+- Dense spatio-temporal attention is a prerequisite for the feature replacement strategy to be effective.
+- MVCustom has a significant computational overhead (130.92s, 19.29GB), primarily due to depth estimation and feature replacement.
 
 ## Highlights & Insights
 
-- **Clear and systematic task formulation**: Table 1 systematically analyzes the capability gaps of existing methods across all dimensions of multi-view customization, defining an important and unaddressed task.
-- **Elegant training-inference decoupling**: Subject representation is learned from limited data at training time, while explicit geometric constraints compensate for data insufficiency at inference—a strategy generalizable to other data-scarce generative settings.
-- **Transfer from video diffusion to multi-view generation**: Exploiting the temporal consistency of video models to achieve multi-view consistency represents an effective cross-task transfer.
+- **Systematic Task Definition**: Through Table 1, the paper systematically analyzes the missing capabilities of existing methods in multi-view customization, defining an important and unmet task.
+- **Clever Training-Inference Decoupling**: Learning subject representations with limited data during training and using explicit geometric constraints during inference to compensate for data scarcity—this strategy is generalizable to other data-scarce generation tasks.
+- **Video Diffusion to Multi-View Transfer**: Leveraging the temporal consistency of video models to achieve multi-view consistency is an effective cross-task transfer approach.
 
 ## Limitations & Future Work
 
-- The framework cannot alter the intrinsic pose of the subject through text (e.g., changing from "sitting" to "standing"), as FeatureNeRF learns a fixed canonical pose.
-- Computational overhead is substantially higher than competing methods (130.92s vs. 27–97s; 19.29GB vs. 5–7GB).
-- Evaluation is conducted on only 3 categories from CO3Dv2, leaving generalization insufficiently validated.
-- Depth estimation quality directly impacts rendering results and may lack robustness for complex scenes.
+- Cannot change the intrinsic pose of an object via text (e.g., from "sitting" to "standing"), as FeatureNeRF learns a fixed canonical pose.
+- Computational overhead is notably higher than competing methods (130.92s vs 27-97s, 19.29GB vs 5-7GB).
+- Evaluation is limited to 3 categories in CO3Dv2; generalization is not fully verified.
+- Rendering results are directly affected by depth estimation quality, which may not be robust for complex scenes.
 
 ## Related Work & Insights
 
-- **vs. CustomDiffusion360**: Both target viewpoint-controllable customization, but CD360 neglects background consistency, causing COLMAP failure; MVCustom addresses this via a video backbone combined with inference-time geometric constraints.
-- **vs. SEVA (Img-MV gen)**: Supports multi-view generation from a single image but lacks subject identity information, suffering severe degradation at views far from the input.
-- **vs. CameraCtrl + DB**: Directly fine-tuning a multi-view model with DreamBooth paradoxically degrades camera control capability.
-- The depth-aware feature rendering paradigm is transferable to other generation tasks requiring geometric consistency (e.g., video editing, 3D-aware inpainting).
+- **vs CustomDiffusion360**: Both perform pose-controllable customization, but CD360's neglect of background consistency leads to COLMAP failure; MVCustom solves this via a video backbone and inference-time geometry constraints.
+- **vs SEVA (Img-MV gen)**: Multi-view generation from a single image, but lacks subject identity info and degrades severely far from the input view.
+- **vs CameraCtrl + DB**: Direct DreamBooth fine-tuning on multi-view models degrades camera control capability.
+- The concept of depth-aware feature rendering can be transferred to other generation tasks requiring geometric consistency (e.g., video editing, 3D-aware inpainting).
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The task formulation is original, and the inference-time geometric constraint strategy is elegant.
-- **Experimental Thoroughness**: ⭐⭐⭐ Limited to 3 categories; large-scale validation is absent.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem definition is clear and method description is thorough.
-- **Value**: ⭐⭐⭐⭐ Opens a new direction in multi-view customized generation with promising applications in 3D content creation.
+- Novelty: ⭐⭐⭐⭐ Innovative task definition and clever inference-stage geometry constraints.
+- Experimental Thoroughness: ⭐⭐⭐ Limited categories (3 classes), lacks large-scale validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and detailed methodology.
+- Value: ⭐⭐⭐⭐ Opens a new direction for multi-view customized generation with potential for 3D content creation.
 
 <!-- RELATED:START -->
 
@@ -146,11 +155,11 @@ MVCustom is the only method achieving high scores simultaneously on camera pose 
 
 ## Related Papers
 
-- [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](../../ICML2026/image_generation/viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
-- [\[ICML 2026\] Divide and Conquer: Reliable Multi-View Evidential Learning for Deepfake Detection](../../ICML2026/image_generation/divide_and_conquer_reliable_multi-view_evidential_learning_for_deepfake_detectio.md)
-- [\[ICLR 2026\] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning](flow-based_single-step_completion_for_efficient_and_expressive_policy_learning.md)
-- [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](../../NeurIPS2025/image_generation/a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
-- [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
+- [\[ICLR 2026\] CroCoDiLight: Repurposing Cross-View Completion Encoders for Relighting](crocodilight_repurposing_cross-view_completion_encoders_for_relighting.md)
+- [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](../../CVPR2026/image_generation/larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
+- [\[CVPR 2025\] LaTexBlend: Scaling Multi-concept Customized Generation with Latent Textual Blending](../../CVPR2025/image_generation/latexblend_scaling_multi-concept_customized_generation_with_latent_textual_blend.md)
+- [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](../../CVPR2026/image_generation/correspondence-attention_alignment_for_multi-view_diffusion_models.md)
+- [\[ICLR 2026\] Geometric Image Editing via Effects-Sensitive In-Context Inpainting with Diffusion Transformers](geometric_image_editing_via_effects-sensitive_in-context_inpainting_with_diffusi.md)
 
 </div>
 

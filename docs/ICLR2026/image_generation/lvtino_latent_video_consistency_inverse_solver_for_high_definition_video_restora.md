@@ -2,144 +2,154 @@
 title: >-
   [Paper Note] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration
 description: >-
-  [ICLR 2026][Image Generation][Video Restoration] This paper proposes LVTINO, the first zero-shot video inverse problem solver built upon a Video Consistency Model (VCM) prior. By injecting measurement consistency constra…
+  [ICLR 2026][Image Generation][Diffusion Model] Proposes LVTINO, the first zero-shot video inverse problem solver based on Video Consistency Model (VCM) priors. By injecting auto-differentiation-free measurement consistency constraints into the VCM sampling process, it achieves superior perceptual quality and temporal consistency over frame-wise image methods across
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Video Restoration"
-  - "Consistency Models"
-  - "Inverse Problem Solving"
-  - "Zero-Shot"
-  - "Diffusion Models"
+  - ICLR 2026
+  - Image Generation
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 67767fb217a4c725
+content_hash: dd3068ef3708720c
 ---
-
 # LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.01339](https://arxiv.org/abs/2510.01339)  
 **Code**: [GitHub](https://github.com/aspagnoletti/LVTINO)  
-**Area**: Video Restoration / Diffusion Models
-**Keywords**: Video Restoration, Consistency Models, Inverse Problem Solving, Zero-Shot, Diffusion Models
+**Area**: Video Restoration / Diffusion Models  
+**Keywords**: Video Restoration, Consistency Models, Inverse Problem Solving, Zero-shot, Diffusion Models
 
 ## TL;DR
 
-This paper proposes LVTINO, the first zero-shot video inverse problem solver built upon a Video Consistency Model (VCM) prior. By injecting measurement consistency constraints—without requiring automatic differentiation—into the VCM sampling process, LVTINO achieves perceptual quality and temporal consistency surpassing frame-wise image methods across multiple video inverse problems (super-resolution, deblurring, inpainting) with a minimal number of neural function evaluations (NFEs).
+Proposes LVTINO, the first zero-shot video inverse problem solver based on Video Consistency Model (VCM) priors. By injecting auto-differentiation-free measurement consistency constraints into the VCM sampling process, it achieves superior perceptual quality and temporal consistency over frame-wise image methods across various video inverse problems (e.g., super-resolution, deblurring, inpainting) with minimal Neural Function Evaluations (NFE).
 
 ## Background & Motivation
 
-**Background**: Computational imaging increasingly leverages generative diffusion models to address challenging image inverse problems (e.g., super-resolution, deblurring, inpainting). State-of-the-art zero-shot image inverse problem solvers exploit distilled text-to-image latent diffusion models (LDMs) as priors, achieving unprecedented accuracy and perceptual quality while maintaining high computational efficiency.
+**Background**: The field of computational imaging increasingly leverages generative diffusion models to solve challenging image inverse problems (e.g., super-resolution, deblurring, inpainting). Current state-of-the-art zero-shot image inverse problem solvers utilize distilled text-to-image Latent Diffusion Models (LDM) as priors, achieving unprecedented performance in accuracy and perceptual quality while maintaining high computational efficiency.
 
-**Limitations of Prior Work**: Extending these image-level advances to high-definition video restoration poses significant challenges. Video restoration requires not only recovering fine spatial details but also capturing subtle inter-frame temporal dependencies. Naively applying image LDM-based inverse solvers frame-by-frame yields temporally inconsistent reconstructions—each frame is generated independently, and cross-frame stochasticity causes flickering and incoherence. Furthermore, diffusion-based inverse solvers typically require a large number of NFEs and automatic differentiation, making them computationally inefficient.
+**Limitations of Prior Work**: Extending these image-level advances to high-definition video restoration faces significant challenges. Video restoration requires not only recovering fine spatial details but also capturing subtle temporal dependencies between frames. Naively applying image LDM-based solvers frame-by-frame leads to temporal inconsistency in reconstruction results—each frame is generated independently, and the randomness between different frames causes flickering and incoherence. Furthermore, diffusion-based inverse solvers typically require many NFEs and auto-differentiation computations, which is inefficient.
 
-**Key Challenge**: Video restoration must simultaneously optimize two competing objectives—spatial detail fidelity and temporal consistency. Image priors offer high spatial quality but lack temporal modeling; video diffusion models provide temporal modeling but incur prohibitive NFE costs and are difficult to condition for inverse problems.
+**Key Challenge**: Video restoration needs to simultaneously optimize two competing objectives: spatial detail fidelity and temporal consistency. Image priors offer high spatial quality but lack temporal modeling; video diffusion models have temporal modeling but suffer from massive NFE overhead and are difficult to condition for inverse problems.
 
-**Goal**: Design an efficient, plug-and-play video inverse problem solver that (1) leverages a video generative prior (rather than an image prior) to ensure temporal consistency, (2) achieves reconstruction with minimal NFEs while maintaining measurement consistency, and (3) requires no automatic differentiation through the degradation operator.
+**Goal**: Design an efficient, plug-and-play video inverse problem solver that can: (1) leverage video generative priors (rather than image priors) to ensure temporal consistency, (2) complete reconstruction with minimal NFEs while maintaining measurement consistency, and (3) avoid auto-differentiation of the degradation operator.
 
-**Key Insight**: Video Consistency Models (VCMs) distill video latent diffusion models into fast generators that naturally capture temporal causality and require only a small number of sampling steps. Using VCMs as priors for video inverse problems simultaneously addresses both temporal consistency and computational efficiency.
+**Key Insight**: Video Consistency Models (VCM) distill video latent diffusion models into fast generators that naturally capture temporal causality and require only a few sampling steps. Using VCM as a prior for video inverse problems can solve both temporal consistency and computational efficiency issues.
 
-**Core Idea**: Inject autodifferentiation-free measurement consistency constraints into the few-step VCM sampling process, realizing the first zero-shot video inverse problem solver built upon a video prior.
+**Core Idea**: Inject auto-differentiation-free measurement consistency constraints into the few-step sampling process of VCM to realize the first zero-shot video inverse problem solver based on a video prior.
 
 ## Method
 
 ### Overall Architecture
 
-LVTINO formulates video inverse problems as optimization problems in the latent space. Given a degraded video $\mathbf{y}$ (e.g., low-resolution, blurry, or partially missing frames) and a pretrained VCM as the prior, the method alternates between a "VCM denoising step" and a "measurement consistency projection step" during the VCM reverse sampling process to produce the restored high-definition video. The denoising step ensures generation quality and temporal consistency, while the projection step enforces consistency between the reconstruction and the observed data. The entire process requires only a small number of NFEs (e.g., 4–8), far fewer than the tens or hundreds required by standard diffusion-based inverse solvers.
+LVTINO addresses high-definition video inverse problems: recovering a clean video $\mathbf{x}$ from a degraded observation $\mathbf{y} = \mathbf{A}\mathbf{x} + \mathbf{n}$ (where $\mathbf{A}$ is a linear degradation operator such as downsampling, blurring, or inpainting masks applied to the whole video). Instead of viewing this as "denoising step-by-step from noise," it is treated as **sampling from a posterior $p(\mathbf{x}\mid\mathbf{y},\mathbf{c},\lambda)$**, approximated using a Langevin sampler—a time-homogeneous process where the iteration $\mathbf{x}_k$ converges directly toward the posterior without traversing a reverse time axis like standard diffusion.
+
+The posterior is composed of "Prior × Likelihood." The prior is the core innovation—a **product-of-experts video prior** $p(\mathbf{x}\mid\mathbf{c},\lambda) \propto p_V^{\eta}(\mathbf{x}\mid\mathbf{c})\, p_I^{1-\eta}(\mathbf{x}\mid\mathbf{c})\, p_\phi(\mathbf{x}\mid\lambda)$, which multiplies a Video Consistency Model (VCM), a frame-wise Image Consistency Model (ICM), and a spatiotemporal regularization term. These handle temporal causality, spatial detail, and stability, respectively. The likelihood $p(\mathbf{y}\mid\mathbf{x})\propto\exp\{-\|\mathbf{y}-\mathbf{A}\mathbf{x}\|^2/2\sigma_n^2\}$ enforces measurement consistency. Each Langevin iteration is split into four sequential sub-steps: VCM prior step → auto-diff-free conditioning half-step with regularization → ICM prior step → auto-diff-free conditioning half-step. The process yields restored video after a few rounds with minimal NFEs and no auto-differentiation.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Y["Degraded Video Observation<br/>y = Ax + n"]
+    X0["Current Iteration x_k"]
+    VCM["VCM Prior Step (SAE)<br/>Encode → Add noise to t_k →<br/>Video Consistency Function f_V → Decode<br/>Models long-range temporal causality"]
+    P1["Auto-diff-free proximal half-step<br/>prox(Data Fidelity + TV Spatiotemporal Reg)"]
+    ICM["ICM Prior Step (SAE)<br/>Frame-wise Image Consistency f_I<br/>Restores fine spatial details"]
+    P2["Auto-diff-free proximal half-step<br/>prox(Data Fidelity)"]
+    X1["New Iteration x_(k+1)"]
+    OUT["HD Restored Video"]
+
+    X0 --> VCM --> P1 --> ICM --> P2 --> X1
+    Y -.Measurement Consistency.-> P1
+    Y -.Measurement Consistency.-> P2
+    X1 -->|Not converged, next iteration| X0
+    X1 -->|Converged| OUT
+```
 
 ### Key Designs
 
-1. **Latent-Space Sampling with VCM Prior**:
+**1. Product-of-Experts Video Prior: VCM for Time, ICM for Space, TV for Stability**
 
-    - **Function**: Leverages a pretrained VCM to generate temporally consistent video frames in the latent space.
-    - **Mechanism**: VCMs are fast generators distilled from video diffusion models, compressing the multi-step denoising process into a few steps (typically 2–8). Each denoising step maps a noisy latent representation to a clean video latent, while causal temporal attention mechanisms model inter-frame dependencies. Compared to applying image priors frame-by-frame, VCMs inherently maintain temporal consistency because their training explicitly models temporal dynamics over video data.
-    - **Design Motivation**: The primary reason for choosing VCMs over standard video diffusion models is efficiency—distillation guarantees high-quality generation in few steps, which is critical for inverse problem solving since each NFE requires a forward pass through a large network.
+The fundamental flaw in applying image LDMs frame-by-frame is that each frame is generated independently with different randomness, causing flickering. However, using only a video prior fails to recover sufficiently fine spatial details. LVTINO solves this by multiplying three experts as the prior: $p_V$ is provided by a text-to-video VCM to model long-range temporal causality and ensure temporal consistency; $p_I$ is provided by a high-resolution text-to-image ICM applied **frame-wise** to recover fine spatial textures; $p_\phi(\mathbf{x}\mid\lambda)\propto\exp\{-\phi_\lambda(\mathbf{x})\}$ is a convex regularizer (implemented using 3D spatial-temporal Total Variation $\mathrm{TV}^3_\lambda$) to suppress background jitter and promote smooth transitions. The temperature parameter $\eta\in(0,1)$ balances the video and image priors.
 
-2. **Conditioning Mechanism Without Automatic Differentiation**:
+**2. SAE Step: Compressing Prior Integrals into Few Consistency Forwards**
 
-    - **Function**: Injects constraints from the observation $\mathbf{y}$ into the VCM sampling process to ensure the reconstruction is consistent with the degraded observation.
-    - **Mechanism**: After each denoising step, the VCM output is decoded from latent space to pixel space, and the data consistency residual $\mathbf{y} - \mathbf{A}\hat{\mathbf{x}}$ is computed by applying the degradation operator $\mathbf{A}$ and comparing against the observation $\mathbf{y}$. The key innovation is using this residual to perform a surrogate gradient update directly in the latent space, bypassing automatic differentiation through both the VCM network and the degradation operator, thereby substantially reducing computational and memory overhead. This approach is applicable to any degradation model expressible as a linear or differentiable operator.
-    - **Design Motivation**: Standard diffusion-based inverse solvers (e.g., DPS, $\Pi$GDM) require backpropagation through the entire denoising network to compute likelihood gradients, which is computationally prohibitive for video models in both time and memory. Circumventing automatic differentiation is the key to making the method feasible for high-definition video.
+Each Langevin step requires calculating the integral of the prior terms $\int \nabla\log p_V\,\mathrm{d}s$ and $\int \nabla\log p_I\,\mathrm{d}s$, which is intractable. LVTINO utilizes a **Stochastic Auto-Encoder (SAE) step** to approximate this: the current estimate is encoded into latent space $\mathbf{z}=\sqrt{\alpha_{t_k}}E(\mathbf{x}_k)+\sqrt{1-\alpha_{t_k}}\,\boldsymbol{\epsilon}$ at noise level $t_k$, and then mapped back to a clean latent via a consistency function $f_\vartheta(\mathbf{z},t_k)$. Since the consistency function is a fast generator distilled from LDMs, a **single forward pass** maps noisy latents to clean ones. The total NFE for the entire video is in the single digits.
 
-3. **Multi-Step Consistency Iteration**:
+**3. Auto-differentiation-free Proximal Conditioning: Closing the Loop with Observations**
 
-    - **Function**: Balances data fidelity and prior quality within the few-step sampling framework.
-    - **Mechanism**: The few-step nature of VCMs implies large update magnitudes per step. To prevent measurement consistency projections from overly disrupting the VCM generation process, LVTINO adopts a progressive consistency injection strategy—relying more heavily on the VCM prior in early denoising steps to establish global structure and temporal consistency, and gradually increasing the data consistency weight in later steps to recover spatial details.
-    - **Design Motivation**: The sampling dynamics of consistency models differ fundamentally from standard diffusion models—the step count is extremely small and the signal-to-noise ratio changes dramatically between steps—necessitating a specially designed temporal schedule for the conditioning strategy.
+LVTINO injects the likelihood via an **implicit (backward Euler) half-step**, which is equivalent to applying a **proximal operator** $\operatorname{prox}_{\delta g_y}$ to the data fidelity term. Crucially, when $\mathbf{A}$ is a linear operator, the proximal operator of $\|\mathbf{y}-\mathbf{A}\mathbf{x}\|^2$ has a **closed-form solution**. This allows conditioning **without performing auto-differentiation through the VCM/ICM networks**. This is a major distinction from solvers like DPS or $\Pi$GDM, which require backpropagation through the entire denoising network, incurring prohibitive memory costs for HD video.
 
 ### Loss & Training
 
-LVTINO is a zero-shot method requiring no task-specific training. The VCM prior is used off-the-shelf, and inference proceeds directly via the alternating denoising–projection steps described above. The only parameters requiring tuning are those governing the temporal schedule of the conditioning strength.
+LVTINO is a zero-shot (plug-and-play) method and **does not perform any training for specific degradations**. The VCM and ICM priors are pre-trained. During inference, the only adjustments needed are several sampling hyperparameters: temperature $\eta$, step size $\delta$, TV regularization strength $\lambda$, and the Moreau–Yosida parameter $\gamma$.
 
 ## Key Experimental Results
 
 ### Main Results: Video Inverse Problem Reconstruction Quality
 
-Comparisons against frame-wise image methods and video methods across multiple degradation tasks:
+Comparison with frame-wise image methods and video methods across multiple tasks:
 
 | Task | Method | PSNR↑ | LPIPS↓ | FVD↓ | NFE |
 |------|------|-------|--------|------|-----|
-| 4× Super-Resolution | Frame-wise LDM (TINO) | Higher | Moderate | High (temporal inconsistency) | 4–8/frame |
-| 4× Super-Resolution | LVTINO | Slightly lower | **Best** | **Best** | 4–8 |
-| Deblurring | Frame-wise LDM | Moderate | Moderate | High | 4–8/frame |
-| Deblurring | LVTINO | Moderate | **Best** | **Best** | 4–8 |
-| Inpainting | Frame-wise LDM | Moderate | Moderate | High | 4–8/frame |
-| Inpainting | LVTINO | Moderate | **Best** | **Best** | 4–8 |
+| 4× Super-Resolution | Frame-wise LDM (TINO) | High | Medium | High (Inconsistent) | 4-8/frame |
+| 4× Super-Resolution | **Ours** | Slightly Lower | **Best** | **Best** | 4-8 |
+| Deblurring | Frame-wise LDM | Medium | Medium | High | 4-8/frame |
+| Deblurring | **Ours** | Medium | **Best** | **Best** | 4-8 |
+| Inpainting | Frame-wise LDM | Medium | Medium | High | 4-8/frame |
+| Inpainting | **Ours** | Medium | **Best** | **Best** | 4-8 |
 
-LVTINO significantly outperforms frame-wise methods on perceptual metrics (LPIPS, FVD), with particularly pronounced improvements in FVD (Fréchet Video Distance), indicating substantially enhanced temporal consistency. The marginal PSNR reduction is expected, as generative priors tend to optimize for perceptual quality rather than pixel-level accuracy.
+LVTINO significantly outperforms frame-wise methods in perceptual metrics (LPIPS, FVD). The improvement in FVD (Fréchet Video Distance) indicates a substantial increase in temporal consistency.
 
 ### Ablation Study: VCM Prior vs. Image LDM Prior
 
 | Prior Type | LPIPS↓ | FVD↓ | Temporal Consistency | Total NFE |
 |---------|--------|------|-----------|---------|
-| Frame-wise Image LDM | Moderate | High | Poor (inter-frame flickering) | 4–8 × #frames |
-| VCM (Ours) | **Low** | **Low** | **Good** | 4–8 (total) |
-| Frame-wise + Temporal Post-filtering | Moderate | Moderate | Moderate | 4–8 × #frames + post-processing |
+| Frame-wise Image LDM | Medium | High | Poor (Flickering) | 4-8 × #frames |
+| **VCM (Ours)** | **Low** | **Low** | **Good** | 4-8 (Total) |
+| Frame-wise + Temporal Filter | Medium | Medium | Medium | 4-8 × #frames + Post |
 
 ### Key Findings
 
-- **Qualitative Leap in Temporal Consistency**: Switching from frame-wise image priors to a video prior yields not merely a numerical improvement in FVD, but a perceptual transformation from "unusable flickering" to "smooth and natural" results. Simple post-hoc temporal filtering cannot fully compensate for the temporal inconsistencies of frame-wise methods.
-- **Substantial Computational Efficiency Gains**: The few-step nature of VCMs reduces LVTINO's total NFE count to only 4–8 for an entire video clip, compared to 4–8 × #frames for frame-wise methods—an efficiency improvement of one to two orders of magnitude.
-- **Zero-Shot Generalizability**: LVTINO is effective across multiple degradation types (super-resolution, deblurring, inpainting) without retraining for each specific degradation.
-- **Perceptual Quality vs. PSNR Trade-off**: LVTINO is marginally inferior to certain deterministic methods in PSNR but significantly superior in perceptual quality (LPIPS, FVD), consistent with the characteristics of generative priors.
+- **Qualitative Shift in Temporal Consistency**: Switching from image priors to video priors changes the results from "flickering and unusable" to "smooth and natural."
+- **Massive Efficiency Gain**: VCM's few-step nature allows for a total NFE of 4-8 for the entire video clip, whereas frame-wise methods require 4-8 × number of frames.
+- **Zero-shot Generalization**: Effective across multiple degradation types without retraining.
+- **Perceptual Quality vs. PSNR Trade-off**: LVTINO matches the characteristics of generative priors, favoring perceptual optimization over pixel-level accuracy.
 
 ## Highlights & Insights
 
-- **First Application of VCMs as Video Inverse Problem Priors**: Connecting the latest video consistency models to the inverse problem solving literature is a natural yet important contribution. VCMs simultaneously address the two core challenges of temporal consistency and computational efficiency.
-- **Practical Value of Autodifferentiation-Free Conditioning**: Bypassing automatic differentiation enables the method to handle high-definition video—automatic differentiation over large video models is memory-infeasible—representing a critical step from a theoretical construct to a practical tool.
-- **Plug-and-Play Zero-Shot Architecture**: No knowledge of the degradation type is needed for retraining; as long as the degradation can be expressed as a known operator, this design philosophy has broad transferability.
+- **First Application of VCM as Video Inverse Prior**: Integrating the latest video consistency models into inverse problem solving is a natural yet significant connection that addresses both consistency and efficiency.
+- **Value of Auto-diff-free Conditioning**: Bypassing auto-differentiation makes processing HD video feasible, moving from "paper-only" methods to practical tools.
+- **Plug-and-play Zero-shot Architecture**: The design has broad transfer value as it requires no retraining, provided the degradation can be expressed as a known operator.
 
 ## Limitations & Future Work
 
-- **Dependence on Pretrained VCM Quality**: The method's performance ceiling is bounded by the generative quality of the VCM prior. If the VCM exhibits weak generation capability on certain video content (e.g., rare scenes), restoration quality will suffer accordingly.
-- **Validation Limited to Linear Degradation Operators**: Super-resolution, blurring, and inpainting are all modeled as linear degradations. The applicability of the method to nonlinear degradations (e.g., JPEG compression artifacts, complex noise models) requires further investigation.
-- **Long Video Processing**: The current method operates on fixed-length video clips; very long videos require segmented processing, and inter-segment consistency is a potential concern.
-- **PSNR Sacrifice**: Perceptual optimization incurs a marginal PSNR penalty, which may necessitate trade-off considerations for applications requiring high PSNR (e.g., medical imaging, remote sensing).
+- **Dependence on Pre-trained VCM Quality**: The upper bound is limited by the generation quality of the underlying VCM.
+- **Linear Degradation Operators**: While SR and blurring are linear, the applicability to non-linear degradations (e.g., JPEG artifacts) needs further verification.
+- **Ultra-long Video Handling**: Current methods operate on fixed-length clips; consistency between segments remains a potential issue.
 
 ## Related Work & Insights
 
-- **vs. DPS / $\Pi$GDM / DDRM and other image inverse solvers**: These methods perform well on images but lack temporal consistency when applied frame-by-frame to video. LVTINO addresses this fundamentally by replacing the prior with a video model (VCM).
-- **vs. Direct conditional generation with video diffusion models**: Direct conditioning of video diffusion models requires a large number of NFEs (tens to hundreds) and conditioning typically requires fine-tuning. LVTINO exploits the distillation properties of VCMs to reduce NFEs to single digits.
-- **vs. Optical flow / motion estimation post-processing**: Some methods apply optical flow-based temporal smoothing after frame-wise restoration, but this is a post-hoc remedy rather than a fundamental solution. The VCM prior models temporal dynamics during the generation process itself.
+- **vs. Image Solvers (DPS, DDRM)**: These lack temporal consistency when applied frame-by-frame; LVTINO fundamentally solves this via the VCM prior.
+- **vs. Direct Conditional Video Generation**: Direct methods require many NFEs; LVTINO leverages VCM distillation to compress NFE to single digits.
+- **vs. Optical Flow Post-processing**: LVTINO models temporal dynamics during the generative process rather than attempting a post-hoc remedy.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — The first work to apply VCMs to video inverse problems; the conceptual contribution is clear and well-motivated, though the overall framework follows the standard alternating denoising–projection paradigm.
-- Experimental Thoroughness: ⭐⭐⭐ — Covers multiple degradation types, but detailed quantitative comparisons are limited; comprehensive comparison against recent non-diffusion-based video restoration methods is lacking.
-- Writing Quality: ⭐⭐⭐⭐ — Motivation is clearly articulated and the method description is well-organized; the 30-page, 16-figure presentation is informationally rich.
-- Value: ⭐⭐⭐⭐ — Offers direct practical value to the video restoration community; the VCM + inverse solver combination opens a promising new research direction.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICCV 2025\] LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization](../../ICCV2025/image_generation/latino-pro_latent_consistency_inverse_solver_with_prompt_optimization.md)
-- [\[ICLR 2026\] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration](eliminating_vae_for_fast_and_high-resolution_generative_detail_restoration.md)
-- [\[ICLR 2026\] QVGen: Pushing the Limit of Quantized Video Generative Models](qvgen_pushing_the_limit_of_quantized_video_generative_models.md)
-- [\[CVPR 2026\] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](../../CVPR2026/image_generation/effecterase_joint_video_object_removal_and_insertion_for_high-quality_effect_era.md)
 - [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
+- [\[ICLR 2026\] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration](eliminating_vae_for_fast_and_high-resolution_generative_detail_restoration.md)
+- [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
+- [\[ICLR 2026\] QVGen: Pushing the Limit of Quantized Video Generative Models](qvgen_pushing_the_limit_of_quantized_video_generative_models.md)
 
 </div>
 

@@ -2,64 +2,76 @@
 title: >-
   [Paper Note] JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation
 description: >-
-  [ICLR 2026][Image Generation][joint diffusion] This paper proposes JointDiff, a joint continuous-discrete diffusion framework that, for the first time…
+  [ICLR 2026][Image Generation][Multi-Agent] Proposes JointDiff, a joint continuous-discrete diffusion framework that unifies Gaussian diffusion (for trajectories) and multinomial diffusion (for possession events) for the first time. It introduces the CrossGuid module to support Weak Possession Guidance (WPG) and text-guided semantic controllable generation, achi
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "joint diffusion"
-  - "continuous-discrete unification"
-  - "multi-agent"
-  - "trajectory generation"
-  - "controllable generation"
+  - ICLR 2026
+  - Image Generation
+  - Multi-Agent
 date: 2026-05-08
-content_hash: 8fd1d598694f6574
+content_hash: 126f42584c6bcccf
 ---
-
 # JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.22522](https://arxiv.org/abs/2509.22522)  
-**Code**: [GitHub](https://github.com/kognia/JointDiff) (mentioned on project page)  
-**Area**: Diffusion Models / Multi-Agent Trajectory Generation
-**Keywords**: joint diffusion, continuous-discrete unification, multi-agent, trajectory generation, controllable generation
+**Code**: [GitHub](https://github.com/kognia/JointDiff) (Mentioned on project page)  
+**Area**: Diffusion Models / Multi-Agent Trajectory Generation  
+**Keywords**: Joint Diffusion, Continuous-Discrete Unification, Multi-Agent, Trajectory Generation, Controllable Generation
 
 ## TL;DR
 
-This paper proposes JointDiff, a joint continuous-discrete diffusion framework that, for the first time, unifies Gaussian diffusion (for trajectories) and multinomial diffusion (for ball-possession events) in a single model. It further introduces a CrossGuid module to support weak possession guidance and text-guided semantic controllable generation, achieving state-of-the-art performance on multi-agent trajectory generation in sports scenarios.
+Proposes JointDiff, a joint continuous-discrete diffusion framework that unifies Gaussian diffusion (for trajectories) and multinomial diffusion (for possession events) for the first time. It introduces the CrossGuid module to support Weak Possession Guidance (WPG) and text-guided semantic controllable generation, achieving SOTA performance in multi-agent trajectory generation for sports.
 
 ## Background & Motivation
 
-In multi-agent systems such as team sports, continuous motion trajectories and discrete state-change events (e.g., passes, ball possession) are tightly coupled and occur simultaneously. Existing generative models face the following challenges:
+In multi-agent systems such as team sports, continuous movement trajectories are tightly coupled and synchronized with discrete state-change events (e.g., passing, possession). Existing generative models face the following issues:
 
-**Continuous-discrete disconnect**: Most methods model only continuous trajectories and ignore discrete events (e.g., ball possession), leading to unrealistic behaviors such as implausible passing paths and distorted player-ball interactions.
+**Disconnection between Continuous and Discrete**: Most methods only model continuous trajectories while ignoring discrete events, leading to unrealistic behaviors such as illogical passing paths or distorted player-ball interactions.
 
-**Lack of semantic controllability**: Existing trajectory diffusion models primarily control individual-level attributes (waypoints, velocities) and lack the ability to condition on scene-level semantics (e.g., "who possesses the ball," "game momentum").
+**Lack of Semantic Controllability**: Existing trajectory diffusion models primarily control individual-level attributes (waypoints, speed) and lack the ability to control scene-level semantics (e.g., "who has possession," "match momentum").
 
-**Inadequate evaluation metrics**: Individual-level ADE/FDE metrics inherited from pedestrian trajectory prediction fail to capture scene-level consistency and are insufficient for evaluating sports scenarios.
+**Insufficient Evaluation Metrics**: Individual-level ADE/FDE metrics inherited from pedestrian trajectory prediction fail to capture scene-level consistency and are inadequate for sports scene evaluation.
 
-Core insight: Only by jointly modeling continuous trajectories and discrete events can realistic, consistent, and controllable multi-agent scenes be generated.
+**Key Insight**: Only by jointly modeling continuous trajectories and discrete events can realistic, consistent, and controllable multi-agent scenes be generated.
 
 ## Method
 
 ### Overall Architecture
 
-JointDiff represents a scene state as the tuple $\mathbf{X} = (\mathbf{Y}, \mathbf{E})$, where $\mathbf{Y} \in \mathbb{R}^{T \times N \times 2}$ denotes continuous trajectory coordinates and $\mathbf{E} \in \{0,1\}^{T \times N}$ denotes discrete ball-possession events (one-hot). In the forward process, the two modalities are noised independently: trajectories via Gaussian diffusion, and events via multinomial diffusion (converging toward a uniform distribution). In the reverse process, a single neural network models both modalities simultaneously, learning cross-modal dependencies through a shared state representation.
+JointDiff addresses the generation of sports multi-agent scenes where continuous trajectories and discrete possession events should occur synchronously. The method packs the scene state into a tuple $\mathbf{X} = (\mathbf{Y}, \mathbf{E})$ for joint denoising—$\mathbf{Y} \in \mathbb{R}^{T \times N \times 2}$ represents continuous trajectory coordinates, and $\mathbf{E} \in \{0,1\}^{T \times N}$ represents discrete one-hot possession events. In the forward process, the two modalities are diffused independently: trajectories follow Gaussian diffusion, while events follow multinomial diffusion (gradually merging toward a uniform distribution). The reverse process is key: a single denoising network (following the dual-layer Social-Temporal Block of U2Diff, with Temporal Mamba for single-agent temporal modeling and Social Transformer for multi-agent interaction) takes the complete noisy state. It branches into a regression head and a classification head to output trajectory noise and event probabilities respectively, learning cross-modal dependencies in a shared representation. For controllable generation, a CrossGuid module is inserted into the blocks to inject guidance signals. During inference, each modality uses its respective sampler with synchronized time steps.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Noisy State<br/>Trajectory Y_s + Events E_s<br/>(inc. observed frames & masks)"] --> TM
+    G["Guidance Signal<br/>Player Index Sequence / Text"] -.-> CG
+    subgraph NET["1. Joint Continuous-Discrete Diffusion (Single Network + Dual Heads)"]
+        direction TB
+        TM["Temporal Mamba<br/>Per-agent temporal modeling"] --> CG["2. CrossGuid Condition Injection<br/>Multimodal Cross-Attention"]
+        CG --> ST["Social Transformer ×2<br/>Inter-agent interaction"]
+        ST --> H1["Regression Head<br/>Trajectory Noise ε_θ"]
+        ST --> H2["Classification Head<br/>Event Probability Ê_0"]
+    end
+    H1 --> S
+    H2 --> S
+    S["3. Hybrid Sampling<br/>Trajectory DDIM(ζ=5) + Event Multinomial Sampling<br/>Step alignment s_d=⌈s·S_d/S⌉"]
+    S -->|s>0 Next Step| A
+    S -->|s=0| OUT["Output Scene<br/>Trajectory + Sync Events"]
+```
 
 ### Key Designs
 
-1. **Joint Continuous-Discrete Diffusion**: The forward process decomposes independently with a shared variance schedule $\{\beta_s\}$:
+**1. Joint Continuous-Discrete Diffusion: Mutual Correction in a Shared Reverse Network**
 
-$$q(\mathbf{Y}_s | \mathbf{Y}_0) = \mathcal{N}(\mathbf{Y}_s; \sqrt{\bar{\alpha}_s} \mathbf{Y}_0, (1-\bar{\alpha}_s)\mathbf{I})$$
-$$q(\mathbf{E}_s | \mathbf{E}_0) = \mathrm{Cat}(\mathbf{E}_s; \bar{\alpha}_s \mathbf{E}_0 + (1-\bar{\alpha}_s)/N)$$
+The forward process adds noise to both modalities independently but shares the same variance schedule $\{\beta_s\}$: trajectories follow standard Gaussian diffusion $q(\mathbf{Y}_s | \mathbf{Y}_0) = \mathcal{N}(\mathbf{Y}_s; \sqrt{\bar{\alpha}_s} \mathbf{Y}_0, (1-\bar{\alpha}_s)\mathbf{I})$, while discrete events follow multinomial diffusion $q(\mathbf{E}_s | \mathbf{E}_0) = \mathrm{Cat}(\mathbf{E}_s; \bar{\alpha}_s \mathbf{E}_0 + (1-\bar{\alpha}_s)/N)$. Crucially, the reverse network $p_\theta$ is conditioned on the full state $(\mathbf{Y}_s, \mathbf{E}_s)$, utilizing a regression head for trajectory noise $\epsilon_\theta$ and a classification head for the original event probability $\hat{\mathbf{E}}_0$. This forces the model to learn cross-modal dependencies, such as "who possesses the ball determines where others should run." The Choice of multinomial diffusion over absorbing state diffusion allows discrete variables to be refined throughout the denoising process, whereas absorbing states are frozen once unmasked, which is sub-optimal for temporal scenes where events evolve with trajectories.
 
-   The reverse network $p_\theta$ conditions on the full state $(\mathbf{Y}_s, \mathbf{E}_s)$ and outputs two heads: a regression head predicting trajectory noise $\epsilon_\theta$, and a classification head predicting original event probabilities $\hat{\mathbf{E}}_0$. This allows the reverse denoising process to learn cross-modal dependencies even though the forward process is modality-independent. Multinomial diffusion is preferred over absorbing-state diffusion because multinomial allows discrete variables to be continuously revised throughout the process, whereas absorbing-state diffusion freezes tokens once unmasked, precluding subsequent corrections.
+**2. CrossGuid Condition Injection: Lightweight Cross-Attention for Semantic Guidance**
 
-2. **CrossGuid Conditioning Module**: Inserted within the Social-Temporal Block between Temporal Mamba and Social Transformer, CrossGuid injects external guidance signals. Two variants are implemented:
+Embedded between Temporal Mamba and Social Transformer within the Social-Temporal Block, this module provides two levels of granularity. Weak Possession Guidance (WPG) requires only a player index sequence $[n_1, n_2, ..., n_L]$, encoded via learnable agent embeddings to serve as K/V, while intermediate ball representations serve as Q. This updates only the ball's trajectory representation and overlays agent embeddings on each player to preserve social reasoning. Text guidance uses a frozen T5-Base to encode natural language descriptions, which are projected and processed via MHA for all agents, with agent embeddings added to the Query side to distinguish agents and respond to scene-level semantics like "who has the ball" or "game flow."
 
-    - **Weak Possession Guidance (WPG)**: Takes a player index sequence $[n_1, n_2, ..., n_L]$, encodes it via learnable agent embeddings as K/V, and performs MHA with the ball's intermediate representation as Q. Only the ball's trajectory representation is updated, and agent embeddings are added to each player to support social reasoning.
-    - **Text Guidance**: Processes natural language descriptions with a frozen T5-Base encoder, projects the output, and performs MHA over all agents. Each agent prepends an agent embedding to its Query for differentiation.
+**3. Hybrid Sampling: Accelerated Continuous Modality and Stable Discrete Modality Alignment**
 
-3. **Hybrid Sampling Strategy**: At inference time, DDIM with step interval $\zeta=5$ is used to accelerate continuous trajectory sampling, while standard stochastic sampling is applied to discrete events. The discrete step count is $S^d = 10$ (vs. continuous $S = 50$), aligned via $s^d = \lceil s \cdot S^d / S \rceil$.
+During inference, different samplers are used: trajectories utilize DDIM acceleration (jump interval $\zeta=5$), while discrete events use a standard stochastic sampler for categorical consistency. The difference in steps (continuous $S=50$, discrete $S^d=10$) is resolved by aligning discrete steps to the continuous timeline via $s^d = \lceil s \cdot S^d / S \rceil$, ensuring synchronized states throughout denoising.
 
 ### Loss & Training
 
@@ -67,13 +79,13 @@ The joint training objective is a weighted sum of the simplified continuous loss
 
 $$\mathcal{L}_{\mathrm{joint}} = \mathcal{L}_{\mathrm{simple}}^{\mathbf{Y}} + \lambda \mathcal{L}_{\mathrm{vb}}^{\mathbf{E}}$$
 
-where $\lambda = 0.1$ balances the contribution of the two modalities. Importance sampling rather than uniform timestep sampling is employed. For controllable generation, Classifier-Free Guidance training is applied by randomly dropping conditioning signals with probability 25%.
+where $\lambda = 0.1$ balances the modalities. Importance sampling is used instead of uniform time-step sampling. For controllable generation, Classifier-Free Guidance training is performed by dropping conditional signals with a 25% probability.
 
 ## Key Experimental Results
 
 ### Main Results: Future Trajectory Generation (min / avg, 20 modes)
 
-| Dataset | Metric | JointDiff | U2Diff (Prev. SOTA) | Gain |
+| Dataset | Metric | JointDiff (Ours) | U2Diff (Prev. SOTA) | Gain |
 |--------|------|-----------|----------|------|
 | NFL | SADE↓ | **2.36/3.40** | 2.59/3.74 | -0.23/-0.34 |
 | NFL | SFDE↓ | **5.53/8.40** | 5.97/9.02 | -0.44/-0.62 |
@@ -81,7 +93,7 @@ where $\lambda = 0.1$ balances the contribution of the two modalities. Importanc
 | NBA | SADE↓ | **1.39/2.01** | 1.48/2.12 | -0.09/-0.11 |
 | NBA | SFDE↓ | **2.53/3.95** | 2.68/4.14 | -0.15/-0.19 |
 
-### Ablation Study: Effect of Joint Modeling (Controllable Generation Task)
+### Ablation Study: Effect of Joint Modeling (Controllable Tasks)
 
 | Configuration | NFL SADE↓ | NFL Acc↑ | Bundesliga SADE↓ | Bundesliga Acc↑ |
 |------|-----------|----------|------------------|-----------------|
@@ -92,38 +104,38 @@ where $\lambda = 0.1$ balances the contribution of the two modalities. Importanc
 
 ### Key Findings
 
-- Joint modeling (JointDiff) outperforms continuous-only variants on both controllable and uncontrollable tasks.
-- Text guidance > weak possession guidance > no guidance; finer-grained guidance yields larger improvements.
-- Multinomial diffusion achieves substantially better event-trajectory consistency than absorbing-state diffusion (e.g., Bundesliga avg Acc: 0.80 vs. 0.70).
-- In human evaluation, JointDiff achieves an 80% win rate over MoFlow, with 24% of cases rated on par with ground-truth trajectories.
-- Even under IID sampling, JointDiff remains competitive with non-IID methods on min metrics.
+- Joint modeling (JointDiff) outperforms variants modeling only continuous trajectories in both controllable and uncontrollable tasks.
+- Performance follows: Text Guidance > Weak Possession Guidance > No Guidance; finer guidance yields larger gains.
+- Consistency (matching between events and trajectories) of multinomial diffusion is significantly better than absorbing state diffusion (e.g., Bundesliga avg Acc: 0.80 vs 0.70).
+- In human evaluation, JointDiff wins over MoFlow with an 80% rate, and in 24% of cases, it was rated indistinguishable from the ground truth.
+- Even under IID sampling conditions, JointDiff remains competitive with non-IID methods on "min" metrics.
 
 ## Highlights & Insights
 
-- This is the first work to apply joint continuous-discrete diffusion to temporally dynamic systems, filling a gap previously limited to static tasks (layout design, CAD).
-- The WPG mode of CrossGuid is elegantly designed — providing only a list of player indices is sufficient to control game momentum, offering low entry barrier with high semantic expressiveness.
-- The comparative analysis of multinomial diffusion vs. absorbing-state diffusion has broad reference value, demonstrating that a continuous correction mechanism outperforms one-shot decisions in temporal modeling.
-- A unified sports benchmark (NFL + Bundesliga with text descriptions) is provided, facilitating future community research.
+- First application of joint continuous-discrete diffusion to temporal dynamic systems, filling the gap left by previous works limited to static tasks (layout design, CAD).
+- The WPG mode of CrossGuid is elegantly designed—controlling game flow by simply providing a player list, offering low entry barriers with high semantic control.
+- The comparative analysis of multinomial vs. absorbing state diffusion provides broad reference value, indicating that continuous correction mechanisms are superior for temporal modeling.
+- Provides a unified sports benchmark (NFL + Bundesliga with text descriptions), benefiting future community research.
 
 ## Limitations & Future Work
 
-- The model assumes a ball-possession event exists at every timestep (dense event regime); extension to sparse events (e.g., fouls, shots) is a direction for future work.
-- Validation is currently limited to sports scenarios; broader adaptation to multi-agent systems such as autonomous driving and robotic collaboration remains to be explored.
-- Discrete event categories are limited to ball possession ($N$ classes); extending to hierarchical discrete spaces with multiple event types requires further investigation.
-- Text guidance relies on the T5 encoder, limiting comprehension of non-English descriptions or complex tactical language.
+- Assumes possession events exist at every time step (dense event mode); extending to sparse events (e.g., fouls, shots) is a future direction.
+- Currently validated only in sports scenes; adaptation to broader multi-agent systems (autonomous driving, robot collaboration) is required.
+- Discrete event categories are limited to possession (N classes); exploring hierarchical discrete spaces for multiple event types is necessary.
+- Text guidance relies on the T5 encoder, which may have limited understanding of non-English descriptions or complex tactical language.
 
 ## Related Work & Insights
 
-- U2Diff serves as the primary continuous trajectory baseline; JointDiff extends its Social-Temporal Block architecture with joint modeling capability.
-- Levi et al. (2023) and Li et al. (2025) apply joint diffusion to static layout and vision-language settings; JointDiff generalizes this to dynamic temporal scenarios.
-- The CrossGuid design can be adapted to other tasks requiring conditional injection into structured multi-agent embeddings.
+- U2Diff is the primary continuous trajectory baseline; JointDiff extends the Social-Temporal Block architecture with joint modeling capabilities.
+- Levi et al. (2023) and Li et al. (2025) utilized joint diffusion in static layouts/vision-language; JointDiff generalizes this to dynamic temporal scenes.
+- The design of CrossGuid can be applied to other tasks requiring condition injection into structured multi-agent embeddings.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First joint continuous-discrete diffusion for dynamic multi-agent systems; the WPG task formulation is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets, multiple tasks, human evaluation, and consistency analysis — comprehensive and thorough.
-- Writing Quality: ⭐⭐⭐⭐ Method is clearly presented with complete mathematical derivations and intuitive figures.
-- Value: ⭐⭐⭐⭐ Significant contribution to multi-agent generation and sports analytics; the joint diffusion paradigm is broadly generalizable.
+- Novelty: ⭐⭐⭐⭐⭐ First joint continuous-discrete diffusion for dynamic multi-agent systems; WPG task definition is novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three datasets + multi-task + human eval + consistency analysis; comprehensive and rigorous.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodology, complete mathematical derivation, and intuitive diagrams.
+- Value: ⭐⭐⭐⭐ Significant contribution to multi-agent generation and sports analytics; the joint diffusion approach is generalizable.
 
 <!-- RELATED:START -->
 
@@ -131,11 +143,11 @@ where $\lambda = 0.1$ balances the contribution of the two modalities. Importanc
 
 ## Related Papers
 
+- [\[CVPR 2025\] Unified Uncertainty-Aware Diffusion for Multi-Agent Trajectory Modeling](../../CVPR2025/image_generation/unified_uncertainty-aware_diffusion_for_multi-agent_trajectory_modeling.md)
 - [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
-- [\[AAAI 2026\] Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition](../../AAAI2026/image_generation/conditional_diffusion_model_for_multi-agent_dynamic_task_dec.md)
-- [\[ICML 2026\] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition](../../ICML2026/image_generation/offline_multi-agent_reinforcement_learning_via_sequential_score_decomposition.md)
-- [\[ICLR 2026\] Discrete Adjoint Matching](discrete_adjoint_matching.md)
-- [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](../../ICML2026/image_generation/viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
+- [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
+- [\[ICLR 2026\] ReDDiT: Rehashing Noise for Discrete Visual Generation](reddit_rehashing_noise_for_discrete_visual_generation.md)
+- [\[ICLR 2026\] Hyperspherical Latents Improve Continuous-Token Autoregressive Generation](hyperspherical_latents_improve_continuous-token_autoregressive_generation.md)
 
 </div>
 

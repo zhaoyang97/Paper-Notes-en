@@ -2,106 +2,116 @@
 title: >-
   [Paper Note] HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation
 description: >-
-  [ICLR 2026][Image Generation][Visual Geolocation] HierLoc reformulates visual geolocation as an image-to-entity alignment problem in hyperbolic space…
+  [ICLR 2026][Image Generation][Paper Note] The paper proposes HierLoc, which remodels geolocation as an image-entity alignment problem in hyperbolic space. By replacing 5M+ image embeddings with 240k hierarchical geographic entity embeddings, it reduces the mean geodesic error by 19.5% and improves sub-region accuracy by 43% on the OSV5M dataset.
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Visual Geolocation"
-  - "Hyperbolic Embeddings"
-  - "Hierarchical Entities"
-  - "Contrastive Learning"
-  - "Retrieval"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 6d42cdd54033e50b
+content_hash: 1afbbbc5b01ee57f
 ---
-
 # HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.23064](https://arxiv.org/abs/2601.23064)  
 **Code**: None  
-**Area**: Diffusion Models
+**Area**: Diffusion Models  
 **Keywords**: Visual Geolocation, Hyperbolic Embeddings, Hierarchical Entities, Contrastive Learning, Retrieval
 
 ## TL;DR
-HierLoc reformulates visual geolocation as an image-to-entity alignment problem in hyperbolic space, replacing 5M+ image embeddings with ~240K geographic entity embeddings. It achieves a 19.5% reduction in mean geodesic error and a 43% improvement in sub-region accuracy on OSV5M.
+The paper proposes HierLoc, which remodels geolocation as an image-entity alignment problem in hyperbolic space. By replacing 5M+ image embeddings with 240k hierarchical geographic entity embeddings, it reduces the mean geodesic error by 19.5% and improves sub-region accuracy by 43% on the OSV5M dataset.
 
 ## Background & Motivation
-Visual geolocation—inferring the capture location from image content—is a global, cross-scale challenge. Existing approaches fall into three categories: retrieval-based (requiring indexing of millions of image embeddings), classification-based (grid-cell classification that ignores geographic continuity), and generative-based (diffusion models that struggle at fine-grained scales). The root cause lies in the inherent hierarchical structure of geography (country → region → sub-region → city): the number of entities grows exponentially from country to city level, yet Euclidean distance grows only linearly, causing deep-level entities to become crowded and lose discriminability. Hyperbolic space naturally provides exponential volume growth, perfectly matching this hierarchical branching structure. HierLoc's key starting point is reframing geolocation from "image-to-image retrieval" to "image-to-entity alignment."
+Visual geolocation (inferring location from image content) is a cross-scale global challenge. Existing methods are divided into retrieval-based (requiring indexing millions of images), classification-based (grid classification ignoring geographic continuity), and generative-based (diffusion models struggling at fine scales). **Key Challenge**: Geography possesses an inherent hierarchical structure (Country → Region → Sub-region → City). The number of entities grows exponentially from country to city levels, whereas Euclidean distance only grows linearly, leading to crowding and reduced discriminability for deep-level entities. **Key Insight**: Hyperbolic space naturally provides exponential volume growth, perfectly matching this hierarchical branching structure. The **Goal** of HierLoc is to transform geolocation from "image-to-image retrieval" into "image-to-entity alignment."
 
 ## Method
 
 ### Overall Architecture
-Geographic entities and images are embedded in the Lorentz hyperbolic space. Images are encoded by a frozen visual encoder (DINOv3) and projected onto the hyperbolic manifold; entities are represented by fusing image, text, and coordinate modalities. Cross-modal attention aligns images with four-level hierarchical entities, and a pretrained Geo-Weighted Hyperbolic InfoNCE (GWH-InfoNCE) loss supervises the alignment. At inference, beam search retrieves predictions by traversing the entity hierarchy.
+HierLoc addresses global-scale visual geolocation by reframing it: rather than "image-to-image retrieval," it treats localization as "image-to-geographic entity alignment." The pipeline processes an input image through a frozen DINOv3 encoder, which is then mapped to a Lorentz hyperbolic manifold. Simultaneously, training metadata is compressed into approximately 240,000 hierarchical geographic entities (Country → Region → Sub-region → City). Each entity is pre-embedded into the same hyperbolic space using multi-modal features (image, text, and coordinates). Cross-modal attention aligns the image with hierarchical entities across four levels. The representations are pre-trained using GWH-InfoNCE, a geographically weighted hyperbolic contrastive loss. During inference, instead of scanning millions of images, the model performs a top-down refinement on the entity tree using beam search to reach city-level entities.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IMG["Input Image"] --> ENC["DINOv3 Encoder (Frozen)<br/>+ Lorentz Hyperbolic Mapping"]
+    META["Training Metadata"] --> HIER["Hierarchical Entity Construction & Embedding<br/>Country→Region→Sub-region→City<br/>Tri-modal: Image/Text/Coords"]
+    ENC --> ATT["Cross-modal Attention<br/>Updates Image Only, Entity Fixed"]
+    HIER --> ATT
+    ATT --> LOSS["GWH-InfoNCE<br/>Geo-weighted Hyperbolic Contrastive Loss"]
+    LOSS -->|Pre-training| BEAM["Beam Search<br/>Level-by-level Tree Refinement"]
+    HIER --> BEAM
+    BEAM --> OUT["City-level Localization Result"]
+```
 
 ### Key Designs
-1. **Hierarchical Entity Construction and Embedding**:
 
-    - Function: Compresses training metadata into ~240K hierarchical entities (233 countries, 4,946 regions, 29,214 sub-regions, 209,894 cities).
-    - Mechanism: Each entity is associated with three modalities—mean image embedding $\text{Img}_i$ (averaged DINOv3 features of training images), text embedding $\text{Text}_i$ (CLIP-encoded entity name), and coordinate embedding $\text{Coords}_i$ (SphereM+ encoded). Anchor embeddings $A_i$ are randomly initialized in the tangent space at the origin and mapped to the hyperboloid; the final embedding is $H_i = \exp_O(\log_0(A_i) + \alpha_{\text{node}} \Delta_i)$.
-    - Design Motivation: Although simple, mean embeddings yield stable and discriminative prototypes at the entity level.
+**1. Hierarchical Entity Construction: Compressing Millions of Images into Discriminative Prototypes**
 
-2. **Cross-Modal Attention**:
+A major pain point for retrieval methods is the linear increase in search cost with database size. HierLoc aggregates training metadata into ~240,000 hierarchical entities (233 countries, 4,946 regions, 29,214 sub-regions, 209,894 cities), replacing massive image samples with entity prototypes. Each entity associates tri-modal features: mean image embedding $\text{Img}_i$ (average DINOv3 features of all training images under that entity), text embedding $\text{Text}_i$ (entity name encoded via CLIP), and coordinate embedding $\text{Coords}_i$ (latitude/longitude encoded via SphereM+). Anchor embeddings $A_i$ are initialized in the tangent space and mapped to the hyperboloid, with the final embedding as $H_i = \exp_O(\log_0(A_i) + \alpha_{\text{node}} \Delta_i)$. This approach reduces retrieval complexity from $O(N)$ to sub-linear hierarchical traversal.
 
-    - Function: Performs multi-head attention in the tangent space with image features as queries and entity features as keys/values.
-    - Mechanism: Eight-head attention is applied independently at each hierarchical level; context vectors from all four levels are concatenated, fused via MLP, and added back to the original image features. Only the image stream is updated; entity embeddings remain fixed—preventing overfitting to training data.
-    - Design Motivation: This asymmetric update strategy ensures the generalizability of entity embeddings.
+**2. Cross-modal Attention: Aligning Images to Entities with Asymmetric Updates**
 
-3. **GWH-InfoNCE Loss**:
+To align image features with the correct hierarchical entities, HierLoc utilizes multi-head attention in the tangent space. Image features serve as the query, while entity embeddings act as key/values. Eight-head attention is performed independently across the four levels. Contexts are concatenated, fused via MLP, and added back to the original image features. The **Mechanism** uses **asymmetric updates**: attention only updates the image stream, while entity embeddings remain fixed. This prevents entities from overfitting to specific training images, preserving the generalization of prototypes as reliable targets for unseen images.
 
-    - Function: Incorporates geographic structure into hyperbolic contrastive learning.
-    - Mechanism: Negative samples are weighted by great-circle distances $g_{\ell,k}$ computed via the haversine formula: $w_{\ell,k} = 1 + \lambda \exp(-g_{\ell,k}/\sigma)$. The loss is $\mathcal{L}_\ell = -\log \frac{\exp(-d_\ell^+/\tau)}{\exp(-d_\ell^+/\tau) + \sum_k w_{\ell,k} \exp(-d_{\ell,k}^-/\tau)}$. The total loss aggregates across levels: $\mathcal{L} = \sum_{\ell} \beta_\ell \mathcal{L}_\ell$.
-    - Design Motivation: Geographically proximate negatives are harder to distinguish and should receive higher weights to enhance fine-grained discrimination.
+**3. GWH-InfoNCE Loss: Encoding Geographic Proximity into Negative Weights**
+
+Standard InfoNCE treats all negative samples equally. However, in geolocation, negative samples closer to the positive sample are harder to distinguish and more valuable for discrimination. GWH-InfoNCE calculates the great-circle distance $g_{\ell,k}$ between negative and positive samples using the haversine formula to weight negatives:
+
+$$w_{\ell,k} = 1 + \lambda \exp(-g_{\ell,k}/\sigma)$$
+
+Geographically proximal negatives receive higher weights. The loss for a single hierarchy level is:
+
+$$\mathcal{L}_\ell = -\log \frac{\exp(-d_\ell^+/\tau)}{\exp(-d_\ell^+/\tau) + \sum_k w_{\ell,k} \exp(-d_{\ell,k}^-/\tau)}$$
+
+where $d$ is the distance in hyperbolic space. The total loss aggregates four levels: $\mathcal{L} = \sum_{\ell} \beta_\ell \mathcal{L}_\ell$. This weighting significantly improves discriminative power at fine scales, resulting in a 43% gain in sub-region accuracy.
 
 ### Loss & Training
-- AdamW is used for Euclidean parameters; RiemannianAdam is used for manifold parameters.
-- Batch size 16, learning rate $2\times10^{-4}$, trained for 5 epochs on 6× L40S GPUs (~60 hours).
-- Inference uses beam search (beam width 10) to progressively refine predictions across the entity hierarchy.
+- Euclidean parameters use AdamW; manifold parameters use RiemannianAdam.
+- Batch size 16, learning rate 2×10⁻⁴, trained for 5 epochs on 6× L40S GPUs (~60 hours).
+- Inference employs beam search (width 10) for level-by-level refinement on the entity hierarchy.
 
 ## Key Experimental Results
 
 ### Main Results (OSV5M Benchmark)
 
 | Method | GeoScore↑ | Distance (km)↓ | Country% | Region% | Sub-region% | City% |
-|--------|-----------|----------------|----------|---------|-------------|-------|
+|------|-----------|----------|-------|-------|---------|-------|
 | SC Retrieval | 3597 | 1386 | 73.4 | 45.8 | 28.4 | 19.9 |
 | LocDiff | - | - | 77.0 | 46.3 | - | 11.0 |
-| **HierLoc (DINOV3)** | **3963** | **861** | **82.9** | **55.0** | **40.7** | **23.3** |
+| **HierLoc (DINOv3)** | **3963** | **861** | **82.9** | **55.0** | **40.7** | **23.3** |
 
-### Ablation Study (Component Contributions)
+### Ablation Study
 
-| Configuration | GeoScore | Notes |
-|---------------|----------|-------|
-| Euclidean space | Baseline | Deep-level entity crowding |
-| + Hyperbolic space | Improved | Exponential volume growth |
-| + GWH-InfoNCE | Best | Geography-aware negative weighting |
-| Laplace vs. Gaussian decay | Laplace superior | Choice of decay kernel matters |
+| Configuration | GeoScore | Description |
+|------|----------|------|
+| Euclidean Space | Baseline | Crowding of deep-level entities |
+| + Hyperbolic Space | Gain | Exponential volume growth |
+| + GWH-InfoNCE | Optimal | Geographically aware negative weighting |
+| Laplace vs Gaussian decay | Laplace better | Choice of decay kernel impacts performance |
 
 ### Key Findings
-- Country accuracy +8.8%, region +20.1%, sub-region +43.2%, city +16.8%.
-- Mean geodesic error reduced by 19.5% (1,386 km → 861 km vs. SC Retrieval).
-- Search space substantially reduced by compressing ~9.6M image records to 240K entities.
+- Accuracy improved by +8.8% for Country, +20.1% for Region, +43.2% for Sub-region, and +16.8% for City levels.
+- Mean geodesic error reduced by 19.5% (1386km → 861km vs. SC Retrieval).
+- Search space drastically reduced from ~9.6M image records to 240k entities.
 - DINOv3 encoder outperforms ViT-L/14.
 
 ## Highlights & Insights
-- The "image-to-entity alignment" paradigm reduces retrieval complexity from $O(N)$ to sub-linear via hierarchical traversal.
-- The design intuition behind geographic distance-weighted negatives in GWH-InfoNCE is particularly elegant—geographically close samples are the truly hard negatives.
-- The asymmetric cross-modal attention (updating only image features while keeping entity embeddings fixed) effectively prevents overfitting.
+- "Image-to-entity alignment" reduces retrieval complexity from $O(N)$ to sub-linear hierarchical traversal.
+- The geographic distance-weighted negative sample design in GWH-InfoNCE is intuitive—geographically close samples are the strongest negatives.
+- Asymmetric cross-modal attention (updating only images, keeping entities fixed) prevents overfitting.
 
 ## Limitations & Future Work
-- Using mean image embeddings for city-level entities may discard visual diversity information.
-- The beam search width is fixed at 10; an adaptive strategy may yield better results.
-- The method requires a pre-constructed hierarchy, which may be limited for regions lacking administrative division data.
+- Using mean image embeddings for city-level entities might lose visual diversity information.
+- A fixed beam search width of 10 is used; adaptive strategies might perform better.
+- Requires pre-constructed hierarchies, which may be restricted in regions lacking administrative division data.
 
 ## Related Work & Insights
-- **vs. PIGEON**: Relies on large-scale classification with semantic fusion, but collapses to a single-level output, discarding hierarchical signals.
-- **vs. GeoCLIP**: Directly uses coordinates as prediction targets without exploiting hierarchical structure.
+- **vs PIGEON**: Based on large-scale classification and semantic fusion, but collapses into single-level output, losing hierarchical signals.
+- **vs GeoCLIP**: Directly predicts coordinates as targets without utilizing hierarchical structures.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First application of hyperbolic embeddings to global hierarchical visual geolocation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation on OSV5M with validation on multiple external benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ Method description is detailed with clear mathematical derivations.
-- Value: ⭐⭐⭐⭐⭐ Geometry-aware hierarchical embeddings offer broader inspiration for other hierarchical structure tasks.
+- Novelty: ⭐⭐⭐⭐⭐ First to apply hyperbolic embeddings to global hierarchical geolocation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive OSV5M evaluation plus validation on external benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Detailed methodology with clear mathematical derivation.
+- Value: ⭐⭐⭐⭐⭐ Geometry-aware hierarchical embeddings provide insights for other hierarchical tasks.
 
 <!-- RELATED:START -->
 
@@ -111,9 +121,9 @@ Geographic entities and images are embedded in the Lorentz hyperbolic space. Ima
 
 - [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)
 - [\[AAAI 2026\] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval](../../AAAI2026/image_generation/hyperbolic_hierarchical_alignment_reasoning_network_for_text-3d_retrieval.md)
-- [\[ICCV 2025\] HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation](../../ICCV2025/image_generation/hypdae_hyperbolic_diffusion_autoencoders_for_hierarchical_few-shot_image_generat.md)
 - [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
-- [\[ICLR 2026\] Compositional amortized inference for large-scale hierarchical Bayesian models](compositional_amortized_inference_for_large-scale_hierarchical_bayesian_models.md)
+- [\[ICCV 2025\] HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation](../../ICCV2025/image_generation/hypdae_hyperbolic_diffusion_autoencoders_for_hierarchical_few-shot_image_generat.md)
+- [\[ICLR 2026\] Next Visual Granularity Generation](next_visual_granularity_generation.md)
 
 </div>
 

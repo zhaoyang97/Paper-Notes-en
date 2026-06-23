@@ -2,177 +2,161 @@
 title: >-
   [Paper Note] Neural Synchrony Between Socially Interacting Language Models
 description: >-
-  [ICLR 2026][LLM/NLP][neural synchrony] This paper presents the first investigation of neural synchrony between LLMs engaged in social interaction. By training affine transformations to predict a partner model's future re…
+  [ICLR 2026][LLM (Other)][Paper Note] This study presents the first investigation of neural synchrony between LLMs during social interaction. By training affine transformations to predict the future representations of interaction partners, the authors define the $SyncR^2$ metric to quantify synchrony strength. Findings indicate that this synchrony depends
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "neural synchrony"
-  - "social interaction"
-  - "LLM representation analysis"
-  - "multi-agent systems"
-  - "inter-brain synchrony analogy"
-  - "predictability"
+  - ICLR 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 7169c4487daa1d9c
+content_hash: 8ecff5ac52b73f09
 ---
-
 # Neural Synchrony Between Socially Interacting Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.17815](https://arxiv.org/abs/2602.17815)  
 **Code**: [zzn-nzz/LM_neural_synchrony](https://github.com/zzn-nzz/LM_neural_synchrony)  
-**Area**: LLM/NLP
-**Keywords**: neural synchrony, social interaction, LLM representation analysis, multi-agent systems, inter-brain synchrony analogy, predictability
+**Area**: LLM/NLP  
+**Keywords**: Neural Synchrony, Social Interaction, LLM Representation Analysis, Multi-Agent Systems, Inter-Brain Synchrony Analogy, Predictability
 
 ## TL;DR
 
-This paper presents the first investigation of neural synchrony between LLMs engaged in social interaction. By training affine transformations to predict a partner model's future representations, it defines the $SyncR^2$ metric to quantify synchrony strength. The results show that synchrony depends on social engagement and temporal proximity, and correlates strongly with LLMs' social behavioral performance (Pearson $r$ = 0.88–0.99), echoing neuroscientific findings on inter-brain synchrony (IBS) in humans.
+This study presents the first investigation of neural synchrony between LLMs during social interaction. By training affine transformations to predict the future representations of interaction partners, the authors define the $SyncR^2$ metric to quantify synchrony strength. Findings indicate that this synchrony depends on social engagement and temporal proximity, and correlates highly with the social performance of LLMs (Pearson $r$ = 0.88-0.99), mirroring neuroscientific findings of human Inter-Brain Synchrony (IBS).
 
 ## Background & Motivation
 
-### Inter-Brain Synchrony (IBS) in Humans
+### Human Inter-Brain Synchrony (IBS)
 
-Neuroscience has established that during social interaction (conversation, cooperation, joint attention), human brain activity becomes synchronized. This **inter-brain synchrony** (IBS) is not merely a byproduct of shared sensory input; it is a functional mechanism that predicts and facilitates social coordination, cooperation, and mutual understanding. Stronger IBS is associated with higher cooperation rates, better learning outcomes, and superior team performance.
+Neuroscience has revealed that when humans interact socially (dialogue, cooperation, joint attention), their brain activities synchronize. This **Inter-Brain Synchrony** (IBS) is not merely a byproduct of shared sensory input but a functional mechanism for predicting and facilitating social coordination, cooperation, and mutual understanding. Stronger IBS is associated with higher cooperation rates, better learning outcomes, and superior team performance.
 
 ### Research Motivation
 
-While LLMs demonstrate remarkable social interaction capabilities at the behavioral level, whether analogous internal mechanisms to the human social brain exist at the **representational level** remains unknown. Prior work has primarily focused on behavioral evaluation (e.g., Theory of Mind tests) or single-model internal analysis (e.g., specific attention heads), leaving the **representational dynamics during multi-model interaction** largely unexplored.
+LLMs exhibit impressive social interaction capabilities at the behavioral level, but whether internal mechanisms similar to the human social brain exist at the **representational level** remains unknown. Prior work has primarily focused on behavioral assessments (e.g., Theory of Mind tests) or single-model internal analysis (e.g., specific attention heads), lacking studies on **representational dynamics during multi-model interactions**.
 
 ### Core Hypothesis
 
-If LLMs in social interaction not only act according to their own roles but also reason about a partner's emotions, intentions, and interaction trajectories, then one LLM's internal representations should contain information predictive of another LLM's representations.
+If LLMs not only act based on their own roles but also reason about the emotions, intentions, and interaction trajectories of their partners, then the internal representations of one LLM should contain information that predicts the representations of the other.
 
 ## Method
 
 ### Overall Architecture
 
-1. Two LLM agents engage in multi-turn social interaction within the Sotopia environment, each with independent background, personality, and goals.
-2. At each turn, the hidden state of the last token of the prompt is extracted as the representation.
-3. An affine transformation is trained to predict the interaction partner's future representations, and prediction performance is used to quantify synchrony.
+The study addresses whether the internal representations of one LLM encode information about its partner during social interaction. The analysis follows a pipeline: first, two LLM agents engage in multi-round social interactions in the Sotopia environment. In each round, per-layer hidden states are extracted from the last token of their respective prompts, serving as the "neural activity" of the model at that moment. Time-aligned representations are paired, and cross-model affine transformations are trained to predict the partner's representations. High prediction accuracy from this linear mapping indicates that one agent's internal state encodes the other's information. Finally, per-layer, bidirectional prediction accuracies are aggregated into a symmetric $SyncR^2$ score to represent synchrony strength. To isolate dynamic synchrony from static similarity, two control groups (removing social participation and removing temporal proximity) were designed.
 
-### Representation Extraction
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    START["Two LLM agents<br/>Sotopia multi-round social interaction"] --> EXTRACT["Representation Extraction<br/>Per-layer hidden states<br/>at last prompt token"]
+    EXTRACT --> AFFINE["Affine Transform + Ridge Regression<br/>Time-aligned pairing<br/>Cross-model linear mapping"]
+    AFFINE --> SYNC["SyncR² Metric<br/>Per-layer best match + Max(0, R²)<br/>Bidirectional average"]
+    SYNC --> OUT["Pairwise Synchrony Score<br/>SyncR²(A,B)"]
+    EXTRACT -.->|Passive agent (read-only)<br/>/ Lag-k pairing| CTRL["Two Control Groups<br/>No Social Participation / No Temporal Proximity"]
+    CTRL -.-> AFFINE
+```
 
-For a $T$-turn dialogue, each LLM backbone $M \in \{A, B\}$ produces at turn $t$:
+### Key Designs
 
-$$\boldsymbol{h}_t^{(M)} \in \mathbb{R}^{L_M \times D_M}, \quad t = 1, \dots, T$$
+**1. Representation Extraction: Compressing dialogues into comparable vectors**
 
-The hidden states across all layers are extracted at the position of the last token of the prompt input, which integrates information from all preceding tokens.
+To measure synchrony, the "state of the model" must be converted into a vector that is alignable across models. For $T$ rounds of dialogue, each backbone $M \in \{A, B\}$ generates per-layer hidden states $\boldsymbol{h}_t^{(M)} \in \mathbb{R}^{L_M \times D_M}$ at round $t$. The authors extract representations only from the last token position of the prompt input, as the autoregressive attention mechanism ensures this position integrates information from all preceding tokens, serving as a concentrated carrier of the context.
 
-### Dataset Construction
+**2. Affine Transformation + Ridge Regression: Testing predictability with linear mappings**
 
-The experimental condition uses temporally aligned representation pairs from real interactions:
-
-$$\mathcal{D}^{A \to B}_{l_A \to l_B} = \{(\boldsymbol{h}^{(A)}_{t, l_A}, \boldsymbol{h}^{(B)}_{t, l_B}) \mid t = 1, \dots, T\}$$
-
-### Learning the Affine Transformation
-
-Ridge regression with an intercept term is employed:
+To determine if one model "encodes" another, time-aligned representations from the same interaction are paired to form a dataset $\mathcal{D}^{A \to B}_{l_A \to l_B} = \{(\boldsymbol{h}^{(A)}_{t, l_A}, \boldsymbol{h}^{(B)}_{t, l_B}) \mid t = 1, \dots, T\}$. A Ridge regression with an intercept solves the mapping from source layer $l_A$ to target layer $l_B$:
 
 $$\hat{\boldsymbol{W}}, \hat{\boldsymbol{b}} = \arg\min_{\boldsymbol{W}, \boldsymbol{b}} \|\boldsymbol{Y} - \boldsymbol{X}\boldsymbol{W} - \mathbf{1}\boldsymbol{b}\|_F^2 + \lambda \|\boldsymbol{W}\|_F^2$$
 
-The regularization coefficient is $\lambda = 0.1$; the intercept is not regularized.
+The regularization parameter is set to $\lambda = 0.1$. Using a linear rather than a non-linear predictor ensures that synchrony is a genuine representational property rather than an artifact of a powerful predictor’s capacity.
 
-### $SyncR^2$ Metric Definition
+**3. $SyncR^2$ Metric: Aggregating accuracy into a symmetric score**
 
-For each layer $l_A$ of the source model $A$, the best-matching layer in the target model $B$ is identified:
+Since synchrony may not be restricted to fixed layers, for each layer $l_A$ of source model $A$, the best match is found in the target model $B$: $r_A^{\star}(l_A) = \max_{l_B} R^2_{\text{test}}(l_A \to l_B)$. Negative values are truncated to zero $\tilde{r}_A(l_A) = \max\{0, r_A^{\star}(l_A)\}$. The mean across all layers yields $SyncR^2(A \to B)$, which is then symmetrized:
 
-$$r_A^{\star}(l_A) = \max_{l_B} R^2_{\text{test}}(l_A \to l_B), \quad \tilde{r}_A(l_A) = \max\{0, r_A^{\star}(l_A)\}$$
+$$SyncR^2(A, B) = \tfrac{1}{2}\big(SyncR^2(A \to B) + SyncR^2(B \to A)\big)$$
 
-This is then averaged across all layers and symmetrized bidirectionally:
+**4. Two Control Groups: Decoupling synchrony from static similarity**
 
-$$SyncR^2(A, B) = \frac{1}{2}(SyncR^2(A \to B) + SyncR^2(B \to A))$$
-
-Negative $R^2$ values are clipped to 0, as performance worse than predicting the mean indicates no synchrony.
-
-### Key Control Experiments
-
-**Control 1 (No Social Engagement)**: A "passive" agent is introduced — it reads the dialogue history but does not generate replies or engage in role-playing. Synchrony is expected to decrease.
-
-**Control 2 (No Temporal Proximity)**: Source representations are paired with target representations $k$ turns later ($k \geq 1$). If synchrony merely reflects static representational similarity, it should not decay with temporal lag.
-
-$$\mathcal{D}^{\text{lag-}k, A \to B}_{l_A \to l_B} = \{(\boldsymbol{h}^{(A)}_{t, l_A}, \boldsymbol{h}^{(B)}_{t+k, l_B}) \mid t = 1, \dots, T-k\}$$
+To exclude the possibility that models are simply similar in structure, two control groups were established. Control 1 (No Social Participation) introduces a "passive" agent that only reads dialogue history without generating responses. Control 2 (No Temporal Proximity) pairs source representations with target representations from $k$ rounds later ($k \geq 1$). If synchrony arises from real-time interaction, $SyncR^2$ should collapse as $k$ increases.
 
 ## Key Experimental Results
 
 ### Experimental Setup
 
-- **6 open-source models**: Mistral-7B-v0.1/v0.2/v0.3, Llama-2-7B-Chat, Llama-3-8B, Llama-3.2-3B
-- **21 model pairs**: covering intra-family and cross-family pairings
-- **450 interaction scenarios**, up to 8 turns each, 3 random seeds
-- 6,500 samples fixed per model pair
+- **6 Open-source Models**: Mistral-7B-v0.1/v0.2/v0.3, Llama-2-7B-Chat, Llama-3-8B, Llama-3.2-3B.
+- **21 Model Pairs**: Including intra-family and cross-family pairings.
+- **450 Interaction Scenarios**, maximum 8 rounds per scenario, 3 random seeds.
+- 6,500 samples per model pair.
 
-### Main Results: Control Condition Validation
+### Main Results: Control Group Validation
 
 | Condition | $SyncR^2$ Level |
 |-----------|----------------|
-| Experimental (real interaction) | Significantly high (0.1–0.3+) |
-| Control 1 (no social engagement) | Substantially reduced |
-| Control 2 (temporal lag $k \geq 1$) | Rapidly collapses to ≈0 |
+| Experimental Group (Real Interaction) | Significantly High (0.1-0.3+) |
+| Control Group 1 (No Social Participation) | Substantial Decrease |
+| Control Group 2 (Temporal Lag $k \geq 1$) | Rapid collapse to ≈0 |
 
-The results confirm that neural synchrony genuinely depends on **authentic social engagement** and **temporal proximity**.
+The results confirm that neural synchrony depends on **active social participation** and **temporal proximity**.
 
-### Key Finding: Synchrony–Performance Correlation
+### Key Findings: Correlation Between Synchrony and Social Performance
 
 | Model Family Type | Pearson $r$ | $p$-value |
-|------------------|------------|-----------|
-| Mistral family (3 pairs) | 0.88 | $< 0.05$ |
-| Cross-family (Mistral × Llama) | 0.89 | $< 0.001$ |
-| Llama family (3 pairs) | 0.99 | $< 0.001$ |
+|-------------------|-------------|-----------|
+| Mistral Family (3 pairs) | 0.88 | $< 0.05$ |
+| Cross-family (Mistral×Llama) | 0.89 | $< 0.001$ |
+| Llama Family (3 pairs) | 0.99 | $< 0.001$ |
 
 More synchronized model pairs systematically achieve better social performance.
 
-### Controlling for Confounds
+### Controlling Confounds
 
-IFEval (instruction following) and MuSR (long-context reasoning) are used as control variables for partial correlation analysis:
+Partial correlations were calculated using IFEval (instruction following) and MuSR (long-context reasoning) as control variables:
 
-| Model Family | After Controlling IFEval | After Controlling MuSR |
-|-------------|--------------------------|------------------------|
+| Model Family | Control IFEval | Control MuSR |
+|--------------|----------------|--------------|
 | Mistral | 0.81 | 0.92 |
 | Cross | 0.71 | 0.89 |
 | Llama | 0.27 | 0.99 |
 
-Correlations remain positive and mostly significant after controlling, demonstrating that synchrony reflects **socially specific capabilities** rather than a byproduct of general ability.
+The positive and mostly significant correlations after controlling for these factors prove that synchrony reflects **social-specific capabilities**.
 
-### Effect of Relationship Intimacy
+### Impact of Relationship Intimacy
 
-The $SyncR^2$ distribution shifts upward as the intimacy of the relationship between agents increases — closer social relationships are accompanied by stronger neural synchrony, echoing findings in human neuroscience (e.g., couples exhibit stronger IBS than strangers).
+The $SyncR^2$ distribution shifts upward as relationship intimacy between agents increases—closer social relations are accompanied by stronger neural synchrony, mirroring neuroscientific findings (e.g., higher IBS in couples vs. strangers).
 
 ### Key Findings
 
-1. The affine transformation (a minimalist assumption) effectively captures synchrony; nonlinear transformations do not significantly improve generalization performance.
-2. Synchrony is most pronounced in intermediate layers.
-3. LLM representations encode the interaction partner's emotional states and can predict the partner's future emotional and action distributions.
+1. Affine transformations (minimal assumption) effectively capture synchrony; non-linear transformations do not significantly improve generalization.
+2. Synchrony is most pronounced in middle layers.
+3. LLM representations encode the emotional states of interaction partners and predict their future emotional and action distributions.
 
 ## Highlights & Insights
 
-1. **Pioneering perspective**: The first work to transfer the neuroscientific concept of IBS to the LLM domain, bridging human social cognition and AI systems.
-2. **Rigorous control design**: The two control conditions — social engagement and temporal proximity — rule out multiple alternative explanations.
-3. **The power of parsimony**: A linear (affine) transformation suffices to reveal deep representational synchrony, supporting the hypothesis of linear structure in LLM representations.
-4. **Implicit evidence for Theory of Mind**: Agent representations encode the partner's invisible internal states (e.g., emotions), suggesting implicit ToM capability.
-5. **Resonance with social predictive coding theory**: The affine transformation directly operationalizes "prediction of another's future state."
+1. **Pioneering Perspective**: First to transfer the concept of IBS from neuroscience to LLMs, bridging human social cognition and AI systems.
+2. **Rigorous Control Design**: Two control groups (social participation and temporal proximity) successfully rule out alternative explanations.
+3. **Power of Simple Methods**: Using linear mappings to reveal deep representational synchrony supports the hypothesis of linear structures in LLM representations.
+4. **Implicit Evidence of ToM**: Representations encode invisible internal states (e.g., partner's emotions), suggesting implicit Theory of Mind capabilities.
+5. **Alignment with Social Predictive Coding**: The affine transformation operationalizes the "prediction of others' future states."
 
 ## Limitations & Future Work
 
-1. **Limited model scale**: The largest model is only 8B parameters; large-scale models prevalent today (e.g., 70B+) are not included.
-2. **Sotopia environment only**: The diversity of social interaction scenarios may not adequately represent real-world social interaction.
-3. **Causal direction unclear**: Whether the synchrony–performance correlation is causal, or whether both are reflections of model capability, remains unresolved.
-4. **Limitations of the affine transformation**: While effective, it may miss nonlinear synchrony patterns in representations.
-5. **Evaluator dependency**: Social performance scores rely on GPT models, which may introduce systematic bias.
+1. **Limited Model Scale**: Restricted to models up to 8B parameters; lacks analysis of current large-scale models (e.g., 70B+).
+2. **Environment Constraint**: The Sotopia environment might not represent the full diversity of real-world social interactions.
+3. **Causal Ambiguity**: Whether synchrony causes performance or both reflect model capacity remains to be clarified.
+4. **Affine Transformation Limits**: May overlook non-linear synchrony patterns in representations.
+5. **Evaluator Bias**: Dependence on GPT-based scoring for social performance may introduce systematic bias.
 
 ## Related Work & Insights
 
-- **IBS neuroscience** (Dumas et al., 2010; Hasson et al., 2012): The direct inspiration for this work.
-- **Brain–LLM alignment** (Mischler et al., 2024): Demonstrates similarity between LLM and brain representations, but is limited to single models.
-- **Sotopia** (Zhou et al., 2023): Provides the infrastructure for the social simulation environment.
-- **Inspiration**: Offers a novel representational analysis perspective for multi-agent system design — collaborative performance may be improved by optimizing inter-agent synchrony.
+- **IBS Neuroscience** (Dumas et al., 2010; Hasson et al., 2012): Direct inspiration for this study.
+- **Brain-LLM Alignment** (Mischler et al., 2024): Demonstrates similarity between LLM and brain representations but limited to single-model analysis.
+- **Sotopia** (Zhou et al., 2023): Provides the social simulation infrastructure.
+- **Insight**: Provides a new representational analysis perspective for multi-agent systems—cooperative performance might be improved by optimizing inter-agent synchrony.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — Highly original; opens an entirely new research direction in the social neuroscience of LLMs.
-- **Technical Depth**: ⭐⭐⭐⭐ — The method is simple yet the control experiment design is sophisticated and the statistical analysis is rigorous.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — 21 model pairs, 450 scenarios, and multiple control conditions, though model scale is limited.
-- **Value**: ⭐⭐⭐ — Currently more analytical and inspirational in nature; direct application pathways remain to be clarified.
-- **Overall Recommendation**: ⭐⭐⭐⭐ — A highly interesting and substantive interdisciplinary work that opens a new window into understanding the "social mind" of LLMs.
+- **Novelty**: ⭐⭐⭐⭐⭐ — Highly original, opening a new research direction in social neuroscience for LLMs.
+- **Technical Depth**: ⭐⭐⭐⭐ — Methodologically simple but with sophisticated control experiments and rigorous statistical analysis.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — 21 model pairs and 450 scenarios, though limited by model size.
+- **Value**: ⭐⭐⭐ — Currently more analytical and heuristic; direct application paths require further exploration.
+- **Overall**: ⭐⭐⭐⭐ — An insightful interdisciplinary work that opens a window into understanding the "social mind" of LLMs.
 
 <!-- RELATED:START -->
 
@@ -181,10 +165,10 @@ The $SyncR^2$ distribution shifts upward as the intimacy of the relationship bet
 ## Related Papers
 
 - [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](../../ACL2026/llm_nlp/repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
+- [\[ACL 2025\] Information Locality as an Inductive Bias for Neural Language Models](../../ACL2025/llm_nlp/information_locality_as_an_inductive_bias_for_neural_language_models.md)
+- [\[ACL 2025\] Neural Topic Modeling with Large Language Models in the Loop](../../ACL2025/llm_nlp/neural_topic_modeling_with_large_language_models_in_the_loop.md)
 - [\[ACL 2026\] An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal](../../ACL2026/llm_nlp/an_existence_proof_for_neural_language_models_that_can_explain_garden-path_effec.md)
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
-- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
-- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
+- [\[ACL 2025\] PiFi: Plug-in and Fine-tuning: Bridging the Gap between Small Language Models and Large Language Models](../../ACL2025/llm_nlp/plugin_finetuning_bridge.md)
 
 </div>
 

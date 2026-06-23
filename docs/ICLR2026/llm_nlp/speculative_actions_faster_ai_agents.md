@@ -2,136 +2,151 @@
 title: >-
   [Paper Note] Speculative Actions: A Lossless Framework for Faster AI Agents
 description: >-
-  [ICLR 2026 Oral][LLM/NLP][speculative execution] Inspired by CPU speculative execution and LLM speculative decoding, this paper proposes the Speculative Actions framework: while a slow Actor (large model) computes…
+  [ICLR 2026][LLM (Other)][speculative execution] Drawing inspiration from CPU speculative execution and LLM speculative decoding, this paper proposes the Speculative Actions framework: while a slow Actor (large model) computes, a fast Speculator (small model) predicts and pre-executes future actions. If the prediction matches, the wait time is skipped to achieve loss
 tags:
-  - "ICLR 2026 Oral"
-  - "LLM/NLP"
-  - "speculative execution"
-  - "AI agents"
-  - "latency reduction"
-  - "lossless acceleration"
-  - "MDP"
+  - ICLR 2026
+  - LLM (Other)
+  - speculative execution
+  - AI agents
+  - latency reduction
+  - lossless acceleration
+  - MDP
 date: 2026-05-08
-content_hash: 838027f00bc9d97b
+content_hash: 66e8b5132750c274
 ---
-
 # Speculative Actions: A Lossless Framework for Faster AI Agents
 
 **Conference**: ICLR 2026 Oral  
-**OpenReview**: [P0GOk5wslg](https://openreview.net/forum?id=P0GOk5wslg)  
+**OpenReview**: [https://openreview.net/forum?id=P0GOk5wslg](https://openreview.net/forum?id=P0GOk5wslg)  
 **Code**: None  
 **Area**: Other  
 **Keywords**: speculative execution, AI agents, latency reduction, lossless acceleration, MDP  
 
 ## TL;DR
-Inspired by CPU speculative execution and LLM speculative decoding, this paper proposes the Speculative Actions framework: while a slow Actor (large model) computes, a fast Speculator (small model) predicts future actions and pre-executes them; upon a match, the waiting round is skipped, achieving lossless acceleration. The framework achieves 15–30% latency reduction across Chess, e-commerce, and QA scenarios. A confidence-based dynamic branching strategy attains acceleration comparable to three speculative branches while using 40% fewer tokens.
+Drawing inspiration from CPU speculative execution and LLM speculative decoding, this paper proposes the Speculative Actions framework: while a slow Actor (large model) computes, a fast Speculator (small model) predicts and pre-executes future actions. If the prediction matches, the wait time is skipped to achieve lossless acceleration. The framework reduces latency by 15-30% in scenarios such as Chess, e-commerce, and QA. A confidence-based dynamic branching strategy achieves acceleration effects similar to 3 speculative branches using 40% fewer tokens.
 
 ## Background & Motivation
 
-**Background**: AI agents interacting with environments follow a strict sequential pattern: the agent generates an action → the environment responds → the agent generates the next action. When large models (e.g., GPT-5, Gemini-2.5-Pro) serve as agents, the latency of each API call becomes a bottleneck.
+**Background**: AI Agents follow a strict serial interaction pattern with the environment: Agent generates action → Environment responds → Agent generates next action. When using large models (e.g., GPT-5, Gemini-2.5-Pro) as Agents, the latency of each API call becomes a bottleneck.
 
-**Limitations of Prior Work**: (a) Speculative decoding only accelerates token generation and does not address agent–environment interaction latency; (b) existing agent acceleration methods mostly sacrifice accuracy (e.g., replacing large models with small ones); (c) no theoretical framework exists to analyze the cost–latency trade-off of parallel speculation in agents.
+**Limitations of Prior Work**: (a) Speculative decoding only accelerates token generation and does not address Agent-environment interaction latency; (b) Existing Agent acceleration methods often sacrifice accuracy (e.g., replacing large models with small ones); (c) There is no theoretical framework to analyze the cost-latency trade-off of parallel speculation in Agents.
 
-**Key Challenge**: Large-model agents achieve high accuracy but are slow; small models are fast but insufficiently accurate. Can both be achieved simultaneously—preserving large-model output quality while approaching small-model speed?
+**Key Challenge**: Large model Agents are accurate but slow, while small models are fast but insufficiently accurate. Can one achieve both—maintaining the accuracy of large models while gaining the speed of small models?
 
-**Goal**: Design a lossless acceleration framework that exploits the speed gap between large and small models to speculatively execute actions in parallel, reducing end-to-end latency while fully preserving the output quality of the large model.
+**Goal**: Design a lossless acceleration framework that leverages the speed difference between large and small models to speculate actions in parallel, reducing end-to-end latency while fully maintaining the output quality of the large model.
 
-**Key Insight**: The key insight from CPU speculative execution—"predict then verify" does not affect correctness, only efficiency. Analogously, in agent interactions, predicted actions are pre-executed; matches are reused and mismatches are discarded, yielding results identical to purely sequential execution.
+**Key Insight**: A key insight from CPU speculative execution is that "predict then verify" does not change correctness, only efficiency. Similarly, in Agent interactions, predicting actions and pre-executing them allows for reusing results upon a match or discarding them upon a mismatch, ensuring the outcome is identical to pure serial execution.
 
-**Core Idea**: A fast small model predicts agent actions and pre-executes environment steps; when predictions are correct, one round of waiting is skipped, and the resulting trajectory is guaranteed to be identical to sequential execution.
+**Core Idea**: Use a fast small model to predict Agent actions and pre-execute environment steps. When predictions are correct, a round of waiting is skipped, ensuring the output trajectory is exactly the same as serial execution.
 
 ## Method
 
 ### Overall Architecture
-The Actor (large model) and Speculator (small model) run in parallel. The Speculator rapidly predicts $k$ possible next actions and pre-executes them, while the Actor computes the true action. If the true action matches a predicted action, the pre-executed result is reused directly, skipping one round of environment interaction latency; otherwise, the prediction is discarded and normal execution continues.
+The pain point addressed in this paper is that large model Agents are "accurate but slow." Agents interact with the environment in a strictly serial manner, wasting time waiting for each large model API call. Speculative Actions applies the CPU speculative execution concept—where prediction and verification affect efficiency but not correctness—by running a fast Speculator (small model) and a slow Actor (large model) in parallel. The Speculator predicts future actions and pre-executes the environment, while the Actor computes the ground-truth action. If the ground-truth action matches a prediction, the pre-execution result is reused to skip the wait; otherwise, it is discarded.
+
+The process follows these steps: at each state, a **confidence gate** determines if speculation is worthwhile. If so, the Speculator places $k$ parallel "bets" (**breadth**) and pre-executes $k$ next states. Once the Actor's ground-truth action arrives, an exact match is performed to decide between reuse or rollback (**Lossless Guarantee**). Upon a hit, the system continues along the hit chain (**depth**), connecting single-step acceleration into multi-step chains. Regardless of the hit outcome, the final action sequence is identical word-for-word to pure serial execution.
+
+```mermaid
+graph TD
+    S["Current State s_t"] --> A["Actor (LLM)<br/>Compute ground-truth action a_t in parallel"]
+    S --> G{"Confidence Gating<br/>p_t ≥ p* ?"}
+    G -->|"No: Unworthy"| SEQ["Serial Execution<br/>Wait only for Actor"]
+    G -->|"Yes"| B["Breadth Speculation: Speculator<br/>Predict k candidates + Pre-execute k next states"]
+    A --> M
+    B --> M{"Lossless Match<br/>a_t ∈ k candidates?"}
+    M -->|"Miss: Discard batch"| SEQ
+    M -->|"Hit: Reuse & skip wait"| D["Depth Speculation<br/>Extend along hit chain<br/>Interleaving into a tree"]
+    D --> NEXT["Enter next state s_(t+1)"]
+    SEQ --> NEXT
+    NEXT -->|"Trajectory continues"| S
+    NEXT -->|"End"| OUT["Output Action Sequence<br/>Identical to sequential execution"]
+```
 
 ### Key Designs
 
-1. **Breadth Speculation**
+**1. Confidence Dynamic Gating: Speculating only when the small model is confident to save tokens.**
 
-    - Function: Launch $k$ speculative branches simultaneously from the current state $s_t$.
-    - Mechanism: The Speculator predicts $k$ actions $\{\hat{a}_t^{(i)}\}_{i=1}^k$ in parallel; for each predicted action, the next state is pre-computed and an Actor call is pre-initiated. The match probability is $p(k) = 1 - (1-p)^k$; larger $k$ increases match probability but raises token cost.
-    - Design Motivation: Breadth speculation is straightforward, and the $k$ branches are mutually independent and fully parallelizable.
+The problem with fixed width $k$ is that it always places $k$ bets regardless of the small model's confidence, which is wasteful when confidence is low. Here, each state dynamically decides whether to speculate based on confidence: speculation is accepted at step $t$ if and only if $p_t \geq p^\star$,
 
-2. **Depth Speculation**
+$$\text{Accept speculation at step } t \iff p_t \geq p^\star$$
 
-    - Function: Continue speculating subsequent steps after a successful match (multi-step speculation chains).
-    - Mechanism: A successfully matched speculation chain can extend to the next step, forming a speculation tree. Theoretical analysis shows that the computational overhead of depth speculation is bounded by the speed ratio $a/b$ and does not grow exponentially with horizon $T$.
-    - Design Motivation: When the single-step match rate is high, depth speculation can compound the acceleration effect.
+The threshold $p^\star$ is analytically derived from the cost-latency ratio. The paper proves this strategy is theoretically optimal under cost constraints. In practice, it achieves acceleration close to $k=3$ breadth speculation using approximately 40% fewer tokens by spending them only on steps likely to hit.
 
-3. **Confidence-Based Dynamic Branching**
+**2. Breadth Speculation: Placing $k$ bets at the same state to increase hit probability.**
 
-    - Function: Dynamically decide whether to speculate based on the Speculator's confidence.
-    - Mechanism: $\text{Accept speculation at step } t \iff p_t \geq p^\star$, where the threshold $p^\star$ is derived from the cost ratio. This strategy is proven to be theoretically optimal.
-    - Design Motivation: Avoids wasting tokens when confidence is low; achieves the acceleration of $k=3$ speculation using 40% fewer tokens.
+When a state is worth speculating, the most direct acceleration involves running multiple speculations at $s_t$ simultaneously. The Speculator predicts $k$ candidate actions $\{\hat{a}_t^{(i)}\}_{i=1}^k$ in parallel, computes the next states for each, and pre-initiates corresponding Actor calls. These $k$ speculations are independent and can be fully parallelized. The hit probability increases with width as $p(k) = 1 - (1-p)^k$ (where $p$ is the hit rate of a single speculation). While a larger $k$ makes hits more stable, it incurs $k$ times the token cost, necessitating the aforementioned confidence gating.
 
-4. **Lossless Guarantee**
+**3. Lossless Guarantee: Reusing results only on exact matches to ensure identical trajectories.**
 
-    - Function: Guarantee that the final execution trajectory is identical to purely sequential execution.
-    - Mechanism: The Actor reuses cached results only when they exactly match the true action; otherwise, predictions are discarded. The output sequence is identical to sequential execution.
-    - Design Motivation: This guarantee is a prerequisite for real-world deployment—users need not worry about acceleration introducing errors.
+Candidates generated via breadth speculation can only be used if they do not change the outcome. The Actor reuses the cached result and skips the wait only when a pre-execution result **exactly matches** the computed ground-truth action $a_t$. If there is no match, the batch is discarded, and the system reverts to normal serial execution. Thus, the final action sequence is identical to sequential execution. This allows it to function as a pure backend optimization that is transparent to users—they do not need to trust the small model or worry about errors.
+
+**4. Depth Speculation: Chaining hits to enable multi-step acceleration.**
+
+Breadth speculation saves one step at a time, but true acceleration comes from continuing the speculation following a hit. Once a speculation matches at the current step, it extends to the next step and the one after that, interleaving multiple chains into a speculation tree. This allows multiple interactions to be processed in advance. Intuition might suggest computational explosion with increased depth, but the paper proves that the total computation for depth speculation is constrained by the Actor/Speculator speed ratio $a/b$ and **does not grow exponentially** with the horizon $T$. As long as the small model is fast enough, depth speculation is cost-effective, and higher single-step hit rates lead to more significant cumulative acceleration.
 
 ### Theoretical Results
-**Latency Savings:** $\frac{E[T_{\text{seq}} - T_{\text{spec}}]}{E[T_{\text{seq}}]} \to \frac{p(k)}{1+p(k)} \cdot \frac{b}{a+b}$
+**Latency Saving:** $\frac{E[T_{\text{seq}} - T_{\text{spec}}]}{E[T_{\text{seq}}]} \to \frac{p(k)}{1+p(k)} \cdot \frac{b}{a+b}$
 
 **Cost Increase:** $\frac{E[M_{\text{spec}} - M_{\text{seq}}]}{E[M_{\text{seq}}]} \to \frac{k}{1+p(k)} - \frac{b}{a+b} \cdot \frac{p(k)}{1+p(k)}$
 
-where Actor and Speculator latencies follow $\text{Exp}(\beta)$ and $\text{Exp}(\alpha)$, respectively.
+Where Actor/Speculator latencies follow $\text{Exp}(\beta)$ and $\text{Exp}(\alpha)$ respectively.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task | Speculation Count $k$ | Latency Savings | Extra Tokens |
-|------|----------------------|----------------|-------------|
-| Chess | $k=1$ | 4–8% | ~91% |
-| Chess | $k=2$ | 11–18% | ~155% |
-| Chess | $k=3$ | 19–31% | ~180% |
-| Chess | Confidence Dynamic | **16–25%** | **~88%** |
+| Task | Speculation Count $k$ | Latency Saving | Extra Tokens |
+|------|-----------|---------|-----------|
+| Chess | $k=1$ | 4-8% | ~91% |
+| Chess | $k=2$ | 11-18% | ~155% |
+| Chess | $k=3$ | 19-31% | ~180% |
+| Chess | Confidence Dynamic | **16-25%** | **~88%** |
 
 ### Ablation Study
 
 | Analysis Dimension | Key Findings |
-|-------------------|-------------|
-| Next-step prediction accuracy | Reaches 55% across domains |
-| Confidence dynamic vs. fixed $k$ | Achieves $k=3$ acceleration at $k=1$ token cost |
-| Lossy mode (OS Tuning) | 93.5% latency reduction, 92% cost reduction |
-| Speculator selection | Same-family small models (e.g., GPT-5-nano for GPT-5) perform best |
+|---------|---------|
+| Next-step Prediction Accuracy | Reaches 55% across domains |
+| Confidence Dynamic vs. Fixed $k$ | Achieves $k=3$ speedup with $k=1$ token cost |
+| Lossy Mode (OS Tuning) | Latency reduced by 93.5%, cost reduced by 92% |
+| Speculator Choice | Small models from the same family (GPT-5-nano for GPT-5) perform best |
 
 ### Key Findings
-- **Cross-domain generality**: Effective across four highly diverse domains—Chess, e-commerce, QA, and OS tuning.
-- **Confidence threshold is the core optimization**: Dynamic branching achieves the best trade-off between token efficiency and latency reduction.
-- **Self-hosted deployment offers nearly free speculation**: Using idle GPUs for speculation incurs almost no additional cost.
-- **Lossy extension has large potential**: When lossiness is permitted (OS Tuning), both latency and cost are substantially reduced simultaneously.
+- **Cross-domain Generalization**: Effective across four highly distinct domains: Chess, e-commerce, QA, and OS tuning.
+- **Confidence Threshold is a Core Optimization**: Dynamic branch selection achieves the best trade-off between token efficiency and latency reduction.
+- **Free Speculation for Self-hosted Deployment**: Using idle GPUs for speculation incurs almost no additional cost.
+- **Significant Lossy Potential**: When lossy execution is permitted (e.g., OS Tuning), both latency and cost decrease substantially.
 
 ## Highlights & Insights
-- **A perfect analogy from CPU speculative execution to AI agents**: CPU speculative execution has a 40+ year history; porting it to AI agent interaction scenarios is a natural yet previously overlooked direction.
-- **Lossless guarantee enables direct deployment**: As a backend optimization that is completely transparent to users, it requires no trust in speculative results.
-- **Theory guides the optimal strategy**: Beyond proposing the method, the paper derives the theoretically optimal threshold $p^\star$, eliminating the need for hyperparameter search.
+- **Perfect Analogy from CPU Speculative Execution to AI Agents**: CPU speculative execution has a 40-year history. Porting it to AI Agent interaction is a natural but previously overlooked direction.
+- **Lossless Guarantee Enables Direct Deployment**: As a backend optimization, it is completely transparent to users and does not require them to trust speculative results.
+- **Theoretically Guided Optimal Strategy**: Beyond proposing the method, the paper provides a theoretically optimal threshold $p^\star$, avoiding manual hyperparameter search.
 
 ## Limitations & Future Work
-- **Depends on the predictability of the action space**: If agent actions are highly stochastic or creative (e.g., open-ended writing), prediction accuracy will be low, making speculation wasteful.
-- **Applicable only to environments with deterministic verification**: Exact judgment of "predicted action = true action" is required; for continuous action spaces, a matching threshold must be defined.
-- **Speculator training not explored**: Off-the-shelf small models are used as Speculators; the possibility of training dedicated Speculators to improve match rates is not investigated.
+- **Dependency on Action Space Predictability**: For tasks where Agent actions are highly stochastic or creative (e.g., open-ended writing), prediction accuracy will be low, leading to wasted speculation.
+- **Applicable Only to Deterministically Verifiable Environments**: Requires the ability to judge "Predicted Action = Ground-truth Action" exactly. Continuous action spaces would require defined matching thresholds.
+- **Speculator Training Not Considered**: Uses off-the-shelf small models as Speculators; specialized training to improve match rates has not been explored.
 
 ## Related Work & Insights
-- **vs. Speculative Decoding**: Speculative decoding accelerates token-level generation, while Speculative Actions accelerates action-level environment interaction; the two approaches can be used in combination.
-- **Connection to LoongRL**: The action sequences generated by LoongRL's plan-retrieve-reason-recheck paradigm are likely highly predictable (especially the plan and retrieve steps), making them naturally amenable to acceleration via Speculative Actions.
+- **vs. Speculative Decoding**: Speculative decoding accelerates token-level generation, while Speculative Actions accelerates action-level environment interaction. Both can be used concurrently.
+- **Connection to LoongRL**: Action sequences generated by the plan-retrieve-reason-recheck pattern in LoongRL may be highly predictable (especially plan and retrieve steps), making them naturally suitable for Speculative Actions acceleration.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Adapts a classic idea to a new scenario; the concept is elegant, though it does not alter the underlying algorithm.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-task validation with theoretical alignment, though larger-scale agent tasks are lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations and clear system design.
-- Value: ⭐⭐⭐⭐⭐ High practical value; directly deployable to accelerate existing agent systems.
+- Novelty: ⭐⭐⭐⭐ Mapping a classic concept to a new scenario; elegant idea without changing underlying algorithms.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multitask verification with theoretical alignment, though lacks larger-scale Agent tasks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivation and clear system design.
+- Value: ⭐⭐⭐⭐⭐ High practical value; can be directly deployed to accelerate existing Agent systems.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
 ## Related Papers
 
+- [\[ICML 2026\] Preregistration for Experiments with AI Agents](../../ICML2026/llm_nlp/preregistration_for_experiments_with_ai_agents.md)
 - [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/llm_nlp/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
-- [\[AAAI 2026\] Blue Teaming Function-Calling Agents](../../AAAI2026/llm_nlp/blue_teaming_function-calling_agents.md)
 - [\[ICLR 2026\] Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards](optimas_optimizing_compound_ai_systems_with_globally_aligned_local_rewards.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
 - [\[ICLR 2026\] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)

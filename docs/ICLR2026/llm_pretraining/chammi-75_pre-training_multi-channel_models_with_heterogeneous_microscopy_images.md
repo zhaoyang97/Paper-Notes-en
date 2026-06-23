@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images
 description: >-
-  [ICLR2026][LLM Pretraining][microscopy] This work introduces CHAMMI-75—the largest heterogeneous multi-channel microscopy image pre-training dataset (2.8M images, 75 sources, 25 channel types…
+  [ICLR 2026][Pretraining][microscopy] The authors construct CHAMMI-75—the largest heterogeneous multi-channel microscopy image pre-training dataset (2.8M images, 75 sources, 25 channel types, 16 species)—demonstrating that imaging modality diversity is the key factor for improving multi-channel model generalization. The trained MorphEm model achieves SOTA
 tags:
-  - "ICLR2026"
-  - "LLM Pretraining"
-  - "microscopy"
-  - "multi-channel imaging"
-  - "dataset curation"
-  - "self-supervised learning"
-  - "cell morphology"
+  - ICLR 2026
+  - Pretraining
+  - microscopy
+  - multi-channel imaging
+  - dataset curation
+  - self-supervised learning
+  - cell morphology
 date: 2026-05-08
-content_hash: 30f981dc44a41150
+content_hash: 38a33b1c9bf52476
 ---
-
 # CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images
 
 **Conference**: ICLR2026  
@@ -24,106 +23,114 @@ content_hash: 30f981dc44a41150
 **Keywords**: microscopy, multi-channel imaging, dataset curation, self-supervised learning, cell morphology
 
 ## TL;DR
-This work introduces CHAMMI-75—the largest heterogeneous multi-channel microscopy image pre-training dataset (2.8M images, 75 sources, 25 channel types, 16 species)—and demonstrates that imaging modality diversity is the key factor for improving generalization of multi-channel models. The trained MorphEm model achieves state-of-the-art performance on 6 out of 7 benchmarks.
+The authors construct CHAMMI-75—the largest heterogeneous multi-channel microscopy image pre-training dataset (2.8M images, 75 sources, 25 channel types, 16 species)—demonstrating that imaging modality diversity is the key factor for improving multi-channel model generalization. The trained MorphEm model achieves SOTA on 6 out of 7 benchmarks.
 
 ## Background & Motivation
 
-**Background**: Microscopy imaging is a foundational tool in biological research. Unlike RGB natural images, microscopy images have a variable number of channels (1 to tens), each encoding distinct fluorescence signals. Deep learning is widely used for microscopy image analysis, but typically requires models with a fixed number of input channels—different experiments use different channel configurations, making models non-transferable across experiments.
+**Background**: Microscopy imaging is a fundamental tool in biological research. Unlike RGB natural images, microscopy images have a variable number of channels (1 to dozens), with each channel encoding different fluorescent signals. While deep learning is widely used for analysis, models typically require fixed channel counts—preventing reuse across experiments with different channel configurations.
 
-**Limitations of Prior Work**: (a) **Fixed channels**—existing models adapt RGB architectures to a specific channel count and cannot handle new channel combinations; (b) **Data fragmentation**—multi-channel microscopy images are scattered across various public platforms with inconsistent formats and metadata, making unified use difficult; (c) **Insufficient scale**—existing datasets such as IDRCell100k contain only 100K images.
+**Limitations of Prior Work**: (a) **Fixed Channels**: Existing models modify RGB architectures for specific channel counts and cannot handle new combinations; (b) **Data Fragmentation**: Multi-channel images are scattered across public platforms with inconsistent formats and metadata; (c) **Insufficient Scale**: Existing datasets like IDRCell100k contain only 100,000 images.
 
-**Key Challenge**: Training a generalizable cell morphology foundation model requires large-scale data covering diverse imaging modalities, species, and channel combinations—yet no such dataset exists.
+**Key Challenge**: Training general foundation models for cellular morphology requires large-scale data covering multiple imaging modalities, species, and channel combinations—yet such a dataset does not exist.
 
-**Goal**: Construct the first large-scale heterogeneous multi-channel microscopy image dataset and systematically evaluate its effectiveness as a pre-training resource.
+**Goal**: To build the first large-scale heterogeneous multi-channel microscopy image dataset and systematically evaluate its effectiveness as a pre-training resource.
 
-**Key Insight**: Images from 75 biological studies are collected across 18 public data-hosting platforms, unified with metadata annotations, and carefully curated with deduplication to construct a high-quality pre-training dataset.
-
-**Core Idea**: Data diversity—especially imaging modality diversity—is the critical factor for training channel-adaptive cell morphology models, and CHAMMI-75 provides precisely this diversity.
+**Key Insight**: Data diversity (especially imaging modality diversity) is critical for training channel-adaptive cell morphology models—CHAMMI-75 provides this diversity.
 
 ## Method
 
 ### Overall Architecture
-The work comprises three components: (1) CHAMMI-75 dataset construction—data acquisition → metadata integration → data curation (deduplication + quality control) → cell segmentation annotation; (2) six evaluation benchmarks (including three newly proposed) covering different channel configurations and domain transfer scenarios; (3) systematic experiments evaluating the pre-training value, influencing factors, and scalability of the dataset.
+This work addresses the problem that "microscopy lacks its own ImageNet." Multi-channel data are fragmented across platforms with varying formats and channels. The work follows three lines: First, **Data Curation**: Downloading ~26M raw images from 75 studies across 18 platforms, integrating metadata into 22 technical/biological variables, and using a metadata-driven curation pipeline to reach 2.8M high-quality heterogeneous images (CHAMMI-75). Cellpose is used to record 1.8 billion single-cell coordinates. Second, **Evaluation Framework**: Organizing 6 benchmarks layered by generalization difficulty, from "seen channels" to "unseen channel combinations/modalities." Third, **Experiments**: Comparing multi-channel strategies (BoC vs. MCA), SSL algorithms (DINO/MAE/SimCLR), and scaling effects to release the optimized model, MorphEm.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["18 Public Platforms / 75 Studies<br/>~26M Raw Images"] --> B["Metadata Integration<br/>22 Technical/Biological Variables"]
+    B --> CUR
+    subgraph CUR["Data Curation Pipeline"]
+        direction TB
+        C1["3D Slice Sampling"] --> C2["Timelapse Frame Sampling"] --> C3["Control Well Plate Sampling"] --> C4["K-means Clustering<br/>Diverse Subset Selection"]
+    end
+    CUR --> D["CHAMMI-75<br/>2.8M Heterogeneous Images"]
+    D --> E["Cellpose Segmentation<br/>1.8B Single-cell Coordinates"]
+    E -->|"Pre-training"| F["BoC vs MCA<br/>Selected BoC: Independent Channel Features"]
+    F --> G["MorphEm<br/>ViT-small + DINO + BoC"]
+    G -->|"Benchmark Evaluation"| H
+    subgraph H["Evaluation Benchmarks (3 Layers of Difficulty)"]
+        direction TB
+        H1["In-distribution: CHAMMI / HPAv23<br/>JUMP-CP / IDR0017"]
+        H2["Channel Generalization: CellPHIE 14-channel"]
+        H3["Cross-modality/Domain: RBC-MC Brightfield Flow"]
+    end
+```
 
 ### Key Designs
 
-1. **Data Curation Pipeline**:
+**1. Data Curation Pipeline: Reducing 26M images to 2.8M truly diverse samples**
+Microscopy data is naturally redundant (adjacent slices in 3D volumes, sequential video frames). The pipeline uses metadata-driven deduplication: (a) random sampling of 2D slices from 3D volumes; (b) random sampling of frames from live-cell videos; (c) sampling control replicates from plates; (d) K-means clustering to select a diverse subset. This converts 26M raw files into a 2.8M high-quality collection. Cellpose annotations ensure training on actual cell regions rather than empty background.
 
-    - Function: Filters ~26M downloaded images down to 2.8M high-quality, low-redundancy pre-training images.
-    - Mechanism: Four-step deduplication—(a) random sampling of 2D slices from 3D images; (b) random frame sampling from live-cell time-lapse videos; (c) random well sampling from replicate control conditions; (d) K-means clustering to select a diverse, high-quality subset.
-    - Design Motivation: Microscopy data contains abundant near-duplicate samples (e.g., adjacent slices of the same 3D volume, consecutive frames of time-lapse videos), which would cause severe overfitting if used directly. Systematic metadata-guided curation ensures diversity.
+**2. Bag of Channels (BoC) vs Multi-Channel Attention (MCA)**
+Microscopy channels vary in number and meaning. BoC treats each channel as an independent modality, passing them through the same backbone and concatenating features; it is channel-agnostic and scalable. MCA flattens all channel tokens into a long sequence to model cross-channel correlations, costing 3-5× more compute. Experiments show BoC consistently outperforms MCA by up to 19% in SSL settings, as modeling cross-channel relations without supervision is excessively difficult.
 
-2. **Bag of Channels (BoC) vs. Multi-Channel Attention (MCA)**:
+**3. MorphEm Model**
+MorphEm (Morphology Embeddings) uses a ViT-small backbone with DINO self-supervision and the BoC strategy, trained on the full CHAMMI-75 for 2,352 GPU hours. This configuration was selected through three-dimensional scaling experiments: BoC > MCA (decisive), DINO > MAE by ~15%, and larger backbones providing further gains. MorphEm achieved a 9.8% relative improvement over the best dataset-scaling results.
 
-    - Function: Evaluates two multi-channel processing strategies.
-    - Mechanism: BoC independently feeds each channel into the backbone for feature extraction and then concatenates the results—channel-agnostic and scalable; MCA organizes all channel tokens into a long sequence to model cross-channel relationships—more informative but 3–5× more computationally expensive.
-    - Design Motivation: BoC consistently outperforms MCA in SSL settings by up to 19%, indicating that learning cross-channel associations in an unsupervised setting is difficult. BoC is more practical and easier to scale.
-
-3. **MorphEm Model**:
-
-    - Function: The best pre-trained model based on CHAMMI-75.
-    - Mechanism: ViT-small + DINO self-supervised learning + BoC strategy, trained on the full CHAMMI-75 (2.8M images). Training required 2,352 GPU hours.
-    - Design Motivation: Systematic scaling experiments show that DINO > MAE > SimCLR, BoC > MCA, and ViT-small is both feasible and effective under academic compute budgets.
-
-4. **Evaluation Benchmark Design**:
-
-    - Function: Six benchmarks covering different generalization scenarios.
-    - Mechanism: Includes in-distribution channel tasks (CHAMMI, HPAv23, JUMP-CP), channel generalization tasks (CellPHIE with 14 channels—unseen combinations during training), and cross-modality + cross-domain tasks (RBC-MC brightfield imaging flow cytometry).
-    - Design Motivation: In practice, new experiments frequently employ novel channel combinations or even new imaging modalities. CellPHIE and RBC-MC specifically test this most challenging form of generalization.
+**4. Evaluation Benchmark Design**
+Benchmarking covers three layers of generalization: In-channel tasks (CHAMMI, HPAv23, JUMP-CP, IDR0017 with seen channel configurations); Channel-generalization tasks (CellPHIE with 14 channels, a novel combination); and Cross-modality/domain tasks (RBC-MC using brightfield flow cytometry, which changes the physical imaging process). CellPHIE and RBC-MC specifically stress-test the model's out-of-distribution capabilities.
 
 ### Loss & Training
-DINO-BoC self-supervised learning: single-channel input to ViT-small, student-teacher framework. After feature extraction, weights are frozen without fine-tuning, and models are evaluated directly on downstream tasks via linear probing or nearest-neighbor retrieval.
+The model uses DINO-BoC self-supervised learning: each channel is independently input into the same ViT-small via a student-teacher framework. After pre-training, weights are frozen, and feature quality is evaluated on downstream tasks using linear probes or nearest neighbor search without fine-tuning.
 
 ## Key Experimental Results
 
 ### Main Results (Comparison across 6 benchmarks)
 
 | Model | Multi-channel | Pre-train Data | CHAMMI ↑ | HPAv23 ↑ | JUMP-CP1 ↑ | CellPHIE ↑ | RBC-MC ↑ |
-|-------|--------------|----------------|---------|---------|-----------|-----------|---------|
-| SubCell (WSL, ViT-B) | Manual select | HPAv23 | 53.38 | **69.33** | 77.60 | 71.23 | 59.10 |
+|------|-------|---------|---------|---------|-----------|-----------|---------|
+| SubCell (WSL, ViT-B) | Manual | HPAv23 | 53.38 | **69.33** | 77.60 | 71.23 | 59.10 |
 | DINOv2 | BoC | LVD-142M | 37.93 | 53.76 | 75.84 | 72.27 | 59.41 |
 | OpenPhenom | MCA | RxRx+JUMP | 38.22 | 49.13 | 74.26 | 75.56 | 64.43 |
 | IDRCell100k | BoC | IDRCell | 37.38 | 44.05 | 72.37 | 79.14 | 55.85 |
 | **MorphEm** | BoC | **CHAMMI-75** | **48.75** | **58.87** | **76.32** | **80.51** | **68.34** |
 
-### Ablation Study (Impact of data factors — relative performance differences)
+### Ablation Study (Impact of data factors - Relative performance difference)
 
 | Factor | With Factor | Without Factor | Impact |
-|--------|------------|----------------|--------|
-| Heterogeneous vs. specialized data | +38% | −27% | **Largest** |
-| Multiple imaging modalities vs. fluorescence only | +15% | −13% | **Second largest** |
-| Varied magnification levels | +3% | −3% | Moderate |
-| Varied cell lines | +1% | −1% | Small |
-| Varied channel counts | +1% | −1% | Small |
+|------|----------|-----------|---------|
+| Heterogeneous vs. Specialized | +38% | -27% | **Highest** |
+| Multi-modality vs. Fluorescence-only | +15% | -13% | **High** |
+| Different Magnifications | +3% | -3% | Medium |
+| Different Cell Lines | +1% | -1% | Small |
+| Different Channel Counts | +1% | -1% | Small |
 
 ### Key Findings
-- **Data heterogeneity >> data volume**: 100K heterogeneous images (IDRCell100k) vs. 2.8M heterogeneous images (CHAMMI-75)—the latter leads by a large margin. Meanwhile, specialized data of comparable scale cannot compete with heterogeneous data at all.
-- **Imaging modality diversity is the key factor**: A model trained on a small number of non-mainstream imaging modalities (12 types) outperforms one trained on only two mainstream modalities by 28%. This suggests that models acquire more robust representations by learning to handle variation across different physical imaging processes.
-- **BoC >> MCA under SSL**: BoC consistently outperforms MCA by 19% while requiring 3–5× less computation. Learning cross-channel associations in an unsupervised setting is inherently difficult.
-- **Small model + good data can surpass large models**: ViT-small MorphEm (SSL) outperforms SubCell (WSL, ViT-base) by 13% on CellPHIE and 15% on RBC-MC—data quality and diversity matter more than model size.
-- **DINO > MAE > SimCLR**: DINO consistently achieves the best performance in microscopy image SSL, likely because its teacher-student framework is better suited for capturing global features of biological morphology.
+- **Data Heterogeneity >> Data Quantity**: 100k heterogeneous images (IDRCell100k) versus 2.8M (CHAMMI-75) shows a lead for the latter, but specialized data at the 100k scale cannot compete with heterogeneous data at any scale.
+- **Modality Diversity is Crucial**: Models trained on minor imaging modalities (12 types) outperformed those trained on two mainstream modalities by 28%, suggesting the model learns more robust representations from varying physical processes.
+- **BoC >> MCA in SSL**: BoC is 19% better than MCA while using 3-5× less compute.
+- **Small Model + Great Data > Large Model**: ViT-small MorphEm (SSL) outperformed SubCell (WSL, ViT-base) by 13% on CellPHIE and 15% on RBC-MC.
+- **DINO > MAE > SimCLR**: DINO is consistently best for microscopy SSL, likely as its teacher-student framework better captures global morphological features.
 
 ## Highlights & Insights
-- **Value of the data curation methodology**: The curation process itself—filtering from 26M to 2.8M images—constitutes a contribution in its own right. The systematic deduplication and diversity-preservation strategy can serve as a template for large-scale dataset construction in other domains.
-- **Insight on imaging modality diversity**: The key is not simply "more data is better," but rather "more types of imaging processes are better." This directly informs data strategy for foundation models—priority should be given to collecting data from diverse physical imaging processes.
-- **Channel generalization to 14 channels**: Although models are trained on at most 7 channels, they generalize zero-shot to the 14-channel CellPHIE benchmark. The channel-independent processing of BoC makes this generalization naturally achievable—analogous to patch-independent processing in ViT for natural images.
+- **Value of Curation Methodology**: The systematic deduplication and diversity preservation strategy serves as a template for large-scale dataset construction in other domains.
+- **Insight on Imaging Modalities**: Diverse physical imaging processes are more important than just "more data." Foundation model strategies should prioritize collecting diverse imaging physics.
+- **Zero-shot Channel Generalization**: Though trained on max 7 channels, the model generalizes to 14 channels in CellPHIE. BoC’s independent processing facilitates this, similar to independent patch processing in ViT.
 
 ## Limitations & Future Work
-- **Compute constraints**: Due to academic compute limitations, only ViT-small was tested. The paper's own scaling experiments show that ViT-large can yield an additional 10% improvement—larger-scale training remains an open opportunity.
-- **BoC discards cross-channel information**: Although practical, the BoC strategy ignores biological co-localization information across channels (e.g., spatial relationships between DAPI and phalloidin). Future work should explore methods for effectively leveraging cross-channel information under SSL.
-- **Metadata noise**: Despite extensive annotation efforts, metadata still contains noise, which degrades weakly supervised learning performance.
-- **Long-tail distribution unresolved**: Channel combination distributions are extremely long-tailed (Figure 4b)—certain channels appear in only a small number of studies, and the representation quality of the model for such rare channels remains unknown.
+- **Compute Limits**: Only ViT-small was fully tested due to academic resource constraints; scaling indicates ViT-large would yield an additional 10% gain.
+- **BoC Loses Inter-channel Information**: BoC ignores biological co-localization (e.g., spatial relations between DAPI and phalloidin). Future work needs to leverage this in SSL.
+- **Metadata Noise**: Some metadata remains noisy despite significant curation efforts, affecting potential weak supervision.
+- **Long-tail Distributions**: The distribution of channel combinations is long-tailed, leaving the representation quality of rare channels uncertain.
 
 ## Related Work & Insights
-- **vs. IDRCell100k**: Both datasets draw from a similar number of sources (79 vs. 75), but CHAMMI-75 contains 30× more images and higher curation quality. A BoC model trained on IDRCell100k consistently underperforms one trained on CHAMMI-75, confirming the value of data quality and scale.
-- **vs. SubCell**: SubCell employs weakly supervised learning, a larger model, and manually curated channel combinations to achieve top performance on some tasks. However, in generalization scenarios (novel channels, novel domains), the SSL small model trained on CHAMMI-75 leads by a large margin—demonstrating that diverse training data is the foundation of generalization.
-- **Analogy to ImageNet/LAION**: Just as ImageNet drove transformative advances in natural image understanding, CHAMMI-75 has the potential to become the "ImageNet" of microscopy imaging—systematic data engineering driving model breakthroughs.
+- **vs. IDRCell100k**: CHAMMI-75 has 30× the data with much higher curation quality. BoC models trained on CHAMMI-75 significantly outperform those on IDRCell100k.
+- **vs. SubCell**: SubCell is strong in specific tasks with weak supervision, but MorphEm (SSL) leads in generalization scenarios (new channels/domains).
+- **Analogy to ImageNet/LAION**: CHAMMI-75 has the potential to become the "ImageNet" of microscopy, where systematic data engineering drives model breakthroughs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ In-depth dataset construction and multi-factor ablation analysis, though methodologically primarily builds on existing techniques (DINO + BoC).
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely comprehensive: 7 benchmarks, 6-factor ablation, 3-dimensional scaling experiments, and BoC vs. MCA comparison.
-- Writing Quality: ⭐⭐⭐⭐⭐ Dataset motivation, construction process, and experimental design are all clearly presented with rich figures and tables.
-- Value: ⭐⭐⭐⭐⭐ Pioneering contribution to the biological imaging foundation model field; dataset, code, and model are all fully open-sourced.
+- Novelty: ⭐⭐⭐⭐ Deep curation and ablation analysis; methodologies are largely existing (DINO+BoC).
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive benchmarks, ablations, and scaling studies.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear narrative on motivation and construction process.
+- Value: ⭐⭐⭐⭐⭐ High contribution to microscopy foundation models; data, code, and models are open-sourced.
 
 <!-- RELATED:START -->
 
@@ -131,11 +138,11 @@ DINO-BoC self-supervised learning: single-channel input to ViT-small, student-te
 
 ## Related Papers
 
-- [\[ACL 2026\] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement](../../ACL2026/llm_pretraining/toward_consistent_world_models_with_multi-token_prediction_and_latent_semantic_e.md)
-- [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](common_corpus_ethical_data_for_llm_pretraining.md)
-- [\[ICCV 2025\] Dataset Ownership Verification for Pre-trained Masked Models](../../ICCV2025/llm_pretraining/dataset_ownership_verification_for_pre-trained_masked_models.md)
-- [\[CVPR 2026\] Linking Modality Isolation in Heterogeneous Collaborative Perception](../../CVPR2026/llm_pretraining/linking_modality_isolation_in_heterogeneous_collaborative_perception.md)
-- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
+- [\[ACL 2025\] Pre-Training Curriculum for Multi-Token Prediction in Language Models](../../ACL2025/llm_pretraining/pre-training_curriculum_for_multi-token_prediction_in_language_models.md)
+- [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
+- [\[ACL 2025\] Meta-rater: A Multi-dimensional Data Selection Method for Pre-training Language Models](../../ACL2025/llm_pretraining/metarater_a_multidimensional_data_selection_method.md)
+- [\[ICLR 2026\] Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries](beyond_multi-token_prediction_pretraining_llms_with_future_summaries.md)
+- [\[ICLR 2026\] Dual-objective Language Models: Training Efficiency Without Overfitting](dual-objective_language_models_training_efficiency_without_overfitting.md)
 
 </div>
 

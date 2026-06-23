@@ -2,130 +2,132 @@
 title: >-
   [Paper Note] Rethinking Code Similarity for Automated Algorithm Design with LLMs
 description: >-
-  [ICLR 2026][LLM/NLP][LLM-AAD] This paper proposes BehaveSim, an algorithm similarity metric based on Problem-Solving Trajectories (PSTrajs) and Dynamic Time Warping (DTW). BehaveSim measures algorithmic differences at th…
+  [ICLR 2026][LLM (Other)][LLM-AAD] This paper proposes BehaveSim, an algorithmic similarity metric based on "Problem Solving Trajectories" (PSTrajs) and Dynamic Time Warping (DTW). It measures algorithmic differences at the execution behavior level rather than the syntax or output level. Integrating BehaveSim into LLM-AAD frameworks like FunSearch/EoH s
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "LLM-AAD"
-  - "code similarity"
-  - "behavioral similarity"
-  - "dynamic time warping"
-  - "FunSearch"
-  - "EoH"
-  - "algorithm diversity"
+  - ICLR 2026
+  - LLM (Other)
+  - LLM-AAD
+  - FunSearch
+  - EoH
 date: 2026-05-08
-content_hash: d08b9d5ae4f5d035
+content_hash: e007e150ccdb32b9
 ---
-
 # Rethinking Code Similarity for Automated Algorithm Design with LLMs
 
-**Conference**: ICLR 2026
-**arXiv**: [2603.02787](https://arxiv.org/abs/2603.02787)  
+**Conference**: ICLR 2026  
+**arXiv**: [2603.02787](https://arxiv.org/abs/2603.02787) ⚠️ arXiv ID and code link are pending verification; refer to the original text.  
 **Code**: [https://github.com/RayZhhh/behavesim](https://github.com/RayZhhh/behavesim)  
-**Area**: LLM / Automated Algorithm Design / Code Similarity
-**Keywords**: LLM-AAD, code similarity, behavioral similarity, dynamic time warping, FunSearch, EoH, algorithm diversity
+**Area**: LLM / Automated Algorithm Design / Code Similarity  
+**Keywords**: LLM-AAD, Code Similarity, Behavioral Similarity, Dynamic Time Warping, FunSearch, EoH, Algorithmic Diversity
 
 ## TL;DR
-This paper proposes BehaveSim, an algorithm similarity metric based on Problem-Solving Trajectories (PSTrajs) and Dynamic Time Warping (DTW). BehaveSim measures algorithmic differences at the level of execution behavior rather than syntax or output, and when integrated into LLM-AAD frameworks such as FunSearch and EoH, yields significant performance improvements.
+This paper proposes BehaveSim, an algorithmic similarity metric based on "Problem Solving Trajectories" (PSTrajs) and Dynamic Time Warping (DTW). It measures algorithmic differences at the execution behavior level rather than the syntax or output level. Integrating BehaveSim into LLM-AAD frameworks like FunSearch/EoH significantly enhances performance.
 
 ## Background & Motivation
-**Background**: LLM-driven automated algorithm design (LLM-AAD) has emerged as a new paradigm for algorithm development. Frameworks such as FunSearch and EoH can autonomously generate code implementations of expert-level algorithms, achieving remarkable results on classical problems including Online Bin Packing, Cap Set, and TSP.
+**Background**: LLM-driven Automated Algorithm Design (LLM-AAD) has emerged as a new paradigm for algorithm development. Frameworks like FunSearch and EoH can autonomously generate expert-level code implementations for algorithms, achieving remarkable results in classic problems such as Online Bin Packing, Cap Set, and TSP.
 
-**Limitations of Prior Work**: In LLM-AAD, the core design principles of algorithms are implicit in the generated code rather than expressed as explicit mathematical formulations or pseudocode. Existing code similarity metrics—such as syntax-tree edit distance, BLEU, and cosine similarity of code embeddings—capture only surface-level syntactic differences and cannot determine whether two code snippets implement fundamentally distinct algorithmic logic.
+**Limitations of Prior Work**: In LLM-AAD, the core design principles of an algorithm are implicit within the generated code rather than expressed through explicit mathematical formulas or pseudocode. Existing code similarity metrics (e.g., AST edit distance, BLEU, Code Embedding cosine similarity) only capture superficial syntactic differences and fail to determine whether two code snippets implement fundamentally different algorithmic logic.
 
-**Key Challenge**: Two syntactically dissimilar code snippets may realize the same algorithmic idea (differing only in variable names or loop structure), while syntactically similar code may embody entirely different solving strategies. Existing metrics cannot distinguish genuine algorithmic innovation from superficial code variation.
+**Key Challenge**: Two code segments with completely different syntax may implement the same algorithmic concept (differing only in variable names or loop structures), while syntactically similar code may embody entirely different solving strategies. Existing metrics cannot distinguish between "genuine algorithmic innovation" and "superficial code variations."
 
-**Key Gap**: LLM-AAD frameworks rely on similarity measures for deduplication and diversity management in population maintenance. Inaccurate similarity metrics cause frameworks to retain redundant pseudo-innovations while crowding out genuinely diverse algorithms, reducing search efficiency.
+**Key Gap**: LLM-AAD frameworks require similarity metrics for deduplication or selection during population maintenance and diversity management. Inaccurate similarity metrics cause frameworks to retain redundant "pseudo-innovative" algorithms, displacing truly valuable diversity and leading to reduced search efficiency.
 
-**Limitations of Output Equivalence**: Another class of approaches compares the final outputs of algorithms (e.g., objective function values), but different algorithms may coincidentally produce identical outputs on the same inputs while behaving very differently on others. Output equivalence cannot reveal differences in the solving process.
+**Limitations of Output Equivalence**: Another category of methods compares the final output of algorithms (e.g., objective function values). However, different algorithms may coincidentally produce the same output for a given input while performing drastically differently on others. Output equivalence fails to reveal differences in the solving process.
 
-**Core Idea**: By recording the sequence of intermediate solutions produced during algorithm execution (problem-solving trajectories), BehaveSim applies DTW to align these trajectories and measures behavioral similarity between algorithms—focusing on *how* a problem is solved rather than *what* solution is produced.
+**Core Idea**: By recording the sequence of intermediate solutions generated by an algorithm during execution (Problem Solving Trajectories), DTW is used to align these trajectories to measure behavioral similarity between algorithms—focusing on "how it solves" rather than "what it solves."
 
 ## Method
 
 ### Overall Architecture
-The core idea of BehaveSim is to evaluate algorithms not by their code text or final outputs, but by their *behavior* during execution—specifically, the trajectory of intermediate solutions generated step by step. The more similar two algorithms' behaviors are (i.e., the better their trajectories align), the more similar their underlying solving strategies are considered to be.
+BehaveSim aims to address a challenge that other code similarity metrics cannot: determining whether two LLM-generated algorithms are "truly different." Its approach bypasses code text and final outputs, focusing instead on runtime behavior—the step-by-step process of generating intermediate solutions. The pipeline operates as follows: first, algorithms are executed on a set of problem instances, and intermediate solutions are recorded at each time step to form a "Problem Solving Trajectory" (PSTrajs); next, Dynamic Time Warping (DTW) is applied to align trajectories between two algorithms to compute a behavioral distance. This distance serves two downstream purposes: it can be integrated into LLM-AAD frameworks like FunSearch or EoH to replace their original deduplication/diversity mechanisms, or it can be used for clustering analysis on a large set of AI-generated algorithms. Closer alignment between trajectories indicates more similar solving strategies.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Algorithms to be compared<br/>+ Problem instances"]
+    PS["Problem Solving Trajectory (PSTrajs) Extraction<br/>Record intermediate solution sequence τ(p) by time step"]
+    DTW["DTW-based Trajectory Alignment<br/>Elastic alignment → Average behavior distance over multiple instances"]
+    IN --> PS --> DTW
+    DTW -->|"Replace framework similarity interface"| AAD["Integration into LLM-AAD Frameworks<br/>FunSearch/EoH deduplication and diversity"]
+    DTW -->|"Construct distance matrix"| CLU["Algorithm Clustering & Analysis<br/>Hierarchical clustering → Strategy genealogy"]
+    AAD --> OUT1["Eliminate pseudo-innovation<br/>Explore broader solution space"]
+    CLU --> OUT2["Quality inspection of AI-generated algorithms"]
+```
 
 ### Key Designs
 
-1. **Problem-Solving Trajectory (PSTraj) Extraction**:
+**1. Problem Solving Trajectory (PSTrajs) Extraction: Recording the "Solving Process" as a Comparable Sequence**
 
-    - **Function**: During algorithm execution, the state of each intermediate solution is recorded at each time step (e.g., packing decisions at each step in bin packing, the next city selected at each step in TSP).
-    - **Formalization**: For algorithm $A$ executing on problem instance $p$, the trajectory is recorded as $\tau_A(p) = (s_1, s_2, \ldots, s_T)$, where $s_t$ denotes the intermediate solution state at time step $t$.
-    - **Design Motivation**: Trajectory granularity is problem-dependent—placement decisions per item for bin packing, incremental path construction for TSP.
-    - **Distinction from Traditional Profiling**: Program profiling focuses on resource consumption (CPU, memory), whereas PSTrajs track the evolution of solutions, capturing the algorithm's "reasoning process."
+Existing metrics fail to "see" algorithmic logic because they focus on static code or isolated outputs. PSTrajs shifts the observation point: it records the state of each intermediate solution at every time step during execution. For an algorithm $A$ executing on problem instance $p$, it produces a trajectory $\tau_A(p) = (s_1, s_2, \ldots, s_T)$, where $s_t$ is the intermediate solution state at step $t$. The granularity of the trajectory is determined by the problem itself: for bin packing, it is the packing decision for each item; for TSP, it is the sequence of next-city selections. This is distinct from program profiling; while profiling focuses on resource consumption like CPU or memory, PSTrajs records the evolution of the solution, capturing the algorithm's "thought process," which is crucial for determining fundamental identity.
 
-2. **DTW-Based Trajectory Alignment**:
+**2. DTW-based Trajectory Alignment: Resolving Step-Count Inconsistency via Elastic Time Axes**
 
-    - **Why DTW**: Different algorithms may execute for different numbers of steps (e.g., fewer steps for greedy algorithms, more for backtracking), necessitating elastic alignment. Dynamic Time Warping (DTW) permits nonlinear time-axis stretching to find the optimal alignment between two trajectories.
-    - **Similarity Computation**: $\text{BehaveSim}(A_1, A_2) = \frac{1}{|P|} \sum_{p \in P} \text{DTW}(\tau_{A_1}(p), \tau_{A_2}(p))$, averaged over multiple problem instances.
-    - **Distance Measure**: The per-state distance function $d(s_i, s_j)$ is defined according to the specific problem (e.g., Jaccard distance for bin packing configurations, edit distance for paths).
+Point-by-point comparison of trajectories is ineffective because different algorithms often have different step counts—greedy algorithms use fewer steps, while backtracking algorithms use more. Direct alignment would misidentify the same strategy as two different ones. Dynamic Time Warping (DTW) allows for non-linear stretching of the time axis to find the optimal alignment between trajectories of varying lengths. BehaveSim uses the average DTW distance across multiple problem instances as the final similarity:
 
-3. **Integration into LLM-AAD Frameworks**:
+$$\text{BehaveSim}(A_1, A_2) = \frac{1}{|P|} \sum_{p \in P} \text{DTW}(\tau_{A_1}(p), \tau_{A_2}(p))$$
 
-    - **FunSearch Integration**: BehaveSim replaces the original deduplication and diversity maintenance mechanism in FunSearch's population management, ensuring that algorithms in the population are genuinely diverse at the behavioral level.
-    - **EoH Integration**: Within the Evolution of Heuristics framework, BehaveSim guides crossover and mutation operations by prioritizing individuals with greater behavioral divergence.
-    - **Effect**: The introduction of behavioral diversity enables the framework to explore a broader solution space and avoid premature convergence to local optima.
-    - **Plug-and-Play**: BehaveSim functions as a modular component requiring no modifications to the core framework logic—only the similarity measurement interface needs to be replaced.
+The distance $d(s_i, s_j)$ between two states during alignment is also problem-specific (e.g., Jaccard distance for bin packing or edit distance for paths). Averaging over multiple instances ensures the similarity reflects stable behavioral patterns rather than accidental consistency on a specific input.
 
-4. **Algorithm Clustering and Analysis**:
+**3. Integration into LLM-AAD Frameworks: A Plug-and-Play Behavioral Diversity Module**
 
-    - **Function**: BehaveSim constructs a pairwise distance matrix among algorithms, which is used with hierarchical clustering to group AI-generated algorithms by behavioral pattern.
-    - **Value**: This enables researchers to systematically analyze the types of solving strategies generated by LLMs and to identify genuinely novel algorithmic designs.
-    - **Visualization**: Clustering results can be rendered as dendrograms or heatmaps, providing an intuitive view of the diversity distribution across algorithm families.
+BehaveSim is designed as a modular component that replaces the similarity metric interface within a framework without altering core logic. In FunSearch's population management, it replaces syntax-based deduplication/diversity mechanisms to ensure that the algorithms retained are behaviorally distinct. In EoH (Evolution of Heuristics), it guides crossover/mutation operations by prioritizing individuals with high behavioral variance. In both cases, the effect is the elimination of "pseudo-innovation"—algorithms that merely change variable names or loop structures while following the same strategy are identified, creating space for genuinely different strategies and allowing the framework to explore a broader solution space without premature convergence.
+
+**4. Algorithm Clustering & Analysis: Mapping the Strategy Genealogy of AI-Generated Algorithms**
+
+Beyond the search loop, BehaveSim can construct a complete distance matrix for a large volume of LLM-generated algorithms to perform hierarchical clustering. This allows researchers to systematically identify the types of strategies LLMs generate and which ones are truly novel. Clustering results can be visualized as dendrograms or heatmaps, showing the diversity distribution of algorithm families. In an era of exploding AI-generated algorithm counts, this provides a previously unavailable "quality inspection" perspective.
 
 ## Key Experimental Results
 
-### Main Results: AAD Performance Gains After BehaveSim Integration
+### Main Results: AAD Performance Gains after BehaveSim Integration
 
-| Task | Framework | Baseline Performance | +BehaveSim | Gain | Notes |
-|------|-----------|---------------------|------------|------|-------|
-| Online Bin Packing | FunSearch | baseline score | significant improvement | diversity-driven | classical NP-hard problem |
-| Cap Set | FunSearch | baseline score | significant improvement | more strategies discovered | mathematical combinatorial optimization |
-| TSP (Travelling Salesman) | EoH | baseline heuristic | significant improvement | strategy redundancy avoided | path optimization |
+| Task | Framework | Original Performance | +BehaveSim | Gain | Description |
+|------|------|---------|-----------|---------|------|
+| Online Bin Packing | FunSearch | baseline score | Significant Improvement | Diversity-driven | Classic NP-hard problem |
+| Cap Set | FunSearch | baseline score | Significant Improvement | More strategies found | Mathematical combinatorial optimization |
+| TSP (Traveling Salesperson) | EoH | baseline heuristic | Significant Improvement | Avoided strategy redundancy | Path optimization |
 
 ### BehaveSim vs. Existing Code Similarity Metrics
 
-| Similarity Metric | Distinguishes Syntactic Variants? | Distinguishes Algorithmic Logic? | AAD Improvement? | Notes |
-|-------------------|----------------------------------|----------------------------------|------------------|-------|
-| Syntax-tree edit distance | ✓ | ✗ | Limited | Code structure only |
-| Code embeddings (CodeBERT, etc.) | Partial | ✗ | Limited | Representation-level semantics |
-| Output equivalence | N/A | Partial | Limited | Ignores solving process |
+| Similarity Metric | Distinguish Syntax Variants? | Distinguish Algorithmic Logic? | AAD Gain? | Description |
+|-----------|---------------|---------------|----------|------|
+| AST Edit Distance | ✓ | ✗ | Limited | Inspects code structure only |
+| Code Embedding (CodeBERT, etc.) | Partial | ✗ | Limited | Semantic representation level |
+| Output Equivalence | N/A | Partial | Limited | Ignores the solving process |
 | **BehaveSim (Ours)** | ✓ | **✓** | **Significant** | Captures execution behavior |
 
 ### Key Findings
-- BehaveSim effectively distinguishes syntactically similar code with different algorithmic logic, and identifies syntactically dissimilar but behaviorally equivalent "pseudo-innovations."
-- Across all three AAD tasks, integrating BehaveSim yields significant performance gains, demonstrating that behavioral diversity is a key factor in improving LLM-AAD effectiveness.
-- Clustering analysis reveals that LLM-generated algorithms can be grouped into several distinct strategy families based on behavioral patterns, facilitating a deeper understanding of AI "algorithmic design thinking."
+- BehaveSim effectively distinguishes syntactically similar code with different logic and identifies "pseudo-innovations" that are syntactically different but behaviorally identical.
+- Across three AAD tasks, framework performance improved significantly after integrating BehaveSim, proving that behavioral diversity is key to enhancing LLM-AAD effectiveness.
+- Clustering analysis reveals that LLM-generated algorithms can be grouped into distinct strategy families based on behavioral patterns, aiding the understanding of AI's "algorithmic design thinking."
 
 ## Highlights & Insights
-- **Paradigm Shift from "Reading Code" to "Observing Behavior"**: BehaveSim advances an elegant insight—measuring algorithm similarity should focus on what an algorithm *does* rather than what it *says*. This perspective has broad implications for code comprehension, software engineering, and program synthesis.
-- **Elegant Application of DTW**: Importing a classical tool from time-series analysis into the code similarity domain, elastic time alignment resolves the inconsistency in execution step counts across different algorithms.
-- **Analyzability of LLM-Generated Algorithms**: Through behavioral clustering, BehaveSim provides the first systematic tool for analyzing the strategic lineage of AI-generated algorithms, offering important insights into the capabilities and limitations of LLM-based code generation.
-- **Infrastructure Contribution to the AAD Ecosystem**: As the volume of LLM-generated algorithms grows explosively, BehaveSim provides a much-needed "algorithm quality inspection" tool for filtering genuine innovations from redundant variants.
+- **Paradigm Shift from "Code-Centric" to "Behavior-Centric"**: BehaveSim proposes an elegant insight—measuring algorithm similarity should focus on "what it does" rather than "how it is written." This has implications for code understanding, software engineering, and program synthesis.
+- **Clever Application of DTW**: It introduces a classic tool from time-series analysis to the field of code similarity, using elastic time alignment to solve the problem of inconsistent step counts in different algorithms.
+- **Analyzability of LLM-Generated Algorithms**: Through behavioral clustering, it provides the first tool for systematically analyzing the strategy genealogy of AI-generated algorithms, which is vital for understanding LLM capabilities and limitations.
+- **Infrastructure Contribution to the AAD Ecosystem**: As the number of LLM-generated algorithms explodes, BehaveSim provides a much-needed "quality inspection" tool to filter for genuine innovation rather than redundant variants.
 
 ## Limitations & Future Work
-- **Problem-Specific Trajectory Definitions**: Extracting PSTrajs requires defining the format of "intermediate solution states" for each problem. Generalizing to arbitrary programming tasks requires additional engineering effort. For problems without a clear notion of intermediate solutions (e.g., classifier design), defining trajectories is itself an open problem.
-- **Computational Overhead**: DTW has time complexity $O(T_1 \times T_2)$; for long trajectories or large populations, pairwise similarity computation may become a bottleneck.
-- **Choice of Trajectory Granularity**: Recording at too coarse a granularity loses behavioral distinctions; too fine a granularity introduces noise. Currently, granularity selection relies on domain knowledge.
-- **Evaluation Limited to Three Tasks**: Although representative combinatorial optimization problems are covered, applicability to a broader range of AAD tasks—such as ML hyperparameter optimization, program synthesis, and constraint satisfaction—remains to be verified.
-- **Handling Stochastic Algorithms**: For algorithms with randomness (e.g., randomized greedy, simulated annealing), trajectories from multiple runs of the same algorithm may vary considerably, requiring repeated sampling and statistical aggregation to stabilize the metric.
-- **Extreme Trajectory Length Discrepancies**: When two algorithms differ drastically in execution steps (e.g., $O(n)$ vs. $O(n^2)$), DTW may produce unreliable alignments, necessitating additional normalization strategies.
-- **Multi-Objective Scenarios**: When algorithms simultaneously optimize multiple objectives (e.g., latency and throughput), a single trajectory may insufficiently characterize behavioral differences, requiring joint alignment of multi-dimensional trajectories.
+- **Problem-Specific Trajectory Definition**: Extracting PSTrajs requires defining "intermediate solution state" formats for each problem, which requires additional engineering for general programming tasks. For problems without clear intermediate solutions (e.g., classifier design), defining the trajectory remains an open question.
+- **Computational Overhead**: The time complexity of DTW is $O(T_1 \times T_2)$. For long trajectories or large populations, pairwise similarity calculations may become a bottleneck.
+- **Trajectory Granularity Choice**: Recording too coarsely might lose behavioral differences, while recording too finely might introduce noise. Granularity currently depends on domain knowledge.
+- **Limited to Three Tasks**: While covering representative combinatorial optimization problems, its applicability to broader AAD tasks (e.g., hyperparameter optimization, program synthesis, constraint satisfaction) remains to be verified.
+- **Handling Stochastic Algorithms**: For algorithms involving randomness (e.g., randomized greedy, simulated annealing), trajectories of the same algorithm may vary across runs. Statistical sampling may be needed to stabilize the metric.
+- **Extreme Trajectory Length Differences**: When step counts differ drastically (e.g., $O(n)$ vs. $O(n^2)$), DTW might produce unreliable alignments, requiring additional normalization strategies.
+- **Multi-Objective Scenarios**: When algorithms optimize multiple objectives simultaneously (e.g., latency vs. throughput), a single trajectory may not fully characterize behavioral differences, necessitating multi-dimensional trajectory alignment.
 
 ## Related Work & Insights
-- **vs. FunSearch (Romera-Paredes et al., 2024)**: FunSearch is Google DeepMind's LLM-AAD framework that evolves algorithms via LLMs. BehaveSim is integrated into FunSearch as a plug-and-play diversity module, enhancing its population diversity management.
-- **vs. EoH (Liu et al., 2024)**: EoH is another LLM-AAD framework that designs heuristics through evolutionary algorithms. BehaveSim replaces EoH's original syntax-based deduplication mechanism.
-- **vs. Code Clone Detection Literature**: Traditional code clone detection asks "are these two pieces of code doing the same thing?" BehaveSim asks "are these two pieces of code doing it the same *way*?"—a finer-grained question that is more valuable for AAD.
-- **vs. Program Equivalence Verification**: Program equivalence determines whether two programs always produce identical outputs (an undecidable problem); BehaveSim instead measures the *degree* of behavioral similarity, offering a more practical approximation.
-- **vs. Algorithm Selection / AutoML**: Algorithm selection focuses on "which algorithm best suits a given problem," while BehaveSim focuses on "how similar are these algorithms"—the latter provides a more fine-grained structured representation of the algorithm space for the former.
-- **vs. Neural Program Embedding**: Methods such as Code2Vec embed programs into vector spaces but capture static semantics. BehaveSim's dynamic behavioral perspective is complementary—combining the two could yield a more comprehensive algorithm representation.
+- **vs. FunSearch (Romera-Paredes et al., 2024)**: FunSearch is a Google DeepMind LLM-AAD framework that evolves algorithms. BehaveSim serves as a plug-and-play diversity module for FunSearch, enhancing its population diversity management.
+- **vs. EoH (Liu et al., 2024)**: EoH is another LLM-AAD framework using evolutionary heuristics. BehaveSim replaces the original syntax-based deduplication mechanism in EoH.
+- **vs. Code Clone Detection Literature**: Traditional clone detection focuses on "whether these code segments do the same thing." BehaveSim focuses on "whether they use the same strategy to do it"—a finer granularity that is more valuable for AAD.
+- **vs. Program Equivalence Checking**: Program equivalence determines if two programs always produce the same output (an undecidable problem). BehaveSim is a practical approximation that measures the degree of behavioral similarity.
+- **vs. Algorithm Selection / AutoML**: Algorithm selection focuses on "which algorithm fits the problem best," whereas BehaveSim focuses on "how similar these algorithms are," providing a structural representation of the algorithm space for the former.
+- **vs. Neural Program Embedding**: Methods like Code2Vec embed programs into vector spaces based on static semantics. BehaveSim's dynamic behavioral perspective is complementary and could be combined for comprehensive algorithmic representation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Defining code similarity from a behavioral perspective is a highly creative starting point
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three AAD tasks + multiple similarity baselines + clustering analysis
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clear and methodology is described intuitively
-- Value: ⭐⭐⭐⭐ Practically valuable for the LLM-AAD ecosystem; the DTW + trajectory approach is transferable to other problems
+- Novelty: ⭐⭐⭐⭐ A highly creative entry point by defining code similarity through behavior.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three AAD tasks, comparisons with multiple similarity metrics, and clustering analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and intuitive method descriptions.
+- Value: ⭐⭐⭐⭐ Practical value for the LLM-AAD ecosystem; the DTW+Trajectory approach is transferable to other domains.
 
 <!-- RELATED:START -->
 
@@ -134,10 +136,10 @@ The core idea of BehaveSim is to evaluate algorithms not by their code text or f
 ## Related Papers
 
 - [\[ACL 2026\] Solver-Independent Automated Problem Formulation via LLMs for High-Cost Simulation-Driven Design](../../ACL2026/llm_nlp/solver-independent_automated_problem_formulation_via_llms_for_high-cost_simulati.md)
+- [\[CVPR 2025\] Rethinking Spiking Self-Attention Mechanism: Implementing a-XNOR Similarity Calculation in Spiking Transformers](../../CVPR2025/llm_nlp/rethinking_spiking_self-attention_mechanism_implementing_a-xnor_similarity_calcu.md)
 - [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
 - [\[ICML 2026\] Automated Formal Proofs of Combinatorial Identities via Wilf–Zeilberger Guidance and LLMs](../../ICML2026/llm_nlp/automated_formal_proofs_of_combinatorial_identities_via_wilf-zeilberger_guidance.md)
 - [\[ACL 2026\] Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards](../../ACL2026/llm_nlp/generative_floor_plan_design_with_llms_via_reinforcement_learning_with_verifiabl.md)
-- [\[ICML 2026\] Rethinking LLM Ensembling from the Perspective of Mixture Models](../../ICML2026/llm_nlp/rethinking_llm_ensembling_from_the_perspective_of_mixture_models.md)
 
 </div>
 

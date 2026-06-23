@@ -2,165 +2,160 @@
 title: >-
   [Paper Note] ConflictScope: Generative Value Conflicts Reveal LLM Priorities
 description: >-
-  [ICLR 2026][LLM/NLP][value conflicts] This paper proposes ConflictScope — an automated pipeline for generating and evaluating value conflict scenarios: given an arbitrary set of values…
+  [ICLR 2026][LLM (Other)][Paper Note] The authors propose ConflictScope—an automated pipeline for generating and evaluating value conflict scenarios. Given an arbitrary set of values, it automatically generates conflict scenarios between value pairs and evaluates the value priority ranking of LLMs through simulated open-ended user interactions (rather than
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "value conflicts"
-  - "value prioritization"
-  - "open-ended evaluation"
-  - "Bradley-Terry model"
-  - "system prompt steering"
+  - ICLR 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 638b37af51f40299
+content_hash: bfb72d0a8f88714c
 ---
-
 # ConflictScope: Generative Value Conflicts Reveal LLM Priorities
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25369](https://arxiv.org/abs/2509.25369)  
 **Code**: [GitHub](https://github.com/andyjliu/conflictscope)  
-**Area**: LLM/NLP
-**Keywords**: value conflicts, value prioritization, open-ended evaluation, Bradley-Terry model, system prompt steering
+**Area**: LLM/NLP  
+**Keywords**: Value Conflicts, Value Ranking, Open-ended Evaluation, Bradley-Terry Model, System Prompt Steering
 
 ## TL;DR
-This paper proposes ConflictScope — an automated pipeline for generating and evaluating value conflict scenarios: given an arbitrary set of values, it automatically generates conflict scenarios for each value pair and evaluates LLM value priority rankings through open-ended simulated user interactions (rather than multiple-choice questions). The study finds that models shift significantly from "protective values" (e.g., harmlessness) toward "personal values" (e.g., user autonomy) under open-ended evaluation, and that system prompts can improve alignment target rankings by 14%.
+The authors propose ConflictScope—an automated pipeline for generating and evaluating value conflict scenarios. Given an arbitrary set of values, it automatically generates conflict scenarios between value pairs and evaluates the value priority ranking of LLMs through simulated open-ended user interactions (rather than multiple-choice questions). The study finds that models significantly shift from "protective values" (e.g., harmlessness) toward "personal values" (e.g., user autonomy) in open-ended evaluations, and system prompts can improve alignment with target rankings by 14%.
 
 ## Background & Motivation
 
-**Universal demand for value alignment**: LLMs are widely deployed in everyday tasks, making it critical to understand which values their behavior supports. Existing alignment research implicitly embeds values through constitutions or human feedback (RLHF), but rarely studies the **priority ordering** among values.
+**Background**: LLMs are widely deployed for daily tasks, making it crucial to understand which values their behaviors support. Existing alignment research implicitly embeds values through constitutions or Reinforcement Learning from Human Feedback (RLHF), but rarely investigates the **priority ranking** between values.
 
-**Existing datasets lack value conflicts**: Approximately 85% of samples in alignment datasets such as HH-RLHF and PKU-SafeRLHF involve no conflicts among constitutional principles (Buyl et al., 2025). Conflicts between specific value pairs are even scarcer, precluding systematic study of LLM behavior under value conflicts.
+**Limitations of Prior Work**: Approximately 85% of samples in alignment datasets like HH-RLHF and PKU-SafeRLHF do not involve conflicts between any constitutional principles (Buyl et al., 2025). Conflicts between specific value pairs are even scarcer, rendering a systematic study of LLM behavior under value conflict impossible.
 
-**Insufficient ecological validity of prior moral dilemma research**:
-   - (1) Prior work treats LLMs as **third-party observers** rather than moral agents → fails to reflect real deployment conditions
-   - (2) Most work uses **multiple-choice evaluation** → highly sensitive to evaluation setup (Khan et al., 2025) and poor generalization (Balepur et al., 2025)
-   - (3) Lacks top-down systematic generation → cannot guarantee coverage of all value pairs
+**Insufficient Ecological Validity in Moral Dilemma Research**:
+   - (1) Prior work treats LLMs as **third-party observers** rather than moral agents, failing to reflect real-world deployment.
+   - (2) Frequent use of **multiple-choice question (MCQ) evaluation**, which is highly sensitive to evaluation settings (Khan et al., 2025) and lacks generalizability (Balepur et al., 2025).
+   - (3) Lack of top-down systematic generation, failing to ensure coverage of all value pairs.
 
-**Divergence between MCQ and open-ended evaluation**: MCQ measures *expressed preferences*, while open-ended interaction measures *revealed preferences* → the two may differ substantially → necessitating evaluation methods closer to real deployment.
+**Key Insight**: There is a discrepancy between MCQ and open-ended evaluation. MCQs measure "expressed preferences," while open-ended interactions measure "revealed preferences." Significant differences may exist between the two, necessitating evaluation methods closer to real-world deployment.
 
-**Practical need for value steering**: Developers wish to steer models toward specific value orderings (e.g., OpenAI Model Spec defines a priority hierarchy), yet tools for evaluating steering effectiveness are lacking.
+**Goal**: Developers want models to be steerable toward specific value rankings (e.g., the hierarchy defined in OpenAI's Model Spec), but tools to evaluate steering effectiveness are lacking.
 
-**Applicability of the Bradley-Terry framework**: Each model action choice in a scenario is treated as a pairwise comparison between two values; the Bradley-Terry model is fit to all pairwise preferences across scenarios → yielding a global value ranking → enabling cross-model and cross-setting comparisons.
+**Mechanism**: Applying the Bradley-Terry framework. By treating the model's action choices in each scenario as paired comparisons between two values, the global value ranking is fitted using the Bradley-Terry model. This supports comparisons across models and settings.
 
 ## Method
 
-### Overall Architecture: ConflictScope
+### Overall Architecture
 
-ConflictScope consists of three main stages: scenario generation → scenario filtering → open-ended evaluation.
+ConflictScope addresses the core problem that existing alignment datasets rarely contain value conflicts, and existing conflict evaluations often use MCQs as third-party observers, far removed from real deployment. It provides an end-to-end pipeline connecting scenario generation, filtering, behavior measurement, and ranking. Given a set of user-defined values, the system samples value pairs and uses a strong model to generate conflict scenarios top-down. A multi-dimensional LLM-as-Judge filters out scenarios that are unrealistic or do not constitute a genuine conflict. Target models then act as "moral agents" in simulated open-ended user dialogues. Their choices are treated as pairwise comparisons to aggregate a global priority ranking across the entire value set. The output includes both the model's value ranking and a sandbox to measure the effectiveness of system prompts in shifting that ranking.
 
-#### 1. Scenario Generation (Two-Stage Approach)
-- **Stage 1** (Abstract generation): Given descriptions of two values, Claude 3.5 Sonnet is prompted to generate a high-level summary of the conflict scenario, including user context, action opportunities, and the benefits and costs of each action. Four prompt templates are used (mild benefit / strong benefit / mild harm / strong harm) → mitigating the model's tendency toward inaction and simulating a realistic mixture of severity levels.
-- **Deduplication**: Sentence embeddings are computed using all-MiniLM-L6-v2; scenarios with cosine similarity ≥ 0.8 are discarded.
-- **Stage 2** (Detail expansion): Each summary is expanded into a full scenario description, user profile, and two candidate actions (each supporting one of the two values).
+A "conflict" is strictly defined as a quadruple $(d, A, V_1, V_2)$, where $d$ is the scenario description, $A=\{a_1, a_2\}$ are two candidate actions, and the value function $V_i: D \times A \to A$ maps the scenario to its recommended action, enforcing $V_1(d,A) \neq V_2(d,A)$. The actions recommended by the two values must be contradictory, forcing the model to choose one.
 
-#### 2. Scenario Filtering (6-Dimensional LLM-as-Judge)
-GPT-4.1 is used as the judge model to apply binary classification across six dimensions:
-- **Scenario plausibility**: Can the scenario occur in the real world, and is LLM involvement reasonable?
-- **Scenario specificity**: Is the description sufficiently elaborated (no vague or placeholder entities)?
-- **Action feasibility**: Can a text-only LLM execute both actions?
-- **Action mutual exclusivity**: Is it genuinely impossible to take both actions simultaneously?
-- **Action value alignment**: Does each value actually recommend the intended action?
-- **Genuine dilemma quality**: Is there an obvious consensus answer? → Non-dilemmas are excluded.
-
-Human validation confirms that LLM-as-Judge achieves high precision across all dimensions.
-
-#### 3. Open-Ended Evaluation (Simulated User Interaction)
-- **User simulation**: GPT-4.1 plays the role of the user, generating natural user prompts based on the scenario and user profile.
-- **Target model response**: The target LLM receives only the user prompt (no scenario context) and generates a free-text response.
-- **Action determination**: A judge LLM determines which candidate action the response more closely aligns with → identifying which value the model supports in that scenario.
-- Evaluation is limited to single-turn interactions; Cohen's Kappa between the judge and human annotators is 0.62 (strong agreement).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["User-defined Value Set<br/>Sample Value Pair (V₁, V₂)"] --> GEN
+    subgraph GEN["Two-Stage Conflict Scenario Generation"]
+        direction TB
+        S1["Stage 1: 4 Template Rotation<br/>Generate Conflict Summary"] --> DEDUP["Sentence Embedding Deduplication<br/>(MiniLM, cos≥0.8 discard)"]
+        DEDUP --> S2["Stage 2: Expand to Full Scenario<br/>+ User Persona + 2 Candidate Actions"]
+    end
+    GEN --> FILTER["6-Dimensional LLM-as-Judge Filtering<br/>(GPT-4.1, must pass all 6)"]
+    FILTER --> EVAL["Open-ended Evaluation<br/>Simulated User ↔ Target Model<br/>Judge determines supported action"]
+    EVAL --> BT["Bradley-Terry Fitting<br/>Global Value Ranking R"]
+    BT --> OUT["Model Value Priority Ranking"]
+    BT -->|Re-run with System Prompt| STEER["Steering Effectiveness Metric"]
+```
 
 ### Key Designs
 
-- **Formal definition of value conflict scenarios**: Defined as a tuple $(d, A, V_1, V_2)$, where $d$ is the scenario description, $A = \{a_1, a_2\}$ is the action set, and $V_i: D \times A \to A$ is a value function, with the requirement that $V_1(d, A) \neq V_2(d, A)$.
-- **Bradley-Terry ranking**: The Bradley-Terry model is fit to all pairwise preferences of the target model across scenarios, yielding a global ranking over the value set.
-- **Steering effectiveness metric**: Alignment $a(R, R_t)$ is defined as the proportion of scenarios in which the model's choice favors the higher-priority value in target ranking $R_t$; steering effectiveness is measured as the normalized improvement:
+**1. Two-Stage Conflict Scenario Generation: Drafting the skeleton then adding flesh while actively creating diversity in severity.**
+
+Requesting a full conflict scenario in one step often results in a bias toward "inaction" or repetitive writing. ConflictScope splits this into two stages. In the first stage, Claude 3.5 Sonnet generates high-level summaries (user background, action opportunities, benefits, and costs) using four rotating prompt templates (minor benefit / strong benefit / minor harm / strong harm). This suppresses the model's tendency toward "inaction" and ensures coverage of various severity levels. Summaries are deduplicated using all-MiniLM-L6-v2 (cosine similarity $\ge 0.8$). The second stage expands each summary into a full description, user persona, and two candidate actions supporting opposing values.
+
+**2. Six-Dimensional LLM-as-Judge Filtering: Eliminating "seemingly conflicting but actually non-conflicting" scenarios.**
+
+Scenarios are filtered using GPT-4.1 across six binary dimensions. Only scenarios passing all six are retained: **Scenario Realism** (could this realistically happen?), **Scenario Specificity** (sufficient detail without ambiguity), **Action Feasibility** (can a text-based LLM perform these?), **Action Mutual Exclusivity** (the actions cannot both be performed), **Action Value-Orientation** (does each action truly correspond to its intended value?), and **Genuine Dilemma** (the absence of an obvious consensus answer).
+
+**3. Open-ended Evaluation: Measuring "what was done" instead of "what the model says it would do."**
+
+In the evaluation, GPT-4.1 acts as a user to generate natural prompts based on the persona. Crucially, the target model **only receives the user prompt and not the scenario context**, generating a free-text response. A judge LLM then determines which candidate action the response aligns with. This measures "revealed preferences," identifying systemic gaps compared to the "expressed preferences" measured by MCQs.
+
+**4. Bradley-Terry Global Ranking and Steering Effectiveness Metric.**
+
+Pairwise preferences across scenarios are fitted using a Bradley-Terry model to derive a global ranking $R$. To measure how a system prompt can guide a model toward a target ranking $R_t$, alignment $a(R, R_t)$ is defined as the proportion of scenarios where the model's choice matches the higher-priority value in $R_t$. The normalized improvement relative to the default state $R_d$ is calculated:
 
 $$\text{Effectiveness} = \frac{a(R_s, R_t) - a(R_d, R_t)}{1 - a(R_d, R_t)}$$
 
-where $R_s$ is the steered ranking and $R_d$ is the default ranking.
+This represent the percentage of "unaligned" scenarios that were successfully corrected by the system prompt.
 
-### Three Value Sets
+The pipeline was instantiated on three value sets:
 
-| Value Set | Values Included | # Scenarios |
-|-----------|-----------------|-------------|
-| HHH | helpfulness, harmlessness, honesty | 1109 |
-| Personal-Protective | autonomy, authenticity, creativity, empowerment vs. responsibility, harmlessness, compliance, privacy | 1187 |
-| ModelSpec | non-hatred, fairness, objectivity, honesty, non-condescension, clarity | 602 |
+| Value Set | Included Values | Scenarios |
+|----------|----------|--------|
+| HHH | Helpfulness, Harmlessness, Honesty | 1109 |
+| Personal-Protective | Autonomy, Truthfulness, Creativity, Empowerment vs. Responsibility, Harmlessness, Compliance, Privacy | 1187 |
+| ModelSpec | No Hate, Fairness, Objectivity, Honesty, Not Being Condescending, Clarity | 602 |
 
 ## Key Experimental Results
 
 ### Table 1: ConflictScope Ablation Study
 
-| Variant | Observer Agreement (↓) | Likert Disagreement Rate (↑) |
-|---------|------------------------|------------------------------|
+| Variant | Inter-observer consistency (↓) | Likert discrepancy rate (↑) |
+|------|---------------|-----------------|
 | **Full (ConflictScope)** | **0.786±0.007** | 0.801±0.017 |
 | Unfiltered | 0.824±0.003 | 0.818±0.008 |
 | Single-stage | 0.898±0.004 | 0.854±0.011 |
 | Direct | 0.852±0.004 | 0.830±0.011 |
 
-Filtering reduces observer agreement by 3.8% (indicating greater challenge) without a significant drop in Likert disagreement rate; two-stage generation reduces agreement by 7.4% compared to single-stage → producing more difficult scenarios.
+Filtering reduces inter-observer consistency by 3.8% (making scenarios more challenging) without significantly lowering the Likert discrepancy rate. Two-stage generation reduces consistency by 7.4% compared to single-stage, indicating more difficult scenarios.
 
 ### Table 2: Comparison with Existing Datasets (Pareto Optimality)
-All three ConflictScope value set variants are **Pareto optimal** on the two metrics of observer agreement and Likert disagreement rate:
-- vs. moral dilemma datasets (DailyDilemmas, CLASH, etc.) → lowest observer agreement (most challenging)
-- vs. alignment datasets (HH-RLHF, PKU-SafeRLHF) → the latter have lower agreement but extremely low Likert disagreement rates → indicating that disagreement stems from models being indifferent between similar options rather than genuinely difficult choices.
+The three variants of ConflictScope are **Pareto optimal** across "inter-observer consistency" and "Likert discrepancy rate":
+- vs. Moral decision datasets (DailyDilemmas, CLASH, etc.): ConflictScope has the lowest consistency (most challenging).
+- vs. Alignment datasets (HH-RLHF, PKU-SafeRLHF): The latter have lower consistency but extremely low Likert discrepancy rates, suggesting disagreement stems from indifference rather than genuine difficulty.
 
-### Figure 4: Value Ranking Shift Between MCQ and Open-Ended Evaluation
-**Personal-Protective value set**:
-- Under MCQ evaluation: protective values average rank **1.7** (high priority)
-- Under open-ended evaluation: protective values average rank **4.5** (low priority)
-- All models (except Claude) shift significantly toward personal values under open-ended evaluation.
-- Similar trend in HHH: MCQ → harmlessness > helpfulness; open-ended → helpfulness > harmlessness.
+### Figure 4: Value Ranking Shift between MCQ and Open-ended Evaluation
+**Personal-Protective Value Set**:
+- MCQ evaluation: Protective values average rank **1.7** (high priority).
+- Open-ended evaluation: Protective values average rank **4.5** (low priority).
+- All models (except Claude) significantly shift toward personal values in open-ended evaluations.
+- HHH set shows a similar trend: MCQ $\to$ Harmlessness > Helpfulness; Open-ended $\to$ Helpfulness > Harmlessness.
 
 ### Figure 5: System Prompt Steering Effectiveness
-- Average normalized effect size = **0.145** (14.5% of misaligned scenarios successfully steered)
-- Only 1 out of 14 models shows significantly negative effects on any value set
-- OLMo-2-32B is most responsive to steering (0.27); Claude Haiku 3.5 is least responsive (0.01)
-- Steering is more effective on HHH and Personal-Protective than on ModelSpec (due to greater principle overlap in the latter)
+- Average normalized effectiveness = **0.145** (14.5% of unaligned scenarios were successfully steered).
+- Only 1/14 models showed significant negative effects across all value sets.
+- OLMo-2-32B was the easiest to steer (0.27), while Claude Haiku 3.5 was the hardest (0.01).
 
 ## Key Findings
 
-1. **Systematic divergence between MCQ and open-ended evaluation**: Models claim to prioritize protective values (harmlessness) in MCQ settings, but their actual behavior in open-ended interactions shifts toward personal values (user autonomy, helpfulness) → "saying one thing, doing another" → underscoring the importance of ecologically valid evaluation.
-
-2. **ConflictScope scenarios are more morally challenging than existing datasets**: They achieve Pareto optimality by simultaneously attaining low inter-model agreement and high preference intensity → genuinely forcing models to make difficult trade-offs.
-
-3. **System prompts can moderately steer value rankings**: An effect size of 14% suggests that system prompts are a viable but imperfect steering mechanism → stronger interventions (e.g., fine-tuning) may be needed.
-
-4. **Claude models are most consistent across evaluation settings**: This suggests that different alignment training strategies lead to different degrees of "expressed–behavioral" consistency → a new dimension for assessing alignment quality.
-
-5. **Privacy and authenticity are least affected by evaluation modality**: Possibly because the behavioral manifestations of these two values are more consistent with their expression in MCQ settings.
+1. **Systemic bias exists between MCQ and open-ended evaluation**: Models claim to prioritize protective values (harmlessness) in MCQs but shift behavior toward personal values (autonomy, helpfulness) in open-ended interactions.
+2. **ConflictScope scenarios are more morally challenging**: They achieve low inter-model consistency while maintaining high preference intensity, forcing difficult trade-offs.
+3. **System prompts can moderately steer value rankings**: An effectiveness of 14% indicates system prompts are a viable but imperfect steering mechanism.
+4. **Claude models are the most consistent**: Suggests that different alignment training strategies lead to varying levels of "expressed-behavioral" consistency.
+5. **Privacy and Truthfulness are least affected by evaluation mode**: Their behavioral manifestations align more closely with their expressed preferences in MCQs.
 
 ## Highlights & Insights
-- **Conceptual transfer of "expressed vs. revealed preferences"**: The paper cleverly adapts a classic distinction from economics and applies it systematically to LLM value alignment evaluation for the first time → exposing a fundamental limitation of MCQ-based evaluation.
-- **Top-down scenario generation**: Unlike bottom-up approaches that generate scenarios first and then annotate values → this ensures sufficient conflict coverage for every value pair → enabling systematic evaluation.
-- **Framework generality**: ConflictScope accepts any user-defined set of values → adaptable to different communities' ethical standards → strong practical utility.
+- **Transfer of "Expressed vs. Revealed Preferences"**: Borrowed from economics to reveal the fundamental limitations of MCQ-based alignment evaluation.
+- **Top-down Scenario Generation**: Unlike bottom-up methods, this ensures coverage for every value pair, facilitating systematic evaluation.
+- **Framework Generality**: ConflictScope accepts arbitrary user-defined values, making it adaptable to diverse ethical standards across different communities.
 
 ## Limitations & Future Work
-- **Single-turn interaction**: Evaluation is limited to single-turn dialogue → multi-turn interactions in real deployment may yield different behavior.
-- **Reliance on LLM-as-Judge**: Both scenario filtering and action determination depend on GPT-4.1 → systematic judge biases may influence results.
-- **English-centric**: All scenarios are in English → cross-lingual and cross-cultural value priorities may differ.
-- **Limited effect size**: System prompt steering achieves only a 14% effect → may be insufficient for scenarios requiring strict safety guarantees.
+- **Single-turn Interaction**: Only evaluates single-turn dialogues; multi-turn interactions might yield different results.
+- **LLM-as-Judge Dependency**: Filtering and action judgment depend on GPT-4.1, potentially introducing systemic biases.
+- **English-Centric**: Scenarios are in English; value priorities may vary across languages and cultures.
+- **Limited Effectiveness**: A 14% steering effect may be insufficient for scenarios requiring strict safety guarantees.
 
 ## Related Work & Insights
 
 | Dimension | ConflictScope | DailyDilemmas (Chiu 2025a) | MoralChoice (Scherrer 2023) |
-|-----------|---------------|---------------------------|---------------------------|
-| Scenario source | Top-down LLM generation | LLM generation + human curation | LLM generation |
-| Evaluation modality | **MCQ + open-ended** | MCQ only | MCQ only |
-| Value set | **Arbitrary user-defined** | Predefined categories | Predefined categories |
-| Model role | **Moral agent** | Third-party observer | Third-party observer |
-| Global ranking | **Bradley-Terry** | None | None |
-| Steering evaluation | **Yes** | No | No |
-
-vs. **AIRiskDilemmas** (Chiu 2025b): the latter also uses Bradley-Terry but relies solely on MCQ evaluation with a fixed value set → ConflictScope is more general and provides open-ended evaluation.
+|------|---------------|---------------------------|---------------------------|
+| Scenario Source | Top-down LLM generation | LLM generation + Human curation | LLM generation |
+| Evaluation Method | **MCQ + Open-ended** | MCQ only | MCQ only |
+| Value Set | **Any User-defined** | Pre-defined categories | Pre-defined categories |
+| Model Role | **Moral Agent** | Third-party observer | Third-party observer |
+| Global Ranking | **Bradley-Terry** | None | None |
+| Steering Eval | **Yes** | None | None |
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Open-ended value conflict evaluation combined with a systematic study of expressed vs. revealed preferences — conceptually novel
-- Experimental Thoroughness: ⭐⭐⭐⭐ 14 models × 3 value sets + ablations + human validation + steering experiments
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, rigorous experimental design, complete formalization
-- Value: ⭐⭐⭐⭐ Provides an important new benchmark and methodology for LLM value alignment evaluation
+- Novelty: ⭐⭐⭐⭐ Systematic study of expressed vs. revealed preferences in open-ended value conflict evaluation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 14 models × 3 value sets + ablations + human validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, rigorous design, and complete formalization.
+- Value: ⭐⭐⭐⭐ Provides a significant new benchmark and methodology for LLM value alignment.
 
 <!-- RELATED:START -->
 
@@ -168,11 +163,11 @@ vs. **AIRiskDilemmas** (Chiu 2025b): the latter also uses Bradley-Terry but reli
 
 ## Related Papers
 
+- [\[ACL 2025\] Generative Psycho-Lexical Approach for Constructing Value Systems in Large Language Models](../../ACL2025/llm_nlp/generative_psycholexical_approach_for_constructing_value.md)
 - [\[ACL 2026\] Generative Interfaces for Language Models](../../ACL2026/llm_nlp/generative_interfaces_for_language_models.md)
 - [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](../../ACL2026/llm_nlp/repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
 - [\[ACL 2026\] Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards](../../ACL2026/llm_nlp/generative_floor_plan_design_with_llms_via_reinforcement_learning_with_verifiabl.md)
-- [\[ICLR 2026\] How Catastrophic is Your LLM? Certifying Risk in Conversation](how_catastrophic_is_your_llm_certifying_risk_in_conversation.md)
-- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
+- [\[ICML 2025\] Generative Social Choice: The Next Generation](../../ICML2025/llm_nlp/generative_social_choice_the_next_generation.md)
 
 </div>
 

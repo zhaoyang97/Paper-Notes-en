@@ -2,100 +2,118 @@
 title: >-
   [Paper Note] Deconstructing Positional Information: From Attention Logits to Training Biases
 description: >-
-  [ICLR2026][LLM Pretraining][Positional Encoding] This paper proposes a unified analytical framework based on Toeplitz matrices, categorizing positional encodings into additive (Absolute/T5/ALiBi) and multiplicative (RoPE…
+  [ICLR 2026][Pretraining][RoPE] Based on a unified Toeplitz matrix framework, the authors categorize positional encoding (PE) into additive (Absolute/T5/ALiBi) and multiplicative (RoPE) types. Through synthetic tasks, they find that RoPE holds significant advantages in position-sensitive tasks but exhibits a "single-head deposit pattern"—where positi
 tags:
-  - "ICLR2026"
-  - "LLM Pretraining"
-  - "Positional Encoding"
-  - "RoPE"
-  - "Toeplitz Matrix"
-  - "Attention Mechanism"
-  - "Single-Head Deposit Pattern"
+  - ICLR 2026
+  - Pretraining
+  - RoPE
+  - Attention
 date: 2026-05-08
-content_hash: 8ac74a8e191a730f
+content_hash: a24c4bd53215202e
 ---
-
 # Deconstructing Positional Information: From Attention Logits to Training Biases
 
-**Conference**: ICLR2026  
+**Conference**: ICLR 2026  
 **arXiv**: [2505.13027](https://arxiv.org/abs/2505.13027)  
 **Code**: To be confirmed  
-**Area**: LLM Pretraining  
-**Keywords**: Positional Encoding, RoPE, Toeplitz Matrix, Attention Mechanism, Single-Head Deposit Pattern  
+**Area**: LLM Pre-training  
+**Keywords**: Positional Encoding, RoPE, Toeplitz Matrix, Attention Mechanism, Single-head Deposit Pattern  
 
 ## TL;DR
-This paper proposes a unified analytical framework based on Toeplitz matrices, categorizing positional encodings into additive (Absolute/T5/ALiBi) and multiplicative (RoPE) types. Through synthetic tasks, it reveals that RoPE exhibits significant advantages on position-sensitive tasks but suffers from a "single-head deposit pattern" in shallow layers, where nearly all positional reasoning concentrates in a single attention head. The paper further provides a theoretical proof that this pattern is an intrinsic property of RoPE's multiplicative structure.
+Based on a unified Toeplitz matrix framework, the authors categorize positional encoding (PE) into additive (Absolute/T5/ALiBi) and multiplicative (RoPE) types. Through synthetic tasks, they find that RoPE holds significant advantages in position-sensitive tasks but exhibits a "single-head deposit pattern"—where positional reasoning in shallow layers is almost entirely concentrated in a single attention head. This pattern is theoretically proven to be an inherent property of RoPE's multiplicative structure.
 
 ## Background & Motivation
 
-**Background**: Positional encoding (PE) is a core component of Transformers, evolving from additive schemes (Sinusoidal, T5 Bias, ALiBi) to multiplicative ones (RoPE). However, mechanistic understanding remains limited to two properties: distance decay and translation invariance.
+**Background**: Positional Encoding (PE) is a core component of Transformers, evolving from additive forms (Sinusoidal, T5 Bias, ALiBi) to multiplicative forms (RoPE). Currently, the understanding of its mechanism is largely limited to the properties of distance decay and translation invariance.
 
-**Limitations of Prior Work**: Despite RoPE's theoretically desirable properties (e.g., decay characteristics supporting length generalization), it underperforms simpler relative PE or even NoPE models on certain tasks—a "performance paradox" that lacks explanation.
+**Limitations of Prior Work**: Although RoPE has favorable theoretical properties (e.g., decay supporting length generalization), it underperforms compared to simple relative PE or even No-PE models on certain tasks. This "performance paradox" lack explanation.
 
-**Core Idea**: The attention logit computation is deconstructed into content–position interaction terms and described uniformly via Toeplitz matrices. Additive PE introduces positional information through independent bias terms, whereas multiplicative PE (RoPE) couples positional signals with content via Hadamard products—this strong coupling leads to excessive concentration of positional reasoning.
+**Core Idea**: Deconstruct the attention logit calculation into interaction terms between content and position, using Toeplitz matrices for unified description. Reveal that additive PE introduces position via independent bias terms, while multiplicative PE (RoPE) couples positional signals with content via Hadamard products—this strong coupling leads to an over-concentration of positional reasoning.
 
 ## Method
 
 ### Overall Architecture
-Token representations are decomposed into a content component $c_i$ and a positional component $p_i$ (i.e., $x_i = c_i + p_i$), and the attention logit matrix is analyzed. For additive PE, the logit matrix is a sum of interaction terms ($\mathbf{L}_{\text{Add}} = G_{q^c,k^c} + G_{q^c,k^p} + G_{q^p,k^c} + G_{q^p,k^p} + \mathbf{B}$); for multiplicative PE (RoPE), it takes a Hadamard product form ($\mathbf{L}_{\text{RoPE}} = \text{Re}\{(\cdots) \circ G_{\mathbf{e}}\}$), where $G_{\mathbf{e}}$ is a Toeplitz kernel.
+This paper does not propose a new method but breaks down the calculation of attention logits to observe where positional information enters and how it settles during training. The analysis follows four steps: first, decomposing each token representation into content and position components $x_i = c_i + p_i$, and expanding the query-key inner product to unify mainstream PEs under a Toeplitz matrix perspective, distinguishing "additive injection" and "multiplicative (RoPE) injection." Second, using a pair of contrasted synthetic tasks to isolate content-position coupling capabilities from natural language. Third, performing head-wise ablation on these probes to discover that RoPE deposits positional reasoning into a single head in shallow layers (single-head deposit pattern). Finally, using gradient analysis to prove this deposit is an inherent training bias of multiplicative injection.
 
-### Key Design 1: Synthetic Task Design
-- **Task 1 (Position-Sensitive)**: Given two trigger words in a sequence, predict their relative distance (classification); requires the model to know both "what" and "where."
-- **Task 2 (Position-Agnostic)**: Count the number of occurrences of a specific trigger word in a sequence; positional information acts as a nuisance variable.
-- These two contrastive tasks precisely isolate the content–position coupling capability.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Attention logit<br/>token = content c + position p"] --> B["Toeplitz Unified Framework<br/>Additive Injection vs Multiplicative(RoPE) Injection"]
+    B --> C["Contrasted Synthetic Tasks<br/>Task1 Pos-Sensitive / Task2 Pos-Agnostic"]
+    C -->|"RoPE + Pos-Sensitive"| D["Single-head Deposit Pattern<br/>Head-wise Ablation + Gradient Proof"]
+    D --> E["Conclusion: Deposit is RoPE’s<br/>Inherent Multiplicative Training Bias"]
+```
 
-### Key Design 2: Discovery and Validation of the Single-Head Deposit Pattern
-Through per-head ablation (zeroing out individual heads), it is found that removing a single attention head in the first layer of a RoPE model causes accuracy on Task 1 to drop by approximately 60%, while removing other heads has negligible effect. This pattern only emerges in the combination of "RoPE + position-sensitive task"—NoPE does not exhibit it, nor does RoPE on Task 2.
+### Key Designs
 
-### Key Design 3: Theoretical Derivation
-- **Proposition 6.1**: The multiplicative structure of RoPE provides a deterministic lower bound (non-zero seed) for gradient signals, ensuring that some head receives a positive positional learning signal.
-- **Proposition 6.2**: The additive bias of ALiBi causes gradient signals to cancel out during batch aggregation, preventing the formation of a stable seed.
-- **Theorem 6.1**: During backpropagation, the seed advantage is amplified exponentially ($\text{Margin}_l \geq \text{Margin}_L \prod_{k=l}^{L-1} \gamma_k$, $\gamma_k > 1$), ultimately leading to monopolization of positional reasoning by a single head.
+**1. Toeplitz Unified Framework: Categorizing PE into Additive and Multiplicative Paths**
+
+Positional encoding has historically been described by fragmented properties like "distance decay" and "translation invariance." This paper leverages the translation invariance property—where the relationship between any two tokens depends only on their relative distance—and maps it to the structure of Toeplitz matrices. By expanding the logit matrix into content-position cross-terms, two distinct paths emerge. Additive PE (Absolute, T5 Bias, ALiBi) injects positional signals as independent terms, where the logit matrix is $\mathbf{L}_{\text{Add}} = G_{q^c,k^c} + G_{q^c,k^p} + G_{q^p,k^c} + G_{q^p,k^p} + \mathbf{B}$, keeping position terms independent of content. Multiplicative PE (RoPE) uses a Toeplitz kernel $G_{\mathbf{e}}$ dependent on relative distance $i-j$ to modulate the content interaction: $\mathbf{L}_{\text{RoPE}} = \text{Re}\{(G_{q,k}+G_{q,p}+G_{p,k}+G_{p})\circ G_{\mathbf{e}}\}$. This multiplicative coupling prevents positional signals from decoupling from content.
+
+**2. Contrasted Synthetic Tasks: Isolating Content-Position Coupling**
+
+To verify the "multiplicative coupling" theory, the authors designed two synthetic tasks: Task 1 (Position-Sensitive) requires predicting the relative distance between two trigger words (requiring "what" and "where"); Task 2 (Position-Agnostic) requires counting trigger word frequency (where position is a nuisance). As predicted, RoPE leads significantly on Task 1 (92.64%) but performs worse on Task 2.
+
+**3. Single-head Deposit Pattern: Training Dynamics of Multiplicative Coupling**
+
+Head-wise ablation on Task 1 revealed that removing one specific head in the first layer caused accuracy to drop by ~60 points, while removing any other head had no effect. This pattern only occurs with "RoPE + Position-Sensitive" tasks. Gradient analysis provides the proof: Proposition 6.1 shows RoPE’s multiplicative structure ensures a non-zero "seed" for positional gradients, causing one head to gain an advantage first. Proposition 6.2 shows ALiBi’s additive bias gradients cancel out. Theorem 6.1 indicates that backpropagation exponentially amplifies this initial advantage layer by layer, where the margin between dominant and sub-dominant heads satisfies $\text{Margin}_l \geq \text{Margin}_L \prod_{k=l}^{L-1}\gamma_k$ (where $\gamma_k>1$), leading to monopoly.
 
 ## Key Experimental Results
 
 ### Synthetic Task Performance
 
-| PE Method | Task 1 (Position-Sensitive) Acc | Task 2 (Position-Agnostic) Acc |
-|-----------|--------------------------------|-------------------------------|
-| RoPE | **92.64%** | 69.43% |
-| MLA | 88.34% | **97.41%** |
-| Absolute | Second best | Moderate |
-| ALiBi | Fails | Worst (strong bias harmful) |
-| NoPE | Fails | **77.69%** |
+| PE Method | Task 1 (Pos.-Sensitive) Acc | Task 2 (Pos.-Agnostic) Acc |
+|-----------|-------------------------|--------------------------|
+| RoPE      | **92.64%**               | 69.43%                   |
+| MLA       | 88.34%                   | **97.41%**               |
+| Absolute  | Sub-optimal             | Medium                   |
+| ALiBi     | Failure                 | Worst                    |
+| NoPE      | Failure                 | **77.69%**               |
 
-### Ablation Study: Minimum Number of RoPE Heads
+### Ablation Study: Minimum RoPE Heads
 
-| No. of RoPE Heads | Task 1 Acc |
-|-------------------|-----------|
-| All heads | 92.64% |
-| 2 heads | ≈90%+ |
-| **1 head** | **≈90%** |
+| Number of RoPE Heads | Task 1 Acc |
+|----------------------|------------|
+| All heads            | 92.64%     |
+| 2 heads              | ≈90%+      |
+| **1 head**           | **≈90%**   |
 
 ### Key Findings
-- RoPE requires only 1–2 heads to perform all positional reasoning; the remaining heads are redundant for position-sensitive tasks.
-- The hybrid architecture MLA (the attention design in DeepSeek-V3) successfully eliminates the deposit pattern while achieving near-optimal performance on both tasks (88.34% / 97.41%).
-- RoPE suppresses the formation of implicit positional representations: in a hybrid Absolute+RoPE model, additive positional directions are completely displaced after Layer 2.
+- RoPE requires only 1-2 heads for all positional reasoning; other heads are redundant for positional tasks.
+- Hybrid architecture MLA (DeepSeek-V3) eliminates the deposit pattern and achieves near-optimal results on both tasks (88.34% / 97.41%).
+- RoPE suppresses implicit positional representations; in Absolute+RoPE models, additive positional directions are displaced after Layer 2.
 
 ## Highlights & Insights
-- **Elegant Theoretical Framework**: All PE methods are unified under an additive vs. multiplicative dichotomy via Toeplitz matrices, yielding strong explanatory power.
-- **Complete Chain from Phenomenon to Mechanism**: Synthetic task discovery → ablation validation → mathematical proof, forming a closed three-step loop.
-- **Theoretical Validation of MLA**: This work provides the first positional-encoding-based explanation for why the MLA design in DeepSeek-V3 is effective.
+- **Elegant Theoretical Framework**: Uses Toeplitz matrices to categorize all PEs, explaining RoPE's behavior.
+- **Continuous Logic Chain**: Synthetic discovery $\rightarrow$ Ablation verification $\rightarrow$ Mathematical proof.
+- **Theoretical Validation of MLA**: Explains why DeepSeek-V3’s MLA design is effective from a PE perspective.
 
 ## Limitations & Future Work
-- The causal relationship between the deposit pattern and length extrapolation capability remains a hypothesis and is not directly validated.
-- The synthetic tasks are overly simplified; applicability to complex NLP tasks (e.g., sequence reversal, Dyck languages) is unknown.
-- Analysis is limited to 6-layer small models; whether the deposit pattern persists in large-scale models remains unclear.
+- The causal link between deposit patterns and length extrapolation is hypothesized but not directly verified.
+- Synthetic tasks are simplified; applicability to complex NLP tasks is unknown.
+- Analysis focused on 6-layer models; persistence in large-scale models is unclear.
 
 ## Related Work & Insights
-- Explains the counterintuitive finding of Kazemnejad et al. (2023) that NoPE outperforms RoPE on certain tasks—because multiplicative bias is harmful on position-agnostic tasks.
-- Provides design principles for future PE research: pure multiplicative coupling should be avoided in favor of MLA-style hybrid strategies (parallel NoPE + RoPE pathways).
+- Explains why NoPE can outperform RoPE in some cases (Kazemnejad et al., 2023) because multiplicative bias is harmful for position-agnostic tasks.
+- Suggests avoiding pure multiplicative coupling in favor of hybrid strategies like MLA (parallel NoPE + RoPE).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Toeplitz unified framework + discovery and theoretical proof of the deposit pattern
-- Experimental Thoroughness: ⭐⭐⭐⭐ Synthetic experiments are elegantly designed with thorough ablations, but natural language experiments are absent
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical exposition is clear, with a complete logical chain from framework to findings to proofs
-- Value: ⭐⭐⭐⭐ Substantially advances mechanistic understanding of positional encoding and offers guidance for novel designs such as MLA
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐
+
+## Related Papers
+
+- [\[ICML 2026\] Decoupling the "What" and "Where" With Polar Coordinate Positional Embeddings](../../ICML2026/llm_pretraining/decoupling_the_what_and_where_with_polar_coordinate_positional_embeddings.md)
+- [\[ICLR 2026\] Conditioned Initialization for Attention](conditioned_initialization_for_attention.md)
+- [\[ICLR 2026\] SPICE: Submodular Penalized Information–Conflict Selection for Efficient Large Language Model Training](spice_submodular_penalized_informationconflict_selection_for_efficient_large_lan.md)
+- [\[ICLR 2026\] Explaining Grokking and Information Bottleneck through Neural Collapse Emergence](explaining_grokking_and_information_bottleneck_through_neural_collapse_emergence.md)
+- [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -103,11 +121,11 @@ Through per-head ablation (zeroing out individual heads), it is found that remov
 
 ## Related Papers
 
-- [\[ICLR 2026\] Explaining Grokking and Information Bottleneck through Neural Collapse Emergence](explaining_grokking_and_information_bottleneck_through_neural_collapse_emergence.md)
-- [\[ICML 2026\] Focus and Dilution: The Multi-stage Learning Process of Attention](../../ICML2026/llm_pretraining/focus_and_dilution_the_multi-stage_learning_process_of_attention.md)
-- [\[AAAI 2026\] No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding](../../AAAI2026/llm_pretraining/no-regret_strategy_solving_in_imperfect-information_games_via_pre-trained_embedd.md)
-- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](../../ICML2026/llm_pretraining/infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
-- [\[NeurIPS 2025\] The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation](../../NeurIPS2025/llm_pretraining/the_atlas_of_in-context_learning_how_attention_heads_shape_in-context_retrieval_.md)
+- [\[ICLR 2026\] SPICE: Submodular Penalized Information–Conflict Selection for Efficient Large Language Model Training](spice_submodular_penalized_informationconflict_selection_for_efficient_large_lan.md)
+- [\[ICLR 2026\] Conditioned Initialization for Attention](conditioned_initialization_for_attention.md)
+- [\[ICLR 2026\] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders](avey-b.md)
+- [\[ICML 2026\] Decoupling the "What" and "Where" With Polar Coordinate Positional Embeddings](../../ICML2026/llm_pretraining/decoupling_the_what_and_where_with_polar_coordinate_positional_embeddings.md)
+- [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
 
 </div>
 

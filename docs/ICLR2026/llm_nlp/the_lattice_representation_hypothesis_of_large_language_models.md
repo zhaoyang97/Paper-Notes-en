@@ -2,47 +2,40 @@
 title: >-
   [Paper Note] The Lattice Representation Hypothesis of Large Language Models
 description: >-
-  [ICLR2026][LLM/NLP][Linear Representation Hypothesis] This paper proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis with Formal Concept Analysis (FCA)…
+  [ICLR 2026][LLM (Other)][Paper Note] Ours proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis (LRH) with Formal Concept Analysis (FCA), it proves that attribute directions in LLM embedding spaces implicitly encode a **concept lattice** through intersections of half-spaces, thereby bridging co
 tags:
-  - "ICLR2026"
-  - "LLM/NLP"
-  - "Linear Representation Hypothesis"
-  - "Formal Concept Analysis"
-  - "Concept Lattice"
-  - "Half-Space Model"
-  - "Embedding Geometry"
-  - "Symbolic Reasoning"
+  - ICLR 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 45eeaf3a9106eafb
+content_hash: e254b76b6d3e38e5
 ---
-
 # The Lattice Representation Hypothesis of Large Language Models
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2603.01227](https://arxiv.org/abs/2603.01227)  
-**Authors**: Bo Xiong (Stanford University)
-**Area**: LLM/NLP (Representation Learning / Interpretability)
-**Keywords**: Linear Representation Hypothesis, Formal Concept Analysis, Concept Lattice, Half-Space Model, Embedding Geometry, Symbolic Reasoning
+**Authors**: Bo Xiong (Stanford University)  
+**Area**: LLM/NLP (Representation Learning / Interpretability)  
+**Keywords**: Linear Representation Hypothesis, Formal Concept Analysis, Concept Lattice, Half-space Model, Embedding Geometry, Symbolic Reasoning  
 
 ## TL;DR
 
-This paper proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis with Formal Concept Analysis (FCA), it demonstrates that attribute directions in LLM embedding spaces implicitly encode a **concept lattice** via half-space intersections, thereby bridging continuous geometry and symbolic abstraction.
+Ours proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by unifying the Linear Representation Hypothesis (LRH) with Formal Concept Analysis (FCA), it proves that attribute directions in LLM embedding spaces implicitly encode a **concept lattice** through intersections of half-spaces, thereby bridging continuous geometry with symbolic abstraction.
 
 ---
 
 ## Background & Motivation
 
-**The mystery of conceptual knowledge in LLMs**: LLMs excel at capturing conceptual knowledge and performing logical reasoning, yet a systematic theoretical account of how symbolic concept hierarchies are encoded in continuous embedding geometry remains lacking.
+**The Mystery of Conceptual Knowledge in LLMs**: While LLMs excel at capturing conceptual knowledge and performing logical reasoning, a systematic theoretical explanation is still lacking regarding how these symbolic conceptual hierarchies are encoded within continuous geometric embedding spaces.
 
-**Limitations of the Linear Representation Hypothesis**: The existing Linear Representation Hypothesis (LRH) posits that semantic features are encoded as linear directions in embedding space, but focuses primarily on the linear separability of binary concepts and offers little explanatory power for **compositional semantics** such as concept subsumption, intersection, and union.
+**Limitations of the Linear Representation Hypothesis**: The existing Linear Representation Hypothesis (LRH) posits that semantic features are encoded as linear directions. However, it primarily focuses on the linear separability of binary concepts and lacks explanatory power for **compositional semantics** (e.g., concept inclusion, intersection, and union).
 
-**Insufficiency of the extensional perspective**: Park et al. (2025) model concepts as sets of tokens (the extensional view), e.g., $Y(\text{animal}) = \{\text{predator}, \text{bird}, \text{dog}, \ldots\}$, but neglect the **intensional properties** of concepts (the attributes and relations that define them), making it difficult to account for set-theoretic semantics such as concept reduction, intersection, and union.
+**Deficiencies of the Extensional Perspective**: Park et al. (2025) modeled concepts as sets of tokens (extensional perspective), such as $Y(\text{animal}) = \{\text{predator}, \text{bird}, \text{dog}, \ldots\}$, but ignored the **intensional properties** (attributes and relations defining a concept), making it difficult to explain set-theoretic semantics like concept subsumption, intersection, and union.
 
-**Insights from Formal Concept Analysis (FCA)**: FCA defines concepts via binary object–attribute relations, where each concept is an (extent, intent) pair; this dual perspective naturally induces a concept lattice structure.
+**Inspirations from Formal Concept Analysis (FCA)**: FCA defines concepts through binary object-attribute relations, where each concept is an (extension, intension) pair. This dual perspective naturally induces a concept lattice structure.
 
-**AI safety and controllability**: Understanding the hidden geometric structure of LLMs is essential for reliably controlling and steering model reasoning behavior, and constitutes a foundational step toward advancing AI safety.
+**Needs for AI Safety and Controllability**: Understanding the hidden geometric structures of LLMs is crucial for reliably controlling and guiding model reasoning behavior, serving as a foundational step for advancing AI safety.
 
-**A gap in theoretical unification**: No systematic theoretical bridge exists between the Linear Representation Hypothesis and Formal Concept Analysis from symbolic AI; this paper fills that gap.
+**Theoretical Unification Gap**: A systematic theoretical bridge between the Linear Representation Hypothesis and Formal Concept Analysis in symbolic AI has been missing. This work fills that gap.
 
 ---
 
@@ -50,60 +43,53 @@ This paper proposes the **Lattice Representation Hypothesis (LRH)** for LLMs: by
 
 ### Overall Architecture
 
-**Mechanism**: Attribute directions $\bar{\ell}_m$ in the LRH are treated as half-space boundaries in embedding space. Thresholded inner products determine whether an object possesses a given attribute, constructing the formal context $(G, M, I)$ of FCA and recovering the concept lattice.
+The core problem addressed in this paper is: where does the LLM hide the hierarchical structure of concepts (subsumption, intersection, and union) within continuous embedding geometry? The answer is a construction pipeline from embeddings to concept lattices. First, each attribute $m$ is viewed as a linear boundary in the embedding space—an attribute direction $\bar{\ell}_m$ plus a threshold $\tau_m$ defining a half-space; whether an object embedding $\mathbf{v}_g$ falls on a specific side determines its possession of that attribute. Attribute directions and thresholds are statistically estimated from annotated object sets and then softened into differentiable associations to derive an FCA formal context $(G, M, I)$. Subsequently, a global translation absorbs all thresholds, making all half-spaces pass through the origin. Thus, a "concept" is mapped to a geometric region formed by the "intersection of multiple half-spaces," accompanied by a continuous projection profile as its "fingerprint." Finally, soft inclusion metrics (to infer partial orders) and concept algebra (Meet/Join for combinations) are defined over these profiles. The entire pipeline recovers a **complete concept lattice** under the extensional inclusion order, connecting continuous geometry with symbolic abstraction.
 
-### Key Design 1: Soft Incidence
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Object Embeddings (synset means)<br/>+ Attribute Annotations"]
+    D1["Estimate Attribute Half-spaces<br/>Soften into Formal Context (G,M,I)<br/>→ Complete Lattice (Theorem 1)"]
+    D2["Canonical Translation to Absorb Thresholds<br/>Half-space Concepts + Projection Profile π"]
+    D3["Soft Inclusion Metric<br/>Infer Concept Poset A⊑B"]
+    D4["Concept Algebra<br/>Meet ∧ / Join ∨"]
+    OUT["Complete Concept Lattice<br/>Continuous Geometry ↔ Symbolic Abstraction"]
+    IN --> D1 --> D2
+    D2 --> D3
+    D2 --> D4
+    D3 --> OUT
+    D4 --> OUT
+```
 
-For an attribute direction $\bar{\ell}_m$ and an object embedding $\mathbf{v}_g$, the soft incidence probability is defined as:
+### Key Designs
 
-$$P_\alpha(m(g) = 1) := \sigma\left(\alpha \cdot (\mathbf{v}_g \cdot \bar{\ell}_m - \tau_m)\right)$$
+**1. Estimating attribute half-spaces and softening into formal contexts: Converting statistically estimated linear boundaries into differentiable "object-attribute" associations**
 
-where $\sigma$ is the sigmoid function, $\alpha > 0$ controls boundary sharpness, and $\tau_m$ is a threshold. As $\alpha \to \infty$, this reduces to a hard threshold. Given confidence level $\delta$, the binary incidence relation is defined as $I_\delta := \{(\mathbf{v}_g, \bar{\ell}_m) \mid P_\alpha(m(g) = 1) \geq \delta\}$.
+To extract an FCA formal context from embeddings, the first step is to obtain the geometric boundary for each attribute. Attribute directions are estimated using regularized Fisher Discriminant Analysis, $\bar{\ell}_m := (\Sigma_+ + \Sigma_- + \lambda I)^{-1}(\bm{\mu}_+ - \bm{\mu}_-)$, with covariance stabilized via Ledoit-Wolf shrinkage. Thresholds are set as the midpoint of the projected means of positive and negative objects: $\tau_m := \frac{1}{2}(\mathbb{E}_{g \in G_+}[\text{Proj}_m(\mathbf{v}_g)] + \mathbb{E}_{g \in G_-}[\text{Proj}_m(\mathbf{v}_g)])$. Object embeddings are taken as the mean embeddings of WordNet synsets to mitigate word-level lexical noise. Once directions and thresholds are obtained, while a hard criterion $\mathbf{v}_g \cdot \bar{\ell}_m \geq \tau_m$ could define the relationship, it is non-differentiable and noise-sensitive. Therefore, the association is softened as:
 
-**Theorem 1 (Existence of Lattice Geometry)**: Under this construction, the induced set of formal concepts $\mathcal{F}_\delta$ satisfies the Galois connection closure property and forms a **complete lattice** under the extent-inclusion order.
+$$P_\alpha(m(g) = 1) := \sigma\!\left(\alpha \cdot (\mathbf{v}_g \cdot \bar{\ell}_m - \tau_m)\right),$$
 
-### Key Design 2: Canonical Representation
+where $\sigma$ is the sigmoid function and $\alpha > 0$ controls the sharpness of the boundary. Given a confidence level $\delta$, truncating the probability into a binary relation $I_\delta := \{(\mathbf{v}_g, \bar{\ell}_m) \mid P_\alpha(m(g) = 1) \geq \delta\}$ yields a deterministic formal context $(G, M, I_\delta)$. This step is critical: Theorem 1 guarantees that the resulting set of formal concepts $\mathcal{F}_\delta$ satisfies the closure property of Galois connections and forms a **complete lattice** under extensional inclusion—providing the geometric foundation for the "Lattice Representation Hypothesis."
 
-**Proposition 1**: If the rows of the attribute direction matrix $D$ are $\mathbf{d}_i^\top$ and the threshold vector is $\bm{\tau}$, and there exists $\mathbf{c} \in \mathbb{R}^d$ such that $D\mathbf{c} = \bm{\tau}$, then the global translation $\mathbf{v}_g \mapsto \mathbf{v}_g - \mathbf{c}$ absorbs all thresholds, yielding a canonical form of half-spaces passing through the origin:
+**2. Canonical translation and half-space concepts: Zeroing thresholds via global translation to map symbolic concepts to geometric regions passing through the origin**
 
-$$\sigma(\alpha(\mathbf{v}_g \cdot \mathbf{d}_i - \tau_i)) = \sigma(\alpha((\mathbf{v}_g - \mathbf{c}) \cdot \mathbf{d}_i))$$
+Different attributes have different thresholds $\tau_m$, scattering boundaries throughout the space and complicating intersection and algebraic operations. Proposition 1 provides a solution: by arranging attribute directions into a matrix $D$ and thresholds into a vector $\bm{\tau}$, if a point $\mathbf{c} \in \mathbb{R}^d$ exists such that $D\mathbf{c} = \bm{\tau}$ (true when attribute directions are linearly independent), then translating all embeddings $\mathbf{v}_g \mapsto \mathbf{v}_g - \mathbf{c}$ eliminates the thresholds without altering the induced lattice: $\sigma(\alpha(\mathbf{v}_g \cdot \mathbf{d}_i - \tau_i)) = \sigma(\alpha((\mathbf{v}_g - \mathbf{c}) \cdot \mathbf{d}_i))$. After translation, each attribute corresponds to a **half-space passing through the origin**. A concept defined by an attribute set $Y \subseteq M$ is then the intersection of these half-spaces:
 
-### Key Design 3: Half-Space Representation and Projection Profile
+$$\mathcal{R}(Y) := \{\mathbf{v} \in \mathbb{R}^d \mid \mathbf{v} \cdot \mathbf{d}_m \geq 0,\ \forall m \in Y\},$$
 
-Under the canonical representation, a concept $C$ defined by attribute set $Y \subseteq M$ corresponds to a half-space intersection:
+which geometrically represents a convex polyhedral cone—the concept's extensional region. To characterize the concept's intension and soften hard regions for noise tolerance, each concept $C$ is assigned a projection profile $\pi_C(m) := \frac{1}{n} \sum_{i=1}^{n} \mathbf{v}_i \cdot \mathbf{d}_m$, representing the mean projection of all object embeddings in the concept onto attribute direction $m$. This serves as a continuous generalization of discrete FCA intension; all profile vectors are $\ell_2$ normalized to ensure comparability between concepts.
 
-$$\mathcal{R}(Y) := \left\{\mathbf{v} \in \mathbb{R}^d \mid \mathbf{v} \cdot \mathbf{d}_m \geq 0, \forall m \in Y\right\}$$
+**3. Soft Inclusion Metric: Inferring partial orders directly from projection profiles without ground-truth hierarchies**
 
-The projection profile of concept $C$ (the continuous analog of its intent):
+With profiles, judging concept subsumption $A \sqsubseteq B$ ($A$ is a specific case of $B$) does not require querying a real hierarchy. Instead, it involves checking if the profile of $A$ satisfies the attributes emphasized by $B$:
 
-$$\pi_C(m) := \frac{1}{n} \sum_{i=1}^{n} \mathbf{v}_i \cdot \mathbf{d}_m$$
+$$\text{Inclusion}(A \sqsubseteq B) = \frac{\sum_{m \in M} \phi(\pi_B(m)) \cdot \sigma(\pi_A(m))}{\sum_{m \in M} \phi(\pi_B(m))},\quad \phi(x) = \log(1 + e^x).$$
 
-All projection vectors are $\ell_2$-normalized to ensure comparability.
+Here, the softplus function $\phi$ assigns higher weights to more significant attributes in $B$, while weak or inactive attributes are smoothly suppressed. $\sigma(\pi_A(m))$ interprets the projection of $A$ on that attribute as the "soft likelihood of $A$ satisfying the attribute." Inclusion is thus modeled as a continuous, geometrically-driven profile compatibility rather than strict set inclusion, allowing poset relationships to be inferred without access to the ground-truth hierarchy.
 
-### Key Design 4: Soft Inclusion Measure
+**4. Concept Algebra: Defining Meet and Join on embedding regions to transform compositional reasoning into geometric operations**
 
-The soft measure for concept subsumption $A \sqsubseteq B$:
-
-$$\text{Inclusion}(A \sqsubseteq B) = \frac{\sum_{m \in M} \phi(\pi_B(m)) \cdot \sigma(\pi_A(m))}{\sum_{m \in M} \phi(\pi_B(m))}$$
-
-where $\phi(x) = \log(1 + e^x)$ (softplus) weights each attribute by its salience in $B$, and $\sigma(\cdot)$ maps $A$'s projection to a soft likelihood of attribute satisfaction.
-
-### Key Design 5: Concept Algebra (Meet & Join)
-
-- **Meet**: $A \wedge B := \mathcal{R}(Y_A \cup Y_B)$, i.e., the region satisfying all attributes of both concepts simultaneously.
-- **Join**: $A \vee B := \mathcal{R}(Y_A) \cup \mathcal{R}(Y_B)$, i.e., the smallest region covering both concepts.
-
-Soft profiles are computed via fuzzy t-norm/co-norm:
-
-$$\pi_{A \wedge B}(m) = \min\{\pi_A(m), \pi_B(m)\}, \quad \pi_{A \vee B}(m) = \max\{\pi_A(m), \pi_B(m)\}$$
-
-Soft equivalence is obtained by symmetrizing the inclusion measure via harmonic mean.
-
-### Attribute Direction and Threshold Estimation
-
-- **Attribute directions**: Regularized Fisher's linear discriminant — $\bar{\ell}_m := (\Sigma_+ + \Sigma_- + \lambda I)^{-1}(\bm{\mu}_+ - \bm{\mu}_-)$, with Ledoit–Wolf shrinkage for covariance estimation.
-- **Thresholds**: Midpoint of mean projections of positive and negative objects — $\tau_m := \frac{1}{2}(\mathbb{E}_{g \in G_+}[\text{Proj}_m(\mathbf{v}_g)] + \mathbb{E}_{g \in G_-}[\text{Proj}_m(\mathbf{v}_g)])$.
-- **Object embeddings**: Mean embeddings of WordNet synsets to reduce lexical noise.
+Concept combinations are computed directly within the half-space model. The Meet operation $A \wedge B := \mathcal{R}(Y_A \cup Y_B)$ represents the narrower region satisfying all attributes of both (geometrically the intersection of two sets of half-spaces). The Join operation $A \vee B := \mathcal{R}(Y_A) \cup \mathcal{R}(Y_B)$ represents the smallest region covering both, approximated by the conic hull of their attribute directions. On continuous profiles, these are implemented using fuzzy logic t-norms/co-norms: $\pi_{A \wedge B}(m) = \min\{\pi_A(m), \pi_B(m)\}$ and $\pi_{A \vee B}(m) = \max\{\pi_A(m), \pi_B(m)\}$. Consequently, compositional reasoning (e.g., $dog \vee wolf$ yielding a hypernym, $horse \wedge zebra$ yielding a refined intersection) becomes an algebraic operation directly executable on embeddings.
 
 ---
 
@@ -111,12 +97,12 @@ Soft equivalence is obtained by symmetrizing the inclusion measure via harmonic 
 
 ### Experimental Setup
 
-- **Datasets**: Five domain-specific datasets constructed from the WordNet hierarchy (WN-Animal, WN-Plant, WN-Food, WN-Event, WN-Cognition); the first three are physical domains, the latter two are abstract.
-- **Attribute annotation**: GPT-4o is used to generate attribute schemas and annotate binary attribute matrices as ground truth.
+- **Datasets**: 5 domain datasets constructed from WordNet hierarchies (WN-Animal, WN-Plant, WN-Food, WN-Event, WN-Cognition). The first three are physical domains; the latter two are abstract.
+- **Attribute Annotation**: GPT-4o was used to generate attribute schemas and annotate binary attribute matrices as ground truth.
 - **Models**: LLaMA3.1-8B, Gemma-7B, Mistral-7B.
-- **Baselines**: Random and Mean (centroid embedding).
+- **Baselines**: Random, Mean (Centroid embeddings).
 
-### Main Results — Table 1: Formal Context Recovery (Validation of the Half-Space Model)
+### Main Results Table 1: Formal Context Recovery (Half-space Model Validation)
 
 | Model | Method | WN-Animal F1 | WN-Plant F1 | WN-Food F1 | WN-Event F1 | WN-Cognition F1 |
 |------|------|:---:|:---:|:---:|:---:|:---:|
@@ -130,9 +116,9 @@ Soft equivalence is obtained by symmetrizing the inclusion measure via harmonic 
 | Mistral-7B | Mean | 62.0 | 61.4 | 62.1 | 56.5 | 63.3 |
 | Mistral-7B | **Linear** | **81.8** | **81.7** | **78.2** | **69.7** | **74.1** |
 
-**Key Findings**: The Linear method significantly outperforms baselines across all models and domains, achieving F1 > 78% in physical domains and > 69% in abstract domains, validating the effectiveness of the half-space model.
+**Findings**: The Linear method significantly outperforms baselines across all models and domains, achieving F1 > 78% in physical domains and > 69% in abstract domains, validating the half-space model.
 
-### Main Results — Table 2: Partial-Order Reasoning (Validation of Lattice Geometry)
+### Main Results Table 2: Poset Inference (Lattice Geometry Validation)
 
 | Model | Method | WN-Animal F1 | WN-Plant F1 | WN-Food F1 | WN-Event F1 | WN-Cognition F1 |
 |------|------|:---:|:---:|:---:|:---:|:---:|
@@ -146,54 +132,54 @@ Soft equivalence is obtained by symmetrizing the inclusion measure via harmonic 
 | Mistral-7B | Mean | 64.9 | 60.5 | 54.8 | 55.0 | 52.6 |
 | Mistral-7B | **Linear** | **72.1** | **57.1** | **62.0** | **61.8** | **61.1** |
 
-**Key Findings**: The soft inclusion measure based on projection profiles can directly infer concept subsumption relations from embedding geometry without access to ground-truth hierarchies.
+**Findings**: The soft inclusion metric based on projection profiles can infer concept subsumption directly from embedding geometry without accessing the ground-truth hierarchy.
 
-### Ablation Study & Supplementary Analysis
+### Ablation Study
 
-- **Qualitative Validation of Concept Algebra (Table 3)**: The Join operation reliably returns hypernyms (e.g., dog∨wolf → predator/canine/mammal), while the Meet operation yields refined intersections (e.g., horse∧zebra → pony/stallion/foal), consistent with WordNet hyponymy relations.
-- **Physical vs. Abstract Domains**: Physical domains (Animal, Plant, Food) consistently outperform abstract domains (Event, Cognition), as physical concepts are grounded in concrete perceptual attributes, whereas abstract concepts rely on more complex contextual attributes.
-- **Effect of Model Scale (LLaMA-3, 3B→70B)**: Scaling provides limited improvement in physical domains (smaller models already encode perceptual attributes well), but yields substantial gains in abstract domains, suggesting that larger models allocate more capacity to abstract conceptual structure.
-- **Attribute Correlation Analysis**: PCA visualization shows that attribute directions naturally organize into semantic clusters (e.g., "eats grass" and "eats plants" are proximate; "swims in water" and "lives in the sea" cluster together), confirming the semantic coherence of attribute directions.
+- **Qualitative Validation of Concept Algebra (Table 3)**: Join operations reliably return hypernyms (e.g., $dog \vee wolf \to predator/canine/mammal$), while Meet operations produce refined intersections (e.g., $horse \wedge zebra \to pony/stallion/foal$), aligning with WordNet.
+- **Physical vs. Abstract Domains**: Physical domains (Animal, Plant, Food) consistently outperform abstract ones (Event, Cognition) because physical concepts rely on concrete perceptual attributes, whereas abstract concepts depend on complex contextual attributes.
+- **Model Scaling Effects (LLaMA-3, 3B→70B)**: Increasing scale has limited impact on physical domains (small models already encode perceptual attributes well) but significant impact on abstract domains, suggesting larger models allocate more capacity to abstract conceptual structures.
+- **Attribute Correlation Analysis**: PCA visualization shows that attribute directions naturally organize into semantic clusters (e.g., "herbivorous" is close to "eating plants"), validating semantic coherence.
 
 ---
 
 ## Highlights & Insights
 
-1. **Elegant theoretical unification**: This is the first work to formally unify the Linear Representation Hypothesis with Formal Concept Analysis via half-space intersections, providing a novel mathematical framework for understanding concept encoding in LLMs.
-2. **A bridge from continuous to symbolic**: The paper demonstrates that symbolic concept lattice structures can emerge naturally from continuous embedding geometry without the explicit intervention of a symbolic system.
-3. **Operationalizable concept algebra**: Meet and Join operations defined directly in embedding space make compositional concept reasoning tractable.
-4. **Comprehensive experimental design**: The theoretical hypothesis is validated progressively across three levels — half-space verification, partial-order reasoning, and concept algebra — combining quantitative and qualitative evidence.
-5. **Potential value for AI safety**: Understanding the geometric encoding of concepts can facilitate reliable control and steering of LLM reasoning behavior.
+1. **Elegant Theoretical Unification**: This work is the first to formally unify the Linear Representation Hypothesis and Formal Concept Analysis through half-space intersections, providing a new mathematical framework for understanding LLM conceptual encoding.
+2. **Bridge from Continuous to Symbolic**: It proves that symbolic concept lattice structures can naturally emerge from continuous embedding geometry without explicit symbolic systems.
+3. **Actionable Concept Algebra**: By defining Meet/Join operations directly on the embedding space, compositional reasoning becomes possible within the geometry.
+4. **Comprehensive Experimental Verification**: The hypothesis is validated progressively through half-space verification, poset inference, and concept algebra, combining quantitative and qualitative analysis.
+5. **Value for AI Safety**: Understanding the geometric encoding of concepts facilitates more reliable control and guidance of LLM reasoning pathways.
 
 ---
 
 ## Limitations & Future Work
 
-1. **Reliance on GPT-4o for attribute annotation**: The ground-truth formal contexts are generated by GPT-4o, which may introduce annotation bias and does not constitute ground truth in the strictest sense.
-2. **Validation limited to WordNet sub-hierarchies**: Experiments are confined to five WordNet domains and have not been validated on larger-scale or more diverse knowledge systems.
-3. **Performance gap in abstract domains**: F1 scores in the Event and Cognition domains are substantially lower than in physical domains, indicating that modeling non-perceptual concepts requires further improvement.
-4. **Single-layer embeddings**: Only the last-layer hidden states are used; differences in lattice structure across layers remain unexplored.
-5. **Strong linearity assumption**: The requirement that attribute directions be linearly separable may not hold for highly entangled or context-dependent attributes.
-6. **Absence of downstream task validation**: The practical utility of the lattice representation hypothesis for real reasoning tasks (e.g., natural language inference, knowledge graph completion) is not demonstrated.
+1. **Dependence on GPT-4o for Attribute Labels**: Ground-truth contexts were generated by GPT-4o, which may introduce annotation bias.
+2. **Validation Limited to WordNet Sub-hierarchies**: Experiments were restricted to 5 WordNet domains and lack validation on larger, more diverse knowledge systems.
+3. **Performance Gap in Abstract Domains**: F1 scores for Event and Cognition domains are significantly lower than for physical domains, indicating the need for improved modeling of non-perceptual concepts.
+4. **Single-layer Analysis**: Only the final hidden states were used, leaving layer-wise differences in lattice structures unexplored.
+5. **Strong Constraints of Linear Assumptions**: The requirement for linear separability of attribute directions may not hold for highly entangled or context-dependent attributes.
+6. **Lack of Downstream Task Validation**: The utility of the Lattice Representation Hypothesis for practical tasks like NLI or knowledge graph completion has yet to be demonstrated.
 
 ---
 
 ## Related Work & Insights
 
-- **Probing conceptual knowledge in LLMs**: Prior work uses binary probes or hierarchical clustering to verify that language models capture conceptual knowledge from ontologies such as WordNet (Wu et al., 2023; Lin & Ng, 2022), but does not explain *how* such knowledge is encoded.
-- **Linear Representation Hypothesis**: From Word2Vec (Mikolov et al., 2013) to modern LLMs, semantic features have been shown to be encoded as linear directions (Park et al., 2024a/b; Gurnee & Tegmark, 2024); this paper extends that framework to lattice structure.
-- **Causal inner product unification**: Park et al. (2024a) unify contextual embedding and token unembedding spaces via a causal inner product; this paper constructs lattice geometry in that unified space.
-- **Emergence of polytopes**: Elhage et al. (2022) observe emergent polyhedral structure in toy models, suggesting richer geometry beyond single directions.
-- **FCA and language models**: Xiong & Staab (2025) first connect FCA with language models, but restrict attention to masked language models; this paper extends the framework to autoregressive LLMs.
+- **Concept Knowledge Probing in LLMs**: Studies have verified that LMs capture conceptual knowledge in ontologies like WordNet (Wu et al., 2023), but didn't explain the encoding mechanism.
+- **Linear Representation Hypothesis**: Semantic features are encoded as linear directions from Word2Vec (Mikolov et al., 2013) to modern LLMs (Gurnee & Tegmark, 2024); Ours extends this to lattice structures.
+- **Causal Inner Product Unification**: Park et al. (2024a) unified context embeddings and token de-embedding spaces; Ours builds lattice geometry upon this unified space.
+- **Emergence of Polytopes**: Elhage et al. (2022) observed polyhedral structures in toy models, hinting at richer geometries beyond single directions.
+- **FCA and Language Models**: Xiong & Staab (2025) first linked FCA with masked language models; Ours extends this to autoregressive LLMs.
 
 ---
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The first work to unify the Linear Representation Hypothesis with FCA and propose the Lattice Representation Hypothesis; the theoretical perspective is highly original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Three-level progressive validation across multiple models and domains; however, the reliability of attribute annotations and the experimental scale could be strengthened.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Rigorous mathematical formalization, clear conceptual exposition, and intuitive illustrations.
-- **Value**: ⭐⭐⭐⭐ — Provides a profound theoretical framework for understanding LLM representations, though the absence of downstream task validation limits immediate practical impact.
+- **Novelty**: ⭐⭐⭐⭐⭐ — Unifying LRH with FCA via LRH is highly original.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Triple-layer validation across multiple models, though attribute reliability could be strengthened.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Rigorous mathematical formalism and clear illustrations.
+- **Value**: ⭐⭐⭐⭐ — Provides a profound theoretical framework, though downstream utility is yet to be proven.
 
 <!-- RELATED:START -->
 
@@ -202,10 +188,10 @@ Soft equivalence is obtained by symmetrizing the inclusion measure via harmonic 
 ## Related Papers
 
 - [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](../../ICML2026/llm_nlp/the_cylindrical_representation_hypothesis_for_language_model_steering.md)
-- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
-- [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](../../AAAI2026/llm_nlp/profuser_progressive_fusion_of_large_language_models.md)
-- [\[ICML 2026\] Rare Event Analysis of Large Language Models](../../ICML2026/llm_nlp/rare_event_analysis_of_large_language_models.md)
-- [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](../../ACL2026/llm_nlp/repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
+- [\[ACL 2025\] Leveraging Large Language Models to Measure Gender Representation Bias in Gendered Language Corpora](../../ACL2025/llm_nlp/leveraging_large_language_models_to_measure_gender_representation_bias_in_gender.md)
+- [\[ICLR 2026\] COSMOS: A Hybrid Adaptive Optimizer for Efficient Training of Large Language Models](cosmos_a_hybrid_adaptive_optimizer_for_efficient_training_of_large_language_mode.md)
+- [\[ICLR 2026\] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities](differential_fine-tuning_large_language_models_towards_better_diverse_reasoning_.md)
+- [\[ACL 2025\] Representation Bending for Large Language Model Safety](../../ACL2025/llm_nlp/repbend_representation_bending_safety.md)
 
 </div>
 

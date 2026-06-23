@@ -2,132 +2,139 @@
 title: >-
   [Paper Note] Trapped by simplicity: When Transformers fail to learn from noisy features
 description: >-
-  [ICLR 2026][LLM/NLP][noise-robust learning] This paper demonstrates that Transformers fail to learn Boolean functions from feature-noisy data. Their simplicity bias—a tendency to learn low-sensitivity functions—causes mo…
+  [ICLR 2026][LLM (Other)][Transformer] Research demonstrates that Transformers fail to learn Boolean functions from data containing feature noise—their simplicity bias (tendency to learn low-sensitivity functions) causes models to be trapped by optimal noise predictors that are simpler than the target function, preventing the recovery of the true noise-free
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "noise-robust learning"
-  - "simplicity bias"
-  - "Boolean functions"
-  - "Transformer"
-  - "sensitivity"
+  - ICLR 2026
+  - LLM (Other)
+  - Transformer
 date: 2026-05-08
-content_hash: ed88dab9b30b15c3
+content_hash: c984f88c2585aab5
 ---
-
 # Trapped by simplicity: When Transformers fail to learn from noisy features
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.08695](https://arxiv.org/abs/2602.08695)  
 **Code**: [https://github.com/peterse/noise-robust-boolean-learning/](https://github.com/peterse/noise-robust-boolean-learning/)  
-**Area**: LLM NLP / Transformer Theoretical Analysis
-**Keywords**: noise-robust learning, simplicity bias, Boolean functions, Transformer, sensitivity
+**Area**: LLM NLP / Transformer Theoretical Analysis  
+**Keywords**: Noise-robust learning, simplicity bias, Boolean functions, Transformer, sensitivity
 
 ## TL;DR
-This paper demonstrates that Transformers fail to learn Boolean functions from feature-noisy data. Their simplicity bias—a tendency to learn low-sensitivity functions—causes models to become trapped at optimal noisy predictors that are simpler than the target function, preventing recovery of the true noiseless target.
+Research demonstrates that Transformers fail to learn Boolean functions from data containing feature noise—their simplicity bias (tendency to learn low-sensitivity functions) causes models to be trapped by optimal noise predictors that are simpler than the target function, preventing the recovery of the true noise-free target.
 
 ## Background & Motivation
 
-**Background**: LLM training data pervasively contains noise (typos, grammatical errors, semantic inconsistencies), yet these models are frequently applied to noise-sensitive tasks such as arithmetic reasoning, where each token prediction depends on preceding noiseless inputs. Prior work has shown that Transformers trained without noise exhibit robustness to test-time noise, but the ability to learn from training data that itself contains feature noise remains underexplored.
+**Background**: Training data for LLMs commonly contains noise (typos, grammatical errors, semantic inconsistencies), yet these models are often applied to tasks highly sensitive to noise (e.g., arithmetic reasoning), where each token prediction depends on previous noise-free inputs. Prior studies show Transformers exhibit robustness to test-time noise after noise-free training, but learning capabilities when the "training data itself contains feature noise" remain under-explored.
 
-**Limitations of Prior Work**: It is known that Transformers exhibit **simplicity bias**, preferring to learn Boolean functions of low sensitivity. Prior work has focused mainly on the effect of label noise, whereas feature noise (input bit flips) is qualitatively different—it renders the optimal predictor $f_N^*$ simpler than the target function $f$.
+**Limitations of Prior Work**: Transformers are known to possess a **simplicity bias**, favoring the learning of Boolean functions with low sensitivity. Previous work primarily focused on the impact of label noise, whereas the impact of feature noise (input bit flips) is qualitatively different—it renders the optimal predictor $f_N^*$ simpler than the target function $f$.
 
-**Key Challenge**: Under feature-noisy training data, the Bayes-optimal predictor $f_N^*$ typically has lower sensitivity than the target function $f$. The simplicity bias of Transformers causes them to favor learning $f_N^*$ over $f$, resulting in failure to generalize to noiseless data.
+**Key Challenge**: When training data contains feature noise, the Bayesian optimal predictor $f_N^*$ typically has lower sensitivity than the target function $f$. The simplicity bias of Transformers specifically biases them toward learning $f_N^*$ rather than $f$, leading to generalization failure on noise-free data.
 
-**Goal**: Can Transformers learn the correct noiseless target function from feature-noisy data (noise-robust learning)? Under what conditions does this succeed or fail? How can failure be explained and mitigated?
+**Goal**: Can Transformers learn the correct noise-free target function from feature-noisy data (noise-robust learning)? Under what conditions does this succeed or fail? How can these failures be explained and mitigated?
 
-**Key Insight**: The study adopts the theoretical framework of Boolean functions, using sensitivity as a complexity measure. It establishes a theoretical framework for noise-robust learning from the perspective of information theory and noisy-channel coding, and designs "trap function" controlled experiments to isolate the effect of simplicity bias.
+**Key Insight**: An analysis is conducted through the theoretical framework of Boolean functions—using sensitivity as a complexity measure. A framework for noise-robust learning is established from the perspectives of information theory and noise channel coding, accompanied by "trap function" control experiments to isolate the effects of simplicity bias.
 
-**Core Idea**: The simplicity bias of Transformers causes them to become "trapped" at simpler optimal noisy predictors under feature noise, leading to systematic failure in noise-robust learning of random Boolean functions.
+**Core Idea**: The simplicity bias of Transformers causes them to be "trapped" by simpler optimal noise predictors under feature noise, resulting in systematic failures in noise-robust learning for random Boolean functions.
 
 ## Method
 
 ### Overall Architecture
-The study is structured as theoretical analysis combined with controlled experiments. The input is a binary string $X$ of length $n$; the goal is to learn a Boolean function $f(X)$. Training inputs $Z = X \oplus E$ are subject to independent bit-flip noise with flip probability $p$, while labels $Y = f(X)$ are noiseless. The central question is whether a model trained on noisy data $(Z, Y)$ can correctly generalize to noiseless test data $(X, Y)$.
+This paper addresses a specific question: Can Transformers learn the true target function when training inputs are corrupted by noise while labels remain clean? To this end, the authors abstract the problem into Boolean function learning, supported by a theoretical framework and controlled experiments. The setup utilizes a binary string $X$ of length $n$ as input, with the target being a Boolean function $f(X)$. During training, the model observes inputs $Z = X \oplus E$ subject to independent bit-flip noise (flip probability $p$), while labels $Y = f(X)$ are noise-free. Key to this is the distribution shift between training and testing—the model trains on noisy data $(Z, Y)$ but must generalize to noise-free data $(X, Y)$. The analysis revolves around what the model converges to under this shift: first deriving the theoretical optimal predictor $f_N^*$ from a noise channel coding perspective, then distinguishing between two classes of functions. For "self-predicting functions" like parity and odd-bit majority, $f$ itself is the optimal solution and learning succeeds; for general random Boolean functions, $f_N^*$ is systematically simpler, and Transformer simplicity bias traps the model on $f_N^*$. Finally, trap function experiments confirm that simplicity bias, rather than a gap in validation error, drives the failure.
+
+As this is a theoretical/analytical paper, there is no fixed network architecture to illustrate; however, the argumentation follows a branching logical chain. The inference process—from noisy data to success/failure paths and mitigation strategies—is visualized in the flowchart below, corresponding to the four key designs (top-down: noise channel coding $\rightarrow$ sensitivity analysis of self-predicting/random functions $\rightarrow$ trap function experiments):
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Noisy Training Data<br/>Inputs Z=X⊕E flipped<br/>Labels Y=f(X) clean"] --> B["Noise Channel Coding Perspective<br/>Learning ≈ Channel Decoding<br/>Derive Optimal Predictor f_N*"]
+    B --> C["Self-predicting Functions<br/>parity / odd maj: f=f_N*<br/>Successful learning via loss minimization"]
+    B --> D["Sensitivity Analysis of Random Boolean Functions<br/>General f: f_N* sensitivity lower than f"]
+    D --> E["Simplicity Bias Favors Low Sensitivity<br/>Model trapped in f_N* instead of f<br/>Noise-Robust Learning Fails"]
+    E --> F["Trap Function Control Experiments<br/>err nearly equal, sensitivity gap large<br/>Isolating simplicity bias"]
+    F -->|"Add sensitivity penalty term −λI"| G["Escape the trap, learn f"]
+```
 
 ### Key Designs
 
-1. **Theoretical Framework from a Noisy-Channel Coding Perspective**:
+**1. Noise Channel Coding: Translating "Learning from Noise" into Communication**
 
-    - Function: Establishes a connection between noise-robust learning and information theory.
-    - Mechanism: Models next-token prediction as a communication process—sender Alice encodes information $Y = f(X)$ into sequence $X$, and receiver Bob observes the noisy version $Z$. The Bayes-optimal predictor is $f_N^*(x) := \text{sign}(T_{1-2p} f(x))$, where $T_\rho$ is the noise operator. Information-theoretic upper and lower bounds on the optimal error rate are established via Fano's inequality: $\Phi^{-1}(H(Y|Z)) \leq \text{err}_f(f_N^*) \leq \phi^{-1}(H(Y|Z))$.
-    - Design Motivation: Unlike prior compression-based analyses (source coding), the noisy-channel coding perspective precisely characterizes the effect of feature noise on learning.
+To analyze the impact of feature noise, a framework is needed to characterize it precisely. The authors model next-token prediction as a communication task: a sender Alice encodes information $Y = f(X)$ into a sequence $X$, and a receiver Bob receives a noisy version $Z$. "Learning" thus becomes equivalent to "decoding over a noisy channel." In this perspective, the Bayesian optimal predictor has a closed-form $f_N^*(x) := \text{sign}(T_{1-2p} f(x))$, where $T_\rho$ is the noise operator. The optimal error rate is bounded by Fano’s inequality using information-theoretic bounds:
 
-2. **Analysis of "Self-Predicting" Functions**:
+$$\Phi^{-1}(H(Y|Z)) \leq \text{err}_f(f_N^*) \leq \phi^{-1}(H(Y|Z))$$
 
-    - Function: Proves that parity and majority functions (odd-length) are self-predicting ($f = f_N^*$), and hence Transformers can successfully learn them.
-    - Mechanism: **Proposition 1** proves that for $\text{maj}_n$ (odd $n$) and $\text{parity}$, the target function is itself the optimal predictor of noisy data. This implies that ordinary loss minimization recovers the target function. Experimental validation confirms that Transformers successfully perform noise-robust learning on $\text{maj}(20,5)$, $\text{maj}(40,5)$, and $\text{parity}(20,4)$, with the median Transformer outperforming the best LSTM.
-    - Design Motivation: Demonstrates that prior work on parity/majority conveyed an overly optimistic impression—these functions are special cases.
+This noise channel coding language differs from traditional compression-based (source coding) analyses—source coding focuses on shortening clean information, whereas the core contradiction here is how noise alters the optimal solution.
 
-3. **Sensitivity Analysis of Random Boolean Functions (Core Theoretical Contribution)**:
+**2. Self-predicting Functions: Why Parity and Majority Seem "Fine"**
 
-    - Function: Proves that for random Boolean functions, the optimal noisy predictor has, on average, lower sensitivity than the target function.
-    - Mechanism: **Proposition 2** proves that for uniformly sampled Boolean functions $f$, when $n$ is sufficiently large, $\mathbb{E}_f[I[f_N^*]] \approx \frac{n}{\pi} \arccos\left(\frac{2p(1-p)}{p^2+(1-p)^2}\right)$, and $\mathbb{E}_f[I[f]] > \mathbb{E}_f[I[f_N^*]]$. This is empirically validated on 3,200 random $k$-juntas, where all samples satisfy $I[f] \geq I[f_N^*]$.
-    - Design Motivation: This is the central finding—because $f_N^*$ is simpler than $f$, the simplicity bias of Transformers causes them to learn $f_N^*$ rather than $f$.
+Focusing only on parity and odd-bit majority leads to overly optimistic conclusions. Proposition 1 proves that for $\text{maj}_n$ (where $n$ is odd) and $\text{parity}$, the target function itself is the optimal predictor on noisy data, i.e., $f = f_N^*$. This implies that for these functions, standard loss minimization is sufficient to learn the target function, as no "trap" by simpler solutions exists. Experiments confirm this: Transformers successfully perform noise-robust learning on $\text{maj}(20,5)$, $\text{maj}(40,5)$, and $\text{parity}(20,4)$, with median Transformers outperforming the best LSTMs. In other words, these commonly studied functions are special cases—their success does not generalize.
 
-4. **"Trap Function" Controlled Experiments**:
+**3. Sensitivity Analysis of Random Boolean Functions: Optimal Noise Predictors are Systematically Simpler (Core Theoretical Contribution)**
 
-    - Function: Constructs special functions where validation error is close ($\text{err}_f(f_N^*) \approx \text{err}_f(f)$) but sensitivity differs substantially ($I[f_N^*] \ll I[f]$), isolating the effect of simplicity bias.
-    - Mechanism: Under these conditions, a model could in principle recover $f$ through loss minimization, yet Transformers are "trapped" by simplicity bias and converge to $f_N^*$. LSTMs also fail, but for a different reason (overfitting to training data). Adding a sensitivity penalty $-\lambda I[\hat{f}]$ to the loss function (penalizing low-sensitivity solutions) allows Transformers to escape the trap and learn $f$.
-    - Design Motivation: Precisely demonstrates that simplicity bias—rather than other factors—is the cause of noise-robust learning failure.
+Shifting focus to general random Boolean functions flips the conclusion. Proposition 2 proves that for a Boolean function $f$ sampled uniformly at random, the average sensitivity of the optimal noise predictor for sufficiently large $n$ is:
+
+$$\mathbb{E}_f[I[f_N^*]] \approx \frac{n}{\pi} \arccos\left(\frac{2p(1-p)}{p^2+(1-p)^2}\right)$$
+
+Furthermore, $\mathbb{E}_f[I[f]] > \mathbb{E}_f[I[f_N^*]]$, meaning the optimal noise predictor is on average simpler (lower sensitivity) than the target function. Experiments on 3200 random $k$-juntas verified this, with $I[f] \geq I[f_N^*]$ holding for all samples. This is the central discovery: since $f_N^*$ is simpler than $f$ and Transformers inherently prefer low-sensitivity solutions, they learn $f_N^*$ instead of the true $f$.
+
+**4. Trap Function Control Experiments: Isolating Simplicity Bias from Other Confounders**
+
+Proving "simpler" is not enough; one must rule out the possibility that the model simply chooses $f_N^*$ because it has lower validation error. The authors construct a class of "trap functions" where the validation error is nearly identical ($\text{err}_f(f_N^*) \approx \text{err}_f(f)$) but the sensitivity gap is large ($I[f_N^*] \ll I[f]$). In this setting, the model could theoretically learn $f$ via loss minimization, yet Transformers remain "trapped" by simplicity bias, converging to the simpler $f_N^*$. LSTMs also fail, but for a different reason—overfitting the training data. Furthermore, adding a sensitivity penalty $-\lambda I[\hat{f}]$ to the loss (penalizing low-sensitivity solutions) allows Transformers to escape the trap and learn $f$. This causal chain confirms that simplicity bias itself causes the failure.
 
 ### Loss & Training
-- Standard training: minimizes cross-entropy loss on noisy data.
-- Improved training: augments the loss with a complexity preference term $-\lambda I[\hat{f}]$ to penalize low-sensitivity solutions.
-- The choice of $\lambda$ is critical—there exists a narrow window in which Transformers can escape the trap.
+- Standard Training: Minimize cross-entropy loss on noisy data.
+- Improved Training: Add a complexity preference term $-\lambda I[\hat{f}]$ to penalize low-sensitivity solutions.
+- The choice of $\lambda$ is critical—there exists a narrow window allowing the Transformer to escape the trap.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of Transformers and LSTMs on noise-robust learning (300 runs per experimental setting):
+Comparison between Transformers and LSTMs in noise-robust learning (300 runs per setup):
 
-| Function | Model | Noise rate $p$ | Success rate of noise-robust learning | Notes |
-|----------|-------|---------------|--------------------------------------|-------|
-| maj(20,5) | SAN median | 0–0.4 | Near-optimal | Self-predicting; succeeds |
-| maj(20,5) | Best LSTM | 0.1+ | Significantly below optimal | Fails under moderate noise |
-| parity(20,4) | SAN | 0–0.3 | Higher than LSTM | Self-predicting function |
-| parity(20,4) | LSTM | 0.05+ | Near zero | Fails even at low noise |
-| Random $k$-junta | SAN | 0.2 | Mostly fails | Non-self-predicting |
-| maj(30,4) even | SAN | 0.32 | Fails | Non-self-predicting (imbalanced) |
+| Function | Model | Noise Rate $p$ | Noise-Robust Learning Success Rate | Description |
+|------|------|---------|-------------------|------|
+| $\text{maj}(20,5)$ | Median SAN | 0-0.4 | Near optimal | Self-predicting; Success |
+| $\text{maj}(20,5)$ | Best LSTM | 0.1+ | Significantly below optimal | Fails with moderate noise |
+| $\text{parity}(20,4)$ | SAN | 0-0.3 | Higher than LSTM | Self-predicting |
+| $\text{parity}(20,4)$ | LSTM | 0.05+ | Nearly zero | Fails even with low noise |
+| Random $k$-junta | SAN | 0.2 | Mostly fail | Non-self-predicting |
+| $\text{maj}(30,4)$ Even | SAN | 0.32 | Fail | Non-self-predicting (unbalanced) |
 
 ### Ablation Study
 
-| Configuration | Key Finding | Notes |
-|---------------|------------|-------|
-| No sensitivity penalty | Transformer trapped at $f_N^*$ | Validation error near-optimal but poor noiseless generalization |
-| Sensitivity penalty $\lambda$ (optimal) | Transformer escapes trap and learns $f$ | Requires precise tuning of $\lambda$ |
-| $\lambda$ too large | Learning fails | Preference for overly complex solutions |
-| LSTM + sensitivity penalty | Still fails | Overfitting cannot be resolved by sensitivity penalty |
+| Configuration | Key Finding | Description |
+|------|---------|------|
+| No Sensitivity Penalty | Transformer trapped in $f_N^*$ | Val error near optimal; poor noise-free generalization |
+| $\lambda$ Sensitivity Penalty (Opt) | Transformer escapes trap, learns $f$ | Requires precise tuning of $\lambda$ |
+| Excessive $\lambda$ | Learning fails | Bias toward overly complex solutions |
+| LSTM + Sensitivity Penalty | Still fails | Overfitting issues cannot be solved by sensitivity penalty |
 
 ### Key Findings
-- **Transformers systematically fail on random $k$-juntas**: Among 3,200 random functions, only those with $I[f] \approx I[f_N^*]$ are successfully learned.
-- **Simplicity bias is the root cause of failure**: Transformers achieve near-optimal validation error (performing well on noisy data) while performing poorly on noiseless test data—validation loss cannot guide selection of the correct model.
-- **LSTM failure has a fundamentally different cause**: Not simplicity bias, but overfitting to training data.
-- **Larger sensitivity gaps correlate with greater difficulty**: $I[f] - I[f_N^*]$ is positively correlated with noiseless generalization error.
+- **Systematic Failure on Random $k$-juntas**: Out of 3200 random functions, only a few where $I[f] \approx I[f_N^*]$ resulted in successful learning.
+- **Simplicity Bias as the Root Cause**: Transformers achieve near-optimal validation error (high performance on noisy data) but poor noise-free test performance—validation loss fails to guide the selection of the correct model.
+- **LSTM Failure Reason**: Unlike Transformers, LSTMs fail due to overfitting training data rather than simplicity bias.
+- **Correlation with Sensitivity Gap**: The difficulty of learning increases as the gap $I[f] - I[f_N^*]$ grows.
 
 ## Highlights & Insights
-- **The dual nature of simplicity bias**: Prior work regarded the simplicity bias of Transformers as advantageous (promoting generalization); this paper reveals that under feature noise it becomes the root cause of systematic failure. This perspective shift is highly illuminating.
-- **Trap function experimental design**: By carefully constructing functions where $\text{err}(f_N^*) \approx \text{err}(f)$ but $I[f_N^*] \ll I[f]$, the authors elegantly isolate the effect of simplicity bias and eliminate the confounding factor of a validation error gap.
-- **Information-theoretic perspective**: Connecting noise-robust learning to noisy-channel coding (rather than the conventional compression/source coding framing) provides a novel set of analytical tools.
-- **Implications for LLM training**: If sufficient noise or randomness is present in the training corpus, LLMs may be unable to learn precise discrete reasoning rules (e.g., arithmetic), as simplicity bias causes them to converge to "approximate but imprecise" solutions. This finding directly transfers to explaining the unreliability of LLMs in mathematical reasoning.
+- **Dual Nature of Simplicity Bias**: Previous research viewed simplicity bias as an advantage for generalization; this paper reveals it as a root cause of systematic failure under feature noise. This shift in perspective is highly insightful.
+- **Trap Function Design**: By constructing cases where $\text{err}(f_N^*) \approx \text{err}(f)$ but $I[f_N^*] \ll I[f]$, the authors elegantly isolate simplicity bias, ruling out "validation error gap" as a confounder.
+- **Information-Theoretic Perspective**: Linking noise-robust learning to noise channel coding (rather than the usual source coding/compression) provides a fresh analytical toolkit.
+- **Implications for LLM training**: If training corpora contain significant noise, LLMs may fail to learn precise discrete reasoning rules (e.g., arithmetic) because simplicity bias favors "approximate but imprecise" solutions. This translates to the unreliability observed in LLM mathematical reasoning.
 
 ## Limitations & Future Work
-- **Overly simplified noise model**: Only i.i.d. bit-flip noise is considered; the structured nature of real linguistic noise (grammatical errors, semantic inconsistencies) is not captured.
-- **Restricted function class**: Experiments are limited to random $k$-juntas, which may not represent the complexity of real learning problems.
-- **High noise rate requirement**: Many observed effects require relatively high noise rates, which may not be common in natural datasets.
-- **Sensitivity penalty is impractical**: Escaping the trap requires precise tuning of $\lambda$, which lacks operational feasibility in practice.
-- **Directions for improvement**: Investigating how more complex noise models (e.g., semantic noise in natural language) affect the conclusions; exploring alternative simplicity-bias mitigation methods such as curriculum learning and noise-aware training.
+- **Oversimplified Noise Model**: Only independent bit flips are considered; structured features of natural language noise (grammatical errors, etc.) are not captured.
+- **Limited Function Types**: Experiments are restricted to random $k$-juntas, which may not represent the complexity of real-world learning problems.
+- **High Noise Requirements**: Many observed effects require relatively high noise rates that might be uncommon in natural datasets.
+- **Impracticality of Sensitivity Penalty**: Escaping traps requires precise $\lambda$ tuning, which lacks operability in practical applications.
+- **Future Directions**: Investigating the impact of complex noise models (e.g., semantic noise) on these conclusions; exploring alternative mitigation methods (e.g., curriculum learning).
 
 ## Related Work & Insights
-- **vs. Bhattamishra et al. (2023b)**: They prove that Transformers prefer low-sensitivity functions and are robust to label noise. The key distinction of this paper is the study of **feature noise** rather than label noise, revealing that simplicity bias is harmful in this setting.
-- **vs. Vasudeva et al. (2025)**: They prove that Transformers trained without noise are robust to test-time noise. This paper further asks whether training on noisy data generalizes to noiseless testing—a question to which the answer is generally negative.
-- **vs. Deletang et al. (2024)**: They analyze language models from a compression/source coding perspective. This paper adopts a noisy-channel coding perspective, which is better suited to characterizing settings where training data contains noise.
-- Directly informs the understanding of LLM failures in mathematical reasoning: if noise in training data biases the optimal solution toward lower complexity, LLMs may learn "simplified" reasoning rules.
+- **vs. Bhattamishra et al. (2023b)**: They proved Transformer simplicity bias favors low sensitivity and is robust to label noise. The key difference here is the study of **feature noise**, where simplicity bias is found to be harmful.
+- **vs. Vasudeva et al. (2025)**: They showed Transformers are robust to test-time noise after noise-free training. This paper asks the inverse: Does training on noisy data generalize to noise-free tests? The answer is generally negative.
+- **vs. Deletang et al. (2024)**: They analyzed LMs via source coding/compression. This paper uses noise channel coding, which is better suited for describing noisy training scenarios.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Reveals the negative effect of simplicity bias under feature noise; solid theoretical contributions (proof of Proposition 2 and trap function design).
-- Experimental Thoroughness: ⭐⭐⭐⭐ 3,200 random functions, multiple function types, and elegantly designed controlled experiments; however, results are confined to synthetic Boolean function settings.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain; the progression from success cases to failure cases is natural, with tight integration of theory and experiments.
+- Novelty: ⭐⭐⭐⭐⭐ Reveals the negative effects of simplicity bias under feature noise; solid theoretical contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3200 random functions and sophisticated control designs, though limited to synthetic Boolean scenarios.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain; natural progression from success to failure cases; tight integration of theory and experiments.
 
 <!-- RELATED:START -->
 
@@ -135,11 +142,11 @@ Comparison of Transformers and LSTMs on noise-robust learning (300 runs per expe
 
 ## Related Papers
 
-- [\[ICLR 2026\] When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making](when_stability_fails_hidden_failure_modes_of_llms_in_data-constrained_scientific.md)
-- [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
-- [\[ICML 2026\] Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics](../../ICML2026/llm_nlp/deep_networks_learn_to_parse_uniform-depth_context-free_languages_from_local_sta.md)
-- [\[ACL 2026\] TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale](../../ACL2026/llm_nlp/tingis_real-time_risk_event_discovery_from_noisy_customer_incidents_at_enterpris.md)
 - [\[ICLR 2026\] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure](is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f.md)
+- [\[ICML 2025\] When Will It Fail?: Anomaly to Prompt for Forecasting Future Anomalies in Time Series](../../ICML2025/llm_nlp/when_will_it_fail_anomaly_to_prompt_for_forecasting_future_anomalies_in_time_ser.md)
+- [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
+- [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](../../AAAI2026/llm_nlp/vision_transformers_are_circulant_attention_learners.md)
+- [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](../../AAAI2026/llm_nlp/learning_spatial_decay_for_vision_transformers.md)
 
 </div>
 

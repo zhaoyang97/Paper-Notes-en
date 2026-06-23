@@ -2,75 +2,85 @@
 title: >-
   [Paper Note] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding
 description: >-
-  [ICLR 2026][LLM/NLP][Masked Diffusion LM] This paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize after unmasking—skipping Q projection a…
+  [ICLR 2026][LLM (Other)][Masked Diffusion LM] The paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize (skipping Q projection and FFN, while caching KV). This reduces the per-step attention complexity from $O(N^2d)$ to $O(MNd)$, achieving a 30-50% reduction in FLOPs on LLaDA-8B withou
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "Masked Diffusion LM"
-  - "Inference Acceleration"
-  - "Token Locking"
-  - "KL Divergence"
-  - "KV Cache"
+  - ICLR 2026
+  - LLM (Other)
+  - Masked Diffusion LM
+  - Inference Acceleration
+  - Token Locking
+  - KV Cache
 date: 2026-05-08
-content_hash: 6276867bb4ab9ac9
+content_hash: ddff63608d0b4793
 ---
-
 # Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.06412](https://arxiv.org/abs/2602.06412)  
 **Code**: [https://daioba.github.io/surelock](https://daioba.github.io/surelock)  
-**Area**: LLM/NLP
+**Area**: LLM/NLP  
 **Keywords**: Masked Diffusion LM, Inference Acceleration, Token Locking, KL Divergence, KV Cache
 
 ## TL;DR
-This paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize after unmasking—skipping Q projection and FFN while caching KV—thereby reducing per-step attention computation from $O(N^2d)$ to $O(MNd)$. SureLock achieves 30–50% FLOPs reduction on LLaDA-8B without degrading generation quality.
+The paper proposes SureLock, which permanently locks token positions in Masked Diffusion LMs once their posterior distributions stabilize (skipping Q projection and FFN, while caching KV). This reduces the per-step attention complexity from $O(N^2d)$ to $O(MNd)$, achieving a 30-50% reduction in FLOPs on LLaDA-8B without sacrificing generation quality.
 
 ## Background & Motivation
 
-**Background**: Masked Diffusion LMs (MDLMs, e.g., LLaDA, Dream) generate text via iterative denoising, requiring attention and FFN recomputation over all $N$ token positions at each step, with complexity $O(N^2d)$.
+**Background**: Masked Diffusion LMs (MDLMs, such as LLaDA and Dream) generate text through iterative denoising. Each step requires recomputing attention and FFN for all $N$ token positions, leading to a computational complexity of $O(N^2d)$.
 
-**Limitations of Prior Work**: Many tokens exhibit rapidly stabilizing posterior distributions after unmasking, yet standard samplers continue to recompute them at every step—resulting in substantial redundant computation. Existing acceleration methods either reduce the number of steps (temporal) or reuse KV across steps (reuse), but still emit $N$ query rows per step, leaving spatial complexity unchanged.
+**Limitations of Prior Work**: Many tokens stabilize their posterior distributions quickly after being unmasked, yet standard samplers continue redundant computations for them, resulting in significant computational waste. Existing acceleration methods either reduce the number of steps (temporal) or reuse KV across steps (reuse), but they still emit $N$ query rows per step, leaving the spatial complexity unchanged.
 
-**Key Challenge**: Bidirectional attention in MDLMs requires full computation at every step, yet most unmasked tokens have effectively "converged" and do not require recomputation.
+**Key Challenge**: The bidirectional attention in MDLMs necessitates full computation at each step, even though many unmasked tokens have "converged" and do not require recomputation.
 
-**Goal**: How to identify and permanently skip computation for converged tokens, achieving monotonically decreasing per-step computational cost?
+**Goal**: How to identify and permanently skip computation for converged tokens to achieve a monotonically decreasing computational load per step?
 
-**Key Insight**: Monitor the KL divergence of each token position's posterior between adjacent steps, and permanently lock positions whose divergence falls below a threshold $\varepsilon$.
+**Key Insight**: Monitor the KL divergence of each token position between adjacent steps and permanently lock positions that fall below a certain threshold.
 
-**Core Idea**: Tokens with stable posteriors permanently exit computation (KV locked, Q/FFN skipped), and the active set shrinks monotonically as sampling progresses.
+**Core Idea**: Tokens with stable posteriors permanently exit the computation pipeline (locking KV and skipping Q/FFN), causing the active set to shrink monotonically as sampling progresses.
 
 ## Method
 
 ### Overall Architecture
-At each iteration of MDLM, SureLock maintains two sets: the active set $\mathcal{A}_t$ (requiring computation) and the locked set $\mathcal{L}_t$ (computation skipped, but KV cached). Per-step Q projection and FFN are computed only for active positions; during attention, active tokens can still attend to locked tokens via cached KV.
+The primary overhead in MDLM arises from bidirectional attention, which necessitates recomputing Q projections, attention, and FFN for all $N$ tokens at each iteration, resulting in $O(N^2d)$ complexity. However, many tokens reach posterior stability shortly after being unmasked. SureLock aims to permanently remove these "converged positions" from the computation flow. In each step, it maintains two sets: an active set $\mathcal{A}_t$, where positions undergo standard Q, attention, and FFN computation, and a locked set $\mathcal{L}_t$, where positions are skipped while retaining their previously cached $K$ and $V$. After computing posteriors and unmasking new tokens, a cost-effective convergence criterion (inter-step KL divergence, optionally combined with a confidence gate) identifies stable positions to be locked—caching their K/V, freezing their posterior, and moving them out of the active set. As sampling progresses, the active set shrinks monotonically, reducing the computational complexity from $O(N^2d)$ to $O(M_tNd)$ (where $M_t$ is the number of active positions). Since locked tokens can still be attended to by other tokens via the cache, information is preserved. The threshold $\varepsilon$ in the criterion is derived from a closed-form theorem mapping it to a terminal error upper bound, providing a formal budget for locking aggressiveness.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Masked Sequence<br/>MDLM (e.g., LLaDA-8B)"] --> STEP["Active Set A_t: Compute Q, Attention, FFN<br/>Locked Set L_t: Feed cached K/V only"]
+    STEP --> POST["Obtain posterior p_t<br/>Unmask new tokens per strategy"]
+    POST --> CRIT{"Locking Criterion<br/>Inter-step KL D≤ε ∧ Confidence Gate"}
+    BOUND["Theoretical Error Upper Bound<br/>δ=C_tail·√ε, solve for ε"] -.Set Threshold.-> CRIT
+    CRIT -->|"Satisfied: Converged"| LOCK["Permanently Lock Position<br/>Cache K/V, Freeze posterior, Move from A_t"]
+    CRIT -->|"Not Satisfied: Remain Active"| NEXT
+    LOCK --> NEXT["Next Step<br/>Active Set M_t shrinks monotonically"]
+    NEXT -->|"t < T"| STEP
+    NEXT -->|"t = T"| OUT["Generation Output<br/>30–50% FLOPs Reduction"]
+```
 
 ### Key Designs
 
-1. **Permanent Locking Mechanism**:
+**1. Permanent Locking + KV Caching: Removing Converged Positions from the Pipeline**
 
-    - **Function**: Once token position $i$ is locked, Q projection and FFN are skipped for all subsequent steps, with cached $K, V$ values reused.
-    - **Mechanism**: After locking, $\hat{p}_t^{(i)} = p_{t^*}^{(i)}$ (posterior frozen), while $K^{\text{all}}[\mathcal{L}_t] \leftarrow \mathcal{C}.k[\mathcal{L}_t]$ ensures other tokens can still attend to locked positions.
-    - **Design Motivation**: Unlike selective-update methods (e.g., dLLM-Cache, which selects "what to compute now"), SureLock selects "what to permanently remove"—the active set is strictly non-increasing, guaranteeing monotonically decreasing computation.
+The design addresses the redundant computation performed by standard samplers on all unmasked tokens. Once a position $i$ is determined to have converged at step $t^*$, SureLock locks it—skipping its Q projection and FFN in all subsequent steps. The posterior is frozen at its value at the time of locking: $\hat{p}_t^{(i)} = p_{t^*}^{(i)}$. Locked positions are moved from the active set $\mathcal{A}_t$ to the locked set $\mathcal{L}_t$, where the active set is defined as $\mathcal{A}_t = \bar{\mathcal{M}}_t \setminus \mathcal{L}_t$ (unmasked but not yet locked). Locking does not mean disappearance; cached keys and values are fed back into the attention mechanism via $K^{\text{all}}[\mathcal{L}_t] \leftarrow \mathcal{C}.k[\mathcal{L}_t]$ (similarly for V), allowing active tokens to attend to these positions. This reduces the complexity of attention to $O(M_tNd)$ and FFN to $O(M_td^2)$. Unlike selective update methods like dLLM-Cache, which re-evaluate the active set at every step, SureLock's active set only decreases, making the computation reduction monotonic and predictable.
 
-2. **Locking Criterion: Inter-Step KL Divergence**:
+**2. Locking Criterion: Inter-step KL Divergence and Confidence Gating**
 
-    - **Function**: Position $i$ is locked when $D_t^{(i)} = \text{KL}(p_t^{(i)} \| p_{t-1}^{(i)}) \leq \varepsilon$.
-    - **Mechanism**: KL divergence measures the degree of change in the posterior between adjacent steps. The threshold $\varepsilon$ translates directly into a terminal error bound $\delta = C_{\text{tail}}\sqrt{\varepsilon}$.
-    - **Design Motivation**: Local KL is inexpensive to compute and theoretically tractable—Theorem 1 proves that the local KL at the locking step suffices to bound the deviation in the final token probability.
+To implement "permanent removal," a cheap and reliable convergence signal is required. The primary criterion is the KL divergence between the posterior distributions of adjacent steps:
 
-3. **Optional Confidence Gate**:
+$$D_t^{(i)} \triangleq \text{KL}(p_t^{(i)} \| p_{t-1}^{(i)})$$
 
-    - **Function**: $u_t^{(i)} = 1 - \max_v p_t^{(i)}(v) \leq q_m(u_t)$ serves as an auxiliary condition.
-    - **Design Motivation**: Acts as a safety net—only tokens with sufficiently peaked posteriors are locked, preventing premature locking of positions that remain uncertain.
+When this drops below a threshold $\varepsilon$, the position is marked as converged. Local KL is computationally inexpensive as posteriors are already computed. An **optional confidence gate** can be added as a safeguard: KL alone might occasionally misjudge a position that has low variation between steps but is still far from settling (flat posterior). The gate uses an uncertainty measure $u_t^{(i)} = 1 - \max_v p_t^{(i)}(v)$, accepting only positions within the top $m\%$ most confident active tokens ($u_t^{(i)} \leq q_m(u_t)$). The final locking rule is $D_{t^*}^{(i)} \leq \varepsilon \wedge u_{t^*}^{(i)} \leq q_m(u_{t^*})$; the method remains functional with only the KL criterion.
 
-4. **Theoretical Error Bound (Theorem 1)**:
+**3. Theoretical Error Upper Bound: Linking Local KL to Global Error**
 
-    - **Core Result**: $\|\log p_T^{(i)} - \log \hat{p}_T^{(i)}\|_\infty \leq C_{\text{tail}}\sqrt{D_{t^*}^{(i)}}$, where $C_{\text{tail}} = L_{\text{sm}} L / (1 - \sqrt{\rho})$.
-    - **Significance**: Establishes a closed-form mapping from a locally computable KL threshold to a global terminal error bound, providing principled guidance for hyperparameter selection.
+This design justifies the use of a cheap local KL metric for permanent locking. Theorem 1 provides a closed-form bound:
+
+$$\|\log p_T^{(i)} - \log \hat{p}_T^{(i)}\|_\infty \leq C_{\text{tail}}\sqrt{D_{t^*}^{(i)}}$$
+
+where $C_{\text{tail}} = L_{\text{sm}} L / (1 - \sqrt{\rho})$ is determined by the operator norm constants of the model. It directly maps the locally computed $D_{t^*}^{(i)}$ at the moment of locking to the global deviation of the final token log-probability relative to a "no locking" baseline. This eliminates the need for trial-and-error thresholding; given a tolerable terminal error $\delta = C_{\text{tail}}\sqrt{\varepsilon}$, one can solve for $\varepsilon(\delta) = \delta^2 / C_{\text{tail}}^2$. The authors note that this bound is **intentionally conservative and design-oriented** rather than a precise predictor, and it relies on strong assumptions such as geometric tail contraction.
 
 ### Loss & Training
-SureLock is a **training-free** inference-time method that does not modify model parameters. It is orthogonal to and composable with existing temporal and reuse acceleration methods.
+SureLock is a **training-free** inference-time method that does not modify model parameters. It is orthogonal to existing temporal (step reduction) and reuse (cross-step KV reuse) acceleration methods and can be combined with them.
 
 ## Key Experimental Results
 
@@ -79,47 +89,47 @@ SureLock is a **training-free** inference-time method that does not modify model
 **LLaDA-8B-Instruct (MT-Bench + WikiText-103)**:
 
 | Configuration | FLOPs Reduction | Generation Quality |
-|---|---|---|
-| Baseline (no locking) | 0% | Baseline |
+|---------------|-----------------|--------------------|
+| Baseline (No Locking) | 0% | Baseline |
 | SureLock (ε=0.01) | ~30% | ≈ Baseline |
 | SureLock (ε=0.05) | ~50% | ≈ Baseline |
-| SureLock (ε=0.1) | ~50%+ | Slight degradation |
+| SureLock (ε=0.1) | ~50%+ | Slight Decrease |
 
 ### Ablation Study
 
-| Configuration | FLOPs Savings | Quality | Notes |
-|---|---|---|---|
-| KL criterion only | Comparable to full method | ≈ | KL alone suffices as the sole criterion |
-| Confidence gate only | Less aggressive | Maintained | Confidence alone is insufficient |
-| Without KV caching | Same FLOPs | Significant degradation | Locked tokens become unattendable, causing information loss |
+| Configuration | FLOPs Savings | Quality | Description |
+|---------------|---------------|---------|-------------|
+| KL Criterion Only | Comparable to Full | ≈ | KL is sufficient as a standalone criterion |
+| Confidence Gate Only | Less Savings | Maintained | Confidence alone is not aggressive enough |
+| No KV Caching | Identical FLOPs | Significant Drop | Loss of information as locked tokens cannot be attended to |
 
 ### Key Findings
-- The active position count $M_t$ **monotonically decreases** with step index, confirming the hypothesis that tokens converge progressively.
-- 30–50% FLOPs reduction incurs **zero or negligible degradation** on WikiText-103 perplexity and MT-Bench scores.
-- SureLock is orthogonal to temporal methods (step reduction) and reuse methods (cross-step KV reuse), and can be combined with both.
-- Although the theoretical bound is conservative (designed for guidance rather than precise prediction), it provides clear principled guidance for tuning $\varepsilon$.
+- The number of active positions $M_t$ **decreases monotonically** with the number of steps, validating the hypothesis that more tokens converge over time.
+- A 30-50% reduction in FLOPs is achieved with **zero or negligible loss** in WikiText-103 perplexity and MT-Bench scores.
+- The method is orthogonal to temporal and reuse methods and can be layered for cumulative gains.
+- Although the theoretical bound is conservative, it provides clear guidance for hyperparameter ($\varepsilon$) selection.
 
 ## Highlights & Insights
-- **From "which computations to perform" to "which computations to permanently eliminate"**: This perspective shift is the key innovation. The strictly shrinking active set yields a monotonically decreasing computation curve, making the approach more predictable than selective-update methods.
-- **Theory-practice closed loop**: The closed-form relationship between KL threshold and terminal error bound provides theoretically grounded hyperparameter selection without relying on empirical tuning—a rare property in systems acceleration work.
-- **Complementarity with d²Cache**: d²Cache selectively determines which tokens to update at each step at fine granularity, while SureLock permanently removes converged tokens—the two approaches are composable.
+- **Shift from "what to compute" to "what to permanently remove"**: This perspective shift is a key innovation. A shrinking-only active set makes the computation curve monotonic and more predictable than selective update methods.
+- **Theory-Practice Loop**: The closed-form relationship between the KL threshold and terminal error bound provides a theoretical basis for hyperparameter selection, which is rare in systems acceleration work.
+- **Complementary to d²Cache**: While d²Cache performs fine-grained selection of tokens to update at each step, SureLock permanently removes converged tokens—the two can be combined.
 
 ## Limitations & Future Work
-- The geometric tail-contraction assumption (A2) in Theorem 1 is relatively strong; posterior dynamics may not strictly satisfy it in practice.
-- Permanent locking is irreversible—if a locked token's optimal value changes due to updates at other positions, recovery is impossible.
-- Validation is limited to LLaDA-8B; other MDLMs (e.g., Dream, MDLM-original) are not evaluated.
-- The locking threshold $\varepsilon$ still requires manual specification, and the constant $C_{\text{tail}}$ in the theoretical bound is difficult to estimate precisely.
+- The geometric tail contraction assumption (A2) in Theorem 1 is strong and may not be strictly satisfied in practice.
+- Permanent locking carries an irreversibility risk—if a token needs to change after locking due to shifts in other positions, it cannot recover.
+- Verification was primarily conducted on LLaDA-8B; other MDLMs (e.g., Dream, original MDLM) remain untested.
+- The locking threshold $\varepsilon$ still requires manual setting, as $C_{\text{tail}}$ is difficult to estimate precisely.
 
 ## Related Work & Insights
-- **vs. dLLM-Cache**: dLLM-Cache selectively updates a subset of tokens at each step (non-permanently); SureLock permanently locks tokens, yielding a monotonically shrinking active set and greater long-term savings.
-- **vs. Fast-dLLM**: Fast-dLLM adopts semi-autoregressive block-level decoding; SureLock operates at the token level, offering finer granularity and orthogonal composability.
-- **vs. AR KV Cache**: KV caches in autoregressive models grow naturally with sequence length; SureLock's KV cache approximates a similar "invariant cache" effect within bidirectional attention.
+- **vs dLLM-Cache**: dLLM-Cache selectively updates tokens at each step (non-permanent), while SureLock permanently locks tokens, leading to greater long-term savings as the active set shrinks monotonically.
+- **vs Fast-dLLM**: Fast-dLLM performs block-wise semi-autoregressive decoding, whereas SureLock operates at the token level, offering finer granularity and orthogonality.
+- **vs AR KV Cache**: While AR KV caches naturally grow, SureLock’s KV cache simulates an "invariant cache" effect within bidirectional attention.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The permanent locking of converged tokens is a concise and effective idea, further strengthened by the theoretical analysis.
-- Experimental Thoroughness: ⭐⭐⭐ Limited to a single model with restricted task coverage.
-- Writing Quality: ⭐⭐⭐⭐⭐ Motivation is clear, algorithmic presentation is precise, and theoretical derivations are complete.
-- Value: ⭐⭐⭐⭐ Introduces a new orthogonal dimension for MDLM inference acceleration.
+- Novelty: ⭐⭐⭐⭐ The idea of permanently locking converged tokens is simple yet effective, supported by theoretical analysis.
+- Experimental Thoroughness: ⭐⭐⭐ Limited model and task coverage.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, precise algorithmic description, and complete theoretical derivation.
+- Value: ⭐⭐⭐⭐ Provides a new orthogonal dimension for MDLM inference acceleration.
 
 <!-- RELATED:START -->
 
@@ -128,10 +138,10 @@ SureLock is a **training-free** inference-time method that does not modify model
 ## Related Papers
 
 - [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
-- [\[ACL 2026\] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness](../../ACL2026/llm_nlp/masked_by_consensus_disentangling_privileged_knowledge_in_llm_correctness.md)
-- [\[ICLR 2026\] Enhancing Persona Following at Decoding Time via Dynamic Importance-Guided Token Estimation for Role-Playing Agents](enhancing_persona_following_at_decoding_time_via_dynamic_importance-guided_token.md)
+- [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
 - [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 - [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](../../ICML2026/llm_nlp/spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
+- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
 
 </div>
 

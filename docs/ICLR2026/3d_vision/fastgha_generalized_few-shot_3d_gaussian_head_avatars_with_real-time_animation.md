@@ -2,61 +2,85 @@
 title: >-
   [Paper Note] FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar generation framework that reconstructs an animatable 3D Gaussian head from 4 arbitrary-expression…
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] Ours proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar framework. It reconstructs animatable 3D Gaussian heads from 4 arbitrary expression/viewpoint images in ~1 second, supports real-time animation at 62 FPS, and achieves a PSNR of 22.5 dB on Ava-256 (surpassing Avat3r's 20.7 dB while being 7.75x faste
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "head avatar"
-  - "few-shot"
-  - "real-time animation"
-  - "feed-forward"
+  - ICLR 2026
+  - 3D Vision
+  - 3D Gaussian Splatting
+  - head avatar
+  - few-shot
+  - real-time animation
+  - feed-forward
 date: 2026-05-08
-content_hash: e97912200920b52a
+content_hash: d02bb3d3afa0fc4d
 ---
-
 # FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.13837](https://arxiv.org/abs/2601.13837)  
 **Code**: To be confirmed  
-**Area**: 3D Vision / Head Reconstruction
+**Area**: 3D Vision / Head Reconstruction  
 **Keywords**: 3D Gaussian Splatting, head avatar, few-shot, real-time animation, feed-forward
 
 ## TL;DR
-This paper proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar generation framework that reconstructs an animatable 3D Gaussian head from 4 arbitrary-expression/viewpoint input images in ~1 second, supporting real-time animation at 62 FPS. On Ava-256, it achieves a PSNR of 22.5 dB, surpassing Avat3r's 20.7 dB while being 7.75× faster.
+Ours proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar framework. It reconstructs animatable 3D Gaussian heads from 4 arbitrary expression/viewpoint images in ~1 second, supports real-time animation at 62 FPS, and achieves a PSNR of 22.5 dB on Ava-256 (surpassing Avat3r's 20.7 dB while being 7.75x faster).
 
 ## Background & Motivation
 
-**Background**: Methods for 3D head avatar generation fall into two categories: optimization-based and feed-forward. Optimization-based approaches (e.g., per-identity fitting) require large amounts of multi-view data and lengthy optimization, making them unsuitable for real-time deployment. Feed-forward methods (Avat3r, GPAvatar) can generate avatars from sparse images, but either lack controllable animation, suffer from slow animation speeds (Avat3r achieves only 8 FPS), or produce limited reconstruction quality.
+**Background**: 3D head avatar generation methods are divided into optimization-based and feed-forward approaches. Optimization-based methods (e.g., per-identity fitting) require large multi-view datasets and long optimization times, making them unsuitable for real-time deployment. Feed-forward methods (e.g., Avat3r, GPAvatar) can generate avatars from few-shot images but either lack controllable animation, suffer from slow animation speeds (Avat3r reaches only 8 FPS), or demonstrate limited reconstruction quality.
 
-**Limitations of Prior Work**: (a) Avat3r employs skip connections with geometric priors, causing geometric errors to propagate directly into the final output; (b) existing methods struggle to simultaneously achieve accurate expression transfer (AKD) and identity preservation (CSIM); (c) there is a persistent trade-off between animation speed and quality, with high-quality methods typically being slow.
+**Limitations of Prior Work**: (a) Avat3r utilizes skip-connections for geometry priors, causing geometric errors to propagate directly to the final output; (b) existing methods struggle to balance expression transfer accuracy (AKD) and identity preservation (CSIM); (c) a trade-off exists between animation speed and quality—high-quality methods are typically slow.
 
-**Key Insight**: A two-stage design — first, feed-forward reconstruction of a canonical Gaussian head from few-shot images (with learned per-Gaussian features); second, expression-driven deformation via a lightweight MLP for fast animation.
+**Key Insight**: A two-stage design is adopted—first, feed-forward reconstruction of a canonical Gaussian head (with learned per-Gaussian features) from few-shot images, followed by expression-driven deformation using a lightweight MLP to achieve fast animation.
 
-**Core Idea**: A multi-view Transformer based on SD-Turbo VAE and DINOv3 features reconstructs a canonical Gaussian head, which is then animated in real time via per-Gaussian learned features and a lightweight deformation MLP.
+**Core Idea**: The framework employs an SD-Turbo VAE + DINOv3 feature-based multi-view Transformer to reconstruct the canonical Gaussian head. Real-time animation is realized through per-Gaussian learned features combined with a lightweight deformation MLP.
 
 ## Method
 
 ### Overall Architecture
-**Stage 1**: 4 input images → SD-Turbo VAE extracts color features + DINOv3 extracts semantic features + Plücker ray encoding for camera pose → multi-view Transformer aggregates cross-view information → modified VAE decoder outputs per-pixel Gaussian parameters → fused into canonical Gaussian head $\mathcal{G}^c_f$ (with 32-dimensional per-Gaussian features).
+The Key Challenge FastGHA addresses is the conflict between fast few-shot feed-forward reconstruction and high-quality animatable performance, where previous methods often sacrificed one for the other. The task is decoupled into two stages: "modeling" the identity as a static standard head and "driving" expressions onto it. The first stage performs feed-forward reconstruction of a canonical (neutral) Gaussian head from 4 images of arbitrary expressions/views. This head carries additional learned features for each Gaussian point alongside standard attributes. The second stage feeds target FLAME expression codes into a lightweight MLP to calculate point-wise position and color offsets, deforming the standard head into any expression for real-time rendering. Consequently, the expensive multi-view reconstruction occurs only once, while subsequent animation is reduced to low-cost point-wise MLP forward passes.
 
-**Stage 2**: Canonical Gaussian head + FLAME expression encoding → lightweight MLP processes each Gaussian independently → outputs position and color offsets $\delta_z$ → deformed Gaussians rendered via differentiable rasterization.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["4 Few-shot Images<br/>(Arbitrary Expression/View)"] --> BB
+    subgraph BB["SD-Turbo VAE Backbone"]
+        direction TB
+        E["VAE Encoder (frozen) + DINOv3<br/>+ Plücker Ray Encoding"] --> T["Multi-view Transformer<br/>Cross-view Fusion"] --> D["VAE Decoder (fine-tuned)<br/>Per-pixel Gaussians"]
+    end
+    BB --> GC["Per-Gaussian Learned Features<br/>Canonical Gaussians + 32D features"]
+    GC --> MLP["Lightweight Deformation MLP<br/>Point-wise Parallel + FLAME code"]
+    MLP --> OUT["Differentiable Rasterization<br/>Real-time Animation (62 FPS)"]
+    VGGT["VGGT Geometry Regularization<br/>Depth Supervision L_geo"] -.During Training.-> BB
+```
 
 ### Key Designs
 
-1. **SD-Turbo VAE as Backbone**: The encoder is frozen to retain pretrained high-level semantic features; the decoder is fine-tuned to generate Gaussian parameters. This yields a +0.5 dB PSNR improvement over training from scratch.
+**1. SD-Turbo VAE Backbone: Filling the few-shot information gap with pre-trained generative priors**
 
-2. **Per-Gaussian Learned Features $\mathbf{f} \in \mathbb{R}^{32}$**: In addition to standard Gaussian attributes (position/color/rotation/scale/opacity), each Gaussian is assigned a 32-dimensional semantic feature encoding expression-relevant high-level information, which is fed into the deformation MLP. Removing this component reduces PSNR by 0.22 and CSIM by 0.014.
+Reconstructing a complete renderable head from only 4 images involves inherently insufficient input information, requiring strong priors to hallucinate unobserved regions. FastGHA leverages the SD-Turbo VAE instead of training an encoder from scratch. The encoder is frozen to retain high-level semantic features from pre-training, while the decoder is fine-tuned to produce per-pixel Gaussian parameters from fused multi-view features. Specifically, input images extract color features via the VAE encoder and semantic features via DINOv3, while camera poses are encoded using Plücker rays. These are processed by a multi-view Transformer for cross-view fusion and finally restored by the fine-tuned VAE decoder into the canonical Gaussian head $\mathcal{G}^c_f$. Ablations indicate these pre-trained weights are the most critical component—training from scratch results in a 0.49 dB drop in PSNR and a 0.023 drop in CSIM.
 
-3. **VGGT Geometry Regularization**: Point clouds generated by a pretrained VGGT model serve as geometric supervision (depth loss $\mathcal{L}_{geo}$), replacing Avat3r's skip-connection approach and thereby avoiding error propagation.
+**2. Per-Gaussian Learned Features $\mathbf{f}\in\mathbb{R}^{32}$: Providing expression cues for the deformation stage**
 
-4. **Lightweight Deformation MLP**: Each Gaussian point is processed independently (highly parallelizable), taking canonical attributes and the FLAME expression code as input and producing position and color offsets.
+If the first stage only outputted standard Gaussian attributes (position, color, rotation, scale, opacity), the deformation MLP would have to guess expression dynamics based solely on low-level geometry. FastGHA enables the decoder to learn an additional 32-dimensional feature vector for each Gaussian, encoding high-level semantics related to expressions. This is used as input for the deformation MLP, essentially pre-storing information about "what role this point plays on the face and how it should respond to expression changes." This feature overhead is minimal, yet removing it leads to a 0.22 drop in PSNR and a 0.014 drop in CSIM.
+
+**3. VGGT Geometry Regularization: Downgrading geometry priors from "input" to "supervision"**
+
+Avat3r feeds geometry priors directly into the network via skip-connections, which allows errors in the priors to propagate to the final output. FastGHA changes the "access point" of geometry priors: point clouds generated by a pre-trained VGGT model are used as a depth supervision signal $\mathcal{L}_{geo}$ in the loss function rather than as network input. Thus, the geometry prior only guides convergence during training and is not involved in inference, preventing prior errors from contaminating the output. This is the fundamental difference in geometry utilization between FastGHA and Avat3r, emphasizing the principle that geometry priors should serve as regularization.
+
+**4. Lightweight Deformation MLP: Transforming animation into fully parallelizable point-wise operations**
+
+The bottleneck of real-time animation lies in the computational cost of the deformation stage. FastGHA designs deformation as an MLP that processes each Gaussian independently. The input consists of the Gaussian's canonical attributes plus the FLAME expression code, and the output is the position and color offset $\delta_z$, with no interaction between Gaussian points. This lack of interaction allows for high levels of parallel computation. Combined with the one-time reconstruction design, the animation frame rate reaches 62 FPS (7.75x faster than Avat3r's 8 FPS). The trade-off is the absence of global consistency constraints across Gaussians, which is noted as a limitation.
+
+### Mechanism
+The complete process from capture to animation is as follows: given 4 photos of the same person with different expressions/views, color and semantic features are extracted via the SD-Turbo VAE encoder and DINOv3. These are combined with Plücker ray-encoded camera poses and fused in a multi-view Transformer. The fine-tuned VAE decoder then outputs per-pixel Gaussians to form the canonical head $\mathcal{G}^c_f$ with 32D per-Gaussian features—this step takes approximately 0.98 seconds. To animate, a target FLAME expression code is combined with the canonical attributes and 32D features of each Gaussian and fed into the deformation MLP to calculate $\delta_z$ offsets. The deformed Gaussians are rendered via differentiable rasterization. Since deformation is purely point-wise and parallel, this drive-and-render cycle maintains a stable 62 FPS.
 
 ### Loss & Training
-$$\mathcal{L} = \mathcal{L}_{RGB} + \mathcal{L}_{SSIM} + 0.5\mathcal{L}_{perc} + \mathcal{L}_{sil} + 0.5\mathcal{L}_{geo}$$
+The total loss combines pixel reconstruction, structural similarity, perception, silhouette, and geometry supervision:
 
-Training data: Ava-256 (256 subjects / 40 cameras) + NeRSemble (425 subjects / 16 cameras). Each sample consists of 4 images of the same subject with different expressions/viewpoints as input, and 8 same-expression images as supervision. Trained on 4× H800 GPUs for 400k steps (~4 days).
+$$\mathcal{L} = \mathcal{L}_{RGB} + \mathcal{L}_{SSIM} + 0.5\,\mathcal{L}_{perc} + \mathcal{L}_{sil} + 0.5\,\mathcal{L}_{geo}$$
+
+Where $\mathcal{L}_{geo}$ is the depth supervision provided by VGGT point clouds. Training data includes Ava-256 (256 identities / 40 cameras) and NeRSemble (425 identities / 16 cameras). Each sample uses 4 images of the same person with different expressions/views as input, and 8 images with the same expression as supervision. Training was performed for 400k steps on 4×H800 GPUs, taking approximately 4 days.
 
 ## Key Experimental Results
 
@@ -67,45 +91,45 @@ Training data: Ava-256 (256 subjects / 40 cameras) + NeRSemble (425 subjects / 1
 | InvertAvatar | 14.2 | 0.36 | 0.55 | 0.29 | 15.8 | - |
 | GPAvatar | 19.1 | 0.70 | 0.32 | 0.26 | 6.9 | - |
 | Avat3r | 20.7 | 0.71 | 0.33 | 0.59 | 4.8 | 8 |
-| **FastGHA** | **22.5** | **0.77** | **0.23** | **0.73** | **4.8** | **62** |
+| **Ours (FastGHA)** | **22.5** | **0.77** | **0.23** | **0.73** | **4.8** | **62** |
 
-FastGHA comprehensively outperforms Avat3r: PSNR +1.8, LPIPS −0.10, CSIM +0.14, FPS 7.75×.
+FastGHA outperforms Avat3r across all metrics: PSNR +1.8, LPIPS -0.10, CSIM +0.14, and 7.75x FPS.
 
 ### Ablation Study
 
 | Configuration | PSNR | CSIM | AKD |
 |---|---|---|---|
-| w/o VAE pretrained weights | 20.789 | 0.681 | 5.487 |
-| w/o geometry loss | 21.132 | 0.687 | 5.049 |
-| w/o per-Gaussian features | 21.053 | 0.690 | 5.216 |
+| w/o VAE Pre-training | 20.789 | 0.681 | 5.487 |
+| w/o Geometry Loss | 21.132 | 0.687 | 5.049 |
+| w/o Per-Gaussian Features | 21.053 | 0.690 | 5.216 |
 | **Full FastGHA** | **21.274** | **0.704** | **4.996** |
 
 ### Key Findings
-- **Pretrained VAE weights are the most critical component**: removing them reduces PSNR by 0.49 and CSIM by 0.023.
-- **Sub-second reconstruction**: only 0.98 seconds for 4 input images.
-- **Trade-off with number of input images**: 2 images → 128 FPS but lower quality; 6 images → 32 FPS with marginal quality gain. 4 images represents the optimal balance.
-- Strong performance on NeRSemble as well: PSNR 24.0, SSIM 0.81.
+- **Pre-trained VAE weights are the most critical factor**: PSNR drops by 0.49 and CSIM drops by 0.023 without them.
+- **Sub-second reconstruction**: 4 input images take only 0.98 seconds.
+- **Image count trade-off**: 2 images result in 128 FPS but lower quality; 6 images result in 32 FPS with diminishing quality returns. 4 images is the optimal balance.
+- **Stong performance on NeRSemble**: Achieved PSNR 24.0 and SSIM 0.81.
 
 ## Highlights & Insights
-- **Correct use of geometric priors**: Employing geometric information as a regularization loss rather than via skip connections avoids the error propagation issue present in Avat3r. This constitutes a general design principle.
-- **Per-Gaussian semantic features**: The 32-dimensional learned features enable the deformation MLP to leverage high-level information beyond low-level geometric attributes, yielding significant gains at minimal cost.
-- **Key to real-time animation**: The deformation MLP processes each Gaussian independently (requiring no cross-Gaussian interaction), making the operation fully parallelizable.
+- **Correct usage of geometry priors**: Using depth as a regularization loss instead of a skip-connection input avoids error propagation seen in Avat3r. This is a generalizable design principle.
+- **Per-Gaussian semantic features**: 32D learned features allow the deformation MLP to utilize high-level information beyond low-level geometry, providing high gains at low cost.
+- **Key to real-time animation**: The deformation MLP processes each Gaussian independently, enabling full parallelization without the need for cross-Gaussian interaction.
 
 ## Limitations & Future Work
-- Camera parameters and FLAME expression codes must be obtained in advance, which may become a bottleneck in practical applications.
-- Training and evaluation are conducted exclusively on laboratory-captured multi-view datasets; robustness to in-the-wild inputs such as low-quality selfies has not been validated.
-- Fine-grained modeling of hair and accessories is not supported, due to inherent limitations of the Gaussian representation.
-- The deformation MLP processes each Gaussian independently, lacking global consistency constraints.
+- Requires pre-acquired camera parameters and FLAME expression codes, which can be a bottleneck in practical applications.
+- Evaluated only on laboratory multi-view datasets; robustness to low-quality in-the-wild inputs (e.g., selfies) is unverified.
+- Does not support fine-grained modeling of hair and accessories (limited by the Gaussian representation).
+- The deformation MLP lacks global consistency constraints as it processes points independently.
 
 ## Related Work & Insights
-- **vs. Avat3r**: Avat3r is also feed-forward but employs skip connections with geometric priors, leading to error propagation and achieving only 8 FPS. FastGHA replaces skip connections with depth supervision, achieving 62 FPS.
-- **vs. GPAvatar**: GPAvatar exhibits poor identity preservation (CSIM 0.26 vs. 0.73), attributable to the absence of strong semantic feature extraction.
+- **vs Avat3r**: Avat3r is also feed-forward but suffers from error propagation due to skip-connected geometry priors and only reaches 8 FPS. FastGHA replaces skip-connections with depth supervision and reaches 62 FPS.
+- **vs GPAvatar**: GPAvatar has poor identity preservation (CSIM 0.26 vs 0.73) due to its lack of powerful semantic feature extraction.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The two-stage design and per-Gaussian feature concept are clear and effective, though individual components are not individually groundbreaking.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Two datasets, multiple baselines, comprehensive ablations, and speed analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ The pipeline is described clearly, though the motivation for certain design choices could be elaborated further.
-- **Value**: ⭐⭐⭐⭐ First to achieve few-shot + real-time animation for 3D Gaussian head avatars, with high practical utility.
+- Novelty: ⭐⭐⭐⭐ The two-stage design and per-Gaussian feature logic are clear and effective, though individual components are not entirely revolutionary.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across two datasets, multiple baselines, thorough ablation, and speed analysis.
+- Writing Quality: ⭐⭐⭐⭐ Pipeline descriptions are clear, though motivations for certain design choices could be more in-depth.
+- Value: ⭐⭐⭐⭐ High practical value as the first to achieve both few-shot and real-time animation for 3D Gaussian head avatars.
 
 <!-- RELATED:START -->
 
@@ -114,10 +138,10 @@ FastGHA comprehensively outperforms Avat3r: PSNR +1.8, LPIPS −0.10, CSIM +0.14
 ## Related Papers
 
 - [\[CVPR 2026\] EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization](../../CVPR2026/3d_vision/emotag_emotion-aware_talking_head_synthesis_on_gaussian_splatting_with_few-shot_.md)
-- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](../../CVPR2026/3d_vision/physhead_simulation-ready_gaussian_head_avatars.md)
-- [\[AAAI 2026\] Generalized Geometry Encoding Volume for Real-time Stereo Matching](../../AAAI2026/3d_vision/generalized_geometry_encoding_volume_for_real-time_stereo_matching.md)
-- [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](../../CVPR2026/3d_vision/fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](../../CVPR2026/3d_vision/multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[ECCV 2024\] HeadGaS: Real-Time Animatable Head Avatars via 3D Gaussian Splatting](../../ECCV2024/3d_vision/headgas_real-time_animatable_head_avatars_via_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
+- [\[ICLR 2026\] SMAGA: Secondary Motion-Aware 3D Clothed Gaussian Avatars from Monocular Videos](smaga_secondary_motion-aware_3d_clothed_gaussian_avatars_from_monocular_videos.md)
+- [\[CVPR 2026\] RelightAnyone: A Generalized Relightable 3D Gaussian Head Model](../../CVPR2026/3d_vision/relightanyone_a_generalized_relightable_3d_gaussian_head_model.md)
 
 </div>
 

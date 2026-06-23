@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention
 description: >-
-  [ICLR2026][3D Vision][novel view synthesis] This paper proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation…
+  [ICLR 2026][3D Vision][novel view synthesis] Ours proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation, reducing the complexity of novel view synthesis from $O(N_{in}^2)$ to $O(N_{in})$. It achieves SOTA performance on RealEstate10K (29.86 dB PSNR) with 50% training time and a 4.4x speedup in inference
 tags:
-  - "ICLR2026"
-  - "3D Vision"
-  - "novel view synthesis"
-  - "Transformer"
-  - "Dual-Stream Architecture"
-  - "KV-Cache"
-  - "Attention Decoupling"
+  - ICLR 2026
+  - 3D Vision
+  - novel view synthesis
+  - Transformer
+  - Dual-Stream Architecture
+  - KV-Cache
+  - Attention Decoupling
 date: 2026-05-08
-content_hash: 3cd14cfdffc1cc8b
+content_hash: c52c46cdcba049ff
 ---
-
 # Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention
 
 **Conference**: ICLR2026  
@@ -25,81 +24,67 @@ content_hash: 3cd14cfdffc1cc8b
 
 ## TL;DR
 
-This paper proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation, reducing the complexity of novel view synthesis from $O(N_{in}^2)$ to $O(N_{in})$. On RealEstate10K, the model achieves state-of-the-art performance (29.86 dB PSNR) using only 50% of LVSM's training time, with a 4.4× inference speedup.
+Ours proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation, reducing the complexity of novel view synthesis from $O(N_{in}^2)$ to $O(N_{in})$. It achieves SOTA performance on RealEstate10K (29.86 dB PSNR) with 50% training time and a 4.4x speedup in inference.
 
 ## Background & Motivation
 
-Novel View Synthesis (NVS)—reconstructing 3D scenes from 2D images—is a central problem in computer vision. The field has evolved from per-scene optimization methods such as NeRF and 3DGS to feed-forward Transformer approaches like LVSM, which directly synthesize novel views from posed images without hand-crafted 3D priors.
+Novel View Synthesis (NVS), reconstructing 3D scenes from 2D images, is a core problem in computer vision. Recent developments have evolved from per-scene optimization like NeRF/3DGS to feed-forward Transformer methods like LVSM, which synthesize novel views directly from posed images, eliminating reliance on handcrafted 3D priors.
 
-However, LVSM's decoder-only design concatenates all input and target tokens before applying full self-attention, leading to two critical bottlenecks:
+However, the decoder-only design of LVSM concatenates all input and target tokens for full self-attention, leading to two major bottlenecks:
 
-1. **Inefficiency**: Attention complexity scales quadratically with the number of input views as $O(N^2)$; input representations are recomputed redundantly when generating multiple target views.
-2. **Performance limitations**: Heterogeneous tokens—content-rich input views and pose-only target queries—share the same attention parameters, hindering each stream from learning specialized representations.
+1. **Low Efficiency**: It exhibits quadratic complexity $O(N^2)$ relative to the number of input views $N$; input representations are redundantly recalculated when generating multiple target views.
+2. **Limited Performance**: Heterogeneous tokens (input views with content vs. target queries with only poses) share the same set of attention parameters, preventing the learning of specialized representations for each.
 
 ## Core Problem
 
-How can one decouple input encoding from target generation within an end-to-end feed-forward NVS framework, while simultaneously improving both efficiency and quality?
+How to decouple input encoding and target generation to improve both efficiency and quality while maintaining an end-to-end feed-forward NVS framework?
 
-The encoder-decoder variant of LVSM avoids redundant computation but compresses all inputs into a single latent vector, causing significant information loss and degraded reconstruction quality. A new architecture is needed that preserves multi-level fine-grained features while supporting efficient inference.
+While encoder-decoder variants of LVSM avoid redundant calculations, compressing all inputs into a single latent vector leads to information loss and significant degradation in reconstruction quality. An architecture that preserves multi-level fine-grained features while supporting efficient inference is required.
 
 ## Method
 
-### 1. Dual-Stream Architecture
+### Overall Architecture
 
-The core idea is to fully decouple input view processing and target view generation into two independent streams:
+Efficient-LVSM addresses the "slow and mutual interference" issue caused by LVSM's full self-attention. The pipeline is split into two non-entangled streams: posed input images are processed by the **Input Encoder** into features, while target query tokens with only pose information pass through the **Target Decoder**. The decoder repeatedly queries the encoder features to progressively "fill in" the new view, finally regressing pixels. Crucially, input encoding is no longer affected by target tokens, and target generation only accesses input features via unidirectional cross-attention. This reduces input complexity from $O(N^2 M)$ to $O(NM + N)$, allowing input representations to be computed once and reused for all target views.
 
-- **Input Encoder**: Applies intra-view self-attention independently to each input view, with no cross-view interaction.
-- **Target Decoder**: Target tokens first undergo self-attention, then query input features via cross-attention.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 26, 'nodeSpacing': 30, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IMG["Posed Input Images<br/>(N views)"] --> ENC["Intra-view self-attention encoding<br/>Independent layer-wise $S_i^l$"]
+    Q["Target Query Tokens<br/>(Pose only)"] --> DEC["Self-then-cross decoding<br/>Layer-wise Self + Cross Attn"]
+    REPA["REPA Distillation<br/>DINOv3 features into mid-layers (Training only)"] -.->|Training| ENC
+    ENC --> CO["Layer-wise Co-refinement<br/>Decoder layer $l$ queries Encoder layer $l$"]
+    CO --> DEC
+    ENC -.->|Input K/V Cache| KV["KV-cache & Incremental Inference<br/>Near-constant cost for view changes"]
+    KV -.->|Incremental Reuse| DEC
+    DEC --> OUT["Pixel Regression → Target View"]
+```
 
-This design reduces complexity from $O(N^2 M)$ to $O(NM + N)$.
+### Key Designs
 
-### 2. Intra-View Self-Attention
+**1. Intra-view self-attention encoding: Linear complexity scaling with view count**
 
-The input encoder applies self-attention exclusively among patches within each individual input view:
+To solve the quadratic complexity bottleneck where $N$ views are fully entangled, the encoder only performs self-attention between patches within the same input view. Features are updated layer-wise as $\mathbf{S_i}^l = \mathbf{S_i}^{l-1} + \text{Self-Attn}_{\text{input}}^l(\mathbf{S_i}^{l-1})$, isolating different views. This ensures total cost grows linearly with $N$. Furthermore, since each view is encoded independently of others, the model generalizes zero-shot to any number of input views at test time.
 
-$$\mathbf{S_i}^l = \mathbf{S_i}^{l-1} + \text{Self-Attn}_{\text{input}}^l(\mathbf{S_i}^{l-1})$$
+**2. Self-then-cross decoding: Scenario alignment and content retrieval via alternating attention**
 
-Each view is processed independently, naturally enabling zero-shot generalization to varying numbers of input views.
+Maintaining geometric consistency between target views while extracting content from inputs is difficult for cross-attention alone. The decoder alternates two steps per layer: first, $\mathbf{T_j}^l = \mathbf{T_j}^{l-1} + \text{Self-Attn}_{\text{target}}^l(\mathbf{T_j}^{l-1})$ allows target tokens to exchange scene-level information and align spatial relationships; then, $\mathbf{T_j}^l = \mathbf{T_j}^l + \text{Cross-Attn}_{\text{target}}^l(\mathbf{T_j}^l, \mathbf{S_1}^l, ..., \mathbf{S_N}^l)$ extracts the required content from input features. Ablations show this 6+6 layer alternating structure significantly outperforms a 12-layer pure cross-attention design.
 
-### 3. Self-then-Cross Attention (Target Decoder)
+**3. Co-refinement: Layer-wise alignment of encoder and decoder features**
 
-The target decoder alternates between self-attention and cross-attention:
+Traditional encoder-decoder designs compress the input into a single representation from the last encoder layer, losing fine-grained details. This caused LVSM Enc-Dec variants to drop to 28.55 dB. Co-refinement allows the cross-attention in decoder layer $l$ to directly query features from encoder layer $l$ ($\mathbf{S_i}^l$). Consequently, fine-grained textures from early layers and high-level semantics from later layers are both accessible to the corresponding decoder layers.
 
-$$\mathbf{T_j}^l = \mathbf{T_j}^{l-1} + \text{Self-Attn}_{\text{target}}^l(\mathbf{T_j}^{l-1})$$
-$$\mathbf{T_j}^l = \mathbf{T_j}^l + \text{Cross-Attn}_{\text{target}}^l(\mathbf{T_j}^l, \mathbf{S_1}^l, ..., \mathbf{S_N}^l)$$
+**4. REPA Distillation: Injecting pre-trained features without inference overhead**
 
-Self-attention enables target tokens to exchange scene-level information with one another, while cross-attention extracts the required content from input features. Ablation studies show that a 6+6 alternating structure outperforms 12 layers of pure cross-attention.
+To further improve encoding quality, the authors use REPA to distill visual features from a pre-trained DINOv3 into the middle layers of the encoder. The loss maximizes patch-level similarity: $\mathcal{L}_{REPA} = \frac{1}{N}\sum_{i=1}^{N}\text{sim}(f(\mathbf{I}), h_\phi(\mathbf{X_k}))$, where $h_\phi$ is a projection head used only during training. REPA is discarded during inference. Notably, REPA significantly benefits Efficient-LVSM but is ineffective for the original LVSM, as the latter's full self-attention entangles features across views, preventing alignment of distillation signals.
 
-### 4. Co-Refinement Mechanism
+**5. KV-cache and Incremental Inference: Realizing the "compute-once" dividend**
 
-Unlike conventional encoder-decoder designs that consume only the final encoder layer's features, co-refinement allows each decoder layer to query the corresponding encoder layer. This enables the decoder to leverage:
-
-- Fine-grained texture details from early layers
-- High-level semantic information from later layers
-
-Visualizations confirm that co-refinement produces feature maps capturing significantly more target-view detail than a vanilla encoder-decoder baseline.
-
-### 5. REPA Distillation
-
-REPA is employed to distill visual features from a pretrained DINOv3 model into intermediate encoder layers by maximizing patch-level similarity:
-
-$$\mathcal{L}_{REPA} = \frac{1}{N}\sum_{i=1}^{N}\text{sim}(f(\mathbf{I}), h_\phi(\mathbf{X_k}))$$
-
-The pretrained encoder and projection layers are discarded at inference time, incurring no additional inference overhead. A key finding is that REPA yields substantially larger gains for Efficient-LVSM than for LVSM, since full self-attention in the latter entangles feature maps across different views.
-
-### 6. KV-Cache and Incremental Inference
-
-The decoupled design naturally supports KV-caching:
-
-- Key/value pairs for input views are computed once and cached for reuse.
-- Adding a new target view: cached representations are directly reused for rendering.
-- Adding a new input view: only the new view is processed and appended to the cache.
-
-The marginal cost of adding input or target views is nearly constant, making the model well-suited for interactive applications.
+Since input encoding is target-independent and cross-attention is unidirectional, input view key/values are cached after the first computation. Adding a target view only requires the new target tokens to query the cached input features. Adding an input view only requires encoding that specific view and appending its key/values to the cache. Both operations incur near-constant latency and memory overhead, making the model ideal for interactive 3D browsing.
 
 ## Key Experimental Results
 
-### Scene-Level (RealEstate10K, 2 Input Views)
+### Main Results (RealEstate10K, 2 Input Views)
 
 | Method | PSNR ↑ | SSIM ↑ | LPIPS ↓ |
 |------|--------|--------|---------|
@@ -107,7 +92,7 @@ The marginal cost of adding input or target views is nearly constant, making the
 | LVSM Dec-Only (512) | 29.53 | 0.904 | 0.141 |
 | **Efficient-LVSM (512)** | **29.86** | **0.905** | 0.147 |
 
-### Object-Level (ABO / GSO, 512 Resolution)
+### Object-level (ABO / GSO, 512 Res)
 
 | Method | ABO PSNR | GSO PSNR |
 |------|----------|----------|
@@ -115,57 +100,54 @@ The marginal cost of adding input or target views is nearly constant, making the
 | LVSM Dec-Only | 32.10 | 32.36 |
 | **Efficient-LVSM** | **32.65** | **32.92** |
 
-### Efficiency Comparison
+### Key Findings
 
-- Training convergence: approximately **2×** faster than LVSM
-- Inference speed: **4.4×** faster than LVSM Dec-Only (up to 14.9× in certain settings)
-- Training resources: 64 A100 GPUs for 3 days, representing only **50%** of LVSM's training cost
-- Incremental inference: latency and memory remain nearly constant as views are added
-
-### Zero-Shot Generalization
-
-Trained with 4 input views, the model generalizes at test time to varying numbers of input views, enabled by the per-view independent processing design.
+- **Training Speed**: Approximately **2×** faster convergence than LVSM.
+- **Inference Speed**: **4.4×** faster than LVSM Dec-Only (up to 14.9× in specific cases).
+- **Training Resources**: 64 A100 GPUs for 3 days, only **50%** of LVSM's training time.
+- **Incremental Inference**: Latency and VRAM remain nearly constant when adding views.
+- **Zero-shot Generalization**: Trained on 4 views, it generalizes well to varying view counts due to independent view processing.
 
 ## Highlights & Insights
 
-1. **Rigorous problem analysis**: The limitations of LVSM's full self-attention are systematically analyzed from the perspectives of information heterogeneity and computational complexity, motivating the dual-stream decoupled design.
-2. **Elegant co-refinement design**: Layer-wise alignment between encoder and decoder features fully exploits multi-scale information.
-3. **Strong practical value**: KV-cache combined with incremental inference enables deployment in interactive 3D scene browsing applications.
-4. **Dual gains in efficiency and quality**: Efficient-LVSM surpasses LVSM across all benchmarks while substantially reducing training and inference costs.
-5. **Conditional finding on REPA distillation**: The work reveals a coupling between distillation effectiveness and attention architecture design.
+1. **Profound Problem Analysis**: Systematically identifies flaws in LVSM's full self-attention regarding information heterogeneity and complexity.
+2. **Elegant Co-Refinement**: Effectively utilizes multi-scale information by aligning encoder-decoder features layer-wise.
+3. **High Practical Value**: KV-cache and incremental inference enable deployment in interactive 3D scene browsing.
+4. **Efficiency/Quality Win**: Exceeds LVSM on all benchmarks while significantly reducing costs.
+5. **Conditional REPA Discovery**: Reveals the coupling between distillation effectiveness and attention architecture.
 
 ## Limitations & Future Work
 
-1. Intra-view attention in the input encoder contains no cross-view interaction; scene understanding relies entirely on the decoder's cross-attention, which may be insufficient for scenes with heavy occlusion.
-2. Scaling behavior at larger model sizes or higher resolutions remains unexplored.
-3. Evaluation is limited to static scenes; applicability to dynamic scenes is unknown.
-4. LPIPS at 512 resolution is marginally worse than LVSM Dec-Only (0.147 vs. 0.141), indicating room for improvement in perceptual quality.
+1. The encoder's intra-view attention lacks cross-view interaction; scene understanding relies entirely on the decoder's cross-attention, which may be insufficient for highly occluded scenes.
+2. Scaling behavior for larger models or higher resolutions has not been explored.
+3. Validated only on static scenes; applicability to dynamic scenes is unknown.
+4. LPIPS at 512 resolution is slightly behind LVSM Dec-Only (0.147 vs 0.141), suggesting room for improvement in perceptual quality.
 
 ## Related Work & Insights
 
 | Dimension | LVSM Dec-Only | LVSM Enc-Dec | Efficient-LVSM |
 |------|--------------|--------------|----------------|
-| Input complexity | $O(N^2)$ | $O(N^2)$ | $O(N)$ |
-| Parameter sharing | Heterogeneous tokens shared | Separated but uses only last layer | Separated + layer-wise co-refinement |
-| KV-Cache | Not supported | Not supported | Supported |
-| Incremental inference | Not supported | Not supported | Supported |
-| Variable-view generalization | Poor | Poor | Strong (zero-shot) |
+| Input Complexity | $O(N^2)$ | $O(N^2)$ | $O(N)$ |
+| Parameter Sharing | Shared | Separate (last layer) | Separate + layer-wise Co-ref |
+| KV-Cache | Not Supported | Not Supported | Supported |
+| Incremental Inference | Not Supported | Not Supported | Supported |
+| Variable View Gen | Poor | Poor | Strong (Zero-shot) |
 | RealEstate10K PSNR | 29.53 | 28.55 | **29.86** |
 
-Compared to Gaussian splatting-based methods such as pixelSplat and MVSplat, Efficient-LVSM does not rely on explicit 3D representations, is more end-to-end, and achieves higher quality, though at greater computational cost.
+Compared to Gaussian Splatting methods like pixelSplat/MVSplat, Efficient-LVSM is more end-to-end and provides higher quality without explicit 3D representations, though it requires more computation.
 
-The following broader insights emerge from this work:
+## Insights
 
-1. **Transferability of the dual-stream decoupling principle**: Any Transformer task involving heterogeneous inputs—such as multimodal understanding or robot perception—can benefit from decoupling the provider and query streams.
-2. **Generality of co-refinement**: Layer-wise cross-querying can be applied to other encoder-decoder architectures beyond NVS.
-3. **KV-Cache for 3D vision**: Importing the mature KV-cache technique from LLMs into 3D vision provides a new pathway toward real-time interactive rendering.
-4. **Coupling between distillation and architecture**: The substantially different REPA gains across architectures suggest that distillation strategies should be co-designed with the model architecture.
+1. **Dual-stream Decoupling**: Transformer tasks with heterogeneous inputs (e.g., multimodal understanding) can adopt this design to decouple providers from queries.
+2. **Co-Refinement Generality**: The idea of layer-wise cross-querying is applicable to other encoder-decoder architectures beyond NVS.
+3. **KV-Cache for 3D**: Adapting LLM KV-caching to 3D vision provides a path toward real-time interactive rendering.
+4. **Distillation-Architecture Coupling**: The varying effectiveness of REPA suggests that distillation strategies should be co-designed with model architectures.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The dual-stream co-refinement design represents a clear contribution to NVS, though individual components are not entirely novel in isolation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive ablations covering scene-level and object-level benchmarks across efficiency, quality, and generalization dimensions.
-- Writing Quality: ⭐⭐⭐⭐ — The progression from problem analysis to solution derivation is logically coherent and well-illustrated.
-- Value: ⭐⭐⭐⭐⭐ — Simultaneous gains in efficiency and quality, strong practical utility of KV-cache support, and clear guidance for future work.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -173,11 +155,11 @@ The following broader insights emerge from this work:
 
 ## Related Papers
 
-- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](../../ICCV2025/3d_vision/rayzer_a_self-supervised_large_view_synthesis_model.md)
 - [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](../../CVPR2026/3d_vision/flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
+- [\[ICLR 2026\] Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation](aligned_novel_view_image_and_geometry_synthesis_via_cross-modal_attention_instil.md)
+- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](../../ICCV2025/3d_vision/rayzer_a_self-supervised_large_view_synthesis_model.md)
 - [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](../../CVPR2026/3d_vision/from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
 - [\[ICCV 2025\] Faster and Better 3D Splatting via Group Training](../../ICCV2025/3d_vision/faster_and_better_3d_splatting_via_group_training.md)
-- [\[CVPR 2026\] Scaling View Synthesis Transformers (SVSM)](../../CVPR2026/3d_vision/scaling_view_synthesis_transformers.md)
 
 </div>
 

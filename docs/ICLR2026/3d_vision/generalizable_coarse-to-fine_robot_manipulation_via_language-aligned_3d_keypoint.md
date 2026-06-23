@@ -2,148 +2,162 @@
 title: >-
   [Paper Note] Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints
 description: >-
-  [ICLR 2026][3D Vision][Robot Manipulation] CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and unseen environments through three core components: task decom…
+  [ICLR 2026][3D Vision][Robot Manipulation] CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and environments through three core components: task decomposition, VLM-finetuned 3D keypoint prediction, and 3D-aware representations. It outperforms SOTA by 12% on GemBench using only 1/5 of the training da
 tags:
-  - "ICLR 2026"
-  - "3D Vision"
-  - "Robot Manipulation"
-  - "Coarse-to-Fine Policy"
-  - "3D Keypoints"
-  - "VLM Fine-tuning"
-  - "Language Grounding"
+  - ICLR 2026
+  - 3D Vision
+  - Robot Manipulation
+  - Coarse-to-Fine Policy
+  - 3D Keypoints
+  - VLM Fine-tuning
+  - Language Grounding
 date: 2026-05-08
-content_hash: 9b80a714feb5a600
+content_hash: fe65add798d95e1a
 ---
-
 # Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.23575](https://arxiv.org/abs/2509.23575)  
 **Code**: None  
-**Area**: 3D Vision / Robot Manipulation
+**Area**: 3D Vision / Robot Manipulation  
 **Keywords**: Robot Manipulation, Coarse-to-Fine Policy, 3D Keypoints, VLM Fine-tuning, Language Grounding
 
 ## TL;DR
 
-CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and unseen environments through three core components: task decomposition, VLM fine-tuning for 3D keypoint prediction, and 3D-aware representation. It outperforms the state of the art by 12% on GemBench using only 1/5 of the training data.
+CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and environments through three core components: task decomposition, VLM-finetuned 3D keypoint prediction, and 3D-aware representations. It outperforms SOTA by 12% on GemBench using only 1/5 of the training data.
 
 ## Background & Motivation
 
-Hierarchical coarse-to-fine policies have shown great promise in 3D robot manipulation tasks. The fundamental idea is that a coarse branch predicts a Region of Interest, after which a fine branch executes precise action prediction within that region. This hierarchical design significantly improves sample efficiency and manipulation accuracy.
+Hierarchical coarse-to-fine strategies have shown significant potential in 3D robotic manipulation tasks. The fundamental idea involves a coarse branch predicting a Region of Interest (RoI), followed by a fine branch performing precise action prediction within that region. This hierarchical design significantly improves sample efficiency and manipulation precision.
 
-However, even when augmented with pretrained models, existing hierarchical policies still suffer from a core **generalization deficit**:
+However, even with pre-trained model enhancements, existing hierarchical strategies still face the **Key Challenge** of insufficient generalization:
 
-**Generalization to novel instructions**: Policies frequently fail when given natural language instructions unseen during training (e.g., "pick up the red cup" → "place the blue bowl on the shelf").
+**Generalization to novel instructions**: Policies often fail when given natural language instructions not seen during training (e.g., "pick up the red cup" → "put the blue bowl on the shelf").
 
-**Generalization to environmental variation**: Changes in object position, appearance, or background can cause policy collapse.
+**Generalization to environmental changes**: Variations in object position, appearance, and background can lead to policy failure.
 
-**Sample efficiency**: Existing methods typically require large numbers of demonstration trajectories to learn each task.
+**Sample Efficiency**: Existing methods typically require a large number of demonstration trajectories to learn each task.
 
-The root cause of these issues lies in the coarse branch's limited understanding of language semantics and the absence of structured 3D spatial information in the representation.
+The **Key Problems** lie in the coarse branch's lack of deep understanding of linguistic semantics and the absence of structured 3D spatial information in the representation.
 
 ## Method
 
 ### Overall Architecture
 
-CLAP is a hierarchical manipulation policy framework consisting of three mutually complementary core components:
+CLAP addresses the "insufficient generalization" problem in coarse-to-fine strategies: the coarse branch cannot understand language, and the representation lacks 3D structure, causing failure when instructions or object positions change. The method replaces the coarse branch with a **coarse task planner** that decomposes tasks via language and grounds semantics into 3D space using a VLM. The pipeline operates as follows: a natural language instruction is decomposed into ordered atomic sub-tasks. Each sub-task, along with the current RGB observation, is fed into a fine-tuned VLM to predict a 3D keypoint aligned with the sub-task semantics. The fine-grained action predictor then uses this keypoint as an anchor, fuses multi-view RGB-D data to construct a 3D-aware representation, and outputs precise end-effector actions. Language, semantics, and 3D space are connected through the intermediate representation of keypoints.
 
-1. Complex instructions are first decomposed into a sequence of sub-tasks via task decomposition.
-2. A fine-tuned VLM then predicts language-aligned 3D keypoints from the current observation for each sub-task.
-3. Finally, precise manipulation is executed near the predicted keypoints using a 3D-aware representation.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    I["Natural Language Instruction<br/>(e.g., Put the cup next to the plate)"] --> D["Task Decomposition<br/>Into ordered atomic sub-tasks"]
+    D --> S["Current Sub-task Text<br/>+ Multi-view RGB-D Observation"]
+    S --> K["VLM Fine-tuning for 3D Keypoint Prediction<br/>Semantically-aligned spatial anchors"]
+    K --> R["3D-Aware Representation<br/>RGB-D fusion centered on keypoints"]
+    R --> A["End-effector Action"]
+    A -->|If incomplete, fetch next sub-task| S
+```
 
 ### Key Designs
 
-1. **Task Decomposition**:
+**1. Task Decomposition: Breaking complex instructions into reusable atomic actions**
 
-    - **Function**: Decomposes natural language instructions into an ordered sequence of sub-task steps.
-    - **Mechanism**: A large language model (LLM) or rule-based method decomposes complex manipulation instructions into atomic steps. For example, "place the cup next to the plate" can be decomposed into "1. approach the cup → 2. grasp the cup → 3. move next to the plate → 4. release the cup."
-    - **Design Motivation**: Direct end-to-end mapping of complex instructions requires abundant data. After decomposition, each sub-task is simpler and more transferable—the atomic action "grasp" can be reused across diverse scenarios. This compositionality is a key source of generalization.
+End-to-end mapping of long instructions like "put the cup next to the plate" to actions requires massive trajectory data, leading to poor generalization. CLAP uses an LLM (or rule-based method) to decompose instructions into ordered steps—the example becomes "approach cup → grasp cup → move to plate → release cup." Each atomic sub-task is shorter and more modular. Actions like "grasp" or "release" naturally generalize across scenes: a "grasp" learned on a cup remains valid for bowls or boxes. This compositionality is the first source of generalization—the policy rearranges mastered atomic skills instead of learning every new instruction from scratch.
 
-2. **VLM Fine-tuning for 3D Keypoint Prediction**:
+**2. VLM Fine-tuning for 3D Keypoint Prediction: Enabling the coarse branch to "understand" linguistic targets**
 
-    - **Function**: Fine-tunes a vision-language model (VLM) to predict the 3D keypoint location of the target object given the current visual observation and a sub-task description.
-    - **Mechanism**: A pretrained VLM (e.g., a CLIP-based model) is fine-tuned on robot manipulation data. The input consists of an RGB image and a sub-task text description; the output is the keypoint coordinates in 3D space. The keypoints are language-aligned—for "grasp the red cup" versus "push the red cup," the predicted keypoint locations differ (corresponding to the handle and the side of the cup, respectively).
-    - **Design Motivation**: VLMs possess rich visual-language priors, encoding knowledge of what a "cup" looks like and where "grasping" should be applied. Fine-tuning adapts these priors to the robot manipulation domain while preserving generalization to novel concepts. Predicting 3D rather than 2D keypoints ensures awareness of depth and spatial relationships.
+Instead of a semantic-agnostic RoI, CLAP utilizes a VLM (e.g., a CLIP-based model) fine-tuned on robotic manipulation data. It processes RGB images and sub-task text to output 3D spatial keypoint coordinates. Crucially, these points are **language-aligned**: for the same red cup, the predicted point falls on the handle for "grasp" but on the side for "push." Fine-tuning leverages pre-existing vision-language priors (e.g., "what a cup looks like," "where to grasp") for manipulation, preserving generalization to new concepts while remaining data-efficient. Predicting 3D rather than 2D coordinates ensures keypoints carry depth and spatial relationships for downstream action prediction.
 
-3. **3D-Aware Representation**:
+**3. 3D-Aware Representation: Providing a robust spatial reasoning foundation for the fine branch**
 
-    - **Function**: Constructs a manipulation-oriented 3D spatial representation.
-    - **Mechanism**: Multi-view RGB images and depth information are combined to build 3D local features centered on the predicted keypoints. The fine branch performs action prediction based on this 3D representation rather than on raw images.
-    - **Design Motivation**: Robot manipulation is inherently a 3D task—grasp poses and placement positions are defined in 3D space. Pure 2D representations lack depth information and are prone to failure under viewpoint changes or object occlusion. A 3D representation provides a more robust foundation for spatial reasoning.
+Robotic manipulation is inherently 3D—grasp poses and placement locations are defined in three dimensions. Pure 2D features destabilize under viewpoint changes or occlusions. The fine branch in CLAP combines multi-view RGB and depth information to construct 3D local features centered at the predicted keypoint. Action regression is built upon this 3D representation. Confining the receptive field to a local 3D region near the keypoint retains geometric details for precise manipulation while remaining invariant to global layout changes, providing the third source of generalization.
+
+### A Complete Example
+
+For "put the cup next to the plate": The instruction is split into four sub-tasks. At the "grasp cup" step, the current RGB observation and the text "grasp cup" enter the fine-tuned VLM. Due to the "grasp" semantics, the predicted 3D keypoint falls on the cup handle. The fine branch then constructs a 3D local representation centered on this point to regress the approach and closure actions. For the "release cup" sub-task, the same observation but with the text "put next to plate" causes the VLM to shift the predicted keypoint to the target location near the plate, where the fine branch outputs the release action. As the sub-task text changes, the keypoint moves semantically in 3D space, and the actions follow—enabling execution even with novel instructions.
 
 ### Loss & Training
 
-- **VLM Fine-tuning**: Keypoint prediction is trained with a regression loss (L1 or L2 distance) to align predicted 3D coordinates with annotated keypoint positions.
-- **Policy Learning**: The fine branch employs Behavior Cloning (BC), learning a mapping from the 3D representation near the keypoint to end-effector actions.
-- **Data Efficiency**: As few as 10 real-world demonstrations suffice to train an effective policy—far fewer than the hundreds typically required by conventional methods.
+VLM keypoint prediction uses a regression loss ($L_1$ or $L_2$ distance) to align predicted 3D coordinates with annotated keypoints. The fine branch employs Behavior Cloning (BC) to learn the mapping from 3D representations to end-effector actions within the keypoint neighborhood. By reusing VLM pre-training priors, the data requirements are extremely low—useful policies can be trained with only 10 demonstrations in real-world settings, far fewer than the hundreds required by conventional methods.
 
 ## Key Experimental Results
 
 ### Experimental Setup
-- Simulation benchmark: GemBench (a manipulation benchmark specifically designed for generalization evaluation)
-- Real-world experiments: Physical robot platform with 10 demonstrations
-- Evaluation metric: Manipulation success rate
-- Generalization dimensions: Novel instructions, novel object appearances, novel environment layouts
+- Simulation Benchmark: GemBench (designed for generalization evaluation)
+- Real-world Experiments: Physical robot platform, 10 demonstrations
+- Metrics: Success Rate
+- Generalization Dimensions: Novel instructions, novel object appearance, novel environmental layouts
 
 ### Main Results
 
-| Method | GemBench Avg. Success Rate | Training Trajectories | Notes |
-|--------|---------------------------|----------------------|-------|
-| SOTA (best baseline) | ~X% | ~5N | Requires many demonstrations |
-| **CLAP** | **X + 12%** | **N (1/5)** | Higher success rate with less data |
+| Method | GemBench Avg. Success Rate | Training Trajectories | Note |
+|------|-------------------|-----------|------|
+| Prev. SOTA | ~X% | ~5N | Requires massive demonstrations |
+| **Ours (CLAP)** | **X + 12%** | **N (1/5)** | Significantly higher success + less data |
 
-CLAP exceeds the best prior method on GemBench by an average of 12 percentage points while using only 1/5 of the training trajectories.
+CLAP outperforms SOTA methods by 12 percentage points on GemBench while using only 1/5 of the training trajectories.
 
-### Real-Robot Experiments
+### Real-world Robot Experiments
 
-| Setting | Success Rate | Notes |
-|---------|-------------|-------|
-| Training scenarios | High | Learned from only 10 demonstrations |
-| Novel instructions | Successful generalization | Language-aligned keypoints correctly identify new targets |
-| Novel environments | Successful generalization | 3D representation is robust to layout changes |
+| Setting | Success Rate | Note |
+|------|--------|------|
+| Training Scene | High | Learnable with 10 demonstrations |
+| Novel Instructions | Successful Generalization | Language-aligned keypoints correctly identify new targets |
+| Novel Environments | Successful Generalization | 3D representation robust to layout changes |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| w/o Task Decomposition | Success rate drops | Direct processing of complex instructions is ineffective |
-| w/o VLM Fine-tuning (pretrained VLM only) | Success rate drops | Pretrained VLM is insufficiently adapted to manipulation |
-| 2D representation instead of 3D | Success rate drops | Lack of depth information impairs precise manipulation |
+| Configuration | Key Metric | Note |
+|------|---------|------|
+| w/o Task Decomposition | Success Rate drops | Poor handling of complex direct instructions |
+| w/o VLM Fine-tuning (Frozen VLM) | Success Rate drops | Pre-trained VLM lacks adaptation to manipulation scenes |
+| 2D instead of 3D Representation | Success Rate drops | Lack of depth information affects precision |
 
 ### Key Findings
 
-1. **All three components are indispensable**: Task decomposition, VLM fine-tuning, and 3D representation each contribute a distinct dimension of generalization.
-2. **Extremely low data requirements**: Only 10 demonstrations are needed for real-world deployment, which is highly valuable for practical applications.
-3. **Language alignment is critical**: Keypoints carry not only spatial location but also semantic information—the same object produces different keypoints under different instructions.
+1.  **Components are Indispensable**: Task decomposition, VLM fine-tuning, and 3D representation each contribute to different dimensions of generalization.
+2.  **Extremely Low Data Demand**: Working in real-world scenarios with 10 demonstrations is highly valuable for deployment.
+3.  **Language Alignment is Vital**: Keypoints are not just spatial locations; they carry semantic information, generating different points for different instructions on the same object.
 
 ## Highlights & Insights
 
-- **The ideal combination of low data and strong generalization**: By fully leveraging pretrained VLM priors, the method reduces sample requirements to a minimum while maintaining strong generalization.
-- **Clean hierarchical design**: The coarse branch (VLM keypoint prediction) and fine branch (3D local action prediction) have well-defined, complementary roles.
-- **Bridging language and 3D space**: Fine-tuning VLMs to map language semantics onto 3D keypoints provides an effective bridge between NLP and robot manipulation.
-- **Practical orientation**: The ability to deploy with only 10 demonstrations gives this approach high real-world applicability.
+- **Ideal "Low Data + High Generalization" Combination**: Leverages pre-trained VLM priors to minimize sample requirements while maintaining robustness.
+- **Clear Hierarchical Design**: Distinct division of labor between the coarse branch (VLM keypoint prediction) and fine branch (3D local action prediction).
+- **Bridge between Language and 3D Space**: Fine-tuning VLMs to map semantics to 3D keypoints provides an effective bridge between NLP and robotic manipulation.
+- **Practicality**: The ability to deploy with only 10 demonstrations gives the method high real-world utility.
 
 ## Limitations & Future Work
 
-1. **Robustness of task decomposition**: If the LLM produces an inaccurate decomposition (e.g., omitting a critical step or incorrect ordering), the entire pipeline fails.
-2. **Expressiveness of keypoints**: A single 3D keypoint may be insufficient to describe complex manipulations, such as tasks requiring bimanual coordination or multi-contact interactions.
-3. **VLM fine-tuning data**: Although policy learning requires few demonstrations, VLM fine-tuning may still demand a non-trivial amount of annotated data.
-4. **Dynamic environments**: The method appears designed for static or slowly changing environments; its adaptability to rapidly dynamic scenes (e.g., moving objects) remains unknown.
-5. **Long-horizon tasks**: Error accumulation may become problematic when task decomposition yields a long sequence of sub-tasks.
-6. **Limits of open-vocabulary generalization**: Although generalization to novel instructions is demonstrated, the boundary of generalization to entirely unseen object categories (never encountered during training) has not been thoroughly explored.
+1.  **Task Decomposition Robustness**: If LLM decomposition is inaccurate (e.g., missing steps or wrong order), the pipeline fails.
+2.  **Keypoint Representational Power**: A single 3D keypoint may be insufficient for complex operations (e.g., bimanual coordination or multi-point contact).
+3.  **VLM Fine-tuning Data**: While policy learning is data-efficient, VLM fine-tuning may still require substantial structured data.
+4.  **Dynamic Environments**: The current method appears oriented toward static or slowly changing environments; adaptability to fast dynamic scenes is unknown.
+5.  **Long-horizon Tasks**: Error accumulation across long sub-task sequences may become an issue.
+6.  **Open-vocabulary Limits**: While generalizing to new instructions, the boundaries for completely novel object categories (unseen types) remain unexplored.
 
 ## Related Work & Insights
 
-- **Relation to PerAct/RVT**: PerAct and RVT employ voxelized 3D representations for manipulation but lack a language-guided keypoint mechanism. CLAP's coarse-to-fine design is an effective complement to such approaches.
-- **Relation to SayCan/Code-as-Policies**: These methods use LLMs for task planning without addressing generalization at the level of low-level manipulation policies. CLAP's task decomposition is conceptually similar but focuses more on the execution layer.
-- **Trend of VLMs in robotics**: Works such as RT-2 and Octo also integrate VLMs into robot systems, but predominantly in an end-to-end fashion. CLAP's hierarchical approach (VLM → keypoints → local policy) offers a more controllable and data-efficient alternative.
-- **Universality of 3D keypoints**: Keypoints as an intermediate representation for manipulation exhibit strong generality; future work could explore richer keypoint representations, such as oriented keypoints or keypoint graphs.
+- **Comparison with PerAct/RVT**: While PerAct and RVT use voxelized 3D representations, they lack language-guided keypoint mechanisms. CLAP’s coarse-to-fine design is a powerful complement to these approaches.
+- **Comparison with SayCan/Code-as-Policies**: These use LLMs for high-level planning but do not address low-level policy generalization. CLAP's decomposition is similar but focuses on execution.
+- **VLM Trends in Robotics**: Works like RT-2 and Octo use VLMs end-to-end. CLAP's hierarchical approach (VLM → Keypoint → Local Policy) offers a more controllable and data-efficient alternative.
+- **Universality of 3D Keypoints**: Keypoints serve as effective intermediate representations; future work could explore richer versions (e.g., oriented keypoints or keypoint graphs).
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
 - Experimental Thoroughness: ⭐⭐⭐⭐
 - Writing Quality: ⭐⭐⭐⭐
 - Value: ⭐⭐⭐⭐⭐
+
+## Related Papers
+
+- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](../../CVPR2026/3d_vision/3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
+- [\[ICCV 2025\] RoboPearls: Editable Video Simulation for Robot Manipulation](../../ICCV2025/3d_vision/robopearls_editable_video_simulation_for_robot_manipulation.md)
+- [\[AAAI 2026\] VGGT-DP: Generalizable Robot Control via Vision Foundation Models](../../AAAI2026/3d_vision/vggt-dp_generalizable_robot_control_via_vision_foundation_models.md)
+- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
+- [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -152,10 +166,10 @@ CLAP exceeds the best prior method on GemBench by an average of 12 percentage po
 ## Related Papers
 
 - [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](../../CVPR2026/3d_vision/3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
-- [\[ICLR 2026\] Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation](learning_part-aware_dense_3d_feature_field_for_generalizable_articulated_object_.md)
-- [\[AAAI 2026\] VGGT-DP: Generalizable Robot Control via Vision Foundation Models](../../AAAI2026/3d_vision/vggt-dp_generalizable_robot_control_via_vision_foundation_models.md)
+- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
 - [\[ICCV 2025\] RoboPearls: Editable Video Simulation for Robot Manipulation](../../ICCV2025/3d_vision/robopearls_editable_video_simulation_for_robot_manipulation.md)
-- [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
+- [\[AAAI 2026\] VGGT-DP: Generalizable Robot Control via Vision Foundation Models](../../AAAI2026/3d_vision/vggt-dp_generalizable_robot_control_via_vision_foundation_models.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 
 </div>
 

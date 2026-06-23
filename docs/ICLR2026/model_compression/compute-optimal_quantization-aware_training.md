@@ -2,139 +2,134 @@
 title: >-
   [Paper Note] Compute-Optimal Quantization-Aware Training
 description: >-
-  [ICLR 2026][Model Compression][Quantization-Aware Training] Through 757 QAT experiments spanning 86M–2.2B parameters and 1–6 bits, this paper demonstrates that the optimal QAT training fraction grows with total compute b…
+  [ICLR 2026][Model Compression][Scaling Law] Based on 757 QAT experiments (86M-2.2B parameters, 1-6 bits), this paper discovers that the optimal QAT training fraction increases as total compute grows (contrary to the previous conclusion of a fixed 10%). It proposes a tokens-per-parameter-byte statistic and a new loss scaling law to accurately predict optimal QAT
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Quantization-Aware Training"
-  - "Scaling Law"
-  - "Compute-Optimal Allocation"
-  - "tokens-per-parameter-byte"
-  - "Low-Bit Quantization"
+  - ICLR 2026
+  - Model Compression
+  - Scaling Law
+  - tokens-per-parameter-byte
 date: 2026-05-08
-content_hash: 3e3cfd5fe90183dc
+content_hash: 7b85d3d236354ed5
 ---
-
 # Compute-Optimal Quantization-Aware Training
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.22935](https://arxiv.org/abs/2509.22935)  
 **Code**: None  
-**Area**: Model Compression / LLM Efficiency
-**Keywords**: Quantization-Aware Training, Scaling Law, Compute-Optimal Allocation, tokens-per-parameter-byte, Low-Bit Quantization
+**Area**: Model Compression / LLM Efficiency  
+**Keywords**: Quantization-Aware Training, Scaling Law, Compute-Optimal Allocation, tokens-per-parameter-byte, Low-bit Quantization
 
 ## TL;DR
-Through 757 QAT experiments spanning 86M–2.2B parameters and 1–6 bits, this paper demonstrates that the optimal QAT training fraction grows with total compute budget—contradicting the previously held belief that 10% is universally optimal—and proposes the tokens-per-parameter-byte statistic along with a new loss scaling law to accurately predict the optimal QAT allocation strategy and final loss across all configurations.
+Based on 757 QAT experiments (86M-2.2B parameters, 1-6 bits), this paper discovers that the optimal QAT training fraction increases as total compute grows (contrary to the previous conclusion of a fixed 10%). It proposes a tokens-per-parameter-byte statistic and a new loss scaling law to accurately predict optimal QAT allocation strategies and final loss.
 
 ## Background & Motivation
 
-**Background**: QAT is the dominant approach for training high-quality quantized models, typically following a two-stage pipeline of full-precision (FP) pretraining followed by QAT fine-tuning. Liu et al. (2025) recommend allocating 10% of total training steps to the QAT phase.
+**Background**: QAT is the mainstream method for training high-quality quantized models, typically employing a two-stage "full-precision (FP) training → QAT fine-tuning" pipeline. Liu et al. (2025) previously suggested that the QAT stage should account for 10% of total training steps.
 
 **Limitations of Prior Work**:
-   - The "10% optimum" conclusion was derived under limited compute budgets and has not been validated at larger scales
-   - PTQ-induced quantization error grows with the amount of pretraining data (Kumar et al.), suggesting that the FP-to-QAT allocation should be scale-dependent
-   - Existing QAT scaling laws (Chen et al.) assume $D_{fp}=0$ (i.e., QAT from scratch) and do not address the two-stage FP→QAT scenario
-   - No unified scaling law exists across different bit-widths
+   - Previous conclusions regarding the "10% optimum" were derived under limited compute budgets and were not verified at larger scales.
+   - Quantization error introduced by PTQ increases with the volume of pre-training data (Kumar et al.), implying that the FP-QAT allocation should be scale-dependent.
+   - Existing QAT scaling laws (Chen et al.) assume $D_{fp}=0$ (QAT from scratch) and do not handle the "FP → QAT" two-stage scenario.
+   - Lack of a unified scaling law across different bit-widths.
 
-**Key Challenge**: Too few QAT steps leave the model unable to adapt to low-precision arithmetic; too many QAT steps compress the FP stage and extend training with noisy gradients. How does this trade-off shift as total compute grows?
+**Key Challenge**: Too few QAT steps prevent the model from adapting to low precision, while too many QAT steps compress the FP stage and lead to excessive training with noisy gradients. How does this equilibrium shift as total compute increases?
 
 **Goal**:
-   - How does the optimal QAT fraction vary with model size, total token count, and bit-width?
-   - Can a single unified scaling law predict final loss across all configurations?
-   - Can the training pipeline be further streamlined (e.g., by merging the cooldown and QAT phases)?
+   - How does the optimal QAT fraction vary with model size, total tokens, and bit-width?
+   - Can a unified scaling law predict the final loss across all configurations?
+   - Can the training pipeline be further optimized (e.g., merging cooldown and QAT)?
 
-**Key Insight**: The paper introduces tokens-per-parameter-byte, $S = D/(N \cdot B/8)$, as a unified scaling variable that simultaneously encodes model size, data volume, and quantization precision.
+**Key Insight**: Introduce tokens-per-parameter-byte $S = D/(N \cdot B/8)$ as a unified scaling variable that simultaneously encodes model size, data volume, and quantization precision.
 
-**Core Idea**: The optimal time allocation for QAT is not a fixed 10% but rather a function that grows with tokens-per-parameter-byte, and can be accurately modeled by a unified scaling law.
+**Core Idea**: The optimal time allocation for QAT is not a fixed 10% but a function that grows with tokens-per-parameter-byte, which can be accurately modeled by a unified scaling law.
 
 ## Method
 
 ### Overall Architecture
-Two-stage training: FP phase ($D_{fp}$ tokens) → QAT phase ($D_{qat}$ tokens), totaling $D_{total} = D_{fp} + D_{qat}$. The central question is: given $N$, $D_{total}$, and $B$, what is the optimal fraction $f^* = D_{qat}^*/D_{total}$?
+Standard training for low-bit quantized models involves two stages: full-precision (FP) training ($D_{fp}$ tokens) followed by quantization-aware training (QAT, $D_{qat}$ tokens), with $D_{total} = D_{fp} + D_{qat}$. This work centers on one question: given model scale $N$, total token budget $D_{total}$, and bit-width $B$, what is the optimal QAT fraction $f^* = D_{qat}^*/D_{total}$ and how does it scale?
+
+Instead of modifying training operators, the paper makes this allocation problem predictable: First, it identifies a 1D scaling variable, tokens-per-parameter-byte (Design 1), to fit a closed-form formula for the optimal fraction (Design 2). Second, it builds a unified scaling law for the entire loss curve across scales and bit-widths (Design 3) to infer both the optimal fraction and final loss. Finally, it provides a practical improvement to the training pipeline by fusing the learning rate cooldown with QAT (Design 4).
 
 ### Key Designs
 
-1. **Tokens-per-Parameter-Byte Statistic**:
+**1. Tokens-per-Parameter-Byte Statistic: A Unified Scaling Variable**
 
-    - Function: Unifies the prediction of the optimal QAT allocation across different model sizes and bit-widths.
-    - Mechanism: $S_{total} = D_{total}/(N \cdot B/8)$ normalizes the total token count by the quantized byte size of the model parameters. Larger models are easier to quantize ($N$ large → $S$ small); lower bit-widths are harder to quantize ($B$ small → $S$ large); longer training makes quantization harder ($D$ large → $S$ large).
-    - Design Motivation: As shown in Figure 2, optimal points for different bit-widths are scattered when plotted against raw token counts, but collapse onto a single curve when plotted against tokens-per-parameter-byte.
+The paper merges model size $N$, data volume $D$, and bit-width $B$ into $S_{total} = D_{total}/(N \cdot B/8)$, normalizing training tokens by the quantized parameter bytes. This variable captures three directions of "quantization difficulty": larger models are easier to quantize ($N$ increases → $S$ decreases), lower bits are harder ($B$ decreases → $S$ increases), and longer training is harder ($D$ increases → $S$ increases). In tokens-per-parameter-byte coordinates, optimal points for different bit-widths align on a single curve, identifying this as the true independent variable governing QAT allocation.
 
-2. **Optimal QAT Fraction Prediction**:
+**2. Optimal QAT Fraction Prediction: A Single-Parameter Formula**
 
-    - Function: Directly fits the relationship between the optimal QAT fraction and $S_{total}$.
-    - Mechanism: $\hat{f}(D_{total}, N, B) = \frac{\exp(\log S_{total} - a/\log S_{total})}{S_{total}}$, where $a=6.7297$ is the sole fitted parameter.
-    - Design Motivation: The relationship between $S_{total}$ and the optimal $S_{qat}$ is approximately linear in log-log space; a constraint $D_{qat} \leq D_{total}$ is imposed. The resulting MAE is only 0.091.
+With $S_{total}$ as the correct variable, the paper observes an approximately linear relationship between $S_{total}$ and optimal $S_{qat}$ in log-log space. Incorporating the physical constraint $D_{qat} \leq D_{total}$ yields a closed-form prediction:
 
-3. **Unified Loss Scaling Law**:
+$$\hat{f}(D_{total}, N, B) = \frac{\exp(\log S_{total} - a/\log S_{total})}{S_{total}}$$
 
-    - Function: Predicts final loss across all combinations of model size, token count, and bit-width.
-    - Mechanism: $L = \text{Chinchilla-like} + \delta(N, D_{qat}, D_{fp}, B)$, where the QAT penalty term $\delta$ decomposes into three components:
-        - **Irreducible QAT error** $\theta \cdot 2^{-\kappa B}$: a precision floor determined by bit-width
-        - **Pure QAT penalty** $\frac{\phi \cdot 2^{-\chi B}}{N^\psi \cdot S_{qat}^\omega}$: error incurred when QAT steps are insufficient
-        - **FP/QAT interaction term** $\frac{\lambda \cdot 2^{-\mu B}}{N^\nu \cdot S_{fp}^\xi \cdot S_{qat}^\rho}$: additional difficulty in quantization caused by an excessively long FP phase
-    - Design Motivation: Prior scaling laws yield loss that diverges as $D \to \infty$, which is physically unreasonable. In the proposed formulation, all penalty terms decrease as $S$ grows, ensuring loss eventually converges. Fitted on 757 experimental data points, the law accurately predicts both the optimal fraction and the final loss.
+Only one parameter ($a=6.7297$) is needed to predict the optimal fraction across all configurations with an MAE of only 0.091.
 
-4. **Cooldown + QAT Fusion**:
+**3. Unified Loss Scaling Law: Predicting Final Loss Across Configurations**
 
-    - Function: Merges the learning rate decay phase with QAT, eliminating redundant FP updates.
-    - Mechanism: QAT begins directly at the peak learning rate of the FP phase, with learning rate decay applied concurrently, rather than completing the FP cooldown before initiating QAT.
-    - Design Motivation: In the standard FP + cooldown + QAT pipeline, the FP updates during cooldown contribute little to the final quantized model and can be safely omitted.
+To predict the final loss, the paper adds a QAT-aware penalty term $\delta$ to the Chinchilla framework:
+
+$$L = \text{Chinchilla-like} + \delta(N, D_{qat}, D_{fp}, B)$$
+
+The penalty $\delta$ is decomposed into: **Irreducible QAT error** $\theta \cdot 2^{-\kappa B}$ (precision floor); **Pure QAT penalty** $\frac{\phi \cdot 2^{-\chi B}}{N^\psi \cdot S_{qat}^\omega}$ (residual error from insufficient QAT steps); and **FP/QAT interaction term** $\frac{\lambda \cdot 2^{-\mu B}}{N^\nu \cdot S_{fp}^\xi \cdot S_{qat}^\rho}$ (denoting that excessive FP training makes subsequent quantization harder). All terms decay as $S$ increases, ensuring the loss converges.
+
+**4. Cooldown + QAT Fusion: Reducing Redundant Computation**
+
+The standard process is FP training → cooldown → QAT. However, FP updates during cooldown offer little value to the final quantized model. This method switches directly to QAT from the peak learning rate of the FP stage, performing LR decay and QAT fine-tuning simultaneously. This eliminates redundant compute without increasing total tokens.
 
 ### Loss & Training
-- QAT employs the straight-through estimator to handle the non-differentiability of quantization operations.
-- The 757 experiments cover models from 86M to 2.2B parameters, 1/2/4/6-bit quantization, and 2.3B to 1.4T tokens.
-- Scaling law parameters are fitted using Huber loss with gradient descent.
+- QAT uses the straight-through estimator to handle non-differentiable quantization operations.
+- 757 experiments covering 86M-2.2B models, 1-6 bits, and 2.3B-1.4T tokens.
+- Huber loss and gradient descent are used to fit scaling law parameters.
 
 ## Key Experimental Results
 
-### Main Results: Optimal QAT Fraction Grows with Scale
+### Main Results: Optimal QAT Fraction Increases with Scale
 
-| Model Size | Total Tokens | 2-bit Optimal $f^*$ | 4-bit Optimal $f^*$ | 6-bit Optimal $f^*$ |
-|-----------|-------------|-------------------|-------------------|-------------------|
+| Model Size | Total Tokens | 2-bit Opt f* | 4-bit Opt f* | 6-bit Opt f* |
+| :--- | :--- | :--- | :--- | :--- |
 | 86M | Short | ~10% | ~8% | ~5% |
 | 86M | Long | ~40% | ~25% | ~15% |
 | 396M | Medium | ~25% | ~15% | ~10% |
 | 759M | Long | ~30%+ | ~20% | ~12% |
 
-### Scaling Law Prediction Accuracy
+### Scaling Law Predictive Accuracy
 
 | Prediction Target | Error |
-|------------------|-------|
-| Optimal QAT fraction (direct fit) | MAE = 0.091 |
-| Loss scaling law (757 experiments) | Accurately predicts all configurations |
-| Optimal bit-width selection | Correctly predicted |
-| Cooldown+QAT fusion vs. standard | Matches or exceeds standard pipeline |
+| :--- | :--- |
+| Optimal QAT fraction (Direct fit) | MAE = 0.091 |
+| Loss scaling law (757 experiments) | Accurate across all configs |
+| Cross bit-width optimal choice | Correctly predicted |
+| Cooldown+QAT fusion vs. Standard | Meets or exceeds standard |
 
 ### Key Findings
-- **Refutes the "10% universality" claim**: Under large compute budgets, the optimal QAT fraction can reach 30–40% for low bit-widths.
-- **Lower bit-widths require more QAT**: At the same scale, 2-bit quantization requires more QAT steps than 6-bit.
-- **Larger models are easier to quantize**: Given the same $D_{total}$, larger models require a smaller optimal QAT fraction.
-- **Cooldown fusion is effective**: The fused scheme matches or exceeds the standard FP+QAT pipeline without increasing the total token budget.
-- **4-bit QAT offers the best cost-efficiency**: Under most memory constraints, 4-bit quantization achieves the optimal trade-off between loss and memory footprint.
+- **Rejection of the "10% rule"**: At high compute budgets, the optimal QAT fraction can reach 30-40% for low bit-widths.
+- **Low bits require more QAT**: 2-bit models require more QAT steps than 6-bit models at the same scale.
+- **Large models are easier to quantize**: At the same $D_{total}$, larger models require a smaller QAT fraction.
+- **Cooldown fusion is effective**: Achieving similar or better results than the standard pipeline without extra tokens.
+- **4-bit QAT is the "sweet spot"**: It generally provides the best trade-off between loss and memory under most constraints.
 
 ## Highlights & Insights
-- **Tokens-per-parameter-byte is an elegantly unified variable**: A single quantity simultaneously encodes model size, data volume, and quantization precision, revealing a consistent scaling behavior across diverse configurations. This methodology of identifying the right variable is broadly instructive.
-- **Methodological value in overturning prior conclusions**: The paper demonstrates through large-scale systematic experimentation that earlier conclusions were valid only within a limited regime—a recurring and important contribution in scaling law research.
-- **Engineering utility of the scaling law**: After fitting 757 experiments, the law directly answers the question of how many bits and what QAT fraction to use given a specific compute budget and memory constraint, providing actionable guidance for large-scale training planning.
+- **Tokens-per-parameter-byte is an elegant unified variable**: It successfully maps model size, data volume, and precision to a 1D coordinate where universal laws emerge.
+- **Methodological value in challenging consensus**: Systematically proving that previous conclusions were local optima by expanding the scale.
+- **Practical Engineering Utility**: After fitting 757 experiments, the law directly answers how many bits and what QAT fraction to use given a specific compute and memory budget.
 
 ## Limitations & Future Work
-- Experiments are limited to models up to 2.2B parameters; validation on models with 7B+ parameters is absent.
-- Only weight quantization is considered; activation quantization is not addressed.
-- The scaling law has 15+ fitted parameters, raising potential concerns about overfitting.
-- The learning rate schedule for the cooldown+QAT fusion strategy is relatively simple and may admit more optimal designs.
-- Variables such as MoE architectures and data quality are not considered.
+- Only tested up to 2.2B parameters; verification for 7B+ models is needed.
+- Focuses on weight quantization; does not address activation quantization.
+- The scaling law has 15+ fittable parameters, risking potential over-fitting.
+- Learning rate schedules in cooldown+QAT fusion could be further optimized.
+- Does not account for MoE architectures or varying data quality.
 
 ## Related Work & Insights
-- **vs. Chen et al. (2025b)**: Their QAT scaling law only handles training from scratch ($D_{fp}=0$) and fits each bit-width separately; this paper provides a unified treatment of the FP→QAT pipeline across all bit-widths.
-- **vs. Kumar et al. (2025)**: They show that PTQ error grows with the amount of pretraining data; this paper corroborates a similar trend in the QAT setting and offers a principled remedy.
-- **vs. Chinchilla**: The proposed scaling law extends the Chinchilla framework with QAT-aware penalty terms, representing a natural generalization of Chinchilla to the quantization-aware training setting.
+- **vs. Chen et al. (2025b)**: Their law covers training from scratch ($D_{fp}=0$); this work handles FP→QAT and unifies bit-widths.
+- **vs. Kumar et al. (2025)**: They identified PTQ error growth with data volume; this work validates this in QAT and provides a solution.
+- **vs. Chinchilla**: This work is a natural extension of Chinchilla to the quantization training domain by adding QAT-aware terms.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Refutes established conclusions and proposes a unified scaling law, though the underlying methodology is not entirely new.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 757 experiments spanning multiple model sizes, bit-widths, and token counts; an enormous engineering undertaking.
-- Writing Quality: ⭐⭐⭐⭐⭐ Beautifully designed figures, clear logical exposition, and well-motivated variable choices throughout.
-- Value: ⭐⭐⭐⭐⭐ Provides direct, actionable guidance for practical LLM quantization training planning; characteristic of Apple's high-quality research output.
+- Novelty: ⭐⭐⭐⭐ (Challenged existing consensus + unified scaling law)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (757 experimental points is a massive engineering effort)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Excellent visualizations and logical derivations)
+- Value: ⭐⭐⭐⭐⭐ (Directly applicable to large-scale LLM training planning)
 
 <!-- RELATED:START -->
 
@@ -142,11 +137,11 @@ Two-stage training: FP phase ($D_{fp}$ tokens) → QAT phase ($D_{qat}$ tokens),
 
 ## Related Papers
 
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
-- [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](../../ICCV2025/model_compression/scheduling_weight_transitions_for_quantization-aware_training.md)
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
+- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
+- [\[ICLR 2026\] Optimal Brain Restoration for Joint Quantization and Sparsification of LLMs](optimal_brain_restoration_for_joint_quantization_and_sparsification_of_llms.md)
 - [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ICLR 2026\] What Layers When: Learning to Skip Compute in LLMs with Residual Gates](what_layers_when_learning_to_skip_compute_in_llms_with_residual_gates.md)
 
 </div>
 

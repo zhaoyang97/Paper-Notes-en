@@ -2,66 +2,62 @@
 title: >-
   [Paper Note] Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression
 description: >-
-  [ICLR2026][Model Compression][dataset compression] This paper proposes the Dataset Color Quantization (DCQ) framework, which reduces color redundancy at the dataset level through three mechanisms — chromaticity-aware clu…
+  [ICLR 2026][Model Compression][Paper Note] The Dataset Color Quantization (DCQ) framework is proposed to reduce color redundancy at the dataset level through three mechanisms: chroma-aware clustering, attention-guided palette allocation, and texture-preserving optimization, achieving storage compression while maintaining training effectiveness.
 tags:
-  - "ICLR2026"
-  - "Model Compression"
-  - "dataset compression"
-  - "color quantization"
-  - "palette sharing"
-  - "attention guidance"
-  - "texture preservation"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 5933de5560c695b0
+content_hash: c995a420c67ee796
 ---
-
 # Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2602.20650](https://arxiv.org/abs/2602.20650)  
-**Code**: N/A  
-**Area**: Model Compression
-**Keywords**: dataset compression, color quantization, palette sharing, attention guidance, texture preservation
+**Code**: None  
+**Area**: Model Compression  
+**Keywords**: Dataset Compression, Color Quantization, Palette Sharing, Attention Guidance, Texture Preservation  
 
 ## TL;DR
-This paper proposes the Dataset Color Quantization (DCQ) framework, which reduces color redundancy at the dataset level through three mechanisms — chromaticity-aware clustering, attention-guided palette allocation, and texture-preserved palette optimization — achieving storage compression while maintaining training performance.
+The Dataset Color Quantization (DCQ) framework is proposed to reduce color redundancy at the dataset level through three mechanisms: chroma-aware clustering, attention-guided palette allocation, and texture-preserving optimization, achieving storage compression while maintaining training effectiveness.
 
 ## Background & Motivation
 
-### State of the Field
+**Background & Limitations of Prior Work**: The storage requirements of large-scale image datasets challenge resource-constrained environments. Existing dataset compression methods (dataset pruning, distillation) reduce data volume by discarding samples but ignore **intra-image color redundancy**—the fact that many pixels share nearly identical colors (e.g., smooth regions like sky or walls). Existing Color Quantization (CQ) methods suffer from two major issues:
 
-**Background**: The storage demands of large-scale image datasets pose significant challenges in resource-constrained environments. Existing dataset compression methods (dataset pruning, distillation) reduce data volume by discarding samples, yet overlook **intra-image color redundancy** — many pixels share nearly identical colors (e.g., smooth regions such as sky and walls). Existing color quantization (CQ) methods suffer from two major issues:
+**Image-attribute based CQ** (e.g., K-Means): Lacks semantic guidance, leading to blurred semantic boundaries and uniform bit allocation for both foreground and background.
 
-**Image-property-based CQ** (e.g., K-Means): lacks semantic guidance, leading to blurred semantic boundaries and uniform bit allocation between background and foreground.
+**Model-aware CQ** (e.g., ColorCNN): Maintains recognition accuracy but introduces abrupt texture/edge discontinuities. When ColorCNN quantizes CIFAR-10 to 4 colors, the pre-trained model achieves 77% inference accuracy, but training on this quantized data yields only 58%.
 
-**Model-aware CQ** (e.g., ColorCNN): preserves recognition accuracy but introduces abrupt texture/edge discontinuities — when ColorCNN quantizes CIFAR-10 to 4 colors, inference accuracy of a pretrained model reaches 77%, yet training on quantized data yields only 58%.
-
-Key insight: existing methods are **inference-oriented** (optimizing pretrained model recognition on quantized images), whereas this paper is the first to propose **training-oriented** dataset color quantization.
+**Key Insight**: Existing methods are **inference-oriented** (optimizing recognition of quantized images by pre-trained models), whereas this work proposes **training-oriented** dataset color quantization for the first time.
 
 ## Method
 
 ### Overall Architecture
-DCQ consists of three core modules forming a unified dataset-level color compression pipeline.
+DCQ compresses color redundancy at the dataset level rather than per single image: it first clusters the entire dataset into several groups based on color distribution, allowing images in the same cluster to share a palette. Then, it uses attention maps to bias the limited color budget toward semantically critical regions. Finally, it uses differentiable quantization to optimize the palette to preserve texture edges. Ultimately, only the palette index per pixel and a small number of shared palettes need to be stored, with quantized images reconstructed in real-time during training. When quantizing from standard 24-bit RGB to $q$ bits, the palette size reduces to $2^q$ colors, with a compression rate $q_r = 1 - q/24$. For example, 2-bit quantization with only 4 colors achieves a 91.7% compression rate.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Dataset Images<br/>24-bit RGB"] --> B["Chroma-Aware Clustering<br/>Shallow Feature K-Means → 20 Clusters<br/>Shared Palette per Cluster"]
+    B --> C["Attention-Guided Palette Allocation<br/>Grad-CAM++ Selects top-k% Pixels<br/>Aggregated into Shared Palette in LAB Space"]
+    C --> D["Texture-Preserving Palette Optimization<br/>Differentiable Quantization + STE<br/>Minimize Edge Distribution Difference EL"]
+    D --> E["Storage<br/>Per-pixel Index + Sparse Shared Palettes"]
+    E --> F["Real-time Reconstruction During Training<br/>For Training Downstream Networks"]
+```
 
 ### Key Designs
-**1. Chromaticity-Aware Clustering (CAC)**:
-- Clusters dataset images via K-Means ($k=20$ clusters) using shallow features $\psi_{\text{shallow}}(x)$ from a pretrained model.
-- Images within the same cluster share a palette, balancing cross-image consistency with quantization fidelity.
-- Shallow features capture color distribution patterns (vs. deep features capturing semantics), motivated by the intuition: $i \uparrow \Rightarrow \text{Sem}(\psi_i) \uparrow, \text{Vis}(\psi_i) \downarrow$
 
-**2. Attention-Guided Palette Allocation**:
-- Obtains attention maps via Grad-CAM++, retaining the top $k_{Gra}\%$ pixels by attention value.
-- Palette aggregation is restricted to high-attention regions (foreground/key objects), ensuring semantically critical areas receive richer color representation.
-- K-Means is performed in LAB color space rather than RGB to better preserve perceptual similarity.
+**1. Chroma-Aware Clustering: Balancing Consistency and Fidelity via Palette Sharing**
 
-**3. Texture-Preserved Palette Optimization**:
-- Inspired by style transfer, optimizes the palette via differentiable color quantization with a straight-through estimator (STE).
-- Minimizes the edge distribution discrepancy $EL$ between the original and quantized images (edge information extracted via Sobel operator).
-- Formula: $EL = \sum_{i=1}^{3} w_i \cdot \text{MSE}(G(I_{\text{orig}}^i), G(I_{\text{quant}}^i))$
+If each image learns an individual palette, storage overhead is high and cross-image consistency is lacking; if the entire dataset shares one palette, it fails to accommodate diverse images. DCQ takes a middle ground: using shallow features $\psi_{\text{shallow}}(x)$ of a pre-trained model to perform K-Means clustering ($k=20$) on dataset images, where images in the same cluster share one palette. Shallow features are used because features become more semantic and lose visual color information as depth increases (intuition: $i \uparrow \Rightarrow \text{Sem}(\psi_i) \uparrow,\ \text{Vis}(\psi_i) \downarrow$), while color quantization focuses on color distribution patterns rather than category semantics. Ablations show that shallow feature clustering (79.90% at 1-bit) significantly outperforms label-based clustering (40.10%) or deep feature clustering (42.10%), with $k=20$ being the optimal balance point.
 
-Storage scheme: only indices and the shared palette are stored; quantized images are reconstructed on-the-fly during training.
+**2. Attention-Guided Palette Allocation: Investing the Color Budget in Foreground Critical Regions**
 
-Compression ratio formula: starting from standard 24-bit RGB (8 bits per channel), quantizing to $q$ bits reduces the palette to $2^q$ colors, yielding a compression ratio $q_r = 1 - q/24$. For example, 2-bit (only 4 colors) achieves a compression ratio of 91.7%.
+At extremely low bits, the number of colors is very limited. If the budget is distributed uniformly across background and foreground, critical objects may become unrecognizable. DCQ uses Grad-CAM++ to compute attention maps, retaining only the top $k_{Gra}\%$ pixels with the highest attention values for palette aggregation. This allows semantically critical regions to obtain more color representation while smooth backgrounds are coarsely quantized. Clustering is performed in the LAB color space rather than RGB, as Euclidean distance in LAB better aligns with human perceptual similarity, resulting in more visually continuous color allocation.
+
+**3. Texture-Preserving Palette Optimization: Suppressing Quantization Artifacts via Differentiable Quantization**
+
+Naive color quantization produces color patches in smooth areas and introduces abrupt texture discontinuities at object edges, which causes training collapse in ColorCNN. DCQ draws inspiration from style transfer, treating color quantization as a differentiable operation with Straight-Through Estimators (STE) to backpropagate gradients, enabling direct optimization of the palette to align textures. The objective is to minimize the edge distribution difference between the original and quantized images—using the Sobel operator $G(\cdot)$ to extract edges from each channel and calculating $EL = \sum_{i=1}^{3} w_i \cdot \text{MSE}\big(G(I_{\text{orig}}^i), G(I_{\text{quant}}^i)\big)$. Ablation studies show this term provides a 1–3 percentage point boost, which is key for DCQ to succeed in training scenarios compared to inference-oriented CQ.
 
 ## Key Experimental Results
 
@@ -69,47 +65,47 @@ Compression ratio formula: starting from standard 24-bit RGB (8 bits per channel
 
 | Dataset | Method | 2-bit (4 colors) | 1-bit (2 colors) |
 |--------|------|-----------|-----------|
-| CIFAR-10 | Random (pruning) | 77.04% | 70.08% |
+| CIFAR-10 | Random (Pruning) | 77.04% | 70.08% |
 | CIFAR-10 | TDDS | 77.32% | 72.46% |
 | CIFAR-10 | **DCQ (Ours)** | **89.15%** | **79.90%** |
 | CIFAR-100 | Random | 39.71% | 36.68% |
 | CIFAR-100 | **DCQ (Ours)** | **57.69%** | **38.44%** |
 | ImageNet-1K | **DCQ (Ours)** | **49.69%** | **35.95%** |
 
-- CIFAR-10 full-precision accuracy is 95.45%; DCQ at 2-bit achieves 89.15% (only 6.3 points drop), whereas training on ColorCNN-quantized data yields only ~58%.
-- Ablation: shallow-feature clustering (79.90% @ 1-bit) substantially outperforms label-based clustering (40.10%), random clustering (28.44%), and deep-feature clustering (42.10%).
-- $k=20$ clusters is the optimal balance point (verified by ablation).
-- On CIFAR-100 at 2-bit, DCQ (57.69%) surpasses the strongest pruning baseline TDDS (32.15%) by **25.5 percentage points**.
-- On ImageNet-1K at 5-bit, DCQ (66.99%) approaches full-precision accuracy (73.54%), dropping only 6.5 points.
-- Inference-oriented CQ baselines (MedianCut, OCTree) perform substantially worse than DCQ in training scenarios.
-- Texture-preserved palette optimization contributes approximately 1–3 percentage points of improvement (see Appendix C.1 for ablation results).
+- Full precision accuracy on CIFAR-10 is 95.45%; DCQ 2-bit reaches 89.15% (only 6.3 point drop), whereas ColorCNN training after quantization is only ~58%.
+- Ablation: Shallow feature clustering (79.90% @ 1-bit) is significantly better than label clustering (40.10%), random clustering (28.44%), or deep features (42.10%).
+- Cluster count $k=20$ is the optimal balance point.
+- At 2-bit on CIFAR-100, DCQ (57.69%) outperforms the strongest pruning method TDDS (32.15%) by **25.5 percentage points**.
+- On ImageNet-1K at 5-bit, DCQ (66.99%) is close to full precision (73.54%), with only a 6.5 point drop.
+- Comparison with inference-oriented CQ: MedianCut and OCTree perform significantly worse than DCQ in training scenarios.
+- Texture-preserving optimization contributes a 1-3 percentage point improvement (see Appendix C.1 for ablation).
 
 ## Highlights & Insights
-1. **Novel problem formulation**: This is the first work to explicitly define training-oriented dataset-level color quantization, distinguishing it from inference-oriented conventional CQ.
-2. **Orthogonal to dataset pruning**: DCQ reduces storage per image while pruning reduces the number of images; the two approaches can be applied jointly.
-3. **Elegant shared palette design**: Images within the same cluster share a palette, reducing storage (only indices need to be stored) while improving cross-image consistency.
-4. **Significant advantage under aggressive compression**: DCQ substantially outperforms dataset pruning methods, particularly at extreme low-bit settings (1–2 bits).
+1.  **Novel Problem Definition**: Explicitly proposes the training-oriented dataset-level color quantization problem for the first time, distinguishing it from traditional inference-oriented CQ.
+2.  **Orthogonal to Dataset Pruning**: DCQ reduces storage per image while pruning reduces the number of images; the two can be used cumulatively.
+3.  **Clever Shared Palette Design**: Using the same palette for images in the same cluster reduces storage (only indices needed) and improves cross-image consistency.
+4.  **Significant Advantage in Aggressive Compression**: Especially at 1-2 bit extremely low color counts, DCQ far surpasses dataset pruning methods.
 
 ## Limitations & Future Work
-- Relies on a pretrained model for feature extraction and attention maps (Grad-CAM++), introducing additional preprocessing overhead.
-- Training effectiveness is validated only on ResNet-18/34; compatibility with modern architectures such as ViT has not been assessed.
-- Accuracy degradation remains notable at extreme low bits (1-bit: CIFAR-10 79.90% vs. 95.45% full precision).
-- Shared palettes may degrade quantization quality on datasets with large inter-class color variation.
-- A fair storage-vs-accuracy comparison with recent dataset distillation methods (e.g., D4M, RDED) is absent.
-- LAB color space conversion adds computational steps; scalability to very large datasets remains to be validated.
-- The selection of $k_{Gra}\%$ in attention guidance requires ablation tuning and may vary across datasets.
+- Dependency on pre-trained models for feature extraction and attention maps (Grad-CAM++), increasing preprocessing costs.
+- Training effectiveness verified only on ResNet-18/34; adaptation to modern architectures like ViT has not been tested.
+- Accuracy drop remains significant at extremely low bits (1-bit) (CIFAR-10: 79.90% vs 95.45%).
+- Shared palettes might reduce quantization quality for datasets with high inter-class variance.
+- Lack of fair storage-accuracy comparison with recent dataset distillation methods (e.g., D4M, RDED).
+- LAB color space conversion adds computational steps; scalability for ultra-large-scale datasets requires verification.
+- Selection of $k_{Gra}\%$ in attention guidance requires ablation tuning, and optimal values may vary across datasets.
 
 ## Related Work & Insights
-- Compared to model-aware CQ methods such as ColorCNN and CQFormer, DCQ is the first to target training rather than inference optimization.
-- Direct comparisons with dataset pruning methods (EL2N, Forgetting, CCS, TDDS) at matched compression ratios demonstrate DCQ's clear advantage at high compression rates.
-- The chromaticity-aware clustering approach is extensible to quantization of other data characteristics (e.g., spectral features, texture complexity).
-- DCQ is orthogonal to dataset pruning/distillation and can be combined: pruning first reduces sample count, then DCQ reduces per-sample storage.
-- The effectiveness of shallow features for image clustering provides a useful reference for other data preprocessing tasks.
+- Compared to model-aware CQ like ColorCNN/CQFormer, DCQ is optimized for training rather than inference for the first time.
+- Directly compared with dataset pruning (EL2N, Forgetting, CCS, TDDS) at the same compression rates, DCQ shows a clear advantage at high compression ratios.
+- The idea of chroma-aware clustering can be extended to the quantization of other data features (e.g., frequency spectrum, texture complexity).
+- DCQ is orthogonal to dataset pruning/distillation methods and can be layered: use pruning to reduce sample count, then DCQ to reduce per-sample storage.
+- The effective design of using shallow features for image clustering provides a reference for other data preprocessing tasks.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ (Training-oriented dataset color quantization is a new direction)
 - Experimental Thoroughness: ⭐⭐⭐⭐ (4 datasets, multiple baselines, extensive ablations)
-- Writing Quality: ⭐⭐⭐⭐ (Clear motivation, detailed method description)
+- Writing Quality: ⭐⭐⭐⭐ (Clear motivation, detailed methodology)
 - Value: ⭐⭐⭐⭐ (Opens a new dimension for dataset compression)
 - Overall Recommendation: ⭐⭐⭐⭐
 

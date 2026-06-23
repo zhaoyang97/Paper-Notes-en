@@ -2,59 +2,75 @@
 title: >-
   [Paper Note] Dataset Distillation as Pushforward Optimal Quantization
 description: >-
-  [ICLR2026][Model Compression][Dataset Distillation] This work reformulates decoupled dataset distillation as an optimal quantization problem…
+  [ICLR 2026][Model Compression][Diffusion Model] Reformulates decoupled dataset distillation as an optimal quantization problem. It proves that latent space clustering using weights, combined with a diffusion prior, convergently approximates the true data distribution. The proposed DDOQ algorithm outperforms baselines like D4M on ImageNet-1K with minimal additional c
 tags:
-  - "ICLR2026"
-  - "Model Compression"
-  - "Dataset Distillation"
-  - "Optimal Quantization"
-  - "Wasserstein Distance"
-  - "Diffusion Models"
-  - "Latent Space Clustering"
+  - ICLR 2026
+  - Model Compression
+  - Diffusion Model
 date: 2026-05-08
-content_hash: c9b8c5150a3fead1
+content_hash: f551f7b7ceab6124
 ---
-
 # Dataset Distillation as Pushforward Optimal Quantization
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2501.07681](https://arxiv.org/abs/2501.07681)  
 **Code**: None  
-**Area**: Model Compression
-**Keywords**: Dataset Distillation, Optimal Quantization, Wasserstein Distance, Diffusion Models, Latent Space Clustering
+**Area**: Model Compression  
+**Keywords**: Dataset Distillation, Optimal Quantization, Wasserstein distance, Diffusion models, Latent space clustering  
 
 ## TL;DR
-This work reformulates decoupled dataset distillation as an optimal quantization problem, proves that latent-space clustering with learned weights via a diffusion prior can converge to approximate the true data distribution, and proposes the DDOQ algorithm, which surpasses baselines such as D4M on ImageNet-1K with minimal additional computation.
+Reformulates decoupled dataset distillation as an optimal quantization problem. It proves that latent space clustering using weights, combined with a diffusion prior, convergently approximates the true data distribution. The proposed DDOQ algorithm outperforms baselines like D4M on ImageNet-1K with minimal additional computational overhead.
 
 ## Background & Motivation
 
-### Limitations of Prior Work
+**Background**: Dataset Distillation (DD) aims to find small synthetic training sets such that models trained on them achieve performance close to models trained on the complete dataset. Early bi-level optimization methods suffer from high computational complexity and dependency on model architecture. Decoupled methods (e.g., SRe2L, D4M) significantly improve efficiency by matching data distributions and using generative techniques to bypass pixel-space optimization.
 
-**Background**: Dataset distillation (DD) aims to find a small synthetic training set such that models trained on it achieve performance close to those trained on the full dataset. Early bi-level optimization methods incur high computational cost and depend on model architecture. **Decoupled methods** (e.g., SRe2L, D4M) bypass pixel-space optimization by matching data distributions with generative techniques, yet lack theoretical guarantees — no prior work has theoretically established whether a distilled dataset can reasonably approximate the original data distribution.
+**Limitations of Prior Work**: Although decoupled methods are efficient, they lack theoretical guarantees—no prior work has theoretically proven whether distilled datasets can reasonably approximate the original data distribution. The entire paradigm operates more like an "empirical success" rather than being "provably correct."
 
-**Key Challenge**: Methods such as D4M perform $k$-means clustering in latent space followed by decoding, which is essentially solving a **Wasserstein barycenter** problem (with uniform weights). Classical **optimal quantization** theory shows that incorporating automatically learned weights can substantially reduce the Wasserstein distance.
+**Key Insight**: Methods like D4M perform $k$-means clustering in latent space followed by decoding, which essentially solves for the **Wasserstein barycenter** (using uniform weights). Classic **optimal quantization** theory suggests that by assigning automatically learned weights to each centroid while keeping the number of centroids fixed, the Wasserstein distance to the true distribution can be further reduced. This upgrade from "barycenter → weighted quantization" is the entry point of this work.
 
 ## Method
 
 ### Overall Architecture
-DDOQ (Dataset Distillation by Optimal Quantization) follows a four-step pipeline:
-1. **Encoding**: Map training samples to latent space via an LDM encoder: $Z = \mathcal{E}(\mathcal{T})$
-2. **Clustering**: Apply mini-batch $k$-means (i.e., the CLVQ algorithm) per class to obtain $K$ centroids $z_k^{(L)}$ and corresponding weights $w_k^{(L)}$
-3. **Decoding**: Generate distilled images via the LDM decoder and diffusion model: $x_k^{(L)} = \mathcal{D} \circ \mathcal{U}_t(z_k^{(L)}, \text{emb})$
-4. **Weighted Training**: Train new models using a weighted loss: $\min_\theta \sum_{(x,y,w)} w \cdot \ell(x,y,\theta)$
+DDOQ (Dataset Distillation by Optimal Quantization) reformulates decoupled distillation as an **optimal quantization** problem. The pipeline consists of four steps: first, use an LDM encoder to map training samples of each class to the latent space; second, perform **weighted clustering** in the latent space to obtain a set of quantization points (centroids + weights); third, use diffusion decoding to restore centroids into distilled images, letting images inherit weights from their centroids; finally, feed the "images + weights" together for downstream **weighted training**.
+
+Compared to D4M, the process adds almost only the "automatically learned weights" step, upgrading the latent space approximation from a Wasserstein barycenter to weighted optimal quantization. Two theorems regarding consistency and convergence rates ensure that the benefits of "reducing distance in latent space" are transferred to the image space while maintaining distance properties and converging quantifiably with the number of quantization points—distinguishing DDOQ from previous purely empirical decoupled methods.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    T["Training Set 𝒯<br/>(Partitioned by class)"] --> E["LDM Encoder ℰ<br/>Samples → Latent Space Z"]
+    E --> Q["Weighted Optimal Quantization<br/>mini-batch k-means → K Centroids z_k + Weights w_k"]
+    Q -->|"Consistency Theorem: Decoding preserves distance<br/>Error converges at O(K^-1/d)"| D["Diffusion Decoding 𝒟∘𝒰_t<br/>Centroids → Distilled Images x_k (inheriting w_k)"]
+    D --> Tr["Weighted Training<br/>min Σ w·ℓ(x,y,θ)"]
+    Tr --> M["Downstream Model θ"]
+```
 
 ### Key Designs
-**Theorem 1 (Consistency)**: For VESDE or VPSDE diffusion processes, if the Wasserstein-2 distance between latent distributions $\mu_T$ and $\nu_T$ is $\mathcal{W}_2(\mu_T, \nu_T)$, then after reverse diffusion to image space:
-$$\|\mathbb{E}_{\mu_\delta}[f] - \mathbb{E}_{\nu_\delta}[f]\| \leq C \cdot L \cdot \mathcal{W}_2(\mu_T, \nu_T)$$
-That is, diffusion generation **preserves distributional proximity** — a good approximation in latent space remains a good approximation in image space.
 
-**Corollary 1 (Convergence Rate)**: As the number of quantization points $K$ increases, the approximation error converges at rate $\mathcal{O}(K^{-1/d})$ (where $d$ is the latent space dimensionality), theoretically establishing the consistency of decoupled distillation methods.
+**1. Weighted Optimal Quantization: Upgrading Uniform Clustering to Weighted Quantization**
 
-**Core Improvement**: Compared to D4M, the only addition is **automatically determined weights** (naturally produced during CLVQ clustering), yielding an average Wasserstein-2 distance reduction of **15.7%** (IPC=10) and **16.1%** (IPC=50).
+Methods like D4M perform $k$-means for each class in the latent space and then decode, which essentially seeks the Wasserstein barycenter under uniform weights—meaning each centroid is treated equally, discarding the information that different regions have different sample densities. This paper points out that clustering is a special case of the classic **optimal quantization** problem. Optimal quantization theory shows that assigning a weight $w_k$ to each centroid (representing the measure of its Voronoi cell) can further reduce the Wasserstein-2 distance to the true distribution given a fixed number of centroids. Implementation-wise, mini-batch $k$-means (corresponding to the CLVQ competitive learning quantization algorithm) is run for each category to cluster sample encodings $Z=\mathcal{E}(\mathcal{T})$ into $K$ centroids $z_k^{(L)}$, and the proportion of samples falling into each cell is directly recorded as the weight $w_k^{(L)}$. Weights are produced naturally during clustering with almost no extra computation, making the distribution of quantization points significantly closer to the original data—the latent space $\mathcal{W}_2$ distance is reduced by an average of **15.7%** at IPC=10 and **16.1%** at IPC=50.
+
+**2. Consistency and Convergence Rate: Proving Latent Approximation Transfers and Converges Quantifiably**
+
+Approximating in latent space has an underlying premise—"if the latent space approximation is good, the decoding back to image space remains good"; otherwise, quantization gains would be lost during diffusion decoding. This paper addresses this through two mathematical results. The **Consistency Theorem** (Theorem 1) proves for two types of diffusion processes (VESDE / VPSDE) that if the distance between two latent space distributions is $\mathcal{W}_2(\mu_T,\nu_T)$, then after reverse diffusion to the image space, the difference in expectation for any Lipschitz function $f$ is linearly bounded by that distance:
+
+$$\|\mathbb{E}_{\mu_\delta}[f]-\mathbb{E}_{\nu_\delta}[f]\| \leq C\cdot L\cdot \mathcal{W}_2(\mu_T,\nu_T)$$
+
+where $L$ is the Lipschitz constant of $f$. This implies diffusion decoding is "distance-preserving," and the effort to reduce $\mathcal{W}_2$ in Design 1 is proportionally translated into a better approximation in the image space—providing theoretical support for the decoupled paradigm of operating in latent rather than pixel space. The **Convergence Rate Corollary** (Corollary 1) further characterizes the relationship between the number of quantization points $K$ and the error: as $K$ increases, the error converges at a rate of $\mathcal{O}(K^{-1/d})$ (where $d$ is the latent space dimension). This is the first result to provide a convergence rate for decoupled distillation, grounding the empirical phenomenon of "higher IPC leads to better performance" in a quantifiable rate; it also reveals an inherent limitation—the rate slows as dimension $d$ increases, requiring more quantization points for the same precision in high-dimensional latent spaces.
+
+**3. Weighted Decoding and Training: Propagating Weights to the Downstream Model**
+
+The gains of optimal quantization cannot be realized if weights learned during the quantization phase stop at the latent space. This paper propagates weights all the way to the downstream task: after obtaining weighted centroids, an LDM decoder combined with a diffusion process is used to generate distilled images $x_k^{(L)}=\mathcal{D}\circ\mathcal{U}_t(z_k^{(L)},\text{emb})$, where each image inherits the weight $w_k^{(L)}$ of its centroid. Downstream training no longer treats all distilled samples equally, but instead uses a weighted loss:
+
+$$\min_\theta \sum_{(x,y,w)} w\cdot \ell(x,y,\theta)$$
+
+This ensures that quantization points covering a larger measure receive higher weights during optimization. This allows the distribution information from the quantization phase to be fully transmitted to model training, serving as the final step in converting "weighted optimal quantization" into downstream accuracy.
 
 ## Key Experimental Results
 
-**ImageNet-1K (UNet backbone, evaluated with ResNet-18)**:
+**ImageNet-1K (UNet backbone, ResNet-18 evaluation)**:
 
 ### Main Results
 
@@ -65,53 +81,53 @@ That is, diffusion generation **preserves distributional proximity** — a good 
 | 100 | 52.8% | 59.3% | — | **60.1%** |
 | 200 | 57.0% | 62.6% | — | **63.4%** |
 
-- IPC 200 + ResNet-101: DDOQ 68.6% vs. D4M 68.1%, achieving a **30% error reduction** relative to the full-data accuracy of 69.8%
-- Cross-architecture generalization (IPC=50): DDOQ consistently outperforms D4M on CNN student models (e.g., MobileNet-V2: 52.1% vs. 47.9%)
+- IPC 200 + ResNet-101: DDOQ 68.6% vs D4M 68.1%, representing a **30% error reduction** relative to the full-precision 69.8%.
+- Cross-architecture generalization (IPC=50): DDOQ consistently outperforms D4M on CNN student models (e.g., MobileNet-V2: 52.1% vs 47.9%).
 
 **DiT backbone (DDOQ-DiT)**:
 
 ### Ablation Study
 
 | Dataset | IPC | Minimax-IGD | **DDOQ-DiT** |
-|---------|-----|-------------|-------------|
+|--------|-----|-------------|-------------|
 | ImageNet-1K | 10 | 46.2% | **53.0%** |
 | ImageWoof | 10 | 43.3% | **48.8%** |
 | ImageNette | 10 | 65.3% | **68.2%** |
 
-- A stronger DiT backbone improves ImageNet-1K IPC=10 accuracy from 33.1% to **53.0%** (+19.9 points)
+- A stronger DiT backbone improves ImageNet-1K IPC=10 accuracy from 33.1% to **53.0%** (+19.9 points).
 
-**Cross-Architecture Generalization Details (IPC=50, ResNet-18 teacher)**:
-- ResNet-18 student: DDOQ 56.2% vs. D4M 55.2%
-- MobileNet-V2 student: DDOQ 52.1% vs. D4M 47.9% (+4.2 points)
-- EfficientNet-B0 student: DDOQ 58.0% vs. D4M 55.4% (+2.6 points)
-- Swin-T student: DDOQ 57.4% vs. D4M 58.1% (−0.7 points)
+**Cross-architecture Generalization Details (IPC=50, ResNet-18 teacher)**:
+- ResNet-18 student: DDOQ 56.2% vs D4M 55.2%
+- MobileNet-V2 student: DDOQ 52.1% vs D4M 47.9% (+4.2 points)
+- EfficientNet-B0 student: DDOQ 58.0% vs D4M 55.4% (+2.6 points)
+- Swin-T student: DDOQ 57.4% vs D4M 58.1% (slightly lower by 0.7 points)
 
-**Wasserstein Distance Analysis**: Incorporating weights reduces the $\mathcal{W}_2$ distance between distilled latent points and encoded training data by an average of 15.7% at IPC=10 and 16.1% at IPC=50, confirming that optimal quantization outperforms the Wasserstein barycenter formulation.
+**Wasserstein Distance Analysis**: After adding weights, the $\mathcal{W}_2$ distance between distilled latent points and encoded training data decreases by an average of 15.7% at IPC=10 and 16.1% at IPC=50, confirming that optimal quantization is superior to Wasserstein barycenters.
 
 ## Highlights & Insights
-1. **Solid Theoretical Contributions**: This work is the first to prove consistency and convergence rates for decoupled distillation methods under a diffusion prior, filling a notable theoretical gap in the field.
-2. **Minimal Modification**: Compared to D4M, the only change is the introduction of automatically learned weights, incurring virtually no additional computation since the weights arise naturally from the $k$-means process.
-3. **Optimal Quantization Perspective**: The work reveals that clustering methods such as $k$-means fundamentally solve an optimal quantization problem, where weights correspond to the measure of Voronoi cells.
-4. **Theoretical Guarantees for Diffusion Models**: Theorem 1 proves that diffusion generation preserves distributional proximity, providing theoretical justification for operating in latent space rather than pixel space.
+1. **Solid Theoretical Contribution**: Provides the first proof of consistency and convergence rates for decoupled distillation methods under a diffusion prior, filling a theoretical gap in the field.
+2. **Extremely Simple Improvement**: Compared to D4M, it only adds automatically learned weights with almost no additional computation (weights are generated naturally during the $k$-means process).
+3. **Optimal Quantization Perspective**: Reveals that clustering methods like $k$-means essentially solve optimal quantization problems, where weights are the measures of Voronoi cells.
+4. **Theoretical Guarantee for Diffusion Models**: Theorem 1 proves that diffusion generation maintains distribution proximity, providing a theoretical basis for operating in latent space rather than pixel space.
 
 ## Limitations & Future Work
-- At low IPC settings (e.g., IPC=10), DDOQ still lags behind RDED's patch-based approach (RDED 42.0% vs. DDOQ 33.1% with UNet backbone).
-- DDOQ slightly underperforms D4M on Transformer student architectures such as Swin-T (57.4% vs. 58.1%), potentially requiring more careful hyperparameter tuning.
-- The convergence rate $\mathcal{O}(K^{-1/d})$ slows as latent space dimensionality $d$ increases, potentially weakening performance in high-dimensional latent settings.
-- The method relies on the quality of pre-trained LDM/DiT backbones, with generated image fidelity bounded by the capacity of the underlying model.
-- Soft labels require an additional pre-trained classifier (e.g., ResNet-18), and peak performance is thus capped by that classifier's accuracy (69.8%).
-- The potential combination with diffusion-guided methods (e.g., IGD) remains unexplored; the two approaches may be complementary.
+- In low IPC settings (e.g., IPC=10), it still lags behind the patch-based method of RDED (RDED 42.0% vs DDOQ 33.1% with UNet backbone).
+- DDOQ is slightly inferior to D4M on Transformer student architectures like Swin-T (57.4% vs 58.1%), which may require more fine-grained hyperparameter tuning.
+- The convergence rate $\mathcal{O}(K^{-1/d})$ slows as the latent dimension $d$ increases, potentially weakening the effect in high-dimensional scenarios.
+- Relies on the quality of pre-trained LDM/DiT; the fidelity of generated images is limited by the capability of the base model.
+- Soft labels rely on an extra pre-trained classifier (e.g., ResNet-18), and maximum performance is capped by the accuracy of that classifier (69.8%).
+- The possibility of combining with diffusion guidance methods (e.g., IGD) has not been explored; the two could be complementary.
 
 ## Related Work & Insights
-- **Comparison with D4M**: Adding weights alone yields consistent improvements, demonstrating that upgrading from Wasserstein barycenter to optimal quantization is the key factor.
-- **Comparison with RDED**: RDED is stronger at low IPC but does not scale well; DDOQ performs better at high IPC and maintains constant memory usage.
-- The optimal quantization framework is extensible to other scenarios requiring data approximation, such as data summarization in federated learning.
+- Direct comparison with D4M: Consistency improvements gained simply by adding weights indicate that the upgrade from Wasserstein barycenter to optimal quantization is key.
+- Comparison with RDED: RDED is stronger at low IPC but not scalable; DDOQ is superior at high IPC and has constant memory requirements.
+- Optimal quantization theory can be extended to other scenarios requiring data approximation, such as data summarization in federated learning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Optimal quantization perspective + consistency proof; outstanding theoretical contribution)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Multi-IPC, multi-architecture evaluation on ImageNet-1K; limited dataset variety)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Rigorous theoretical derivations and clear algorithmic descriptions)
-- Value: ⭐⭐⭐⭐⭐ (Provides theoretical foundations for dataset distillation with a concise and effective method)
+- Novelty: ⭐⭐⭐⭐⭐ (Optimal quantization perspective + consistency proof, outstanding theoretical contribution)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (ImageNet-1K with multiple IPCs and architectures, but lacks more datasets)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Rigorous theoretical derivation, clear algorithm description)
+- Value: ⭐⭐⭐⭐⭐ (Provides a theoretical foundation for dataset distillation, simple and efficient method)
 
 <!-- RELATED:START -->
 
@@ -122,8 +138,8 @@ That is, diffusion generation **preserves distributional proximity** — a good 
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
 - [\[ICLR 2026\] Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression](dataset_color_quantization_a_training-oriented_framework_for_dataset-level_compr.md)
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
-- [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
-- [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
+- [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](../../CVPR2026/model_compression/mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
+- [\[CVPR 2026\] IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation](../../CVPR2026/model_compression/ims3_breaking_distributional_aggregation_in_diffusion-based_dataset_distillation.md)
 
 </div>
 

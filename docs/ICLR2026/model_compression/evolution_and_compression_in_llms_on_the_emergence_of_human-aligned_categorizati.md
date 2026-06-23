@@ -2,149 +2,151 @@
 title: >-
   [Paper Note] Evolution and compression in LLMs: On the emergence of human-aligned categorization
 description: >-
-  [ICLR2026][Model Compression][information bottleneck] Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm…
+  [ICLR 2026][Model Compression][information bottleneck] Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm, this work demonstrates that LLMs, even without being trained on IB objectives, can spontaneously emerge category structures that are highly aligned with human semantic systems and exhibit near-optimal compr
 tags:
-  - "ICLR2026"
-  - "Model Compression"
-  - "information bottleneck"
-  - "color naming"
-  - "iterated learning"
-  - "semantic categories"
-  - "LLM alignment"
+  - ICLR 2026
+  - Model Compression
+  - information bottleneck
+  - color naming
+  - iterated learning
+  - semantic categories
+  - LLM alignment
 date: 2026-05-08
-content_hash: bec3533cc3aef582
+content_hash: 9e7ae1c7f1b07bf3
 ---
-
 # Evolution and compression in LLMs: On the emergence of human-aligned categorization
 
-**Conference**: ICLR2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.08093](https://arxiv.org/abs/2509.08093)  
 **Code**: [infocoglab/evolution-compression-llms](https://infocoglab.github.io/evolution-compression-llms)  
-**Area**: Model Compression
+**Area**: Model Compression  
 **Keywords**: information bottleneck, color naming, iterated learning, semantic categories, LLM alignment
 
 ## TL;DR
 
-Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm, this paper demonstrates that LLMs can spontaneously develop category structures that are highly aligned with human semantic categorization systems and achieve near-optimal compression efficiency, without having been trained on any IB objective.
+Through the Information Bottleneck (IB) framework and the Iterated In-Context Language Learning (IICLL) paradigm, this work demonstrates that LLMs, even without being trained on IB objectives, can spontaneously emerge category structures that are highly aligned with human semantic systems and exhibit near-optimal compression efficiency.
 
 ## Background & Motivation
 
-### Root Cause
+**Background**: Substantial evidence suggests that human semantic categorization systems (such as color naming) adhere to the Information Bottleneck (IB) principle—achieving a near-optimal trade-off between the informational complexity of vocabulary and communicative accuracy. This theoretical framework, proposed by Zaslavsky et al. (2018), has been extensively validated across 110 languages in the World Color Survey (WCS).
 
-**Background**: Extensive evidence indicates that human semantic categorization systems (e.g., color naming) adhere to the Information Bottleneck (IB) principle—achieving a near-optimal trade-off between lexical information complexity and communicative accuracy. This theoretical framework was proposed by Zaslavsky et al. (2018) and has been broadly validated across 110 languages in the World Color Survey (WCS).
+**Key Challenge**: The training objective for LLMs is language modeling (next-token prediction) rather than the IB objective function. This raises a core question: are LLMs merely mimicking categorization patterns found in training data, or do they possess an inherent, human-like inductive bias that spontaneously drives efficient semantic compression?
 
-However, LLMs are trained on a language modeling objective (next-token prediction), not on an IB objective. This raises a fundamental question: are LLMs merely imitating categorization patterns present in training data, or do they possess an intrinsic, human-like inductive bias that spontaneously drives efficient semantic compression?
+**Design Motivation**: Color naming is a classic domain for studying categorization in cognitive science. It provides unique cross-linguistic human data (WCS dataset) and cultural evolution experimental data (Xu et al., 2013), making it an ideal testbed for evaluating LLM alignment with human cognition.
 
-Color naming is a canonical domain for studying categorization in cognitive science, with uniquely rich cross-linguistic human data (the WCS dataset) and cultural evolution experiments (Xu et al., 2013), making it an ideal testbed for assessing whether LLMs are aligned with human cognition.
-
-**Goal**:
-1. How do LLMs' English color naming systems perform in terms of IB efficiency and human alignment?
-2. Are LLMs merely imitating patterns in training data, or do they possess a genuine inductive bias toward IB efficiency?
-3. Does such a bias generalize beyond the color domain to other semantic domains?
+**Goal**: This paper aims to answer three questions: (1) How do LLM English color-naming systems perform regarding IB efficiency and human alignment? (2) Do LLMs possess a genuine inductive bias for IB efficiency beyond mere imitation? (3) Does this bias persist in semantic domains outside of color?
 
 ## Method
 
-### Experiment 1: English Color Naming
+### Overall Architecture
 
-- The WCS standard color grid (330 color chips) is used as stimuli.
-- 39 models spanning 6 model families (Gemini, Gemma 3, Llama 3, Qwen 2.5, OLMo 2, GPT-2) are evaluated.
-- Input modalities: text (sRGB coordinates) and image (for multimodal models).
-- Constrained generation: Gemini uses controlled generation; open-source models are evaluated via log-probability scoring.
-- Evaluation metrics: IB efficiency loss $\varepsilon = \min_\beta \frac{1}{\beta}(\mathcal{F}_\beta[q] - \mathcal{F}_\beta^*)$ and Normalized Information Distance (NID) for alignment.
+Rather than training models, this work adapts cognitive science tools to probe LLMs. The compression efficiency of a categorization system is quantified using the Information Bottleneck (IB) framework. LLMs are probed via two paths: static evaluation of existing English color naming and dynamic observation of naming systems emerging through Iterated In-Context Language Learning (IICLL). IICLL utilizes pseudo-labels and hidden semantics to decouple the model from direct training data retrieval. Both paths are mapped onto an IB complexity-accuracy plane for direct comparison with human data from the World Color Survey (WCS).
 
-### Experiment 2: Iterated In-Context Language Learning (IICLL)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    S["330 Color Stimuli<br/>(WCS Standard Grid)"]
+    S --> A["English Color Naming Evaluation<br/>39 Models / 6 Families<br/>controlled gen or log-prob selection"]
+    S --> B
+    subgraph B["IICLL (Iterated In-Context Language Learning)<br/>(Pseudo-labels + Hidden Semantics)"]
+        direction TB
+        B0["Randomly Partitioned Initial System<br/>k∈{2,3,4,5,6,14}"] --> B1["Sample Color-Pseudo-label Pairs<br/>as In-Context Examples"]
+        B1 --> B2["Post-ICL LLM<br/>Renames all 330 Colors → New System"]
+        B2 -->|"~4 Generations"| B1
+    end
+    A --> IB["IB Complexity-Accuracy Plane<br/>Efficiency Loss ε + Alignment NID"]
+    B --> IB
+    IB --> CMP["Comparison with WCS 110 Languages +<br/>Human Iterated Learning Data"]
+```
 
-This is the paper's core methodological contribution, combining the iterated learning paradigm from cognitive science with the in-context learning capabilities of LLMs:
+### Key Designs
 
-1. **Initialization**: A pseudo color naming system is initialized with a random partition, with category count $k \in \{2, 3, 4, 5, 6, 14\}$.
-2. **Each generation**: A small number of "color–pseudo-label" pairs are sampled from the previous generation's language system $L_{t-1}$ as in-context examples $d_{t-1}$.
-3. **Inference**: After in-context learning, the LLM assigns labels to all 330 colors to produce the new system $L_t$.
-4. **Iteration**: This process is repeated over multiple generations, and the evolutionary trajectory of the system is observed.
+**1. Quantifying Semantic Compression Efficiency via IB: Translating "Good Categorization" into an Optimizable Objective**
 
-Key design: pseudo label words (non-English color terms) are used, and the model is not informed that the inputs are colors—stimuli are described only as objects with "features." This ensures the model cannot directly draw on color knowledge from training data.
-
-### IB Theoretical Framework
-
-The IB objective is:
+To determine if LLM color-word systems are "efficient," an information-theoretic metric is required. This paper follows the Zaslavsky et al. (2018) IB objective function:
 
 $$\mathcal{F}_\beta[q] = I_q(M;W) - \beta \cdot I_q(W;U)$$
 
-where $I_q(M;W)$ is the complexity (mutual information between speaker meanings and words), $I_q(W;U)$ is the accuracy (information about world states retained by words), and $\beta \geq 0$ controls the trade-off. Optimal systems lie on the IB theoretical bound.
+where $I_q(M;W)$ represents complexity (mutual information between speaker meanings $M$ and words $W$), and $I_q(W;U)$ represents accuracy (information retained by words $W$ about world states $U$). The parameter $\beta \geq 0$ regulates the trade-off. Theoretically optimal systems lie on the IB frontier. Efficiency loss is defined as $\varepsilon = \min_\beta \frac{1}{\beta}(\mathcal{F}_\beta[q] - \mathcal{F}_\beta^*)$; closer proximity to the frontier indicates near-optimal compression. Normalized Information Distance (NID) measures alignment with human English naming systems.
+
+**2. Large-scale English Color Naming Evaluation**
+
+The first objective is to assess whether LLMs are already as efficient as humans when naming colors. 330 color chips from the WCS grid are used as stimuli across 39 models (Gemini, Gemma 3, Llama 3, Qwen 2.5, Olmo 2, GPT-2). Inputs include text (sRGB coordinates) and images (for multimodal models). Word selection is handled via controlled generation or log-probability scoring of candidates.
+
+**3. IICLL Paradigm: Generational Evolution of LLMs**
+
+Static evaluation cannot distinguish between imitation and true inductive bias. This paper introduces Iterated In-Context Language Learning (IICLL): a pseudo-color naming system is initialized with random partitions ($k \in \{2, 3, 4, 5, 6, 14\}$). In each generation, a few "color-pseudo-label" pairs from the previous generation $L_{t-1}$ are used as in-context examples $d_{t-1}$. The LLM then renames all 330 colors to produce $L_t$. This simulates human cultural transmission to see if systems spontaneously drift toward the IB frontier.
+
+**4. Pseudo-labels + Hidden Semantics: Severing Access to Training Data**
+
+To ensure IICLL reflects internal bias rather than data mimicry, labels are non-English pseudo-words, and prompts never specify the stimuli are "colors," referring to them only as having certain "features." Any emergent IB-efficient structure is thus attributable to intrinsic compression bias.
 
 ## Key Experimental Results
 
 ### English Color Naming Results
 
-- LLMs vary substantially in complexity and alignment with English color naming.
-- **Model scale and instruction fine-tuning** are two key factors: larger instruction-tuned models achieve better alignment and IB efficiency.
-- Gemini 2.0 and Gemma 3 27B (inst.) most closely approximate human English color naming.
-- Notably, many state-of-the-art models fail to reproduce English color naming (e.g., Llama 3.3 70B inst.).
-- Some models (OLMo 2 32B inst., Qwen 2.5 VL 7B inst.) produce systems more similar to low-resource languages in the WCS than to English.
-- Image input does not consistently outperform text input; CIELAB coordinates generally underperform sRGB.
+- Significant variance exists among LLMs regarding complexity and English alignment.
+- **Model scale and instruction tuning** are critical: larger, instruction-tuned models achieve better alignment and IB efficiency.
+- Gemini 2.0 and Gemma 3 27B (inst.) are most similar to human naming systems.
+- Surprisingly, some SOTA models (e.g., Llama 3.3 70B inst.) fail to reproduce standard English color naming.
+- Certain models (Olmo 2 32B inst., Qwen 2.5 VL 7B inst.) produce systems more akin to low-resource WCS languages than English.
 
 ### IICLL Cultural Evolution Results
 
-- **Gemini 2.0**: The only model capable of spanning the full range of complexity observed in human languages; IICLL chains converge to near-optimal IB solutions resembling WCS languages and human iterated learning data.
-- **Gemma 3 27B, Qwen 2.5 32B, Llama 3.3 70B**: Also converge to IB-efficient solutions, but only within the low-complexity regime.
-- All models converge to near the IB bound within approximately 4 generations, paralleling the dynamics of human iterated learning.
-- Rotation analysis confirms that Gemini's efficiency and alignment are non-trivial—randomly rotating the color mapping leads to significant degradation.
+- **Gemini 2.0**: The only model covering the full range of complexity observed in human languages; IICLL chains converge to near-optimal IB solutions similar to WCS data.
+- **Gemma 3 27B, Qwen 2.5 32B, Llama 3.3 70B**: These also converge to IB-efficient solutions, albeit restricted to lower complexity regions.
+- All models converge near the IB frontier within ~4 generations, mirroring human dynamic patterns.
+- Rotation analysis confirms that efficiency and alignment are non-trivial.
 
-### Extension to the Shepard Circular Domain
+### Shepard Circular Domain Expansion
 
-- Gemini is tested on a two-dimensional Shepard circular space (64 stimuli) defined by radius and spoke angle.
-- After IICLL transmission, categories progressively become spatially compact and distinguish regions along both dimensions.
-- This provides preliminary evidence that the LLM's IB bias may generalize across domains.
+- Gemini was tested on a 2D Shepard circular space (64 stimuli).
+- Through IICLL transmission, categories became spatially compact and differentiated based on two dimensions.
+- This provides preliminary evidence that the IB bias in LLMs may be domain-general.
 
 ## Highlights & Insights
 
-1. **Deep integration of theory and experiment**: The IB framework and iterated learning paradigm from cognitive science are seamlessly transferred to LLM research, yielding a highly persuasive methodology.
-2. **IICLL paradigm innovation**: The use of pseudo-labels eliminates the confound of training data imitation, directly probing LLMs' intrinsic inductive biases.
-3. **Large-scale model comparison**: A systematic comparison of 39 models across 6 families reveals clear relationships between model scale, instruction fine-tuning, and IB efficiency.
-4. **Cross-domain generalization**: The Shepard circle experiment provides preliminary evidence of generalization beyond the color domain.
-5. **A new perspective on human–AI alignment**: IB efficiency may be an emergent property of intelligent behavior, arising in both humans and LLMs despite neither being explicitly trained to optimize this objective.
+1.  **Theory-Experiment Integration**: Successfully migrates the cognitive science IB framework and iterated learning paradigm to LLM research.
+2.  **IICLL Innovation**: The use of pseudo-labels effectively eliminates the confounding factor of training data mimicry.
+3.  **Large-Scale Comparison**: Revealing the clear relationship between model scale, instruction tuning, and IB efficiency across 39 models.
+4.  **Human-AI Alignment Perspective**: Suggests that IB efficiency is an emergent property of intelligent behavior, appearing in both humans and LLMs without explicit optimization for that objective.
 
 ## Limitations & Future Work
 
-1. **Only Gemini 2.0 achieves the full complexity range**: Other state-of-the-art models are limited to low-complexity solutions, indicating that IICLL places very high demands on in-context learning ability, and the generality of the conclusions remains to be verified.
-2. **Source of the bias is unclear**: Whether the IB efficiency bias originates from the training data distribution, instruction fine-tuning, or model architecture remains unresolved, as the paper does not disentangle these factors.
-3. **Specificity of the color domain**: Colors are richly represented numerically in internet text (hex, RGB), potentially giving LLMs a natural advantage in this domain; cross-domain generalization is supported only by preliminary results on the Shepard circle.
-4. **Absence of communicative pressure**: IICLL simulates cultural transmission only and does not incorporate the functional pressure of actual communication, leaving a gap relative to real language evolution.
-5. **Evaluation limited to English**: Although WCS data are used, direct evaluation of LLMs is conducted only on English color terms.
+1.  **Scale Requirements**: Only Gemini 2.0 reached the full complexity range, suggesting IICLL requires high in-context learning capabilities.
+2.  **Source of Bias**: Whether the IB efficiency bias stems from training data distribution, instruction tuning, or architecture remains uncoupled.
+3.  **Domain Specificity**: LLMs might have a natural advantage in the color domain due to numerical representations (hex, RGB) in training data.
+4.  **Lack of Communicative Pressure**: IICLL simulates cultural transmission but lacks functional communicative pressure found in real language evolution.
 
 ## Related Work & Insights
 
-| Work | Focus | Distinction from This Paper |
-|------|--------|-----------------------------|
-| Marjieh et al. (2024) | Color naming in a small set of models (GPT-3/4, etc.) | Systematic comparison of 39 models + IB analysis + IICLL |
-| Abdou et al. (2021) | Internal color representations in LLMs | Focuses on naming behavior under prompt interaction |
-| Zhu & Griffiths (2024) I-ICL | In-context priors of LLMs | Extended to IICLL, directly replicating human iterated language learning experiments |
-| Carlsson et al. (2024) | IB-efficient color naming in neural network agents | Uses LLMs rather than agents trained from scratch |
-| Ren et al. (2020) NIL | Compositional language in neural iterated learning | Focuses on semantic compression efficiency rather than compositionality |
+| Work | Focus | Distinction |
+| :--- | :--- | :--- |
+| Marjieh et al. (2024) | Color naming in few models (GPT-3/4) | 39 models + IB analysis + IICLL |
+| Abdou et al. (2021) | Internal color representations in LLMs | Focused on naming behavior via prompt interaction |
+| Zhu & Griffiths (2024) | In-context priors in LLMs | Extended to IICLL to replicate human experiments |
+| Carlsson et al. (2024) | IB efficiency in trained agents | Uses frozen LLMs rather than scratch-trained agents |
 
-## Related Work & Insights
-
-- **Implications for LLM alignment research**: IB efficiency as a quantifiable dimension of human–AI alignment captures semantic-level correspondence more deeply than conventional benchmark evaluations.
-- **Implications for model compression**: Although categorized under model compression, the paper addresses "semantic compression" rather than parameter compression; nonetheless, its information-theoretic perspective (IB principle) provides important reference for understanding how models encode semantics within limited representations.
-- **Cognitive effects of instruction fine-tuning**: Instruction fine-tuning not only improves task performance but may also reshape the model's semantic organization, bringing it closer to human cognitive structures.
-- **Cultural evolution × AI**: IICLL provides a scalable experimental paradigm for studying cultural evolution dynamics within LLMs.
+- **Insights on Alignment**: IB efficiency serves as a quantifiable dimension of human-AI alignment, capturing semantic organization more deeply than traditional benchmarks.
+- **Value for Model Compression**: While categorized under model compression, this work discusses "semantic compression" rather than parameter pruning. The IB perspective is valuable for understanding how models encode semantics within limited representations.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Integrates the IB framework from cognitive science with LLMs; IICLL is a significant methodological contribution)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Large-scale comparison of 39 models, though cross-domain generalization evidence remains preliminary)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, well-motivated theory, and polished figures)
-- Value: ⭐⭐⭐⭐ (Provides a fundamentally new theoretical perspective on LLMs' semantic organization capabilities)
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](../../ICML2026/model_compression/xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
 - [\[ICLR 2026\] LLM DNA: Tracing Model Evolution via Functional Representations](llm_dna_tracing_model_evolution_via_functional_representations.md)
 - [\[ICLR 2026\] Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences](paper_copilot_tracking_the_evolution_of_peer_review_in_ai_conferences.md)
-- [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](../../CVPR2026/model_compression/memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
-- [\[NeurIPS 2025\] TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs](../../NeurIPS2025/model_compression/tokensqueeze_performance-preserving_compression_for_reasoning_llms.md)
+- [\[CVPR 2026\] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework](../../CVPR2026/model_compression/towards_unified_human_perception_and_machine_understanding_token_flow_guided_com.md)
+- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](../../ICML2026/model_compression/xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 
 </div>
 

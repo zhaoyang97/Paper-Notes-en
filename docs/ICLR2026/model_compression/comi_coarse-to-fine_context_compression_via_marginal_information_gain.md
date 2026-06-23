@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] COMI: Coarse-to-fine Context Compression via Marginal Information Gain
 description: >-
-  [ICLR2026][Model Compression][context compression] This paper proposes COMI, a coarse-to-fine adaptive context compression framework based on Marginal Information Gain (MIG = query relevance − semantic redundancy). At a…
+  [ICLR 2026][Model Compression][context compression] This paper proposes COMI, a coarse-to-fine adaptive context compression framework based on Marginal Information Gain (MIG = query relevance - semantic redundancy). At a 32x compression ratio, it improves the NaturalQuestions EM score by approximately 25 points compared to the second-best method. The core contribution l
 tags:
-  - "ICLR2026"
-  - "Model Compression"
-  - "context compression"
-  - "token merging"
-  - "long context"
-  - "marginal information gain"
-  - "RAG"
+  - ICLR 2026
+  - Model Compression
+  - context compression
+  - token merging
+  - long context
+  - marginal information gain
+  - RAG
 date: 2026-05-08
-content_hash: 54271d560d0d4021
+content_hash: e3642e39c34bd06c
 ---
-
 # COMI: Coarse-to-fine Context Compression via Marginal Information Gain
 
 **Conference**: ICLR2026  
@@ -24,55 +23,70 @@ content_hash: 54271d560d0d4021
 **Keywords**: context compression, token merging, long context, marginal information gain, RAG
 
 ## TL;DR
-This paper proposes COMI, a coarse-to-fine adaptive context compression framework based on Marginal Information Gain (MIG = query relevance − semantic redundancy). At a 32× compression ratio, COMI improves NaturalQuestions EM by approximately 25 points over the second-best method, with the core insight being the joint optimization of relevance and diversity among retained information.
+This paper proposes COMI, a coarse-to-fine adaptive context compression framework based on Marginal Information Gain (MIG = query relevance - semantic redundancy). At a 32x compression ratio, it improves the NaturalQuestions EM score by approximately 25 points compared to the second-best method. The core contribution lies in the simultaneous optimization of information relevance and diversity.
 
 ## Background & Motivation
 
-**Background**: Techniques such as RAG increase LLM input length, leading to high computational costs and information redundancy. Context compression methods fall into two categories: task-agnostic (global compression without considering the query) and task-aware (retaining query-relevant content).
+**Background**: Technologies such as RAG have increased LLM input lengths, leading to high computational costs and information redundancy. Context compression methods are categorized into task-agnostic (global compression ignoring the query) and task-aware (retaining relevant content based on the query).
 
-**Limitations of Prior Work**: (a) Task-agnostic methods ignore the query and inevitably lose relevant information under high compression ratios; (b) Task-aware methods rely solely on "relevance" as the compression criterion — retained tokens tend to be highly similar (redundant). Empirically, only 0.75% of tokens account for 99% of attention weights, and the cosine similarity among these tokens exceeds 0.6; (c) High redundancy may mislead LLMs into generating incorrect outputs ("relevant does not imply correct").
+**Limitations of Prior Work**: (a) Task-agnostic methods ignore the query, leading to the inevitable loss of relevant information under high compression; (b) Task-aware methods use only "relevance" as the compression criterion—resulting in highly similar (redundant) retained tokens; empirical studies show that only 0.75% of tokens account for 99% of attention weights, and the cosine similarity between these tokens exceeds 0.6; (c) High redundancy may mislead LLMs into generating incorrect outputs ("relevance does not equal correctness").
 
-**Key Challenge**: Retaining tokens purely by relevance preserves large amounts of "relevant but redundant" content, resulting in insufficient diversity after compression. Existing dynamic compression rate allocation schemes either apply fixed linear rules or rely solely on relevance, none of which account for semantic redundancy.
+**Key Challenge**: Retaining tokens solely by relevance leads to the preservation of many "relevant but redundant" contents, causing insufficient information diversity after compression. Existing dynamic compression rate allocation methods use either fixed linear rules or are based solely on relevance, neglecting semantic redundancy.
 
-**Goal**: To simultaneously optimize relevance and diversity under high compression ratios — retaining information that is both query-relevant and mutually non-redundant.
+**Goal**: To simultaneously optimize relevance and diversity under high compression ratios—retaining information that is relevant to the query and mutually non-redundant.
 
-**Key Insight**: Define Marginal Information Gain MIG = relevance − redundancy as a unified metric to guide coarse-grained group budget allocation and fine-grained token merging.
+**Key Insight**: Define Marginal Information Gain (MIG) = Relevance - Redundancy, as a unified metric to guide coarse-grained group budget allocation and fine-grained token fusion.
 
-**Core Idea**: Use MIG (query cosine similarity minus the maximum similarity to other tokens) to drive a two-stage compression pipeline — dynamic compression rate allocation across groups, followed by MIG-weighted token merging within groups.
+**Core Idea**: Use MIG (query cosine similarity minus the maximum similarity with other tokens) to guide two-stage compression—dynamic allocation of compression rates between groups and weighted token fusion within groups.
 
 ## Method
 
 ### Overall Architecture
-Input context $X$ + query $Q$ → Encoder → Two-stage compression: (1) Coarse-grained group budget reallocation (based on inter-group MIG) → (2) Fine-grained intra-group token merging (based on intra-group MIG) → LSA cross-layer semantic alignment → Decoder generates the answer.
+COMI addresses the contradiction between maintaining relevant information and avoiding redundancy under high compression. It utilizes an Encoder-Decoder architecture: given context $X$ and query $Q$, the Encoder first encodes them into hidden states, and the query tokens are average-pooled into a query vector $\bar{q}$ as a reference for relevance. Then, a two-stage coarse-to-fine compression is performed: macroscopically, the context is partitioned into equal-length segments, and compression budgets are dynamically allocated based on the informational value of each segment (segments with high MIG receive higher budgets); microscopically, tokens within each segment are weighted-fused into compressed tokens. Both stages are driven by the Marginal Information Gain (MIG). The compressed representations are aligned via Layer-wise Semantic Alignment (LSA) and sent to the Decoder to generate the answer.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Context X + Query Q"] --> B["Encoder encodes hidden states <br/>Query average pooling to get q̄"]
+    B --> C["Marginal Information Gain MIG <br/>Relevance − Redundancy"]
+    C -->|Inter-group MIG budget allocation| D["Coarse-grained group budget reallocation <br/>High MIG segments compressed less"]
+    D -->|Intra-group MIG weighting| E["Fine-grained token fusion <br/>Unique tokens dominate"]
+    E --> F["LSA Layer-wise Semantic Alignment"]
+    F --> G["Decoder decodes answer"]
+```
 
 ### Key Designs
 
-1. **Marginal Information Gain (MIG)**:
+**1. Marginal Information Gain MIG: Modeling "Relevance" and "Non-redundancy" in a Single Formula**
 
-    - Definition: $G(x_i, q, X) = \frac{x_i^\top q}{\|x_i\|\|q\|} - \max_{j \neq i} \frac{x_i^\top x_j}{\|x_i\|\|x_j\|}$
-    - First term: cosine similarity between the token and the query (relevance)
-    - Second term: cosine similarity between the token and its most similar counterpart in the context (redundancy)
-    - Interpretation: High MIG = query-relevant and semantically unique; Low MIG = irrelevant or highly redundant
-    - Design Motivation: Relevance alone leads to retention of large amounts of repetitive content. MIG jointly models relevance and uniqueness, and it is theoretically shown that expected performance under MIG-based selection exceeds that of relevance-only selection.
+A common failure in task-aware compression is focusing solely on relevance, which results in highly similar retained tokens. COMI replaces the selection criterion with Marginal Information Gain:
 
-2. **Coarse-grained Group Budget Reallocation**:
+$$G(x_i, q, X) = \frac{x_i^\top q}{\|x_i\|\|q\|} - \max_{j \neq i} \frac{x_i^\top x_j}{\|x_i\|\|x_j\|}$$
 
-    - Function: Divides the context into equal-length segments and dynamically allocates compression ratios based on segment-level MIG.
-    - Mechanism: For each segment, select a representative vector (the token with the highest cosine similarity to the query) → compute segment MIG → apply inverse-rank softmax to assign weights $P_i = e^{-G_i} / \sum e^{-G_j}$ → segments with higher MIG receive larger budgets (lower compression ratios).
-    - Design Motivation: Information value is unevenly distributed across the context — segments that are both relevant and distinctive should be allocated greater retention budgets.
+The first term is the cosine similarity between the token and the query (relevance); the second term is the maximum cosine similarity between the token and others in the context (redundancy). A high MIG implies the token is both relevant to the query and unique in content. The paper theoretically proves that selecting tokens based on MIG yields better expected performance than using relevance alone.
 
-3. **Fine-grained Token Merging**:
+**2. Coarse-grained group budget reallocation: Differential allocation for non-uniform information distribution**
 
-    - Function: Within each group, MIG-weighted merging combines multiple tokens into a single compressed token.
-    - Mechanism: $\tilde{h}_i = \sum_{h_k \in S_i} \frac{e^{G(h_k, \bar{q}, S_i)}}{\sum e^{G}} \cdot h_k$, where tokens with higher MIG contribute more.
-    - Design Motivation: Avoids the information loss of simple uniform averaging. MIG weighting ensures that semantically unique and query-relevant tokens dominate the merged representation.
+Information is distributed non-uniformly across long contexts. COMI segments the context into equal-length blocks, uses a representative vector (the token with the highest query similarity in the segment) to calculate the segment's MIG $G_i$, and applies an inverse softmax to allocate the compression budget:
+
+$$P_i = \frac{e^{-G_i}}{\sum_j e^{-G_j}}$$
+
+Using $-G_i$ in the exponent creates an inverse ranking: segments with higher MIG receive more retention budget (lower actual compression rate). This ensures segments that are relevant and unique retain more tokens.
+
+**3. Fine-grained token fusion: Unique tokens dominate fusion within groups**
+
+Instead of uniform averaging, which dilutes critical information, COMI uses MIG-weighted fusion. With the pooled query vector $\bar{q}$ as a reference, tokens are weighted by their MIG via softmax:
+
+$$\tilde{h}_i = \sum_{h_k \in S_i} \frac{e^{G(h_k, \bar{q}, S_i)}}{\sum_{h_l \in S_i} e^{G(h_l, \bar{q}, S_i)}} \cdot h_k$$
+
+Tokens with higher MIG contribute more to the fused result, ensuring that unique and relevant semantics dominate the compressed tokens.
 
 ### Loss & Training
-Built on an Encoder-Decoder architecture. The Encoder and LSA are fully fine-tuned; the Decoder fine-tunes only $W_Q, W_K, W_V, W_O$. Training objective: standard cross-entropy loss $\mathcal{L}_{nll}$, predicting correct answers from compressed representations.
+The model uses an Encoder-Decoder architecture. The Encoder and LSA are fully fine-tuned, while only the attention projection matrices $W_Q, W_K, W_V, W_O$ are fine-tuned in the Decoder. The training objective is standard cross-entropy $\mathcal{L}_{nll}$, predicting the correct answer based on the compressed representations.
 
 ## Key Experimental Results
 
-### Main Results (32× Compression, Qwen2-7B)
+### Main Results (32x compression, Qwen2-7B)
 
 | Method | NQ EM | 2WikiMQA EM | HotpotQA EM | NarrativeQA EM | MultiNews F1 |
 |------|-------|-------------|-------------|----------------|-------------|
@@ -80,57 +94,58 @@ Built on an Encoder-Decoder architecture. The Encoder and LSA are fully fine-tun
 | SnapKV | 6.06 | 8.09 | 13.61 | 0.00 | 25.56 |
 | Activation Beacon | 11.67 | 36.53 | 39.73 | 6.63 | 33.60 |
 | LongLLMLingua | 15.07 | 21.80 | 21.58 | 1.03 | - |
-| GMSA | - | - | - | - | - |
-| **COMI** | **~40** | **~45** | **~42** | **~10** | **~30** |
+| **Ours (COMI)** | **~40** | **~45** | **~42** | **~10** | **~30** |
 
-### Ablation Study (NQ, LLaMA-2-7B, 16×)
+### Ablation Study (NQ, LLaMA-2-7B, 16x)
 
-| Configuration | EM | Note |
+| Configuration | EM | Description |
 |------|-----|------|
-| COMI (full) | 22.75 | Complete method |
-| w/o MIG (relevance only) | ↓ significant | Redundancy accumulation |
-| w/o coarse-grained reallocation | ↓ moderate | Fixed compression ratio |
-| w/o fine-grained MIG weighting | ↓ moderate | Uniform merging |
+| COMI (full) | 22.75 | Full method |
+| w/o MIG (Relevance only) | ↓Significant | Redundancy accumulation |
+| w/o Coarse reallocation | ↓Moderate | Fixed compression rate |
+| w/o Fine MIG weighting | ↓Moderate | Uniform fusion |
 
 ### Key Findings
-- **At 32× compression, COMI outperforms the second-best method by ~25 EM** (NQ + Qwen2): the advantage is particularly pronounced at extreme compression ratios — when only 3% of tokens can be retained, information diversity becomes critical.
-- **At 16× compression, COMI approaches original prompt performance**: on LLaMA-2-7B, COMI achieves 22.75 EM vs. 15.04 EM for the original input — compressed representations even surpass the uncompressed baseline by eliminating redundant noise.
-- **The redundancy penalty in MIG is the key contribution**: removing it leads to significant performance degradation, confirming that "relevant but redundant" content is the core bottleneck at high compression ratios.
-- **Consistent effectiveness across backbones**: COMI achieves substantial improvements on both LLaMA-2-7B and Qwen2-7B.
+- **COMI outperforms the second-best method by ~25 EM points at 32x compression** (NQ + Qwen2): The advantage is extremely significant at high compression ratios, where information diversity becomes critical.
+- **COMI approaches original prompt performance at 16x compression**: On LLaMA-2-7B, COMI achieves 22.75 EM vs. the original 15.04 EM—the compressed input actually outperforms the original by removing redundant noise.
+- **MIG's redundancy penalty is the key contribution**: Removing it leads to significant degradation, confirming that "relevance without diversity" is the core issue at high compression.
+- **Consistent effectiveness across backbones**: Significant leads on both LLaMA-2-7B and Qwen2-7B.
 
 ## Highlights & Insights
-- **MIG = relevance − redundancy is a concise and principled metric**: a single formula unifies two core dimensions of information retention. This design principle is transferable to any information selection scenario (e.g., RAG retrieval, KV-cache management).
-- **Hierarchical coarse-to-fine two-stage strategy**: segment-level budget allocation (macro decisions) followed by token-level merging (micro decisions) — dual-level MIG guidance ensures optimality at both global and local granularities.
-- **Counter-intuitive finding that compressed representations outperform the original**: this suggests that much of the content in long texts constitutes noise — effective compression is equivalent to denoising.
+- **MIG = Relevance - Redundancy is a clean and powerful metric**: It unifies two core dimensions of information selection in a single formula. This design can be transferred to other scenarios like RAG retrieval or KV-cache management.
+- **Hierarchical design of the two-stage strategy**: Budgets are allocated at the segment level (macro decision) and tokens are fused at the local level (micro decision), ensuring optimality at both scales.
+- **Counter-intuitive finding of "exceeding original performance"**: This suggests that a large amount of redundancy in long texts acts as noise; effective compression serves as denoising.
 
 ## Limitations & Future Work
-- **Requires an Encoder-Decoder architecture**: not directly applicable to KV-cache compression in Decoder-only models. Integrating the MIG principle into KV-cache management warrants further exploration.
-- **MIG uses maximum single-token similarity as the redundancy measure**: this may be insufficient — a group of moderately similar tokens can also produce redundancy. Diversity metrics such as DPP or MMR may offer more accurate characterization.
-- **Training overhead**: fine-tuning both the Encoder and Decoder is required; training-free deployment is not supported. In contrast, methods such as LLMLingua require no training.
-- **Not validated on very long texts**: experiments use inputs of approximately 4–8K tokens. Performance on truly long-context scenarios (100K+ tokens) remains unknown.
+- **Requirement for Encoder-Decoder architecture**: It cannot be directly applied to KV-cache compression in Decoder-only models. Incorporating MIG into KV-cache management is a future research direction.
+- **MIG uses maximum single-token similarity as a redundancy metric**: This may be insufficient for groups of moderately similar tokens. Using DPP or MMR for diversity might be more accurate.
+- **Training cost**: It requires fine-tuning the Encoder and parts of the Decoder, unlike training-free methods like LLMLingua.
+- **Ultra-long text validation**: Experiments were limited to 4-8K tokens; performance in truly long-context scenarios (100K+) remains unknown.
 
 ## Related Work & Insights
-- **vs. LLMLingua/LongLLMLingua**: These methods select tokens based on perplexity/entropy (discarding less important ones) but do not account for redundancy among retained tokens. COMI's MIG jointly considers relevance and uniqueness.
-- **vs. GMSA**: GMSA addresses cross-layer semantic alignment in Encoder-Decoder frameworks; COMI inherits the LSA solution and innovates on the compression strategy.
-- **vs. Activation Beacon/StreamLLM**: These are KV-cache compression methods tied to specific model architectures. COMI operates at the prompt level and is model-agnostic.
+- **vs. LLMLingua/LongLLMLingua**: These use perplexity/entropy for token removal but do not consider redundancy among retained tokens. COMI's MIG balances relevance and uniqueness.
+- **vs. GMSA**: GMSA addresses cross-layer semantic alignment; COMI adopts the LSA solution while innovating at the compression strategy level.
+- **vs. Activation Beacon/StreamLLM**: These are model-specific KV-cache compression methods. COMI is prompt-level compression and thus more model-agnostic.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The MIG formulation is concise and intuitively well-motivated; the coarse-to-fine framework is carefully designed.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four QA benchmarks plus one summarization task, two backbone models, multiple compression ratios, and comprehensive comparisons.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated (the finding that 0.75% of tokens account for 99% of attention is particularly compelling).
-- Value: ⭐⭐⭐⭐ Provides an effective solution for high compression ratios; MIG is transferable to other information selection scenarios.
+- Novelty: ⭐⭐⭐⭐ MIG is simple and intuitively correct; the coarse-to-fine framework is well-designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation across 4 QA tasks, 1 summarization task, 2 backbones, and multiple compression ratios.
+- Writing Quality: ⭐⭐⭐⭐ Motivation is clear, supported by strong empirical observations (0.75% tokens/99% attention).
+- Value: ⭐⭐⭐⭐ Provides an effective solution for high compression ratios with transferable design principles.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
 ## Related Papers
 
+- [\[ACL 2025\] CFSP: An Efficient Structured Pruning Framework for LLMs with Coarse-to-Fine Activation Information](../../ACL2025/model_compression/cfsp_an_efficient_structured_pruning_framework_for_llms_with_coarse-to-fine_acti.md)
+- [\[ICLR 2026\] InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression](infotok_adaptive_discrete_video_tokenizer_via_information-theoretic_compression.md)
 - [\[CVPR 2026\] HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation](../../CVPR2026/model_compression/hieramp_coarse-to-fine_autoregressive_amplification_for_generative_dataset_disti.md)
 - [\[ICLR 2026\] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](freqkv_key-value_compression_in_frequency_domain_for_context_window_extension.md)
-- [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](../../AAAI2026/model_compression/infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
 - [\[ICCV 2025\] Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP](../../ICCV2025/model_compression/gain-mlp_improving_hdr_gain_map_encoding_via_a_lightweight_mlp.md)
-- [\[ACL 2026\] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](../../ACL2026/model_compression/fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)
 
 </div>
 

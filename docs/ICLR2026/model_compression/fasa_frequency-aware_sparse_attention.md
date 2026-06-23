@@ -2,79 +2,81 @@
 title: >-
   [Paper Note] FASA: Frequency-Aware Sparse Attention
 description: >-
-  [ICLR 2026][Model Compression][KV cache compression] This paper identifies functional sparsity at the frequency component (FC) level within RoPE—a small subset of "dominant FCs" can effectively predict token importance.…
+  [ICLR 2026][Model Compression][Paper Note] This paper discovers functional sparsity at the Frequency Chunk (FC) level in RoPE—where a small number of "dominant FCs" can effectively predict token importance. Based on this, it proposes the FASA framework, which achieves training-free KV cache compression through a two-stage process: predicting token importance vi
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "KV cache compression"
-  - "sparse attention"
-  - "RoPE frequency analysis"
-  - "token pruning"
-  - "long-context inference"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 76580a8edc7c7c0a
+content_hash: f9e78bee41609716
 ---
-
 # FASA: Frequency-Aware Sparse Attention
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.03152](https://arxiv.org/abs/2602.03152)  
 **Code**: [GitHub](https://github.com/AMAP-ML/FASA-ICLR2026)  
-**Area**: Signal Communication
+**Area**: Signal Communication  
 **Keywords**: KV cache compression, sparse attention, RoPE frequency analysis, token pruning, long-context inference
 
 ## TL;DR
-This paper identifies functional sparsity at the frequency component (FC) level within RoPE—a small subset of "dominant FCs" can effectively predict token importance. Based on this finding, the paper proposes the FASA framework, which achieves training-free KV cache compression via two stages: dominant-FC-based token importance prediction and focused attention computation. On LongBench, retaining only 256 tokens approaches 100% of full-KV performance; on AIME24, FASA achieves a 2.56× speedup using only 18.9% of the KV cache.
+This paper discovers functional sparsity at the Frequency Chunk (FC) level in RoPE—where a small number of "dominant FCs" can effectively predict token importance. Based on this, it proposes the FASA framework, which achieves training-free KV cache compression through a two-stage process: predicting token importance via dominant FCs and focusing attention computation. On LongBench, it achieves nearly 100% full-KV performance while retaining only 256 tokens; on AIME24, it achieves a 2.56× speedup using only 18.9% of the cache.
 
 ## Background & Motivation
 
-1. **Background**: LLM long-context processing faces a memory bottleneck due to the linear growth of KV caches. Mainstream compression directions include token pruning (StreamingLLM, SnapKV), low-rank compression, quantization, KV merging, and budget allocation.
-2. **Limitations of Prior Work**: (1) Static strategies (StreamingLLM) retain fixed leading/trailing tokens, causing irreversible information loss; (2) adaptive strategies (SnapKV, H2O) use heuristic ranking that fails to fully capture the query-dependent nature of token importance; (3) learning-based strategies require training token predictors that generalize poorly across datasets.
-3. **Key Challenge**: Token importance is inherently query-dependent, yet existing methods either apply static, query-agnostic rules or evaluate importance at a cost equivalent to computing full attention. The key question is whether query-aware importance prediction can be achieved more cheaply.
-4. **Goal**: To achieve query-aware token importance prediction at minimal computational cost without any training.
-5. **Key Insight**: RoPE decomposes attention computation into independent contributions from $d/2$ 2D frequency components (FCs). Different FCs serve different roles due to their distinct rotation frequencies: high-frequency FCs encode positional patterns, while low-frequency FCs carry semantic information. A small subset of "dominant FCs" suffices to approximately reconstruct the full-head attention pattern.
-6. **Core Idea**: Exploit the intrinsic FC-level functional sparsity in RoPE, replacing full-dimensional attention with lightweight computation over a small number of dominant FCs to predict token importance.
+1. **Background**: LLM long-context processing faces memory bottlenecks due to the linear growth of the KV cache. Mainstream compression directions include token pruning (StreamingLLM, SnapKV), low-rank compression, quantization, KV merging, and budget allocation.
+2. **Limitations of Prior Work**: (1) Static strategies (StreamingLLM) permanently retain head and tail tokens, leading to irreversible information loss; (2) Adaptive strategies (SnapKV, H2O) use heuristic rankings that fail to fully capture the query-dependency of token importance; (3) Learning strategies require training token predictors, which exhibit poor generalization across different datasets.
+3. **Key Challenge**: Token importance is inherently query-dependent, but existing methods either use query-independent static rules or evaluate importance in a manner as expensive as computing full attention. Is there a cheaper way to achieve query-aware importance prediction?
+4. **Goal**: How to achieve query-aware token importance prediction with minimal computational cost without requiring training?
+5. **Key Insight**: RoPE decomposes attention computation into independent contributions from $d/2$ 2D Frequency Chunks (FCs). Different FCs exhibit distinct functions due to varying rotation frequencies: high-frequency FCs handle positional patterns, while low-frequency FCs carry semantic information. Only a few "dominant FCs" are needed to approximately reconstruct the attention patterns of the full head.
+6. **Core Idea**: Leverage the inherent FC-level functional sparsity of RoPE to predict token importance using low-overhead calculations from a few dominant FCs instead of full-dimensional attention.
 
 ## Method
 
 ### Overall Architecture
-FASA consists of two stages: (1) Token Importance Prediction (TIP)—using a pre-calibrated dominant FC set $\mathcal{I}_{dom}$ to efficiently estimate per-token importance scores; and (2) Focused Attention Computation (FAC)—performing full-dimensional attention exclusively over the selected critical token subset. Dominant FC identification is a one-time offline calibration process.
+FASA decomposes attention into a "coarse screening then fine computation" two-step process: first, it uses a set of offline-calibrated dominant frequency chunks (FCs) to calculate token importance scores (Token Importance Prediction, TIP) at a minimal cost; then, it executes full-dimensional attention only on the selected subset of critical tokens (Focused Attention Computation, FAC). The identification of dominant FCs is a one-time offline calibration, incurring no additional training costs during inference—this is the key to how FASA achieves training-free, query-aware prediction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    CAL["Functional Sparsity of RoPE FCs<br/>Offline selection of dominant FCs<br/>based on CA metric (< 1% of FCs)"] -.One-time Calibration.-> B
+    A["Input: Query q_t<br/>+ Full KV Cache K_1:t"] --> B
+    B["TIP: Token Importance Prediction<br/>Accumulate scores S_t only on dominant FCs<br/>Select top-N_fac for candidate set T_t"] --> C
+    C["FAC: Focused Attention Computation<br/>Gather K/V for T_t, retain original<br/>positions for full-dimensional attention"] --> D["Output: Next token"]
+```
 
 ### Key Designs
 
-1. **Functional Sparsity Discovery in RoPE Frequency Components**:
-    - Function: Provides the theoretical and empirical foundation for token importance prediction.
-    - Mechanism: In RoPE, a $d$-dimensional vector is divided into $d/2$ 2D frequency components, where the rotation frequency of the $i$-th FC is $\theta_i = B^{-2(i-1)/d}$. A Contextual Agreement (CA) metric is proposed: $\text{CA}_\mathcal{K}^{l,h,i} = |\text{TopK-I}(\alpha_{l,h}, \mathcal{K}) \cap \text{TopK-I}(\alpha_{l,h}^{(i)}, \mathcal{K})| / \mathcal{K}$, which measures the top-K token set overlap between a single-FC attention pattern and the full-head attention. Empirically, dominant FCs are sparse (fewer than 1% of FCs contribute >90% of contextual agreement), universal across tasks (dominant FC overlap across different calibration datasets exceeds 70%), and consistent across models.
-    - Design Motivation: FC-level sparsity is an intrinsic property of the RoPE structure rather than a task-specific artifact. High-frequency FCs primarily encode positional patterns (recency bias) rather than semantic information and can therefore be safely ignored.
+**1. Functional Sparsity of RoPE Frequency Chunks: Proving a few FCs are enough**
 
-2. **TIP: Token Importance Predictor**:
-    - Function: Predicts the importance ranking of all tokens at minimal computational cost.
-    - Mechanism: Offline calibration selects $N_{tip}$ FCs that maximize the sum of expected CA scores: $\mathcal{I}_{dom}^{l,h} = \text{TopK-I}(\{\overline{\text{CA}}_\mathcal{K}^{l,h,i}\}, N_{tip})$. During online inference, scores are aggregated over only the dominant FCs: $S_t^{l,h} = \sum_{i \in \mathcal{I}_{dom}} \alpha^{l,h,i}(q_t, K_{1:t})$, and the top-$N_{fac}$ tokens are selected as $\mathcal{T}_t = \text{TopK-I}(S_t^{l,h}, N_{fac})$. TIP complexity is $O(2tN_{tip})$, far lower than full attention at $O(td)$.
-    - Design Motivation: Dominant FCs account for only 1/4 to 1/8 of the full dimensionality yet accurately reconstruct context selection behavior. A single calibration generalizes across tasks.
+The method is grounded in the observation that RoPE splits $d$-dimensional vectors into $d/2$ pairs of 2D frequency chunks. The rotation frequency of the $i$-th FC, $\theta_i = B^{-2(i-1)/d}$, varies, leading to functional differentiation: high-frequency FCs encode positional patterns (recency bias), while low-frequency FCs carry semantic information. To quantify "how well a single FC represents the selection behavior of the entire head," the paper defines the Contextual Agreement (CA) metric $\text{CA}_\mathcal{K}^{l,h,i} = |\text{TopK-I}(\alpha_{l,h}, \mathcal{K}) \cap \text{TopK-I}(\alpha_{l,h}^{(i)}, \mathcal{K})| / \mathcal{K}$, representing the overlap ratio between the single FC's top-$\mathcal{K}$ tokens and those of the full head.
 
-3. **FAC: Focused Attention Computation**:
-    - Function: Executes full-precision attention over the filtered critical tokens.
-    - Mechanism: Key and Value entries corresponding to $\mathcal{T}_t$ are retrieved from the full KV cache via a Gather operation: $K_{\mathcal{T}_t} = \text{Gather}(K_{1:t}, \mathcal{T}_t)$, $V_{\mathcal{T}_t} = \text{Gather}(V_{1:t}, \mathcal{T}_t)$. Original absolute positions of retained tokens are preserved to maintain the integrity of RoPE positional encodings. Complexity is $O(N_{fac}d)$. Two variants are provided: FASA-M (memory-optimized, offloads KV cache to CPU) and FASA-C (compute-optimized, retains the full cache on GPU but accesses only sparse Keys).
-    - Design Motivation: With critical tokens already identified by TIP, FAC performs full-fidelity attention on the reduced set to ensure generation quality. Position preservation avoids performance degradation caused by positional encoding distortion.
+Empirical results yield three strong conclusions: dominant FCs are extremely sparse (less than 1% of FCs contribute >90% of CA), universal across tasks (over 70% overlap in dominant FCs across calibration datasets), and consistent across models. This implies FC-level sparsity is an inherent structural property of RoPE rather than task-specific. Since high-frequency FCs primarily manage position, they can be safely ignored, justifying the use of very few FCs for prediction.
+
+**2. TIP: Token Importance Prediction using dominant FCs**
+
+In the offline phase, $N_{tip}$ FCs that maximize the sum of expected CA are selected as the dominant set $\mathcal{I}_{dom}^{l,h} = \text{TopK-I}(\{\overline{\text{CA}}_\mathcal{K}^{l,h,i}\}, N_{tip})$. Online, full-dimensional attention is no longer computed. Instead, scores are accumulated only over these dominant FCs: $S_t^{l,h} = \sum_{i \in \mathcal{I}_{dom}} \alpha^{l,h,i}(q_t, K_{1:t})$, and the top-$N_{fac}$ tokens are selected to form the candidate set $\mathcal{T}_t = \text{TopK-I}(S_t^{l,h}, N_{fac})$. Since dominant FCs only account for 1/8 to 1/4 of the total dimensions, the TIP complexity is $O(2tN_{tip})$, which is significantly lower than the $O(td)$ of full attention.
+
+**3. FAC: Focused Attention Computation on critical tokens**
+
+Once $\mathcal{T}_t$ is obtained, the corresponding Keys and Values are retrieved from the full KV cache using Gather: $K_{\mathcal{T}_t} = \text{Gather}(K_{1:t}, \mathcal{T}_t)$, $V_{\mathcal{T}_t} = \text{Gather}(V_{1:t}, \mathcal{T}_t)$. Full-fidelity attention is then performed on this reduced set with a complexity of $O(N_{fac}d)$. A crucial detail is maintaining the original absolute position of each token to preserve the integrity of RoPE, preventing degradation caused by positional distortion. Two variants are implemented: FASA-M offloads the KV cache to the CPU to save VRAM (memory optimization), while FASA-C keeps the full cache on the GPU but performs sparse access only on Keys (computation optimization).
 
 ### Loss & Training
-FASA is a fully **training-free** framework. Dominant FC identification requires only a small number of calibration samples in a one-time offline process. It is orthogonal to and composable with layer-wise budget allocation methods (e.g., PyramidKV). Theoretical speedup is $\text{Speedup} = d / N_{tip}$ (when $N_{fac} \ll t$).
+FASA is entirely training-free. The identification of dominant FCs requires only a one-time offline process with a few calibration samples. It is orthogonal to and can be combined with layer-wise budget allocation (e.g., PyramidKV). When $N_{fac} \ll t$, the theoretical speedup is $\text{Speedup} = d / N_{tip}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task / Method | Stream | SnapKV | Quest | FASA | Full KV | Oracle |
+| Task/Method | Stream | SnapKV | Quest | FASA | Full KV | Oracle |
 |--------|------|------|-------|------|---------|--------|
 | LongBench (K=256) | ~80% | ~92% | ~90% | **~99%** | 100% | 100% |
 | AIME24 Speedup | — | — | — | **2.56×** | 1× | — |
 | KV Cache Usage | — | — | — | **18.9%** | 100% | — |
 
-Cross-model validation: consistently effective on Llama-3.1-8B, Mistral-7B, Qwen2-7B, and others.
+Cross-model validation: Consistently effective across Llama-3.1-8B, Mistral-7B, Qwen2-7B, etc.
 
 ### Ablation Study
 
-| FC Count (F) / KV Budget (K) | K=64 | K=256 | K=512 | K=1024 |
+| No. of FCs (F) / KV Budget (K) | K=64 | K=256 | K=512 | K=1024 |
 |------|------|------|------|------|
 | Random FC | 2.0 | 3.6 | 6.4 | 25.5 |
 | Stream | 34.4 | 26.8 | 24.4 | 30.7 |
@@ -83,35 +85,35 @@ Cross-model validation: consistently effective on Llama-3.1-8B, Mistral-7B, Qwen
 | F=16 (1/4) | 55.3 | 59.7 | 62.8 | 70.1 |
 
 ### Key Findings
-- Only 1/8 of FCs suffice to outperform SnapKV by 10.3% in composite CA score across all budget levels.
-- FC functional sparsity is an intrinsic model property: highly consistent across architectures, scales, and tasks.
-- FASA-C achieves a 2.56× speedup on the AIME24 long-CoT reasoning task with less than 0.7% performance degradation.
-- Dominant FCs constitute fewer than 1% of all FCs yet contribute the majority of contextual information.
-- Retaining only 256 tokens on LongBench approaches 100% of full-KV performance.
+- Using only 1/8 of FCs outperforms SnapKV by 10.3% in composite CA scores across all budget levels.
+- Functional sparsity of FCs is an inherent property of the model: highly consistent across architectures, scales, and tasks.
+- FASA-C achieves a 2.56× speedup on the AIME24 long-CoT reasoning task with a performance loss of <0.7%.
+- Dominant FCs account for less than 1% of total FCs but contribute the vast majority of contextual information.
+- On LongBench, retaining only 256 tokens achieves nearly 100% of the full-KV performance.
 
 ## Highlights & Insights
-- A novel theoretical perspective on RoPE: FC-level functional sparsity reveals an elegant division of labor between high-frequency FCs (positional encoding) and low-frequency FCs (semantic content).
-- Completely training-free with one-time calibration for lifelong use: the task-agnostic nature of dominant FCs makes calibration highly efficient.
-- Orthogonal to existing methods: seamlessly composable with quantization, layer-wise budget allocation, and other techniques.
-- Granularity innovation from token-level to frequency-component-level: finer-grained than page-level (Quest) or token-level (SnapKV) approaches.
+- **New theoretical perspective on RoPE**: Functional sparsity at the frequency chunk level—an elegant division of labor between high-frequency FCs (positional encoding) and low-frequency FCs (semantic carrier).
+- **Training-free and one-time calibration**: The task-independence of dominant FCs makes calibration extremely efficient.
+- **Orthogonal to existing methods**: Can be seamlessly combined with quantization, layer-wise budget allocation, and other techniques.
+- **Granular innovation**: Moving from token-level to frequency-chunk-level granularity; finer than page-level (Quest) or token-level (SnapKV) methods.
 
 ## Limitations & Future Work
-- Whether the 1/4 dominant FC selection ratio remains optimal under extremely long contexts (100K+) requires further investigation.
-- The current implementation targets decoder-only architectures; adaptation is needed for encoder-decoder models and non-RoPE architectures.
-- CPU–GPU data transfer latency in FASA-M may become a bottleneck in high-throughput scenarios.
-- Integration with speculative decoding remains unexplored.
+- Whether the 1/4 selection ratio for dominant FCs remains optimal for extremely long contexts (100K+) remains to be verified.
+- The current implementation focuses on decoder-only architectures; adaptation for encoder-decoder and non-RoPE models is required.
+- The CPU-GPU data transfer latency in FASA-M might become a bottleneck in high-throughput scenarios.
+- The potential synergy with speculative decoding has not yet been explored.
 
 ## Related Work & Insights
-- **vs StreamingLLM**: Static retention strategy discards tokens in intermediate positions that may be critical.
-- **vs SnapKV**: One-shot filtering at the prefill stage cannot adapt to changes in token importance during generation.
-- **vs Quest**: Page-level granularity is too coarse, retrieving entire pages even when only a few tokens are needed.
+- **vs StreamingLLM**: Uses a static retention strategy; discarding intermediate tokens may lose critical information.
+- **vs SnapKV**: Performs a one-time filter during the pre-filling stage, failing to adapt to changes in token importance during generation.
+- **vs Quest**: Page-level granularity is too coarse, retrieving an entire page even if only a few tokens are needed.
 - **vs SparQ/LoKi**: Low-rank methods require auxiliary memory to store projection matrices.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ FC-level functional sparsity is a novel theoretical discovery about RoPE with broad implications.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across three paradigms: long-context benchmarks, sequence modeling, and long-CoT reasoning.
-- Writing Quality: ⭐⭐⭐⭐ A complete logical chain from observation to hypothesis to validation to method.
-- Value: ⭐⭐⭐⭐⭐ A training-free, efficient, and general KV cache compression solution with strong practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ FC-level functional sparsity is a significant new theoretical discovery for RoPE.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across long-context benchmarks, sequence modeling, and long-CoT reasoning.
+- Writing Quality: ⭐⭐⭐⭐ Complete logical chain from observation and hypothesis to validation and methodology.
+- Value: ⭐⭐⭐⭐⭐ A training-free, efficient, and universal KV cache compression solution with high practical utility.
 
 <!-- RELATED:START -->
 
@@ -119,11 +121,11 @@ Cross-model validation: consistently effective on Llama-3.1-8B, Mistral-7B, Qwen
 
 ## Related Papers
 
-- [\[ICLR 2026\] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension](freqkv_key-value_compression_in_frequency_domain_for_context_window_extension.md)
-- [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](../../NeurIPS2025/model_compression/specattn_speculating_sparse_attention.md)
 - [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
+- [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](../../NeurIPS2025/model_compression/specattn_speculating_sparse_attention.md)
+- [\[ICLR 2026\] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers](ensembling_pruned_attention_heads_for_uncertainty-aware_efficient_transformers.md)
 - [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
-- [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
+- [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](../../CVPR2026/model_compression/trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
 
 </div>
 

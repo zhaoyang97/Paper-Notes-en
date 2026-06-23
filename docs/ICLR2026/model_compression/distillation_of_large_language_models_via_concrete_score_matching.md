@@ -2,139 +2,140 @@
 title: >-
   [Paper Note] Distillation of Large Language Models via Concrete Score Matching
 description: >-
-  [ICLR 2026][Model Compression][knowledge distillation] This paper proposes Concrete Score Distillation (CSD), a knowledge distillation loss for LLMs grounded in discrete score matching. By matching the relative logit dif…
+  [ICLR 2026][Model Compression][Knowledge Distillation] Concrete Score Distillation (CSD) is proposed as a knowledge distillation loss for LLMs based on discrete score matching. By matching the relative logit differences between student and teacher across all vocabulary pairs, it concurrently overcomes the issues of softmax smoothing and the restricted solution space inhere
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "knowledge distillation"
-  - "LLM compression"
-  - "score matching"
-  - "logit distillation"
-  - "discrete score matching"
+  - ICLR 2026
+  - Model Compression
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 4dc1ba2625191522
+content_hash: 6a150d994841bd76
 ---
-
 # Distillation of Large Language Models via Concrete Score Matching
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25837](https://arxiv.org/abs/2509.25837)  
 **Code**: [GitHub](https://github.com/aailab-kaist/CSD)  
-**Area**: Model Compression / Knowledge Distillation
-**Keywords**: knowledge distillation, LLM compression, score matching, logit distillation, discrete score matching
+**Area**: Model Compression / Knowledge Distillation  
+**Keywords**: Knowledge Distillation, LLM Compression, Score Matching, Logit Distillation, Discrete Score Matching
 
 ## TL;DR
 
-This paper proposes Concrete Score Distillation (CSD), a knowledge distillation loss for LLMs grounded in discrete score matching. By matching the relative logit differences between all vocabulary token pairs across the student and teacher, CSD simultaneously overcomes the softmax-smoothing problem and the solution-space restriction inherent in direct logit distillation.
+Concrete Score Distillation (CSD) is proposed as a knowledge distillation loss for LLMs based on discrete score matching. By matching the relative logit differences between student and teacher across all vocabulary pairs, it concurrently overcomes the issues of softmax smoothing and the restricted solution space inherent in direct logit distillation.
 
 ## Background & Motivation
 
-Deploying LLMs incurs prohibitive inference costs, making knowledge distillation (KD) a central technique for transferring capabilities from large models to smaller ones. Existing KD methods predominantly align student and teacher distributions via softmax probability matching (e.g., KL divergence); however, the softmax transformation severely smooths logit information. With large vocabularies (e.g., 128K tokens), the vast majority of token probabilities approach zero (only 0.0023% exceed 0.01), rendering the rich knowledge encoded in teacher logits nearly indistinguishable after softmax.
+The deployment and inference costs of LLMs are extremely high, making knowledge distillation (KD) a core technique for transferring capabilities from large models to smaller ones. Existing KD methods primarily align student and teacher distributions through softmax probability matching (e.g., KL divergence). However, the softmax transformation severely smoothes logit information; with large vocabularies (e.g., 128K), most token probabilities approach zero (only 0.0023% > 0.01), rendering the teacher's rich knowledge nearly indistinguishable after softmax.
 
-Direct Logit Distillation (DLD) avoids softmax smoothing by matching raw logits via MSE, yet it introduces another critical flaw: **logit-shift invariance**. Because softmax depends only on relative logit differences, the condition $f_\theta[y_t] = f_T[y_t] + C$ yields identical probabilities for all tokens, yet the MSE loss of DLD is non-zero in this case, artificially restricting the feasible solution space. This restriction is especially harmful when there is a large capacity gap between teacher and student.
+Direct Logit Distillation (DLD), which matches raw logits via MSE, avoids softmax smoothing but suffers from another critical flaw: **logit shift invariance**. Since softmax only considers the relative differences between logits, the probabilities remain identical if $f_\theta[y_t] = f_T[y_t] + C$ holds for all tokens. However, the MSE loss in DLD is non-zero in such cases, artificially restricting the optimal solution space. This limitation is particularly detrimental when there is a significant capacity gap between the teacher and student.
 
-The core idea of this paper draws on the insight from energy-based models where score matching circumvents the normalization constraint: discrete concrete score matching is introduced into LLM distillation to design a logit-level objective that is neither affected by softmax smoothing nor constrained in its solution space.
+The Core Idea: Inspired by the concept of score matching in energy-based models to bypass normalization constraints, this work introduces discrete concrete score matching into LLM distillation. It designs a logit-level distillation objective that is neither affected by softmax smoothing nor restricted in its solution space.
 
 ## Method
 
 ### Overall Architecture
 
-The core of CSD is to reformulate concrete score (discrete probability ratio) matching as logit residual matching. For each token position, CSD does not directly align logit values; instead, it aligns the relative logit differences between all vocabulary pairs $(y_t, x)$.
+CSD changes the distillation objective from "aligning probabilities" to "aligning logit residuals." For each token position, instead of directly matching the teacher's and student's logit values, it matches the relative logit differences $f[x] - f[y_t]$ between all vocabulary pairs $(y_t, x)$. This differential structure corresponds to the logarithmic form of the concrete score in discrete diffusion, bypassing softmax smoothing and naturally eliminating the shift-sensitivity issues of DLD.
 
 ### Key Designs
 
-1. **Log-transformed Concrete Score Matching**: Directly using the concrete score (probability ratio $q_\theta(x)/q_\theta(y_t)$) causes training instability when the denominator approaches zero. Applying a logarithmic transformation converts probability-ratio matching into logit-difference matching:
+**1. Log-transformed concrete score matching: Replacing probability ratios with stable logit differences**
+
+The concrete score itself is a probability ratio $q_\theta(x)/q_\theta(y_t)$. Direct matching causes the loss to explode and training to diverge when the denominator $q_\theta(y_t)$ approaches zero. CSD applies a logarithm to the probability ratio, transforming the matching target from a "ratio" to a "difference," resulting in a clean logit-level quadratic loss:
 
 $$\mathcal{L}_{\text{CSD}} = \frac{1}{2} \sum_{y_t \in \mathcal{V}} \sum_{x \in \mathcal{V}} w(y_t, x) \left( f_\theta[x] - f_\theta[y_t] - f_T[x] + f_T[y_t] \right)^2$$
 
-The log transformation yields two benefits: (1) probability ratios need not be computed explicitly, ensuring training stability; and (2) a logit-level loss formulation arises naturally.
+The log transformation achieves two goals: it eliminates the need to calculate overflow-prone probability ratios, ensuring stable training; simultaneously, the loss naturally resides in the logit space, completely skipping softmax and preventing the teacher's knowledge from being erased by large-vocabulary probability suppression.
 
-2. **Superset Property of the Solution Space (Theorem 2)**: The optimal solution set of CSD strictly contains that of DLD, i.e., $\Theta_{\text{CSD}}^* \supsetneq \Theta_{\text{DLD}}^*$. When $f_\theta[y_t] = f_T[y_t] + C$, the CSD loss is zero whereas the DLD loss is not. This means CSD allows the student to search over a strictly larger space, which is particularly advantageous under limited model capacity.
+**2. Larger optimal solution space: Differential structure naturally tolerates logit shifts**
 
-3. **Linear-time Gradient Computation (Theorem 3)**: Although CSD nominally requires a double summation over the vocabulary ($O(|\mathcal{V}|^2)$), decomposing the weight function as $w(y_t, x) = w_1(y_t) \cdot w_2(x)$ enables analytic gradient computation in $O(|\mathcal{V}|)$ time. The key step is performing weighted centering normalization on the logits and then computing a weighted residual sum.
+DLD uses MSE to align logits directly, but softmax only cares about relative differences. When $f_\theta[y_t] = f_T[y_t] + C$ (a constant $C$ added to all tokens), the probabilities are identical, yet DLD yields a non-zero loss, thus artificially shrinking the set of reachable optimal solutions for the student. The CSD loss only considers the difference $f[x] - f[y_t]$, so the shift term $C$ cancels out, resulting in zero loss. Consequently, its optimal solution set strictly contains that of DLD (Theorem 2: $\Theta_{\text{CSD}}^* \supsetneq \Theta_{\text{DLD}}^*$). This "extra search freedom" becomes more valuable as the student's capacity becomes more limited relative to the teacher.
 
-4. **Flexible Weight Design Space**: By choosing different combinations of $w_1, w_2$ from teacher probability (T), student probability (S), and uniform distribution (U), CSD flexibly interpolates between mode-seeking and mode-covering behavior. The $(S,S)$ configuration favors high fidelity, while $(U,S)$ and $(T,S)$ promote diversity.
+**3. Compressing $O(|\mathcal{V}|^2)$ double summation to $O(|\mathcal{V}|)$**
+
+Directly calculating the double summation over a 128K vocabulary is infeasible. CSD assumes the weight function is decomposable as $w(y_t, x) = w_1(y_t) \cdot w_2(x)$. Under this decomposition, the gradient can be expanded analytically: first perform weighted centering/normalization on the logits, then calculate the weighted sum of residuals. The entire gradient can be computed in $O(|\mathcal{V}|)$ time (Theorem 3). This step is critical for transitioning CSD from a theoretical concept to a practical training objective.
+
+**4. Adjustable weights to switch between fidelity and diversity**
+
+$w_1$ and $w_2$ can be set to the teacher's probability (T), the student's probability (S), or a uniform distribution (U). Different combinations allow CSD to slide between mode-seeking and mode-covering behaviors: $(S,S)$ provides the highest fidelity to the teacher, while $(U,S)$ and $(T,S)$ introduce more distributional mass, improving diversity and probability calibration. This provides a unified knob to express preferences that previously required different divergences like KL, RKL, or SKL.
 
 ### Loss & Training
 
-- The gradient structure resembles that of KL divergence, but replaces softmax normalization with **centered normalization**, avoiding softmax smoothing.
-- CSD is orthogonal to and compatible with on-policy techniques (ImitKD, GKD, DistiLLM).
-- Monte Carlo gradient estimation is also supported (for joint weight functions), though analytic gradients converge faster.
+The gradient structure of CSD is similar to KL divergence, with the key difference being the use of **centered normalization** instead of softmax normalization; this is precisely how it bypasses softmax smoothing. It is orthogonal to on-policy distillation techniques (ImitKD, GKD, DistiLLM) and can be used in conjunction with them. For non-decomposable joint weight functions, CSD also supports Monte Carlo gradient estimation, though the analytic gradient in the decomposable case converges faster and performs better, making it the default choice.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1: Pure loss comparison for GPT-2-1.5B → GPT-2-0.1B (ROUGE-L)**
+**Table 1: GPT-2-1.5B → GPT-2-0.1B Loss Function Comparison (ROUGE-L)**
 
-| Loss | Dolly | Self-Instruct | Vicuna | Super-NI | UnNI | Avg. |
-|------|-------|--------------|--------|----------|------|------|
+| Loss Function | Dolly | Self-Instruct | Vicuna | Super-NI | UnNI | Average |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | KL | 23.52 | 10.02 | 14.57 | 16.76 | 18.55 | 16.68 |
 | RKL | 24.26 | 11.19 | 15.80 | 20.17 | 22.99 | 18.88 |
 | SRKL | 24.53 | 12.19 | 15.63 | 23.37 | 24.28 | 20.00 |
 | **CSD (Ours)** | **24.94** | **12.06** | **15.78** | **24.60** | **25.88** | **20.65** |
 
-**Table 2: Task-specific distillation Gemma-7B-IT → Gemma-2B-IT**
+**Table 2: Task-Specific Distillation Gemma-7B-IT → Gemma-2B-IT**
 
 | Loss | Summarization ROUGE-L | Translation COMET | GSM8K Acc |
-|------|-----------------------|-------------------|-----------|
+| :--- | :--- | :--- | :--- |
 | KL | 35.02 | 73.96 | 24.03 |
 | **CSD (T,S)** | **35.67** | **74.14** | **25.78** |
 | RKL | 0.00 | 45.02 | 0.00 |
 
 ### Ablation Study
 
-- **CSD vs. DLD under identical weights**: CSD (T,T)/(U,U)/(S,S) consistently outperforms DLD T/U/S, validating the benefit of the enlarged solution space.
-- **Weight selection**: $(S,S)$ achieves the highest fidelity; $(U,S)$ provides the best diversity–fidelity trade-off; $(T,S)$ yields the best probability calibration.
-- **General-purpose dialogue distillation**: On Qwen2.5-7B→1.5B, MT-Bench improves from 5.75 (DistiLLM-2) to 5.95 (CSD).
-- **Analytic vs. Monte Carlo gradients**: Analytic computation converges slightly faster and achieves marginally better performance.
+*   **CSD vs DLD under identical weights**: CSD (T,T)/(U,U)/(S,S) consistently outperforms DLD T/U/S, validating the advantage of a larger solution space.
+*   **Weight Selection**: (S,S) yields the highest fidelity, (U,S) provides the best diversity-fidelity trade-off, and (T,S) offers the best probability calibration.
+*   **General Dialogue Distillation**: On Qwen2.5-7B→1.5B, MT-Bench increased from 5.75 (DistiLLM-2) to 5.95 (CSD).
+*   **Analytic Gradient vs Monte Carlo**: Analytic computation converges slightly faster and achieves superior performance.
 
 ### Key Findings
 
-- Softmax discards a substantial portion of teacher knowledge in large-vocabulary LLMs (99.99%+ of token probabilities are below 0.01).
-- Logit-shift invariance is the fundamental flaw of DLD; CSD resolves it naturally through its differential structure.
-- Mode-seeking losses (RKL, SKL) are prone to collapse under low-data distillation regimes; CSD avoids this via weight selection.
-- CSD is orthogonally complementary to on-policy methods, with the largest gains observed in purely on-policy settings.
+*   Softmax results in the loss of significant teacher knowledge in large-vocab LLMs (99.99%+ tokens have probability < 0.01).
+*   Logit shift invariance is a core deficiency of DLD, which CSD solves naturally through its differential structure.
+*   Mode-seeking losses (RKL, SKL) are prone to collapse in low-data distillation; CSD avoids this through weight selection.
+*   CSD is orthogonal and complementary to on-policy methods, showing the largest gains in pure on-policy settings.
 
 ## Highlights & Insights
 
-- Reframing LLM distillation from the perspective of energy-based model score matching is both conceptually novel and theoretically rigorous.
-- The analysis of logit-shift invariance is concise and incisive, directly identifying the fundamental deficiency of DLD.
-- The weight function design space provides a unified framework for understanding the mode-seeking versus mode-covering spectrum.
-- Analytic gradient computation reduces the nominally $O(|\mathcal{V}|^2)$ CSM objective to a practically feasible $O(|\mathcal{V}|)$ procedure.
+*   Re-examines the LLM distillation problem from an energy-based model perspective; the approach is novel and theoretically grounded.
+*   The analysis of logit shift invariance is concise and powerful, directly addressing the fundamental flaw of DLD.
+*   The weight function design space provides a unified framework for understanding mode-seeking and mode-covering behaviors.
+*   Analytic gradient calculation reduces the complexity of CSM from $O(|\mathcal{V}|^2)$ to a practically usable $O(|\mathcal{V}|)$.
 
 ## Limitations & Future Work
 
-- Exploration of the weight function space remains limited; joint weight function designs have not been fully investigated.
-- The factorization assumption $w(y_t,x)=w_1(y_t)w_2(x)$ constrains the expressiveness of the weighting scheme.
-- Validation on larger-scale models (teacher >10B parameters) is insufficient.
-- Integration with other compression methods such as quantization and pruning has not been explored.
+*   Exploration of the weight function space remains limited; the design of joint weight functions has not been fully explored.
+*   The decomposability assumption $w(y_t,x)=w_1(y_t)w_2(x)$ restricts the expressive power of the weights.
+*   Validation on larger-scale models (>10B teacher) is insufficient.
+*   Integration with other compression methods such as quantization and pruning has not been investigated.
 
 ## Related Work & Insights
 
-- **DistiLLM** (Ko et al., 2024): Proposes SKL/SRKL smoothed KL distillation; CSD builds upon and further improves this line of work.
-- **GKD** (Agarwal et al., 2024): An f-divergence framework; CSD can be viewed as a new framework that transcends probability matching.
-- **Concrete Score Matching** (Meng et al., 2022): Score matching for discrete diffusion models; this paper innovatively adapts it to autoregressive LLM distillation.
-- Insight: The "bypassing normalization" principle of score matching may find broader applicability in other NLP tasks that require distribution matching.
+*   **DistiLLM** (Ko et al., 2024): Proposed SKL/SRKL smoothed KL distillation; the current work improves upon this foundation.
+*   **GKD** (Agarwal et al., 2024): Uses the f-divergence framework; CSD can be seen as a new framework transcending probability matching.
+*   **Concrete Score Matching** (Meng et al., 2022): Developed for discrete diffusion models; this work innovatively adapts it for autoregressive LLM distillation.
+*   Insight: The "bypass normalization" idea from score matching could find applications in other NLP tasks requiring distribution matching.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Transferring EBM score matching to LLM distillation is creative, though the core mechanism ultimately reduces to logit differential matching.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers diverse backbones, task types, and on-policy combinations with comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Theoretical derivations are rigorous, figures are clear, and motivation is well articulated.
-- Value: ⭐⭐⭐⭐ — Provides a unified framework for logit distillation design; empirical gains are consistent though modest in magnitude.
+*   Novelty: ⭐⭐⭐⭐ Creative transfer from EBM score matching to LLM distillation, though the core remains logit differential matching.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple backbones, task types, and on-policy combinations with comprehensive ablations.
+*   Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivations, clear illustrations, and sound motivational analysis.
+*   Value: ⭐⭐⭐⭐ Provides a unified framework for logit distillation design; practical performance gains are stable though modest in magnitude.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
+- [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](knowledge_distillation_for_large_language_models_through_residual_learning.md)
+- [\[CVPR 2026\] Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals](../../CVPR2026/model_compression/phased_dmd_few-step_distribution_matching_distillation_via_score_matching_within.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
-- [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
-- [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
-- [\[ICLR 2026\] Is Finer Better? The Limits of Microscaling Formats in Large Language Models](is_finer_better_the_limits_of_microscaling_formats_in_large_language_models.md)
+- [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
+- [\[ICLR 2026\] MoSA: Mosaic Shared Adaptation of Large Language Models](mosa_mosaic_shared_adaptation_of_large_language_models.md)
 
 </div>
 

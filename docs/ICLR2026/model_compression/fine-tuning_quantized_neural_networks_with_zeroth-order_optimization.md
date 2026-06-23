@@ -2,121 +2,128 @@
 title: >-
   [Paper Note] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization
 description: >-
-  [ICLR 2026][Model Compression][Zeroth-order optimization] This paper proposes QZO, a method that estimates gradients via zeroth-order perturbations applied to quantization scaling factors (rather than discrete weights)…
+  [ICLR 2026][Model Compression][Paper Note] The paper proposes QZO, a method that estimates gradients by applying zeroth-order perturbations to quantization scaling factors (rather than discrete weights). Combined with Directional Derivative Clipping (DDC) to stabilize training, it achieves extreme memory-efficient fine-tuning for 4-bit/2-bit LLMs, reducing tota
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Zeroth-order optimization"
-  - "quantized model fine-tuning"
-  - "memory-efficient training"
-  - "quantization scaling factors"
-  - "gradient variance"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: daa54e36dd377bb0
+content_hash: 97a4af45ecb11620
 ---
-
 # Fine-tuning Quantized Neural Networks with Zeroth-order Optimization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.13430](https://arxiv.org/abs/2505.13430)  
 **Code**: [GitHub](https://github.com/maifoundations/QZO)  
-**Area**: Model Compression / Efficient Fine-Tuning
-**Keywords**: Zeroth-order optimization, quantized model fine-tuning, memory-efficient training, quantization scaling factors, gradient variance
+**Area**: Model Compression/Efficient Fine-tuning  
+**Keywords**: Zeroth-order optimization, fine-tuning quantized models, memory-efficient training, quantization scaling factors, gradient variance
 
 ## TL;DR
-This paper proposes QZO, a method that estimates gradients via zeroth-order perturbations applied to quantization scaling factors (rather than discrete weights), and stabilizes training with directional derivative clipping (DDC). QZO enables memory-efficient fine-tuning of 4-bit/2-bit LLMs with over 18× total memory reduction.
+The paper proposes QZO, a method that estimates gradients by applying zeroth-order perturbations to quantization scaling factors (rather than discrete weights). Combined with Directional Derivative Clipping (DDC) to stabilize training, it achieves extreme memory-efficient fine-tuning for 4-bit/2-bit LLMs, reducing total memory by over 18x.
 
 ## Background & Motivation
 
-**Background**: Fine-tuning LLMs requires storing weights, gradients, optimizer states, and activations — a typical 7B model demands 56 GB. Existing approaches compress individual components: LoRA reduces trainable parameters, GaLore compresses optimizer states, and MeZO eliminates gradient storage via zeroth-order optimization.
+**Background**: LLM fine-tuning require storing weights, gradients, optimizer states, and activations; a typical 7B model needs 56GB. Existing methods compress different components: LoRA reduces parameters, GaLore compresses optimizer states, and MeZO eliminates gradient storage using zeroth-order optimization.
 
-**Limitations of Prior Work**: These methods address only part of the memory problem. Weights themselves remain a significant bottleneck — a 7B model in bfloat16 requires 14 GB — and even with MeZO eliminating gradients, 14 GB must still be allocated for weights. The most direct remedy is weight quantization (e.g., int4 requires only ~3.5 GB), but quantized weights are discrete and cannot be directly perturbed in zeroth-order schemes.
+**Limitations of Prior Work**: These methods only address part of the memory problem. Weights themselves still occupy significant memory (14GB for a 7B model in bfloat16); even if MeZO eliminates gradients, 14GB is still needed for weights. The most direct solution is weight quantization (e.g., int4 only needs 3.5GB), but quantized weights are discrete and cannot be directly perturbed via zeroth-order optimization.
 
-**Key Challenge**: Zeroth-order optimization requires perturbations in a continuous space, yet quantized weights are discrete; the estimated gradients are continuous and thus cannot directly update discrete weights without a dequantize–requantize cycle.
+**Key Challenge**: Zeroth-order optimization requires weight perturbation in continuous space, yet quantized weights are discrete. Furthermore, estimated gradients are continuous, making them unable to directly update discrete weights without an expensive dequantization-requantization cycle.
 
-**Goal**: Enable zeroth-order optimization on quantized models while maximizing memory compression across weights, gradients, and optimizer states simultaneously.
+**Goal**: How to apply zeroth-order optimization to quantized models while maximizing memory compression (full compression of weights + gradients + optimizer states)?
 
-**Key Insight**: Quantization can be expressed as $w = \Delta \cdot \bar{w}$, where $\Delta$ is a continuous scaling factor and $\bar{w}$ is a discrete integer. Perturbations can be applied to the continuous $\Delta$ while keeping $\bar{w}$ fixed.
+**Key Insight**: It is observed that the essence of quantization is $w = \Delta \cdot \bar{w}$, where $\Delta$ is a continuous scaling factor and $\bar{w}$ represents discrete integers. One can perturb the continuous $\Delta$ while keeping $\bar{w}$ fixed.
 
-**Core Idea**: Perturb continuous quantization scaling factors for zeroth-order gradient estimation, and control gradient variance via directional derivative clipping.
+**Core Idea**: Perturb continuous quantization scaling factors for zeroth-order gradient estimation and employ directional derivative clipping to control gradient variance.
 
 ## Method
 
 ### Overall Architecture
-QZO = Q-SPSA (quantized zeroth-order gradient estimation) + DDC (directional derivative clipping). The quantized integer weights $\bar{\theta}$ remain fixed; only the continuous scaling factors $\Delta$ are updated. Two forward passes suffice for gradient estimation — no backpropagation, no gradient storage, and no optimizer states are required.
+QZO performs fine-tuning on quantized LLMs without incurring the memory costs of gradients and optimizer states. The challenge is that quantization represents weights as $w = \Delta \cdot \bar{w}$, where $\bar{w}$ are discrete integers and $\Delta$ are continuous scaling factors. Since zeroth-order optimization requires perturbing parameters in continuous space, discrete $\bar{w}$ cannot be directly perturbed. QZO addresses this by fixing the quantized integer weights $\bar{\theta}$ throughout training and treating only the scaling factors $\Delta$ as learnable parameters.
+
+Training is an iterative cycle that avoids backpropagation. In each step: a perturbation vector $z$ is generated based on a random seed; forward passes are performed using $\Delta + \epsilon z$ and $\Delta - \epsilon z$ respectively; the derivative along direction $z$ is estimated using the difference between the two losses (Q-SPSA); this scalar is then clipped to suppress variance (DDC); finally, $z$ is replayed using the same seed to update $\Delta$ (the memory seed technique ensures $z$ does not need to be stored). These three components jointly compress memory across gradients, optimizer states, and weights.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Quantized Model w=Δ·w̄<br/>Fix integer weights w̄, learn scaling factors Δ only"] --> B["Sample random seed s<br/>Generate perturbation vector z via s"]
+    B --> C["Q-SPSA: Forward Δ+εz to get ℓ+<br/>Forward Δ−εz to get ℓ−<br/>Directional derivative d=(ℓ+−ℓ−)/(2ε)"]
+    C --> D["DDC: d'=clip(d,−C,C)<br/>Suppress high variance of ZO gradient"]
+    D --> E["In-place Seed: Replay z via seed s<br/>ZO-SGD Update: Δ←max(Δ−η·d'·z, 0)"]
+    E -->|Next Step| B
+    E --> F["Fine-tuned Quantized Model"]
+```
 
 ### Key Designs
 
-1. **Q-SPSA (Quantized Simultaneous Perturbation Stochastic Approximation)**:
+**1. Q-SPSA: Shifting Zeroth-Order Perturbation from Discrete Weights to Continuous Scaling Factors**
 
-    - **Function**: Extends SPSA to quantized models by perturbing continuous scaling factors rather than discrete weights.
-    - **Mechanism**: $\hat{\nabla}_{\Delta}\mathcal{L} = \frac{\mathcal{L}((\Delta+\epsilon z)\odot\bar{\theta}) - \mathcal{L}((\Delta-\epsilon z)\odot\bar{\theta})}{2\epsilon}z$, where $z \sim \mathcal{N}(0, I_d)$
-    - **Design Motivation**: $\Delta$ is continuous and thus naturally amenable to perturbation and gradient-based updates. The dequantization $w = \Delta \cdot \bar{w}$ is consistent with standard forward passes, requiring no modification to inference code. The approach applies to both scalar-based (GPTQ) and codebook-based (AQLM) quantization schemes.
+Zeroth-order optimization is typically hindered by the inability to perturb discrete weights. Q-SPSA applies perturbations only to the continuous scaling factor $\Delta$, estimating the gradient using the loss difference from two forward passes:
 
-2. **DDC (Directional Derivative Clipping)**:
+$$\hat{\nabla}_{\Delta}\mathcal{L} = \frac{\mathcal{L}((\Delta+\epsilon z)\odot\bar{\theta}) - \mathcal{L}((\Delta-\epsilon z)\odot\bar{\theta})}{2\epsilon}z, \quad z \sim \mathcal{N}(0, I_d)$$
 
-    - **Function**: Clips the scalar directional derivative $d$ in the zeroth-order gradient estimate to stabilize training.
-    - **Mechanism**: $d' = \text{clip}(d, -C, C)$, yielding a clipped gradient estimate $\hat{\nabla} = d' \cdot z$.
-    - **Design Motivation**: Zeroth-order gradient estimates suffer from high variance (a known issue also present in MeZO). Theorem 1 proves that clipping preserves unbiasedness while reducing variance, since $d'^2 \leq d^2$.
+Only $\Delta$ is perturbed by $\epsilon z$, while integer weights $\bar{\theta}$ remain unchanged. Since dequantization $w = \Delta \cdot \bar{w}$ is a standard part of the quantized model's forward pass, the perturbed forward pass is identical to standard inference, requiring no changes to inference code. This decomposition naturally fits major quantization types: scalar-based (e.g., GPTQ) and codebook-based (e.g., AQLM).
 
-3. **Memory Seed Trick**:
+**2. DDC (Directional Derivative Clipping): Suppressing Zeroth-Order Gradient Variance**
 
-    - **Function**: Reproduces the perturbation vector $z$ on-the-fly via a random seed, avoiding explicit storage.
-    - **Mechanism**: Identical to MeZO — a seed index replaces direct storage of $z$.
-    - **Design Motivation**: Storing $z$ would have the same memory footprint as the model itself, negating the savings.
+Zeroth-order estimation suffers from high variance, leading to spikes in training loss. DDC clips the directional derivative scalar $d$:
+
+$$d' = \text{clip}(d, -C, C), \quad \hat{\nabla} = d' \cdot z$$
+
+Crucially, clipping does not destroy estimation correctness: Theorem 1 in the paper proves that the clipped gradient remains an unbiased estimator with non-increasing variance, because $d'^2 \leq d^2$, thus $\text{Var}[\hat{\nabla}'] \leq \text{Var}[\hat{\nabla}]$. DDC achieves a more stable training curve without incurring bias.
+
+**3. In-place Seed Technique: Replaying Perturbation Vectors via Random Seeds**
+
+The perturbation vector $z$ has the same dimensionality as the model; storing it would negate the memory savings from eliminating gradients. QZO follows MeZO's approach: it stores only the random seed used to generate $z$ and resamples it whenever the same $z$ is needed for updates. This makes the memory overhead of $z$ negligible.
 
 ### Loss & Training
-- ZO-SGD update: $\Delta_{t+1} = \max(\Delta_t - \eta \cdot d' \cdot z,\ 0)$ (enforcing non-negativity of scaling factors).
-- Learning rate $10^{-7}$, perturbation scale $\epsilon = 10^{-3}$, clipping threshold $C = 100$.
-- Optional: joint update of $\Delta$ via Q-SPSA and non-quantized parameters via SPSA.
+The update uses ZO-SGD: $\Delta_{t+1} = \max(\Delta_t - \eta \cdot d' \cdot z, 0)$, where $\max(\cdot, 0)$ ensures scaling factors remain non-negative. Default hyperparameters are learning rate $\eta = 10^{-7}$, perturbation scale $\epsilon = 10^{-3}$, and clipping threshold $C = 100$. If the model contains unquantized parts, standard SPSA is used to jointly update those parameters.
 
 ## Key Experimental Results
 
 ### Main Results
-4-bit GPTQ quantized models evaluated on SST-2 / RTE / CB / BoolQ / SQuAD:
+4-bit GPTQ quantized models (SST-2/RTE/CB/BoolQ/SQuAD):
 
-| Method | Precision | Memory | SST-2 | RTE | SQuAD |
-|--------|-----------|--------|-------|-----|-------|
-| Zero-Shot | 16bit | 14 GB | baseline | baseline | baseline |
-| Fine-tuning + AdamW | 16bit | 56 GB | upper bound | upper bound | upper bound |
-| MeZO | 16bit | 14 GB | strong | strong | strong |
-| QZO (4bit) | 4bit | **<3 GB** | near MeZO | near MeZO | near MeZO |
+| Method | Accuracy | Memory | SST-2 | RTE | SQuAD |
+|------|------|------|-------|-----|-------|
+| Zero-Shot | 16bit | 14GB | Baseline | Baseline | Baseline |
+| Fine-tuning+AdamW | 16bit | 56GB | Upper Bound | Upper Bound | Upper Bound |
+| MeZO | 16bit | 14GB | Good | Good | Good |
+| QZO (4bit) | 4bit | **<3GB** | Near MeZO | Near MeZO | Near MeZO |
 
-### Extreme Quantization Experiment (2-bit AQLM, Llama-2-13B)
+### Extreme Quantization Experiments (2-bit AQLM, Llama-2-13B)
 
-| Configuration | Memory | Performance | Notes |
-|---------------|--------|-------------|-------|
-| Zero-Shot-Q (2bit) | ~5 GB | baseline | post-quantization zero-shot |
-| QZO (2bit) | ~5 GB | **significantly above baseline** | effective under extreme compression |
-| MeZO (16bit) | 26 GB | reference | requires 5× more memory |
+| Configuration | Memory | Performance | Description |
+|------|------|------|------|
+| Zero-Shot-Q(2bit) | ~5GB | Baseline | Post-quantization zero-shot |
+| QZO(2bit) | ~5GB | **Significantly exceeds Zero-Shot** | Effective under extreme quantization |
+| MeZO(16bit) | 26GB | Reference | Requires 5x memory |
 
 ### Key Findings
-- QZO achieves fine-tuning performance close to MeZO (14 GB) using less than 3 GB — an 18× memory reduction.
-- QZO remains significantly effective over the zero-shot baseline under 2-bit extreme quantization.
-- DDC is critical for training stability; without it, loss spikes occur frequently.
-- The clipping threshold $C$ yields stable performance over a wide range (50–200).
+- QZO achieves fine-tuning performance close to MeZO (14GB) with <3GB memory, an 18x memory compression.
+- It significantly outperforms the zero-shot baseline even under 2-bit extreme quantization.
+- DDC clipping is vital for stable training; without DDC, the loss frequently exhibits abnormal jumps.
+- The clipping threshold $C$ is stable across a wide range (50-200).
 
 ## Highlights & Insights
-- **Unified framework for extreme compression**: QZO simultaneously eliminates gradients, optimizer states, and compresses weights, achieving memory savings along all three axes. The 18× reduction enables fine-tuning of 13B models on a 24 GB GPU.
-- **Perturbing scaling factors rather than weights**: This avoids the cumbersome dequantize → perturb → requantize pipeline. The key insight is the factorization $w = \Delta \cdot \bar{w}$, which exposes a continuous component amenable to perturbation.
-- **Theoretical guarantee for DDC**: The paper proves that clipping preserves unbiasedness while strictly reducing variance — a clean and rigorous theoretical result.
+- **Unified Framework for Extreme Compression**: Simultaneously eliminates gradients and optimizer states while compressing weights, achieving "extreme" memory savings across all three dimensions. 18x compression enables fine-tuning 13B models on a 24GB GPU.
+- **Perturbing Scaling Factors instead of Weights**: Avoids the complex dequantization $\rightarrow$ perturbation $\rightarrow$ requantization workflow. The key insight is decomposing quantization into $w = \Delta \cdot \bar{w}$ and only perturbing the continuous part.
+- **Theoretical Guarantee for DDC**: Proving that clipping remains unbiased while reducing variance is a clean theoretical result.
 
 ## Limitations & Future Work
-- Zeroth-order optimization converges slowly, requiring significantly more update steps (~20k) compared to first-order methods (a few hundred).
-- Evaluation is limited to NLU tasks (classification and QA); effectiveness on generative tasks such as instruction following remains unexplored.
-- Only scaling factors can be fine-tuned (limited granularity); unlike LoRA, QZO cannot learn new low-rank parameters.
-- Comparison with LoRA-based quantized fine-tuning (e.g., QLoRA) is absent.
+- Zeroth-order optimization converges slowly, requiring more optimization steps (20k steps vs. hundreds for first-order methods).
+- Validation is limited to NLU tasks (classification + QA); performance on generative tasks (e.g., instruction following) is unknown.
+- Only the scaling factors can be fine-tuned (limited granularity), unlike LoRA which learns new low-rank parameters.
+- Lack of direct comparison with LoRA + Quantization (e.g., QLoRA).
 
 ## Related Work & Insights
-- **vs. MeZO**: MeZO applies zeroth-order optimization to full-precision models; QZO applies it to quantized models, achieving comparable performance at 1/5 the memory footprint.
-- **vs. QLoRA**: QLoRA combines quantization with LoRA-based fine-tuning but still requires gradient storage. QZO eliminates gradient storage entirely, achieving lower memory at a potential cost in expressiveness.
-- **vs. ZO-signSGD**: Prior quantized zeroth-order work requires quantizing the perturbation noise and applying sign SGD on discrete weights; QZO is more efficient and flexible.
+- **vs MeZO**: MeZO performs ZO on unquantized models; QZO performs ZO on quantized models, achieving similar results with 1/5 of the memory.
+- **vs QLoRA**: QLoRA uses quantization + LoRA but still requires gradient storage. QZO completely eliminates gradient storage, offering lower memory usage but potentially lower performance.
+- **vs ZO-signSGD**: Prior quantized ZO work required quantizing perturbation noise and using sign SGD on discrete weights; QZO is more efficient and flexible.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The idea of perturbing quantization scaling factors is intuitive and effective.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Limited dataset variety; comparison with QLoRA is missing.
-- **Writing Quality**: ⭐⭐⭐⭐ — Method description is clear and theoretical proofs are complete.
-- **Value**: ⭐⭐⭐⭐ — Directly practical for extremely resource-constrained deployment scenarios.
+- Novelty: ⭐⭐⭐⭐ The idea of perturbing quantization scaling factors is intuitive and effective.
+- Experimental Thoroughness: ⭐⭐⭐ Dataset diversity is somewhat limited; lacks comparison with QLoRA.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological description and complete theoretical proofs.
+- Value: ⭐⭐⭐⭐ Directly valuable for extreme resource-constrained scenarios.
 
 <!-- RELATED:START -->
 
@@ -126,9 +133,9 @@ QZO = Q-SPSA (quantized zeroth-order gradient estimation) + DDC (directional der
 
 - [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](../../CVPR2026/model_compression/fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
 - [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
-- [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
 - [\[ICML 2026\] Turning Stale Gradients into Stable Gradients: Coherent Coordinate Descent with Implicit Landscape Smoothing for Lightweight Zeroth-Order Optimization](../../ICML2026/model_compression/turning_stale_gradients_into_stable_gradients_coherent_coordinate_descent_with_i.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
+- [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
+- [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
 
 </div>
 

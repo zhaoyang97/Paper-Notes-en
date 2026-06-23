@@ -2,125 +2,133 @@
 title: >-
   [Paper Note] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs
 description: >-
-  [ICLR 2026][Model Compression][binary-coded quantization] This paper proposes AnyBCQ, a multi-precision LLM quantization framework based on Binary-Coded Quantization (BCQ). By progressively expanding precision (freezing…
+  [ICLR 2026][Model Compression][Paper Note] The authors propose AnyBCQ, a multi-precision LLM quantization framework based on binary-coded quantization (BCQ). By employing progressive precision expansion (freezing existing bit-planes and adding residual bit-planes), it supports dynamic switching between 2-4 bits for a single model. Dedicated CUDA kernels perform
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "binary-coded quantization"
-  - "multi-precision inference"
-  - "bit-plane operations"
-  - "LLM deployment"
-  - "CUDA kernels"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 9a8e583249784fad
+content_hash: 0645efa304c7888a
 ---
-
 # AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.10467](https://arxiv.org/abs/2510.10467)  
 **Code**: [https://github.com/naver-aics/anybcq](https://github.com/naver-aics/anybcq)  
-**Area**: Model Compression / LLM Quantization
-**Keywords**: binary-coded quantization, multi-precision inference, bit-plane operations, LLM deployment, CUDA kernels
+**Area**: Model Compression / LLM Quantization  
+**Keywords**: Binary-coded quantization, multi-precision inference, bit-plane operations, LLM deployment, CUDA kernel  
 
 ## TL;DR
-This paper proposes AnyBCQ, a multi-precision LLM quantization framework based on Binary-Coded Quantization (BCQ). By progressively expanding precision (freezing existing bit-planes and appending residual bit-planes), a single model supports dynamic switching between 2-bit and 4-bit precision. Dedicated CUDA kernels perform computation directly at the bit-plane level, eliminating lookup-table and transpose overhead. At 2-bit, AnyBCQ substantially outperforms Any-Precision LLM in accuracy (MMLU 35.3% vs. 24.7%) and achieves up to 3.0× throughput over FP16.
+The authors propose AnyBCQ, a multi-precision LLM quantization framework based on binary-coded quantization (BCQ). By employing progressive precision expansion (freezing existing bit-planes and adding residual bit-planes), it supports dynamic switching between 2-4 bits for a single model. Dedicated CUDA kernels perform computations directly at the bit-plane level to avoid lookup table (LUT) and transposition overhead. In 2-bit settings, accuracy significantly outperforms Any-Precision LLM (35.3% vs 24.7% MMLU), with throughput reaching up to 3.0x that of FP16.
 
 ## Background & Motivation
 
-**Background**: Multi-precision LLM frameworks allow a single model to dynamically select precision at runtime according to SLOs. Any-Precision LLM is the current state of the art but relies on non-uniform quantization (clustering-based), requiring lookup tables and bit-transpose operations.
+**Background**: Multi-precision LLM models allow a single model to dynamically select precision at runtime based on Service Level Objectives (SLOs). Any-Precision LLM is the current SOTA but relies on non-uniform quantization (clustering-based), which requires LUTs and bit-transpose operations.
 
-**Limitations of Prior Work**: (a) Non-uniform quantization cannot be computed directly on bit-planes, incurring additional transpose and lookup overhead. (b) Existing multi-precision methods suffer accuracy collapse at very low bit-widths (e.g., 2-bit), limiting practical use to 3–4-bit regimes. (c) Storing multiple independent precision models incurs large memory overhead (9.85 GB for LLaMA-3.1-8B vs. 4.99 GB for AnyBCQ).
+**Limitations of Prior Work**: (a) Non-uniform quantization cannot be computed directly on bit-planes, incurring extra transposition and LUT overhead; (b) existing multi-precision methods suffer from accuracy collapse at extremely low bits (e.g., 2-bit), limiting practical use to the 3-4 bit range; (c) the memory overhead of storing multiple independent precision models is substantial (LLaMA-3.1-8B requires 9.85GB vs 4.99GB for AnyBCQ).
 
-**Key Challenge**: Non-uniform quantization offers strong representational capacity but is ill-suited for hardware acceleration (due to lookup tables); BCQ is naturally hardware-friendly but conventionally supports only fixed precision.
+**Key Challenge**: Non-uniform quantization is expressive but unsuitable for hardware acceleration (requires LUTs), while BCQ is naturally hardware-friendly but typically fixed-precision.
 
-**Goal**: Extend BCQ to a multi-precision setting, enabling dynamic precision switching while preserving hardware efficiency.
+**Goal**: To extend BCQ to multi-precision settings, maintaining hardware friendliness while supporting dynamic precision switching.
 
-**Key Insight**: BCQ represents weights as a linear combination of binary bit-planes, $\hat{W} = \sum_i \alpha_i B_i$. Inference at $p$-bit precision corresponds exactly to computing over $p$ bit-planes, making BCQ a natural fit for multi-precision deployment.
+**Key Insight**: BCQ represents weights as a linear combination of binary bit-planes $\hat{W} = \sum_i \alpha_i B_i$. Since $p$-bit inference corresponds exactly to the computation of $p$ bit-planes, it naturally supports multi-precision.
 
-**Core Idea**: Freeze low-precision bit-planes, append new bit-planes from residuals, and optimize only the scaling factors, achieving progressive precision expansion.
+**Core Idea**: Freeze low-precision bit-planes $\rightarrow$ add new bit-planes from residuals $\rightarrow$ optimize only the scaling factors to achieve progressive precision expansion.
 
 ## Method
 
 ### Overall Architecture
-AnyBCQ consists of two components: (1) **Offline quantization** — starting from a base precision $p_L$, BCQ is greedily initialized and progressively expanded to target precision $p_H$; at each step, existing binary codes are frozen and only scaling factors are optimized. (2) **Online inference** — dedicated CUDA kernels load bit-planes on demand and compute via additions/subtractions (no lookup tables), supporting per-request precision selection.
+The starting point of AnyBCQ is to generalize binary-coded quantization (BCQ) from fixed precision to multi-precision. BCQ decomposes weights into a linear combination of binary bit-planes $\hat{W} = \sum_i \alpha_i B_i$ ($B_i \in \{-1,+1\}$). Computing with $p$ bit-planes corresponds to $p$-bit inference, meaning "precision" is inherently determined by the number of active bit-planes. The methodology consists of two stages: offline "growable" quantization, starting from a base precision $p_L$ and expanding to a target precision $p_H$, where existing binary codes are frozen at each step and only scaling factors are re-fitted; and an online CUDA kernel that performs addition/subtraction directly on bit-planes. This allows a single model to select precision at runtime based on SLOs without LUTs or transposition.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    W["全精度权重 W"] --> INIT["基础精度 p_L<br/>greedy 初始化 + 交替优化<br/>(LS 求 α / BS 更新 B)"]
+    subgraph GROW["渐进式精度扩展（设计 1）"]
+        direction TB
+        INIT --> FREEZE["冻结已有 bit-plane<br/>B_1..B_p"]
+        FREEZE --> RES["取残差符号<br/>B_(p+1)=sign(R_p)"]
+        RES --> RELS["仅用 LS 重拟合<br/>该精度全部缩放因子 α"]
+        RELS -->|未到 p_H| FREEZE
+    end
+    GROW -->|共享同一套 bit-plane| STORE["多精度模型<br/>2/3/4-bit 共存"]
+    STORE --> KERNEL["bit-plane CUDA 内核（设计 2）<br/>逐 plane 加减法累加<br/>免转置 / 免查表"]
+    REQ["请求 SLO<br/>选定精度 p"] --> KERNEL
+    KERNEL --> OUT["p-bit 输出"]
+```
 
 ### Key Designs
 
-1. **Progressive Precision Expansion**
+**1. Progressive Precision Expansion: Shared Bit-planes Across Precisions**
 
-    - **Function**: Starting from 2-bit BCQ and incrementally expanding to 3-bit and 4-bit.
-    - **Mechanism**: At base precision $p_L$: greedy initialization → alternating refinement (LS for $\alpha$ + BS for $B$). Expanding to $p+1$: freeze $B_1, \ldots, B_p$ → set new bit-plane $B_{p+1} = \text{sign}(R_p)$ (sign of residual) → optimize all scaling factors $\{\alpha_i^{p+1}\}_{i=1}^{p+1}$ for the new precision via LS only.
-    - **Design Motivation**: Sharing binary codes substantially reduces storage (binary codes dominate memory), reducing LLaMA-3.1-8B from 9.85 GB to 4.99 GB (−49%). Precision expansion is monotonically guaranteed.
+A primary bottleneck in multi-precision quantization is the memory overhead of storing one model per precision. AnyBCQ treats high precision as a residual supplement to low precision. The base precision $p_L$ is initialized via greedy BCQ and refined through alternating optimization—fixing $B$ to solve for scaling factors $\alpha$ via Least Squares (LS), then fixing $\alpha$ to update $B$ via Binary Search (BS). To expand from $p$-bit to $(p+1)$-bit, $B_1, \dots, B_p$ are frozen, and the new bit-plane is derived from the sign of the current residual $B_{p+1} = \text{sign}(R_p)$. All scaling factors $\{\alpha_i^{p+1}\}_{i=1}^{p+1}$ for that precision level are then re-optimized using LS. 
 
-2. **Direct Bit-Plane CUDA Kernels**
+This provides two benefits: (1) Storage efficiency: Binary codes account for most overhead, and by sharing them, the multi-precision LLaMA-3.1-8B model size is reduced from 9.85GB to 4.99GB (-49%). (2) Monotonic accuracy: Since higher precision involves adding residual planes, quantization error decreases monotonically with the number of bits.
 
-    - **Function**: Eliminate bit-transpose and centroid lookup operations.
-    - **Mechanism**: Load one bit-plane at a time; since $B_i \in \{-1, +1\}$, GEMM reduces to additions and subtractions; use LUT-GEMM to cache common partial results; multiply by $\alpha_i$ and accumulate as partial sums; output after $p$ bit-planes.
-    - **Design Motivation**: Non-uniform quantization requires bit-transpose ($O(MKp)$) and centroid lookup ($O(MK)$); BCQ's direct computation eliminates both steps. Memory bandwidth scales proportionally with precision (3-bit loads only 3 planes rather than 4 followed by discarding 1).
+**2. Bit-plane CUDA Kernel: Mapping Precision to Memory and Compute Scaling**
+
+BCQ's multi-precision compatibility is a layer-level advantage, but actual throughput depends on the inference kernel. Non-uniform quantization (like the clustering in Any-Precision LLM) requires bit-transpose ($O(MKp)$) and centroid lookup ($O(MK)$) during the forward pass. AnyBCQ’s kernel loads bit-planes sequentially. Since $B_i \in \{-1,+1\}$, the GEMM operation with activations reduces to additions and subtractions. Combined with LUT-GEMM to cache partial sums, each plane is multiplied by $\alpha_i$ and accumulated. 
+
+Beyond eliminating transposition and lookups, this "per-plane accumulation" ensures that lower precision is naturally faster. Memory access scales linearly with the number of loaded planes. Running 3-bit only requires reading 3 planes, rather than reading 4-bit data and discarding 1 bit as in standard fixed-point schemes, allowing memory bandwidth to scale linearly with precision.
 
 ### Loss & Training
-- Calibration: 512-sequence C4 dataset, 10 epochs of MRE optimization
-- Asymmetric BCQ with group-wise quantization ($g = 128$)
-- Initialization with 20 rounds of alternating refinement
+- Calibration uses 512 sequences from C4 to minimize Mean Relative Error (MRE) over 10 epochs.
+- Employs asymmetric BCQ with group-wise quantization (group size $g=128$).
+- Base precision initialization includes 20 rounds of alternating refinement.
 
 ## Key Experimental Results
 
 ### Main Results (LLaMA-3.1-8B)
 
 | Method | 2-bit MMLU | 3-bit MMLU | 4-bit MMLU |
-|--------|-----------|-----------|------------|
+|------|-----------|-----------|------------|
 | AWQ | 24.12 | 47.28 | 60.49 |
 | Any-Precision LLM | 24.66 | 55.53 | **64.04** |
 | ShiftAddLLM | 24.83 | 56.53 | 63.50 |
-| **AnyBCQ (Multi)** | **35.32** | 58.28 | 63.53 |
-| FP16 | 65.02 | — | — |
+| **AnyBCQ (Ours)** | **35.32** | 58.28 | 63.53 |
+| FP16 | 65.02 | - | - |
 
-AnyBCQ surpasses competing methods at 2-bit MMLU by more than 10 percentage points. At 4-bit, performance is comparable to Any-Precision LLM.
-
-### Throughput
-- Up to 3.0× over FP16
-- Up to 1.2× over Any-Precision LLM
-- Negligible overhead for dynamic precision switching
+AnyBCQ outperforms competitors by over 10 percentage points in 2-bit MMLU while performing comparably to Any-Precision LLM at 4-bit.
 
 ### Key Findings
-- The 2-bit regime is where differentiation is greatest — AnyBCQ's BCQ formulation substantially outperforms non-uniform quantization.
-- The gap between multi-precision and fixed-precision variants emerges at 3–4-bit, where the shared binary constraint restricts the optimization space.
-- At 4-bit, differences across methods converge as quantization error becomes small.
+- **2-bit is the most discriminative range**: The BCQ scheme used in AnyBCQ is far superior to non-uniform quantization for ultra-low bits.
+- **Multi-prec vs Fixed-prec Gap**: A slight performance gap appears at 3-4 bits due to optimization constraints from shared binary codes.
+- **Convergence at 4-bit**: Differences between various methods converge as quantization errors become sufficiently small.
 
 ## Highlights & Insights
-- The central insight that **BCQ is naturally suited for multi-precision** is the core contribution — $p$-bit computation equals summing $p$ bit-planes, making BCQ the only multi-precision scheme that requires no lookup tables.
-- A **49% memory reduction** (vs. multi-model storage) with competitive accuracy offers strong practical value.
-- Significant progress in the traditionally difficult 2-bit regime (MMLU: 24% → 35%).
+- The insight that **BCQ is naturally suited for multi-precision** is central to this work. Since $p$-bit compute equals $p$ bit-plane additions, BCQ is the only scheme that avoids LUTs in multi-precision scenarios.
+- Achieves **49% memory savings** compared to multi-model approaches while maintaining accuracy.
+- Achieved a major breakthrough in the traditional 2-bit "dead zone" (MMLU 24% $\rightarrow$ 35%).
 
 ## Limitations & Future Work
-- At 4-bit, accuracy slightly trails Any-Precision LLM, reflecting BCQ's representational limitations at higher precision.
-- Validation is limited to LLaMA-3.1-8B; larger models remain untested.
-- Binary codes frozen during progressive expansion cannot be subsequently corrected — early errors propagate to higher-precision stages.
-- Only weight-only quantization is considered; activation quantization is not addressed.
+- Accuracy at 4-bit is slightly lower than Any-Precision LLM, showing the expressive limits of BCQ at higher precisions.
+- Evaluation is limited to LLaMA-3.1-8B; larger models require testing.
+- Once binary codes are frozen during progressive expansion, they cannot be corrected, potentially propagating early errors to higher precisions.
+- Focuses only on weight-only quantization; activation quantization is not addressed.
 
 ## Related Work & Insights
-- **vs. Any-Precision LLM**: Non-uniform quantization offers greater representational capacity but is hardware-unfriendly; BCQ trades a modest reduction in high-precision accuracy for substantial hardware efficiency gains and superior low-bit performance.
-- **vs. ShiftAddLLM**: Both are BCQ-based methods, but ShiftAddLLM supports only fixed precision; AnyBCQ extends BCQ to the multi-precision setting.
-- **vs. GPTQ/AWQ**: Uniform quantization collapses entirely at 2-bit; the binary bit-plane structure of BCQ is more robust at ultra-low precision.
+- **vs Any-Precision LLM**: Non-uniform quantization is more expressive but hardware-unfriendly; AnyBCQ trades slight high-bit accuracy for massive hardware efficiency and low-bit performance.
+- **vs ShiftAddLLM**: Both use BCQ, but ShiftAddLLM supports only fixed precision, whereas AnyBCQ extends this to multi-precision.
+- **vs GPTQ/AWQ**: Uniform quantization collapses at 2-bit, while the binary bit-plane structure of BCQ is much more robust.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The extension from BCQ to multi-precision is natural yet effective; the CUDA kernel design demonstrates engineering innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive benchmarks, throughput evaluation, and ablations, though limited to a single model.
-- **Writing Quality**: ⭐⭐⭐⭐ Figures 1–3 provide highly intuitive comparisons.
-- **Value**: ⭐⭐⭐⭐⭐ Fills a critical gap in BCQ-based multi-precision LLM deployment with strong practical utility.
+- Novelty: ⭐⭐⭐⭐ The extension from BCQ to multi-precision is natural yet effective; CUDA kernel design shows engineering innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Full coverage of benchmarks, throughput, and ablation, though tested on a single model series.
+- Writing Quality: ⭐⭐⭐⭐ Figures 1-3 provide very intuitive comparisons.
+- Value: ⭐⭐⭐⭐⭐ Fills a gap in multi-precision LLM deployment using BCQ with high practical utility.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
 ## Related Papers
 
+- [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
 - [\[ICLR 2026\] Highly Efficient and Effective LLMs with Multi-Boolean Architectures](highly_efficient_and_effective_llms_with_multi-boolean_architectures.md)
-- [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](../../ICML2026/model_compression/gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
-- [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
-- [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
-- [\[AAAI 2026\] QuEPT: Quantized Elastic Precision Transformers with One-Shot Calibration for Multi-Bit Switching](../../AAAI2026/model_compression/quept_quantized_elastic_precision_transformers_with_one-shot_calibration_for_mul.md)
+- [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
+- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
+- [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)
 
 </div>
 

@@ -2,78 +2,81 @@
 title: >-
   [Paper Note] DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing
 description: >-
-  [ICLR 2026][Model Compression][Image immunization] DiffVax trains a feed-forward immunizer (UNet++) that generates imperceptible adversarial perturbations for arbitrary images in a single forward pass (~70ms)…
+  [ICLR 2026][Model Compression][Paper Note] DiffVax trains a feed-forward immunizer (UNet++) that generates imperceptible adversarial perturbations for any image in a single forward pass (~70ms). This causes diffusion-based malicious editing to fail, achieving a 250,000× speedup over prior per-image optimization methods and extending immunization to video conten
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Image immunization"
-  - "adversarial perturbation"
-  - "diffusion model editing protection"
-  - "feed-forward network"
-  - "video protection"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 9b3e7c69b3b10905
+content_hash: 444006cb452cd5a5
 ---
-
 # DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2411.17957](https://arxiv.org/abs/2411.17957)  
 **Code**: Available (Project Webpage)  
-**Area**: Diffusion Models / Security
-**Keywords**: Image immunization, adversarial perturbation, diffusion model editing protection, feed-forward network, video protection
+**Area**: Diffusion Models / Security  
+**Keywords**: Image Immunization, Adversarial Perturbation, Diffusion Editing Protection, Feed-forward Network, Video Protection  
 
 ## TL;DR
 
-DiffVax trains a feed-forward immunizer (UNet++) that generates imperceptible adversarial perturbations for arbitrary images in a single forward pass (~70ms), causing diffusion-based malicious editing to fail. Compared to prior per-image optimization methods, DiffVax achieves a 250,000× speedup and is the first to extend immunization to video content.
+DiffVax trains a feed-forward immunizer (UNet++) that generates imperceptible adversarial perturbations for any image in a single forward pass (~70ms). This causes diffusion-based malicious editing to fail, achieving a 250,000× speedup over prior per-image optimization methods and extending immunization to video content for the first time.
 
 ## Background & Motivation
 
-**Background**: The editing capabilities of diffusion models (e.g., Stable Diffusion) are rapidly advancing. Tools such as inpainting and InstructPix2Pix enable photorealistic image manipulation, which malicious users exploit to generate deepfakes, non-consensual intimate imagery, and other harmful content.
+**Background**: The editing capabilities of diffusion models (e.g., Stable Diffusion) are increasingly powerful. Tools like inpainting and InstructPix2Pix enable realistic modifications but are exploited by malicious users to generate deepfakes and non-consensual sexual content.
 
-**Limitations of Prior Work**: Existing image immunization methods (PhotoGuard, DAYN) require running projected gradient descent (PGD) optimization independently for each image, consuming 10 minutes to several hours per image and demanding over 15GB of GPU memory, with no ability to generalize to unseen content.
+**Limitations of Prior Work**: Existing image immunization methods (PhotoGuard, DAYN) require running Projected Gradient Descent (PGD) optimization for every individual image. A single image consumes 10 minutes to several hours, with GPU memory requirements exceeding 15GB, and fails to generalize to unseen content.
 
-**Key Challenge**: Effective immunization requires backpropagating through diffusion models to craft adversarial perturbations, yet the per-image optimization paradigm fundamentally cannot scale to large-scale scenarios such as social media platforms, where millions of images and videos are uploaded daily.
+**Key Challenge**: Effective immunization requires backpropagation through the diffusion model to create adversarial perturbations, but the per-image optimization paradigm cannot scale to large-scale scenarios (e.g., millions of daily uploads on social media).
 
-**Goal**: (a) Transform immunization from per-image optimization to feed-forward inference; (b) ensure perturbations remain imperceptible while causing editing to fail; (c) maintain robustness against counter-attacks (JPEG compression, denoising).
+**Goal**: (a) Transition immunization from per-image optimization to feed-forward inference; (b) ensure perturbations are imperceptible while causing editing failure; (c) maintain robustness against counter-attacks (JPEG compression, denoising).
 
-**Key Insight**: A image-conditioned perturbation generator is trained to learn "how to strategically place noise" from a large collection of training samples, rather than optimizing from scratch for each input. This design generalizes to unseen images, unseen prompts, and even video frames.
+**Key Insight**: Train an image-conditioned perturbation generator that learns "how to place noise intelligently" from large training samples, rather than optimizing from scratch each time. This design generalizes to unseen images, prompts, and video frames.
 
-**Core Idea**: Replace per-image optimization with an end-to-end trained UNet++ immunizer that learns to generate low-frequency, imperceptible, and highly disruptive perturbations via a dual objective $\mathcal{L}_{\text{noise}} + \mathcal{L}_{\text{edit}}$.
+**Core Idea**: Replace per-image optimization with an end-to-end trained UNet++ immunizer. Use dual-objective learning with $\mathcal{L}_{\text{noise}} + \mathcal{L}_{\text{edit}}$ to generate low-frequency, imperceptible, and highly disruptive perturbations.
 
 ## Method
 
 ### Overall Architecture
 
-Training proceeds in two stages. In Stage 1, the immunizer $f(\cdot;\theta)$ generates a perturbation $\epsilon_{\mathrm{im}}$ for an input image $\mathbf{I}$; the perturbation is multiplied by mask $\mathbf{M}$ and added to the image to obtain the immunized image $\mathbf{I}_{\mathrm{im}}$. In Stage 2, the immunized image is passed through a frozen SD Inpainting model for editing, and the editing-failure loss is computed. At inference time, only a single forward pass through Stage 1 is required.
+The core problem is transforming the process of "applying adversarial perturbations for diffusion editing defense" from per-image optimization (hundreds of steps, minutes to hours) into a single forward inference. DiffVax decomposes this into an end-to-end two-stage training pipeline. In Stage 1, the immunizer $f(\cdot;\theta)$ takes image $\mathbf{I}$ and predicts perturbation $\epsilon_{\mathrm{im}}$, which is multiplied with the immunization mask $\mathbf{M}$ and added to the original image to obtain the immunized image $\mathbf{I}_{\mathrm{im}}=\mathbf{I}+\epsilon_{\mathrm{im}}\odot\mathbf{M}$. Stage 2 feeds $\mathbf{I}_{\mathrm{im}}$ into a **frozen** SD Inpainting model for editing, using an editing failure loss to backpropagate and train the immunizer. Training data includes carefully constructed images, synthetic masks, and diverse prompts to ensure generalization. Once trained, inference only requires the single forward pass of Stage 1 (~70ms).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    D["数据构建<br/>1000 人像 + SAM 合成 mask<br/>+ ChatGPT 多样 prompt"] --> I["输入图像 I"]
+    I --> F["UNet++ 免疫器 f(·;θ)<br/>一次前向预测扰动 ε_im"]
+    F --> A["ε_im × 免疫 mask M<br/>叠加得免疫图 I_im"]
+    A --> N["L_noise<br/>约束扰动不可感知"]
+    A --> S["冻结 SD Inpainting<br/>训练与编辑解耦：<br/>不绑 prompt、免疫 mask≠编辑 mask"]
+    S --> E["L_edit<br/>编辑区趋向全黑 → 编辑失败"]
+    N --> T["反传更新 θ"]
+    E --> T
+    A -.->|"推理仅需此步"| O["免疫图输出 (~70ms)"]
+```
 
 ### Key Designs
 
-1. **UNet++ Immunizer**:
+**1. UNet++ Immunizer: Replacing Per-Image Optimization with Single Forward Prediction**
 
-    - **Function**: Maps an input image to an adversarial perturbation map.
-    - **Mechanism**: Employs UNet++ rather than a standard U-Net; its nested dense skip connections provide richer multi-scale feature aggregation, empirically yielding better training stability for the notoriously unstable task of adversarial noise prediction.
-    - **Design Motivation**: Generating precise perturbations requires multi-level information collaboration.
+Previous methods required hundreds of PGD steps in pixel space for every new image. This work instead trains an image-conditioned generator $f(\cdot;\theta)$ to directly map the input image to a perturbation map $\epsilon_{\mathrm{im}}$. UNet++ is chosen over standard U-Net because adversarial noise prediction is highly unstable and requires precise multi-scale coordination. UNet++'s nested skip connections provide denser multi-scale feature aggregation, leading to stable convergence. Inference speed is reduced to ~70ms, providing a 250,000× speedup.
 
-2. **Decoupling of Training and Editing**:
+**2. Training-Editing Decoupling: Agnostic to Prompts and Mask Shapes**
 
-    - **Function**: The immunization mask and the editing mask need not match between training and inference.
-    - **Mechanism**: The immunizer takes no prompt as input (experiments confirm that the noise is prompt-agnostic) and is not tied to any specific mask shape.
-    - **Design Motivation**: Addresses the vulnerability in prior methods where adversaries can bypass protection by using a different mask.
+A major vulnerability in previous methods is that perturbations are often optimized for specific prompts or masks; attackers can bypass protection by changing the prompt or shifting the mask. DiffVax ensures the immunizer is **not conditioned on prompts** (experiments verify effective perturbations are prompt-agnostic) and does not bind to specific mask shapes. Consequently, training immunization masks and inference/attack editing masks can differ significantly, enhancing robustness.
 
-3. **Data Construction**:
+**3. Data Construction: Generalization via Synthetic Masks and Diverse LLM Prompts**
 
-    - Uses 1,000 portrait images from the CCP dataset, masks generated by SAM, and diverse background-editing prompts generated by ChatGPT (2,000 prompts in total).
-    - Split 80/20 into seen/unseen subsets.
+For the feed-forward immunizer to generalize to unseen images and prompts, data diversity is critical. Using 1,000 portraits from the CCP dataset as a base, the method uses SAM to automatically generate foreground masks and ChatGPT to generate 2,000 diverse background editing prompts. This dataset is split into 80/20 seen/unseen categories to evaluate generalization performance.
 
 ### Loss & Training
 
 $$\mathcal{L} = \alpha \cdot \mathcal{L}_{\text{noise}} + \mathcal{L}_{\text{edit}}$$
 
-- $\mathcal{L}_{\text{noise}} = \frac{1}{\text{sum}(\mathbf{M})} \|(\mathbf{I}_{\mathrm{im}} - \mathbf{I}) \odot \mathbf{M}\|_1$: ensures perturbation imperceptibility.
-- $\mathcal{L}_{\text{edit}} = \frac{1}{\text{sum}(\sim\mathbf{M})} \|\text{SD}(\mathbf{I}_{\mathrm{im}}, \sim\mathbf{M}, \mathcal{P}) \odot (\sim\mathbf{M})\|_1$: forces the edited region output toward all-black, indicating complete editing failure.
+- $\mathcal{L}_{\text{noise}} = \frac{1}{\text{sum}(\mathbf{M})} \|(\mathbf{I}_{\mathrm{im}} - \mathbf{I}) \odot \mathbf{M}\|_1$: Ensures perturbations are imperceptible.
+- $\mathcal{L}_{\text{edit}} = \frac{1}{\text{sum}(\sim\mathbf{M})} \|\text{SD}(\mathbf{I}_{\mathrm{im}}, \sim\mathbf{M}, \mathcal{P}) \odot (\sim\mathbf{M})\|_1$: Forces pixels in the edited region toward solid black, representing complete editing failure.
 
-Training runs for 350 epochs with batch size 5, Adam optimizer at lr=1e-5, $\alpha=4$, approximately 22 hours on an A100 in 16-bit precision.
+Training parameters: 350 epochs, batch size 5, Adam lr=1e-5, $\alpha=4$, ~22 hours on an A100.
 
 ## Key Experimental Results
 
@@ -86,7 +89,7 @@ Training runs for 350 epochs with batch size 5, Adam optimizer at lr=1e-5, $\alp
 | DiffusionGuard | 0.551/0.556 | 14.37/14.71 | 0.965 | 26.98/27.10 | 131.1 | 6,750 |
 | **DiffVax** | **0.510/0.526** | **13.96/14.32** | **0.989** | **23.13/24.17** | **0.07** | **5,648** |
 
-### Robustness Against Counter-Attacks
+### Robustness against Counter-attacks
 
 | Method | SSIM↓ (w/ Denoiser) | SSIM↓ (w/ JPEG 0.75) | SSIM↓ (w/ IMPRESS) |
 |------|--------------------|-----------------------|--------------------|
@@ -96,37 +99,37 @@ Training runs for 350 epochs with batch size 5, Adam optimizer at lr=1e-5, $\alp
 
 ### Key Findings
 
-- DiffVax learns low-frequency perturbations (rather than high-frequency scattered noise), making it inherently resistant to JPEG compression and denoisers, which primarily remove high-frequency components.
-- The average $L_1$ perturbation magnitude is only 0.001, far smaller than baselines (0.003–0.012), indicating that the advantage lies in the strategic placement of noise rather than its magnitude.
-- In a user study (67 participants), DiffVax achieves an average rank of 1.64 (least resembling the original edited output), substantially outperforming PG-D at 2.63.
-- Video immunization: a 64-frame video is processed in 0.739 seconds versus 64 hours for PG-D.
+- DiffVax learns low-frequency perturbations (rather than high-frequency scattered noise), making it inherently resistant to JPEG compression and denoising, which typically remove high-frequency components.
+- The average $L_1$ magnitude of the perturbation is only 0.001, significantly lower than the 0.003~0.012 of baselines, indicating that its advantage stems from strategic placement rather than intensity.
+- In a user study (67 participants), DiffVax received an average rank of 1.64 (most dissimilar to original edits), outperforming PG-D (2.63).
+- Video immunization: Processing 64 video frames takes only 0.739 seconds, compared to 64 hours for PG-D.
 
 ## Highlights & Insights
 
-- **Proof of Feasibility for the Feed-Forward Paradigm**: The work demonstrates that the adversarial perturbation space possesses a learnable structure that can be generalized to unseen content via a neural network, eliminating the need for per-image optimization.
-- **Low-Frequency Perturbations = Robustness**: The $L_1$ constraint in $\mathcal{L}_{\text{noise}}$ naturally guides the model to learn a low-frequency perturbation distribution, which is both more efficient and more resistant to counter-attacks than a fixed $L_\infty$ budget.
-- **Pioneer of Video Immunization**: All prior methods are computationally intractable for video; DiffVax's efficiency makes this direction feasible for the first time.
+- **Feasibility of Feed-forward Paradigm**: Proves that the adversarial perturbation space contains learnable structures that can be generalized via neural networks, eliminating the need for per-image optimization.
+- **Low-frequency Perturbations via $L_1$**: The $L_1$ constraint in $\mathcal{L}_{\text{noise}}$ encourages the model to learn low-frequency perturbation distributions, which is more robust than fixed $L_\infty$ budgets against common image processing.
+- **Pioneering Video Immunization**: While prior methods were computationally infeasible for video, DiffVax's efficiency makes industrial-scale video content protection viable for the first time.
 
 ## Limitations & Future Work
 
-- Protection degrades in scenes with many small objects, where noise is spread too thinly.
-- Protection may partially fail when the immunization mask differs greatly from the editing mask.
-- Cross-model transferability is limited (SD v1.5 → v2 is effective but imperfect).
-- Training data consists of only 1,000 portrait images; extending to more diverse domains (animation, digital art) is an important future direction.
+- Protection effectiveness decreases in scenes containing many small objects (insufficiently concentrated noise).
+- Protection may partially fail when the mismatch between the immunization mask and the editing mask is extreme.
+- Cross-model transferability is limited (effective but imperfect when moving from SD v1.5 to v2).
+- Training data is limited to 1,000 portraits; expanding to broader domains (e.g., anime, digital art) remains a significant future direction.
 
 ## Related Work & Insights
 
-- **vs. PhotoGuard**: PG performs per-image PGD optimization, which is ~3,000× slower, and its high-frequency noise is easily removed by JPEG compression; DiffVax learns strategic low-frequency perturbations.
-- **vs. DiffusionGuard**: DG extends PG with augmented mask optimization but remains a per-image paradigm at 131s/image; DiffVax processes each image in 0.07s.
-- **vs. DAYN**: An attention-based semantic attack that reduces computation but likewise cannot generalize.
-- **Insights**: The feed-forward adversarial perturbation generator paradigm is transferable to other security scenarios (e.g., audio deepfake protection).
+- **vs PhotoGuard**: PG uses PGD for per-image optimization (3,000× slower) and relies on high-frequency noise easily removed by JPEG; DiffVax learns low-frequency strategic perturbations.
+- **vs DiffusionGuard**: DG extends PG with augmented masks but remains a per-image paradigm (131s/image); DiffVax requires 0.07s/image.
+- **vs DAYN**: An attention-based semantic attack that reduces computation but still lacks generalization capability.
+- Insight: The feed-forward adversarial generator approach can be transferred to other security domains (e.g., defending against audio deepfakes).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The feed-forward immunizer paradigm is novel, though the core idea (training a noise generator) has precedent in the adversarial attack literature.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage including ablations, counter-attack evaluations, cross-model transfer, user studies, video, and multiple editing tools.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with rich figures and tables.
-- Value: ⭐⭐⭐⭐ Highly practical; the 250,000× speedup makes large-scale deployment feasible.
+- Novelty: ⭐⭐⭐⭐ The feed-forward immunizer paradigm is innovative, though the core idea of training noise generators has precedents in adversarial attack literature.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage including ablations, counter-attacks, cross-model tests, user studies, video, and various editing tools.
+- Writing Quality: ⭐⭐⭐⭐ Well-structured with rich visualizations.
+- Value: ⭐⭐⭐⭐ Strong practical utility; the 250,000× speedup makes large-scale deployment feasible.
 
 <!-- RELATED:START -->
 
@@ -134,11 +137,11 @@ Training runs for 350 epochs with batch size 5, Adam optimizer at lr=1e-5, $\alp
 
 ## Related Papers
 
+- [\[ICLR 2026\] DVD-Quant: Data-free Video Diffusion Transformers Quantization](dvd-quant_data-free_video_diffusion_transformers_quantization.md)
+- [\[ICLR 2026\] Plug-and-Play Fidelity Optimization for Diffusion Transformer Acceleration via Cumulative Error Minimization](plug-and-play_fidelity_optimization_for_diffusion_transformer_acceleration_via_c.md)
 - [\[ICCV 2025\] MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion](../../ICCV2025/model_compression/motionfollower_editing_video_motion_via_score-guided_diffusion.md)
-- [\[CVPR 2026\] On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](../../CVPR2026/model_compression/on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)
+- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](../../CVPR2026/model_compression/cadc_content_adaptive_diffusion-based_generative_image_compression.md)
 - [\[ICLR 2026\] Modality-free Graph In-context Alignment](modality-free_graph_in-context_alignment.md)
-- [\[ACL 2026\] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration](../../ACL2026/model_compression/improving_the_throughput_of_diffusion-based_large_language_models_via_a_training.md)
-- [\[NeurIPS 2025\] One-Step Diffusion-Based Image Compression with Semantic Distillation](../../NeurIPS2025/model_compression/one-step_diffusion-based_image_compression_with_semantic_distillation.md)
 
 </div>
 

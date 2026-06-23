@@ -2,150 +2,133 @@
 title: >-
   [Paper Note] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models
 description: >-
-  [ICLR 2026][Model Compression][Benchmark Evaluation] This paper proposes BeyondBench, an evaluation framework that algorithmically generates mathematical problems on-the-fly (44 tasks / 117 variants / 3 difficulty levels…
+  [ICLR 2026][Model Compression][Paper Note] The authors propose BeyondBench, an evaluation framework that algorithmically and dynamically generates mathematical problems (44 tasks / 117 variants / 3 difficulty levels). This ensures each test is free from training data contamination. After evaluating 101 language models (0.5B to 141B parameters), it was found tha
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Benchmark Evaluation"
-  - "Data Contamination"
-  - "Reasoning"
-  - "Algorithm Problem Generation"
-  - "NP-Complete Problems"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: af631802635d97e4
+content_hash: 697b3501fd949d16
 ---
-
 # BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.24210](https://arxiv.org/abs/2509.24210)  
 **Code**: [GitHub](https://github.com/ctrl-gaurav/BeyondBench) / [PyPI](https://pypi.org/project/beyondbench/) / [Leaderboard](https://ctrl-gaurav.github.io/BeyondBench/)  
-**Area**: LLM Evaluation / Model Compression
-**Keywords**: Benchmark Evaluation, Data Contamination, Reasoning, Algorithm Problem Generation, NP-Complete Problems
+**Area**: LLM Evaluation / Model Compression  
+**Keywords**: Benchmark Evaluation, Data Contamination, Reasoning Ability, Algorithmic Task Generation, NP-Complete Problems
 
 ## TL;DR
-This paper proposes BeyondBench, an evaluation framework that algorithmically generates mathematical problems on-the-fly (44 tasks / 117 variants / 3 difficulty levels) to ensure each evaluation instance is free from training data contamination. It evaluates 101 language models (0.5B–141B parameters), finding that even the strongest models achieve only 56% accuracy on the Hard Suite, with substantial performance drops when tools are unavailable.
+The authors propose BeyondBench, an evaluation framework that algorithmically and dynamically generates mathematical problems (44 tasks / 117 variants / 3 difficulty levels). This ensures each test is free from training data contamination. After evaluating 101 language models (0.5B to 141B parameters), it was found that even the strongest models only achieve a 56% accuracy rate on the Hard Suite, and performance drops significantly when tools are not utilized.
 
 ## Background & Motivation
+Language model evaluation faces an increasingly severe issue of **data contamination**: as model training data scales (covering vast amounts of internet text), static benchmark questions may already exist in the training sets. This allows models to achieve high scores through "memorization" rather than "reasoning," leading to inflated benchmark scores that fail to reflect true reasoning capabilities.
 
-- **Background**: Language model evaluation faces an increasingly severe **data contamination** problem. As training corpora grow to encompass vast amounts of internet text, the questions in static benchmarks may already appear in training data, enabling models to achieve high scores through memorization rather than genuine reasoning—leading to inflated benchmark numbers that fail to reflect true reasoning ability.
-- **Limitations of Prior Work**: Existing benchmarks (e.g., GSM8K, MATH, ARC) are static datasets that, once released, risk being absorbed into the training data of subsequent models. While some works attempt deduplication as a mitigation, the fundamental issue is that static datasets are finite and cannot structurally eliminate contamination.
-- **Key Challenge**: We need to evaluate models' *genuine reasoning ability*, yet any publicly fixed question set is inherently at risk of contamination.
-- **Key Insight**: This paper abandons static question banks entirely and instead adopts **algorithmic dynamic generation**—generating fresh problem instances online at every evaluation, with a problem space exceeding $10^{15}$ combinations, driving the coverage probability of any pretraining corpus toward zero. Each problem also admits a deterministically verifiable solution, ensuring objective evaluation.
+Existing benchmarks (e.g., GSM8K, MATH, ARC) are static datasets that are likely "absorbed" into training data once made public. While some efforts attempt to mitigate this through data deduplication, the fundamental issue remains that static datasets have limited scale and cannot fundamentally prevent contamination.
+
+**Key Challenge**: There is a need to evaluate the "true reasoning ability" of models, but any public, fixed set of questions carries the risk of being contaminated.
+
+**Key Insight**: This work completely abandons static question banks in favor of **algorithmic dynamic generation**. New problem instances are generated online for every evaluation, with a problem space exceeding $10^{15}$ combinations, making the coverage in any pre-training corpus move toward zero. Furthermore, every problem has a deterministically verifiable solution to ensure objective evaluation.
 
 ## Method
 
 ### Overall Architecture
-BeyondBench is an installable Python package (`pip install beyondbench`) supporting multiple backends (OpenAI, Gemini, Anthropic APIs; vLLM local inference; HuggingFace Transformers). The workflow is: (1) generate problem instances online according to the specified Suite and difficulty level; (2) submit problems to the target model; (3) parse model responses and compare against deterministic ground-truth answers; (4) compute metrics including accuracy, instruction-following compliance, and token efficiency.
+BeyondBench is an installable Python evaluation package (`pip install beyondbench`). The core idea is to replace the "task bank" with a "task generator": for each evaluation, new problem instances are algorithmically generated online according to specified suites and difficulty levels. After being sent to the model under evaluation, the outputs are validated item-by-item against deterministic ground-truth answers. The framework calculates accuracy, instruction-following compliance, and token efficiency. The framework itself does not train any models and supports three types of backends: OpenAI/Gemini/Anthropic APIs, vLLM local inference, and HuggingFace Transformers.
 
 ### Key Designs
 
-1. **Three-Tier Difficulty Suites**:
+**1. Three-tier Difficulty Task Suites: Building a Reasoning Ladder by Computational Complexity**
 
-    - **Easy Suite (29 tasks)**: Fundamental arithmetic and statistical problems—sorting, summation, mean, median, GCD/LCM, etc.—assessing basic mathematical operation ability.
-    - **Medium Suite (5 tasks, 49 variants)**: Sequence pattern recognition and reasoning problems, including Fibonacci variants, sequence rule discovery, and pattern matching, requiring inductive reasoning.
-    - **Hard Suite (10 tasks, 68 variants)**: NP-complete and constraint satisfaction problems—graph coloring, knapsack, TSP variants, SAT problems—which are computationally hard and require combinatorial search or heuristic reasoning.
+To distinguish between "arithmetic proficiency" and "algorithmic thinking," difficulty must increase along an interpretable axis. BeyondBench decomposes reasoning into three suites of increasing difficulty corresponding to computational complexity levels. The Easy Suite contains 29 tasks covering basic arithmetic and statistics such as sorting, summation, mean, median, and GCD/LCM, representing basic operations solvable in polynomial time. The Medium Suite contains 5 tasks and 49 variants, shifting to sequence pattern recognition (Fibonacci variants, sequence discovery, pattern matching), testing inductive reasoning rather than brute calculation. The Hard Suite contains 10 tasks and 68 variants, introducing NP-complete and constraint satisfaction problems such as Graph Coloring, Knapsack, Traveling Salesman variants, and Satisfiability (SAT). These are inherently computationally difficult, forcing models to engage in combinatorial search or heuristic reasoning. This progressive hierarchy exposes layers of reasoning ability; experiments demonstrate a cliff-like performance drop from Easy to Hard, helping determine if a model is "reasoning" or "pattern matching."
 
-2. **Contamination Resistance: Three-Layer Guarantee**:
+**2. Triple Contamination-Resistance Guarantees: Making Questions Impossible to "Memorize"**
 
-    - **Vast problem space**: Each task's instance space exceeds $10^{15}$, making static dataset coverage impossible.
-    - **Deterministically verifiable solutions**: Every generated instance has a mathematically unique correct answer, eliminating evaluation ambiguity.
-    - **Isomorphic transformations**: Problems can be subjected to semantically equivalent but syntactically distinct transformations (e.g., renumbering graph nodes, renaming variables), producing instances that appear different but are structurally identical, further reducing memorization-based matching.
+The foundation of the framework is the impossibility of questions appearing in training corpora, achieved through three overlapping mechanisms. First is the massive problem space: instance combinations for each task exceed $10^{15}$, far surpassing the coverage of any static corpus. Second is the deterministic verifiable solution: every generated instance has a mathematically unique correct answer, meaning verification does not rely on human judges and has no scoring ambiguity. Third is isomorphic transformation: the framework applies semantically equivalent but syntactically different rewrites to the same problem (e.g., renumbering graph nodes, replacing variable names) to generate variants that "look different but are essentially the same," further reducing the probability of winning through surface-level memory. Together, these ensure that the shortcut of "recalling training data" is ineffective on BeyondBench, forcing scores to reflect real-time reasoning.
 
-3. **Multi-Dimensional Evaluation Metrics**:
+**3. Multi-dimensional Evaluation Metrics: Decomposing "Success" into Interpretable Facets**
 
-    - Accuracy: reported per task and per Suite.
-    - Instruction-following compliance: whether models output answers in the required format.
-    - Token efficiency analysis: number of tokens consumed to reach an answer.
-    - Three-fold evaluation: each configuration is run three times and averaged for robustness.
+Relying solely on accuracy can hide significant information. Therefore, the framework records four types of signals for every evaluation: accuracy (calculated by task and suite), instruction-following compliance (measuring if the model outputs answers in the required format), token efficiency (reflecting the tokens consumed to reach an answer), and three-fold evaluation (averaging results across three runs for each configuration). Decoupling accuracy from instruction-following reveals whether a model is "capable and obedient" or "capable but format-agnostic." Three-fold averaging dampens random fluctuations from dynamic generation, ensuring scores are comparable.
 
-4. **Complete Toolchain**:
+**4. Out-of-the-box Evaluation Toolchain: Benchmarking as an Accessible Utility**
 
-    - CLI: `beyondbench evaluate --model-id xxx --suite easy`
-    - Python API: programmatic control over the evaluation pipeline.
-    - FastAPI server: `beyondbench serve` exposes a REST API.
-    - Result comparison: `beyondbench results compare` for cross-model comparison.
-
-### Loss & Training
-Not applicable—BeyondBench is a pure evaluation framework involving no training.
+BeyondBench is more than a paper; it is a set of installable engineering utilities (`pip install beyondbench`) that lowers the barrier for large-scale evaluation to a single package installation. The CLI command `beyondbench evaluate --model-id xxx --suite easy` runs an evaluation in one line; the Python API allows for programmatic control; `beyondbench serve` launches a FastAPI service to provide REST-based evaluation; and `beyondbench results compare` enables horizontal comparison across models. This toolchain, combined with unified wrappers for OpenAI/Gemini/Anthropic, vLLM, and HuggingFace backends, supported the large-scale evaluation of 101 models.
 
 ## Key Experimental Results
 
-### Main Results: Large-Scale Evaluation of 101 Models
-The study evaluates 85 open-source and 16 closed-source models ranging from 0.5B to 141B parameters.
+### Main Results: Large-scale Evaluation of 101 Models
+The study evaluated 85 open-source and 16 closed-source models, ranging from 0.5B to 141B parameters:
 
-**Top-5 Leaderboard (with tool use / reasoning tokens)**:
+**Top 5 Leaderboard (Using Tools/Reasoning Tokens)**:
 
-| Rank | Model | Hard Suite Acc. | Easy Suite Acc. |
-|------|-------|-----------------|-----------------|
-| 🥇 | GPT-5* | N/A | 96.15% |
-| 🥈 | GPT-5-Nano* | N/A | 93.58% |
-| 🥉 | GPT-5-Mini* | N/A | 94.23% |
-| 4 | o3* | N/A | 94.96% |
-| 5 | o4-Mini* | N/A | 95.30% |
+| Rank | Model | Hard Suite Accuracy | Easy Suite Accuracy |
+|------|------|-----------------|-----------------|
+| 🥇 | GPT-5* | Not Specified | 96.15% |
+| 🥈 | GPT-5-Nano* | Not Specified | 93.58% |
+| 🥉 | GPT-5-Mini* | Not Specified | 94.23% |
+| 4 | o3* | Not Specified | 94.96% |
+| 5 | o4-Mini* | Not Specified | 95.30% |
 
-(*Models using reasoning/thinking tokens)
+(*Models using reasoning/thought tokens)
 
-**Hard Suite Performance of Representative Models**:
+**Representative Model Performance on Hard Suite**:
 
 | Model | Hard Suite Accuracy |
-|-------|---------------------|
+|------|-----------------|
 | Gemini-2.5-pro | 56.21% |
 | Qwen2.5-72B | 33.37% |
 | Llama-3.3-70B | 27.16% |
 
-### Impact of Tool Use vs. No Tool Use
+### Impact of Tool-Use vs. No-Tool
 
 | Model | Overall Accuracy Drop (No Tools) |
-|-------|----------------------------------|
-| GPT-5 | −16.81% |
-| GPT-5-mini | −15.86% (or −28.05%) |
-| GPT-5-nano | −43.95% (or −47.59%) |
+|------|----------------------|
+| GPT-5 | -16.81% |
+| GPT-5-mini | -15.86% (or -28.05%) |
+| GPT-5-nano | -43.95% (or -47.59%) |
 
-Tool use (e.g., code execution) has a substantial impact on reasoning performance, with the effect being especially pronounced for smaller models.
+Tool-use (such as code execution) has a massive impact on reasoning performance, particularly for smaller models.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|------------|-------|
-| Easy → Medium → Hard | Monotonically decreasing performance | Complexity scales from polynomial to exponential; performance drops sharply |
-| Model scale effect | Larger models generally perform better | Relationship is not strictly linear |
-| Quantization impact | Multiple quantization schemes tested | Effect varies across tasks |
-| Instruction-following vs. accuracy | Inconsistent | High accuracy does not guarantee perfect instruction-following compliance |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Easy→Medium→Hard | Step-wise Performance Drop | Performance drops sharply from polynomial to exponential complexity |
+| Model Scaling Effect | Larger Models Usually Better | However, the relationship is not strictly linear |
+| Quantization Impact | Various Schemes Tested | Quantization affects different tasks inconsistently |
+| Instruction-Following vs. Accuracy | Inconsistent | High accuracy does not guarantee perfect instruction-following |
 
 ### Key Findings
-- **Reasoning degrades sharply with complexity**: Even the strongest models exhibit drastic performance drops from Easy to Hard, suggesting that current LLM "reasoning" relies more on pattern matching than genuine algorithmic thinking.
-- **Tool use is critical**: Without code execution tools, model performance on mathematical and algorithmic tasks drops substantially, particularly for smaller models.
-- **Scale effects exist but are limited**: Larger models perform better on the Hard Suite, yet the gap between 70B and 141B models is far smaller than on the Easy Suite.
-- **Open-source vs. closed-source gap**: Closed-source models—especially those with reasoning capabilities such as o3 and GPT-5—markedly outperform open-source counterparts on the Hard Suite.
+- **Reasoning Performance Degrades Sharply with Complexity**: Even the strongest models show significant performance drops from Easy to Hard, suggesting current LLM "reasoning" relies more on pattern matching than genuine algorithmic thinking.
+- **Tool-Use is Critical**: Performance on mathematical and algorithmic problems drops significantly without code execution tools, especially for smaller models.
+- **Scaling Effects Exist but are Limited**: Larger models perform better on the Hard Suite, but the gap between 70B and 141B models is much smaller than the gaps observed in the Easy Suite.
+- **Open-source vs. Closed-source Gap**: Closed-source models (especially those with reasoning capabilities like o3 or GPT-5) lead open-source models significantly on the Hard Suite.
 
 ## Highlights & Insights
-- **Paradigm shift in evaluation**: The transition from "static question banks" to "dynamic generation" represents a significant methodological advance, fundamentally resolving the data contamination problem.
-- **Unprecedented scale**: A cross-sectional comparison of 101 models provides a panoramic view previously unavailable to the community.
-- **Engineering completeness**: Beyond being a research paper, BeyondBench is a fully functional open-source tool—Python package, CLI, API server, and online leaderboard—lowering the barrier to adoption.
-- **NP-complete problems as a reasoning ceiling**: Using computationally hard problems from complexity theory to probe LLMs provides valuable insight into the upper limits of reasoning ability.
-- **Tool-assisted vs. tool-free performance contrast**: This comparison reveals the gap between models truly understanding a problem and models merely transcribing it into executable code.
+- **Evaluation Paradigm Shift**: The transition from "static banks" to "dynamic generation" is a major methodological advancement that fundamentally solves the data contamination problem.
+- **Unprecedented Scale**: The horizontal comparison of 101 models provides an unprecedented overview of the landscape.
+- **Engineering Completeness**: More than just a paper, it provides a complete open-source toolset—Python package, CLI, API server, and online leaderboard—lowering usage barriers.
+- **NP-complete Problems as Reasoning Upper Bound**: Using computationally hard problems from theoretical computer science to test LLMs provides valuable insights into the upper bounds of reasoning capabilities.
+- **Tool-use vs. No-tool Performance Comparison**: This reveals the gap between a model's true understanding of a problem and its ability to translate it into code.
 
 ## Limitations & Future Work
-- All tasks are mathematical/algorithmic in nature; natural language reasoning, commonsense reasoning, and causal reasoning are not covered.
-- The format of dynamically generated problems may differ from problem formats commonly encountered during pretraining, introducing potential format bias.
-- Easy Suite problems may be too simple (basic arithmetic) to offer meaningful discrimination.
-- Reliance on deterministic answers precludes evaluation of open-ended reasoning capabilities.
-- Three-fold evaluation improves robustness but increases evaluation cost.
-- NP-complete problems in the Hard Suite may unduly favor models that employ brute-force search via code execution, not necessarily reflecting genuine "reasoning" ability.
+- All tasks are mathematical/algorithmic, failing to cover natural language reasoning, commonsense reasoning, or causal reasoning.
+- Dynamically generated problem formats may differ from formats common in pre-training data, leading to potential format bias.
+- Problems in the Easy Suite might be too simple (basic arithmetic), offering limited discriminative power.
+- Reliance on deterministic answers precludes the evaluation of open-ended reasoning.
+- Three-fold evaluation improves robustness but increases evaluation costs.
+- NP problems in the Hard Suite might favor models using brute-force search (via code execution), which does not necessarily reflect deep "reasoning."
 
 ## Related Work & Insights
-- Compared with static mathematical benchmarks such as GSM8K and MATH, BeyondBench structurally eliminates contamination risk.
-- Similar in spirit to dynamic benchmarks like LiveBench, BeyondBench offers a substantially larger problem space ($>10^{15}$) and covers NP-complete problems.
-- Compared with synthetic reasoning benchmarks such as PrOntoQA, BeyondBench targets broader algorithmic reasoning rather than a single reasoning type.
-- **Insight**: Future benchmark design should more broadly adopt the paradigm of "dynamic generation + deterministic verification" rather than relying on statically annotated datasets.
-- The distinction between *reasoning ability* and *tool-use ability* is crucial for understanding and advancing genuine intelligence in LLMs.
+- Compared to static math benchmarks like GSM8K and MATH, BeyondBench fundamentally avoids contamination.
+- Similar to dynamic benchmarks like LiveBench, but BeyondBench offers a larger problem space ($>10^{15}$) and covers NP-complete problems.
+- Compared to synthetic reasoning benchmarks like PrOntoQA, BeyondBench focuses on a broader range of algorithmic reasoning rather than a single reasoning type.
+- Insight: Future benchmark designs should shift toward the "dynamic generation + deterministic verification" paradigm instead of relying on manually annotated static datasets.
+- The distinction between "reasoning ability" and "tool-use capability" is vital for understanding and developing true intelligence in LLMs.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Dynamic generation for evaluation is not an entirely new concept, but the systematicity and scale here are unprecedented.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 101 models, 3 difficulty levels, multiple quantization schemes, and tool vs. no-tool comparisons.
-- **Writing Quality**: ⭐⭐⭐⭐ — Abstract and framework descriptions are clear; full-text assessment is limited due to HTML conversion failure.
-- **Value**: ⭐⭐⭐⭐⭐ — Significant practical value for the LLM evaluation community; tooling is open-source and immediately usable.
+- Novelty: ⭐⭐⭐⭐ — Dynamic evaluation is not a new concept, but the systematicity and scale are unprecedented.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 101 models, 3 difficulty levels, multiple quantization schemes, and Tool-use vs. No-tool comparisons.
+- Writing Quality: ⭐⭐⭐⭐ — Abstracts and framework descriptions are clear, though certain detailed evaluations were restricted by document conversion issues.
+- Value: ⭐⭐⭐⭐⭐ — High practical value for the LLM evaluation community; the tools are open-sourced and ready for immediate use.
 
 <!-- RELATED:START -->
 
@@ -153,10 +136,10 @@ Tool use (e.g., code execution) has a substantial impact on reasoning performanc
 
 ## Related Papers
 
-- [\[ICLR 2026\] FuncBenchGen: A Contamination-Free Controllable Evaluation Framework for Reliable Benchmarking](towards_reliable_benchmarking_a_contamination_free_controllable_evaluation_frame.md)
+- [\[ICLR 2026\] Towards Reliable Benchmarking: A Contamination Free, Controllable Evaluation Framework for Multi-step LLM Function Calling](towards_reliable_benchmarking_a_contamination_free_controllable_evaluation_frame.md)
 - [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
-- [\[ICLR 2026\] Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models](scaling_reasoning_hop_exposes_weaknesses_demystifying_and_improving_hop_generali.md)
 - [\[ACL 2026\] IntroLM: Introspective Language Models via Prefilling-Time Self-Evaluation](../../ACL2026/model_compression/introlm_introspective_language_models_via_prefilling-time_self-evaluation.md)
+- [\[ICLR 2026\] Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models](scaling_reasoning_hop_exposes_weaknesses_demystifying_and_improving_hop_generali.md)
 - [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 
 </div>

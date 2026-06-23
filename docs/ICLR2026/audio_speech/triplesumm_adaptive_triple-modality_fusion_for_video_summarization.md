@@ -2,79 +2,86 @@
 title: >-
   [Paper Note] TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization
 description: >-
-  [ICLR 2026][Audio & Speech][video summarization] This paper proposes TripleSumm, which achieves dynamic frame-level modality importance adjustment via a Multi-scale Temporal block (hierarchical sliding-window attention)…
+  [ICLR 2026][Audio & Speech][Paper Note] TripleSumm is proposed to achieve dynamic frame-level modality importance adjustment using Multi-Scale Temporal blocks (hierarchical sliding window attention) and Cross-Modal Fusion blocks (adaptive weighting of vision/text/audio via a fusion token). The authors also release MoSu, the first large-scale triple-modality
 tags:
-  - "ICLR 2026"
-  - "Audio & Speech"
-  - "video summarization"
-  - "triple-modality fusion"
-  - "adaptive weighting"
-  - "multi-scale temporal"
-  - "large-scale dataset"
+  - ICLR 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 7a0ca7c4ee54ef45
+content_hash: f8dffed49fa73a13
 ---
-
 # TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01169](https://arxiv.org/abs/2603.01169)  
 **Code**: [https://github.com/smkim37/TripleSumm](https://github.com/smkim37/TripleSumm)  
-**Area**: Audio & Speech
-**Keywords**: video summarization, triple-modality fusion, adaptive weighting, multi-scale temporal, large-scale dataset
+**Area**: Audio and Speech  
+**Keywords**: Video Summarization, Triple-Modality Fusion, Adaptive Weights, Multi-scale Temporal, Large-scale Dataset
 
 ## TL;DR
-This paper proposes TripleSumm, which achieves dynamic frame-level modality importance adjustment via a Multi-scale Temporal block (hierarchical sliding-window attention) and a Cross-modal Fusion block (fusion token adaptively weighting visual/text/audio). The authors also release MoSu, the first large-scale triple-modality video summarization dataset (52,678 videos), achieving SOTA on 4 benchmarks.
+TripleSumm is proposed to achieve dynamic frame-level modality importance adjustment using Multi-Scale Temporal blocks (hierarchical sliding window attention) and Cross-Modal Fusion blocks (adaptive weighting of vision/text/audio via a fusion token). The authors also release MoSu, the first large-scale triple-modality video summarization dataset (52,678 videos), achieving SOTA results across 4 benchmarks.
 
 ## Background & Motivation
 
-**Background**: Video summarization extracts key segments to represent the original video content. Existing methods primarily rely on visual features combined with attention mechanisms.
+**Background**: Video summarization extracts key segments to represent the original video content. Existing methods primarily utilize visual features combined with attention mechanisms.
 
-**Limitations of Prior Work**: Modality importance varies dynamically from frame to frame (e.g., text is more informative when a judge is speaking; visual and audio are more informative during a robot performance), yet existing methods employ static or modality-agnostic fusion strategies. Furthermore, no large-scale triple-modality dataset exists.
+**Limitations of Prior Work**: Modality importance changes dynamically frame-by-frame (e.g., text is crucial when a judge speaks, while vision and audio are more important during a robot performance). However, current methods employ static or modality-agnostic fusion strategies. Furthermore, there is a lack of large-scale triple-modality datasets.
 
 **Core Idea**: Adaptive frame-level modality fusion combined with a large-scale triple-modality benchmark.
 
 ## Method
 
 ### Overall Architecture
-Visual/text/audio streams of the raw video → modality-specific pretrained encoders (GoogLeNet/CLIP + RoBERTa + AST) → linear projection + LayerNorm to a shared dimension $D$ → per-frame aggregation into fusion tokens $\mathbf{E}^f$ → alternating $L$-layer stacks of Multi-scale Temporal blocks (MST) + Cross-modal Fusion blocks (CMF) → prediction head outputting frame-level importance scores $\hat{S} \in [0,1]$ → high-scoring frames selected to compose the summary.
+The core problem TripleSumm addresses is that the "most trustworthy modality" in a video changes frame-by-frame. Existing methods use static or modality-agnostic global fusion strategies, which struggle with segments not dominated by visual cues. The overall mechanism involves feeding visual, text, and audio streams into frozen pre-trained encoders (GoogLeNet/CLIP, RoBERTa, AST), projecting them into a unified dimension $D$, and aggregating a "fusion token" frame-by-frame. The model then stacks $L$ layers of Multi-Scale Temporal (MST) blocks and Cross-Modal Fusion (CMF) blocks in a "temporal refinement followed by cross-modal fusion" cycle. This allows the fusion token to adaptively decide which modality to trust at each frame. Finally, a prediction head regresses frame-level importance scores to select coherent segments. The central hypothesis is that since modality importance varies frame-by-frame, fusion must occur at the frame granularity rather than using global weights.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    V["Visual Frames"] --> VE["Image Encoder<br/>GoogLeNet/CLIP (Frozen)"]
+    T["Text/Subtitles"] --> TE["Text Encoder<br/>RoBERTa (Frozen)"]
+    A["Audio"] --> AE["Audio Encoder<br/>AST (Frozen)"]
+    VE --> P["Linear Projection + LayerNorm<br/>Unified to Dimension D"]
+    TE --> P
+    AE --> P
+    P --> FT["Fusion Token Construction<br/>Tri-modality Aggregation + TPE + LME"]
+    FT --> LAYER
+    subgraph LAYER["L Layers of Alternating Blocks"]
+        direction TB
+        MST["Multi-Scale Temporal Block (MST)<br/>Window Attention · Increasing Window Size"] --> CMF["Cross-Modal Fusion Block (CMF)<br/>Fusion Token as Query · Frame-level Weighting"]
+    end
+    LAYER --> HEAD["Prediction Head<br/>Frame-level Importance Score Regression"]
+    HEAD -->|Training · L2 Loss| MOSU["MoSu Dataset<br/>Most Replayed Heatmap Labels"]
+    HEAD -->|Inference · Segment Selection| SUM["Output Summary Video"]
+```
 
 ### Key Designs
 
-1. **Multi-scale Temporal Block (MST)**:
+**1. Fusion Token Construction: Creating an unbiased neutral anchor for cross-modal fusion**
 
-    - Employs Window Self-Attention (WSA) with window size $w$ increasing layer by layer (small windows in early layers capture local dependencies; large windows in later layers capture long-range dependencies).
-    - Reduces complexity from $O(N^2)$ for full attention to $O(w \cdot N)$.
-    - Cross-modal parameter sharing — the same WSA parameters are applied to all four token types (fusion/visual/text/audio).
-    - **Design Motivation**: Temporal dynamics in video frames (e.g., scene transitions, rhythm changes) are modality-agnostic; shared parameters efficiently capture universal temporal patterns.
+If visual features are used as queries to absorb other modalities, as in traditional multi-modal methods, it assumes a prior that vision is most important, introducing modality bias. TripleSumm aggregates per-frame embeddings from all three modalities into an additional fusion token, $\mathbf{e}^f_i=\text{Agg}(\mathbf{e}^v_i,\mathbf{e}^t_i,\mathbf{e}^a_i)$. The $\text{Agg}$ function can be a simple average or an MLP. Since it does not belong to any single modality, it acts as a neutral anchor. To distinguish frame positions and modality sources, each token (fusion and the three modalities) is augmented with Temporal Position Encoding (TPE) $\mathbf{tpe}_i$ and Learnable Modality Embeddings (LME) $\mathbf{lme}^{\{f,v,t,a\}}$, such that $\mathbf{h}^{\{f,v,t,a\}}_i=\mathbf{e}^{\{f,v,t,a\}}_i+\mathbf{tpe}_i+\mathbf{lme}^{\{f,v,t,a\}}$. This fusion token persists through all layers, absorbing information from the most relevant modalities at the current frame without modifying the original modality tokens, thus preserving raw representations for subsequent layers.
 
-2. **Cross-modal Fusion Block (CMF)**:
+**2. Multi-Scale Temporal Block (MST): Modeling long-video dependencies with hierarchical window attention**
 
-    - The fusion token $\mathbf{h}^f_i$ serves as the query, while the three modality tokens $\mathbf{h}^{\{v,t,a\}}_i$ serve as keys/values.
-    - Cross-attention achieves frame-level adaptive weighting — at each timestep the model independently determines which modality to attend to.
-    - **Design Motivation**: Avoids the modality bias present in conventional methods (e.g., always using visual as the query); the fusion token acts as a neutral anchor that treats all three modalities equally.
+Videos can last minutes or thousands of frames, making full $O(N^2)$ attention computationally prohibitive. MST uses Window Self-Attention (WSA), where each query only attends to a local window of width $w$, reducing complexity to $O(w\cdot N)$. The window size $w$ increases with layer depth—shallow layers capture local dependencies between adjacent frames, while deeper layers establish long-range connections across segments. A key design choice is that WSA shares parameters across the four token types (fusion, visual, text, audio). Since temporal patterns like scene transitions are modality-agnostic, parameter sharing reduces overhead and learns universal temporal structures.
 
-3. **Fusion Token Design**:
+**3. Cross-Modal Fusion Block (CMF): Deciding modality trust independently at each frame**
 
-    - $\mathbf{e}^f_i = \text{Agg}(\mathbf{e}^v_i, \mathbf{e}^t_i, \mathbf{e}^a_i)$, where the aggregation function can be average pooling or an MLP.
-    - Temporal Positional Encoding (TPE) and Learnable Modality Embeddings (LME) are added to distinguish timesteps and modality sources.
-    - Key property: after being updated in CMF, fusion tokens carry information from the most relevant modality without directly modifying the individual modality tokens.
+While MST refines features along the time axis within each modality, CMF enables cross-modal communication. CMF follows MST, using the fusion token $\mathbf{h}^f_i$ at time step $i$ as the query and the three modality tokens $\mathbf{h}^{\{v,t,a\}}_i$ as key/value pairs for cross-attention. This allows the fusion token to perform weighted aggregation of the most relevant modality—text weight increases during speech, while audio weight increases during musical performances. Alternating $L$ layers of MST and CMF ensures that frame-level modality preferences become increasingly accurate as the network deepens.
 
-4. **MoSu Dataset Construction**:
+**4. MoSu Dataset: Utilizing "Most Replayed" heatmaps for free frame-level annotation**
 
-    - Filtered from YouTube-8M by: (1) availability of English subtitles and audio tracks; (2) >50,000 views to obtain "Most Replayed" statistics; (3) duration ≥120 s to ensure sufficient length.
-    - Final dataset: 52,678 videos covering visual, text, and audio modality features.
-    - Annotations derived from YouTube "Most Replayed" heatmaps — collective behavioral feedback from at least 50,000 viewers per video.
+Triple-modality video summarization has lacked large-scale benchmarks. TripleSumm filters 52,678 real-world videos (requiring English subtitles, available audio tracks, and sufficient views for reliable replay statistics). Labels are derived directly from YouTube's "Most Replayed" heatmaps, representing the collective attention of at least 50,000 viewers per video. This serves as a proxy for frame importance without requiring manual frame-by-frame scoring.
+
+> ⚠️ Note: Refer to Sec. 4 of the original paper for specific MoSu filtering thresholds (view counts, duration).
 
 ### Loss & Training
-L2 regression loss: $\mathcal{L} = \|S - \hat{S}\|_2^2$, predicting frame-level importance scores. The final summary is generated by selecting temporally coherent segments that maximize predicted scores.
+The model is trained using an L2 regression loss $\mathcal{L}=\|S-\hat{S}\|_2^2$ to supervise the frame-level importance scores $\hat{S}$. During inference, temporally coherent segments that maximize the predicted scores are selected to form the summary.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Benchmark | Metric | TripleSumm | Prev. SOTA | Gain |
-|-----------|--------|-----------|------------|------|
+|------|------|-----------|---------|------|
 | MoSu | Kendall τ | 0.145 | 0.107 (CFSum) | +35.5% |
 | Mr.HiSum | Kendall τ | 0.105 | 0.089 | +18.0% |
 | SumMe | F1 | 52.3 | 50.1 | +2.2 |
@@ -82,46 +89,46 @@ L2 regression loss: $\mathcal{L} = \|S - \hat{S}\|_2^2$, predicting frame-level 
 
 ### Ablation Study
 
-| Configuration | MoSu τ | Note |
-|---------------|--------|------|
+| Configuration | MoSu τ | Description |
+|------|--------|------|
 | Full TripleSumm | 0.145 | Complete model |
-| Visual only | 0.091 | Significant degradation |
-| Visual + Text | 0.128 | Audio contributes clearly |
-| w/o MST | 0.121 | Multi-scale is important |
-| w/o CMF | 0.118 | Adaptive fusion is critical |
+| Vision only | 0.091 | Significant degradation |
+| Vision + Text | 0.128 | Clear audio contribution |
+| w/o MST | 0.121 | Multi-scale importance |
+| w/o CMF | 0.118 | Significance of adaptive fusion |
 
 ### Key Findings
-- TripleSumm degrades gracefully under missing modalities — it dynamically relies on available modalities and does not collapse when a single modality is absent.
-- Qualitative analysis shows that fusion tokens adaptively attend to different modalities across frames (e.g., judge-speaking frames → high text weight; musical performance frames → high audio weight).
-- Visual-only models achieve τ=0.091 on MoSu; adding text raises this to 0.128, and further adding audio yields 0.145 — each modality contributes independently.
-- The multi-scale design of MST is particularly important for long videos — single-window-size variants drop τ by approximately 16% on MoSu.
-- Parameter efficiency is high: TripleSumm has a parameter count comparable to the visual-only PGL-SUM, yet leverages three times as many information sources.
+- TripleSumm degrades robustly when modalities are missing, adaptively relying on available inputs rather than crashing due to missing data.
+- Qualitative analysis shows the fusion token focuses on different modalities at different frames (e.g., high text weight for speech, high audio weight for music).
+- Visual-only models achieve τ=0.091 on MoSu; adding text increases it to 0.128, and audio further to 0.145, proving independent modality contributions.
+- MST's multi-scale design is critical for long videos; single-window models show an approx. 16% drop in τ on MoSu.
+- High parameter efficiency: TripleSumm's parameter count is comparable to the visual-only PGL-SUM, despite utilizing triple the information sources.
 
 ## Highlights & Insights
-- The fusion token as a "neutral anchor" for cross-modal interaction is the key innovation — it eliminates the modality bias caused by using visual features as the query in conventional methods.
-- The hierarchical window design of MST enables the model to build temporal understanding progressively from local to global, which is especially important for long videos (>2 minutes).
-- Incorporating three modalities not only improves performance but also enhances robustness — performance degrades gracefully when any single modality is missing.
+- Using a fusion token as a "neutral anchor" for cross-modal interaction is a key innovation, avoiding the vision-centric bias of traditional methods.
+- The hierarchical window design of MST allows the model to build temporal understanding from local to global scales, which is especially important for videos longer than 2 minutes.
+- The inclusion of triple modalities improves both performance and robustness; performance degradation is controlled when any single modality is missing.
 - The "Most Replayed" annotation scheme for MoSu is a pragmatic choice, leveraging collective viewing behavior as a free proxy for frame importance.
 
 ## Limitations & Future Work
-- MoSu is based on YouTube "Most Replayed" and may be biased toward entertainment content, with insufficient coverage of educational or professional videos.
-- The fusion token is initialized via simple average aggregation; more sophisticated initialization (e.g., gating) could yield further improvements.
-- Only frozen features from pretrained encoders are used; end-to-end fine-tuning of the encoders may unlock additional potential.
-- The WSA window size increases according to a fixed schedule; adaptive window size adjustment could be more beneficial.
-- Comparisons with LLM-based summarization approaches (e.g., VideoLLMs) remain unexplored.
+- MoSu is based on YouTube "Most Replayed" data, which may bias towards entertainment content and lack coverage of educational/professional videos.
+- Fusion token initialization uses simple average aggregation; more complex initializations (e.g., gating) might further improve results.
+- The model uses frozen features from pre-trained encoders; end-to-end finetuning could unlock more potential.
+- WSA window sizes follow a fixed schedule; adaptive window size adjustment could be more optimal.
+- Comparisons with LLM-based summarization methods (e.g., VideoLLM) have not yet been explored.
 
 ## Related Work & Insights
-- **vs. CFSum**: CFSum also uses three modalities but employs static fusion; TripleSumm's frame-level adaptive weighting is the key differentiator.
-- **vs. A2Summ**: A2Summ focuses on audio-visual dual-modality, whereas TripleSumm provides complete coverage of all three modalities.
-- **vs. PGL-SUM/CSTA**: These visual-only Transformer methods lag significantly behind on MoSu, validating the necessity of multimodal input.
-- **MoSu Dataset**: The first large-scale triple-modality video summarization benchmark, derived from "Most Replayed" statistics of 52,678 YouTube videos with at least 50,000 viewers each.
-- **Inspiration**: The design concept of the fusion token as a cross-modal interaction "anchor" is transferable to other multimodal tasks such as multimodal retrieval and video question answering.
+- **vs CFSum**: CFSum also uses triple modalities but employs static fusion. TripleSumm’s frame-level adaptive weighting is the key differentiator.
+- **vs A2Summ**: A2Summ focuses on audio-visual bi-modality; TripleSumm provides full tri-modality coverage.
+- **vs PGL-SUM/CSTA**: These visual-only Transformer methods lag significantly on MoSu, validating the necessity of multi-modality.
+- **MoSu Dataset**: The first large-scale tri-modality benchmark based on "Most Replayed" stats from 52,678 YouTube videos, each with at least 50,000 viewer "votes."
+- **Inspiration**: The design of the fusion token as an "anchor" for cross-modal interaction is transferable to other multi-modal tasks (e.g., multi-modal retrieval, VideoQA).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Adaptive triple-modality fusion + large-scale dataset, contributing both methodology and resources.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 benchmarks + ablation + qualitative analysis + missing-modality robustness tests.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with intuitive figures.
-- Value: ⭐⭐⭐⭐⭐ Both the MoSu dataset and the triple-modality fusion method offer lasting value.
+- Novelty: ⭐⭐⭐⭐ Adaptive tri-modality fusion + large-scale dataset; dual contributions in method and resource.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 benchmarks + ablation + qualitative analysis + missing modality robustness tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and intuitive diagrams.
+- Value: ⭐⭐⭐⭐⭐ Both the MoSu dataset and the tri-modality fusion method possess lasting value.
 
 <!-- RELATED:START -->
 
@@ -131,9 +138,9 @@ L2 regression loss: $\mathcal{L} = \|S - \hat{S}\|_2^2$, predicting frame-level 
 
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
 - [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
+- [\[ICLR 2026\] Confident and Adaptive Generative Speech Recognition via Risk Control](confident_and_adaptive_generative_speech_recognition_via_risk_control.md)
 - [\[ICML 2026\] Multimodal Fusion via Self-Consistent Task-Gradient Fields](../../ICML2026/audio_speech/multimodal_fusion_via_self-consistent_task-gradient_fields.md)
-- [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
+- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 
 </div>
 

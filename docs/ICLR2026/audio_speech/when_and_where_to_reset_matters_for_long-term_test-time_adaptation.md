@@ -2,138 +2,138 @@
 title: >-
   [Paper Note] When and Where to Reset Matters for Long-Term Test-Time Adaptation
 description: >-
-  [ICLR 2026][Audio & Speech][test-time adaptation] ASR proposes an adaptive selective reset scheme that uses prediction concentration $\mathcal{C}_t$ to dynamically determine *when* to reset (avoiding the suboptimality of…
+  [ICLR 2026][Audio & Speech][Paper Note] ASR proposes an adaptive selective reset scheme that dynamically determines *when* to reset via prediction concentration $\mathcal{C}_t$ (avoiding the suboptimality of fixed cycles) and *where* to reset via a progressive layer selection strategy from the output layer to the input layer (preserving valuable adaptation k
 tags:
-  - "ICLR 2026"
-  - "Audio & Speech"
-  - "test-time adaptation"
-  - "model collapse"
-  - "adaptive reset"
-  - "selective reset"
-  - "Fisher information"
-  - "long-term domain shift"
+  - ICLR 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 8023b95c5bf8d412
+content_hash: 993d64761273c90a
 ---
-
 # When and Where to Reset Matters for Long-Term Test-Time Adaptation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.03796](https://arxiv.org/abs/2603.03796)  
 **Code**: [https://github.com/YonseiML/asr](https://github.com/YonseiML/asr)  
-**Area**: Audio & Speech
-**Keywords**: test-time adaptation, model collapse, adaptive reset, selective reset, Fisher information, long-term domain shift
+**Area**: Audio & Speech  
+**Keywords**: Test-time adaptation, Model collapse, Adaptive reset, Selective reset, Fisher information, Long-term domain shift
 
 ## TL;DR
-ASR proposes an adaptive selective reset scheme that uses prediction concentration $\mathcal{C}_t$ to dynamically determine *when* to reset (avoiding the suboptimality of fixed-period resets), and employs a progressive layer selection strategy from output to input layers to determine *where* to reset (preserving valuable adaptation knowledge). Combined with importance-aware regularization for recovering critical knowledge in reset layers and on-the-fly adaptation adjustment, ASR achieves a 44.12% improvement over the prior SOTA on CCC-Hard.
+ASR proposes an adaptive selective reset scheme that dynamically determines *when* to reset via prediction concentration $\mathcal{C}_t$ (avoiding the suboptimality of fixed cycles) and *where* to reset via a progressive layer selection strategy from the output layer to the input layer (preserving valuable adaptation knowledge). Combined with importance-aware regularization to recover key reset knowledge and on-the-fly adjustments, it achieves a 44.12% improvement over the SOTA on CCC-Hard.
 
 ## Background & Motivation
 
-**Background**: Continual test-time adaptation (TTA) updates models on non-stationary domain streams, but long-term adaptation leads to error accumulation and model collapse — where the model predicts only a small number of classes for all inputs.
+**Background**: Continual Test-Time Adaptation (TTA) updates models on non-stationary domain streams, but long-term adaptation leads to error accumulation $\rightarrow$ model collapse: the model predicts only a few classes for all inputs.
 
-**Limitations of Prior Work**: (1) Methods such as RDumb apply full resets at fixed intervals, which are unrelated to actual collapse risk — resets occur either too early (wasting adaptation knowledge) or too late (allowing deep error accumulation); (2) full resets catastrophically discard all temporally accumulated knowledge; (3) each reset is followed by significant performance drops and recovery delays.
+**Limitations of Prior Work**: (1) Methods like RDumb use fixed-period full resets $\rightarrow$ cycles are unrelated to actual collapse risk, occurring either too early (wasting adapted knowledge) or too late (deep error accumulation); (2) Full resets catastrophically discard all knowledge accumulated over time; (3) There is a significant performance drop and recovery delay after each reset.
 
-**Key Challenge**: Resetting too frequently leads to insufficient adaptation; resetting too infrequently allows irreversible collapse. Full resets cause knowledge loss; no resets allow error accumulation.
+**Key Challenge**: Resetting too frequently $\rightarrow$ insufficient adaptation; resetting too rarely $\rightarrow$ irreversible collapse. Full reset $\rightarrow$ knowledge loss; no reset $\rightarrow$ error accumulation.
 
-**Goal**: (1) *When*: how to dynamically detect when collapse risk is high? (2) *Where*: how to select which layers to reset in order to minimize knowledge loss? (3) How to recover critical knowledge from reset layers?
+**Goal**: (1) When: How to dynamically determine collapse risk? (2) Where: How to select layers to reset to minimize knowledge loss? (3) How to recover key reset knowledge?
 
-**Key Insight**: Prediction concentration is used as a proxy for collapse risk, and the hierarchical structure of deep networks — where label noise corruption begins near the output layers — informs the reset scope.
+**Key Insight**: Using prediction concentration as a proxy for collapse risk, and leveraging the hierarchical structure of deep networks (layers near the output are first corrupted by label noise) to determine the reset range.
 
-**Core Idea**: Deviation of prediction concentration from a long-term baseline triggers resets; layers are progressively reset from the output end according to collapse severity; Fisher information-weighted regularization recovers critical knowledge from reset layers.
+**Core Idea**: Use deviation in prediction concentration from a long-term baseline to trigger resets, reset progressively from output to input layers based on collapse severity, and apply Fisher-weighted regularization to recover key reset knowledge.
 
 ## Method
 
 ### Overall Architecture
-ASR consists of three components: (1) adaptive selective reset (based on $\mathcal{C}_t$ vs. $\bar{\mathcal{C}}_{t-1}$); (2) importance-aware knowledge recovery (Fisher information regularization); (3) on-the-fly adaptation adjustment (based on prediction inconsistency $\phi_t$).
+ASR is a plug-and-play module for existing continual TTA methods (ETA, EATA, ROID, etc.). It repeats a standard process for each test batch in a long-term non-stationary stream: performing forward inference to obtain batch prediction averages, using a collapse risk signal (prediction concentration) to determine **when** to reset and thus deciding **how deep** to reset (proceeding from output-heavy layers toward the input), followed by Fisher-weighted regularization to "pull back" valuable knowledge from reset layers. Finally, it adjusts regularization strength and baseline update rates on-the-fly based on domain discrepancy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Test Batch B_t<br/>(Long-term Non-stationary Stream)"] --> FW["Forward Inference<br/>Calculate Mean Batch Logit"]
+    FW --> C1["Adaptive Reset<br/>Concentration C_t<br/>vs. Long-term Baseline C̄"]
+    C1 -->|"C_t ≤ Baseline: Low Risk"| KEEP["No Reset<br/>Continue Adaptation"]
+    C1 -->|"C_t > Baseline: Trigger Reset"| C2["Selective Reset<br/>Ratio r_t from Output<br/>to Input Layers"]
+    C2 --> C3["Knowledge Recovery<br/>Fisher Reg. Pulls Parameters<br/>to CMA+EMA States"]
+    C3 --> C4["On-the-fly Adjustment<br/>Scale via Discrepancy φ_t<br/>Reg. Strength & Baseline Rate"]
+    KEEP --> C4
+    C4 --> OUT["Updated Model<br/>Process Next Batch"]
+    OUT -.->|Next Timestep| IN
+```
 
 ### Key Designs
 
-1. **Adaptive Reset — When**:
+**1. Adaptive Reset — Determining when to reset: Replacing fixed cycles with prediction concentration**
 
-    - Prediction concentration: $\mathcal{C}_t = \sum_{c=1}^C \hat{p}_{t_c} \log(\hat{p}_{t_c})$, where $\hat{p}_t = \sigma(\frac{1}{|\mathcal{B}_t|}\sum_i f_{\theta_{t-1}}(x_t^i))$
-    - Large $\mathcal{C}_t$ → low prediction diversity → high collapse risk
-    - Cumulative concentration (EMA): $\bar{\mathcal{C}}_t = \mu_\mathcal{C} \cdot \bar{\mathcal{C}}_{t-1} + (1-\mu_\mathcal{C}) \cdot \mathcal{C}_t$
-    - Trigger condition: reset is performed immediately when $\mathcal{C}_t > \bar{\mathcal{C}}_{t-1}$
-    - $\bar{\mathcal{C}}_0$ is initialized as $-\log(\alpha_0 \cdot C)$, with $\alpha_0$ chosen to ensure the initial value is large enough to prevent premature resets
-    - Empirical validation: Pearson correlation between $\mathcal{C}_t$ and accuracy reaches **0.88**
+Methods like RDumb reset everything at fixed intervals, which is unrelated to when the model actually nears collapse. ASR uses a signal directly reflecting collapse risk—prediction concentration $\mathcal{C}_t = \sum_{c=1}^C \hat{p}_{t_c} \log(\hat{p}_{t_c})$, where $\hat{p}_t = \sigma(\frac{1}{|\mathcal{B}_t|}\sum_i f_{\theta_{t-1}}(x_t^i))$ is the softmax distribution of mean batch logits. As the model collapses to few classes, the distribution sharpens, $\mathcal{C}_t$ increases, signaling collapse risk. The method maintains an EMA long-term baseline $\bar{\mathcal{C}}_t = \mu_\mathcal{C} \cdot \bar{\mathcal{C}}_{t-1} + (1-\mu_\mathcal{C}) \cdot \mathcal{C}_t$ and triggers a reset when $\mathcal{C}_t > \bar{\mathcal{C}}_{t-1}$. The signal is reliable due to its 0.88 Pearson correlation with actual accuracy.
 
-2. **Selective Reset — Where**:
+**2. Selective Reset — Determining where to reset: Progressive depth from output to input**
 
-    - Motivation: label noise corruption begins at the output end of the network (Bai et al., 2021; Yang et al., 2024), while layers near the input are more robust
-    - Reset ratio: $r_t = r_0 + \lambda_r \cdot (\mathcal{C}_t - \bar{\mathcal{C}}_{t-1})$
-    - The top $r_t$ fraction of layers (starting from the output end) are reset; the remaining layers are preserved
-    - $r_t$ is capped at 1.0; $r_0$ denotes the minimum reset ratio
-    - Design Motivation: more severe collapse → deeper corruption propagation → more layers need to be reset
+Full resets discard all accumulated knowledge. ASR leverages observations that corruption from label noise first erodes the end of the network (near output). Thus, only a ratio $r_t$ of layers starting from the output end is reset. The reset depth is determined by the collapse severity: $r_t = r_0 + \lambda_r \cdot (\mathcal{C}_t - \bar{\mathcal{C}}_{t-1})$, with a maximum of 1.0. This cuts off contaminated sections while retaining clean, shallow-layer adaptation knowledge.
 
-3. **Importance-Aware Knowledge Recovery**:
+**3. Importance-weighted Knowledge Recovery — Preventing reset from erasing critical parameters**
 
-    - Loss: $\mathcal{L} = \mathcal{L}_u + \lambda_\mathcal{F}\sum_i \bar{\mathcal{F}}^i(\theta_{t-1}^i - \bar{\theta}^i)^2$
-    - $\bar{\mathcal{F}}^i$: accumulated Fisher information matrix; $\bar{\theta}^i$: accumulated parameters
-    - Parameters important to prior tasks (high Fisher values) are guided to align with their accumulated states
-    - **Hybrid accumulation scheme**: CMA equally weights parameter and Fisher matrix accumulation between resets; EMA aggregates CMA values at reset trigger points
-    - Addressed dilemma: parameters near a reset point are more adapted to the current domain but are also more susceptible to corruption; the recency bias of EMA is therefore unsuitable for direct application
+Parameters critical to previous tasks should not be cleared. ASR uses a Fisher-weighted regularization term: $\mathcal{L} = \mathcal{L}_u + \lambda_\mathcal{F}\sum_i \bar{\mathcal{F}}^i(\theta_{t-1}^i - \bar{\theta}^i)^2$, where $\bar{\mathcal{F}}^i$ is the accumulated Fisher information matrix and $\bar{\theta}^i$ is the accumulated parameter state. To avoid dominance by "dirty" parameters just before collapse, the method uses a CMA+EMA hybrid: it accumulates via CMA (equal weight) between resets and aggregates through EMA at the reset trigger points.
 
-4. **On-the-Fly Adaptation Adjustment**:
+**4. On-the-fly Adjustment — Automatically scaling mechanisms by domain shift**
 
-    - Prediction inconsistency: $\phi_t = \frac{1}{|\mathcal{B}_t|}\sum_i \mathbb{I}(\arg\max(\breve{y}_t^i) \neq \arg\max(\hat{y}_t^i))$
-    - Large $\phi_t$ (high disagreement between source model and current model) → large domain gap
-    - Adaptive hyperparameter scheduling: $\lambda_\mathcal{F} = \lambda_0 \cdot \phi_t^2$ (larger domain gap → stronger regularization); $\mu_\mathcal{C} = \mu_0 \cdot \phi_t + 1 - \mu_0$ (larger domain gap → slower concentration update)
+Fixed regularization and baseline rates cannot handle varying domain shifts. ASR measures domain discrepancy via prediction inconsistency between source and current models: $\phi_t = \frac{1}{|\mathcal{B}_t|}\sum_i \mathbb{I}(\arg\max(\breve{y}_t^i) \neq \arg\max(\hat{y}_t^i))$. This discrepancy is used to adjust the regularization coefficient $\lambda_\mathcal{F} = \lambda_0 \cdot \phi_t^2$ and the baseline update rate $\mu_\mathcal{C} = \mu_0 \cdot \phi_t + 1 - \mu_0$.
 
 ## Key Experimental Results
 
-### CCC Benchmark (Main Results, ResNet-50)
+### Main Results (ResNet-50 on CCC Benchmark)
 
-| Method (ETA-based) | Easy | Medium | Hard | Mean |
-|-------------------|------|--------|------|------|
+| Method (Base: ETA) | Easy | Medium | Hard | Mean |
+|----------------|------|--------|------|------|
 | ETA | 43.24 | 19.03 | 0.32 | 20.86 |
 | + RDumb | 49.47 | 39.42 | 9.77 | 32.89 |
-| + COME | - | - | - | - |
-| + ReservoirTTA | - | - | - | - |
-| **+ ASR (Ours)** | **Highest** | **Highest** | **Highest** | **Highest** |
+| **+ ASR (Ours)** | **Best** | **Best** | **Best** | **Best** |
 
-ASR achieves a **44.12%** improvement over the prior SOTA on CCC-Hard.
-
-### Other Benchmarks
-- Concatenated ImageNet-C (CIN-C): best performance among all methods
-- ImageNet-C (20 rounds): stable adaptation without collapse
-- ImageNet-D109 (20 rounds): similarly achieves the best results
+Ours improves over SOTA by **44.12%** on CCC-Hard.
 
 ### Key Findings
-- ASR functions as a plug-in add-on compatible with multiple baselines including ETA, EATA, and ROID
-- Gains are especially pronounced in challenging settings (CCC-Hard) — precisely the scenarios where existing methods collapse most severely
-- $\mathcal{C}_t$ is more stable and reliable than alternative collapse detection signals (e.g., high-confidence prediction ratio, distribution shift detection)
-- Selective reset vs. full reset: substantially reduces post-reset performance drops and recovery delays
+- ASR acts as a universal add-on for ETA, EATA, and ROID.
+- Gains are most significant in challenging settings (CCC-Hard) where existing methods collapse most severely.
+- $\mathcal{C}_t$ is more stable and reliable than other collapse detection metrics (e.g., high confidence or distribution shift detection).
+- Selective reset significantly reduces performance drops and recovery lag compared to full resets.
 
 ### Ablation Study
-- Removing adaptive reset (replaced with fixed-period reset) → performance degradation
-- Removing selective reset (replaced with full reset) → increased performance drops and recovery delays
-- Removing Fisher regularization → failure to recover critical knowledge from reset layers
-- Removing on-the-fly adjustment → insufficient adaptability under challenging domain shifts
+- Removing Adaptive Reset (fixed cycle) $\rightarrow$ Performance decline.
+- Removing Selective Reset (full reset) $\rightarrow$ Increased performance drops and recovery delay.
+- Removing Fisher Reg $\rightarrow$ Failure to recover critical reset knowledge.
+- Removing On-the-fly Adjustment $\rightarrow$ Reduced adaptability under challenging domain shifts.
 
 ## Highlights & Insights
-- **Elegance of signal design**: $\mathcal{C}_t$ is derived from the entropy of the softmax of batch-level averaged logits — simple yet effective (correlation of 0.88), requiring no additional models or computation overhead
-- **Theoretical grounding for layer-wise reset**: the method leverages the known phenomenon that corruption begins at the output end of the network, translating a general observation into a practical strategy
-- **CMA+EMA hybrid accumulation**: elegantly addresses the bootstrapping dilemma that "parameters near a reset are better adapted to the current domain but more likely to be corrupted"
-- **Plug-and-play design**: ASR can be added on top of any existing TTA method without modifying the base adaptation algorithm
+- **Elegant Signal Design**: $\mathcal{C}_t$ is simple yet effective (0.88 correlation) at depicting collapse without requiring extra models.
+- **Theoretical Basis for Hierarchical Reset**: Translates the observation of backward-spreading corruption into a practical strategy.
+- **CMA+EMA Hybrid Accumulation**: Solves the bootstrapping dilemma where parameters near reset are better adapted to the current domain but more likely corrupted.
+- **Plug-and-play**: Integrated easily into any existing TTA method without altering base adaptation algorithms.
 
 ## Limitations & Future Work
-- Hyperparameters ($r_0, \lambda_r, \alpha_0, \lambda_0, \mu_0$) require calibration on holdout data, though only a small amount is used (5% of a single split)
-- The current formulation assumes that samples within a batch originate from the same domain; mixed-domain batch scenarios remain unexplored
-- The accuracy of Fisher information estimation may degrade over time in continual online learning
-- Validation on ViT-B-16 is relatively preliminary; evaluation on additional architectures and scales is warranted
-- Integration with prompt-based TTA methods is worth exploring
+- Hyperparameters ($r_0, \lambda_r, \alpha_0, \lambda_0, \mu_0$) require determined holdout data (though only 5% of one split).
+- Current assumption of intra-batch domain homogeneity; mixed-domain batches require further study.
+- Fisher estimation accuracy may degrade over time in continuous online learning.
+- Integration with prompt-based TTA methods remains to be explored.
 
 ## Related Work & Insights
-- **vs. RDumb**: fixed-period full reset is a naive yet effective baseline; ASR extends it with adaptivity and selectivity
-- **vs. CoTTA**: CoTTA uses augmentation-averaged pseudo-labels and stochastic parameter restoration; ASR adopts a more principled Fisher-based approach
-- **vs. ROID/CMF**: weight interpolation methods; ASR's reset-and-recovery paradigm is complementary
-- **vs. PeTTA**: regularization based on parameter divergence; ASR's prediction concentration is a more direct indicator of collapse
+- **vs. RDumb**: ASR introduces adaptivity and selectivity over the naive fixed-cycle full reset baseline.
+- **vs. CoTTA**: While CoTTA uses augmentation-averaged pseudo-labels, ASR uses a more principled Fisher-based recovery.
+- **vs. ROID/CMF**: Weight ensemble methods are complementary to the reset-and-recovery paradigm of ASR.
+- **vs. PeTTA**: Prediction concentration $\mathcal{C}_t$ is a more direct collapse metric than parameter divergence.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The combination of adaptive and selective reset, together with the CMA+EMA hybrid accumulation, represents a meaningful contribution
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 4 benchmarks, multiple baseline combinations, detailed ablations, multi-architecture validation
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear motivation (Fig. 1 is highly intuitive), well-illustrated methodology (Fig. 2), rigorous statistical reporting
-- Value: ⭐⭐⭐⭐⭐ — A 44.12% improvement on CCC-Hard is a substantial breakthrough; the plug-and-play design ensures broad applicability
+- Novelty: ⭐⭐⭐⭐ The combination of adaptive + selective reset and CMA+EMA accumulation is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 benchmarks, multiple baseline combinations, detailed ablation, and multi-architecture validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation (very intuitive Fig.1), clear methodology (Fig.2), and rigorous statistics.
+- Value: ⭐⭐⭐⭐⭐ The 44.12% improvement on CCC-Hard is a substantial breakthrough; the plug-and-play design is highly applicable.
+
+<div class="related-papers" markdown="1">
+
+<!-- RELATED:END -->
+
+## Related Papers
+
+- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](../../NeurIPS2025/audio_speech/e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
+- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](../../CVPR2026/audio_speech/infinityhuman_towards_long-term_audio-driven_human_animation.md)
+- [\[ICLR 2026\] AVEX: What Matters for Animal Vocalization Encoding](avex_what_matters_for_animal_vocalization_encoding.md)
+- [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](../../NeurIPS2025/audio_speech/textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
+- [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -141,11 +141,11 @@ ASR achieves a **44.12%** improvement over the prior SOTA on CCC-Hard.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](../../NeurIPS2025/audio_speech/e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
-- [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](../../NeurIPS2025/audio_speech/textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
-- [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation](knowing_when_to_quit_probabilistic_early_exits_for_speech_separation.md)
+- [\[ICLR 2026\] AVEX: What Matters for Animal Vocalization Encoding](avex_what_matters_for_animal_vocalization_encoding.md)
+- [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
 - [\[ICLR 2026\] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment](when_style_breaks_safety_defending_llms_against_superficial_style_alignment.md)
-- [\[NeurIPS 2025\] Instance-Specific Test-Time Training for Speech Editing in the Wild](../../NeurIPS2025/audio_speech/instance-specific_test-time_training_for_speech_editing_in_the_wild.md)
+- [\[ICLR 2026\] TVTSyn: Content-Synchronized Time-Varying Timbre for Streaming Voice Conversion and Anonymization](tvtsyn_content-synchronous_time-varying_timbre_for_streaming_voice_conversion_an.md)
+- [\[ICLR 2026\] Efficient Audio-Visual Speech Separation with Discrete Lip Semantics and Multi-Scale Global-Local Attention](efficient_audio-visual_speech_separation_with_discrete_lip_semantics_and_multi-s.md)
 
 </div>
 

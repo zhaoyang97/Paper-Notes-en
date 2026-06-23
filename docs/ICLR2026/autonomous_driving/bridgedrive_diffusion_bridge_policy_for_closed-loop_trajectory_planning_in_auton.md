@@ -2,74 +2,76 @@
 title: >-
   [Paper Note] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Diffusion bridge model] BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning for autonomous driving…
+  [ICLR 2026][Autonomous Driving][Bench2Drive] BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning in autonomous driving. This ensures theoretical symmetry between forward and backward processes, achieving success rates of 74.99% (PDM-Lite) and 89.25% (LEAD) in Bench2Drive closed-loop evaluations,
 tags:
-  - "ICLR 2026"
-  - "Autonomous Driving"
-  - "Diffusion bridge model"
-  - "anchor trajectory guidance"
-  - "closed-loop planning"
-  - "geometric path waypoints"
-  - "Bench2Drive"
+  - ICLR 2026
+  - Autonomous Driving
+  - Bench2Drive
 date: 2026-05-08
-content_hash: 85334c1f5c457750
+content_hash: 27066441e612b9aa
 ---
-
 # BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving
 
 **Conference**: ICLR 2026  
 **arXiv**: [2509.23589](https://arxiv.org/abs/2509.23589)  
 **Code**: [https://github.com/shuliu-ethz/BridgeDrive](https://github.com/shuliu-ethz/BridgeDrive)  
 **Area**: Autonomous Driving  
-**Keywords**: Diffusion bridge model, anchor trajectory guidance, closed-loop planning, geometric path waypoints, Bench2Drive  
+**Keywords**: Diffusion Bridge Model, Anchor Trajectory Guidance, Closed-Loop Planning, Geometric Waypoints, Bench2Drive  
 
 ## TL;DR
-BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning for autonomous driving, ensuring theoretical symmetry between the forward and reverse processes. On the Bench2Drive closed-loop benchmark, it achieves success rates of 74.99% (PDM-Lite) and 89.25% (LEAD), surpassing the previous SOTA by 7.72% and 2.45%, respectively.
+BridgeDrive proposes replacing truncated diffusion with a diffusion bridge to achieve anchor-guided trajectory planning in autonomous driving. This ensures theoretical symmetry between forward and backward processes, achieving success rates of 74.99% (PDM-Lite) and 89.25% (LEAD) in Bench2Drive closed-loop evaluations, surpassing previous SOTA by 7.72% and 2.45%, respectively.
 
 ## Background & Motivation
 
-**Background**: Diffusion models have emerged as a powerful paradigm for autonomous driving planning due to their ability to model multimodal behavior distributions. DiffusionDrive introduced anchor trajectories (K-means cluster centers representing typical human driving behaviors) to guide the diffusion process, achieving state-of-the-art performance.
+**Background**: Diffusion models have become a powerful paradigm for autonomous driving planning due to their ability to model multi-modal behavior distributions. DiffusionDrive introduced anchor trajectories (K-means clustering centers representing typical human driving behavior) to guide the diffusion process, achieving SOTA performance.
 
-**Limitations of Prior Work**: DiffusionDrive employs a truncated diffusion schedule, initiating denoising from a noisy version of the anchor rather than from pure Gaussian noise. This introduces a theoretical asymmetry between the forward process (adding noise to anchors) and the denoising process (recovering the true trajectory)—the denoiser is trained to regress from noisy anchors to true trajectories rather than to invert the forward diffusion process.
+**Limitations of Prior Work**: DiffusionDrive utilizes a truncated diffusion schedule, starting denoising from a noisy version of an anchor rather than pure Gaussian noise. This leads to a theoretical asymmetry between the forward process (adding noise to anchors) and the denoising process (recovering ground-truth trajectories)—the denoiser is trained to regress from a noisy anchor to a real trajectory rather than reversing a forward diffusion process.
 
-**Key Challenge**: This asymmetry deviates from the core principles of diffusion models, potentially leading to unpredictable behavior and degraded performance. The central question is how to preserve the benefits of anchor guidance while maintaining theoretical consistency with the diffusion framework.
+**Key Challenge**: This asymmetry deviates from the core principles of diffusion models, potentially leading to unpredictable behavior and performance degradation. How can the advantages of anchor guidance be maintained while ensuring the theoretical consistency of the diffusion model?
 
-**Goal**: (a) Design a theoretically consistent anchor-guided diffusion framework; (b) adopt a trajectory representation better suited to diffusion models; (c) achieve real-time closed-loop deployment.
+**Goal**: (a) Design a theoretically consistent anchor-guided diffusion framework; (b) select a trajectory representation better suited for diffusion models; (c) achieve real-time closed-loop deployment.
 
-**Key Insight**: The planning task is formulated as a diffusion bridge—learning a diffusion process that explicitly connects anchor trajectories to refined planning trajectories, guaranteeing perfect symmetry between the forward and reverse processes.
+**Key Insight**: Define the planning task as a diffusion bridge—learning a diffusion process that explicitly connects an anchor trajectory to a refined planned trajectory, ensuring perfect symmetry between forward and backward processes.
 
-**Core Idea**: Replace truncated diffusion with a diffusion bridge, making anchor guidance an intrinsic component of the diffusion model rather than an external workaround.
+**Core Idea**: Replace truncated diffusion with a diffusion bridge, making anchor guidance an intrinsic part of the diffusion model rather than an external hack.
 
 ## Method
 
 ### Overall Architecture
-The input consists of sensor data (LiDAR + front-facing camera + target point), from which a perception module extracts BEV features and conditioning information $z$. Planning proceeds in two steps: (1) a classifier $h_\phi$ selects the best anchor $y$ from a predefined anchor set $\mathcal{Y}$; (2) a denoiser $x_\theta$ progressively transforms the anchor $x_T = y$ into a refined planning trajectory $x_0$ via the diffusion bridge PF-ODE.
+The input consists of sensor data (LiDAR + front camera + target points), which passes through a perception module to extract BEV features and conditional information $z$. Planning is performed in two steps: (1) An anchor classifier $h_\phi$ selects the best anchor from a predefined set $\mathcal{Y}$ as the starting point $x_T = y$; (2) A diffusion bridge denoiser $x_\theta$ iteratively transforms the anchor $x_T = y$ into a refined trajectory $x_0$ via a DDIM first-order ODE. The trajectory itself is represented by "geometric waypoints + velocity scalars." Three key designs are integrated throughout this pipeline: the denoising process is reformulated as a theoretically symmetric **diffusion bridge**, the output trajectory is replaced with a decoupled **geometric waypoint representation**, and the starting point is provided by a learned **anchor classifier**.
+
+```mermaid
+graph TD
+    A["Sensor Input<br/>LiDAR + Front Camera + Target Point"] --> B["Perception Module<br/>BEV Features + Conditional Context z"]
+    Y["Predefined Anchor Set<br/>K-means Behavior Clusters"] --> C["Anchor Classifier<br/>Cross-attention selects x_T=y"]
+    B --> C
+    B --> D["Diffusion Bridge Denoiser<br/>Iterating from x_T=y via DDIM ODE"]
+    C --> D
+    D --> E["Refined Trajectory x_0<br/>Geometric Waypoints + Velocity Scalar"]
+```
 
 ### Key Designs
 
-1. **Diffusion Bridge Formulation**:
+**1. Diffusion Bridge Formulation: Making anchor guidance an intrinsic endpoint of the process**
 
-    - **Function**: The planning task is formulated as a diffusion bridge from anchor $x_T = y$ to ground-truth trajectory $x_0 = x$, guaranteeing symmetry between the forward and reverse processes.
-    - **Mechanism**: A Doob h-transform is employed to construct a conditional diffusion process, defining a Gaussian transition kernel $q(x_t|x_0, x_T) = \mathcal{N}(x_t | a_t x_T + b_t x_0, c_t^2 I)$, where $a_t, b_t, c_t$ are determined by the noise schedule. Key properties: at $t=0$, $a_0=c_0=0, b_0=1$ ensures recovery of the true trajectory; at $t=T$, the process terminates exactly at the anchor. The denoiser is trained with a standard mean squared error objective: $\min_\theta \mathbb{E}[w(t)\|x_\theta(x_t, t, x_T, z) - x_0\|^2]$, and training is simulation-free.
-    - **Design Motivation**: In DiffusionDrive's truncated diffusion, the noisy anchor $y_t = \alpha_t y + \sigma_t \epsilon$ deviates from the true trajectory $x$ for all $t$, making it impossible to recover $x$ through denoising—a violation of the invertibility principle of diffusion models. The diffusion bridge resolves this by establishing an exact probabilistic path between the two endpoints.
-    - **Difference from DiffusionDrive**: During training, BridgeDrive's noise sample $x_t = a_t y + b_t x + c_t \epsilon$ depends jointly on the true trajectory and the anchor (Line 7, Algorithm 1), whereas DiffusionDrive's $y_t = \alpha_t y + \sigma_t \epsilon$ depends only on the anchor (Line 7, Algorithm 2).
+The issue with DiffusionDrive's truncated diffusion is that its noisy anchor $y_t = \alpha_t y + \sigma_t \epsilon$ only adds noise around the anchor $y$ for all $t$, without ever truly passing through the ground-truth trajectory $x$. Thus, the denoiser learns to "regress from a noisy anchor to ground truth" rather than "reversing a noise-adding process," violating the foundation of diffusion reversibility. BridgeDrive instead uses the Doob h-transform to construct a conditional diffusion process explicitly connecting two endpoints: planning is defined as a diffusion bridge from anchor $x_T = y$ to ground-truth $x_0 = x$. The transition kernel follows a Gaussian form $q(x_t|x_0, x_T) = \mathcal{N}(x_t \mid a_t x_T + b_t x_0,\, c_t^2 I)$, where coefficients $a_t, b_t, c_t$ are given by the noise schedule.
 
-2. **Geometric Path Waypoints**:
+$$x_t = a_t\, y + b_t\, x + c_t\, \epsilon$$
 
-    - **Function**: Equally spaced geometric path coordinates combined with a scalar speed $(x^{\text{geo}}, v) \in \mathbb{R}^{N \times 2} \times \mathbb{R}$ replace equally spaced temporal waypoints $x^{\text{temp}} \in \mathbb{R}^{N \times 2}$.
-    - **Mechanism**: Geometric path waypoints decouple path shape from speed—overtaking maneuvers at different speeds need only learn similar geometric patterns with different speed scalars, whereas temporal waypoints must stretch inter-point spacing to accommodate varying speeds, making generalization more difficult.
-    - **Design Motivation**: Temporal waypoints introduce ambiguity in speed encoding and are more prone to violating route topology constraints. Ablation studies show that geometric path waypoints yield substantial gains across all diffusion methods (BridgeDrive: +15.09% SR).
+Both ends of this path are precisely fixed: at $t=0$, $a_0 = c_0 = 0, b_0 = 1$, returning to the ground-truth trajectory; at $t=T$, it falls exactly on the anchor. The training objective remains a standard weighted MSE $\min_\theta \mathbb{E}[w(t)\|x_\theta(x_t, t, x_T, z) - x_0\|^2]$, which is simulation-free. The fundamental difference from DiffusionDrive lies in the training samples: BridgeDrive's $x_t$ depends on both the ground truth and the anchor, whereas DiffusionDrive's $y_t$ depends only on the anchor. This inclusion of $x$ determines whether the backward process is truly reversible or merely a regression.
 
-3. **Anchor Classifier**:
+**2. Geometric Waypoint Representation: Decoupling path shape from velocity**
 
-    - **Function**: During training, the nearest-neighbor anchor is used as the ground-truth label; during inference, the classifier $h_\phi(z, \mathcal{Y})$ predicts the optimal anchor.
-    - **Mechanism**: The classifier interacts with all anchors and BEV features via cross-attention, outputting a probability for each anchor. It is executed only once before denoising iterations, introducing no additional iterative overhead.
-    - **Design Motivation**: The true trajectory is unavailable at inference time, precluding direct nearest-neighbor computation and necessitating a learned predictor. Incorrect anchor selection leads to catastrophic failures (Fig. 1, red trajectories), making classifier accuracy critical.
+The coordinates used for the diffusion model significantly impact performance. The standard approach uses temporal waypoints $x^{\text{temp}} \in \mathbb{R}^{N \times 2}$ at equal time intervals. For the same geometric path, different speeds result in different point densities, forcing the model to re-learn stretched/compressed distributions for every speed, which harms generalization and risks violating topological constraints. BridgeDrive adopts geometric waypoints with a scalar velocity $(x^{\text{geo}}, v) \in \mathbb{R}^{N \times 2} \times \mathbb{R}$. Path shape is decoupled from speed; overtaking at different speeds becomes "similar geometric patterns + different velocity scalars," allowing the geometric part to be reused. This simple substitution brought significant gains across all diffusion methods, contributing +15.09% SR to BridgeDrive.
+
+**3. Anchor Classifier: Learning a predictor to select the correct starting point**
+
+The starting point of the diffusion bridge $x_T = y$ is an anchor. During training, the anchor closest to ground truth can be used as supervision. At inference, ground truth is unavailable, so a predictor is required. BridgeDrive uses a classifier $h_\phi(z, \mathcal{Y})$ with cross-attention to allow conditional information to interact with all predefined anchors and BEV features. It outputs probabilities for each anchor and runs only once before the denoising iterations begin, adding no iterative overhead. Accuracy is critical: the diffusion bridge refines from the selected anchor; if the anchor is wrong, the denoiser may be led toward an entirely incorrect trajectory, causing catastrophic failure.
 
 ### Loss & Training
-- Denoiser loss: weighted MSE $\mathbb{E}[w(t)\|x_\theta(x_t, t, x_T, z) - x_0\|^2]$
-- Classifier loss: cross-entropy with the nearest anchor to the ground-truth trajectory as the label
-- Inference uses a DDIM first-order ODE solver, generating trajectories with a small number of function evaluations
+- Denoiser Loss: Weighted MSE $\mathbb{E}[w(t)\|x_\theta(x_t, t, x_T, z) - x_0\|^2]$
+- Classifier Loss: Cross-entropy loss, with labels being the anchor closest to the ground truth.
+- Inference: Uses a DDIM first-order ODE solver, requiring only a few function evaluations to generate trajectories.
 
 ## Key Experimental Results
 
@@ -77,7 +79,7 @@ The input consists of sensor data (LiDAR + front-facing camera + target point), 
 Bench2Drive closed-loop evaluation (CARLA Leaderboard 2.0, 220 routes):
 
 | Method | Dataset | VLA | Diffusion | DS | SR(%) |
-|--------|---------|-----|-----------|-----|-------|
+|------|--------|-----|------|-----|-------|
 | DriveTransformer | Think2Drive | ✘ | ✘ | 63.46 | 35.01 |
 | ORION | Think2Drive | ✓ | ✘ | 77.74 | 54.62 |
 | DiffusionDrive-geo | PDM-Lite | ✘ | ✓ | 80.79 | 58.18 |
@@ -88,40 +90,40 @@ Bench2Drive closed-loop evaluation (CARLA Leaderboard 2.0, 220 routes):
 
 ### Ablation Study
 
-| Configuration | DS | SR(%) | Note |
-|--------------|-----|-------|------|
-| DiffusionDrive-temp | 77.68 | 52.72 | Truncated diffusion + temporal waypoints |
-| DiffusionDrive-geo | 80.79 | 58.18 | Truncated diffusion + geometric waypoints (+5.46%) |
-| Full Diffusion-geo | 83.85 | 67.27 | Full diffusion + geometric waypoints |
-| **BridgeDrive-geo** | **87.99** | **74.99** | Diffusion bridge + geometric waypoints (+15.09% vs. temp) |
+| Configuration | DS | SR(%) | Description |
+|------|-----|-------|------|
+| DiffusionDrive-temp | 77.68 | 52.72 | Truncated Diffusion + Temporal Waypoints |
+| DiffusionDrive-geo | 80.79 | 58.18 | Truncated Diffusion + Geometric Waypoints (+5.46%) |
+| Full Diffusion-geo | 83.85 | 67.27 | Full Diffusion + Geometric Waypoints |
+| **BridgeDrive-geo** | **87.99** | **74.99** | Diffusion Bridge + Geometric Waypoints (+15.09% vs temp) |
 
 ### Key Findings
-- Geometric path waypoints outperform temporal waypoints across all diffusion methods, with the largest gain observed in BridgeDrive (+15.09% SR)
-- Full diffusion outperforms truncated diffusion (demonstrating the importance of theoretical consistency), and the diffusion bridge further outperforms full diffusion (demonstrating the value of anchor guidance)
-- BridgeDrive yields the most significant improvement in the Merging scenario (+11.17), as anchor guidance provides a strong prior in ambiguous situations
-- Inference speed satisfies real-time deployment requirements; the DDIM first-order solver is sufficient
+- Geometric waypoints outperform temporal waypoints in all diffusion methods, with the largest improvement in BridgeDrive (+15.09% SR).
+- Full diffusion outperforms truncated diffusion (proving the importance of theoretical consistency), and diffusion bridge further outperforms full diffusion (proving the value of anchor guidance).
+- BridgeDrive shows the most significant improvement in merging scenarios (+11.17) because anchor guidance provides strong priors in ambiguous situations.
+- Inference speed meets real-time deployment requirements; the DDIM first-order solver is sufficient.
 
 ## Highlights & Insights
-- **Theory-driven methodological improvement**: Rather than stacking modules, the paper identifies a theoretical flaw in DiffusionDrive from the mathematical foundations of diffusion models and provides a principled solution via the diffusion bridge formulation. This theory-to-practice reasoning strategy is noteworthy.
-- **The choice of representation for decoupling path shape and speed is critical**: A seemingly simple representational change (geometric vs. temporal waypoints) yields a 15% SR improvement, highlighting the importance of inductive bias selection in diffusion-based planning.
-- **Anchors as boundary conditions of the diffusion bridge** rather than external guidance signals represent a more elegant integration paradigm, transferable to other conditional generation tasks.
+- **Theory-driven methodological improvement**: Rather than stacking modules, the authors identified theoretical flaws in DiffusionDrive starting from the mathematical principles of diffusion models and provided a "correct" solution via diffusion bridge formulation.
+- **The choice of decoupled path and speed representation** is critical: a seemingly simple representation change (geometric vs. temporal waypoints) led to a 15% SR boost, showing that inductive bias selection is vital in diffusion planning.
+- **Anchors as boundary conditions for the diffusion bridge**, rather than external guidance signals, represent a more elegant integration that could be transferred to other conditional generation tasks.
 
 ## Limitations & Future Work
-- Performance on Comfortness and Give Way metrics is suboptimal; the model tends to brake frequently, prioritizing safety at the cost of ride comfort
-- Integration with VLAs (Vision-Language-Action models) has not been explored; the authors explicitly identify this as a future direction
-- Anchor classifier accuracy is a performance bottleneck—incorrect anchor selection leads to catastrophic failures (Fig. 1)
-- Improvements on open-loop evaluation (NAVSIM) are less pronounced than on closed-loop, suggesting the method's primary advantage lies in handling feedback loops and interaction
+- Performance on "Comfortness" and "Give Way" metrics is suboptimal; the model tends to brake frequently, prioritizing safety at the expense of comfort.
+- No integration with VLA (Vision-Language-Action), which the authors identify as a future direction.
+- Anchor classifier accuracy is a performance bottleneck—incorrect anchor selection leads to catastrophic failure.
+- Improvement on open-loop evaluation (NAVSIM) is less significant than in closed-loop, suggesting the method's primary advantage lies in handling feedback loops and interactions.
 
 ## Related Work & Insights
-- **vs. DiffusionDrive (Liao et al., 2025)**: The key distinction is theoretical consistency—DiffusionDrive's truncated diffusion introduces asymmetry between the forward and reverse processes, which BridgeDrive eliminates via the diffusion bridge, improving SR from 58.18% to 74.99%
-- **vs. SimLingo (Renz et al., 2025)**: SimLingo relies on a VLA large language model, yet BridgeDrive, as a pure diffusion approach without VLA, surpasses it, suggesting that the potential of diffusion models in planning tasks is underestimated
-- **vs. ORION (Fu et al., 2025)**: ORION is augmented with VLA and VQA; its diffusion variant (46.54% SR) performs worse, underscoring that the correct use of diffusion models is paramount
+- **vs DiffusionDrive (Liao et al., 2025)**: The core difference is theoretical consistency. DiffusionDrive's truncated diffusion introduces asymmetry, while BridgeDrive eliminates this via a diffusion bridge, increasing SR from 58.18% to 74.99%.
+- **vs SimLingo (Renz et al., 2025)**: SimLingo relies on VLA Large Language Models. BridgeDrive's pure diffusion approach surpasses it without VLA, suggesting the potential of diffusion models in planning is undervalued.
+- **vs ORION (Fu et al., 2025)**: ORION is enhanced by VLA + VQA, but its diffusion version (46.54% SR) is worse, indicating that the correct application of diffusion models is paramount.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The application of diffusion bridges to autonomous driving planning is novel, though the core technique (diffusion bridge) builds on prior work
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Closed-loop and open-loop evaluation, detailed ablations, multi-dataset validation, and three-seed repeated experiments
-- Writing Quality: ⭐⭐⭐⭐⭐ The analysis of DiffusionDrive's theoretical flaw is exceptionally clear, and the side-by-side algorithm pseudocode comparison is immediately illuminating
-- Value: ⭐⭐⭐⭐⭐ Achieves substantial gains on the most challenging closed-loop benchmark with a concise method and efficient inference
+- Novelty: ⭐⭐⭐⭐ The application of diffusion bridges in autonomous driving planning is novel, though the underlying technology (diffusion bridge) exists.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive closed-loop and open-loop evaluations, detailed ablations, and cross-dataset validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ The analysis of DiffusionDrive's flaws is very clear, and the algorithmic pseudocode comparison is intuitive.
+- Value: ⭐⭐⭐⭐⭐ Achieves significant improvements on challenging closed-loop benchmarks with a concise and efficient method.
 
 <!-- RELATED:START -->
 
@@ -130,10 +132,10 @@ Bench2Drive closed-loop evaluation (CARLA Leaderboard 2.0, 220 routes):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/model-based_policy_adaptation_for_closed-loop_end-to-end_autonomous_driving.md)
-- [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](../../AAAI2026/autonomous_driving/diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
-- [\[AAAI 2026\] ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving](../../AAAI2026/autonomous_driving/reflexdiffusion_reflection-enhanced_trajectory_planning_for_.md)
-- [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](../../CVPR2026/autonomous_driving/colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
-- [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
+- [\[ICLR 2026\] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](plan-r1_safe_and_feasible_trajectory_planning_as_language_modeling.md)
+- [\[ICLR 2026\] VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning](vadv2_end-to-end_vectorized_autonomous_driving_via_probabilistic_planning.md)
+- [\[ECCV 2024\] NeuroNCAP: Photorealistic Closed-Loop Safety Testing for Autonomous Driving](../../ECCV2024/autonomous_driving/neuroncap_photorealistic_closed-loop_safety_testing_for_autonomous_driving.md)
+- [\[ICLR 2026\] Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving](discrete_diffusion_for_reflective_vision-language-action_models_in_autonomous_dr.md)
 
 </div>
 

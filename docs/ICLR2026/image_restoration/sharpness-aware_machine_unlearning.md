@@ -2,81 +2,89 @@
 title: >-
   [Paper Note] Sharpness-Aware Machine Unlearning
 description: >-
-  [ICLR 2026][Image Restoration][machine unlearning] This paper systematically analyzes the theoretical properties of SAM in the machine unlearning setting through a signal-noise decomposition framework. It finds that SAM…
+  [ICLR 2026][Image Restoration][machine unlearning] This work systematically analyzes the theoretical properties of SAM in machine unlearning scenarios from the perspective of signal-noise decomposition. It finds that SAM "relinquishes" denoising capabilities on the forget set while maintaining advantages on the retain set. Consequently, the authors propose Sharp MinMax
 tags:
-  - "ICLR 2026"
-  - "Image Restoration"
-  - "machine unlearning"
-  - "Sharpness-Aware Minimization"
-  - "SAM"
-  - "Signal-Noise Decomposition"
-  - "Sharp MinMax"
+  - ICLR 2026
+  - Image Restoration
+  - machine unlearning
+  - Sharpness-Aware Minimization
+  - SAM
+  - Signal-Noise Decomposition
+  - Sharp MinMax
 date: 2026-05-08
-content_hash: b6eb881b71afd419
+content_hash: 0092b639f226a6a4
 ---
-
 # Sharpness-Aware Machine Unlearning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.13715](https://arxiv.org/abs/2506.13715)  
 **Code**: None  
-**Area**: Image Restoration
+**Area**: Image Restoration  
 **Keywords**: machine unlearning, Sharpness-Aware Minimization, SAM, Signal-Noise Decomposition, Sharp MinMax
 
 ## TL;DR
 
-This paper systematically analyzes the theoretical properties of SAM in the machine unlearning setting through a signal-noise decomposition framework. It finds that SAM abandons its denoising capability on the forget set while retaining it on the retain set. Motivated by this finding, the paper proposes the Sharp MinMax algorithm, which partitions the model into two components subject to sharpness minimization (retain) and sharpness maximization (forget) respectively, achieving state-of-the-art unlearning performance.
+This work systematically analyzes the theoretical properties of SAM in machine unlearning scenarios from the perspective of signal-noise decomposition. It finds that SAM "relinquishes" denoising capabilities on the forget set while maintaining advantages on the retain set. Consequently, the authors propose Sharp MinMax, which splits the model into two parts to perform sharpness minimization (for retention) and sharpness maximization (for forgetting) respectively, achieving SOTA unlearning performance.
 
 ## Background & Motivation
 
-Machine Unlearning aims to efficiently remove the influence of specific training data from a model without retraining from scratch. Existing methods such as influence-function-based updates (Influence Unlearning), sparse fine-tuning (L1-Sparse), and gradient ascent (NegGrad) have made progress, yet they lack deep theoretical understanding of the unlearning process and rely heavily on extensive hyperparameter tuning with unpredictable behavior in practice.
+Machine Unlearning aims to efficiently remove the influence of specific training data on a model without retraining from scratch. While existing methods such as influence function updates (Influence Unlearning), sparse fine-tuning (L1-Sparse), and gradient ascent (NegGrad) have made progress, they lack deep theoretical understanding of the unlearning process, often relying on extensive hyperparameter tuning and exhibiting unpredictable behavior in practice.
 
-The key challenge is that when a model simultaneously receives retain signals and forget signals, the two classes of signals interfere with and may cancel each other during training. In particular, **achieving a reliable balance between retain accuracy and completeness of forgetting** has long lacked principled theoretical guidance.
+The Key Challenge lies in the interference or cancellation between "retain signals" and "forget signals" during training. Specifically, there has been a lack of reliable theoretical guidance on **how to achieve a balance between accuracy on retained data and thoroughness of forgetting on target data**.
 
-Sharpness-Aware Minimization (SAM) has been shown to find flatter loss minima, effectively suppressing noise memorization and improving generalization. A natural hypothesis arises: does an optimizer that suppresses memorization also excel at forgetting? This paper investigates this question through rigorous theoretical and empirical analysis.
+Sharpness-Aware Minimization (SAM) has been proven to find flatter loss minima, effectively suppressing noise memorization and improving generalization. A natural hypothesis is: Does an optimizer adept at suppressing memorization also excel at "unlearning"? This paper conducts in-depth theoretical and experimental research on this question.
 
 ## Method
 
 ### Overall Architecture
 
-This paper builds on a signal-noise decomposition framework over a two-layer CNN, decomposing model weight updates into a signal learning coefficient $\kappa$ and a noise learning coefficient $\zeta$, and systematically analyzes the behavioral differences between SGD and SAM under the NegGrad unlearning scheme.
+This paper addresses whether SAM, known for suppressing noise memorization and finding flat minima, can facilitate the "unlearning" of specific data. To clarify this, the authors first establish an analytical framework and then propose a specific algorithm based on it. The analytical part utilizes a two-layer CNN to decompose each weight update into a signal learning coefficient $\kappa$ and a noise memorization coefficient $\zeta$, precisely tracking the differing trajectories of SGD and SAM during NegGrad unlearning. In this setup, each image patch carries either a class signal $y_i\varphi$ or irrelevant noise $\xi_i$. Unlearning uses a dual-objective loss $\mathcal{L}_{\text{NegGrad}}=\alpha\,\mathcal{L}(\mathcal{R})-(1-\alpha)\,\mathcal{L}(\mathcal{F})$, performing gradient descent on the retain set $\mathcal{R}$ and gradient ascent on the forget set $\mathcal{F}$. Theoretically, three conclusions are derived (selective failure of SAM's denoising capability, differentiated error bounds, and a theoretical threshold for the retain weight $\alpha$), pointing to the counter-intuitive fact: SAM is only effective on the retain set and degrades to standard SGD on the forget set. The proposed algorithm leverages this by splitting the model into a "forget model $W_F$" and a "retain model $W_R$" based on the gradient magnitude relative to the forget set. Sharpness maximization is applied to the former, while SAM sharpness minimization is applied to the latter, forming the Sharp MinMax approach. The data flow of Sharp MinMax is as follows:
 
-Specifically, each patch of an input image either contains a class signal $y_i \varphi$ or a noise vector $\xi_i$. Model weights are decomposed into signal and noise components, and the training objective is to increase $\kappa$ (signal learning) while controlling $\zeta$ (noise memorization).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    F["Forget set F"] --> G["Single forward pass;<br/>accumulate gradient per parameter for F"]
+    G --> SPLIT["Split parameters via rank-based mask<br/>by gradient magnitude"]
+    SPLIT -->|High-magnitude parameters for F| WF["Forget model W_F"]
+    SPLIT -->|Remaining parameters| WR["Retain model W_R"]
+    R["Retain set R"] --> WR
+    WF --> SMAX["Sharpness Maximization;<br/>deliberate overfitting to F"]
+    WR --> SMIN["SAM Sharpness Minimization;<br/>maintain generalization"]
+    SMAX --> OUT["Model after unlearning;<br/>Clean F removal + High R accuracy"]
+    SMIN --> OUT
+```
 
 ### Key Designs
 
-1. **SAM Denoising Failure Lemma (Lemma 3.1)**: Under the NegGrad unlearning scheme, the perturbation term $\hat{\epsilon}$ of SAM deactivates noise neurons on the retain set $\mathcal{R}$ (preserving denoising properties), while noise neurons on the forget set $\mathcal{F}$ remain active. This means SAM degenerates to SGD-like behavior on the forget set—overfitting to the forget set to a degree comparable to SGD. The root cause is that NegGrad performs gradient ascent on the forget set, reversing the effect of the SAM perturbation.
+**1. Selective Failure of SAM’s Denoising Capability: Explaining why SAM is no longer a universal remedy in unlearning**
 
-2. **Differentiated Test Error Bounds (Theorem 3.2 & 3.3)**: Under NegGrad with SGD, benign overfitting is achievable when the signal strength satisfies $\|\varphi\|_2 \geq C_1 d^{1/4} n^{-1/4} P \sigma_p$; otherwise, harmful overfitting leads to test error $\geq 0.1$. SAM's advantage is that, even under weaker signal conditions $\|\varphi\|_2 \geq \Omega(1)$, it can still guarantee low test error as long as the retain set signal is sufficient, owing to the preservation of SAM's denoising property on the retain set.
+While it is generally assumed that the flat minima found by SAM suppress noise memorization, Lemma 3.1 proves that this benefit only holds for half of the data in unlearning scenarios. The SAM perturbation term $\hat\epsilon$ adds noise in the direction of loss ascent before gradient calculation. On the retain set $\mathcal{R}$, this deactivates noise neurons and maintains denoising properties. However, NegGrad performs gradient ascent on the forget set $\mathcal{F}$, which reverses the effect of $\hat\epsilon$, keeping the noise neurons of the forget set active. Consequently, SAM degrades to standard SGD on $\mathcal{F}$, resulting in a degree of overfitting comparable to SGD—a precursor to the idea that "deliberate overfitting aids unlearning."
 
-3. **Signal Margin and $\alpha$ Threshold (Lemma 3.4)**: SAM's signal learning rate on the retain set is $\Theta(\|\varphi\|_2^2)$ times that of SGD, allowing SAM to tolerate a smaller retain weight $\alpha$ (i.e., stronger emphasis on forgetting). In the benign overfitting regime, the gap in required $\alpha$ between SGD and SAM is of order $O(\sqrt{d/n})$. This finding has practical implications: **the choice of $\alpha$ depends not only on the relative sizes of the retain and forget sets, but also on signal strength and data dimensionality**.
+**2. Differentiated Error Bounds Determined by Signal Strength: Quantifying the safety margin of SAM**
 
-4. **Sharp MinMax Algorithm**: Motivated by the theoretical insight that SAM has an advantage on the retain set but degenerates on the forget set, the authors propose partitioning the model into two components:
+Theorems 3.2 and 3.3 attribute "successful generalization after unlearning" to a signal strength threshold. Under SGD, benign overfitting only occurs when $\|\varphi\|_2\geq C_1 d^{1/4}n^{-1/4}P\sigma_p$; otherwise, harmful overfitting occurs, leading to test error $\geq 0.1$. SAM significantly relaxes this threshold: even if the signal is as weak as $\|\varphi\|_2\geq\Omega(1)$, low test error can be maintained provided the retain set has sufficient signal. This gap stems from Design 1—SAM's denoising properties on the retain set are not compromised, making it safe across a wider range of signal intensities.
 
-    - **Retain model**: trained with SAM (sharpness minimization) to leverage its denoising property for maintaining generalization.
-    - **Forget model**: trained with sharpness maximization, deliberately driving the model toward sharper loss landscapes on the forget set, thereby achieving more thorough forgetting via "memorize then forget."
+**3. Theoretical Threshold for Retain Weight $\alpha$: Turning hyperparameter tuning into a computable quantity**
 
-   Model partitioning is based on gradient magnitude ranking: parameter gradient magnitudes with respect to the forget set are computed, and parameters with high magnitudes are assigned to the forget model.
+In practice, a smaller $\alpha$ emphasizes forgetting but can degrade retain accuracy, traditionally requiring manual tuning. Lemma 3.4 provides a basis for this: the signal learning rate of SAM on the retain set is $\Theta(\|\varphi\|_2^2)$ times that of SGD, allowing it to tolerate a smaller $\alpha$. Within the benign overfitting range, the required $\alpha$ thresholds for SGD and SAM differ by an order of $O(\sqrt{d/n})$. Thus, the optimal $\alpha$ is determined not only by the ratio of retain to forget samples but also by signal strength $\|\varphi\|_2$ and data dimension $d$, providing the first estimable lower bound for $\alpha$ rather than a purely heuristic one.
 
-### Loss & Training
+**4. Sharp MinMax: Translating "SAM is only effective for the retain set" into an algorithm**
 
-- **NegGrad dual-objective loss**: $\mathcal{L}_{\text{NegGrad}} = \alpha \cdot \mathcal{L}(\mathcal{R}) - (1-\alpha) \cdot \mathcal{L}(\mathcal{F})$, combining gradient descent on the retain set with gradient ascent on the forget set.
-- **Sharp MinMax**: the retain component uses SAM's $\min_W \mathcal{L} + [\max_{\hat{\epsilon}} \mathcal{L}(W+\hat{\epsilon}) - \mathcal{L}(W)]$; the forget component uses sharpness maximization $\min_W \mathcal{L} - [\max_{\hat{\epsilon}} \mathcal{L}(W+\hat{\epsilon}) - \mathcal{L}(W)]$.
-- **Forgetting difficulty quantification**: The memorization score $\text{mem}(\mathcal{A}, \mathcal{S}, i)$ from Feldman & Zhang (2020) is used to measure per-sample forgetting difficulty; high-memorization samples are harder to unlearn.
+Since SAM provides advantages for the retain set but degrades for the forget set, the algorithm assigns different roles to model components. The authors first pass the forget set $\mathcal{F}$ through the model to accumulate gradients for each parameter and create a weight mask based on gradient magnitude ranking (Fan et al., 2023). Parameters with the most significant high magnitudes for $\mathcal{F}$ are assigned to the "forget model $W_F$," while the rest are assigned to the "retain model $W_R$." Opposing sharpness regularizations are then applied: the retain model uses SAM for sharpness minimization $\min_{W_R}\mathcal{L}+[\max_{\hat\epsilon}\mathcal{L}(W_R+\hat\epsilon)-\mathcal{L}(W_R)]$ to protect generalization via flat minima; the forget model performs sharpness maximization $\min_{W_F}\mathcal{L}-[\max_{\hat\epsilon}\mathcal{L}(W_F+\hat\epsilon)-\mathcal{L}(W_F)]$ to push the loss landscape toward sharpness. Doing so induces deep overfitting to the forget set—following the logic that "the better it is remembered, the more thoroughly it can be erased." While the objectives differ only by a sign, this directly materializes the counter-intuitive observation from Design 1 into a SOTA unlearning strategy. Notably, $W_F$ requires higher signal strength than SGD to avoid harmful overfitting. Additionally, the authors utilize the memorization score $\text{mem}(\mathcal{A},\mathcal{S},i)$ from Feldman & Zhang (2020) to quantify unlearning difficulty, categorizing the forget set into $\mathcal{F}_{\text{high}},\mathcal{F}_{\text{mid}},\mathcal{F}_{\text{low}}$ for graded evaluation.
 
 ## Key Experimental Results
 
 ### Experimental Setup
-- Datasets: CIFAR-100, ImageNet-1K (main experiments); CIFAR-10, Tiny-ImageNet (supplementary experiments)
+- Datasets: CIFAR-100, ImageNet-1K (Main), CIFAR-10, Tiny-ImageNet (Supplementary)
 - Model: ResNet-50
-- Forget set size $|\mathcal{F}| \approx 5\%|\mathcal{S}|$, partitioned by memorization score into $\mathcal{F}_{\text{high}}, \mathcal{F}_{\text{mid}}, \mathcal{F}_{\text{low}}$
-- Evaluation metric: ToW (Tug-of-War), jointly measuring retain accuracy, forget accuracy, and test accuracy
+- Forget set size: $|\mathcal{F}| \approx 5\%|\mathcal{S}|$, split by memorization score into $\mathcal{F}_{\text{high}}, \mathcal{F}_{\text{mid}}, \mathcal{F}_{\text{low}}$
+- Metric: ToW (Tug-of-War), a composite measure of retain accuracy, forget accuracy, and test accuracy
 - Baselines: NegGrad, RL, SalUn, L1-Sparse, SCRUB
 
 ### Main Results
 
-| Method | ImageNet AVG ToW | CIFAR-100 AVG ToW | Notes |
-|--------|-----------------|-------------------|-------|
+| Method | ImageNet AVG ToW | CIFAR-100 AVG ToW | Description |
+|------|-----------------|-------------------|------|
 | NegGrad+SGD | 83.83 | 81.80 | Baseline |
 | NegGrad+SAM 0.1 | 83.68 | 72.78 | SAM as $\mathcal{U}$ |
 | NegGrad+ASAM 1.0 | 84.84 | 83.11 | Best NegGrad variant |
@@ -84,40 +92,40 @@ Specifically, each patch of an input image either contains a class signal $y_i \
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|--------------|------------|-------|
-| Decreasing $\alpha$ | SAM shows stronger robustness to degradation | SGD collapses first; ASAM 1.0 is most robust |
-| MIA accuracy | SAM consistently reduces MIA accuracy | Forget set samples are harder to identify via membership inference |
-| Feature entanglement $E_{Wp}$ | SAM < SGD | Better separation of retain/forget features after unlearning with SAM |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Reducing $\alpha$ | SAM shows stronger decay resistance | SGD collapses first; ASAM 1.0 is most robust |
+| MIA Accuracy | Consistently lowered by SAM | Forget set is harder to identify by Membership Inference Attacks |
+| Feature Entanglement $E_{Wp}$ | SAM < SGD | SAM achieves better separation of retain/forget features after unlearning |
 
 ### Key Findings
 
-1. **SAM consistently improves all unlearning methods**: Whether used as a pretraining or unlearning optimizer, SAM improves the ToW metric across the board.
-2. **Overfitting can be beneficial for unlearning**: In strict sample-level unlearning scenarios such as privacy and copyright protection, deliberately overfitting the model to the forget set is actually more effective—challenging the conventional wisdom that overfitting is always harmful.
-3. **SGD sometimes achieves lower forget accuracy**: Although SAM achieves higher ToW, SGD can sometimes reach lower forget-set accuracy, corroborating the theoretical prediction that SGD overfits more deeply to the forget set.
-4. **Loss landscape visualization**: SAM-pretrained models exhibit flatter landscapes, yet interestingly, SGD models become flatter after unlearning, suggesting a potential implicit regularization effect.
+1. **SAM consistently improves all unlearning methods**: Whether used as a pre-training algorithm or an unlearning algorithm, SAM enhances the ToW metric.
+2. **Overfitting can benefit unlearning**: In strict sample-level unlearning scenarios (e.g., privacy/copyright), deliberately making the model overfit to the forget set is actually more effective—challenging the conventional wisdom that "overfitting is always harmful."
+3. **SGD sometimes achieves lower forget accuracy**: Although SAM has a higher ToW, SGD occasionally reaches lower accuracy on the forget set, confirming theoretical predictions that SGD overfits more deeply to the forget set.
+4. **Loss landscape visualization**: Models pre-trained with SAM are flatter. Interestingly, SGD becomes flatter after unlearning, suggesting a potential implicit regularization effect.
 
 ## Highlights & Insights
 
-- **Strong theoretical contribution**: This is the first work to rigorously analyze SAM's behavior in machine unlearning under a signal-noise decomposition framework, proving the "selective failure" of SAM's denoising property—a counterintuitive yet important finding.
-- **Connecting optimization and unlearning**: The work deeply integrates sharpness-aware optimization with machine unlearning and provides theoretical guidance for choosing $\alpha$, eliminating reliance on purely heuristic tuning.
-- **Elegant Sharp MinMax design**: Leveraging the insight that "overfitting = better forgetting," the model is partitioned into two complementary components that simultaneously maintain generalization and enhance forgetting.
-- **Wasserstein entanglement metric**: An optimal-transport-based feature entanglement measure $E_{Wp}$ is proposed, which better discriminates irregularly shaped feature distributions compared to the variance-based entanglement $E_{\text{Var}}$.
+- **Significant Theoretical Contribution**: This work is the first to analyze SAM's behavior in machine unlearning under a rigorous signal-noise framework, proving the "selective failure" of SAM’s denoising properties—a counter-intuitive yet vital discovery.
+- **Connecting Optimization and Unlearning**: By deeply integrating sharpness-aware optimization with machine unlearning, it provides theoretical guidance for $\alpha$ selection, moving away from purely heuristic tuning.
+- **Elegant Sharp MinMax Design**: Leveraging the insight that "overfitting = good unlearning," the model is split into complementary parts to maintain generalization while enhancing unlearning.
+- **Wasserstein Entanglement Metric**: The proposed feature entanglement measure $E_{Wp}$ based on optimal transport is more capable of distinguishing irregularly shaped feature distributions than variance-based entanglement $E_{\text{Var}}$.
 
 ## Limitations & Future Work
 
-1. **Incomplete theory for weak signal regimes**: SAM's behavior when the retain signal strength is $O(1)$ is not fully characterized, and harmful overfitting may occur in this regime.
-2. **Interaction between $\alpha$ and model partition ratio**: The interaction between the two hyperparameters—retain weight $\alpha$ and the proportion of the forget model—is not theoretically analyzed.
-3. **Two-layer CNN assumption**: The theoretical analysis is based on a two-layer CNN; extension to deeper networks requires additional work.
-4. **"Regularization" effect of SGD after unlearning**: The paper observes that the loss landscape of SGD flattens after unlearning but provides no explanation for this phenomenon.
-5. **Computational overhead**: SAM itself requires two forward/backward passes, and Sharp MinMax incurs additional cost from model partitioning.
+1. **Missing Theory for Weak Signal Regime**: When the retain signal strength is $O(1)$, SAM's behavior is not fully characterized, and harmful overfitting might occur.
+2. **Interaction between $\alpha$ and Model Split Ratio**: The theoretical interaction between the retain weight $\alpha$ and the proportion of the forget model has not been analyzed.
+3. **Two-layer CNN Assumption**: The theoretical analysis is based on a two-layer CNN; extending this to deep networks requires additional work.
+4. **"Regularization" Effect of SGD after Unlearning**: The observation that the loss landscape becomes flatter after SGD unlearning remains unexplained.
+5. **Computational Overhead**: SAM itself requires two forward/backward passes, and Sharp MinMax adds the cost of model splitting.
 
 ## Related Work & Insights
 
-- **Relation to SalUn**: SalUn also performs parameter-selective unlearning but uses random label flipping; Sharp MinMax replaces this with sharpness maximization, which is better theoretically grounded.
-- **Relation to SCRUB**: SCRUB combines knowledge distillation with NegGrad; SAM can serve as a direct plug-in to improve its performance.
-- **Implications for privacy unlearning**: The finding that "overfitting benefits forgetting" has important implications for designing unlearning algorithms that satisfy differential privacy constraints.
-- **Implications for LLM unlearning**: The proposed framework may extend to unlearning in large language models (e.g., knowledge editing, concept erasure), especially given the widespread adoption of SAM in LLM fine-tuning.
+- **Relationship with SalUn**: SalUn also performs selective parameter unlearning but uses random label flipping; Sharp MinMax replaces this with sharpness maximization, which is more theoretically grounded.
+- **Relationship with SCRUB**: SCRUB is based on knowledge distillation and NegGrad; SAM can be used as a plug-in to directly enhance its performance.
+- **Implications for Privacy Unlearning**: The finding that "overfitting benefits unlearning" provides important guidance for designing unlearning algorithms that satisfy differential privacy constraints.
+- **Implications for LLM Unlearning**: The framework may extend to Large Language Model unlearning (e.g., knowledge editing, concept erasure), especially given that SAM is already widely used in LLM fine-tuning.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -131,11 +139,11 @@ Specifically, each patch of an input image either contains a class signal $y_i \
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
-- [\[ICML 2026\] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration](../../ICML2026/image_restoration/degradation-aware_metric_prompting_for_hyperspectral_image_restoration.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](../../CVPR2026/image_restoration/drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[ICML 2026\] DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs](../../ICML2026/image_restoration/dapd_dependency-aware_parallel_decoding_via_attention_for_diffusion_llms.md)
-- [\[CVPR 2026\] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](../../CVPR2026/image_restoration/motionaware_animatable_gaussian_avatars_deblurring.md)
+- [\[ICLR 2026\] Text-Aware Image Restoration with Diffusion Models](text-aware_image_restoration_with_diffusion_models.md)
+- [\[CVPR 2025\] Classic Video Denoising in a Machine Learning World: Robust, Fast, and Controllable](../../CVPR2025/image_restoration/classic_video_denoising_in_a_machine_learning_world_robust_fast_and_controllable.md)
+- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
+- [\[ICLR 2026\] Trajectory-aware Shifted State Space Models for Online Video Super-Resolution](trajectory-aware_shifted_state_space_models_for_online_video_super-resolution.md)
+- [\[ICLR 2026\] Content-Aware Mamba for Learned Image Compression](content-aware_mamba_for_learned_image_compression.md)
 
 </div>
 

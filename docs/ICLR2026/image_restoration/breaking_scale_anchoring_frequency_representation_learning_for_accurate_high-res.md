@@ -2,119 +2,145 @@
 title: >-
   [Paper Note] Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training
 description: >-
-  [ICLR 2026][Image Restoration][scale anchoring] This paper defines the novel problem of "Scale Anchoring" (SA)—wherein training on low-resolution data causes inference errors to remain anchored at training-resolution lev…
+  [ICLR 2026][Image Restoration][scale anchoring] The paper defines "Scale Anchoring" (where low-resolution training anchors error during high-resolution inference) and proposes an architecture-agnostic Frequency Representation Learning (FRL). By using Nyquist-normalized frequency encoding, it ensures that errors decrease as resolution increases, which is validated ac
 tags:
-  - "ICLR 2026"
-  - "Image Restoration"
-  - "scale anchoring"
-  - "frequency representation"
-  - "zero-shot super-resolution"
-  - "spatiotemporal forecasting"
-  - "Nyquist frequency"
+  - ICLR 2026
+  - Image Restoration
+  - scale anchoring
+  - frequency representation
+  - zero-shot super-resolution
+  - spatiotemporal forecasting
+  - Nyquist frequency
 date: 2026-05-08
-content_hash: 1c246b4654d91d66
+content_hash: 51f5487c54955d2c
 ---
-
 # Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.05132](https://arxiv.org/abs/2512.05132)  
 **Code**: To be confirmed  
-**Area**: Object Detection (Spatiotemporal Forecasting / Zero-Shot Super-Resolution)
+**Area**: Object Detection (Spatiotemporal Forecasting / Zero-shot Super-Resolution)  
 **Keywords**: scale anchoring, frequency representation, zero-shot super-resolution, spatiotemporal forecasting, Nyquist frequency
 
 ## TL;DR
 
-This paper defines the novel problem of "Scale Anchoring" (SA)—wherein training on low-resolution data causes inference errors to remain anchored at training-resolution levels during high-resolution inference—and proposes an architecture-agnostic Frequency Representation Learning (FRL) method. By introducing Nyquist-normalized frequency encodings, FRL enables errors to decrease as resolution increases, with effectiveness validated across 8 mainstream architectures.
+The paper defines "Scale Anchoring" (where low-resolution training anchors error during high-resolution inference) and proposes an architecture-agnostic Frequency Representation Learning (FRL). By using Nyquist-normalized frequency encoding, it ensures that errors decrease as resolution increases, which is validated across 8 mainstream architectures.
 
 ## Background & Motivation
 
-**Zero-Shot Super-Resolution Spatiotemporal Forecasting (ZS-SR STF)**: Training deep learning models on low-resolution data and performing inference at high resolution, motivated by the prohibitive cost of high-resolution DNS simulation data for training.
+**Zero-shot Super-Resolution Spatiotemporal Forecasting (ZS-SR STF)**: Training deep learning models on low-resolution data and performing inference at high resolution—necessary because the training cost of high-resolution DNS simulation is prohibitive.
 
-**Prevailing Misconception**: Existing methods consider a cross-resolution error ratio (RMSE_Ratio) close to 1 as "successful generalization." However, for a $p$-th order numerical solver, an $\alpha$-fold resolution increase should reduce the error by $\alpha^p$.
+**Limitations of Prior Work**: Existing methods assume a "successful generalization" if the cross-resolution error ratio (RMSE_Ratio) is close to 1. However, for a $p$-order numerical solver, an $\alpha$-fold resolution increase should reduce the error by $\alpha^p$ times.
 
-**Root Cause of Scale Anchoring**: The Nyquist frequency of low-resolution training data imposes an upper bound on the physical frequency content a model can learn. During high-resolution inference, the model cannot process high-frequency components unseen during training, causing errors to remain anchored at the training resolution.
+**Root of Scale Anchoring**: The Nyquist frequency of low-resolution training data limits the upper bound of physical law frequencies the model can learn. During high-resolution inference, the model cannot process high-frequency components never seen during training, causing the error to anchor at the training resolution level.
 
-**Distinction from Known Phenomena**:
-- **vs. Spectral Bias (SB)**: SB concerns the preference for learning low-to-high frequencies within the training frequency band; SA is an information-theoretic constraint *outside* the training frequency band.
-- **vs. Discretization Mismatch Error (DME)**: DME arises from architectural/optimization choices and can be mitigated by design; SA is a hard constraint imposed by the Shannon–Nyquist sampling theorem.
+**Key Challenge (Distinction from Known Phenomena)**:
+   - **vs Spectral Bias (SB)**: SB is a learning preference for low-to-high frequencies within the training band; SA is an information-theoretic limitation outside the training band.
+   - **vs Discretization Mismatch Error (DME)**: DME arises from architecture/optimization choices and can be eliminated by design; SA is a hard limit imposed by the Shannon-Nyquist sampling theorem.
 
-**Key Theoretical Results**:
-- **Theorem 1 (Frequency Blind Zone)**: The frequency response of a network trained at resolution $\rho_0$ is undefined or erroneous for $\omega > \rho_0/2$.
-- **Theorem 2 (High-Frequency Error Dominance)**: High-resolution inference error is dominated by frequency components in $[\rho_0/2, \rho/2]$.
+**Key Insight (Theory)**:
+   - **Theorem 1 (Frequency Blind Zone)**: The frequency response of a network trained at resolution $\rho_0$ is undefined or incorrect for $\omega > \rho_0/2$.
+   - **Theorem 2 (High-frequency Error Dominance)**: High-resolution inference error is primarily driven by frequency components in the range $[\rho_0/2, \rho/2]$.
 
 ## Method
 
-### Three-Step FRL (Architecture-Agnostic)
+### Overall Architecture
 
-1. **Multi-Resolution Data Construction**: Downsampling the original data to generate multiple resolution versions $\rho_j = \rho_0/2^j$ (standard multi-scale training technique).
-2. **Nyquist-Normalized Frequency Representation (Core Contribution)**: $PE_{freq}(x, k, \rho) = \sin(2\pi k \cdot x / k_{Nyq}(\rho))$, which ensures that the same physical frequency produces identical representation values across different resolutions. This decouples frequency from resolution and constitutes the paper's primary methodological novelty.
-3. **Frequency-Aware Training Loss**: Standard loss augmented with a frequency-domain consistency loss $\lambda \cdot \|F_\Theta - \hat{u}\|^2_{freq}$, ensuring cross-scale spectral consistency (standard spectral regularization technique).
+Frequency Representation Learning (FRL) is an architecture-agnostic "plug-in" workflow applied to both ends of a backbone network $F_\Theta$. The front end expands training data across multiple sampling rates and shifts the spatial frequency encoding from "resolution-drifting" to "Nyquist-normalized." The back end utilizes a frequency-domain consistency loss to lock the model's spectral behavior across scales. Among the three components, **Nyquist Normalized Frequency Representation** is the core to breaking Scale Anchoring. **Multi-resolution Data Construction** provides comparative samples at "same frequency, different resolution," while **Frequency-aware Training Loss** prevents normalized encodings from deviating during optimization—the latter two serve as scaffolds.
 
-### Loss & Training
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["High-fidelity Physical Field<br/>(High-res DNS)"] --> B["Multi-resolution Data Construction<br/>Successive Downsampling ρj=ρ0/2^j"]
+    B --> C["Nyquist Normalized Frequency Representation<br/>PE Normalized by k_Nyq(ρ)"]
+    C --> D["Backbone Network FΘ<br/>(Architecture-agnostic)"]
+    D --> E["Frequency-aware Training Loss<br/>Cross-scale Spectral Consistency"]
+    E -->|Backprop Refines Encoding| D
+    D --> F["High-resolution Inference<br/>Error Decreases as ρ Increases"]
+```
 
-Steps 1 and 3 follow established practices; Step 2—Nyquist frequency alignment—is the sole methodological innovation. Ablation studies confirm that Step 2 is a necessary condition for breaking Scale Anchoring.
+### Key Designs
+
+**1. Multi-resolution Data Construction: Exposing the Model to Multiple Sampling Rates**
+
+Starting from high-fidelity data, a set of resolution versions $\rho_j = \rho_0/2^j$ is generated via successive downsampling. This allows identical physical fields with different sampling densities to enter training simultaneously. This step alone is a standard multi-scale technique and does not break Scale Anchoring; ablation shows the RMSE_Ratio remains $\sim 1.0$ when used in isolation. Its true purpose is to provide "same frequency, different resolution" paired samples for the Nyquist normalization to learn cross-scale correspondences.
+
+**2. Nyquist Normalized Frequency Representation: Decoupling Frequency and Resolution**
+
+This is the central methodological innovation for breaking Scale Anchoring. Conventional frequency encodings use discrete wavenumbers $k$, meaning the same physical frequency maps to different encoding values at different resolutions. Consequently, the model binds "frequencies" to the "training resolution." FRL normalizes by the Nyquist frequency $k_{Nyq}(\rho)$ of each resolution:
+
+$$PE_{freq}(x, k, \rho) = \sin\!\big(2\pi k \cdot x / k_{Nyq}(\rho)\big)$$
+
+This ensures identical physical frequencies receive consistent representation values regardless of resolution. The network learns frequency structures independent of sampling rates rather than discrete patterns on a fixed grid. This allows the frequency response bandwidth to extend to the full spectrum, enabling error reduction at higher resolutions. In ablations, adding this step alone brings RMSE_Ratio down to $0.3$–$0.4$.
+
+**3. Frequency-aware Training Loss: Enforcing Cross-scale Spectral Consistency**
+
+A frequency-domain consistency loss is added to the standard regression loss to align predicted $F_\Theta$ and target $\hat{u}$ in the spectral domain:
+
+$$\mathcal{L} = \mathcal{L}_{std} + \lambda \cdot \|F_\Theta - \hat{u}\|^2_{freq}$$
+
+This explicitly incorporates spectral consistency into the optimization objective. Like Step 1, this is a standard regularization method that fails to break SA alone ($\sim 1.0$). Only when combined (Full FRL) does the RMSE_Ratio drop to $0.135$–$0.181$, effectively breaking Scale Anchoring.
 
 ## Key Experimental Results
 
-### 3D Fluid Simulation (Trained at 32³, Tested up to 129³)
+### 3D Fluid Simulation (Train 32³, Test up to 129³)
 
-| Method | RMSE_Ratio: Baseline → +FRL | High-Res RMSE Reduction |
-|--------|----------------------------|------------------------|
+| Method | RMSE_Ratio Original → +FRL | High-res RMSE Reduction |
+|------|----------------------|----------------|
 | GNN | 1.018 → **0.175** | 5.82× |
 | CNN | 1.060 → **0.137** | 7.74× |
 | NO | 1.017 → **0.135** | 7.53× |
 | Transformer | 1.021 → **0.165** | 6.19× |
 | Diffusion | 1.041 → **0.181** | 5.75× |
 
-### ERA5 Weather Forecasting (Trained at 180×90, Inferred up to 1440×721)
+### ERA5 Weather Forecasting (Train 180×90, Inference up to 1440×721)
 
 | Architecture | RMSE_Ratio → +FRL | ACC Gain |
-|--------------|-------------------|---------|
-| Transformer | 1.053 → 0.708 | 0.44 → 0.65 |
-| CNN | 1.066 → 0.662 | 0.42 → 0.68 |
+|------|-------------------|---------|
+| Transformer | 1.053 → 0.708 | 0.44→0.65 |
+| CNN | 1.066 → 0.662 | 0.42→0.68 |
 
 ### Ablation Study
 
-| Configuration | RMSE_Ratio | Note |
-|---------------|-----------|------|
-| Step 1 only (multi-resolution training) | ~1.0 | Does not break SA |
-| Step 3 only (frequency loss) | ~1.0 | Does not break SA |
-| **Steps 1+2+3 (full FRL)** | **0.135–0.181** | Successfully breaks SA |
-| Step 2 only | 0.3–0.4 | Effective but insufficient |
+| Configuration | RMSE_Ratio | Description |
+|------|-----------|------|
+| Step 1 only (Multi-res) | ~1.0 | Does not break SA |
+| Step 3 only (Freq loss) | ~1.0 | Does not break SA |
+| **Step 1+2+3 (Full FRL)** | **0.135-0.181** | Successfully breaks SA |
+| Step 2 only | 0.3-0.4 | Effective but insufficient |
 
 ### Key Findings
 
-- Scale Anchoring is present in all 8 mainstream architectures (GNN / Transformer / CNN / Diffusion / NO / Neural ODE / Mamba / NN).
-- FRL extends the effective frequency response bandwidth from the vicinity of the training Nyquist frequency to the full frequency range.
-- FRL degrades in extreme regimes such as high-Reynolds-number turbulence, where spectral relationships are not smooth.
+- All 8 mainstream architectures (GNN/Transformer/CNN/Diffusion/NO/Neural ODE/Mamba/NN) suffer from Scale Anchoring.
+- FRL extends the frequency response bandwidth from the training Nyquist frequency to the full frequency band.
+- Performance degrades in extreme systems such as high-Reynolds turbulence where spectral relationships are non-smooth.
 
 ## Highlights & Insights
 
-- **High Value of Problem Formulation**: SA is rigorously distinguished from SB and DME for the first time, supported by complete theoretical analysis.
-- **Architecture Agnosticism**: Demonstrated effectiveness across 8 representative architectures, indicating that SA is a universal limitation of data-driven models.
-- **Honest Discussion of Limitations**: The authors explicitly describe failure modes and suggest incorporating Kolmogorov spectral constraints as future work.
-- **Cross-Domain Validation**: Verified in two physically distinct domains—fluid simulation and weather forecasting.
+- **Problem Definition**: High value in being the first to strictly distinguish Scale Anchoring from SB/DME with comprehensive theoretical analysis.
+- **Architecture Agnostic**: Validated across 8 representative architectures, demonstrating that SA is a universal limitation of data-driven models.
+- **Honest Discussion**: The authors self-report failure modes and suggest introducing Kolmogorov spectral constraints.
+- **Cross-domain Validation**: Proved across fluid simulation and weather forecasting, two distinct physical domains.
 
 ## Limitations & Future Work
 
-- Strict convergence order is not guaranteed, as deep learning models are fundamentally not equivalent to numerical solvers.
-- In high-Reynolds-number turbulence and discontinuous problems, non-smooth spectral relationships degrade FRL's extrapolation capability.
-- Multi-resolution training introduces additional computational and memory overhead (approximately 2–3×).
-- Validation is limited to spatiotemporal forecasting tasks; applicability to domains such as image super-resolution remains unexplored.
+- No guarantee of a strict convergence order—deep learning models are not equivalent to numerical solvers.
+- Extrapolation capability of FRL degrades in high-Reynolds turbulence or discontinuity problems where spectral relationships are non-smooth.
+- Multi-resolution training incurs additional computational and memory overhead (approx. 2-3×).
+- Applicability to other scenarios, such as image super-resolution, remains unknown as only spatiotemporal forecasting was tested.
 
 ## Related Work & Insights
 
-- **FNO/PINO**: Improve resolution generalization but do not explicitly address Nyquist frequency constraints.
-- **Anti-Spectral-Bias Methods**: Target high-frequency learning within the training band; SA concerns frequencies outside the training band.
-- **Multi-Resolution Training / Spectral Regularization**: FRL's Steps 1 and 3 draw on these established techniques.
+- **FNO/PINO**: Improved resolution generalization but failed to explicitly address Nyquist frequency limitations.
+- **Anti-Spectral Bias Methods**: Focused on learning high frequencies within the training band, whereas SA is an issue outside the band.
+- **Multi-resolution Training / Spectral Regularization**: FRL's Steps 1 and 3 leverage these standard techniques to support the core normalization.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Novel problem formulation + rigorous theoretical analysis + empirical validation
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 architectures × 2 physical domains + comprehensive ablation
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with honest discussion of failure modes
-- Value: ⭐⭐⭐⭐ Significant implications for the scientific machine learning community
+- Novelty: ⭐⭐⭐⭐⭐ New problem definition + rigorous theory + validation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 architectures × 2 physical domains + complete ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with honest discussion of failure modes.
+- Value: ⭐⭐⭐⭐ Deeply insightful for the Scientific Machine Learning (SciML) community.
 
 <!-- RELATED:START -->
 
@@ -122,11 +148,11 @@ Steps 1 and 3 follow established practices; Step 2—Nyquist frequency alignment
 
 ## Related Papers
 
-- [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
-- [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](../../NeurIPS2025/image_restoration/encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](../../CVPR2026/image_restoration/fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
-- [\[ICCV 2025\] Outlier-Aware Post-Training Quantization for Image Super-Resolution](../../ICCV2025/image_restoration/outlier-aware_post-training_quantization_for_image_super-resolution.md)
-- [\[ICCV 2025\] FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration](../../ICCV2025/image_restoration/foundir_unleashing_million-scale_training_data_to_advance_foundation_models_for_.md)
+- [\[ICLR 2026\] Learning Heterogeneous Degradation Representation for Real-World Super-Resolution](learning_heterogeneous_degradation_representation_for_real-world_super-resolutio.md)
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](../../CVPR2026/image_restoration/hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
+- [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
+- [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](../../CVPR2026/image_restoration/event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
+- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
 
 </div>
 

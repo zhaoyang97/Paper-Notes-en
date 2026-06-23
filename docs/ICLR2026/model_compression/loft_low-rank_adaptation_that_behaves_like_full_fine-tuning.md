@@ -2,177 +2,178 @@
 title: >-
   [Paper Note] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning
 description: >-
-  [ICLR 2026][Model Compression][LoRA] This paper proposes LoFT, a low-rank adaptation method composed of six building blocks that aligns the internal optimizer dynamics (momentum and second-order moments) with those of fu…
+  [ICLR 2026][Model Compression][LoRA] Ours proposes LoFT, a low-rank adaptation method that aligns internal optimizer dynamics (momentum and second moment) with full fine-tuning behavior. Composed of six building blocks, LoFT exactly recovers AdamW in the full-rank limit and significantly narrows the performance gap between LoRA and full fine-tuning across
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "LoRA"
-  - "Low-Rank Adaptation"
-  - "Full Fine-Tuning"
-  - "Optimizer State Alignment"
-  - "AdamW"
+  - ICLR 2026
+  - Model Compression
+  - LoRA
+  - AdamW
 date: 2026-05-08
-content_hash: 934f2bf2aed0864d
+content_hash: 34a3cdf17707ab03
 ---
-
 # LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.21289](https://arxiv.org/abs/2505.21289)  
 **Code**: None  
-**Area**: Parameter-Efficient Fine-Tuning / Model Compression
+**Area**: Parameter-Efficient Fine-Tuning / Model Compression  
 **Keywords**: LoRA, Low-Rank Adaptation, Full Fine-Tuning, Optimizer State Alignment, AdamW
 
 ## TL;DR
 
-This paper proposes LoFT, a low-rank adaptation method composed of six building blocks that aligns the internal optimizer dynamics (momentum and second-order moments) with those of full fine-tuning. In the full-rank limit, LoFT exactly recovers AdamW, and it substantially closes the performance gap between LoRA and full fine-tuning across multiple benchmarks.
+Ours proposes LoFT, a low-rank adaptation method that aligns internal optimizer dynamics (momentum and second moment) with full fine-tuning behavior. Composed of six building blocks, LoFT exactly recovers AdamW in the full-rank limit and significantly narrows the performance gap between LoRA and full fine-tuning across multiple benchmarks.
 
 ## Background & Motivation
 
-Adapting large-scale pretrained models to downstream tasks has become the standard paradigm in NLP and beyond. However, as model sizes scale to billions of parameters, full fine-tuning becomes computationally expensive and impractical, particularly in multi-task or multi-user settings. Parameter-efficient fine-tuning (PEFT) techniques address this challenge by training only a small subset of parameters, with LoRA (Low-Rank Adaptation) being the most popular approach.
+Downstream adaptation of large-scale pre-trained models has become a standard paradigm in NLP and other fields. However, as model size grows to billions of parameters, full fine-tuning becomes computationally expensive and impractical, especially in multi-task or multi-user scenarios. Parameter-Efficient Fine-Tuning (PEFT) techniques address this challenge by training only a small subset of parameters, with LoRA (Low-Rank Adaptation) being the most popular solution.
 
-**Successes and Limitations of LoRA:**
+**Limitations of Prior Work in LoRA:**
 
-LoRA freezes the original weights and injects trainable low-rank matrices $W = W_0 + UV^\top$ into selected layers, where $U \in \mathbb{R}^{m \times r}$, $V \in \mathbb{R}^{n \times r}$, $r \ll \min\{m, n\}$. This significantly reduces the number of trainable parameters without adding inference latency. Nevertheless, LoRA still lags behind full fine-tuning in certain settings:
+LoRA freezes original weights and injects trainable low-rank matrices $W = W_0 + UV^\top$ into selected layers, where $U \in \mathbb{R}^{m \times r}$, $V \in \mathbb{R}^{n \times r}$, and $r \ll \min\{m, n\}$. While this reduces trainable parameters without increasing inference latency, LoRA still lags behind full fine-tuning in several scenarios:
 
-**Persistent performance gap**: Empirical studies consistently show a non-trivial gap between LoRA and full fine-tuning.
+- **Persistent Performance Gap**: Empirical studies show a consistent performance gap between LoRA and full fine-tuning.
+- **Slower Convergence**: The optimization dynamics of LoRA differ fundamentally from full fine-tuning.
+- **Hyperparameter Sensitivity**: Setting the scaling factor $\alpha$ significantly impacts performance, leading to high tuning costs.
 
-**Slower convergence**: The optimization dynamics of LoRA differ fundamentally from those of full fine-tuning.
+**Key Insight:**
 
-**Hyperparameter sensitivity**: The choice of the scaling factor $\alpha$ significantly affects performance, incurring non-trivial tuning costs.
-
-**Key Insight of This Paper:**
-
-Prior work (e.g., DoRA, LoRA-Pro) primarily focused on more accurate gradient approximation within the low-rank subspace. This paper reveals a neglected yet critical factor: **optimizer state misalignment** — specifically, the first-order moment (momentum) and second-order moment (variance) in AdamW. When these internal statistics are not properly aligned with the low-rank constraint, adaptation quality degrades.
+Previous works (e.g., DoRA, LoRA-Pro) primarily focused on more accurate gradient approximation within the low-rank subspace. However, this paper reveals a crucial neglected factor: **optimizer state misalignment**—specifically the first moment (momentum) and second moment (variance) in AdamW. When these internal statistics are not properly aligned with low-rank constraints, adaptation effectiveness is compromised.
 
 ## Method
 
 ### Overall Architecture
 
-LoFT can be understood as "the closest approximation to full fine-tuning under the constraint that weight updates are restricted to a low-rank subspace." It consists of six core building blocks that systematically address the discrepancies between LoRA and full fine-tuning.
+LoFT aims to answer: since LoRA constrains weight updates to a low-rank subspace, what update under this constraint most closely approximates full fine-tuning? Instead of modifying the network architecture, LoFT decomposes one step of the AdamW update and examines where it deviates from full fine-tuning under low-rank parameterization. It employs six Building Blocks to correct these deviations. These blocks naturally group into four stages along the update data flow: aligning the **weight update** itself (alternating updates + gradient scaling), calibrating the **first moment (momentum)**, aligning the **second moment (variance)**, and finally aligning **gradient clipping**.
+
+The following diagram illustrates the four alignment stages that gradients pass through to generate new low-rank factors:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Full Gradient ∇_W f(W)<br/>+ Current Factors U_k, V_k"]
+    A["Weight Update Alignment<br/>Alternating updates to remove η² terms<br/>+ Gradient scaling via projection P_V"]
+    B["First-moment Calibration<br/>Momentum rotation via C_V^k"]
+    C["Second-moment Alignment & Reconstruction<br/>Khatri-Rao for cross-terms<br/>+ Update reconstruction and projection"]
+    D["Gradient Clipping Alignment<br/>Norm estimation via projected gradients"]
+    OUT["New Factors U_(k+1), V_(k+1)<br/>Recovers AdamW in full-rank limit"]
+    IN --> A --> B --> C --> D --> OUT
+```
 
 ### Key Designs
 
-1. **Alternating Updates (Building Block 1)**:
+**1. Weight Update Alignment: Aligning the "Shape" of Updates**
 
-    - Function: Updates $U$ and $V$ alternately rather than simultaneously.
-    - Mechanism: When standard LoRA updates $U$ and $V$ jointly, a cross term proportional to $\eta^2$ appears in the weight update, which is inconsistent with full fine-tuning. Alternating updates eliminate this term: when only $U$ is updated, $W^+ = W - \eta \nabla_W f(W) VV^\top$.
-    - **Design Motivation**: Eliminates the second-order cross term in LoRA updates, bringing the update form closer to full fine-tuning.
+This stage addresses two shape deviations outside the optimizer state. First, standard LoRA updates $U$ and $V$ simultaneously, which introduces a cross-term proportional to $\eta^2$ in the $UV^\top$ increment that does not exist in full fine-tuning. LoFT uses alternating updates—updating only $U$ in a given step—reformulating the update as $W^+ = W - \eta \nabla_W f(W) VV^\top$ to eliminate the cross-term. Second, since low-rank decomposition is not unique ($UV^\top = (cU)(V/c)^\top$), update scales can drift. LoFT uses scaled gradients $\tilde{\nabla}_U f(W) = \nabla_U f(W)(V^\top V)^{-1}$, effectively standardizing the update via a projection matrix $\mathcal{P}_V = V(V^\top V)^{-1}V^\top$ as:
 
-2. **Gradient Scaling (Building Block 2)**:
+$$W^+ = W - \eta \nabla_W f(W) \mathcal{P}_V$$
 
-    - Function: Uses the scaled gradient $\tilde{\nabla}_U f(W) = \nabla_U f(W)(V^\top V)^{-1}$.
-    - Mechanism: Using LoRA gradients directly introduces a scale-dependency issue — $UV^\top = (cU)(V/c)^\top$ holds for any $c \neq 0$, yet gradient updates scale with $c$. The projection matrix $\mathcal{P}_V = V(V^\top V)^{-1}V^\top$ is used to normalize the update: $W^+ = W - \eta \nabla_W f(W) \mathcal{P}_V$. This ensures the update direction is always the orthogonal projection of the full gradient onto the current low-rank subspace — the optimal low-rank approximation.
-    - **Design Motivation**: Eliminates scale ambiguity, makes updates independent of the specific parameterization of $U$ and $V$, and removes the need for the $\alpha$ hyperparameter.
+This ensures the update direction is always the orthogonal projection of the full gradient onto the current low-rank subspace, eliminating the need for the sensitive scaling factor $\alpha$.
 
-3. **First-Order Moment (Momentum) Calibration (Building Block 3)**:
+**2. First-moment (Momentum) Calibration: Rotating Historical Momentum**
 
-    - Function: Introduces a calibration matrix $C_V^k = (V_{k-1}^\top V_k)(V_k^\top V_k)^{-1}$ into momentum accumulation.
-    - Mechanism: The standard LoRA momentum $m_U^k V^\top$ involves $V_i$ from different time steps and the current $V_k$, leading to inconsistent implicit projections. The calibration matrix "rotates" historical momentum into the current subspace:
-    $m_U^k = \beta_1 m_U^{k-1} C_V^k + (1-\beta_1)\tilde{\nabla}_U f(W_i)$
-    The calibrated momentum is equivalent to accumulating the full gradient projected onto the intersection of all historical and current subspaces.
-    - **Design Motivation**: As the low-rank subspace evolves during training, historical momentum must be "transformed" into the current subspace to remain meaningful.
+AdamW accumulates multiple gradient steps into momentum, but the low-rank subspace changes during training. Standard LoRA momentum $m_U^k V^\top$ mixes historical $V_i$ with the current $V_{k}$, effectively projecting past momentum onto an obsolete subspace. LoFT introduces a calibration matrix $C_V^k = (V_{k-1}^\top V_k)(V_k^\top V_k)^{-1}$ to "rotate" historical momentum into the current subspace before accumulation:
 
-4. **Second-Order Moment Alignment (Building Blocks 4 & 5)**:
+$$m_U^k = \beta_1 m_U^{k-1} C_V^k + (1-\beta_1)\tilde{\nabla}_U f(W_i)$$
 
-    - Function: Efficiently maintains cross terms of the second-order moment via Khatri-Rao and Kronecker product identities.
-    - Mechanism: Adam's second-order moment $v_k$ involves element-wise squared gradients. Under low-rank parameterization, maintaining an $r^2$-sized cross-term matrix $p_U^k$ is required:
-    $p_U^k = \beta_2 p_U^{k-1}(C_V^k \otimes C_V^k) + (1-\beta_2)(\tilde{\nabla}_U f \bullet \tilde{\nabla}_U f)$
-    The full second-order moment estimate is then reconstructed via $\tilde{v}_U^k = p_U^k(V_k * V_k)$. Building Block 5 uses the calibrated first- and second-order moments to construct the final update:
-    $U_{k+1} = U_k - \eta_k \frac{m_U^k V_k / (1-\beta_1^k)}{p_U^k(V_k * V_k)/(1-\beta_2^k) + \varepsilon} V_k(V_k^\top V_k)^{-1}$
-    - **Design Motivation**: Precisely aligns Adam's adaptive learning rate mechanism so that each step of low-rank optimization is as close as possible to full fine-tuning.
+The calibrated momentum is equivalent to projecting the full gradient onto the intersection of historical and current subspaces.
 
-5. **Gradient Clipping (Building Block 6)**:
+**3. Second-moment Alignment and Update Reconstruction: Managing Variance**
 
-    - Function: Uses the projected effective gradient $\nabla_W f(W) \mathcal{P}_V$ as the layer representative during gradient clipping.
-    - **Design Motivation**: Ensures clipping behavior is consistent with full fine-tuning.
+The second moment is more complex as Adam's $v_k$ involves element-wise squares of gradients. LoFT maintains an $r^2$-sized cross-term matrix $p_U^k$ and applies rotation using the Kronecker product ($\otimes$) and element-wise squares via the transposed Khatri-Rao product ($\bullet$):
+
+$$p_U^k = \beta_2 p_U^{k-1}(C_V^k \otimes C_V^k) + (1-\beta_2)(\tilde{\nabla}_U f \bullet \tilde{\nabla}_U f)$$
+
+The full second-moment estimate is reconstructed using $\tilde{v}_U^k = p_U^k(V_k * V_k)$, and the final parameter update is formed:
+
+$$U_{k+1} = U_k - \eta_k \frac{m_U^k V_k / (1-\beta_1^k)}{p_U^k(V_k * V_k)/(1-\beta_2^k) + \varepsilon} V_k(V_k^\top V_k)^{-1}$$
+
+This effectively migrates Adam's adaptive learning rate mechanism into low-rank optimization.
+
+**4. Gradient Clipping Alignment: Aligning Norm Estimation**
+
+For gradient clipping, using raw LoRA gradients to estimate norms leads to clipping strengths inconsistent with full fine-tuning. LoFT uses the projected effective gradient $\nabla_W f(W) \mathcal{P}_V$ to calculate the norm, ensuring clipping behavior remains consistent.
 
 ### Loss & Training
 
-- LoFT is an optimizer-level improvement and does not modify the loss function; it is compatible with any standard training objective.
-- Weight decay requires no special modification: alternating updates ensure that decay $UV^\top \to (1-\lambda\eta_k)UV^\top$ is consistent with full fine-tuning.
-- Additional memory overhead: $\mathcal{O}((m+n)r)$ for first-order moment calibration; $\mathcal{O}((m+n)r^2)$ for second-order moment cross terms.
-- Computational overhead: primarily from $r \times r$ matrix inversions and Khatri-Rao products, at $\mathcal{O}(r^3)$ complexity.
+- LoFT is an optimizer-level improvement and does not change the loss function.
+- Weight decay requires no special modification as alternating updates ensure $UV^\top \to (1-\lambda\eta_k)UV^\top$ remains consistent with full fine-tuning.
+- **Extra Memory**: $\mathcal{O}((m+n)r)$ for first-moment and $\mathcal{O}((m+n)r^2)$ for second-moment cross-terms.
+- **Computation**: Primarily $r \times r$ matrix inversions and Khatri-Rao products, $\mathcal{O}(r^3)$.
 
-**Core Theoretical Guarantee**: When $r = \min\{m, n\}$ and $U_k, V_k$ are full-rank, LoFT-AdamW **exactly recovers** the full AdamW update. This is the first low-rank adaptation method with this property.
+**Mechanism**: When $r = \min\{m, n\}$ and $U_k, V_k$ are full rank, LoFT-AdamW **exactly recovers** the full AdamW update. This is the first low-rank adaptation method with this property.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Commonsense Reasoning (LLaMA series)**:
+**Common Sense Reasoning (LLaMA Series):**
 
 | Model | Method | BoolQ | PIQA | SIQA | HS | WG | ARC-C | ARC-E | OBQA | Avg. |
-|-------|--------|-------|------|------|----|----|-------|-------|------|------|
+|-------|-------|-------|------|------|-----|-----|-------|-------|------|------|
 | LLaMA-7B | LoRA | - | - | - | - | - | - | - | - | Baseline |
 | LLaMA-7B | DoRA | - | - | - | - | - | 64.68 | - | - | Baseline+ |
 | LLaMA-7B | LoFT | - | 80.96 | 78.27 | 80.50 | 76.40 | - | 80.26 | 78.40 | 74.95 |
 | LLaMA2-7B | DoRA | - | 82.92 | 79.22 | 88.90 | - | - | - | - | 79.71 |
-| LLaMA2-7B | LoFT | 71.80 | - | - | - | 82.72 | 69.11 | 84.43 | 81.00 | Best |
+| LLaMA2-7B | LoFT | 71.80 | - | - | - | 82.72 | 69.11 | 84.43 | 81.00 | **SOTA** |
 
-**Image Classification (ViT-Base)**:
-- Evaluated on medical imaging datasets and highly imbalanced datasets such as DomainNet.
-- LoFT matches or exceeds full fine-tuning performance on most datasets.
+**Image Classification (ViT-Base):**
+- Evaluated on medical imaging and DomainNet (highly imbalanced datasets).
+- LoFT matches or exceeds full fine-tuning performance across multiple datasets.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---------------|-----------|-------|
-| LoFT (full) | Best convergence | All components working together |
-| w/o alternating updates | Significantly worse | Second-order cross terms harm convergence |
-| w/o optimizer state calibration | Noticeably worse | Misaligned momentum and variance lead to suboptimal results |
-| Gradient scaling only | Limited improvement | Gradient alignment is only a partial solution |
-| Standard LoRA | Slowest convergence | All issues compounded |
-
-A synthetic experiment ($f(W) = \|W - A\|_F^2$, $m=1024, n=512, r=8$) clearly demonstrates the importance of each component: the convergence curve of LoFT nearly overlaps with that of full fine-tuning.
+| Configuration | Key Metric | Description |
+|---------------|------------|-------------|
+| LoFT (Full) | Optimal Convergence | All components working in synergy |
+| w/o Alternating Updates | Significantly Worse | Second-order cross-terms hinder convergence |
+| w/o State Calibration | Noticeably Worse | Misaligned momentum and variance are suboptimal |
+| Only Gradient Scaling | Limited Improvement | Gradient alignment is only a partial solution |
+| LoRA (Standard) | Slowest Convergence | Cumulative effect of all alignment issues |
 
 ### Key Findings
 
-1. LoFT addresses not only gradient alignment but also the long-neglected problem of optimizer state alignment.
-2. LoFT maintains robust performance even under extreme low-rank constraints ($r=1$).
-3. LoFT naturally eliminates the need for the LoRA scaling factor $\alpha$.
-4. Significant training quality improvements are achieved without any additional inference cost.
+1. LoFT addresses the neglected optimizer state alignment problem rather than just gradient alignment.
+2. LoFT remains robust even under extreme low-rank constraints ($r=1$).
+3. LoFT automatically eliminates the need for the LoRA scaling factor $\alpha$.
+4. It achieves significantly higher training quality without increasing inference costs.
 
 ## Highlights & Insights
 
-1. **Optimizer state misalignment is a neglected critical issue**: All prior LoRA improvement work focused on gradient approximation; this paper is the first to systematically identify and address the misalignment of momentum and second-order moments — a genuine blind spot in the field.
-2. **The six-block decomposition is clear and elegant**: Each building block has a well-defined corresponding problem and theoretical motivation, and together they form a complete solution.
-3. **Mathematically provable equivalence**: Exact recovery of AdamW in the full-rank limit constitutes a very strong theoretical guarantee.
-4. **Elimination of the $\alpha$ hyperparameter**: Gradient scaling naturally resolves norm ambiguity, reducing tuning burden.
-5. **Clever use of Khatri-Rao / Kronecker products**: Matrix decomposition theory is leveraged to maintain second-order moments efficiently, keeping computational complexity tractable.
+1. **Optimizer Misalignment is a Blind Spot**: While prior LoRA variants focused on gradient approximation, this work is the first to systematically resolve momentum and second-moment misalignment.
+2. **Elegant Decomposition**: The six Building Blocks provide clear problem-solution mappings with strong theoretical motivation.
+3. **Provable Equivalence**: Exact recovery of AdamW at full rank provides a much stronger theoretical guarantee than previous heuristics.
+4. **Elimination of $\alpha$**: Using gradient scaling naturally resolves norm ambiguity and reduces hyperparameter tuning burdens.
 
 ## Limitations & Future Work
 
-1. **Additional memory overhead**: The second-order moment cross terms require $\mathcal{O}((m+n)r^2)$ extra memory, which is unfriendly for large values of $r$. The authors plan to explore LLM-specific optimizers (e.g., Muon) to mitigate this.
-2. **Increased computational cost**: While inference is unaffected, training requires additional matrix operations (calibration, projection, etc.).
-3. **Incomplete experimental tables**: Conversion errors in ar5iv caused some numerical results to be missing, affecting the completeness of the presented results.
-4. **Larger-scale models not explored**: Experiments are primarily conducted at the 7B–8B scale; effectiveness on models of 70B parameters and above remains to be verified.
-5. **Integration with other PEFT methods**: Whether the ideas underlying LoFT can transfer to other PEFT approaches such as Adapter and Prefix Tuning is an open question.
+1. **Memory Overhead**: The second-moment cross-term requires $\mathcal{O}((m+n)r^2)$ memory, which is less efficient for large $r$. Future work may explore LLM-specific optimizers like Muon.
+2. **Computational Cost**: Training involves additional matrix operations (calibration, projections).
+3. **Incomplete Tables**: Some experimental values are missing due to ar5iv conversion errors.
+4. **Model Scale**: Experiments focused on 7B-8B models; efficacy on 70B+ models remains to be verified.
 
 ## Related Work & Insights
 
-- **LoRA and variants**: LoRA → DoRA (decoupled direction and magnitude) → LoRA-Pro (improved gradient approximation) → LoFT (comprehensive alignment of optimizer dynamics).
-- **Riemannian optimization perspective**: Zhang et al. derive similar gradient scaling results from a Riemannian geometry viewpoint.
-- **Inspiration**: The idea of optimizer state alignment may be applicable to other constrained optimization settings — any optimization method operating within a subspace may benefit from analogous calibration strategies.
+- **Evolution of LoRA**: LoRA → DoRA (magnitude/direction decoupling) → LoRA-Pro (gradient approximation) → LoFT (optimizer dynamics alignment).
+- **Riemannian Optimization**: Similar gradient scaling results have been derived from the perspective of Riemannian geometry.
+- **Insight**: The principle of optimizer state alignment may benefit any subspace-constrained optimization method.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — First work to systematically reveal and address optimizer state misalignment; solid theoretical contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers language and vision tasks across multiple model scales, though some data are missing.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Building-block organization is clear; mathematical derivations are rigorous.
-- **Value**: ⭐⭐⭐⭐⭐ — Provides important guidance for LoRA improvements and has the potential to become a new standard practice.
+- **Novelty**: ⭐⭐⭐⭐⭐ — Systematically addresses the overlooked optimizer state misalignment problem.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Broad coverage across tasks, though some data is missing.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Distinct Building Block organization and rigorous derivation.
+- **Value**: ⭐⭐⭐⭐⭐ — Provides critical guidance for LoRA improvements; potential to become a new standard.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](../../ICML2026/model_compression/scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
+- [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
 - [\[ACL 2026\] Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions](../../ACL2026/model_compression/polynomial_expansion_rank_adaptation_enhancing_low-rank_fine-tuning_with_high-or.md)
-- [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
-- [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](../../NeurIPS2025/model_compression/reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
+- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 
 </div>
 

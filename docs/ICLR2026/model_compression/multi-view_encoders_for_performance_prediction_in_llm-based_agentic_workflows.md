@@ -2,80 +2,83 @@
 title: >-
   [Paper Note] Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows
 description: >-
-  [ICLR 2026][Model Compression][Performance Prediction] This paper proposes Agentic Predictor, a multi-view workflow encoding framework that jointly models graph structure, code semantics…
+  [ICLR 2026][Model Compression][Paper Note] This paper proposes Agentic Predictor, a multi-view workflow encoding framework that predicts the performance of LLM Agent workflows by jointly modeling graph structure, code semantics, and prompt information, significantly reducing expensive trial-and-error evaluations.
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Performance Prediction"
-  - "Multi-View Encoding"
-  - "Agentic Workflows"
-  - "Graph Neural Networks"
-  - "Unsupervised Pretraining"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 4ada70451430281d
+content_hash: fd1a1bd2082e0637
 ---
-
 # Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.19764](https://arxiv.org/abs/2505.19764)  
 **Code**: [GitHub](https://github.com/deepauto-ai/agentic-predictor)  
-**Area**: Model Compression
-**Keywords**: Performance Prediction, Multi-View Encoding, Agentic Workflows, Graph Neural Networks, Unsupervised Pretraining
+**Area**: Model Compression  
+**Keywords**: Performance Prediction, Multi-View Encoding, Agent Workflows, Graph Neural Networks, Unsupervised Pre-training
 
 ## TL;DR
 
-This paper proposes Agentic Predictor, a multi-view workflow encoding framework that jointly models graph structure, code semantics, and prompt information to predict the performance of LLM-based agentic workflows, substantially reducing costly trial-and-error evaluations.
+This paper proposes Agentic Predictor, a multi-view workflow encoding framework that predicts the performance of LLM Agent workflows by jointly modeling graph structure, code semantics, and prompt information, significantly reducing expensive trial-and-error evaluations.
 
 ## Background & Motivation
 
-LLM-based agentic systems have advanced rapidly in recent years, yet optimizing their workflow configurations poses significant challenges due to a vast search space. Existing automated design methods (e.g., ADAS, AFlow) rely on large numbers of LLM API calls for evaluation, incurring prohibitive computational costs. This paper proposes replacing full-execution evaluation with a **performance predictor**, drawing inspiration from predictor-based approaches in neural architecture search (NAS).
+LLM Agent systems have developed rapidly in recent years, but optimizing their workflow configurations faces enormous search space challenges. Existing automated design methods (e.g., ADAS, AFlow) rely on a large number of LLM API calls for evaluation, which is computationally expensive. This paper proposes using a **performance predictor** as a substitute for full execution evaluation, analogous to predictor methods in Neural Architecture Search (NAS).
 
-Two core challenges are identified:
+There are two Key Challenges:
 
-**Workflow Heterogeneity**: Different workflows vary substantially in communication structure, prompting strategies, and tool-calling patterns, making unified modeling difficult.
+**Workflow Heterogeneity**: Different workflows vary greatly in communication structures, prompting strategies, and tool invocation patterns, making it difficult to model them using a single unified model.
 
-**Label Scarcity**: Obtaining performance labels via full execution is expensive, leaving insufficient data for supervised learning.
+**Scarcity of Labeled Data**: Obtaining performance labels through full execution is costly, leading to insufficient data for supervised learning.
 
 ## Method
 
 ### Overall Architecture
 
-Agentic Predictor comprises three stages: (a) a multi-view workflow encoder that maps agentic workflows into a unified representation; (b) a cross-domain unsupervised pretraining stage that learns generalizable representations; and (c) a predictor-guided search stage that trains the predictor with a small number of labeled samples.
+The Core Idea of Agentic Predictor is to first compress an Agent workflow into a unified low-dimensional representation and then use a lightweight predictor to judge the quality of the workflow directly from this representation, thereby skipping expensive real execution. The entire pipeline consists of three stages: first, a multi-view encoder merges three types of heterogeneous information—the workflow's graph structure, code, and prompts—into a unified vector $\mathbf{Z}$ via multi-graph attention interactions. Second, cross-domain unsupervised pre-training is performed on a large volume of unlabeled workflows to enable the encoder to learn general representations. Finally, the predictor is trained using only a small number of samples with performance labels and is used to guide the workflow search. The first two components represent the primary Novelty (multi-view encoding + multi-graph attention + cross-domain pre-training), while the predictor and search function as downstream scaffolds reusing NAS concepts.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Candidate Agent Workflow<br/>Graph Structure + Code + Prompts"]
+    subgraph MV["Multi-View Workflow Encoding (Design 1)"]
+        direction TB
+        G["Graph View: GNN encodes communication DAG"]
+        C["Code View: MLP encodes complete code"]
+        P["Prompt View: MLP encodes roles/specifications"]
+    end
+    IN --> MV
+    MV --> ATT["Multi-Graph Attention (Design 2)<br/>Cross-view node-level interaction<br/>+ ViewAttnPool adaptive weighting"]
+    ATT --> Z["Unified representation Z (512-dim)"]
+    Z -->|"Massive unlabeled workflows"| PRE["Cross-domain unsupervised pre-training (Design 3)<br/>Reconstruction loss + Cross-modal contrast"]
+    PRE --> PRED["Train performance predictor<br/>Small labeled sample set"]
+    PRED --> OUT["Predictor-guided search<br/>Select high-performance workflow configurations"]
+```
 
 ### Key Designs
 
-1. **Multi-View Workflow Encoding**:
+**1. Multi-View Workflow Encoding: Characterizing heterogeneous workflows from three complementary perspectives**
 
-    - **Graph View $\mathcal{G}$**: Models the workflow as a DAG, encoding inter-agent communication dependencies via a GNN.
-    - **Code View $\mathcal{C}$**: Encodes the complete workflow code using an MLP to capture logical structure and tool-usage patterns.
-    - **Prompt View $\mathcal{P}$**: Encodes role descriptions and behavioral specifications from system prompts using an MLP.
-    - The three views are fused through an aggregation layer: $\mathbf{Z} = \text{MLP}([\mathbf{Z}_\mathcal{G}, \mathbf{Z}_\mathcal{C}, \mathbf{Z}_\mathcal{P}])$
+A single perspective is insufficient to describe an Agent workflow—viewing only the communication graph loses specific logic, while only reading the code makes it difficult to model the dependency structure between Agents. This paper encodes from three views simultaneously: the graph view $\mathcal{G}$ models the workflow as a DAG, using a GNN to encode communication dependencies between Agents; the code view $\mathcal{C}$ uses an MLP to encode the complete workflow code, capturing logical structures and tool invocation patterns; the prompt view $\mathcal{P}$ uses an MLP to encode role descriptions and behavioral specifications within system prompts. After obtaining representations for each view, they are fused into a unified vector $\mathbf{Z} = \text{MLP}([\mathbf{Z}_\mathcal{G}, \mathbf{Z}_\mathcal{C}, \mathbf{Z}_\mathcal{P}])$ via an aggregation layer. Specifically, text is encoded into 384 dimensions by all-MiniLM-L6-v2, and code is encoded into 768 dimensions by CodeRankEmbed, followed by a unified mapping to a 512-dimensional space to align the three heterogeneous signals.
 
-2. **Cross-Graph Attention Mechanism**:
+**2. Multi-Graph Attention Mechanism: Enabling node-level information exchange across views**
 
-    - Three graph types are constructed: prompt graph $\mathcal{G}_\text{prompt}$, code graph $\mathcal{G}_\text{code}$, and operator graph $\mathcal{G}_\text{operator}$.
-    - Node-level information exchange is performed via cross-view self-attention.
-    - ViewAttnPool adaptively learns importance weights for each view.
+Simply concatenating representations from the three views does not allow them to perceive each other, whereas code snippets, prompt texts, and operator nodes in a workflow are inherently highly coupled. This paper further decomposes the workflow into three graphs: the prompt graph $\mathcal{G}_\text{prompt}$, the code graph $\mathcal{G}_\text{code}$, and the operator graph $\mathcal{G}_\text{operator}$. Information exchange is performed at the node level through cross-view self-attention, allowing an operator node to directly attend to its relevant code and prompts. During fusion, ViewAttnPool is used to adaptively learn the weight of each view's importance, allowing the model to dynamically decide whether to trust structure, code, or semantics more based on workflow characteristics, rather than using a fixed ratio for the three.
 
-3. **Cross-Domain Unsupervised Pretraining**:
+**3. Cross-Domain Unsupervised Pre-training: Learning general representations on unlabeled workflows to mitigate label scarcity**
 
-    - Reconstruction loss: $\mathcal{L}_{rec} = \frac{1}{M}\sum_{i=1}^{M}\|\mathcal{G}_i - \hat{\mathcal{G}}_i\|^2 + \|\mathcal{C}_i - \hat{\mathcal{C}}_i\|^2 + \|\mathcal{P}_i - \hat{\mathcal{P}}_i\|^2$
-    - Cross-modal contrastive loss: InfoNCE loss applied across three view pairs — $(\mathcal{G}, \mathcal{C})$, $(\mathcal{G}, \mathcal{P})$, and $(\mathcal{C}, \mathcal{P})$.
-    - Pretraining uses no performance labels, avoiding label leakage.
+Performance labels can only be obtained through full execution, which is high-cost and low-volume; direct supervised learning is prone to overfitting. This paper first pre-trains the encoder on a large volume of unlabeled workflows. The Goal consists of two parts: one is a reconstruction loss, requiring the encoder to reconstruct the three views from the latent representation: $\mathcal{L}_{rec} = \frac{1}{M}\sum_{i=1}^{M}\|\mathcal{G}_i - \hat{\mathcal{G}}_i\|^2 + \|\mathcal{C}_i - \hat{\mathcal{C}}_i\|^2 + \|\mathcal{P}_i - \hat{\mathcal{P}}_i\|^2$; the second is a cross-modal contrastive loss, applying InfoNCE between three pairs of views $(\mathcal{G}, \mathcal{C})$, $(\mathcal{G}, \mathcal{P})$, and $(\mathcal{C}, \mathcal{P})$ to pull different views of the same workflow closer in the representation space while pushing different workflows apart. The entire pre-training process does not involve any performance labels, fundamentally avoiding label leakage, and the learned general representations provide significant Gains in downstream low-label scenarios.
 
 ### Loss & Training
 
-- Pretraining stage: $\mathcal{L}_{enc} = \mathcal{L}_{rec} + \mathcal{L}_{con}$ (reconstruction + contrastive)
-- Predictor stage: cross-entropy loss for binary classification; MSE loss for regression.
-- The text encoder uses all-MiniLM-L6-v2 (384-dim); the code encoder uses CodeRankEmbed (768-dim); both are projected to a unified 512-dim space.
+The total loss during the pre-training phase is the sum of reconstruction and contrastive losses: $\mathcal{L}_{enc} = \mathcal{L}_{rec} + \mathcal{L}_{con}$. In the predictor stage, the encoder representations are frozen and reused. The predictor selects objectives based on the task: cross-entropy loss for binary classification (whether the workflow succeeds) and MSE loss for performance regression.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Domain | Metric | Agentic Predictor | Prev. SOTA | Gain |
-|--------|--------|-------------------|------------|------|
+| Area | Metric | Agentic Predictor | Prev. SOTA | Gain |
+|------|------|-------------------|----------|------|
 | Code Generation (GD) | Accuracy | 85.33% | 85.24% (Graph Trans.) | +0.09% |
 | Code Generation (AF) | Accuracy | 85.62% | 84.71% (Graph Trans.) | +0.91% |
 | Math (GD) | Accuracy | 66.20% | 64.84% (GAT) | +1.36% |
@@ -85,44 +88,44 @@ Agentic Predictor comprises three stages: (a) a multi-view workflow encoder that
 
 ### Ablation Study
 
-| Configuration | Avg. Accuracy | Avg. Utility | Note |
-|---------------|--------------|--------------|------|
+| Configuration | Average Accuracy | Average Utility | Description |
+|------|-------------|-------------|------|
 | Code + Graph + Text (Full) | **84.38%** | **81.88%** | Full model |
-| w/o Code | Decreased | Decreased | Code view is critical for logical understanding |
-| w/o Graph | Decreased | Decreased | Graph structure is critical for interaction modeling |
-| w/o Text | Decreased | Decreased | Prompt semantics are indispensable |
+| w/o Code | Lower | Lower | Code view is vital for logic understanding |
+| w/o Graph | Lower | Lower | Graph structure is vital for interaction modeling |
+| w/o Text | Lower | Lower | Prompt semantics are indispensable |
 
 ### Key Findings
 
-- The three views are strongly complementary; removing any single view leads to performance degradation.
-- Cross-domain unsupervised pretraining is particularly effective under label-scarce conditions (the pretrained variant Agentic Predictor+ yields larger gains in low-label regimes).
-- The method is search-agnostic and can be combined with arbitrary search strategies.
+- The three-view encoding exhibits strong complementarity; removing any single view leads to a performance drop.
+- Cross-domain unsupervised pre-training is particularly effective when labels are scarce (the pre-trained Agentic Predictor+ shows larger gains in low-label scenarios).
+- The Method is search-agnostic and can be combined with any search strategy.
 
 ## Highlights & Insights
 
-- Transferring the performance prediction paradigm from NAS to agentic workflow optimization represents a novel research direction.
-- Multi-view encoding effectively exploits the heterogeneous information present in agentic workflows (structure, code, and semantics).
-- The cross-domain pretraining strategy mitigates label scarcity, demonstrating the potential of self-supervised learning in emerging domains.
+- Migrating the performance prediction concept from NAS to the field of Agent workflow optimization is a novel direction.
+- Multi-view encoding fully utilizes the heterogeneous information (structure, code, semantics) of Agent workflows.
+- The cross-domain pre-training strategy effectively mitigates label scarcity, demonstrating the potential of self-supervised learning in new domains.
 
 ## Limitations & Future Work
 
-- Evaluation is conducted solely on FLORA-Bench, limiting the breadth of dataset coverage.
-- The generalization of the predictor to unseen workflow variations requires further investigation.
-- Larger-scale agentic systems and more complex multimodal workflows remain unexplored.
-- The code and prompt encoders rely on fixed pretrained models without end-to-end fine-tuning.
+- Validated only on FLORA-Bench, which has limited dataset coverage.
+- The generalization capability of the predictor across workflow changes requires further verification.
+- Larger-scale Agent systems and more complex multimodal workflows have not yet been explored.
+- The code and prompt encoders use fixed pre-trained models and lack end-to-end fine-tuning.
 
 ## Related Work & Insights
 
-- Compared to FLORA-Bench: this work introduces multi-view encoding and unsupervised pretraining rather than relying on a single graph view.
-- Compared to MAS-GPT: this work employs a lightweight predictor rather than fine-tuning an LLM to generate workflows.
-- Predictor-based approaches from NAS (e.g., CAP, FlowerFormer) can be directly adapted to the agentic domain.
+- Comparison with FLORA-Bench: This paper introduces multi-view encoding and unsupervised pre-training rather than a single graph view.
+- Comparison with MAS-GPT: This paper uses a lightweight predictor instead of LLM fine-tuning to generate workflows.
+- Concepts from NAS predictors (such as CAP, FlowerFormer) can be directly migrated to the Agent domain.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Introducing performance prediction into agentic workflow design is a new direction.
-- Experimental Thoroughness: ⭐⭐⭐ Limited to a single benchmark, though ablations are detailed.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear and the framework is well described.
-- Value: ⭐⭐⭐⭐ Practically meaningful for reducing the development cost of agentic systems.
+- Novelty: ⭐⭐⭐⭐ Introducing performance prediction into Agent workflow design is a new direction.
+- Experimental Thoroughness: ⭐⭐⭐ Only one benchmark is used, but ablation studies are detailed.
+- Writing Quality: ⭐⭐⭐⭐ Problem definitions are clear, and the framework description is complete.
+- Value: ⭐⭐⭐⭐ Practically significant for reducing the development costs of Agent systems.
 
 <!-- RELATED:START -->
 
@@ -131,10 +134,10 @@ Agentic Predictor comprises three stages: (a) a multi-view workflow encoder that
 ## Related Papers
 
 - [\[ICLR 2026\] Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning](incentivizing_agentic_reasoning_in_llm_judges_via_tool-integrated_reinforcement_.md)
+- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](../../CVPR2026/model_compression/cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
 - [\[ICLR 2026\] Parallel Token Prediction for Language Models](parallel_token_prediction_for_language_models.md)
-- [\[ICLR 2026\] A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA](a_fano-style_accuracy_upper_bound_for_llm_single-pass_reasoning_in_multi-hop_qa.md)
-- [\[CVPR 2026\] Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression](../../CVPR2026/model_compression/parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m.md)
-- [\[ICLR 2026\] Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks](distilling_and_adapting_a_topology-aware_framework_for_zero-shot_interaction_pre.md)
+- [\[ICLR 2026\] GmNet: Revisiting Gating Mechanisms From A Frequency View](gmnet_revisiting_gating_mechanisms_from_a_frequency_view.md)
+- [\[ICLR 2026\] Towards Reliable Benchmarking: A Contamination Free, Controllable Evaluation Framework for Multi-step LLM Function Calling](towards_reliable_benchmarking_a_contamination_free_controllable_evaluation_frame.md)
 
 </div>
 

@@ -2,94 +2,81 @@
 title: >-
   [Paper Note] LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models
 description: >-
-  [ICLR 2026][Model Compression][Lipschitz constraints] This paper proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture—which learns orthogonal matrices via manifold optimization and achieves…
+  [ICLR 2026][Model Compression][Paper Note] Ours proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture. By utilizing orthogonal manifold optimization to learn orthogonal matrices and a Spatial Shift Module driven by Theorem 1 for spatial mixing, the model successfully scales to the billion-parameter level. It establishes new SOTA Ce
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Lipschitz constraints"
-  - "certified robustness"
-  - "orthogonal matrices"
-  - "manifold optimization"
-  - "spatial shift module"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: a92c87ff3be052f9
+content_hash: 82a2566bf3a9e965
 ---
-
 # LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.18513](https://arxiv.org/abs/2601.18513)  
 **Code**: None  
-**Area**: Others / Adversarial Robustness
-**Keywords**: Lipschitz constraints, certified robustness, orthogonal matrices, manifold optimization, spatial shift module
+**Area**: Others / Adversarial Robustness  
+**Keywords**: Lipschitz constraints, Certified robustness, Orthogonal matrices, Manifold optimization, Spatial shift module
 
 ## TL;DR
 
-This paper proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture—which learns orthogonal matrices via manifold optimization and achieves spatial mixing through a theoretically motivated Spatial Shift Module derived from Theorem 1. LipNeXt scales to billion-parameter models and establishes new state-of-the-art certified robust accuracy (CRA) on CIFAR-10/100, Tiny-ImageNet, and ImageNet, with a +8% CRA gain on ImageNet at $\varepsilon=1$.
+Ours proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture. By utilizing orthogonal manifold optimization to learn orthogonal matrices and a Spatial Shift Module driven by Theorem 1 for spatial mixing, the model successfully scales to the billion-parameter level. It establishes new SOTA Certified Robust Accuracy (CRA) on CIFAR-10/100, Tiny-ImageNet, and ImageNet, achieving a +8% CRA Gain at $\varepsilon=1$ on ImageNet.
 
 ## Background & Motivation
 
-**The challenge of adversarial robustness**: Adversarial examples pose a fundamental threat to safety-critical applications such as autonomous driving, medical imaging, and malware detection. Empirical defenses cannot provide formal guarantees, leaving models vulnerable to stronger attacks.
+**Adversarial Robustness Challenge**: Adversarial examples pose a major threat to safety-critical applications (autonomous driving, medical imaging, malware detection). Empirical defenses fail to provide formal guarantees, and models remain vulnerable to stronger attacks.
 
-**Two paradigms for certified robustness**: (a) Randomized smoothing (RS) provides probabilistic guarantees through noise averaging; (b) Lipschitz-based methods exploit the network's Lipschitz constant to provide deterministic (worst-case) guarantees. This paper focuses on the latter.
+**Two Paths for Certified Robustness**: (a) Randomized Smoothing (RS) provides probabilistic guarantees through noise averaging; (b) Lipschitz methods provide deterministic (worst-case) guarantees using the Lipschitz constant of the network. This paper focuses on the latter.
 
-**Scaling bottleneck of Lipschitz methods**: Existing methods predominantly use VGG-style architectures with $\leq 32$M parameters, which already underfit on CIFAR-100 and suffer significant performance degradation on ImageNet. Performance gains from larger models saturate quickly.
+**Scaling Bottleneck of Lipschitz Methods**: Existing methods mostly use VGG-style architectures with $\leq 32$M parameters, which underperform on CIFAR-100 and significantly degrade on ImageNet. Gains from increasing model size saturate rapidly.
 
-**Orthogonal matrices: performance-critical yet computationally expensive**: Tight Lipschitz bounds require all weight matrices to be orthogonal. Existing explicit methods (matrix exponential SOC, Cayley transform, LOT-Orth, Cholesky-Orth) and implicit methods (AOL, CPL, SLL layers) introduce substantial computational overhead—including FFT, matrix inversions, and power iterations—that limits scalability and low-precision training.
+**Orthogonal Matrices as Key and Bottleneck**: Tight Lipschitz bounds require all weights to be orthogonal. Existing explicit (SOC, Cayley, LOT-Orth, Cholesky-Orth) and implicit (AOL, CPL, SLL layers) methods introduce significant computational overhead (FFT, matrix inverse, power iteration), limiting scalability and low-precision training.
 
-**Attention mechanisms are incompatible with Lipschitz control**: Transformer attention lacks direct Lipschitz constraint mechanisms. Nevertheless, ConvNeXt and MetaFormer demonstrate that macro-level design principles from the Transformer era can be integrated with Lipschitz architectures.
+**Incompatibility of Attention with Lipschitz Control**: Transformer attention lacks direct means for Lipschitz constraint. However, ConvNeXt and MetaFormer suggest that Transformer-era macro designs can be integrated with Lipschitz architectures.
 
-**Core motivation**: Can one design a 1-Lipschitz architecture that requires neither constrained reparameterization nor convolutions, enabling certified robustness to benefit from scaling laws in the same way as standard training?
+**Goal**: Can a 1-Lipschitz architecture be designed without constrained reparameterization or convolutions, allowing certified robustness to benefit from scaling laws like standard training?
 
 ## Method
 
 ### Overall Architecture
 
-A LipNeXt Block stacks four 1-Lipschitz components: orthogonal projection $R \in \mathcal{M}_C$ (channel mixing) → Spatial Shift $\mathcal{S}$ (spatial mixing) → orthogonal projection $R^\top$ (back-projection) → orthogonal linear $M$ + $\beta$-Abs activation. The complete block is:
+LipNeXt decomposes a block into four serial 1-Lipschitz components: an orthogonal projection $R \in \mathcal{M}_C$ for channel mixing, a Spatial Shift $\mathcal{S}$ for spatial mixing, $R^\top$ to project channels back, and a final orthogonal linear layer $M$ with $\beta$-Abs activation. The block is formulated as $Z = \sigma(M R^\top \mathcal{S}(R(X + p)) + b)$, where $p \in \mathbb{R}^{H \times W \times 1}$ is a learnable positional encoding. Each component is individually proven to maintain a 1-Lipschitz constant, ensuring the entire network is strictly 1-Lipschitz without post-hoc constraints. After stacking $L$ blocks, an L2 Spatial Pool $[\text{L2Pool}(X)]_c = \sqrt{\sum_{h,w} X_{h,w,c}^2$ aggregates spatial dimensions, preserving norm-sensitivity to the classification head.
 
-$$Z = \sigma(M R^\top \mathcal{S}(R(X + p)) + b)$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input Feature X<br/>+ Learnable Positional Encoding p"] --> R["Orthogonal Projection R<br/>Channel Mixing<br/>(Manifold Optimization)"]
+    R --> S["Spatial Shift Module<br/>5-partition Circular Shift<br/>Parameter-free Spatial Mixing"]
+    S --> RT["Orthogonal Back-projection Rᵀ<br/>Inversion to Original Channels<br/>(Manifold Optimization)"]
+    RT --> M["Orthogonal Linear M + Bias b<br/>(Manifold Optimization)"]
+    M --> ACT["β-Abs Activation σ<br/>1-Lipschitz Nonlinearity"]
+    ACT -->|"Strictly 1-Lipschitz<br/>Stack L blocks"| POOL["L2 Spatial Pool<br/>Norm-preserving Aggregation"]
+    POOL --> CLS["Classification Head → CRA"]
+```
 
-where $p \in \mathbb{R}^{H \times W \times 1}$ is a learnable positional encoding and $\sigma$ is the $\beta$-Abs activation. Spatial dimensions are aggregated via L2 Spatial Pooling: $[\text{L2Pool}(X)]_c = \sqrt{\sum_{h,w} X_{h,w,c}^2}$. The entire network strictly maintains the 1-Lipschitz property.
+### Key Designs
 
-### Key Design 1: FastExp Manifold Optimization
+**1. FastExp Manifold Optimization: Direct training on the orthogonal manifold with overhead reduced to 5 matrix multiplications.**
 
-**Core observation**: During large-model training, the learning rate $\eta \sim 10^{-3}$ is small, implying that the Frobenius norm of the skew-symmetric parameter matrix $A$ in the exponential map (Eq. 3) is also small. This motivates an adaptive truncated Taylor expansion:
+Explicit reparameterizations (matrix exponential, Cayley, Cholesky-Orth) are scaling bottlenecks. This work treats orthogonal matrices as points on a manifold. Given that the learning rate $\eta \sim 10^{-3}$ is small for large models, the Frobenius norm of the parameter matrix $A$ in the exponential map is also small. Thus, an adaptive truncated Taylor expansion $\text{FastExp}(A)$ is used: $I+A+\tfrac12A^2$ for $\|A\|_F < 0.05$, up to $A^4$ for larger norms, and exact exponential only if $\|A\|_F \ge 1$. Polar Retraction via SVD is performed at the end of each epoch to correct drift. A manifold version of Lookahead is used, accumulating skew-symmetric updates in the tangent space: $X_{\text{slow}} \leftarrow X_{\text{slow}} \cdot \text{FastExp}(\tfrac12 \sum_{j=t-K+1}^{t} \Delta_j)$.
 
-$$\text{FastExp}(A) = \begin{cases} I + A + \frac{1}{2}A^2, & \|A\|_F < 0.05 \\ I + A + \frac{1}{2}A^2 + \frac{1}{6}A^3, & 0.05 \leq \|A\|_F < 0.25 \\ I + A + \frac{1}{2}A^2 + \frac{1}{6}A^3 + \frac{1}{24}A^4, & 0.25 \leq \|A\|_F < 1 \\ \exp(A), & \|A\|_F \geq 1 \end{cases}$$
+**2. Spatial Shift Module: Deriving fixed spatial shifts from Theorem 1.**
 
-**Two stabilization techniques**:
+To avoid power iteration in convolutions, Ours proves Theorem 1: For a kernel $K \in \mathbb{R}^{k \times k}$ with unit stride and circular padding, the convolution $f_K$ is norm-preserving iff $K$ has exactly one non-zero element with value $\pm 1$. Thus, norm-preserving depthwise convolution must degenerate into a spatial shift. The implementation splits features into 5 partitions (up, down, left, right, and stationary shifts). Circular padding is used to maintain norm-preservation, and an explicit positional encoding $p$ is added to compensate for the lack of spatial information inherent in circular padding.
 
-- **(a) Periodic Polar Retraction**: At the end of each epoch, SVD $X = U\Sigma V^\top$ is performed and the matrix is reset as $X \leftarrow UV^\top$, correcting accumulated truncation errors.
-- **(b) Manifold Lookahead**: The standard Lookahead weight interpolation $0.5X_t + 0.5X_{t-K}$ destroys orthogonality. Instead, interpolation is performed in the tangent space over skew-symmetric updates: $X_{\text{slow}} \leftarrow X_{\text{slow}} \cdot \text{FastExp}(\frac{1}{2}\sum_{j=t-K+1}^{t} \Delta_j)$, preserving orthogonality on the manifold.
+**3. β-Abs Activation: A 1-Lipschitz and GPU-friendly nonlinearity.**
 
-The additional per-step overhead amounts to at most **5 matrix multiplications**, far less than FFT convolutions or power iterations.
-
-### Key Design 2: Spatial Shift Module (Theorem 1)
-
-**Theorem 1**: Let $f_K$ be a spatial convolution with kernel $K \in \mathbb{R}^{k \times k}$, unit stride, and circular padding. $f_K$ is norm-preserving (tight 1-Lipschitz isometric), i.e., $\|f_K(X) - f_K(Y)\|_F = \|X - Y\|_F, \forall X,Y$, if and only if $K$ contains exactly one nonzero element with value $\pm 1$.
-
-**Implication**: A norm-preserving depthwise convolution **necessarily degenerates into a spatial shift**—this theoretical result directly induces the architectural design.
-
-**2D implementation**: Each token's features are partitioned into 5 groups (shift up / shift down / shift left / shift right / no shift), corresponding to circular shifts. An orthogonal projection $R$ mixes channels before and after the shift, ensuring that the shift does not always act on the same fixed channel subsets. The empirically optimal shift ratio is $\alpha \in \{1/8, 1/16\}$.
-
-**Circular padding vs. zero padding**: Zero padding implicitly introduces positional information, whereas circular padding does not but guarantees norm-preservation. This paper adopts circular padding with an explicit positional encoding $p$, which experiments confirm is superior to zero-padding schemes.
-
-### Key Design 3: β-Abs Activation
-
-$$[\beta\text{-Abs}(\boldsymbol{x})]_i = \begin{cases} |x_i|, & i \leq \beta d \\ x_i, & \text{otherwise} \end{cases}$$
-
-The parameter $\beta \in [0,1]$ controls the degree of nonlinearity. At $\beta = 0.5$, the commonly used MinMax activation can be expressed as: $\exists R \in \mathcal{M}_{2d}, \text{MinMax}(x) = R^\top \beta\text{-Abs}(Rx)$. The activation is 1-Lipschitz and GPU-friendly, requiring no sorting or pairing operations.
+MinMax activation requires sorting/pairing, which is inefficient for large models. Ours defines $[\beta\text{-Abs}(\boldsymbol{x})]_i = |x_i|$ for $i \le \beta d$, otherwise $x_i$, with $\beta \in [0, 1]$. This element-wise piecewise function is naturally 1-Lipschitz and GPU-friendly. When $\beta = 0.5$, it contains MinMax as a special case via orthogonal rotation.
 
 ### Loss & Training
 
-EMMA loss is used for certified robust training, following the training recipe of LiResNet++. bfloat16 precision training is supported (LiResNet requires float32 due to numerical overflow in power iteration, and BRONet requires the equivalent of float64 due to complex FFT arithmetic). Multi-class classification is handled via one-vs-rest decomposition.
+Certified robust training follows the LiResNet++ recipe and uses the EMMA loss. Due to the elimination of power iteration and FFT, LipNeXt can be trained in bfloat16, whereas LiResNet and BRONet often require higher precision for numerical stability (e.g., FFT in complex space).
 
 ## Key Experimental Results
 
-### Table 1: CIFAR-10/100 + Tiny-ImageNet Main Results
+### Main Results: CIFAR-10/100 + Tiny-ImageNet
 
-| Dataset | Model | Params | Clean Acc | CRA@36/255 | CRA@72/255 | CRA@108/255 |
-|--------|------|--------|-----------|------------|------------|-------------|
+| Dataset | Model | #Params | Clean Acc | CRA@36/255 | CRA@72/255 | CRA@108/255 |
+|---------|-------|---------|-----------|------------|------------|-------------|
 | CIFAR-10 | LiResNet | 83M | 81.0 | 69.8 | 56.3 | 42.9 |
 | CIFAR-10 | BRONet | 68M | 81.6 | 70.6 | 57.2 | 42.5 |
 | CIFAR-10 | **LipNeXt L32W1024** | **64M** | **81.5** | **71.2** | **59.2** | **45.9** |
@@ -100,80 +87,77 @@ EMMA loss is used for certified robust training, following the training recipe o
 | Tiny-IN | BRONet | 75M | 41.2 | 29.0 | 19.0 | 12.1 |
 | Tiny-IN | **LipNeXt L32W2048** | **256M** | **45.5** | **35.0** | **25.9** | **18.0** |
 
-### Table 3: ImageNet Results
+### Main Results: ImageNet
 
-| Model | Params | Training Speed (min/epoch) | CRA@ε=1 | Clean@ε=36/255 | CRA@ε=36/255 |
-|------|--------|-------------------|---------|----------------|---------------|
+| Model | #Params | Training Speed (min/epoch) | CRA@ε=1 | Clean@ε=36/255 | CRA@ε=36/255 |
+|-------|---------|---------------------------|---------|----------------|---------------|
 | LiResNet | 51M | 5.3 | 14.2 | 45.6 | 35.0 |
 | BRONet | 86M | 10.5 | - | 49.3 | 37.6 |
 | **LipNeXt 1B** | **1B** | **8.9** | **21.1** | **55.9** | **40.3** |
 | **LipNeXt 2B** | **2B** | **17.8** | **22.4** | **57.0** | **41.2** |
 
-CRA at $\varepsilon=1$ on ImageNet improves by +8% over BRONet; CRA at $\varepsilon=36/255$ improves by +3%.
+At $\varepsilon=1$ on ImageNet, CRA Gain is +8% over BRONet.
 
-### Table 4: Scaling Experiments (ImageNet 400 classes, ε=1)
+### Ablation Study: Scaling (ImageNet 400 classes, ε=1)
 
-| Config | Depth | Width | Clean Acc | CRA |
-|------|------|------|-----------|-----|
-| Fixed depth=32 | 32 | 1024→4096 | 40.5→51.7 | 22.9→30.0 |
-| Fixed width=2048 | 8→128 | 2048 | 30.7→47.5 | 22.4→26.9 |
-| Fixed params=1B | 32 | 4096 | **51.7** | **30.0** |
-| Fixed params=1B | 64 | 2896 | 51.2 | 29.6 |
-
-A depth of 32 layers is optimal under a fixed parameter budget. Both width and depth yield non-saturating gains.
+| Configuration | Depth | Width | Clean Acc | CRA |
+|---------------|-------|-------|-----------|-----|
+| Fixed Depth=32 | 32 | 1024→4096 | 40.5→51.7 | 22.9→30.0 |
+| Fixed Width=2048 | 8→128 | 2048 | 30.7→47.5 | 22.4→26.9 |
+| Fixed Params=1B | 32 | 4096 | **51.7** | **30.0** |
+| Fixed Params=1B | 64 | 2896 | 51.2 | 29.6 |
 
 ## Key Findings
 
-1. **Lipschitz certification can benefit from scaling**: CRA continues to improve from 1B to 2B parameters, challenging the conventional wisdom that certified robustness is confined to small models.
-2. **Stability under low-precision training**: LipNeXt supports bfloat16 training, whereas LiResNet requires float32 due to numerical overflow in power iteration under bf16, and BRONet's complex FFT arithmetic is equivalent to float64. This enables LipNeXt to continuously benefit from hardware acceleration.
-3. **FastExp approximation is sufficiently accurate**: The combination of adaptive Taylor truncation, periodic SVD retraction, and manifold Lookahead ensures numerical stability, with performance on par with exact matrix exponentiation.
-4. **Theoretical limits of norm-preserving convolutions**: Theorem 1 proves that norm-preserving depthwise convolutions under circular padding can only be spatial shifts—a tight necessary and sufficient condition.
-5. **Necessity of positional encoding**: Circular padding introduces no positional information; explicit positional encoding is required to achieve performance competitive with zero-padding. Experiments confirm that circular padding with explicit PE outperforms zero-padding.
+1. **Lipschitz certification benefits from scaling**: CRA continues to improve from 1B to 2B parameters, breaking the perception that certified robustness is limited to small models.
+2. **Low-precision stability**: LipNeXt supports bfloat16 training, benefiting from hardware acceleration.
+3. **Accuracy of FastExp**: Adaptive Taylor truncation combined with SVD retraction and manifold Lookahead ensures numerical stability and performance comparable to exact matrix exponentials.
+4. **Theoretical limit of norm-preserving convs**: Theorem 1 proves that norm-preserving depthwise convolutions must be spatial shifts.
+5. **Position encoding is necessary**: Since circular padding lacks spatial cues, explicit positional encoding is required to beat zero-padding schemes.
 
 ## Highlights & Insights
 
-- **Theory-driven architecture design**: Theorem 1 naturally derives the Spatial Shift Module from the norm-preservation condition, rather than as an empirical design choice.
-- **Paradigm shift from constraints to manifolds**: Replacing orthogonal constraints from "reparameterization followed by projection" with "direct optimization on the manifold" yields a conceptually clean and computationally efficient approach (only 5 matrix multiplications per step).
-- **First billion-scale certified robust model**: This work demonstrates that deterministic certification need not be confined to small models, opening new directions for subsequent research.
-- **Training efficiency**: Despite being 10–20× larger, LipNeXt achieves comparable training throughput to prior work (1B model at 8.9 min/epoch vs. BRONet at 86M parameters and 10.5 min/epoch).
+- **Theory-driven design**: The Spatial Shift Module is derived from Theorem 1 rather than empirical trial and error.
+- **Paradigm shift**: Shifts from "reparameterize-then-project" to "direct optimization on the manifold," which is efficient (5 matmuls/step).
+- **First billion-scale certified model**: Proves that deterministic certification can track modern scaling trends.
+- **Training efficiency**: Despite being 10-20x larger, training throughput is comparable to prior smaller models (1B model at 8.9 min/epoch vs 86M BRONet at 10.5 min/epoch).
 
 ## Limitations & Future Work
 
-- Only $\ell_2$ norm certification is considered; $\ell_\infty$ norm certification is more practically demanded but remains more challenging.
-- Training the 2B parameter model requires 16× H100 GPUs; deployment at this scale necessitates distillation or other compression techniques.
-- The maximum CRA@ε=108/255 on CIFAR-10 is lower than AOL (45.9 vs. 49.0), as AOL trades clean accuracy for robustness at large perturbation radii.
-- The method has not been trained on large-scale image-text datasets, making direct comparisons with randomized smoothing approaches (which can leverage pretrained models such as CLIP) potentially incomplete.
+- Focused on $\ell_2$ certification only; $\ell_\infty$ Lipschitz certification is more challenging but highly desired.
+- Training 2B models requires significant resources (e.g., 16×H100 GPUs); practical deployment may require distillation.
+- Maximum CRA at large $\varepsilon$ on CIFAR-10 is slightly lower than AOL (45.9 vs 49.0), as AOL sacrifices clean accuracy for robustness.
+- Not yet tested on large-scale vision-language pre-training, which leaves a gap in comparison to randomized smoothing.
 
 ## Related Work & Insights
 
-| Method | Orthogonal Matrix Implementation | Spatial Mixing | Scalable | Low-Precision Training |
-|------|-------------|---------|------------|-----------|
-| **LipNeXt (Ours)** | Manifold optimization + FastExp | Spatial Shift (parameter-free) | ✅ 1–2B | ✅ bf16 |
-| LiResNet (Hu et al., 2024) | Cholesky-Orth | Convolution + power iteration | ❌ Saturates at 83M | ❌ Requires float32 |
-| BRONet (Lai et al., 2025) | Block Reflector | FFT-based frequency-domain convolution | ❌ 86M | ❌ Equivalent to float64 |
+| Method | Orthogonal Implementation | Spatial Mixing | Scalable | Low-precision |
+|--------|---------------------------|----------------|----------|---------------|
+| **LipNeXt (Ours)** | Manifold Opt + FastExp | Spatial Shift (Fixed) | ✅ 1-2B | ✅ bf16 |
+| LiResNet | Cholesky-Orth | Conv + Power Iteration | ❌ 83M Saturation | ❌ Req. float32 |
+| BRONet | Block Reflector | FFT-based Conv | ❌ 86M | ❌ Req. float64 |
 
-**vs. LiResNet**: LipNeXt retains the macro-level structure of LiResNet but replaces all core components—manifold optimization replaces Cholesky-Orth, and the Spatial Shift replaces convolution with power iteration—eliminating the scaling bottleneck.
+**vs LiResNet**: LipNeXt replaces core components with manifold optimization and spatial shifts, removing the scaling bottleneck.
 
-**vs. BRONet**: BRONet's FFT convolutions require complex32 arithmetic, whereas LipNeXt's Spatial Shift is a parameter-free integer index operation. LipNeXt already surpasses BRONet at equal parameter counts, with the advantage growing further at larger scales.
+**vs BRONet**: BRONet requires complex FFT operations, while LipNeXt uses parameter-free index operations, providing better scaling potential.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First convolution-free, manifold-optimized billion-scale certified robust architecture; Theorem 1 provides theory-driven design
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Four datasets, scaling experiments, and extensive ablations; $\ell_\infty$ experiments are absent
-- **Writing Quality**: ⭐⭐⭐⭐ Theoretical derivations are clear, Algorithm 1 is complete, and motivation is developed progressively
-- **Value**: ⭐⭐⭐⭐⭐ A significant milestone in certified robustness, demonstrating that deterministic guarantees can track modern scaling trends
+- **Novelty**: ⭐⭐⭐⭐⭐ First billion-scale certified architecture, theory-driven design via Theorem 1.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid scaling and ablation studies across 4 datasets, though lacks $\ell_\infty$ results.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear theoretical derivation and consistent motivation.
+- **Value**: ⭐⭐⭐⭐⭐ A milestone showing deterministic guarantees can benefit from modern scaling trends.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
 - [\[ICML 2026\] Procedural Pretraining: Warming Up Language Models with Abstract Data](../../ICML2026/model_compression/procedural_pretraining_warming_up_language_models_with_abstract_data.md)
-- [\[ICLR 2026\] Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models](scaling_reasoning_hop_exposes_weaknesses_demystifying_and_improving_hop_generali.md)
 - [\[ICLR 2026\] MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes](mobilellm-r1_exploring_the_limits_of_sub-billion_language_model_reasoners_with_o.md)
-- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](../../ICML2026/model_compression/model_merging_scaling_laws_in_large_language_models.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
+- [\[ICLR 2026\] Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models](scaling_reasoning_hop_exposes_weaknesses_demystifying_and_improving_hop_generali.md)
+- [\[ICLR 2026\] QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models](qwha_quantization-aware_walsh-hadamard_adaptation_for_parameter-efficient_fine-t.md)
 
 </div>
 

@@ -2,74 +2,82 @@
 title: >-
   [Paper Note] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts
 description: >-
-  [ICLR 2026][Model Compression][LoRA] This paper proposes LD-MoLE, which replaces conventional TopK routing with a Sparsegen closed-form projection to achieve differentiable, dynamic…
+  [ICLR 2026][Model Compression][LoRA] LD-MoLE is proposed, utilizing the Sparsegen closed-form projection to replace traditional TopK routing. It achieves differentiable, dynamic, and token-adaptive LoRA expert allocation. Combined with a lightweight MLP to predict sparsity factors and an analytic sparsity loss, it outperforms fixed-routing and ReLU-routin
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "LoRA"
-  - "Mixture-of-Experts"
-  - "dynamic routing"
-  - "Sparsegen"
-  - "parameter-efficient fine-tuning"
+  - ICLR 2026
+  - Model Compression
+  - LoRA
+  - Mixture-of-Experts
+  - Sparsegen
+  - parameter-efficient fine-tuning
 date: 2026-05-08
-content_hash: b88822f5503c05f8
+content_hash: 5dbee93901202332
 ---
-
 # LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25684](https://arxiv.org/abs/2509.25684)  
 **Code**: [GitHub](https://github.com/eshentw/LD-MoLE)  
-**Area**: Model Compression
-**Keywords**: LoRA, Mixture-of-Experts, dynamic routing, Sparsegen, parameter-efficient fine-tuning
+**Area**: Model Compression  
+**Keywords**: LoRA, Mixture-of-Experts, Dynamic Routing, Sparsegen, parameter-efficient fine-tuning
 
 ## TL;DR
-This paper proposes LD-MoLE, which replaces conventional TopK routing with a Sparsegen closed-form projection to achieve differentiable, dynamic, token-adaptive LoRA expert assignment. A lightweight MLP predicts sparse factors, and an analytic sparsity loss is employed. LD-MoLE outperforms fixed-routing and ReLU-routing baselines across multiple benchmarks.
+LD-MoLE is proposed, utilizing the Sparsegen closed-form projection to replace traditional TopK routing. It achieves differentiable, dynamic, and token-adaptive LoRA expert allocation. Combined with a lightweight MLP to predict sparsity factors and an analytic sparsity loss, it outperforms fixed-routing and ReLU-routing baselines across multiple benchmarks.
 
 ## Background & Motivation
-LoRA combined with MoE (i.e., MoLE) is a promising direction for parameter-efficient fine-tuning of large language models: multiple low-rank LoRA modules serve as experts, and a routing network determines which experts each token uses. However, existing methods predominantly rely on TopK routing, which suffers from three key limitations:
+LoRA + MoE (MoLE) is a promising direction for efficient fine-tuning of large models: multiple low-rank LoRA modules act as experts, and a routing network determines which experts to use for each token. However, existing methods generally rely on TopK routing, which faces three major limitations:
 
-**Hyperparameter sensitivity**: The value of $k$ requires careful tuning, as the optimal $k$ varies across tasks.
+**Hyperparameter Sensitivity**: The value of $k$ requires careful tuning, and the optimal $k$ varies across different tasks.
 
 **Non-differentiability**: TopK selection is a discrete operation, hindering end-to-end optimization.
 
-**Fixed allocation**: Each token activates the same number of experts, failing to adapt to varying complexity.
+**Fixed Allocation**: Every token activates the same number of experts, failing to adapt to varying token complexities.
 
-ReMoE attempts to address these issues with ReLU routing, but suffers from instability where some tokens may be assigned no expert at all. The core question is: can one design a routing mechanism that is both stably differentiable and capable of adaptively controlling the number of activated experts?
+ReMoE attempts to solve this with ReLU routing but suffers from instability where some tokens might not be assigned to any experts. The core problem is: Can a routing mechanism be designed that is both stable/differentiable and capable of adaptively controlling the number of experts?
 
-LD-MoLE addresses this by leveraging Sparsegen — a closed-form projection onto the probability simplex — which guarantees that each token is assigned at least one expert, while enabling dynamic expert selection through a learnable sparsity parameter $\lambda$.
+The key insight of LD-MoLE is to leverage Sparsegen—a closed-form projection on the probability simplex—to ensure at least one expert is assigned to every token while achieving dynamic expert selection via a learnable sparsity parameter $\lambda$.
 
 ## Method
 
 ### Overall Architecture
-Multiple LoRA experts are placed at each linear projection in every Transformer layer. A routing module receives token embeddings and outputs sparse weight assignments over experts. The final output is the sum of the base weight output and the weighted outputs of all active experts.
+LD-MoLE addresses the long-standing issues of TopK routing being non-differentiable and requiring manual tuning of $k$. It attaches multiple LoRA experts to the linear projections of each Transformer layer. For each incoming token, the routing module reads its embedding and operates along two parallel branches: one performs gating to produce expert scores $\bm{u}$, and the other uses a lightweight MLP to predict a token-specific sparsity factor $\lambda$. Both are fed into the Sparsegen closed-form projection to obtain sparse weights $\bm{p}$ on the probability simplex, which determine which experts are activated and their respective weights. The final output for the token is the sum of the base weight output and the weighted sum of outputs from all activated experts. During training, an analytic sparsity loss uses $\lambda$ to constrain the number of activated experts within a target range. The entire routing process, from scoring to sparse allocation, is closed-form and differentiable everywhere, allowing for end-to-end training with the base model.
+
+```mermaid
+graph TD
+    X["Token Embedding x"]
+    X --> G["Gating Scores<br/>Expert scores u = W_gate · x"]
+    X --> L["Learnable Dynamic Sparsity Factor<br/>MLP predicts token-specific λ"]
+    G --> SP["Sparsegen Routing<br/>Closed-form projection (u, λ) → Sparse weights p"]
+    L --> SP
+    L -.During Training.-> LS["Analytic Sparsity Loss<br/>Constraints activated experts ≤ k"]
+    SP --> O["Token Output<br/>Base Output + Weighted Sum of Activated Experts"]
+```
 
 ### Key Designs
-1. **Sparsegen Routing**:
 
-    - Function: Projects routing scores onto the probability simplex to produce sparse assignments.
-    - Mechanism: Given expert scores $\bm{u} = \bm{W}_{\text{gate}} \bm{x}$, Sparsegen solves the optimization problem $\bm{p} = \arg\min_{\bm{p}} \|\bm{p} - \bm{u}\|^2 - \lambda\|\bm{p}\|^2$, subject to $\bm{p} \geq 0, \mathbf{1}^\top \bm{p} = 1$. The closed-form solution is $\bm{p}_i = \left[\frac{\bm{u}_i - \tau}{1-\lambda}\right]_+$.
-    - Design Motivation: Unlike the discrete transitions of TopK, Sparsegen has well-defined subgradients and bounded upper limit, ensuring stable optimization. As $\lambda \to 1^-$, the distribution becomes sparser; as $\lambda \to -\infty$, it approaches uniform.
+**1. Sparsegen Routing: Replacing Discrete TopK with Closed-form Projection**
 
-2. **Learnable Dynamic Sparsity Factor**:
+The drawback of TopK is its discrete nature; deciding whether to select an expert involves a hard jump, lacking well-defined gradients for end-to-end optimization. LD-MoLE adopts Sparsegen: given gate-produced expert scores $\bm{u} = \bm{W}_{\text{gate}} \bm{x}$, it solves a projection problem with sparse regularization:
 
-    - Function: Predicts a personalized $\lambda$ value for each token.
-    - Mechanism: A lightweight shared MLP $f(\bm{x}) = \lambda \in \mathbb{R}$ predicts $\lambda$ from the input, shared across dimensions (typically only two variants), with negligible parameter overhead.
-    - Design Motivation: Different tokens have varying modeling complexity; complex tokens benefit from more experts, while simple tokens require fewer.
+$$\bm{p} = \arg\min_{\bm{p}} \|\bm{p} - \bm{u}\|^2 - \lambda\|\bm{p}\|^2, \quad \text{s.t. } \bm{p} \geq 0,\ \mathbf{1}^\top \bm{p} = 1$$
 
-3. **Analytic Sparsity Loss**:
+This has a closed-form solution $\bm{p}_i = \left[\frac{\bm{u}_i - \tau}{1-\lambda}\right]_+$, where $\tau$ is the threshold satisfying the simplex constraint. This solution is naturally sparse (components subtracted to a negative value are truncated to 0) and possesses well-defined subgradients and bounded upper bounds, ensuring stable optimization. The sparsity factor $\lambda$ acts as a dial: as $\lambda \to 1^-$, the allocation becomes extremely sparse; as $\lambda \to -\infty$, it tends toward a uniform distribution.
 
-    - Function: Explicitly controls the number of active experts.
-    - Mechanism: Using Proposition 2, the paper derives the $\lambda$ interval $[\lambda_{\text{lower}}(k), \lambda_{\text{upper}}(k))$ that activates exactly $k$ experts, yielding the sparsity loss $\mathcal{L}_{\text{sparse}} = \text{ReLU}(\lambda_{\text{lower}}(k) - \lambda)$.
-    - Design Motivation: Leverages the analytic properties of Sparsegen to directly constrain sparsity without heuristic tuning.
+**2. Learnable Dynamic Sparsity Factor: Let Each Token Decide Its Expert Count**
+
+The fundamental problem with fixed $k$ is the "one-size-fits-all" approach—every token activates the same number of experts regardless of difficulty. However, token modeling complexity varies significantly; complex tokens require multiple experts, while simple ones may only need one. LD-MoLE uses a lightweight shared MLP $f(\bm{x}) = \lambda \in \mathbb{R}$ to directly predict a unique $\lambda$ from the token embedding, which is then fed into Sparsegen to control the number of activated experts at a token level. This MLP shares parameters across input dimensions (usually only 2 types), resulting in minimal parameter overhead while transforming $k$ from a hyperparameter into a learned variable.
+
+**3. Analytic Sparsity Loss: Constraining Expert Count via Mathematical Properties**
+
+Having a dynamic $\lambda$ is insufficient without a mechanism to suppress the number of active experts to a target range without heuristic tuning. LD-MoLE utilizes the analytic properties of Sparsegen: according to Proposition 2, activating exactly $k$ experts corresponds to a specific interval $[\lambda_{\text{lower}}(k), \lambda_{\text{upper}}(k))$. Consequently, the sparsity loss is defined as $\mathcal{L}_{\text{sparse}} = \text{ReLU}(\lambda_{\text{lower}}(k) - \lambda)$—penalizing the predicted $\lambda$ if it has not entered the "at most $k$ experts" interval. This constraint is derived directly from the mathematical properties of the router, eliminating the need for heuristic parameter tuning.
 
 ### Loss & Training
-Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{LM}} + \alpha \mathcal{L}_{\text{lb}} + \beta \mathcal{L}_{\text{sparse}}$
+Total Loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{LM}} + \alpha \mathcal{L}_{\text{lb}} + \beta \mathcal{L}_{\text{sparse}}$
 - $\mathcal{L}_{\text{LM}}$: Standard cross-entropy (next-token prediction or sequence classification).
 - $\mathcal{L}_{\text{lb}}$: Load balancing loss to prevent routing collapse.
 - $\mathcal{L}_{\text{sparse}}$: Sparsity control loss.
 
-8 LoRA experts, rank=8, scaling=16. Trained for 10 epochs on 4×H200 GPUs.
+Configuration: 8 LoRA experts, rank=8, scaling=16. Trained for 10 epochs on 4×H200 GPUs.
 
 ## Key Experimental Results
 
@@ -85,39 +93,39 @@ Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{LM}} + \alpha \math
 
 ### Ablation Study
 
-| Configuration | Avg Score | Note |
+| Configuration | Avg Score | Description |
 |------|--------|------|
-| LD-MoLE (β=0) | 82.0 | No sparsity loss; full performance |
-| LD-MoLE (β>0, k≤4) | ~81.5 | Fewer active experts; slight performance drop |
-| MoLA(2468) vs MoLA(8888) | 78.7→78.2 | Layer-wise allocation more important under fixed routing |
-| ReMoLE (unstable) | Sharp drop on CoLA | ReLU routing may assign zero experts |
+| LD-MoLE (β=0) | 82.0 | No sparsity loss, full performance |
+| LD-MoLE (β>0, k≤4) | ~81.5 | Reduced active experts, slight performance drop |
+| MoLA(2468) vs MoLA(8888) | 78.7→78.2 | Inter-layer allocation is more critical in fixed routing |
+| ReMoLE (Unstable) | CoLA drop | ReLU routing can assign zero experts |
 
 ### Key Findings
-- Dynamic routing consistently outperforms fixed routing on instruction-tuning tasks, while the gap is smaller on classification tasks.
+- Dynamic routing generally outperforms fixed routing on instruction tuning tasks, while the difference is smaller for classification tasks.
 - LD-MoLE guarantees at least one expert per token (Lemma 1), avoiding the instability of ReMoLE.
-- The sparsity loss effectively reduces the number of active experts without significantly degrading performance.
-- MoLA(2468) outperforms MoLA(8888), suggesting that under fixed routing many experts are wasted.
+- Sparsity loss effectively reduces the number of active experts without significantly impacting performance.
+- MoLA(2468) outperformed MoLA(8888), indicating that many experts are wasted under fixed routing.
 
 ## Highlights & Insights
-- The application of Sparsegen to MoE routing is the key innovation, simultaneously achieving differentiability and sparsity.
-- The shared MLP design for predicting $\lambda$ is concise and efficient, introducing minimal parameter overhead.
-- The analytic sparsity loss is derived directly from mathematical properties, requiring no heuristic tuning.
+- The application of Sparsegen in MoE routing is a key innovation, balancing differentiability and sparsity.
+- The shared MLP design for predicting $\lambda$ is simple and efficient with minimal parameter overhead.
+- The analytic sparsity loss is derived directly from mathematical properties, avoiding heuristics.
 
 ## Limitations & Future Work
-- Main experiments are conducted only on 3B and 1.7B scale models; larger models remain untested.
+- Main experiments were only validated on 3B and 1.7B scale models; larger models have not been tested.
 - Training cost (4×H200, 10 epochs) remains relatively high for a PEFT method.
-- Specific inference latency introduced by routing computation (sorting + MLP) is not reported.
+- Specific inference latency for routing calculations (sorting + MLP) was not reported.
 
 ## Related Work & Insights
-- **vs. MoLA (TopK)**: LD-MoLE adapts $k$ automatically, eliminating the need for hyperparameter tuning.
-- **vs. ReMoE (ReLU)**: LD-MoLE guarantees at least one expert is assigned per token, yielding greater stability.
-- **vs. Soft MoE**: LD-MoLE is sparse, offering higher computational efficiency.
+- **vs MoLA (TopK)**: LD-MoLE adapts $k$, avoiding hyperparameter tuning.
+- **vs ReMoE (ReLU)**: LD-MoLE is more stable by guaranteeing at least one assigned expert.
+- **vs Soft MoE**: LD-MoLE is sparse, offering higher computational efficiency.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The application of Sparsegen routing to MoLE is novel, with rigorous theoretical analysis.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model, multi-task evaluation, though inference efficiency comparisons are absent.
-- Writing Quality: ⭐⭐⭐⭐ Mathematical derivations are clear, though notation is dense.
-- Value: ⭐⭐⭐⭐ Provides a stronger mathematical framework for MoE routing.
+- Novelty: ⭐⭐⭐⭐ Application of Sparsegen routing in MoLE is novel with solid theoretical analysis.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on multiple models and tasks, though lacking inference efficiency comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Clear mathematical derivations, despite many symbols.
+- Value: ⭐⭐⭐⭐ Provides a superior mathematical framework for MoE routing.
 
 <!-- RELATED:START -->
 
@@ -125,11 +133,11 @@ Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{LM}} + \alpha \math
 
 ## Related Papers
 
-- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
+- [\[ICLR 2026\] LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing](lora-mixer_coordinate_modular_lora_experts_through_serial_attention_routing.md)
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
-- [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
-- [\[ICML 2026\] Parameters as Experts: Adapting Vision Models with Dynamic Parameter Routing](../../ICML2026/model_compression/parameters_as_experts_adapting_vision_models_with_dynamic_parameter_routing.md)
-- [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](../../ACL2026/model_compression/lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
+- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
+- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
+- [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](drllm_dynamic_layer_routing_in_llms.md)
 
 </div>
 

@@ -2,76 +2,69 @@
 title: >-
   [Paper Note] Is Finer Better? The Limits of Microscaling Formats in Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][microscaling quantization] This paper identifies and explains a counterintuitive anomaly in microscaling quantization — namely that reducing block size below a certain threshold *increases*…
+  [ICLR 2026][Model Compression][FP4] Discovers and explains the counter-intuitive "finer-is-worse" anomaly in microscaling quantization—when block size decreases below a certain threshold, the limited dynamic range of the FP8 UE4M3 scale causes the quantization error of narrow-distribution tensors to increase instead. The paper proposes the FP8 UE5M3 scal
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "microscaling quantization"
-  - "FP4"
-  - "quantization anomaly"
-  - "dynamic range"
-  - "LLM quantization"
+  - ICLR 2026
+  - Model Compression
+  - FP4
 date: 2026-05-08
-content_hash: c5cedf8f192eb967
+content_hash: 3583d1f4731bd6df
 ---
-
 # Is Finer Better? The Limits of Microscaling Formats in Large Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19026](https://arxiv.org/abs/2601.19026)  
 **Code**: None  
-**Area**: Model Compression
-**Keywords**: microscaling quantization, FP4, quantization anomaly, dynamic range, LLM quantization
+**Area**: Model Compression  
+**Keywords**: Microscaling quantization, FP4, quantization anomalies, dynamic range, LLM quantization
 
 ## TL;DR
-This paper identifies and explains a counterintuitive anomaly in microscaling quantization — namely that reducing block size below a certain threshold *increases* quantization error for narrow-distribution tensors due to the limited dynamic range of the FP8 UE4M3 scale format — and proposes FP8 UE5M3 as a hardware-friendly solution.
+Discovers and explains the counter-intuitive "finer-is-worse" anomaly in microscaling quantization—when block size decreases below a certain threshold, the limited dynamic range of the FP8 UE4M3 scale causes the quantization error of narrow-distribution tensors to increase instead. The paper proposes the FP8 UE5M3 scale format as a hardware-friendly solution.
 
 ## Background & Motivation
-The growing computational and memory demands of LLMs have made reduced numerical precision a critical optimization direction. Microscaling formats achieve aggressive FP4-level compression via block-wise shared scales, with native hardware support from NVIDIA and AMD (e.g., NVFP4 uses 16 FP4 elements sharing one FP8 UE4M3 scale).
+As the demand for LLM computation and memory grows, reducing numerical precision has become a critical optimization path. Microscaling formats achieve aggressive FP4-level compression by sharing block-wise scales and are natively supported by NVIDIA and AMD hardware (e.g., NVFP4 uses 16 FP4 elements sharing one FP8 UE4M3 scale).
 
-The conventional intuition holds that smaller block size → more precise per-block scale → lower quantization error. This holds when using BF16 (16-bit) scales. However, when scales are quantized to FP8 UE4M3, a **perplexity inversion** emerges — on certain models, reducing block size from 16 to 8 actually *increases* perplexity.
+Generally, intuition suggests: smaller block size $\to$ more accurate scale per block $\to$ lower quantization error. This holds true when using BF16 (16-bit) scales. However, when the scale is quantized to FP8 UE4M3, **perplexity inversion** occurs—on certain models, reducing the block size from 16 to 8 actually increases perplexity.
 
-This counterintuitive finding carries practical significance: the industry is actively pursuing smaller block sizes to improve quantization accuracy, and if a fundamental limitation exists, design directions need to be reconsidered. The core question is: why does finer granularity sometimes perform worse, and how can it be fixed?
+The discovery of this counter-intuitive phenomenon is of practical importance: the industry is actively pursuing smaller block sizes to improve quantization accuracy. If fundamental limits exist, design directions must be adjusted. Core Problem: Why is finer granularity sometimes worse? How can it be fixed?
 
 ## Method
 
 ### Overall Architecture
-A three-step analytical pipeline: (1) experimentally identify the anomaly and locate its root cause; (2) establish a theoretical framework to explain it from first principles; (3) propose the hardware-friendly UE5M3 scale format based on the analysis.
+This paper does not invent a new quantization algorithm but rather explains a counter-intuitive observation: while smaller block sizes should allow scales to fit the data better, quantization errors unexpectedly rise in some models. The authors proceed through three steps: "Phenomenon $\to$ Root Cause $\to$ Fix." They first systematically scan the relationship between block size and perplexity across multiple models to isolate perplexity inversion to MSE anomalies in specific tensors. Then, assuming weights follow a normal distribution, they analytically decompose the block mean squared error into three terms to explain from first principles why narrow-distribution tensors perform worse at finer granularities. Finally, following the identified root cause of "insufficient scale dynamic range," they propose the FP8 UE5M3 scale format—changing only one bit—as a hardware-friendly solution.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Multi-model Weights<br/>FP4 + FP8 UE4M3 scale quantization"] --> B["Experimental localization of anomalies<br/>Scan block size → Perplexity inversion<br/>Per-tensor MSE → Std dev σ intersection"]
+    B --> C["Theoretical Framework<br/>Normal distribution assumption<br/>Analytical decomposition of block MSE into three terms"]
+    C -->|"Root Cause: Insufficient FP8 scale dynamic range"| D["FP8 UE5M3 Scale Format<br/>Shift 1 bit to exponent<br/>Min representable value 2⁻⁹→2⁻¹⁷"]
+    D --> E["Narrow-distribution Tensors<br/>Quantization error fixed at finer granularity"]
+```
 
 ### Key Designs
 
-1. **Experimental Localization of the Anomaly**:
+**1. Experimental localization of anomalies: Quantifying the root cause of "finer is worse"**
 
-    - Function: Systematically analyze quantization behavior across models and block sizes.
-    - Mechanism:
-        - With BF16 scales (unquantized): perplexity decreases monotonically as block size shrinks across all models — as expected.
-        - With FP8 UE4M3 scales: granite-3.3-8b shows inversion at block size 16; llama-3.1-8b at block size 8; llama-2-7b shows no inversion.
-        - Per-tensor MSE analysis reveals that ~25% of blocks exhibit higher error under finer granularity. MSE curves as a function of weight standard deviation $\sigma$ cross at $\sigma < 2\times10^{-2}$, where block size 8 yields higher MSE than block size 16.
-    - Design Motivation: Cross-model differences stem from the width of weight distributions — models with narrower distributions (e.g., granite) are more severely affected.
+Intuition suggests smaller block sizes yield more precise scales, which is true when using 16-bit BF16 scales—all models show a monotonic decrease in perplexity as block size decreases. The problem arises when the scale itself is quantized to FP8 UE4M3: granite-3.3-8b exhibits perplexity inversion at block size 16, llama-3.1-8b at block size 8, while llama-2-7b does not invert at all. To find the source of the variance, the authors perform per-tensor MSE analysis, finding that approximately 25% of blocks have higher errors at finer granularity. The relationship between MSE and weight standard deviation $\sigma$ reveals an intersection point: when $\sigma < 2\times10^{-2}$, the MSE of block size 8 is higher than that of block size 16. This intersection line explains the differences between models—models with narrower weight distributions like Granite fall on the "narrow distribution" side of the intersection and are hit earliest and most severely by inversion.
 
-2. **Theoretical Framework (Gaussian Distribution Assumption)**:
+**2. Theoretical Framework: Analytical decomposition of block MSE using normal distribution assumptions**
 
-    - Function: Derive closed-form relationships between MSE and $\sigma$ from first principles.
-    - Mechanism: Assuming weights $X \sim \mathcal{N}(0, \sigma)$, the total MSE is decomposed into three independent contributions:
-        - $\text{MSE}_{Z, x_i \neq x_{\max}}$: quantization error for ordinary elements, determined jointly by the discretization of scale $s_k$ and FP4 element quantization.
-        - $\text{MSE}_{Z, x_i = x_{\max}}$: error at the maximum-value element (zero when the scale is unquantized, nonzero after quantization).
-        - $\text{MSE}_{Z, s=0}$: error when all elements in a block are rounded to zero (triggered when $x_{\max} < s_{\min}/2$).
-    - The theoretical predictions match experimental data with high fidelity ($\chi^2 \approx 4 \times 10^{-8}$).
-    - Design Motivation: The theory reveals the root cause — for narrow distributions, the limited dynamic range of UE4M3 (minimum nonzero value $2^{-9}$) cannot accurately represent the scale of small blocks.
+After identifying narrow distributions as the cause, the authors explain "how narrow" and "why inversion occurs." Assuming weight $X \sim \mathcal{N}(0, \sigma)$ within a block, the quantized mean squared error is decomposed into three independent contributions:
 
-3. **FP8 UE5M3 Scale Format**:
+$$\text{MSE}_Z = \text{MSE}_{Z,\,x_i \neq x_{\max}} + \text{MSE}_{Z,\,x_i = x_{\max}} + \text{MSE}_{Z,\,s=0}$$
 
-    - Function: Extend the dynamic range of the scale format to eliminate inversion anomalies.
-    - Mechanism: One unused bit in the 8-bit unsigned FP8 scale is reallocated as an exponent bit: UE4M3 (4 exponent bits + 3 mantissa bits, minimum value $2^{-9}$) → UE5M3 (5 exponent bits + 3 mantissa bits, minimum value $2^{-17}$). Mantissa processing logic remains unchanged; only the exponent handling is extended by one bit.
-    - Hardware Impact: Mantissa processing dominates hardware complexity; adding one exponent bit incurs negligible overhead. Scale generation can reuse existing FP8 E5M2 quantization logic.
-    - Design Motivation: Extending the minimum representable scale by a factor of 256 ($2^{-9} \to 2^{-17}$) effectively addresses the representation problem for narrow-distribution tensors.
+Where $\text{MSE}_{Z,\,x_i \neq x_{\max}}$ is the quantization error of ordinary elements, determined by the discretization of scale $s_k$ and the FP4 element quantization; $\text{MSE}_{Z,\,x_i = x_{\max}}$ is the error of the maximum element in the block, which is 0 when the scale is not quantized but non-zero otherwise; $\text{MSE}_{Z,\,s=0}$ is the error when the entire block is rounded to zero, triggered when $x_{\max} < s_{\min}/2$. This analytical expression aligns with experimental data to a degree of $\chi^2 \approx 4 \times 10^{-8}$, confirming the root cause: the scales of narrow-distributed blocks are inherently small, and the minimum non-zero value representable by UE4M3 is only $2^{-9}$. The limited dynamic range cannot accurately represent these small scales—as blocks get finer, the relative weight of the maximum element increases, making the second and third error terms more prominent, thus leading to worse performance.
 
-### Comparison: Per-Tensor Scaling
-NVIDIA's current implementation applies per-tensor scaling to pre-amplify narrow distributions, but this approach has drawbacks: (1) sensitivity to outliers — a single large value affects the entire tensor; (2) additional absmax computation or pre-calibration required at inference time. UE5M3 achieves equal or better performance without per-tensor scaling.
+**3. FP8 UE5M3 Scale Format: Fixing the root cause by shifting one bit**
+
+Since the root cause is the insufficient dynamic range of the scale, the most direct fix is to expand that range. In the 8-bit unsigned FP8 scale, one bit was underutilized. The authors shift this bit from the mantissa to the exponent: changing UE4M3 (4-bit exponent + 3-bit mantissa, min value $2^{-9}$) to UE5M3 (5-bit exponent + 3-bit mantissa, min value $2^{-17}$). The mantissa logic remains identical, merely processing one additional exponent bit. This change extends the minimum representable scale by 256 times ($2^{-9} \to 2^{-17}$), covering the small scales required by narrow-distribution tensors. This path was chosen over more complex schemes because hardware complexity is primarily driven by mantissa processing; the overhead of one extra exponent bit is negligible, and scale generation can reuse existing FP8 E5M2 quantization logic, making deployment nearly zero-cost.
+
+As a comparison, NVIDIA's current approach with NVFP4 uses per-tensor scales to pre-amplify narrow distributions. However, this has two weaknesses: it is sensitive to outliers (a single large value can bias the entire tensor scale), and it requires calculating absmax or pre-calibration during inference. UE5M3 provides sufficient dynamic range from the scale side, achieving better or comparable results without any per-tensor scaling.
 
 ## Key Experimental Results
 
-### Main Results (FP4 Quantization, Block Size 8)
+### Main Results (FP4 quantization, block size 8)
 
 | Model | Format | Wiki PPL↓ | PIQA↑ | HellaSwag↑ | GSM8K↑ | MMLU↑ |
 |------|------|----------|-------|-----------|--------|------|
@@ -83,39 +76,39 @@ NVIDIA's current implementation applies per-tensor scaling to pre-amplify narrow
 | llama-3.1-8b | UE4M3 | 7.23 | 78.29 | 57.72 | 32.30 | 56.18 |
 | llama-3.1-8b | **UE5M3** | **6.79** | **78.84** | **58.94** | **42.15** | **60.97** |
 
-### Ablation: Three-Term MSE Decomposition
+### Ablation: MSE Three-term Decomposition
 
 | $\sigma$ Range | Dominant Error Term | Explanation |
 |-------------|----------|------|
-| Large ($>0.02$) | $\text{MSE}_{x_i \neq x_{\max}}$ | Ordinary element quantization error dominates |
-| Medium (~$0.005$) | $\text{MSE}_{x_i = x_{\max}}$ | Scale quantization error at the maximum element becomes significant |
-| Small ($<0.001$) | $\text{MSE}_{s=0}$ | Whole-block zero-rounding error dominates |
+| Large ($>0.02$) | $\text{MSE}_{x_i \neq x_{\max}}$ | Quantization error of ordinary elements dominates |
+| Medium (~$0.005$) | $\text{MSE}_{x_i = x_{\max}}$ | Scale quantization error of the max element is significant |
+| Small ($<0.001$) | $\text{MSE}_{s=0}$ | Zeroing error for the entire block dominates |
 
 ### Key Findings
-- UE5M3 outperforms UE4M3 with per-tensor scaling on granite-3.3-8b: GSM8K score 56.17 vs. 44.88 (+11.3%).
-- The theoretical framework generalizes to multiple distributions (Gaussian, uniform, Laplacian) and multiple formats (FP4/INT4/FP6 scales).
-- The anomaly is more severe in models with narrow weight distributions, such as the SSM model mamba-codestral-7b.
-- As block size decreases, the relative contribution of $\text{MSE}_{x_i=x_{\max}}$ increases — explaining why finer granularity can perform worse.
+- **Ours** (UE5M3) outperforms UE4M3 + per-tensor scaling on granite-3.3-8b: GSM8K improved from 44.88 to 56.17 (**Gain** +11.3%).
+- The theoretical framework applies to various distributions (Normal, Uniform, Laplace, etc.) and formats (FP4/INT4/FP6 scale).
+- Anomalies are more severe in models with narrow weight distributions, such as the SSM model mamba-codestral-7b.
+- As block size decreases, the relative weight of the $\text{MSE}_{x_i=x_{\max}}$ term increases—explaining why finer granularity is worse.
 
 ## Highlights & Insights
-- The discovery of the "finer = worse" counterintuitive phenomenon is itself valuable — it serves as an important warning to the industry's trend of blindly pursuing smaller block sizes.
-- The theoretical framework achieves remarkable precision ($\chi^2$ on the order of $10^{-8}$) and is readily extensible to new formats.
-- The UE5M3 solution is elegant and simple — reallocating a single bit yields a 256× dynamic range extension with minimal hardware modification.
+- Discovering the counter-intuitive "finer = worse" phenomenon itself is highly valuable—it serves as an important warning to the industry's blind pursuit of smaller block sizes.
+- The precision of the theoretical framework is impressive ($\chi^2$ at $10^{-8}$ level) and is easily extendable to new formats.
+- The UE5M3 solution is elegantly simple—attaining a 256x dynamic range expansion by reallocating just 1 bit, with minimal hardware changes.
 
 ## Limitations & Future Work
-- Only weight quantization is analyzed; anomalous behavior in activation quantization warrants further investigation.
-- UE5M3 extends the maximum representable value from $2^{15}$ (UE4M3) to $2^{31}$, which may involve trade-offs for large outliers.
-- The theoretical framework assumes a Gaussian distribution; while experimental validation shows strong agreement, a rigorous proof remains absent.
+- Only weight quantization was analyzed; the anomalous behavior of activation quantization warrants further study.
+- The maximum range of UE5M3 extends from $2^{15}$ (UE4M3) to $2^{31}$, which may involve trade-offs for large outliers.
+- The theoretical framework assumes a normal distribution; while experimental validation shows good alignment, a rigorous proof is still lacking.
 
 ## Related Work & Insights
-- **vs. NVFP4**: NVFP4 relies on UE4M3 with per-tensor scaling; UE5M3 achieves superior results without per-tensor scaling.
-- **vs. BlockDialect**: BlockDialect extends element representation via codebooks; UE5M3 addresses the problem from the scale side. The two approaches are orthogonal and can be combined.
+- **vs NVFP4**: NVFP4 uses UE4M3 + per-tensor scaling, whereas UE5M3 achieves better results without per-tensor scaling.
+- **vs BlockDialect**: BlockDialect extends element representation via codebooks; UE5M3 solves the problem from the scale side, and the two are orthogonal and combinable.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Identifies a novel quantization anomaly with rigorous theoretical explanation.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated across multiple model types (LLM/SSM/hybrid), formats, and with near-perfect theory–experiment correspondence.
-- Writing Quality: ⭐⭐⭐⭐⭐ Narrative flows clearly from phenomenon to theory to solution.
-- Value: ⭐⭐⭐⭐⭐ Directly impacts hardware design and quantization practice.
+- Novelty: ⭐⭐⭐⭐⭐ Discovered a new quantization anomaly and provided a rigorous theoretical explanation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple models (LLM/SSM/Hybrid), multiple formats, perfect alignment between theory and experiment.
+- Writing Quality: ⭐⭐⭐⭐⭐ The narrative logic from phenomenon to theory to solution is clear and fluid.
+- Value: ⭐⭐⭐⭐⭐ Directly impacts hardware design and quantization practices.
 
 <!-- RELATED:START -->
 
@@ -123,10 +116,10 @@ NVIDIA's current implementation applies per-tensor scaling to pre-amplify narrow
 
 ## Related Papers
 
+- [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)
 - [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](distillation_of_large_language_models_via_concrete_score_matching.md)
-- [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
-- [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
+- [\[ICLR 2026\] MoSA: Mosaic Shared Adaptation of Large Language Models](mosa_mosaic_shared_adaptation_of_large_language_models.md)
 - [\[ICLR 2026\] MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes](mobilellm-r1_exploring_the_limits_of_sub-billion_language_model_reasoners_with_o.md)
 
 </div>

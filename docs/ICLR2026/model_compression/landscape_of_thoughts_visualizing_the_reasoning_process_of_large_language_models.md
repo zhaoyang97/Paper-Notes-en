@@ -2,110 +2,114 @@
 title: >-
   [Paper Note] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][LLM reasoning visualization] This paper proposes Landscape of Thoughts (LoT), the first tool to visualize LLM reasoning trajectories as two-dimensional terrain maps. By encoding intermediat…
+  [ICLR 2026][Model Compression][t-SNE] The authors propose Landscape of Thoughts (LoT), the first tool to visualize LLM reasoning trajectories as 2D topographic maps. By using perplexity-based features and t-SNE projections, LoT reveals behavioral patterns in reasoning and can be adapted into a lightweight verifier to improve reasoning accuracy and test-tim
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "LLM reasoning visualization"
-  - "reasoning trajectory analysis"
-  - "t-SNE"
-  - "test-time scaling"
-  - "lightweight verifier"
+  - ICLR 2026
+  - Model Compression
+  - t-SNE
 date: 2026-05-08
-content_hash: 9606f5ff3d2e374b
+content_hash: 9fa5acfd5fcd2d81
 ---
-
 # Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.22165](https://arxiv.org/abs/2503.22165)  
 **Code**: [GitHub](https://github.com/tmlr-group/landscape-of-thoughts)  
-**Area**: Model Compression
-**Keywords**: LLM reasoning visualization, reasoning trajectory analysis, t-SNE, test-time scaling, lightweight verifier
+**Area**: Model Compression  
+**Keywords**: LLM Reasoning Visualization, Reasoning Trajectory Analysis, t-SNE, Test-time Scaling, Lightweight Verifier
 
 ## TL;DR
-This paper proposes Landscape of Thoughts (LoT), the first tool to visualize LLM reasoning trajectories as two-dimensional terrain maps. By encoding intermediate states via perplexity-based features and projecting them with t-SNE, LoT reveals reasoning behavior patterns and can be adapted as a lightweight verifier to improve reasoning accuracy and test-time scaling.
+The authors propose Landscape of Thoughts (LoT), the first tool to visualize LLM reasoning trajectories as 2D topographic maps. By using perplexity-based features and t-SNE projections, LoT reveals behavioral patterns in reasoning and can be adapted into a lightweight verifier to improve reasoning accuracy and test-time scaling effects.
 
 ## Background & Motivation
-Step-by-step reasoning in LLMs is widely applied in agentic settings, yet the reasoning behavior itself remains poorly understood. Existing analysis methods either rely on specific decoders/tasks or require manual inspection of individual reasoning trajectories—a process that neither scales (100 trajectories require ~50 minutes) nor supports dataset-level aggregation. This hinders model development, reasoning research, and safety monitoring.
+The step-by-step reasoning capability of LLMs is widely applied in scenarios like agents, yet the reasoning behavior remains difficult to interpret. Existing analysis methods either rely on specific decoders/tasks or require manual reading of trajectories—which is neither scalable (taking 50 minutes for 100 trajectories) nor conducive to dataset-level aggregation. This hinders model development, reasoning research, and safety monitoring.
 
-The root cause is the absence of a general, automated, and scalable tool capable of analyzing LLM reasoning trajectories from the level of individual samples to entire datasets. The core idea of LoT is to represent each intermediate state during reasoning as a feature vector encoding "distances" to each candidate answer, then project these vectors into 2D space via t-SNE to form a "thought landscape" that intuitively depicts reasoning convergence patterns.
+**Key Challenge**: There is a lack of a general, automated, and scalable tool capable of analyzing LLM reasoning trajectories from the individual sample to the entire dataset level. **Core Idea**: LoT represents each intermediate state during reasoning as a "distance" feature vector relative to each candidate answer, then uses t-SNE to project these into a 2D space to form a "thought landscape," intuitively demonstrating reasoning convergence patterns.
 
 ## Method
 
 ### Overall Architecture
-LoT operates as a post-hoc analysis tool without interfering with the model's reasoning process. Given a multiple-choice dataset, after the LLM generates reasoning trajectories, LoT encodes textual states into numerical features and analyzes reasoning behavior through qualitative visualization (terrain maps) and quantitative metrics (consistency, uncertainty, and perplexity).
+LoT aims to solve the invisible problem of "what the LLM's step-by-step reasoning process actually looks like." It is a **post-analysis tool** that does not modify the model or intervene in reasoning; it only "examines" generated reasoning trajectories after the fact. The pipeline is as follows: given a multiple-choice dataset, the LLM generates several reasoning trajectories. LoT first encodes each textual intermediate state into a set of numerical features. Then it branches into two paths: **qualitative visualization**, projecting high-dimensional features into 2D to draw "thought landscapes" for observing convergence patterns; and **quantitative metrics**, quantifying reasoning behavior using consistency, uncertainty, and perplexity. These observed patterns (systematic differences in convergence speed between correct and incorrect trajectories) can then be utilized to train a **lightweight verifier** using the same state features, which weights multiple trajectories during test-time to improve accuracy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Multiple Reasoning<br/>Trajectories Generated by LLM"] --> B["State Characterization:<br/>Each Intermediate State → k-dim<br/>Perplexity Distance Vector f_i"]
+    B -->|Qualitative View| C["Landscape Visualization:<br/>Feature Matrix F → t-SNE → 2D Thought Landscape"]
+    B -->|Quantitative View| D["Quantitative Metric System:<br/>Consistency, Uncertainty, Perplexity"]
+    C --> E["Convergence Pattern Observation:<br/>Systematic Differences in Correct/Error Trajectories"]
+    D --> E
+    B --> F["Lightweight Verifier:<br/>Random Forest (State Features + Consistency)"]
+    E -.Informed by Observations.-> F
+    F --> G["Weighted Majority Vote → Final Answer"]
+```
 
 ### Key Designs
-1. **State Featurization**:
 
-    - Function: Encode each intermediate state in the reasoning trajectory as a $k$-dimensional feature vector.
-    - Mechanism: The LLM itself is used to estimate the distance from each state to each candidate answer. For state $s_i$, the perplexity with respect to each option $c_j$ is computed as $d(s_i, c_j) = \text{PPL}(c_j | s_i)$, and the normalized result forms feature $\bm{f}_i$.
-    - Design Motivation: Perplexity naturally reflects model confidence toward a given answer, and token-length normalization ensures comparability across options of varying lengths.
+**1. State Characterization: Converting Textual Intermediate States into Comparable Numerical Vectors**
 
-2. **Terrain Map Visualization**:
+Reasoning trajectories are text strings and cannot be directly analyzed mathematically. The **Core Idea** of LoT is to measure distance using the LLM's own likelihood without an external encoder: for an intermediate state $s_i$ in a trajectory, it calculates the perplexity to each candidate option $c_j$ sequentially: $d(s_i, c_j) = \text{PPL}(c_j \mid s_i)$. These are concatenated into a $k$-dimensional feature vector $\bm{f}_i$ (where $k$ is the number of options) after normalization. Intuitively, this vector records "how close the model is to each answer from its current reasoning state." Using perplexity has two benefits: it naturally reflects the model's confidence in an answer, and normalization by token length allows for fair comparison between options of different lengths.
 
-    - Function: Project all state features and option landmarks into a 2D space.
-    - Mechanism: A feature matrix $\bm{F} \in \mathbb{R}^{k \times (rn+k)}$ is constructed from all trajectory states and option landmark features, then projected via t-SNE into two dimensions. States are color-coded by correctness, and density maps display the distribution of states across reasoning stages.
-    - Design Motivation: t-SNE excels at preserving local neighborhood structure, enabling visualization of convergence trends in the distance-based feature space.
+**2. Topography Visualization: Compressing High-Dimensional Features into 2D Landscapes via t-SNE**
 
-3. **Quantitative Metric System**:
+To make the reasoning process intuitive, LoT takes the state features of all trajectories in a dataset, plus the $k$ options themselves as "landmark" features, and stacks them into a feature matrix $\bm{F} \in \mathbb{R}^{k \times (rn+k)}$ ($r$ trajectories, $n$ states per trajectory, $k$ option landmarks). This is projected onto a 2D plane using t-SNE. t-SNE is chosen for its ability to preserve local neighborhood structures, faithfully unfolding the convergence trends of trajectories as they approach specific options in the distance space. Finally, trajectories are colored by correctness, and density maps are overlaid to show state distributions at different reasoning stages, placing "where reasoning converges, how fast it converges, and if it is correct" right before the eyes.
 
-    - Consistency: Whether the optimal choice at an intermediate state matches that of the final state, $\text{Consistency}(s_i) = \mathbb{1}(\arg\min \bm{f}_i = \arg\min \bm{f}_n)$.
-    - Uncertainty: The entropy of the feature vector, reflecting model confidence at intermediate steps.
-    - Perplexity: Thought-level perplexity measuring model confidence in its generated reasoning steps.
+**3. Quantitative Metric System: Quantifying Reasoning Behavior via Three Metrics**
 
-### Lightweight Verifier
-Based on observed differences in convergence speed and consistency, a random forest classifier $g$ is trained to predict trajectory correctness. The input consists of state features and consistency metrics; the output is a correct/incorrect label. Weighted majority voting replaces simple voting to select the final answer.
+The landscapes provide qualitative intuition; dataset-level aggregation requires calculable scalars. LoT defines three metrics built directly on state features $\bm{f}_i$. **Consistency** measures whether the optimal choice of an intermediate state matches the final state: $\text{Consistency}(s_i) = \mathbb{1}(\arg\min \bm{f}_i = \arg\min \bm{f}_n)$. Earlier consistency indicates the model "made up its mind" sooner. **Uncertainty** uses the entropy of the feature vector, reflecting the model's hesitation at that step. **Perplexity** is the thought-level perplexity, measuring the model's confidence in its generated thought segment. Together, these allow cross-model and cross-dataset comparisons of "who converges faster and who is more certain."
+
+**4. Lightweight Verifier: Turning Visual Observations into Classifiers**
+
+The topography reveals a usable pattern—correct and incorrect trajectories systematically differ in convergence speed and consistency. LoT leverages these features to train a Random Forest classifier $g$, which takes state features and consistency measures as input and outputs a "correct/incorrect" label for the trajectory. At inference, instead of simple majority voting, this verifier scores each trajectory for **weighted majority voting**. It does not rely on any additional pretrained language models, making it exceptionally lightweight.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model / Method | AQuA (Acc%) | MMLU | CommonsensQA | StrategyQA |
-|---|---|---|---|---|
-| Llama-1B (CoT, no verifier) | 15.8 | - | - | - |
-| Llama-3B (CoT, no verifier) | 42.0 | - | - | - |
-| Llama-70B (CoT, no verifier) | 84.4 | 80.2 | 75.8 | 64.8 |
-| + Verifier (10 trajectories) | consistent gain | consistent gain | consistent gain | consistent gain |
+| Model/Method | AQuA (Acc%) | MMLU | CommonsensQA | StrategyQA |
+|-----------|-------------|------|--------------|------------|
+| Llama-1B (CoT, No Verifier) | 15.8 | - | - | - |
+| Llama-3B (CoT, No Verifier) | 42.0 | - | - | - |
+| Llama-70B (CoT, No Verifier) | 84.4 | 80.2 | 75.8 | 64.8 |
+| With Verifier (10 trajectories) | Consistent Gain | Consistent Gain | Consistent Gain | Consistent Gain |
 | Verifier (50 trajectories) | >65% | - | - | - |
 
 ### Ablation Study / Transferability
 
-| Train → Test | ΔAcc | Notes |
-|---|---|---|
-| AQuA → StrategyQA | +4.5% | Positive cross-dataset transfer |
-| 70B → 3B | +5.5% | Positive cross-scale transfer |
-| 1B → 70B | positive | Small-model training transfers to large models |
+| Training Data → Test Data | Gain (ΔAcc) | Description |
+|---------------------|------|--------------|
+| AQuA → StrategyQA | +4.5% | Cross-dataset positive transfer |
+| 70B → 3B | +5.5% | Cross-model scale positive transfer |
+| 1B → 70B | Positive | Small model training usable for large models |
 
 ### Key Findings
-- Larger models exhibit faster convergence, higher consistency, and lower uncertainty and perplexity in their reasoning trajectories.
-- Incorrect trajectories converge to wrong answers earlier than correct trajectories converge to correct ones, enabling early error detection.
-- Intermediate-state consistency is generally low, revealing the instability inherent in the reasoning process.
-- The verifier with 50 trajectories significantly outperforms baseline voting (>65% vs. ~30%), demonstrating strong test-time scaling.
+- Larger models exhibit faster trajectory convergence, higher consistency, and lower uncertainty/perplexity.
+- Incorrect trajectories converge to wrong answers earlier than correct trajectories do (allowing for early detection).
+- Consistency of intermediate states is generally low, revealing instability in the reasoning process.
+- The verifier significantly outperforms baseline voting with 50 trajectories (>65% vs ~30%), demonstrating strong test-time scaling.
 
 ## Highlights & Insights
-- The approach of reformulating reasoning behavior analysis as a visualization problem is novel, analogous to the contribution of t-SNE to high-dimensional data analysis.
-- The state featurization design is elegant: perplexity serves as a bridge connecting the text space to a numerical feature space.
-- The lightweight verifier does not rely on pretrained language models; a random forest suffices to effectively distinguish correct from incorrect trajectories.
-- The possibility of cross-model and cross-dataset transfer opens a direction toward general-purpose reasoning monitoring.
+- The **Novelty** lies in transforming reasoning behavior into a visualization problem, analogous to t-SNE's contribution to high-dimensional data analysis.
+- The **State Characterization** is clever: using perplexity as a bridge to connect textual space with numerical space.
+- The lightweight verifier does not rely on pretrained language models; Random Forest alone effectively distinguishes correct/incorrect trajectories.
+- The potential for cross-model/cross-dataset transfer opens directions for universal reasoning monitoring.
 
 ## Limitations & Future Work
-- The framework is restricted to multiple-choice formats; open-ended tasks require new featurization schemes.
-- Likelihood estimation depends on open-source LLMs and is inapplicable to closed-source models.
-- Cross-dataset transfer is not always positive, and the transferability of features warrants further improvement.
-- t-SNE projection may discard part of the structural information.
+- Restricted to multiple-choice formats; open-ended tasks require new characterization schemes.
+- Dependency on likelihood estimation limits use with closed-source models.
+- Cross-dataset transfer is not always positive; feature transferability needs improvement.
+- t-SNE projection may lose certain structural information.
 
 ## Related Work & Insights
-- **vs. Manual text inspection**: LoT provides automated and scalable analysis, avoiding subjective bias.
-- **vs. Metric-only analysis**: Combining qualitative terrain maps with quantitative indicators reveals patterns invisible to either approach alone.
-- **vs. LLM-based verifiers**: LoT is lightweight and fast, requiring no additional language model.
+- **vs. Manual Inspection**: LoT provides automated, scalable analysis avoiding subjective bias.
+- **vs. Metric Analysis**: Combining qualitative landscapes with quantitative metrics reveals patterns invisible to either method alone.
+- **vs. LLM-based Verifiers**: Lightweight and fast, requiring no additional language models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First reasoning trajectory visualization tool; a pioneering perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated across multiple models, methods, and datasets, but lacks direct comparison with LLM-based verifiers.
-- Writing Quality: ⭐⭐⭐⭐⭐ Polished figures and well-organized observations.
-- Value: ⭐⭐⭐⭐ Practically valuable for reasoning research and safety monitoring; the verifier's practical utility is somewhat limited.
+- **Novelty**: ⭐⭐⭐⭐⭐ First reasoning trajectory visualization tool, pioneering perspective.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Evaluated across multiple models/methods/datasets, though lacks direct comparison with LLM-verifiers.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Exquisite charts, well-organized observations.
+- **Value**: ⭐⭐⭐⭐ Practical value for reasoning research and safety monitoring; verifier utility is specialized.
 
 <!-- RELATED:START -->
 

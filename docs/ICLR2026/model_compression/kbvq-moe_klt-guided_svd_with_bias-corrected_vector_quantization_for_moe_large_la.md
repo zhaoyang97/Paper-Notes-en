@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][MoE quantization] This paper proposes KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. It eliminates inter-expert redundancy sharing (IDRE) via…
+  [ICLR 2026][Model Compression][Paper Note] The authors propose KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. By utilizing KLT-guided SVD for Input-Driven Redundancy Elimination (IDRE) and Bias-Corrected Output Stabilization (BCOS), it achieves a 10%+ accuracy improvement over existing methods under 2-bit quantiza
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "MoE quantization"
-  - "vector quantization"
-  - "KLT transform"
-  - "SVD redundancy elimination"
-  - "bias correction"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 4528be3a9a7a4134
+content_hash: a2dfc62e36e8f53b
 ---
-
 # KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models
 
 **Conference**: ICLR 2026  
@@ -24,56 +18,64 @@ content_hash: 4528be3a9a7a4134
 **Keywords**: MoE quantization, vector quantization, KLT transform, SVD redundancy elimination, bias correction
 
 ## TL;DR
-This paper proposes KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. It eliminates inter-expert redundancy sharing (IDRE) via KLT-guided SVD and stabilizes outputs through bias-corrected output stabilization (BCOS), achieving 10%+ accuracy improvement over existing methods at 2-bit quantization.
+The authors propose KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. By utilizing KLT-guided SVD for Input-Driven Redundancy Elimination (IDRE) and Bias-Corrected Output Stabilization (BCOS), it achieves a 10%+ accuracy improvement over existing methods under 2-bit quantization.
 
 ## Background & Motivation
-MoE models (e.g., Qwen3-30B-A3B, Mixtral-8x7B) achieve a performance–efficiency balance through sparse expert activation, yet their massive parameter counts make deployment challenging (Qwen3-80B-A3B requires 160GB+ GPU memory).
+MoE models (e.g., Qwen3-30B-A3B, Mixtral-8x7B) achieve a balance between performance and efficiency through sparse expert activation. however, their massive parameter counts make deployment challenging (Qwen3-80B-A3B requires over 160GB of VRAM).
 
-Vector quantization (VQ) has demonstrated strong potential for ultra-low-bit compression of dense LLMs—mapping weight vectors to the nearest codeword in a discrete codebook. However, directly applying VQ to MoE encounters two critical obstacles:
+Vector Quantization (VQ) has demonstrated strong potential for the ultra-low bit compression of dense LLMs by mapping weight vectors to the nearest codewords in a discrete codebook. However, its direct application to MoE faces two critical obstacles:
 
-**Inter-expert redundant representations**: MoE experts frequently capture similar feature patterns; VQ repeatedly quantizes similar representations for each expert, leading to inefficient utilization of limited codebook capacity.
+**Inter-expert Redundant Representation**: MoE experts frequently capture similar feature patterns. VQ repeatedly quantizes similar representations for each expert, leading to inefficient utilization of limited codebook capacity.
 
-**Accumulated output bias amplified by expert aggregation**: Quantization errors accumulate across layers to produce bias; the weighted aggregation of multiple experts in MoE further amplifies this bias, causing more severe distributional drift than in dense LLMs.
+**Amplification of Cumulative Output Bias by Expert Aggregation**: Quantization errors accumulate across layers to produce bias. In MoE, the weighted aggregation of multiple experts further amplifies this bias, resulting in more severe distribution shifts than in dense LLMs.
 
-**Core Idea**: KLT and SVD are first applied to extract shared weight structures across experts (retained in full precision), VQ is applied only to the expert-specific residuals, and channel-wise affine correction is then used to repair distributional drift.
+Core Idea: First, KLT+SVD is used to extract shared weight structures across experts (retained in full precision), applying VQ only to expert-specific components. Subsequently, channel-level affine correction is applied to fix distribution shifts.
 
 ## Method
 
 ### Overall Architecture
-$W \xrightarrow[\text{KLT+SVD}]{\text{IDRE}} \underbrace{W_{\text{share}}}_{\text{shared component}} + \underbrace{W_{\text{quant}}}_{\text{specific component}} \xrightarrow[\text{Bias Correction}]{\text{BCOS}} W_{\text{share}} + W_{\text{quant}}^{\text{VQ}} + (s, b)$
+KBVQ-MoE aims to compress MoE weights to 2–3 bits without collapse. The mechanism involves separating redundant and essential components followed by a correction step. It follows a two-step process: first, Input-Driven Redundancy Elimination (IDRE) uses KLT-guided SVD to decompose each expert's weights into two parts—a structure shared by all experts (retained in full precision) and expert-specific residuals; only these residuals are subjected to low-bit Vector Quantization (VQ). Second, Bias-Corrected Output Stabilization (BCOS) adds an affine correction to each output channel following VQ to pull the mean and variance drifts caused by quantization back to full-precision levels. The entire pipeline is:
+
+$$W \xrightarrow[\text{KLT+SVD}]{\text{IDRE}} \underbrace{W_{\text{share}}}_{\text{Shared Part}} + \underbrace{W_{\text{quant}}}_{\text{Specific Part}} \xrightarrow[\text{Bias Correction}]{\text{BCOS}} W_{\text{share}} + W_{\text{quant}}^{\text{VQ}} + (s, b)$$
+
+The method is pure Post-Training Quantization (PTQ) and requires no re-training. The VQ step employs a standard configuration: a vector length of 4, with the codebook initialized via k-means++ and converged over 100 iterations. Input statistics for IDRE and output statistics for BCOS are estimated based on the same calibration data (256 samples from Red Pajama with a sequence length of 4096). The entire experiment can be completed on a single NVIDIA RTX A6000.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    W["MoE Expert Weights W<br/>(Layer-wise, incl. shared/routed experts)"]
+    subgraph IDRE["1. Input-Driven Redundancy Elimination (IDRE)"]
+        direction TB
+        A["Perform KLT on input activations<br/>to obtain coherent basis U_X"] --> B["Map weights to coherent space<br/>+ Concatenate all experts into unified matrix"]
+        B --> C["Perform SVD on unified matrix<br/>and take top k singular values"]
+    end
+    W --> IDRE
+    IDRE -->|"Shared structure<br/>(FP, k≈1/128 of full rank)"| SHARE["W_share retained directly"]
+    IDRE -->|"Expert-specific residuals"| VQ["Vector Quantization (VQ)<br/>(Length 4, k-means++)"]
+    SHARE --> BCOS["2. Bias-Corrected Output Stabilization (BCOS)<br/>Channel-wise affine (s+1)⊙(W·x)+b"]
+    VQ --> BCOS
+    BCOS --> OUT["Compressed MoE<br/>2–3 bit, Pure PTQ"]
+```
 
 ### Key Designs
 
-1. **Input-Driven Redundancy Elimination (IDRE)**:
+**1. Input-Driven Redundancy Elimination (IDRE): Extracting shared expert weights for full-precision retention to prevent VQ from wasting codewords.**
 
-    - **Function**: Extracts shared weight structures across experts and retains them in full precision.
-    - **Mechanism** (3 steps):
-        - *Step 1: KLT decomposition of input activations*: Compute the input covariance matrix $C_X = \frac{1}{B-1}X^TX$ and perform eigendecomposition to obtain energy-sorted orthogonal bases $U_X = U_{\text{KLT}} \Lambda_{\text{KLT}}^{1/2}$.
-        - *Step 2: Map weights into the input-coherent space*: $\hat{W} = WU_X$, orienting weight analysis along the principal directions of the input.
-        - *Step 3: Extract shared structure*: Concatenate the transformed weights of all $n$ experts into a unified representation $\bar{W} \in \mathbb{R}^{(n \cdot oc) \times ic}$, then apply SVD to $\bar{W}$ to extract the shared structure corresponding to the top-$k$ singular values. The shared directions are mapped back to the original space: $U_{\text{share}} = U^T \cdot U_X^{-1}$.
-    - **Design Motivation**: KLT ensures that redundancy extraction is guided by input statistics rather than pure weight-space decomposition; SVD operating on the unified representation handles all experts simultaneously. The truncation rank $k$ is set to $1/128$ of the full rank, incurring only a 0.12% parameter overhead.
+MoE experts often learn similar feature patterns. If VQ is performed independently for each expert, the limited codebook capacity is repeatedly occupied by these redundant structures. IDRE identifies and handles common structures across experts in three steps: first, perform KLT on input activations to compute the covariance matrix $C_X = \frac{1}{B-1}X^TX$ and its eigen-decomposition, yielding orthogonal bases $U_X = U_{\text{KLT}} \Lambda_{\text{KLT}}^{1/2}$ sorted by energy. Second, map weights into this input-coherent space $\hat{W} = WU_X$, ensuring subsequent structural analysis is guided by input principal directions rather than blind decomposition in weight space. Finally, concatenate the transformed weights of all $n$ experts vertically into a unified matrix $\bar{W} \in \mathbb{R}^{(n \cdot oc) \times ic}$, perform SVD, and select the subspace corresponding to the top $k$ singular values as the shared structure, then map it back to the original space $U_{\text{share}} = U^T \cdot U_X^{-1}$. This single SVD processes redundancies across all experts simultaneously, while KLT ensures the extracted shared directions are statistically significant regarding the input. The truncation rank $k$ is approximately $1/128$ of the full rank, so the parameter overhead for the FP shared part is only about 0.12%. Only the remaining specific residuals are passed to VQ, focusing the codebook capacity on truly non-redundant information.
 
-2. **Bias-Corrected Output Stabilization (BCOS)**:
+**2. Bias-Corrected Output Stabilization (BCOS): Restoring distribution shifts amplified by expert aggregation using near-zero-cost affine transformations.**
 
-    - **Function**: Repairs output distributional drift introduced by VQ quantization.
-    - **Mechanism**: After applying VQ to the expert-specific weights $W_{\text{quant}}$, a channel-wise affine transform corrects the output:
-      $\mathbf{y}_{\text{corr}} = (s+1) \odot (W_{\text{VQ}}x) + b$
-      where $s_j \approx \frac{\sigma_{y_j}}{\sigma_{\hat{y}_j}} - 1$ and $b_j = \mu_{y_j} - (1+s_j)\mu_{\hat{y}_j}$, aligning the mean and variance of the quantized output with those of the full-precision output.
-    - **Design Motivation**: Only $2 \cdot oc$ additional parameters per layer are required, making computational and storage overhead negligible. The optimal parameters under the MMSE criterion admit a closed-form solution.
+Quantization errors accumulate layer-by-layer as bias, and MoE's weighted aggregation of multiple expert outputs further amplifies this bias, making distribution shifts more severe than in dense LLMs. BCOS applies a channel-wise affine correction to the output of the VQ-quantized specific weights $W_{\text{quant}}$:
 
-3. **Vector Quantization Details**:
+$$\mathbf{y}_{\text{corr}} = (s+1) \odot (W_{\text{VQ}}x) + b$$
 
-    - Vector length is set to 4; k-means++ initialization with 100 iterations is used.
-    - Calibration data: 256 samples from Red Pajama with sequence length 4096.
-
-### Loss & Training
-Pure post-training quantization (PTQ) — no retraining required. All experiments are conducted on an NVIDIA RTX A6000.
+Scaling and offset parameters are used to align the second-order statistics of the quantized output with the full-precision output per channel, where $s_j \approx \frac{\sigma_{y_j}}{\sigma_{\hat{y}_j}} - 1$ and $b_j = \mu_{y_j} - (1+s_j)\mu_{\hat{y}_j}$. This ensures the mean and variance of each channel return to full-precision levels. These parameters have a closed-form solution under the Minimum Mean Square Error (MMSE) criterion and can be calculated directly from calibration data statistics without additional training. Each layer requires only $2 \cdot oc$ additional parameters, making computational and storage overhead negligible.
 
 ## Key Experimental Results
 
-### Main Results (Multiple Models and Bit-widths)
+### Main Results (Multiple Models, Multiple Bit-widths)
 
-| Model | Bits | Method | PPL (↓) | Avg. Accuracy (↑) |
+| Model | Bit | Method | PPL(↓) | Avg. Acc(↑) |
 |------|------|------|--------|-------------|
 | Qwen1.5-MoE-A2.7B | FP16 | — | 7.22 | 68.07 |
 | Qwen1.5-MoE-A2.7B | 3-bit | VQ | 11.47 | 55.94 |
@@ -94,33 +96,33 @@ Pure post-training quantization (PTQ) — no retraining required. All experiment
 | ✓ | ✓ | **9.26** | **—** | **—** | **—** |
 
 ### Key Findings
-- Qwen1.5-MoE at 3-bit achieves 67.99% accuracy, nearly matching the FP16 baseline of 68.07%—a loss of only 0.08%.
-- For Qwen3-30B-A3B at 2-bit, KBVQ-MoE reduces PPL by 6 points and improves accuracy by 10%+ compared to vanilla VQ.
-- After IDRE eliminates redundancy, inter-expert output similarity decreases substantially (verified via comparison figures).
-- BCOS effectively repairs distributional drift—corrected channel means and variances align precisely with full-precision values.
-- IDRE contributes more than BCOS (PPL reduction of 7 vs. 4.4), yet the two components together achieve the best results.
+- Qwen1.5-MoE 3-bit quantization achieves 67.99% accuracy, nearly identical to the FP16 accuracy of 68.07%—a loss of only 0.08%.
+- For Qwen3-30B-A3B 2-bit: KBVQ-MoE reduces PPL by 6 points and improves accuracy by over 10% compared to direct VQ.
+- After IDRE eliminates redundancy, expert output similarity decreases significantly (verified by comparative figures).
+- BCOS effectively fixes distribution shifts—corrected channel means and variances align precisely with FP.
+- The contribution of IDRE is greater than that of BCOS (PPL reduction of 7 vs 4.4), but the two are most effective when combined.
 
 ## Highlights & Insights
-- This work is the first to systematically address VQ-specific challenges in MoE architectures—redundancy waste and bias amplification.
-- The KLT-guided SVD design is elegant: aligning the weight space with input statistics makes redundancy extraction more precise.
-- The closed-form solution of BCOS is simple and practical, requiring only calibration data statistics without additional training.
-- Usable performance is maintained even at extreme bit-widths (2-bit), indicating that the method's compression ceiling is high.
+- Systematically addresses the specific problems of VQ in MoE architectures—redundancy waste and bias amplification—for the first time.
+- The KLT-guided SVD design is elegant; weight space alignment driven by input statistics makes redundancy extraction more precise.
+- The closed-form solution for BCOS is simple and practical, requiring only calibration data statistics without additional training.
+- Maintains usable performance even at extremely low bits (2-bit), indicating a high compression limit for the method.
 
 ## Limitations & Future Work
-- Retaining the shared structure in full precision increases storage, and the choice of truncation rank $k$ may require per-layer tuning.
-- KLT assumes a stationary input distribution; dynamic inputs may yield suboptimal KLT bases.
-- Evaluation is limited to the inference (PTQ) setting; combining with QAT could further improve performance.
-- Scalability to larger MoE models (e.g., Qwen3-80B-A3B) has not been verified.
+- Retaining the shared structure in full precision increases storage; the selection of truncation rank $k$ may require per-layer tuning.
+- KLT assumes the input distribution is stationary; dynamic inputs may result in suboptimal KLT bases.
+- Evaluation was limited to the inference (PTQ) setting; integration with QAT may further improve results.
+- Scalability on larger MoE models (e.g., Qwen3-80B-A3B) has not yet been verified.
 
 ## Related Work & Insights
-- **vs. GPTQ/MoEQuant**: Scalar quantization methods perform poorly at ≤3 bits; KBVQ-MoE exploits the structural advantages of VQ.
-- **vs. VPTQ/AQLM**: General-purpose VQ methods do not account for inter-expert redundancy in MoE, resulting in poor performance when applied directly.
+- **vs GPTQ/MoEQuant**: Scalar quantization methods perform poorly at $\le 3$ bits; KBVQ-MoE leverages the structural advantages of VQ.
+- **vs VPTQ/AQLM**: General VQ methods do not account for expert redundancy in MoE, leading to suboptimal results when applied directly.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of KLT + SVD + VQ + affine correction is novel, though each component has precedents.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers 4 models, 2/3-bit settings, 7 datasets, and a complete ablation study.
-- **Writing Quality**: ⭐⭐⭐⭐ Method description is detailed and mathematical derivations are clear.
-- **Value**: ⭐⭐⭐⭐⭐ The first MoE-specific VQ framework; near-lossless 3-bit quantization offers high practical value.
+- Novelty: ⭐⭐⭐⭐ The combination of KLT+SVD+VQ+Affine Correction is novel, though individual components have precedents.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated across 4 models, 2/3-bit settings, 7 datasets, with full ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Detailed method descriptions and clear formula derivations.
+- Value: ⭐⭐⭐⭐⭐ As the first MoE-specific VQ framework, the near-lossless 3-bit quantization is highly practical.
 
 <!-- RELATED:START -->
 
@@ -129,10 +131,10 @@ Pure post-training quantization (PTQ) — no retraining required. All experiment
 ## Related Papers
 
 - [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](../../ICML2026/model_compression/rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
+- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](steering_moe_llms_via_expert_deactivation.md)
 - [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)
-- [\[ICLR 2026\] MoNE: Replacing Redundant Experts with Lightweight Novices for Structured Pruning of MoE](mone_replacing_redundant_experts_with_lightweight_novices_for_structured_pruning.md)
-- [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
+- [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
 
 </div>
 

@@ -2,99 +2,89 @@
 title: >-
   [Paper Note] FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension
 description: >-
-  [ICLR 2026][Model Compression][KV cache compression] This paper proposes FreqKV, a parameter-free and architecture-agnostic KV cache compression method that iteratively compresses KV states in the frequency domain by ret…
+  [ICLR 2026][Model Compression][DCT] FreqKV is proposed as a parameter-free, architecture-agnostic KV cache compression method. By iteratively compressing KV states in the frequency domain (preserving low frequencies and discarding high frequencies), it extends the context window of LLaMA-2-7B to 256K with only 8K length fine-tuning while maintaining stab
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "KV cache compression"
-  - "frequency domain transform"
-  - "context window extension"
-  - "DCT"
-  - "long-context inference"
+  - ICLR 2026
+  - Model Compression
+  - DCT
 date: 2026-05-08
-content_hash: f7dd3a4dda10b9d9
+content_hash: caec6a3a31c7fdd6
 ---
-
 # FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.00570](https://arxiv.org/abs/2505.00570)  
 **Code**: [GitHub](https://github.com/LUMIA-Group/FreqKV)  
-**Area**: Model Compression / LLM Efficiency
-**Keywords**: KV cache compression, frequency domain transform, context window extension, DCT, long-context inference
+**Area**: Model Compression / LLM Efficiency  
+**Keywords**: KV Cache Compression, Frequency Domain Transformation, Context Window Extension, DCT, Long-context Inference
 
 ## TL;DR
 
-This paper proposes FreqKV, a parameter-free and architecture-agnostic KV cache compression method that iteratively compresses KV states in the frequency domain by retaining low-frequency components and discarding high-frequency ones. With only lightweight fine-tuning on 8K-length sequences, FreqKV extends the context window of LLaMA-2-7B to 256K while maintaining stable perplexity.
+FreqKV is proposed as a parameter-free, architecture-agnostic KV cache compression method. By iteratively compressing KV states in the frequency domain (preserving low frequencies and discarding high frequencies), it extends the context window of LLaMA-2-7B to 256K with only 8K length fine-tuning while maintaining stable perplexity.
 
 ## Background & Motivation
 
-The reasoning capability of LLMs is bounded by the context window established during pretraining; performance degrades sharply beyond this limit. Existing approaches each have notable drawbacks:
+The inference capability of LLMs is limited by the context window size set during pre-training, with performance dropping sharply beyond this window. Existing solutions have their limitations:
 
-**Positional encoding methods** (ALiBi, PI, LongRoPE): rely on full self-attention, incurring quadratic computational cost.
+**Position Encoding Methods** (ALiBi, PI, LongRoPE): Rely on full self-attention, incurring excessive quadratic computational costs.
 
-**KV cache eviction methods** (SnapKV, PyramidKV, FastKV): discard unimportant tokens based on attention scores, but the information from evicted tokens is permanently lost, degrading subsequent decoding performance, with no ability to extrapolate beyond the context window.
+**KV Cache Eviction Methods** (SnapKV, PyramidKV, FastKV): Discard unimportant tokens based on attention scores; however, information from discarded tokens is permanently lost, leading to performance degradation in subsequent decoding and an inability to extrapolate beyond the context window.
 
-**Token merging methods** (CaM, KVMerger, D2O): retain more information but perform poorly without fine-tuning.
+**Token Merging Methods** (CaM, KVMerger, D2O): Retain more information but perform poorly without fine-tuning.
 
-**Additional module methods** (LoCoCo, Activation Beacon): compress KV states via extra parameters, increasing memory overhead.
+**Extra Module Methods** (LoCoCo, Activation Beacon): Introduce additional parameters to compress KV states, increasing memory overhead.
 
-**Key observation**: The authors find that KV states in LLMs exhibit strong energy concentration in the frequency domain—energy is predominantly concentrated in low-frequency components. Although the initial embeddings in the first layer show no clear low-frequency bias, subsequent layers progressively shift energy toward lower frequencies as decoding proceeds. This implies that high-frequency components are largely redundant and can be discarded with minimal loss.
+**Key Insight**: The authors observe that KV states in LLMs exhibit strong energy concentration in the frequency domain—energy is primarily concentrated in low-frequency components. While initial embeddings in the first layer lack a clear low-frequency bias, subsequent layers gradually shift energy to low frequencies as decoding progresses. This implies that high-frequency components are largely redundant and can be discarded with minimal loss.
 
-Further perturbation experiments confirm that low-frequency components encode global semantic information and long-range dependencies, exhibiting robustness to input perturbations, whereas high-frequency components capture local details and are sensitive to perturbations. On summarization tasks, retaining low-frequency components substantially outperforms retaining high-frequency ones (e.g., GovReport: 25.51 vs. 14.21).
+Further perturbation experiments confirm: low-frequency components encode global semantic information and long-range dependencies, showing robustness to input perturbations; high-frequency components capture local details and are sensitive to perturbations. In summarization tasks, preserving low-frequency components significantly outperforms preserving high-frequency ones (e.g., GovReport: 25.51 vs. 14.21).
 
 ## Method
 
 ### Overall Architecture
 
-FreqKV operates in three steps:
+FreqKV transforms the KV cache into the frequency domain using the Discrete Cosine Transform (DCT) along the sequence dimension, retaining only the energy-concentrated low-frequency components and discarding redundant high-frequency ones. It then returns to the time domain via Inverse DCT (IDCT) to obtain a shorter cache. The pipeline operates around a cache limit $N$: tokens within the window undergo standard attention; once the cache is filled, a few initial attention sink tokens are preserved as-is, while the remaining tokens undergo frequency domain compression to free up space for new tokens. This iterative process allows the context window to be infinitely extended. Notably, compression occurs before applying RoPE to the Keys, ensuring the process introduces no parameters, requires no structural changes, and needs no positional extrapolation.
 
-1. Apply the Discrete Cosine Transform (DCT) along the sequence dimension of the KV cache to convert it to the frequency domain.
-2. Retain low-frequency components and discard high-frequency components for compression.
-3. Apply the Inverse DCT (IDCT) to reconstruct the compressed KV cache in the time domain.
-
-Through an iterative compression strategy, FreqKV repeatedly executes the above process as the cache grows, enabling theoretically unlimited context window extension.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["K/V of new token<br/>(Before RoPE)"] --> CACHE{"KV Cache<br/>reaches limit N?"}
+    CACHE -->|"No"| ATT
+    CACHE -->|"Yes"| SINK["Attention Sink Preservation<br/>First S tokens kept as-is"]
+    SINK --> COMP
+    subgraph COMP["Frequency Domain KV Compression"]
+        direction TB
+        DCT["DCT for remaining tokens along sequence"] --> TRUNC["Truncate to keep L=γN<br/>low-freq coefficients"] --> IDCT["IDCT to time domain<br/>×√(L/N) magnitude compensation"]
+    end
+    COMP -->|"Iterative Compression: Release N−L slots"| CACHE
+    COMP --> ATT["RoPE Integration<br/>Apply RoPE based on cache positions"]
+    ATT --> OUT["Compressed cache for decoding<br/>Infinite context extension"]
+```
 
 ### Key Designs
 
-**1. Frequency-Domain KV Compression**
+**1. Frequency Domain KV Compression: Removing high-frequency redundancy instead of entire tokens**
 
-DCT is applied to the KV cache along the sequence dimension:
+Eviction methods discard tokens with low attention, causing permanent information loss. FreqKV takes a different perspective: since KV state energy is concentrated in low frequencies, one can compress the representation precision without losing tokens. Specifically, DCT is applied to Keys and Values along the sequence dimension to obtain spectra $Z_K = \mathrm{DCT}(K)$ and $Z_V = \mathrm{DCT}(V)$. Given a retention ratio $\gamma$, the cache length is truncated from $N$ to $L = \gamma N$, retaining only the first $L$ low-frequency coefficients. After truncation, IDCT is applied to return to the time domain, multiplied by a scaling factor $\sqrt{L/N}$ to restore original magnitude—since DCT and IDCT normalization differ by factors of $\sqrt{N}$ and $\sqrt{L}$, this factor prevents signal amplification across multiple iterations:
 
-$$Z_K = \text{DCT}(K),\quad Z_V = \text{DCT}(V)$$
+$$K_{\text{comp}} = \sqrt{L/N}\,\mathrm{IDCT}(Z_K[0{:}L]),\quad V_{\text{comp}} = \sqrt{L/N}\,\mathrm{IDCT}(Z_V[0{:}L])$$
 
-Given a retention ratio $\gamma$, the cache size is compressed from $N$ to $L = \gamma \cdot N$ by filtering out $N - L$ high-frequency components. The IDCT is then applied to reconstruct the time-domain representation, scaled by $\sqrt{L/N}$ to restore the original amplitude:
+The compressed results replace the original cache for subsequent attention. Global semantics of all tokens are preserved via low-frequency components, albeit with reduced representation precision.
 
-$$K_{\text{compressed}} = \sqrt{L/N} \cdot \text{IDCT}(Z_K[0:L-1])$$
+**2. Iterative Compression: Natural degradation for distant tokens and high precision for proximal tokens**
 
-The compressed KV cache directly replaces the original cache in attention computation.
+To support infinite context, compression must be applied repeatedly. FreqKV sets a cache upper limit $N$: standard attention is used within the window until the cache is full, triggering one round of frequency compression to release $N-L$ slots. Consequently, earlier tokens undergo more compression cycles and have lower precision, while tokens closer to the current position are compressed less. This aligns with the "recency bias" of auto-regressive LLMs. As compression only triggers every $N-L$ tokens with a cost of $O(N\log N)$, the overhead per step is negligible, and total attention cost grows linearly with input length. This iterative strategy allows models trained at 8K to extrapolate to 256K.
 
-**2. Iterative Compression Strategy**
+**3. Attention Sink Preservation: Anchoring the initial tokens**
 
-This is the key mechanism enabling context window extension. Compression is triggered when the KV cache reaches its maximum capacity $N$; the freed space then accommodates new tokens. The procedure is as follows:
+LLMs exhibit the attention sink phenomenon, where unusually high attention is allocated to initial tokens serving as global anchors. Compressing these disrupts the attention distribution. Thus, FreqKV keeps the first $S$ tokens ( $S=4$ in experiments) in the cache without compression. Frequency compression only acts on content following the sink tokens.
 
-- Tokens within the window undergo standard attention computation.
-- When the cache is full → frequency-domain compression → $N - L$ slots are freed.
-- New tokens fill the freed slots → cache fills again → compression is triggered again.
-- This cycle repeats indefinitely.
+**4. RoPE Integration: Navigating extrapolation challenges**
 
-As a result, earlier tokens undergo more rounds of compression while more recent tokens are compressed fewer times—naturally consistent with the autoregressive property of LLMs (recent tokens are more important). Since compression is triggered only once every $N - L$ tokens, the complexity is $O(N \log N)$, with negligible computational overhead.
-
-**3. Attention Sink Preservation**
-
-Following the attention sink phenomenon (whereby LLMs tend to assign high attention scores to initial tokens), FreqKV reserves $S$ initial tokens that are excluded from compression (with $S = 4$ in experiments). Compression applies only to the cache content following the sink tokens.
-
-**4. RoPE Integration**
-
-Key states are compressed and cached prior to applying RoPE; RoPE is then encoded at attention computation time. The compressed keys use position indices within the cache rather than original sequence positions, thus enabling context window extension without positional extrapolation or interpolation.
+RoPE embeds absolute positions into Keys. If compression occurs after encoding, position indices become corrupted, necessitating extrapolation or interpolation. FreqKV compresses and caches Keys before applying RoPE. RoPE is only applied during attention calculation using the current position indices within the cache. Thus, compressed Keys always use valid internal positions, naturally extending context without interpolation.
 
 ### Loss & Training
 
-FreqKV itself is a **parameter-free method** that introduces no additional parameters. Only lightweight fine-tuning is required to adapt to the frequency-domain compression pattern:
-
-- For LLaMA-2: fine-tuned on the RedPajama pretraining dataset at 8K length for language modeling; the chat model is fine-tuned on the LongAlpaca instruction dataset.
-- For LLaMA-3: similarly fine-tuned at 16K length.
-- Training adopts the same chunk-wise processing pipeline used at inference (alternating attention computation and frequency-domain compression).
+FreqKV is parameter-free but requires minimal fine-tuning to adapt the model to the frequency-compressed cache distribution. For LLaMA-2, the model is fine-tuned on RedPajama at 8K length for language modeling and on LongAlpaca instruction data for the chat version. LLaMA-3 is similar, fine-tuned at 16K. The training process employs the same chunk-wise pipeline as inference, alternating between attention calculation and frequency compression.
 
 ## Key Experimental Results
 
@@ -111,9 +101,9 @@ FreqKV itself is a **parameter-free method** that introduces no additional param
 | 32K | LongLoRA | Full | 8.29 | 7.83 | 7.54 | 7.35 | 7.22 |
 | 32K | **FreqKV** | Comp. | **7.47** | **7.14** | **7.04** | **7.00** | **6.98** |
 
-FreqKV extends the context to 32K (PPL 7.02) with only 8K training, even outperforming LongLoRA trained at 32K (7.22). FreqKV also incurs no performance degradation on short contexts (2K/4K), slightly surpassing Full FT.
+FreqKV extends the context to 32K with only 8K training (PPL 7.02), outperforming LongLoRA trained at 32K (7.22). FreqKV also suffers no performance loss in short contexts (2K/4K), even exceeding Full FT.
 
-**Table 2: LongBench Long-Context Understanding Benchmark (LLaMA-2-chat-7B, 50% retention ratio)**
+**Table 2: LongBench Long-context Understanding (LLaMA-2-chat-7B, 50% retention)**
 
 | Method | Single-doc QA | Multi-doc QA | Summarization | Few-shot | Code | Average |
 |------|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -123,51 +113,49 @@ FreqKV extends the context to 32K (PPL 7.02) with only 8K training, even outperf
 | PyramidKV | 25.3 | 21.3 | 23.9 | 59.8 | 48.0 | 36.84 |
 | **FreqKV** | **24.2** | **27.9** | **24.7** | 56.0 | **58.8** | **37.85** |
 
-At a 50% compression ratio, FreqKV surpasses all KV eviction and merging methods, with particularly large margins on multi-document QA (+5.4 vs. SnapKV) and code tasks (+10.8 vs. Full Cache).
+FreqKV outperforms all KV eviction and merging methods at a 50% compression rate, with significant gains in multi-doc QA (+5.4 vs. SnapKV) and code tasks (+10.8 vs. Full Cache).
 
 ### Ablation Study
 
-The paper provides multiple ablation studies in the appendix:
-
-- **Choice of retained frequency components**: Retaining only low-frequency components substantially outperforms retaining only high-frequency components, confirming the importance of low-frequency information.
-- **Retention ratio $\gamma$**: $\gamma = 0.5$ yields a favorable trade-off.
-- **Number of sink tokens $S$**: $S = 4$ suffices; increasing $S$ yields diminishing returns.
-- **LLaMA-2-13B**: The method remains effective on a larger model, with PPL decreasing from 6.95 (Full FT at 8K) to 6.41 (FreqKV at 32K).
+- **Frequency Component Selection**: Preserving low frequencies is significantly superior to preserving high frequencies.
+- **Retention Ratio $\gamma$**: $\gamma=0.5$ provides a good trade-off.
+- **Sink Token Count $S$**: $S=4$ is sufficient; gains diminish beyond this.
+- **Model Scale**: Effectively reduces PPL on LLaMA-2-13B from 6.95 (Full FT @ 8K) to 6.41 (FreqKV @ 32K).
 
 ### Key Findings
 
-1. **No permanent information loss from frequency-domain compression**: Unlike eviction methods, FreqKV retains information from all tokens (via low-frequency components), merely reducing representational precision.
-2. **Substantial context extension from minimal training**: Stable PPL at 256K is achieved with only 8K fine-tuning, far outperforming LongLoRA which requires 32K training.
-3. **No degradation on short contexts**: Performance within the original window (2K/4K) is even marginally improved.
-4. **Generality across attention variants**: Effective on both LLaMA-2 (MHA) and LLaMA-3 (GQA).
-5. **Natural alignment of iterative compression**: Earlier tokens are compressed more times, which aligns with the intuition in autoregressive LLMs that recent tokens are more important.
+1. **No Permanent Information Loss**: Unlike eviction, FreqKV retains information from all tokens via low-frequency components.
+2. **Minimal Training for Large Extension**: Stable PPL at 256K achieved with only 8K training.
+3. **Short Context Resilience**: Performance does not degrade (and sometimes improves) within the original window.
+4. **Universality**: Modularly effective for both MHA (LLaMA-2) and GQA (LLaMA-3).
+5. **Natural Alignment**: Iterative compression inherently prioritizes recent tokens over distant ones.
 
 ## Highlights & Insights
 
-- Examining KV cache compression through a frequency-domain lens is a novel and elegant perspective; the energy concentration property of DCT in low-frequency components provides a solid mathematical foundation for the method.
-- Completely parameter-free, requiring no modification to the model architecture—plug-and-play.
-- The iterative compression strategy naturally achieves progressive quality degradation: high precision for recent tokens, lower precision for distant tokens.
-- By compressing keys before RoPE and re-encoding positions at inference time, the method elegantly sidesteps the positional extrapolation problem.
+- Examining KV cache compression from a frequency domain perspective is a novel and elegant approach, rooted in the mathematical energy concentration property of DCT.
+- Completely parameter-free and architecture-agnostic; truly plug-and-play.
+- The iterative strategy naturally achieves "high precision for recent tokens, low precision for distant tokens."
+- Compressing Keys before RoPE and re-encoding positions avoids the difficult position extrapolation problem.
 
 ## Limitations & Future Work
 
-1. DCT assumes symmetric signal extension at boundaries, which may not hold for certain extreme KV distributions.
-2. A fixed retention ratio $\gamma$ may not be optimal for all layers and heads; adaptive $\gamma$ could yield further improvements.
-3. Compressed "tokens" no longer correspond to true token positions, which may affect tasks that require precise positional information.
-4. Validation on larger-scale models (70B+) is absent.
-5. FreqKV is orthogonal to token eviction methods; the potential of combining the two remains unexplored.
+1. The assumption of symmetric signal extension in DCT might not hold for extreme KV distributions.
+2. Fixed retention ratio $\gamma$ may not be optimal for all layers/heads; adaptive ratios could yield further gains.
+3. Compressed "tokens" no longer correspond to physical token positions, potentially affecting tasks requiring precise location information.
+4. Not yet validated on 70B+ scale models.
+5. Orthogonal to token eviction methods; the synergy between the two remains unexplored.
 
 ## Related Work & Insights
 
-FreqKV is the first to introduce frequency-domain learning into KV cache compression for decoder-only LLMs. Prior frequency-domain methods have primarily been applied to CNN-based image processing and Transformer encoders (e.g., FNet). The method is complementary to token eviction approaches and may inspire the application of other signal processing techniques (e.g., wavelet transforms) to LLM inference optimization.
+FreqKV is the first to introduce frequency domain learning into KV cache compression for decoder-only LLMs. Previous frequency domain methods were primarily used in CNNs or Transformer encoders (e.g., FNet). This method could complement token eviction or inspire the use of other signal processing techniques like Wavelet Transforms in LLM optimization.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (first application of frequency-domain KV compression in decoder-only LLMs)
-- Technical Depth: ⭐⭐⭐⭐ (DCT/IDCT theory clearly presented; iterative compression design is elegant)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (PPL + LongBench + RULER + Needle-in-a-Haystack + LongGenBench; multiple models and tasks)
-- Practicality: ⭐⭐⭐⭐⭐ (parameter-free, architecture-agnostic, minimal training required)
-- Writing Quality: ⭐⭐⭐⭐ (frequency-domain motivation clearly articulated; experiments comprehensive)
+- Novelty: ⭐⭐⭐⭐⭐
+- Technical Depth: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Utility: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -175,11 +163,11 @@ FreqKV is the first to introduce frequency-domain learning into KV cache compres
 
 ## Related Papers
 
+- [\[ACL 2025\] SCOPE: Optimizing Key-Value Cache Compression in Long-context Generation](../../ACL2025/model_compression/scope_optimizing_key-value_cache_compression_in_long-context_generation.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
+- [\[ICLR 2026\] GmNet: Revisiting Gating Mechanisms From A Frequency View](gmnet_revisiting_gating_mechanisms_from_a_frequency_view.md)
 - [\[NeurIPS 2025\] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression](../../NeurIPS2025/model_compression/qsvd_efficient_low-rank_approximation_for_unified_query-key-value_weight_compres.md)
-- [\[AAAI 2026\] Earth-Adapter: Bridge Geospatial Domain Gaps with Mixture of Frequency Adaptation](../../AAAI2026/model_compression/earth-adapter_bridge_the_geospatial_domain_gaps_with_mixture_of_frequency_adapta.md)
-- [\[ICLR 2026\] Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport](cross_domain_lossy_compression_optimal_transport.md)
-- [\[NeurIPS 2025\] KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction](../../NeurIPS2025/model_compression/kvzip_query-agnostic_kv_cache_compression_with_context_reconstruction.md)
+- [\[CVPR 2026\] FreqSIC: Frequency-aware Stereo Image Compression with Bi-directional Checkerboard Context Model](../../CVPR2026/model_compression/freqsic_frequency-aware_stereo_image_compression_with_bi-directional_checkerboar.md)
 
 </div>
 

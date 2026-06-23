@@ -2,76 +2,88 @@
 title: >-
   [Paper Note] Don't Just Fine-tune the Agent, Tune the Environment
 description: >-
-  [ICLR 2026][Reinforcement Learning][Environment Tuning] This paper proposes the Environment Tuning training paradigm, which enables LLM agents to learn complex multi-turn tool use from scratch using only 400 training sam…
+  [ICLR 2026][Reinforcement Learning][Environment Tuning] Proposes the Environment Tuning training paradigm, utilizing structured curricula, actionable environment-enhanced feedback, and fine-grained progress rewards to enable LLM agents to learn complex multi-turn tool use from scratch with only 400 training samples, while achieving superior out-of-distribution generalizatio
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Environment Tuning"
-  - "LLM Agent"
-  - "Multi-turn Tool Use"
-  - "Curriculum Learning"
+  - ICLR 2026
+  - Reinforcement Learning
+  - Environment Tuning
+  - LLM Agent
 date: 2026-05-08
-content_hash: 77c5ffcd4cc3392e
+content_hash: 2c07bb0df2b10679
 ---
-
 # Don't Just Fine-tune the Agent, Tune the Environment
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.10197](https://arxiv.org/abs/2510.10197)  
 **Code**: [https://github.com/inclusionAI/AWorld-RL/tree/main/EnvTuning](https://github.com/inclusionAI/AWorld-RL/tree/main/EnvTuning)  
-**Area**: Reinforcement Learning / LLM Agent
+**Area**: Reinforcement Learning / LLM Agent  
 **Keywords**: Environment Tuning, LLM Agent, Multi-turn Tool Use, Curriculum Learning, Reinforcement Learning
 
 ## TL;DR
 
-This paper proposes the Environment Tuning training paradigm, which enables LLM agents to learn complex multi-turn tool use from scratch using only 400 training samples, through structured curriculum learning, actionable environment-augmented feedback, and fine-grained progress rewards, while achieving strong out-of-distribution generalization.
+Proposes the Environment Tuning training paradigm, utilizing structured curricula, actionable environment-enhanced feedback, and fine-grained progress rewards to enable LLM agents to learn complex multi-turn tool use from scratch with only 400 training samples, while achieving superior out-of-distribution generalization.
 
 ## Background & Motivation
 
-LLM agents face three core challenges in multi-turn tool use tasks: (1) **Extreme data scarcity** — the BFCL V3 multi-turn dataset contains only 800 samples, and high-quality human annotation is prohibitively costly; (2) **Environmental complexity** — 8 distinct domains and 84 tools require cross-domain API calls and sophisticated orchestration; (3) **Long interaction chains** — each task involves multiple rounds of user queries, where failure at any single turn causes overall task failure.
+LLM agents face three core challenges in multi-turn tool use tasks: (1) **Data extreme scarcity**—the BFCL V3 multi-turn dataset contains only 800 samples, and high-quality manual annotation is costly; (2) **Complex environments**—8 different domains and 84 tool types require cross-domain API calls and complex orchestration; (3) **Long interaction chains**—a single task involves multiple user queries, where failure in any turn leads to overall failure.
 
-The root cause of existing approaches is as follows: SFT on synthetic trajectories enables rapid capability acquisition but is prone to overfitting and poor generalization; standard RL training suffers from a severe cold-start problem — agents with insufficient initial capability cannot explore effectively in vast action spaces, becoming trapped in a vicious cycle of low-quality rollouts, while long interaction chains further destabilize training and cause gradient explosion. Experiments show that single-stage RL directly applied to 400 samples collapses after approximately 70 steps, achieving only ~10% improvement.
+The Key Challenge of existing solutions is: SFT on synthetic trajectories can quickly acquire capabilities but is prone to overfitting and poor generalization; standard RL training suffers from a severe "cold start" problem—agents with insufficient initial ability cannot explore effectively in a massive action space, falling into a vicious cycle of low-quality rollouts, and long interaction chains lead to training instability and gradient explosion. Experiments show that direct single-stage RL on 400 samples crashes after about 70 steps, yielding only approximately 10% improvement.
 
-The core idea of this paper is: **rather than imitating on static trajectories, let the agent learn directly within a carefully designed environment**. By "tuning the environment" rather than only "tuning the model," failed explorations are converted into valuable learning signals.
+The Core Idea of this paper is: **instead of imitating static trajectories, let the agent learn directly within a carefully designed environment**. By "tuning the environment" rather than just "tuning the model," failed explorations are transformed into valuable learning signals.
 
 ## Method
 
 ### Overall Architecture
 
-Environment Tuning models multi-turn tool use as a POMDP and relies on three complementary mechanisms working in concert: (1) a structured curriculum that progressively increases learning difficulty; (2) actionable environment augmentation that transforms ambiguous error messages into pedagogically meaningful feedback; and (3) fine-grained progress rewards that provide dense per-turn learning signals. The input consists of problem instances and tool documentation; the output is a sequence of tool calls and natural language responses produced by the agent.
+Environment Tuning models multi-turn tool use as a POMDP, where inputs are problem instances and tool documentation, and outputs are sequences of tool calls and natural language responses. Instead of performing imitation on static trajectories, it allows the agent to explore directly in a carefully modified environment, supported by three complementary mechanisms: a structured curriculum scales learning difficulty from syntax mastery to unassisted generalization; actionable environment augmentation rewrites vague error messages into instructional diagnostic feedback; and fine-grained progress rewards decompose sparse success signals into turn-by-turn dense signals. The workflow is as follows: the curriculum determines the aids, data, and feedback configurations for each stage; the agent performs multi-turn rollouts in the configured environment; augmentation and progress rewards shape the signals for each turn; and updates are performed using GRPO. Progression to the next stage occurs only after convergence and gradient stability are verified.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Problem Instances + Tool Docs<br/>(POMDP, 400 samples only)"] --> CUR
+    subgraph CUR["Four-stage Structured Curriculum"]
+        direction TB
+        S1["Stage 1: Syntax<br/>Reward only format/calls"] --> S2["Stage 2: Multi-turn reasoning on Base"]
+        S2 --> S3["Stage 3: Full dataset<br/>Miss Param/Func/Long Context"]
+        S3 --> S4["Stage 4: Disable Augmentation<br/>Align with Eval Env"]
+    end
+    CUR -->|"Per-stage Feedback/Reward/Data config"| LOOP["Agent Multi-turn Rollout<br/>Tool Call ↔ Env Feedback"]
+    LOOP --> AUG["Actionable Env Augmentation<br/>Vague Error → Diagnostic Feedback"]
+    AUG --> PR["Fine-grained Progress Reward<br/>Turn-by-turn r_state·r_exec"]
+    PR --> GRPO["GRPO Update<br/>Decoupled clipping + large KL penalty"]
+    GRPO -->|"Verify convergence + stability<br/>→ Switch Stage"| CUR
+    GRPO --> OUT["Learn Complex Multi-turn<br/>Tool Use + OOD Generalization"]
+```
 
 ### Key Designs
 
-1. **Four-Stage Structured Curriculum**: The learning process is divided into four progressive stages, following the principle of "learn syntax first, then reasoning, then remove the training wheels."
+**1. Four-stage Structured Curriculum: Solving the exploration difficulty for cold-start agents in massive action spaces**
 
-    - **Stage 1 (Syntax Mastery)**: Trains the agent to produce correctly formatted outputs and valid tool calls. A dedicated syntax reward is defined as $R_{\text{Stage1}} = I_{\text{tool}} \cdot (R_{\text{format}} + R_{\text{tool}})$, where $R_{\text{format}}$ measures XML format correctness and $R_{\text{tool}}$ measures tool call parameter correctness. This stage rapidly eliminates "empty turns" in which the agent produces irrelevant dialogue instead of tool calls.
-    - **Stage 2 (Basic Reasoning + Augmented Feedback)**: Applies progress rewards and environment augmentation on the Base dataset to develop fundamental multi-turn reasoning capabilities.
-    - **Stage 3 (Advanced Scenarios)**: Introduces the full training set, including complex scenarios such as missing parameters, missing functions, and long contexts; the agent learns to handle ambiguity and functional gaps with the aid of augmented feedback.
-    - **Stage 4 (Alignment with Evaluation Environment)**: Disables environment augmentation, forcing the agent to rely on its own reasoning to handle standard error messages, thereby ensuring out-of-distribution generalization.
-    - Stage transition criteria: both validation accuracy convergence and gradient norm stability must be satisfied before advancing to the next stage.
+Direct single-stage RL on 400 samples leads to gradient explosion and collapse after ~70 steps, yielding only ~10% improvement, because agents with insufficient initial ability cannot find valid trajectories in long interaction chains. The curriculum approach is to "learn syntax first, then reasoning, and finally remove assistance." Stage 1 only requires the agent to produce correctly formatted and valid tool calls, with rewards designed as $R_{\text{Stage1}} = I_{\text{tool}} \cdot (R_{\text{format}} + R_{\text{tool}})$, where $R_{\text{format}}$ measures XML formatting and $R_{\text{tool}}$ measures parameter accuracy. This stage quickly eliminates "empty turns" where agents output dialogue without calling tools. Stage 2 enables progress rewards and environment augmentation on the Base dataset to learn basic multi-turn reasoning. Stage 3 introduces the full dataset with missing parameters, functions, and long contexts, relying on augmented feedback to handle ambiguity. Stage 4 disables augmentation, forcing the agent to rely on its own reasoning to handle standard errors, aligning with the evaluation environment for OOD generalization. Transitioning between stages requires both accuracy convergence and gradient norm stability, which is why the four-stage design prevents the collapses seen in single-stage RL.
 
-2. **Actionable Environment Augmentation**: Standard environment error messages are replaced with diagnostic and pedagogically informative feedback. The design motivation is to help the agent discover inter-tool dependencies and intra-tool constraint rules.
+**2. Actionable Environment Augmentation: Rewriting vague errors into instructional diagnostic feedback**
 
-    - **Discovering inter-tool dependencies**: For example, when booking a flight using a city name instead of an airport code, the standard environment returns "No available route" (ambiguous), whereas the augmented environment returns "Invalid airport code[s]: destination airport 'Pinehaven'. Please use valid airport codes. You can use alternative tool to find the correct airport code for a city." (precise and actionable).
-    - **Revealing intra-tool rules**: For example, when the `rm` command does not accept path arguments, the standard environment returns "No such file or directory" (misleading), while the augmented environment returns "Paths are not allowed. Specify only file/directory name in current directory." (directly correcting the misconception).
+Standard environment errors are often vague or misleading. Environment augmentation replaces these with precise, actionable hints to help the agent understand tool dependencies and constraints. For example, when using a city name instead of an airport code, the standard environment returns "No available route," while the augmented environment returns "Invalid airport code[s]: destination airport 'Pinehaven'. Please use valid airport codes. You can use alternative tool to find the correct airport code for a city." This identifies the error and suggests the correct tool. Similarly, for `rm` commands, it corrects misconceptions about path arguments. This "turning dead ends into learning opportunities" approach yields over 20% improvement in complex scenarios like Missing Parameters and Functions.
 
-3. **Fine-Grained Progress Reward**: Replaces sparse binary terminal rewards with dense per-turn signals. The reward at turn $t$ is the product of environment state evaluation $r_t^{\text{state}}$ and execution result evaluation $r_t^{\text{exec}}$, and the total reward is the average success rate across all turns: $R_P = \frac{1}{T}\sum_{t=1}^{T} r_t^{\text{state}} \cdot r_t^{\text{exec}}$. This allows "nearly correct" and "completely incorrect" trajectories to be distinguished.
+**3. Fine-grained Progress Rewards: Decomposing sparse binary terminal rewards into turn-by-turn signals**
+
+Sparse success rewards fail to distinguish between "nearly correct" and "completely wrong" trajectories in long chains. Progress rewards score each turn $t$ as the product of state evaluation $r_t^{\text{state}}$ and execution results $r_t^{\text{exec}}$. The total reward is the average success rate across turns: $R_P = \frac{1}{T}\sum_{t=1}^{T} r_t^{\text{state}} \cdot r_t^{\text{exec}}$. Ablations show that replacing this with binary rewards causes Stage 3 training to fail, indicating that dense signals are essential for learning long-chain tasks.
 
 ### Loss & Training
 
-Training is based on a modified GRPO algorithm (PPO-style) with decoupled clipping and KL divergence penalty:
+Training is based on an improved GRPO algorithm (PPO-like), incorporating a decoupled clipping mechanism and KL divergence penalty:
 
 $$\mathcal{L}(\theta) = -\mathbb{E}_t\left[\min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon_{\text{low}}, 1+\epsilon_{\text{high}})\hat{A}_t)\right] + \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})$$
 
-Key hyperparameters: $\beta = 0.1$ (a larger KL coefficient is critical for preventing policy collapse), $\epsilon_{\text{low}} = 0.2$, $\epsilon_{\text{high}} = 0.28$. The advantage function is computed via within-group normalization (no critic network).
+Key hyperparameters: $\beta = 0.1$ (a large KL coefficient is crucial to prevent policy collapse), $\epsilon_{\text{low}} = 0.2$, $\epsilon_{\text{high}} = 0.28$. The advantage function is calculated via group-wise normalization (without a critic network).
 
 ## Key Experimental Results
 
 ### Main Results
 
-In-distribution results on the BFCL V3 multi-turn benchmark (using only 400 training samples):
+In-distribution results on BFCL V3 multi-turn (trained on only 400 samples):
 
-| Model | Avg (%) | Base (%) | Miss Func (%) | Miss Param (%) | Long Context (%) |
+| Model | Average (%) | Base (%) | Miss Func (%) | Miss Param (%) | Long Context (%) |
 |------|----------|----------|-------------|----------------|-----------------|
 | GPT-4o | 51.00 | 59.00 | 54.00 | 41.00 | 50.00 |
 | o3 | 49.25 | 47.00 | 55.00 | 47.00 | 48.00 |
@@ -80,7 +92,7 @@ In-distribution results on the BFCL V3 multi-turn benchmark (using only 400 trai
 | watt-tool-8B + EnvTuning | **54.34** | - | - | - | - |
 | ToolACE-2 + EnvTuning | 47.18 | - | - | - | - |
 
-Out-of-distribution (OOD) generalization results (BFCL V4 + ACEBench):
+Out-of-distribution (OOD) results (BFCL V4 + ACEBench):
 
 | Model | Web Search (%) | ACEBench Agent (%) |
 |------|---------------|-------------------|
@@ -91,43 +103,43 @@ Out-of-distribution (OOD) generalization results (BFCL V4 + ACEBench):
 
 ### Ablation Study
 
-| Configuration | Avg Accuracy | Notes |
+| Configuration | Average Acc | Description |
 |------|----------|------|
-| Qwen2.5-7B base | 7.00% | Direct inference |
-| + Direct GRPO | ~17% | Single-stage RL without curriculum; limited gains |
-| + Full EnvTuning | 36.92% | +19.5% over direct GRPO |
-| w/o environment augmentation | Drop >20% | Large losses on Missing Param/Func |
-| Binary reward replacing progress reward | Stage 3 training fails | Cannot learn on complex tasks at all |
+| Qwen2.5-7B Base | 7.00% | Direct Inference |
+| + Direct GRPO | ~17% | RL without curriculum, limited effect |
+| + Full EnvTuning | 36.92% | 19.5% Gain over direct GRPO |
+| w/o Env Augmentation | Down >20% | Massive losses in Miss Param/Func |
+| Binary Reward instead of Progress | Stage 3 Failed | No learning in complex tasks |
 
 ### Key Findings
 
-- **SFT severely overfits**: xLAM-2 achieves 70.50% in-distribution but collapses to 5.00% on OOD Web Search, confirming that trajectory imitation generalizes poorly.
-- **Environment augmentation is critical in complex scenarios**: It yields more than 20% improvement on Missing Parameters and Missing Functions.
-- **A larger KL coefficient is necessary**: $\beta = 0.1$ substantially outperforms the commonly used 0.001, effectively maintaining policy entropy and preventing premature collapse.
-- **Single-stage RL suffers gradient explosion after ~70 steps**, whereas the four-stage curriculum maintains stable gradient norms throughout training.
+- **SFT Overfits Heavily**: While xLAM-2 reaches 70.50% in-distribution, its OOD Web Search performance collapses to 5.00%, proving poor generalization of trajectory imitation.
+- **Environment Augmentation is Critical**: Provides over 20% Gain in Missing Parameters and Missing Functions scenarios.
+- **Large KL Coefficient Required**: $\beta = 0.1$ outperforms the common 0.001, effectively maintaining policy entropy and preventing early collapse.
+- **Single-stage RL explodes at ~70 steps**, whereas the four-stage curriculum maintains gradient norm stability throughout.
 
 ## Highlights & Insights
 
-- **Paradigm innovation**: Shifting from "imitation on trajectories" to "exploration within an environment" represents an important conceptual shift in LLM Agent training. No expert demonstration trajectories are required — only problem instances.
-- **Exceptional data efficiency**: An agent trained on only 400 problem instances surpasses several proprietary models, which is highly significant for data-scarce settings.
-- **Importance of environment engineering**: The quality of environment feedback directly determines RL exploration efficiency, offering a methodology for environment design — error messages should be actionable and diagnostic.
-- **Compelling case studies**: Three scenarios — file system, travel API, and vehicle control — clearly illustrate how augmented feedback transforms "dead ends" into "learning opportunities."
-- **Stage transition strategy** (validation accuracy convergence + gradient norm stability) provides useful engineering guidance for practical implementation.
+- **Paradigm Shift**: Shifting from "imitating trajectories" to "exploring in the environment" represents a major change in LLM Agent training. No expert demonstrations are needed; only problem instances are required.
+- **High Data Efficiency**: Just 400 problem instances can train an agent that outperforms several proprietary models, which is significant for data-scarce scenarios.
+- **The Importance of Environment Engineering**: The quality of environment feedback directly determines RL exploration efficiency, suggesting that error messages should be actionable and diagnostic.
+- **Compelling Case Studies**: Clear demonstrations in file systems, travel APIs, and vehicle control show how augmented feedback turns "dead ends" into "learning opportunities."
+- **Curriculum Stage Transition Strategy**: The dual condition of accuracy convergence and gradient stability provides valuable engineering experience for practical implementations.
 
 ## Limitations & Future Work
 
-- **Environment augmentation requires manual design**: The current actionable feedback must be hand-crafted for each environment; automation is an important future direction.
-- **In-distribution performance gap remains**: There is still a gap relative to SFT methods using large-scale synthetic data (e.g., xLAM-2 at 70.50%), indicating room for improvement in the trade-off between data volume and exploration efficiency.
-- **Limited generalization scope**: OOD evaluation is primarily conducted on BFCL V4 and ACEBench; broader multi-modal agent scenarios remain unvalidated.
-- **Validated only on 7–8B models**: Performance at larger scales is unknown, and whether curriculum design requires adjustment with model scale is unexplored.
-- **Automatic determination of curriculum stage count and data allocation strategy** is a valuable direction for future research.
+- **Environment Augmentation requires manual design**: Currently, actionable feedback must be manually written for each environment; automated mechanisms are a key future direction.
+- **In-distribution performance gap**: A gap remains compared to SFT methods using massive synthetic data (e.g., xLAM-2's 70.50%), suggesting the trade-off between data volume and exploration efficiency can be improved.
+- **Limited Generalization Scope**: OOD evaluations are mainly on BFCL V4 and ACEBench; broader multimodal agent scenarios are not yet verified.
+- **Validated only on 7-8B models**: Performance on larger models is unknown, and it remains to be seen if the curriculum design must scale with model size.
+- **Automated Curriculum determination**: Automating the number of stages and data allocation strategies is a worthwhile research direction.
 
 ## Related Work & Insights
 
-- The central finding of **SFT memorizes, RL generalizes** (Chu et al., 2025) is thoroughly validated in this work — OOD collapse of SFT is a general phenomenon.
-- **Comparison with ReCall and ARTIST** highlights the limitations of direct RL in complex multi-turn environments, establishing curriculum learning as a necessary component.
-- **The environment augmentation idea** is generalizable to other Agent RL domains: engineering environment feedback to guide exploration is more natural than modifying the reward function.
-- **Insight**: In automated training pipelines for LLM Agents, environment design and reward engineering are equally important and warrant systematic investigation.
+- Core findings that **"SFT memorizes, RL generalizes"** (Chu et al., 2025) are fully validated—OOD collapse in SFT is a universal phenomenon.
+- Comparison with ReCall and ARTIST highlights the limitations of direct RL in complex multi-turn environments, making curriculum learning a necessity.
+- The idea of environment augmentation can be extended to other Agent RL domains: guiding exploration through engineered feedback is more natural than modifying reward functions.
+- **Insight**: Environment design and reward engineering are as critical as model architecture in an automated LLM Agent training pipeline.
 
 ## Rating
 
@@ -143,10 +155,10 @@ Out-of-distribution (OOD) generalization results (BFCL V4 + ACEBench):
 ## Related Papers
 
 - [\[ICLR 2026\] TRACED: Transition-aware Regret Approximation with Co-learnability for Environment Design](traced_transition-aware_regret_approximation_with_co-learnability_for_environmen.md)
+- [\[ICLR 2026\] Proximal Supervised Fine-Tuning](proximal_supervised_fine-tuning.md)
+- [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
+- [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](q-learning_with_fine-grained_gap-dependent_regret.md)
 - [\[ACL 2026\] A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)](../../ACL2026/reinforcement_learning/a_goal_without_a_plan_is_just_a_wish_efficient_and_effective_global_planner_trai.md)
-- [\[ICLR 2026\] RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning](rewardmap_tackling_sparse_rewards_in_fine-grained_visual_reasoning_via_multi-sta.md)
-- [\[ICLR 2026\] DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition](dive-k_differential_visual_reasoning_for_fine-grained_image_recognition.md)
-- [\[AAAI 2026\] TowerMind: A Tower Defence Game Learning Environment and Benchmark for LLM as Agents](../../AAAI2026/reinforcement_learning/towermind_a_tower_defence_game_learning_environment_and_benchmark_for_llm_as_age.md)
 
 </div>
 

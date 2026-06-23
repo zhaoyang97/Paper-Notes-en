@@ -2,123 +2,129 @@
 title: >-
   [Paper Note] ExGRPO: Learning to Reason from Experience
 description: >-
-  [ICLR 2026][Reinforcement Learning][Experience Replay] This paper presents the first systematic study of what types of reasoning experiences are most valuable for RLVR…
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper presents the first systematic study on what types of reasoning experiences are most valuable for RLVR. It identifies that medium-difficulty problems combined with low-entropy trajectories are most effective. Based on this, the ExGRPO framework for experience management and hybrid policy optimization is propo
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Experience Replay"
-  - "RLVR"
-  - "Reasoning RL"
-  - "Experience Management"
-  - "GRPO"
+  - ICLR 2026
+  - Reinforcement Learning
+  - RLVR
+  - GRPO
 date: 2026-05-08
-content_hash: c4798edbd2c0e5ab
+content_hash: e302df524f62b173
 ---
-
 # ExGRPO: Learning to Reason from Experience
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.02245](https://arxiv.org/abs/2510.02245)  
 **Code**: [GitHub](https://github.com/RanranZhang/ExGRPO)  
-**Area**: LLM Reasoning / Reinforcement Learning
+**Area**: LLM Reasoning / Reinforcement Learning  
 **Keywords**: Experience Replay, RLVR, Reasoning RL, Experience Management, GRPO
 
 ## TL;DR
-This paper presents the first systematic study of what types of reasoning experiences are most valuable for RLVR, finding that medium-difficulty problems paired with low-entropy trajectories are most effective. Based on these findings, it proposes the ExGRPO framework for experience management and mixed-policy optimization, achieving an average gain of +3.5 points on mathematical reasoning and +7.6 points on general reasoning.
+This paper presents the first systematic study on what types of reasoning experiences are most valuable for RLVR. It identifies that medium-difficulty problems combined with low-entropy trajectories are most effective. Based on this, the ExGRPO framework for experience management and hybrid policy optimization is proposed, achieving an average gain of +3.5 points in mathematical reasoning and +7.6 points in general reasoning.
 
 ## Background & Motivation
 
-**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become a core paradigm for enhancing LLM reasoning capabilities, with on-policy methods such as GRPO being the dominant approach. During training, models generate large volumes of reasoning trajectories (experiences).
+**Background**: RLVR (Reinforcement Learning with Verifiable Rewards) has become the core paradigm for enhancing LLM reasoning capabilities, with on-policy methods like GRPO being the mainstream. Large volumes of reasoning trajectories (experiences) are generated during training.
 
-**Limitations of Prior Work**: Standard on-policy training discards rollout experiences after a single gradient update, leading to wasted computational resources and training instability. Although experience replay has been extensively studied in traditional RL, the fundamental question of what experiences are most valuable in large-model RLVR settings remains underexplored.
+**Limitations of Prior Work**: Standard on-policy training discards rollout experiences after a single gradient update, leading to wasted computational resources and training instability. While experience replay is well-studied in traditional RL, the fundamental question of which experiences are most valuable in the context of LLM RLVR remains unexplored.
 
-**Key Challenge**: The vast amount of collected experience is not uniformly valuable — some problems are too easy (providing no learning signal), others too hard (introducing excessive noise); some trajectories reason correctly, while others arrive at correct answers through flawed reasoning. Identifying and exploiting high-value experiences is therefore critical.
+**Key Challenge**: Massive amounts of collected experiences are not equivalent—some problems are too simple (no learning signal), while others are too difficult (noisy). Some trajectories provide the right answer for the wrong reasons ("lucky guesses"). Discerning and utilizing high-value experiences is critical.
 
-**Goal**: (1) What constitutes valuable reasoning experience? (2) How can such experiences be systematically managed and reused?
+**Goal**: (1) Define what constitutes valuable reasoning experience. (2) Systematically manage and reuse these experiences.
 
-**Key Insight**: A systematic analysis of experience value along two dimensions — problem difficulty and trajectory entropy. The study finds that medium-difficulty problems (accuracy 25%–75%) provide the strongest optimization signal, and low-entropy trajectories correspond to higher-quality reasoning chains.
+**Key Insight**: Experience value is analyzed through problem difficulty and trajectory entropy. It is found that medium difficulty (25%-75% accuracy) provides the strongest optimization signals, and low-entropy trajectories correspond to higher-quality reasoning chains.
 
-**Core Idea**: Manage experiences via difficulty-based bucketing, and prioritize sampling of medium-difficulty, low-entropy trajectories for mixed on-policy/off-policy optimization.
+**Core Idea**: Manage experiences via difficulty bucketing, prioritizing the sampling of medium-difficulty and low-entropy trajectories for hybrid on-policy/off-policy optimization.
 
 ## Method
 
 ### Overall Architecture
-ExGRPO augments GRPO with a three-stage experience management pipeline (collection → bucketing → selection) and mixed-policy optimization. A replay buffer maintains historically successful trajectories, and each training batch mixes newly sampled on-policy data with off-policy experience samples.
+ExGRPO addresses the inefficiency of standard on-policy RLVR, where rollouts are discarded after one use despite valuable successful trajectories. It implements a replay buffer atop GRPO to store successful historical trajectories and explicitly manages experience value through three steps: **collecting** and **bucketing** successful trajectories by problem difficulty, **selecting** low-entropy trajectories from medium-difficulty problems, and performing **hybrid optimization** mixing off-policy experience with on-policy samples. The updated policy generates the next batch of rollouts, creating a loop where new successful trajectories flow back into the buffer. The core principle is that signals should concentrate on the reliable reasoning of medium-difficulty tasks.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Current batch rollout<br/>(on-policy samples)"] --> B["Collection & Bucketing<br/>Store success trajectories<br/>Bucket by accuracy"]
+    B -->|"Remove solved items"| R["Retired Set<br/>Prevent overfitting"]
+    B --> C["Experience Selection<br/>Gaussian sampling (medium)<br/>Pick lowest entropy"]
+    C --> D["Hybrid Policy Optimization<br/>On/off-policy weighted mix<br/>Importance weighting"]
+    A --> D
+    D --> E["Update Policy πθ"]
+    E -->|"Next Round"| A
+```
 
 ### Key Designs
 
-1. **Experience Collection & Partition**:
+**1. Experience Collection & Bucketing: Layering problems by accuracy to separate signal strengths**
 
-    - Function: Collect successful trajectories into the buffer and partition them into Easy/Medium/Hard buckets based on the latest per-question accuracy.
-    - Mechanism: Accuracy is defined as $\text{Acc}(q^*) = k/K$, with buckets defined as Easy $[75\%, 100\%)$, Medium $(25\%, 75\%]$, and Hard $(0, 25\%]$. A Retired Set is introduced: questions for which all rollouts are correct are removed from the buffer to prevent overfitting to easy problems.
-    - Design Motivation: Problems of different difficulty levels provide learning signals of varying strength and therefore require differentiated treatment.
+Successful trajectories are collected into a buffer. Each problem $q^*$ is tagged with its recent accuracy $\text{Acc}(q^*) = k/K$ (k successes in K rollouts) and assigned to three buckets: Easy [75%, 100%), Medium (25%, 75%], and Hard (0, 25%]. Different difficulty levels provide varying gradient signals; simple items offer little signal, while hard ones are noisy. A "Retired Set" mechanism is introduced: once all rollouts for a problem are correct, it is removed from the buffer to prevent overfitting on mastered tasks.
 
-2. **Experience Selection**:
+**2. Experience Selection: Prioritizing problem difficulty and trajectory reliability**
 
-    - Function: A two-step selection process — first sample questions according to difficulty distribution, then select low-entropy trajectories.
-    - Mechanism: Question sampling probability is $p \propto \mathcal{N}(\text{Acc}(q^*); \mu=0.5, \sigma=1)$, prioritizing medium-difficulty questions; for each question, the trajectory with the lowest entropy under the current policy is selected: $o^* \leftarrow \arg\min_{o_i} H(o_i; \pi_\theta)$.
-    - Design Motivation: Medium-difficulty problems provide the strongest optimization signal (empirically verified); low-entropy trajectories correspond to higher-quality reasoning chains (empirically, high-entropy trajectories tend to reach correct answers through flawed reasoning, and their repeated sampling causes a "snowball effect" that contaminates training).
+Selection occurs in two stages. First, problems are sampled according to a Gaussian distribution centered at 0.5, $p \propto \mathcal{N}(\text{Acc}(q^*); \mu=0.5, \sigma=1)$, favoring medium-difficulty problems. Second, for a selected problem, the trajectory with the lowest entropy under the current policy is chosen: $o^* \leftarrow \arg\min_{o_i} H(o_i; \pi_\theta)$. Low entropy serves as a proxy for reliability, as high-entropy trajectories often represent "lucky guesses" with flawed reasoning. Replaying high-entropy trajectories can lead to a "snowball effect" of reinforced errors.
 
-3. **Mixed-Policy Optimization**:
+**3. Hybrid Policy Optimization: Joint training with distribution correction**
 
-    - Function: Jointly optimize over on-policy new samples and off-policy historical experiences, with importance weighting to correct for distributional shift.
-    - Mechanism: $\mathcal{J}_{\text{ExGRPO}} = (1-\rho)\cdot\mathcal{J}_{\text{on}} + \rho\cdot\mathcal{J}_{\text{exp}}$, where the off-policy term uses importance weights $w_t^*(\theta) = \frac{\pi_\theta(o_t^*|q^*)}{\pi_{\theta_{\text{past}}}(o_t^*|q^*)}$.
-    - Design Motivation: Replaying exclusively low-entropy off-policy trajectories may impair exploration; mixing with on-policy data preserves exploratory capacity. Importance weighting ensures unbiased gradient estimation.
+The objective weights current on-policy samples and historical experiences:
+
+$$\mathcal{J}_{\text{ExGRPO}} = (1-\rho)\cdot\mathcal{J}_{\text{on}} + \rho\cdot\mathcal{J}_{\text{exp}}$$
+
+The mixing ratio $\rho$ controls the proportion of experience samples. To correct for distribution shift in off-policy trajectories generated by previous policies, importance weights $w_t^*(\theta) = \frac{\pi_\theta(o_t^*|q^*)}{\pi_{\theta_{\text{past}}}(o_t^*|q^*)}$ are utilized to ensure unbiased gradient estimation. The hybrid approach maintains exploration capabilities that a pure replay might suppress.
 
 ### Loss & Training
-- Built on Dr.GRPO: length normalization and standard deviation normalization are removed.
-- The mixing ratio $\rho$ controls the proportion of experience samples.
-- Off-policy samples are incorporated into mixed advantage estimation groups: 1 historical trajectory + $K{-}1$ new rollouts.
+- Based on Dr.GRPO: Removes length and standard deviation normalization.
+- Hybrid ratio $\rho$ controls the experience sample weight.
+- Off-policy samples form a hybrid advantage estimation group: 1 historical trajectory + K-1 new rollouts.
 
 ## Key Experimental Results
 
 ### Main Results
-Gains across five backbone models (1.5B–8B) on mathematical and general reasoning:
+Gains across 5 backbone models (1.5B-8B) in mathematical and general reasoning:
 
-| Model | Math Avg. Gain | General Reasoning Gain | Notes |
-|-------|---------------|----------------------|-------|
-| Qwen2.5-Math-1.5B | +3–4 pts | +7–8 pts | Per benchmark |
-| Qwen2.5-Math-7B | +3–4 pts | +7–8 pts | AIME/AMC, etc. |
-| Llama-3.1-8B | Stable training | Significant gain | On-policy collapses |
-| LUFFY model | Consistent gain | Consistent gain | On-policy collapses |
+| Model | Avg Math Gain | General Reasoning Gain | Note |
+|------|------------|------------|------|
+| Qwen2.5-Math-1.5B | +3-4 pts | +7-8 pts | Across all benchmarks |
+| Qwen2.5-Math-7B | +3-4 pts | +7-8 pts | AIME/AMC etc. |
+| Llama-3.1-8B | Stable Training | Significant Gain | Resolved on-policy collapse |
+| LUFFY Model | Continuous Imp. | Continuous Imp. | Resolved on-policy collapse |
 
 ### Ablation Study
 
-| Configuration | Math Metric | Notes |
-|---------------|------------|-------|
-| Full ExGRPO | Best | Complete framework |
-| w/o difficulty bucketing (random sampling) | Degraded | Medium-difficulty prioritization is critical |
-| w/o low-entropy selection | Degraded | Low-entropy trajectories are higher quality |
-| w/o importance weighting | Degraded | Distributional shift must be corrected |
-| w/o Retired Set | Degraded | Overfitting to easy problems |
+| Configuration | Math Metric | Note |
+|------|---------|------|
+| Full ExGRPO | Optimal | Complete solution |
+| w/o Bucketing (Random) | Decrease | Medium difficulty priority is key |
+| w/o Low entropy selection | Decrease | Low entropy indicates higher quality |
+| w/o Importance weights | Decrease | Distribution shift requires correction |
+| w/o Retired Set | Decrease | Overfitting on easy problems |
 
 ### Key Findings
-- ExGRPO maintains stable training on both weak models (Llama-3.1-8B) and strong models (LUFFY), whereas on-policy GRPO collapses.
-- Medium-difficulty problems contribute the most; Hard-bucket problems contribute the least, but should not be discarded entirely as they provide complementary signals.
-- High-entropy correct trajectories — where the model arrives at a correct answer through flawed reasoning ("lucky guessing") — are amplified under replay, producing a snowball effect; low-entropy selection effectively mitigates this.
-- Experience replay reduces average training overhead rather than increasing it, as reusing historical rollouts decreases the number of new generations required.
+- ExGRPO ensures stable training for both weak (Llama-3.1-8B) and strong (LUFFY) models where on-policy GRPO collapses.
+- Medium-difficulty problems contribute the most; the Hard group contributes the least but provides complementary signals and should not be discarded entirely.
+- The "snowball effect" of incorrect logic in "lucky guess" (high entropy) trajectories is amplified in replay; low-entropy selection effectively mitigates this.
+- Experience replay reduces average training overhead by reusing historical rollouts, thus decreasing the number of required generations.
 
 ## Highlights & Insights
-- **Systematic Analysis of Experience Value**: This is the first work to analyze the value of experiences in RLVR along two dimensions — problem difficulty and trajectory entropy — yielding a concise and compelling finding: medium difficulty + low entropy. This insight has broad implications for the RLVR community.
-- **Discovery of the Snowball Effect**: High-entropy trajectories, despite being answer-correct, involve flawed reasoning; their repeated sampling contaminates training. The paper identifies a concrete degeneration case in which the model learns to solve math problems via code blocks, directly attributing this to high-entropy experience.
-- **Retired Set Design**: Removing fully solved problems from the buffer is a simple yet effective mechanism — it prevents overfitting to easy problems and concentrates resources on medium-difficulty problems that still carry learning value.
+- **Systematic Experience Analysis**: Analyzes experience value in RLVR through problem difficulty and trajectory entropy for the first time, identifying the "Medium Difficulty + Low Entropy" principle.
+- **Discovery of the "Snowball Effect"**: Identified that high-entropy trajectories with correct answers but wrong reasoning can pollute training. Instances of the model learning to "use code blocks for math" (degeneration) were attributed to high-entropy experiences.
+- **Retired Set Design**: Simple but effective removal of fully solved problems from the buffer prevents overfitting and focuses resources on high-value learning signals.
 
 ## Limitations & Future Work
-- The difficulty bucketing thresholds (25%/75%) are fixed; they should be adjusted dynamically as model capability evolves during training.
-- Entropy is an imperfect proxy for trajectory quality — high-entropy trajectories may still be valuable in certain contexts, such as when exploring novel solution strategies.
-- Validation is limited to mathematical reasoning; the optimal experience characteristics for other domains such as code reasoning may differ.
-- The "staleness" of experience — historical trajectories may no longer be optimal after policy updates — remains an open issue.
+- Fixed difficulty thresholds (25%/75%) should ideally be dynamic as the model evolves.
+- Entropy is an imperfect proxy; high entropy might occasionally be valuable for exploration.
+- Results are primarily validated on mathematical reasoning; optimal experience traits for other domains like code reasoning may differ.
+- Problem of "stale" experiences where historical trajectories may no longer be optimal after significant policy updates.
 
 ## Related Work & Insights
-- **vs. GRPO**: ExGRPO augments GRPO with experience management, yielding +3.5 pts on math and +7.6 pts on general reasoning.
-- **vs. ReMix/RePO**: These methods also employ experience replay but overlook data quality; ExGRPO's bucketing and low-entropy selection provide finer-grained control.
-- **vs. LUFFY**: LUFFY mixes expert data with on-policy data, whereas ExGRPO reuses the model's own historical experiences and requires no additional external data.
+- **vs GRPO**: ExGRPO adds experience management to GRPO, yielding +3.5 math / +7.6 general reasoning gains.
+- **vs ReMix/RePO**: While these perform experience replay, they ignore data quality. ExGRPO's bucketing and low-entropy selection are more refined.
+- **vs LUFFY**: LUFFY mixes expert data with on-policy samples; ExGRPO uses the model's own history, requiring no external data.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Novel perspective on experience value analysis; the snowball effect discovery is insightful.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five backbone models, math + general reasoning benchmarks, detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation analysis; the preliminary study is persuasive.
-- Value: ⭐⭐⭐⭐⭐ Directly actionable for RLVR training practice; insights are transferable.
+- Novelty: ⭐⭐⭐⭐ Fresh perspective on experience value and the snowball effect.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluated on 5 backbones, multiple benchmarks, and detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and convincing preliminary studies.
+- Value: ⭐⭐⭐⭐⭐ Practical guidance for RLVR training with transferable insights.
 
 <!-- RELATED:START -->
 
@@ -126,11 +132,11 @@ Gains across five backbone models (1.5B–8B) on mathematical and general reason
 
 ## Related Papers
 
-- [\[ICLR 2026\] How LLMs Learn to Reason: A Complex Network Perspective](how_llms_learn_to_reason_a_complex_network_perspective.md)
+- [\[ICLR 2026\] Learning to Reason Efficiently with Discounted Reinforcement Learning](learning_to_reason_efficiently_with_discounted_reinforcement_learning.md)
+- [\[ICLR 2026\] Reliability-Adjusted Prioritized Experience Replay](reliability-adjusted_prioritized_experience_replay.md)
+- [\[ICLR 2026\] Learning to Reason as Action Abstractions with Scalable Mid-Training RL](learning_to_reason_as_action_abstractions_with_scalable_mid-training_rl.md)
+- [\[ICLR 2026\] R1-Code-Interpreter: LLMs Reason with Code via Supervised and Multi-stage Reinforcement Learning](r1-code-interpreter_llms_reason_with_code_via_supervised_and_multi-stage_reinfor.md)
 - [\[ICML 2026\] Agent Learning via Early Experience](../../ICML2026/reinforcement_learning/agent_learning_via_early_experience.md)
-- [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](../../NeurIPS2025/reinforcement_learning/research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
-- [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
 
 </div>
 

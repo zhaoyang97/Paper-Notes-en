@@ -2,90 +2,93 @@
 title: >-
   [Paper Note] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline RL] This work is the first to introduce Bayes Adaptive MDPs (BAMDPs) into offline model-based RL. It proposes Continuous BAMCP to handle Bayesian planning in continuous state/a…
+  [ICLR 2026][Reinforcement Learning][Bayes Adaptive MDP] This work introduces Bayes Adaptive MDP (BAMDP) into offline model-based RL for the first time, proposing Continuous BAMCP to solve Bayesian planning in continuous state/action spaces. By combining pessimistic reward penalties with search-based policy iteration (the "RL + Search" paradigm), it significantly outperforms
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Offline RL"
-  - "Model-based Reinforcement Learning"
-  - "Bayes Adaptive MDP"
-  - "MCTS"
-  - "Uncertainty Quantification"
-  - "Deep Ensemble"
+  - ICLR 2026
+  - Reinforcement Learning
+  - Bayes Adaptive MDP
+  - MCTS
+  - deep ensemble
 date: 2026-05-08
-content_hash: 4de2e3babc3bebe9
+content_hash: 1d8771d1d1356fbd
 ---
-
 # BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL
 
 **Conference**: ICLR 2026  
 **arXiv**: [2410.11234](https://arxiv.org/abs/2410.11234)  
 **Code**: None  
 **Area**: Reinforcement Learning / Offline RL / Model-based Methods  
-**Keywords**: Offline RL, Model-based Reinforcement Learning, Bayes Adaptive MDP, MCTS, Uncertainty Quantification, Deep Ensemble
+**Keywords**: Offline RL, Model-based RL, Bayes Adaptive MDP, MCTS, Uncertainty Quantification, Deep Ensemble
 
 ## TL;DR
-This work is the first to introduce Bayes Adaptive MDPs (BAMDPs) into offline model-based RL. It proposes Continuous BAMCP to handle Bayesian planning in continuous state/action spaces, combines pessimistic reward penalization with search-based policy iteration (an "RL + Search" paradigm), achieves significant improvements over 19 baselines on 12 D4RL tasks (Cohen's $d > 1.8$), and demonstrates successful application to tokamak fusion control.
+This work introduces Bayes Adaptive MDP (BAMDP) into offline model-based RL for the first time, proposing Continuous BAMCP to solve Bayesian planning in continuous state/action spaces. By combining pessimistic reward penalties with search-based policy iteration (the "RL + Search" paradigm), it significantly outperforms 19 baselines on 12 D4RL tasks (Cohen's $d > 1.8$) and is successfully applied to nuclear fusion tokamak control.
 
 ## Background & Motivation
-**Background**: Offline MBRL learns ensemble world models from static datasets and uses model rollouts to optimize policies. Methods such as MOBILE, CBOP, and RAMBO represent the current state of the art.
+**Background**: Offline MBRL learns an ensemble of world models from static datasets and optimizes policies using model rollouts. MOBILE, CBOP, and RAMBO are current SOTA methods.
 
 **Limitations of Prior Work**:
-   - Multiple MDPs may behave identically on the offline dataset but diverge in out-of-distribution (OOD) regions, necessitating principled treatment of model uncertainty.
-   - Existing methods **treat ensemble members uniformly** (e.g., sampling one model uniformly for prediction) and do not exploit dynamic belief updates.
-   - Different ensemble members vary in accuracy across different state-action regions, yet no mechanism exists to allow agents to adaptively trust the most accurate member.
+   - Multiple MDPs may behave identically on the offline dataset but diverge in OOD regions—model uncertainty must be addressed.
+   - Existing methods **treat ensemble members uniformly** (e.g., uniformly sampling one model for prediction) and fail to utilize dynamic belief updates.
+   - Different ensemble members have varying accuracies across different state-action regions, but there is no mechanism for the agent to adaptively trust more precise members.
 
-**Key Challenge**: BAMDPs provide a principled framework for uncertainty handling (via Bayesian posterior updates over model beliefs), but existing BAMCP algorithms are restricted to discrete spaces and require access to the true world model.
+**Key Challenge**: BAMDP provides a principled framework for uncertainty handling (dynamic model belief updates via Bayesian posterior), but existing BAMCP algorithms are only suitable for discrete spaces and require the true world model.
 
-**Core Idea**: Formulate offline MBRL as a BAMDP, propose a continuous-space BAMCP, incorporate pessimistic reward penalization, and distill search results into a policy network — realizing an "RL + Search" paradigm (akin to AlphaZero) for offline MBRL.
+**Core Idea**: Model offline MBRL as a BAMDP + Propose Continuous BAMCP + Pessimistic reward penalty + Distill search results into a policy network—realizing an "RL + Search" (similar to AlphaZero) paradigm for offline MBRL.
 
 ## Method
 
 ### Overall Architecture
-Offline dataset $\mathcal{D}_\mu$ → Train $K$ ensemble world models $\{(\mathcal{P}_\theta^i, \mathcal{R}_\theta^i)\}_{i=1}^K$ → Construct pessimistic BAMDP → Apply Continuous BAMCP search with belief updates at each state → Distill search results into an actor-critic network → Policy iteration.
+This paper addresses a long-overlooked problem in offline model-based RL: while an **ensemble** of world models learned from static data behaves consistently in covered regions, they disagree in OOD regions. Current methods either sample members uniformly or add static pessimistic penalties, failing to teach the agent "which model to trust here and now." The overall approach of BA-MCTS is to remodel offline MBRL as a Bayes Adaptive MDP (BAMDP), making the "belief about the model" part of the state and updating it dynamically during planning.
+
+The specific pipeline involves: first training $K$ ensemble world models $\{(\mathcal{P}_\theta^i, \mathcal{R}_\theta^i)\}_{i=1}^K$ on the offline dataset $\mathcal{D}_\mu$; then constructing a BAMDP with pessimistic reward penalties (embedding "model belief" into the state and penalizing uncertain regions); for each sampled state, performing a tree search with Continuous BAMCP and belief updates to obtain improved policy and value estimates; and finally distilling the search results back into an actor-critic framework, using the updated networks to drive the next round of search in a policy iteration loop. This establishes an AlphaZero-style "RL + Search" paradigm for offline continuous control.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    D["Offline Dataset D"] --> ENS["Train K Ensemble<br/>World Models"]
+    ENS --> BELIEF["BAMDP Modeling & Belief Update<br/>Information State (s, b)<br/>Bayesian belief update b along trajectories"]
+    BELIEF --> PESS["Pessimistic BAMDP (P-BAMDP)<br/>Reward + One-step look-ahead Q<br/>Pessimistic penalty of target"]
+    PESS --> BAMCP["Continuous BAMCP Tree Search<br/>DPW + PUCT, sample successors<br/>weighted by belief"]
+    BAMCP --> RET["Return improved policy π_ret<br/>and value estimate v_ret"]
+    RET --> PI["Search-based Policy Iteration<br/>KL distillation for actor + SAC update for critic"]
+    PI -->|Next round: research with updated π, V| BAMCP
+```
 
 ### Key Designs
 
-1. **BAMDP Formulation and Belief Updates**
+**1. BAMDP Modeling & Belief Update: Learning "Which Model to Trust" as a State Variable**
 
-    - **Function**: Explicitly models ensemble uncertainty as a BAMDP, where the information state $(s, b)$ encompasses both the physical state and the current model belief.
-    - **Belief update (Eq. 4)**: $b'(\theta)(i) \propto b(\theta)(i) \cdot \mathcal{P}_\theta^i(s'|s,a) \cdot \mathcal{R}_\theta^i(r|s,a)$
-    - **Initial prior**: $b_0 = [1/K, \ldots, 1/K]$ (uniform, since ensemble members are IID-sampled).
-    - As planning proceeds, beliefs are dynamically adjusted — models that better predict transitions receive higher weights.
-    - **Design Motivation**: Fundamentally different from existing methods that sample ensemble members uniformly; allows the agent to selectively trust the most accurate model in each trajectory region.
+The limitation addressed is that ensemble members have different accuracies in different regions, yet existing methods treat them equally. BA-MCTS defines the information state as $(s, b)$, where $s$ is the physical state and $b$ is the current belief distribution over ensemble members. Planning starts with a uniform prior $b_0 = [1/K, \ldots, 1/K]$ (since ensembles are IID sampled), and performs Bayesian updates after each step based on observed transitions and rewards (Eq. 4):
 
-2. **Continuous BAMCP (Bayesian Planning in Continuous Spaces)**
+$$b'(\theta)(i) \propto b(\theta)(i) \cdot \mathcal{P}_\theta^i(s'|s,a) \cdot \mathcal{R}_\theta^i(r|s,a)$$
 
-    - **Function**: Extends BAMCP to continuous state/action spaces with stochastic transitions.
-    - **Core Techniques**: Double Progressive Widening (DPW) + PUCT search rule.
-        - DPW: Maintains a finite child list and controls expansion rate based on visit count $\lfloor N^{\alpha} \rfloor$ — new actions/states are added only after sufficient visits.
-        - The root sampling property of vanilla BAMCP no longer holds under DPW (the equality in Lemma A.1 breaks), necessitating a PUCT-style formulation instead.
-    - **Key Modification**: In StatePW, transitions are sampled according to the belief-weighted mixture $s' \sim \sum_i b(\theta)(i) \mathcal{P}_\theta^i(\cdot|s,a)$, with beliefs updated after each transition.
-    - **Theoretical Guarantee**: Consistency of the planner is proven (convergence to a near-Bayes-optimal policy).
+This means members with more accurate predictions are assigned higher weights in subsequent planning. This essentially differs from "uniform ensemble sampling"—the agent can selectively trust the most accurate model along each trajectory rather than treating uncertainty as a fixed heuristic.
 
-3. **Pessimistic BAMDP (P-BAMDP)**
+**2. Pessimistic BAMDP (P-BAMDP): Safeguarding Regions Where All Models Are Inaccurate**
 
-    - **Function**: Adds a pessimistic reward penalty on top of the BAMDP to prevent overoptimism in high-uncertainty regions.
-    - **Penalty term (Eq. 5)**: $\tilde{r} = r - \lambda \cdot \text{std}[r^i + \gamma \mathbb{E}_{s'^i, a'} Q_{\psi^-}(s'^i, a')]_{i=1}^K$
-    - Unlike methods that penalize only divergence in next-state predictions (e.g., MOPO/MOReL), the penalty here targets the standard deviation of the **one-step lookahead Q-value targets** — more accurately reflecting the agent's uncertainty at each state-action pair.
-    - **Design Motivation**: Even with adaptive belief updates, regions where all models are inaccurate may still exist; pessimistic penalization provides a safety guarantee.
+Even if BAMDP can adaptively trust more reliable models, it may still encounter OOD regions where all ensemble members are inaccurate, and belief updates alone cannot resolve this. P-BAMDP adds a layer of pessimistic penalty to the reward (Eq. 5), forming the "environment" solved by common search:
 
-4. **Search-Based Policy Iteration ("RL + Search")**
+$$\tilde{r} = r - \lambda \cdot \text{std}[r^i + \gamma \mathbb{E}_{s'^i, a'} Q_{\psi^-}(s'^i, a')]_{i=1}^K$$
 
-    - **Function**: Distills Continuous BAMCP search results into an actor-critic network.
-    - **Actor update**: For each sampled state $s$, BAMCP search returns an improved policy $\pi_{ret}(a|s)$ (distributed according to visit counts); policy distillation is performed via KL divergence $D_{KL}(\pi_{ret} \| \pi)$.
-    - **Critic update**: The value estimate $v_{ret}$ returned by search is used to update the Q-network (SAC-style).
-    - **Design Motivation**: Analogous to AlphaZero — search provides stronger policy evaluation/improvement signals, which are distilled into the network for real-time deployment. Pure search without distillation yields decisions only for individual states and cannot generalize.
+Notably, the penalty targets the standard deviation of the **one-step look-ahead Q-value target** across members. This more directly characterizes the overall uncertainty of the agent at a specific state-action pair, suppressing high-risk areas more effectively and acting as a safety valve for the belief mechanism.
+
+**3. Continuous BAMCP: Extending Bayesian Planning to Continuous Stochastic Control**
+
+Original BAMCP (Guez 2013) only handles discrete spaces and relies on the true world model. To adapt it for continuous offline MBRL, Double Progressive Widening (DPW) is introduced. The search tree maintains a limited list of children for each node, controlled by the visit count $\lfloor N^{\alpha} \rfloor$. New actions or successors are only added after sufficient visits, constraining the branching factor in continuous spaces. Since standard root sampling fails with DPW, the selection rule is changed to PUCT. During state expansion (StatePW), successors are sampled based on current weighted beliefs $s' \sim \sum_i b(\theta)(i) \mathcal{P}_\theta^i(\cdot|s,a)$, and beliefs are updated immediately after each transition. The paper further proves the consistency of this planner, showing it converges to a near-Bayes-optimal policy.
+
+**4. Search-based Policy Iteration ("RL + Search"): Distilling Strong Search Signals into Deployable Networks**
+
+Pure search only provides decisions for single states and lacks generalization or real-time deployment capabilities. Inspired by AlphaZero, BA-MCTS distills Continuous BAMCP results into an actor-critic framework. For each sampled state $s$, the search returns an improved policy $\pi_{ret}(a|s)$ based on visit counts, and the actor is aligned via KL divergence $D_{KL}(\pi_{ret} \| \pi)$. Simultaneously, the search-derived value estimate $v_{ret}$ updates the critic in a SAC style. Search acts as a "stronger policy evaluation and improvement operator," allowing the network to inherit search quality while maintaining generalization and real-time inference.
 
 ### Loss & Training
-- **World model**: Ensemble of $K$ Gaussian mixture dynamics models trained with NLL loss.
-- **Actor**: $\mathcal{L}_{actor} = D_{KL}(\pi_{ret} \| \pi)$
-- **Critic**: Standard SAC soft Q-loss + pessimistic penalty.
-- **Search hyperparameters**: $E$ simulations, maximum depth $d_{max}$, DPW parameters $\alpha, \beta$.
+- World Model: Trained using NLL loss for a Gaussian mixture dynamics ensemble ($K$ members).
+- Actor: $\mathcal{L}_{actor} = D_{KL}(\pi_{ret} \| \pi)$.
+- Critic: Standard SAC soft Q-loss + pessimistic penalty.
+- Search Parameters: $E$ simulations, depth $d_{max}$, DPW parameters $\alpha, \beta$.
 
 ## Key Experimental Results
 
-### Main Results (D4RL MuJoCo, 12 Tasks)
+### Main Results (D4RL MuJoCo, 12 tasks)
 
 | Task | BA-MCTS | MOBILE | CBOP | RAMBO | COMBO |
 |------|---------|--------|------|-------|-------|
@@ -93,55 +96,55 @@ Offline dataset $\mathcal{D}_\mu$ → Train $K$ ensemble world models $\{(\mathc
 | Walker2d-med-replay | **91.4** | 85.1 | 74.6 | 85.0 | 56.0 |
 | **Average (12 tasks)** | **80.3** | 76.5 | 73.9 | 68.9 | — |
 
-Cohen's $d > 1.8$ (vs. all 19 baselines with reported standard deviations) — extremely high statistical significance ($d > 0.8$ is already considered a large effect).
+Cohen's $d > 1.8$ (vs all 19 baselines with standard deviations)—indicating extremely high statistical significance ($d > 0.8$ is considered a large effect).
 
-### Tokamak Control (Nuclear Fusion, 3 Tasks)
+### Tokamak Control (Nuclear Fusion, 3 tasks)
 
 | Task | BA-MCTS | MOBILE | CBOP | SAC-10 |
 |------|---------|--------|------|--------|
-| Plasma temperature tracking | **Best** | — | — | — |
-| Shape control | **Best** | — | — | — |
-| Combined control | **Best** | — | — | — |
+| Plasma Temp Tracking | **Optimal** | — | — | — |
+| Shape Control | **Optimal** | — | — | — |
+| Combined Control | **Optimal** | — | — | — |
 
-Successful validation on a highly stochastic real physical system, demonstrating the robustness of the proposed method.
+Successful validation on highly stochastic real physical systems demonstrates the method's robustness.
 
 ### Ablation Study
 
-| Configuration | Effect | Note |
+| Configuration | Effect | Description |
 |------|------|------|
-| Remove BAMDP (uniform ensemble sampling) | Significant drop | Core value of belief adaptation |
-| Remove pessimistic penalty | Drop | Safety guarantee needed in OOD regions |
-| Remove search (pure RL) | Drop | Search provides stronger policy improvement signal |
-| Increase search depth $d_{max}$ | Performance gain with higher compute | Trade-off |
+| Remove BAMDP (Uniform Ensemble) | Significant drop | Core value of belief adaptation |
+| Remove Pessimistic Penalty | Drop | Safety required in OOD regions |
+| Remove Search (Pure RL) | Drop | Search provides stronger policy improvement signals |
+| Increase Search Depth $d_{max}$ | Performance gain | Higher computational cost trade-off |
 
 ### Key Findings
-- BAMDP belief updates allow the agent to "learn" along a trajectory which ensemble member is more reliable — particularly important near OOD boundaries.
-- The "RL + Search" paradigm is successfully transferred from board games (AlphaZero) to continuous control — search-result distillation into the network via policy iteration is effective.
-- Short-horizon rollouts (small $H$) combined with the value network as a terminal estimator effectively mitigate model error accumulation.
-- Tokamak validation confirms applicability to highly stochastic real physical systems.
+- BAMDP belief updates allow the agent to "learn" which ensemble member is more reliable along a trajectory—crucial at OOD boundaries.
+- The "RL + Search" paradigm successfully transfers from board games (AlphaZero) to continuous control via policy iteration with search result distillation.
+- Short-horizon rollouts ($H$) combined with a value network as a terminal estimate effectively control model error accumulation.
+- Tokamak validation shows the method is applicable to high-stochasticity control in real physical systems.
 
 ## Highlights & Insights
-- **First application of BAMDP to offline RL** constitutes a conceptual contribution — the Bayesian framework elevates the treatment of ensemble uncertainty from heuristic to principled. Belief updates endow the agent with dynamic judgment of which model is more reliable.
-- **Transfer of the "RL + Search" paradigm**: AlphaZero's core idea (search provides strong supervision → distill into network → iterative improvement) is successfully applied to continuous control, potentially opening a new paradigm for offline MBRL.
-- **Theoretical consistency proof**: The convergence analysis of Continuous BAMCP provides a theoretical foundation for planning in continuous BAMDPs.
+- **First application of BAMDP in offline RL**: A conceptual contribution where "ensemble uncertainty" is elevated from a heuristic to a principled Bayesian framework. Belief updates give the agent dynamic judgment regarding model reliability.
+- **Transfer of the "RL + Search" Paradigm**: Core ideas from AlphaZero (search as strong supervision $\rightarrow$ distillation $\rightarrow$ iterative improvement) are successfully applied to continuous control, potentially opening a new paradigm for offline MBRL.
+- **Theoretical Consistency Proof**: The convergence proof for Continuous BAMCP provides a theoretical foundation for planning in continuous BAMDPs.
 
 ## Limitations & Future Work
-- MCTS planning is computationally expensive — $E$ simulations per state may limit real-time applicability.
-- Finite search depth $d_{max}$ means model errors can still accumulate.
-- Ensemble size $K$ is fixed (typically 7); richer posterior approximations (e.g., Bayesian neural networks) may be more expressive.
-- The method has not been evaluated on visual observations (high-dimensional state spaces).
-- DPW parameters $\alpha, \beta$ require careful tuning.
+- High computational cost of MCTS planning—requiring $E$ simulations per state may limit real-time applications.
+- Limited search depth $d_{max}$ means model errors can still accumulate.
+- Fixed ensemble size $K$ (usually 7); richer posterior approximations (e.g., Bayesian Neural Networks) might be better.
+- Not tested on visual observations (high-dimensional state spaces).
+- DPW parameters $\alpha, \beta$ require tuning.
 
 ## Related Work & Insights
-- **vs. MOBILE/CBOP/RAMBO**: These methods use ensembles but treat members uniformly or apply only static pessimistic penalties; BA-MCTS dynamically updates beliefs and employs search-based planning, representing a fundamentally different paradigm.
-- **vs. BAMCP (Guez 2013)**: The original BAMCP is restricted to discrete spaces and requires the true model; Continuous BAMCP extends to continuous spaces and operates with learned models.
-- **vs. AlphaZero**: BA-MCTS is "AlphaZero for offline MBRL" — search + distillation + iteration — augmented with Bayesian beliefs and pessimism.
+- **vs MOBILE/CBOP/RAMBO**: These methods use ensembles but treat members uniformly or only apply static pessimism; BA-MCTS uses dynamic belief updates + search-based planning, a fundamentally different paradigm.
+- **vs BAMCP (Guez 2013)**: Original BAMCP is limited to discrete spaces and requires true models; Continuous BAMCP extends this to continuous spaces using learned models.
+- **vs AlphaZero**: BA-MCTS is essentially "AlphaZero for offline MBRL"—using search, distillation, and iteration while adding Bayesian beliefs and pessimism.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to unify BAMDP + Continuous BAMCP + pessimistic penalization + search-based policy iteration in offline MBRL.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ New SOTA on 12 D4RL tasks + tokamak application + Cohen's $d$ significance analysis + comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ Theoretically rigorous with clear algorithmic descriptions.
-- Value: ⭐⭐⭐⭐⭐ Introduces a new paradigm (BAMDP + "RL + Search") for offline MBRL with far-reaching impact.
+- Novelty: ⭐⭐⭐⭐⭐ First to unify BAMDP + Continuous BAMCP + Pessimism + Search-based PI in offline MBRL.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ New SOTA on 12 D4RL tasks + Tokamak application + Cohen's d significance analysis + thorough ablations.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous theory, clear algorithmic description.
+- Value: ⭐⭐⭐⭐⭐ Introduces a new paradigm (BAMDP + "RL + Search") for offline MBRL with far-reaching implications.
 
 <!-- RELATED:START -->
 
@@ -151,9 +154,9 @@ Successful validation on a highly stochastic real physical system, demonstrating
 
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
 - [\[ICML 2026\] Reinforced Sequential Monte Carlo for Amortised Sampling](../../ICML2026/reinforcement_learning/reinforced_sequential_monte_carlo_for_amortised_sampling.md)
-- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICLR 2026\] Regret-Guided Search Control for Efficient Learning in AlphaZero](regret-guided_search_control_for_efficient_learning_in_alphazero.md)
-- [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
+- [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
+- [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](offline_reinforcement_learning_with_adaptive_feature_fusion.md)
+- [\[NeurIPS 2025\] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs](../../NeurIPS2025/reinforcement_learning/sequential_monte_carlo_for_policy_optimization_in_continuous_pomdps.md)
 
 </div>
 

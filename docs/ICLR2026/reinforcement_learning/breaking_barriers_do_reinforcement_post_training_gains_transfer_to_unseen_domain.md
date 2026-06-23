@@ -2,152 +2,139 @@
 title: >-
   [Paper Note] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?
 description: >-
-  [ICLR2026][Reinforcement Learning][Reinforcement Post-Training (RPT)] Through an observational study (18 open-source RPT models) and an interventional study (single-domain GRPO training)…
+  [ICLR 2026][Reinforcement Learning][RLVR] Through observational studies (18 open-source RPT models) and interventional studies (single-domain GRPO training), this work systematically reveals the generalization limitations of Reinforcement Post Training (RPT/RLVR). While RPT significantly improves performance within the training domain, cross-domain generalizat
 tags:
-  - "ICLR2026"
-  - "Reinforcement Learning"
-  - "Reinforcement Post-Training (RPT)"
-  - "RLVR"
-  - "Cross-Domain Generalization"
-  - "Structured Reasoning"
-  - "Unstructured Reasoning"
-  - "LLM"
+  - ICLR 2026
+  - Reinforcement Learning
+  - RLVR
+  - LLM
 date: 2026-05-08
-content_hash: fead83f434632ca5
+content_hash: 7df4d3bc439448ef
 ---
-
 # Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?
 
-**Conference**: ICLR2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.19733](https://arxiv.org/abs/2506.19733)  
-**Code**: To be confirmed  
-**Area**: Reinforcement Learning
-**Keywords**: Reinforcement Post-Training (RPT), RLVR, Cross-Domain Generalization, Structured Reasoning, Unstructured Reasoning, LLM
+**Code**: TBD  
+**Area**: Reinforcement Learning  
+**Keywords**: Reinforcement Post Training (RPT), RLVR, Cross-Domain Generalization, Structured Reasoning, Unstructured Reasoning, LLM
 
 ## TL;DR
-Through an observational study (18 open-source RPT models) and an interventional study (single-domain GRPO training), this paper systematically reveals the generalization limitations of Reinforcement Post-Training (RPT/RLVR): RPT yields substantial within-domain gains, but cross-domain generalization is inconsistent — structured domains (math ↔ code) exhibit mutual transfer, whereas gains do not generalize to unstructured domains (law/finance/medicine). This finding holds consistently across algorithms, model scales, and training steps.
+Through observational studies (18 open-source RPT models) and interventional studies (single-domain GRPO training), this work systematically reveals the generalization limitations of Reinforcement Post Training (RPT/RLVR). While RPT significantly improves performance within the training domain, cross-domain generalization is inconsistent: gains transfer between structured domains (Math ↔ Code) but fail to generalize to unstructured domains (Law/Finance/Medical). This finding remains consistent across different algorithms, model scales, and training steps.
 
 ## Background & Motivation
 
-**Background**: RPT (particularly RLVR) has recently achieved remarkable progress in mathematical and code reasoning — Gemini 3 Pro reaches 100% on AIME 2025, Claude Opus 4.5 reaches 81% on SWE-bench, and GPT-5.2-Pro reaches 93.2% on GPQA Diamond. These models are typically post-trained on mixed multi-domain data.
+**Background**: RPT (especially RLVR) has recently achieved remarkable progress in mathematical and code reasoning. Gemini 3 Pro reached 100% on AIME 2025, Claude Opus 4.5 reached 81% on SWE-bench, and GPT-5.2-Pro reached 93.2% on GPQA Diamond. These models are typically post-trained on a mix of multi-domain data.
 
-**Core Problem**: Do the reasoning gains brought by RPT generalize broadly across domains, as pretraining does? Existing work almost exclusively evaluates RPT models within their training domains, lacking systematic cross-domain analysis.
+**Core Problem**: Does the reasoning capability improvement brought by RPT possess broad domain generalization like pre-training? Existing works almost exclusively evaluate RPT models within the training domain, lacking systematic cross-domain analysis.
 
-**Research Challenges**: (1) Existing RPT models employ different algorithms, hyperparameters, and multi-domain data, making it difficult to isolate the effect of RPT itself; (2) Coverage must span both structured (math, code) and unstructured (law, finance, medicine) reasoning tasks.
+**Key Challenge**: (1) Existing RPT models use different algorithms, hyperparameters, and multi-domain data, making it difficult to isolate the effects of RPT itself; (2) Evaluation needs to cover both structured (Math, Code) and unstructured (Law, Finance, Medical) reasoning tasks.
 
-**Core Design**: A two-phase "observational + interventional" research paradigm is adopted — broad evaluation of existing models to identify trends, followed by controlled experiments to establish causal relationships.
+**Key Insight**: A two-stage research paradigm of "observational + interventional" is adopted—broadly evaluating existing models to discover trends first, and then validating causal relationships through controlled experiments.
 
 ## Method
 
-### Research Design
+### Overall Architecture
 
-**Four Research Questions**:
-- RQ1: Do RPT gains transfer to domains outside the training distribution?
-- RQ2: How does the structural similarity of reasoning affect generalization?
-- RQ3: How well does RPT generalize across sub-domains within the same domain?
-- RQ4: Does generalization vary with hyperparameters (algorithm, model scale, training steps)?
+This is an empirical study aimed at answering whether "reasoning gains from RPT transfer beyond the training domain." This is decomposed into four progressive research questions: cross-domain transfer of gains (RQ1), the impact of reasoning structural similarity on generalization (RQ2), intra-domain generalization between sub-tasks (RQ3), and the stability of these patterns across algorithms/scales/steps (RQ4). To observe universal trends while isolating causality, a two-stage design is employed: an observational study performing a large-scale horizontal comparison of 18 public RPT models, followed by an interventional study using a unified base model and algorithm for single-domain RPT. Evidence is synthesized using evaluation metrics backed by statistical tests.
 
-### Domain Taxonomy
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Three-Domain Reasoning Classification<br/>Math · Code · Knowledge-Intensive<br/>(Structured ↔ Unstructured)"]
+    A --> B["Observational Study<br/>18 Public RPT Models vs Base<br/>× 16 Benchmarks"]
+    A --> C["Interventional Study<br/>Unified Base + GRPO<br/>40K Single-Domain RPT samples per domain"]
+    B --> D["Evaluation & Statistical Testing<br/>Aggregate Improvement Δ + CMH Odds Ratio θ̂"]
+    C --> D
+    D --> E["RQ1-4 Conclusions<br/>Significant ID · Insignificant OOD<br/>Structured Transfer · No Transfer to Unstructured"]
+```
 
-Reasoning tasks are categorized into three major domains:
-- **Math** (structured): GSM8K, MATH-500, AIME 2024, AMC 2023
-- **Code** (structured): MBPP, HumanEval, BigCodeBench, LiveCodeBench, USACO, Codeforces, Polyglot
-- **Knowledge-Intensive Reasoning** (unstructured): PubMedQA, MedQA, TabFact, LegalBench, FinBench
+### Key Designs
 
-Key definition: Structured reasoning follows deterministic logical steps and precise syntax, whereas unstructured reasoning requires flexible, context-sensitive inference, world knowledge, and handling of ambiguity.
+**1. Three-Domain Classification (Structured vs. Unstructured): An Operational Coordinate System for "Cross-Domain"**
+The authors categorize reasoning tasks into three domains: **Math** (GSM8K, MATH-500, AIME 2024, AMC 2023), **Code** (MBPP, HumanEval, BigCodeBench, LiveCodeBench, USACO, Codeforces, Polyglot), and **Knowledge-Intensive Reasoning** (PubMedQA, MedQA, TabFact, LegalBench, FinBench). A critical dimension is identified: Math and Code are **structured reasoning**, following deterministic logical steps and precise syntax, while Law/Finance/Medical are **unstructured reasoning**, requiring context sensitivity and reliance on world knowledge to handle ambiguity.
 
-### Observational Study
+**2. Observational Study: Identifying Phenomena Across 18 Public Models**
+RPT models were systematically filtered from 466 candidates down to 18 based on data availability, parameter scale (1.5B–14B), and the requirement that the base was not purely a pre-trained model (ensuring RPT is the primary variable). Each model was compared against its base on 16 benchmarks. This stage provides broad evidence across various algorithms and scales.
 
-- Open-source RPT models are systematically filtered from Hugging Face: 466 → 31 → 18
-- Selection criteria: publicly available RPT data, model size 1.5B–14B parameters, base model not purely pretrained
-- Each model is compared against its base model across 16 benchmarks
-- Coverage includes math, code, legal, financial, and medical domains
+**3. Interventional Study: Controlled Training to Isolate RPT Causality**
+To eliminate interference from different algorithms or data, variables were fixed: the base model is DeepSeek-R1-Distill-Qwen-1.5B, the algorithm is GRPO (Group Relative Policy Optimization) with identical hyperparameters. The only difference is the training data (40K samples each for Math, Code, and Knowledge-Intensive domains). Any OOD performance difference can thus be attributed to the RPT data domain. Replication using DAPO, 2 epochs, and Llama-3.2-3B-Instruct was also performed.
 
-### Interventional Study
-
-- Base model: DeepSeek-R1-Distill-Qwen-1.5B (unified)
-- RPT is applied separately on three disjoint 40K-sample datasets: math, code, and knowledge-intensive reasoning
-- Algorithm: GRPO (Group Relative Policy Optimization) with identical hyperparameters throughout
-- Additional validation: DAPO algorithm, 2-epoch training, and Llama-3.2-3B-Instruct as the backbone
-
-### Evaluation Metrics
-
-- **Aggregate accuracy gain** $\Delta_{i,j}^{(\mathcal{D})}$: weighted-average pass@1 improvement
-- **CMH statistical test**: Cochran-Mantel-Haenszel test, computing the common odds ratio $\hat{\theta}$; significance marked at $p < 0.05$
-- Small benchmarks (AMC/AIME) are repeated 16 times and averaged; others are run once
+**4. Evaluation Metrics & Statistical Testing: Beyond Point Estimates**
+Generalization is quantified using **Aggregate Accuracy Improvement** $\Delta_{i,j}^{(\mathcal{D})}$, representing the weighted average pass@1 improvement of an RPT model relative to its base. To account for noise, the **Cochran-Mantel-Haenszel (CMH) test** is used to calculate a common odds ratio $\hat{\theta}$ across benchmarks with significance marked at $p<0.05$. An $\hat{\theta}$ close to 1 indicates no real advantage from RPT.
 
 ## Key Experimental Results
 
-### RQ1: RPT Does Not Generalize to Arbitrary Unseen Domains
+### RQ1: RPT cannot generalize to arbitrary unseen domains
 
-| Metric | In-Domain (ID) Avg. | Out-of-Domain (OOD) Avg. |
-|--------|---------------------|--------------------------|
+| Metric | In-Domain (ID) Avg | Out-of-Domain (OOD) Avg |
+|------|--------------|----------------|
 | $\Delta$ (pass@1 %) | +2.87 | **-3.19** |
 | Odds ratio $\hat{\theta}$ | 3.10 | 1.32 |
 
-- Typical case: DeepScaleR-1.5B gains +5.1% on math but only +1.7% elsewhere (3× drop)
-- Extreme case: AZR-Coder-7B (near-zero-data post-training) gains +30.12% on code but **-23.31%** OOD
-- In the single-domain interventional experiments, none of the math, code, or knowledge RPT conditions yield statistically significant OOD improvements
+- Typical Case: DeepScaleR-1.5B gained +5.1% in Math but only +1.7% in other domains (a 3x drop).
+- Extreme Case: AZR-Coder-7B gained +30.12% in Code but dropped **-23.31%** OOD.
+- Interventional experiments showed no statistically significant OOD gains regardless of the RPT domain.
 
-### RQ2: Structured Domains Transfer Mutually; Cross-Type Transfer Fails
+### RQ2: Transfer occurs between structured domains, but not across types
 
 | Training Domain → Test Domain | Math | Code | Knowledge-Intensive |
-|-------------------------------|------|------|---------------------|
+|---------------|------|------|-----------|
 | **Math RPT** | +2.18% | +4.77% | -0.27% |
 | **Code RPT** | +15.44% | +9.49% | -0.27% |
-| **Knowledge RPT** | +21.40%* | +12.16%* | Decline |
+| **Knowledge RPT** | +21.40%* | +12.16%* | Decrease |
 
-- Math → Code and Code → Math transfer are both effective bidirectionally; Math → Code transfer is stronger, reflecting math as a more foundational form of structured reasoning
-- Structured → Knowledge-Intensive: no statistically significant improvement, and occasional decline
-- **Counterintuitive finding**: Knowledge-Intensive → Structured domains shows significant positive transfer, suggesting that unstructured reasoning is in some sense a "superset" of structured reasoning capabilities
+- Bidirectional transfer exists between Math and Code; Math → Code transfer is stronger (Math is a more fundamental structured reasoning).
+- Structured → Knowledge-Intensive: No significant improvement, or even a decrease.
+- **Counter-intuitive finding**: Knowledge-Intensive → Structured RPT actually shows significant positive transfer, suggesting unstructured reasoning may be a "superset" of structured reasoning.
 
-### RQ3: Within-Domain Sub-Domain Generalization Depends on Structural Similarity
+### RQ3: Intra-domain generalization depends on structural similarity
 
-- Within-domain generalization is consistent for structured domains (uniform gains across math sub-tasks and across code sub-tasks)
-- Within-domain generalization is poor for unstructured domains: Fino1-8B (finance RPT) shows -2% on PubMedQA, -1.6% on LegalBench, and **-15.8%** on TabFact
-- In the interventional study, Knowledge-RPT also exhibits overall decline on the knowledge domain, indicating a lack of shared logical templates across unstructured tasks
+- Generalization within structured domains is good (consistent gains across sub-tasks).
+- Generalization within unstructured domains is poor: Fino1-8B (Finance RPT) showed PubMedQA -2%, LegalBench -1.6%, and TabFact **-15.8%**.
+- Knowledge-RPT also showed an overall decline in the knowledge domain in interventional experiments, indicating a lack of shared logical templates in unstructured tasks.
 
-### RQ4: Generalization Limitations Are Consistent Across Configurations
+### RQ4: Generalization constraints remain consistent across configurations
 
 | Base + Algorithm | $\Delta^{(ID)}$ | $\Delta^{(OOD)}$ | Gap |
-|-----------------|-----------------|-------------------|-----|
+|------------|-----------------|-------------------|-----|
 | DS-Qwen-1.5B + GRPO | +3.13 | **-1.81** | 4.94 |
 | Llama-3.2-3B + GRPO | +6.47 | +1.41 | 5.06 |
 | DS-Qwen-1.5B + DAPO | +3.96 | **-1.27** | 5.23 |
 
-- The same pattern holds across different RL algorithms (GRPO vs. DAPO), different base models, and additional training steps
-- The ID–OOD gap increases with training steps and eventually stabilizes
-- Larger model size leads ID gains to outgrow OOD gains by an additional 16.5%, exacerbating overfitting
+- Different RL algorithms (GRPO vs. DAPO), different base models, and increased training steps all exhibit the same pattern.
+- The ID-OOD gap widens with training steps before eventually stabilizing.
+- Larger model parameters cause ID gains to grow 16.5% more than OOD gains, exacerbating overfitting.
 
 ## Highlights & Insights
 
-- **"Observational + Interventional" experimental design paradigm**: Trends are first identified via broad evaluation of 18 models, then causal relationships are validated through controlled single-domain training — a rigorous research design
-- **Counterintuitive positive transfer from unstructured to structured domains**: Knowledge RPT models exhibit statistically significant gains on math, suggesting that broad knowledge reasoning subsumes structured reasoning to some degree
-- **Hierarchy of structured reasoning**: Math → Code transfer is stronger than Code → Math, reflecting mathematical reasoning as a more foundational capability
-- **Even minimal training data can cause OOD harm**: AZR-Coder causes -23% OOD degradation with almost no training data, indicating that RPT itself — not overfitting per se — is the root cause of generalization failure
-- **Use of CMH statistical testing**: The introduction of a standardized hypothesis testing framework, rather than relying solely on point estimates, strengthens the credibility of the conclusions
+- **"Observational + Interventional" Paradigm**: Rigorous research design combining broad trends from 18 models with causal validation from controlled experiments.
+- **Counter-intuitive Unstructured-to-Structured Transfer**: Knowledge RPT models show statistically significant gains in Math, suggesting high-level knowledge reasoning may encompass elements of structured reasoning.
+- **Hierarchy of Structured Reasoning**: Math → Code transfer is stronger than Code → Math, reflecting that mathematical reasoning is a more foundational capability.
+- **OOD Damage from Minimal Data**: AZR-Coder caused -23% OOD drop despite minimal training data, suggesting RPT itself (rather than simple overfitting) causes generalization failure.
+- **Application of CMH Statistical Test**: Use of a standardized hypothesis testing framework rather than point estimates increases the credibility of the conclusions.
 
 ## Limitations & Future Work
 
-- Interventional experiments use only 1.5B models; single-domain RPT experiments on larger models (7B+) are absent
-- Training data for knowledge-intensive reasoning is filtered by o3-mini to remove math/code content; filtering quality may affect conclusions
-- Joint SFT + RPT training scenarios are not explored; the study focuses exclusively on pure RLVR
-- The number of benchmarks for unstructured domains is limited (only 5), and whether some (e.g., TabFact) truly represent "unstructured reasoning" is debatable
-- Changes in internal model representations during RPT (e.g., probing analysis) are not analyzed, leaving the mechanistic explanation incomplete
-- All experiments are based on open-source models; the generalization behavior of closed-source RPT models (e.g., o1, the full DeepSeek-R1) may differ
+- Interventional experiments only utilized 1.5B models; single-domain RPT experiments for larger models (7B+) are missing.
+- Knowledge-intensive training data was filtered by o3-mini; filtering quality may impact conclusions.
+- The study focuses on pure RLVR and does not explore the generalization of joint SFT + RPT training.
+- The number of unstructured domain benchmarks is limited (5), and whether some (e.g., TabFact) truly represent "unstructured reasoning" is debatable.
+- Lack of mechanistic explanation; model internal representations (e.g., via probing) were not analyzed.
+- Findings are based on open-source models; closed-source RPT models (like o1 or full DeepSeek-R1) might behave differently.
 
 ## Related Work & Insights
 
-- **vs. DeepSeek-R1/o1 series**: These models are post-trained on multi-domain mixed data and appear to improve broadly, but because ID and OOD are interleaved, genuine generalization cannot be distinguished. This paper reveals generalization limitations through single-domain experiments
-- **vs. RPT limitation studies (Yue et al., Ma et al.)**: Prior work questions RPT in terms of reasoning quality and computational efficiency; this paper is the first systematic study of RPT generalization across data domains
-- **vs. pretraining generalization**: Pretraining achieves broad generalization through massive, diverse data; RPT generalization is far more limited, indicating that "reasoning learning" during post-training is fundamentally domain-specific pattern reinforcement
-- **Practical implications**: RPT deployment should use training data tailored to the target domain; expecting math/code RPT to yield legal/medical reasoning capabilities is unrealistic
+- **vs. DeepSeek-R1/o1 Series**: While these models show comprehensive improvements by using multi-domain data, they cannot distinguish true generalization from ID/OOD mixing. This paper isolates generalization limits via single-domain experiments.
+- **vs. RPT Limitation Studies (Yue et al., Ma et al.)**: While previous work questioned RPT's reasoning quality or efficiency, this is the first to systematically investigate the data domain generalization of RPT.
+- **vs. Pre-training Generalization**: Pre-training achieves broad generalization through massive diverse data; RPT generalization is much weaker, indicating "reasoning learning" in post-training is essentially domain-specific pattern reinforcement.
+- **Practical Implications**: RPT should utilize data tailored to the target domain; it is unrealistic to expect Law/Medical reasoning improvements solely through Math/Code RPT.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First systematic study of cross-domain generalization in RPT, with a well-designed experimental framework
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 18 models × 16 benchmarks, dual validation via observational + interventional studies, ablation across algorithms/models/steps
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, RQ-driven organization, rigorous statistical testing
-- Value: ⭐⭐⭐⭐⭐ An important cautionary contribution to the RPT community, exposing a widely overlooked generalization bottleneck
+- Novelty: ⭐⭐⭐⭐ First systematic study of RPT cross-domain generalization with rigorous design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 18 models × 16 benchmarks, multi-stage validation, and ablations across algorithms/models/steps.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, RQ-driven, and rigorous statistical testing.
+- Value: ⭐⭐⭐⭐⭐ Significant warning for the RPT community, revealing a widely overlooked generalization bottleneck.
 
 <!-- RELATED:START -->
 
@@ -155,11 +142,11 @@ Key definition: Structured reasoning follows deterministic logical steps and pre
 
 ## Related Papers
 
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](prompt_curriculum_learning_for_efficient_llm_post-training.md)
+- [\[ICLR 2026\] Masked Skill Token Training for Hierarchical Off-Dynamics Transfer](masked_skill_token_training_for_hierarchical_off-dynamics_transfer.md)
+- [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
-- [\[ACL 2026\] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study](../../ACL2026/reinforcement_learning/scaling_behaviors_of_llm_reinforcement_learning_post-training_an_empirical_study.md)
-- [\[ICML 2026\] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training](../../ICML2026/reinforcement_learning/provable_benefit_of_curriculum_in_transformer_tree-reasoning_post-training.md)
-- [\[ACL 2026\] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents](../../ACL2026/reinforcement_learning/breaking_the_impasse_dual-scale_evolutionary_policy_training_for_social_language.md)
-- [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](../../ICML2026/reinforcement_learning/how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
 
 </div>
 

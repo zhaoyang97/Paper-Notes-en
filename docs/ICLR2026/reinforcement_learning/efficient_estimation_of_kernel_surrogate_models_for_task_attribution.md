@@ -2,129 +2,133 @@
 title: >-
   [Paper Note] Efficient Estimation of Kernel Surrogate Models for Task Attribution
 description: >-
-  [ICLR 2026][Reinforcement Learning][task attribution] This paper proposes a kernel surrogate model (KernelSM) for task attribution. By employing RBF kernel ridge regression to capture nonlinear interaction effects among…
+  [ICLR 2026][Reinforcement Learning][task attribution] This work proposes Kernel Surrogate Models (KernelSM) for task attribution, utilizing RBF kernel ridge regression to capture non-linear interaction effects between tasks. Combined with an efficient estimation algorithm via gradient projection to avoid redundant training, it achieves a 25% correlation improvement over l
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "task attribution"
-  - "kernel surrogate model"
-  - "influence function"
-  - "data attribution"
-  - "kernel ridge regression"
+  - ICLR 2026
+  - Reinforcement Learning
+  - task attribution
+  - kernel surrogate model
+  - influence function
+  - data attribution
+  - kernel ridge regression
 date: 2026-05-08
-content_hash: d70d99161ca2b732
+content_hash: d73cd75cb6c313a3
 ---
-
 # Efficient Estimation of Kernel Surrogate Models for Task Attribution
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.03783](https://arxiv.org/abs/2602.03783)  
 **Code**: [https://github.com/VirtuosoResearch/Kernel-surrogate-models](https://github.com/VirtuosoResearch/Kernel-surrogate-models)  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: task attribution, kernel surrogate model, influence function, data attribution, kernel ridge regression
 
 ## TL;DR
-This paper proposes a kernel surrogate model (KernelSM) for task attribution. By employing RBF kernel ridge regression to capture nonlinear interaction effects among tasks, combined with a gradient-projection-based efficient estimation algorithm that eliminates repeated retraining, KernelSM achieves a 25% improvement in correlation over linear surrogate and influence function baselines across mathematical reasoning, in-context learning, and multi-objective RL settings.
+This work proposes Kernel Surrogate Models (KernelSM) for task attribution, utilizing RBF kernel ridge regression to capture non-linear interaction effects between tasks. Combined with an efficient estimation algorithm via gradient projection to avoid redundant training, it achieves a 25% correlation improvement over linear surrogate and influence function baselines in scenarios such as mathematical reasoning, in-context learning, and multi-objective RL.
 
 ## Background & Motivation
 
-**Background**: Modern AI systems (e.g., LLMs) are trained simultaneously on diverse tasks. Quantifying the contribution of each training task to a target task (task attribution) is a central problem in interpretability. Existing approaches include leave-one-out (LOO) retraining (exact but computationally infeasible), influence functions (requiring Hessian computation), and linear surrogate models (fitting a linear function via random subset sampling).
+**Background**: Modern AI systems (e.g., LLMs) are often trained simultaneously on diverse tasks. Quantifying the impact of each training task on a target task (task attribution) is a central problem in interpretability. Existing methods include: Leave-One-Out (LOO) retraining (accurate but computationally infeasible), influence functions (requiring Hessian computation), and linear surrogate models (fitting a linear function via random subset sampling).
 
-**Limitations of Prior Work**: Linear surrogate models can only capture first-order additive effects and fail to express nonlinear interactions among tasks—such as synergistic effects (joint training on two tasks outperforms the sum of individual contributions), adversarial effects, and XOR-type effects. These interactions are particularly pronounced for training samples near decision boundaries.
+**Limitations of Prior Work**: Linear surrogate models can only capture first-order additive effects and fail to represent non-linear interactions—such as synergetic effects (where two tasks trained together perform better than the sum of their individual effects), antagonistic effects, or XOR-type interactions. These interactions are particularly significant among training samples near decision boundaries.
 
-**Key Challenge**: Stronger surrogate models (e.g., kernel methods) require evaluating model performance $F(\mathbf{s})$ on more subsets, each demanding a full retraining—making the computational cost comparable to LOO.
+**Key Challenge**: Stronger surrogate models (such as kernel methods) require evaluating model performance $F(\mathbf{s})$ on a larger number of subsets, where each subset traditionally requires a full training run—making the computational cost comparable to LOO.
 
-**Goal**: (1) Provide a unified analysis of the relationship between linear surrogates and influence functions; (2) Design surrogate models capable of capturing nonlinear task interactions; (3) Enable efficient estimation without repeated retraining.
+**Goal**: (1) Provide a unified analysis of the relationship between linear surrogates and influence functions; (2) Design a surrogate model capable of capturing non-linear interactions; (3) Enable efficient estimation while avoiding redundant training.
 
-**Key Insight**: The paper first uses a second-order Taylor expansion to prove that linear surrogates $\approx$ influence functions (when second-order interactions are small), thereby exposing the limitations of linear surrogates. It then upgrades the surrogate model with an RBF kernel and employs a first-order gradient approximation to avoid repeated retraining.
+**Key Insight**: The authors first prove via a second-order Taylor expansion that linear surrogates $\approx$ influence functions (when second-order interactions are small), exposing the inherent limitations of linear surrogates. They then upgrade the surrogate model using RBF kernels and leverage a first-order gradient approximation to avoid repeated training.
 
-**Core Idea**: Efficiently construct kernel surrogate models via gradient-projection-based first-order approximation, capturing nonlinear task interactions with less than 2% relative error.
+**Core Idea**: Efficiently construct a kernel surrogate model using a first-order approximation via gradient projection to capture non-linear task interactions with a relative error of < 2%.
 
 ## Method
 
 ### Overall Architecture
-Given $K$ training tasks → sample $m$ binary subset vectors $\mathbf{s} \in \{0,1\}^K$ → efficiently estimate model performance $F(\mathbf{s}^{(i)})$ for each subset (via gradient approximation, without retraining) → fit $g_\theta: \{0,1\}^K \to \mathbb{R}$ using kernel ridge regression → output task attribution scores (nonlinear task interactions are implicitly encoded by the kernel function).
+The core question of task attribution is: how does the performance of a target task change if one of $K$ training tasks is removed? The most precise approach is to retrain the model for every subset and evaluate performance $F(\mathbf{s})$ (where $\mathbf{s} \in \{0,1\}^K$ is a binary indicator vector of participating tasks), but this is equivalent to LOO and computationally infeasible. This work proposes using a surrogate model $g_\theta$ to fit $F$: first sample $m$ subset vectors $\mathbf{s}^{(i)}$, rapidly estimate $F(\mathbf{s}^{(i)})$ for each subset **without retraining by using gradient approximations**, then feed these $(\mathbf{s}^{(i)}, F(\mathbf{s}^{(i)}))$ pairs into an RBF kernel ridge regression $g_\theta: \{0,1\}^K \to \mathbb{R}$. Finally, attribution scores for each task are derived from the fitted kernel model. The key is upgrading the surrogate from linear to kernel-based to capture non-linear interactions while maintaining computational costs similar to linear surrogates.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["K training tasks + target task<br/>Question F(s): Performance change if a task is removed"] --> B["Sample m subsets<br/>s^(i) ∈ {0,1}^K"]
+    B --> C["Efficient estimation via gradient projection<br/>Estimate each F(s^(i)) using 1st-order approx without retraining"]
+    C --> D["RBF Kernel Surrogate Model g_θ<br/>Kernel Ridge Regression fits (s^(i), F)"]
+    D --> E["Extract attribution scores for each task"]
+```
 
 ### Key Designs
 
-1. **Unified Analysis of Linear Surrogates and Influence Functions**:
+**1. Unified Analysis of Linear Surrogates and Influence Functions**
 
-    - Function: Prove that linear surrogate model coefficients are equivalent to influence functions under a first-order approximation.
-    - Mechanism: Apply a second-order Taylor expansion to $F(\mathbf{s})$, substitute into the linear regression objective, and analyze the regression coefficients via the delta method. Proposition 3.1 establishes $\|\hat{\beta} - \nabla_\mathbf{s} F(\mathbf{s}^*) - \text{second-order correction}\| \lesssim c_3 K^{3/2} p^{-1}$.
-    - Design Motivation: Reveals the fundamental limitation of linear surrogates—when the norm of the Hessian $\mathbf{H}_\mathbf{s}$ is non-negligible, neither linear surrogates nor influence functions can accurately attribute task contributions.
+To justify the need for kernels, the authors clarify the limitations of linear surrogates. They perform a second-order Taylor expansion of $F(\mathbf{s})$ at an operating point $\mathbf{s}^*$ and analyze the limit of regression coefficients using the delta method. Proposition 3.1 provides a bias bound between the regression coefficients $\hat{\beta}$ and the first-order gradient plus second-order corrections: $\|\hat{\beta} - \nabla_\mathbf{s} F(\mathbf{s}^*) - \text{correction term}\| \lesssim c_3 K^{3/2} p^{-1}$. This result links the two methods: when second-order interactions (norm of Hessian $\mathbf{H}_\mathbf{s}$) are small, linear surrogate coefficients converge to the first-order gradient, which is exactly what influence functions characterize. Conversely, if $\mathbf{H}_\mathbf{s}$ is non-negligible, both methods fail simultaneously as they are fundamentally first-order.
 
-2. **RBF Kernel Surrogate Model (KernelSM)**:
+**2. RBF Kernel Surrogate Model (KernelSM)**
 
-    - Function: Replace linear regression with kernel ridge regression to learn nonlinear task interactions.
-    - Mechanism: $g_\theta(\mathbf{s}) = \sum_i \theta_i k(\mathbf{s}^{(i)}, \mathbf{s})$, where $k(\mathbf{s}^{(a)}, \mathbf{s}^{(b)}) = \exp(-\gamma \|\mathbf{s}^{(a)} - \mathbf{s}^{(b)}\|^2)$. The closed-form solution for the coefficients is $\theta = (\mathcal{K} + \lambda I)^{-1} \mathbf{F}$.
-    - Design Motivation: The RBF kernel is a universal approximator on the binary space $\{0,1\}^K$, and its geometric intuition naturally matches the subset space—similar subsets (close in Hamming distance) should yield similar performance.
+Given that the bottleneck is the first-order nature of prior methods, KernelSM replaces linear regression with kernel ridge regression:
 
-3. **Efficient Estimation via Gradient Projection (Core Contribution)**:
+$$g_\theta(\mathbf{s}) = \sum_i \theta_i\, k(\mathbf{s}^{(i)}, \mathbf{s}), \qquad k(\mathbf{s}^{(a)}, \mathbf{s}^{(b)}) = \exp(-\gamma \|\mathbf{s}^{(a)} - \mathbf{s}^{(b)}\|^2)$$
 
-    - Function: Avoid retraining the model for each subset $\mathbf{s}^{(i)}$ by using a first-order Taylor approximation to estimate $F(\mathbf{s}^{(i)})$.
-    - Mechanism: Perform a first-order expansion at the pretrained weights $W_0$: $f_W(x) \approx f_{W_0}(x) + \langle \nabla f_{W_0}(x), W - W_0 \rangle$. For each subset $\mathbf{s}^{(i)}$, solve for the optimal perturbation $Z^*_{\mathbf{s}^{(i)}}$ via multinomial logistic regression using projected gradients as features, then estimate $\hat{f}(x) = f_{W_0}(x) + \langle \nabla f_{W_0}(x), Z^*_{\mathbf{s}^{(i)}} \rangle$.
-    - Design Motivation: Gradients need only be computed once at $W_0$; all subsequent subset estimations reduce to linear algebra on CPU. Empirical validation shows that the first-order approximation error is less than 2%.
-    - Key Technique: Gaussian random convolution is used to project high-dimensional gradient vectors into a low-dimensional space, reducing regression solving to a matter of seconds.
+The coefficients have a closed-form solution $\theta = (\mathcal{K} + \lambda I)^{-1} \mathbf{F}$. The RBF kernel is chosen for two reasons: its universal approximation property in binary space $\{0,1\}^K$, which captures synergy, antagonism, and XOR interactions; and its geometric intuition, where the squared Euclidean distance on $\{0,1\}^K$ equals the Hamming distance. This defines a heat kernel where subsets differing by only a few tasks are expected to have similar performance, providing a sound inductive bias.
+
+**3. Efficient Estimation via Gradient Projection**
+
+The challenge lies in obtaining $m$ values of $F(\mathbf{s}^{(i)})$. This work avoids retraining by performing a first-order Taylor expansion of the model at the pre-trained weights $W_0$: $f_W(x) \approx f_{W_0}(x) + \langle \nabla f_{W_0}(x), W - W_0 \rangle$. For each subset $\mathbf{s}^{(i)}$, the projected gradients are treated as features to solve a multinomial logistic regression for the optimal weight perturbation $Z^*_{\mathbf{s}^{(i)}}$, which is substituted back into the expansion to yield the estimate $\hat{f}(x) = f_{W_0}(x) + \langle \nabla f_{W_0}(x), Z^*_{\mathbf{s}^{(i)}} \rangle$. This results in the gradient $\nabla f_{W_0}$ being computed only once at $W_0$, reducing subsequent subset estimations to CPU-based linear algebra. Gaussian random projections are used to map high-dimensional gradients to a lower-dimensional space, allowing the process to complete in seconds with a relative error $< 2\%$.
 
 ### Loss & Training
 Kernel ridge regression objective: $\min_{g_\theta} \sum_{i=1}^m (F(\mathbf{s}^{(i)}) - g_\theta(\mathbf{s}^{(i)}))^2 + \lambda \|g_\theta\|^2_\mathcal{K}$
 
-Hyperparameters $\lambda$ and $\gamma$ are selected via cross-validation.
+The regularization term $\lambda \|g_\theta\|^2_\mathcal{K}$ controls model complexity. Hyperparameters $\lambda$ (regularization strength) and $\gamma$ (RBF bandwidth) are selected via cross-validation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | CIFAR-10 Corr.↑ | Modular Arith. Corr.↑ | ICL Corr.↑ | Multi-obj. RL Corr.↑ |
-|---|---|---|---|---|
+| Method | CIFAR-10 Corr.↑ | Modular Arithmetic Corr.↑ | ICL Corr.↑ | Multi-obj RL Corr.↑ |
+|------|--------------|-----------|---------|------------|
 | Influence Function | ~0.74 | ~0.55 | ~0.72 | ~0.65 |
 | Linear Surrogate | ~0.76 | ~0.58 | ~0.75 | ~0.68 |
-| **KernelSM** | ~0.82 | ~0.80 | ~0.88 | ~0.73 |
+| **KernelSM** | **~0.82** | **~0.80** | **~0.88** | **~0.73** |
 
-KernelSM achieves a 25% improvement in correlation over linear baselines and influence functions (compared against LOO ground truth). The largest gain is observed on modular arithmetic tasks (42%), attributable to strong nonlinear interactions in operations such as XOR and division.
+KernelSM improves correlation by approximately 25% over linear baselines (compared against LOO ground truth). The largest gain (42%) is seen in modular arithmetic, where operations like XOR/division exhibit strong non-linear interactions.
 
 ### Ablation Study
 
-| Kernel | CIFAR-10 Residual↓ | Modular Arith. Residual↓ |
-|---|---|---|
+| Kernel | CIFAR-10 Residual↓ | Modular Arithmetic Residual↓ |
+|--------|-------------|-----------|
 | Linear | 4.4±0.9 | 4.6±1.3 |
 | **RBF** | **1.0±0.0** | **1.5±0.4** |
 
-| Task | First-order Approx. Relative Error |
-|---|---|
+| Task | First-order Approx Relative Error |
+|------|--------------|
 | CIFAR-10 | 1.02±0.69% |
 | Modular Arithmetic | 2.40±2.17% |
 | ICL | 0.51±0.04% |
-| Multi-objective RL | 0.43±0.73% |
+| Multi-obj RL | 0.43±0.73% |
 
 ### Key Findings
-- **Nonlinear interactions are pervasive**: The residual error of the RBF kernel is 1/4 to 1/3 that of the linear model, indicating that nonlinear task interactions are non-negligible.
-- **First-order gradient approximation is sufficiently accurate**: Relative error remains below 2% across diverse tasks and model scales (including a 34B-parameter LLM).
-- **Downstream task selection benefits substantially**: Using KernelSM for ICL example selection and task selection in multi-objective optimization reduces loss by 40% compared to linear methods.
-- Linear surrogates and influence functions are empirically confirmed to be equivalent under first-order approximation (Pearson correlation 0.96–0.98).
+- **Ubiquity of Non-linear Interactions**: The residual error of the RBF kernel is 1/4 to 1/3 of the linear model, indicating that task interactions cannot be ignored.
+- **Accurate First-order Gradient Approximation**: Across various tasks and model scales (including 34B LLMs), the relative error remains $< 2\%$.
+- **Downstream Task Selection Benefits**: Using KernelSM for ICL example selection and task selection in multi-objective optimization reduces loss by 40% compared to linear methods.
+- Linear surrogates and influence functions are indeed equivalent under first-order approximation (Pearson correlation 0.96-0.98).
 
 ## Highlights & Insights
-- **Unified theory**: This is the first work to rigorously establish, via second-order Taylor expansion, the conditions under which linear surrogate models and influence functions are equivalent, while revealing their shared limitation—neither can capture task interactions.
-- **Efficient estimation via gradient projection**: The approach elegantly circumvents the computational bottleneck of kernel methods through first-order Taylor approximation combined with random projection for dimensionality reduction, making the practical cost of KernelSM comparable to that of linear models.
-- **Geometric intuition of the RBF kernel**: On the binary subset space $\{0,1\}^K$, the RBF kernel is equivalent to a heat kernel based on Hamming distance—implying that similar training subsets (differing in only a few tasks) should yield similar performance, which constitutes a sound inductive bias.
+- **Unified Theory**: Provides a rigorous proof via second-order Taylor expansion for the equivalence conditions of linear surrogates and influence functions, revealing their shared inability to capture task interactions.
+- **Efficient Gradient Projection**: Bypasses the computational bottleneck of kernel methods using a first-order Taylor approximation combined with random projections, making the overhead comparable to linear models.
+- **Geometric Intuition**: In the binary subset space $\{0,1\}^K$, the RBF kernel acts as a heat kernel based on Hamming distance, implying that similar training subsets should yield similar performance.
 
 ## Limitations & Future Work
-- The first-order approximation is valid near the pretrained weights $W_0$; when fine-tuning deviates substantially (e.g., full fine-tuning of large models), the approximation error may increase significantly.
-- The expressive capacity of the kernel surrogate model is bounded by the number of sampled subsets $m$—for large $K$, a sufficiently large number of subset samples is required.
-- Stronger kernel functions such as deep kernels or neural tangent kernels remain unexplored.
-- Validation is limited to task-level attribution; extension to instance-level data attribution (though the theoretical framework is general) has not been pursued.
-- Evaluation relies primarily on correlation with LOO ground truth; the practical utility of kernel attribution for model debugging or data cleaning has not been validated.
+- The first-order approximation is effective near $W_0$, but its error may increase significantly with large fine-tuning steps (e.g., full fine-tuning of large models).
+- The expressivity of the kernel surrogate is limited by the number of samples $m$; scenarios with a very large number of tasks $K$ require more extensive subset sampling.
+- Deep kernels or Neural Tangent Kernels (NTK) were not explored.
+- The focus remains on task-level attribution; extension to sample-level data attribution was not explicitly tested.
 
 ## Related Work & Insights
-- **vs. DataModels (Ilyas et al. 2022)**: DataModels employ linear regression for data attribution; KernelSM generalizes this to kernel methods.
-- **vs. Influence Functions (Koh & Liang 2017)**: This paper proves that influence functions $\approx$ the first-order approximation of linear surrogates; only KernelSM can capture second-order effects.
-- **vs. TRAK (Park et al. 2023)**: TRAK also uses gradient features for data attribution but remains a linear model; KernelSM employs an RBF kernel to capture nonlinear interactions.
+- **vs DataModels (Ilyas et al. 2022)**: DataModels uses linear regression for data attribution; KernelSM serves as its kernelized generalization.
+- **vs Influence Functions (Koh & Liang 2017)**: This work proves influence functions $\approx$ first-order approximations of linear surrogates, whereas KernelSM captures second-order effects.
+- **vs TRAK (Park et al. 2023)**: TRAK also utilizes gradient features for data attribution but remains a linear model; KernelSM employs RBF kernels for non-linear modeling.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea of applying kernel methods to task attribution is natural and theoretically grounded; the efficient estimation algorithm is the key contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers classification, mathematical reasoning, ICL, and RL; ablations are comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Theory and experiments are well-organized, though some proof details are overly compressed.
-- Value: ⭐⭐⭐⭐ Provides a more powerful tool for task attribution with significant gains in downstream applications (task selection).
+- Novelty: ⭐⭐⭐⭐ The application of kernel methods to task attribution is theoretically grounded and the efficient estimation algorithm is a key contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers classification, modular arithmetic, ICL, and RL with comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Well-organized, though some proof details are highly condensed.
+- Value: ⭐⭐⭐⭐ Provides a more powerful tool for task attribution with significant downstream application results.
 
 <!-- RELATED:START -->
 
@@ -134,9 +138,9 @@ KernelSM achieves a 25% improvement in correlation over linear baselines and inf
 
 - [\[ICLR 2026\] Pruning as a Cooperative Game: Surrogate-Assisted Layer Contribution Estimation for Large Language Models](remix_reinforcement_routing_for_mixtures_of_loras_in_llm_finetuning.md)
 - [\[ICLR 2026\] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning](one_model_for_all_tasks_leveraging_efficient_world_models_in_multi-task_planning.md)
+- [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
+- [\[ICLR 2026\] Policy Newton Algorithm in Reproducing Kernel Hilbert Space](policy_newton_algorithm_in_reproducing_kernel_hilbert_space.md)
 - [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](optimistic_task_inference_behavior_models.md)
-- [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
-- [\[ICML 2026\] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation](../../ICML2026/reinforcement_learning/d2_improving_reasoning_in_diffusion_language_models_via_trajectory_likelihood_es.md)
 
 </div>
 

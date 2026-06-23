@@ -2,78 +2,82 @@
 title: >-
   [Paper Note] Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs
 description: >-
-  [ICLR2026][Reinforcement Learning][vehicle routing problem] This paper proposes Chain-of-Context Learning (CCL), which achieves stepwise dynamic constraint-aware decoding via Relevance-Guided Context Reformulation (RGCR…
+  [ICLR 2026][Reinforcement Learning][vehicle routing problem] Proposes Chain-of-Context Learning (CCL), which achieves step-by-step dynamic constraint-aware decoding through Relevance-Guided Context Reformulation (RGCR, adaptively aggregating constraint information to build context) and Trajectory-Shared Node Re-embedding (TSNR, updating nodes shared across trajectories to avoid
 tags:
-  - "ICLR2026"
-  - "Reinforcement Learning"
-  - "vehicle routing problem"
-  - "multi-task learning"
-  - "reinforcement-learning"
-  - "constraint-aware decoding"
-  - "neural combinatorial optimization"
+  - ICLR 2026
+  - Reinforcement Learning
+  - vehicle routing problem
+  - multi-task learning
+  - reinforcement-learning
+  - constraint-aware decoding
+  - neural combinatorial optimization
 date: 2026-05-08
-content_hash: 3fe703f7eb9d4015
+content_hash: 1521ae92d4b92987
 ---
-
 # Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2603.01667](https://arxiv.org/abs/2603.01667)  
 **Code**: To be confirmed  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: vehicle routing problem, multi-task learning, reinforcement-learning, constraint-aware decoding, neural combinatorial optimization
 
 ## TL;DR
-This paper proposes Chain-of-Context Learning (CCL), which achieves stepwise dynamic constraint-aware decoding via Relevance-Guided Context Reformulation (RGCR, adaptively aggregating constraint information to construct context) and Trajectory-Shared Node Re-embedding (TSNR, sharing node updates across trajectories to avoid redundant computation). CCL comprehensively outperforms existing methods across 48 VRP variants (16 in-distribution + 32 out-of-distribution).
+Proposes Chain-of-Context Learning (CCL), which achieves step-by-step dynamic constraint-aware decoding through Relevance-Guided Context Reformulation (RGCR, adaptively aggregating constraint information to build context) and Trajectory-Shared Node Re-embedding (TSNR, updating nodes shared across trajectories to avoid redundant computation). It comprehensively outperforms existing methods on 48 VRP variants (16 in-distribution + 32 out-of-distribution).
 
 ## Background & Motivation
 
-**Background**: The Vehicle Routing Problem (VRP) is a core task in logistics optimization. Neural solvers employ RL with an encoder-decoder architecture to autoregressively generate routes, achieving high efficiency but typically training on a single VRP variant. Multi-task VRP requires a unified framework to handle diverse constraint combinations (capacity, backhaul, open routes, time windows, multi-depot, etc.).
+**Background**: The Vehicle Routing Problem (VRP) is a core task in logistics optimization. Neural solvers utilize RL + encoder-decoder architectures to generate paths autoregressively. While efficient, they are typically trained only for a single VRP variant. Multi-task VRP requires a unified framework to handle combinations of multiple constraints (capacity, backhauls, open routes, time windows, multi-depot, etc.).
 
-**Limitations of Prior Work**: Existing multi-task VRP solvers (MTPOMO, MVMoE, CaDA, etc.) encode constraint and node information as **static embeddings**—node representations are not updated throughout decoding once encoding is complete. However, decoding is sequential: as routes progress, the relative importance of different constraints shifts (e.g., distance limits become more critical when the vehicle is nearly full), and static embeddings cannot capture this dynamic.
+**Limitations of Prior Work**: Existing multi-task VRP solvers (MTPOMO, MVMoE, CaDA, etc.) encode constraint and node information as **static embeddings**—node representations are not updated during the decoding process once encoding is finished. However, decoding is sequential; as the route progresses, the importance of different constraints changes (e.g., distance limits become more critical when returning to the depot), which static embeddings fail to reflect.
 
-**Key Challenge**: Although the context (e.g., current time, remaining capacity) is updated at each step, node embeddings are not—resulting in a **context-node misalignment** that leads to inaccurate state estimation and degraded decision quality. This violates the Markov property in MDPs, which requires that the state contain sufficient information for optimal decision-making.
+**Key Challenge**: Although the context (e.g., current time, remaining capacity) is updated at every step, the node embeddings remain static. This leads to **context-node misalignment**, inaccurate state estimation, and degraded decision quality. This violates the Markov property in MDPs, which states that "the state should contain sufficient information to make optimal decisions."
 
-**Goal**: To enable both constraint information and node representations to be progressively and dynamically updated during multi-task VRP decoding, achieving accurate state representation at every step.
+**Goal**: To allow both constraint information and node representations to update dynamically step-by-step during the decoding process of multi-task VRP, achieving precise state representation.
 
-**Key Insight**: Constraint information is explicitly incorporated into context construction at each step (RGCR), and the updated context is in turn used to refresh node embeddings (TSNR), forming a "context chain" in which node embeddings at each step carry historical information.
+**Key Insight**: Explicitly integrate constraint information into the context construction of each step (RGCR), and then use the updated context to update node embeddings in turn (TSNR), forming a "Chain-of-Context"—where node embeddings at each step carry historical information.
 
-**Core Idea**: Synchronously update both context and node embeddings during RL-based VRP decoding, so that each decision is grounded in the most accurate current state rather than outdated static embeddings.
+**Core Idea**: Synchronously update context and node embeddings during the RL decoding of VRP, ensuring every decision is based on the current most accurate state rather than outdated static embeddings.
 
 ## Method
 
 ### Overall Architecture
-CCL follows the encoder-decoder paradigm. **Encoder**: A Transformer encodes constraint tokens and node attributes into initial embeddings. **Decoder**: At each step, RGCR first constructs a context embedding by aggregating constraint attributes and the current node → TSNR then updates node embeddings by incorporating multi-trajectory context → the updated context and node embeddings are used to make selection decisions. During training, 16 VRP tasks (4 constraint combinations) are mixed; at inference, the model generalizes zero-shot to 32 additional variants.
+The core problem CCL addresses is the distortion of state representation in multi-task VRP solvers during autoregressive decoding, where context changes at every step but node embeddings remain fixed after encoding. Its approach is to maintain "dynamics" throughout. It still follows the encoder-decoder paradigm: an encoder uses a Transformer to encode constraint tokens and node attributes into initial embeddings. Every decoding step involves three actions: first, aggregation of the current step's context by RGCR based on the relevance between constraints and the current node; second, updating node embeddings across trajectories using this context through TSNR; finally, making node selection decisions using the updated context and node embeddings. The updated node embeddings are then passed to the next step, forming a "Chain-of-Context." The model is jointly trained on a mixture of 16 VRP tasks (combinations of 4 constraints) and generalizes zero-shot to 32 additional variants during inference.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["VRP Instance<br/>Node Attributes + Constraint Tokens"] --> B["Transformer Encoder<br/>Initial Node Embeddings"]
+    B --> C["RGCR<br/>Adaptive Context Aggregation<br/>via Constraint Relevance"]
+    C --> D["TSNR<br/>Cross-Trajectory Shared<br/>Node Re-embedding (with Distance Bias)"]
+    D --> E["Selection Decision<br/>Select Next Node"]
+    E -->|"Incomplete: H_j as next query<br/>(Chain-of-Context Transmission)"| C
+    E -->|"All nodes visited"| F["Output Path"]
+```
 
 ### Key Designs
 
-1. **RGCR (Relevance-Guided Context Reformulation)**:
+**1. RGCR (Relevance-Guided Context Reformulation): Adaptive context aggregation based on constraint importance**
 
-    - **Function**: Adaptively aggregates information from each constraint at every step to construct the current-step context embedding.
-    - **Mechanism**: Operates in three stages—(1) each constraint's attributes are projected via a linear layer to produce constraint embeddings $\mathbf{C}^k$ (e.g., remaining capacity and demand for the capacity constraint, time windows and current time for the TW constraint); (2) the dot-product relevance between each constraint embedding and the current node embedding is computed as $s^k = \mathbf{H}_{\tau} \cdot \mathbf{C}^k$; (3) constraint embeddings are relevance-weighted and summed, then concatenated with the raw constraint features to yield a unified context.
-    - **Design Motivation**: Different constraints carry different importance at different decoding steps—capacity constraints are most critical when the vehicle is nearly full, and TW constraints become paramount near a window's closing time. Weighting constraints by their similarity to the current node embedding allows the model to automatically learn where to focus attention.
+This addresses the pain point where "all constraints are treated equally in the context." In reality, capacity constraints should be prioritized when the vehicle is nearly full, while Time Window (TW) constraints are the bottleneck near closing times. Static-weighted contexts cannot capture these shifts. RGCR reconstructs the context in three steps: first, generating constraint embeddings $\mathbf{C}^k$ for each attribute via linear layers (e.g., remaining capacity/demand for B constraints, time windows/current time for TW constraints); second, calculating the dot-product relevance $s^k = \mathbf{H}_{\tau} \cdot \mathbf{C}^k$ between each constraint and the current node; finally, performing a weighted sum of these embeddings based on relevance and concatenating the original constraints. This automatically determines which constraints to attend to based on the "similarity" to the current node.
 
-2. **TSNR (Trajectory-Shared Node Re-embedding)**:
+**2. TSNR (Trajectory-Shared Node Re-embedding): Efficiently updating shared node embeddings using multi-trajectory contexts**
 
-    - **Function**: Efficiently updates shared node embeddings using multi-trajectory context.
-    - **Mechanism**: Node embeddings serve as queries; the concatenation of node embeddings and all trajectory contexts serves as keys/values; multi-head attention is applied to update node embeddings. A distance bias term $\mathbf{B}_j$ (inter-node distances plus the distance from each trajectory's current position to each node) is added to prevent overfitting to time windows. Updated node embeddings are passed to the next step as queries.
-    - **Design Motivation**: In multi-trajectory parallel exploration, independently updating node embeddings per trajectory incurs prohibitive computational overhead. TSNR allows all trajectories to share a single set of node embeddings while dynamically updating them by aggregating per-trajectory context via attention, balancing efficiency and information completeness.
+To make node embeddings "dynamic," the most direct way is to update a separate set for each exploration trajectory, but this incurs massive computational overhead during parallel decoding. TSNR compromises by sharing a single set of node embeddings across all trajectories: it uses node embeddings as queries and concatenates node embeddings with contexts from all trajectories as keys/values. Multi-head attention then aggregates information from all trajectories to update node representations. A distance bias term $\mathbf{B}_j$ (distances between nodes and distances from the current positions of trajectories to nodes) is added to prevent the model from overfitting by over-relying on time window signals. This retains multi-trajectory information while compressing the update cost from "per-trajectory" back to "per shared set."
 
-3. **Chain-of-Context Propagation**:
+**3. Chain-of-Context Transmission: Allowing node embeddings to carry history across steps to capture sequential dependencies**
 
-    - **Function**: Propagates node embeddings across steps to capture sequential dependencies.
-    - **Mechanism**: The output $\mathbf{H}_j$ from TSNR at step $j$ serves as the input query at step $j+1$. Update frequency is controlled by probability $P_{tr}$ (training) and $P_{ts}$ (testing).
-    - **Design Motivation**: Prior methods make decisions at each step using initial (step-0) embeddings combined with the current context, discarding information accumulated over intermediate steps. Chain propagation allows node embeddings at each step to "remember" the historical decision context.
+Previous methods used the initial (step-0) embeddings combined with the current context for decisions, losing information accumulated in intermediate steps. CCL uses the output $\mathbf{H}_j$ from TSNR at step $j$ directly as the input query for step $j+1$. Consequently, node embeddings at each step "remember" the previous decision context, linking the entire decoding sequence into a Chain-of-Context. The update frequency is controlled by probabilities $P_{tr}$ (training) and $P_{ts}$ (testing), allowing a trade-off between representation freshness and computation.
 
 ### Loss & Training
-The REINFORCE algorithm is used with multi-trajectory parallel exploration (different starting points); the reward is the negative total route length. Training mixes 16 VRP variants (combinations of 4 constraints: B/L/O/TW) with uniform sampling. At inference, the model directly generalizes zero-shot to 32 new variants incorporating MB/MD constraints not seen during training.
+The REINFORCE algorithm is used with multi-trajectory parallel exploration (different starting points), using the negative total route length as the reward. Training involves a mixture of 16 VRP variants (combinations of B/L/O/TW constraints) sampled with equal probability. Inference generalizes zero-shot to 32 new variants including MB/MD constraints.
 
 ## Key Experimental Results
 
-### Main Results (16 In-Distribution Tasks, $N=50$)
+### Main Results (16 In-distribution tasks, N=50)
 
-| Method | CVRP Gap | OVRP Gap | VRPTW Gap | OVRPTW Gap | Avg. Gap |
-|--------|---------|---------|----------|-----------|---------|
+| Method | CVRP Gap | OVRP Gap | VRPTW Gap | OVRPTW Gap | Avg Gap |
+|------|---------|---------|----------|-----------|---------|
 | HGS-PyVRP | 0%* | 0%* | 0%* | 0%* | Baseline |
 | MTPOMO | 1.42% | 3.19% | 2.42% | 1.56% | ~2.1% |
 | CaDA | 1.29% | 2.59% | 1.75% | 1.12% | ~1.7% |
@@ -83,41 +87,41 @@ The REINFORCE algorithm is used with multi-trajectory parallel exploration (diff
 
 ### Ablation Study
 
-| Configuration | Avg. Gap ($N=50$) | Note |
-|---------------|------------------|------|
-| CCL (full) | 1.0% | All components |
-| w/o RGCR | ~1.5% | No adaptive constraint aggregation |
-| w/o TSNR | ~1.4% | No node embedding updates; degrades to static embeddings |
-| w/o distance bias | ~1.2% | No distance bias in attention |
-| w/o chain propagation | ~1.3% | Uses initial embeddings instead of previous-step embeddings |
+| Configuration | Avg Gap (N=50) | Description |
+|------|---------------|------|
+| CCL (Full) | 1.0% | All components included |
+| w/o RGCR | ~1.5% | No adaptive constraint aggregation; performance drops |
+| w/o TSNR | ~1.4% | No node embedding updates; degrades to static embedding |
+| w/o Distance Bias | ~1.2% | No distance bias in attention |
+| w/o Chain-of-Context | ~1.3% | Every step uses initial embeddings instead of previous step's |
 
 ### Key Findings
-- **CCL achieves the best performance on all 16 in-distribution tasks**: The advantage is largest on tasks with time-window constraints (VRPTW, OVRPTW), confirming that dynamic context is most valuable for time-sensitive constraints.
-- **CCL also leads on the majority of 32 out-of-distribution tasks**: Zero-shot generalization to MB/MD constraint combinations unseen during training demonstrates that the dynamic constraint-awareness mechanism transfers well.
-- **Both RGCR and TSNR contribute substantially**: Removing either module increases the gap by 0.3–0.5%, confirming that dynamic context construction and dynamic node updating are both indispensable.
-- **Computational overhead is reasonable**: CCL inference takes approximately 5–7 s ($N=50$)—somewhat slower than CaDA (1–3 s) but far faster than HGS-PyVRP (10+ minutes), and the quality gap (~1%) is considerably smaller than that of other neural methods.
+- **CCL is the best across all 16 in-distribution tasks**: The advantage is largest in tasks with time window constraints (VRPTW, OVRPTW), indicating that dynamic context is most valuable for time-sensitive constraints.
+- **Leads in most of the 32 out-of-distribution tasks**: Zero-shot generalization to combinations of MB/MD constraints unseen during training proves the generalization capability of the dynamic constraint-aware mechanism.
+- **RGCR and TSNR both make significant contributions**: Removing either module increases the gap by 0.3-0.5%, showing that dynamic context construction and node updates are both indispensable.
+- **Reasonable computational overhead**: CCL inference takes about 5-7s (N=50). While slightly slower than CaDA (1-3s), it is significantly faster than HGS-PyVRP (10min+), and the quality gap (~1% gap) is much smaller than other neural methods.
 
 ## Highlights & Insights
-- **Core insight on context-node alignment**: The paper explicitly identifies the misalignment between static node embeddings and dynamic context as a deficiency in MDP state representation. This framing suggests a general improvement applicable to any autoregressive decoding scheme where the environment state changes over time.
-- **Efficiency design via trajectory-shared node embeddings**: Sharing node embeddings across trajectories and aggregating per-trajectory context via attention avoids the $O(N)$ overhead of per-trajectory updates—a practical engineering optimization for multi-trajectory parallel search.
-- **Distance bias as an anti-overfitting trick**: Without the distance bias, the model is found to over-rely on time-window information; adding a simple Euclidean distance bias mitigates this. This technique may generalize to other combinatorial optimization problems with multiple constraints.
+- **Core Insight on Context-Node Alignment**: Defining the misalignment between "static node embeddings + dynamic context" as a defect in MDP state representation provides a general improvement for RL in combinatorial optimization—any scenario with autoregressive decoding and environment state changes can benefit from this dynamic update.
+- **Efficiency via Trajectory-Shared Node Embeddings**: Using shared embeddings + attention aggregation in multi-trajectory parallel exploration avoids the $O(N)$ overhead of per-trajectory updates, representing a practical engineering optimization.
+- **Distance Bias to Prevent Overfitting**: The discovery that models might over-rely on time window information without distance bias, and that a simple Euclidean distance bias can alleviate this, is a trick potentially useful for other constrained combinatorial problems.
 
 ## Limitations & Future Work
-- **Evaluation limited to the VRP family**: Although VRP encompasses many variants, combinatorial optimization extends far beyond VRP. CCL's applicability to other problems such as TSP, JSP, and BPP remains unverified.
-- **Limited training constraint diversity**: Training uses combinations of only 4 constraints (B/L/O/TW) with zero-shot transfer to 2 new constraint types. Scalability to larger constraint spaces (e.g., stochastic travel times, dynamic demands) requires validation.
-- **~1% gap versus LKH/HGS persists**: Despite inference speedups exceeding 100×, CCL's absolute solution quality still falls short of traditional solvers, which may be unacceptable in precision-critical applications without additional search augmentation.
-- **TSNR update frequency requires tuning**: $P_{tr}$ and $P_{ts}$ are hyperparameters whose optimal values may vary with problem scale and constraint type.
+- **Tested only on the VRP family**: While VRP has many variants, combinatorial optimization extends beyond VRP. The applicability of CCL to other problems like TSP, JSP, or BPP remains unverified.
+- **Limited number of training constraints**: Trained only on 4 constraint types (B/L/O/TW) combinations and generalized to 2 new ones. Larger-scale constraint spaces (e.g., dynamic demands, stochastic travel times) need verification.
+- **~1% gap remaining vs. LKH/HGS**: Although 100x+ faster in inference, absolute quality is still behind traditional solvers. Scenarios requiring extreme precision might still need additional search enhancement.
+- **TSNR update frequency requires tuning**: $P_{tr}$ and $P_{ts}$ are hyperparameters whose optimal values may vary based on problem scale and constraint types.
 
 ## Related Work & Insights
-- **vs. CaDA**: CaDA also targets multi-task VRP but maintains static node embeddings. CCL's dynamic node updates yield consistent improvements, especially on complex constraint combinations involving time windows.
-- **vs. MTPOMO**: CCL inherits MTPOMO's multi-trajectory exploration paradigm but adds constraint-aware context construction and trajectory-shared node updating.
-- **vs. the classic Attention Model**: The original AM (Kool et al., 2019) relies on static encoding; TSNR can be viewed as an enhancement to the AM decoder that frees node embeddings from being "encoded once and frozen for life."
+- **vs CaDA**: CaDA also handles multi-task VRP but uses static node embeddings. CCL consistently outperforms CaDA through dynamic updates, especially on complex constraints like time windows.
+- **vs MTPOMO**: CCL inherits the multi-trajectory exploration from MTPOMO but adds constraint-aware context construction and cross-trajectory shared node updates.
+- **vs Traditional Attention Model**: The original AM (Kool et al., 2019) uses static encoding. CCL's TSNR can be viewed as an enhancement to the AM decoder—ensuring node embeddings are no longer "encoded once and used forever."
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Dynamic context-node alignment is a clear and significant contribution; the RGCR+TSNR design is well-motivated.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 48 VRP variants (16 in-distribution + 32 OOD), multiple scales, and complete ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ — Problem formulation is clear; the three-challenge / three-solution correspondence provides a coherent structure.
-- **Value**: ⭐⭐⭐⭐ — Offers broadly applicable insights for the decoding process in combinatorial optimization RL.
+- Novelty: ⭐⭐⭐⭐ Context-node dynamic alignment is a clear and important contribution; RGCR+TSNR design is sound.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 48 VRP variants (16 in-dist + 32 OOD), multiple scales, complete ablation.
+- Writing Quality: ⭐⭐⭐⭐ Problem definition is clear, with a direct mapping between three challenges and three solutions.
+- Value: ⭐⭐⭐⭐ Provides general inspiration for the decoding process in RL for combinatorial optimization.
 
 <!-- RELATED:START -->
 
@@ -127,8 +131,8 @@ The REINFORCE algorithm is used with multi-trajectory parallel exploration (diff
 
 - [\[ICLR 2026\] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding](mergemix_a_unified_augmentation_paradigm_for_visual_and_multi-modal_understandin.md)
 - [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
-- [\[AAAI 2026\] Where and What Matters: Sensitivity-Aware Task Vectors for Many-Shot Multimodal In-Context Learning](../../AAAI2026/reinforcement_learning/where_and_what_matters_sensitivity-aware_task_vectors_for_many-shot_multimodal_i.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
+- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
+- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
 - [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
 
 </div>

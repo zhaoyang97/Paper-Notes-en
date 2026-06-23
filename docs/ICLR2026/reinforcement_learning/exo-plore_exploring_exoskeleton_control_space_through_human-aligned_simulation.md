@@ -2,146 +2,132 @@
 title: >-
   [Paper Note] Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation
 description: >-
-  [ICLR2026][Reinforcement Learning][exoskeleton optimization] This paper proposes the Exo-plore framework, which combines neuromechanical simulation with deep reinforcement learning to optimize hip exoskeleton control par…
+  [ICLR 2026][Reinforcement Learning][exoskeleton optimization] Ours proposes the Exo-plore framework, which combines neuromechanical simulation with deep reinforcement learning to optimize hip exoskeleton control parameters without human trials, enabling generalization to pathological gait scenarios.
 tags:
-  - "ICLR2026"
-  - "Reinforcement Learning"
-  - "exoskeleton optimization"
-  - "neuromechanical simulation"
-  - "deep reinforcement learning"
-  - "human-in-the-loop"
-  - "surrogate optimization"
+  - ICLR 2026
+  - Reinforcement Learning
+  - exoskeleton optimization
+  - neuromechanical simulation
+  - deep reinforcement learning
+  - human-in-the-loop
+  - surrogate optimization
 date: 2026-05-08
-content_hash: ac37d5d6e594be83
+content_hash: 0078a18f8bcf9cbc
 ---
-
 # Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2601.22550](https://arxiv.org/abs/2601.22550)  
 **Code**: [Project Page](https://daebangstn.github.io/exo-plore/)  
-**Area**: Medical Imaging
-**Keywords**: exoskeleton optimization, neuromechanical simulation, deep reinforcement learning, human-in-the-loop, surrogate optimization
+**Area**: Reinforcement Learning  
+**Keywords**: exoskeleton optimization, neuromechanical simulation, deep reinforcement learning, human-in-the-loop, surrogate optimization  
 
 ## TL;DR
 
-This paper proposes the Exo-plore framework, which combines neuromechanical simulation with deep reinforcement learning to optimize hip exoskeleton control parameters without requiring human subject experiments, and generalizes to pathological gait scenarios.
+Ours proposes the Exo-plore framework, which combines neuromechanical simulation with deep reinforcement learning to optimize hip exoskeleton control parameters without human trials, enabling generalization to pathological gait scenarios.
 
 ## Background & Motivation
 
-Exoskeletons have demonstrated great potential for enhancing human mobility, yet delivering appropriate assistance to individual users remains a significant challenge. The current state-of-the-art approach—Human-in-the-Loop Optimization (HILO)—requires participants to walk for hours while wearing an exoskeleton to iteratively optimize control parameters. This creates a paradox: the populations most in need of exoskeleton assistance (e.g., individuals with mobility impairments) are precisely those least capable of tolerating such intensive optimization protocols.
+Exoskeletons show great potential in enhancing human mobility, but providing appropriate assistance remains a challenge. Current state-of-the-art Human-in-the-Loop Optimization (HILO) requires participants to wear the exoskeleton and walk for hours to iteratively optimize control parameters. This creates a paradox: the populations most in need of assistance (e.g., those with mobility impairments) are the least able to endure such high-intensity optimization experiments.
 
-Furthermore, humans actively adapt to external forces imposed by exoskeletons, modifying gait patterns and muscle coordination strategies, which causes predictions based on "fixed gait" assumptions to be systematically inaccurate. Existing neuromechanical simulation methods either rely on motion capture data tracking to handle large observation/action spaces, or depend on hand-crafted biologically inspired controllers with limited generalizability. No unified framework has been established to simultaneously achieve: (i) fitting observed human adaptation behavior, and (ii) predicting responses under unobserved assistance conditions.
+Furthermore, the human body actively adapts to external forces from exoskeletons by altering gait patterns and muscle coordination, making predictions based on "fixed gait" assumptions inaccurate. Existing neuromechanical simulation methods either rely on tracking motion capture data to handle large observation/action spaces or depend on hand-designed bio-inspired controllers with limited generalization. A unified framework is lacking to simultaneously (i) fit observed human adaptation behaviors and (ii) predict responses under unobserved assistance conditions.
 
 ## Core Problem
 
-How can simulation accurately reproduce human adaptive responses to exoskeleton assistive forces without conducting real human experiments, enabling efficient optimization of exoskeleton control parameters? In particular, how can this capability generalize to pathological gait scenarios to provide personalized assistance for individuals with mobility impairments?
+How can human adaptive responses to exoskeleton assistance be accurately simulated without human trials to efficiently optimize control parameters? Specifically, how can this capability be extended to pathological gait scenarios to provide personalized assistance for individuals with mobility impairments?
 
 ## Method
 
 ### Overall Architecture
 
-Exo-plore consists of two core components: a **Gait Data Generator** and an **Exoskeleton Optimizer**.
+Exo-plore transfers the iterative process of human exoskeleton fitting into a simulator. The pipeline consists of two stages: the first is a **neuromechanical gait generator**, where a "virtual human" driven by Deep RL walks realistically under given exoskeleton assistance to output gait and metabolic responses; the second is an **exoskeleton optimizer** that searches for control parameters minimizing the Cost of Transport (CoT) based on the simulated data. The framework relies on the virtual human's ability to replicate observed adaptations and extrapolate to unseen conditions. This is achieved by compressing the assistance strategy into two parameters via delayed feedback control and aligning simulation behavior with human data using metabolic model tuning and loss-aversion rewards.
 
-### 1. Exoskeleton Controller
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["Control Parameters<br/>(κ, Δt)"] --> CTRL["Delayed Feedback Controller<br/>τ_exo = κ·u(t-Δt)"]
+    CTRL --> GEN
+    subgraph GEN["Neuromechanical Gait Generator"]
+        direction TB
+        POSE["PoseNet (Deep RL)<br/>Target pos q_d"] --> PD["PD Controller<br/>Subtract exo torque"]
+        PD --> MCN["MCN + IMR<br/>Torque → Activation a"]
+    end
+    GEN --> ALIGN["Sim-to-Real Alignment<br/>Metabolic (α,β) + HEI Reward"]
+    ALIGN --> DATA["Sim Gait + Metabolism<br/>→ Cost of Transport CoT"]
+    DATA["Sim Gait + Metabolism<br/>→ CoT"] --> OPT["MLP Surrogate Optimizer<br/>LHS → Surrogate → SLSQP"]
+    OPT -->|Search optimal κ, Δt| P
+```
 
-The hip exoskeleton employs delayed-feedback control, with the assistive torque defined as:
+### Key Designs
 
-$$\tau_{\text{exo}}(t) = \kappa \cdot u(t - \Delta t)$$
+**1. Delayed Feedback Exoskeleton Controller: Compressing strategies into two searchable parameters**
 
-where $u(t) = \sin(\theta_r) - \sin(\theta_l)$ is a control signal based on the difference between left and right hip joint angles, $\kappa$ is the gain (equivalent stiffness parameter), and $\Delta t$ is the time delay. The optimization objective is to find the optimal $(\kappa, \Delta t)$ that minimizes the metabolic Cost of Transport (CoT).
+The first challenge in optimization is the high dimensionality of assistance strategies. Ours uses delayed feedback control for compression: the hip assistance torque is $\tau_{\text{exo}}(t) = \kappa \cdot u(t - \Delta t)$, where the control signal $u(t) = \sin(\theta_r) - \sin(\theta_l)$ is derived from the hip angle difference, $\kappa$ is the gain (equivalent stiffness), and $\Delta t$ is the time delay. This reduces the strategy to just two parameters $(\kappa, \Delta t)$, transforming the problem into a search for the minimum CoT in a 2D space, which aligns with hardware logic while keeping the search space manageable.
 
-### 2. Gait Data Generator
+**2. Neuromechanical Gait Generator: Enabling active adaptation rather than rigid tracking**
 
-The human controller comprises three modules:
+To allow the virtual human to "wear" the exoskeleton and adjust gait naturally under unseen forces, the controller comprises three components: PoseNet (Deep RL) learns target PD joint positions $\mathbf{q}_d$; the PD Controller generates joint torques minus exoskeleton forces; and the Muscle Coordination Network (MCN) maps torques to muscle activations $\mathbf{a}$ via supervised learning. The total reward $r_{\text{total}} = w_{\text{gait}} r_{\text{gait}} + w_{\text{arm}} r_{\text{arm}} + w_{\text{energy}} r_{\text{energy}} + w_{\text{HEI}} r_{\text{HEI}}$ encourages target gait following, arm swing suppression, metabolic regularization, and human-exoskeleton interaction (HEI) modeling. An **Internal Muscle Regularizer (IMR)** is added to the MCN loss to maintain coordinated activation within anatomical muscle groups.
 
-- **PoseNet**: Computes PD target joint positions $\mathbf{q}_d$, trained via Deep RL
-- **PD Controller**: Generates joint torques to reduce the error between target and current positions, with exoskeleton assistive forces subtracted
-- **Muscle Coordination Network (MCN)**: Maps target joint torques to muscle activations $\mathbf{a}$, trained via supervised learning
+**3. Sim-to-Real Matching: Aligning simulations via metabolic tuning and loss-aversion rewards**
 
-The total reward function is designed as:
-
-$$r_{\text{total}} = w_{\text{gait}} \cdot r_{\text{gait}} + w_{\text{arm}} \cdot r_{\text{arm}} + w_{\text{energy}} \cdot r_{\text{energy}} + w_{\text{HEI}} \cdot r_{\text{HEI}}$$
-
-where $r_{\text{gait}}$ encourages following target gait patterns, $r_{\text{arm}}$ penalizes unnatural arm motion, $r_{\text{energy}}$ regularizes energy consumption, and $r_{\text{HEI}}$ models human–exoskeleton interaction.
-
-The MCN training loss incorporates a novel **Intra-Muscle Regularizer (IMR)**, which enforces coherent activation patterns among line muscles belonging to the same anatomical muscle group.
-
-### 3. Sim-to-Real Matching
-
-Two key designs align simulation results with real human experimental data:
-
-**(a) Metabolic Energy Model Calibration**: Metabolic energy expenditure is modeled as $\frac{d}{dt}\text{MEE} = \sum_i m_i^\alpha a_i^\beta$. Algorithm 1 and Algorithm 2 search for optimal parameters $(\alpha, \beta)$ such that the simulated Preferred Walking Speed (PWS) matches real human data, yielding $(\alpha, \beta) = (1.5, 1.0)$.
-
-**(b) Human–Exoskeleton Interaction (HEI) Reward**: Designed based on the **resistance minimization hypothesis**, reflecting the behavioral principle that humans are more sensitive to losses than gains (Loss Aversion):
+Two alignments ensure simulation credibility. First, the metabolic energy model is defined as $\frac{d}{dt}\text{MEE} = \sum_i m_i^\alpha a_i^\beta$. Algorithms 1 and 2 are used to search for exponents $(\alpha, \beta)$ that match the simulated Preferred Walking Speed (PWS) with human data, resulting in $(\alpha, \beta) = (1.5, 1.0)$. Second, the HEI reward, based on the **minimum resistance hypothesis**, incorporates a loss-aversion concept where "humans are more sensitive to losses than gains":
 
 $$r_{\text{HEI}} = 1 + \frac{1}{\kappa} \sum_{k \in \{L,R\}} \min(0, P_k)$$
 
-When the exoskeleton imposes resistive power on the human body ($P_k < 0$), $r_{\text{HEI}}$ drops below 1, driving the policy to actively adjust kinematics to reduce resistance, thereby reproducing the adaptive behavior observed in real human experiments.
+When the exoskeleton performs negative work on the human (resistance power $P_k < 0$), the reward drops below 1, forcing the policy to adjust kinematics to avoid resistance—replicating adaptation behaviors observed in real experiments that cannot be reproduced by rewarding positive assistance alone.
 
-### 4. Exoskeleton Optimizer
+**4. MLP Surrogate Optimizer: Utilizing simulation data for a scalable surrogate network**
 
-An MLP surrogate network replaces Gaussian Processes to fully exploit the abundance of simulation data:
-
-- Latin Hypercube Sampling (LHS) is used to sample the control parameter space, avoiding aliasing effects of grid sampling
-- The surrogate network loss incorporates Huber Loss (for outlier robustness), gradient penalty (to smooth the CoT landscape), and L1/L2 regularization
-- SLSQP and trust-region gradient optimization are applied to identify the optimal control parameters
+In the optimization phase, data shifts from expensive human trials to cheap simulation samples. Ours replaces Gaussian Processes with an MLP surrogate network to map control parameters to CoT, leveraging neural networks' data throughput advantages. Latin Hypercube Sampling (LHS) is used to avoid aliasing. The surrogate loss includes Huber Loss for outlier robustness, a gradient penalty for landscape smoothness, and L1/L2 regularization. Finally, SLSQP with trust-region optimization finds the optimal $(\kappa, \Delta t)$ on the fitted landscape.
 
 ## Key Experimental Results
 
 ### Unassisted Gait Validation
-
-- Joint kinematics (ankle, knee, hip) qualitatively match real human experimental data (Boo et al., 2025)
-- Muscle activation patterns resemble human EMG signals without explicit constraints
-- The walking speed–CoT curve is consistent with trends in Browning et al. (2006), with accurate PWS prediction
+- Joint kinematics (ankle, knee, hip) qualitatively match human experiment data (Boo et al., 2025).
+- Muscle activation patterns resemble human EMG signals without explicit constraints.
+- Walking speed - CoT curves align with the trends in Browning et al. (2006), with accurate PWS prediction.
 
 ### Assisted Gait Validation
-
-- Under control parameters $(\kappa, \Delta t) = (8\text{Nm}, 0.25\text{s})$, the scaling trends of assistive torque/power with walking speed are consistent with Lim et al. (2019b)
-- HEI reward vs. no HEI: at 4 km/h, when delay increases from 0.05s to 0.25s in real human experiments, assistive power increases by 1.88×; the HEI reward condition yields 1.73× (correlation coefficient 0.83), while the no-HEI condition yields only 0.67× (correlation coefficient 0.69)
-- The HEI reward condition produces the maximum metabolic reduction rate closest to real human experiments
+- Under $(\kappa, \Delta t) = (8\text{Nm}, 0.25\text{s})$, the scaling of assistance torque/power with walking speed matches Lim et al. (2019b).
+- HEI reward vs No HEI: At 4 km/h, increasing delay from 0.05s to 0.25s results in a 1.88x increase in power in human data; the HEI reward yields 1.73x (correlation 0.83), while no HEI yields only 0.67x (correlation 0.69).
+- The HEI reward scheme produces the metabolic reduction rates closest to human experiments.
 
 ### Control Parameter Optimization
-
-- Healthy population: the optimal delay $\Delta t$ decreases monotonically with increasing walking speed
-- Pathological gait: among 5 pathological gait types (equinus, waddling, crouch, calcaneal, foot drop), 4 exhibit a strong linear relationship between optimal gain $\kappa$ and pathology severity
-- Foot drop fails to converge stably due to excessive gait variability caused by frequent toe–ground collisions
+- Healthy Group: Optimal delay $\Delta t$ decreases monotonically as walking speed increases.
+- Pathological Gait: In 4 out of 5 pathological gaits (equinus, waddling, crouch, calcaneal), the optimal gain $\kappa$ shows a strong linear relationship with pathology severity.
+- Foot drop failed to stabilize due to excessive gait variability from frequent toe-ground collisions.
 
 ## Highlights & Insights
 
-- **Fills a critical gap**: The first work to unify neuromechanical simulation and Deep RL for both fitting and predicting exoskeleton-assisted conditions, enabling genuine optimization without human subject experiments
-- **Clever HEI reward design**: Draws on loss aversion from behavioral economics to model human adaptive behavior via the resistance minimization hypothesis—simple yet effective
-- **Rigorous sim-to-real matching**: Validation spans not only kinematics but also assistive torque/power scaling, muscle activation patterns, and ground reaction forces across multiple dimensions
-- **Pathological gait generalization**: Demonstrates a linear relationship between pathology severity and optimal assistance, with direct clinical implications
-- **Practical surrogate network**: MLP + LHS + gradient penalty outperforms traditional Bayesian Optimization in data-rich simulation settings and offers better scalability
+- **Filling a Critical Gap**: This is the first work to unify neuromechanical simulation and Deep RL for both fitting and predicting exoskeleton assistance conditions, achieving "trial-free optimization."
+- **Clever HEI Reward**: Applying loss aversion from behavioral economics to model human adaptation via a minimum resistance hypothesis is simple yet effective.
+- **Rigorous Sim-to-Real**: Validations go beyond kinematics to include torque/power scaling, muscle activations, and ground reaction forces.
+- **Pathological Generalization**: Demonstrates a linear relationship between pathology severity and optimal assistance, offering direct clinical value.
+- **Practical Surrogate Strategy**: The combination of MLP + LHS + gradient penalty is more efficient and scalable than Gaussian Processes for data-rich simulation scenarios.
 
 ## Limitations & Future Work
 
-- **Lack of real human validation**: Control parameters optimized in simulation have not been validated on real human subjects, particularly patient populations
-- **Simplified reward model**: The HEI reward is based on a single assumption and may not capture the full complexity of human adaptive behavior
-- **No personalization**: The framework does not model individual-specific motor control characteristics
-- **Muscle dynamics approximation**: Rigid tendons and simplified muscle models may fail to capture individual differences
-- **Foot drop failure**: 1 out of 5 pathological gait types cannot be successfully optimized, revealing limitations of the framework under high-variability scenarios
-- **Simplified foot model**: A box-shaped rigid foot leads to overestimated step frequency at low walking speeds
+- **Lack of Human Validation**: Optimized parameters have not yet been validated on real humans, particularly patients.
+- **Simplified Reward Model**: The HEI reward is based on a single hypothesis and may not capture the full complexity of human adaptation.
+- **Lack of Personalization**: Does not model individual-specific motor control characteristics.
+- **Musculoskeletal Approximations**: Use of rigid tendons and simplified muscle models might miss individual physiological variations.
+- **Foot Drop Failure**: Optimization failure in 1 of 5 pathological gaits highlights limitations in high-variability scenarios.
+- **Simplified Foot Model**: Box-shaped rigid feet lead to higher predicted step frequencies at low speeds.
 
 ## Related Work & Insights
 
-| Method | Characteristics | Limitations |
-|--------|-----------------|-------------|
-| HILO (Zhang et al., 2017; Slade et al., 2024) | Iterative optimization via real human experiments | Requires hours of walking; infeasible for mobility-impaired patients; <30 iterations |
-| Luo et al. (2024) | Deep RL + exoskeleton, published in Nature | Relies on imitation policy, limiting adaptation to unseen conditions; no correlation validation against real human data |
-| Generative GaitNet (Park et al., 2022) | Deep RL gait generation | Does not account for exoskeleton assistance or pathological gait |
-| **Exo-plore (Ours)** | Unified fitting + prediction framework, HEI reward, surrogate optimization | No real human validation; simplified muscle model |
-
-- **Loss Aversion in robotics**: Introducing behavioral economics concepts to model human–robot interaction rewards represents a cross-disciplinary approach worth adopting in other HRI scenarios (e.g., assistive robots, prosthetic control)
-- **Surrogate networks vs. GP**: In data-rich simulation settings, MLP surrogate networks with gradient penalty are more efficient and scalable than traditional Bayesian Optimization—a transferable insight for other simulation-based optimization problems
-- **Pathological gait linear relationship**: If validated in real human experiments, this linearity could greatly simplify clinical exoskeleton parameter configuration, allowing optimal parameters to be rapidly estimated from pathology severity alone
+| Method | Features | Limitations |
+|------|------|------|
+| HILO (Zhang et al., 2017; Slade et al., 2024) | Iterative optimization via human trials | Hours of walking required; unsuitable for patients; <30 iterations |
+| Luo et al. (2024) | Deep RL + Exoskeleton (Nature) | Relies on imitation, limiting adaptation to unseen conditions; lacks human data correlation validation |
+| Generative GaitNet (Park et al., 2022) | Deep RL gait generation | Does not consider exoskeleton assistance or pathological gait |
+| **Exo-plore (Ours)** | Unified fit+predict framework, HEI reward, surrogate optimization | Lacks human verification; simplified muscle models |
 
 ## Rating
-- Novelty: 8/10 — First work to apply a sim-to-real-matched neuromechanical simulation framework to exoskeleton control optimization; HEI reward design is novel
-- Experimental Thoroughness: 8/10 — Multi-dimensional validation and ablation studies are thorough, but real human experimental validation is absent
-- Writing Quality: 9/10 — Structure is clear, methods are described in detail, and algorithmic pseudocode is well-formatted
-- Value: 8/10 — Significant contribution to the exoskeleton assistance field; pathological gait generalization holds strong clinical promise
+- Novelty: 8/10 — First to use a sim-to-real aligned neuromechanical framework for exoskeleton optimization with a novel HEI reward.
+- Experimental Thoroughness: 8/10 — Extensive multi-dimensional validation and ablations, though lacking real-world human trials.
+- Writing Quality: 9/10 — Clear structure, detailed methodology, and standard algorithm pseudocode.
+- Value: 8/10 — Significant for the exoskeleton field; pathological generalization holds clinical promise.
 
 <!-- RELATED:START -->
 
@@ -149,11 +135,11 @@ An MLP surrogate network replaces Gaussian Processes to fully exploit the abunda
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](../../NeurIPS2025/reinforcement_learning/learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
+- [\[ICLR 2026\] Improving Human-AI Coordination through Online Adversarial Training and Generative Models](improving_human-ai_coordination_through_online_adversarial_training_and_generati.md)
+- [\[ICLR 2026\] Accelerated Learning with Linear Temporal Logic using Differentiable Simulation](accelerated_learning_with_linear_temporal_logic_using_differentiable_simulation.md)
+- [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](self-aligned_reward_towards_effective_and_efficient_reasoners.md)
+- [\[ICLR 2026\] Policy Newton Algorithm in Reproducing Kernel Hilbert Space](policy_newton_algorithm_in_reproducing_kernel_hilbert_space.md)
 - [\[ICLR 2026\] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation](mars-sep_multimodal-aligned_reinforced_sound_separation.md)
-- [\[ICLR 2026\] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning](shop-r1_rewarding_llms_to_simulate_human_behavior_in_online_shopping_via_reinfor.md)
-- [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
-- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](../../ACL2026/reinforcement_learning/semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 
 </div>
 

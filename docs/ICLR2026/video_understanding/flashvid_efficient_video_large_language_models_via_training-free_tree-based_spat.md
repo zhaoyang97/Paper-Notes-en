@@ -2,128 +2,133 @@
 title: >-
   [Paper Note] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging
 description: >-
-  [ICLR 2026][Video Understanding][visual token compression] This paper proposes FlashVID, a training-free inference acceleration framework for video large language models (VLLMs) that jointly models spatial and temporal r…
+  [ICLR 2026][Video Understanding][Paper Note] FlashVID is proposed as a training-free inference acceleration framework for Video Large Language Models (VLLMs). By jointly modeling spatial and temporal redundancy through Tree-based Spatiotemporal Token Merging (TSTM), it maintains 99.1% of LLaVA-OneVision's performance while retaining only 10% of visual tokens. Fur
 tags:
-  - "ICLR 2026"
-  - "Video Understanding"
-  - "visual token compression"
-  - "spatiotemporal redundancy"
-  - "token merging"
-  - "video large language models"
-  - "training-free acceleration"
+  - ICLR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: d3247dbeef3880c7
+content_hash: d6777b2544b178f8
 ---
-
 # FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2602.08024](https://arxiv.org/abs/2602.08024)  
 **Code**: [https://github.com/Fanziyang-v/FlashVID](https://github.com/Fanziyang-v/FlashVID)  
-**Area**: Video Understanding / LLM Efficiency / Multimodal VLM
-**Keywords**: visual token compression, spatiotemporal redundancy, token merging, video large language models, training-free acceleration
+**Area**: Video Understanding / LLM Efficiency / Multimodal VLM  
+**Keywords**: Visual Token Compression, Spatiotemporal Redundancy, Token Merging, Video Large Language Models, Training-free Acceleration
 
 ## TL;DR
-This paper proposes FlashVID, a training-free inference acceleration framework for video large language models (VLLMs) that jointly models spatial and temporal redundancy via Tree-based Spatiotemporal Token Merging (TSTM). Retaining only 10% of visual tokens, FlashVID preserves 99.1% of LLaVA-OneVision's performance and enables a 10× increase in input frames for Qwen2.5-VL.
+FlashVID is proposed as a training-free inference acceleration framework for Video Large Language Models (VLLMs). By jointly modeling spatial and temporal redundancy through Tree-based Spatiotemporal Token Merging (TSTM), it maintains 99.1% of LLaVA-OneVision's performance while retaining only 10% of visual tokens. Furthermore, it enables a 10x increase in input frame capacity for Qwen2.5-VL.
 
 ## Background & Motivation
 
-**Background**: VLLMs achieve strong performance on video understanding tasks, but require processing a large number of visual tokens (e.g., 32 frames × 196 tokens/frame = 6,272 tokens). The quadratic complexity of attention with respect to sequence length imposes substantial inference overhead.
+**Background**: Video Large Language Models (VLLMs) demonstrate superior performance in video understanding tasks but require processing a massive number of visual tokens (e.g., 32 frames × 196 tokens/frame = 6272 tokens). Since attention computational complexity scales quadratically with sequence length, inference overhead is substantial.
 
-**Limitations of Prior Work**: Existing acceleration methods (FastV, VisionZip, PruneVID) typically compress spatial and temporal redundancy independently, neglecting the intrinsic coupling between spatiotemporal relationships. In particular, Temporal Token Merging (TTM) assumes that semantically similar tokens in adjacent frames reside at the same spatial positions, which fails when objects move, deform, or scale across frames.
+**Limitations of Prior Work**: Existing acceleration methods (FastV, VisionZip, PruneVID) typically compress spatial and temporal redundancies independently, overlooking the intrinsic coupling of spatiotemporal relationships. Specifically, Temporal Token Merging (TTM) assumes that semantically similar tokens in adjacent frames reside at the same spatial coordinates, which is violated by object movement, deformation, and scaling in videos.
 
-**Key Challenge**: The fixed spatial correspondence assumed by TTM does not hold in dynamic videos — the most relevant visual features across adjacent frames may not share the same spatial location, and forced merging under this assumption introduces noise and distorts video representations.
+**Key Challenge**: The fixed spatial correspondence of TTM does not hold in dynamic videos—the most relevant visual features in adjacent frames may not occupy the same spatial position. Forced merging introduces noise and distorts video representations.
 
-**Goal**: How can spatial and temporal redundancy be jointly modeled for efficient compression without any training, while remaining adaptive to the dynamic nature of video content?
+**Goal**: How to jointly model spatial and temporal redundancy for efficient compression without training, while simultaneously adapting to the dynamic nature of video?
 
-**Key Insight**: The observation that spatial and temporal redundancy are coupled (redundant regions in one frame tend to persist across multiple frames), and that temporal redundancy is not tied to fixed spatial positions.
+**Key Insight**: Spatial and temporal redundancies are coupled (redundant regions in one frame often persist across multiple frames), and temporal redundancy is not bound to fixed spatial locations.
 
-**Core Idea**: Replace fixed spatial position-based cross-frame token correspondence with a hierarchical spatiotemporal redundancy tree that matches the most similar — rather than co-located — tokens for merging.
+**Core Idea**: Replace fixed-coordinate inter-frame token correspondence with a hierarchical spatiotemporal redundancy tree, matching the most similar tokens rather than those in identical positions for merging.
 
 ## Method
 
 ### Overall Architecture
-FlashVID comprises two complementary modules: (1) ADTS (Attention and Diversity-based Token Selection), which selects the most representative and diverse token subset from each frame; and (2) TSTM (Tree-based Spatiotemporal Token Merging), which constructs cross-frame redundancy trees over the remaining tokens and aggregates redundant ones. The final output consists of the union of retained important tokens and TSTM-aggregated tokens.
+FlashVID addresses the inference bottleneck caused by long sequences of visual tokens in video VLLMs (e.g., ~6272 tokens for 32 frames). It implements a training-free compression step before tokens enter the LLM, consisting of two modules: first, ADTS selects a small subset of "important and non-redundant" tokens to be preserved exactly; second, the remaining majority of tokens enter TSTM to find semantically similar counterparts across frames, clustering into redundancy trees where each tree collapses into a single representative token. Finally, the "preserved important tokens" and "aggregated representative tokens" are concatenated and fed into the LLM. These two modules provide complementary synergy by selecting what should stay and compressing what should be merged.
+
+```mermaid
+graph TD
+    A["Video Frames<br/>32 frames × 196 tokens ≈ 6272"] --> B["Vision Encoder<br/>Extract Token Features"]
+    B --> C["ADTS: Attention + Diversity<br/>Token Selection<br/>(MMDP + CLS Attention + Event Correlation)"]
+    C -->|"Preserved Important Tokens"| F["Union<br/>(~10% Visual Tokens)"]
+    C -->|"Remaining Tokens"| D["TSTM: Tree-based Spatiotemporal<br/>Token Merging<br/>(Cross-frame Similarity Matching → Redundancy Tree)"]
+    D -->|"Mean Pooling → Representative Token"| F
+    F --> G["Video Large Language Model<br/>(LLM)"]
+```
 
 ### Key Designs
 
-1. **Tree-based Spatiotemporal Token Merging (TSTM)**:
+**1. Attention + Diversity Token Selection (ADTS): Identifying Representative Tokens per Frame**
 
-    - **Function**: Constructs cross-frame redundancy trees to aggregate semantically similar tokens into a single representation.
-    - **Mechanism**: A cosine similarity matrix is computed between tokens in adjacent frames. Each token is connected to its most similar counterpart in the previous frame (rather than its co-located one), provided the similarity exceeds a threshold. This progressively constructs cross-frame redundancy trees, and all tokens within each tree are aggregated via mean pooling.
-    - **Design Motivation**: Unlike TTM's fixed spatial correspondence, TSTM permits free spatial matching, enabling it to capture positional shifts caused by object motion. Experiments show that, under the same threshold, TSTM merges more tokens than TTM and achieves higher average similarity at merge time.
+ADTS is placed at the beginning of the pipeline because constructing redundancy trees directly from raw video features might allow noisy or low-information tokens to dominate the trees, causing critical visual information to be lost. ADTS filters out "tokens that must be preserved" in each frame. It models token selection as a Max-Min Diversity Problem (MMDP) solved on the cosine distance matrix $D^{(f)}$ of each frame, aiming to select a subset where tokens are maximally dispersed to cover diverse features.
 
-2. **Attention and Diversity-based Token Selection (ADTS)**:
+To prevent missing high-information tokens, ADTS incorporates two calibration terms: the CLS attention weights $A_{[CLS]}$ (marking tokens most attended by the vision encoder) and event correlation $\bar{S}_e$ (calculated as the correlation between each token and the frame-level embedding obtained via global average pooling). The final subset $\mathcal{I}=\text{MMDP}(D, A_{[CLS]}, \bar{S}_e)$ ensures broad coverage without missing key information. Ablation studies confirm that ADTS significantly outperforms selection based solely on attention (ATS) or diversity (DTS).
 
-    - **Function**: Selects the most informative and feature-diverse token subset from each frame.
-    - **Mechanism**: Token selection is formulated as a Max-Min Diversity Problem (MMDP) solved over a cosine distance matrix, calibrated by two terms: (a) CLS attention weights — identifying tokens most attended to by the encoder; and (b) event relevance — computed by global average pooling to obtain frame-level embeddings and measuring each token's correlation with the overall video event.
-    - **Design Motivation**: Solving MMDP alone guarantees diversity but may omit the most important tokens. Incorporating attention and event relevance calibration ensures both diversity and informativeness.
+**2. Tree-based Spatiotemporal Token Merging (TSTM): Global Similarity Matching**
 
-3. **Two-Stage Compression Pipeline**:
+Remaining tokens after ADTS are processed by TSTM. This step addresses the flaw in existing TTM methods which assume semantically similar tokens in adjacent frames share spatial positions. In dynamic scenes, features shift, and position-based merging introduces noise.
 
-    - Stage 1: ADTS selects important tokens from each frame (retained without modification).
-    - Stage 2: Remaining tokens are passed to TSTM to construct redundancy trees and perform aggregation.
-    - Final output: The union of aggregated tokens and retained tokens from all frames.
+TSTM allows tokens to match freely across space: it calculates a cosine similarity matrix $S^{(f)}$ between tokens in adjacent frames. Each token is connected to the **most similar token in the previous frame** if the similarity exceeds a threshold $T_\tau$. These edges progressively grow into cross-frame redundancy trees. All tokens within a single tree are aggregated into one representative token via mean pooling. This approach naturally absorbs displacement caused by object motion. Experiments shows that TSTM merges more tokens than TTM at the same threshold while maintaining higher average intra-cluster similarity.
+
+### Mechanism Example
+Processing a 32-frame input for LLaVA-OneVision (approx. 6272 tokens) with a 10% target retention (approx. 627 tokens): 
+1. ADTS solves the MMDP with CLS and event calibration per frame to select the most representative "preserved" tokens. 
+2. Remaining tokens enter TSTM, forming redundancy trees across adjacent frames via similarity-based matching (exceeding $T_\tau$). Each tree collapses into one token. 
+3. The union of preserved tokens and tree-aggregated tokens is sent to the LLM. 
+A redundant background region persisting across frames is collapsed into one token, while a moving foreground object is either tracked via TSTM's free matching or preserved by ADTS, preventing erroneous merging due to position shifts.
 
 ### Loss & Training
-No training is required. FlashVID operates as a plug-and-play module that can be directly integrated into existing VLLMs.
+The framework requires no training and serves as a plug-and-play module directly embedded into the inference workflow of existing VLLMs.
 
 ## Key Experimental Results
 
 ### Main Results
-Average performance across 5 video understanding benchmarks on LLaVA-OneVision (32 frames):
+Average performance across 5 video understanding benchmarks using LLaVA-OneVision (32 frames):
 
-| Method | Retention Ratio | VideoMME | EgoSchema | LongVideoBench | MVBench | Avg. | Relative Acc. |
-|--------|----------------|----------|-----------|----------------|---------|------|---------------|
+| Method | Retention Rate | VideoMME | EgoSchema | LongVideoBench | MVBench | Average | Relative Accuracy |
+|--------|----------------|----------|-----------|----------------|---------|---------|-------------------|
 | Vanilla | 100% | 58.5 | 60.3 | 56.6 | 58.3 | 58.4 | 100.0% |
 | FastV | 10% | 51.5 | 51.2 | 52.3 | 52.3 | 51.8 | 88.7% |
 | VisionZip | 10% | 51.6 | 55.6 | 50.1 | 50.3 | 51.9 | 88.9% |
 | FastVID | 10% | 55.5 | 56.1 | 55.5 | 57.7 | 56.2 | 96.2% |
 | **FlashVID** | **10%** | **57.2** | **59.5** | **56.0** | **57.7** | **57.9** | **99.1%** |
 
-### Frame Scaling Experiment on Qwen2.5-VL
+### Qwen2.5-VL Frame Expansion Experiment
 
-| Setting | Frames | VideoMME | MLVU | Relative Gain |
-|---------|--------|----------|------|---------------|
+| Setting | Frames | VideoMME | MLVU | Gain |
+|---------|--------|----------|------|---------|
 | Vanilla | 16 | 65.7 | 67.6 | baseline |
 | FlashVID | 160 | 69.9 | 74.5 | +8.6% |
 
 ### Ablation Study
 
-| Configuration | VideoMME | EgoSchema | Avg. |
-|---------------|----------|-----------|------|
+| Configuration | VideoMME | EgoSchema | Average |
+|---------------|----------|-----------|---------|
 | Full FlashVID (ADTS+TSTM) | 57.2 | 59.5 | 57.9 |
 | w/o TSTM (ADTS only) | 56.2 | 58.0 | 56.7 |
 | w/o ADTS (TSTM only) | 56.5 | 59.1 | 57.0 |
 | TTM replacing TSTM | 55.5 | 57.8 | 56.5 |
 
 ### Key Findings
-- TSTM contributes the most; adding TSTM on top of ADTS alone yields approximately 1.2 points of improvement.
-- Replacing TSTM with TTM leads to a notable performance drop, validating the importance of dynamic spatial correspondence.
-- At 10% token retention, FlashVID preserves 99.1% of performance, substantially outperforming FastV (88.7%) and VisionZip (88.9%).
-- Extending the input to 10× more frames on Qwen2.5-VL under the same computational budget yields an 8.6% performance gain.
+- TSTM is the primary contributor, providing a ~1.2 point improvement over ADTS alone.
+- Replacing TSTM with TTM leads to a significant performance drop, validating the importance of dynamic spatial correspondence.
+- FlashVID maintains 99.1% performance at a 10% token retention rate, significantly outperforming FastV (88.7%) and VisionZip (88.9%).
+- On Qwen2.5-VL, increasing input frames 10x yields an 8.6% performance gain under the same computational budget.
 
 ## Highlights & Insights
-- **Tree-based Dynamic Matching**: The core insight is simple yet effective — relevant tokens in adjacent frames need not be co-located, and replacing fixed-position matching with globally optimal similarity-based matching is sufficient. This idea transfers readily to any task involving cross-frame correspondence.
-- **Training-free Plug-and-Play**: No retraining is required, making FlashVID theoretically compatible with any VLLM and offering high practical engineering value.
-- **Frame Scaling Application**: Computation saved through token compression is "exchanged" for additional input frames, elegantly converting efficiency gains into capability improvements.
+- **Tree-based Dynamic Matching**: The core insight is simple yet effective—related tokens in adjacent frames are not at the same position. Replacing fixed matching with global similarity matching is a transferable concept for any cross-frame correspondence task.
+- **Training-free and Plug-and-play**: No retraining is required, making it adaptable to any VLLM with high practical engineering value.
+- **Frame Expansion Application**: By "exchanging" saved computation for more input frames, the efficiency gain is cleverly converted into a performance capability boost.
 
 ## Limitations & Future Work
-- The merging threshold is a hyperparameter; the optimal value may vary across videos, and adaptive threshold strategies warrant further exploration.
-- For very long videos and high-resolution inputs, the cost of constructing the similarity matrix in TSTM is non-negligible.
-- Compression is applied only at the inference stage; training-time efficiency is not addressed.
-- The differential compression behavior between highly static scenes (extremely high redundancy) and highly dynamic scenes (very low redundancy) has not been thoroughly analyzed.
+- The merging threshold is a hyperparameter; optimal thresholds likely vary by video, suggesting a need for adaptive threshold strategies.
+- For ultra-long videos or high-resolution inputs, the cost of constructing similarity matrices in TSTM may become non-negligible.
+- Compression is limited to the inference phase only; training-time efficiency was not addressed.
+- Variations in compression effectiveness between high-redundancy (static) and low-redundancy (highly dynamic) scenes require further analysis.
 
 ## Related Work & Insights
-- **vs. FastV (Chen et al., 2024)**: FastV prunes tokens inside the LLM using text-to-visual attention, representing an Inner-LLM approach; FlashVID employs a hybrid strategy.
-- **vs. PruneVID (Huang et al., 2025)**: PruneVID also performs spatiotemporal merging but relies on fixed spatial position correspondence via TTM; FlashVID uses dynamic matching instead.
-- **vs. ToMe (Bolya et al., 2023)**: ToMe is the seminal work on image token merging; FlashVID extends this paradigm to the video spatiotemporal domain.
+- **vs FastV (Chen et al., 2024)**: FastV prunes via text-to-visual attention within the LLM (Inner-LLM); FlashVID utilizes a hybrid strategy.
+- **vs PruneVID (Huang et al., 2025)**: PruneVID performs spatiotemporal merging but relies on fixed-position TTM; FlashVID employs dynamic matching.
+- **vs ToMe (Bolya et al., 2023)**: While ToMe pioneered image token merging, FlashVID extends this to the video spatiotemporal domain.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The tree-based spatiotemporal merging concept is concise and effective, though the overall framework combines existing components.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluations span 3 VLLMs × 5 benchmarks × multiple compression ratios, yielding a comprehensive assessment.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated, figures are intuitive, and algorithm descriptions are complete.
-- Value: ⭐⭐⭐⭐⭐ Training-free, plug-and-play, and negligible performance loss make this highly practical.
+- Novelty: ⭐⭐⭐⭐ The tree-based spatiotemporal merging is elegant, though the framework combines some existing components.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 3 VLLMs, 5 benchmarks, and multiple compression ratios.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, intuitive diagrams, and complete algorithmic descriptions.
+- Value: ⭐⭐⭐⭐⭐ High practical utility due to training-free, plug-and-play nature with minimal performance loss.
 
 <!-- RELATED:START -->
 
@@ -133,9 +138,9 @@ Average performance across 5 video understanding benchmarks on LLaVA-OneVision (
 
 - [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](../../CVPR2026/video_understanding/token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
 - [\[ICML 2026\] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](../../ICML2026/video_understanding/omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)
+- [\[ICLR 2026\] LLaVAction: Evaluating and Training Multi-modal Large Language Models for Action Understanding](llavaction_evaluating_and_training_multi-modal_large_language_models_for_action_.md)
 - [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](../../CVPR2026/video_understanding/unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
-- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](../../CVPR2026/video_understanding/ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
+- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
 
 </div>
 

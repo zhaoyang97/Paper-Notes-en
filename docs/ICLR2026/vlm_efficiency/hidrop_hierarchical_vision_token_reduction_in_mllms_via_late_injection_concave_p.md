@@ -2,163 +2,163 @@
 title: >-
   [Paper Note] HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit
 description: >-
-  [ICLR 2026][Multimodal VLM][Visual token compression] This paper proposes the HiDrop framework, which conducts a systematic layer-wise behavioral analysis of MLLMs (shallow layers = propagators…
+  [ICLR 2026][vlm_efficiency][Late Injection] The authors propose the HiDrop framework, which performs deep functional analysis of MLLM layers (Shallow = Propagators, Middle = Fusion Centers, Deep = Language Reasoning). It designs a three-stage strategy: Late Injection (skipping shallow layers), Concave Pyramid Pruning (pruning in middle layers), and Early Exit (e
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Visual token compression"
-  - "MLLM acceleration"
-  - "progressive pruning"
-  - "Late Injection"
-  - "diffused attention"
+  - ICLR 2026
+  - vlm_efficiency
+  - Late Injection
 date: 2026-05-08
-content_hash: 169190f6fd1cc6ef
+content_hash: e13ead86554891e6
 ---
-
 # HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.23699](https://arxiv.org/abs/2602.23699)  
 **Code**: [https://github.com/EIT-NLP/HiDrop](https://github.com/EIT-NLP/HiDrop)  
-**Area**: Multimodal VLM
-**Keywords**: Visual token compression, MLLM acceleration, progressive pruning, Late Injection, diffused attention
+**Area**: Multimodal VLM  
+**Keywords**: Vision token compression, MLLM acceleration, progressive pruning, Late Injection, diffused attention  
 
 ## TL;DR
 
-This paper proposes the HiDrop framework, which conducts a systematic layer-wise behavioral analysis of MLLMs (shallow layers = propagators, middle layers = fusion hubs, deep layers = language reasoners) and designs a three-stage strategy: Late Injection (skipping shallow layers) + Concave Pyramid Pruning (aggressive pruning in middle layers) + Early Exit (discarding tokens in deep layers). The framework compresses approximately 90% of visual tokens with negligible performance degradation and achieves a 1.72× training speedup.
+The authors propose the HiDrop framework, which performs deep functional analysis of MLLM layers (Shallow = Propagators, Middle = Fusion Centers, Deep = Language Reasoning). It designs a three-stage strategy: Late Injection (skipping shallow layers), Concave Pyramid Pruning (pruning in middle layers), and Early Exit (exiting in deep layers). This approach compresses approximately 90% of vision tokens with negligible performance loss and achieves a 1.72× training speedup.
 
 ## Background & Motivation
 
-**Background**: The computational cost of processing visual tokens in MLLMs (e.g., LLaVA) scales quadratically with token count. Visual encoders produce far more tokens than text (e.g., 576 patch tokens), creating a major bottleneck for both inference and training.
+**Background**: The computational overhead of processing vision tokens in MLLMs (e.g., LLaVA) grows quadratically with the number of tokens. Vision encoders generate significantly more tokens than text (e.g., 576 patch tokens), creating a primary bottleneck for both inference and training.
 
-**Limitations of Prior Work**: Existing visual token pruning methods rest on two fundamental misconceptions: (a) they incorrectly assume that shallow layers are critical multimodal fusion sites requiring dense visual tokens, whereas shallow layers in practice barely process visual tokens and merely propagate them passively; (b) they apply fixed-ratio pyramid or linear pruning schedules (e.g., FastV, PDrop), ignoring the non-uniform information flow across layers.
+**Limitations of Prior Work**: Existing vision token pruning methods suffer from two core misconceptions: (a) the belief that shallow layers are critical multimodal fusion layers requiring dense vision tokens, whereas shallow layers actually perform little processing and primarily serve as passive propagators; (b) the use of fixed-ratio pyramid or linear pruning schedules (e.g., FastV, PDrop), which ignore the non-uniformity of information flow across different layers.
 
-**Key Challenge**: How can token pruning strategies be made to truly align with the internal layer-wise processing dynamics of the model?
+**Key Challenge**: How to design a token management strategy that dynamically aligns with the internal hierarchical processing of the model?
 
-**Goal**: Design a token management strategy aligned with the hierarchical functional roles of MLLM layers — shallow layers do not need to process visual tokens (skip entirely), middle layers are where fusion redundancy is highest (aggressive pruning), and deep layers have already completed fusion (discard remaining tokens).
+**Goal**: Design a token management strategy aligned with MLLM hierarchical functions—where vision tokens are not processed in shallow layers (skipped), aggressively pruned in middle layers where fusion redundancy is highest, and discarded in deep layers where fusion is complete.
 
-**Key Insight**: Conduct a systematic layer-wise behavioral analysis (intra-modal similarity + cross-modal influence) and replace heuristic assumptions with data-driven findings.
+**Key Insight**: Systematically analyze hierarchical behavior (intra-modal similarity + cross-modal influence) to replace heuristic assumptions with data-driven findings.
 
-**Core Idea**: Perform the right operation at the right location based on the hierarchical functional division of MLLM layers (propagation / fusion / reasoning) — inject late, prune aggressively, and exit early.
+**Core Idea**: Execute the right operations at the right locations according to the functional division of MLLM layers (propagation/fusion/reasoning)—Late Injection, Aggressive Pruning, and Early Exit.
 
 ## Method
 
 ### Overall Architecture
 
-HiDrop partitions LLM layers into three stages:
-- **Shallow layers (Layers 1–8)**: Late Injection — visual tokens are not injected at all; only text is processed.
-- **Middle layers (Layers 9–24)**: Concave Pyramid Pruning — visual tokens are progressively pruned at selected filtering layers using a Differentiable Top-K operator, with faster pruning early and slower pruning later.
-- **Deep layers (Layers 25–32)**: Early Exit — all remaining visual tokens are discarded; pure text reasoning proceeds.
+The premise of HiDrop is that vision tokens are not "always needed" throughout the depth of the LLM. Thus, the management strategy should follow hierarchical functions rather than maintaining dense tokens from the first to the last layer. The authors first analyze hierarchical behavior, segmenting the 32 layers of LLaVA into three functional stages: shallow layers passively propagate vision information, middle layers are where cross-modal fusion occurs, and deep layers degrade into pure linguistic reasoning. Different strategies are applied to each segment.
 
-Together, the three stages define a "visual processing window" in which visual tokens exist for only approximately half of the total layers.
+Specifically, vision tokens do not enter the sequence in shallow layers (approx. Layers 1~8) via Late Injection. They are injected at the middle layers (approx. Layers 9~24) and progressively pruned using Differentiable Top-K in a "fast-then-slow" manner at selected filtering layers (Concave Pyramid Pruning). Upon reaching the deep layers (approx. Layers 25~32), all remaining vision tokens are discarded (Early Exit). This three-stage approach effectively opens a "processing window" for vision tokens that covers only about half of the total layers.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IMG["Input Image"] --> ENC["Vision Encoder<br/>576 vision tokens"]
+    TXT["Input Text"] --> SHALLOW["Shallow Layers L1~8<br/>Text-only forward<br/>No vision token injection"]
+    ENC -.->|"Parallel Encoding<br/>(Eng. Optimization)"| INJ
+    SHALLOW --> INJ["Late Injection<br/>L_inj=9 Inject all vision tokens"]
+    INJ --> PRUNE["Concave Pyramid Pruning + ILVAS<br/>Middle Layers L9~24 Progressive Pruning<br/>ILVAS selects filtering layers + DTop-K"]
+    PRUNE --> EXIT["Early Exit<br/>L_exit=25 Discard all vision tokens"]
+    EXIT --> DEEP["Deep Layers L25~32<br/>Pure language reasoning"]
+    DEEP --> OUT["Output Answer"]
+```
 
 ### Key Designs
 
-1. **Late Injection**:
+**1. Late Injection: Skipping shallow layers**
 
-    - Function: Visual tokens are injected into the sequence only at layer $L_{inj}=9$.
-    - Mechanism: Analysis reveals that intra-modal cosine similarity in shallow layers is extremely high (visual tokens barely change), and cross-modal influence is near zero (text representations are unaffected by the image). Since shallow layers do not process visual information, no computation should be wasted there.
-    - Design Motivation: Unlike the conventional "inject first, then prune" paradigm, HiDrop is the first to propose "delayed injection" — visual tokens bypass shallow layers entirely, saving computation from the outset.
+Hierarchical analysis provides two pieces of evidence: vision tokens in shallow layers exhibit extremely high intra-modal cosine similarity, indicating they barely change, while cross-modal influence is near zero, indicating text representations are unaffected by images. Consequently, HiDrop injects vision tokens at $L_{inj}=9$, running only text through the first 8 layers. Unlike traditional routes that inject all tokens and then prune, HiDrop saves computation from the source.
 
-2. **Concave Pyramid Pruning + ILVAS**:
+**2. Concave Pyramid Pruning + ILVAS: Non-uniform middle layer pruning**
 
-    - Function: Progressively prune visual tokens in middle layers, with faster pruning early and slower pruning later.
-    - Mechanism:
-        - **Where to prune (ILVAS)**: The Inter-Layer Visual Attention Similarity metric is proposed to measure the stability of visual token attention distributions between adjacent layers. Layers with high ILVAS indicate that attention allocation has stabilized and are therefore good filtering points. Local maxima of the ILVAS curve are selected (e.g., layers {10, 14, 16, 18}).
-        - **What to prune (DTop-K)**: A Differentiable Top-K operator is used for differentiable token selection. Normalized importance scores $c'_i$ are computed, and a soft mask is generated via sigmoid with a learnable threshold $a$: $\text{Mask}(c,a) = \sigma(\lambda(c'_i - a))$. A hard threshold is applied during the forward pass for discrete selection, while gradients flow through during the backward pass.
-    - Design Motivation: The concave schedule (fast early, slow late) matches the pattern of increasing fusion sparsity in middle layers — early in the fusion stage, many tokens are redundant and can be removed aggressively, while later tokens are more informative and require more careful pruning.
+After injection, vision tokens enter the middle layers where fusion is densest and redundancy is highest. HiDrop addresses two questions: where to prune and what to prune. The pruning locations are determined by ILVAS (Inter-Layer Visual Attention Similarity), which measures the stability of vision token attention distributions between adjacent layers. Local maxima of the ILVAS curve are selected as filtering layers (e.g., layers {10, 14, 16, 18}). Token selection uses Differentiable Top-K (DTop-K): importance scores are normalized and sorted to get $c'_i$, and a soft mask is generated using sigmoid with a learnable threshold $a$:
 
-3. **Early Exit**:
+$$\text{Mask}(c,a) = \sigma(\lambda(c'_i - a))$$
 
-    - Function: All remaining visual tokens are discarded at layer $L_{exit}=25$.
-    - Mechanism: Training-free experiments verify that removing all visual tokens after layer 24 causes negligible performance degradation.
-    - Design Motivation: Deep layers have completed cross-modal fusion and entered a pure language reasoning phase; visual tokens at this stage consume computation without contributing information.
+During the forward pass, discrete keep/drop decisions are made via a hard threshold, while gradients flow through the soft mask for importance estimation. Pruning follows a concave schedule—fast initially and slow later—matching the increasing sparsity of fusion in the middle layers.
 
-4. **Engineering Optimizations**:
+**3. Early Exit: Discarding tokens in the reasoning phase**
 
-    - Persistent Position Encoding: Each visual token retains a fixed positional identifier to prevent RoPE positional confusion caused by dynamic pruning.
-    - FlashAttention compatibility: Token selection is performed via a lightweight auxiliary attention module, leaving the primary attention computation unchanged.
-    - Parallel decoupling: Shallow-layer text forward passes and visual encoding execute in parallel; Late Injection makes this parallelism possible.
+Training-free experiments show that removing all vision tokens after layer 24 has almost no impact on performance. This suggests deep layers have completed cross-modal fusion and transitioned to pure language reasoning. Thus, remaining vision tokens are discarded at $L_{exit}=25$.
+
+**4. Engineering Optimization**
+
+*   **Persistent Position Encoding**: Assigns fixed position identifiers to vision tokens to prevent RoPE index confusion after dynamic pruning.
+*   **FlashAttention Compatibility**: Uses a lightweight auxiliary attention for token selection while keeping the main attention computation unchanged, preserving FlashAttention acceleration.
+*   **Parallel Decoupling**: Leverages Late Injection to execute shallow text forwarding and vision encoding in parallel.
 
 ### Loss & Training
 
-- Standard two-stage LLaVA training (pre-training + instruction tuning) is followed.
-- The temperature coefficient for DTop-K is set to $\lambda = N_v$ (the number of visual tokens).
-- Training is conducted on 8× A100 40GB GPUs.
+- Follows standard LLaVA two-stage training (Pre-training + Instruction Tuning).
+- DTop-K temperature coefficient $\lambda = N_v$ (number of vision tokens).
+- Trained on $8 \times \text{A100 40GB}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison across 11 benchmarks on LLaVA-1.5-7B (retaining approximately 64 tokens, 88.9% compression):
+Comparison on 11 benchmarks using LLaVA-1.5-7B (retaining ~64 tokens, 88.9% compression):
 
 | Method | Type | MMEP | GQA | VQAv2 | POPE | MMStar | Avg(%) |
-|--------|------|------|-----|-------|------|--------|--------|
-| LLaVA-1.5-7B | Upper bound (576 tokens) | 1506.5 | 61.9 | 78.5 | 86.8 | 33.7 | 100.0 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| LLaVA-1.5-7B | Upper Bound (576 t) | 1506.5 | 61.9 | 78.5 | 86.8 | 33.7 | 100.0 |
 | FastV | Training-free | 1086.6 | 48.8 | 61.6 | 67.7 | 29.6 | 82.8 |
 | PDrop | Training-based | 1350.7 | 56.6 | 71.8 | 82.6 | 32.7 | 94.2 |
 | TwigVLM | Training-based | 1404.0 | 58.8 | 75.6 | 82.7 | 33.1 | 95.3 |
 | **HiDrop** | **Training-based** | **1473.3** | **60.5** | **76.5** | **86.4** | **32.0** | **98.3** |
 
-Under the most extreme setting of 48 tokens (91.7% compression), HiDrop still achieves 97.1% of the original performance.
+At an extreme 48 tokens (91.7% compression), HiDrop maintains 97.1% of the original performance.
 
 ### Ablation Study
 
-| Configuration | Avg(%) | Note |
-|---------------|--------|------|
-| Full HiDrop | 98.3 | Complete framework |
-| w/o Late Injection | 96.8 | Shallow layers also process visual tokens |
-| w/o Early Exit | 97.5 | Visual tokens retained in deep layers |
-| w/o Concave (linear schedule) | 96.9 | Uniform pruning replaces concave pyramid |
-| Hard Top-K (replaces DTop-K) | 97.1 | Non-differentiable hard selection |
+| Configuration | Avg(%) | Description |
+| :--- | :--- | :--- |
+| Full HiDrop | 98.3 | Full framework |
+| w/o Late Injection | 96.8 | Vision tokens processed in shallow layers |
+| w/o Early Exit | 97.5 | Vision tokens kept in deep layers |
+| w/o Concave (Linear) | 96.9 | Uniform pruning instead of concave |
+| Hard Top-K | 97.1 | Non-differentiable hard selection |
 
-Training efficiency: HiDrop achieves a 1.72× training speedup compared to the original LLaVA-1.5-7B.
+Training Efficiency: HiDrop achieves a 1.72× training speedup compared to the original LLaVA-1.5-7B.
 
 ### Key Findings
 
-- Late Injection contributes the most — approximately 1.5% performance retention gain — indicating that avoiding visual token processing in shallow layers not only saves computation but also eliminates meaningless shallow-layer interference.
-- Concave > Linear > Convex pyramid: Aggressive pruning in the early fusion stage is optimal, fully consistent with the conclusions of the middle-layer fusion dynamics analysis.
-- DTop-K outperforms Hard Top-K by approximately 1.2%: Differentiable selection enables gradient backpropagation to the token importance estimation.
-- Even when compressing to only 48 visual tokens per image (576→48, 12× compression), the POPE metric drops only from 86.8 to 86.6, representing near-lossless compression.
+- Late Injection contributes most (approx. 1.5% performance gain), proving that avoiding shallow processing reduces meaningless interference.
+- Concave Pyramid > Linear > Convex Pyramid: Aggressive pruning in early fusion stages is optimal, aligning with fusion dynamic analysis.
+- DTop-K outperforms Hard Top-K by ~1.2%, as differentiable selection allows importance estimation to be optimized via backpropagation.
+- Even at 48 tokens (12× compression), the POPE metric only drops from 86.8 to 86.6, showing near-lossless performance.
 
 ## Highlights & Insights
 
-- **Analysis-driven design paradigm**: Rather than designing a method and then seeking experimental justification, this work first conducts systematic layer-wise behavioral analysis (intra-modal similarity, cross-modal influence, early exit experiments) and lets data-driven findings guide algorithmic design. This research paradigm is itself instructive.
-- **"Delayed injection" as a conceptual breakthrough**: All prior methods implicitly assume that visual tokens participate in computation from the first layer. HiDrop is the first to assert that "shallow layers do not need visual information at all" — a deep insight into MLLM operating mechanisms that may generalize to other modalities (e.g., audio tokens).
-- **One-to-one correspondence between three stages and layer functions**: Late Injection ↔ propagation layers, Concave Pruning ↔ fusion layers, Early Exit ↔ reasoning layers — an elegant design.
+- **Analysis-driven Design**: Rather than designing a method and then finding support, the authors perform systematic hierarchical analysis to drive algorithmic design.
+- **Late Injection as a Breakthrough**: While prior methods assumed vision tokens are necessary from the first layer, HiDrop demonstrates that shallow layers do not require vision information, a localized insight potentially applicable to other modalities.
+- **Structural Elegance**: The correspondence between policy and layer function—Late Injection (Propagation), Concave Pruning (Fusion), Early Exit (Reasoning)—is conceptually strong.
 
 ## Limitations & Future Work
 
-- **Validated only on LLaVA-1.5**: The conclusions from the layer-wise behavioral analysis may not generalize to all MLLMs (e.g., Qwen-VL or InternVL may have different layer-wise functional assignments), and validation across more architectures is needed.
-- **Fixed injection and exit layers**: $L_{inj}=9$ and $L_{exit}=25$ are hard-coded; different inputs (simple vs. complex images) may require different processing windows.
-- **Multi-image inputs not considered**: In video understanding or multi-image QA settings, the volume of visual tokens is much larger and layer-wise behavior may differ.
-- **DTop-K training overhead**: Differentiable Top-K introduces additional parameters and computation; the cost-benefit ratio for larger models requires further investigation.
+- **Architecture Specificity**: Conclusions are validated on LLaVA-1.5; hierarchical behavior might differ in models like Qwen-VL or InternVL.
+- **Fixed Thresholds**: $L_{inj}=9$ and $L_{exit}=25$ are hard-coded; different inputs might require dynamic windows.
+- **Multi-image Scenarios**: Behavior in video or multi-image QA, where token counts are higher, remains unexplored.
+- **DTop-K Overhead**: Differentiable Top-K introduces extra parameters/computation, requiring verification of the cost-benefit ratio on larger models.
 
 ## Related Work & Insights
 
-- **vs. FastV**: FastV performs a single one-shot pruning at an early layer — an overly coarse approach with a poorly chosen pruning location (pruning at shallow layers). HiDrop demonstrates that visual tokens should not be present in shallow layers at all.
-- **vs. PDrop**: PDrop applies progressive pruning at uniform intervals and uniform ratios, ignoring the non-uniform nature of middle-layer fusion. HiDrop's ILVAS metric and concave pyramid schedule offer a more precise alternative.
-- **vs. TwigVLM**: TwigVLM prunes in shallow layers and removes tokens in deep layers, but shallow-layer pruning is superfluous. HiDrop replaces shallow-layer pruning with Late Injection, which is more efficient.
-- **Implications for video/multi-image MLLMs**: Analyzing the layer-wise behavior of video tokens may reveal similar "shallow-layer redundancy" phenomena, enabling analogous strategies for substantial compression.
+- **vs. FastV**: FastV prunes once at an early layer, which is too coarse. HiDrop proves vision tokens should not be present in shallow layers at all.
+- **vs. PDrop**: PDrop uses uniform intervals and ratios, ignoring non-uniform fusion dynamics. HiDrop’s ILVAS and concave scheduling are more precise.
+- **vs. TwigVLM**: TwigVLM prunes in shallow layers; HiDrop's Late Injection is more efficient as it bypasses those layers entirely.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Late Injection represents an entirely new perspective; analysis-driven design is an excellent research paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 11 benchmarks, 3 model scales, detailed ablations, efficiency analysis, and layer-wise behavioral visualization.
-- Writing Quality: ⭐⭐⭐⭐⭐ The analysis→insight→design narrative flows smoothly, with high-quality figures.
-- Value: ⭐⭐⭐⭐⭐ Extremely high practical value — directly applicable for accelerating any LLaVA-architecture MLLM.
+- **Novelty**: ⭐⭐⭐⭐⭐ (Late Injection is a fresh perspective)
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ (11 benchmarks, multiple scales, detailed ablation)
+- **Writing Quality**: ⭐⭐⭐⭐⭐ (Fluid narrative from analysis to design)
+- **Value**: ⭐⭐⭐⭐⭐ (Highly practical for MLLM acceleration)
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](../../CVPR2026/vlm_efficiency/score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
+- [\[NeurIPS 2025\] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability](../../NeurIPS2025/vlm_efficiency/beyond_greedy_exits_improved_early_exit_decisions_for_risk_control_and_reliabili.md)
+- [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
 - [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
-- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/multimodal_vlm/filter_correlate_compress_training-free_token_reduction_for_.md)
-- [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
-- [\[NeurIPS 2025\] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability](../../NeurIPS2025/multimodal_vlm/beyond_greedy_exits_improved_early_exit_decisions_for_risk_control_and_reliabili.md)
 
 </div>
 

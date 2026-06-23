@@ -2,153 +2,148 @@
 title: >-
   [Paper Note] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][Long video understanding] This paper proposes FLoC, a visual token compression framework based on the facility location function. Through submodular optimization…
+  [ICLR 2026][Video Understanding][Paper Note] Ours proposes FLoC, a visual token compression framework based on the facility location function. By employing submodular optimization, it rapidly selects a subset of tokens that are both representative and diverse under a given budget. FLoC achieves training-free, model-agnostic, and query-independent token compressio
 tags:
-  - "ICLR 2026"
-  - "Video Understanding"
-  - "Long video understanding"
-  - "token compression"
-  - "facility location"
-  - "submodular function optimization"
-  - "training-free"
+  - ICLR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: aac35dc69779aace
+content_hash: 2b47a11febcfe360
 ---
-
 # FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2511.00141](https://arxiv.org/abs/2511.00141)  
-**Code**: N/A  
-**Area**: Video Understanding / Visual Token Compression
-**Keywords**: Long video understanding, token compression, facility location, submodular function optimization, training-free
+**Code**: None  
+**Area**: Video Understanding / Visual Token Compression  
+**Keywords**: Long Video Understanding, Token Compression, Facility Location, Submodular Optimization, Training-free
 
 ## TL;DR
 
-This paper proposes FLoC, a visual token compression framework based on the facility location function. Through submodular optimization, FLoC efficiently selects a token subset that is both representative and diverse under a given budget, enabling training-free, model-agnostic, and query-agnostic token compression for long video understanding.
+Ours proposes FLoC, a visual token compression framework based on the facility location function. By employing submodular optimization, it rapidly selects a subset of tokens that are both representative and diverse under a given budget. FLoC achieves training-free, model-agnostic, and query-independent token compression for long video understanding.
 
 ## Background & Motivation
 
-**Token explosion in long videos**: As video length increases, the number of visual tokens grows explosively, far exceeding the context window limits of large multimodal models (LMMs) (typically 4K–32K tokens), severely constraining long video understanding capabilities.
+**Visual Token Explosion in Long Videos**: As video length increases, the number of visual tokens grows exponentially, far exceeding the context window limits of Large Multimodal Models (LMMs) (typically 4K-32K tokens). This severely restricts long video understanding capabilities.
 
-**Limitations of existing compression methods**:
-- Sampling/pooling methods ignore semantic importance and discard information indiscriminately.
-- Clustering methods (e.g., k-means) primarily select representatives from dense regions, tending to miss sparse but important tokens (e.g., small objects or fine-grained text in a scene).
-- Query-aware methods require advance knowledge of the query, lack flexibility for general scenarios, and require re-compression for each new query.
-- Trainable methods depend on specific model architectures and large amounts of annotated data.
+**Limitations of Prior Work**:
+   - Sampling/pooling methods ignore semantic importance and discard information indiscriminately.
+   - Clustering methods (e.g., k-means) primarily select representative elements from dense regions, easily missing sparse but critical tokens (e.g., small objects, detailed text).
+   - Query-aware methods require prior knowledge of the query, lacking flexibility for general scenarios and necessitating re-compression for every query.
+   - Trainable methods depend on specific model architectures and large amounts of annotated data.
 
-**Tension between representativeness and diversity**: Simple scenes contain abundant redundant tokens, yet sparse but critical visual cues (e.g., key tokens in a scene of searching for keys) appear infrequently yet are crucial. Both representativeness and diversity must be simultaneously ensured.
+**Key Challenge (Representativeness vs. Diversity)**: While many tokens are redundant in simple scenes, critical but sparse visual cues (e.g., a "key" token in a "finding keys" scenario) appear infrequently yet are vital. There is a need to ensure both representativeness and diversity simultaneously.
 
-**Practical deployment requirements**: Applications such as CCTV surveillance, smart glasses, and mobile robots demand efficient, general-purpose, plug-and-play compression solutions.
+**Goal**: Applications like CCTV surveillance, smart glasses, and mobile robots require efficient, general, and plug-and-play compression solutions.
 
 ## Method
 
 ### Overall Architecture
 
-FLoC operates in two steps: (1) the input video is divided into temporal blocks, within each of which the facility location function is applied to select a token subset; (2) the selected token subset is concatenated with the text prompt and fed into a video LMM. The entire process requires no training, no prior knowledge of the query, and integrates seamlessly with any video LMM.
+FLoC aims to solve the visual token explosion problem when feeding long videos into Video-LMMs: given a token budget $K$, it selects a representative subset that covers the entire scene without missing sparse critical cues. The entire pipeline relies solely on the cosine similarity between token embeddings, making it fully decoupled from upstream visual encoders and downstream LMMs. Consequently, it is training-free, model-agnostic, and query-independent, serving as a plug-and-play module between any encoder and any LMM.
+
+**Mechanism**: Video frames are first processed by a visual encoder to extract all visual tokens. These tokens are divided into temporal chunks of fixed length $T$ along the time axis. Within each chunk, selecting which tokens to keep is formulated as a facility location submodular maximization objective. This is solved via a lazy greedy algorithm to find a representative subset within budget $K$. Finally, the selected tokens from each chunk are concatenated with the text prompt and fed into the Video-LMM.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Long Video Frame Sequence"] --> B["Visual Encoder<br/>Extract all visual tokens"]
+    B --> C["Temporal Chunking<br/>Split along time axis into<br/>fixed length blocks T"]
+    C --> D["Facility Location Objective<br/>Submodular Maximization<br/>Global coverage within budget K"]
+    D --> E["Lazy Greedy Solver<br/>Diminishing returns skip<br/>invalid gain calculations"]
+    E --> F["Representative Tokens per Block<br/>Concatenate with text prompt"]
+    F --> G["Video LMM<br/>Output Answer"]
+```
+
+The "zero requirements" (training-free, model-agnostic, query-independent) constitute the direct practical value of FLoC while simultaneously constraining the design of each step (must use embedding similarity and run at inference time).
 
 ### Key Designs
 
-**1. Facility Location Function**
+**1. Temporal Chunking: Narrowing Search Space and Enabling Streaming**
 
-- **Function**: Models token selection as a submodular optimization problem $S^* = \arg\max_{S \subseteq V, |S| \leq K} f(S)$.
-- **Mechanism**: The objective function is $f(S) = \sum_{v \in V} \max_{u \in S} \text{sim}(v, u)$, where sim denotes cosine similarity. Intuitively, for each original token, the most similar token in the subset is identified; a higher total similarity indicates better coverage of the full token set by the subset.
-- **Design Motivation**: The facility location function naturally balances representativeness (selected tokens should cover all original tokens) and diversity (redundant selections are discouraged), and its submodularity guarantees an approximation ratio of $(1-1/e) \approx 0.632$.
+In long videos, distant frames are often unrelated. Computing a global selection over the entire video is computationally wasteful and destroys temporal locality. FLoC avoids global selection by first cutting tokens into small chunks of fixed length $T$ along the temporal axis. Submodular optimization is then performed independently within each chunk. This reduces the candidate size for each optimization step, significantly lowering computation. Furthermore, independent processing within chunks fits streaming scenarios naturally; tokens in the buffer can be compressed and sent as soon as a chunk is full without waiting for the entire video. $T=32$ is used as a robust default.
 
-**2. Lazy Greedy Algorithm**
+**2. Facility Location Objective: Balancing Representativeness and Diversity**
 
-- **Function**: Exploits the diminishing returns property of submodular functions to avoid unnecessary recomputation of marginal gains via a priority queue.
-- **Mechanism**: A priority queue of marginal gain upper bounds is maintained for all candidate tokens. At each step, the candidate with the highest upper bound is popped and its exact marginal gain is recomputed; if this value still exceeds the upper bounds of all remaining candidates, it is immediately selected without evaluating others. Otherwise, the upper bound is updated and the candidate is reinserted into the queue.
-- **Design Motivation**: The naïve greedy algorithm has complexity $O(nK)$; in practice, lazy greedy achieves speedups of an order of magnitude, enabling real-time processing of long videos.
+Clustering methods (like k-means) tend to assign budgets to elements in dense regions, often drowning out sparse but critical cues. FLoC uses the facility location objective to formulate the selection as a submodular maximization problem under budget constraints: $S^* = \arg\max_{S \subseteq V,\, |S| \leq K} f(S)$, where $f(S) = \sum_{v \in V} \max_{u \in S} \mathrm{sim}(v, u)$, with $\mathrm{sim}$ representing cosine similarity. This objective finds a representative in the chosen subset $S$ for every original token $v$. The sum is maximized only when $S$ covers all areas of the scene, including sparse ones, naturally balancing representativeness (covering all tokens) and diversity (avoiding redundant neighbors). Submodularity ensures a greedy solution with a $(1-1/e) \approx 0.632$ approximation guarantee.
 
-**3. Temporal Blocking**
+**3. Lazy Greedy Solver: Skipping Computations via Diminishing Returns**
 
-- **Function**: Divides the video into small temporal blocks, within each of which token selection is performed independently.
-- **Mechanism**: Block-wise selection preserves temporal locality while reducing the search space for each optimization step.
-- **Design Motivation**: Improves computational efficiency and naturally supports future streaming processing scenarios where tokens are accumulated in a buffer before processing.
+Solving the facility location objective exactly is NP-hard. A naive greedy approach requires recalculating marginal gains for all candidates every time a token is added, resulting in $O(nK)$ complexity, which is too slow for long videos. FLoC leverages the submodular property of diminishing marginal returns: for any $A \subseteq B \subseteq V$ and token $v$, the gain satisfies $f(A \cup \{v\}) - f(A) \geq f(B \cup \{v\}) - f(B)$. By maintaining a priority queue ordered by previous gain upper bounds, FLoC only recalculates the exact gain for the top candidate. If the recalculated value remains higher than the bounds of other candidates, it is guaranteed to be the optimal choice for the current step. This accelerates the process by an order of magnitude.
 
-**4. Training-Free, Model-Agnostic, and Query-Agnostic Design**
+**4. Triple "Zero-Requirement": Training-free, Model-agnostic, and Query-independent**
 
-- **Function**: The entire compression process requires no training, is not tied to any specific model, and does not require prior knowledge of user queries.
-- **Mechanism**: Selection is based solely on cosine similarity between token embeddings, fully decoupled from both the upstream visual encoder and the downstream LMM.
-- **Design Motivation**: Maximizes generality and deployment flexibility. After a single compression pass, only the compressed tokens need to be stored; multiple queries can be answered without re-compression, saving both computation and memory.
-
-### Loss & Training
-
-- FLoC is a **training-free** method; no loss functions or backpropagation are involved.
-- The lazy greedy algorithm is run at inference time to select the token subset.
-- The compression ratio can be set flexibly (experiments cover $2^{-3}$ to $2^{-5}$).
+The method relies purely on cosine similarity of embeddings, decoupling it from specific architectures. Since the compressed subset is query-independent, a video only needs to be compressed once to be reused for any subsequent questions, saving the overhead of repeated compression inherent in query-aware methods.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Compression comparison on Qwen2.5-VL-7B (compression ratio $2^{-3}$):
+Comparison on Qwen2.5-VL-7B (Compression Ratio $2^{-3}$):
 
-| Method | Video-MME | MLVU | LVB | EgoSchema | Avg. |
-|--------|-----------|------|-----|-----------|------|
-| No compression (ratio=1) | 66.33 | 70.31 | 60.51 | 61.40 | 64.64 |
+| Method | Video-MME | MLVU | LVB | EgoSchema | Average |
+|------|-----------|------|-----|-----------|------|
+| No Compression (ratio=1) | 66.33 | 70.31 | 60.51 | 61.40 | 64.64 |
 | TS-LLaVA | 61.15 | 67.57 | 55.20 | 59.60 | 60.88 |
 | LongVU | 62.19 | 66.61 | 55.42 | 59.40 | 60.91 |
 | DyCoke | 62.11 | 67.53 | 55.12 | 59.60 | 61.09 |
 | **FLoC (Ours)** | **63.33** | **68.81** | **58.12** | **60.00** | **62.57** |
 
-Results on InternVL3-8B (compression ratio $2^{-3}$):
+On InternVL3-8B (Compression Ratio $2^{-3}$):
 
-| Method | Video-MME | MLVU | LVB | EgoSchema | Avg. |
-|--------|-----------|------|-----|-----------|------|
-| No compression | 66.63 | 72.68 | 59.39 | 70.00 | 67.18 |
+| Method | Video-MME | MLVU | LVB | EgoSchema | Average |
+|------|-----------|------|-----|-----------|------|
+| No Compression | 66.63 | 72.68 | 59.39 | 70.00 | 67.18 |
 | LongVU | 64.70 | 69.50 | 55.35 | 69.20 | 64.69 |
 | **FLoC (Ours)** | **64.93** | **71.57** | **56.69** | **69.40** | **65.65** |
 
 ### Ablation Study
 
-Extended temporal input setting (1 FPS, up to 7200 frames, Qwen2.5-VL-7B):
+Extended temporal input scenario (1 FPS, up to 7200 frames, Qwen2.5-VL-7B):
 
-| Max Frames | Method | Video-MME | MLVU | LVB | Avg. |
-|------------|--------|-----------|------|-----|------|
-| 768 | No compression | 66.33 | 70.31 | 60.51 | 65.82 |
+| Max Frames | Method | Video-MME | MLVU | LVB | Average |
+|----------|------|-----------|------|-----|------|
+| 768 | No Compression | 66.33 | 70.31 | 60.51 | 65.82 |
 | 7200 | TS-LLaVA | 65.07 | 72.40 | 62.08 | 66.52 |
 | 7200 | DyCoke | 65.78 | 71.30 | 62.98 | 66.69 |
 
-At a higher compression ratio ($2^{-4}$), FLoC still achieves the best performance, with an average accuracy of 60.09% on Qwen2.5-VL, surpassing all competing methods.
+FLoC maintains best performance at higher compression ratios ($2^{-4}$): average accuracy of 60.09% (Qwen2.5-VL), surpassing all baselines.
 
 ### Key Findings
 
-1. **FLoC consistently and significantly outperforms clustering-based and other compression methods across all compression ratios**, with the most pronounced advantage on LongVideoBench (58.12% vs. 55.42% for the second-best at 8× compression).
-2. **Processing speed substantially exceeds traditional clustering methods**: as shown in Figure 1, FLoC outperforms k-means, spectral clustering, and similar approaches in both accuracy and speed, with processing time often an order of magnitude lower.
-3. **Cross-model generality**: FLoC consistently leads on Qwen2.5-VL-7B, InternVL3-8B, Qwen2-VL, and LLaVA-Next-Video.
-4. **Complementary to extended temporal input**: FLoC remains effective in the 7200-frame setting, maintaining performance comparable to or better than the uncompressed baseline.
-5. **Importance of diversity guarantees**: In sharp contrast to clustering methods (which tend to favor dense regions), the facility location objective in FLoC ensures that sparse but important tokens are retained.
+1. **FLoC significantly outperforms clustering and other compression methods across all ratios**, with the most prominent advantage on LongVideoBench (58.12% vs 55.42% second best at 8x compression).
+2. **Processing speed far exceeds traditional clustering**: FLoC is superior to k-means and spectral clustering in both accuracy and speed, often with lower processing time by an order of magnitude.
+3. **Cross-model Generality**: Consistent leads across Qwen2.5-VL-7B, InternVL3-8B, Qwen2-VL, and LLaVA-Next-Video.
+4. **Complementary to Extended Temporal Input**: Works effectively in 7200-frame scenarios, maintaining performance comparable to or better than no compression.
+5. **Importance of Diversity**: Unlike clustering which favors dense regions, the facility location objective in FLoC ensures sparse but important tokens are preserved.
 
 ## Highlights & Insights
 
-- **Introducing classical combinatorial optimization into visual token compression**: The facility location function has been successfully applied in document summarization and video summarization; this paper is the first to apply it to visual token selection in LMMs, offering both theoretical guarantees and strong empirical performance.
-- The triple "zero-requirement" design—**training-free, model-agnostic, and query-agnostic**—makes FLoC the most deployment-friendly compression solution available.
-- The **compress-once, query-many-times** property is of great practical importance: unlike query-aware methods that require re-compression for every new query, FLoC compresses only once and supports arbitrary subsequent queries.
-- The practical acceleration of lazy greedy makes real-time long video processing feasible.
+- **Introduction of Classical Combinatorial Optimization to Visual Token Compression**: Facility location functions have succeeded in document and video summarization; Ours applies them to LMM visual token selection with both theoretical guarantees and practical effectiveness.
+- **Triple "Zero-Requirement" Design**: Training-free, model-agnostic, and query-independent features make FLoC one of the most deployable compression schemes.
+- **Single Compression for Multiple Queries**: Unlike query-aware methods that re-compress for every query, FLoC only needs one compression pass to handle arbitrary subsequent questions, saving computation and VRAM.
+- **Real-time Viability**: The acceleration from lazy greedy makes online compression for long videos possible.
 
 ## Limitations & Future Work
 
-1. **Purely similarity-based selection may miss semantically important tokens with inconspicuous embeddings**: the facility location objective only considers coverage in embedding space and does not account for semantic importance.
-2. **Boundary effects from temporal blocking**: long-range temporal dependencies across block boundaries may be severed.
-3. **Cosine similarity may not be the optimal similarity measure**: different token types (objects, actions, text, etc.) may require different distance functions.
-4. **Fixed budget $K$ selection**: the optimal compression ratio may vary with video content complexity; adaptive budget selection could yield further improvements.
-5. **Evaluation limited to QA-type tasks**: the effectiveness of FLoC on generative tasks (video captioning, video summarization) remains to be validated.
+1. **Similarity-based selection might miss semantically important tokens with non-salient embeddings**: Facility location focuses on embedding space coverage rather than explicit semantics.
+2. **Boundary Effects from Temporal Chunking**: Long-range temporal dependencies across chunks might be severed.
+3. **Similarity Metric Selection**: Cosine similarity might not be optimal for all token types (objects, actions, text).
+4. **Fixed Budget $K$**: Optimal compression ratios may vary based on video complexity; adaptive budget selection could offer improvements.
+5. **Task Scope**: Primarily evaluated on QA tasks; performance on generative tasks (video captioning, summarization) remains to be verified.
 
 ## Related Work & Insights
 
-- **TS-LLaVA / LongVU**: Compression methods based on temporal redundancy filtering — FLoC's diversity mechanism better preserves sparse yet critical information.
-- **DyCoke**: Dynamic clustering-based compression — FLoC surpasses simple clustering via the global coverage objective of facility location.
-- **PruneVid / Scissor**: Trainable compression methods — their performance is inferior to FLoC, suggesting that model biases introduced by training may negatively affect generalization.
-- The submodular optimization approach is generalizable to image token compression (high-resolution image understanding) and multimodal retrieval (selecting representative subsets from large candidate pools).
+- **TS-LLaVA / LongVU**: Methods based on temporal redundancy filtering—FLoC's diversity mechanism better preserves sparse critical information.
+- **DyCoke**: Dynamic clustering compression—FLoC surpasses simple clustering via global coverage objectives in facility location.
+- **PruneVid / Scissor**: Trainable compression—often performs worse than FLoC, suggesting that training-induced model bias might negatively impact generality.
+- The submodular optimization approach can be extended to image token compression (high-res understanding) and multimodal retrieval.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Applying facility location to token compression is an elegant cross-domain transfer, though lazy greedy itself is a classical algorithm.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Four benchmarks, four models, multiple compression ratios, and detailed speed comparisons constitute a comprehensive experimental design.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem formulation is clear, the comparison with clustering methods is persuasive, and the algorithm description is rigorous.
-- **Value**: ⭐⭐⭐⭐⭐ The training-free, plug-and-play nature confers extremely high practical value, representing a significant contribution to the long video understanding community.
+- **Novelty**: ⭐⭐⭐⭐ Clever cross-domain transfer of facility location to token compression, though lazy greedy is a classic algorithm.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 4 benchmarks, 4 models, various ratios, and detailed speed comparisons.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear problem definition and persuasive comparison with clustering methods.
+- **Value**: ⭐⭐⭐⭐⭐ High practical value due to training-free and plug-and-play characteristics; significant contribution to the long video understanding community.
 
 <!-- RELATED:START -->
 
@@ -156,11 +151,11 @@ At a higher compression ratio ($2^{-4}$), FLoC still achieves the best performan
 
 ## Related Papers
 
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](../../CVPR2026/video_understanding/an_efficient_token_compression_framework_for_visual_object_tracking.md)
+- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](focus_efficient_keyframe_selection_for_long_video_understanding.md)
 - [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
-- [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](../../AAAI2026/video_understanding/apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
 - [\[CVPR 2026\] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](../../CVPR2026/video_understanding/question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)
-- [\[ICML 2026\] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](../../ICML2026/video_understanding/omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)
-- [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](../../CVPR2026/video_understanding/unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
+- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
 
 </div>
 

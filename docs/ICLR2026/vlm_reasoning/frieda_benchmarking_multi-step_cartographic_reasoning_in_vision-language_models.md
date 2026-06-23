@@ -2,156 +2,142 @@
 title: >-
   [Paper Note] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models
 description: >-
-  [ICLR2026][Multimodal VLM][cartographic reasoning] This paper introduces FRIEDA, a benchmark that systematically evaluates large vision-language models (LVLMs) on multi-step…
+  [ICLR 2026][vlm_reasoning][cartographic reasoning] The FRIEDA benchmark is proposed to systematically evaluate the multi-step, cross-map cartographic reasoning capabilities of large vision-language models. Results show the strongest model, Gemini-2.5-Pro, achieves only 38.20% accuracy, significantly lower than the human performance of 84.87%.
 tags:
-  - "ICLR2026"
-  - "Multimodal VLM"
-  - "cartographic reasoning"
-  - "map VQA"
-  - "spatial relations"
-  - "multi-image reasoning"
-  - "benchmark"
+  - ICLR 2026
+  - vlm_reasoning
+  - cartographic reasoning
+  - map VQA
+  - spatial relations
+  - multi-image reasoning
+  - benchmark
 date: 2026-05-08
-content_hash: bb772d96189588f4
+content_hash: 6072835bdf06fd03
 ---
-
 # FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2512.08016](https://arxiv.org/abs/2512.08016)  
 **Code**: [knowledge-computing/FRIEDA](https://github.com/knowledge-computing/FRIEDA)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: cartographic reasoning, map VQA, spatial relations, multi-image reasoning, benchmark
 
 ## TL;DR
 
-This paper introduces FRIEDA, a benchmark that systematically evaluates large vision-language models (LVLMs) on multi-step, cross-map cartographic reasoning. The strongest model, Gemini-2.5-Pro, achieves only 38.20% accuracy, far below the human baseline of 84.87%.
+The FRIEDA benchmark is proposed to systematically evaluate the multi-step, cross-map cartographic reasoning capabilities of large vision-language models. Results show the strongest model, Gemini-2.5-Pro, achieves only 38.20% accuracy, significantly lower than the human performance of 84.87%.
 
 ## Background & Motivation
 
-- Cartographic reasoning is a core human cognitive capability, involving comprehensive interpretation of legends, scale bars, compasses, map text, and geometric features, and is indispensable in real-world applications such as urban planning and disaster response.
-- Existing LVLM research typically treats maps as a special case of charts, neglecting the unique symbolic grammar and spatial relational reasoning that maps require.
-- Current map VQA benchmarks exhibit significant shortcomings: (1) most cover only a subset of spatial relations (e.g., navigation or entity recognition only); (2) map styles are limited (predominantly choropleth or web basemaps); (3) cross-map reasoning is rarely addressed; (4) in-document map retrieval scenarios are absent.
-- Consequently, existing benchmarks cannot comprehensively assess whether LVLMs possess human-level map reading ability.
+- Cartographic reasoning is a core human cognitive ability involving the integrated understanding of legends, scales, compasses, map text, and geometric features, which is indispensable in real-world scenarios like urban planning and disaster response.
+- Existing LVLM research often treats maps as special cases of charts, ignoring map-specific symbolic grammar and spatial relation reasoning requirements.
+- Current map VQA benchmarks have significant limitations: (1) most cover only a subset of spatial relations (e.g., navigation or entity recognition only); (2) limited map styles (mostly choropleth or web basemaps); (3) lack of cross-map reasoning; (4) absence of in-document map retrieval scenarios.
+- Consequently, current benchmarks fail to comprehensively measure whether LVLMs possess human-level map reading capabilities.
 
 ## Core Problem
 
-How to design a cartographic reasoning benchmark that covers all three categories of spatial relations (topological, metric, and directional), requires multi-step reasoning and cross-map integration, and closely reflects real-world document usage scenarios?
+How to design a cartographic reasoning benchmark that covers all three types of spatial relations (topological, metric, directional), requires multi-step reasoning and cross-map integration, and aligns with real-world document usage scenarios?
 
 ## Method
 
-### Task Definition
+### Overall Architecture
 
-FRIEDA organizes questions around four core dimensions:
+FRIEDA is an open-ended VQA benchmark for cartographic reasoning. For each question, given one or more maps from a real document, the model must first interpret cartographic symbols such as the legend, map scale, and compass, then integrate evidence across maps to complete multi-step spatial reasoning, and finally provide a free-text answer. The benchmark consists of three components: a "four-dimensional task design" to define required skills, "expert-curated data construction" to extract and filter questions from real documents, and an "answer-type adaptive evaluation protocol" to fairly score open-ended responses. The final dataset comprises 500 high-quality questions filtered by PhD-level consensus, with nearly 60% requiring joint reasoning across multiple maps.
 
-1. **Spatial Relation Reasoning**: Based on the three major spatial relation categories in the GIS literature:
-    - Topological relations: border (shared boundary), equal (geometric coincidence), intersect (overlap), within (containment)
-    - Metric relations: distance (computing real-world distances using scale bars)
-    - Directional relations: orientation (determining cardinal directions using compass roses)
-2. **Map Element Interpretation**: Requires understanding the semantics of map text, legend, map scale, and compass.
-3. **Cross-Map Reasoning**: Requires aligning shared symbols, labels, and scale bars across multiple maps and integrating multi-source evidence.
-4. **Contextual Setting**: The model must first retrieve the relevant map from multiple maps within the same document before answering.
+### Key Designs
 
-### Benchmark Construction Pipeline
+**1. Four-Dimensional Task Design: Decomposing Human Map Reading Skills**
 
-1. **Map Collection**: Maps are collected from publicly available government reports, environmental assessment documents, geological surveys, and other sources across six thematic domains, covering 32 countries with highly diverse styles.
-2. **Question Generation**: GPT-4/GPT-o3 is used to generate candidate questions, ensuring that no question can be answered via search engines or without viewing the map.
-3. **Expert Review**: Two GIS experts (with 7 and 2 years of experience, respectively) manually verify answers and resolve ambiguous questions.
-4. **Annotation Validation**: Eleven doctoral researchers (8 with cartographic expertise) conduct a four-week annotation process; only questions for which ≥2/3 of annotators agree on the gold-standard answer are retained, yielding a final set of 500 questions.
+Typical map VQA only covers specific spatial subsets, failing to measure human-level capability. FRIEDA aligns with GIS (Geographic Information System) literature to decompose skills into four orthogonal dimensions: The spatial relation dimension covers three categories and six relations—topological (border, equal, intersect, within, based on the 9-Intersection model), metric (distance, requiring scale-based conversion), and directional (orientation, requiring compass interpretation). The map element interpretation dimension requires understanding the semantics of map text, legends, map scales, and compasses. The cross-map reasoning dimension requires aligning symbols, labels, and scales shared across multiple maps. The contextual dimension requires models to retrieve the relevant map from multiple images in a document before answering.
 
-### Dataset Statistics
+**2. Expert-Curated Data Construction: Mitigating Bias via Multi-Level Consensus**
 
-| Item | Count |
-|------|-------|
-| Total questions | 500 |
-| Source documents | 210 |
-| Total maps | 17,030 |
-| Single-map questions | 202 (40.4%) |
-| Multi-map questions | 298 (59.6%) |
-| Questions requiring legend | 417 (83.4%) |
-| Avg. maps per contextual question | 9.5 |
+To ensure the benchmark tests visual reasoning rather than common knowledge, a multi-stage pipeline was implemented. Maps were collected from government reports, environmental impact statements, and geological surveys across 32 countries with diverse styles. Candidate questions were generated by GPT-4/GPT-o3 and filtered to ensure they could not be answered without the map or via search engines. GIS experts verified answers and resolved ambiguities. Finally, 11 PhD researchers performed multiple rounds of annotation, retaining only questions where $\ge 2/3$ of annotators reached a consensus—removing 61 ambiguous questions.
 
-### Evaluation Protocol
+| Item | Quantity |
+|------|------|
+| Total Questions | 500 |
+| Source Documents | 210 |
+| Total Maps | 17,030 |
+| Single-map Questions | 202 (40.4%) |
+| Multi-map Questions | 298 (59.6%) |
+| Questions requiring Legend | 417 (83.4%) |
+| Avg. Maps in Contextual set | 9.5 |
 
-Answers fall into three categories, each evaluated differently:
+**3. Answer-Type Adaptive Evaluation Protocol: Fair Scoring for Open-Ended Answers**
 
-- **Text answers**: Mistral Small 3.1 is used as an LLM-as-Judge for semantic matching rather than exact string comparison.
-- **Distance answers**: Unit-aware parsing + MAPE; answers within 20% error are considered correct.
-- **Directional answers**: Adjacent cardinal direction tolerance is permitted (e.g., if the gold standard is North, NW and NE are also accepted).
+Since answers are free-text, literal matching is unsuitable. FRIEDA uses three sets of rules based on answer types. For text-based answers (topological/semantic labels), Mistral Small 3.1 serves as the LLM-as-Judge for semantic matching, tolerating equivalent expressions (e.g., "Cypress Creek" vs. "Cypress"). For distance-based answers, unit-aware parsing is followed by calculating the Mean Absolute Percentage Error (MAPE), where $\text{MAPE} \le 20\%$ is considered correct. For directional answers, adjacent cardinal direction tolerances are allowed (e.g., NW or NE is accepted if the gold standard is North), avoiding excessive strictness on compass readings.
 
 ## Key Experimental Results
 
-### Overall Performance
+### Main Results
 
 | Model | Accuracy |
-|-------|----------|
-| Human average | 84.87% |
+|------|--------|
+| Human Average | 84.87% |
 | Gemini-2.5-Pro | 38.20% |
 | GPT-5-Think | 37.20% |
 | Claude-Sonnet-4 | 31.60% |
-| Qwen2.5-VL-72B (best open-source) | 25.60% |
+| Qwen2.5-VL-72B (Best Open Source) | 25.60% |
 | Ovis2.5-9B-Think | 25.80% |
 
-### Analysis by Spatial Relation
+### Spatial Relation Analysis
 
 - **Orientation** is the category where models perform best: Gemini-2.5-Pro reaches 71.59%.
-- **Distance** is the most challenging: the best model achieves only 27.47% (GPT-5-Think), and human performance is also relatively lower at 78.28%.
-- For **equal** relations, GPT-5-Think (44.44%) significantly outperforms Gemini-2.5-Pro (33.33%), reflecting its advantage in multi-map reasoning.
-- Claude-Sonnet-4 performs best on **distance** questions, demonstrating stronger scale bar interpretation.
+- **Distance** is the most difficult: the best model achieves only 27.47% (GPT-5-Think), and human performance is also lower (78.28%).
+- For **equal** relations, GPT-5-Think (44.44%) significantly outperforms Gemini-2.5-Pro (33.33%), demonstrating an advantage in multi-map reasoning.
+- Claude-Sonnet-4 performs best on **distance** questions, showing proficiency in scale interpretation.
 
 ### Key Findings
 
-- The accuracy gap between direct and contextual settings is minimal (88.03% question-level consistency), indicating that the primary bottleneck lies in cartographic reasoning itself rather than map retrieval.
-- Model size shows no clear positive correlation with performance; training data and reasoning mechanisms are more critical.
-- Enabling the Think mode improves Ovis2.5-9B by approximately 5%, primarily in directional judgment and multi-map alignment.
+- Minimal accuracy difference between "direct" and "contextual" settings (88.03% question-level consistency) indicates the bottleneck is cartographic reasoning itself, not map retrieval.
+- Model size does not show a strong positive correlation with performance; training data and reasoning mechanisms are more critical.
+- Enabling "Think" mode for Ovis2.5-9B provides a ~5% improvement, primarily in orientation and multi-map alignment.
 
 ### Error Analysis (Gemini-2.5-Pro)
 
 | Error Type | Proportion |
-|------------|------------|
-| Legend misinterpretation (color/symbol mapping errors) | 25.61% |
-| Cross-map interpretation failure | 23.78% |
-| Spatial relation semantic confusion | 16.46% |
-| Scale bar errors | 9.76% |
-| Incorrect map text selection | 8.93% |
-| Counting errors | 6.71% |
+|----------|------|
+| Legend Misinterpretation (color/symbol mapping) | 25.61% |
+| Cross-map Interpretation Failure | 23.78% |
+| Spatial Relation Semantic Confusion | 16.46% |
+| Scale/Metric Error | 9.76% |
+| Map Text Selection Error | 8.93% |
+| Counting Error | 6.71% |
 
 ## Highlights & Insights
 
-- **Comprehensive spatial relation coverage**: The first map VQA benchmark to systematically cover all three major categories—topological, metric, and directional—comprising six relation types in total.
-- **Cross-map reasoning**: 59.6% of questions require joint reasoning across multiple maps, filling a critical evaluation gap in multi-map cartographic reasoning.
-- **Real-world map diversity**: Sourced from 210 real documents across 32 countries and six domains (geology, urban planning, environmental assessment, etc.), avoiding the simplification bias inherent in synthetic maps.
-- **Rigorous quality control**: Expert curation, annotation by 11 doctoral researchers, and a ≥2/3 consensus filter ensure high question quality.
-- **Dual-mode evaluation**: Direct and contextual settings decouple reasoning capability from retrieval capability.
+- **Comprehensive Spatial Coverage**: This is the first map VQA benchmark to systematically cover all three categories and six types of spatial relations.
+- **Cross-Map Reasoning**: 59.6% of questions require joint reasoning across multiple maps, filling a gap in evaluating multi-image integration in cartography.
+- **Real Map Diversity**: Maps from 210 documents across 32 countries cover six domains, avoiding the simplification bias of synthetic maps.
+- **Strict Quality Control**: Expert curation combined with 11 PhD annotators and $\ge 2/3$ consensus filtering ensures high data quality.
+- **Dual-Mode Evaluation**: The direct and contextual settings successfully decouple reasoning ability from retrieval ability.
 
 ## Limitations & Future Work
 
-- The dataset covers only Latin-script documents, excluding maps in Chinese, Arabic, and other languages.
-- The scale of 500 questions is relatively limited, and sample sizes across spatial relation subcategories are uneven.
-- Evaluation of fine-tuned models is absent, making it difficult to assess whether domain adaptation can substantially improve performance.
-- The reliability of LLM-as-Judge evaluation depends on the specific evaluation model and may introduce bias.
-- The effects of chain-of-thought prompting or tool augmentation (e.g., GIS API calls) on performance remain unexplored.
+- The dataset only includes documents with Latin characters, failing to cover maps in other languages like Chinese or Arabic.
+- The scale of 500 questions is relatively limited, and sample sizes for some spatial relation subcategories are unbalanced.
+- There is currently no evaluation of post-fine-tuning performance to judge if domain adaptation can significantly improve results.
+- Reliability of the LLM-as-Judge depends on specific models and may introduce bias.
+- The impact of chain-of-thought prompting or tool-augmentation (e.g., GIS APIs) has not been explored.
 
 ## Related Work & Insights
 
-| Dimension | MapQA/MapWise | MapEval | FRIEDA |
-|-----------|--------------|---------|--------|
-| Map types | Primarily choropleth | Web basemaps | Diverse real-document maps |
-| Spatial relations | None | Partial | All three categories, six types |
-| Multi-map reasoning | No | No | Yes (59.6%) |
-| Document context | No | No | Yes (contextual setting) |
-| Answer format | Multiple choice | MC/short answer | Open-ended |
+| Dimension | MapQA/MapWise | MapEval | FRIEDA (Ours) |
+|----------|--------------|---------|--------|
+| Map Type | Primarily Choropleth | Web Basemaps | Diverse Real Documents |
+| Spatial Relations | N/A | Partial | All 3 categories / 6 types |
+| Multi-map Reasoning | No | No | Yes (59.6%) |
+| Document Context | No | No | Yes (contextual setting) |
+| Answer Format | Multiple Choice | Multiple Choice / Short Answer | Open-ended |
 
-Unlike spatial reasoning work on natural images such as SpatialVLM and SpatialRGPT, FRIEDA focuses on map-specific symbolic systems (legends, scale bars, compass roses), evaluating symbol-to-semantics mapping ability rather than spatial perception in natural scenes.
-
-The benchmark reveals systematic deficiencies in current LVLMs' understanding of symbolic visual representations; legend misinterpretation accounts for the largest share of errors, suggesting insufficient modeling of discrete symbol-to-semantics mappings. Cross-map reasoning failures resemble alignment issues in multi-image VQA and may require explicit spatial alignment modules or attention mechanisms. Distance estimation—which demands scale bar comprehension followed by numerical computation—represents a distinctive failure mode where tool-augmented LLMs may offer a viable solution. Directional reasoning performs relatively well, indicating that models have acquired basic compass recognition, yet still fail when the compass is rotated.
+Unlike natural image spatial reasoning works like SpatialVLM, FRIEDA focuses on map-specific symbolic systems (legends, scales, compasses), evaluating symbol-semantic mapping rather than natural scene spatial perception.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — First benchmark to comprehensively cover multiple spatial relation categories using real-world maps
-- Experimental Thoroughness: ⭐⭐⭐⭐ — 11 models + human baseline + fine-grained error analysis
-- Writing Quality: ⭐⭐⭐⭐ — Task definitions are clear, and GIS theory is tightly integrated with LVLM evaluation
-- Value: ⭐⭐⭐⭐ — Fills an important evaluation gap with practical significance for advancing spatial intelligence in LVLMs
+- Novelty: ⭐⭐⭐⭐ — First comprehensive real-world map reasoning benchmark covering multiple spatial categories.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Includes 11 models, human baselines, and fine-grained error analysis.
+- Writing Quality: ⭐⭐⭐⭐ — Clear task definitions with a strong link between GIS theory and LVLM evaluation.
+- Value: ⭐⭐⭐⭐ — Fills a critical gap in evaluation, meaningful for advancing spatial intelligence in LVLMs.
 
 <!-- RELATED:START -->
 
@@ -160,10 +146,10 @@ The benchmark reveals systematic deficiencies in current LVLMs' understanding of
 ## Related Papers
 
 - [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
-- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/multimodal_vlm/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
-- [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](../../AAAI2026/multimodal_vlm/finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
-- [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](../../ACL2026/multimodal_vlm/omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
-- [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](../../CVPR2026/multimodal_vlm/graphvlm_benchmark_vlm_graph_learning.md)
+- [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/vlm_reasoning/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
+- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
+- [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
+- [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](../../AAAI2026/vlm_reasoning/finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
 
 </div>
 

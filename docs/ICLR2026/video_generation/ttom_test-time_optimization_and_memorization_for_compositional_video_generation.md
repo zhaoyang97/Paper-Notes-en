@@ -2,140 +2,150 @@
 title: >-
   [Paper Note] TTOM: Test-Time Optimization and Memorization for Compositional Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Test-time optimization] This paper proposes TTOM, a framework that aligns attention maps of video generation models with LLM-generated spatiotemporal layouts by optimizing newly introduced p…
+  [ICLR 2026][Video Generation][Paper Note] The TTOM framework is proposed to align the attention of video generation models with LLM-generated spatio-temporal layouts during inference by optimizing newly added parameters. A parameter memorization mechanism is utilized to store historical optimization contexts for reuse, achieving relative improvements of 34% (C
 tags:
-  - "ICLR 2026"
-  - "Video Generation"
-  - "Test-time optimization"
-  - "compositional video generation"
-  - "parameter memorization"
-  - "spatiotemporal layout"
-  - "attention alignment"
+  - ICLR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: bc7f5bff0c682dcf
+content_hash: 4af914b874500993
 ---
-
 # TTOM: Test-Time Optimization and Memorization for Compositional Video Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.07940](https://arxiv.org/abs/2510.07940)  
 **Code**: [https://ttom-t2v.github.io/](https://ttom-t2v.github.io/)  
-**Area**: Video Generation / Compositional Reasoning
-**Keywords**: Test-time optimization, compositional video generation, parameter memorization, spatiotemporal layout, attention alignment
+**Area**: Video Generation / Compositional Reasoning  
+**Keywords**: Test-time Optimization, Compositional Video Generation, Parameter Memorization, Spatio-temporal Layout, Attention Alignment
 
 ## TL;DR
-This paper proposes TTOM, a framework that aligns attention maps of video generation models with LLM-generated spatiotemporal layouts by optimizing newly introduced parameters at inference time, while a parameter memorization mechanism stores historical optimization contexts for reuse. TTOM achieves relative improvements of 34% (CogVideoX) and 14% (Wan2.1) on T2V-CompBench.
+The TTOM framework is proposed to align the attention of video generation models with LLM-generated spatio-temporal layouts during inference by optimizing newly added parameters. A parameter memorization mechanism is utilized to store historical optimization contexts for reuse, achieving relative improvements of 34% (CogVideoX) and 14% (Wan2.1) on T2V-CompBench.
 
 ## Background & Motivation
 
-**Background**: Text-to-video (T2V) models perform well on single-object scenarios but suffer from severe misalignment in compositional scenes involving multiple objects, attributes, motions, and spatial relationships. Existing methods leverage LLMs to generate spatiotemporal layouts and guide generation by modifying latent variables or attention maps.
+**Background**: Text-to-Video (T2V) models perform excellently in single-object scenarios but remain significantly under-aligned in compositional scenarios (multiple objects + attributes + motion + spatial relations). Existing methods use LLMs to generate spatio-temporal layouts and guide generation by modifying latents or attention maps.
 
-**Limitations of Prior Work**: (a) Direct manipulation of latent variables or attention maps disrupts feature distributions, causing flickering and collapse; (b) each sample is processed independently without leveraging historical context; (c) interventions optimized for one sample do not generalize to others.
+**Limitations of Prior Work**: (a) Direct intervention in latents or attention maps disrupts feature distributions, leading to flickering or collapse; (b) Independent per-sample processing fails to utilize historical context; (c) Interventions for one sample cannot generalize to others.
 
-**Key Challenge**: Fine-grained control over compositional layouts is required, yet such control must not corrupt the feature distribution of the pre-trained model.
+**Key Challenge**: The need for fine-grained control over compositional layouts without disrupting the feature distribution of pre-trained models.
 
-**Goal**: Achieve model-agnostic compositional layout alignment at test time while reusing historical optimization results.
+**Goal**: To align compositional layouts at test-time in a model-agnostic manner while reusing historical optimization results.
 
-**Key Insight**: Rather than modifying latent variables, the approach inserts and optimizes new parameters to align attention with the target layout, then stores the optimized parameters in memory for future reuse.
+**Key Insight**: Instead of modifying latents, insert and optimize new parameters to align attention with the layout—then store these optimized parameters in memory for future reuse.
 
-**Core Idea**: Optimize parameters instead of latent variables to achieve layout alignment, and accumulate cross-sample knowledge via parameter memorization.
+**Core Idea**: Optimize parameters rather than latents to align layouts, and use parameter memorization to achieve knowledge accumulation and reuse across samples.
 
 ## Method
 
 ### Overall Architecture
-Streaming setting: users submit prompts sequentially. (1) An LLM generates a spatiotemporal layout (bounding box sequences per object). (2) The memory is queried for a matching entry — if found, parameters are loaded (with optional continued optimization); otherwise, new parameters are initialized. (3) Test-time optimization (TTO) aligns attention maps with the layout. (4) Optimized parameters are stored in memory.
+
+TTOM addresses the dilemma in compositional video generation of requiring fine-grained layout control without destroying the feature distribution of pre-trained models. It treats this problem within a **streaming service** scenario: a system processes a continuous stream of user prompts and accumulates experience over time.
+
+The method begins with an **offline preparation** step: an "Attention-Layout Relevance Probing" measures which layers in the DiT actually determine object layouts, identifying a small subset of high-relevance layers to target for subsequent optimization. Following this, it enters **online streaming processing**: for each incoming prompt, the pipeline first uses an LLM to translate the prompt into a **spatio-temporal layout** (a sequence of bboxes per object across frames). It then queries the **parameter memory** for similar scenes. If a match occurs (hit), the stored parameters are loaded (with optional fine-tuning); if not (miss), it proceeds to **Test-Time Optimization (TTO)**. TTO optimizes a set of newly inserted parameters only within the high-relevance layers to align the model’s attention with the LLM-provided layout. Finally, the optimized parameters and the abstract scene description are written back to memory for future reuse. The entire process leaves the latents untouched and the original model weights frozen.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    PROBE["Attention-Layout Relevance Probing<br/>Offline identification of high-relevance layers"] -.Specifies target layers.-> TTO
+    P["User Prompt Stream (Continuous)"] --> LLM["LLM Spatio-temporal Layout Planning<br/>Bbox sequences per object"]
+    LLM --> MEM{"Check Parameter Memory<br/>Similar scene found?"}
+    MEM -->|Miss| TTO["Test-Time Optimization (TTO)<br/>Optimize new parameters φ in target layers<br/>JSD alignment of attention and layout"]
+    MEM -->|Hit| LOAD["Load Stored Parameters φ*<br/>Direct generation or fine-tune initialization"]
+    TTO --> GEN["Denoise with Frozen VFM to Generate Video"]
+    LOAD --> GEN
+    TTO -->|Insert| WRITE["Write Back to Parameter Memory<br/>Scene abstraction as Key · φ* as Value<br/>LFU eviction if full"]
+    LOAD -.Update.-> WRITE
+```
 
 ### Key Designs
 
-1. **Attention–Layout Correlation Probing**:
+**1. Attention-Layout Relevance Probing: Identifying target layers**
 
-    - Function: Identifies which DiT layers have attention maps most correlated with the final video layout.
-    - Mechanism: Generate a video → segment with GroundingDINO + SAM2 → compute mIoU between per-layer attention maps and segmentation masks. Results reveal large variance in correlation across layers.
-    - Design Motivation: Only layers with high correlation are targeted for optimization, avoiding unnecessary interference.
+DiT contains many attention layers; optimizing all of them blindly is inefficient and causes interference. TTOM performs offline probing: it generates a video normally, segments objects using GroundingDINO + SAM2 as "pseudo-ground truth layouts," and calculates the mIoU between attention maps and segmentation results for each layer. Results show that relevance varies significantly across layers—only a subset of layers truly determines the final object layout. Subsequent TTO focuses optimization only on these high-relevance layers.
 
-2. **Test-Time Optimization (TTO)**:
+**2. Test-Time Optimization (TTO): Optimizing parameters, not latents**
 
-    - Function: Inserts new parameters and optimizes them to align attention with the layout.
-    - Mechanism: Lightweight parameters $\phi$ are inserted into the video foundation model (VFM) and optimized via a JSD alignment loss $L_{align} = \frac{1}{N}\sum_i JSD(\bar{A}_i \| \bar{B}_i)$ that aligns attention maps with Gaussian-smoothed layout masks.
-    - Design Motivation: Optimizing $\phi$ rather than latent variables $z_t$ avoids distribution collapse.
+This is the core distinction between TTOM and "latent guidance" methods. Previous approaches directly modify latents $z_t$ or attention maps to force alignment, which often disrupts feature distributions and causes flickering. TTOM inserts a set of lightweight new parameters $\phi$ into the VFM and optimizes only $\phi$ during inference, allowing the model's attention to learn layout alignment. The alignment objective uses Jensen-Shannon Divergence (JSD) to bring the attention maps $\bar{A}_i$ and Gaussian-smoothed layout masks $\bar{B}_i$ closer as two distributions:
 
-3. **Parameter Memorization**:
+$$L_{align} = \frac{1}{N}\sum_i JSD(\bar{A}_i \| \bar{B}_i)$$
 
-    - Function: Stores historical optimization contexts for future reuse.
-    - Mechanism: Memory $\mathcal{M} = \{g(C): \phi^*_C\}$, where keys are text embeddings of abstracted scene descriptions. Supports insert/read/update/delete operations; LFU eviction is applied when capacity is exceeded.
-    - Design Motivation: Parameters from similar scenes can be loaded directly to skip optimization (efficiency), or used as strong initializations (quality).
+Since external parameters are optimized instead of the latents, the model's feature distribution is preserved, maintaining both alignment and image quality. The authors observe that JSD is more stable than direct L2 alignment.
+
+**3. Parameter Memorization: Turning one-time optimization into reusable knowledge**
+
+Another issue with per-sample optimization is that historical experience is discarded. TTOM equips the system with a parameter memory $\mathcal{M} = \{g(C): \phi^*_C\}$, where the key is the text embedding of a "scene abstraction $C$" through an encoder $g(C)$, and the value is the converged parameter set $\phi^*_C$. This memory supports insert, read, update, and delete operations, using an LFU (Least Frequently Used) policy for eviction. For new requests, parameters from similar scenes can be loaded directly to save time or used as a strong initialization for faster convergence of fine-tuning.
 
 ### Loss & Training
 
-The method is unsupervised — only $L_{align}$ (JSD) is used to optimize the newly inserted parameters at test time. LLM-generated layouts include a validation step to ensure consistency. When a memory match is found, optimization can be skipped entirely for direct inference.
+The entire process is **unsupervised**: only the alignment loss $L_{align}$ (JSD) is used at test-time to optimize the new parameters, requiring no labels. The LLM-generated layout includes a validation step to ensure consistency. Once a memory hit occurs, parameters can be loaded to skip optimization for immediate inference.
 
 ## Key Experimental Results
 
 ### Main Results
 
-T2V-CompBench (7 compositional video generation categories):
+T2V-CompBench (7 categories of compositional video generation):
 
-| Model | Avg. Score | Motion | Numeracy | Spatial |
-|-------|-----------|--------|----------|---------|
-| CogVideoX-5B | baseline | low | low | low |
-| CogVideoX + TTOM | **+34%** | significant gain | significant gain | significant gain |
-| Wan2.1-14B | baseline | medium | medium | medium |
-| Wan2.1 + TTOM | **+14%** | gain | gain | gain |
+| Model | Avg. Score | Motion | Quantity | Spatial |
+|-------|------------|--------|----------|---------|
+| CogVideoX-5B | Baseline | Low | Low | Low |
+| CogVideoX + TTOM | **+34%** | Gain | Gain | Gain |
+| Wan2.1-14B | Baseline | Mid | Mid | Mid |
+| Wan2.1 + TTOM | **+14%** | Gain | Gain | Gain |
 
 Consistent improvements are also observed on VBench.
 
 ### Ablation Study
 
-| Configuration | Observation |
+| Configuration | Description |
 |---------------|-------------|
-| Optimize latents vs. optimize parameters | Parameter optimization yields higher quality without collapse |
-| With memory vs. without memory | Memory significantly improves both efficiency and quality |
-| Layer selection | Optimizing only high-correlation layers achieves the best results |
-| Skip optimization on memory hit | Large efficiency gains with only marginal quality degradation |
-| Transferability | Parameters optimized for one scene transfer effectively to similar scenes |
+| Latent vs. Parameter Optimization | Parameter optimization yields better quality and avoids collapse |
+| With vs. Without Memory | Memory significantly improves efficiency and quality |
+| Layer Selection | Optimizing only high-relevance layers performs best |
+| Skip Optimization on Hit | Drastically improves efficiency with minimal quality trade-off |
+| Transferability | Parameters optimized for one scene generalize to similar scenes |
 
 ### Key Findings
-- TTOM decouples compositional world knowledge — optimized parameters exhibit strong transferability and generalization.
-- Parameter memorization enables progressive improvement in streaming inference, as accumulated compositional patterns can be reused by new scenes.
-- The approach is model-agnostic, demonstrating effectiveness on both CogVideoX and Wan2.1 with distinct architectures.
-- JSD loss is more stable than direct $L_2$ loss.
+- TTOM decouples compositional world knowledge—optimized parameters exhibit strong transferability and generalization.
+- Parameter memorization makes streaming inference improve over time as historical patterns are reused for new scenes.
+- The method is model-agnostic, proving effective on both CogVideoX and Wan2.1 architectures.
+- JSD loss is more stable than direct L2 loss for attention alignment.
 
 ## Highlights & Insights
-- **Optimizing parameters rather than latents**: Avoids feature distribution corruption caused by direct intervention, offering a more principled alternative to latent guidance.
-- **"Better with use" property of parameter memory**: Transforms test-time optimization from a one-shot cost into cumulative knowledge accumulation, conceptually analogous to human experiential learning.
-- **Forward-looking streaming setting**: Frames video generation as a continuous service rather than isolated requests, better reflecting real-world deployment scenarios.
-- **Attention–layout correlation probing**: Provides the first systematic quantification of the correspondence between per-layer DiT attention maps and final video layouts, offering independent analytical value.
+- **Parameter vs. Latent Optimization**: Avoiding direct intervention prevents feature distribution disruption, representing a more elegant control method than "latent guidance."
+- **"The More the Better" Nature of Memory**: It transforms test-time optimization from a one-off cost into knowledge accumulation, conceptually similar to human experiential learning.
+- **Forward-looking Streaming Setup**: Situating video generation within a continuous service framework rather than isolated requests aligns better with real-world deployment.
+- **Attention-Layout Relevance Probing**: This provides an independent analytical value by systematically quantifying the correspondence between DiT attention layers and final layouts for the first time.
 
 ## Limitations & Future Work
-- TTO requires additional optimization steps, resulting in slower cold-start inference.
-- Inaccurate LLM-generated spatiotemporal layouts propagate errors to the generated output.
-- Scene abstraction for memory keys (e.g., "<object A> drifts above <object B>") may be overly coarse.
-- Validation is limited to T2V; extension to image generation or 3D scenes remains unexplored.
-- Memory capacity management and the LFU eviction strategy may be suboptimal.
+- TTO requires additional optimization steps, leading to slower cold-start inference.
+- Errors in LLM-generated spatio-temporal layouts can propagate to the generation results.
+- Scene abstractions (e.g., "<object A> drifts above <object B>") may be too coarse.
+- Validated only on T2V, not yet extended to image generation or 3D scenes.
+- Memory capacity management and LFU strategies may not be optimal.
 
 ## Related Work & Insights
-- **vs. LLM-grounded Diffusion (Lian et al., 2023b)**: Prior work optimizes latent variables, leading to quality degradation. TTOM optimizes newly inserted parameters to avoid this issue.
-- **vs. TTT layers (Sun et al., 2024)**: TTT memory operates within a sample (across frames), whereas TTOM memory operates across samples.
-- **vs. Attend-and-Excite**: The latter controls attention at the image level. TTOM extends attention control to spatiotemporal attention in video.
-- **Implications for video generation**: The paradigm of parameter-level control combined with cross-sample memorization is broadly applicable to other generative control settings.
+- **vs. LLM-grounded Diffusion (Lian et al., 2023b)**: Those methods optimize latents, causing quality degradation; TTOM avoids this by optimizing new parameters.
+- **vs. TTT layers (Sun et al., 2024)**: TTT memory is intra-sample (inter-frame), whereas TTOM focuses on cross-sample parameter memory.
+- **vs. Attend-and-Excite**: That method is for image-level attention; TTOM extends this to spatio-temporal attention in video.
+- **Inspiration for Video Generation**: The paradigm of parameter-level control combined with cross-sample memory can be generalized to other controlled generation tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of TTO and parameter memorization is highly novel; the streaming setting is forward-looking.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two benchmarks, multiple VFMs, and comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Motivation is built up progressively; the framework design is elegant.
-- Value: ⭐⭐⭐⭐⭐ Constitutes a substantial advance in compositional video generation; the parameter memorization paradigm has broad applicability.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of TTO and parameter memory is highly novel; the streaming setup is forward-looking.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient testing across two benchmarks, multiple VFMs, and various ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Elegant framework design with a logically progressive motivation.
+- Value: ⭐⭐⭐⭐⭐ Provides substantial advancement for compositional video generation with a paradigm that has broad application potential.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](../../CVPR2026/video_generation/training-free_motion_factorization_for_compositional_video_generation.md)
-- [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](motionstream_real-time_video_generation_with_interactive_motion_controls.md)
+- [\[CVPR 2026\] VISTA: A Test-Time Self-Improving Video Generation Agent](../../CVPR2026/video_generation/vista_a_test-time_self-improving_video_generation_agent.md)
+- [\[CVPR 2025\] One-Minute Video Generation with Test-Time Training](../../CVPR2025/video_generation/one-minute_video_generation_with_test-time_training.md)
+- [\[CVPR 2026\] Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation](../../CVPR2026/video_generation/reasoning_diffusion_for_unpaired_test_time_out-of-distribution_text-image_to_vid.md)
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
-- [\[AAAI 2026\] DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation](../../AAAI2026/video_generation/dreamrunner_fine-grained_compositional_story-to-video_genera.md)
 
 </div>
 

@@ -2,142 +2,146 @@
 title: >-
   [Paper Note] PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives
 description: >-
-  [ICLR 2026][AIGC Detection][Political Consensus] The PoliCon benchmark is constructed from 2,225 high-quality deliberation records spanning 13 years (2009–2022) of the European Parliament. By designing diverse voting mec…
+  [ICLR 2026][AIGC Detection][Paper Note] The PoliCon benchmark was constructed based on 2,225 high-quality deliberation records from the European Parliament (2009-2022) to evaluate the ability of LLMs to draft consensus resolutions under diverse voting mechanisms, power structures, and political objectives. Results indicate that frontier models perform reason
 tags:
-  - "ICLR 2026"
-  - "AIGC Detection"
-  - "Political Consensus"
-  - "LLM Evaluation"
-  - "European Parliament"
-  - "Social Choice Theory"
-  - "Vote Simulation"
+  - ICLR 2026
+  - AIGC Detection
 date: 2026-05-08
-content_hash: 3fa13b79d7ce3f16
+content_hash: 1b7ea26ec67dc914
 ---
-
 # PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.19558](https://arxiv.org/abs/2505.19558)
 
-**Code**: Available  
+**Code**: Yes  
 **Area**: AIGC Detection / LLM Evaluation
 
-**Keywords**: Political Consensus, LLM Evaluation, European Parliament, Social Choice Theory, Vote Simulation
+**Keywords**: Political consensus, LLM evaluation, European Parliament, Social choice theory, Voting simulation
 
 ## TL;DR
 
-The PoliCon benchmark is constructed from 2,225 high-quality deliberation records spanning 13 years (2009–2022) of the European Parliament. By designing diverse voting mechanisms (simple majority / two-thirds majority / veto power), power structures, and political objectives (utilitarianism / Rawlsianism), the benchmark systematically evaluates the ability of LLMs to draft political consensus resolutions, revealing the shortcomings of frontier models on complex consensus tasks and their inherent partisan biases.
+The PoliCon benchmark was constructed based on 2,225 high-quality deliberation records from the European Parliament (2009-2022) to evaluate the ability of LLMs to draft consensus resolutions under diverse voting mechanisms, power structures, and political objectives. Results indicate that frontier models perform reasonably well on simple majority tasks but fall significantly short on 2/3 majority and security-related issues.
 
 ## Background & Motivation
 
-- **Importance of political consensus**: In pluralistic societies, consensus-building—from infrastructure to welfare policy—is the foundation of the legitimacy and enforceability of collective decisions, yet the process is highly challenging due to value conflicts, power dynamics, and issue complexity.
-- **Exploration of LLMs in governance**: Although LLMs have demonstrated potential in facilitating group deliberation, supporting democratic discussion, and resolving regional conflicts, their ability to reach consensus in genuinely complex political settings remains unsystematically studied.
-- **Limitations of prior work**: Existing political science benchmarks focus on stance detection, ideology analysis, or text summarization, and none specifically evaluate LLMs' ability to draft political consensus resolutions under diverse consensus objectives.
-- **Core problem**: Can LLMs bridge the divide among stakeholders with divergent positions and achieve different types of political consensus in real-world political environments?
+Building political consensus in a diverse society is a fundamental prerequisite for effective governance. While LLMs have demonstrated potential in facilitating group discussions and supporting democratic deliberation, their ability to achieve various consensus objectives in real-world, complex political scenarios has not been systematically evaluated. Existing political science evaluations focus primarily on stance classification or text analysis, lacking an assessment of the LLM's capability to "find consensus."
+
+PoliCon designs four adjustable factors: (1) political issues and their thematic classification; (2) political objectives (Simple Majority / 2/3 Majority / Veto Power / Rawlsian / Utilitarian); (3) number of participating parties (2/4/6 parties); and (4) seat-based power structures. The combination of these factors generates 28,620 scenarios.
 
 ## Method
 
-### Data Collection and Preprocessing
+### Overall Architecture
 
-Data were sourced from three channels: the official European Parliament website, HowTheyVote, and the VoteWatch Europe dataset, covering the 7th–9th parliamentary terms (2009–2022). After rigorous filtering (confirming completed final votes and information completeness) from 30,698 raw records, 2,225 high-quality entries were retained. Each entry consists of a six-tuple: $(issue, topic, background, stances, resolution, votes)$, where DeepSeek-R1 is used for background summarization and stance extraction, and rule-based synonym substitution diversifies the stance data. Voting data are processed by matching each MEP to their party and rounding support rates to integers in the range 0–9.
+PoliCon abstracts a political consensus task as "drafting a resolution that can be passed given multi-party stances" and builds an evaluation loop around real-world European Parliament deliberation data. It first performs **structural cleaning** on 13 years of parliamentary records into a sextuple corpus, which is then expanded into tens of thousands of scenarios using a **four-factor task environment**. Tested LLMs draft an open-ended resolution for each scenario, which is finally processed by a **two-stage evaluator**: first simulating votes for each party and then aggregating results based on the conditions of the selected **political objective**. This maps resolutions to comparable scalar scores, providing a unified evaluation for six frontier models.
 
-### Task Environment Design
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Raw European Parliament Records<br/>(2009-2022, 30,000+ entries)"] --> CLEAN
+    subgraph CLEAN["Structural Cleaning"]
+        direction TB
+        B["Three-channel Aggregation<br/>+ Strict Filtering"] --> C["Sextuple Corpus<br/>(2,225 entries)"]
+    end
+    CLEAN --> ENV
+    subgraph ENV["Four-factor Task Environment"]
+        direction TB
+        D["Issue × Party Num<br/>× Power Structure Combinations"] --> E["28,620 Scenarios"]
+    end
+    ENV --> F["Tested LLM<br/>Drafts Consensus Resolution"]
+    G["Five Political Objectives<br/>SM·2/3M·VP·Rawls·Util<br/>→ Passing Conditions"] --> EVAL
+    F --> EVAL
+    subgraph EVAL["Two-stage Evaluator"]
+        direction TB
+        H["Stage 1: LLM-as-judge<br/>Party Voting Scores"] --> I["Stage 2: Aggregated by Objective<br/>Determine Consensus Achievement"]
+    end
+    EVAL --> J["Uniform Scoring for<br/>6 Frontier Models"]
+```
 
-PoliCon constructs the task environment via four adjustable factors:
+### Key Designs
 
-| Factor | Description | Specific Settings |
-|--------|-------------|-------------------|
-| Political Issue | The political question under discussion and its thematic category | 5 coarse + 19 fine-grained topic types (security, economy, etc.) |
-| Political Objective | The criterion for achieving consensus | Pass resolution / Rawlsianism / Utilitarianism |
-| Participants | Stakeholders varying in number and position | 2, 4, or 6 parties |
-| Power Structure | Influence differences arising from seat allocation | Randomly assigned seat proportions $\sum_{i=1}^{n} w_i = 1$ |
+**1. Structural cleaning of real deliberation data: Transforming 13 years of parliamentary records into computable sextuples**
 
-### Voting Mechanisms and Political Objectives
+Directly evaluating using raw parliamentary records is hindered by noise and missing data. The first step involves organizing data into a uniform format. The authors aggregated 30,698 raw records from the 7th-9th European Parliaments (2009-2022) via the EP official website, HowTheyVote, and VoteWatch Europe. After strict filtering for completed votes and full information, 2,225 records were retained. Each record was structured as a sextuple $(issue, topic, background, stances, resolution, votes)$. DeepSeek-R1 was utilized for background summarization and stance extraction, with rule-based synonym replacement to expand the diversity of stance expressions. For voting, each MEP was matched to their party, and support rates were rounded to integers from 0-9. Issues were categorized into 5 broad and 19 fine-grained categories (e.g., security, economy), enabling difficulty analysis by theme.
 
-The voting mechanisms simulate real-world collective decision-making rules. The overall vote outcome is $u = \sum_{i=1}^{n} w_i u_i$, where $w_i$ is the seat proportion of party $p_i$ and $u_i$ is that party's vote score:
+**2. Four-factor task environment: Using adjustable knobs to cover the consensus spectrum from easy to difficult**
 
-| Mechanism / Objective | Passing Condition | Real-World Analog |
-|-----------------------|-------------------|-------------------|
-| Simple Majority (SM) | $u \geq 5$ | Routine votes in most parliaments |
-| Two-Thirds Majority (2/3M) | $u \geq 6.67$ | Major decisions such as constitutional amendments |
-| Veto Power (VP) | $u \geq 5$ and $u_k \geq 6$ | UN Security Council permanent member veto |
-| Rawlsianism (Rawls) | $u = \min_{i \in n}(u_i)$, maximizing the least advantaged party | Protecting minority group interests |
-| Utilitarianism (Util) | $u = \sum_{i=1}^{n} u_i$, maximizing aggregate utility | Maximizing overall social welfare |
+A single scenario cannot capture the diversity of political consensus. Thus, PoliCon decomposes the task into four independently adjustable factors: political issues (5 major/19 minor categories), political objectives (5 consensus standards), number of participants (2/4/6 parties), and power structure. Power structures are assigned based on a random distribution of seat proportions $w_i$ such that $\sum_{i=1}^{n} w_i = 1$, characterizing differences in influence and exposing potential model biases toward specific parties. With 15 configurations (3 party counts × 5 settings) applied to 2,225 records, 28,620 specific scenarios were generated to provide a systematic range of difficulty.
 
-Combining 3 party-count settings × 5 configurations yields 15 task setups covering 28,620 specific political scenarios.
+**3. Five political objectives: Encoding real-world voting rules into decidable passing conditions**
 
-### Open-Ended Evaluation Framework
+To automatically judge whether "consensus is reached," fuzzy political goals must be converted into clear numerical conditions. The total voting result is weighted by seats: $u = \sum_{i=1}^{n} w_i u_i$ (where $u_i$ is party $p_i$'s 0-9 voting score). Each objective corresponds to a passing rule: Simple Majority (SM) requires $u \geq 5$; 2/3 Majority (2/3M) requires $u \geq 6.67$, corresponding to major decisions like constitutional amendments; Veto Power (VP) requires $u \geq 5$ and $u_k \geq 6$ for a specific key party $k$, analogous to the UN Security Council; Rawlsianism takes $u = \min_{i}(u_i)$ to maximize the benefit of the most disadvantaged party; Utilitarianism takes $u = \sum_{i} u_i$ to maximize total utility. Consequently, free-text resolutions are converged into scalar values for unified comparison.
 
-The evaluation framework is grounded in Social Choice Theory and comprises two modules:
+**4. Social choice theory-based two-stage evaluator: Enabling automatic scoring of open-ended resolutions**
 
-1. **Vote Simulation Module**: Adopts an LLM-as-a-judge approach (GPT-4o-mini backbone) to produce a vote score in the range 0–9 for each party: $u_i = \text{JUDGE}(\cdot \mid \text{background}, s_i, \text{resolution})$, considering both consistency between the resolution and each party's stance and overall feasibility.
-2. **Consensus Assessment Module**: Maps all votes to a quantitative score according to the specific task definition and determines whether the corresponding political consensus objective has been achieved.
+As resolutions are open-ended text without gold labels, a two-stage evaluator ("Simulate Voting, then Aggregate Decision") was developed. The first stage uses an LLM-as-a-judge (GPT-4o-mini backbone) to generate a 0-9 voting score $u_i = \text{JUDGE}(\cdot \mid \text{background}, s_i, \text{resolution})$ for each party, considering consistency with the party's stance and feasibility. The second stage aggregates all scores according to the passing conditions of the chosen political objective to determine if consensus was reached. Validation on approximately 41,800 test samples showed a Pearson correlation of 0.83 between the evaluator and real votes, with a mean error of only 1.61 compared to human annotators (72% of errors within $\pm 1.92$), proving the model-simulated voting is a reliable proxy for real passing rates.
 
-## Experimental Setup
+### Loss & Training
 
-- **Evaluated models**: 6 representative LLMs—GPT-4o, Gemini-2.5-Flash (thinking), DeepSeek-V3.1 (thinking), Qwen2.5-72B, Qwen2.5-32B, and Llama-3.3-70B.
-- **Inference parameters**: temperature=0.7, top-p=0.95.
-- **Baselines**: Random (randomly selecting one party's stance as the resolution) and Greedy (selecting the stance of the party with the most seats as the resolution).
-- **Evaluator validation**: Compared against ground-truth votes on approximately 41,800 test samples, achieving a Pearson correlation of 0.83; in human annotator agreement experiments, the mean error was only 1.61 and 72% of errors fell within $\pm 1.92$.
+PoliCon is an evaluation-only framework and does not involve model training. All tested LLMs generated resolutions using inference settings of temperature=0.7 and top-p=0.95. The evaluator was also called in inference mode.
 
 ## Key Experimental Results
 
-| Model | SM (2/4/6 parties) | 2/3M (2/4/6 parties) | VP (2/4/6 parties) | Rawls (2/4/6 parties) | Util (2/4/6 parties) |
-|-------|--------------------|----------------------|--------------------|----------------------|----------------------|
-| Random | 0.56/0.53/0.56 | 0.29/0.20/0.14 | 0.36/0.35/0.38 | 2.59/2.01/1.77 | 5.04/4.78/4.80 |
-| Greedy | 0.80/0.74/0.73 | 0.45/0.37/0.28 | 0.46/0.44/0.44 | 2.61/2.02/1.74 | 5.07/4.79/4.79 |
-| Qwen2.5-32B | 0.74/0.80/0.87 | 0.34/0.39/0.40 | 0.47/0.55/0.62 | 4.02/3.50/3.19 | 6.01/6.27/6.38 |
-| Llama-3.3-70B | 0.72/0.78/0.86 | 0.37/0.45/0.48 | 0.46/0.55/0.63 | 3.98/3.42/3.11 | 6.08/6.40/6.56 |
-| Qwen2.5-72B | 0.76/0.82/0.88 | 0.40/0.47/0.49 | 0.50/0.57/0.65 | 4.11/3.46/3.13 | 6.11/6.39/6.53 |
-| GPT-4o | 0.83/0.87/0.92 | 0.51/0.57/0.63 | 0.54/0.62/0.69 | 4.50/3.80/3.42 | 6.40/6.62/6.80 |
-| DeepSeek-V3.1 | 0.87/0.89/0.93 | 0.52/0.57/0.63 | 0.58/0.64/0.71 | 4.52/3.78/3.42 | 6.38/6.62/6.77 |
-| Gemini-2.5 | **0.88/0.90**/0.90 | **0.53/0.57**/0.58 | **0.61/0.66**/0.70 | **4.60/3.91/3.51** | 6.39/6.56/6.68 |
+### Main Results (6-Party Setting)
 
-**Key Findings**:
-- Gemini-2.5 achieves the best overall performance, attaining top results on 60% of tasks, followed closely by DeepSeek-V3.1 and GPT-4o.
-- Model pass rates reach 87–93% on SM tasks but drop sharply to 52–63% on 2/3M tasks.
-- Thinking models (Gemini-2.5, DeepSeek-V3.1) generally outperform non-thinking models.
-- As the number of parties increases, the pass rate for resolution tasks actually rises (because task construction preferentially selects parties with the greatest stance divergence, making reconciliation harder with fewer parties), whereas performance on the Rawls objective declines (more parties make it harder to satisfy all parties simultaneously).
-- LLMs lack the ability to form coalitions among smaller parties to achieve collective welfare; successful proposals tend to rely on the support of the largest party.
-- Topics involving security and civil rights are more challenging than those related to industrial development.
+| Model | SM | 2/3M | VP | Rawls | Util |
+|------|-----|------|-----|-------|------|
+| Random | 0.56 | 0.14 | 0.38 | 1.77 | 4.80 |
+| Greedy | 0.73 | 0.28 | 0.44 | 1.74 | 4.79 |
+| GPT-4o | 0.87 | 0.51 | 0.66 | 2.36 | 5.38 |
+| DeepSeek-V3.1 | **0.92** | **0.58** | **0.73** | **2.59** | **5.55** |
 
-## Key Designs
+### Ablation Study
 
-1. **Multi-dimensional task environment construction**: By combining four factors—political issue, political objective, number of participants, and power structure—28,620 political scenarios covering diverse consensus objectives are generated from 2,225 real records, ensuring comprehensive and realistic evaluation.
-2. **Social Choice Theory-based evaluation framework**: LLM-as-a-judge vote simulation is integrated with Social Choice Theory (simple majority / two-thirds majority / veto power / Rawlsianism / utilitarianism) to enable automated quantitative evaluation of open-ended text outputs.
-3. **Partisan bias detection mechanism**: By randomly reassigning seat proportions and observing the resulting vote score distributions, the study finds that LLM scores still tend toward the real vote distribution (rather than the uniform distribution of the random baseline), thereby quantitatively revealing the inherent partisan biases of the models.
+| Setting | Difficulty Change | Description |
+|------|---------|------|
+| 2→6 Parties | SM stable, 2/3M drops sharply | More participants make reaching a supermajority harder. |
+| Security Issues | Significant drop for all models | Impact of political sensitivity. |
+| Dominant Party Bias | Models tend to cater to dominant parties | Rather than forming coalitions with small parties. |
+
+### Key Findings
+
+- All models perform well on Simple Majority (>80%), but performance drops significantly on 2/3 Majority (~40-58%).
+
+- Security and defense issues are the most difficult thematic categories—potentially because safety training of models restricts related outputs.
+
+- LLMs tend to prioritize the stances of parties with the most seats rather than attempting to unite small parties into a coalition, revealing an implicit "power-first" bias in models.
+
+- The Greedy baseline (always choosing the dominant party's stance) is surprisingly effective in certain settings, suggesting that LLM strategies are sometimes no better than simple heuristics.
+
+- Consistency analysis with 20 human annotators confirms the reliability of the evaluation framework.
 
 ## Highlights & Insights
 
-- ⭐⭐⭐ **Novelty**: The first benchmark to systematically evaluate LLM performance across multiple political consensus objectives; the integration of Social Choice Theory into the LLM evaluation framework represents a novel and practically significant problem formulation.
-- ⭐⭐⭐ **Experimental Design**: The four-factor combination generates 28,620 scenarios with broad coverage; the high agreement between the evaluator and ground-truth votes (Pearson 0.83) provides a solid validation foundation.
-- ⭐⭐ **Practicality**: While the work reveals LLM limitations and biases, it remains far from genuinely assisting political decision-making; the paper is primarily diagnostic and lacks concrete proposals for improving models' consensus-building capabilities.
-- ⭐⭐ **Limitations**: The evaluator itself is based on GPT-4o-mini, introducing circularity concerns in model self-evaluation; random seat assignment increases diversity but may deviate from real power dynamics; generalizability beyond European parliamentary data to other political systems remains uncertain.
-- **Potential extensions**: (1) Introducing multi-round negotiation mechanisms rather than single-shot resolution generation; (2) exploring prompting strategies or fine-tuning methods to improve performance on harder tasks such as two-thirds majority; (3) extending the framework to other collective decision-making settings such as corporate governance or community deliberation.
+- The first benchmark to systematically evaluate the political consensus capabilities of LLMs, featuring a sophisticated design (multi-objective + multi-power structure).
+
+- Reveals implicit political biases in LLMs: a tendency to cater to powerful parties rather than seeking genuine compromise.
+
+- The evaluation framework based on social choice theory provides an actionable solution for assessing open-ended political tasks.
+
+## Limitations & Future Work
+
+- Based exclusively on European Parliament data; performance under different political systems remains to be evaluated.
+
+- The voting simulation evaluator (GPT-4o-mini) may possess its own biases.
+
+- Real-world political negotiations involve dynamic processes such as compromises and quid pro quo, whereas this study is currently limited to single-round generation.
 
 ## Related Work & Insights
 
-| Direction | Representative Work | Relation to This Paper |
-|-----------|--------------------|-----------------------|
-| LLM-assisted democratic deliberation | Tessler et al. 2024; Fish et al. 2023 | Prior work focuses on opinion aggregation and group statement generation; this paper further evaluates consensus achievement under formal political institutions (voting mechanisms + power structures). |
-| Political science benchmarks | POLCA; Liang et al. 2025 | POLCA only judges whether statements appear in a final agreement; Liang focuses on UN position simulation; this paper is the first to construct a multi-objective political consensus evaluation benchmark. |
-| LLM bias detection | Stammbach et al. 2024; Chalkidis & Brandl 2024 | Prior work detects whether models have inherent political leanings; this paper further reveals how such biases affect actual consensus-building performance. |
-| Negotiation and game theory | Lewis et al. 2017; Bianchi et al. 2024 | Game-theoretic negotiation focuses on two-party transaction scenarios; this paper addresses multi-party, multi-objective, and varying power-structure settings in real political consensus problems. |
+- Complementary to the group consensus work by Tessler et al. (2024), but focuses on more formal political scenarios.
 
----
-title: >-
-  [Paper Notes] PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives
-description: >-
-  [ICLR 2026][Political Consensus] PoliCon is a benchmark constructed from 2,225 high-quality European Parliament deliberation records (2009–2022), evaluating LLMs' ability to draft consensus resolutions under diverse voting mechanisms, power structures, and political objectives. Results show that frontier models perform reasonably well on simple majority tasks but fall significantly short on two-thirds majority and security-related topics.
-tags:
-  - ICLR 2026
-  - Political Consensus
-  - LLM Evaluation
-  - European Parliament
-  - Social Choice Theory
-  - Vote Simulation
----
+- Extensible to other collective decision-making evaluation scenarios, such as corporate decision-making or community governance.
+
+## Rating
+
+- Novelty: ⭐⭐⭐⭐ First benchmark for political consensus evaluation.
+
+- Experimental Thoroughness: ⭐⭐⭐⭐ 6 models + multiple settings + human validation.
+
+- Writing Quality: ⭐⭐⭐⭐ Clear structure.
+
+- Value: ⭐⭐⭐⭐ Insightful for AI governance.
 
 <!-- RELATED:START -->
 
@@ -146,8 +150,8 @@ tags:
 ## Related Papers
 
 - [\[ACL 2026\] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection](../../ACL2026/aigc_detection/mdok-style_at_semeval-2026_task_10_finetuning_llms_for_conspiracy_detection.md)
-- [\[NeurIPS 2025\] Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content](../../NeurIPS2025/aigc_detection/can_llms_write_faithfully_an_agent-based_evaluation_of_llm-generated_islamic_con.md)
 - [\[NeurIPS 2025\] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](../../NeurIPS2025/aigc_detection/asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)
+- [\[NeurIPS 2025\] Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content](../../NeurIPS2025/aigc_detection/can_llms_write_faithfully_an_agent-based_evaluation_of_llm-generated_islamic_con.md)
 - [\[ACL 2026\] From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment](../../ACL2026/aigc_detection/from_scoring_to_explanations_evaluating_shap_and_llm_rationales_for_rubric-based.md)
 - [\[ACL 2026\] Who Wrote This Line? Evaluating the Detection of LLM-Generated Classical Chinese Poetry](../../ACL2026/aigc_detection/who_wrote_this_line_evaluating_the_detection_of_llm-generated_classical_chinese_.md)
 

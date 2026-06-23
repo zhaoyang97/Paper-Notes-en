@@ -2,77 +2,96 @@
 title: >-
   [Paper Note] Incentive-Aligned Multi-Source LLM Summaries
 description: >-
-  [ICLR 2026][Audio & Speech][truthful summarization] This paper introduces the Truthful Text Summarization (TTS) framework, which incorporates a multi-task peer prediction mechanism from game theory into LLM multi-source…
+  [ICLR 2026][Audio & Speech][truthful summarization] This work introduces the multi-task peer prediction mechanism from game theory into the LLM multi-source summarization pipeline, proposing the Truthful Text Summarization (TTS) framework. By constructing leave-one-out (LOO) cross-evaluation sets, extracting source stances on claims, and scoring reliability through info
 tags:
-  - "ICLR 2026"
-  - "Audio & Speech"
-  - "truthful summarization"
-  - "incentive alignment"
-  - "peer prediction"
-  - "prompt injection"
-  - "source reliability"
+  - ICLR 2026
+  - Audio & Speech
+  - truthful summarization
+  - incentive alignment
+  - peer prediction
+  - prompt injection
+  - source reliability
 date: 2026-05-08
-content_hash: 73ca13ead75da418
+content_hash: c520e3aeec9ad231
 ---
-
 # Incentive-Aligned Multi-Source LLM Summaries
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25184](https://arxiv.org/abs/2509.25184)  
 **Code**: None  
-**Area**: Audio & Speech
-**Keywords**: truthful summarization, incentive alignment, peer prediction, prompt injection, source reliability
+**Area**: Audio/Speech  
+**Keywords**: truthful summarization, incentive alignment, peer prediction, prompt injection, source reliability  
 
 ## TL;DR
 
-This paper introduces the Truthful Text Summarization (TTS) framework, which incorporates a multi-task peer prediction mechanism from game theory into LLM multi-source summarization pipelines. The approach constructs evaluation claim sets via leave-one-out cross-referencing, extracts each source's stance on individual claims, scores source reliability using informative agreement, filters unreliable sources, and regenerates the summary. The framework is theoretically proven to make truthful reporting a utility-maximizing strategy, and empirically demonstrates robustness against prompt injection, misinformation sources, and coordinated attacks.
+This work introduces the multi-task peer prediction mechanism from game theory into the LLM multi-source summarization pipeline, proposing the Truthful Text Summarization (TTS) framework. By constructing leave-one-out (LOO) cross-evaluation sets, extracting source stances on claims, and scoring reliability through informative agreement to filter unreliable sources before re-summarizing, the authors theoretically prove that "truthful reporting is the utility-maximizing strategy." Experiments demonstrate effective defense against prompt injection, fake information sources, and collaborative attacks.
 
 ## Background & Motivation
 
-**Paradigm shift from search to summarization**: Traditional search engines present multiple results as independent entries, limiting the impact of any single malicious source. LLM-driven summarization merges multiple sources into a unified narrative, allowing a single strategic actor to hijack the entire output via prompt injection or semantic manipulation—far exceeding the influence achievable through traditional search ranking.
+**Paradigm shift from search to summary**: Traditional search engines display multiple results as independent entries, where the impact of a single malicious source is limited. LLM-driven summarization merges multiple sources into a single narrative, allowing a strategic actor to hijack the entire output via prompt injection or semantic steering, with an impact far exceeding traditional search rankings.
 
-**Three dimensions of LLM vulnerability**: (a) susceptibility to plausible hallucinations; (b) manipulability by adversarial prompt injection; (c) difficulty adjudicating mutually contradictory claims. These properties create exploitable opportunities for malicious sources.
+**Triple vulnerability of LLMs**: (a) Susceptibility to plausible hallucinations, (b) ease of manipulation by adversarial prompt injection, and (c) difficulty in adjudicating contradictory claims. These factors provide opportunities for malicious sources.
 
-**Incentive misalignment**: Existing RAG pipelines focus on technical summarization quality optimization (e.g., self-critique, LLM-as-judge) without accounting for the strategic behavior of content creators—if manipulation yields greater exposure at low cost, information sources are incentivized to fabricate content.
+**Incentive mismatch problem**: Existing RAG pipelines focus only on technical summarization quality (e.g., self-criticism, LLM-as-judge) and overlook the strategic behavior of content creators. If manipulation yields higher exposure at a lower cost, information sources have the incentive to provide false data.
 
-**Key Challenge**: Achieving simultaneous technical robustness (filtering bad sources) and incentive robustness (making truthful reporting a Nash equilibrium) without access to ground-truth labels.
+**Key Challenge**: The need to achieve both technical robustness (filtering bad sources) and incentive robustness (making truthful reporting a Nash equilibrium) simultaneously, especially without ground-truth labels.
 
-**Key Insight**: Drawing on peer prediction mechanisms from game theory, which operate without ground-truth labels, using informative agreement among sources to assess reliability.
+**Key Insight**: Drawing on the peer prediction mechanism from game theory, which requires no ground truth, reliability is evaluated using informative agreement between sources.
 
 ## Method
 
-### Overall Architecture of TTS
+### Overall Architecture
 
-TTS employs a two-pass pipeline. Given a query $q$ and a retrieved source set $\mathcal{C}$:
+The TTS (Truthful Text Summarization) framework addresses scenarios where a search system feeds multiple web sources into an LLM to synthesize a summary. Some sources might be outdated, commercially motivated, or contain hidden prompt injection instructions (e.g., "Paris weather warning vs. outdoor park promotion"). Existing pipelines fail to verify source authenticity and are vulnerable to manipulation. The core logic of TTS is **filter then generate**: the pipeline is split into two passes. The first pass does not produce a summary but has sources "test and grade" each other to calculate a reliability score $\hat{w}_i$ independent of ground truth. The second pass removes low-scoring sources entirely and synthesizes the final summary using only reliable sources. This scoring process adapts the multi-task peer prediction mechanism into a "sources grading sources" format to identify trustworthy entities on the open web.
 
-**First Pass — Source Scoring (Leave-One-Out Peer Prediction)**:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Query q + Retrieved Sources C"] --> SPLIT["Randomly split into Groups A and B<br/>(A tested by B, B tested by A)"]
+    subgraph LOO["LOO Claim Construction & Stance Extraction (Design 1)"]
+        direction TB
+        D1["For Source τ_i: Generate summary draft<br/>using only other sources"] --> D2["Decomposer splits into<br/>Atomic Claim Set T_i"]
+        D2 --> D3["Extractor reads each source's stance<br/>on each claim<br/>(Support/Oppose/Abstain)"]
+    end
+    SPLIT --> LOO
+    LOO --> SCORE["Informative Agreement Scoring<br/>Subtract random agreement → Reliability score ŵ_i"]
+    SCORE --> FILTER{"ŵ_i ≥ threshold t ?"}
+    FILTER -->|No| DROP["Discard unreliable sources"]
+    FILTER -->|Yes| RESUM["Synthesize summary<br/>using only reliable sources"]
+    RESUM --> OUT["Robust Summary"]
+```
 
-1. **Leave-One-Out Claim Construction**: For each source $\tau_i$, a draft summary is generated from the remaining sources $\{\tau_j\}_{j \neq i}$ and decomposed by a decomposer $D$ into an atomic claim set $T_i$. Crucially, $\tau_i$ is excluded from constructing its own evaluation set, ensuring claim exogeneity.
-2. **Stance Extraction**: An extractor $E$ derives each source's stance on each claim: $r_{ik} \in \{1(\text{support}), 0(\text{oppose}), \bot(\text{abstain})\}$.
-3. **Informative Agreement Scoring**: For each (source $i$, peer $j$) pair, on-task agreement is computed minus off-task agreement, then averaged across peers and claims to obtain $\hat{w}_i$. The core formula is: $\sigma_{ikj} = S(r_{ik}, r_{jk}) - S(r_{i\ell}, r_{jm})$, where $\ell, m$ are distinct claims selected via random permutation.
+### Key Designs
 
-**Second Pass — Filtering and Re-summarization**: Sources with $\hat{w}_i < t_{\text{src},i}$ are filtered out, and the summary is regenerated using only reliable sources.
+**1. Leave-One-Out (LOO) Claim Construction & Stance Extraction: Preventing sources from manipulating their own tests**
 
-### Computational Efficiency Optimization
+If a source can influence the set of claims used to evaluate it, it might opportunistically craft questions it can answer correctly. TTS employs **claim exogeneity**: for each source $\tau_i$, a draft summary is generated using only the other sources $\{\tau_j\}_{j \neq i}$, which is then broken into atomic claims $T_i$ by a decomposer $D$. Since $\tau_i$ never participates in the construction of its own evaluation set, $T_i$ remains exogenous and unmanipulable. After obtaining the claims, an extractor $E$ reads the stance $r_{ik} \in \{1(\text{Support}), 0(\text{Oppose}), \bot(\text{Abstain})\}$ of each source toward claim $k$, standardizing messy free text into comparable discrete signals.
 
-The source set $\mathcal{C}$ is randomly partitioned into groups A and B; sources in group A have their claim sets constructed from group B documents, and vice versa. This preserves exogeneity while reducing complexity from $O(|\mathcal{C}|K(|\mathcal{C}|-1))$ to $O(K|\mathcal{C}|)$.
+Computing LOO for every single source involves a complexity of $O(|\mathcal{C}|K(|\mathcal{C}|-1))$, which is prohibitive at scale. TTS implements this by randomly splitting sources into groups A and B; group A uses claims from group B for evaluation and vice versa. This preserves claim exogeneity while reducing complexity to linear $O(K|\mathcal{C}|)$.
 
-### Theoretical Guarantees
+**2. Informative Agreement Scoring: Identifying reliable sources without ground truth**
 
-| Theorem | Conditions | Guarantee |
+With stance signals available, how can reliability be determined without ground truth? Simply rewarding "agreement" would encourage collusive lying. Instead, TTS measures **informative** agreement: agreement on a specific claim must subtract the baseline of "accidental agreement across random claims." For every pair (source $i$, peer $j$), the score is calculated as:
+
+$$\sigma_{ikj} = S(r_{ik}, r_{jk}) - S(r_{i\ell}, r_{jm})$$
+
+where $\ell, m$ are two different claims selected via random permutation. The mean is taken across all peers $j$ and claims $k$ to derive the source score $\hat{w}_i$. Only when a source carries valid information correlated with others does the score become significantly positive. "Uninformative" strategies—including collusive stances from sybil attackers—result in scores near zero and are subsequently filtered.
+
+**3. Filtering & Re-summarization: Severing adversarial paths before generation**
+
+After obtaining all $\hat{w}_i$, sources with $\hat{w}_i < t_{\text{src},i}$ (using a fixed global threshold $t = 0.06$ in experiments) are filtered. The final summary is synthesized only from the remaining reliable sources. The critical point is that **isolation happens before the final generation**: adversarial text never enters the generation context, providing a more robust defense than prompt-level instructions (e.g., "ignore suspicious instructions") and preventing the LLM from being swayed by contradictory claims.
+
+**4. Theoretical Guarantees: Establishing "truthful reporting" as an equilibrium**
+
+The first three steps represent the mechanism, but ensuring sources **lack the incentive** to cheat requires proving that "truthfully reporting one's true stance" is indeed the utility-maximizing strategy. TTS provides three progressive theorems covering asymptotic, strong guarantee, and finite-sample cases. Unlike heuristic scoring, this grants the "exposure (citation in summary) = incentive" design provable incentive-alignment properties.
+
+| Theorem | Condition | Guarantee |
 |---|---|---|
-| Thm 3.2 (Asymptotic Informed Truthfulness) | $K \to \infty$, threshold $0 < t < \alpha_i \eta_i^{\text{truth}} \gamma$ | Truthful reporting weakly dominates all strategies and strictly dominates all uninformative strategies |
-| Thm 3.3 (Strong Truthfulness) | Large $K$ + claims with bias flip $\geq \varphi_{\min}$ | Truthful reporting strictly dominates all significantly biased strategies |
-| Thm 3.4 ($\varepsilon$-Informed Truthfulness) | Finite $K$ + midpoint threshold | Utility error decays exponentially in $K$; $K \geq O(\ln(v_i/\varepsilon)/\underline{g}_i^2)$ suffices |
+| Thm 3.2 (Asymptotic informed truthfulness) | $K \to \infty$, threshold $0 < t < \alpha_i \eta_i^{\text{truth}} \gamma$ | Truthfulness is weakly better than all strategies, strictly better than any uninformative strategy |
+| Thm 3.3 (Strong truthfulness) | Large $K$ + bias-flipping $\geq \varphi_{\min}$ claims | Truthfulness is strictly better than all significantly biased strategies |
+| Thm 3.4 ($\varepsilon$-informed truthfulness) | Finite $K$ + midpoint threshold | Utility error decays exponentially with $K$; $K \geq O(\ln(v_i/\varepsilon)/\underline{g}_i^2)$ is sufficient |
 
-### Key Differences from Classical Peer Prediction
-
-| Dimension | Classical Peer Prediction | TTS |
-|---|---|---|
-| Source of evaluation tasks | Externally fixed | LOO-constructed; sources cannot manipulate evaluation sets |
-| Report format | Abstract signals | Natural language documents; extractor converts to stances |
-| Incentive mechanism | Monetary payment | Exposure/attribution (inclusion in summary) |
-| Application context | Peer review, etc. | Open-web search (payment infeasible) |
+Compared to traditional peer prediction, TTS makes three key adaptations for the open web: evaluation tasks are constructed on-the-fly via LOO so sources cannot manipulate them; reports transition from abstract signals to natural language documents (proven equivalent to signal-report strategies); and incentives shift from monetary payments to exposure/attribution, as paying sources in open search is impractical.
 
 ## Key Experimental Results
 
@@ -85,36 +104,36 @@ The source set $\mathcal{C}$ is randomly partitioned into groups A and B; source
 | Majority Claims | 50.1% | 38.6% | 63.6% | 38.4% |
 | **TTS (Ours)** | **76.1%** | **72.3%** | **86.2%** | **77.1%** |
 
-TTS improves answer accuracy on NQ to 72.3% (vs. 25.1% for the initial synthesis baseline) and on ClashEval to 77.1% (vs. 15.6%), with precision gains approaching twofold improvement.
+TTS improves answer accuracy on NQ to 72.3% (vs. 25.1% for initial synthesis) and on ClashEval to 77.1% (vs. 15.6%), while nearly doubling precision improvements.
 
-### Robustness Against Coordinated Attacks
+### Ablation Study (Sybil Attacks)
 
-When four "uninformative" sources (opposing all claims) are injected into ClashEval, simple majority voting fails entirely—assigning high scores to coordinated attackers and incorrectly inflating adversarial source ratings. TTS continues to assign near-zero scores to uninformative sources and maintains correct reliability rankings. This validates the theoretical robustness of peer prediction scoring against coordinated uninformative equilibria.
+By adding 4 "uninformative" sources (all opposing all claims) into ClashEval, simple majority voting schemes fail completely—not only awarding high scores to sybil attackers but also incorrectly elevating the scores of adversarial sources. TTS continues to assign near-zero scores to uninformative sources, maintaining the correct reliability ranking. This validates the theoretical robustness of peer prediction scoring against collusive uninformative equilibria.
 
-### Computational Overhead
+### Computational Cost
 
-On average, each query (7 sources) requires approximately 174K input tokens and 13K output tokens, costing approximately $0.07/query using gemini-2.5-flash-lite. In practice, TTS can be run on sampled traffic to accumulate source reputation signals incrementally.
+On average, each query (7 sources) costs approximately 174k input tokens + 13k output tokens, totaling ~$0.07/query using gemini-2.5-flash-lite. In practical deployment, TTS can be run on sampled traffic to accumulate source reputation signals.
 
 ## Highlights & Insights
 
-- **Pioneering intersection of game theory and LLM safety**: This is the first application of peer prediction to source filtering in LLM summarization, enabling discrimination between reliable and unreliable sources without ground-truth labels.
-- **Structural advantage**: By isolating and removing unreliable sources prior to final generation, the framework fundamentally blocks the influence pathway of adversarial text—a more thorough defense than prompt-level countermeasures.
-- **Implications for RAG systems**: The TTS scoring mechanism can be embedded as a source credibility assessment module in any LLM system that integrates external sources (RAG, agents, search summarization).
-- **Incentive design perspective**: The paper reframes LLM summarization from "how to generate good summaries" to "how to design ecosystems that incentivize truthful information provision."
+- **Pioneering intersection of Game Theory × LLM Security**: The first use of peer prediction for source filtering in LLM summarization, distinguishing reliable from unreliable sources without ground-truth labels.
+- **Structural Advantage**: Isolating and removing unreliable sources before final generation fundamentally blocks the path of adversarial text—a more thorough approach than prompt-level defenses.
+- **Implications for RAG Systems**: The TTS scoring mechanism can be embedded as a source trustworthiness module in any LLM system that integrates external sources (RAG, Agents, Search Summaries).
+- **Incentive Design Perspective**: Shifts the LLM summarization problem from "how to generate good summaries" to "how to design an ecosystem where sources are incentivized to provide truthful information."
 
 ## Limitations & Future Work
 
-- Experiments are conducted at small scale (6–7 sources per query); validation in large-scale settings with hundreds of sources remains absent.
-- A fixed global threshold $t = 0.06$ is used; adaptive thresholding could further improve performance.
-- The quality of claim decomposition and stance extraction depends on LLM capability; performance in multilingual or highly specialized domains has not been verified.
-- Integration with reputation priors (discussed in Appendix D) could enable incremental source evaluation.
+- Experimental scale is relatively small (6-7 sources per query) and has not been validated in large-scale scenarios with hundreds of sources.
+- Uses a fixed global threshold ($t = 0.06$); adaptive thresholds could further improve performance.
+- The quality of claim decomposition and stance extraction depends on LLM capabilities; performance in multilingual or highly specialized domains remains to be verified.
+- Could be combined with reputation priors (discussed in Appendix D) for incremental source evaluation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The intersection of game theory and LLM summarization is a genuinely novel direction, with complete theoretical guarantees
-- Experimental Thoroughness: ⭐⭐⭐ Small-scale validation is effective, but large-scale and multilingual experiments are lacking
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are rigorous and framework diagrams are clear
-- Value: ⭐⭐⭐⭐⭐ Significant implications for LLM information security and RAG system design
+- Novelty: ⭐⭐⭐⭐⭐ The intersection of game theory and LLM summarization is a fresh direction with complete theoretical guarantees.
+- Experimental Thoroughness: ⭐⭐⭐ Small-scale validation is effective but lacks large-scale and multilingual experiments.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous theoretical derivation and clear framework diagrams.
+- Value: ⭐⭐⭐⭐⭐ Significant insights for LLM information security and RAG system design.
 
 <!-- RELATED:START -->
 

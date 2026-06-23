@@ -2,165 +2,149 @@
 title: >-
   [Paper Note] Discovering and Steering Interpretable Concepts in Large Generative Music Models
 description: >-
-  [ICLR 2026][Audio & Speech][Sparse Autoencoder] This work presents the first application of Sparse Autoencoders (SAEs) to the audio/music domain…
+  [ICLR 2026][Audio & Speech][Sparse Autoencoder] This work represents the first application of Sparse Autoencoders (SAE) to the audio/music domain, extracting interpretable musical concept features from the residual stream of the autoregressive music generation model MusicGen and leveraging these features for steerable generation.
 tags:
-  - "ICLR 2026"
-  - "Audio & Speech"
-  - "Sparse Autoencoder"
-  - "Music Generation"
-  - "Interpretability"
-  - "MusicGen"
-  - "Feature Steering"
+  - ICLR 2026
+  - Audio & Speech
+  - Sparse Autoencoder
+  - Music Generation
+  - interpretability
+  - MusicGen
+  - Feature Steering
 date: 2026-05-08
-content_hash: f12835d20db56574
+content_hash: e322b1948a857c85
 ---
-
 # Discovering and Steering Interpretable Concepts in Large Generative Music Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2505.18186](https://arxiv.org/abs/2505.18186)  
 **Code**: [musicdiscovery.media.mit.edu](https://musicdiscovery.media.mit.edu)  
-**Area**: Audio & Speech
-**Keywords**: Sparse Autoencoder, Music Generation, Interpretability, MusicGen, Feature Steering
+**Area**: Audio & Speech  
+**Keywords**: Sparse Autoencoder, Music Generation, interpretability, MusicGen, Feature Steering
 
 ## TL;DR
 
-This work presents the first application of Sparse Autoencoders (SAEs) to the audio/music domain, extracting interpretable musical concept features from the residual stream of the autoregressive music generation model MusicGen, and leveraging these features for controllable generation (steering).
+This work represents the first application of Sparse Autoencoders (SAE) to the audio/music domain, extracting interpretable musical concept features from the residual stream of the autoregressive music generation model MusicGen and leveraging these features for steerable generation.
 
 ## Background & Motivation
 
-- Deep generative models produce high-quality music, implying that they have learned an implicit theory of musical structure internally; however, these internal representations remain a black box to humans.
-- Existing probing methods can only verify whether a model encodes **already-known** concepts (e.g., chords, beats), and cannot discover **unknown** structures that the model has learned on its own.
-- The music domain lacks large-scale paired music–text data, making concept discovery particularly challenging.
-- In NLP and vision, SAEs have been shown to extract interpretable sparse features from Transformer activations (Templeton et al., 2024), yet they have not been applied to the audio modality.
+- While deep generative models produce high-quality music, suggesting an implicit internal theory of musical structure, these representations remain a black box to humans.
+- Existing probing methods only verify "if the model encodes **known** concepts" (e.g., chords, tempo) and cannot discover **unknown** structures learned autonomously by the model.
+- The music domain lacks large-scale paired "music-text" data, making unsupervised concept discovery particularly challenging.
+- In NLP and vision, SAEs have proven effective at extracting interpretable sparse features from Transformer activations (Templeton et al., 2024), but they have not yet been applied to the audio modality.
 
-Core motivation: **Shifting from "did the model learn X?" to "what did the model actually learn?"**—unsupervisedly discovering the full set of musical concepts encoded within the model.
+Core Motivation: **Shifting from "Does the model learn X?" to "What exactly did the model learn?"**—discovering all internally encoded musical concepts in an unsupervised manner.
 
 ## Core Problem
 
-1. How to **unsupervisedly** discover interpretable musical concepts from the intermediate representations of a music generation model?
-2. How to **automatically and at scale** evaluate and annotate thousands of latent features?
-3. Can the discovered features **causally** steer the generation output?
+1. How can interpretable musical concepts be discovered in an **unsupervised** manner from the intermediate representations of music generation models?
+2. How can thousands of potential features be evaluated and annotated **automatically and at scale**?
+3. Can the discovered features **causally** control (steer) the generative output?
 
 ## Method
 
 ### Overall Architecture
 
-The pipeline consists of three stages: activation extraction → SAE training and feature filtering → automatic annotation and human validation.
+To determine which musical concepts a generative model learns and whether they can be manipulated, this paper proposes a four-step pipeline. First, intermediate activations are extracted from multiple residual stream layers of a **frozen** MusicGen using approximately 160,000 music clips. Second, a k-sparse autoencoder is trained to rewrite these entangled activations into a set of sparse, monosemantic features. Third, thousands of features are filtered by activation rates and automatically labeled/scored using a three-way automated approach. Finally, specific feature directions are injected back into the residual stream to verify if they can causally steer the generated music. The first two steps handle "extraction and disentanglement," the third handles "filtering and naming," and the fourth provides causal validation of steerability.
 
-### 1. Dataset and Activation Extraction
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Music Clips<br/>(MusicSet ~160k tracks)"] --> B["Multi-layer Residual Stream Activation Extraction<br/>Sample 5 layers from frozen MusicGen"]
+    B --> C["k-sparse autoencoder<br/>top-k sparse bottleneck extracts monosemantic features"]
+    C --> D["Filtering + Three-way Auto-labeling<br/>Activation rate filtering → LLM/Classifier/CLAP"]
+    D --> E["Residual Stream Steering<br/>Inject feature directions for causal validation"]
+    E --> F["Interpretable + Steerable<br/>Musical Concept Features"]
+```
 
-- Uses the MusicSet dataset (~160k clips of ~10s each, sourced from MTG-Jamendo / MusicCaps / MusicBench).
-- Audio is fed into pretrained MusicGen-Large (MGL, $d=2048$) and MusicGen-Small (MGS, $d=1024$).
-- Activations are extracted from 5 residual stream layers: layer 2 (early), layers at 25%/50%/75% depth, and the second-to-last layer (late).
-- MGL layer indices: $\{2, 12, 24, 36, 46\}$; MGS layer indices: $\{2, 6, 12, 18, 22\}$.
+### Key Designs
 
-### 2. Sparse Autoencoder (SAE) Training
+**1. Multi-layer Residual Stream Activation Extraction: Probing across depth**
 
-- Uses a $k$-sparse autoencoder architecture: encoder $\mathbf{h} = \text{ReLU}(\mathbf{W}_e \mathbf{x} + \mathbf{b}_e)$, followed by a top-$k$ projection retaining the $k$ largest activations.
-- Decoder $\hat{\mathbf{x}} = \mathbf{W}_d \mathbf{h} + \mathbf{b}_d$, minimizing MSE reconstruction loss.
-- Hyperparameter combinations: expansion factor $\epsilon \in \{4, 32\}$, sparsity $k \in \{32, 100\}$.
+To discover concepts, intermediate representations must be extracted from the generative model. The authors use the MusicSet dataset (~160,000 10-second clips from MTG-Jamendo / MusicCaps / MusicBench) and feed them into pre-trained MusicGen-Large (MGL, $d=2048$) and MusicGen-Small (MGS, $d=1024$). The models remain frozen. Activations are sampled from five residual stream layers across the depth: Layer 2, 25%, 50%, 75%, and the penultimate layer (MGL: $\{2,12,24,36,46\}$; MGS: $\{2,6,12,18,22\}$). This allows for a comparison of interpretability across different depths.
 
-### 3. Feature Filtering
+**2. k-sparse autoencoder: Disentangling activations via a sparse bottleneck**
 
-For each feature, its activation rate $r_i$ across all tracks in the validation set is computed, and three categories of invalid features are removed:
+Residual stream activations suffer from superposition, where a single dimension may encode multiple concepts. The authors train a k-sparse autoencoder to rewrite these as sparse features. The encoder $\mathbf{h}=\text{ReLU}(\mathbf{W}_e\mathbf{x}+\mathbf{b}_e)$ is followed by a top-k projection that retains only the $k$ largest activations, setting the rest to zero. The decoder $\hat{\mathbf{x}}=\mathbf{W}_d\mathbf{h}+\mathbf{b}_d$ reconstructs the original activation under MSE loss. Forced sparsity compels each feature to carry a single meaning. Each column of the decoder $\mathbf{W}_{d,j}$ represents a "direction" for a specific feature, reused for steering. The dictionary size is controlled by an expansion factor $\epsilon\in\{4,32\}$, with sparsity $k\in\{32,100\}$.
 
-- **Never activating**: $r_i = 0$
-- **Overly common**: $r_i > 0.25$ (activates in more than 25% of tracks; semantically ambiguous)
-- **Overly rare**: $r_i < 0.01$ (insufficient coverage for reliable interpretation)
+**3. Filtering + Three-way Auto-labeling: Scaling concept identification**
 
-### 4. Automatic Annotation Pipeline
+With thousands of potential features, manual naming is impossible. First, activation rate filtering is applied: features with $r_i=0$ (dead), $r_i>0.25$ (too generic), and $r_i<0.01$ (too rare) are removed. This yields 4,697 valid features. Three labeling pathways follow: Generative labeling sends merged audio of the top-10 activations to Gemini Flash 1.5 for labels and descriptions; Classifier labeling uses Essentia to extract genre, instrument, and mood tags; CLAP scoring calculates the cosine similarity between the text label and audio embeddings to quantify label alignment.
 
-Three complementary strategies applied in parallel:
+**4. Residual Stream Steering: Causal validation of feature directions**
 
-- **Generative annotation**: The concatenated audio of the top-10 highest-activating samples per feature is passed to Gemini Flash 1.5, prompting the multimodal LLM to generate concept labels, confidence scores, and descriptions.
-- **Classifier-based annotation**: Pretrained Essentia audio classifiers are used to extract labels (genre, instrument, mood, etc.).
-- **CLAP alignment scoring**: The CLAP embedding cosine similarity between label text and activating audio samples is computed to quantify label quality.
-
-### 5. Generation Steering
-
-During forward inference, a scaled decoder weight vector is injected into the residual stream at the SAE layer:
+To prove that features are "actionable directions," the authors inject the scaled decoder direction of a target feature $j$ back into the residual stream during inference:
 
 $$\mathbf{x}' = \mathbf{x} + \alpha \cdot \beta \cdot \mathbf{W}_{d,j}$$
 
-where $\alpha \in (0,1)$ is the steering intensity and $\beta$ is the maximum activation magnitude of feature $j$. A neutral prompt "Simple melody" is used for testing, comparing outputs at $\alpha=0$ (baseline) and $\alpha=1$ (maximum steering).
+where $\mathbf{W}_{d,j}$ is the learned direction, $\beta$ is the maximum activation strength of feature $j$, and $\alpha\in(0,1)$ is the steering strength. A neutral prompt ("Simple melody") is used to isolate the effect. If the output audio shifts toward the concept, the direction is validated.
 
 ## Key Experimental Results
 
 ### Feature Discovery Statistics
 
-- A total of **4,697 valid features** are retained after filtering.
-- MGL substantially outperforms MGS: MGL at $\epsilon=32, k=100$ on layer L2 yields up to 2,344 features; MGS rarely exceeds 100 features across all configurations.
-- Expansion factor 32 combined with $k=100$ performs best.
+- A total of **4,697 valid features** were retained after filtering.
+- MGL significantly outperforms MGS: MGL at $\epsilon=32, k=100$ produces 2,344 features at Layer 12, whereas MGS rarely exceeds 100 features across configurations.
+- An expansion factor of 32 combined with $k=100$ proved most effective.
 
-### Automatic Annotation Quality
+### Automatic Labeling Quality
 
-- CLAP alignment scores for Essentia classifier labels are consistently higher than for Gemini-generated labels.
+- Essentia classifier labels generally achieved higher CLAP alignment scores than Gemini-generated labels.
 - Human evaluation (400 features/method, 80 participants): Essentia confidence 3.96/5 (71% > 4), Gemini confidence 3.19/5 (47% > 4).
 
-### Layer-wise Patterns
+### Hierarchical Patterns
 
-- Deeper MGL features exhibit higher CLAP scores, indicating that **deeper layers encode more interpretable concepts**.
-- Layer-prediction MLP accuracy: MGL 50.29%, MGS 40.51%—features in larger models exhibit **more pronounced cross-layer differentiation**.
+- Deeper layers in MGL show higher CLAP scores, suggesting that **deeper layers encode more interpretable concepts**.
+- Layer prediction MLP accuracy: MGL 50.29%, MGS 40.51%—denoting that **feature differentiation across layers is more pronounced in larger models**.
 
 ### Steering Effectiveness
 
-- Across different SAE configurations, **15%–35% of features** demonstrate positive steering improvement.
-- Best configuration: MGL L36, $\epsilon=32, k=100$ achieves 35.1% positive improvement.
-- Human listening test (10 participants × 10 groups): 66/100 trials correctly identified SAE-steered audio (vs. 17 for baseline and 17 for chance), $\chi^2=48.02, p<.0001$.
+- Across SAE configurations, **15%–35% of features** demonstrated positive steering improvement.
+- Best configuration: MGL L36, $\epsilon=32, k=100$ reached 35.1% positive improvement.
+- Human listening tests (10 people × 10 groups): 66/100 correctly identified SAE-steered audio (vs. 17 for baseline, 17 for random), $\chi^2=48.02, p<.0001$.
 
-## Highlights & Insights
+## Highlights
 
-- **First SAE application to audio**: Successfully transfers the SAE interpretability methodology from NLP/vision to music generation models, opening a new research direction.
-- **Unsupervised concept discovery**: Recovers classical music concepts (taiko drums, Hardstyle Techno, Baroque harpsichord, rock guitar solos) while also uncovering **novel patterns not captured by existing theory** (e.g., "electronic beeps and boops," "single instrument single note," "oscillating bell timbre").
-- **Comprehensive evaluation framework**: A multi-level evaluation pipeline combining multimodal LLMs, pretrained classifiers, CLAP alignment, and human validation.
-- **Causal validation via steering**: Steering experiments provide causal evidence that the discovered features correspond to **actionable directions** within the model's internal representations.
+- **First Audio SAE Application**: Successfully migrates SAE interpretability methods from NLP/Vision to music generation, opening a new research direction.
+- **Unsupervised Concept Discovery**: Recovers classic concepts (Taiko drums, Hardstyle Techno, Baroque Harpsichord) and discovers **new patterns not yet encoded by theory** (e.g., "electronic beeps/boops", "single-note instruments").
+- **Comprehensive Evaluation**: A multi-layered pipeline combining multi-modal LLMs, pre-trained classifiers, CLAP alignment, and human validation.
+- **Causal Steering**: Causal evidence that discovered features correspond to **actionable directions** within the model.
 
 ## Limitations & Future Work
 
-- Steering success rate is only 15%–35%; most features, though interpretable, are not necessarily steerable.
-- Validation is limited to MusicGen; diffusion-based music generation models and other architectures are not tested.
-- Automatic annotation remains limited: Gemini label quality is less consistent than classifier labels, and the accuracy of open-ended labels warrants further improvement.
-- Feature filtering thresholds (1%–25%) are heuristically set and may exclude borderline cases.
-- MGS yields very few valid features (< 10 in most configurations); the lower-bound effect of model scale is insufficiently discussed.
-- Activations are extracted using unconditional audio only; feature differences under conditional generation scenarios are not explored.
+- Steering success rates are only 15%–35%; many features are interpretable but not necessarily steerable.
+- Validated only on MusicGen; diffusion-based music models or other architectures remain untested.
+- Automatic labeling constraints: Gemini labels are less stable than classifier labels.
+- Heuristic filtering thresholds (1%–25%) may miss edge cases.
+- MGS produces very few valid features, leaving the lower bound for model scale and SAE effectiveness under-discussed.
 
 ## Related Work & Insights
 
 | Method | Strategy | Concept Source | Limitations |
-|--------|----------|---------------|-------------|
-| Probing (Wei et al., 2024a; Ma & Xia, 2024) | Supervised probing | Predefined known concepts | Can only verify known concepts |
-| DecoderLens (Vásquez et al., 2024) | Intermediate activation visualization | Layer-wise "auditory" evolution | Primarily qualitative |
-| Concept Bottleneck Models | Bottleneck layer constraints | Manually specified concept sets | Requires prior knowledge |
-| Protein language model SAE (Simon & Zou, 2024) | SAE feature discovery | Unsupervised | Different domain |
-| **Ours** | **SAE + automatic annotation + steering** | **Unsupervised discovery** | **First audio application with causal validation** |
-
-The expansion of the SAE interpretability paradigm from text → vision → proteins → audio suggests that this approach has cross-modal generality and may extend further to video generation, 3D generation, and beyond.
-
-The finding that "concepts learned by the model may transcend existing human theoretical frameworks" is of significant value to music theory research—positioning AI as a discovery tool.
-
-The steering mechanism provides a novel paradigm for controllable generation that operates directly on internal representations, without relying on text prompts or conditioning signals.
-
-Layer-wise differentiation patterns (deeper layers more interpretable; larger models exhibiting greater cross-layer feature differentiation) are consistent with findings in NLP, further supporting the Transformer hypothesis that shallow layers encode low-level features while deeper layers encode high-level semantics.
+|------|------|----------|------|
+| Probing (Wei et al., 2024a; Ma & Xia, 2024) | Supervised Probing | Pre-defined | Limited to known concepts |
+| DecoderLens (Vásquez et al., 2024) | Intermediate Visualization | Layer-wise Evolution | Primarily qualitative |
+| Concept Bottleneck Models | Bottleneck Constraint | Hand-specified | Requires prior knowledge |
+| Protein LM SAE (Simon & Zou, 2024) | SAE Discovery | Unsupervised | Different domain |
+| **Ours** | **SAE + Auto-labeling + Steering** | **Unsupervised** | **First audio app with causal validation** |
 
 ## Rating
-
-- Novelty: 9/10 (first SAE application to audio; dual contribution of concept discovery and steering)
-- Experimental Thoroughness: 8/10 (multiple models, layers, and hyperparameter combinations with human evaluation, but limited to MusicGen)
-- Writing Quality: 9/10 (clear exposition, rich figures, complete description of each pipeline stage)
-- Value: 8/10 (opens a new direction for music model interpretability; steering has practical value but success rate remains to be improved)
+- Novelty: 9/10
+- Experimental Thoroughness: 8/10
+- Writing Quality: 9/10
+- Value: 8/10
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Steering Autoregressive Music Generation with Recursive Feature Machines](steering_autoregressive_music_generation_with_recursive_feature_machines.md)
+- [\[ICLR 2026\] Music Flamingo: Scaling Music Understanding in Audio Language Models](music_flamingo_scaling_music_understanding_in_audio_language_models.md)
 - [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](../../AAAI2026/audio_speech/aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
-- [\[ICLR 2026\] Improving Black-Box Generative Attacks via Generator Semantic Consistency](improving_black-box_generative_attacks_via_generator_semantic_consistency.md)
-- [\[ICML 2026\] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech](../../ICML2026/audio_speech/sparse_autoencoders_for_interpretable_emotion_control_in_text-to-speech.md)
-- [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/audio_speech/diffa_large_language_diffusion_models_can_listen_and_understand.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[ICLR 2026\] Confident and Adaptive Generative Speech Recognition via Risk Control](confident_and_adaptive_generative_speech_recognition_via_risk_control.md)
+- [\[ICLR 2026\] Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?](automatic_stage_lighting_control_is_it_a_rule-driven_process_or_generative_task.md)
 
 </div>
 

@@ -2,145 +2,143 @@
 title: >-
   [Paper Note] CLARC: C/C++ Benchmark for Robust Code Search
 description: >-
-  [ICLR 2026][AIGC Detection][Code Retrieval] This paper introduces CLARC, the first compilable C/C++ code retrieval benchmark comprising 6…
+  [ICLR 2026][AIGC Detection][Paper Note] Constructs CLARC, the first compilable C/C++ code retrieval benchmark (6,717 query-code pairs), using an automated pipeline to extract code from GitHub and generate/validate queries via LLM with hypothesis testing. It covers four retrieval scenarios—Standard, Anonymized, Assembly, and WebAssembly—revealing that existin
 tags:
-  - "ICLR 2026"
-  - "AIGC Detection"
-  - "Code Retrieval"
-  - "C/C++ Benchmark"
-  - "Compilation Verification"
-  - "Code Embedding"
-  - "Assembly Language"
-  - "Robustness"
+  - ICLR 2026
+  - AIGC Detection
 date: 2026-05-08
-content_hash: e775b641f91e4bd5
+content_hash: 569ca1511c7299c7
 ---
-
 # CLARC: C/C++ Benchmark for Robust Code Search
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.04484](https://arxiv.org/abs/2603.04484)  
 **Code**: [GitHub](https://github.com/ClarcTeam/CLARC) / [HuggingFace](https://huggingface.co/datasets/ClarcTeam/CLARC)  
-**Area**: AIGC Detection
-**Keywords**: Code Retrieval, C/C++ Benchmark, Compilation Verification, Code Embedding, Assembly Language, Robustness
+**Area**: AIGC Detection  
+**Keywords**: Code Retrieval, C/C++ Benchmark, Compilation Validation, Code Embedding, Assembly Language, Robustness
 
 ## TL;DR
-This paper introduces CLARC, the first compilable C/C++ code retrieval benchmark comprising 6,717 query–code pairs. An automated pipeline extracts code from GitHub and employs LLMs combined with hypothesis testing to generate and validate queries. The benchmark covers four retrieval scenarios—standard, anonymized, assembly, and WebAssembly—and reveals that existing code embedding models over-rely on lexical features (NDCG@10 drops from 0.89 to 0.67 after anonymization) and perform poorly on binary-level retrieval.
+Constructs CLARC, the first compilable C/C++ code retrieval benchmark (6,717 query-code pairs), using an automated pipeline to extract code from GitHub and generate/validate queries via LLM with hypothesis testing. It covers four retrieval scenarios—Standard, Anonymized, Assembly, and WebAssembly—revealing that existing code embedding models rely excessively on lexical features (NDCG@10 drops from 0.89 to 0.67 after anonymization) and significantly underperform in binary-level retrieval.
 
 ## Background & Motivation
-**Background**: Code retrieval benchmarks predominantly target Python and Java (e.g., CodeSearchNet, CoSQA, COIR), with embedding-based retrieval models (Voyage-code-3, OpenAI embeddings, etc.) serving as the standard for large-scale retrieval.
+**Background**: Existing code retrieval benchmarks primarily focus on Python/Java (e.g., CodeSearchNet, CoSQA, COIR). Embedding-based retrieval models (Voyage-code-3, OpenAI embedding, etc.) are standard for large-scale retrieval.
 
 **Limitations of Prior Work**:
-   - **Language Coverage Bias**: C/C++ is central to systems programming, yet mainstream benchmarks neglect or underemphasize text-to-code retrieval for C/C++.
-   - **Non-Compilable Code**: Many code snippets in existing benchmarks lack necessary includes or dependencies and cannot be compiled, disconnecting them from real engineering practice.
-   - **Unexposed Lexical Dependency**: Benchmarks rarely test robustness under identifier renaming or anonymization, meaning high scores may reflect variable-name matching rather than semantic understanding.
-   - **Absence of Binary-Level Evaluation**: Security auditing and reverse engineering require searching code at the assembly or binary level, yet no benchmark assesses this capability.
+   - **Language Coverage Bias**: C/C++ is core to systems programming, yet mainstream benchmarks ignore or de-emphasize C/C++ text-to-code retrieval.
+   - **Non-compilable Code**: Many code snippets in existing benchmarks lack includes/dependencies and cannot be compiled, disconnecting them from actual engineering practice.
+   - **Hidden Lexical Reliance**: Benchmarks rarely test robustness against identifier renaming or anonymization; high scores may result from variable name matching rather than semantic understanding.
+   - **Absence of Binary Level**: Security auditing and reverse engineering require code searching at the assembly or binary level, but no benchmarks evaluate such capabilities.
 
-**Key Challenge**: Code retrieval models claim to understand "code semantics," but if they rely on lexical features such as variable and function names, they will fail on obfuscated or assembly-level code.
+**Key Challenge**: Code retrieval models claim to understand "code semantics," but if they rely on lexical features like variable or function names, they will fail on obfuscated or assembly code.
 
-**Core Idea**: Construct a full-stack code retrieval benchmark spanning source code to binary, and systematically probe semantic understanding versus lexical matching through anonymization and compilation to low-level representations.
+**Core Idea**: Build a code retrieval benchmark covering the full stack from source code to binary. Use anonymization and compilation to low-level languages to systematically test semantic understanding versus lexical matching.
 
 ## Method
 
-### Dataset Construction Pipeline (Four Stages)
+### Overall Architecture
 
-1. **Data Collection**
-    - Functions are mined from 144 popular C/C++ GitHub repositories (45 for evaluation, 99 for training).
-    - A whitelist of compilation environments (standard library headers) is established.
-    - Each function is extracted along with its full dependency context (call graph and required definitions).
-    - **Key Filter**: Only functions that compile successfully in the prepared environment are retained, ensuring code completeness.
+CLARC is an automated construction pipeline from GitHub source code to natural language queries. It first crawls independently compilable functions from popular C/C++ repositories (**Compilable Filtering**), then categorizes them into three groups based on dependency complexity (**Dependency Complexity Grouping**). Each function is then abstracted through four retrieval scenarios: "Source $\rightarrow$ Anonymization $\rightarrow$ Assembly $\rightarrow$ WebAssembly" (**Progressive Robustness Scenarios**). Finally, queries are generated by LLMs and filtered using statistical hypothesis testing to remove low-quality samples (**LLM Generation + Hypothesis Testing**). The final dataset contains 6,717 validated query-code pairs. Evaluation uses two metrics: **NDCG@10**, which measures ranking quality of top-10 results (higher is better), and **Hole@10**, which tracks the proportion of missing relevant documents in the top 10 (lower is better, specifically capturing severe omissions in assembly/binary retrieval). The design aims to determine whether high model scores indicate true semantic understanding or simply memorization of variable names.
 
-2. **Dependency Complexity Classification**
-    - Group 1 (526 pairs): Self-contained functions with no custom-type or auxiliary-function dependencies (avg. 12.8 LOC).
-    - Group 2 (469 pairs): Functions depending on custom types but not auxiliary functions (13.3 LOC).
-    - Group 3 (250 pairs): Functions depending on both custom types and auxiliary functions (71.5 LOC; longer and more complex).
-    - **Design Motivation**: Retrieval difficulty varies with dependency complexity—code requiring contextual understanding is harder to retrieve.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Popular GitHub<br/>C/C++ Repos (144)"] --> B["Compilable Filtering<br/>Extract Func + Context → Compile Check"]
+    B --> C["Dependency Complexity Grouping<br/>Group 1 / 2 / 3"]
+    C --> SCEN
+    subgraph SCEN["Progressive Robustness Scenarios"]
+        direction TB
+        S1["Standard Source"] --> S2["Anonymization<br/>var_0 / func_1"]
+        S2 --> S3["x86 Assembly"] --> S4["WebAssembly"]
+    end
+    SCEN --> D["LLM Generation + Hypothesis Testing<br/>Generate Query → Significance Filter"]
+    D --> E["CLARC Benchmark<br/>6,717 Query-Code Pairs"]
+    E --> F["Retrieval Evaluation<br/>NDCG@10 / Hole@10"]
+```
 
-3. **Robustness Settings (Four Scenarios)**
-    - **Standard Source Code**: Original C/C++ code.
-    - **Anonymized**: All variable, function, and type names replaced with meaningless identifiers (e.g., `var_0`, `func_1`), stripping lexical cues and retaining only semantics.
-    - **Assembly**: Compiled to x86 assembly, simulating reverse engineering scenarios.
-    - **WebAssembly**: Compiled to `.wat` format, simulating Web security auditing scenarios.
-    - **Design Motivation**: Progressively stripping high-level features tests the model's genuine understanding at different levels of abstraction.
+### Key Designs
 
-4. **Query Generation and Validation**
-    - An LLM generates natural language queries (code summarization).
-    - **Hypothesis-Testing Validation**: Rather than relying solely on LLM quality, human annotators score queries, and statistical hypothesis testing verifies that scores are significantly above a random baseline.
-    - **Design Motivation**: Ensures that query–code correspondence is not an LLM hallucination.
+**1. Compilable Filtering: Aligning Benchmarks with Real Engineering**
+A major issue with existing C/C++ benchmarks is that code snippets lack includes or dependency definitions and cannot be compiled. CLARC extracts functions from 144 repositories (45 for evaluation, 99 for training) by establishing a whitelist of standard library headers and extracting the complete dependency context (type definitions, helper functions) along the call graph. Only functions that successfully compile in this prepared environment are retained. This ensures code integrity and provides the foundation for low-level language scenarios—code that cannot compile cannot generate assembly.
 
-### Evaluation Metrics
-- **NDCG@10**: Ranking quality.
-- **Hole@10**: Proportion of relevant documents absent from the top 10 (lower is better)—measures severe omissions.
+**2. Dependency Complexity Grouping: Deconstructing Retrieval Difficulty**
+Understanding an isolated small function versus a complex function with nested calls and custom type dependencies presents different challenges. CLARC splits evaluation pairs into three groups: Group 1 (standalone functions with no custom dependencies, avg. 12.8 LOC), Group 2 (depends on custom types but no helper functions, 13.3 LOC), and Group 3 (depends on both custom types and helper functions, 71.5 LOC, significantly more complex). This allows for quantifiable experiments on how dependency context impacts retrieval.
+
+**3. Progressive Robustness Scenarios: Stripping Lexical Clues**
+To distinguish between semantic understanding and simple keyword matching (e.g., matching a query with a function named `compute_hash`), CLARC uses four abstraction levels: **Standard Source** (original naming), **Anonymization** (replaces all identifiers with `var_0`, `func_1`, etc., leaving only control flow and structure), **Assembly** (compiled to x86 assembly to simulate reverse engineering), and **WebAssembly** (compiled to `.wat` format to simulate web security auditing). This chain progressively strips high-level language features to isolate the contributions of lexical matching.
+
+**4. LLM Generation + Hypothesis Testing for Quality Control**
+Queries are generated by LLMs as code summaries. To prevent hallucinations or mismatches, CLARC introduces human scoring combined with statistical hypothesis testing. Evaluators rate the match between the generated query and code; these scores must be significantly higher than a random baseline to be included. This transforms "query quality" from a subjective impression into a statistically grounded conclusion.
 
 ## Key Experimental Results
 
 ### Main Results (6 Models × 4 Scenarios)
 
-| Model | Standard NDCG@10 | Anonymized NDCG@10 | Drop |
-|-------|-----------------|-------------------|------|
-| Voyage-code-3 | **0.89** | 0.67 | −24.7% |
-| OpenAI-embed-large | 0.85 | 0.60 | −29.4% |
-| CodeT5+ | 0.72 | 0.55 | −23.6% |
-| OASIS | 0.68 | 0.54 | −20.6% |
-| Nomic-emb-code | 0.78 | 0.58 | −25.6% |
+| Model | Standard NDCG@10 | Anonymized NDCG@10 | Decline |
+|------|-------------|---------------|---------|
+| Voyage-code-3 | **0.89** | 0.67 | -24.7% |
+| OpenAI-embed-large | 0.85 | 0.60 | -29.4% |
+| CodeT5+ | 0.72 | 0.55 | -23.6% |
+| OASIS | 0.68 | 0.54 | -20.6% |
+| Nomic-emb-code | 0.78 | 0.58 | -25.6% |
 
-### Assembly / WebAssembly Retrieval
+### Assembly/WebAssembly Retrieval
 
 | Metric | Average Performance |
-|--------|-------------------|
-| Assembly Hole@10 (best model) | ~17.1% |
-| WebAssembly Hole@10 | Higher (worse performance) |
+|------|---------|
+| Assembly Hole@10 (Best Model) | ~17.1% |
+| WebAssembly Hole@10 | Higher (Worse performance) |
 
 ### Analysis by Dependency Complexity
 
 | Group | Standard NDCG@10 | Anonymized NDCG@10 |
-|-------|-----------------|-------------------|
-| Group 1 (self-contained) | Highest | Largest drop |
-| Group 3 (complex dependencies) | Second | Smaller drop |
+|-------|-------------|---------------|
+| Group 1 (Standalone) | Highest | Most significant drop |
+| Group 3 (Complex) | Second highest | Smaller drop |
 
 ### Key Findings
-- **All models exhibit consistent, substantial drops after anonymization** (20–30%), directly demonstrating reliance on lexical features such as variable and function names rather than genuine semantic understanding.
-- **Assembly-level retrieval poses a significant challenge**: Even the best model misses 17.1% of relevant documents, rendering code retrieval largely impractical for security auditing and reverse engineering.
-- Group 1 (self-contained functions) suffers the largest drop after anonymization, likely because such functions rely more heavily on descriptive naming.
-- Commercial models (Voyage-code-3) lead on standard scenarios but lose their advantage after anonymization, suggesting that their "semantic understanding" partly stems from superior lexical matching.
-- OASIS, specifically optimized for robustness, shows the smallest degradation but also achieves a lower absolute performance level.
+- **Consistent Performance Drop After Anonymization**: All models declined by 20-30%, proving a heavy reliance on lexical features like variable/function names.
+- **Assembly-level Retrieval is a Major Challenge**: Even the best model has a 17.1% omission rate (Hole@10), suggesting code retrieval is currently unreliable for security auditing or reverse engineering.
+- **Group 1 (Standalone Functions) Drops Most After Anonymization**: Likely because standalone functions rely more heavily on descriptive naming for context.
+- **Commercial Models Lead in Standard Scenarios**: However, their advantage shrinks after anonymization, implying their "semantic understanding" partially stems from superior lexical matching.
+- **Robustness-optimized OASIS**: Showed the smallest decline but low absolute performance levels.
 
 ## Highlights & Insights
-- **Systematic Falsification of "Lexical Dependency"**: The clean experimental design of anonymization directly quantifies how much model performance derives from lexical features versus genuine semantic understanding—an important warning for the code retrieval community.
-- **Full-Stack Coverage**: The progressive abstraction stripping from high-level source code → anonymized code → assembly → WebAssembly constitutes an elegant evaluation framework.
-- **Value of Compilability Guarantees**: Ensuring code completeness with full context brings the benchmark closer to real engineering practice and enables dependency-complexity analysis.
-- **Reusable Automated Pipeline**: The same pipeline can be applied to build analogous benchmarks for other languages and projects.
+- **Systematic Falsification of "Lexical Reliance"**: Quantifies how much performance comes from lexical features versus true semantic understanding through a clean anonymization design.
+- **Full-stack Coverage**: The progressive abstraction from high-level source to WebAssembly provides an elegant evaluation framework.
+- **Value of Compilability**: Ensures code integrity and context, making the benchmark closer to real-world engineering and enabling dependency complexity analysis.
+- **Reusable Automated Pipeline**: Other languages or projects can utilize this workflow to build similar benchmarks.
 
 ## Limitations & Future Work
-- Coverage is limited to C/C++; analogous benchmarks for Python, Java, Rust, and other languages are absent.
-- Assembly-level evaluation targets only the x86 architecture; ARM, RISC-V, and other architectures may exhibit different characteristics.
-- Queries are LLM-generated and may not fully reflect the distribution of real developer search intent.
-- The evaluation set of 1,245 pairs is relatively small compared to benchmarks such as CodeSearchNet.
-- Multi-stage retrieval (coarse ranking followed by re-ranking) and RAG scenarios remain unexplored.
+- Currently covers only C/C++; benchmarks for Python, Java, and Rust are needed.
+- Assembly testing is limited to x86; ARM or RISC-V may exhibit different characteristics.
+- Queries generated by LLMs may differ in distribution from actual developer search intents.
+- The evaluation set size (1,245 pairs) is relatively small compared to datasets like CodeSearchNet.
+- Multi-stage retrieval (re-ranking) or RAG scenarios were not explored.
 
 ## Related Work & Insights
-- **vs. CodeSearchNet**: Primarily covers Python, Go, Ruby, etc.; lacks C/C++ text-to-code retrieval and does not verify compilability.
-- **vs. COIR**: A multi-task code retrieval benchmark that includes no anonymization or assembly-level robustness testing.
-- **vs. XCodeEval**: Includes C++ but not sourced from real-world projects.
-- **Implications for Code Embedding Models**: The substantial degradation after anonymization indicates a need for better semantic modeling approaches—such as program analysis, control-flow graphs, and data-flow analysis—rather than purely text-based embeddings.
+- **vs. CodeSearchNet**: Focuses on Python/Go/Ruby, lacks C/C++ text-to-code, and does not verify compilability.
+- **vs. COIR**: A multi-task code retrieval benchmark but lacks anonymization or assembly-level robustness testing.
+- **vs. XCodeEval**: Includes C++ but not from real-world projects.
+- **Implications for Embedding Models**: The significant degradation after anonymization suggests a need for better semantic modeling (e.g., program analysis, control flow graphs) rather than pure text embeddings.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First compilable C/C++ code retrieval benchmark spanning source code to binary; the progressive anonymization–compilation design is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Six models × four scenarios × three dependency complexity levels, with hypothesis-testing validation.
-- Writing Quality: ⭐⭐⭐⭐ Pipeline description is detailed and statistical validation is rigorous.
-- Value: ⭐⭐⭐⭐⭐ The dataset contribution provides lasting value to the code retrieval and security communities and exposes critical model weaknesses.
+- Novelty: ⭐⭐⭐⭐ First compilable C/C++ benchmark with progressive source-to-binary design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 6 models × 4 scenarios × 3 complexity levels + statistical validation.
+- Writing Quality: ⭐⭐⭐⭐ Detailed pipeline description and rigorous statistical verification.
+- Value: ⭐⭐⭐⭐⭐ Dataset contribution is valuable for code retrieval and security communities, exposing critical model weaknesses.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
-- [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
-- [\[ICML 2026\] Generating Robust Portfolios of Optimization Models using Large Language Models](../../ICML2026/aigc_detection/generating_robust_portfolios_of_optimization_models_using_large_language_models.md)
+- [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
+- [\[ICLR 2026\] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection](no_pixel_left_behind_a_detail-preserving_architecture_for_robust_high-resolution.md)
 - [\[ICML 2026\] AutoBaxBuilder: Bootstrapping Code Security Benchmarking](../../ICML2026/aigc_detection/autobaxbuilder_bootstrapping_code_security_benchmarking.md)
-- [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](../../ICML2026/aigc_detection/feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
+- [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
 
 </div>
 

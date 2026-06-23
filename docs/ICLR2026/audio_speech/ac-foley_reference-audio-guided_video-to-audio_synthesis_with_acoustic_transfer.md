@@ -2,131 +2,135 @@
 title: >-
   [Paper Note] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer
 description: >-
-  [ICLR 2026][Audio & Speech][Video-to-Audio] This paper proposes AC-Foley, a reference-audio-guided video-to-audio synthesis framework that achieves fine-grained timbre control, timbre transfer…
+  [ICLR 2026][Audio & Speech][Flow Matching] AC-Foley is proposed as a reference-audio-guided video-to-audio synthesis framework. Through two-stage training (acoustic feature learning and temporal adaptation) and multimodal conditional flow matching, it achieves fine-grained timbre control, timbre transfer, and zero-shot sound effect generation, significantly out
 tags:
-  - "ICLR 2026"
-  - "Audio & Speech"
-  - "Video-to-Audio"
-  - "Foley Synthesis"
-  - "Reference Audio Control"
-  - "Timbre Transfer"
-  - "Flow Matching"
+  - ICLR 2026
+  - Audio & Speech
+  - Flow Matching
 date: 2026-05-08
-content_hash: 3232f72c54b59eee
+content_hash: 085e9e298d43e367
 ---
-
 # AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.15597](https://arxiv.org/abs/2603.15597)  
 **Code**: None  
-**Area**: Audio Generation
-**Keywords**: Video-to-Audio, Foley Synthesis, Reference Audio Control, Timbre Transfer, Flow Matching
+**Area**: Audio Generation  
+**Keywords**: Video-to-Audio, Foley Synthesis, Reference Audio Control, Timbre Transfer, Flow Matching  
 
 ## TL;DR
-This paper proposes AC-Foley, a reference-audio-guided video-to-audio synthesis framework that achieves fine-grained timbre control, timbre transfer, and zero-shot sound effect generation via two-stage training (acoustic feature learning + temporal adaptation) and multimodal conditional flow matching, significantly outperforming existing methods in audio quality and acoustic fidelity.
+AC-Foley is proposed as a reference-audio-guided video-to-audio synthesis framework. Through two-stage training (acoustic feature learning and temporal adaptation) and multimodal conditional flow matching, it achieves fine-grained timbre control, timbre transfer, and zero-shot sound effect generation, significantly outperforming existing methods in audio quality and acoustic fidelity.
 
 ## Background & Motivation
 
-**Background**: Existing V2A methods primarily synthesize audio from text prompts combined with visual information, achieving audio-visual synchronization at the semantic level.
+**Background**: Existing V2A methods primarily synthesize audio through text prompts and visual information, achieving audio-visual synchronization at the semantic level.
 
-**Limitations of Prior Work**: (a) Dataset granularity gap — training annotations group acoustically distinct sounds (e.g., barks from different dog breeds) under coarse labels; (b) Limitations of text description — language cannot encode fine-grained acoustic features (e.g., "metal impact" cannot distinguish the time-frequency characteristics of a hammer striking an anvil versus a steel chain falling). These constraints prevent text-based control from achieving fine-grained sound effect synthesis.
+**Limitations of Prior Work**: (a) Dataset granularity gap—training labels categorize acoustically distinct sounds (e.g., barking of different dog breeds) into coarse labels; (b) Textual description limitations—language cannot encode micro-acoustic features (e.g., "metallic impact" cannot distinguish the time-frequency characteristics of a hammer hitting an anvil versus a steel chain falling). Consequently, text control fails to achieve fine-grained sound synthesis.
 
-**Key Challenge**: Foley artists need to synthesize multiple acoustic variants for the same visual action (e.g., footsteps on surfaces of different materials), yet text cannot precisely describe timbral differences, and training data lacks such fine-grained annotations.
+**Key Challenge**: Foley artists need to synthesize multiple acoustic variants for the same visual action (e.g., footsteps on different material surfaces), but text cannot precisely describe timbre differences, and training data lacks such fine-grained annotations.
 
-**Goal**: To directly control acoustic characteristics using reference audio, bypassing the semantic ambiguity inherent in text.
+**Goal**: Use reference audio to directly control acoustic characteristics, bypassing the semantic ambiguity of text.
 
-**Key Insight**: A VAE encodes the reference audio to preserve its complete acoustic signature (rather than using encoders such as CLAP that extract only semantic information), and two-stage training is employed to learn how to adapt the reference timbre to the temporal structure of the video.
+**Key Insight**: Utilize a VAE to encode reference audio to preserve the complete acoustic signature (instead of using encoders like CLAP that only extract semantic information), and learn to adapt the reference timbre to the video's temporal structure through two-stage training.
 
-**Core Idea**: Replace text with raw audio signals as the control condition; leverage a VAE to preserve timbral features and employ two-stage training to achieve adaptive transfer from reference audio to video temporal dynamics.
+**Core Idea**: Use the audio signal directly as a control condition instead of text. Timbre features are preserved via a VAE, and the adaptive transfer from reference audio to video timing is realized through a two-stage training strategy.
 
 ## Method
 
 ### Overall Architecture
-The inputs are a silent video and a reference audio clip (with an optional text prompt). A multimodal Transformer generates audio that is synchronized with the video and preserves the timbral characteristics of the reference audio, operating under a conditional flow matching framework. The three modalities interact through joint training.
+AC-Foley addresses the problem where text cannot specify the "exact type of sound" desired when dubbing a silent video; instead, a piece of reference audio is used to specify the timbre. The pipeline feeds silent video, reference audio, and optional text into a multimodal Transformer. Under a conditional flow matching framework, the target audio is synthesized from noise. The result must be temporally aligned with the video and retain the acoustic signature of the reference. The three modalities are not simply concatenated; they are separately encoded and then merged into a shared multimodal condition vector $\mathbf{c}$, which modulates the Transformer via adaLN. The video dictates "when the sound occurs and alignment with action," the reference audio (encoded by the **Audio Control Module** using a VAE) dictates the "timbre," and the text provides "semantic grounding." The model "transfers" rather than "copies" timbre due to the **two-stage training strategy** used during reference audio sampling.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    V["Silent Video V"] --> VE["CLIP Visual Features<br/>+ Synchformer Sync Features"]
+    T["Text T (Optional)"] --> TE["CLIP Text Features"]
+    AC["Reference Audio A_c"] --> AM["Audio Control Module<br/>STFT→mel→VAE encoding→pooling"]
+    VE --> C["Multimodal Condition Vector c<br/>(+ Timestep Fourier Encoding)"]
+    TE --> C
+    AM --> C
+    C -->|adaLN modulation| MMT["Multimodal Conditional Flow Matching<br/>Velocity field v_θ: Noise gradually flows to target latent"]
+    MMT --> DEC["VAE Decoding → mel → vocoder"]
+    DEC --> OUT["Target Audio A_t<br/>Aligned with video timing + Preserved reference timbre"]
+    TS["Two-stage Training Strategy<br/>Stage 1 Overlap / Stage 2 Non-overlap"] -. Sample Reference Audio .-> AC
+```
 
 ### Key Designs
 
-1. **Multimodal Conditional Flow Matching**:
+**1. Multimodal Conditional Flow Matching: Unifying Three Control Signals into One Velocity Field**
 
-    - **Function**: Extends conditional flow matching to three-modality conditional generation over video, audio, and text.
-    - **Mechanism**: The velocity field $v_\theta(t, \mathcal{C}, x_t)$ is guided by multimodal conditions $\mathcal{C} = \{V, A, T\}$. The condition vector $\mathbf{c}$ integrates CLIP visual/text features, Synchformer synchronization features, VAE audio features, and timestep embeddings, modulating Transformer inputs via adaLN.
-    - **Design Motivation**: Flow matching offers faster inference than diffusion models, and joint multimodal training allows different control signals to complement one another.
+To allow video, audio, and text to guide generation simultaneously, AC-Foley integrates them into a condition vector $\mathbf{c}$ for the flow matching model. The velocity field is defined as $v_\theta(t, \mathcal{C}, x_t)$, using multimodal conditions $\mathcal{C} = \{V, A, T\}$ to predict the direction of $x_t$. The vector $\mathbf{c}$ concatenates CLIP visual/text features, Synchformer sync features, VAE audio features, and timestep encodings to modulate the Transformer input via adaLN. Flow matching is chosen over diffusion for faster inference (solving an ODE requires fewer steps than iterative denoising) and because multimodal joint training naturally allows components to complement each other—if one modality is missing, others provide a fallback.
 
-2. **Audio Control Module**:
+**2. Audio Control Module: Using VAE Instead of CLAP to Preserve Waveform-level Timbre**
 
-    - **Function**: Encodes the reference audio using a VAE to preserve complete acoustic features.
-    - **Mechanism**: A pretrained VAE encoder maps the reference audio to the latent space (instead of CLAP), and average pooling is applied to extract acoustic features. CLAP captures only semantic-level audio information, whereas the VAE retains full spectral and timbral characteristics.
-    - **Design Motivation**: Since text suffers from insufficient semantic granularity, conditioning directly on audio — which preserves waveform-level acoustic information rather than semantic labels — is a principled solution.
+The root cause of text control failure is coarse semantic granularity; thus, "audio is used to describe audio." Reference audio is compressed into a latent space via a pre-trained VAE encoder, followed by mean pooling to obtain an acoustic feature vector. The choice of encoder is critical: existing methods typically use CLAP, which is trained for semantic retrieval and only retains label-level information (e.g., "dog barking"), discarding spectral details. VAEs preserve low-level waveform features, enabling differentiation between timbres of the same label, such as a Chihuahua versus a large dog. In short, CLAP captures semantics, while VAE captures acoustics—exactly what fine-grained Foley requires.
 
-3. **Two-Stage Training Strategy**:
+**3. Two-Stage Training Strategy: Leveraging Intra-video Audio Self-similarity to Learn "Transfer" Over "Copying"**
 
-    - **Function**: Learns acoustic feature extraction and temporal adaptation in separate stages.
-    - **Mechanism**: Stage 1 (Acoustic Feature Learning) trains on overlapping audio-visual clip pairs to establish the ability to extract acoustic features from the reference audio. Stage 2 (Temporal Adaptation) uses non-overlapping audio segments from different temporal positions within the same video as conditions, exploiting intra-video audio self-similarity (e.g., footsteps in the same scene share acoustic characteristics) to force the model to align reference timbral features with the video's temporal structure.
-    - **Design Motivation**: The non-overlapping conditioning in Stage 2 is the key design choice — it compels the model to learn "timbre transfer" rather than "waveform copying," resolving the temporal misalignment and audio-visual incoherence caused by naive duplication.
+Directly feeding reference audio during training may lead the model to "cheat" by copying the reference waveform to the output, resulting in temporal misalignment. AC-Foley uses two stages to avoid this. Stage 1 (Acoustic Feature Learning) uses **overlapping** audio-visual segments to let the model learn to extract acoustic features. Stage 2 (Temporal Adaptation) uses **non-overlapping** audio segments from the same video as conditions. This exploits the fact that sounds within the same video share acoustic properties (e.g., consistent footstep timbre in one scene) but occur at different times. Since the condition and target are no longer temporally aligned, the model must learn to "transfer the reference timbre to the temporal structure indicated by the video." This non-overlapping design is the cornerstone of the strategy.
 
 ### Loss & Training
-The standard conditional flow matching objective (velocity field regression) is used. Each modality's condition is randomly dropped out during training with a certain probability, enabling flexible condition combinations at inference time.
+The training objective is the standard conditional flow matching loss (regression on the velocity field). Multimodal conditions are subjected to random dropout during training, allowing for flexible combinations during inference—the model functions correctly whether or not reference audio or text is provided. This also allows the model to degrade gracefully into a competitive standard V2A model when no reference is given.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | FD↓ | KL↓ | MCD↓ | Timbre Fidelity |
-|--------|-----|-----|------|-----------------|
-| MMAudio (text only) | Baseline | Baseline | Baseline | No control |
-| CondFoley | Moderate | Moderate | Moderate | Limited |
-| **AC-Foley (audio conditioned)** | **−20%** | **−28%** | **−22%** | **Precise** |
-| AC-Foley (no audio condition) | Competitive | Competitive | Competitive | — |
+|------|-----|-----|------|---------|
+| MMAudio (Text only) | Baseline | Baseline | Baseline | No Control |
+| CondFoley | Medium | Medium | Medium | Limited |
+| **AC-Foley (Audio Cond)** | **-20%** | **-28%** | **-22%** | **Precise** |
+| AC-Foley (No Audio Cond) | Competitive | Competitive | Competitive | — |
 
 ### Ablation Study
 
-| Configuration | Audio Quality | Timbre Fidelity | Notes |
-|---------------|---------------|-----------------|-------|
-| Full model | Best | Best | Two-stage training + VAE encoding |
-| Stage 1 only | Moderate | Temporal misalignment | Lacks temporal adaptation |
-| CLAP instead of VAE | Degraded | Timbral detail lost | CLAP captures only semantics |
-| No audio condition | Competitive | — | Degenerates to standard V2A |
+| Configuration | Audio Quality | Timbre Fidelity | Description |
+|------|---------|---------|------|
+| Full Model | Best | Best | Two-stage training + VAE encoding |
+| Stage 1 Only | Medium | Temporal Mismatch | Lacks temporal adaptation |
+| CLAP instead of VAE | Poor | Loss of detail | CLAP only captures semantics |
+| No Audio Cond | Competitive | — | Degrades to standard V2A |
 
 ### Key Findings
-- Providing different reference audio clips (e.g., Chihuahua bark vs. large-breed bark) for the same dog video yields acoustically distinct outputs, validating fine-grained control capability.
-- Timbre transfer experiments succeed across categories (e.g., transferring donkey vocalizations to a lion video), demonstrating cross-category acoustic feature transfer.
-- Zero-shot generation: using a suppressed gunshot as reference audio with a shooting video produces a silenced effect that text prompts are entirely incapable of describing.
-- Even without a reference audio input, AC-Foley remains competitive with state-of-the-art V2A methods, indicating that joint multimodal training itself improves baseline generation capability.
+- Providing different reference audio for the same video (e.g., Chihuahua bark vs. large dog bark) generates distinct sounds, verifying fine-grained control.
+- Timbre transfer experiments were successful (e.g., transferring a donkey's bray to a lion video), demonstrating cross-category acoustic transfer.
+- Zero-shot capability: Generating suppressed gunshot effects using a silencer reference with a standard gunshot video, which text prompts cannot adequately describe.
+- Even without reference audio, AC-Foley remains competitive with SOTA V2A methods, indicating that multimodal joint training improves base capabilities.
 
 ## Highlights & Insights
-- **A principled bypass of text**: Rather than improving text descriptions, the method uses audio directly as the control signal — "letting sound describe sound" is fundamentally more effective than "letting words describe sound."
-- **Elegant two-stage training design**: Exploiting intra-video audio self-similarity to force the model to learn "transfer" rather than "copy" is an ingenious training strategy.
-- **VAE vs. CLAP**: Prior work defaults to CLAP for audio encoding, but CLAP is designed for semantic retrieval. Preserving timbre requires lower-level waveform features, making VAE the principled choice.
+- **Bypassing Text Limitations**: Instead of refining text descriptions, using audio as a control signal is fundamentally more effective—"describing sound with sound" is superior to "describing sound with words."
+- **Clever Two-Stage Training**: Leveraging intra-video self-similarity to force the model to learn "transfer" instead of "copying" is an ingenious training design.
+- **VAE vs. CLAP Choice**: While CLAP is the default for many, its semantic nature makes it unsuitable for timbre preservation; VAEs provide the necessary low-level features.
 
 ## Limitations & Future Work
-- Reference audio must be provided by the creator, increasing the barrier to use.
-- Generation quality may degrade when the reference audio is semantically inconsistent with the video content.
-- Two-stage training adds training complexity.
-- Flexibility with respect to reference audio length may be constrained by the VAE's processing capacity.
+- Acquiring reference audio requires input from creators, increasing the barrier to use.
+- Generation quality may decrease when the reference audio and video content are semantically mismatched.
+- Two-stage training increases training complexity.
+- Flexibility regarding reference audio length may be constrained by the VAE's processing capacity.
 
 ## Related Work & Insights
-- **vs. MMAudio**: MMAudio jointly trains on video and text modalities but does not support audio-conditioned control; AC-Foley extends to three modalities and enables precise timbre control.
-- **vs. CondFoley**: CondFoley requires equal-length reference audio-video pairs, limiting flexibility; AC-Foley supports variable-length references.
-- **vs. MultiFoley**: MultiFoley performs audio continuation/extension and is constrained by the diversity of input audio; AC-Foley performs timbre transfer applicable across different semantic categories.
+- **vs. MMAudio**: MMAudio jointly trains video and text modalities but lacks audio conditional control; AC-Foley extends this to three modalities.
+- **vs. CondFoley**: CondFoley requires equal-length reference audio-video pairs, limiting flexibility; AC-Foley supports variable lengths.
+- **vs. MultiFoley**: MultiFoley performs audio continuation/expansion; AC-Foley enables timbre transfer across different semantic categories.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea of replacing text with reference audio control is intuitive yet highly effective; the two-stage training design is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three application scenarios are fully covered: fine-grained control, timbre transfer, and zero-shot generation.
-- Writing Quality: ⭐⭐⭐⭐ Motivation is clearly articulated; application examples are vivid and intuitive.
-- Value: ⭐⭐⭐⭐⭐ Provides a much-needed fine-grained control tool for Foley production practice.
+- Novelty: ⭐⭐⭐⭐ Audio-based control is intuitive yet highly effective; the two-stage training is well-designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers fine-grained control, timbre transfer, and zero-shot generation.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and vivid application examples.
+- Value: ⭐⭐⭐⭐⭐ Provides a much-needed tool for fine-grained control in practical Foley production.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2025\] MultiFoley: Video-Guided Foley Sound Generation with Multimodal Controls](../../CVPR2025/audio_speech/video-guided_foley_sound_generation_with_multimodal_controls.md)
+- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](../../CVPR2026/audio_speech/pavas_physics-aware_video-to-audio_synthesis.md)
 - [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](../../NeurIPS2025/audio_speech/model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
-- [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation](prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-.md)
 - [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
-- [\[ICML 2026\] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration](../../ICML2026/audio_speech/polyphonia_zero-shot_timbre_transfer_in_polyphonic_music_with_acoustic-informed_.md)
-- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](../../CVPR2026/audio_speech/omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
+- [\[ICLR 2026\] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis](hierarchical_semantic-acoustic_modeling_via_semi-discrete_residual_representatio.md)
 
 </div>
 

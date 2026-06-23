@@ -2,159 +2,160 @@
 title: >-
   [Paper Note] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] This paper introduces ST-WebAgentBench, the first benchmark specifically designed to evaluate the safety and trustworthiness of web agents. Through a policy hierarchy framework and the C…
+  [ICLR 2026][LLM Agent][Web Agent] This paper proposes ST-WebAgentBench, the first benchmark specifically designed to evaluate the safety and trustworthiness of Web Agents. Through a hierarchical policy framework and the Completion under Policy (CuP) metric, it reveals that current SOTA agents exhibit severe policy violations in enterprise scenarios.
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "Web Agent"
-  - "Safety"
-  - "Trustworthiness"
-  - "benchmark"
-  - "Policy Compliance"
+  - ICLR 2026
+  - LLM Agent
+  - Web Agent
+  - Safety
+  - Trustworthiness
+  - benchmark
+  - Policy Compliance
 date: 2026-05-08
-content_hash: 7afbe03a36297472
+content_hash: 452ef2cd399df064
 ---
-
 # ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2410.06703](https://arxiv.org/abs/2410.06703)  
 **Code**: [https://sites.google.com/view/st-webagentbench/home](https://sites.google.com/view/st-webagentbench/home)  
-**Area**: LLM Agent
+**Area**: LLM Agent  
 **Keywords**: Web Agent, Safety, Trustworthiness, benchmark, Policy Compliance
 
 ## TL;DR
 
-This paper introduces ST-WebAgentBench, the first benchmark specifically designed to evaluate the safety and trustworthiness of web agents. Through a policy hierarchy framework and the Completion under Policy (CuP) metric, it reveals that current SOTA agents exhibit serious policy violations in enterprise settings.
+This paper proposes ST-WebAgentBench, the first benchmark specifically designed to evaluate the safety and trustworthiness of Web Agents. Through a hierarchical policy framework and the Completion under Policy (CuP) metric, it reveals that current SOTA agents exhibit severe policy violations in enterprise scenarios.
 
 ## Background & Motivation
 
-LLM-based web agents have advanced rapidly in recent years, with frameworks such as AutoGPT, LangGraph, and AutoGen giving rise to a large number of autonomous web agents. However, existing benchmarks—including WebArena, WorkArena, and Mind2Web—**focus exclusively on task completion rate**, entirely neglecting safety, policy compliance, and trustworthiness, which are critical factors for enterprise deployment.
+The development of LLM-based Web Agents has accelerated recently, with frameworks like AutoGPT, LangGraph, and AutoGen spawning numerous autonomous agents. However, existing benchmarks such as WebArena, WorkArena, and Mind2Web **focus solely on task completion rates**, completely ignoring critical factors for enterprise deployment: safety, policy compliance, and trustworthiness.
 
-Specific problems include:
+Specific issues include:
 
-**Neglected safety risks**: Agents may inadvertently delete user accounts, perform unintended actions, or leak sensitive data.
+**Neglected Safety Risks**: Agents may accidentally delete user accounts, perform unintended operations, or leak sensitive data.
 
-**Hallucination behavior**: Agents may populate fictitious information (e.g., fabricated email addresses) during task execution and still receive full task completion scores.
+**Hallucinatory Behavior**: Agents may fill in fictitious information (e.g., fake email addresses) to complete a task, yet still receive a completion score.
 
-**Absence of policy compliance evaluation**: Enterprise environments require agents to strictly adhere to a hierarchical set of organizational policies, user preferences, and task instructions.
+**Lack of Policy Compliance Evaluation**: Enterprise environments require agents to strictly adhere to hierarchical constraints across organizational policies, user preferences, and task instructions.
 
-**Lack of human-in-the-loop support**: Existing benchmarks do not support agents proactively seeking human confirmation under uncertainty.
+**Absence of Human-in-the-loop**: Existing benchmarks do not support agents actively seeking human confirmation when uncertain.
 
-These issues constitute a significant barrier to large-scale deployment of web agents in real-world enterprise environments.
+These problems represent major obstacles to the large-scale deployment of Web Agents in real-world enterprise environments.
 
 ## Method
 
 ### Overall Architecture
 
-ST-WebAgentBench is built on the BrowserGym environment, integrating WebArena and SuiteCRM application environments. It comprises 235 policy-augmented tasks spanning multiple safety categories.
+ST-WebAgentBench aims to answer a question avoided by existing benchmarks: it is not just about "whether a Web Agent can complete a task," but "whether it can complete it safely while adhering to enterprise policies." Built on the open-source BrowserGym environment, it transforms 375 real enterprise tasks (from WebArena’s GitLab and ShoppingAdmin, plus the open-source SuiteCRM) from simple completion evaluations into compliance evaluations. The pipeline consists of three steps: first, assigning a set of hierarchical policies (Organization $\succ$ User $\succ$ Task) to each task; second, decomposing "safety and trustworthiness" into six auditable dimensions, each instantiated by 1–2 reusable templates sharing violation detection functions; third, auditing action trajectories to output a completion flag and a cross-dimensional violation vector. These are aggregated into metrics like CuP, pCuP, and Risk Ratio. The dataset contains 3,057 policy instances covering all six dimensions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["375 Enterprise Tasks<br/>GitLab·ShoppingAdmin·SuiteCRM<br/>Accessed via BrowserGym"] --> B["Policy Hierarchy<br/>Porg ≻ Puser ≻ Ptask<br/>Tightens Legal Action Set Ht"]
+    B --> C["Six Safety & Trust Dimensions<br/>Instantiated via 1-2 Templates<br/>Total 3057 Policy Instances"]
+    C --> D["Shared Violation Detection Functions<br/>Step-wise Audit of Action Trajectories<br/>Outputs Completion Flag Ct + Violation Vector Vt"]
+    D --> E["CuP / pCuP<br/>Score only if Completed and Zero Violations"]
+    D --> F["Risk Ratio<br/>Normalized by Number of Dimension Policies"]
+    E --> G["Enterprise-grade Deployment Compliance Conclusions"]
+    F --> G
+```
 
 ### Key Designs
 
-1. **Policy Hierarchy for Safe and Trustworthy Behavior**
+**1. Policy Hierarchy: Prioritizing Safety Constraints like Corporate Regulations**
 
-    - **Organizational Policy $P_{org}$** (highest priority): e.g., "Never delete any record from the system."
-    - **User Preferences $P_{user}$** (medium priority): e.g., "Always ask for my permission before submitting a new form."
-    - **Task Instructions $P_{task}$** (lowest priority): execution instructions for a specific task.
-    - Agent behavior must satisfy: $\pi_H(S_t) = \arg\max_{a_t \in A(S_t)} [R_{task}(S_t, a_t)]$ subject to $a_t \in H_t$
+In enterprises, the relationship "Organization Rules > User Preferences > Specific Tasks" is a natural hierarchy, but existing benchmarks flatten all instructions into a single prompt. This paper explicitly divides policies into three layers: Organizational Policy $P_{org}$ has the highest priority (non-negotiable privacy/safety/irreversible operation red lines, e.g., "never delete records"), User Preference $P_{user}$ is middle-tier (effective only if not conflicting with $P_{org}$), and Task Instruction $P_{task}$ is lowest. This hierarchy $P_{org} \succ P_{user} \succ P_{task}$ tightens the set of legal actions for an Agent at state $S_t$ to:
 
-2. **Safety and Trustworthiness Dimensions (10 evaluation dimensions)**
+$$H_t = \{\, a \in A(S_t) : a \text{ satisfies } P_{org} \land P_{user} \land P_{task} \,\}$$
 
-    - User Consent and Action Confirmation
-    - Boundary and Scope Restriction
-    - Strict Task Execution
-    - Policy Adherence
-    - Robustness Against Jailbreaking
-    - Security of Sensitive Data
-    - Error Handling and Safety Nets
-    - Legal and Ethical Compliance
-    - Transparency and Explainability
-    - Observation Integrity and Manipulation Defense
-    - Reflection and Task Verification
+Agents must maximize task rewards only within $H_t$. Violating a high-priority policy to complete a task is no longer considered "optimal" but is disqualified. Violating $P_{org}$ counts as a safety failure, while violating $P_{user}$ or $P_{task}$ reduces trustworthiness and success respectively.
 
-3. **CuP Metric (Completion under Policy)**
+**2. Six Safety and Trust Dimensions: Auditable Categories of "Unsafety"**
 
-    - A policy violation matrix $V$ is defined, where $V_{source,category}$ denotes the number of violations for a given source and category.
-    - Metric formulation: $CuP = C_{task} \cdot \mathbb{1}\{V_{total} = 0\}$
-    - Task completion is credited **only when there are zero policy violations**, making this metric strictly more demanding than the raw task completion rate.
+The authors define six orthogonal dimensions to diagnose failures: User Consent (require confirmation before irreversible actions), Boundary & Scope (actions limited to authorized areas), Strict Execution (no data fabrication or unauthorized improvisation), Hierarchy Adherence (obeying top-level rules during conflict), Robustness & Security (resisting jailbreaks and protecting sensitive data), and Error Handling (transparent reporting and safe fallback). These dimensions allow for granular diagnosis, such as identifying if an agent specifically struggles with the "Consent" dimension.
 
-4. **Risk Ratio Assessment**
+**3. CuP Metric (Completion under Policy): Zero Tolerance for Violations**
 
-    - $\text{Risk Ratio}_{source,category} = \frac{\sum_i V_{source,category}(i)}{\#Policies_{source}}$
-    - Three-tier risk classification: low risk (≤5%), medium risk (5–15%), high risk (>15%).
+Traditional completion rates reward speculative behavior like using fake emails. Each task $t$ generates a binary completion flag $C_t$ and a non-negative violation vector $V_t^d$ across six dimensions $d \in D$. CuP multiplies completion by compliance:
 
-### Benchmark Implementation
+$$CuP_t = C_t \cdot \mathbb{1}\!\left[\textstyle\sum_d V_t^d = 0\right], \qquad CuP = \frac{1}{T}\sum_t CuP_t$$
 
-- **Task distribution**: Core benchmark (indices 0–84) + cognitive load tests (indices 85–234).
-- **Evaluation functions**: `element_action_match`, `is_sequence_match`, `is_url_match`, `is_ask_the_user`, `is_action_count`, `is_program_html`.
-- **Human-in-the-loop support**: BrowserGym's observation space is extended to include the policy hierarchy, enabling asynchronous agent integration.
+If any violation occurs, the indicator function becomes 0, and the completion score is vetoed. For long-horizon tasks, pCuP applies the same filter to partial completion flags. This "zero-violation score" reflects enterprise reality, where the cost of one unauthorized deletion outweighs the benefit of task completion.
+
+**4. Risk Ratio: Normalized Signals for Cross-Dimensional Comparison**
+
+To compare dimensions with different policy counts, the violation frequency is normalized:
+
+$$\text{RiskRatio}_d = \frac{\sum_t V_t^d}{\#Policies_d}$$
+
+This quantifies how "dangerous" an agent is in specific dimensions, categorized as Low/Medium/High risk.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Agent | Completion Rate | CuP | Partial Completion | Partial CuP | Consent Violations | Strict Execution Violations |
-|---|---|---|---|---|---|---|
+| Agent | Completion Rate | CuP | Partial CR | Partial CuP | Consent Violations | Strict Execution Violations |
+|-------|-----------------|-----|------------|-------------|-------------------|-----------------------------|
 | AWM | 0.238 | 0.238 | 0.369 | 0.238 | 37.0 (High Risk) | 24.0 (High Risk) |
 | WebVoyager | 0.128 | 0.113 | 0.169 | 0.155 | 12.0 (High Risk) | 21.0 (High Risk) |
-| WorkArena Legacy | 0.129 | 0.114 | 0.171 | 0.157 | 4.0 (Medium Risk) | 16.0 (Medium Risk) |
+| WorkArena Legacy | 0.129 | 0.114 | 0.171 | 0.157 | 4.0 (Med Risk) | 16.0 (Med Risk) |
 
-### Cognitive Load Experiment
+### Ablation Study (Cognitive Load)
 
 | Difficulty | Policies/Task | AWM Performance |
-|---|---|---|
+|------------|---------------|-----------------|
 | Easy | 3 | 14.8 |
-| Medium | 10 | — |
+| Medium | 10 | - |
 | Hard | 17 | 11.5 |
 
 ### Key Findings
 
-1. **CuP is substantially lower than the nominal completion rate**: AWM's CuP (0.238) is significantly lower than its partial completion rate (0.369), exposing critical safety gaps.
-2. **Consent dimension incurs the most violations**: AWM accumulates 37 consent violations, with a risk ratio as high as 0.44.
-3. **Cognitive load has a pronounced effect**: As the number of policies increases from 3 to 17, agent performance drops from 14.8 to 11.5.
-4. **Hallucination is pervasive**: Agents execute additional steps beyond the task instructions, such as mistakenly creating repositories or filling in fabricated information.
-5. **Boundary dimension has limited impact**: Likely because agents fail before boundary checks are triggered.
+1. **CuP is significantly lower than nominal completion**: AWM's CuP (0.238) is much lower than its partial completion rate (0.369), exposing critical safety gaps.
+2. **Consent violations are the most severe**: AWM recorded 37 consent violations, with a risk ratio of 0.44.
+3. **Significant impact of cognitive load**: As the number of policies increased from 3 to 17, agent performance dropped from 14.8 to 11.5.
+4. **Widespread hallucination issues**: Agents performed extra steps outside instructions, such as accidentally creating repositories or filling in fictitious information.
+5. **Low impact of boundary dimensions**: This may be because agents fail for other reasons before triggering boundary checks.
 
 ## Highlights & Insights
 
-- **Elegant design of the CuP metric**: The zero-tolerance policy violation condition ($\mathbb{1}\{V_{total}=0\}$) accurately reflects the real requirements of enterprise environments.
-- **Policy-aware architecture proposal**: The paper proposes multi-agent architectural principles incorporating a Policy Agent and an Interceptor Pattern.
-- **Enterprise perspective**: Unlike academic benchmarks that solely pursue task completion, this work re-examines agent evaluation from the standpoint of enterprise safety and compliance.
-- **BrowserGym integration**: The benchmark is open-sourced with a plan to contribute the extensions back to the BrowserGym ecosystem.
+- **Sophisticated CuP Indicator**: The "zero-tolerance" design $(\mathbb{1}\{V_{total}=0\})$ accurately reflects real-world enterprise requirements.
+- **Policy-Aware Architecture Proposal**: Suggests multi-agent designs incorporating Policy Agents and Interceptor Patterns.
+- **Industrial Perspective**: Unlike academic benchmarks that only chase completion, this work re-examines agents through the lens of enterprise safety and compliance.
+- **BrowserGym Integration**: Open-sourced and integrated into the broader BrowserGym ecosystem.
 
 ## Limitations & Future Work
 
-1. The dataset is relatively small (235 tasks) and the distribution across policy categories is uneven.
-2. Task design for the boundary dimension requires improvement, as it currently has limited impact on agent performance.
-3. Manually annotating policy ground truth is costly; automated approaches warrant further exploration.
-4. Only three agents are evaluated; broader evaluation across more agents is needed.
-5. In-depth testing of advanced safety dimensions such as jailbreak attacks and sensitive data leakage is lacking.
+1. Small dataset size (235 tasks) and unbalanced distribution of policy categories.
+2. Boundary dimension task design needs improvement, as it currently has limited impact on performance.
+3. High cost of manual ground truth annotation; automated methods need exploration.
+4. Limited evaluation scope (only 3 agents); more models need to be tested.
+5. Lacks in-depth testing for advanced security dimensions like jailbreak attacks or sensitive data exfiltration.
 
 ## Related Work & Insights
 
-- **WebArena/WorkArena series**: Provides foundational infrastructure for online interactive benchmarks.
-- **GuardAgent**: An agent framework that enforces safety measures via knowledge-based reasoning.
-- **R-Judge**: A benchmark for evaluating agent capability in handling safety-critical tasks.
-- The key contribution of this work to the agent safety research community lies in establishing a paradigm shift in evaluation: from "can the task be completed?" to "is the task completed safely?"
+- **WebArena/WorkArena Series**: Provides the infrastructure for online interaction benchmarks.
+- **GuardAgent**: An agent framework using knowledge reasoning for safety measures.
+- **R-Judge**: A benchmark for evaluating agent capability in safety-critical tasks.
+- The value of this work lies in the paradigm shift from "can it complete it" to "can it complete it safely."
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (First benchmark for safety and trustworthiness evaluation, though the methodology essentially amounts to adding policy constraints)
-- Experimental Thoroughness: ⭐⭐⭐ (Only 3 agents evaluated; dataset is relatively small)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure; problem definition is precise)
-- Value: ⭐⭐⭐⭐⭐ (Fills the gap in agent safety evaluation; offers important guidance for enterprise-domain agent deployment)
+- Novelty: ⭐⭐⭐⭐ (First safety/trustworthiness benchmark, though method is essentially adding constraints)
+- Experimental Thoroughness: ⭐⭐⭐ (Tested on only 3 agents; small dataset)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure and problem definition)
+- Value: ⭐⭐⭐⭐⭐ (Fills a gap in agent safety evaluation; highly relevant for enterprise deployment)
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
-- [\[ICLR 2026\] LiveNewsBench: Evaluating LLM Web Search Capabilities with Freshly Curated News](livenewsbench_evaluating_llm_web_search_capabilities_with_freshly_curated_news.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
-- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
-- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
+- [\[ICLR 2026\] Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on Diverse Video Games](orak_a_foundational_benchmark_for_training_and_evaluating_llm_agents_on_diverse_.md)
+- [\[ICLR 2026\] WARC-Bench: Web Archive based Benchmark for GUI Subtask Executions](warc-bench_web_archive_based_benchmark_for_gui_subtask_executions.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
+- [\[ICML 2026\] It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents](../../ICML2026/llm_agent/its_a_trap_task-redirecting_agent_persuasion_benchmark_for_web_agents.md)
 
 </div>
 

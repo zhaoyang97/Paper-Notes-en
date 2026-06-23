@@ -2,77 +2,85 @@
 title: >-
   [Paper Note] SR-Scientist: Scientific Equation Discovery With Agentic AI
 description: >-
-  [ICLR 2026][LLM Agent][symbolic regression] This paper proposes the SR-Scientist framework, which elevates LLMs from simple equation proposers to autonomous AI scientists. By leveraging a code interpreter tool for data a…
+  [ICLR 2026][LLM Agent][symbolic regression] Ours proposes the SR-Scientist framework, elevating LLMs from simple equation proposers to autonomous AI scientists. By utilizing code interpreter tools for data analysis and equation evaluation, the agent autonomously discovers scientific equations through long-horizon interactions, with capabilities further enhanced
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "symbolic regression"
-  - "agentic AI"
-  - "equation discovery"
-  - "reinforcement-learning"
-  - "scientific discovery"
+  - ICLR 2026
+  - LLM Agent
+  - symbolic regression
+  - agentic AI
+  - equation discovery
+  - reinforcement-learning
+  - scientific discovery
 date: 2026-05-08
-content_hash: 8b6498f776eda8c3
+content_hash: 5baf65e97f38c9d7
 ---
-
 # SR-Scientist: Scientific Equation Discovery With Agentic AI
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.11661](https://arxiv.org/abs/2510.11661)  
 **Code**: [GitHub](https://github.com/GAIR-NLP/SR-Scientist)  
-**Area**: LLM Agent
+**Area**: LLM Agent  
 **Keywords**: symbolic regression, agentic AI, equation discovery, reinforcement-learning, scientific discovery
 
 ## TL;DR
 
-This paper proposes the SR-Scientist framework, which elevates LLMs from simple equation proposers to autonomous AI scientists. By leveraging a code interpreter tool for data analysis and equation evaluation, the framework autonomously discovers scientific equations through long-horizon interactions, with reinforcement learning further enhancing its capabilities.
+Ours proposes the SR-Scientist framework, elevating LLMs from simple equation proposers to autonomous AI scientists. By utilizing code interpreter tools for data analysis and equation evaluation, the agent autonomously discovers scientific equations through long-horizon interactions, with capabilities further enhanced via reinforcement learning.
 
 ## Background & Motivation
 
-Symbolic Regression (SR) aims to discover interpretable mathematical expressions from observational data and is a foundational task in scientific discovery. Existing approaches fall into three main categories:
-- **Genetic Programming (GP) methods**: e.g., PySR and GPLearn, which perform combinatorial search over expression trees
-- **Deep learning methods**: e.g., E2E, NeSymReS, and DSR, which train neural networks to map numerical data to expressions
-- **LLM-augmented methods**: e.g., LLM-SR and LaSR, which embed LLMs within GP pipelines as equation proposers
+Symbolic Regression (SR) aims to discover interpretable mathematical expressions from observed data and serves as a fundamental task in scientific discovery. Traditional methods are mainly categorized into:
+- **Genetic Programming (GP)**: e.g., PySR, GPLearn, which use expression trees for combinatorial search.
+- **Deep Learning**: e.g., E2E, NeSymReS, DSR, which learn mappings from numerical values to expressions via neural networks.
+- **LLM-Augmented**: e.g., LLM-SR, LaSR, which embed LLMs into GP algorithms as equation proposers.
 
-Key limitations of existing LLM-based approaches include:
-1. LLMs serve only as equation generators within fixed pipelines, **lacking autonomy**
-2. They cannot directly analyze observational data via tools to extract insights
-3. Most works focus solely on inference and do not explore **self-improvement** through methods such as RL
+**Limitations of Prior Work**:
+1. LLMs act only as equation generators within fixed pipelines, **lacking autonomy**.
+2. They cannot directly analyze observed data using tools to gain insights.
+3. Most work focuses solely on the inference stage and does not explore **self-evolution** through methods like RL.
 
-The core motivation of this paper is to build a scientific discovery framework centered on Agentic AI, transforming the LLM from a passive tool into an autonomous agent capable of driving the entire discovery lifecycle.
+**Goal**: Construct a scientific discovery framework centered on Agentic AI, where the LLM is no longer a passive tool but an autonomous agent driving the entire discovery lifecycle.
 
 ## Method
 
 ### Overall Architecture
 
-The inference framework of SR-Scientist adopts an iterative design (Algorithm 1):
+The goal of SR is to infer the underlying mathematical expression from observed data $(\mathbf{x}, y)$. SR-Scientist wraps an LLM as an autonomous agent operating under the ReAct framework: rather than generating an equation in one shot, it iteratively performs "reasoning $\rightarrow$ tool use $\rightarrow$ observation" to explore the data. In each step, it can invoke two code interpreter tools to analyze data or evaluate equations. Validated optimal equations are stored in a cross-round experience buffer. The process iterates multiple rounds with progressive accuracy goals (configured for a maximum of $N=40$ rounds and $M=25$ interaction steps per round), finally submitting the best-scoring equation from the buffer. The evaluation metric is the Mean Absolute Percentage Error $\text{MAPE} = \frac{100\%}{n} \sum_{i=1}^{n} \left| \frac{y_i - f(\mathbf{x}_i)}{y_i} \right|$. A GRPO reinforcement learning layer can be added to enable self-evolution from the agent's exploration trajectories.
 
-1. **Each iteration** sets a precision target $G_i$ (based on MAPE)
-2. The LLM agent operates under the ReAct framework, alternating between reasoning and tool invocation: $(r_1, \mathcal{T}_1, o_1), (r_2, \mathcal{T}_2, o_2), \ldots$
-3. An Experience Buffer propagates the best equations across iterations
-4. Upon meeting the stopping criterion, the best equation is submitted
-
-The objective function uses MAPE (Mean Absolute Percentage Error):
-
-$$\text{MAPE} = \frac{100\%}{n} \sum_{i=1}^{n} \left| \frac{y_i - f(\mathbf{x}_i)}{y_i} \right|$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Observed Data (x, y)"] --> REASON["Agent Reasoning<br/>ReAct: Think → Act → Observe"]
+    subgraph TOOLS["Dual-Tool Code Interpreter"]
+        direction TB
+        T1["Data Analyzer T1: Writes code for stats/residuals to uncover structure"]
+        T2["Equation Evaluator T2: BFGS fits constants → Reports MAPE"]
+    end
+    REASON --> TOOLS --> REASON
+    REASON --> BUF["Experience Buffer: Stores (Eq, MAPE), feeds back top-K"]
+    BUF -->|"Long-horizon exploration: Progressive goals<br/>Max 40 rounds × ≤25 steps/round"| REASON
+    BUF --> OUT["Submit equation with best score in buffer"]
+    OUT -.Optional Outer Layer.-> RL["GRPO Reinforcement Learning: Log-linear reward drives self-evolution"]
+```
 
 ### Key Designs
 
-**Tool Design**: The code interpreter is encapsulated into two core tools:
-- **Data Analyzer $T_1$**: Linked to observational data, allowing the agent to write code for statistical analysis, residual analysis, and various forms of data exploration
-- **Equation Evaluator $T_2$**: Accepts equation skeletons with constant placeholders, internally optimizes constants via the BFGS algorithm, and reports performance
+**1. Dual-Tool Code Interpreter: Enabling "Hands-on" Analysis**
 
-**Experience Buffer**: Maintains $E = \{(e_i, s_i)\}_{i=1}^{N}$ to record explored equations and their MAPE scores. At the start of each iteration, the top-$K$ equations are retrieved as in-context examples, elegantly circumventing LLM context length constraints.
+**Design Motivation**: The bottleneck of existing LLM-SR methods is that LLMs guess equations based only on text descriptions without seeing the raw data. SR-Scientist encapsulates two tools: the Data Analyzer $T_1$ links directly to observed data, allowing the agent to write code for statistics, residual plotting, and relationship mapping. The Equation Evaluator $T_2$ takes an equation skeleton with constant placeholders, fits them using BFGS, and reports the MAPE, decoupling "form proposal" from "parameter tuning." This loop allows the agent to observe, hypothesize, and verify like a human scientist. Removing $T_1$ results in a $\sim 28\%$ drop in accuracy for GPT-based variants.
 
-**Long-Horizon Optimization**: Each iteration allows the agent up to $M=25$ rounds of interaction (exceeding 20 turns), providing sufficient time for data analysis and equation refinement.
+**2. Experience Buffer: Bypassing Context Limits via Heap Structures**
+
+Long-horizon exploration generates numerous candidate equations. SR-Scientist maintains a buffer $E = \{(e_i, s_i)\}_{i=1}^{N}$ recording explored equations $e_i$ and their MAPE scores $s_i$. At the start of each iteration, only the top-$K$ best equations are retrieved as context examples. This transfers valuable historical experience across iterations while keeping context length manageable, acting as an external memory of "best attempts."
+
+**3. Long-Horizon Iterative Exploration: Depth of Search**
+
+The discovery process is decomposed into $N=40$ iterations, each with a progressive accuracy goal $G_i$. The agent is allowed up to $M=25$ steps of reasoning-tool interaction per iteration. This high limit (exceeding typical 10–20 step agent loops) provides the budget necessary for repetitive trial-and-error, detailed data analysis, and equation refinement.
 
 ### Loss & Training
 
-The training framework adopts the GRPO algorithm with a log-linear reward function:
-
+To enable self-evolution, SR-Scientist is trained using GRPO. Since SR performance is continuously measurable, a binary reward would lose gradient information. Thus, the reward is designed as a log-linear mapping:
 $$\mathcal{R} = \text{clip}\left(\frac{\lg s_{\max} - \lg s}{\lg s_{\max} - \lg s_{\text{goal}}}, 0, 1\right)$$
-
-where $s$ is the MAPE of the best equation, $s_{\max}=100\%$, and $s_{\text{goal}}=0.1\%$. This continuous reward design avoids the sparsity of binary rewards. Training data is constructed via a hybrid strategy combining rule-based and model-based synthesis, covering four domains: materials science, chemistry, biology, and physics.
+where $s$ is the best MAPE in the trajectory, $s_{\max}$ is the upper bound for non-zero reward, and $s_{\text{goal}}$ is the target accuracy. The log scale ensures that "reducing error from 10% to 1%" and "from 1% to 0.1%" provide equal reward increments.
 
 ## Key Experimental Results
 
@@ -81,7 +89,7 @@ where $s$ is the MAPE of the best equation, $s_{\max}=100\%$, and $s_{\text{goal
 Accuracy results on the LSR-Synth benchmark (129 problems across 4 disciplines):
 
 | Method | Overall Acc₀.₀₁ | Overall Acc₀.₀₀₁ | Materials Acc₀.₀₁ | Chemistry Acc₀.₀₁ | Biology Acc₀.₀₁ | Physics Acc₀.₀₁ |
-|--------|-----------------|-------------------|-------------------|-------------------|-----------------|-----------------|
+|------|-----------------|-------------------|------------------|-------------|---------------|---------------|
 | PySR | 29.46 | 14.47 | 53.33 | 25.93 | 16.67 | 25.76 |
 | LLM-SR (Qwen-480B) | 41.08 | 18.09 | 80.00 | 36.11 | 30.56 | 28.79 |
 | SR-Scientist (GPT-120B) | **63.57** | **49.35** | 74.67 | **81.48** | **66.67** | 40.91 |
@@ -90,70 +98,68 @@ Accuracy results on the LSR-Synth benchmark (129 problems across 4 disciplines):
 | SR-Scientist (30B) | 32.30 | 16.02 | 81.33 | 22.22 | 22.22 | 18.18 |
 | SR-Scientist (30B+RL) | 40.92 | 20.69 | 85.33 | 37.38 | 29.17 | 25.00 |
 
-**Core Finding**: SR-Scientist outperforms all baselines by 6%–35% across all four backbone models, with GPT-OSS-120B achieving the highest overall performance. RL training yields consistent and significant improvements across all disciplines.
+**Key Findings**: SR-Scientist outperforms baselines by 6%–35% across four models, with GPT-OSS-120B achieving the highest performance. RL training yields significant gains across all disciplines.
 
 ### Ablation Study
 
 | Method | Acc₀.₀₁ | Acc₀.₀₀₁ |
-|--------|---------|----------|
+|------|---------|----------|
 | SR-Scientist (GPT) | 63.57 | 49.35 |
 | w/o Data Analyzer $T_1$ | 35.66 | 16.28 |
 | w/o Experience Buffer | 57.36 | 41.86 |
-| w/o top-k (random sampling) | 58.14 | 41.86 |
+| w/o top-k (Random) | 58.14 | 41.86 |
 
-Key findings from the ablation:
-- The data analysis tool has the largest impact on the GPT model (a drop of ~28 percentage points)
-- The experience buffer has the largest impact on the Qwen model (a drop of 13.4 percentage points)
-- Top-k sampling outperforms random sampling
+Ablation analysis indicates that:
+- The data analysis tool is most critical for the GPT model ($\sim 28$ point drop).
+- The experience buffer is most critical for the Qwen model.
+- Top-k sampling is superior to random sampling.
 
 ### Key Findings
 
-1. **Symbolic Accuracy**: SR-Scientist achieves the best performance in fully recovering ground-truth equations (SA=7.75–8.00), surpassing PySR (4.65) and LLM-SR (5.43)
-2. **Noise Robustness**: SR-Scientist consistently outperforms other methods under Gaussian noise with varying standard deviations
-3. **OOD Generalization**: Discovered equations maintain the best performance on out-of-distribution test data
-4. **Optimal Interaction Length**: 25 rounds is the optimal value; too few (10 rounds) is insufficient for thorough exploration, while too many yields diminishing returns
-5. **Tool Usage Behavioral Differences**: GPT-series models tend to directly write residual analysis code, whereas Qwen/GLM models more frequently use descriptive statistics
+1. **Symbolic Accuracy**: Ours achieves the best performance in recovering ground-truth equations (SA=7.75~8.00) vs. PySR (4.65) and LLM-SR (5.43).
+2. **Noise Robustness**: SR-Scientist consistently outperforms others under varying levels of Gaussian noise.
+3. **Exploration Horizon**: 25 steps is optimal; 10 steps is insufficient, while additional steps yield diminishing returns.
+4. **Tool-Use Behavior**: GPT variants prefer writing residual analysis code, while Qwen/GLM variants rely more on data statistics.
 
 ## Highlights & Insights
 
-1. **Paradigm Shift**: Transforming the LLM from a passive equation proposer to an autonomous AI scientist represents a significant conceptual advance in scientific discovery
-2. **Elegant Experience Buffer Design**: A simple heap structure resolves the LLM context length limitation while enabling cross-iteration knowledge transfer
-3. **Continuous Reward Design**: Leveraging the continuous measurability of equation performance, the log-linear reward avoids sparsity and is better suited to this task than the binary rewards typical of math or code tasks
-4. **Minimal Human Pipeline Principle**: The agent freely determines its own workflow; different backbone models exhibit distinct analytical strategies (e.g., GPT favors residual analysis, Qwen favors statistical analysis)
-5. **Effective RL Self-Improvement**: The 30B model trained with RL approaches the performance of larger non-RL models, validating the feasibility of agent self-improvement
+1. **Paradigm Shift**: Transforms LLMs from passive equation proposers to autonomous AI scientists.
+2. **Buffer Design**: Effectively solves context limits via a heap structure, enabling cross-iteration knowledge transfer.
+3. **Continuous Reward**: Leverages the measurable nature of SR to design log-linear rewards, avoiding the sparsity issues found in binary (pass/fail) rewards.
+4. **Self-Evolution**: RL training allows smaller 30B models to approach the performance of much larger non-RL models, validating the feasibility of agent self-improvement.
 
 ## Limitations & Future Work
 
-1. Only text-based models are used; multimodal inputs (e.g., chart analysis) are not exploited
-2. Performance degrades significantly under noisy conditions
-3. The agent may repeatedly explore previously identified poor-performing equations across iterations; the memory system has room for improvement
-4. Although the evaluation set is designed to mitigate memorization, LSR-Synth remains synthetic data and may not fully reflect the complexity of real-world scientific discovery
+1. Currently limits input to text, omitting multi-modal data like charts.
+2. Significant performance degradation persists in high-noise scenarios.
+3. The memory system could be optimized to prevent redundant exploration of known poor equations.
+4. While designed for anti-memorization, benchmarks like LSR-Synth are still synthetic rather than real-world discovery scenarios.
 
 ## Related Work & Insights
 
-- Compared to works such as FunSearch (Romera-Paredes et al., 2024) and AlphaEvolve, SR-Scientist places greater emphasis on agent autonomy and long-horizon interaction
-- The combination of experience buffer and GRPO provides a blueprint for RL training of scientific discovery agents
-- The modular framework design (pluggable tools, swappable backbone models) is highly extensible and can be generalized to other scientific discovery tasks
+- Compared to FunSearch or AlphaEvolve, SR-Scientist emphasizes agent autonomy and long-horizon interactions.
+- The combination of experience buffers and GRPO provides a template for training agents in scientific discovery tasks.
+- The modular design (swappable tools and backbones) is highly extensible for other scientific domains.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Introducing the agentic AI paradigm into symbolic regression, combined with RL-based self-improvement, constitutes a significant contribution
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across 4 disciplines, 5 backbone models, and multiple metrics including accuracy, generalization, noise robustness, and symbolic accuracy
-- **Practicality**: ⭐⭐⭐⭐ — Open-source code and modular framework, though the reliance on extensive LLM calls entails non-trivial computational cost
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and well-specified algorithms, though some sections could be more concise
-- **Overall Rating**: ⭐⭐⭐⭐ (4/5)
+- **Novelty**: ⭐⭐⭐⭐
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐
+- **Value**: ⭐⭐⭐⭐
+- **Writing Quality**: ⭐⭐⭐⭐
+- **Overall**: ⭐⭐⭐⭐ (4/5)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ICLR 2026\] The Controllability Trap: A Governance Framework for Military AI Agents](the_controllability_trap_a_governance_framework_for_military_ai_systems.md)
-- [\[ICLR 2026\] AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations](autofigure_generating_and_refining_publication-ready_scientific_illustrations.md)
+- [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
 - [\[ACL 2026\] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery](../../ACL2026/llm_agent/moose-copilot_a_web-based_interactive_assistant_for_unified_exploratory_and_fine.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agentic AI Defense Against LLM Jailbreaking](toward_a_dynamic_stackelberg_game-theoretic_framework_for_agentic_ai_defense_aga.md)
+- [\[ICML 2025\] Evaluating Retrieval-Augmented Generation Agents for Autonomous Scientific Discovery in Astrophysics](../../ICML2025/llm_agent/evaluating_retrieval-augmented_generation_agents_for_autonomous_scientific_disco.md)
 
 </div>
 

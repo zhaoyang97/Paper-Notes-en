@@ -2,96 +2,89 @@
 title: >-
   [Paper Note] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][Smart Home] This paper proposes SimuHome, a time-accelerated smart home simulator based on the Matter protocol along with a 600-episode benchmark. It is the first benchmark to simulate the continuo…
+  [ICLR 2026][LLM Agent][Paper Note] SimuHome is proposed as a time-accelerated smart home simulator and a 600-episode benchmark based on the Matter protocol. It is the first to simulate the continuous impact of device operations on environmental variables and evaluate workflow scheduling capabilities. Findings indicate that workflow scheduling remains th
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "Smart Home"
-  - "Workflow Scheduling"
-  - "Temporal Reasoning"
-  - "Interactive Simulator"
+  - ICLR 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 5134d621045958de
+content_hash: bdb3ae42633fc3d2
 ---
-
 # SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.24282](https://arxiv.org/abs/2509.24282)  
 **Code**: [https://github.com/holi-lab/SimuHome/](https://github.com/holi-lab/SimuHome/)  
-**Area**: LLM Agent
+**Area**: LLM Agent  
 **Keywords**: Smart Home, LLM Agent, Workflow Scheduling, Temporal Reasoning, Interactive Simulator
 
 ## TL;DR
-This paper proposes SimuHome, a time-accelerated smart home simulator based on the Matter protocol along with a 600-episode benchmark. It is the first benchmark to simulate the continuous effects of device operations on environmental variables and to evaluate workflow scheduling capabilities. Results reveal that workflow scheduling remains the most challenging frontier for current LLM agents, including GPT-5.1.
+SimuHome is proposed as a time-accelerated smart home simulator and a 600-episode benchmark based on the Matter protocol. It is the first to simulate the continuous impact of device operations on environmental variables and evaluate workflow scheduling capabilities. Findings indicate that workflow scheduling remains the most significant challenge for current LLM agents (including GPT-5.1).
 
 ## Background & Motivation
-**Background**: Smart home agents (e.g., Amazon Alexa, Google Home) are among the earliest large-scale commercial tool agents, yet many everyday home requests still exceed their capabilities. Recent research leverages LLMs to build more capable smart home agents that must handle tasks ranging from simple commands to complex temporal coordination.
+**Background**: Smart home agents (e.g., Amazon Alexa, Google Home) were among the first tool agents to be commercialized at scale. However, many daily household requests still exceed their capabilities. Current research leverages LLMs to build more robust smart home agents that must handle multi-level tasks ranging from simple commands to complex temporal coordination.
 
 **Limitations of Prior Work**:
-   - **No simulation of environmental dynamics**: Benchmarks such as HomeBench, Sasha, and SAGE do not simulate how device operations continuously affect environmental variables (e.g., temperature, humidity). Setting an air conditioner to 25°C does not instantly change the temperature—it decreases gradually, and agents need to observe this process.
-   - **No modeling of operation dependencies**: Real devices have operational dependencies (e.g., an air conditioner must be powered on before its temperature can be adjusted), which existing benchmarks do not model.
-   - **No support for temporal scheduling evaluation**: Tasks such as "turn on the kitchen light after the dishwasher finishes" require querying remaining time, computing completion moments, and registering timed tasks—capabilities no existing benchmark evaluates.
-   - **Static data is insufficient**: A single user request may admit multiple valid action sequences, which fixed annotations cannot cover. Agents need to operate in an interactive environment and verify outcomes.
+- **Lack of Environment Simulation**: Benchmarks like HomeBench, Sasha, and SAGE do not simulate how device operations continuously affect environmental variables (e.g., temperature, humidity). Setting an AC to 25°C does not change the temperature instantly; it is a gradual process that an agent needs to observe.
+- **Lack of Operation Dependencies**: Real-world devices have operation dependencies (e.g., an AC must be powered on before adjusting temperature), which existing benchmarks fail to model.
+- **No Support for Temporal Scheduling Evaluation**: Tasks such as "turn on the kitchen light after the dishwasher finishes" require the agent to query remaining time, calculate completion moments, and register scheduled tasks—capabilities existing benchmarks cannot evaluate.
+- **Insufficient Static Data**: A single user request may have multiple valid operation sequences, which fixed annotations cannot cover. Agents need to operate in an interactive environment to verify results.
 
-**Key Challenge**: LLM agents need to perform complex temporal reasoning in dynamic, physically constrained environments, yet no suitable simulator or benchmark exists to train and evaluate such capabilities.
+**Key Challenge**: LLM agents need to perform complex temporal reasoning in dynamic environments with physical constraints, but there is no suitable simulator and benchmark to train and evaluate this ability.
 
-**Goal**: To construct a high-fidelity, interactive, time-accelerated smart home simulator and a systematic benchmark covering 6 query types (with feasible/infeasible variants).
+**Goal**: Build a high-fidelity, interactive, time-accelerated smart home simulator and a systematic benchmark covering 6 query types (including feasible/infeasible variants).
 
-**Key Insight**: Device behavior is modeled based on the Matter protocol (the global smart home communication standard), ensuring that operational constraints in the simulator are consistent with real physical devices and enabling sim-to-real transfer.
+**Key Insight**: Model device behavior based on the Matter protocol (the global standard for smart home communication) to ensure that device operation constraints in the simulator align with real physical devices, supporting sim-to-real transfer.
 
-**Core Idea**: Matter protocol + tick-based deterministic environment simulation + time acceleration + 6 query types × feasible/infeasible variants = comprehensive evaluation of LLM agent capabilities in realistic smart home scenarios.
+**Core Idea**: Matter protocol + tick-based deterministic environment simulation + time acceleration + 6 query types × [feasible/infeasible] = Assessment of the full capabilities of LLM agents in real smart home scenarios.
 
 ## Method
 
 ### Overall Architecture
-SimuHome consists of two components: (1) a **Simulator**—an interactive smart home environment based on the Matter protocol that supports device operations, continuous environmental variable updates, and time acceleration; and (2) a **Benchmark**—600 manually validated episodes covering 12 evaluation categories (6 query types × feasible/infeasible). Agents interact with the simulator via APIs and complete tasks under the ReAct framework.
+SimuHome addresses the limitations of existing benchmarks that treat environments as static and device operations as atomic transactions, failing to test temporal reasoning under physical constraints. The solution consists of two components: an **interactive simulator** based on the Matter protocol (where device operations continuously change environmental variables and support time acceleration to run long processes like "waiting for the dishwasher" in seconds) and a **600-episode benchmark** (6 query types × feasible/infeasible, totaling 12 evaluation categories). During runtime, the agent interacts with the simulator in a ReAct loop: receiving a user query, observing device and environment states, issuing commands or registering scheduled workflows, and receiving new states as the simulator advances in deterministic time steps until the task is complete. Scoring is performed by the simulator or an LLM judge.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    GEN["Episode Gen & Dual-Track Eval<br/>Randomized samples + Sim/LLM Judge"] -. Randomized Generation .-> QT["Query Type Ladder<br/>6 Types × Feasible/Infeasible"]
+    QT --> AGENT["LLM Agent (ReAct)<br/>Observe → Think → Act"]
+    AGENT -->|"Query / Command (Immediate Feedback)"| SIM
+    AGENT -->|"schedule_workflow"| SCHED["Delayed Feedback Workflow Scheduling<br/>Receipt only, no validation/error"]
+    SCHED --> SIM
+    subgraph SIM["High-Fidelity Interactive Simulator (Matter + Tick Env)"]
+        direction TB
+        DEV["Matter Device Model<br/>17 Types + Dependencies"] <--> ENV["Tick Env Update<br/>0.1s Accumulate Multi-Device Impact"]
+    end
+    SIM -->|"Return New State"| AGENT
+    AGENT -. Final State → Evaluation .-> GEN
+```
 
 ### Key Designs
 
-1. **Matter Protocol-Based Device Modeling**:
+**1. Query Type Ladder: 6 Queries × Feasible/Infeasible, Scaling Temporal Reasoning Burden**
 
-    - Function: Models operational rules and dependencies for 17 device types.
-    - Mechanism: Device behavior strictly follows the Matter protocol—e.g., an air conditioner must execute `PowerOn` before temperature adjustment, and a washing machine has multi-stage operating cycles. Each device defines a set of supported Matter clusters (capability groups).
-    - Design Motivation: Ensures that simulator behavior is consistent with real devices, enabling knowledge acquired in the simulator to transfer to physical environments.
+Fixed annotations and single-difficulty levels cannot capture the capability span from reading a value to coordinating multiple devices. Thus, the benchmark arranges tasks into a six-level ladder: QT1 State Query ("What is the kitchen humidity?") → QT2 Implicit Intent Inference ("It feels stuffy" → infer dehumidification needed → turn on dehumidifier) → QT3 Explicit Device Control (specified device and target value, must follow dependencies) → QT4-1 Temporal Scheduling ("Turn off light in 10 mins") → QT4-2 Event-Driven Scheduling ("Turn off light after dishwasher finishes," requires checking remaining time → calculating completion moment → registering workflow) → QT4-3 Coordinated Scheduling ("Finish dishwasher and laundry simultaneously," requires calculating both remaining times → back-calculating start times). From QT1 to QT4, the tasks progress from "reading a value" to "calculating precise moments for multiple devices and pre-registering." Each category includes an **infeasible variant** (non-existent device / physical limit exceeded / temporal contradiction) to force the agent to identify and explain why a task cannot be done, rather than hallucinating an action.
 
-2. **Real-Time Environmental State Update Mechanism**:
+**2. High-Fidelity Interactive Simulator: Matter Protocol Modeling + Tick Environment Updates**
 
-    - Function: Computes the cumulative effects of all active devices on environmental variables (temperature, illuminance, humidity, air quality) at each tick (0.1 second).
-    - Mechanism: Effects from multiple devices are superimposed (e.g., two air conditioners running at high speed cool the room faster), and device sensor attributes are synchronously updated to reflect the current environment. Deterministic time steps guarantee full reproducibility.
-    - Design Motivation: Real physical environment responses are gradual; agents must be able to observe and determine whether a target state has been reached.
+In previous benchmarks, devices were operated instantly without dependencies or simulation of physical processes (e.g., temperature gradually approaching 25°C). SimuHome integrates both: it uses the Matter protocol to define the behavior of 17 device types, where each device declares its supported Matter clusters (capability groups), and operations must follow protocol dependencies (e.g., an AC needs `PowerOn` before adjusting temperature). Simultaneously, it uses a tick (0.1s) as the minimum time step to advance the environment, accumulating the impact of all active devices on environmental variables (temperature, illuminance, humidity, air quality). Multiple device effects are additive (two ACs cool faster). Since updates are driven by deterministic time steps, evolution is reproducible; with time acceleration, processes taking minutes in the simulated world can finish in seconds.
 
-3. **Agent–Simulator Interface and Workflow Scheduling**:
+**3. Delayed Feedback Workflow Scheduling Interface: The Structural Root of QT4 Difficulty**
 
-    - Function: Provides three categories of tools: querying device states, executing Matter commands, and registering timed workflows.
-    - Mechanism: `schedule_workflow` accepts an absolute start time and a list of commands. Crucially, scheduling only returns a registration confirmation without pre-validating whether commands will succeed at execution time. Command failures at execution time also return no error—mimicking the behavior of real smart home platforms.
-    - Design Motivation: This "delayed feedback" design is intentional—it simulates real-world scenarios where device states may change between scheduling and execution, and is the structural reason why QT4 tasks are harder than QT3.
+The interface provides the agent with three tools: querying device status, executing Matter commands, and registering a scheduled workflow `schedule_workflow` (accepting an absolute start time and a sequence of commands). A critical design choice is that scheduling only returns an "already registered" receipt; it does not pre-validate if these commands will succeed at the execution time, nor does it return errors if they fail later. This mimics real smart home platforms where device states might change between "registration" and "execution." This "delayed feedback" makes QT4 structurally harder than QT3: in QT3, the agent sees immediate success or failure (immediate feedback), whereas in QT4, once a workflow is submitted, the feedback loop for error correction is lost.
 
-4. **Six Query Type Design**:
+**4. Episode Generation & Dual-Track Evaluation: Randomized Diversity and Objective Validation**
 
-    - **QT1 Status Query**: Querying environmental variables or device settings (e.g., "What is the humidity in the kitchen?").
-    - **QT2 Implicit Intent Inference**: Users express needs indirectly (e.g., "It feels stuffy" → infer need for dehumidification → activate dehumidifier).
-    - **QT3 Explicit Device Control**: Precisely specifying devices and target values while adhering to operational dependencies.
-    - **QT4-1 Time-Based Scheduling**: Controlling devices at a specified future time (e.g., "Turn off the lights in 10 minutes").
-    - **QT4-2 Event-Driven Scheduling**: Triggering actions upon device completion events (e.g., "Turn off the lights after the dishwasher finishes" → query remaining time → compute completion moment → register workflow).
-    - **QT4-3 Coordinated Scheduling**: Synchronizing the timing of multiple devices (e.g., "Schedule the dishwasher and washing machine to finish at the same time" → compute remaining time for both → adjust start times accordingly).
-    - Each query type has an **infeasible variant** (non-existent device / physical limits exceeded / temporal contradiction), requiring agents to identify and explain the reason.
-
-5. **Episode Generation and Evaluation**:
-
-    - Function: Constructs diverse episodes by randomizing home layouts, device states, and environmental variables.
-    - Mechanism: A three-step pipeline—(a) dependency-aware random initialization of device states; (b) structured goal and prerequisite action generation; (c) query generation by GPT-4o mini followed by independent validation by two graduate students (Cohen's κ = 0.92). Evaluation uses two methods: direct simulator verification (for feasible QT2–4) and LLM-as-a-Judge (for infeasible episodes and QT1), with majority voting over three runs.
-    - Design Motivation: Prerequisite action requirements (e.g., agents must first call `get_room_devices()`) prevent agents from succeeding through guesswork.
+Episodes are constructed by randomizing home layouts, device states, and environment variables. The process includes: (a) Dependency-aware randomized initialization of device states; (b) Generation of structured goals and prerequisite action requirements (e.g., must call `get_room_devices()` first); (c) Generation of natural language queries using GPT-5 mini, followed by independent validation by two graduate students (Cohen's $\kappa=0.92$, indicating high reliability). Evaluation follows two tracks: feasible QT2–QT4 are verified by the simulator regarding the final state, while infeasible episodes and QT1 are handled by LLM-as-a-Judge using majority voting from three rounds.
 
 ### Loss & Training
-This paper is primarily a benchmark contribution. SFT experiments use 204 successful trajectories from GPT-5.1 to fine-tune Gemma3-4B-it and Qwen3-32B.
+The primary contribution is the benchmark; no new training objective is proposed. SFT experiments used 204 successful trajectories from GPT-5.1 to fine-tune Gemma3-4B-it and Qwen3-32B to test if "imitating success" could bridge the workflow scheduling gap.
 
 ## Key Experimental Results
 
 ### Main Results (Success Rate %)
 
 | Model | QT1-F | QT2-F | QT3-F | QT4-1-F | QT4-2-F | QT4-3-F |
-|---|---|---|---|---|---|---|
+|------|-------|-------|-------|---------|---------|---------|
 | Llama4-Maverick | 96 | 52 | 88 | 22 | 18 | 32 |
 | Qwen3-235B | 86 | 32 | 84 | 26 | 38 | 28 |
 | Gemini-2.5-Flash | 92 | 66 | 82 | 22 | 40 | 12 |
@@ -99,45 +92,43 @@ This paper is primarily a benchmark contribution. SFT experiments use 204 succes
 | Gemini-2.5-Pro | 96 | 60 | 76 | 44 | 60 | 46 |
 | **GPT-5.1** | **100** | **80** | **86** | **60** | **72** | **56** |
 
-### Ablation Study (Reasoning Capability vs. Latency Trade-off)
+### Ablation Study (Reasoning vs. Latency Trade-off)
 
-| Model | QT3-F Time (s) | QT4-2-F Time (s) | QT4-3-F Time (s) | Reasoning Model |
-|---|---|---|---|---|
+| Model | QT3-F Time(s) | QT4-2-F Time(s) | QT4-3-F Time(s) | Reasoning Model |
+|------|-------------|-----------------|-----------------|------------|
 | GPT-4.1 | 22.9 | 28.7 | 29.7 | No |
 | Gemini-2.5-Pro | 66.1 | 57.7 | 53.7 | Yes |
 | GPT-5.1 | 78.6 | 135.1 | 112.7 | Yes |
 
 ### Key Findings
-- **Workflow scheduling is the most persistent challenge**: Even GPT-5.1 achieves only 56% on QT4-3 (coordinated scheduling). Success rates drop sharply from QT1/QT3 to QT4.
-- **Immediate feedback is key to QT3 success**: Over 40% of successful QT3 episodes involve recovery from initial errors via tool feedback; the `schedule_workflow` interface in QT4 lacks this mechanism, preventing agents from detecting their own mistakes.
-- **Reasoning models offer large gains at high cost**: GPT-5.1 outperforms non-reasoning GPT-4.1 by 26 percentage points on QT4-2 (46%→72%), but requires 3–5× more time (135s vs. 29s), which is impractical for real-time smart home applications.
-- **SFT yields limited improvement**: Fine-tuning most substantially improves infeasible request detection (up to +26%), but provides almost no benefit for feasible workflow scheduling (QT4-3-F remains at 0%), as temporal computations vary across episodes and cannot be learned through imitation.
-- **Small models are nearly incapable**: Models with fewer than 7B parameters achieve 0% success on most tasks; only Gemma3-4B-it achieves limited success on QT1.
-- **Error analysis**: QT2 failures are dominated by device control errors (DC, 71%); QT4 errors are more evenly distributed—DC (40%), temporal reasoning (TR, 25%), and action planning (AP, 19%).
+- **Workflow scheduling is the most persistent challenge**: Even for GPT-5.1, the success rate for QT4-3 (coordinated scheduling) is only 56%.
+- **Immediate feedback is key to QT3 success**: Over 40% of successful QT3 episodes recovered from initial errors via tool feedback; QT4's `schedule_workflow` lacks this, preventing self-correction.
+- **Reasoning models provide significant gains at high cost**: GPT-5.1 improves QT4-2 by 26% over GPT-4.1 (46%→72%) but takes 3-5x longer, making it less suitable for real-time smart home applications.
+- **SFT has limited improvement**: Fine-tuning improved infeasible request detection (up to +26%) but showed almost no improvement for feasible workflow scheduling (QT4-3-F remained at 0%), as temporal calculations vary per episode and cannot be learned through simple imitation.
+- **Small models are largely incapable**: Models <7B had nearly 0% success on most tasks, with Gemma3-4B-it showing only limited success on QT1.
 
 ## Highlights & Insights
-- **The "delayed feedback" design philosophy is the central insight**: The performance gap between QT3 and QT4 is not merely a matter of task complexity but reflects a fundamental difference in feedback structure—agents can recover through trial and error when immediate feedback is available, but are nearly incapable of self-correction without it. This insight has broad implications for the design of all agent systems.
-- **Practical value of the time-accelerated simulator**: Beyond evaluation, the paper proposes using the simulator as a pre-validation environment for agents—testing scheduling plans in the time-accelerated simulator before submitting them to the real environment. This offers a concrete path toward addressing the delayed feedback problem.
-- **Adoption of the Matter protocol is a well-motivated design choice**: It ensures consistency between simulated and real device behavior, giving benchmark results practical reference value beyond a purely synthetic setting.
+- **The "Delayed Feedback" philosophy is a core insight**: The performance gap between QT3 and QT4 is not just about task complexity, but the fundamental difference in feedback structure. This has implications for all agent system designs.
+- **Practical value of time-accelerated simulation**: Beyond evaluation, the simulator can serve as a pre-verification environment—agents can test scheduling plans in acceleration before committing to the real environment.
+- **Strategic adoption of Matter protocol**: Ensures simulated behaviors match real devices, providing real-world relevance to benchmark results.
 
 ## Limitations & Future Work
-- The environmental model is relatively simple—it only models device–environment interactions within a single room and does not account for cross-room effects (e.g., a living room air conditioner affecting a bedroom) or cross-device interactions (e.g., combined effects of a humidifier and air conditioner).
-- While 17 device types cover common household appliances, more complex IoT devices (e.g., security systems, voice assistant integrations) are not included.
-- Infeasible episode design primarily covers three categories (non-existent device / physical limits / temporal contradiction); real-world scenarios involve additional constraints such as energy consumption limits and conflicting user preferences.
-- The benchmark scale of 600 episodes is relatively small, with only 50 episodes per evaluation category, which may result in high statistical variance.
-- Evaluation relies on LLM-as-a-Judge for certain categories, and the accuracy of the judge may affect results.
+- The environment model is simplified—it only models device-environment interaction within a single room, ignoring cross-room impacts or complex cross-device interactions.
+- 17 device types cover common cases but exclude more complex IoT devices like security systems.
+- Infeasible designs cover three main scenarios; real-world constraints like energy limits or user preference conflicts are not yet addressed.
+- The 600-episode scale is relatively small (50 per category), which may result in statistical variance.
 
 ## Related Work & Insights
-- **vs. HomeBench**: HomeBench evaluates agents by comparing API call sequences without simulating environmental dynamics. SimuHome provides an interactive environment that supports multiple valid action sequences.
-- **vs. SAGE**: SAGE allows device states to change dynamically but does not simulate the continuous evolution of environmental variables and does not support temporal scheduling evaluation.
-- **vs. AI2-THOR/ALFRED**: These are 3D environment benchmarks for physical navigation and object manipulation, which are fundamentally different from smart home API control tasks.
-- **vs. Sasha**: Sasha focuses on creative intent interpretation (e.g., "make the environment more comfortable") and evaluates through user surveys. SimuHome's evaluation is more objective (simulator-verified) and covers a broader range of task types.
+- **vs HomeBench**: Evaluates via API sequence comparison without environment simulation. SimuHome provides an interactive environment.
+- **vs SAGE**: Allows dynamic status but lacks continuous environmental variation and temporal scheduling.
+- **vs AI2-THOR/ALFRED**: These are 3D environments for physical navigation, fundamentally different from API-based smart home control.
+- **vs Sasha**: Focuses on creative intent (e.g., "make it comfortable") based on human surveys. SimuHome is more objective via simulator verification.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — The first smart home benchmark to simulate continuous device–environment interactions, support time acceleration, and evaluate workflow scheduling; the problem formulation is systematic and thorough.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 18 models, 6 query types × feasible/infeasible variants, detailed error analysis, and multiple improvement strategies (SFT / framework substitution / multi-turn interaction / self-correction), with exceptionally thorough analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ — The logical flow is clear and coherent, connecting simulator design, benchmark construction, and experimental findings in a well-structured narrative; the analysis of the delayed feedback mechanism is particularly insightful.
-- Value: ⭐⭐⭐⭐ — Makes an important contribution to smart home agent research, though the domain is relatively specialized and its generality is narrower than more broadly applicable works.
+- Novelty: ⭐⭐⭐⭐⭐ First smart home benchmark to simulate continuous device-environment interaction with time acceleration and workflow scheduling.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 18 models, 6 query types, detailed error analysis, and multiple improvement attempts (SFT/Self-correction).
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain; the analysis of the delayed feedback mechanism is particularly insightful.
+- Value: ⭐⭐⭐⭐ Significant push for smart home agent research, though the domain is vertically specialized.
 
 <!-- RELATED:START -->
 
@@ -145,10 +136,10 @@ This paper is primarily a benchmark contribution. SFT experiments use 204 succes
 
 ## Related Papers
 
-- [\[ICLR 2026\] WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment](weboperator_action-aware_tree_search_for_autonomous_agents_in_web_environment.md)
+- [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
-- [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
-- [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](a_benchmark_for_deep_information_synthesis.md)
+- [\[ICLR 2026\] Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on Diverse Video Games](orak_a_foundational_benchmark_for_training_and_evaluating_llm_agents_on_diverse_.md)
+- [\[ACL 2025\] SMART: Self-Aware Agent for Tool Overuse Mitigation](../../ACL2025/llm_agent/smart_self-aware_agent_for_tool_overuse_mitigation.md)
 - [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
 
 </div>

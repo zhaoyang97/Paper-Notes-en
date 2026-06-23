@@ -2,137 +2,133 @@
 title: >-
   [Paper Note] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models
 description: >-
-  [ICLR 2026][LLM Agent][Tool use] ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence (rather than a single token) via collaboration-aware vector quantization…
+  [ICLR 2026][LLM Agent][Paper Note] ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence rather than a single token through collaboration-aware vector quantization. This achieves logarithmic vocabulary expansion (covering 47,000+ tools with only ~512 new tokens), comprehensively outperforming the ToolGen baseline on Tool
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "Tool use"
-  - "vector quantization"
-  - "collaborative semantics"
-  - "vocabulary expansion"
-  - "generative tool retrieval"
+  - ICLR 2026
+  - LLM Agent
 date: 2026-05-08
-content_hash: 9c976db802371046
+content_hash: a2fdbd6065f81a91
 ---
-
 # ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.21947](https://arxiv.org/abs/2601.21947)  
-**Code**: Available  
-**Area**: LLM Agent
-**Keywords**: Tool use, vector quantization, collaborative semantics, vocabulary expansion, generative tool retrieval
+**Code**: Yes  
+**Area**: LLM Agent  
+**Keywords**: Tool Use, Vector Quantization, Collaborative Semantics, Vocabulary Expansion, Generative Tool Retrieval
 
 ## TL;DR
-ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence (rather than a single token) via collaboration-aware vector quantization, achieving logarithmic vocabulary scaling (47,000+ tools requiring only ~512 new tokens). It comprehensively outperforms the ToolGen baseline on ToolBench while reducing language model perplexity degradation from 16.5× to 4×.
+ToolWeaver is proposed to represent each tool as a hierarchical discrete code sequence rather than a single token through collaboration-aware vector quantization. This achieves logarithmic vocabulary expansion (covering 47,000+ tools with only ~512 new tokens), comprehensively outperforming the ToolGen baseline on ToolBench while reducing language model perplexity degradation from 16.5x to 4x.
 
 ## Background & Motivation
 
-**Background**: Generative tool use (e.g., ToolGen) represents tools as new tokens, allowing LLMs to directly "utter" tool names rather than retrieving from a candidate list. However, existing "one tool, one token" approaches face severe scalability challenges.
+**Background**: Generative tool use (e.g., ToolGen) represents tools as new tokens, allowing LLMs to "speak" tool names directly instead of retrieving from a candidate list. However, current "one-tool-one-token" methods face severe scalability issues.
 
 **Limitations of Prior Work**:
-- **Vocabulary explosion**: 47,000 tools → 47,000 new tokens, causing linear growth in the embedding layer.
-- **Language capability catastrophe**: Massive new tokens corrupt the language model; ToolGen raises perplexity from 6.34 to 104.54 (16.5×).
-- **Semantic blindness**: A single token cannot encode inter-tool collaborative relationships; the model can only infer collaboration patterns from sparse tool ID co-occurrences.
-- **Poor cross-domain generalization**: Single token IDs lack transferable semantic structure.
+- **Vocabulary Explosion**: 47,000 tools require 47,000 new tokens; linear growth leads to expansion of the embedding layer.
+- **Catastrophic Language Degradation**: Massive new tokens pollute the language model; ToolGen pushes perplexity from 6.34 to 104.54 (16.5x).
+- **Semantic Blind Spots**: Single tokens cannot encode collaborative relationships between tools; models must infer collaboration patterns from sparse tool ID co-occurrences.
+- **Poor Cross-domain Generalization**: Single token IDs lack transferable semantic structures.
 
-**Key Challenge**: A compact representation of large-scale tool libraries is required that simultaneously encodes intrinsic tool semantics (functionality) and extrinsic collaboration patterns (co-usage patterns) without degrading pretrained language capabilities.
+**Key Challenge**: There is a need for a compact representation for large-scale tool libraries that encodes both intrinsic semantics (function) and extrinsic collaborative patterns (co-usage) without destroying pre-trained language capabilities.
 
-**Goal**: Design a logarithmic vocabulary expansion scheme that jointly encodes semantic and collaborative information.
+**Goal**: Design a logarithmic vocabulary expansion scheme that simultaneously encodes semantic and collaborative information.
 
-**Key Insight**: Inspired by VQ-VAE, tool embeddings are quantized into multi-level discrete codes via Residual Quantization (RQ)—$K^L$ tools require only $L \times K$ new tokens—with graph Laplacian regularization injecting collaborative signals.
+**Key Insight**: Inspired by VQ-VAE, use Residual Vector Quantization (RQ) to quantize tool embeddings into multi-level discrete codes—$K^L$ tools require only $L \times K$ new tokens. Collaborative signals are then injected via Graph Laplacian regularization.
 
-**Core Idea**: Encode tools as hierarchical token sequences via collaboration-aware residual quantization, enabling logarithmic vocabulary scaling and collaborative semantic modeling.
+**Core Idea**: Utilize collaboration-aware residual quantization to encode tools as hierarchical token sequences, achieving logarithmic vocabulary expansion and collaborative semantic modeling.
 
 ## Method
 
 ### Overall Architecture
-Stage 1: A text encoder obtains semantic embeddings for tools.
-Stage 2: Collaboration-aware RQ-VAE quantizes embeddings into discrete code sequences.
-Stage 3: Sinkhorn optimal transport resolves code conflicts.
-Stage 4: Two-stage LLM fine-tuning (retrieval alignment + trajectory alignment).
-Inference: Constrained beam search ensures only valid tool codes are generated.
+ToolWeaver aims to solve the problem where "one-tool-one-token" exhausts the vocabulary and ruins language performance when the tool library expands to 47,000+. It allows an LLM to directly "speak" the tool to be called in a compact and semantic way by replacing "one independent token" with "one hierarchical discrete code sequence." First, a text encoder obtains semantic embeddings for each tool. These are then quantized into $L$-level codes $[\iota_1, \iota_2, \ldots, \iota_L]$ using a collaboration-aware RQ-VAE, where each level selects a codeword from a shared codebook. Thus, tools share a small set of codeword combinations, requiring only $L \times K$ new tokens to cover the entire library. After quantization, Sinkhorn optimal transport is used to resolve conflicts where different tools might map to the same code, ensuring unique encoding. Finally, the LLM is fine-tuned in two stages (retrieval alignment + trajectory alignment), and constrained beam search is used during inference to restrict generation to valid codes.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Tool Library (47,000+ Tools)"] --> B["Text Encoder<br/>Get Semantic Embeddings"]
+    B --> C["Collaboration-Aware RQ<br/>Hierarchical Discrete Codes + Graph Laplacian Regularization"]
+    C --> D["Conflict Mitigation via Optimal Transport<br/>Sinkhorn ensures one-to-one unique encoding"]
+    D --> E["Two-stage LLM Fine-tuning<br/>Retrieval Alignment + Trajectory Alignment"]
+    E --> F["Constrained Beam Search Inference<br/>Trie constrains output to valid codes"]
+    F --> G["Output Tool Call"]
+```
 
 ### Key Designs
 
-1. **Collaboration-Aware Residual Quantization (Stage 2)**
+**1. Collaboration-Aware Residual Quantization: Using hierarchical codebooks to compress tools into a logarithmic vocabulary and embedding "co-usage" into the code**
 
-    - **Function**: Quantizes tool embeddings into multi-level discrete codes $[\iota_1, \iota_2, \ldots, \iota_L]$.
-    - **Mechanism**: RQ-VAE quantizes residuals level by level: $\iota_{d,l} = \arg\min_k \|r_{d,l} - v_{l,k}\|^2$, $r_{d,l+1} = r_{d,l} - v_{l,\iota_{d,l}}$.
-    - **Collaborative Regularization** (core innovation): A tool co-occurrence matrix is computed from usage trajectories as $A_{uv} = C_{uv}/\sqrt{C_{uu} \cdot C_{vv}}$, and a graph Laplacian loss $\mathcal{L}_{collab} = \sum_{u,v} A_{uv}\|\hat{z}_u - \hat{z}_v\|^2$ is added.
-    - **Design Motivation**: Tools that are frequently used together are assigned similar codes, enabling the LLM to learn collaboration patterns from code-level co-occurrence rather than sparse tool ID co-occurrence.
-    - **Vocabulary size**: $L$ levels × $K$ codebook entries = $L \times K$ new tokens. With $L=4, K=128$, 512 tokens cover 47,000+ tools.
+This is the core of ToolWeaver, addressing both "vocabulary explosion" and "semantic blind spots." The quantization follows the residual logic of RQ-VAE: residuals of tool embeddings are quantized level-by-level to the nearest codeword. At level $l$, $\iota_{d,l} = \arg\min_k \|r_{d,l} - v_{l,k}\|^2$ is selected, and the residual is updated as $r_{d,l+1} = r_{d,l} - v_{l,\iota_{d,l}}$. Since $K$ codewords across $L$ levels can combine into $K^L$ codes, vocabulary growth becomes logarithmic—$L=4, K=128$ requires only 512 new tokens to cover 47,000+ tools.
 
-2. **Conflict Mitigation via Optimal Transport (Stage 3)**
+The innovation lies in injecting collaborative signals. ToolWeaver constructs a normalized co-occurrence matrix $A_{uv} = C_{uv}/\sqrt{C_{uu} \cdot C_{vv}}$ from historical trajectories and adds a Graph Laplacian regularization term:
 
-    - **Function**: Resolves conflicts where multiple tools map to the same code sequence.
-    - **Mechanism**: A uniform distribution is enforced over the final-level codebook using the Sinkhorn-Knopp algorithm to solve the optimal transport problem.
-    - **Constraints**: Each tool is fully assigned, and each codeword is used uniformly.
-    - **Design Motivation**: Guarantees a unique identifier for each tool.
+$$\mathcal{L}_{collab} = \sum_{u,v} A_{uv}\|\hat{z}_u - \hat{z}_v\|^2$$
 
-3. **Constrained Beam Search Inference**
+This pulls tools that are "often called together" closer in the quantized embedding space, causing them to share more hierarchical codewords. This transforms collaborative relationships from sparse tool ID co-occurrences into dense code-level co-occurrences, allowing the LLM to learn collaboration patterns on a denser codeword level.
 
-    - **Function**: Ensures that only valid tool codes are produced during generation.
-    - **Mechanism**: All valid code sequences are precomputed into a prefix tree (Trie); invalid next tokens are masked at inference time.
-    - **Design Motivation**: Prevents the generation of non-existent tool codes.
+**2. Conflict Mitigation via Optimal Transport: Re-routing conflicting codes to ensure one-to-one mapping**
+
+Dense hierarchical quantization may map multiple tools to the same code sequence. ToolWeaver applies a uniform distribution constraint on the final level codebook and formulates the "tool-to-codeword" assignment as an optimal transport problem, solved iteratively with the Sinkhorn-Knopp algorithm. This ensures each tool is fully assigned while each codeword is used evenly, spreading clustered tools across different codewords and providing unique identifiers smoothly.
+
+**3. Constrained Beam Search Inference: Restricting generation to valid codes to prevent hallucinating tools**
+
+Since tools are now multi-token sequences, free generation could produce "invalid codes" that do not correspond to any tool. ToolWeaver constructs a Prefix Tree (Trie) of all valid code sequences. During inference, it masks out invalid next tokens at each step based on the Trie, ensuring beam search only explores valid branches and the model only outputs existing tool codes.
 
 ### Loss & Training
-- Quantization loss: $\mathcal{L}_{tokenize} = \mathcal{L}_{recon} + \mathcal{L}_{quant} + \lambda\mathcal{L}_{collab}$, with optimal $\lambda=1.0$.
-- Retrieval alignment: $\mathcal{L}_{retrieval} = -\mathbb{E}[\log P(\boldsymbol{\iota}_d | q)]$ (489K query–tool pairs).
-- Trajectory alignment: Standard SFT loss (183K trajectories).
+The quantization phase objective is $\mathcal{L}_{tokenize} = \mathcal{L}_{recon} + \mathcal{L}_{quant} + \lambda\mathcal{L}_{collab}$, combining reconstruction, quantization, and collaboration regularization, with an optimal weight $\lambda=1.0$. LLM alignment is two-fold: Retrieval Alignment uses 489K query-tool pairs with $\mathcal{L}_{retrieval} = -\mathbb{E}[\log P(\boldsymbol{\iota}_d | q)]$ to teach the model to generate correct codes for queries; Trajectory Alignment uses 183K trajectories for standard SFT to embed tool codes into multi-step call processes.
 
 ## Key Experimental Results
 
-### Main Results (ToolBench, 47,000+ tools)
+### Main Results (ToolBench, 47,000+ Tools)
 
 | Method | I1 NDCG@1 | I3 NDCG@1 | I3 SoPR | WikiText-2 PPL |
-|--------|-----------|-----------|---------|----------------|
+| :--- | :--- | :--- | :--- | :--- |
 | BM25 | 26.92 | 10.00 | - | - |
 | ToolRetriever | 75.92 | 28.00 | - | - |
 | ToolGen | 88.50 | 81.00 | 36.34% | 104.54 |
 | **ToolWeaver** | **91.16** | **88.00** | **52.19%** | **25.36** |
 
-ToolWeaver comprehensively outperforms all baselines on both retrieval and task completion, while reducing language model degradation from 16.5× to 4×.
+ToolWeaver leads in both retrieval and task completion while reducing language model degradation from 16.5x to 4x.
 
 ### Ablation Study
 
-| Configuration | Key Findings |
-|---------------|-------------|
-| $\lambda=0$ (no collaboration) | Significant I3 performance drop, validating that collaborative signals are critical for complex tasks. |
-| $\lambda=1$ (optimal) | Best performance across all metrics. |
-| $\lambda=10$ (over-constrained) | Performance degrades; collaborative signals override semantic information. |
-| Removing semantic initialization | NDCG drops ~20; semantic grounding is an essential prerequisite. |
-| Adding collaborative guidance | I1 improves by 1–2; I3 improves by 4–5; gains increase with task complexity. |
-| Encoding strategy comparison | Atomic (ToolGen), Numerical, Hierarchical, and Semantic encodings all underperform ToolWeaver. |
+| Configuration | Key Finding |
+| :--- | :--- |
+| $\lambda=0$ (No collaboration) | I3 performance drops significantly, validating the necessity of collaborative signals for complex tasks. |
+| $\lambda=1$ (Optimal) | Best performance across all metrics. |
+| $\lambda=10$ (Over-constraint) | Performance drops as collaborative signals override semantic information. |
+| W/O Semantic Init | NDCG drops by ~20, indicating semantic foundation is a critical prerequisite. |
+| W/ Collaborative Guidance | I1 increases by 1-2, I3 by 4-5; higher complexity tasks benefit more. |
+| Encoding Comparison | Atomic (ToolGen), Numerical, Hierarchical, and Semantic all underperform compared to ToolWeaver. |
 
 ### Key Findings
-- **Logarithmic vs. linear scaling**: 512 new tokens vs. 47,000; token utilization improves by 16,400×.
-- **Language capability preservation**: PPL 25.36 vs. 104.54; summarization F1 drops only 0.31% vs. 2.93%.
-- **Collaborative signals are critical for complex tasks**: The largest improvements occur on I3 (cross-category multi-tool tasks) (+7 NDCG / +15.85 SoPR).
-- **Semantic initialization is foundational**: The single largest contributing factor, demonstrating that high-quality tool representations are a prerequisite for all subsequent gains.
-- **Structural additions alone are insufficient**: Hierarchical encoding and semantic name encoding both underperform ToolWeaver's learned collaborative encoding.
+- **Logarithmic vs. Linear Expansion**: 512 new tokens vs. 47,000; token utilization efficiency increased by 16,400x.
+- **Language Capability Protection**: PPL 25.36 vs. 104.54; Summarization F1 only dropped 0.31% vs. 2.93%.
+- **Collaborative Signals are Critical**: I3 (cross-category multi-tool) improved most (+7 NDCG / +15.85 SoPR).
+- **Semantic Initialization is Fundamental**: The largest single contributor, indicating high-quality tool representation is the baseline for everything.
+- **Structural Padding is Insufficient**: Hierarchical or semantic name encoding is inferior to ToolWeaver’s learned collaborative encoding.
 
 ## Highlights & Insights
-- **Logarithmic vocabulary scaling is a fundamental architectural improvement**: It transforms tool use from a "vocabulary expansion problem" into a "sequence generation problem," fundamentally resolving the scalability bottleneck of large-scale tool libraries. This paradigm generalizes to any scenario requiring large-scale discrete entity generation.
-- **The collaborative regularization design is elegant**: Rather than simply encoding semantics, usage patterns (which tools are frequently co-used) are injected into the coding space, allowing the codes themselves to carry collaborative signals. This enables the LLM to learn tool combinations from code co-occurrence, which is far denser than tool ID co-occurrence.
-- **Sinkhorn optimal transport resolves encoding conflicts**: Uniqueness is guaranteed through a mathematically principled approach that is more robust than hard-coded deduplication.
+- **Logarithmic vocabulary expansion is a fundamental architectural improvement**: It transforms tool use from a "vocabulary expansion problem" to a "sequence generation problem," resolving the scalability bottleneck for large-scale tool libraries. This approach is generalizable to any large-scale discrete entity generation scenario.
+- **Elegant design of collaborative regularization**: Instead of just encoding semantics, it injects usage patterns into the code space. This allows the LLM to learn tool combinations from code co-occurrence, which is much denser than tool ID co-occurrence.
+- **Sinkhorn Optimal Transport for conflict resolution**: An elegant mathematical way to ensure uniqueness that is more robust than hard-coded deduplication.
 
 ## Limitations & Future Work
 - Collaborative signals depend on high-quality co-occurrence data; sparse or biased usage patterns may cause degradation.
-- Evaluation is conducted solely on ToolBench; cross-domain transfer remains untested.
-- Constrained beam search introduces additional inference overhead (not quantified).
-- The hyperparameter $\lambda$ requires empirical tuning; no automatic configuration guidance is provided.
+- Validated only on ToolBench; cross-domain transfer has not been tested.
+- Constrained beam search increases inference overhead (not yet quantified).
+- $\lambda$ requires empirical tuning; lack of automatic setting guidelines.
 
 ## Related Work & Insights
-- **vs. ToolGen**: The one-tool-one-token baseline suffers from poor scalability (linear vocabulary growth + PPL catastrophe); ToolWeaver outperforms it on all metrics.
-- **vs. ToolRetriever**: A retrieval-based method that is non-generative and exhibits limited recall in large-scale tool libraries.
-- **vs. RQ-VAE in vision/recommendation**: ToolWeaver extends RQ-VAE from image/product quantization to tool semantic quantization; collaborative regularization is the key innovation.
+- **vs. ToolGen**: The one-tool-one-token baseline with poor scalability (linear vocabulary + PPL catastrophe); ToolWeaver outperforms it on all metrics.
+- **vs. ToolRetriever**: A retrieval-based method, not generative; recall rate is limited in large-scale libraries.
+- **vs. RQ-VAE in Vision/RecSys**: ToolWeaver extends RQ-VAE from image/item quantization to tool semantic quantization, with collaborative regularization being the key innovation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — Logarithmic vocabulary scaling combined with collaboration-aware quantization constitutes an entirely new paradigm for tool representation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Evaluation at 47,000-tool scale, diverse ablations, and comprehensive language capability assessment.
-- **Writing Quality**: ⭐⭐⭐⭐ — Method description is clear; ablation analysis is thorough.
-- **Value**: ⭐⭐⭐⭐⭐ — Addresses the core scalability bottleneck of generative tool use with direct engineering value for agent systems.
+- Novelty: ⭐⭐⭐⭐⭐ Logarithmic vocabulary expansion + collaboration-aware quantization is a new paradigm for tool representation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 47,000 tool scale, multiple ablations, and comprehensive language capability assessment.
+- Writing Quality: ⭐⭐⭐⭐ Clear method description and thorough ablation analysis.
+- Value: ⭐⭐⭐⭐⭐ Solves the core scalability bottleneck in generative tool use, offering direct engineering value for Agent systems.
 
 <!-- RELATED:START -->
 
@@ -140,11 +136,11 @@ ToolWeaver comprehensively outperforms all baselines on both retrieval and task 
 
 ## Related Papers
 
+- [\[ACL 2025\] Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger](../../ACL2025/llm_agent/meco_metacognition_tool_use.md)
+- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](../../ACL2026/llm_agent/feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](../../ACL2026/llm_agent/agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
-- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
-- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](../../ACL2026/llm_agent/don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
-- [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](../../ACL2026/llm_agent/meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
+- [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
+- [\[ACL 2025\] ToolHop: A Query-Driven Benchmark for Evaluating Large Language Models in Multi-Hop Tool Use](../../ACL2025/llm_agent/toolhop_multi_hop_tool_use.md)
 
 </div>
 

@@ -2,131 +2,122 @@
 title: >-
   [Paper Note] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution
 description: >-
-  [ICLR 2026][LLM Agent][language agent] This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks…
+  [ICLR 2026][LLM Agent][language agent] This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks. It emphasizes realistic and diverse environment states and long-horizon multi-step interactions (averaging ~20 tool calls). The strongest model, Claude-4.5-Sonnet, achieves only a 38.6% success rate
 tags:
-  - "ICLR 2026"
-  - "LLM Agent"
-  - "language agent"
-  - "benchmark"
-  - "MCP"
-  - "tool calling"
-  - "long-horizon"
-  - "multi-application interaction"
-  - "execution-based evaluation"
+  - ICLR 2026
+  - LLM Agent
+  - language agent
+  - benchmark
+  - MCP
+  - tool calling
+  - long-horizon
 date: 2026-05-08
-content_hash: 8f79275558b68d33
+content_hash: 768f5e3deec8345b
 ---
-
 # The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.25726](https://arxiv.org/abs/2510.25726)  
-**Code**: To be confirmed (based on MCP servers)  
-**Area**: LLM Agent / Benchmark / Tool Use
-**Keywords**: language agent, benchmark, MCP, tool calling, long-horizon, multi-application interaction, execution-based evaluation
+**Code**: To be confirmed (Based on MCP servers)  
+**Area**: LLM Agent / Benchmark / Tool Use  
+**Keywords**: language agent, benchmark, MCP, tool calling, long-horizon, multi-app interaction, execution-based evaluation
 
 ## TL;DR
-This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks, emphasizing realistic and diverse environment states alongside long-horizon multi-step interactions (averaging ~20 tool calls per task). The strongest evaluated model, Claude-4.5-Sonnet, achieves only 38.6% task success rate.
+This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks. It emphasizes realistic and diverse environment states and long-horizon multi-step interactions (averaging ~20 tool calls). The strongest model, Claude-4.5-Sonnet, achieves only a 38.6% success rate.
 
 ## Background & Motivation
-**Background**: Language agents are increasingly expected to complete complex, multi-step workflows across real-world applications—such as managing calendar-email coordination or monitoring databases to generate reports. This demands agents capable of tool discovery, multi-turn reasoning, state tracking, and cross-system coordination.
+**Background**: Language agents are expected to complete complex workflows across applications and multiple steps in the real world, such as coordinating calendars with emails or monitoring databases to generate reports. This requires agents to possess integrated capabilities for tool discovery, multi-turn reasoning, state tracking, and cross-system coordination.
 
-**Limitations of Prior Work**: Existing agent benchmarks suffer from three major shortcomings: (1) narrow application coverage, often focusing on a single tool or API; (2) overly simplified tasks solvable in one or two tool calls; and (3) unrealistic environment states that use blank or minimal initial conditions rather than the complex data found in real software. These limitations prevent meaningful evaluation of agents' real-world deployment capabilities.
+**Limitations of Prior Work**: Existing agent benchmarks suffer from three major shortcomings: (1) narrow application domains (mostly focusing on a single tool or API), (2) oversimplified tasks (completable in one or two steps), and (3) unrealistic environment states (using empty or minimalist initial states rather than the complex data found in real software), failing to adequately evaluate an agent's actual deployment capabilities.
 
-**Key Challenge**: Researchers need reliable evaluations of agents' real-world performance, yet a substantial gap exists between the "toy-level" tasks in current benchmarks and genuine workflows. This disconnect causes benchmark scores to diverge from actual capability—agents perform well on simple benchmarks but fail frequently in realistic scenarios.
+**Key Challenge**: Researchers need to reliably assess the real-world performance of agents, but the massive gap between "toy-level" tasks in existing benchmarks and actual workflows leads to a disconnect between benchmark scores and real-world utility—agents perform well on simple benchmarks but fail frequently in real scenarios.
 
-**Opportunity from MCP**: The emergence of the Model Context Protocol (MCP) provides infrastructure for building standardized tool interfaces. Toolathlon constructs its tool layer atop high-quality MCP servers, some of which were implemented or revised by the authors themselves to ensure interface quality and consistency.
+**Key Insight**: The emergence of the Model Context Protocol (MCP) provides the infrastructure for building standardized tool interfaces. Toolathlon builds its tool layer on high-quality MCP servers, some implemented or revised by the team to ensure interface quality and consistency.
 
-**Evaluation Reliability**: Many existing benchmarks rely on LLM judgment or string matching to assess agent outputs, introducing substantial noise and reproducibility issues. A rigorous, execution-based verification mechanism is needed to ensure deterministic assessment of task completion.
+**Goal**: Existing benchmarks often rely on LLM judgments or string matching to evaluate outputs, which are prone to error and non-reproducible. A rigorous verification mechanism based on program execution is needed to ensure deterministic determination of task completion.
 
-**Core Idea**: To construct the first comprehensive agent benchmark that simultaneously satisfies four dimensions: diverse application coverage, realistic environment states, long-horizon complex tasks, and execution-based evaluation.
+**Core Idea**: Construct the first comprehensive agent benchmark that simultaneously satisfies four dimensions: diverse application coverage, realistic environment states, long-horizon complex tasks, and execution-based verification.
 
 ## Method
 
 ### Overall Architecture
-Toolathlon is organized around four core design principles: application diversity (Diverse Apps), environment realism (Realistic Setup), task complexity (Long-Horizon Tasks), and evaluation reliability (Execution-Based Evaluation).
+Toolathlon is a language agent benchmark that exposes 32 real software applications as 604 tools via MCP servers, requiring agents to complete 108 long-horizon tasks in environments with realistic initial data. The benchmark consists of four components: a diverse application tool layer, realistic environment states, complex tasks averaging ~20 calls, and deterministic verification based on program execution.
 
 ### Key Designs
 
-1. **Application and Tool Coverage**:
+These four design points simultaneously increase the difficulty across four dimensions: the tool layer complicates tool selection, environment states provide "dirty" starting points, task design extends the logic chain, and execution-based evaluation enforces strict scoring.
 
-    - Covers 32 software applications spanning everyday productivity tools (Google Calendar, Notion, Gmail) to specialized platforms (WooCommerce for e-commerce, Kubernetes for container orchestration, BigQuery for data analytics), encompassing 604 distinct tools/APIs.
-    - The tool layer is implemented via MCP servers; the authors revised or re-implemented select MCP servers to ensure interface quality and behavioral consistency.
-    - Design intent: agents must confront the "tool discovery" challenge—identifying the correct combination of tools from a large pool to accomplish a given task.
+**1. Application and Tool Layer: Turning "Tool Discovery" into a Challenge**
 
-2. **Realistic Environment States**:
+In single-tool benchmarks, agents do not need to select tools, but in real deployment, "finding the right tool among many" is itself a difficulty. Toolathlon spans 32 software applications, ranging from daily productivity (Google Calendar, Notion, Gmail) to professional tools (WooCommerce e-commerce, Kubernetes container orchestration, BigQuery data analysis), totaling 604 tools/APIs. The tool layer is standardized on MCP servers. The team revised or re-implemented several existing MCP servers to ensure interface quality and cross-application behavioral consistency. Consequently, agents must locate the correct tool combination among hundreds of options at each step rather than facing pre-selected APIs, turning "tool retrieval" back into a real obstacle.
 
-    - Unlike benchmarks that merely provide functional tool interfaces against empty environments, Toolathlon supplies each task with an initial environment state drawn from real software.
-    - Examples include Canvas courses populated with dozens of students' genuine course data, real financial spreadsheets, and e-commerce systems with existing orders.
-    - Value: agents must search, filter, and relate information within complex pre-existing data, rather than simply creating records in a blank environment.
+**2. Realistic Environment States: Working with Existing "Dirty" Data**
 
-3. **Task Design and Complexity**:
+While tools may be available in many benchmarks, the initial environments are often blank, artificially lowering difficulty. Toolathlon injects initial states from real software for every task—Canvas courses contain actual enrollment and grade data for dozens of students, financial sheets have existing accounts, and e-commerce systems contain historical orders. Agents must retrieve, filter, and correlate within existing complex data before modification, mimicking a new employee taking over an existing system rather than performing a demo in a clean sandbox. Many failures stem from "writing data without understanding the existing state."
 
-    - The benchmark comprises 108 tasks, all manually authored or distilled from real workplace scenarios, each requiring agent interaction with multiple applications.
-    - On average, each task requires approximately 20 tool calls, qualifying as long-horizon tasks that demand sustained context maintenance and multi-step planning.
-    - Task types include: information retrieval and aggregation, cross-system data synchronization, conditional logic and workflow execution, and report generation.
+**3. Task Design and Long-Horizon Complexity: Maintaining Planning Pressure over ~20 Calls**
 
-4. **Execution-Based Evaluation**:
+Short tasks end in one or two steps, failing to expose weaknesses in planning and context maintenance. All 108 tasks in Toolathlon are manually authored or distilled from real workflows, each requiring cross-application collaboration and averaging ~20 tool calls—typical long-horizon tasks. Task types include information retrieval and aggregation, cross-system data synchronization, conditional execution, and report generation. Agents must track state across dozens of interactions, handle conditional branches, and recover from mid-way errors—any deviation accumulates in subsequent steps, revealing capabilities that short tasks cannot measure.
 
-    - Each task is paired with a dedicated evaluation script that verifies task completion by inspecting system state changes (e.g., database records, file contents, API states).
-    - Evaluation is deterministic—it does not rely on LLM judgment or fuzzy matching, eliminating noise introduced by the evaluation process itself.
-    - Evaluation scripts assess both correctness (whether the task was completed) and completeness (whether any steps were missed), with some tasks incorporating intermediate checkpoint checks.
+**4. Execution-Based Evaluation: Deterministic Judgment via Post-Task State Checks**
+
+Using LLM scoring or string matching introduces noise and reduces reproducibility. Toolathlon provides a dedicated evaluation script for each task that directly checks system state changes—database records, file contents, and API states—to strictly determine completion. The evaluation is deterministic, covering both correctness (goal achievement) and completeness (no missing steps). Some tasks include intermediate checkpoints to locate exactly where an agent failed. Compared to "grading based on final responses," this "world-state-based" scoring is both objective and reproducible.
 
 ## Key Experimental Results
 
 ### Main Results: Model Success Rate Comparison
 
-| Model | Success Rate (%) | Avg. Tool Calls | Type | Notes |
-|-------|-----------------|-----------------|------|-------|
-| Claude-4.5-Sonnet | **38.6** | 20.2 | Closed-source | Best overall model |
-| GPT-4o / GPT-5 series | 25–35 (est.) | ~20 | Closed-source | Moderate performance |
-| DeepSeek-V3.2-Exp | **20.1** | ~20 | Best open-source | Best open-weight result |
-| Other open-source models | <20 | Variable | Open-source | Broadly insufficient |
+| Model | Success Rate (%) | Avg. Tool Calls | Type | Note |
+|-------|------------------|-----------------|------|------|
+| Claude-4.5-Sonnet | **38.6** | 20.2 | Closed | Strongest Model |
+| GPT-4o / GPT-5 series | 25-35 (Est.) | ~20 | Closed | Moderate Performance |
+| DeepSeek-V3.2-Exp | **20.1** | ~20 | Open | Strongest Open-source |
+| Other Open-source | <20 | Highly Variable | Open | Generally Insufficient |
 
-### Performance Variation Across Application Categories
+### Performance Across Application Categories
 
-| Application Category | Typical Apps | Performance Trend | Key Challenges |
-|---------------------|-------------|-------------------|----------------|
-| Everyday productivity | Calendar, Gmail | Relatively strong | Highly structured APIs |
-| Project management | Notion, Canvas | Moderate | Complex data structures |
-| DevOps | Kubernetes, Git | Weak | Requires specialized domain knowledge |
-| Data analytics | BigQuery, Sheets | Weak | Multi-step data processing |
-| E-commerce | WooCommerce | Weak | Complex business logic |
+| Category | Typical Apps | Performance Trend | Difficulty Analysis |
+|----------|--------------|-------------------|---------------------|
+| Productivity | Calendar, Gmail | Relatively Good | Highly structured APIs |
+| Project Mgmt | Notion, Canvas | Moderate | Requires understanding complex data structures |
+| DevOps | Kubernetes, Git | Poor | Requires domain expertise |
+| Data Analysis | BigQuery, Sheets | Poor | Requires multi-step data processing |
+| E-commerce | WooCommerce | Poor | Complex business logic |
 
 ### Key Findings
-- Even the strongest model, Claude-4.5-Sonnet, achieves only 38.6% success, indicating that current agents remain substantially insufficient for realistic, long-horizon, multi-application tasks.
-- A gap of approximately 18 percentage points exists between closed-source and open-source models (38.6% vs. 20.1%), revealing tool use as a notable weakness of open-source models.
-- Primary failure modes include: incorrect tool selection, loss of critical information over long contexts, failure to adapt data formats across applications, and lack of error recovery capability.
-- Success rates on specialized domain tools (e.g., Kubernetes, BigQuery) are markedly lower than on everyday productivity tools, identifying domain knowledge as a key bottleneck for current agents.
-- While MCP server standardization reduces tool integration complexity, agents still fall short in "understanding the capability boundaries" of individual tools.
+- Even the strongest model, Claude-4.5-Sonnet, reached only 38.6% success, indicating significant deficiencies in current agents regarding realistic, long-horizon, multi-app tasks.
+- A gap of approximately 18 percentage points exists between open-source and closed-source models (38.6% vs 20.1%); tool-use capability remains a major weakness for open-source weights.
+- Primary failure reasons include: incorrect tool selection, loss of key information in long contexts, cross-app data format mismatches, and lack of error recovery.
+- Success rates for specialized tools (e.g., Kubernetes, BigQuery) are significantly lower than for productivity tools, identifying domain knowledge as a critical bottleneck.
+- While MCP standardization reduces integration complexity, agents still struggle to "understand tool capability boundaries."
 
 ## Highlights & Insights
-- **The philosophy of "realistic environment states"**: Toolathlon not only provides tool interfaces but also supplies complex, pre-populated data environments. This forces agents to "work in the midst of existing complexity"—analogous to the challenge a new employee faces when inheriting an established system with real data. This more accurately reflects the difficulties encountered in actual deployment than blank-environment testing.
-- **MCP as infrastructure**: The choice to build the tool layer on MCP servers is forward-looking—as the MCP ecosystem grows, Toolathlon can naturally scale to additional applications and tools.
-- **The evaluation value of long-horizon tasks**: An average task length of 20 tool calls effectively probes agents' planning capability, context maintenance, and error recovery—qualities that remain invisible in short-horizon evaluations.
+- **The Philosophy of "Realistic Environment States"**: Toolathlon provides complex real-world data environments rather than just tool interfaces. This forces agents to "work in chaos"—much like a human employee facing existing data systems. This reflects deployment challenges more accurately than blank-box testing.
+- **MCP as Infrastructure**: Using MCP servers as the tool layer is forward-looking; as the MCP ecosystem grows, Toolathlon can naturally expand to more applications.
+- **Value of Long-Horizon Evaluation**: Task lengths averaging 20 calls effectively test planning, context retention, and error recovery—traits invisible in short-duration tasks.
 
 ## Limitations & Future Work
-- **Limited task scale**: Although the 108 tasks are manually constructed with high quality, their relatively small number may be insufficient to evaluate model generalization across a broader range of scenarios.
-- **Static environments**: Task environments are fixed at the start of evaluation and do not involve dynamically changing conditions (e.g., real-time notifications, concurrent user actions) that are common in real-world deployments.
-- **High annotation cost**: Each task requires a manually authored evaluation script, making expansion to additional tasks and applications costly.
-- **Absence of interactive scenarios**: All tasks are unidirectional—agents execute tasks without any mid-task user feedback or requirement changes.
-- **Model API cost**: An average of 20 tool calls per task incurs substantial API overhead, limiting the feasibility of comprehensive evaluation across a wider range of models.
-- **Geographic and linguistic limitations**: Current applications and tasks are primarily English-language and oriented toward North American or globally standardized software tools, with insufficient coverage of non-English environments and localized applications.
-- **Missing safety dimension**: The benchmark primarily measures task completion rate and does not systematically evaluate the safety of agent tool use (e.g., data leakage, privilege escalation, unintended side effects).
+- **Limited Task Scale**: Although high-quality and manually constructed, 108 tasks may be insufficient to evaluate generalization across all scenarios.
+- **Static Environments**: Environment states are fixed at the start of evaluation and do not involve dynamic changes (e.g., real-time notifications, concurrent users).
+- **High Labeling Cost**: Manually writing evaluation scripts for each task makes scaling to more tasks/apps expensive.
+- **Lack of Interactive Scenarios**: Tasks are currently one-way; there are no scenarios where a user provides feedback or modifies requirements mid-task.
+- **Model Inference Cost**: An average of 20 calls per task implies significant API costs, limiting the feasibility of evaluating a wide range of models comprehensively.
+- **Geographic and Linguistic Limitations**: Current applications and tasks are primarily English-based and centered on global/North American tools, lacking coverage for non-English environments.
+- **Missing Safety Dimension**: The benchmark focuses on task completion rates and does not systematically evaluate agent safety (e.g., data leaks, permission escalation, or unintended side effects).
 
 ## Related Work & Insights
-- **vs. AgentBench (Liu et al., 2023)**: AgentBench covers operating systems, databases, and web environments, but its task length and environment state complexity are considerably lower than Toolathlon's. Toolathlon represents a significant upgrade in application diversity and environment realism.
-- **vs. ToolBench (Qin et al., 2024)**: ToolBench provides a large-scale API collection with automated task generation, but tasks are predominantly single-step or few-step calls with simple environment states. Toolathlon emphasizes long-horizon multi-step interaction and realistic states.
-- **vs. SWE-bench (Jimenez et al., 2024)**: SWE-bench focuses on a single domain—software engineering (code repair)—whereas Toolathlon spans 32 distinct application domains, evaluating agents' general-purpose tool use capability.
-- **vs. GAIA (Mialon et al., 2023)**: GAIA tests general AI assistants on web search and reasoning with relatively short tasks. Toolathlon's MCP-based framework positions it closer to real application integration scenarios.
-- **vs. τ-bench (Yao et al., 2024)**: τ-bench also addresses tool use but is oriented more toward reasoning capability verification. Toolathlon places greater emphasis on breadth of application coverage and environment state realism.
-- **vs. AgentDojo (Debenedetti et al., 2024)**: AgentDojo focuses on security (prompt injection defense), while Toolathlon focuses on functionality (task completion rate); the two benchmarks offer complementary evaluation perspectives.
+- **vs AgentBench (Liu et al., 2023)**: AgentBench covers OS, DB, and Web, but its task length and state complexity are inferior to Toolathlon. Toolathlon is a significant upgrade in diversity and realism.
+- **vs ToolBench (Qin et al., 2024)**: ToolBench offers massive API sets and automated task generation, but tasks are often single-step or few-step with simple states. Toolathlon emphasizes long-horizon multi-step tasks and realistic states.
+- **vs SWE-bench (Jimenez et al., 2024)**: SWE-bench focuses on the single domain of software engineering (code fixes). Toolathlon covers 32 different domains to test general tool-use capability.
+- **vs GAIA (Mialon et al., 2023)**: GAIA tests general assistants on search and reasoning with shorter tasks. Toolathlon's MCP framework makes it closer to real-world application integration.
+- **vs $\tau$-bench (Yao et al., 2024)**: $\tau$-bench also focuses on tool use but designs tasks more toward reasoning verification. Toolathlon emphasizes the breadth of application coverage and state realism.
+- **vs AgentDojo (Debenedetti et al., 2024)**: AgentDojo emphasizes safety (defense against prompt injection), while Toolathlon emphasizes functionality (completion rate). Their perspectives are complementary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of MCP, realistic environment states, and long-horizon tasks establishes a new paradigm for agent evaluation
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation of state-of-the-art models across 32 applications × 604 tools × 108 tasks
-- Writing Quality: ⭐⭐⭐⭐ Benchmark description is clear, though some sections are detail-dense
-- Value: ⭐⭐⭐⭐⭐ Fills a critical gap in agent evaluation regarding "realism"; has strong potential to become a community-standard benchmark
+- Novelty: ⭐⭐⭐⭐ The combination of MCP + Realistic states + Long-horizon tasks is a new paradigm for agent evaluation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive testing of SOTA models across 32 apps × 604 tools × 108 tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear descriptions, though some details are quite dense.
+- Value: ⭐⭐⭐⭐⭐ Fills a critical gap in "realism" for agent evaluation; likely to become a community standard.
 
 <!-- RELATED:START -->
 
@@ -134,11 +125,11 @@ Toolathlon is organized around four core design principles: application diversit
 
 ## Related Papers
 
-- [\[CVPR 2026\] CarePilot: A Multi-Agent Framework for Long-Horizon Computer Task Automation in Healthcare](../../CVPR2026/llm_agent/carepilot_a_multi-agent_framework_for_long-horizon_computer_task_automation_in_h.md)
+- [\[ICLR 2026\] LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent](longhorizonui_a_unified_framework_for_robust_long-horizon_task_automation_of_gui.md)
+- [\[CVPR 2026\] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks](../../CVPR2026/llm_agent/webgym_scaling_training_environments_for_long-horizon_visual_web_agents_with_rea.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
+- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
 - [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
-- [\[ICLR 2026\] Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents](harnessing_uncertainty_entropy-modulated_policy_gradients_for_long-horizon_llm_a.md)
-- [\[AAAI 2026\] Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](../../AAAI2026/llm_agent/cook_and_clean_together_teaching_embodied_agents_for_paralle.md)
-- [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
 
 </div>
 
